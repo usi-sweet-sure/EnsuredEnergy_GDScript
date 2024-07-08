@@ -1,9 +1,10 @@
-[gd_scene load_steps=79 format=3 uid="uid://g58p7rxvcdik"]
+[gd_scene load_steps=80 format=3 uid="uid://g58p7rxvcdik"]
 
 [ext_resource type="Script" path="res://src/gdscript/main.gd" id="1_6q0gk"]
 [ext_resource type="PackedScene" uid="uid://ba56oxmvcxpos" path="res://scenes/world.tscn" id="1_prp6q"]
 [ext_resource type="PackedScene" uid="uid://bs48lirfn2fp2" path="res://scenes/hud/ui.tscn" id="2_d60f5"]
 [ext_resource type="PackedScene" uid="uid://i802aa7uc538" path="res://scenes/building/BuildMenu.tscn" id="2_wrh8p"]
+[ext_resource type="Script" path="res://src/cs/ui/camera.gd" id="3_2lui3"]
 [ext_resource type="Texture2D" uid="uid://56mnndf1ggaj" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0010_Nuclear.png" id="4_e6lsk"]
 [ext_resource type="Texture2D" uid="uid://dbx2rmjpjd6qx" path="res://assets/new Power plants/Power plants/Power_Plants-smoke-1.png" id="5_n6wof"]
 [ext_resource type="Texture2D" uid="uid://eou3fo8c40ne" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0015_Waste.png" id="5_vx3tb"]
@@ -1901,6 +1902,7 @@ limit_left = -3500
 limit_top = -1600
 limit_right = 5240
 limit_bottom = 3400
+script = ExtResource("3_2lui3")
 
 [node name="Map" parent="World" index="1"]
 texture_filter = 2
@@ -2189,6 +2191,12 @@ libraries = {
 }
 autoplay = "Wind"
 
+[node name="Money" parent="World/BuildButton" index="13"]
+offset_left = -286.0
+offset_top = -132.5
+offset_right = -126.0
+offset_bottom = -43.5
+
 [node name="BuildButton2" parent="World" index="15"]
 offset_left = 624.0
 offset_top = 480.0
@@ -2256,6 +2264,12 @@ autoplay = "Sun"
 
 [node name="Hammer" parent="World/BuildButton9" index="0"]
 position = Vector2(308, 205)
+
+[node name="Money" parent="World/BuildButton9" index="13"]
+offset_left = -279.0
+offset_top = -124.0
+offset_right = -119.0
+offset_bottom = -35.0
 
 [node name="Hydro" parent="World" index="26" groups=["PP"]]
 position = Vector2(360, 1982)
