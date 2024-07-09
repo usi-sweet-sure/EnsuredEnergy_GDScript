@@ -6,10 +6,11 @@ var http1
 
 #globals
 var res_id = 1
-var res_name = "new123(ˆ%%$#ˆ%$*+)_)"
+var res_name = "new123"
 var yr = 2035
 var prm_id = 186
 var tj = 8000
+
 
 #init
 func _ready():
@@ -27,6 +28,7 @@ func res_ins():
 	var error = http1.request(url.format({"res_name": res_name.uri_encode()}))
 	if error != OK:
 		push_error("http error")
+		
 		
 #upsert param
 func prm_ups():
