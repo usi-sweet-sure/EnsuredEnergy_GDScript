@@ -35,7 +35,6 @@ func _on_close_button_pressed():
 	$BuildMenu.hide()
 	
 func _on_pp_delete(pp):
-	print(pp)
 	for plant in $PowerPlants.get_children():
 		if pp.name == plant.name:
 			plant.hide()

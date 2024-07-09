@@ -39,6 +39,10 @@ window/stretch/mode="canvas_items"
 
 project/assembly_name="sure_energy_tycoon"
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://Text.de.translation", "res://Text.en.translation", "res://Text.fr.translation", "res://Text.it.translation")
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

@@ -837,6 +837,7 @@ position = Vector2(-28, 0)
 texture = ExtResource("6_qkc2p")
 
 [node name="Multiplier" type="ColorRect" parent="BuildInfo/EnergyContainer"]
+visible = false
 z_index = 1
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2

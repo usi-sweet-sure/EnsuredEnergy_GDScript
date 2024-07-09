@@ -17,6 +17,8 @@ extends Node2D
 
 var is_alive: bool = true
 
+@onready var delete_button = $Delete
+
 var plant_name_to_model = {
 	"gas": "cnv_gas_ele",
 	"nuclear": "cnv_nuc_ele",
