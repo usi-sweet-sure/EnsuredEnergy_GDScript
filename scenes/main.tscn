@@ -1,6 +1,6 @@
 [gd_scene load_steps=79 format=3 uid="uid://g58p7rxvcdik"]
 
-[ext_resource type="Script" path="res://src/gdscript/main.gd" id="1_6q0gk"]
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_1m61r"]
 [ext_resource type="PackedScene" uid="uid://ba56oxmvcxpos" path="res://scenes/world.tscn" id="1_prp6q"]
 [ext_resource type="PackedScene" uid="uid://bs48lirfn2fp2" path="res://scenes/hud/ui.tscn" id="2_d60f5"]
 [ext_resource type="PackedScene" uid="uid://i802aa7uc538" path="res://scenes/building/BuildMenu.tscn" id="2_wrh8p"]
@@ -1881,7 +1881,7 @@ _data = {
 }
 
 [node name="Main" type="Node2D"]
-script = ExtResource("1_6q0gk")
+script = ExtResource("1_1m61r")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -4272.0
@@ -2555,16 +2555,6 @@ bus = &"Sound"
 [editable path="World/BuildButton/Biomass"]
 [editable path="World/BuildButton/River"]
 [editable path="World/BuildButton/Pump"]
-[editable path="World/BuildButton/BuildMenu"]
-[editable path="World/BuildButton/BuildMenu/Container/Solar"]
-[editable path="World/BuildButton/BuildMenu/Container/Wind"]
-[editable path="World/BuildButton/BuildMenu/Container/Tree"]
-[editable path="World/BuildButton/BuildMenu/Container/Hydro"]
-[editable path="World/BuildButton/BuildMenu/Container/Gas"]
-[editable path="World/BuildButton/BuildMenu/Container/Waste"]
-[editable path="World/BuildButton/BuildMenu/Container/Biomass"]
-[editable path="World/BuildButton/BuildMenu/Container/River"]
-[editable path="World/BuildButton/BuildMenu/Container/Pump"]
 [editable path="World/Solar"]
 [editable path="World/BuildButton9"]
 [editable path="World/BuildButton9/Gas"]
@@ -2576,16 +2566,6 @@ bus = &"Sound"
 [editable path="World/BuildButton9/Biomass"]
 [editable path="World/BuildButton9/River"]
 [editable path="World/BuildButton9/Pump"]
-[editable path="World/BuildButton9/BuildMenu"]
-[editable path="World/BuildButton9/BuildMenu/Container/Solar"]
-[editable path="World/BuildButton9/BuildMenu/Container/Wind"]
-[editable path="World/BuildButton9/BuildMenu/Container/Tree"]
-[editable path="World/BuildButton9/BuildMenu/Container/Hydro"]
-[editable path="World/BuildButton9/BuildMenu/Container/Gas"]
-[editable path="World/BuildButton9/BuildMenu/Container/Waste"]
-[editable path="World/BuildButton9/BuildMenu/Container/Biomass"]
-[editable path="World/BuildButton9/BuildMenu/Container/River"]
-[editable path="World/BuildButton9/BuildMenu/Container/Pump"]
 [editable path="World/Hydro"]
 [editable path="World/Pump"]
 [editable path="World/River"]
