@@ -17,9 +17,9 @@ func _ready():
 	http1 = HTTPRequest.new()
 	add_child(http1)
 	http1.request_completed.connect(self._http1_completed)
-	res_ins()
+	#res_ins()
 	#prm_ups()
-	#get_ctx()
+	get_ctx()
 	
 	
 #new game	
