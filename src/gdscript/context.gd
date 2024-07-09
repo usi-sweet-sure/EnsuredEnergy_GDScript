@@ -6,6 +6,7 @@ var http1
 
 #globals
 var res_id = 1
+var res_name = "new123(ˆ%%$#ˆ%$*+)_)"
 var yr = 2035
 var prm_id = 186
 var tj = 8000
@@ -15,15 +16,15 @@ func _ready():
 	http1 = HTTPRequest.new()
 	add_child(http1)
 	http1.request_completed.connect(self._http1_completed)
-	#res_ins()
+	res_ins()
 	#prm_ups()
-	get_ctx()
+	#get_ctx()
 	
 	
 #new game	
 func res_ins():
-	var url = "https://sure.euler.usi.ch/json.php?mth=ins"
-	var error = http1.request(url)
+	var url = "https://sure.euler.usi.ch/json.php?mth=ins&res_name={res_name}"
+	var error = http1.request(url.format({"res_name": res_name.uri_encode()}))
 	if error != OK:
 		push_error("http error")
 		
