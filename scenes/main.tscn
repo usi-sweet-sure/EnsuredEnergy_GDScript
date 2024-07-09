@@ -1885,6 +1885,7 @@ _data = {
 script = ExtResource("1_6q0gk")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_left = -4272.0
 offset_top = -2176.0
 offset_right = 5392.0
@@ -2191,11 +2192,8 @@ libraries = {
 }
 autoplay = "Wind"
 
-[node name="Money" parent="World/BuildButton" index="13"]
-offset_left = -286.0
-offset_top = -132.5
-offset_right = -126.0
-offset_bottom = -43.5
+[node name="CloseButton" parent="World/BuildButton/BuildMenu" index="0"]
+visible = false
 
 [node name="BuildButton2" parent="World" index="15"]
 offset_left = 624.0
@@ -2265,11 +2263,8 @@ autoplay = "Sun"
 [node name="Hammer" parent="World/BuildButton9" index="0"]
 position = Vector2(308, 205)
 
-[node name="Money" parent="World/BuildButton9" index="13"]
-offset_left = -279.0
-offset_top = -124.0
-offset_right = -119.0
-offset_bottom = -35.0
+[node name="CloseButton" parent="World/BuildButton9/BuildMenu" index="0"]
+visible = false
 
 [node name="Hydro" parent="World" index="26" groups=["PP"]]
 position = Vector2(360, 1982)
@@ -2492,20 +2487,6 @@ follow_viewport_enabled = false
 
 [node name="BuildMenu" parent="." instance=ExtResource("2_wrh8p")]
 visible = false
-
-[node name="ModelController" type="Node" parent="."]
-
-[node name="HTTPRequest" type="HTTPRequest" parent="ModelController"]
-
-[node name="ResourceManager" type="Node" parent="."]
-
-[node name="EnergyManager" type="Node" parent="ResourceManager"]
-
-[node name="SupportManager" type="Node" parent="ResourceManager"]
-
-[node name="EnvironmentManager" type="Node" parent="ResourceManager"]
-
-[node name="PolicyManager" type="Node" parent="ResourceManager"]
 
 [node name="Tutorial" parent="." instance=ExtResource("11_uite1")]
 
