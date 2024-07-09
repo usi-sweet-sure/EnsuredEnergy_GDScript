@@ -22,6 +22,7 @@ driver/mix_rate=48000
 [autoload]
 
 Context1="*res://src/gdscript/Context1.gd"
+Main="*res://src/gdscript/main.gd"
 
 [debug]
 

@@ -38,15 +38,19 @@ func _ready():
 	_update_info()
 	
 func _update_info():
+	# updates the energy produced by a plant in summer and winter
 	$ResRect/EnergyS.text = str(availability.x * capacity).pad_decimals(1)
 	$ResRect/EnergyW.text = str(availability.y * capacity).pad_decimals(1)
 	$BuildInfo/EnergyContainer/Summer/BuildMenuNumHole/SummerE.text = str(availability.x * capacity).pad_decimals(1)
 	$BuildInfo/EnergyContainer/Winter/BuildMenuNumHole2/WinterE.text = str(availability.y * capacity).pad_decimals(1)
+	
+	# TODO for pollution, land use and production costs
 
+# add the model numbers to the plant
 func _on_request_finished(result, response_code, headers, body):
 	var model_key = plant_name_to_model[plant_name]
 	if plant_name == "nuclear":
-		capacity = int(Context1.ctx1[0][model_key]) / 1000 / 3
+		capacity = int(Context1.ctx1[0][model_key]) / 1000 / 3 # there's 3 nuclear plants
 	if plant_name == "hydro" || plant_name == "river":
 		capacity = int(Context1.ctx1[0][model_key]) / 1000 / 2
 	else:
@@ -54,7 +58,7 @@ func _on_request_finished(result, response_code, headers, body):
 	_update_info()
 
 
-# need to get this working...
+# need to get the hover working...
 func _on_hover_area_mouse_entered():
 	if is_preview:
 		$BuildInfo.show()

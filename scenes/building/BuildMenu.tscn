@@ -123,6 +123,7 @@ flat = true
 [node name="Wind" parent="Container" instance=ExtResource("2_236y8")]
 position = Vector2(420, 167)
 scale = Vector2(0.9, 0.9)
+build_time = 2
 is_preview = true
 metadata/_edit_group_ = true
 
@@ -196,6 +197,7 @@ focus_mode = 0
 flat = true
 
 [node name="Hydro" parent="Container" instance=ExtResource("2_236y8")]
+visible = false
 position = Vector2(194, 167)
 scale = Vector2(0.9, 0.9)
 is_preview = true
@@ -307,7 +309,7 @@ metadata/_edit_use_anchors_ = true
 [node name="EnergyW" parent="Container/Waste/ResRect" index="7"]
 metadata/_edit_use_anchors_ = true
 
-[node name="InfoButton" parent="Container/Waste" index="7"]
+[node name="InfoButton" parent="Container/Waste" index="6"]
 metadata/_edit_use_anchors_ = true
 
 [node name="WasteButton" type="Button" parent="Container/Waste"]
@@ -365,7 +367,7 @@ metadata/_edit_use_anchors_ = true
 [node name="EnergyW" parent="Container/Biomass/ResRect" index="7"]
 metadata/_edit_use_anchors_ = true
 
-[node name="InfoButton" parent="Container/Biomass" index="7"]
+[node name="InfoButton" parent="Container/Biomass" index="6"]
 metadata/_edit_use_anchors_ = true
 
 [node name="BiomassButton" type="Button" parent="Container/Biomass"]
@@ -378,6 +380,7 @@ flat = true
 metadata/_edit_use_anchors_ = true
 
 [node name="River" parent="Container" instance=ExtResource("2_236y8")]
+visible = false
 position = Vector2(420, 167)
 scale = Vector2(0.9, 0.9)
 is_preview = true
@@ -426,7 +429,7 @@ metadata/_edit_use_anchors_ = true
 [node name="EnergyW" parent="Container/River/ResRect" index="7"]
 metadata/_edit_use_anchors_ = true
 
-[node name="InfoButton" parent="Container/River" index="7"]
+[node name="InfoButton" parent="Container/River" index="6"]
 metadata/_edit_use_anchors_ = true
 
 [node name="RiverButton" type="Button" parent="Container/River"]
@@ -439,6 +442,7 @@ flat = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Pump" parent="Container" instance=ExtResource("2_236y8")]
+visible = false
 position = Vector2(647, 166)
 scale = Vector2(0.9, 0.9)
 is_preview = true
@@ -483,7 +487,7 @@ metadata/_edit_use_anchors_ = true
 [node name="EnergyW" parent="Container/Pump/ResRect" index="7"]
 metadata/_edit_use_anchors_ = true
 
-[node name="InfoButton" parent="Container/Pump" index="7"]
+[node name="InfoButton" parent="Container/Pump" index="6"]
 metadata/_edit_use_anchors_ = true
 
 [node name="PumpButton" type="Button" parent="Container/Pump"]

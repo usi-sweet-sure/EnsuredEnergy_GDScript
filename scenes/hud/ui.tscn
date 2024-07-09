@@ -1,7 +1,6 @@
-[gd_scene load_steps=114 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=113 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Texture2D" uid="uid://dik8jskwri4ev" path="res://assets/UI Elements/Profil-metal.png" id="1_ooswe"]
-[ext_resource type="Texture2D" uid="uid://c3e2r6qjw4kti" path="res://assets/Gameplay_UI_Reference-03.jpg" id="1_rcpup"]
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/UI Elements/Button-Next-Normal.png" id="2_aobed"]
 [ext_resource type="PackedScene" uid="uid://d2hyunjbx7qb7" path="res://scenes/hud/energy_bar.tscn" id="3_fm1y6"]
 [ext_resource type="Texture2D" uid="uid://biq6v1m7nc6l" path="res://assets/UI Elements/Button-Next-Press.png" id="3_qtdni"]
@@ -813,11 +812,6 @@ _data = {
 
 [node name="UI" type="CanvasLayer"]
 follow_viewport_enabled = true
-
-[node name="GameplayUiReference-03" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(960, 540)
-texture = ExtResource("1_rcpup")
 
 [node name="Profil-bar-metal" type="Sprite2D" parent="."]
 position = Vector2(202, 178.5)
