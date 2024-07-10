@@ -1,4 +1,4 @@
-[gd_scene load_steps=114 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=115 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Texture2D" uid="uid://dik8jskwri4ev" path="res://assets/UI Elements/Profil-metal.png" id="1_ooswe"]
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/UI Elements/Button-Next-Normal.png" id="2_aobed"]
@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://bwmnloeklg76n" path="res://assets/UI Elements/Enviornment-Hand.png" id="23_3qgyr"]
 [ext_resource type="Texture2D" uid="uid://lxqt8kspr35q" path="res://assets/UI Elements/Icon-Environment-.png" id="24_t8vy5"]
 [ext_resource type="Texture2D" uid="uid://0mihvtaw003w" path="res://assets/UI Elements/Icon-Pollution-.png" id="25_7q1c5"]
+[ext_resource type="Script" path="res://src/gdscript/hud/energy_import.gd" id="25_pkr0e"]
 [ext_resource type="Texture2D" uid="uid://vff0e83ytund" path="res://assets/UI Elements/Energy-base.png" id="28_mr6x7"]
 [ext_resource type="Texture2D" uid="uid://dm24o8isvyq3f" path="res://assets/UI Elements/Import-Slider.png" id="29_j3wwc"]
 [ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/Fonts/Special_Elite/SpecialElite-Regular.ttf" id="30_d1m8l"]
@@ -1123,6 +1124,7 @@ offset_bottom = 949.0
 theme_override_icons/grabber = ExtResource("29_j3wwc")
 max_value = 100.0
 ticks_on_borders = false
+script = ExtResource("25_pkr0e")
 
 [node name="Target" parent="Import" index="0"]
 position = Vector2(-24, 220)
@@ -2913,6 +2915,12 @@ flip_h = true
 flip_v = true
 region_rect = Rect2(2, 0, 278, 194)
 
+[connection signal="pressed" from="EnergyBarWinter/Button" to="Import" method="_on_winter_energy_bar_button_pressed"]
+[connection signal="pressed" from="EnergyBarSummer/Button" to="Import" method="_on_summer_energy_bar_button_pressed"]
+[connection signal="value_changed" from="Import" to="Import" method="_on_import_slider_value_changed"]
+[connection signal="toggled" from="Import/ImportSwitch" to="Import" method="_on_clean_import_switch_toggled"]
+[connection signal="pressed" from="Import/UpButton" to="Import" method="_on_import_up_button_pressed"]
+[connection signal="pressed" from="Import/DownButton" to="Import" method="_on_import_down_button_pressed"]
 [connection signal="pressed" from="TimePanelBlank/TurnInfo" to="TimePanelBlank" method="clock_pressed"]
 
 [editable path="EnergyBarSummerPredict"]
