@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=115 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Texture2D" uid="uid://dik8jskwri4ev" path="res://assets/UI Elements/Profil-metal.png" id="1_ooswe"]
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/UI Elements/Button-Next-Normal.png" id="2_aobed"]
@@ -28,7 +28,6 @@
 [ext_resource type="Texture2D" uid="uid://52o3k8juwbmd" path="res://assets/UI Elements/Clock_Meter-1.png" id="19_bcm0u"]
 [ext_resource type="Texture2D" uid="uid://bmjee8ocqy0ge" path="res://assets/UI Elements/Enviornment-Base.png" id="21_i8c3o"]
 [ext_resource type="Texture2D" uid="uid://bwmnloeklg76n" path="res://assets/UI Elements/Enviornment-Hand.png" id="23_3qgyr"]
-[ext_resource type="Script" path="res://src/gdscript/hud/energy_bar.gd" id="23_4f0ex"]
 [ext_resource type="Texture2D" uid="uid://lxqt8kspr35q" path="res://assets/UI Elements/Icon-Environment-.png" id="24_t8vy5"]
 [ext_resource type="Texture2D" uid="uid://0mihvtaw003w" path="res://assets/UI Elements/Icon-Pollution-.png" id="25_7q1c5"]
 [ext_resource type="Script" path="res://src/gdscript/hud/energy_import.gd" id="25_pkr0e"]
@@ -1027,6 +1026,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_styles/background = SubResource("StyleBoxFlat_8mw3r")
 max_value = 200.0
+season = 1
 
 [node name="Target" parent="EnergyBarSummerPredict" index="0"]
 visible = false
@@ -1068,7 +1068,6 @@ offset_bottom = 969.0
 mouse_default_cursor_shape = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_qglqh")
 max_value = 200.0
-script = ExtResource("23_4f0ex")
 
 [node name="Target" parent="EnergyBarWinter" index="0"]
 position = Vector2(-195, -609.5)
@@ -1097,7 +1096,6 @@ mouse_default_cursor_shape = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 max_value = 200.0
-script = ExtResource("23_4f0ex")
 season = 1
 
 [node name="Target" parent="EnergyBarSummer" index="0"]
@@ -2919,8 +2917,6 @@ flip_h = true
 flip_v = true
 region_rect = Rect2(2, 0, 278, 194)
 
-[connection signal="pressed" from="EnergyBarWinter/Button" to="Import" method="_on_winter_energy_bar_button_pressed"]
-[connection signal="pressed" from="EnergyBarSummer/Button" to="Import" method="_on_summer_energy_bar_button_pressed"]
 [connection signal="value_changed" from="Import" to="Import" method="_on_import_slider_value_changed"]
 [connection signal="toggled" from="Import/ImportSwitch" to="Import" method="_on_clean_import_switch_toggled"]
 [connection signal="pressed" from="Import/UpButton" to="Import" method="_on_import_up_button_pressed"]
@@ -2928,7 +2924,9 @@ region_rect = Rect2(2, 0, 278, 194)
 [connection signal="pressed" from="TimePanelBlank/TurnInfo" to="TimePanelBlank" method="clock_pressed"]
 
 [editable path="EnergyBarSummerPredict"]
+[editable path="EnergyBarSummerPredict/BarInfo"]
 [editable path="EnergyBarWinterPredict"]
+[editable path="EnergyBarWinterPredict/BarInfo"]
 [editable path="EnergyBarWinter"]
 [editable path="EnergyBarWinter/BarInfo"]
 [editable path="EnergyBarSummer"]
