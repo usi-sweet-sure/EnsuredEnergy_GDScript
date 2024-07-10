@@ -8,9 +8,15 @@ extends Node2D
 
 signal energy_supply_updated_winter
 signal energy_supply_updated_summer
+signal energy_demand_updated_winter
+signal energy_demand_updated_summer
 
-var demand_summer: int = 200
-var demand_winter: int = 210
+var demand_summer: int = 200:
+	set(value):
+		energy_demand_updated_summer.emit(value)
+var demand_winter: int = 210:
+	set(value):
+		energy_demand_updated_winter.emit(value)
 var supply_summer: int = 0:
 	set(value):
 		energy_supply_updated_summer.emit(value)
@@ -28,7 +34,6 @@ func _update_supply():
 		supply_summer += power_plant.capacity * power_plant.availability.x
 		supply_winter += power_plant.capacity * power_plant.availability.y
 	print(supply_summer)
-	
 	
 
 func _unhandled_input(event):
