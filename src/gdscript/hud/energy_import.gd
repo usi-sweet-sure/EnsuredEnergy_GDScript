@@ -15,7 +15,7 @@ func update_imported_energy_cost_label(cost: String):
 # 	'drag_ended' signal may be more suitable
 func _on_import_slider_value_changed(value):
 	# E. The value should be ceiled to not exceed the amount of energy needed
-	
+	Main.supply_winter += value
 	# E. This is clearly not what to do, it's just to have a visual feedback
 	update_imported_energy_cost_label(str(value))
 	
