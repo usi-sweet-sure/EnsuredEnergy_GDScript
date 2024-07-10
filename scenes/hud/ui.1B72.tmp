@@ -2914,6 +2914,7 @@ flip_v = true
 region_rect = Rect2(2, 0, 278, 194)
 
 [connection signal="pressed" from="TimePanelBlank/TurnInfo" to="TimePanelBlank" method="clock_pressed"]
+[connection signal="pressed" from="TimePanelBlank/TurnInfo" to="TimePanelBlank/TurnInfoContainer" method="is_visible"]
 
 [editable path="EnergyBarSummerPredict"]
 [editable path="EnergyBarWinterPredict"]

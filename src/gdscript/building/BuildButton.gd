@@ -7,8 +7,9 @@ func _ready():
 	# for each last button in powerplants in buildmenu, connect to pp_pressed
 	for pp in $BuildMenu/Container.get_children():
 		pp.get_child(-1).pressed.connect(_on_pp_pressed.bind(pp))
-	for pp in $PowerPlants.get_children():
-		pp.delete_button.pressed.connect(_on_pp_delete.bind(pp))
+	# E. Commented the two following line, there's a bug with delete_button
+	#for pp in $PowerPlants.get_children():
+		#pp.delete_button.pressed.connect(_on_pp_delete.bind(pp))
 
 
 # when pressing on a buildbutton
