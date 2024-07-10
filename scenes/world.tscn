@@ -238,7 +238,7 @@ texture_normal = ExtResource("13_urnb4")
 texture_pressed = ExtResource("13_urnb4")
 texture_hover = ExtResource("13_urnb4")
 
-[node name="BuildingInfo" parent="BuildButton9" index="6"]
+[node name="BuildingInfo" parent="BuildButton9" index="2"]
 offset_left = -84.0
 offset_top = -35.0
 offset_right = 72.0
@@ -252,11 +252,11 @@ scale = Vector2(1, 1)
 position = Vector2(-314, -307)
 scale = Vector2(1, 1)
 
-[node name="Money" parent="BuildButton9" index="13"]
-offset_left = -279.0
-offset_top = -124.0
-offset_right = -119.0
-offset_bottom = -35.0
+[node name="Money" parent="BuildButton9" index="4"]
+offset_left = 57.0
+offset_top = 68.0
+offset_right = 217.0
+offset_bottom = 157.0
 
 [node name="Hydro" parent="." instance=ExtResource("7_6x5m2")]
 position = Vector2(384, 1864)
@@ -373,15 +373,15 @@ position = Vector2(2776, 160)
 [editable path="Wind"]
 [editable path="Solar"]
 [editable path="BuildButton9"]
-[editable path="BuildButton9/Gas"]
-[editable path="BuildButton9/Hydro"]
-[editable path="BuildButton9/Solar"]
-[editable path="BuildButton9/Tree"]
-[editable path="BuildButton9/Wind"]
-[editable path="BuildButton9/Waste"]
-[editable path="BuildButton9/Biomass"]
-[editable path="BuildButton9/River"]
-[editable path="BuildButton9/Pump"]
+[editable path="BuildButton9/PowerPlants/Gas"]
+[editable path="BuildButton9/PowerPlants/Hydro"]
+[editable path="BuildButton9/PowerPlants/Solar"]
+[editable path="BuildButton9/PowerPlants/Tree"]
+[editable path="BuildButton9/PowerPlants/Wind"]
+[editable path="BuildButton9/PowerPlants/Waste"]
+[editable path="BuildButton9/PowerPlants/Biomass"]
+[editable path="BuildButton9/PowerPlants/River"]
+[editable path="BuildButton9/PowerPlants/Pump"]
 [editable path="BuildButton9/BuildMenu"]
 [editable path="BuildButton9/BuildMenu/Container/Solar"]
 [editable path="BuildButton9/BuildMenu/Container/Wind"]

@@ -31,9 +31,9 @@ func res_ins():
 		
 		
 #upsert param
-func prm_ups():
+func prm_ups(id, prm, year, val):
 	var url = "https://sure.euler.usi.ch/json.php?mth=ups&res_id={res_id}&prm_id={prm_id}&yr={yr}&tj={tj}"
-	var error = http1.request(url.format({"res_id": res_id, "yr": yr, "prm_id": prm_id, "tj": tj}))
+	var error = http1.request(url.format({"res_id": id, "yr": year, "prm_id": prm, "tj": val}))
 	if error != OK:
 		push_error("http error")
 	
@@ -52,9 +52,9 @@ func _http1_completed(result, response_code, headers, body):
 	json.parse(body.get_string_from_utf8())
 	ctx1 = json.get_data()
 	#set globals
-	res_id = ctx1[0]["res_id"]
-	yr = ctx1[0]["yr"]
+	#res_id = ctx1[0]["res_id"]
+	#yr = ctx1[0]["yr"]
 	#debug
-	print(ctx1[0]["res_id"])
-	print(ctx1[0]["yr"])
-	print(ctx1[0]["cnv_gas_gas"])
+	#print(ctx1[0]["res_id"])
+	#print(ctx1[0]["yr"])
+	#print(ctx1[0]["cnv_gas_gas"])

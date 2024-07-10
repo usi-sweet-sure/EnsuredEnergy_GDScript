@@ -98,7 +98,7 @@ color = Color(0.180392, 0.180392, 0.180392, 0)
 [node name="Solar" parent="Container" instance=ExtResource("2_236y8")]
 position = Vector2(194, 167)
 scale = Vector2(0.9, 0.9)
-is_preview = true
+plant_name = "solar"
 metadata/_edit_group_ = true
 
 [node name="Sprite" parent="Container/Solar" index="1"]
@@ -123,8 +123,8 @@ flat = true
 [node name="Wind" parent="Container" instance=ExtResource("2_236y8")]
 position = Vector2(420, 167)
 scale = Vector2(0.9, 0.9)
+plant_name = "wind"
 build_time = 2
-is_preview = true
 metadata/_edit_group_ = true
 
 [node name="Price" parent="Container/Wind/PreviewInfo" index="3"]
@@ -166,7 +166,6 @@ flat = true
 [node name="Tree" parent="Container" instance=ExtResource("2_236y8")]
 position = Vector2(1322, 166)
 scale = Vector2(0.9, 0.9)
-is_preview = true
 metadata/_edit_group_ = true
 
 [node name="Price" parent="Container/Tree/PreviewInfo" index="3"]
@@ -200,7 +199,6 @@ flat = true
 visible = false
 position = Vector2(194, 167)
 scale = Vector2(0.9, 0.9)
-is_preview = true
 metadata/_edit_group_ = true
 
 [node name="Price" parent="Container/Hydro/PreviewInfo" index="3"]
@@ -236,7 +234,6 @@ flat = true
 [node name="Gas" parent="Container" instance=ExtResource("2_236y8")]
 position = Vector2(647, 166)
 scale = Vector2(0.9, 0.9)
-is_preview = true
 metadata/_edit_group_ = true
 
 [node name="Price" parent="Container/Gas/PreviewInfo" index="3"]
@@ -267,7 +264,6 @@ flat = true
 [node name="Waste" parent="Container" instance=ExtResource("2_236y8")]
 position = Vector2(872.001, 166)
 scale = Vector2(0.9, 0.9)
-is_preview = true
 metadata/_edit_group_ = true
 
 [node name="PreviewInfo" parent="Container/Waste" index="0"]
@@ -324,7 +320,6 @@ metadata/_edit_use_anchors_ = true
 [node name="Biomass" parent="Container" instance=ExtResource("2_236y8")]
 position = Vector2(1097, 166)
 scale = Vector2(0.9, 0.9)
-is_preview = true
 metadata/_edit_group_ = true
 
 [node name="PreviewInfo" parent="Container/Biomass" index="0"]
@@ -383,7 +378,6 @@ metadata/_edit_use_anchors_ = true
 visible = false
 position = Vector2(420, 167)
 scale = Vector2(0.9, 0.9)
-is_preview = true
 metadata/_edit_group_ = true
 
 [node name="PreviewInfo" parent="Container/River" index="0"]
@@ -445,7 +439,6 @@ metadata/_edit_use_anchors_ = true
 visible = false
 position = Vector2(647, 166)
 scale = Vector2(0.9, 0.9)
-is_preview = true
 metadata/_edit_group_ = true
 
 [node name="PreviewInfo" parent="Container/Pump" index="0"]

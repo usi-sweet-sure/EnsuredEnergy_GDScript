@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://ct4blqwh4y6ab"]
+[gd_scene load_steps=41 format=3 uid="uid://ct4blqwh4y6ab"]
 
 [ext_resource type="Script" path="res://src/gdscript/building/PowerPlant.gd" id="1_rcgoa"]
 [ext_resource type="Texture2D" uid="uid://b60o54o5riav8" path="res://assets/UI Elements/Build_Menu_0005_Build-Menu-Metal.png" id="2_ambcb"]
@@ -56,9 +56,6 @@ spacing_glyph = 6
 
 [sub_resource type="FontVariation" id="FontVariation_r1iqv"]
 spacing_glyph = 6
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hky5x"]
-size = Vector2(176, 248)
 
 [sub_resource type="Animation" id="Animation_qnlx6"]
 resource_name = "Money+"
@@ -1212,12 +1209,6 @@ focus_mode = 0
 mouse_default_cursor_shape = 2
 flat = true
 
-[node name="HoverArea" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HoverArea"]
-position = Vector2(0, 4)
-shape = SubResource("RectangleShape2D_hky5x")
-
 [node name="LifeSpanWarning" type="Label" parent="."]
 visible = false
 z_index = 1
@@ -1269,6 +1260,7 @@ visible = false
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("14_x1bya")
 
+[connection signal="pressed" from="BuildInfo/EnergyContainer/Multiplier/Inc" to="." method="_on_mult_inc_pressed"]
+[connection signal="pressed" from="BuildInfo/EnergyContainer/Multiplier/Dec" to="." method="_on_mult_dec_pressed"]
+[connection signal="toggled" from="BuildInfo/Switch" to="." method="_on_switch_toggled"]
 [connection signal="pressed" from="InfoButton" to="." method="_on_info_button_pressed"]
-[connection signal="mouse_entered" from="HoverArea" to="." method="_on_hover_area_mouse_entered"]
-[connection signal="mouse_exited" from="HoverArea" to="." method="_on_hover_area_mouse_exited"]

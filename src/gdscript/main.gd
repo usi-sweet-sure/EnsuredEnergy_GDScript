@@ -14,13 +14,21 @@ var supply_winter: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	_update_supply()
+	Context1.http1.request_completed.connect(_on_request_finished)
 
 func _update_supply():
 	for power_plant in get_tree().get_nodes_in_group("PP"):
 		supply_summer += power_plant.capacity * power_plant.availability.x
 		supply_winter += power_plant.capacity * power_plant.availability.y
-	print(supply_summer)
+	
+func _check_supply():
+	if supply_summer >= demand_summer && supply_winter >= demand_winter:
+		return true
+	else:
+		return false
+	
+func _on_request_finished(result, response_code, headers, body):
+	_update_supply()
 
 func _unhandled_input(event):
 	if event is InputEventKey:
