@@ -27,6 +27,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(400, 1100)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CloseButton:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_kodya"]
 resource_name = "SlideUp"
@@ -43,6 +55,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(400, 1100), Vector2(400, 725)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CloseButton:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cqvg1"]
 _data = {
@@ -53,6 +77,7 @@ _data = {
 [node name="BuildMenu" type="CanvasLayer"]
 
 [node name="CloseButton" type="Button" parent="."]
+visible = false
 offset_right = 1921.0
 offset_bottom = 688.0
 focus_mode = 0
@@ -73,6 +98,7 @@ color = Color(0.180392, 0.180392, 0.180392, 0)
 [node name="Solar" parent="Container" instance=ExtResource("2_236y8")]
 position = Vector2(194, 167)
 scale = Vector2(0.9, 0.9)
+is_preview = true
 metadata/_edit_group_ = true
 
 [node name="Sprite" parent="Container/Solar" index="1"]
@@ -97,6 +123,8 @@ flat = true
 [node name="Wind" parent="Container" instance=ExtResource("2_236y8")]
 position = Vector2(420, 167)
 scale = Vector2(0.9, 0.9)
+build_time = 2
+is_preview = true
 metadata/_edit_group_ = true
 
 [node name="Price" parent="Container/Wind/PreviewInfo" index="3"]
@@ -138,6 +166,7 @@ flat = true
 [node name="Tree" parent="Container" instance=ExtResource("2_236y8")]
 position = Vector2(1322, 166)
 scale = Vector2(0.9, 0.9)
+is_preview = true
 metadata/_edit_group_ = true
 
 [node name="Price" parent="Container/Tree/PreviewInfo" index="3"]
@@ -168,8 +197,10 @@ focus_mode = 0
 flat = true
 
 [node name="Hydro" parent="Container" instance=ExtResource("2_236y8")]
+visible = false
 position = Vector2(194, 167)
 scale = Vector2(0.9, 0.9)
+is_preview = true
 metadata/_edit_group_ = true
 
 [node name="Price" parent="Container/Hydro/PreviewInfo" index="3"]
@@ -205,6 +236,7 @@ flat = true
 [node name="Gas" parent="Container" instance=ExtResource("2_236y8")]
 position = Vector2(647, 166)
 scale = Vector2(0.9, 0.9)
+is_preview = true
 metadata/_edit_group_ = true
 
 [node name="Price" parent="Container/Gas/PreviewInfo" index="3"]
@@ -235,6 +267,7 @@ flat = true
 [node name="Waste" parent="Container" instance=ExtResource("2_236y8")]
 position = Vector2(872.001, 166)
 scale = Vector2(0.9, 0.9)
+is_preview = true
 metadata/_edit_group_ = true
 
 [node name="PreviewInfo" parent="Container/Waste" index="0"]
@@ -276,7 +309,7 @@ metadata/_edit_use_anchors_ = true
 [node name="EnergyW" parent="Container/Waste/ResRect" index="7"]
 metadata/_edit_use_anchors_ = true
 
-[node name="InfoButton" parent="Container/Waste" index="7"]
+[node name="InfoButton" parent="Container/Waste" index="6"]
 metadata/_edit_use_anchors_ = true
 
 [node name="WasteButton" type="Button" parent="Container/Waste"]
@@ -291,6 +324,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Biomass" parent="Container" instance=ExtResource("2_236y8")]
 position = Vector2(1097, 166)
 scale = Vector2(0.9, 0.9)
+is_preview = true
 metadata/_edit_group_ = true
 
 [node name="PreviewInfo" parent="Container/Biomass" index="0"]
@@ -333,7 +367,7 @@ metadata/_edit_use_anchors_ = true
 [node name="EnergyW" parent="Container/Biomass/ResRect" index="7"]
 metadata/_edit_use_anchors_ = true
 
-[node name="InfoButton" parent="Container/Biomass" index="7"]
+[node name="InfoButton" parent="Container/Biomass" index="6"]
 metadata/_edit_use_anchors_ = true
 
 [node name="BiomassButton" type="Button" parent="Container/Biomass"]
@@ -346,8 +380,10 @@ flat = true
 metadata/_edit_use_anchors_ = true
 
 [node name="River" parent="Container" instance=ExtResource("2_236y8")]
+visible = false
 position = Vector2(420, 167)
 scale = Vector2(0.9, 0.9)
+is_preview = true
 metadata/_edit_group_ = true
 
 [node name="PreviewInfo" parent="Container/River" index="0"]
@@ -393,7 +429,7 @@ metadata/_edit_use_anchors_ = true
 [node name="EnergyW" parent="Container/River/ResRect" index="7"]
 metadata/_edit_use_anchors_ = true
 
-[node name="InfoButton" parent="Container/River" index="7"]
+[node name="InfoButton" parent="Container/River" index="6"]
 metadata/_edit_use_anchors_ = true
 
 [node name="RiverButton" type="Button" parent="Container/River"]
@@ -406,8 +442,10 @@ flat = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Pump" parent="Container" instance=ExtResource("2_236y8")]
+visible = false
 position = Vector2(647, 166)
 scale = Vector2(0.9, 0.9)
+is_preview = true
 metadata/_edit_group_ = true
 
 [node name="PreviewInfo" parent="Container/Pump" index="0"]
@@ -449,7 +487,7 @@ metadata/_edit_use_anchors_ = true
 [node name="EnergyW" parent="Container/Pump/ResRect" index="7"]
 metadata/_edit_use_anchors_ = true
 
-[node name="InfoButton" parent="Container/Pump" index="7"]
+[node name="InfoButton" parent="Container/Pump" index="6"]
 metadata/_edit_use_anchors_ = true
 
 [node name="PumpButton" type="Button" parent="Container/Pump"]

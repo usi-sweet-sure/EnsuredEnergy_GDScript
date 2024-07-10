@@ -1885,6 +1885,7 @@ _data = {
 script = ExtResource("1_6q0gk")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_left = -4272.0
 offset_top = -2176.0
 offset_right = 5392.0
@@ -2191,12 +2192,6 @@ libraries = {
 }
 autoplay = "Wind"
 
-[node name="Money" parent="World/BuildButton" index="13"]
-offset_left = -286.0
-offset_top = -132.5
-offset_right = -126.0
-offset_bottom = -43.5
-
 [node name="BuildButton2" parent="World" index="15"]
 offset_left = 624.0
 offset_top = 480.0
@@ -2264,12 +2259,6 @@ autoplay = "Sun"
 
 [node name="Hammer" parent="World/BuildButton9" index="0"]
 position = Vector2(308, 205)
-
-[node name="Money" parent="World/BuildButton9" index="13"]
-offset_left = -279.0
-offset_top = -124.0
-offset_right = -119.0
-offset_bottom = -35.0
 
 [node name="Hydro" parent="World" index="26" groups=["PP"]]
 position = Vector2(360, 1982)
@@ -2348,31 +2337,31 @@ texture = ExtResource("11_nggna")
 [node name="ResRect" parent="World/Pump" index="4"]
 visible = false
 
-[node name="Water13" type="Sprite2D" parent="World/Pump" index="14"]
+[node name="Water13" type="Sprite2D" parent="World/Pump" index="13"]
 position = Vector2(-37, 86)
 texture = ExtResource("11_y3iyb")
 
-[node name="Water14" type="Sprite2D" parent="World/Pump" index="15"]
+[node name="Water14" type="Sprite2D" parent="World/Pump" index="14"]
 position = Vector2(-61, 78)
 texture = ExtResource("24_n8myi")
 
-[node name="Water15" type="Sprite2D" parent="World/Pump" index="16"]
+[node name="Water15" type="Sprite2D" parent="World/Pump" index="15"]
 position = Vector2(-61, 118)
 texture = ExtResource("24_n8myi")
 
-[node name="Water10" type="Sprite2D" parent="World/Pump" index="17"]
+[node name="Water10" type="Sprite2D" parent="World/Pump" index="16"]
 position = Vector2(-40.3934, 73.4594)
 scale = Vector2(0.8, 0.8)
 skew = -0.174533
 texture = ExtResource("26_fkwhx")
 flip_h = true
 
-[node name="Water12" type="Sprite2D" parent="World/Pump" index="18"]
+[node name="Water12" type="Sprite2D" parent="World/Pump" index="17"]
 modulate = Color(1, 1, 1, 0.498039)
 position = Vector2(-29, 70)
 texture = ExtResource("26_fkwhx")
 
-[node name="Water11" type="Sprite2D" parent="World/Pump" index="19"]
+[node name="Water11" type="Sprite2D" parent="World/Pump" index="18"]
 position = Vector2(-32.3936, 91.4592)
 rotation = -3.14159
 scale = Vector2(0.8, 0.8)
@@ -2380,7 +2369,7 @@ skew = -0.174533
 texture = ExtResource("26_fkwhx")
 flip_h = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="World/Pump" index="20"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="World/Pump" index="19"]
 libraries = {
 "": SubResource("AnimationLibrary_lb77a")
 }
@@ -2454,31 +2443,31 @@ texture = ExtResource("9_agn8w")
 [node name="ResRect" parent="World/River2" index="4"]
 visible = false
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="World/River2" index="14"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="World/River2" index="13"]
 libraries = {
 "": SubResource("AnimationLibrary_a8121")
 }
 autoplay = "Water"
 
-[node name="Water3" type="Sprite2D" parent="World/River2" index="15"]
+[node name="Water3" type="Sprite2D" parent="World/River2" index="14"]
 modulate = Color(1, 1, 1, 0.662745)
 position = Vector2(60, 110)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("11_y3iyb")
 
-[node name="Water" type="Sprite2D" parent="World/River2" index="16"]
+[node name="Water" type="Sprite2D" parent="World/River2" index="15"]
 modulate = Color(1, 1, 1, 0.764706)
 position = Vector2(70.4502, 104.5)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("32_dhm8b")
 
-[node name="Water4" type="Sprite2D" parent="World/River2" index="17"]
+[node name="Water4" type="Sprite2D" parent="World/River2" index="16"]
 modulate = Color(1, 1, 1, 0.384314)
 position = Vector2(60, 90)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("32_dhm8b")
 
-[node name="Water2" type="Sprite2D" parent="World/River2" index="18"]
+[node name="Water2" type="Sprite2D" parent="World/River2" index="17"]
 modulate = Color(1, 1, 1, 0.709804)
 position = Vector2(70.4502, 104.5)
 scale = Vector2(0.7, 0.7)
@@ -2492,20 +2481,6 @@ follow_viewport_enabled = false
 
 [node name="BuildMenu" parent="." instance=ExtResource("2_wrh8p")]
 visible = false
-
-[node name="ModelController" type="Node" parent="."]
-
-[node name="HTTPRequest" type="HTTPRequest" parent="ModelController"]
-
-[node name="ResourceManager" type="Node" parent="."]
-
-[node name="EnergyManager" type="Node" parent="ResourceManager"]
-
-[node name="SupportManager" type="Node" parent="ResourceManager"]
-
-[node name="EnvironmentManager" type="Node" parent="ResourceManager"]
-
-[node name="PolicyManager" type="Node" parent="ResourceManager"]
 
 [node name="Tutorial" parent="." instance=ExtResource("11_uite1")]
 
@@ -2548,15 +2523,15 @@ bus = &"Sound"
 [editable path="World/Biomass"]
 [editable path="World/Wind"]
 [editable path="World/BuildButton"]
-[editable path="World/BuildButton/Gas"]
-[editable path="World/BuildButton/Hydro"]
-[editable path="World/BuildButton/Solar"]
-[editable path="World/BuildButton/Tree"]
-[editable path="World/BuildButton/Wind"]
-[editable path="World/BuildButton/Waste"]
-[editable path="World/BuildButton/Biomass"]
-[editable path="World/BuildButton/River"]
-[editable path="World/BuildButton/Pump"]
+[editable path="World/BuildButton/PowerPlants/Gas"]
+[editable path="World/BuildButton/PowerPlants/Hydro"]
+[editable path="World/BuildButton/PowerPlants/Solar"]
+[editable path="World/BuildButton/PowerPlants/Tree"]
+[editable path="World/BuildButton/PowerPlants/Wind"]
+[editable path="World/BuildButton/PowerPlants/Waste"]
+[editable path="World/BuildButton/PowerPlants/Biomass"]
+[editable path="World/BuildButton/PowerPlants/River"]
+[editable path="World/BuildButton/PowerPlants/Pump"]
 [editable path="World/BuildButton/BuildMenu"]
 [editable path="World/BuildButton/BuildMenu/Container/Solar"]
 [editable path="World/BuildButton/BuildMenu/Container/Wind"]
@@ -2569,15 +2544,15 @@ bus = &"Sound"
 [editable path="World/BuildButton/BuildMenu/Container/Pump"]
 [editable path="World/Solar"]
 [editable path="World/BuildButton9"]
-[editable path="World/BuildButton9/Gas"]
-[editable path="World/BuildButton9/Hydro"]
-[editable path="World/BuildButton9/Solar"]
-[editable path="World/BuildButton9/Tree"]
-[editable path="World/BuildButton9/Wind"]
-[editable path="World/BuildButton9/Waste"]
-[editable path="World/BuildButton9/Biomass"]
-[editable path="World/BuildButton9/River"]
-[editable path="World/BuildButton9/Pump"]
+[editable path="World/BuildButton9/PowerPlants/Gas"]
+[editable path="World/BuildButton9/PowerPlants/Hydro"]
+[editable path="World/BuildButton9/PowerPlants/Solar"]
+[editable path="World/BuildButton9/PowerPlants/Tree"]
+[editable path="World/BuildButton9/PowerPlants/Wind"]
+[editable path="World/BuildButton9/PowerPlants/Waste"]
+[editable path="World/BuildButton9/PowerPlants/Biomass"]
+[editable path="World/BuildButton9/PowerPlants/River"]
+[editable path="World/BuildButton9/PowerPlants/Pump"]
 [editable path="World/BuildButton9/BuildMenu"]
 [editable path="World/BuildButton9/BuildMenu/Container/Solar"]
 [editable path="World/BuildButton9/BuildMenu/Container/Wind"]

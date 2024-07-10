@@ -946,25 +946,6 @@ _data = {
 "spin": SubResource("Animation_7lfvt")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6vwjw"]
-atlas = ExtResource("20_32s1v")
-region = Rect2(4, 194, 696, 450)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_24gml"]
-atlas = ExtResource("22_bcf67")
-region = Rect2(0, 6, 334, 150)
-
-[sub_resource type="FontVariation" id="FontVariation_trk67"]
-base_font = ExtResource("23_eoefj")
-
-[sub_resource type="FontVariation" id="FontVariation_b84m0"]
-base_font = ExtResource("26_op5m0")
-spacing_glyph = 6
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k81xh"]
-atlas = ExtResource("20_110sn")
-region = Rect2(80, 920, 804, 466)
-
 [sub_resource type="Animation" id="Animation_kfh41"]
 length = 0.001
 tracks/0/type = "value"
@@ -1606,6 +1587,25 @@ _data = {
 "water": SubResource("Animation_ji2x8")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vwjw"]
+atlas = ExtResource("20_32s1v")
+region = Rect2(4, 194, 696, 450)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24gml"]
+atlas = ExtResource("22_bcf67")
+region = Rect2(0, 6, 334, 150)
+
+[sub_resource type="FontVariation" id="FontVariation_trk67"]
+base_font = ExtResource("23_eoefj")
+
+[sub_resource type="FontVariation" id="FontVariation_b84m0"]
+base_font = ExtResource("26_op5m0")
+spacing_glyph = 6
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k81xh"]
+atlas = ExtResource("20_110sn")
+region = Rect2(80, 920, 804, 466)
+
 [sub_resource type="Theme" id="Theme_6inie"]
 
 [sub_resource type="Animation" id="Animation_hkwrp"]
@@ -2067,11 +2067,16 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_1brcf")
 offset = Vector2(18, -15)
 
-[node name="Gas" parent="." instance=ExtResource("1_wi5q3")]
+[node name="PowerPlants" type="Node2D" parent="."]
+
+[node name="Gas" parent="PowerPlants" instance=ExtResource("1_wi5q3")]
 visible = false
 position = Vector2(369, 78)
 
-[node name="Price" parent="Gas/PreviewInfo" index="3"]
+[node name="PreviewInfo" parent="PowerPlants/Gas" index="0"]
+visible = false
+
+[node name="Price" parent="PowerPlants/Gas/PreviewInfo" index="3"]
 layout_mode = 0
 anchors_preset = 0
 anchor_top = 0.0
@@ -2082,60 +2087,69 @@ offset_right = 52.0
 offset_bottom = 35.0
 grow_vertical = 1
 
-[node name="Sprite" parent="Gas" index="1"]
+[node name="Sprite" parent="PowerPlants/Gas" index="1"]
 texture = ExtResource("5_4jvt0")
 
-[node name="NameRect" parent="Gas" index="3"]
+[node name="NameRect" parent="PowerPlants/Gas" index="3"]
 visible = false
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Gas"]
+[node name="ResRect" parent="PowerPlants/Gas" index="4"]
+visible = false
+
+[node name="Delete" parent="PowerPlants/Gas" index="5"]
+visible = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PowerPlants/Gas"]
 libraries = {
 "": SubResource("AnimationLibrary_wuk7f")
 }
 autoplay = "smoke"
 
-[node name="Cloud" type="Sprite2D" parent="Gas"]
+[node name="Cloud" type="Sprite2D" parent="PowerPlants/Gas"]
 modulate = Color(0.333333, 0.333333, 0.333333, 0.784314)
 position = Vector2(74, -110)
 scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("4_xclwe")
 
-[node name="Cloud2" type="Sprite2D" parent="Gas"]
+[node name="Cloud2" type="Sprite2D" parent="PowerPlants/Gas"]
 modulate = Color(0.333333, 0.333333, 0.333333, 0.784314)
 position = Vector2(23, -142)
 scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("5_s6f5j")
 
-[node name="Cloud3" type="Sprite2D" parent="Gas"]
+[node name="Cloud3" type="Sprite2D" parent="PowerPlants/Gas"]
 modulate = Color(0.333333, 0.333333, 0.333333, 0.784314)
 position = Vector2(59, -123)
 scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("6_3vcfd")
 
-[node name="Cloud4" type="Sprite2D" parent="Gas"]
+[node name="Cloud4" type="Sprite2D" parent="PowerPlants/Gas"]
 modulate = Color(0.333333, 0.333333, 0.333333, 0.784314)
 position = Vector2(129, -79)
 scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("4_xclwe")
 
-[node name="Cloud5" type="Sprite2D" parent="Gas"]
+[node name="Cloud5" type="Sprite2D" parent="PowerPlants/Gas"]
 modulate = Color(0.333333, 0.333333, 0.333333, 0.784314)
 position = Vector2(131, -95)
 scale = Vector2(1e-05, 1e-05)
 skew = -0.141372
 texture = ExtResource("5_s6f5j")
 
-[node name="Cloud6" type="Sprite2D" parent="Gas"]
+[node name="Cloud6" type="Sprite2D" parent="PowerPlants/Gas"]
 modulate = Color(0.333333, 0.333333, 0.333333, 0.784314)
 position = Vector2(95, -88)
 scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("6_3vcfd")
 
-[node name="Hydro" parent="." instance=ExtResource("1_wi5q3")]
+[node name="Hydro" parent="PowerPlants" instance=ExtResource("1_wi5q3")]
 visible = false
 position = Vector2(370, 80)
 
-[node name="Price" parent="Hydro/PreviewInfo" index="3"]
+[node name="PreviewInfo" parent="PowerPlants/Hydro" index="0"]
+visible = false
+
+[node name="Price" parent="PowerPlants/Hydro/PreviewInfo" index="3"]
 layout_mode = 0
 anchors_preset = 0
 anchor_top = 0.0
@@ -2146,43 +2160,52 @@ offset_right = 52.0
 offset_bottom = 35.0
 grow_vertical = 1
 
-[node name="Sprite" parent="Hydro" index="1"]
+[node name="Sprite" parent="PowerPlants/Hydro" index="1"]
 texture = ExtResource("10_ueb8a")
 
-[node name="Water" type="Sprite2D" parent="Hydro"]
+[node name="NameRect" parent="PowerPlants/Hydro" index="3"]
+visible = false
+
+[node name="ResRect" parent="PowerPlants/Hydro" index="4"]
+visible = false
+
+[node name="Water" type="Sprite2D" parent="PowerPlants/Hydro"]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(-40.2271, 108.085)
 skew = -0.0349066
 texture = ExtResource("11_4yjee")
 
-[node name="Water2" type="Sprite2D" parent="Hydro"]
+[node name="Water2" type="Sprite2D" parent="PowerPlants/Hydro"]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(-40.2271, 108.085)
 skew = -0.00681517
 texture = ExtResource("8_gdfhs")
 
-[node name="Water3" type="Sprite2D" parent="Hydro"]
+[node name="Water3" type="Sprite2D" parent="PowerPlants/Hydro"]
 modulate = Color(1, 1, 1, 0.0784314)
 position = Vector2(-40.2271, 108.085)
 skew = -0.00681517
 texture = ExtResource("10_r5m2o")
 
-[node name="Water4" type="Sprite2D" parent="Hydro"]
+[node name="Water4" type="Sprite2D" parent="PowerPlants/Hydro"]
 modulate = Color(1, 1, 1, 0.784314)
 position = Vector2(-34.224, 104.091)
 texture = ExtResource("11_4yjee")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Hydro"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PowerPlants/Hydro"]
 libraries = {
 "": SubResource("AnimationLibrary_dd3cj")
 }
 autoplay = "water"
 
-[node name="Solar" parent="." instance=ExtResource("1_wi5q3")]
+[node name="Solar" parent="PowerPlants" instance=ExtResource("1_wi5q3")]
 visible = false
 position = Vector2(431, 151)
 
-[node name="Price" parent="Solar/PreviewInfo" index="3"]
+[node name="PreviewInfo" parent="PowerPlants/Solar" index="0"]
+visible = false
+
+[node name="Price" parent="PowerPlants/Solar/PreviewInfo" index="3"]
 layout_mode = 0
 anchors_preset = 0
 anchor_top = 0.0
@@ -2193,40 +2216,49 @@ offset_right = 52.0
 offset_bottom = 35.0
 grow_vertical = 1
 
-[node name="Sprite" parent="Solar" index="1"]
+[node name="Sprite" parent="PowerPlants/Solar" index="1"]
 texture = ExtResource("12_2b7wd")
 
-[node name="PointLight2D" type="PointLight2D" parent="Solar/Sprite" index="0"]
+[node name="PointLight2D" type="PointLight2D" parent="PowerPlants/Solar/Sprite" index="0"]
 position = Vector2(20.3086, -88.1882)
 rotation = 0.558505
 scale = Vector2(1.88471, 2.38422)
 energy = 0.0
 texture = SubResource("GradientTexture2D_ekq5o")
 
-[node name="Sprite2" type="Sprite2D" parent="Solar"]
+[node name="NameRect" parent="PowerPlants/Solar" index="3"]
+visible = false
+
+[node name="ResRect" parent="PowerPlants/Solar" index="4"]
+visible = false
+
+[node name="Sprite2" type="Sprite2D" parent="PowerPlants/Solar"]
 visible = false
 position = Vector2(0, 43)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("11_yw74m")
 
-[node name="Sprite3" type="Sprite2D" parent="Solar"]
+[node name="Sprite3" type="Sprite2D" parent="PowerPlants/Solar"]
 visible = false
 position = Vector2(0, 7)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("12_lwhr4")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Solar"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PowerPlants/Solar"]
 root_node = NodePath("../Sprite")
 libraries = {
 "": SubResource("AnimationLibrary_p040j")
 }
 autoplay = "sun"
 
-[node name="Tree" parent="." instance=ExtResource("1_wi5q3")]
+[node name="Tree" parent="PowerPlants" instance=ExtResource("1_wi5q3")]
 visible = false
 position = Vector2(431, 151)
 
-[node name="Price" parent="Tree/PreviewInfo" index="3"]
+[node name="PreviewInfo" parent="PowerPlants/Tree" index="0"]
+visible = false
+
+[node name="Price" parent="PowerPlants/Tree/PreviewInfo" index="3"]
 layout_mode = 0
 anchors_preset = 0
 anchor_top = 0.0
@@ -2237,14 +2269,23 @@ offset_right = 52.0
 offset_bottom = 35.0
 grow_vertical = 1
 
-[node name="Sprite" parent="Tree" index="1"]
+[node name="Sprite" parent="PowerPlants/Tree" index="1"]
 texture = ExtResource("13_buqe2")
 
-[node name="Wind" parent="." instance=ExtResource("1_wi5q3")]
+[node name="NameRect" parent="PowerPlants/Tree" index="3"]
+visible = false
+
+[node name="ResRect" parent="PowerPlants/Tree" index="4"]
+visible = false
+
+[node name="Wind" parent="PowerPlants" instance=ExtResource("1_wi5q3")]
 visible = false
 position = Vector2(431, 151)
 
-[node name="Price" parent="Wind/PreviewInfo" index="3"]
+[node name="PreviewInfo" parent="PowerPlants/Wind" index="0"]
+visible = false
+
+[node name="Price" parent="PowerPlants/Wind/PreviewInfo" index="3"]
 layout_mode = 0
 anchors_preset = 0
 anchor_top = 0.0
@@ -2255,10 +2296,10 @@ offset_right = 52.0
 offset_bottom = 35.0
 grow_vertical = 1
 
-[node name="Sprite" parent="Wind" index="1"]
+[node name="Sprite" parent="PowerPlants/Wind" index="1"]
 texture = ExtResource("14_sk126")
 
-[node name="Turbine4" type="Sprite2D" parent="Wind/Sprite" index="0"]
+[node name="Turbine4" type="Sprite2D" parent="PowerPlants/Wind/Sprite" index="0"]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(-129.699, -140.949)
 rotation = 1.39626
@@ -2266,7 +2307,7 @@ scale = Vector2(1.25, 1.25)
 texture = SubResource("AtlasTexture_tned4")
 offset = Vector2(0, 16)
 
-[node name="Turbine5" type="Sprite2D" parent="Wind/Sprite" index="1"]
+[node name="Turbine5" type="Sprite2D" parent="PowerPlants/Wind/Sprite" index="1"]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(-128.75, -150)
 rotation = 0.785398
@@ -2274,7 +2315,7 @@ scale = Vector2(1.25, 1.25)
 texture = SubResource("AtlasTexture_ytual")
 offset = Vector2(-12, -20)
 
-[node name="Turbine6" type="Sprite2D" parent="Wind/Sprite" index="2"]
+[node name="Turbine6" type="Sprite2D" parent="PowerPlants/Wind/Sprite" index="2"]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(-129.655, -138.836)
 rotation = 1.39626
@@ -2282,69 +2323,279 @@ scale = Vector2(1.25, 1.25)
 texture = SubResource("AtlasTexture_pding")
 offset = Vector2(15, -10)
 
-[node name="Turbine" type="Sprite2D" parent="Wind/Sprite" index="3"]
+[node name="Turbine" type="Sprite2D" parent="PowerPlants/Wind/Sprite" index="3"]
 position = Vector2(-133.75, -147.5)
 scale = Vector2(1.25, 1.25)
 texture = SubResource("AtlasTexture_ytual")
 offset = Vector2(-12, -20)
 
-[node name="Turbine2" type="Sprite2D" parent="Wind/Sprite" index="4"]
+[node name="Turbine2" type="Sprite2D" parent="PowerPlants/Wind/Sprite" index="4"]
 position = Vector2(-130, -146.25)
 scale = Vector2(1.25, 1.25)
 texture = SubResource("AtlasTexture_pding")
 offset = Vector2(15, -10)
 
-[node name="Turbine3" type="Sprite2D" parent="Wind/Sprite" index="5"]
+[node name="Turbine3" type="Sprite2D" parent="PowerPlants/Wind/Sprite" index="5"]
 position = Vector2(-136.25, -143.125)
 scale = Vector2(1.25, 1.25)
 texture = SubResource("AtlasTexture_tned4")
 offset = Vector2(0, 16)
 
-[node name="Sprite2" type="Sprite2D" parent="Wind"]
+[node name="NameRect" parent="PowerPlants/Wind" index="3"]
+visible = false
+
+[node name="ResRect" parent="PowerPlants/Wind" index="4"]
+visible = false
+
+[node name="Sprite2" type="Sprite2D" parent="PowerPlants/Wind"]
 visible = false
 position = Vector2(25, 69)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("17_hwjl1")
 
-[node name="Turbine" type="Sprite2D" parent="Wind/Sprite2"]
+[node name="Turbine" type="Sprite2D" parent="PowerPlants/Wind/Sprite2"]
 position = Vector2(-143.75, -190)
 texture = ExtResource("15_ipg12")
 
-[node name="Turbine2" type="Sprite2D" parent="Wind/Sprite2"]
+[node name="Turbine2" type="Sprite2D" parent="PowerPlants/Wind/Sprite2"]
 position = Vector2(161.25, -182.5)
 texture = ExtResource("15_ipg12")
 
-[node name="Turbine3" type="Sprite2D" parent="Wind/Sprite2"]
+[node name="Turbine3" type="Sprite2D" parent="PowerPlants/Wind/Sprite2"]
 position = Vector2(168.75, -12.5)
 texture = ExtResource("15_ipg12")
 
-[node name="Sprite3" type="Sprite2D" parent="Wind"]
+[node name="Sprite3" type="Sprite2D" parent="PowerPlants/Wind"]
 visible = false
 position = Vector2(41, 59)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("18_rjr5t")
 
-[node name="Turbine" type="Sprite2D" parent="Wind/Sprite3"]
+[node name="Turbine" type="Sprite2D" parent="PowerPlants/Wind/Sprite3"]
 position = Vector2(-163.75, -173.75)
 texture = ExtResource("15_ipg12")
 
-[node name="Turbine2" type="Sprite2D" parent="Wind/Sprite3"]
+[node name="Turbine2" type="Sprite2D" parent="PowerPlants/Wind/Sprite3"]
 position = Vector2(72.5, -201.25)
 texture = ExtResource("15_ipg12")
 
-[node name="Turbine3" type="Sprite2D" parent="Wind/Sprite3"]
+[node name="Turbine3" type="Sprite2D" parent="PowerPlants/Wind/Sprite3"]
 position = Vector2(145, -157.5)
 texture = ExtResource("15_ipg12")
 
-[node name="Turbine4" type="Sprite2D" parent="Wind/Sprite3"]
+[node name="Turbine4" type="Sprite2D" parent="PowerPlants/Wind/Sprite3"]
 position = Vector2(165, 13.75)
 texture = ExtResource("15_ipg12")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Wind"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PowerPlants/Wind"]
 libraries = {
 "": SubResource("AnimationLibrary_dcpmn")
 }
 autoplay = "spin"
+
+[node name="Waste" parent="PowerPlants" instance=ExtResource("1_wi5q3")]
+visible = false
+position = Vector2(431, 151)
+
+[node name="PreviewInfo" parent="PowerPlants/Waste" index="0"]
+visible = false
+
+[node name="Price" parent="PowerPlants/Waste/PreviewInfo" index="3"]
+layout_mode = 0
+anchors_preset = 0
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 52.0
+offset_bottom = 35.0
+grow_vertical = 1
+
+[node name="Sprite" parent="PowerPlants/Waste" index="1"]
+texture = ExtResource("17_f2csk")
+
+[node name="Smoke" type="Sprite2D" parent="PowerPlants/Waste/Sprite" index="0"]
+modulate = Color(0.345098, 0.345098, 0.345098, 0)
+position = Vector2(105, -215)
+texture = ExtResource("4_xclwe")
+
+[node name="Smoke2" type="Sprite2D" parent="PowerPlants/Waste/Sprite" index="1"]
+modulate = Color(0.345098, 0.345098, 0.345098, 0)
+position = Vector2(115, -285)
+texture = ExtResource("5_s6f5j")
+
+[node name="Smoke3" type="Sprite2D" parent="PowerPlants/Waste/Sprite" index="2"]
+modulate = Color(0.345098, 0.345098, 0.345098, 0)
+position = Vector2(110, -375)
+texture = ExtResource("6_3vcfd")
+
+[node name="Smoke4" type="Sprite2D" parent="PowerPlants/Waste/Sprite" index="3"]
+modulate = Color(0.345098, 0.345098, 0.345098, 0)
+position = Vector2(30, -235)
+texture = ExtResource("4_xclwe")
+
+[node name="Smoke5" type="Sprite2D" parent="PowerPlants/Waste/Sprite" index="4"]
+modulate = Color(0.345098, 0.345098, 0.345098, 0)
+position = Vector2(15, -295)
+texture = ExtResource("5_s6f5j")
+
+[node name="Smoke6" type="Sprite2D" parent="PowerPlants/Waste/Sprite" index="5"]
+modulate = Color(0.345098, 0.345098, 0.345098, 0)
+position = Vector2(25, -345)
+texture = ExtResource("6_3vcfd")
+
+[node name="NameRect" parent="PowerPlants/Waste" index="3"]
+visible = false
+
+[node name="ResRect" parent="PowerPlants/Waste" index="4"]
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PowerPlants/Waste"]
+root_node = NodePath("../Sprite")
+libraries = {
+"": SubResource("AnimationLibrary_5ewng")
+}
+autoplay = "Smoke"
+
+[node name="Biomass" parent="PowerPlants" instance=ExtResource("1_wi5q3")]
+visible = false
+position = Vector2(431, 151)
+
+[node name="PreviewInfo" parent="PowerPlants/Biomass" index="0"]
+visible = false
+
+[node name="Price" parent="PowerPlants/Biomass/PreviewInfo" index="3"]
+layout_mode = 0
+anchors_preset = 0
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 52.0
+offset_bottom = 35.0
+grow_vertical = 1
+
+[node name="Sprite" parent="PowerPlants/Biomass" index="1"]
+texture = ExtResource("18_66dmx")
+
+[node name="Smoke" type="Sprite2D" parent="PowerPlants/Biomass/Sprite" index="0"]
+modulate = Color(0.345098, 0.345098, 0.345098, 0)
+position = Vector2(-53, -263)
+texture = ExtResource("4_xclwe")
+
+[node name="Smoke2" type="Sprite2D" parent="PowerPlants/Biomass/Sprite" index="1"]
+modulate = Color(0.345098, 0.345098, 0.345098, 0)
+position = Vector2(-23, -328)
+texture = ExtResource("5_s6f5j")
+
+[node name="Smoke3" type="Sprite2D" parent="PowerPlants/Biomass/Sprite" index="2"]
+modulate = Color(0.345098, 0.345098, 0.345098, 0)
+position = Vector2(-18, -403)
+texture = ExtResource("6_3vcfd")
+
+[node name="Smoke4" type="Sprite2D" parent="PowerPlants/Biomass/Sprite" index="3"]
+modulate = Color(0.345098, 0.345098, 0.345098, 0)
+position = Vector2(-135, -225)
+texture = ExtResource("4_xclwe")
+
+[node name="Smoke5" type="Sprite2D" parent="PowerPlants/Biomass/Sprite" index="4"]
+modulate = Color(0.345098, 0.345098, 0.345098, 0)
+position = Vector2(-115, -300)
+texture = ExtResource("5_s6f5j")
+
+[node name="NameRect" parent="PowerPlants/Biomass" index="3"]
+visible = false
+
+[node name="ResRect" parent="PowerPlants/Biomass" index="4"]
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PowerPlants/Biomass"]
+root_node = NodePath("../Sprite")
+libraries = {
+"": SubResource("AnimationLibrary_rrkkx")
+}
+autoplay = "Smoke"
+
+[node name="River" parent="PowerPlants" instance=ExtResource("1_wi5q3")]
+visible = false
+position = Vector2(431, 151)
+
+[node name="PreviewInfo" parent="PowerPlants/River" index="0"]
+visible = false
+
+[node name="Price" parent="PowerPlants/River/PreviewInfo" index="3"]
+layout_mode = 0
+anchors_preset = 0
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 52.0
+offset_bottom = 35.0
+grow_vertical = 1
+
+[node name="Sprite" parent="PowerPlants/River" index="1"]
+texture = ExtResource("19_e5dte")
+
+[node name="Water" type="Sprite2D" parent="PowerPlants/River/Sprite" index="0"]
+modulate = Color(1, 1, 1, 0.588235)
+position = Vector2(73.5, 63.75)
+texture = ExtResource("19_ll4xw")
+
+[node name="Water2" type="Sprite2D" parent="PowerPlants/River/Sprite" index="1"]
+modulate = Color(1, 1, 1, 0.588235)
+position = Vector2(73.5, 63.75)
+texture = ExtResource("20_h55rh")
+
+[node name="Water3" type="Sprite2D" parent="PowerPlants/River/Sprite" index="2"]
+modulate = Color(1, 1, 1, 0.588235)
+position = Vector2(73.5, 63.75)
+texture = ExtResource("21_g2ord")
+
+[node name="Water4" type="Sprite2D" parent="PowerPlants/River/Sprite" index="3"]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(77.25, 68.75)
+texture = ExtResource("21_g2ord")
+
+[node name="NameRect" parent="PowerPlants/River" index="3"]
+visible = false
+
+[node name="ResRect" parent="PowerPlants/River" index="4"]
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PowerPlants/River"]
+root_node = NodePath("../Sprite")
+libraries = {
+"": SubResource("AnimationLibrary_flnhf")
+}
+autoplay = "water"
+
+[node name="Pump" parent="PowerPlants" instance=ExtResource("1_wi5q3")]
+visible = false
+position = Vector2(431, 151)
+
+[node name="PreviewInfo" parent="PowerPlants/Pump" index="0"]
+visible = false
+
+[node name="Price" parent="PowerPlants/Pump/PreviewInfo" index="3"]
+layout_mode = 0
+anchors_preset = 0
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 52.0
+offset_bottom = 35.0
+grow_vertical = 1
+
+[node name="Sprite" parent="PowerPlants/Pump" index="1"]
+texture = ExtResource("10_ueb8a")
+
+[node name="NameRect" parent="PowerPlants/Pump" index="3"]
+visible = false
+
+[node name="ResRect" parent="PowerPlants/Pump" index="4"]
+visible = false
 
 [node name="BuildingInfo" type="ColorRect" parent="."]
 visible = false
@@ -2476,181 +2727,12 @@ centered = false
 
 [node name="Area2D" type="Area2D" parent="BuildingInfo"]
 
-[node name="Waste" parent="." instance=ExtResource("1_wi5q3")]
-visible = false
-position = Vector2(431, 151)
-
-[node name="Price" parent="Waste/PreviewInfo" index="3"]
+[node name="BuildingCancel" type="Button" parent="BuildingInfo"]
 layout_mode = 0
-anchors_preset = 0
-anchor_top = 0.0
-anchor_bottom = 0.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 52.0
-offset_bottom = 35.0
-grow_vertical = 1
-
-[node name="Sprite" parent="Waste" index="1"]
-texture = ExtResource("17_f2csk")
-
-[node name="Smoke" type="Sprite2D" parent="Waste/Sprite" index="0"]
-modulate = Color(0.345098, 0.345098, 0.345098, 0)
-position = Vector2(105, -215)
-texture = ExtResource("4_xclwe")
-
-[node name="Smoke2" type="Sprite2D" parent="Waste/Sprite" index="1"]
-modulate = Color(0.345098, 0.345098, 0.345098, 0)
-position = Vector2(115, -285)
-texture = ExtResource("5_s6f5j")
-
-[node name="Smoke3" type="Sprite2D" parent="Waste/Sprite" index="2"]
-modulate = Color(0.345098, 0.345098, 0.345098, 0)
-position = Vector2(110, -375)
-texture = ExtResource("6_3vcfd")
-
-[node name="Smoke4" type="Sprite2D" parent="Waste/Sprite" index="3"]
-modulate = Color(0.345098, 0.345098, 0.345098, 0)
-position = Vector2(30, -235)
-texture = ExtResource("4_xclwe")
-
-[node name="Smoke5" type="Sprite2D" parent="Waste/Sprite" index="4"]
-modulate = Color(0.345098, 0.345098, 0.345098, 0)
-position = Vector2(15, -295)
-texture = ExtResource("5_s6f5j")
-
-[node name="Smoke6" type="Sprite2D" parent="Waste/Sprite" index="5"]
-modulate = Color(0.345098, 0.345098, 0.345098, 0)
-position = Vector2(25, -345)
-texture = ExtResource("6_3vcfd")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Waste"]
-root_node = NodePath("../Sprite")
-libraries = {
-"": SubResource("AnimationLibrary_5ewng")
-}
-autoplay = "Smoke"
-
-[node name="Biomass" parent="." instance=ExtResource("1_wi5q3")]
-visible = false
-position = Vector2(431, 151)
-
-[node name="Price" parent="Biomass/PreviewInfo" index="3"]
-layout_mode = 0
-anchors_preset = 0
-anchor_top = 0.0
-anchor_bottom = 0.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 52.0
-offset_bottom = 35.0
-grow_vertical = 1
-
-[node name="Sprite" parent="Biomass" index="1"]
-texture = ExtResource("18_66dmx")
-
-[node name="Smoke" type="Sprite2D" parent="Biomass/Sprite" index="0"]
-modulate = Color(0.345098, 0.345098, 0.345098, 0)
-position = Vector2(-53, -263)
-texture = ExtResource("4_xclwe")
-
-[node name="Smoke2" type="Sprite2D" parent="Biomass/Sprite" index="1"]
-modulate = Color(0.345098, 0.345098, 0.345098, 0)
-position = Vector2(-23, -328)
-texture = ExtResource("5_s6f5j")
-
-[node name="Smoke3" type="Sprite2D" parent="Biomass/Sprite" index="2"]
-modulate = Color(0.345098, 0.345098, 0.345098, 0)
-position = Vector2(-18, -403)
-texture = ExtResource("6_3vcfd")
-
-[node name="Smoke4" type="Sprite2D" parent="Biomass/Sprite" index="3"]
-modulate = Color(0.345098, 0.345098, 0.345098, 0)
-position = Vector2(-135, -225)
-texture = ExtResource("4_xclwe")
-
-[node name="Smoke5" type="Sprite2D" parent="Biomass/Sprite" index="4"]
-modulate = Color(0.345098, 0.345098, 0.345098, 0)
-position = Vector2(-115, -300)
-texture = ExtResource("5_s6f5j")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Biomass"]
-root_node = NodePath("../Sprite")
-libraries = {
-"": SubResource("AnimationLibrary_rrkkx")
-}
-autoplay = "Smoke"
-
-[node name="River" parent="." instance=ExtResource("1_wi5q3")]
-visible = false
-position = Vector2(431, 151)
-
-[node name="Price" parent="River/PreviewInfo" index="3"]
-layout_mode = 0
-anchors_preset = 0
-anchor_top = 0.0
-anchor_bottom = 0.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 52.0
-offset_bottom = 35.0
-grow_vertical = 1
-
-[node name="Sprite" parent="River" index="1"]
-texture = ExtResource("19_e5dte")
-
-[node name="Water" type="Sprite2D" parent="River/Sprite" index="0"]
-modulate = Color(1, 1, 1, 0.588235)
-position = Vector2(73.5, 63.75)
-texture = ExtResource("19_ll4xw")
-
-[node name="Water2" type="Sprite2D" parent="River/Sprite" index="1"]
-modulate = Color(1, 1, 1, 0.588235)
-position = Vector2(73.5, 63.75)
-texture = ExtResource("20_h55rh")
-
-[node name="Water3" type="Sprite2D" parent="River/Sprite" index="2"]
-modulate = Color(1, 1, 1, 0.588235)
-position = Vector2(73.5, 63.75)
-texture = ExtResource("21_g2ord")
-
-[node name="Water4" type="Sprite2D" parent="River/Sprite" index="3"]
-modulate = Color(1, 1, 1, 0.392157)
-position = Vector2(77.25, 68.75)
-texture = ExtResource("21_g2ord")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="River"]
-root_node = NodePath("../Sprite")
-libraries = {
-"": SubResource("AnimationLibrary_flnhf")
-}
-autoplay = "water"
-
-[node name="Pump" parent="." instance=ExtResource("1_wi5q3")]
-visible = false
-position = Vector2(431, 151)
-
-[node name="Price" parent="Pump/PreviewInfo" index="3"]
-layout_mode = 0
-anchors_preset = 0
-anchor_top = 0.0
-anchor_bottom = 0.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 52.0
-offset_bottom = 35.0
-grow_vertical = 1
-
-[node name="Sprite" parent="Pump" index="1"]
-texture = ExtResource("10_ueb8a")
-
-[node name="Cancel" type="Button" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 521.0
-offset_top = -24.0
-offset_right = 577.0
-offset_bottom = 32.0
+offset_left = 224.0
+offset_top = -321.0
+offset_right = 280.0
+offset_bottom = -265.0
 theme = SubResource("Theme_6inie")
 theme_override_font_sizes/font_size = 25
 text = "X"
@@ -2768,17 +2850,18 @@ texture = ExtResource("6_3vcfd")
 [node name="BuildMenu" parent="." instance=ExtResource("41_kwlf5")]
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="pressed" from="BuildingInfo/BuildingCancel" to="." method="_on_building_cancel_pressed"]
 [connection signal="pressed" from="BuildMenu/CloseButton" to="." method="_on_close_button_pressed"]
 
-[editable path="Gas"]
-[editable path="Hydro"]
-[editable path="Solar"]
-[editable path="Tree"]
-[editable path="Wind"]
-[editable path="Waste"]
-[editable path="Biomass"]
-[editable path="River"]
-[editable path="Pump"]
+[editable path="PowerPlants/Gas"]
+[editable path="PowerPlants/Hydro"]
+[editable path="PowerPlants/Solar"]
+[editable path="PowerPlants/Tree"]
+[editable path="PowerPlants/Wind"]
+[editable path="PowerPlants/Waste"]
+[editable path="PowerPlants/Biomass"]
+[editable path="PowerPlants/River"]
+[editable path="PowerPlants/Pump"]
 [editable path="BuildMenu"]
 [editable path="BuildMenu/Container/Solar"]
 [editable path="BuildMenu/Container/Wind"]

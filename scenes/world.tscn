@@ -46,6 +46,7 @@ texture = ExtResource("15_mndp2")
 
 [node name="Nuclear3" parent="." instance=ExtResource("7_6x5m2")]
 position = Vector2(1241, -398)
+plant_name = "nuclear"
 metadata/_edit_group_ = true
 
 [node name="Price" parent="Nuclear3/PreviewInfo" index="3"]
@@ -61,6 +62,7 @@ grow_vertical = 1
 
 [node name="Nuclear2" parent="." instance=ExtResource("7_6x5m2")]
 position = Vector2(1504, -103)
+plant_name = "nuclear"
 metadata/_edit_group_ = true
 
 [node name="Price" parent="Nuclear2/PreviewInfo" index="3"]
@@ -76,6 +78,7 @@ grow_vertical = 1
 
 [node name="Nuclear" parent="." instance=ExtResource("7_6x5m2")]
 position = Vector2(953, 215)
+plant_name = "nuclear"
 metadata/_edit_group_ = true
 
 [node name="Price" parent="Nuclear/PreviewInfo" index="3"]
@@ -90,9 +93,11 @@ offset_bottom = 35.0
 grow_vertical = 1
 
 [node name="Geothermal" parent="." instance=ExtResource("7_6x5m2")]
+plant_name = "geothermal"
 
 [node name="Waste" parent="." instance=ExtResource("7_6x5m2")]
 position = Vector2(184, 512)
+plant_name = "waste"
 metadata/_edit_group_ = true
 
 [node name="Price" parent="Waste/PreviewInfo" index="3"]
@@ -112,6 +117,7 @@ texture = ExtResource("6_4yo2s")
 
 [node name="Biomass" parent="." instance=ExtResource("7_6x5m2")]
 position = Vector2(-712, 1296)
+plant_name = "biomass"
 metadata/_edit_group_ = true
 
 [node name="Price" parent="Biomass/PreviewInfo" index="3"]
@@ -127,6 +133,8 @@ grow_vertical = 1
 
 [node name="Wind" parent="." instance=ExtResource("7_6x5m2")]
 position = Vector2(-636, 439)
+availability = Vector2(0.1, 0.9)
+plant_name = "wind"
 metadata/_edit_group_ = true
 
 [node name="Price" parent="Wind/PreviewInfo" index="3"]
@@ -197,6 +205,8 @@ offset_bottom = 1248.0
 
 [node name="Solar" parent="." instance=ExtResource("7_6x5m2")]
 position = Vector2(2864, 1568)
+availability = Vector2(0.8, 0.2)
+plant_name = "solar"
 metadata/_edit_group_ = true
 
 [node name="Price" parent="Solar/PreviewInfo" index="3"]
@@ -242,8 +252,15 @@ scale = Vector2(1, 1)
 position = Vector2(-314, -307)
 scale = Vector2(1, 1)
 
+[node name="Money" parent="BuildButton9" index="13"]
+offset_left = -279.0
+offset_top = -124.0
+offset_right = -119.0
+offset_bottom = -35.0
+
 [node name="Hydro" parent="." instance=ExtResource("7_6x5m2")]
 position = Vector2(384, 1864)
+plant_name = "hydro"
 metadata/_edit_group_ = true
 
 [node name="Price" parent="Hydro/PreviewInfo" index="3"]
@@ -267,6 +284,7 @@ texture = ExtResource("10_c3oti")
 
 [node name="Pump" parent="." instance=ExtResource("7_6x5m2")]
 position = Vector2(1757, 1602)
+plant_name = "hydro"
 metadata/_edit_group_ = true
 
 [node name="Price" parent="Pump/PreviewInfo" index="3"]
@@ -285,6 +303,8 @@ position = Vector2(42, -66)
 
 [node name="River" parent="." instance=ExtResource("7_6x5m2")]
 position = Vector2(2096, 2088)
+availability = Vector2(0.7, 0.3)
+plant_name = "river"
 metadata/_edit_group_ = true
 
 [node name="Price" parent="River/PreviewInfo" index="3"]
@@ -300,6 +320,8 @@ grow_vertical = 1
 
 [node name="River2" parent="." instance=ExtResource("7_6x5m2")]
 position = Vector2(2816, 864)
+availability = Vector2(0.7, 0.3)
+plant_name = "river"
 metadata/_edit_group_ = true
 
 [node name="Price" parent="River2/PreviewInfo" index="3"]
