@@ -28,9 +28,12 @@ func _on_pp_pressed(pp):
 	for plant in $PowerPlants.get_children():
 		if pp.name == plant.name:
 			if pp.build_time < 1:
+				
 				plant.show()
 				plant.add_to_group("PP")
 				plant.delete_button.show()
+				plant._connect_next_turn_signal()
+				
 				self_modulate = Color(1,1,1,0)
 				disabled = true
 				Gameloop._update_supply()

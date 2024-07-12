@@ -1,9 +1,10 @@
 extends Node2D
 
-@export var start_year: int = 2022
-@export var n_turns: int = 10
-@export var start_money: int = 250
-@export var money_per_turn: int = 250
+var start_year: int = 2020
+var n_turns: int = 10
+var start_money: int = 250
+var money_per_turn: int = 250
+var current_turn: int = 1 #player action always take place in the following year
 
 var demand_availability = Vector2(0.45, 0.55)
 var year_list = []
@@ -13,16 +14,18 @@ signal energy_supply_updated_summer
 signal energy_demand_updated_winter
 signal energy_demand_updated_summer
 
+signal next_turn
+
 var demand_summer: int = 200:
 	set(value):
 		energy_demand_updated_summer.emit(value)
 var demand_winter: int = 210:
 	set(value):
 		energy_demand_updated_winter.emit(value)
-var supply_summer: int = 0:
+var supply_summer: int = 300:
 	set(value):
 		energy_supply_updated_summer.emit(value)
-var supply_winter: int = 0:
+var supply_winter: int = 300:
 	set(value):
 		energy_supply_updated_winter.emit(value)
 

@@ -83,7 +83,6 @@ func _update_info():
 		$BuildInfo/EnergyContainer/Multiplier/Inc.show()
 	$BuildInfo/EnergyContainer/Multiplier/MultAmount.text = str(upgrade)
 
-# TODO only call once at the start of the game, not every request
 # add the model numbers to the plant
 func _on_request_finished(result, response_code, headers, body):
 	var model_key = plant_name_to_model[plant_name]
@@ -96,6 +95,7 @@ func _on_request_finished(result, response_code, headers, body):
 	else:
 		capacity = int(Context1.ctx1[0][model_key]) / 1000
 		cnv_capacity = int(Context1.ctx1[0][plant_id])
+		
 	_update_info()
 	Context1.http1.request_completed.disconnect(_on_request_finished)
 
@@ -109,11 +109,11 @@ func _on_mult_inc_pressed():
 		$BuildInfo/EnergyContainer/Multiplier/Dec.show()
 		
 		var plant_id = plant_name_to_ups_id[plant_name]
-		cnv_capacity *= (1 + (upgrade * mult_factor))
+		var value = cnv_capacity * (1 + (upgrade * mult_factor)) # !! Check rounding of the value in model
 		capacity *= (1 + (upgrade * mult_factor))
 		Context1.prm_id = plant_id
-		Context1.yr = "2025"
-		Context1.tj = cnv_capacity
+		Context1.yr = Gameloop.year_list[Gameloop.current_turn]
+		Context1.tj = value
 		Context1.prm_ups()
 		
 		_update_info()
@@ -124,14 +124,22 @@ func _on_mult_inc_pressed():
 func _on_mult_dec_pressed():
 	if upgrade > 1:
 		var plant_id = plant_name_to_ups_id[plant_name]
-		cnv_capacity /= (1 + (upgrade * mult_factor))
+		var value = cnv_capacity / (1 + (upgrade * mult_factor))
 		capacity /= (1 + (upgrade * mult_factor))
-		#Context1.prm_ups(Context1.res_id, plant_id, "2025", cnv_capacity)
+		Context1.prm_id = plant_id
+		Context1.yr = Gameloop.year_list[Gameloop.current_turn]
+		Context1.tj = value
+		Context1.prm_ups()
 		upgrade -= 1
 		
 		_update_info()
 		Gameloop._update_supply()
+		
+func _connect_next_turn_signal():
+	Gameloop.next_turn.connect(_hide_delete_on_next_turn)
 
+func _hide_delete_on_next_turn():
+	delete_button.hide()
 
 func _on_switch_toggled(toggled_on):
 	pass # Replace with function body.
