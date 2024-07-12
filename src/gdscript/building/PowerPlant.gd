@@ -117,7 +117,7 @@ func _on_mult_inc_pressed():
 		Context1.prm_ups()
 		
 		_update_info()
-		Main._update_supply()
+		Gameloop._update_supply()
 		
 
 
@@ -130,7 +130,7 @@ func _on_mult_dec_pressed():
 		upgrade -= 1
 		
 		_update_info()
-		Main._update_supply()
+		Gameloop._update_supply()
 
 
 func _on_switch_toggled(toggled_on):

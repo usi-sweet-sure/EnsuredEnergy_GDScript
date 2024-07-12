@@ -33,7 +33,7 @@ func _on_pp_pressed(pp):
 				plant.delete_button.show()
 				self_modulate = Color(1,1,1,0)
 				disabled = true
-				Main._update_supply()
+				Gameloop._update_supply()
 			else:
 				$BuildingInfo.show()
 	
@@ -48,7 +48,7 @@ func _on_pp_delete(pp):
 		pp.delete_button.hide()
 		self_modulate = Color(1,1,1,1)
 		disabled = false
-		Main._update_supply()
+		Gameloop._update_supply()
 
 func _on_pp_mouse_entered(pp):
 	pp.build_info.show()
