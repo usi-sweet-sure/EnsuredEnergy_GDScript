@@ -6,11 +6,25 @@ extends Node2D
 @export var money_per_turn: int = 250
 
 var demand_availability = Vector2(0.45, 0.55)
-var demand_summer: int = 200
-var demand_winter: int = 210
-var supply_summer: int = 0
-var supply_winter: int = 0
 var year_list = []
+
+signal energy_supply_updated_winter
+signal energy_supply_updated_summer
+signal energy_demand_updated_winter
+signal energy_demand_updated_summer
+
+var demand_summer: int = 200:
+	set(value):
+		energy_demand_updated_summer.emit(value)
+var demand_winter: int = 210:
+	set(value):
+		energy_demand_updated_winter.emit(value)
+var supply_summer: int = 0:
+	set(value):
+		energy_supply_updated_summer.emit(value)
+var supply_winter: int = 0:
+	set(value):
+		energy_supply_updated_winter.emit(value)
 
 
 # Called when the node enters the scene tree for the first time.
@@ -37,6 +51,7 @@ func _check_supply():
 	
 func _on_request_finished(result, response_code, headers, body):
 	_update_supply()
+	print(supply_summer)
 	
 
 func _unhandled_input(event):

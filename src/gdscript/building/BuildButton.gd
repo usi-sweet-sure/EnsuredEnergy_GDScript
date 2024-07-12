@@ -11,6 +11,9 @@ func _ready():
 		pp.get_child(-1).mouse_exited.connect(_on_pp_mouse_exited.bind(pp))
 	for pp in $PowerPlants.get_children():
 		pp.delete_button.pressed.connect(_on_pp_delete.bind(pp))
+	# E. Commented the two following line, there's a bug with delete_button
+	#for pp in $PowerPlants.get_children():
+		#pp.delete_button.pressed.connect(_on_pp_delete.bind(pp))
 
 
 # when pressing on a buildbutton

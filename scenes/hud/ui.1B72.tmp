@@ -1,6 +1,5 @@
-[gd_scene load_steps=115 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=114 format=3 uid="uid://bs48lirfn2fp2"]
 
-[ext_resource type="Script" path="res://src/gdscript/hud/UI.gd" id="1_1ymqx"]
 [ext_resource type="Texture2D" uid="uid://dik8jskwri4ev" path="res://assets/UI Elements/Profil-metal.png" id="1_ooswe"]
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/UI Elements/Button-Next-Normal.png" id="2_aobed"]
 [ext_resource type="PackedScene" uid="uid://d2hyunjbx7qb7" path="res://scenes/hud/energy_bar.tscn" id="3_fm1y6"]
@@ -10,9 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://60dl810b25fd" path="res://assets/UI Elements/Button-press.png" id="5_hh5pc"]
 [ext_resource type="PackedScene" uid="uid://c81iji81uc4g7" path="res://scenes/hud/import.tscn" id="5_ps4b6"]
 [ext_resource type="PackedScene" uid="uid://885lty3v1qbq" path="res://scenes/windows/shock.tscn" id="5_tj765"]
+[ext_resource type="Texture2D" uid="uid://dddt3hgvf20b6" path="res://assets/Elements/POLICIES BUTTON.png" id="6_ivien"]
 [ext_resource type="AudioStream" uid="uid://d0mx81kv2vlha" path="res://assets/Sounds/Negative 2_1.wav" id="6_jw1cb"]
 [ext_resource type="Texture2D" uid="uid://d01b6u4flcphj" path="res://assets/Elements/GRAPH BUTTON.png" id="7_7gbcu"]
 [ext_resource type="Texture2D" uid="uid://cgf1xjsx0mfot" path="res://assets/UI Elements/Button-Next-Base.png" id="7_g7ih8"]
+[ext_resource type="Texture2D" uid="uid://b8lwrin3nxbmj" path="res://assets/Elements/SETTINGS BUTTON.png" id="7_mnpcp"]
 [ext_resource type="PackedScene" uid="uid://jj476u8yn2g8" path="res://scenes/windows/window.tscn" id="7_yu7g8"]
 [ext_resource type="AudioStream" uid="uid://ben5r72x0p8pr" path="res://assets/Sounds/Move_03.wav" id="10_po2ll"]
 [ext_resource type="Texture2D" uid="uid://bjeebs7uy4hpn" path="res://assets/UI Elements/Button-small-Hole.png" id="11_i0u5d"]
@@ -29,7 +30,6 @@
 [ext_resource type="Texture2D" uid="uid://bwmnloeklg76n" path="res://assets/UI Elements/Enviornment-Hand.png" id="23_3qgyr"]
 [ext_resource type="Texture2D" uid="uid://lxqt8kspr35q" path="res://assets/UI Elements/Icon-Environment-.png" id="24_t8vy5"]
 [ext_resource type="Texture2D" uid="uid://0mihvtaw003w" path="res://assets/UI Elements/Icon-Pollution-.png" id="25_7q1c5"]
-[ext_resource type="Script" path="res://src/gdscript/hud/energy_import.gd" id="25_pkr0e"]
 [ext_resource type="Texture2D" uid="uid://vff0e83ytund" path="res://assets/UI Elements/Energy-base.png" id="28_mr6x7"]
 [ext_resource type="Texture2D" uid="uid://dm24o8isvyq3f" path="res://assets/UI Elements/Import-Slider.png" id="29_j3wwc"]
 [ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/Fonts/Special_Elite/SpecialElite-Regular.ttf" id="30_d1m8l"]
@@ -175,6 +175,15 @@ _data = {
 [sub_resource type="FontVariation" id="FontVariation_n3vpe"]
 base_font = ExtResource("51_joowr")
 spacing_glyph = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8mw3r"]
+bg_color = Color(0.214844, 0.335938, 0.347656, 1)
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qglqh"]
 bg_color = Color(0.214844, 0.335938, 0.347656, 1)
@@ -363,6 +372,10 @@ bg_color = Color(0.627451, 0.627451, 0.627451, 1)
 border_color = Color(0, 0, 0, 1)
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dajl"]
+atlas = ExtResource("6_ivien")
+region = Rect2(48, 49, 43, 44)
 
 [sub_resource type="FontVariation" id="FontVariation_15ni2"]
 base_font = ExtResource("51_joowr")
@@ -800,7 +813,6 @@ _data = {
 
 [node name="UI" type="CanvasLayer"]
 follow_viewport_enabled = true
-script = ExtResource("1_1ymqx")
 
 [node name="Profil-bar-metal" type="Sprite2D" parent="."]
 position = Vector2(202, 178.5)
@@ -1013,7 +1025,6 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_styles/background = SubResource("StyleBoxFlat_8mw3r")
 max_value = 200.0
-season = 1
 
 [node name="Target" parent="EnergyBarSummerPredict" index="0"]
 visible = false
@@ -1083,7 +1094,6 @@ mouse_default_cursor_shape = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 max_value = 200.0
-season = 1
 
 [node name="Target" parent="EnergyBarSummer" index="0"]
 position = Vector2(-331, -609.5)
@@ -1113,7 +1123,6 @@ offset_bottom = 949.0
 theme_override_icons/grabber = ExtResource("29_j3wwc")
 max_value = 100.0
 ticks_on_borders = false
-script = ExtResource("25_pkr0e")
 
 [node name="Target" parent="Import" index="0"]
 position = Vector2(-24, 220)
@@ -1906,6 +1915,15 @@ offset = Vector2(0, -22)
 position = Vector2(49, 67)
 texture = ExtResource("25_7q1c5")
 
+[node name="PolicyButton2" type="TextureButton" parent="."]
+visible = false
+offset_left = 238.0
+offset_top = 82.0
+offset_right = 281.0
+offset_bottom = 125.0
+texture_normal = SubResource("AtlasTexture_0dajl")
+ignore_texture_size = true
+
 [node name="Stats" type="TextureButton" parent="."]
 visible = false
 offset_left = 293.0
@@ -2664,6 +2682,17 @@ text = "+"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="SettingsButton2" type="Button" parent="."]
+visible = false
+offset_left = 102.0
+offset_top = 60.5
+offset_right = 190.0
+offset_bottom = 148.5
+focus_mode = 0
+mouse_default_cursor_shape = 2
+icon = ExtResource("7_mnpcp")
+flat = true
+
 [node name="BorrowContainer" type="Button" parent="."]
 visible = false
 offset_left = -8.0
@@ -2884,16 +2913,11 @@ flip_h = true
 flip_v = true
 region_rect = Rect2(2, 0, 278, 194)
 
-[connection signal="value_changed" from="Import" to="Import" method="_on_import_slider_value_changed"]
-[connection signal="toggled" from="Import/ImportSwitch" to="Import" method="_on_clean_import_switch_toggled"]
-[connection signal="pressed" from="Import/UpButton" to="Import" method="_on_import_up_button_pressed"]
-[connection signal="pressed" from="Import/DownButton" to="Import" method="_on_import_down_button_pressed"]
 [connection signal="pressed" from="TimePanelBlank/TurnInfo" to="TimePanelBlank" method="clock_pressed"]
+[connection signal="pressed" from="TimePanelBlank/TurnInfo" to="TimePanelBlank/TurnInfoContainer" method="is_visible"]
 
 [editable path="EnergyBarSummerPredict"]
-[editable path="EnergyBarSummerPredict/BarInfo"]
 [editable path="EnergyBarWinterPredict"]
-[editable path="EnergyBarWinterPredict/BarInfo"]
 [editable path="EnergyBarWinter"]
 [editable path="EnergyBarWinter/BarInfo"]
 [editable path="EnergyBarSummer"]
