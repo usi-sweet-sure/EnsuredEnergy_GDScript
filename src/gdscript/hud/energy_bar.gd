@@ -11,12 +11,13 @@ enum Season {WINTER, SUMMER}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	# Determines which season the bar will be monitoring
 	match season:
 		Season.WINTER:
 			Main.energy_supply_updated_winter.connect(_on_energy_supply_updated)
 			Main.energy_demand_updated_winter.connect(_on_energy_demand_updated)
 			
-			# To get the first value
+			# Sets initial values
 			_on_energy_supply_updated(Main.supply_winter)
 			_on_energy_demand_updated(Main.demand_winter)
 		Season.SUMMER:
