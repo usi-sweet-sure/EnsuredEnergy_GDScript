@@ -1,5 +1,6 @@
-[gd_scene load_steps=115 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=116 format=3 uid="uid://bs48lirfn2fp2"]
 
+[ext_resource type="Script" path="res://src/gdscript/hud/UI.gd" id="1_i7b76"]
 [ext_resource type="Texture2D" uid="uid://dik8jskwri4ev" path="res://assets/UI Elements/Profil-metal.png" id="1_ooswe"]
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/UI Elements/Button-Next-Normal.png" id="2_aobed"]
 [ext_resource type="PackedScene" uid="uid://d2hyunjbx7qb7" path="res://scenes/hud/energy_bar.tscn" id="3_fm1y6"]
@@ -814,6 +815,7 @@ _data = {
 
 [node name="UI" type="CanvasLayer"]
 follow_viewport_enabled = true
+script = ExtResource("1_i7b76")
 
 [node name="Profil-bar-metal" type="Sprite2D" parent="."]
 position = Vector2(202, 178.5)
@@ -2917,6 +2919,7 @@ flip_h = true
 flip_v = true
 region_rect = Rect2(2, 0, 278, 194)
 
+[connection signal="pressed" from="NextTurn" to="." method="_on_next_turn_pressed"]
 [connection signal="value_changed" from="Import" to="Import" method="_on_import_slider_value_changed"]
 [connection signal="toggled" from="Import/ImportSwitch" to="Import" method="_on_clean_import_switch_toggled"]
 [connection signal="pressed" from="Import/UpButton" to="Import" method="_on_import_up_button_pressed"]

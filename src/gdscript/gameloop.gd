@@ -51,7 +51,6 @@ func _check_supply():
 	
 func _on_request_finished(result, response_code, headers, body):
 	_update_supply()
-	print(supply_summer)
 	
 
 func _unhandled_input(event):
