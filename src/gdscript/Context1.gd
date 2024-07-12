@@ -31,9 +31,9 @@ func res_ins():
 		
 		
 #upsert param
-func prm_ups(id, prm, year, val):
+func prm_ups():
 	var url = "https://sure.euler.usi.ch/json.php?mth=ups&res_id={res_id}&prm_id={prm_id}&yr={yr}&tj={tj}"
-	var error = http1.request(url.format({"res_id": id, "yr": year, "prm_id": prm, "tj": val}))
+	var error = http1.request(url.format({"res_id": res_id, "yr": yr, "prm_id": prm_id, "tj": tj}))
 	if error != OK:
 		push_error("http error")
 	

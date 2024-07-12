@@ -111,9 +111,13 @@ func _on_mult_inc_pressed():
 		var plant_id = plant_name_to_ups_id[plant_name]
 		cnv_capacity *= (1 + (upgrade * mult_factor))
 		capacity *= (1 + (upgrade * mult_factor))
-		Context1.prm_ups(Context1.res_id, plant_id, "2025", cnv_capacity)
+		Context1.prm_id = plant_id
+		Context1.yr = "2025"
+		Context1.tj = cnv_capacity
+		Context1.prm_ups()
 		
 		_update_info()
+		Main._update_supply()
 		
 
 
@@ -122,10 +126,11 @@ func _on_mult_dec_pressed():
 		var plant_id = plant_name_to_ups_id[plant_name]
 		cnv_capacity /= (1 + (upgrade * mult_factor))
 		capacity /= (1 + (upgrade * mult_factor))
-		Context1.prm_ups(Context1.res_id, plant_id, "2025", cnv_capacity)
+		#Context1.prm_ups(Context1.res_id, plant_id, "2025", cnv_capacity)
 		upgrade -= 1
 		
 		_update_info()
+		Main._update_supply()
 
 
 func _on_switch_toggled(toggled_on):
