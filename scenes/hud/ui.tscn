@@ -1012,16 +1012,13 @@ position = Vector2(-155, 113)
 texture = ExtResource("33_my285")
 
 [node name="EnergyBarWinter" parent="." instance=ExtResource("3_fm1y6")]
-offset_left = 291.001
+offset_left = 290.0
 offset_top = 928.0
-offset_right = 482.001
-offset_bottom = 969.0
+offset_right = 481.0
+offset_bottom = 972.0
 mouse_default_cursor_shape = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_qglqh")
 max_value = 200.0
-
-[node name="Target" parent="EnergyBarWinter" index="0"]
-position = Vector2(-195, -609.5)
 
 [node name="BarInfo" parent="EnergyBarWinter" index="1"]
 z_index = 1
@@ -1048,9 +1045,6 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 max_value = 200.0
 season = 1
-
-[node name="Target" parent="EnergyBarSummer" index="0"]
-position = Vector2(-331, -609.5)
 
 [node name="BarInfo" parent="EnergyBarSummer" index="1"]
 z_index = 1

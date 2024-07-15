@@ -6,11 +6,15 @@ enum Season {WINTER, SUMMER}
 @onready var info_box = $BarInfo
 @onready var info_text = $BarInfo/MarginContainer/MarginContainer/VBoxContainer/InfoText
 @onready var info_text_2 = $BarInfo/MarginContainer/MarginContainer/VBoxContainer/InfoText2
-@onready var demand_line = $Target
+@onready var demand_line = $DemandLine
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	# The bars will have the same max_value, wich is the maximum demand
+	# between winter and summer
+	max_value = max(Gameloop.demand_winter * 1.75, Gameloop.demand_summer * 1.75)
+	
 	# Determines which season the bar will be monitoring
 	match season:
 		Season.WINTER:
@@ -30,16 +34,10 @@ func _ready():
 			_on_energy_demand_updated(Gameloop.demand_summer)
 			_on_energy_supply_updated(Gameloop.supply_summer)
 
-# Updates the position of the line representing the energy supply to reach
+# Updates the position of the line representing the demand and the max value of the progress bar
 func _on_energy_demand_updated(demand):
-	# E. this does not work yet
-	print(get_season_text(season) + " demand ")
-	var demand_normalized = demand - self.min_value / self.max_value - self.min_value
-	
-	demand_line.position = Vector2(
-		demand_line.position.x + demand_normalized,
-		demand_line.position.y
-	)
+	var bar_height = size.x
+	demand_line.position.x = bar_height / max_value * demand
 
 # Updates the progress bar
 func _on_energy_supply_updated(supply):
