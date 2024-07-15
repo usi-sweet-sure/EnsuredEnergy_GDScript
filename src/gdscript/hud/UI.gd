@@ -26,8 +26,6 @@ func _on_next_turn_pressed():
 		Context1.yr = Gameloop.year_list[Gameloop.current_turn]
 	
 	
-
-
 func _on_next_turn_gui_input(event):
 	pass
 	# add not enough energy warning
