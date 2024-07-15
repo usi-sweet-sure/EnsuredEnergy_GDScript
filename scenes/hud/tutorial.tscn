@@ -69,6 +69,7 @@ grow_vertical = 2
 [node name="InfoBubble" type="ColorRect" parent="Bubbles"]
 visible = false
 show_behind_parent = true
+layout_mode = 0
 offset_left = 456.0
 offset_right = 1920.0
 offset_bottom = 1080.0
