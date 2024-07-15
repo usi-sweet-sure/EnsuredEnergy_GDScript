@@ -1,6 +1,5 @@
-[gd_scene load_steps=116 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=114 format=3 uid="uid://bs48lirfn2fp2"]
 
-[ext_resource type="Script" path="res://src/gdscript/hud/UI.gd" id="1_i7b76"]
 [ext_resource type="Texture2D" uid="uid://dik8jskwri4ev" path="res://assets/UI Elements/Profil-metal.png" id="1_ooswe"]
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/UI Elements/Button-Next-Normal.png" id="2_aobed"]
 [ext_resource type="PackedScene" uid="uid://d2hyunjbx7qb7" path="res://scenes/hud/energy_bar.tscn" id="3_fm1y6"]
@@ -31,7 +30,6 @@
 [ext_resource type="Texture2D" uid="uid://bwmnloeklg76n" path="res://assets/UI Elements/Enviornment-Hand.png" id="23_3qgyr"]
 [ext_resource type="Texture2D" uid="uid://lxqt8kspr35q" path="res://assets/UI Elements/Icon-Environment-.png" id="24_t8vy5"]
 [ext_resource type="Texture2D" uid="uid://0mihvtaw003w" path="res://assets/UI Elements/Icon-Pollution-.png" id="25_7q1c5"]
-[ext_resource type="Script" path="res://src/gdscript/hud/energy_import.gd" id="25_pkr0e"]
 [ext_resource type="Texture2D" uid="uid://vff0e83ytund" path="res://assets/UI Elements/Energy-base.png" id="28_mr6x7"]
 [ext_resource type="Texture2D" uid="uid://dm24o8isvyq3f" path="res://assets/UI Elements/Import-Slider.png" id="29_j3wwc"]
 [ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/Fonts/Special_Elite/SpecialElite-Regular.ttf" id="30_d1m8l"]
@@ -474,7 +472,7 @@ tracks/5/path = NodePath("Year4:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0.01, 0.8, 1.25, 1.26, 2, 2.01, 2.76),
+"times": PackedFloat32Array(0, 0.8, 1.25, 1.26, 2, 2.01, 2.76),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(40, 85), Vector2(40, 90), Vector2(40, 32), Vector2(40, 90), Vector2(40, 32), Vector2(40, 90), Vector2(40, 31)]
@@ -510,10 +508,10 @@ tracks/8/path = NodePath("Year5:text")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0.01, 1.27, 2.01),
+"times": PackedFloat32Array(0, 1.26, 2.01),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": ["1", "2", "3"]
+"values": ["3", "4", "5"]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
@@ -522,10 +520,10 @@ tracks/9/path = NodePath("Year4:text")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0.01, 1.26, 2.02, 2.76),
+"times": PackedFloat32Array(0, 1.26, 2.01, 2.75),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": ["0", "1", "2", "3"]
+"values": ["2", "3", "4", "5"]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
@@ -648,8 +646,7 @@ tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["0
-"]
+"values": ["2"]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -661,7 +658,7 @@ tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["0"]
+"values": ["2"]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
@@ -816,7 +813,6 @@ _data = {
 
 [node name="UI" type="CanvasLayer"]
 follow_viewport_enabled = true
-script = ExtResource("1_i7b76")
 
 [node name="Profil-bar-metal" type="Sprite2D" parent="."]
 position = Vector2(202, 178.5)
@@ -1029,7 +1025,6 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_styles/background = SubResource("StyleBoxFlat_8mw3r")
 max_value = 200.0
-season = 1
 
 [node name="Target" parent="EnergyBarSummerPredict" index="0"]
 visible = false
@@ -1099,7 +1094,6 @@ mouse_default_cursor_shape = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 max_value = 200.0
-season = 1
 
 [node name="Target" parent="EnergyBarSummer" index="0"]
 position = Vector2(-331, -609.5)
@@ -1129,7 +1123,6 @@ offset_bottom = 949.0
 theme_override_icons/grabber = ExtResource("29_j3wwc")
 max_value = 100.0
 ticks_on_borders = false
-script = ExtResource("25_pkr0e")
 
 [node name="Target" parent="Import" index="0"]
 position = Vector2(-24, 220)
@@ -2474,7 +2467,7 @@ offset_bottom = 160.0
 theme = ExtResource("70_2ktfd")
 theme_override_colors/font_color = Color(0.0390625, 0.160156, 0.171875, 1)
 theme_override_font_sizes/font_size = 46
-text = "0"
+text = "2"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -2491,8 +2484,7 @@ offset_bottom = 156.0
 theme = ExtResource("70_2ktfd")
 theme_override_colors/font_color = Color(0.0390625, 0.160156, 0.171875, 1)
 theme_override_font_sizes/font_size = 46
-text = "0
-"
+text = "2"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -2901,7 +2893,6 @@ position = Vector2(638, 380)
 texture = ExtResource("54_7juy1")
 
 [node name="NuclearWarning" type="Label" parent="."]
-visible = false
 offset_left = 1689.0
 offset_top = 740.0
 offset_right = 1889.0
@@ -2922,18 +2913,11 @@ flip_h = true
 flip_v = true
 region_rect = Rect2(2, 0, 278, 194)
 
-[connection signal="gui_input" from="NextTurn" to="." method="_on_next_turn_gui_input"]
-[connection signal="pressed" from="NextTurn" to="." method="_on_next_turn_pressed"]
-[connection signal="value_changed" from="Import" to="Import" method="_on_import_slider_value_changed"]
-[connection signal="toggled" from="Import/ImportSwitch" to="Import" method="_on_clean_import_switch_toggled"]
-[connection signal="pressed" from="Import/UpButton" to="Import" method="_on_import_up_button_pressed"]
-[connection signal="pressed" from="Import/DownButton" to="Import" method="_on_import_down_button_pressed"]
 [connection signal="pressed" from="TimePanelBlank/TurnInfo" to="TimePanelBlank" method="clock_pressed"]
+[connection signal="pressed" from="TimePanelBlank/TurnInfo" to="TimePanelBlank/TurnInfoContainer" method="is_visible"]
 
 [editable path="EnergyBarSummerPredict"]
-[editable path="EnergyBarSummerPredict/BarInfo"]
 [editable path="EnergyBarWinterPredict"]
-[editable path="EnergyBarWinterPredict/BarInfo"]
 [editable path="EnergyBarWinter"]
 [editable path="EnergyBarWinter/BarInfo"]
 [editable path="EnergyBarSummer"]
