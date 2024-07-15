@@ -2872,6 +2872,7 @@ region_rect = Rect2(2, 0, 278, 194)
 
 [connection signal="gui_input" from="NextTurn" to="." method="_on_next_turn_gui_input"]
 [connection signal="pressed" from="NextTurn" to="." method="_on_next_turn_pressed"]
+[connection signal="drag_ended" from="Import" to="Import" method="_on_import_slider_drag_ended"]
 [connection signal="value_changed" from="Import" to="Import" method="_on_import_slider_value_changed"]
 [connection signal="toggled" from="Import/ImportSwitch" to="Import" method="_on_clean_import_switch_toggled"]
 [connection signal="pressed" from="Import/UpButton" to="Import" method="_on_import_up_button_pressed"]
