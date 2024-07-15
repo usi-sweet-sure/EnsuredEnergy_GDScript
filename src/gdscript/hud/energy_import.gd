@@ -40,14 +40,17 @@ func _on_energy_demand_updated_winter(demand):
 
 func _on_import_slider_drag_ended(value_changed):
 	if(value_changed):
-		var add_to_supply = value - previous_import # Can be negative if the user lowered the import
+		# Can be negative if the user lowered the import
+		var add_to_supply = value - previous_import
 		
-		# Prevents the user from exceding the energy demand
+		# Prevents the user from importing more than the energy demand
 		if(Gameloop.supply_winter + add_to_supply > Gameloop.demand_winter):
 			set_value_no_signal(Gameloop.demand_winter - Gameloop.supply_winter + previous_import)
+			add_to_supply = Gameloop.demand_winter - Gameloop.supply_winter
 
 		previous_import = value
 		Gameloop.supply_winter += add_to_supply
+		
 
 		# E. This is clearly not what to do, it's just to have a visual feedback
 		update_imported_energy_cost_label(str(value))
