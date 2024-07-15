@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=115 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Script" path="res://src/gdscript/hud/UI.gd" id="1_i7b76"]
 [ext_resource type="Texture2D" uid="uid://dik8jskwri4ev" path="res://assets/UI Elements/Profil-metal.png" id="1_ooswe"]
@@ -177,15 +177,6 @@ _data = {
 [sub_resource type="FontVariation" id="FontVariation_n3vpe"]
 base_font = ExtResource("51_joowr")
 spacing_glyph = 7
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8mw3r"]
-bg_color = Color(0.214844, 0.335938, 0.347656, 1)
-border_color = Color(0, 0, 0, 1)
-border_blend = true
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qglqh"]
 bg_color = Color(0.214844, 0.335938, 0.347656, 1)
@@ -1019,49 +1010,6 @@ horizontal_alignment = 2
 [node name="CHF" type="Sprite2D" parent="ImportEnergy-bar-metal"]
 position = Vector2(-155, 113)
 texture = ExtResource("33_my285")
-
-[node name="EnergyBarSummerPredict" parent="." instance=ExtResource("3_fm1y6")]
-offset_left = 357.001
-offset_top = 928.0
-offset_right = 548.001
-offset_bottom = 970.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 1
-theme_override_styles/background = SubResource("StyleBoxFlat_8mw3r")
-max_value = 200.0
-season = 1
-
-[node name="Target" parent="EnergyBarSummerPredict" index="0"]
-visible = false
-position = Vector2(-331, -609.5)
-
-[node name="BarInfo" parent="EnergyBarSummerPredict" index="1"]
-z_index = 1
-offset_left = 490.0
-offset_top = -61.0
-offset_right = 792.768
-offset_bottom = 172.786
-rotation = 1.5708
-metadata/_edit_group_ = true
-
-[node name="EnergyBarWinterPredict" parent="." instance=ExtResource("3_fm1y6")]
-offset_left = 291.001
-offset_top = 928.0
-offset_right = 482.001
-offset_bottom = 969.0
-max_value = 200.0
-
-[node name="Target" parent="EnergyBarWinterPredict" index="0"]
-visible = false
-position = Vector2(-195, -609.5)
-
-[node name="BarInfo" parent="EnergyBarWinterPredict" index="1"]
-z_index = 1
-offset_left = 489.0
-offset_top = -131.0
-offset_right = 794.768
-offset_bottom = 113.053
-rotation = 1.5708
 
 [node name="EnergyBarWinter" parent="." instance=ExtResource("3_fm1y6")]
 offset_left = 291.001
@@ -2930,10 +2878,6 @@ region_rect = Rect2(2, 0, 278, 194)
 [connection signal="pressed" from="Import/DownButton" to="Import" method="_on_import_down_button_pressed"]
 [connection signal="pressed" from="TimePanelBlank/TurnInfo" to="TimePanelBlank" method="clock_pressed"]
 
-[editable path="EnergyBarSummerPredict"]
-[editable path="EnergyBarSummerPredict/BarInfo"]
-[editable path="EnergyBarWinterPredict"]
-[editable path="EnergyBarWinterPredict/BarInfo"]
 [editable path="EnergyBarWinter"]
 [editable path="EnergyBarWinter/BarInfo"]
 [editable path="EnergyBarSummer"]

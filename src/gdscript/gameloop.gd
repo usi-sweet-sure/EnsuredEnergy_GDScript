@@ -27,12 +27,12 @@ var demand_winter: int = 190:
 		energy_demand_updated_winter.emit(new_value)
 var supply_summer: int = 0:
 	set(new_value):
-		supply_summer = new_value
-		energy_supply_updated_summer.emit(new_value)
+		supply_summer = clamp(new_value, 0, demand_winter)
+		energy_supply_updated_summer.emit(supply_summer)
 var supply_winter: int = 0:
 	set(new_value):
-		supply_winter = new_value
-		energy_supply_updated_winter.emit(new_value)
+		supply_winter = clamp(new_value, 0, demand_winter)
+		energy_supply_updated_winter.emit(supply_winter)
 
 
 # Called when the node enters the scene tree for the first time.

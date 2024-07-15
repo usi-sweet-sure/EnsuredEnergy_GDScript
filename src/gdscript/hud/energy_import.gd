@@ -4,7 +4,6 @@ extends Node
 @onready var import_slider: VSlider = $"."
 @onready var imported_energy_cost_label: Label = $"../ImportEnergy-bar-metal/ImportCosts"
 
-
 func update_imported_energy_cost_label(cost: String):
 	imported_energy_cost_label.text = cost
 
