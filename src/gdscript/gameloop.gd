@@ -15,12 +15,13 @@ signal energy_demand_updated_winter
 signal energy_demand_updated_summer
 
 signal next_turn
+signal end
 
 var demand_summer: int = 200:
 	set(new_value):
 		demand_summer = new_value;
 		energy_demand_updated_summer.emit(new_value)
-var demand_winter: int = 210:
+var demand_winter: int = 190:
 	set(new_value):
 		demand_winter = new_value
 		energy_demand_updated_winter.emit(new_value)
@@ -40,7 +41,6 @@ func _ready():
 	
 	for i in n_turns + 1:
 		year_list.append(start_year + (i * 3))
-	print(year_list)
 
 func _update_supply():
 	supply_summer = 0

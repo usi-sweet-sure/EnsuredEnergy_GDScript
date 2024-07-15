@@ -14,11 +14,18 @@ func _on_energy_supply_updated(value):
 func _on_next_turn_pressed():
 	$TimePanelBlank._set_next_years_anim()
 	$TimePanelBlank/TimelineAnimation.play("NextTurnAnim")
+	await $TimePanelBlank/TimelineAnimation.animation_finished
 	# display shock after anim
-	Gameloop.next_turn.emit()
 	
-	Gameloop.current_turn += 1
-	Context1.yr = Gameloop.year_list[Gameloop.current_turn]
+	if Gameloop.current_turn == Gameloop.n_turns:
+		Gameloop.end.emit()
+		$NextTurn.hide()
+	else:
+		Gameloop.next_turn.emit()
+		Gameloop.current_turn += 1
+		Context1.yr = Gameloop.year_list[Gameloop.current_turn]
+	
+	
 
 
 func _on_next_turn_gui_input(event):

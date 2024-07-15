@@ -20,6 +20,7 @@ var cnv_capacity: int = 10
 
 @onready var delete_button = $Delete
 @onready var build_info = $BuildInfo
+@onready var multiplier = $BuildInfo/EnergyContainer/Multiplier
 
 var plant_name_to_model = {
 	"gas": "cnv_gas_ele",

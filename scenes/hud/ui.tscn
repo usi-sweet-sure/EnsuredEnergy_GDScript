@@ -2901,6 +2901,7 @@ position = Vector2(638, 380)
 texture = ExtResource("54_7juy1")
 
 [node name="NuclearWarning" type="Label" parent="."]
+visible = false
 offset_left = 1689.0
 offset_top = 740.0
 offset_right = 1889.0
