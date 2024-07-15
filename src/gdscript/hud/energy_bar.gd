@@ -15,16 +15,10 @@ func _ready():
 	match season:
 		Season.WINTER:
 			Gameloop.energy_supply_updated_winter.connect(_on_energy_supply_updated)
-			Gameloop.energy_demand_updated_winter.connect(_on_energy_demand_updated)
-			
-			# Sets initial values
-			_on_energy_supply_updated(Gameloop.supply_winter)
-			_on_energy_demand_updated(Gameloop.demand_winter)
+			Gameloop.energy_demand_updated_winter.connect(_on_energy_demand_updated)	
 		Season.SUMMER:
 			Gameloop.energy_supply_updated_summer.connect(_on_energy_supply_updated)
 			Gameloop.energy_demand_updated_summer.connect(_on_energy_demand_updated)
-			_on_energy_supply_updated(Gameloop.supply_summer)
-			_on_energy_demand_updated(Gameloop.demand_summer)
 
 # Updates the position of the line representing the energy supply to reach
 func _on_energy_demand_updated(demand):

@@ -17,17 +17,21 @@ signal energy_demand_updated_summer
 signal next_turn
 
 var demand_summer: int = 200:
-	set(value):
-		energy_demand_updated_summer.emit(value)
+	set(new_value):
+		demand_summer = new_value;
+		energy_demand_updated_summer.emit(new_value)
 var demand_winter: int = 210:
-	set(value):
-		energy_demand_updated_winter.emit(value)
-var supply_summer: int = 300:
-	set(value):
-		energy_supply_updated_summer.emit(value)
-var supply_winter: int = 300:
-	set(value):
-		energy_supply_updated_winter.emit(value)
+	set(new_value):
+		demand_winter = new_value
+		energy_demand_updated_winter.emit(new_value)
+var supply_summer: int = 0:
+	set(new_value):
+		supply_summer = new_value
+		energy_supply_updated_summer.emit(new_value)
+var supply_winter: int = 0:
+	set(new_value):
+		supply_winter = new_value
+		energy_supply_updated_winter.emit(new_value)
 
 
 # Called when the node enters the scene tree for the first time.
