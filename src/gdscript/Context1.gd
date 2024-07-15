@@ -47,7 +47,7 @@ func get_ctx():
 	
 	
 #handle response
-func _http1_completed(result, response_code, headers, body):
+func _http1_completed(_result, _response_code, _headers, body):
 	var json = JSON.new()
 	json.parse(body.get_string_from_utf8())
 	ctx1 = json.get_data()

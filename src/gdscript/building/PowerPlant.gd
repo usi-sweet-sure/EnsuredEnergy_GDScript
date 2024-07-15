@@ -67,13 +67,16 @@ func _ready():
 	
 	_update_info()
 	
+	$NameRect/Name.text = plant_name
+	$BuildInfo/Name.text = plant_name
+	
 
 func _update_info():
 	# updates the energy produced by a plant in summer and winter
-	$ResRect/EnergyS.text = str(availability.x * capacity).pad_decimals(1)
-	$ResRect/EnergyW.text = str(availability.y * capacity).pad_decimals(1)
-	$BuildInfo/EnergyContainer/Summer/BuildMenuNumHole/SummerE.text = str(availability.x * capacity).pad_decimals(1)
-	$BuildInfo/EnergyContainer/Winter/BuildMenuNumHole2/WinterE.text = str(availability.y * capacity).pad_decimals(1)
+	$PreviewInfo/EnergyS.text = str(availability.x * capacity).pad_decimals(0)
+	$PreviewInfo/EnergyW.text = str(availability.y * capacity).pad_decimals(0)
+	$BuildInfo/EnergyContainer/Summer/BuildMenuNumCounter3/SummerE.text = str(availability.x * capacity).pad_decimals(0)
+	$BuildInfo/EnergyContainer/Winter/BuildMenuNumCounter3/WinterE.text = str(availability.y * capacity).pad_decimals(0)
 	
 	# TODO for pollution, land use and production costs
 	
@@ -85,16 +88,16 @@ func _update_info():
 	$BuildInfo/EnergyContainer/Multiplier/MultAmount.text = str(upgrade)
 
 # add the model numbers to the plant
-func _on_request_finished(result, response_code, headers, body):
+func _on_request_finished(_result, _response_code, _headers, _body):
 	var model_key = plant_name_to_model[plant_name]
 	var plant_id = plant_name_to_cnv_cap[plant_name]
 	if plant_name == "nuclear":
-		capacity = int(Context1.ctx1[0][model_key]) / 1000 / 3 # there's 3 nuclear plants
+		capacity = int(Context1.ctx1[0][model_key]) / 100 / 3 # there's 3 nuclear plants
 	if plant_name == "hydro" || plant_name == "river":
-		capacity = int(Context1.ctx1[0][model_key]) / 1000 / 2
+		capacity = int(Context1.ctx1[0][model_key]) / 100 / 2
 		cnv_capacity = int(Context1.ctx1[0][plant_id])
 	else:
-		capacity = int(Context1.ctx1[0][model_key]) / 1000
+		capacity = int(Context1.ctx1[0][model_key]) / 100
 		cnv_capacity = int(Context1.ctx1[0][plant_id])
 		
 	_update_info()

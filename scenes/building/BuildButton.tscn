@@ -2093,10 +2093,7 @@ texture = ExtResource("5_4jvt0")
 [node name="NameRect" parent="PowerPlants/Gas" index="3"]
 visible = false
 
-[node name="ResRect" parent="PowerPlants/Gas" index="4"]
-visible = false
-
-[node name="Delete" parent="PowerPlants/Gas" index="5"]
+[node name="Delete" parent="PowerPlants/Gas" index="4"]
 visible = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PowerPlants/Gas"]
@@ -2167,9 +2164,6 @@ texture = ExtResource("10_ueb8a")
 [node name="NameRect" parent="PowerPlants/Hydro" index="3"]
 visible = false
 
-[node name="ResRect" parent="PowerPlants/Hydro" index="4"]
-visible = false
-
 [node name="Water" type="Sprite2D" parent="PowerPlants/Hydro"]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(-40.2271, 108.085)
@@ -2231,9 +2225,6 @@ texture = SubResource("GradientTexture2D_ekq5o")
 [node name="NameRect" parent="PowerPlants/Solar" index="3"]
 visible = false
 
-[node name="ResRect" parent="PowerPlants/Solar" index="4"]
-visible = false
-
 [node name="Sprite2" type="Sprite2D" parent="PowerPlants/Solar"]
 visible = false
 position = Vector2(0, 43)
@@ -2275,9 +2266,6 @@ grow_vertical = 1
 texture = ExtResource("13_buqe2")
 
 [node name="NameRect" parent="PowerPlants/Tree" index="3"]
-visible = false
-
-[node name="ResRect" parent="PowerPlants/Tree" index="4"]
 visible = false
 
 [node name="Wind" parent="PowerPlants" instance=ExtResource("1_wi5q3")]
@@ -2345,9 +2333,6 @@ texture = SubResource("AtlasTexture_tned4")
 offset = Vector2(0, 16)
 
 [node name="NameRect" parent="PowerPlants/Wind" index="3"]
-visible = false
-
-[node name="ResRect" parent="PowerPlants/Wind" index="4"]
 visible = false
 
 [node name="Sprite2" type="Sprite2D" parent="PowerPlants/Wind"]
@@ -2451,9 +2436,6 @@ texture = ExtResource("6_3vcfd")
 [node name="NameRect" parent="PowerPlants/Waste" index="3"]
 visible = false
 
-[node name="ResRect" parent="PowerPlants/Waste" index="4"]
-visible = false
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PowerPlants/Waste"]
 root_node = NodePath("../Sprite")
 libraries = {
@@ -2511,9 +2493,6 @@ texture = ExtResource("5_s6f5j")
 [node name="NameRect" parent="PowerPlants/Biomass" index="3"]
 visible = false
 
-[node name="ResRect" parent="PowerPlants/Biomass" index="4"]
-visible = false
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PowerPlants/Biomass"]
 root_node = NodePath("../Sprite")
 libraries = {
@@ -2566,9 +2545,6 @@ texture = ExtResource("21_g2ord")
 [node name="NameRect" parent="PowerPlants/River" index="3"]
 visible = false
 
-[node name="ResRect" parent="PowerPlants/River" index="4"]
-visible = false
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PowerPlants/River"]
 root_node = NodePath("../Sprite")
 libraries = {
@@ -2599,9 +2575,6 @@ grow_vertical = 1
 texture = ExtResource("10_ueb8a")
 
 [node name="NameRect" parent="PowerPlants/Pump" index="3"]
-visible = false
-
-[node name="ResRect" parent="PowerPlants/Pump" index="4"]
 visible = false
 
 [node name="BuildingInfo" type="ColorRect" parent="."]

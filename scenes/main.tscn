@@ -1959,9 +1959,6 @@ flip_h = true
 offset_top = -268.0
 offset_bottom = -228.0
 
-[node name="NinePatchRect" parent="World/Nuclear3/BuildInfo" index="1"]
-offset_top = -232.0
-
 [node name="LifeSpan" parent="World/Nuclear3/BuildInfo/ColorRect" index="0"]
 visible = true
 
@@ -1971,9 +1968,6 @@ offset_right = 238.0
 offset_bottom = 213.0
 
 [node name="NameRect" parent="World/Nuclear3" index="4"]
-visible = false
-
-[node name="ResRect" parent="World/Nuclear3" index="5"]
 visible = false
 
 [node name="Nuclear2" parent="World" index="6" groups=["PP"]]
@@ -2016,9 +2010,6 @@ position = Vector2(50, -265)
 scale = Vector2(0.647423, 1.21787)
 texture = ExtResource("7_vvt3h")
 
-[node name="NinePatchRect" parent="World/Nuclear2/BuildInfo" index="1"]
-offset_top = -236.0
-
 [node name="LifeSpan" parent="World/Nuclear2/BuildInfo/ColorRect" index="0"]
 visible = true
 
@@ -2028,9 +2019,6 @@ offset_right = 238.0
 offset_bottom = 212.0
 
 [node name="NameRect" parent="World/Nuclear2" index="4"]
-visible = false
-
-[node name="ResRect" parent="World/Nuclear2" index="5"]
 visible = false
 
 [node name="Nuclear" parent="World" index="7" groups=["PP"]]
@@ -2085,9 +2073,6 @@ modulate = Color(1, 1, 1, 0)
 position = Vector2(57, -249.25)
 texture = ExtResource("6_swuok")
 
-[node name="NinePatchRect" parent="World/Nuclear/BuildInfo" index="1"]
-offset_top = -241.0
-
 [node name="LifeSpan" parent="World/Nuclear/BuildInfo/ColorRect" index="0"]
 visible = true
 
@@ -2098,12 +2083,6 @@ offset_bottom = 213.0
 
 [node name="NameRect" parent="World/Nuclear" index="4"]
 visible = false
-
-[node name="ResRect" parent="World/Nuclear" index="5"]
-visible = false
-offset_top = 104.0
-offset_bottom = 133.0
-metadata/_edit_group_ = true
 
 [node name="Geothermal" parent="World" index="8" groups=["PP"]]
 max_upgrade = 1
@@ -2116,9 +2095,6 @@ texture = ExtResource("26_wcdn1")
 flip_h = true
 
 [node name="NameRect" parent="World/Geothermal" index="3"]
-visible = false
-
-[node name="ResRect" parent="World/Geothermal" index="4"]
 visible = false
 
 [node name="Waste" parent="World" index="9" groups=["PP"]]
@@ -2153,9 +2129,6 @@ position = Vector2(76, -330)
 texture = ExtResource("9_2lgj4")
 
 [node name="NameRect" parent="World/Waste" index="4"]
-visible = false
-
-[node name="ResRect" parent="World/Waste" index="5"]
 visible = false
 
 [node name="Biomass" parent="World" index="11" groups=["PP"]]
@@ -2195,9 +2168,6 @@ position = Vector2(-127, -282)
 texture = ExtResource("8_jh2tr")
 
 [node name="NameRect" parent="World/Biomass" index="4"]
-visible = false
-
-[node name="ResRect" parent="World/Biomass" index="5"]
 visible = false
 
 [node name="Wind" parent="World" index="12" groups=["PP"]]
@@ -2243,9 +2213,6 @@ texture = SubResource("AtlasTexture_obbpa")
 offset = Vector2(3, 16)
 
 [node name="NameRect" parent="World/Wind" index="5"]
-visible = false
-
-[node name="ResRect" parent="World/Wind" index="6"]
 visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="World/Wind" index="12"]
@@ -2319,9 +2286,6 @@ texture = SubResource("GradientTexture2D_mhl0d")
 [node name="NameRect" parent="World/Solar" index="5"]
 visible = false
 
-[node name="ResRect" parent="World/Solar" index="6"]
-visible = false
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="World/Solar" index="12"]
 libraries = {
 "": SubResource("AnimationLibrary_1rsdt")
@@ -2369,9 +2333,6 @@ texture = ExtResource("11_nggna")
 flip_h = true
 
 [node name="NameRect" parent="World/Hydro" index="3"]
-visible = false
-
-[node name="ResRect" parent="World/Hydro" index="4"]
 visible = false
 
 [node name="Water" type="Sprite2D" parent="World/Hydro" index="10"]
@@ -2444,34 +2405,31 @@ texture = ExtResource("11_nggna")
 [node name="NameRect" parent="World/Pump" index="3"]
 visible = false
 
-[node name="ResRect" parent="World/Pump" index="4"]
-visible = false
-
-[node name="Water13" type="Sprite2D" parent="World/Pump" index="12"]
+[node name="Water13" type="Sprite2D" parent="World/Pump" index="11"]
 position = Vector2(-37, 86)
 texture = ExtResource("11_y3iyb")
 
-[node name="Water14" type="Sprite2D" parent="World/Pump" index="13"]
+[node name="Water14" type="Sprite2D" parent="World/Pump" index="12"]
 position = Vector2(-61, 78)
 texture = ExtResource("24_n8myi")
 
-[node name="Water15" type="Sprite2D" parent="World/Pump" index="14"]
+[node name="Water15" type="Sprite2D" parent="World/Pump" index="13"]
 position = Vector2(-61, 118)
 texture = ExtResource("24_n8myi")
 
-[node name="Water10" type="Sprite2D" parent="World/Pump" index="15"]
+[node name="Water10" type="Sprite2D" parent="World/Pump" index="14"]
 position = Vector2(-40.3934, 73.4594)
 scale = Vector2(0.8, 0.8)
 skew = -0.174533
 texture = ExtResource("26_fkwhx")
 flip_h = true
 
-[node name="Water12" type="Sprite2D" parent="World/Pump" index="16"]
+[node name="Water12" type="Sprite2D" parent="World/Pump" index="15"]
 modulate = Color(1, 1, 1, 0.498039)
 position = Vector2(-29, 70)
 texture = ExtResource("26_fkwhx")
 
-[node name="Water11" type="Sprite2D" parent="World/Pump" index="17"]
+[node name="Water11" type="Sprite2D" parent="World/Pump" index="16"]
 position = Vector2(-32.3936, 91.4592)
 rotation = -3.14159
 scale = Vector2(0.8, 0.8)
@@ -2479,7 +2437,7 @@ skew = -0.174533
 texture = ExtResource("26_fkwhx")
 flip_h = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="World/Pump" index="18"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="World/Pump" index="17"]
 libraries = {
 "": SubResource("AnimationLibrary_lb77a")
 }
@@ -2494,9 +2452,6 @@ visible = false
 texture = ExtResource("9_agn8w")
 
 [node name="NameRect" parent="World/River" index="3"]
-visible = false
-
-[node name="ResRect" parent="World/River" index="4"]
 visible = false
 
 [node name="Water" type="Sprite2D" parent="World/River" index="10"]
@@ -2562,34 +2517,31 @@ texture = ExtResource("9_agn8w")
 [node name="NameRect" parent="World/River2" index="3"]
 visible = false
 
-[node name="ResRect" parent="World/River2" index="4"]
-visible = false
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="World/River2" index="12"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="World/River2" index="11"]
 libraries = {
 "": SubResource("AnimationLibrary_a8121")
 }
 autoplay = "Water"
 
-[node name="Water3" type="Sprite2D" parent="World/River2" index="13"]
+[node name="Water3" type="Sprite2D" parent="World/River2" index="12"]
 modulate = Color(1, 1, 1, 0.662745)
 position = Vector2(60, 110)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("11_y3iyb")
 
-[node name="Water" type="Sprite2D" parent="World/River2" index="14"]
+[node name="Water" type="Sprite2D" parent="World/River2" index="13"]
 modulate = Color(1, 1, 1, 0.764706)
 position = Vector2(70.4502, 104.5)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("32_dhm8b")
 
-[node name="Water4" type="Sprite2D" parent="World/River2" index="15"]
+[node name="Water4" type="Sprite2D" parent="World/River2" index="14"]
 modulate = Color(1, 1, 1, 0.384314)
 position = Vector2(60, 90)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("32_dhm8b")
 
-[node name="Water2" type="Sprite2D" parent="World/River2" index="16"]
+[node name="Water2" type="Sprite2D" parent="World/River2" index="15"]
 modulate = Color(1, 1, 1, 0.709804)
 position = Vector2(70.4502, 104.5)
 scale = Vector2(0.7, 0.7)
@@ -2605,9 +2557,6 @@ visible = false
 texture = ExtResource("34_jc6ff")
 
 [node name="NameRect" parent="World/Gas" index="3"]
-visible = false
-
-[node name="ResRect" parent="World/Gas" index="4"]
 visible = false
 
 [node name="UI" parent="." instance=ExtResource("2_d60f5")]

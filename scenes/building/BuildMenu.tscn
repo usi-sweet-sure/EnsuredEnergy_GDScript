@@ -98,6 +98,7 @@ color = Color(0.180392, 0.180392, 0.180392, 0)
 [node name="Solar" parent="Container" instance=ExtResource("2_236y8")]
 position = Vector2(194, 167)
 scale = Vector2(0.9, 0.9)
+availability = Vector2(0.8, 0.2)
 plant_name = "solar"
 metadata/_edit_group_ = true
 
@@ -123,6 +124,7 @@ flat = true
 [node name="Wind" parent="Container" instance=ExtResource("2_236y8")]
 position = Vector2(420, 167)
 scale = Vector2(0.9, 0.9)
+availability = Vector2(0.1, 0.9)
 plant_name = "wind"
 build_time = 2
 metadata/_edit_group_ = true
@@ -166,6 +168,7 @@ flat = true
 [node name="Tree" parent="Container" instance=ExtResource("2_236y8")]
 position = Vector2(1322, 166)
 scale = Vector2(0.9, 0.9)
+availability = Vector2(0, 0)
 metadata/_edit_group_ = true
 
 [node name="Price" parent="Container/Tree/PreviewInfo" index="3"]
@@ -184,7 +187,7 @@ offset_right = -155.0
 offset_bottom = -320.0
 scale = Vector2(0.5, 0.5)
 
-[node name="Name" parent="Container/Tree/BuildInfo" index="5"]
+[node name="Name" parent="Container/Tree/BuildInfo" index="4"]
 theme_override_font_sizes/font_size = 20
 
 [node name="TreeButton" type="Button" parent="Container/Tree"]
@@ -199,6 +202,7 @@ flat = true
 visible = false
 position = Vector2(194, 167)
 scale = Vector2(0.9, 0.9)
+plant_name = "hydro"
 metadata/_edit_group_ = true
 
 [node name="Price" parent="Container/Hydro/PreviewInfo" index="3"]
@@ -264,6 +268,7 @@ flat = true
 [node name="Waste" parent="Container" instance=ExtResource("2_236y8")]
 position = Vector2(872.001, 166)
 scale = Vector2(0.9, 0.9)
+plant_name = "waste"
 metadata/_edit_group_ = true
 
 [node name="PreviewInfo" parent="Container/Waste" index="0"]
@@ -296,16 +301,7 @@ scale = Vector2(0.5, 0.5)
 [node name="NameRect" parent="Container/Waste" index="3"]
 metadata/_edit_use_anchors_ = true
 
-[node name="ResRect" parent="Container/Waste" index="4"]
-metadata/_edit_use_anchors_ = true
-
-[node name="EnergyS" parent="Container/Waste/ResRect" index="6"]
-metadata/_edit_use_anchors_ = true
-
-[node name="EnergyW" parent="Container/Waste/ResRect" index="7"]
-metadata/_edit_use_anchors_ = true
-
-[node name="InfoButton" parent="Container/Waste" index="6"]
+[node name="InfoButton" parent="Container/Waste" index="5"]
 metadata/_edit_use_anchors_ = true
 
 [node name="WasteButton" type="Button" parent="Container/Waste"]
@@ -320,6 +316,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Biomass" parent="Container" instance=ExtResource("2_236y8")]
 position = Vector2(1097, 166)
 scale = Vector2(0.9, 0.9)
+plant_name = "biomass"
 metadata/_edit_group_ = true
 
 [node name="PreviewInfo" parent="Container/Biomass" index="0"]
@@ -353,16 +350,7 @@ scale = Vector2(0.5, 0.5)
 [node name="NameRect" parent="Container/Biomass" index="3"]
 metadata/_edit_use_anchors_ = true
 
-[node name="ResRect" parent="Container/Biomass" index="4"]
-metadata/_edit_use_anchors_ = true
-
-[node name="EnergyS" parent="Container/Biomass/ResRect" index="6"]
-metadata/_edit_use_anchors_ = true
-
-[node name="EnergyW" parent="Container/Biomass/ResRect" index="7"]
-metadata/_edit_use_anchors_ = true
-
-[node name="InfoButton" parent="Container/Biomass" index="6"]
+[node name="InfoButton" parent="Container/Biomass" index="5"]
 metadata/_edit_use_anchors_ = true
 
 [node name="BiomassButton" type="Button" parent="Container/Biomass"]
@@ -378,6 +366,7 @@ metadata/_edit_use_anchors_ = true
 visible = false
 position = Vector2(420, 167)
 scale = Vector2(0.9, 0.9)
+plant_name = "river"
 metadata/_edit_group_ = true
 
 [node name="PreviewInfo" parent="Container/River" index="0"]
@@ -414,16 +403,7 @@ scale = Vector2(0.5, 0.5)
 [node name="NameRect" parent="Container/River" index="3"]
 metadata/_edit_use_anchors_ = true
 
-[node name="ResRect" parent="Container/River" index="4"]
-metadata/_edit_use_anchors_ = true
-
-[node name="EnergyS" parent="Container/River/ResRect" index="6"]
-metadata/_edit_use_anchors_ = true
-
-[node name="EnergyW" parent="Container/River/ResRect" index="7"]
-metadata/_edit_use_anchors_ = true
-
-[node name="InfoButton" parent="Container/River" index="6"]
+[node name="InfoButton" parent="Container/River" index="5"]
 metadata/_edit_use_anchors_ = true
 
 [node name="RiverButton" type="Button" parent="Container/River"]
@@ -471,16 +451,7 @@ scale = Vector2(0.5, 0.5)
 [node name="NameRect" parent="Container/Pump" index="3"]
 metadata/_edit_use_anchors_ = true
 
-[node name="ResRect" parent="Container/Pump" index="4"]
-metadata/_edit_use_anchors_ = true
-
-[node name="EnergyS" parent="Container/Pump/ResRect" index="6"]
-metadata/_edit_use_anchors_ = true
-
-[node name="EnergyW" parent="Container/Pump/ResRect" index="7"]
-metadata/_edit_use_anchors_ = true
-
-[node name="InfoButton" parent="Container/Pump" index="6"]
+[node name="InfoButton" parent="Container/Pump" index="5"]
 metadata/_edit_use_anchors_ = true
 
 [node name="PumpButton" type="Button" parent="Container/Pump"]

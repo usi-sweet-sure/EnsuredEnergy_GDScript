@@ -56,7 +56,7 @@ func _check_supply():
 	else:
 		return false
 	
-func _on_request_finished(result, response_code, headers, body):
+func _on_request_finished(_result, _response_code, _headers, _body):
 	_update_supply()
 	
 
