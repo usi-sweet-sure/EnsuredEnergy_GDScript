@@ -1,7 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://c81iji81uc4g7"]
+[gd_scene load_steps=16 format=3 uid="uid://c81iji81uc4g7"]
 
 [ext_resource type="Texture2D" uid="uid://dm24o8isvyq3f" path="res://assets/UI Elements/Import-Slider.png" id="1_wlgbb"]
-[ext_resource type="Texture2D" uid="uid://bticb2k83c61t" path="res://assets/UI Elements/Import-line-limit.png" id="2_mncwm"]
 [ext_resource type="Texture2D" uid="uid://dwys7y27kiabl" path="res://assets/UI Elements/Import-Switch-On.png" id="3_5cyy2"]
 [ext_resource type="Texture2D" uid="uid://dhxkhfg2qxlgx" path="res://assets/UI Elements/Import-Switch-Off.png" id="4_h7pam"]
 [ext_resource type="Texture2D" uid="uid://ftccvuweij8o" path="res://assets/UI Elements/Import-line.png" id="7_ielfg"]
@@ -37,11 +36,6 @@ max_value = 50.0
 scrollable = false
 tick_count = 2
 ticks_on_borders = true
-
-[node name="Target" type="Sprite2D" parent="."]
-show_behind_parent = true
-position = Vector2(-5, 220)
-texture = ExtResource("2_mncwm")
 
 [node name="Import-line" type="Sprite2D" parent="."]
 show_behind_parent = true

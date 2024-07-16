@@ -28,15 +28,9 @@ value = 50.0
 show_percentage = false
 script = ExtResource("2_px67k")
 
-[node name="Target" type="Line2D" parent="."]
-position = Vector2(-195, -616.5)
-points = PackedVector2Array(332, 643.5, 332, 616.5)
-width = 2.0
-default_color = Color(1, 1, 1, 0)
-
-[node name="Energy-limit" type="Sprite2D" parent="Target"]
-z_index = 2
-position = Vector2(332, 630.5)
+[node name="DemandLine" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(0, 20)
 rotation = 1.5708
 texture = ExtResource("3_rqqb7")
 
