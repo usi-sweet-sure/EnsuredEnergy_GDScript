@@ -1909,6 +1909,8 @@ script = ExtResource("3_2lui3")
 texture_filter = 2
 
 [node name="Nuclear3" parent="World" index="5" groups=["PP"]]
+plant_name = "NUCLEAR"
+life_span = 3
 max_upgrade = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="World/Nuclear3" index="0"]
@@ -1972,6 +1974,8 @@ visible = false
 
 [node name="Nuclear2" parent="World" index="6" groups=["PP"]]
 position = Vector2(1479, -248)
+plant_name = "NUCLEAR"
+life_span = 6
 max_upgrade = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="World/Nuclear2" index="0"]
@@ -2023,6 +2027,8 @@ visible = false
 
 [node name="Nuclear" parent="World" index="7" groups=["PP"]]
 position = Vector2(1001, 130)
+plant_name = "NUCLEAR"
+life_span = 9
 max_upgrade = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="World/Nuclear" index="0"]
@@ -2085,6 +2091,7 @@ offset_bottom = 213.0
 visible = false
 
 [node name="Geothermal" parent="World" index="8" groups=["PP"]]
+plant_name = "GEOTHERMAL"
 max_upgrade = 1
 
 [node name="PreviewInfo" parent="World/Geothermal" index="0"]
@@ -2099,6 +2106,7 @@ visible = false
 
 [node name="Waste" parent="World" index="9" groups=["PP"]]
 position = Vector2(-16, 1056)
+plant_name = "WASTE"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="World/Waste" index="0"]
 root_node = NodePath("../Sprite")
@@ -2133,6 +2141,7 @@ visible = false
 
 [node name="Biomass" parent="World" index="11" groups=["PP"]]
 position = Vector2(-784, 1288)
+plant_name = "BIOMASS"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="World/Biomass" index="0"]
 root_node = NodePath("../Sprite")
@@ -2172,6 +2181,7 @@ visible = false
 
 [node name="Wind" parent="World" index="12" groups=["PP"]]
 position = Vector2(-556, 553)
+plant_name = "WIND"
 
 [node name="PreviewInfo" parent="World/Wind" index="0"]
 visible = false
@@ -2256,6 +2266,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Solar" parent="World" index="22" groups=["PP"]]
 position = Vector2(3456, 1224)
+plant_name = "SOLAR"
 
 [node name="PreviewInfo" parent="World/Solar" index="0"]
 visible = false
@@ -2324,6 +2335,7 @@ visible = true
 
 [node name="Hydro" parent="World" index="26" groups=["PP"]]
 position = Vector2(360, 1982)
+plant_name = "HYDRO"
 
 [node name="PreviewInfo" parent="World/Hydro" index="0"]
 visible = false
@@ -2394,6 +2406,7 @@ libraries = {
 autoplay = "Water"
 
 [node name="Pump" parent="World" index="29" groups=["PP"]]
+plant_name = "HYDRO"
 
 [node name="PreviewInfo" parent="World/Pump" index="0"]
 visible = false
@@ -2444,6 +2457,8 @@ libraries = {
 autoplay = "Water"
 
 [node name="River" parent="World" index="30" groups=["PP"]]
+availability = Vector2(0.6, 0.4)
+plant_name = "RIVER"
 
 [node name="PreviewInfo" parent="World/River" index="0"]
 visible = false
@@ -2507,6 +2522,8 @@ autoplay = "Water"
 
 [node name="River2" parent="World" index="31" groups=["PP"]]
 scale = Vector2(0.8, 0.8)
+availability = Vector2(0.6, 0.4)
+plant_name = "RIVER"
 
 [node name="PreviewInfo" parent="World/River2" index="0"]
 visible = false
@@ -2548,6 +2565,7 @@ scale = Vector2(0.7, 0.7)
 texture = ExtResource("33_1wxp6")
 
 [node name="Gas" parent="World" index="38"]
+plant_name = "GAS"
 max_upgrade = 1
 
 [node name="PreviewInfo" parent="World/Gas" index="0"]

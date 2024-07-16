@@ -2072,6 +2072,7 @@ offset = Vector2(18, -15)
 [node name="Gas" parent="PowerPlants" instance=ExtResource("1_wi5q3")]
 visible = false
 position = Vector2(369, 78)
+plant_name = "GAS"
 
 [node name="PreviewInfo" parent="PowerPlants/Gas" index="0"]
 visible = false
@@ -2142,7 +2143,7 @@ texture = ExtResource("6_3vcfd")
 [node name="Hydro" parent="PowerPlants" instance=ExtResource("1_wi5q3")]
 visible = false
 position = Vector2(370, 80)
-plant_name = "hydro"
+plant_name = "HYDRO"
 
 [node name="PreviewInfo" parent="PowerPlants/Hydro" index="0"]
 visible = false
@@ -2196,7 +2197,7 @@ autoplay = "water"
 [node name="Solar" parent="PowerPlants" instance=ExtResource("1_wi5q3")]
 visible = false
 position = Vector2(431, 151)
-plant_name = "solar"
+plant_name = "SOLAR"
 
 [node name="PreviewInfo" parent="PowerPlants/Solar" index="0"]
 visible = false
@@ -2247,6 +2248,7 @@ autoplay = "sun"
 [node name="Tree" parent="PowerPlants" instance=ExtResource("1_wi5q3")]
 visible = false
 position = Vector2(431, 151)
+plant_name = "GAS"
 
 [node name="PreviewInfo" parent="PowerPlants/Tree" index="0"]
 visible = false
@@ -2271,7 +2273,7 @@ visible = false
 [node name="Wind" parent="PowerPlants" instance=ExtResource("1_wi5q3")]
 visible = false
 position = Vector2(431, 151)
-plant_name = "wind"
+plant_name = "WIND"
 
 [node name="PreviewInfo" parent="PowerPlants/Wind" index="0"]
 visible = false
@@ -2384,7 +2386,7 @@ autoplay = "spin"
 [node name="Waste" parent="PowerPlants" instance=ExtResource("1_wi5q3")]
 visible = false
 position = Vector2(431, 151)
-plant_name = "waste"
+plant_name = "WASTE"
 
 [node name="PreviewInfo" parent="PowerPlants/Waste" index="0"]
 visible = false
@@ -2446,7 +2448,7 @@ autoplay = "Smoke"
 [node name="Biomass" parent="PowerPlants" instance=ExtResource("1_wi5q3")]
 visible = false
 position = Vector2(431, 151)
-plant_name = "biomass"
+plant_name = "BIOMASS"
 
 [node name="PreviewInfo" parent="PowerPlants/Biomass" index="0"]
 visible = false
@@ -2503,7 +2505,7 @@ autoplay = "Smoke"
 [node name="River" parent="PowerPlants" instance=ExtResource("1_wi5q3")]
 visible = false
 position = Vector2(431, 151)
-plant_name = "river"
+plant_name = "RIVER"
 
 [node name="PreviewInfo" parent="PowerPlants/River" index="0"]
 visible = false
@@ -2555,7 +2557,7 @@ autoplay = "water"
 [node name="Pump" parent="PowerPlants" instance=ExtResource("1_wi5q3")]
 visible = false
 position = Vector2(431, 151)
-plant_name = "hydro"
+plant_name = "HYDRO"
 
 [node name="PreviewInfo" parent="PowerPlants/Pump" index="0"]
 visible = false

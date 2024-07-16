@@ -48,3 +48,14 @@ TUTOBUBBLE1,Import more energy here,Voici la barre d'importation,Hier kannst du 
 TUTOBUBBLE2,Build new power plants,Le bouton de construction,Du kannst neue Kraftwerke bauen,Costruire nuove centrali elettriche
 TUTOBUBBLE3,Upgrade existing power plant,Améliorer les centrales existantes,Du kannst bestehende Kraftwerk aufrüsten,Ampiamento della centrale elettrica esistente
 TUTOBUBBLE4,Implement policies,Le bouton de politique,Du kannst politische Massnahmen ergreifen,Implementare le politiche
+POLLUTION,Pollution,,,
+LAND_USE,Land use,,,
+PROD_COST,Production costs,,,
+GAS,Gas,,,
+NUCLEAR,Nuclear,,,
+HYDRO,Hydro,,,
+WASTE,Waste,,,
+BIOMASS,Biomass,,,
+SOLAR,Solar,,,
+WIND,Wind,,,
+GEOTHERMAL,Geothermal,,,
