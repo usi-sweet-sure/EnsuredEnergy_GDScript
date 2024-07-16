@@ -38,7 +38,7 @@ var supply_summer: int = 0:
 var supply_winter: int = 0:
 	set(new_value):
 		supply_winter = new_value
-		print("Summer supply updated : " + str(supply_winter))
+		print("Winter supply updated : " + str(supply_winter))
 		energy_supply_updated_winter.emit(supply_winter)
 var energy_import_cost: int = 0:
 	get:

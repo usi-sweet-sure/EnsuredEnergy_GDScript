@@ -39,6 +39,7 @@ func _on_energy_demand_updated(demand):
 	var bar_height = size.x
 	demand_line.position.x = bar_height / max_value * demand
 
+
 # Updates the progress bar
 func _on_energy_supply_updated(supply):
 	value = supply
