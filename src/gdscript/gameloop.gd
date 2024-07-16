@@ -5,7 +5,7 @@ var n_turns: int = 10
 var start_money: int = 250
 var money_per_turn: int = 250
 var current_turn: int = 1 #player action always take place in the following year
-var green_energy_import_factor: int = 3
+var green_energy_import_factor: float = 1.5
 
 var demand_availability = Vector2(0.45, 0.55)
 var year_list = []
@@ -45,7 +45,7 @@ var energy_import_cost: int = 0:
 		if not green_energy_import_on:
 			return energy_import_cost
 		else:
-			return energy_import_cost * green_energy_import_factor
+			return round(energy_import_cost * green_energy_import_factor)
 	set(new_value):
 		energy_import_cost = new_value
 		energy_import_cost_updated.emit(energy_import_cost)
