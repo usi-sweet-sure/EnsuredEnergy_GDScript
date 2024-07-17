@@ -23,19 +23,13 @@ extends Control
 @onready var money_info_closed_rool_sprite = $MoneyInfo/MoneyInfoBox/MarginContainer/InfoMoneyClosed
 
 
-
 func _ready():
 	Gameloop.borrowed_money_amount_updated.connect(_on_borrowed_money_amount_updated)
 
-# Updates the labels in the borrow money frame and the money info box
+# Updates the borrowed money labels in the money info box
 func _on_borrowed_money_amount_updated(borrowed_amount):
-	var borrowed_amount_to_str = str(borrowed_amount)
-	var debt_amount_to_str = str(borrowed_amount * (1.0 + (Gameloop.debt_percentage_on_borrowed_money / 100.0)))
-	
-	borrowed_amount_label.text = borrowed_amount_to_str
-	debt_amount_label.text = debt_amount_to_str
-	borrowed_amount_label_in_info_box.text = borrowed_amount_to_str
-	debt_amount_label_in_info_box.text = "-" + debt_amount_to_str
+	borrowed_amount_label_in_info_box.text = str(borrowed_amount)
+	debt_amount_label_in_info_box.text = "-" + str(borrowed_amount * (1.0 + (Gameloop.debt_percentage_on_borrowed_money / 100.0)))
 	borrowed_money_info_box.visible = borrowed_amount > 0
 
 # Toggles information about money
@@ -61,10 +55,12 @@ func _unhandled_input(event):
 # Shows the borrow money frame
 func _on_borrow_money_button_pressed():
 	borrow_money_frame.visible = not borrow_money_frame.visible
-
+	borrowed_money_slider.value = 0
+	
 
 func _on_borrow_money_cancel_button_pressed():
 	borrow_money_frame.hide();
+	
 
 # Moving the slider only updates the labels in the borrow money frame
 func _on_borrow_money_slider_value_changed(value):
@@ -74,4 +70,5 @@ func _on_borrow_money_slider_value_changed(value):
 
 # Will call 'self._on_borrowed_money_amount_updated' through the signal connected in 'self._ready'
 func _on_borrow_money_apply_pressed():
-	Gameloop.borrowed_money_amount = borrowed_money_slider.value
+	Gameloop.borrowed_money_amount += borrowed_money_slider.value
+	borrowed_money_slider.value = 0
