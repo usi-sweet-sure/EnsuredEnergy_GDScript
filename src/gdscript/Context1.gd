@@ -7,7 +7,7 @@ var http1
 #globals
 var res_id = 1
 var res_name = "new123"
-var yr = 2023
+var yr = 2022
 var prm_id = 186
 var tj = 8000
 
