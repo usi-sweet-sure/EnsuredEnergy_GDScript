@@ -1,9 +1,8 @@
-[gd_scene load_steps=118 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=126 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Script" path="res://src/gdscript/hud/UI.gd" id="1_i7b76"]
 [ext_resource type="Texture2D" uid="uid://dik8jskwri4ev" path="res://assets/UI Elements/Profil-metal.png" id="1_ooswe"]
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/UI Elements/Button-Next-Normal.png" id="2_aobed"]
-[ext_resource type="Script" path="res://src/gdscript/hud/money_management.gd" id="2_qw05x"]
 [ext_resource type="PackedScene" uid="uid://d2hyunjbx7qb7" path="res://scenes/hud/energy_bar.tscn" id="3_fm1y6"]
 [ext_resource type="Texture2D" uid="uid://biq6v1m7nc6l" path="res://assets/UI Elements/Button-Next-Press.png" id="3_qtdni"]
 [ext_resource type="PackedScene" uid="uid://u1nvhv5ceok" path="res://scenes/hud/BarInfo.tscn" id="4_67rbh"]
@@ -58,11 +57,16 @@
 [ext_resource type="Texture2D" uid="uid://ckf6s1uhm87ae" path="res://assets/UI Elements/Policies_Base-1.png" id="50_inaxr"]
 [ext_resource type="FontFile" uid="uid://dxtsp51pqna2o" path="res://assets/Fonts/static/OpenSans-Bold.ttf" id="51_joowr"]
 [ext_resource type="Texture2D" uid="uid://co2hnnf0cnn72" path="res://assets/UI Elements/Plant_Menu_Base.png" id="52_tsua8"]
+[ext_resource type="Script" path="res://src/gdscript/hud/money_management/money_info_box/money_info_box.gd" id="53_cwkn3"]
 [ext_resource type="FontFile" uid="uid://bwuskgw4ek8y" path="res://assets/Fonts/static/OpenSans-Medium.ttf" id="53_v477p"]
 [ext_resource type="Texture2D" uid="uid://od33hjtqpm14" path="res://assets/UI Elements/Build_Menu_0003_Numbers-hole.png" id="54_7juy1"]
 [ext_resource type="Texture2D" uid="uid://bobwaj4wxr0fj" path="res://assets/UI Elements/Build_Menu_0002_Numbers-counter-1.png" id="55_5s2up"]
 [ext_resource type="Texture2D" uid="uid://di8qa6b8ro5rr" path="res://assets/UI Elements/Paper-Small.png" id="55_5ylb2"]
+[ext_resource type="Script" path="res://src/gdscript/hud/money_management/money_info_box/info_money_closed_scroll.gd" id="55_ikt4p"]
+[ext_resource type="Script" path="res://src/gdscript/hud/money_management/money_info_box/info_money_opened_scroll.gd" id="55_q3xbm"]
+[ext_resource type="Script" path="res://src/gdscript/hud/money_management/money_info_box/money_info_box_texts_container.gd" id="56_3y5yk"]
 [ext_resource type="Script" path="res://src/gdscript/hud/clock.gd" id="57_lg17s"]
+[ext_resource type="Script" path="res://src/gdscript/hud/money_management/money_info_box/borrowed_money_labels.gd" id="58_c856x"]
 [ext_resource type="FontFile" uid="uid://jsoamputail4" path="res://assets/Fonts/static/OpenSans-SemiBold.ttf" id="59_nmkxq"]
 [ext_resource type="Texture2D" uid="uid://bbjycbp8muvr1" path="res://assets/UI Elements/Import-bar-hole.png" id="60_gik5m"]
 [ext_resource type="Texture2D" uid="uid://cqekiqjn8gvh7" path="res://assets/UI Elements/Button-Play-normal.png" id="61_i4pr1"]
@@ -72,6 +76,10 @@
 [ext_resource type="Texture2D" uid="uid://cuhckno2t6g0r" path="res://assets/UI Elements/Button-hover.png" id="63_c1xpc"]
 [ext_resource type="Texture2D" uid="uid://0od1i8cgelas" path="res://assets/UI Elements/Button-Play-hover.png" id="63_klrtp"]
 [ext_resource type="PackedScene" uid="uid://ciphd0cmpslrn" path="res://scenes/hud/tutorial.tscn" id="63_perny"]
+[ext_resource type="Script" path="res://src/gdscript/hud/money_management/borrow_money_frame/borrow_money_frame.gd" id="63_sky43"]
+[ext_resource type="Script" path="res://src/gdscript/hud/money_management/borrow_money_frame/borrow_amount_label.gd" id="65_rjxqh"]
+[ext_resource type="Script" path="res://src/gdscript/hud/money_management/borrow_money_frame/borrow_money_slider.gd" id="66_0vfa5"]
+[ext_resource type="Script" path="res://src/gdscript/hud/money_management/borrow_money_frame/debt_amount_label.gd" id="66_c76li"]
 [ext_resource type="Script" path="res://src/gdscript/hud/energy_import/import_cost_label.gd" id="67_ohk5r"]
 [ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="70_2ktfd"]
 [ext_resource type="Script" path="res://src/gdscript/hud/energy_import/green_import_switch.gd" id="71_dp47n"]
@@ -1941,14 +1949,13 @@ region_rect = Rect2(2, 0, 278, 194)
 [node name="MoneyManagement" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("2_qw05x")
 
 [node name="MoneyInfo" type="Control" parent="MoneyManagement"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="MoneyInfoButton" type="Button" parent="MoneyManagement/MoneyInfo"]
+[node name="ToggleMoneyInfoBoxButton" type="Button" parent="MoneyManagement/MoneyInfo"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -1964,7 +1971,6 @@ flat = true
 alignment = 0
 
 [node name="MoneyInfoBox" type="Control" parent="MoneyManagement/MoneyInfo"]
-visible = false
 layout_mode = 1
 anchor_left = 0.233
 anchor_top = 0.076
@@ -1975,6 +1981,7 @@ offset_top = 4.96
 offset_right = 803.68
 offset_bottom = 349.96
 grow_horizontal = 0
+script = ExtResource("53_cwkn3")
 
 [node name="MarginContainer" type="MarginContainer" parent="MoneyManagement/MoneyInfo/MoneyInfoBox"]
 layout_mode = 0
@@ -1993,6 +2000,7 @@ patch_margin_left = 42
 patch_margin_top = 92
 patch_margin_right = 56
 patch_margin_bottom = 102
+script = ExtResource("55_ikt4p")
 
 [node name="InfoMoneyOpen" type="NinePatchRect" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer"]
 visible = false
@@ -2003,6 +2011,7 @@ patch_margin_left = 52
 patch_margin_top = 92
 patch_margin_right = 40
 patch_margin_bottom = 80
+script = ExtResource("55_q3xbm")
 
 [node name="MarginContainer" type="MarginContainer" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer"]
 layout_mode = 2
@@ -2011,11 +2020,12 @@ theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 84
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer"]
+[node name="MoneyInfoBoxTextsContainer" type="VBoxContainer" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 14
+script = ExtResource("56_3y5yk")
 
-[node name="ColumnsName" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/VBoxContainer"]
+[node name="ColumnsName" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer"]
 layout_mode = 2
 theme = ExtResource("70_2ktfd")
 theme_type_variation = &"Paper"
@@ -2023,7 +2033,7 @@ theme_override_font_sizes/font_size = 24
 text = " "
 vertical_alignment = 1
 
-[node name="Now" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/VBoxContainer/ColumnsName"]
+[node name="Now" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer/ColumnsName"]
 layout_mode = 0
 offset_left = 103.0
 offset_top = -3.0
@@ -2037,7 +2047,7 @@ text = "Now"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="Next" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/VBoxContainer/ColumnsName"]
+[node name="Next" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer/ColumnsName"]
 layout_mode = 0
 offset_left = 207.0
 offset_top = -3.0
@@ -2051,7 +2061,7 @@ text = "Next Turn"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="Budget" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/VBoxContainer"]
+[node name="Budget" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer"]
 layout_mode = 2
 theme = ExtResource("70_2ktfd")
 theme_type_variation = &"Paper"
@@ -2060,7 +2070,7 @@ theme_override_font_sizes/font_size = 26
 text = "Budget:"
 vertical_alignment = 1
 
-[node name="budgetNow" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/VBoxContainer/Budget"]
+[node name="budgetNow" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer/Budget"]
 layout_mode = 0
 offset_left = 103.0
 offset_top = -3.0
@@ -2074,7 +2084,7 @@ text = "000"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="budgetNext" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/VBoxContainer/Budget"]
+[node name="budgetNext" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer/Budget"]
 layout_mode = 0
 offset_left = 200.0
 offset_top = -3.0
@@ -2088,7 +2098,7 @@ text = "000"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="BudgetText" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/VBoxContainer"]
+[node name="BudgetText" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer"]
 visible = false
 layout_mode = 2
 theme = ExtResource("70_2ktfd")
@@ -2098,7 +2108,7 @@ text = "The budget shows you how much money you have and can spend. You start th
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Production" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/VBoxContainer"]
+[node name="Production" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer"]
 layout_mode = 2
 theme = ExtResource("70_2ktfd")
 theme_type_variation = &"Paper"
@@ -2107,7 +2117,7 @@ theme_override_font_sizes/font_size = 26
 text = "Production: "
 vertical_alignment = 1
 
-[node name="prod" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/VBoxContainer/Production"]
+[node name="prod" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer/Production"]
 layout_mode = 0
 offset_left = 203.0
 offset_top = -5.0
@@ -2121,7 +2131,7 @@ text = "000"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="ProductionText" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/VBoxContainer"]
+[node name="ProductionText" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer"]
 visible = false
 layout_mode = 2
 theme = ExtResource("70_2ktfd")
@@ -2131,7 +2141,7 @@ text = "Some power plants have production costs because they need materials to r
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Building" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/VBoxContainer"]
+[node name="Building" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer"]
 layout_mode = 2
 theme = ExtResource("70_2ktfd")
 theme_type_variation = &"Paper"
@@ -2140,7 +2150,7 @@ theme_override_font_sizes/font_size = 26
 text = "Building: "
 vertical_alignment = 1
 
-[node name="build" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/VBoxContainer/Building"]
+[node name="build" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer/Building"]
 layout_mode = 0
 offset_left = 105.0
 offset_top = -4.0
@@ -2154,7 +2164,7 @@ text = "000"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="BuildingText" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/VBoxContainer"]
+[node name="BuildingText" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer"]
 visible = false
 layout_mode = 2
 theme = ExtResource("70_2ktfd")
@@ -2164,7 +2174,7 @@ text = "Indicates how much you have spent on building or upgrading power plants.
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Import" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/VBoxContainer"]
+[node name="Import" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer"]
 layout_mode = 2
 theme = ExtResource("70_2ktfd")
 theme_type_variation = &"Paper"
@@ -2172,7 +2182,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 26
 text = "Import:"
 
-[node name="importamounts" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/VBoxContainer/Import"]
+[node name="importamounts" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer/Import"]
 layout_mode = 2
 offset_left = 214.0
 offset_top = 2.0
@@ -2185,7 +2195,7 @@ theme_override_font_sizes/font_size = 26
 text = "000"
 horizontal_alignment = 2
 
-[node name="ImportText" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/VBoxContainer"]
+[node name="ImportText" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer"]
 visible = false
 layout_mode = 2
 theme = ExtResource("70_2ktfd")
@@ -2194,15 +2204,16 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Indicates how much you will be spending on imports. Clean imports cost N more."
 autowrap_mode = 3
 
-[node name="Debt" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/VBoxContainer"]
+[node name="BorrowedMoney" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer"]
 visible = false
 layout_mode = 2
 theme = ExtResource("70_2ktfd")
 theme_type_variation = &"Paper"
 theme_override_font_sizes/font_size = 26
 text = "Loan:"
+script = ExtResource("58_c856x")
 
-[node name="debtAmount" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/VBoxContainer/Debt"]
+[node name="DebtAmount" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer/BorrowedMoney"]
 layout_mode = 2
 offset_left = 214.0
 offset_top = 2.0
@@ -2215,7 +2226,7 @@ theme_override_font_sizes/font_size = 26
 text = "000"
 horizontal_alignment = 2
 
-[node name="borrowAmount" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/VBoxContainer/Debt"]
+[node name="BorrowedAmount" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer/BorrowedMoney"]
 layout_mode = 2
 offset_left = 117.0
 offset_top = 2.0
@@ -2228,7 +2239,7 @@ theme_override_font_sizes/font_size = 26
 text = "000"
 horizontal_alignment = 2
 
-[node name="DebtText" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/VBoxContainer"]
+[node name="DebtText" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer"]
 visible = false
 layout_mode = 2
 theme = ExtResource("70_2ktfd")
@@ -2237,7 +2248,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Indicated how much money you owe."
 autowrap_mode = 3
 
-[node name="Total" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/VBoxContainer"]
+[node name="Total" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer"]
 layout_mode = 2
 theme = ExtResource("70_2ktfd")
 theme_type_variation = &"Paper"
@@ -2245,7 +2256,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 26
 text = "Total"
 
-[node name="TotalNow" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/VBoxContainer/Total"]
+[node name="TotalNow" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer/Total"]
 layout_mode = 2
 offset_left = 116.0
 offset_top = 2.0
@@ -2258,7 +2269,7 @@ theme_override_font_sizes/font_size = 26
 text = "000"
 horizontal_alignment = 2
 
-[node name="TotalNext" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/VBoxContainer/Total"]
+[node name="TotalNext" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer/Total"]
 layout_mode = 2
 offset_left = 214.0
 offset_top = 2.0
@@ -2305,7 +2316,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="BorrowMoneyButton" type="TextureButton" parent="MoneyManagement/BorrowMoney"]
+[node name="ToggleBorrowMoneyFrameButton" type="TextureButton" parent="MoneyManagement/BorrowMoney"]
 layout_mode = 0
 offset_left = 265.0
 offset_top = 198.5
@@ -2316,14 +2327,14 @@ texture_pressed = ExtResource("45_nhcbq")
 texture_hover = ExtResource("46_mga3n")
 ignore_texture_size = true
 
-[node name="Debt" type="Sprite2D" parent="MoneyManagement/BorrowMoney/BorrowMoneyButton"]
+[node name="Debt" type="Sprite2D" parent="MoneyManagement/BorrowMoney/ToggleBorrowMoneyFrameButton"]
 visible = false
 z_index = -1
 position = Vector2(117, 19)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("55_5ylb2")
 
-[node name="DebtAmount" type="Label" parent="MoneyManagement/BorrowMoney/BorrowMoneyButton/Debt"]
+[node name="DebtAmount" type="Label" parent="MoneyManagement/BorrowMoney/ToggleBorrowMoneyFrameButton/Debt"]
 offset_left = -113.333
 offset_top = -50.0
 offset_right = -50.3333
@@ -2338,7 +2349,7 @@ text = "-000"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label" type="Label" parent="MoneyManagement/BorrowMoney/BorrowMoneyButton"]
+[node name="Label" type="Label" parent="MoneyManagement/BorrowMoney/ToggleBorrowMoneyFrameButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2358,6 +2369,7 @@ offset_left = 685.0
 offset_top = 252.0
 offset_right = 1431.0
 offset_bottom = 813.0
+script = ExtResource("63_sky43")
 
 [node name="MetallicFrame" type="Sprite2D" parent="MoneyManagement/BorrowMoney/BorrowMoneyFrame"]
 scale = Vector2(2, 2)
@@ -2415,8 +2427,9 @@ theme_type_variation = &"Screen"
 theme_override_colors/font_color = Color(0, 81.07, 0.01, 1)
 text = "0"
 horizontal_alignment = 2
+script = ExtResource("65_rjxqh")
 
-[node name="Interest" type="Label" parent="MoneyManagement/BorrowMoney/BorrowMoneyFrame"]
+[node name="Debt" type="Label" parent="MoneyManagement/BorrowMoney/BorrowMoneyFrame"]
 layout_mode = 0
 offset_left = 360.0
 offset_top = 210.0
@@ -2428,7 +2441,7 @@ theme_override_colors/font_color = Color(0.984314, 0, 0, 1)
 text = "Pay Back (next turn)"
 autowrap_mode = 3
 
-[node name="InterestAmount" type="Label" parent="MoneyManagement/BorrowMoney/BorrowMoneyFrame/Interest"]
+[node name="DebtAmount" type="Label" parent="MoneyManagement/BorrowMoney/BorrowMoneyFrame/Debt"]
 layout_mode = 0
 offset_left = 144.0
 offset_top = 52.0
@@ -2439,6 +2452,7 @@ theme_type_variation = &"Screen"
 theme_override_colors/font_color = Color(0.984314, 0, 0, 1)
 text = "0"
 horizontal_alignment = 2
+script = ExtResource("66_c76li")
 
 [node name="Apply" type="TextureButton" parent="MoneyManagement/BorrowMoney/BorrowMoneyFrame"]
 layout_mode = 0
@@ -2519,6 +2533,7 @@ step = 100.0
 rounded = true
 tick_count = 6
 ticks_on_borders = true
+script = ExtResource("66_0vfa5")
 
 [node name="AmountDisplay" type="Control" parent="MoneyManagement"]
 anchors_preset = 0
@@ -2792,12 +2807,16 @@ text = "You need to reach the demand in energy. The target is the white line on 
 [connection signal="gui_input" from="NextTurn" to="." method="_on_next_turn_gui_input"]
 [connection signal="pressed" from="NextTurn" to="." method="_on_next_turn_pressed"]
 [connection signal="pressed" from="TimePanelBlank/TurnInfo" to="TimePanelBlank" method="clock_pressed"]
-[connection signal="pressed" from="MoneyManagement/MoneyInfo/MoneyInfoButton" to="MoneyManagement" method="_on_money_info_button_pressed"]
-[connection signal="pressed" from="MoneyManagement/MoneyInfo/MoneyInfoBox/MoreMoneyInfoButton" to="MoneyManagement" method="_on_more_money_info_button_pressed"]
-[connection signal="pressed" from="MoneyManagement/BorrowMoney/BorrowMoneyButton" to="MoneyManagement" method="_on_borrow_money_button_pressed"]
-[connection signal="pressed" from="MoneyManagement/BorrowMoney/BorrowMoneyFrame/Apply" to="MoneyManagement" method="_on_borrow_money_apply_pressed"]
-[connection signal="pressed" from="MoneyManagement/BorrowMoney/BorrowMoneyFrame/Cancel" to="MoneyManagement" method="_on_borrow_money_cancel_button_pressed"]
-[connection signal="value_changed" from="MoneyManagement/BorrowMoney/BorrowMoneyFrame/BorrowSlider/Slider" to="MoneyManagement" method="_on_borrow_money_slider_value_changed"]
+[connection signal="pressed" from="MoneyManagement/MoneyInfo/ToggleMoneyInfoBoxButton" to="MoneyManagement/MoneyInfo/MoneyInfoBox" method="_on_toggle_money_info_box_button_pressed"]
+[connection signal="pressed" from="MoneyManagement/MoneyInfo/MoneyInfoBox/MoreMoneyInfoButton" to="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/InfoMoneyClosed" method="_on_more_money_info_button_pressed"]
+[connection signal="pressed" from="MoneyManagement/MoneyInfo/MoneyInfoBox/MoreMoneyInfoButton" to="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/InfoMoneyOpen" method="_on_more_money_info_button_pressed"]
+[connection signal="pressed" from="MoneyManagement/MoneyInfo/MoneyInfoBox/MoreMoneyInfoButton" to="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer" method="_on_more_money_info_button_pressed"]
+[connection signal="pressed" from="MoneyManagement/BorrowMoney/ToggleBorrowMoneyFrameButton" to="MoneyManagement/BorrowMoney/BorrowMoneyFrame" method="_on_toggle_borrow_money_frame_button_pressed"]
+[connection signal="pressed" from="MoneyManagement/BorrowMoney/ToggleBorrowMoneyFrameButton" to="MoneyManagement/BorrowMoney/BorrowMoneyFrame/BorrowSlider/Slider" method="_on_toggle_borrow_money_frame_button_pressed"]
+[connection signal="pressed" from="MoneyManagement/BorrowMoney/BorrowMoneyFrame/Apply" to="MoneyManagement/BorrowMoney/BorrowMoneyFrame/BorrowSlider/Slider" method="_on_borrow_money_apply_button_pressed"]
+[connection signal="pressed" from="MoneyManagement/BorrowMoney/BorrowMoneyFrame/Cancel" to="MoneyManagement/BorrowMoney/BorrowMoneyFrame" method="_on_cancel_pressed"]
+[connection signal="value_changed" from="MoneyManagement/BorrowMoney/BorrowMoneyFrame/BorrowSlider/Slider" to="MoneyManagement/BorrowMoney/BorrowMoneyFrame/Money/BorrowAmount" method="_on_borrow_money_slider_value_changed"]
+[connection signal="value_changed" from="MoneyManagement/BorrowMoney/BorrowMoneyFrame/BorrowSlider/Slider" to="MoneyManagement/BorrowMoney/BorrowMoneyFrame/Debt/DebtAmount" method="_on_borrow_money_slider_value_changed"]
 [connection signal="drag_ended" from="ImportAndEnergyZone/Import/ImportSlider" to="ImportAndEnergyZone/Import/ImportSlider" method="_on_import_slider_drag_ended"]
 [connection signal="value_changed" from="ImportAndEnergyZone/Import/ImportSlider" to="ImportAndEnergyZone/Import/ImportSlider" method="_on_import_slider_value_changed"]
 [connection signal="toggled" from="ImportAndEnergyZone/Import/ImportSlider/ImportSwitch" to="ImportAndEnergyZone/Import/ImportSlider/ImportSwitch" method="_on_toggled"]
