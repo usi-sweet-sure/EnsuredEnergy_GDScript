@@ -18,6 +18,7 @@ signal energy_demand_updated_summer
 signal green_energy_import_on_updated
 signal imported_energy_amount_updated
 signal borrowed_money_amount_updated
+signal available_money_amount_updated
 
 signal next_turn
 signal end
@@ -62,6 +63,11 @@ var borrowed_money_amount: int = 0:
 	set(new_value):
 		borrowed_money_amount = new_value
 		borrowed_money_amount_updated.emit(borrowed_money_amount)
+		available_money_amount_updated.emit(available_money_amount)
+var available_money_amount: int = 0:
+	get:
+		return borrowed_money_amount # E. add other money resources as we add them
+		
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

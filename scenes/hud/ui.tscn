@@ -1,4 +1,4 @@
-[gd_scene load_steps=126 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=127 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Script" path="res://src/gdscript/hud/UI.gd" id="1_i7b76"]
 [ext_resource type="Texture2D" uid="uid://dik8jskwri4ev" path="res://assets/UI Elements/Profil-metal.png" id="1_ooswe"]
@@ -83,6 +83,7 @@
 [ext_resource type="Script" path="res://src/gdscript/hud/energy_import/import_cost_label.gd" id="67_ohk5r"]
 [ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="70_2ktfd"]
 [ext_resource type="Script" path="res://src/gdscript/hud/energy_import/green_import_switch.gd" id="71_dp47n"]
+[ext_resource type="Script" path="res://src/gdscript/hud/money_management/available_money_amount_label.gd" id="71_xcmoe"]
 [ext_resource type="Script" path="res://src/gdscript/hud/energy_import/green_import_led_on_sprite.gd" id="72_ytkph"]
 
 [sub_resource type="Animation" id="Animation_pjxim"]
@@ -1003,7 +1004,7 @@ theme = SubResource("Theme_yjcuk")
 flat = true
 
 [node name="Envirornment-bar-metal" type="Sprite2D" parent="."]
-position = Vector2(251, 558)
+position = Vector2(251, 557)
 texture = ExtResource("37_q7ul8")
 
 [node name="PolicyButton" type="TextureButton" parent="."]
@@ -1971,6 +1972,7 @@ flat = true
 alignment = 0
 
 [node name="MoneyInfoBox" type="Control" parent="MoneyManagement/MoneyInfo"]
+visible = false
 layout_mode = 1
 anchor_left = 0.233
 anchor_top = 0.076
@@ -2535,32 +2537,32 @@ tick_count = 6
 ticks_on_borders = true
 script = ExtResource("66_0vfa5")
 
-[node name="AmountDisplay" type="Control" parent="MoneyManagement"]
+[node name="AvailableMoneyAmount" type="Control" parent="MoneyManagement"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="AmountPanel" type="Sprite2D" parent="MoneyManagement/AmountDisplay"]
+[node name="AmountPanel" type="Sprite2D" parent="MoneyManagement/AvailableMoneyAmount"]
 position = Vector2(203, 217.5)
 texture = ExtResource("31_jcf3k")
 
-[node name="Money-counter-1" type="Sprite2D" parent="MoneyManagement/AmountDisplay/AmountPanel"]
+[node name="Money-counter-1" type="Sprite2D" parent="MoneyManagement/AvailableMoneyAmount/AmountPanel"]
 position = Vector2(-30, -1)
 texture = ExtResource("32_2wt40")
 
-[node name="Money-counter-2" type="Sprite2D" parent="MoneyManagement/AmountDisplay/AmountPanel"]
+[node name="Money-counter-2" type="Sprite2D" parent="MoneyManagement/AvailableMoneyAmount/AmountPanel"]
 position = Vector2(-10, -1)
 texture = ExtResource("32_2wt40")
 
-[node name="Money-counter-3" type="Sprite2D" parent="MoneyManagement/AmountDisplay/AmountPanel"]
+[node name="Money-counter-3" type="Sprite2D" parent="MoneyManagement/AvailableMoneyAmount/AmountPanel"]
 position = Vector2(10, -1)
 texture = ExtResource("32_2wt40")
 
-[node name="Money-counter-4" type="Sprite2D" parent="MoneyManagement/AmountDisplay/AmountPanel"]
+[node name="Money-counter-4" type="Sprite2D" parent="MoneyManagement/AvailableMoneyAmount/AmountPanel"]
 position = Vector2(30, -1)
 texture = ExtResource("32_2wt40")
 
-[node name="AmountLabel" type="Label" parent="MoneyManagement/AmountDisplay"]
+[node name="AmountLabel" type="Label" parent="MoneyManagement/AvailableMoneyAmount"]
 layout_mode = 0
 offset_left = 165.0
 offset_top = 201.0
@@ -2573,6 +2575,7 @@ theme_override_font_sizes/font_size = 23
 text = "9999"
 horizontal_alignment = 2
 vertical_alignment = 1
+script = ExtResource("71_xcmoe")
 
 [node name="MoneyIcon" type="Sprite2D" parent="MoneyManagement"]
 position = Vector2(131, 218.5)
