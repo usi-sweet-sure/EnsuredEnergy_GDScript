@@ -15,7 +15,6 @@ signal energy_supply_updated_winter
 signal energy_supply_updated_summer
 signal energy_demand_updated_winter
 signal energy_demand_updated_summer
-signal energy_import_cost_updated
 signal green_energy_import_on_updated
 signal imported_energy_amount_updated
 signal borrowed_money_amount_updated
@@ -46,12 +45,9 @@ var supply_winter: int = 0:
 var energy_import_cost: int = 0:
 	get:
 		if not green_energy_import_on:
-			return energy_import_cost
+			return imported_energy_amount * 0.01
 		else:
-			return round(energy_import_cost * green_energy_import_factor)
-	set(new_value):
-		energy_import_cost = new_value
-		energy_import_cost_updated.emit(energy_import_cost)
+			return round(imported_energy_amount * 0.01 * green_energy_import_factor)
 var green_energy_import_on := false:
 	set(new_value):
 		green_energy_import_on = new_value
