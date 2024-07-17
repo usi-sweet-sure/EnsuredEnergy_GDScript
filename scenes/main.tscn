@@ -2246,6 +2246,12 @@ libraries = {
 }
 autoplay = "Wind"
 
+[node name="Money" parent="World/BuildButton" index="4"]
+offset_left = 57.0
+offset_top = 68.0
+offset_right = 217.0
+offset_bottom = 157.0
+
 [node name="BuildButton2" parent="World" index="15"]
 offset_left = 624.0
 offset_top = 480.0
@@ -2320,6 +2326,12 @@ autoplay = "Sun"
 
 [node name="Hammer" parent="World/BuildButton9" index="0"]
 position = Vector2(308, 205)
+
+[node name="Money" parent="World/BuildButton9" index="4"]
+offset_left = 57.0
+offset_top = 68.0
+offset_right = 217.0
+offset_bottom = 157.0
 
 [node name="Solar" parent="World/BuildButton9/BuildMenu/Container" index="0"]
 visible = false

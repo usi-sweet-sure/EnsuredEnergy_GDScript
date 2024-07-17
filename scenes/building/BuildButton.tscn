@@ -2197,6 +2197,7 @@ autoplay = "water"
 [node name="Solar" parent="PowerPlants" instance=ExtResource("1_wi5q3")]
 visible = false
 position = Vector2(431, 151)
+availability = Vector2(0.8, 0.2)
 plant_name = "SOLAR"
 
 [node name="PreviewInfo" parent="PowerPlants/Solar" index="0"]
@@ -2273,7 +2274,9 @@ visible = false
 [node name="Wind" parent="PowerPlants" instance=ExtResource("1_wi5q3")]
 visible = false
 position = Vector2(431, 151)
+availability = Vector2(0.1, 0.9)
 plant_name = "WIND"
+build_time = 2
 
 [node name="PreviewInfo" parent="PowerPlants/Wind" index="0"]
 visible = false
@@ -2707,8 +2710,6 @@ scale = Vector2(0.8, 0.8)
 texture = SubResource("AtlasTexture_k81xh")
 centered = false
 
-[node name="Area2D" type="Area2D" parent="BuildingInfo"]
-
 [node name="BuildingCancel" type="Button" parent="BuildingInfo"]
 layout_mode = 0
 offset_left = 224.0
@@ -2733,10 +2734,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 57.0
-offset_top = 68.0
-offset_right = 217.0
-offset_bottom = 157.0
+offset_left = -286.0
+offset_top = -132.5
+offset_right = -126.0
+offset_bottom = -43.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -2833,6 +2834,7 @@ texture = ExtResource("6_3vcfd")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="pressed" from="BuildingInfo/Building/BuildingInfo" to="." method="_on_building_info_pressed"]
 [connection signal="pressed" from="BuildingInfo/BuildingCancel" to="." method="_on_building_cancel_pressed"]
 [connection signal="pressed" from="BuildMenu/CloseButton" to="." method="_on_close_button_pressed"]
 
