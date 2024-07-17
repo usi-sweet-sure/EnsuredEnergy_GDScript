@@ -77,7 +77,7 @@ func _update_supply():
 	
 	
 func _check_supply():
-	if supply_summer >= demand_summer && supply_winter >= demand_winter:
+	if supply_summer >= demand_summer && supply_winter + imported_energy_amount >= demand_winter:
 		return true
 	else:
 		return false

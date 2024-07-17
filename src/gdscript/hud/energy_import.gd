@@ -21,7 +21,6 @@ func _ready():
 # Makes sure the user does not import more energy than needed
 func _on_import_slider_value_changed(new_value: float):
 	var new_imported_amount = value
-	print("slider value : ", value, " ", new_value)
 	
 	# Prevents the user from importing more than the energy demand
 	if(Gameloop.supply_winter + new_imported_amount > Gameloop.demand_winter):
