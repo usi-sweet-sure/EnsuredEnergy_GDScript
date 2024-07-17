@@ -8,15 +8,15 @@ extends Node2D
 @export var max_upgrade: int = 3
 @export var build_time: int = 0
 @export var build_cost: int = 100
-@export var production_cost: int = 0
-@export var pollution: int = 0
-@export var land_use: int = 1
+@export var production_cost: float = 0
+@export var pollution: float = 0
+@export var land_use: float = 1
 
 
 var is_alive: bool = true
 var upgrade: int = 0
 var mult_factor: float = 0.025
-var cnv_capacity: int = 10
+var cnv_capacity: float
 var base_capacity
 
 @onready var delete_button = $Delete
@@ -64,6 +64,36 @@ var plant_name_to_ups_id = {
 			"GEOTHERMAL": "246"
 }
 
+var plant_name_to_metric_id = {
+	"GAS_EMI": "met_emi_gas",
+	"GAS_LAND": "met_lnd_gas",
+	"GAS_COST": "met_cst_gas",
+	"NUCLEAR_EMI": "met_emi_nuc",
+	"NUCLEAR_LAND": "met_lnd_nuc",
+	"NUCLEAR_COST": "met_cst_nuc",
+	"HYDRO_EMI": "met_emi_hyd",
+	"HYDRO_LAND": "met_lnd_hyd",
+	"HYDRO_COST": "met_cst_hyd",
+	"RIVER_EMI": "met_emi_hyd",
+	"RIVER_LAND": "met_lnd_hyd",
+	"RIVER_COST": "met_cst_hyd",
+	"WASTE_EMI": "met_emi_wst",
+	"WASTE_LAND": "met_lnd_wst",
+	"WASTE_COST": "met_cst_wst",
+	"BIOMASS_EMI": "met_emi_woo",
+	"BIOMASS_LAND": "met_lnd_woo",
+	"BIOMASS_COST": "met_cst_woo",
+	"SOLAR_EMI": "met_emi_sol",
+	"SOLAR_LAND": "met_lnd_sol",
+	"SOLAR_COST": "met_cst_sol",
+	"WIND_EMI": "met_emi_wnd",
+	"WIND_LAND": "met_lnd_wnd",
+	"WIND_COST": "met_cst_wnd",
+	"GEOTHERMAL_EMI": "met_emi_geo",
+	"GEOTHERMAL_LAND": "met_lnd_geo",
+	"GEOTHERMAL_COST": "met_cst_bgs", #geothermal cost is broken
+}
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Context1.http1.request_completed.connect(_on_request_finished)
@@ -80,9 +110,9 @@ func _update_info():
 	winter_energy.text = str(availability.y * capacity).pad_decimals(0)
 	
 	# updates stats
-	$BuildInfo/ColorRect/ContainerN/Prod.text = str(production_cost)
-	$BuildInfo/ColorRect/ContainerN/Poll.text = str(pollution)
-	$BuildInfo/ColorRect/ContainerN/Land.text = str(land_use)
+	$BuildInfo/ColorRect/ContainerN/Prod.text = "-" + str(production_cost).pad_decimals(0)
+	$BuildInfo/ColorRect/ContainerN/Poll.text = str(pollution).pad_decimals(2)
+	$BuildInfo/ColorRect/ContainerN/Land.text = str(land_use).pad_decimals(2)
 	
 	# multiplier upgrade infos
 	if max_upgrade > 1:
@@ -99,16 +129,29 @@ func _update_info():
 func _on_request_finished(_result, _response_code, _headers, _body):
 	var model_key = plant_name_to_model[plant_name]
 	var plant_id = plant_name_to_cnv_cap[plant_name]
+	var poll_key = plant_name_to_metric_id[plant_name + "_EMI"]
+	var land_key = plant_name_to_metric_id[plant_name + "_LAND"]
+	var cost_key = plant_name_to_metric_id[plant_name + "_COST"]
+	
 	if plant_name == "NUCLEAR":
 		capacity = int(Context1.ctx1[0][model_key]) / 100 / 3 # there's 3 nuclear plants
+		pollution = float(Context1.ctx1[0][poll_key]) / 3
+		land_use = float(Context1.ctx1[0][land_key]) / 3
+		production_cost = float(Context1.ctx1[0][cost_key]) / 10 / 3
 	if plant_name == "HYDRO" || plant_name == "RIVER":
 		capacity = int(Context1.ctx1[0][model_key]) / 100 / 2
-		cnv_capacity = int(Context1.ctx1[0][plant_id])
+		cnv_capacity = float(Context1.ctx1[0][plant_id])
+		pollution = float(Context1.ctx1[0][poll_key]) / 4 # needs to divide by the number of water plants
+		land_use = float(Context1.ctx1[0][land_key]) / 4
+		production_cost = float(Context1.ctx1[0][cost_key]) / 10 / 4
 	else:
 		capacity = int(Context1.ctx1[0][model_key]) / 100
-		cnv_capacity = int(Context1.ctx1[0][plant_id])
+		cnv_capacity = float(Context1.ctx1[0][plant_id])
+		pollution = float(Context1.ctx1[0][poll_key])
+		land_use = float(Context1.ctx1[0][land_key])
+		production_cost = float(Context1.ctx1[0][cost_key]) / 10
+	
 	base_capacity = capacity
-		
 	_update_info()
 	Context1.http1.request_completed.disconnect(_on_request_finished)
 	Gameloop._update_supply()
@@ -150,7 +193,8 @@ func _on_mult_dec_pressed():
 		Gameloop._update_supply()
 		
 func _connect_next_turn_signal():
-	Gameloop.next_turn.connect(_hide_delete_on_next_turn)
+	if !Gameloop.next_turn.is_connected(_hide_delete_on_next_turn):
+		Gameloop.next_turn.connect(_hide_delete_on_next_turn)
 
 func _hide_delete_on_next_turn():
 	delete_button.hide()
