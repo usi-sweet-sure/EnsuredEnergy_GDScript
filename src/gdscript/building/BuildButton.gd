@@ -36,6 +36,14 @@ func _on_pp_pressed(pp):
 				
 				self_modulate = Color(1,1,1,0)
 				disabled = true
+				
+				var plant_id = pp.plant_name_to_ups_id[pp.plant_name]
+				
+				Context1.prm_id = plant_id
+				Context1.yr = Gameloop.year_list[Gameloop.current_turn]
+				Context1.tj = pp.cnv_capacity * 2 #to be changed with the new model
+				Context1.prm_ups()
+				
 				Gameloop._update_supply()
 			else:
 				$BuildingInfo.show()
@@ -51,6 +59,14 @@ func _on_pp_delete(pp):
 		pp.delete_button.hide()
 		self_modulate = Color(1,1,1,1)
 		disabled = false
+		
+		var plant_id = pp.plant_name_to_ups_id[pp.plant_name]
+				
+		Context1.prm_id = plant_id
+		Context1.yr = Gameloop.year_list[Gameloop.current_turn]
+		Context1.tj = pp.cnv_capacity
+		Context1.prm_ups()
+		
 		Gameloop._update_supply()
 
 func _on_pp_mouse_entered(pp):
