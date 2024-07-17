@@ -6,6 +6,7 @@ var start_money: int = 250
 var money_per_turn: int = 250
 var current_turn: int = 1 #player action always take place in the following year
 var green_energy_import_factor: float = 1.5
+var debt_percentage_on_borrowed_money: int = 20
 
 var demand_availability = Vector2(0.45, 0.55)
 var year_list = []
@@ -17,6 +18,7 @@ signal energy_demand_updated_summer
 signal energy_import_cost_updated
 signal green_energy_import_on_updated
 signal imported_energy_amount_updated
+signal borrowed_money_amount_updated
 
 signal next_turn
 signal end
@@ -59,6 +61,10 @@ var imported_energy_amount: int = 0:
 		imported_energy_amount = new_value
 		print("Imported amount : ", imported_energy_amount)
 		imported_energy_amount_updated.emit(imported_energy_amount)
+var borrowed_money_amount: int = 0:
+	set(new_value):
+		borrowed_money_amount = new_value
+		borrowed_money_amount_updated.emit(borrowed_money_amount)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

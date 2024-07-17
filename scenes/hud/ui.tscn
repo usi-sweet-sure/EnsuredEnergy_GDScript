@@ -2229,6 +2229,7 @@ flat = true
 alignment = 0
 
 [node name="MoneyInfoBox" type="Control" parent="MoneyManagement/MoneyInfo"]
+visible = false
 layout_mode = 1
 anchor_left = 0.233
 anchor_top = 0.076
@@ -2466,7 +2467,7 @@ theme_type_variation = &"Paper"
 theme_override_font_sizes/font_size = 26
 text = "Loan:"
 
-[node name="debtamount" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/VBoxContainer/Debt"]
+[node name="debtAmount" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/VBoxContainer/Debt"]
 layout_mode = 2
 offset_left = 214.0
 offset_top = 2.0
@@ -2479,7 +2480,7 @@ theme_override_font_sizes/font_size = 26
 text = "000"
 horizontal_alignment = 2
 
-[node name="borrowamount" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/VBoxContainer/Debt"]
+[node name="borrowAmount" type="Label" parent="MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/VBoxContainer/Debt"]
 layout_mode = 2
 offset_left = 117.0
 offset_top = 2.0
@@ -2615,36 +2616,28 @@ text = "+"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BorrowContainer" type="Button" parent="MoneyManagement/BorrowMoney"]
+[node name="BorrowMoneyFrame" type="Control" parent="MoneyManagement/BorrowMoney"]
 visible = false
-layout_mode = 0
-offset_left = -8.0
-offset_right = 1928.0
-offset_bottom = 1088.0
-flat = true
+anchors_preset = 0
+offset_left = 685.0
+offset_top = 252.0
+offset_right = 1431.0
+offset_bottom = 813.0
 
-[node name="Sprite2D" type="Sprite2D" parent="MoneyManagement/BorrowMoney/BorrowContainer"]
-position = Vector2(968, 520)
+[node name="MetallicFrame" type="Sprite2D" parent="MoneyManagement/BorrowMoney/BorrowMoneyFrame"]
 scale = Vector2(2, 2)
 texture = ExtResource("52_tsua8")
+centered = false
 
-[node name="BorrowMoneyWindow" type="ColorRect" parent="MoneyManagement/BorrowMoney/BorrowContainer"]
-layout_mode = 0
-offset_left = 474.0
-offset_top = 220.0
-offset_right = 1483.0
-offset_bottom = 831.0
-color = Color(0.596078, 0.596078, 0.596078, 0)
-
-[node name="Bank" type="Label" parent="MoneyManagement/BorrowMoney/BorrowContainer/BorrowMoneyWindow"]
+[node name="Title" type="Label" parent="MoneyManagement/BorrowMoney/BorrowMoneyFrame"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -129.5
-offset_top = 45.0
-offset_right = 111.5
-offset_bottom = 115.0
+offset_left = -121.0
+offset_top = 31.0
+offset_right = 120.0
+offset_bottom = 101.0
 grow_horizontal = 2
 theme = ExtResource("70_2ktfd")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -2653,49 +2646,28 @@ text = "BANK"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Title" type="Label" parent="MoneyManagement/BorrowMoney/BorrowContainer/BorrowMoneyWindow"]
-layout_mode = 0
-offset_left = 214.0
-offset_top = 164.0
-offset_right = 774.0
-offset_bottom = 258.0
+[node name="Title2" type="Label" parent="MoneyManagement/BorrowMoney/BorrowMoneyFrame"]
+offset_left = 92.0
+offset_top = 138.0
+offset_right = 652.0
+offset_bottom = 177.0
 theme = ExtResource("70_2ktfd")
 theme_type_variation = &"Screen"
 text = "How much would you like to borrow?"
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="Import-bar-hole" type="Sprite2D" parent="MoneyManagement/BorrowMoney/BorrowContainer/BorrowMoneyWindow"]
-position = Vector2(494, 415)
-rotation = 1.5708
-scale = Vector2(1, 2.232)
-texture = ExtResource("60_gik5m")
-
-[node name="BorrowSlider" type="HSlider" parent="MoneyManagement/BorrowMoney/BorrowContainer/BorrowMoneyWindow"]
-layout_mode = 0
-offset_left = 214.0
-offset_top = 388.0
-offset_right = 774.0
-offset_bottom = 422.0
-theme_override_styles/slider = SubResource("StyleBoxEmpty_r2ty1")
-max_value = 500.0
-step = 100.0
-rounded = true
-tick_count = 6
-ticks_on_borders = true
-
-[node name="Money" type="Label" parent="MoneyManagement/BorrowMoney/BorrowContainer/BorrowMoneyWindow"]
-layout_mode = 0
-offset_left = 278.0
-offset_top = 227.0
-offset_right = 471.0
-offset_bottom = 371.0
+[node name="Money" type="Label" parent="MoneyManagement/BorrowMoney/BorrowMoneyFrame"]
+offset_left = 139.0
+offset_top = 210.0
+offset_right = 332.0
+offset_bottom = 354.0
 theme = ExtResource("70_2ktfd")
 theme_type_variation = &"Screen"
 theme_override_colors/font_color = Color(0, 81.07, 0.01, 1)
 text = "Borrow"
 
-[node name="BorrowAmount" type="Label" parent="MoneyManagement/BorrowMoney/BorrowContainer/BorrowMoneyWindow/Money"]
+[node name="BorrowAmount" type="Label" parent="MoneyManagement/BorrowMoney/BorrowMoneyFrame/Money"]
 layout_mode = 0
 offset_left = -8.0
 offset_top = 50.0
@@ -2707,19 +2679,18 @@ theme_override_colors/font_color = Color(0, 81.07, 0.01, 1)
 text = "0"
 horizontal_alignment = 2
 
-[node name="Interest" type="Label" parent="MoneyManagement/BorrowMoney/BorrowContainer/BorrowMoneyWindow"]
-layout_mode = 0
-offset_left = 481.0
-offset_top = 227.0
-offset_right = 775.0
-offset_bottom = 370.0
+[node name="Interest" type="Label" parent="MoneyManagement/BorrowMoney/BorrowMoneyFrame"]
+offset_left = 360.0
+offset_top = 210.0
+offset_right = 654.0
+offset_bottom = 353.0
 theme = ExtResource("70_2ktfd")
 theme_type_variation = &"Screen"
 theme_override_colors/font_color = Color(0.984314, 0, 0, 1)
 text = "Pay Back (next turn)"
 autowrap_mode = 3
 
-[node name="InterestAmount" type="Label" parent="MoneyManagement/BorrowMoney/BorrowContainer/BorrowMoneyWindow/Interest"]
+[node name="InterestAmount" type="Label" parent="MoneyManagement/BorrowMoney/BorrowMoneyFrame/Interest"]
 layout_mode = 0
 offset_left = 144.0
 offset_top = 52.0
@@ -2731,27 +2702,16 @@ theme_override_colors/font_color = Color(0.984314, 0, 0, 1)
 text = "0"
 horizontal_alignment = 2
 
-[node name="BuildMenu0004Build-menu-screen" type="Sprite2D" parent="MoneyManagement/BorrowMoney/BorrowContainer/BorrowMoneyWindow"]
-position = Vector2(349.5, 483.75)
-scale = Vector2(1.00505, 0.392377)
-texture = ExtResource("61_ni5qv")
-
-[node name="BuildMenu0004Build-menu-screen2" type="Sprite2D" parent="MoneyManagement/BorrowMoney/BorrowContainer/BorrowMoneyWindow"]
-position = Vector2(637, 484)
-scale = Vector2(1.00505, 0.392377)
-texture = ExtResource("61_ni5qv")
-
-[node name="Apply" type="TextureButton" parent="MoneyManagement/BorrowMoney/BorrowContainer/BorrowMoneyWindow"]
-layout_mode = 0
-offset_left = 254.0
-offset_top = 441.0
-offset_right = 447.0
-offset_bottom = 524.0
+[node name="Apply" type="TextureButton" parent="MoneyManagement/BorrowMoney/BorrowMoneyFrame"]
+offset_left = 137.0
+offset_top = 431.0
+offset_right = 330.0
+offset_bottom = 514.0
 texture_normal = ExtResource("62_orw34")
 texture_pressed = ExtResource("5_hh5pc")
 texture_hover = ExtResource("63_c1xpc")
 
-[node name="Label" type="Label" parent="MoneyManagement/BorrowMoney/BorrowContainer/BorrowMoneyWindow/Apply"]
+[node name="Label" type="Label" parent="MoneyManagement/BorrowMoney/BorrowMoneyFrame/Apply"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2765,17 +2725,22 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Cancel" type="TextureButton" parent="MoneyManagement/BorrowMoney/BorrowContainer/BorrowMoneyWindow"]
-layout_mode = 0
-offset_left = 542.0
-offset_top = 441.0
-offset_right = 735.0
-offset_bottom = 524.0
+[node name="ApplyButtonBackground" type="Sprite2D" parent="MoneyManagement/BorrowMoney/BorrowMoneyFrame/Apply"]
+show_behind_parent = true
+position = Vector2(95.5, 42.75)
+scale = Vector2(1.00505, 0.392377)
+texture = ExtResource("61_ni5qv")
+
+[node name="Cancel" type="TextureButton" parent="MoneyManagement/BorrowMoney/BorrowMoneyFrame"]
+offset_left = 433.0
+offset_top = 431.0
+offset_right = 626.0
+offset_bottom = 514.0
 texture_normal = ExtResource("2_aobed")
 texture_pressed = ExtResource("3_qtdni")
 texture_hover = ExtResource("4_mh4j1")
 
-[node name="Label2" type="Label" parent="MoneyManagement/BorrowMoney/BorrowContainer/BorrowMoneyWindow/Cancel"]
+[node name="Label2" type="Label" parent="MoneyManagement/BorrowMoney/BorrowMoneyFrame/Cancel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2789,31 +2754,31 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="BuildMenu0003Numbers-hole" type="Sprite2D" parent="MoneyManagement/BorrowMoney/BorrowContainer/BorrowMoneyWindow"]
-visible = false
-position = Vector2(303.5, 380)
-scale = Vector2(1.52326, 1)
-texture = ExtResource("54_7juy1")
+[node name="CancelButtonBackground" type="Sprite2D" parent="MoneyManagement/BorrowMoney/BorrowMoneyFrame/Cancel"]
+show_behind_parent = true
+position = Vector2(95, 43)
+scale = Vector2(1.00505, 0.392377)
+texture = ExtResource("61_ni5qv")
 
-[node name="BuildMenu0002Numbers-counter-1" type="Sprite2D" parent="MoneyManagement/BorrowMoney/BorrowContainer/BorrowMoneyWindow"]
-visible = false
-position = Vector2(333, 380)
-texture = ExtResource("55_5s2up")
+[node name="BorrowSlider" type="Node2D" parent="MoneyManagement/BorrowMoney/BorrowMoneyFrame"]
+position = Vector2(376, 397)
 
-[node name="BuildMenu0002Numbers-counter-2" type="Sprite2D" parent="MoneyManagement/BorrowMoney/BorrowContainer/BorrowMoneyWindow"]
-visible = false
-position = Vector2(353.058, 380)
-texture = ExtResource("55_5s2up")
+[node name="ImportBar" type="Sprite2D" parent="MoneyManagement/BorrowMoney/BorrowMoneyFrame/BorrowSlider"]
+rotation = 1.5708
+scale = Vector2(1, 2.232)
+texture = ExtResource("60_gik5m")
 
-[node name="BuildMenu0002Numbers-counter-3" type="Sprite2D" parent="MoneyManagement/BorrowMoney/BorrowContainer/BorrowMoneyWindow"]
-visible = false
-position = Vector2(313.058, 380)
-texture = ExtResource("55_5s2up")
-
-[node name="BuildMenu0003Numbers-hole2" type="Sprite2D" parent="MoneyManagement/BorrowMoney/BorrowContainer/BorrowMoneyWindow"]
-visible = false
-position = Vector2(638, 380)
-texture = ExtResource("54_7juy1")
+[node name="Slider" type="HSlider" parent="MoneyManagement/BorrowMoney/BorrowMoneyFrame/BorrowSlider"]
+offset_left = -282.0
+offset_top = -26.0
+offset_right = 278.0
+offset_bottom = 8.0
+theme_override_styles/slider = SubResource("StyleBoxEmpty_r2ty1")
+max_value = 500.0
+step = 100.0
+rounded = true
+tick_count = 6
+ticks_on_borders = true
 
 [node name="AmountDisplay" type="Control" parent="MoneyManagement"]
 anchors_preset = 0
@@ -2868,6 +2833,10 @@ texture = ExtResource("33_my285")
 [connection signal="pressed" from="TimePanelBlank/TurnInfo" to="TimePanelBlank" method="clock_pressed"]
 [connection signal="pressed" from="MoneyManagement/MoneyInfo/MoneyInfoButton" to="MoneyManagement" method="_on_money_info_button_pressed"]
 [connection signal="pressed" from="MoneyManagement/MoneyInfo/MoneyInfoBox/MoreMoneyInfoButton" to="MoneyManagement" method="_on_more_money_info_button_pressed"]
+[connection signal="pressed" from="MoneyManagement/BorrowMoney/BorrowMoneyButton" to="MoneyManagement" method="_on_borrow_money_button_pressed"]
+[connection signal="pressed" from="MoneyManagement/BorrowMoney/BorrowMoneyFrame/Apply" to="MoneyManagement" method="_on_borrow_money_apply_pressed"]
+[connection signal="pressed" from="MoneyManagement/BorrowMoney/BorrowMoneyFrame/Cancel" to="MoneyManagement" method="_on_borrow_money_cancel_button_pressed"]
+[connection signal="value_changed" from="MoneyManagement/BorrowMoney/BorrowMoneyFrame/BorrowSlider/Slider" to="MoneyManagement" method="_on_borrow_money_slider_value_changed"]
 
 [editable path="EnergyBarWinter"]
 [editable path="EnergyBarWinter/BarInfo"]
