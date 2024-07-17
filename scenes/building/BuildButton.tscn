@@ -2072,6 +2072,7 @@ offset = Vector2(18, -15)
 [node name="Gas" parent="PowerPlants" instance=ExtResource("1_wi5q3")]
 visible = false
 position = Vector2(369, 78)
+plant_name = "GAS"
 
 [node name="PreviewInfo" parent="PowerPlants/Gas" index="0"]
 visible = false
@@ -2142,7 +2143,7 @@ texture = ExtResource("6_3vcfd")
 [node name="Hydro" parent="PowerPlants" instance=ExtResource("1_wi5q3")]
 visible = false
 position = Vector2(370, 80)
-plant_name = "hydro"
+plant_name = "HYDRO"
 
 [node name="PreviewInfo" parent="PowerPlants/Hydro" index="0"]
 visible = false
@@ -2196,7 +2197,8 @@ autoplay = "water"
 [node name="Solar" parent="PowerPlants" instance=ExtResource("1_wi5q3")]
 visible = false
 position = Vector2(431, 151)
-plant_name = "solar"
+availability = Vector2(0.8, 0.2)
+plant_name = "SOLAR"
 
 [node name="PreviewInfo" parent="PowerPlants/Solar" index="0"]
 visible = false
@@ -2247,6 +2249,7 @@ autoplay = "sun"
 [node name="Tree" parent="PowerPlants" instance=ExtResource("1_wi5q3")]
 visible = false
 position = Vector2(431, 151)
+plant_name = "GAS"
 
 [node name="PreviewInfo" parent="PowerPlants/Tree" index="0"]
 visible = false
@@ -2271,7 +2274,9 @@ visible = false
 [node name="Wind" parent="PowerPlants" instance=ExtResource("1_wi5q3")]
 visible = false
 position = Vector2(431, 151)
-plant_name = "wind"
+availability = Vector2(0.1, 0.9)
+plant_name = "WIND"
+build_time = 2
 
 [node name="PreviewInfo" parent="PowerPlants/Wind" index="0"]
 visible = false
@@ -2384,7 +2389,7 @@ autoplay = "spin"
 [node name="Waste" parent="PowerPlants" instance=ExtResource("1_wi5q3")]
 visible = false
 position = Vector2(431, 151)
-plant_name = "waste"
+plant_name = "WASTE"
 
 [node name="PreviewInfo" parent="PowerPlants/Waste" index="0"]
 visible = false
@@ -2446,7 +2451,7 @@ autoplay = "Smoke"
 [node name="Biomass" parent="PowerPlants" instance=ExtResource("1_wi5q3")]
 visible = false
 position = Vector2(431, 151)
-plant_name = "biomass"
+plant_name = "BIOMASS"
 
 [node name="PreviewInfo" parent="PowerPlants/Biomass" index="0"]
 visible = false
@@ -2503,7 +2508,7 @@ autoplay = "Smoke"
 [node name="River" parent="PowerPlants" instance=ExtResource("1_wi5q3")]
 visible = false
 position = Vector2(431, 151)
-plant_name = "river"
+plant_name = "RIVER"
 
 [node name="PreviewInfo" parent="PowerPlants/River" index="0"]
 visible = false
@@ -2555,7 +2560,7 @@ autoplay = "water"
 [node name="Pump" parent="PowerPlants" instance=ExtResource("1_wi5q3")]
 visible = false
 position = Vector2(431, 151)
-plant_name = "hydro"
+plant_name = "HYDRO"
 
 [node name="PreviewInfo" parent="PowerPlants/Pump" index="0"]
 visible = false
@@ -2705,8 +2710,6 @@ scale = Vector2(0.8, 0.8)
 texture = SubResource("AtlasTexture_k81xh")
 centered = false
 
-[node name="Area2D" type="Area2D" parent="BuildingInfo"]
-
 [node name="BuildingCancel" type="Button" parent="BuildingInfo"]
 layout_mode = 0
 offset_left = 224.0
@@ -2731,10 +2734,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 57.0
-offset_top = 68.0
-offset_right = 217.0
-offset_bottom = 157.0
+offset_left = -286.0
+offset_top = -132.5
+offset_right = -126.0
+offset_bottom = -43.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -2829,7 +2832,9 @@ texture = ExtResource("6_3vcfd")
 
 [node name="BuildMenu" parent="." instance=ExtResource("41_kwlf5")]
 
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="pressed" from="BuildingInfo/Building/BuildingInfo" to="." method="_on_building_info_pressed"]
 [connection signal="pressed" from="BuildingInfo/BuildingCancel" to="." method="_on_building_cancel_pressed"]
 [connection signal="pressed" from="BuildMenu/CloseButton" to="." method="_on_close_button_pressed"]
 

@@ -33,7 +33,7 @@ func _set_next_years_anim():
 				var decade_track2 = decade_anim.find_track("Year6:text", Animation.TYPE_VALUE)
 				decade_anim.track_set_key_value(decade_track, 0, str(last_decade[2]))
 				decade_anim.track_set_key_value(decade_track2, 0, str(year_num2[2]))
-				$TimePanelBlank/NextDecadeAP.play("NextDecade")
+				$NextDecadeAP.play("NextDecade")
 
 func clock_pressed():
 	clock_info_sticker.visible = not clock_info_sticker.visible

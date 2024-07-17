@@ -39,6 +39,7 @@ var supply_summer: int = 0:
 var supply_winter: int = 0:
 	set(new_value):
 		supply_winter = new_value
+		#print("Summer supply updated : " + str(supply_winter))
 		#print("Winter supply updated : " + str(supply_winter))
 		energy_supply_updated_winter.emit(supply_winter)
 var energy_import_cost: int = 0:
@@ -69,15 +70,19 @@ func _ready():
 func _update_supply():
 	var summer = 0
 	var winter = 0
+	var total_production_costs = 0
 	for power_plant in get_tree().get_nodes_in_group("PP"):
-		summer += power_plant.capacity * power_plant.availability.x
-		winter += power_plant.capacity * power_plant.availability.y
+		if power_plant.is_alive:
+			summer += power_plant.capacity * power_plant.availability.x
+			winter += power_plant.capacity * power_plant.availability.y
+			total_production_costs += power_plant.production_cost
 	supply_summer = summer
 	supply_winter = winter
+	print(total_production_costs)
 	
 	
 func _check_supply():
-	if supply_summer >= demand_summer && supply_winter + imported_energy_amount >= demand_winter:
+	if supply_summer >= demand_summer && supply_winter >= demand_winter:
 		return true
 	else:
 		return false
