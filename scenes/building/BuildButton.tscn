@@ -2831,6 +2831,7 @@ texture = ExtResource("6_3vcfd")
 
 [node name="BuildMenu" parent="." instance=ExtResource("41_kwlf5")]
 
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="." to="." method="_on_pressed"]
 [connection signal="pressed" from="BuildingInfo/BuildingCancel" to="." method="_on_building_cancel_pressed"]
 [connection signal="pressed" from="BuildMenu/CloseButton" to="." method="_on_close_button_pressed"]

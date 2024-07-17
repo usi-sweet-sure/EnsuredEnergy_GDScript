@@ -11,13 +11,17 @@ extends Node2D
 @export var production_cost: float = 0
 @export var pollution: float = 0
 @export var land_use: float = 1
+@export var upgrade_cost: int = 25
 
 
 var is_alive: bool = true
 var upgrade: int = 0
-var mult_factor: float = 0.025
+@export var mult_factor: float = 0.025
 var cnv_capacity: float
 var base_capacity
+var base_pollution
+var base_land_use
+var base_production_cost
 
 @onready var delete_button = $Delete
 @onready var build_info = $BuildInfo
@@ -97,6 +101,7 @@ var plant_name_to_metric_id = {
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Context1.http1.request_completed.connect(_on_request_finished)
+	Context1.http1.request_completed.connect(_on_request_completed)
 	Gameloop.next_turn.connect(_check_life_span)
 	
 	_update_info()
@@ -109,10 +114,14 @@ func _update_info():
 	summer_energy.text = str(availability.x * capacity).pad_decimals(0)
 	winter_energy.text = str(availability.y * capacity).pad_decimals(0)
 	
-	# updates stats
+	# updates metrics
 	$BuildInfo/ColorRect/ContainerN/Prod.text = "-" + str(production_cost).pad_decimals(0)
 	$BuildInfo/ColorRect/ContainerN/Poll.text = str(pollution).pad_decimals(2)
 	$BuildInfo/ColorRect/ContainerN/Land.text = str(land_use).pad_decimals(2)
+	
+	$BuildInfo/ColorRect/LifeSpan.text = str(life_span)
+	$PreviewInfo/Price.text = str(build_cost)
+	$PreviewInfo/Time.text = str(build_time)
 	
 	# multiplier upgrade infos
 	if max_upgrade > 1:
@@ -152,9 +161,17 @@ func _on_request_finished(_result, _response_code, _headers, _body):
 		production_cost = float(Context1.ctx1[0][cost_key]) / 10
 	
 	base_capacity = capacity
+	base_pollution = pollution
+	base_land_use = land_use
+	base_production_cost = production_cost
+	
 	_update_info()
 	Context1.http1.request_completed.disconnect(_on_request_finished)
 	Gameloop._update_supply()
+
+func _on_request_completed(_result, _response_code, _headers, _body):
+	$BuildInfo/EnergyContainer/Multiplier/Inc.disabled = false
+	$BuildInfo/EnergyContainer/Multiplier/Dec.disabled = false
 
 func _on_info_button_pressed():
 	$BuildInfo.visible = !$BuildInfo.visible
@@ -163,11 +180,15 @@ func _on_info_button_pressed():
 func _on_mult_inc_pressed():
 	if upgrade < max_upgrade:
 		$BuildInfo/EnergyContainer/Multiplier/Dec.show()
-		
 		upgrade += 1
+		
 		var plant_id = plant_name_to_ups_id[plant_name]
 		var value = cnv_capacity + (cnv_capacity * mult_factor * upgrade) # !! Check rounding of the value in model
 		capacity = base_capacity + (base_capacity * mult_factor * upgrade)
+		pollution = base_pollution + (base_pollution * mult_factor * upgrade)
+		land_use = base_land_use + (base_land_use * mult_factor * upgrade)
+		production_cost = base_production_cost + (base_production_cost * mult_factor * upgrade)
+		
 		Context1.prm_id = plant_id
 		Context1.yr = Gameloop.year_list[Gameloop.current_turn]
 		Context1.tj = value
@@ -176,14 +197,21 @@ func _on_mult_inc_pressed():
 		_update_info()
 		Gameloop._update_supply()
 		
+		$BuildInfo/EnergyContainer/Multiplier/Inc.disabled = true
+		$BuildInfo/EnergyContainer/Multiplier/Dec.disabled = true
 
 
 func _on_mult_dec_pressed():
 	if upgrade > 0:
 		upgrade -= 1
+		
 		var plant_id = plant_name_to_ups_id[plant_name]
 		var value = cnv_capacity + (cnv_capacity * mult_factor * upgrade)
 		capacity = base_capacity + (base_capacity * mult_factor * upgrade)
+		pollution = base_pollution + (base_pollution * mult_factor * upgrade)
+		land_use = base_land_use + (base_land_use * mult_factor * upgrade)
+		production_cost = base_production_cost + (base_production_cost * mult_factor * upgrade)
+		
 		Context1.prm_id = plant_id
 		Context1.yr = Gameloop.year_list[Gameloop.current_turn]
 		Context1.tj = value
@@ -191,6 +219,9 @@ func _on_mult_dec_pressed():
 		
 		_update_info()
 		Gameloop._update_supply()
+		
+		$BuildInfo/EnergyContainer/Multiplier/Inc.disabled = true
+		$BuildInfo/EnergyContainer/Multiplier/Dec.disabled = true
 		
 func _connect_next_turn_signal():
 	if !Gameloop.next_turn.is_connected(_hide_delete_on_next_turn):

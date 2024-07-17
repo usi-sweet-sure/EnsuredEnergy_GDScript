@@ -451,33 +451,33 @@ texture = ExtResource("9_08ajv")
 [node name="ColorRect" type="ColorRect" parent="BuildInfo"]
 layout_mode = 0
 offset_left = -132.0
-offset_top = -168.0
+offset_top = -232.0
 offset_right = 310.0
-offset_bottom = 97.0
+offset_bottom = 33.0
 color = Color(0.596078, 0.596078, 0.596078, 0)
 
 [node name="LifeSpan" type="Label" parent="BuildInfo/ColorRect"]
 visible = false
 layout_mode = 2
-offset_left = 21.0
-offset_top = 371.0
-offset_right = 348.0
-offset_bottom = 419.0
+offset_left = 64.0
+offset_top = 230.0
+offset_right = 391.0
+offset_bottom = 280.0
 theme = ExtResource("11_iy3hd")
-theme_override_colors/font_color = Color(0.698039, 0, 0.00784314, 1)
-theme_override_font_sizes/font_size = 24
-text = "333"
+theme_type_variation = &"Screen"
+theme_override_font_sizes/font_size = 50
+text = "9"
 horizontal_alignment = 2
 
 [node name="LifeSpanL" type="Label" parent="BuildInfo/ColorRect/LifeSpan"]
 layout_mode = 2
-offset_left = 53.0
-offset_right = 362.0
-offset_bottom = 49.0
+offset_left = -38.0
+offset_right = 282.0
+offset_bottom = 50.0
 theme = ExtResource("11_iy3hd")
-theme_override_colors/font_color = Color(0.698039, 0, 0.00784314, 1)
-theme_override_font_sizes/font_size = 24
-text = "⚠️ Shutting down in"
+theme_type_variation = &"Screen"
+theme_override_font_sizes/font_size = 50
+text = "SHUT_DOWN"
 
 [node name="ContainerL" type="VBoxContainer" parent="BuildInfo/ColorRect"]
 layout_mode = 0

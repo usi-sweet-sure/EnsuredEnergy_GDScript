@@ -62,3 +62,7 @@ func _on_building_cancel_pressed():
 	$BuildingInfo.hide()
 	self_modulate = Color(1,1,1,1)
 	disabled = false
+
+
+func _on_mouse_entered():
+	$AnimationPlayer.play("HammerHit")
