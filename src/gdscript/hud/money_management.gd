@@ -1,11 +1,30 @@
 extends Control
 
+@onready var money_info_box = $MoneyInfo/MoneyInfoBox
+@onready var more_info_texts = [
+	$MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/VBoxContainer/BudgetText,
+	$MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/VBoxContainer/ProductionText,
+	$MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/VBoxContainer/BuildingText,
+	$MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/VBoxContainer/ImportText,
+	$MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/VBoxContainer/DebtText,
+]
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+
+# Toggles information about money
+func _on_money_info_button_pressed():
+	money_info_box.visible = not money_info_box.visible
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+# Toggles more information about money
+func _on_more_money_info_button_pressed():
+	for text in more_info_texts:
+		text.visible = not text.visible
+	
+	
+# Hides the information box
+func _unhandled_input(event):
+	if event is InputEventMouseButton and event.button_mask == MOUSE_BUTTON_MASK_LEFT:
+		money_info_box.hide()
+
+
+
