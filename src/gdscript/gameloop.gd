@@ -46,9 +46,9 @@ var supply_winter: int = 0:
 var energy_import_cost: int = 0:
 	get:
 		if not green_energy_import_on:
-			return imported_energy_amount * 0.01
+			return floor(imported_energy_amount * 0.01)
 		else:
-			return round(imported_energy_amount * 0.01 * green_energy_import_factor)
+			return round(floor(imported_energy_amount * 0.01) * green_energy_import_factor)
 var green_energy_import_on := false:
 	set(new_value):
 		green_energy_import_on = new_value

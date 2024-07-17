@@ -8,10 +8,10 @@ func _ready():
 	Gameloop.imported_energy_amount_updated.connect(_on_imported_energy_amount_updated)
 
 # If the player supplies enough energy in summer and winter, can go to the next turn
-func _on_energy_supply_updated(value):
+func _on_energy_supply_updated(_value):
 	$NextTurn.disabled = !Gameloop._check_supply()
 
-func _on_imported_energy_amount_updated(value):
+func _on_imported_energy_amount_updated(_value):
 	$NextTurn.disabled = !Gameloop._check_supply()
 	
 func _on_next_turn_pressed():
@@ -29,6 +29,6 @@ func _on_next_turn_pressed():
 		Context1.yr = Gameloop.year_list[Gameloop.current_turn]
 	
 	
-func _on_next_turn_gui_input(event):
+func _on_next_turn_gui_input(_event):
 	pass
 	# add not enough energy warning

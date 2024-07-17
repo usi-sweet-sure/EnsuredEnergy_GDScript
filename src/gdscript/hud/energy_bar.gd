@@ -71,7 +71,7 @@ func _unhandled_input(event):
 		info_text_2.hide()
 		info_box.hide()
 
-func get_season_text(season: int):
-	match season:
+func get_season_text(season_value: int):
+	match season_value:
 		0: return "Winter"
 		1: return "Summer"

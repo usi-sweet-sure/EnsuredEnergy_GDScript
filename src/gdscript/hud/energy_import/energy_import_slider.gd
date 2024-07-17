@@ -14,7 +14,7 @@ func _ready():
 
 
 # Makes sure the user does not import more energy than needed
-func _on_import_slider_value_changed(new_value: float):
+func _on_import_slider_value_changed(_new_value: float):
 	var new_imported_amount = value
 	
 	# Prevents the user from importing more than the energy demand
