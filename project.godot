@@ -24,10 +24,6 @@ driver/mix_rate=48000
 Context1="*res://src/gdscript/Context1.gd"
 Gameloop="*res://src/gdscript/gameloop.gd"
 
-[debug]
-
-settings/stdout/print_fps=true
-
 [display]
 
 window/size/viewport_width=1920

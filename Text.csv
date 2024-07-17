@@ -3,3 +3,48 @@ PLAY,Play,Jouer,Spielen,Giocare
 LANG,Language : English,Langue : Français,Sprache : Deutsch,Lingua : Italiano
 HOLD,Hold and drag to move,Maintenir et faire glisser pour déplacer,Zum Verschieben halten und ziehen,Tenere premuto e trascinare per spostare
 SCROLL,Scroll to zoom,Utilise la molette pour zoomer,Scrollen zum Zoomen,Scorrere per ingrandire
+TUTORIAL0,"Congratulations !\n
+You have been designated to [b]manage the Swiss power supply[/b] and to ensure a sustainable and resilient energy sector for the next 30 years (10 turns).","Félicitations ! \n
+Tu as été désigné pour [b]gérer le réseau énergétique[/b] afin de garantir un secteur durable et résilient pour les 30 prochaines années (10 tours).","Glückwunsch !\n
+Du wurdest dazu ausgewählt, [b]das Stromnetz[/b] zu managen und einen nachhaltigen und widerstandsfähigen Energiesektor für die nächsten 30 Jahre (10 Runden) sicherzustellen.","Congratulazioni! \n
+Siete stati incaricati di [b]gestire la rete energetica[/b] per garantire un settore sostenibile e resiliente per i prossimi 30 anni (10 turni di gioco)."
+TUTORIAL1,"You can decide what the future energy system will look like, but always keep in mind that you need to [b]cover the Energy demand[/b].","Tu peux choisir à quoi le futur système énergétique ressemblera, mais tu dois toujours [b]couvrir la demande d'énergie[/b].","Du kannst entscheiden, wie das zukünftige Energiesystem aussehen soll, \n\t
+	aber denke immer daran, dass du [b]genügend Energie produzieren musst, um den Energiebedarf[/b] zu decken.","Puoi scegliere come sarà il sistema energetico futuro, ma deve comunque [b]coprire la domanda di energia[/b]."
+TUTORIAL2,You need to [b]supply[/b] enough [b]energy[/b] for your population. They need to charge their phones and play their favourite video games.,Tu dois [b]fournir[/b] suffisamment d'[b]énergie[/b] pour toute la population. Les gens ont besoin de charger leurs téléphones et de jouer à leurs jeux vidéo préférés.,"Du musst genügend [b]Energie[/b] für deine Bevölkerung zur Verfügung stellen.\n
+Die Menschen müssen ihre Telefone aufladen und ihre Lieblingsvideospiele spielen können.",Dovete [b]fornire[/b] abbastanza [b]energia[/b] per tutta la popolazione. Le persone hanno bisogno di caricare i loro telefoni e di giocare ai loro videogiochi preferiti.
+TUTORIAL3,You need to [b]supply[/b] enough [b]energy[/b] for your population. They need to charge their phones and play their favourite video games.,Tu dois [b]fournir[/b] suffisamment d'[b]énergie[/b] pour toute la population. Les gens ont besoin de charger leurs téléphones et de jouer à leurs jeux vidéo préférés.,"Du musst genügend [b]Energie[/b] für deine Bevölkerung zur Verfügung stellen.\n
+Die Menschen müssen ihre Telefone aufladen und ihre Lieblingsvideospiele spielen können.",È necessario [b]fornire[/b] abbastanza [b]energia[/b] per tutta la popolazione. Le persone hanno bisogno di ricaricare i loro telefoni e di giocare ai loro videogiochi preferiti.
+TUTORIAL4,"There are different ways to supply more energy:\n\n
+
+- You can import energy in winter, but it creates pollution and can be expensive.","Il existe différentes façons d'approvisionner plus d'énergie :\n\n
+
+- Tu peux importer de l'énergie, mais cela pollue et peut être coûteux.","Es gibt verschiedene Möglichkeiten, mehr Energie zur Verfügung zu stellen:\n\n
+
+- Man kann Energie importieren, aber das führt zu Verschmutzung und kann teuer sein.","Ci sono diversi modi per fornire più energia:\n\n
+
+si può importare energia, ma questo inquina e può essere costoso."
+TUTORIAL5,"There are different ways to supply more energy:\n\n
+
+- You can build new power plants, but it costs time and money.","Il existe différentes façons d'approvisionner plus d'énergie :\n\n
+
+- Tu peux construire de nouvelles centrales électriques, mais cela coûte du temps et de l'argent.","Es gibt verschiedene Möglichkeiten, mehr Energie zu liefern: \n\n
+
+- Man kann neue Kraftwerke bauen, aber das kostet Zeit und Geld.","Ci sono diversi modi per fornire più energia:\n\n
+
+si possono costruire nuove centrali elettriche, ma questo costa tempo e denaro."
+TUTORIAL6,"There are different ways to supply more energy:\n\n\t
+
+	- You can upgrade some of the existing power plants","Il existe différentes façons d'approvisionner plus d'énergie :\n\n\t
+
+	- Tu peux améliorer les centrales existantes","Es gibt verschiedene Möglichkeiten, mehr Energie zu liefern:\n\n\t
+
+	- Du kannst einige der bestehenden Kraftwerke aufrüsten","Ci sono diversi modi per fornire più energia:\n\n\t
+
+	- È possibile potenziare alcune delle centrali elettriche esistenti."
+TUTORIAL7,You can also hold information campaigns or try to implement different policies to reduce energy demand or facilitate the construction of power plants.,Tu peux également organiser des campagnes d'information ou tenter de mettre en oeuvre différentes politiques visant à réduire la demande d'énergie ou à faciliter la construction de centrales électriques.,"Du kannst auch Informationskampagnen durchführen oder versuchen, politische Maßnahmen umzusetzen, um 
+		\t den Energiebedarf zu senken oder den Bau von Kraftwerken zu erleichtern.",Potete anche organizzare campagne di informazione o cercare di attuare varie politiche per ridurre la domanda di energia o facilitare la costruzione di centrali elettriche!
+TUTOBUBBLE0,"Each turn, you have to reach the demand for winter ❄️ and summer 🔆","Chaque tour, tu dois atteindre la demande pour l'hiver ❄️ et l'été 🔆",In jeder Runde musst du den Strombedarf für den Winter ❄️ und den Sommer 🔆 erreichen.,"Ad ogni turno, bisogna soddisfare la domanda per l'inverno ❄️ e per l'estate 🔆"
+TUTOBUBBLE1,Import more energy here,Voici la barre d'importation,Hier kannst du mehr Strom importieren,Importa più energia qui
+TUTOBUBBLE2,Build new power plants,Le bouton de construction,Du kannst neue Kraftwerke bauen,Costruire nuove centrali elettriche
+TUTOBUBBLE3,Upgrade existing power plant,Améliorer les centrales existantes,Du kannst bestehende Kraftwerk aufrüsten,Ampiamento della centrale elettrica esistente
+TUTOBUBBLE4,Implement policies,Le bouton de politique,Du kannst politische Massnahmen ergreifen,Implementare le politiche

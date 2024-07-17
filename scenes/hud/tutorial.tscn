@@ -58,23 +58,32 @@ offset_bottom = 1129.0
 color = Color(1, 1, 1, 0)
 metadata/_edit_lock_ = true
 
-[node name="InfoBubble" type="ColorRect" parent="."]
+[node name="Bubbles" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InfoBubble" type="ColorRect" parent="Bubbles"]
 visible = false
 show_behind_parent = true
+layout_mode = 0
 offset_left = 456.0
 offset_right = 1920.0
 offset_bottom = 1080.0
 theme = SubResource("Theme_dnnnk")
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 
-[node name="InfoBubble" type="MarginContainer" parent="InfoBubble"]
+[node name="InfoBubble" type="MarginContainer" parent="Bubbles/InfoBubble"]
 layout_mode = 0
 offset_left = 5.0
 offset_top = 801.0
 offset_right = 449.0
 offset_bottom = 1005.0
 
-[node name="InfoBubble" type="NinePatchRect" parent="InfoBubble/InfoBubble"]
+[node name="InfoBubble" type="NinePatchRect" parent="Bubbles/InfoBubble/InfoBubble"]
 layout_mode = 2
 texture = ExtResource("2_ob33a")
 region_rect = Rect2(0, -2, 284, 192)
@@ -84,39 +93,39 @@ patch_margin_right = 74
 patch_margin_bottom = 44
 metadata/_edit_group_ = true
 
-[node name="Arrow" type="Sprite2D" parent="InfoBubble/InfoBubble/InfoBubble"]
+[node name="Arrow" type="Sprite2D" parent="Bubbles/InfoBubble/InfoBubble/InfoBubble"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 position = Vector2(-12, 66)
 texture = ExtResource("3_xv1gs")
 region_rect = Rect2(24, 24, 30, 32)
 
-[node name="MarginContainer" type="MarginContainer" parent="InfoBubble/InfoBubble"]
+[node name="MarginContainer" type="MarginContainer" parent="Bubbles/InfoBubble/InfoBubble"]
 layout_mode = 2
 theme_override_constants/margin_left = 40
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 44
 
-[node name="Text" type="RichTextLabel" parent="InfoBubble/InfoBubble/MarginContainer"]
+[node name="Text" type="RichTextLabel" parent="Bubbles/InfoBubble/InfoBubble/MarginContainer"]
 layout_mode = 2
 theme = ExtResource("7_6e2hn")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 26
 theme_override_font_sizes/bold_font_size = 26
 bbcode_enabled = true
-text = "Each turn, you have to reach the demand for summer and winter."
+text = "TUTOBUBBLE0"
 fit_content = true
 scroll_active = false
 
-[node name="ColorRect" type="ColorRect" parent="InfoBubble"]
+[node name="ColorRect" type="ColorRect" parent="Bubbles/InfoBubble"]
 layout_mode = 0
 offset_left = -456.0
 offset_top = -48.0
 offset_bottom = 656.0
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 
-[node name="ColorRect2" type="ColorRect" parent="InfoBubble"]
+[node name="ColorRect2" type="ColorRect" parent="Bubbles/InfoBubble"]
 layout_mode = 0
 offset_left = -456.0
 offset_top = 656.0
@@ -124,8 +133,9 @@ offset_right = -208.0
 offset_bottom = 1080.0
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 
-[node name="InfoBubble2" type="ColorRect" parent="."]
+[node name="InfoBubble2" type="ColorRect" parent="Bubbles"]
 visible = false
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -134,14 +144,14 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 
-[node name="InfoBubble2" type="MarginContainer" parent="InfoBubble2"]
+[node name="InfoBubble2" type="MarginContainer" parent="Bubbles/InfoBubble2"]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 829.0
 offset_right = 304.0
 offset_bottom = 957.0
 
-[node name="InfoBubble" type="NinePatchRect" parent="InfoBubble2/InfoBubble2"]
+[node name="InfoBubble" type="NinePatchRect" parent="Bubbles/InfoBubble2/InfoBubble2"]
 layout_mode = 2
 texture = ExtResource("2_ob33a")
 region_rect = Rect2(0, 0, 282, 190)
@@ -151,32 +161,32 @@ patch_margin_right = 78
 patch_margin_bottom = 46
 metadata/_edit_group_ = true
 
-[node name="Arrow" type="Sprite2D" parent="InfoBubble2/InfoBubble2/InfoBubble"]
+[node name="Arrow" type="Sprite2D" parent="Bubbles/InfoBubble2/InfoBubble2/InfoBubble"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 position = Vector2(-12, 66)
 texture = ExtResource("3_xv1gs")
 region_rect = Rect2(24, 24, 30, 32)
 
-[node name="MarginContainer" type="MarginContainer" parent="InfoBubble2/InfoBubble2"]
+[node name="MarginContainer" type="MarginContainer" parent="Bubbles/InfoBubble2/InfoBubble2"]
 layout_mode = 2
 theme_override_constants/margin_left = 40
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 44
 
-[node name="Text" type="RichTextLabel" parent="InfoBubble2/InfoBubble2/MarginContainer"]
+[node name="Text" type="RichTextLabel" parent="Bubbles/InfoBubble2/InfoBubble2/MarginContainer"]
 layout_mode = 2
 theme = ExtResource("7_6e2hn")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 26
 theme_override_font_sizes/bold_font_size = 26
 bbcode_enabled = true
-text = "Each turn, "
+text = "TUTOBUBBLE1"
 fit_content = true
 scroll_active = false
 
-[node name="ColorRect3" type="ColorRect" parent="InfoBubble2"]
+[node name="ColorRect3" type="ColorRect" parent="Bubbles/InfoBubble2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -188,8 +198,9 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 
-[node name="InfoBubble3" type="ColorRect" parent="."]
+[node name="InfoBubble3" type="ColorRect" parent="Bubbles"]
 visible = false
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -198,7 +209,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 
-[node name="ColorRect3" type="ColorRect" parent="InfoBubble3"]
+[node name="ColorRect3" type="ColorRect" parent="Bubbles/InfoBubble3"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -210,7 +221,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 
-[node name="ColorRect4" type="ColorRect" parent="InfoBubble3"]
+[node name="ColorRect4" type="ColorRect" parent="Bubbles/InfoBubble3"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -222,7 +233,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 
-[node name="ColorRect5" type="ColorRect" parent="InfoBubble3"]
+[node name="ColorRect5" type="ColorRect" parent="Bubbles/InfoBubble3"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -235,14 +246,14 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 
-[node name="InfoBubble3" type="MarginContainer" parent="InfoBubble3"]
+[node name="InfoBubble3" type="MarginContainer" parent="Bubbles/InfoBubble3"]
 layout_mode = 0
 offset_left = 1558.0
 offset_top = 654.0
 offset_right = 1834.0
 offset_bottom = 795.0
 
-[node name="InfoBubble" type="NinePatchRect" parent="InfoBubble3/InfoBubble3"]
+[node name="InfoBubble" type="NinePatchRect" parent="Bubbles/InfoBubble3/InfoBubble3"]
 layout_mode = 2
 texture = ExtResource("2_ob33a")
 region_rect = Rect2(0, -2, 282, 196)
@@ -252,33 +263,34 @@ patch_margin_right = 66
 patch_margin_bottom = 50
 metadata/_edit_group_ = true
 
-[node name="Arrow" type="Sprite2D" parent="InfoBubble3/InfoBubble3/InfoBubble"]
+[node name="Arrow" type="Sprite2D" parent="Bubbles/InfoBubble3/InfoBubble3/InfoBubble"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 position = Vector2(-12, 66)
 texture = ExtResource("3_xv1gs")
 region_rect = Rect2(24, 24, 30, 32)
 
-[node name="MarginContainer" type="MarginContainer" parent="InfoBubble3/InfoBubble3"]
+[node name="MarginContainer" type="MarginContainer" parent="Bubbles/InfoBubble3/InfoBubble3"]
 layout_mode = 2
 theme_override_constants/margin_left = 40
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 44
 
-[node name="Text" type="RichTextLabel" parent="InfoBubble3/InfoBubble3/MarginContainer"]
+[node name="Text" type="RichTextLabel" parent="Bubbles/InfoBubble3/InfoBubble3/MarginContainer"]
 layout_mode = 2
 theme = ExtResource("7_6e2hn")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 26
 theme_override_font_sizes/bold_font_size = 26
 bbcode_enabled = true
-text = "Each turn,"
+text = "TUTOBUBBLE2"
 fit_content = true
 scroll_active = false
 
-[node name="InfoBubble4" type="ColorRect" parent="."]
+[node name="InfoBubble4" type="ColorRect" parent="Bubbles"]
 visible = false
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -287,18 +299,18 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 
-[node name="Upgrade" type="Sprite2D" parent="InfoBubble4"]
+[node name="Upgrade" type="Sprite2D" parent="Bubbles/InfoBubble4"]
 position = Vector2(-232, 168)
 texture = ExtResource("4_yf1o7")
 
-[node name="InfoBubble4" type="MarginContainer" parent="InfoBubble4"]
+[node name="InfoBubble4" type="MarginContainer" parent="Bubbles/InfoBubble4"]
 layout_mode = 0
 offset_left = 2.0
 offset_top = 172.0
 offset_right = 384.0
 offset_bottom = 300.0
 
-[node name="InfoBubble" type="NinePatchRect" parent="InfoBubble4/InfoBubble4"]
+[node name="InfoBubble" type="NinePatchRect" parent="Bubbles/InfoBubble4/InfoBubble4"]
 layout_mode = 2
 texture = ExtResource("2_ob33a")
 region_rect = Rect2(0, 0, 280, 194)
@@ -308,32 +320,32 @@ patch_margin_right = 64
 patch_margin_bottom = 46
 metadata/_edit_group_ = true
 
-[node name="Arrow" type="Sprite2D" parent="InfoBubble4/InfoBubble4/InfoBubble"]
+[node name="Arrow" type="Sprite2D" parent="Bubbles/InfoBubble4/InfoBubble4/InfoBubble"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 position = Vector2(-12, 66)
 texture = ExtResource("3_xv1gs")
 region_rect = Rect2(24, 24, 30, 32)
 
-[node name="MarginContainer" type="MarginContainer" parent="InfoBubble4/InfoBubble4"]
+[node name="MarginContainer" type="MarginContainer" parent="Bubbles/InfoBubble4/InfoBubble4"]
 layout_mode = 2
 theme_override_constants/margin_left = 40
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 44
 
-[node name="Text" type="RichTextLabel" parent="InfoBubble4/InfoBubble4/MarginContainer"]
+[node name="Text" type="RichTextLabel" parent="Bubbles/InfoBubble4/InfoBubble4/MarginContainer"]
 layout_mode = 2
 theme = ExtResource("7_6e2hn")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 26
 theme_override_font_sizes/bold_font_size = 26
 bbcode_enabled = true
-text = "Each turn,"
+text = "TUTOBUBBLE3"
 fit_content = true
 scroll_active = false
 
-[node name="ColorRect3" type="ColorRect" parent="InfoBubble4"]
+[node name="ColorRect3" type="ColorRect" parent="Bubbles/InfoBubble4"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -345,7 +357,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 
-[node name="ColorRect4" type="ColorRect" parent="InfoBubble4"]
+[node name="ColorRect4" type="ColorRect" parent="Bubbles/InfoBubble4"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -357,7 +369,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 
-[node name="ColorRect5" type="ColorRect" parent="InfoBubble4"]
+[node name="ColorRect5" type="ColorRect" parent="Bubbles/InfoBubble4"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -369,8 +381,9 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 
-[node name="InfoBubble5" type="ColorRect" parent="."]
+[node name="InfoBubble5" type="ColorRect" parent="Bubbles"]
 visible = false
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -379,14 +392,14 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 
-[node name="InfoBubble5" type="MarginContainer" parent="InfoBubble5"]
+[node name="InfoBubble5" type="MarginContainer" parent="Bubbles/InfoBubble5"]
 layout_mode = 0
 offset_left = 6.0
 offset_top = 9.0
 offset_right = 296.0
 offset_bottom = 137.0
 
-[node name="InfoBubble" type="NinePatchRect" parent="InfoBubble5/InfoBubble5"]
+[node name="InfoBubble" type="NinePatchRect" parent="Bubbles/InfoBubble5/InfoBubble5"]
 layout_mode = 2
 texture = ExtResource("2_ob33a")
 region_rect = Rect2(-2, 0, 284, 190)
@@ -396,32 +409,32 @@ patch_margin_right = 48
 patch_margin_bottom = 44
 metadata/_edit_group_ = true
 
-[node name="Arrow" type="Sprite2D" parent="InfoBubble5/InfoBubble5/InfoBubble"]
+[node name="Arrow" type="Sprite2D" parent="Bubbles/InfoBubble5/InfoBubble5/InfoBubble"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 position = Vector2(-12, 47)
 texture = ExtResource("3_xv1gs")
 region_rect = Rect2(24, 24, 30, 32)
 
-[node name="MarginContainer" type="MarginContainer" parent="InfoBubble5/InfoBubble5"]
+[node name="MarginContainer" type="MarginContainer" parent="Bubbles/InfoBubble5/InfoBubble5"]
 layout_mode = 2
 theme_override_constants/margin_left = 40
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 44
 
-[node name="Text" type="RichTextLabel" parent="InfoBubble5/InfoBubble5/MarginContainer"]
+[node name="Text" type="RichTextLabel" parent="Bubbles/InfoBubble5/InfoBubble5/MarginContainer"]
 layout_mode = 2
 theme = ExtResource("7_6e2hn")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 26
 theme_override_font_sizes/bold_font_size = 26
 bbcode_enabled = true
-text = "Each turn"
+text = "TUTOBUBBLE4"
 fit_content = true
 scroll_active = false
 
-[node name="ColorRect3" type="ColorRect" parent="InfoBubble5"]
+[node name="ColorRect3" type="ColorRect" parent="Bubbles/InfoBubble5"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -433,7 +446,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 
-[node name="ColorRect4" type="ColorRect" parent="InfoBubble5"]
+[node name="ColorRect4" type="ColorRect" parent="Bubbles/InfoBubble5"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -445,7 +458,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 
-[node name="ColorRect5" type="ColorRect" parent="InfoBubble5"]
+[node name="ColorRect5" type="ColorRect" parent="Bubbles/InfoBubble5"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -535,7 +548,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 32
 theme_override_font_sizes/bold_font_size = 32
 bbcode_enabled = true
-text = "Congratulations ! You have been designated to [b]manage the power grid[/b] and ensure a sustainable and resilient energy sector."
+text = "TUTORIAL0"
 fit_content = true
 scroll_active = false
 

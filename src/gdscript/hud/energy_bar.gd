@@ -13,13 +13,14 @@ enum Season {WINTER, SUMMER}
 func _ready():
 	# The bars will have the same max_value, wich is the maximum demand
 	# between winter and summer
-	max_value = max(Gameloop.demand_winter * 1.75, Gameloop.demand_summer * 1.75)
+	max_value = max(Gameloop.demand_winter * 1.5, Gameloop.demand_summer * 1.5)
 	
 	# Determines which season the bar will be monitoring
 	match season:
 		Season.WINTER:
 			Gameloop.energy_supply_updated_winter.connect(_on_energy_supply_updated)
 			Gameloop.energy_demand_updated_winter.connect(_on_energy_demand_updated)
+			Gameloop.imported_energy_amount_updated.connect(_on_imported_energy_amount_updated)
 			
 			# The bars are created after the gameloop sets the variables the first time,
 			# so we have to updates the bars manually when they're created
@@ -42,7 +43,15 @@ func _on_energy_demand_updated(demand):
 
 # Updates the progress bar
 func _on_energy_supply_updated(supply):
-	value = supply
+	if season == Season.WINTER:
+		value = supply + Gameloop.imported_energy_amount
+	else:
+		value = supply
+	
+	
+# Updates the progress bar
+func _on_imported_energy_amount_updated(amount):
+	value = Gameloop.supply_winter + amount
 		
 		
 # Displays basic information on energy supply and demand

@@ -102,6 +102,7 @@ func _on_request_finished(_result, _response_code, _headers, _body):
 		
 	_update_info()
 	Context1.http1.request_completed.disconnect(_on_request_finished)
+	Gameloop._update_supply()
 
 func _on_info_button_pressed():
 	$BuildInfo.visible = !$BuildInfo.visible

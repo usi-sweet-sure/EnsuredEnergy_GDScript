@@ -1,15 +1,28 @@
 extends CanvasLayer
 
 
+var i = 0
+var j = 0
+var tuto_length = 7
+var bubble_list
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
+	bubble_list = $Bubbles.get_children()
 
 func _on_next_button_pressed():
-	hide()
+	if i < tuto_length:
+		i += 1
+		$MarginContainer/MarginContainer/Text.text = tr("TUTORIAL%d" % i)
+		if i > 2:
+			for b in bubble_list:
+				b.hide()
+			bubble_list[j].show()
+			j += 1
+	else:
+		hide()
+		
+func _unhandled_input(event):
+	if event is InputEventKey:
+		if event.pressed and event.keycode == KEY_TAB:
+			hide()
