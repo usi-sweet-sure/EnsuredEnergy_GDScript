@@ -19,6 +19,10 @@ signal green_energy_import_on_updated
 signal imported_energy_amount_updated
 signal borrowed_money_amount_updated
 signal available_money_amount_updated
+signal land_use_percentage_updated
+signal biodiversity_percentage_updated
+signal co2_emissions_updated
+signal imports_emissions_updated
 
 signal next_turn
 signal end
@@ -64,11 +68,28 @@ var borrowed_money_amount: int = 0:
 		borrowed_money_amount = new_value
 		borrowed_money_amount_updated.emit(borrowed_money_amount)
 		available_money_amount_updated.emit(available_money_amount)
+# This is a sum of all the money sources, so don't set this variable, but the
+# parts used to compute it
 var available_money_amount: int = 0:
 	get:
 		return borrowed_money_amount # E. add other money resources as we add them
-		
-
+var land_use_percentage: int = 37:
+	set(new_value):
+		land_use_percentage = clamp(new_value, 0, 100)
+		land_use_percentage_updated.emit(land_use_percentage)
+var biodiversity_percentage: int = 67:
+	set(new_value):
+		biodiversity_percentage = clamp(new_value, 0, 100)
+		biodiversity_percentage_updated.emit(biodiversity_percentage)
+var co2_emissions: int = 17:
+	set(new_value):
+		co2_emissions = clamp(new_value, 0, 100)
+		co2_emissions_updated.emit(co2_emissions)
+var imports_emissions: int = 0:
+	set(new_value):
+		imports_emissions = clamp(new_value, 0, 100)
+		imports_emissions_updated.emit(imports_emissions)
+	
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
