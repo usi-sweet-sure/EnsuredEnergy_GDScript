@@ -2327,12 +2327,6 @@ autoplay = "Sun"
 [node name="Hammer" parent="World/BuildButton9" index="0"]
 position = Vector2(308, 205)
 
-[node name="Money" parent="World/BuildButton9" index="4"]
-offset_left = 57.0
-offset_top = 68.0
-offset_right = 217.0
-offset_bottom = 157.0
-
 [node name="Solar" parent="World/BuildButton9/BuildMenu/Container" index="0"]
 visible = false
 
@@ -2619,6 +2613,7 @@ visible = false
 
 [node name="End" parent="." instance=ExtResource("21_7pke6")]
 visible = false
+script = null
 
 [node name="Audio" parent="." instance=ExtResource("34_smnob")]
 

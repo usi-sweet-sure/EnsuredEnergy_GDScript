@@ -1,5 +1,5 @@
 <!-- 
-    Sustainable Energy Development game modeling the Swiss energy Grid.
+	Sustainable Energy Development game modeling the Swiss energy Grid.
 	Copyright (C) 2023 Università della Svizzera Italiana
 
 	This program is free software: you can redistribute it and/or modify
@@ -16,330 +16,330 @@
 	along with this program.  If not, see <https://www.gnu.org/licenses/>.
 -->    
 <db id="shocks">
-    <!-- Shock config for the cold spell event -->
-    <shock id="cold_spell" tag="env">
-        <!-- The title that will be displayed at the top of the shock -->
-        <name>Cold Spell</name>
-        <img>cold</img>
-        <!-- The description text that will be displayed in the shock window -->
-        <text>The past few winters have been colder than usual, increasing the energy demand in winter by 5 ⚡.</text>
-        <!-- The requirements for said shock -->
-        <!-- Here it means that the player needs to have a winter supply of at least 50 above the demand -->
-        <requirement id="0" field="energyW" value="5" bound="min"/>
-        <!-- The list of ways the player can react to said shock -->
-        <reaction id="0">
-            <!-- The text that will be displayed in the reaction button (verbatim) -->
-            <text>Ask the population to lower their energy consumption. 
+	<!-- Shock config for the cold spell event -->
+	<shock id="cold_spell" tag="env">
+		<!-- The title that will be displayed at the top of the shock -->
+		<name>Cold Spell</name>
+		<img>cold</img>
+		<!-- The description text that will be displayed in the shock window -->
+		<text>The past few winters have been colder than usual, increasing the energy demand in winter by 5 ⚡.</text>
+		<!-- The requirements for said shock -->
+		<!-- Here it means that the player needs to have a winter supply of at least 50 above the demand -->
+		<requirement id="0" field="energyW" value="5" bound="min"/>
+		<!-- The list of ways the player can react to said shock -->
+		<reaction id="0">
+			<!-- The text that will be displayed in the reaction button (verbatim) -->
+			<text>Ask the population to lower their energy consumption. 
 -10 👍</text>
-            <!-- The effect selecting this reaction will have on the player's resources -->
-            <effect field="support" value="-10"/>
-        </reaction>
-        <reaction id="1">
-            <text>Turn on the spare gas plant 
+			<!-- The effect selecting this reaction will have on the player's resources -->
+			<effect field="support" value="-10"/>
+		</reaction>
+		<reaction id="1">
+			<text>Turn on the spare gas plant 
 +10 Pollution 🏭</text>
-            <effect field="gas_upgrade" value="2"/>
-        </reaction>
-        <reaction id="2">
-            <text>Import electricity from neighbouring countries 
+			<effect field="gas_upgrade" value="2"/>
+		</reaction>
+		<reaction id="2">
+			<text>Import electricity from neighbouring countries 
 -50 $</text>
-            <effect field="money" value="-50"/>
-        </reaction>
-        <!-- Reward to the player in case they met the requirements -->
-        <reward>
-            <text>Energy production was high enough to wistand the shock 
+			<effect field="money" value="-50"/>
+		</reaction>
+		<!-- Reward to the player in case they met the requirements -->
+		<reward>
+			<text>Energy production was high enough to wistand the shock 
 +5 👍    +50 $</text>
-            <effect field="support" value="5"/>
-            <effect field="money" value="50"/>
-        </reward>
-    </shock>
+			<effect field="support" value="5"/>
+			<effect field="money" value="50"/>
+		</reward>
+	</shock>
 
-    <shock id="heat_wave" tag="env">
-        <name>Heat Wave</name>
-        <img>hot</img>
-        <text>The summers have been hotter than usual, increasing the energy demand in summer by 5 ⚡.</text>
-        <requirement id="0" field="energyS" value="5" bound="min"/>
-        <reaction id="0">
-            <text>Ask the population to turn down their A/C 
+	<shock id="heat_wave" tag="env">
+		<name>Heat Wave</name>
+		<img>hot</img>
+		<text>The summers have been hotter than usual, increasing the energy demand in summer by 5 ⚡.</text>
+		<requirement id="0" field="energyS" value="5" bound="min"/>
+		<reaction id="0">
+			<text>Ask the population to turn down their A/C 
 -15 👍</text>
-            <effect field="support" value="-15"/>
-        </reaction>
-        <reaction id="1">
-            <text>Turn on the spare gas plant
+			<effect field="support" value="-15"/>
+		</reaction>
+		<reaction id="1">
+			<text>Turn on the spare gas plant
 +10 Pollution 🏭</text>
-            <effect field="gas_upgrade" value="2"/>
-        </reaction>
-        <reaction id="2">
-            <text>Import electricity from neighbouring countries 
+			<effect field="gas_upgrade" value="2"/>
+		</reaction>
+		<reaction id="2">
+			<text>Import electricity from neighbouring countries 
 -50 $</text>
-            <effect field="money" value="-50"/>
-        </reaction>
-        <reward>
-            <text>Energy production was high enough to wistand the shock 
+			<effect field="money" value="-50"/>
+		</reaction>
+		<reward>
+			<text>Energy production was high enough to wistand the shock 
 +5 👍    +50 $</text>
-            <effect field="support" value="5"/>
-            <effect field="money" value="50"/>
-        </reward>
-    </shock>
+			<effect field="support" value="5"/>
+			<effect field="money" value="50"/>
+		</reward>
+	</shock>
 
-    <shock id="glaciers_melting" tag="env">
-        <name>Glaciers melting</name>
-        <img>ice</img>
-        <text>The hydraulic plants depend on the state of the glaciers. As long as the net zero is not reached, the glaciers will continue to melt, decreasing the availability of the hydraulic water supply.</text>
-        <requirement id="0" field="energyW" value="0" bound="min"/>
-        <reaction id="0">
-            <text>OK</text>
-            <effect field="support" value="0"/>
-        </reaction>
-        <reward>
-            <text></text>
-            <effect field="money" value="0"/>
-            <effect field="env" value="0"/>
-        </reward>
-    </shock>
+	<shock id="glaciers_melting" tag="env">
+		<name>Glaciers melting</name>
+		<img>ice</img>
+		<text>The hydraulic plants depend on the state of the glaciers. As long as the net zero is not reached, the glaciers will continue to melt, decreasing the availability of the hydraulic water supply.</text>
+		<requirement id="0" field="energyW" value="0" bound="min"/>
+		<reaction id="0">
+			<text>OK</text>
+			<effect field="support" value="0"/>
+		</reaction>
+		<reward>
+			<text></text>
+			<effect field="money" value="0"/>
+			<effect field="env" value="0"/>
+		</reward>
+	</shock>
 
-    <shock id="severe_weather" tag="env">
-        <name>Severe Weather</name>
-        <img>weather</img>
-        <text>Severe weather throughout the year have lowered the energy production of solar panels and wind turbines.</text>
-        <requirement id="0" field="energyW" value="0" bound="min"/>
-        <reaction id="0">
-            <text>OK</text>
-            <effect field="support" value="-50"/>
-        </reaction>
-        <reward>
-            <text>Wind and Solar energy -10% ⚡</text>
-            <effect field="support" value="0"/>
-            <effect field="money" value="0"/>
-        </reward>
-    </shock>
+	<shock id="severe_weather" tag="env">
+		<name>Severe Weather</name>
+		<img>weather</img>
+		<text>Severe weather throughout the year have lowered the energy production of solar panels and wind turbines.</text>
+		<requirement id="0" field="energyW" value="0" bound="min"/>
+		<reaction id="0">
+			<text>OK</text>
+			<effect field="support" value="-50"/>
+		</reaction>
+		<reward>
+			<text>Wind and Solar energy -10% ⚡</text>
+			<effect field="support" value="0"/>
+			<effect field="money" value="0"/>
+		</reward>
+	</shock>
 <!-- Need geothermal
-    <shock id="earthquake" tag="env">
-        <name>Earthquake</name>
-        <text>An earthquake has hit the area near the geothermal plant in construction, resulting in delays.</text>
-        <requirement id="0" field="energyW" value="0" bound="min"/>
-        <reaction id="0">
-            <text>OK</text>
-            <effect field="support" value="0"/>
-        </reaction>
-        <reward>
-            <text>+ 1 Turn to finish building the Geothermal plant.</text>
-            <effect field="support" value="50"/>
-            <effect field="money" value="50"/>
-        </reward>
-    </shock>
+	<shock id="earthquake" tag="env">
+		<name>Earthquake</name>
+		<text>An earthquake has hit the area near the geothermal plant in construction, resulting in delays.</text>
+		<requirement id="0" field="energyW" value="0" bound="min"/>
+		<reaction id="0">
+			<text>OK</text>
+			<effect field="support" value="0"/>
+		</reaction>
+		<reward>
+			<text>+ 1 Turn to finish building the Geothermal plant.</text>
+			<effect field="support" value="50"/>
+			<effect field="money" value="50"/>
+		</reward>
+	</shock>
 -->
-    <shock id="inc_raw_cost_10" tag="env">
-        <name>Rise of material costs</name>
-        <img>money</img>
-        <text>The prices of raw material have increased resulting in production costs going up by 10%.</text>
-        <requirement id="0" field="energyW" value="0" bound="min"/>
-        <reaction id="0">
-            <text>OK</text>
-            <effect field="support" value="-50"/>
-        </reaction>
-        <reward>
-            <text>-20 $</text>
-            <effect field="support" value="0"/>
-            <effect field="money" value="-20"/>
-        </reward>
-    </shock>
-    
-    <shock id="inc_raw_cost_20" tag="env">
-        <name>Rise of material costs</name>
-        <img>money</img>
-        <text>The prices of raw material have increased resulting in production costs going up by 20%.</text>
-        <requirement id="0" field="energyW" value="0" bound="min"/>
-        <reaction id="0">
-            <text>OK</text>
-            <effect field="support" value="-50"/>
-        </reaction>
-        <reward>
-            <text>-50 $</text>
-            <effect field="support" value="0"/>
-            <effect field="money" value="-50"/>
-        </reward>
-    </shock>
+	<shock id="inc_raw_cost_10" tag="env">
+		<name>Rise of material costs</name>
+		<img>money</img>
+		<text>The prices of raw material have increased resulting in production costs going up by 10%.</text>
+		<requirement id="0" field="energyW" value="0" bound="min"/>
+		<reaction id="0">
+			<text>OK</text>
+			<effect field="support" value="-50"/>
+		</reaction>
+		<reward>
+			<text>-20 $</text>
+			<effect field="support" value="0"/>
+			<effect field="money" value="-20"/>
+		</reward>
+	</shock>
+	
+	<shock id="inc_raw_cost_20" tag="env">
+		<name>Rise of material costs</name>
+		<img>money</img>
+		<text>The prices of raw material have increased resulting in production costs going up by 20%.</text>
+		<requirement id="0" field="energyW" value="0" bound="min"/>
+		<reaction id="0">
+			<text>OK</text>
+			<effect field="support" value="-50"/>
+		</reaction>
+		<reward>
+			<text>-50 $</text>
+			<effect field="support" value="0"/>
+			<effect field="money" value="-50"/>
+		</reward>
+	</shock>
 
-    <shock id="dec_raw_cost_20" tag="env">
-        <name>Reduction of material costs</name>
-        <img>receive</img>
-        <text>The prices of raw material have decreased resulting in production costs going down by 10%.</text>
-        <requirement id="0" field="energyW" value="0" bound="min"/>
-        <reaction id="0">
-            <text>OK</text>
-            <effect field="support" value="-50"/>
-        </reaction>
-        <reward>
-            <text>+20 $</text>
-            <effect field="support" value="0"/>
-            <effect field="money" value="20"/>
-        </reward>
-    </shock>
+	<shock id="dec_raw_cost_20" tag="env">
+		<name>Reduction of material costs</name>
+		<img>receive</img>
+		<text>The prices of raw material have decreased resulting in production costs going down by 10%.</text>
+		<requirement id="0" field="energyW" value="0" bound="min"/>
+		<reaction id="0">
+			<text>OK</text>
+			<effect field="support" value="-50"/>
+		</reaction>
+		<reward>
+			<text>+20 $</text>
+			<effect field="support" value="0"/>
+			<effect field="money" value="20"/>
+		</reward>
+	</shock>
 
-    <shock id="no_shock" tag="env">
-        <name>Calm years</name>
-        <img>sunrise</img>
-        <text>The past years were calmer than usual.</text>
-        <requirement id="0" field="energyW" value="0" bound="min"/>
-        <reaction id="0">
-            <text>OK</text>
-            <effect field="support" value="-50"/>
-        </reaction>
-        <reward>
-            <text>Nothing is affected.</text>
-            <effect field="support" value="0"/>
-            <effect field="money" value="0"/>
-        </reward>
-    </shock>
+	<shock id="no_shock" tag="env">
+		<name>Calm years</name>
+		<img>sunrise</img>
+		<text>The past years were calmer than usual.</text>
+		<requirement id="0" field="energyW" value="0" bound="min"/>
+		<reaction id="0">
+			<text>OK</text>
+			<effect field="support" value="-50"/>
+		</reaction>
+		<reward>
+			<text>Nothing is affected.</text>
+			<effect field="support" value="0"/>
+			<effect field="money" value="0"/>
+		</reward>
+	</shock>
 <!-- Need policies
-    <shock id="protest_wind" tag="env">
-        <name>Protest</name>
-        <text>The population is protesting against the construction of new wind turbines.</text>
-        <requirement id="0" field="energyW" value="0" bound="min"/>
-        <reaction id="0">
-            <text>OK</text>
-            <effect field="support" value="-50"/>
-        </reaction>
-        <reward>
-            <text>You cannot build new ones until new policies have been implemented.</text>
-            <effect field="support" value="50"/>
-            <effect field="money" value="50"/>
-        </reward>
-    </shock>
+	<shock id="protest_wind" tag="env">
+		<name>Protest</name>
+		<text>The population is protesting against the construction of new wind turbines.</text>
+		<requirement id="0" field="energyW" value="0" bound="min"/>
+		<reaction id="0">
+			<text>OK</text>
+			<effect field="support" value="-50"/>
+		</reaction>
+		<reward>
+			<text>You cannot build new ones until new policies have been implemented.</text>
+			<effect field="support" value="50"/>
+			<effect field="money" value="50"/>
+		</reward>
+	</shock>
 
-    <shock id="protest_solar" tag="env">
-        <name>Protest</name>
-        <text>The population is protesting against the construction of new solar panels.</text>
-        <requirement id="0" field="energyW" value="0" bound="min"/>
-        <reaction id="0">
-            <text>OK</text>
-            <effect field="support" value="-50"/>
-        </reaction>
-        <reward>
-            <text>You cannot build new ones until new policies have been implemented.</text>
-            <effect field="support" value="50"/>
-            <effect field="money" value="50"/>
-        </reward>
-    </shock>
+	<shock id="protest_solar" tag="env">
+		<name>Protest</name>
+		<text>The population is protesting against the construction of new solar panels.</text>
+		<requirement id="0" field="energyW" value="0" bound="min"/>
+		<reaction id="0">
+			<text>OK</text>
+			<effect field="support" value="-50"/>
+		</reaction>
+		<reward>
+			<text>You cannot build new ones until new policies have been implemented.</text>
+			<effect field="support" value="50"/>
+			<effect field="money" value="50"/>
+		</reward>
+	</shock>
 -->
-    <shock id="mass_immigration" tag="env">
-        <name>Refugee Crisis</name>
-        <img>people</img>
-        <text>The population has been increasing faster due to the climate refugee crisis.</text>
-        <requirement id="0" field="energyW" value="0" bound="min"/>
-        <reaction id="0">
-            <text>OK</text>
-            <effect field="support" value="0"/>
-        </reaction>
-        <reward>
-            <text>Energy demand in winter and summer +5 ⚡</text>
-            <effect field="energyS" value="5"/>
-            <effect field="energyW" value="5"/>
-        </reward>
-    </shock>
+	<shock id="mass_immigration" tag="env">
+		<name>Refugee Crisis</name>
+		<img>people</img>
+		<text>The population has been increasing faster due to the climate refugee crisis.</text>
+		<requirement id="0" field="energyW" value="0" bound="min"/>
+		<reaction id="0">
+			<text>OK</text>
+			<effect field="support" value="0"/>
+		</reaction>
+		<reward>
+			<text>Energy demand in winter and summer +5 ⚡</text>
+			<effect field="energyS" value="5"/>
+			<effect field="energyW" value="5"/>
+		</reward>
+	</shock>
 
-    <shock id="pandemic" tag="env">
-        <name>Pandemic</name>
-        <img>virus</img>
-        <text>A new virus is spreading rapidly around the world. What should we do?</text>
-        <requirement id="0" field="energyW" value="5000" bound="min"/>
-        <reaction id="0">
-            <text>Put the population in lockdown. 
+	<shock id="pandemic" tag="env">
+		<name>Pandemic</name>
+		<img>virus</img>
+		<text>A new virus is spreading rapidly around the world. What should we do?</text>
+		<requirement id="0" field="energyW" value="5000" bound="min"/>
+		<reaction id="0">
+			<text>Put the population in lockdown. 
 -10 👍 +50 ⚡</text>
-            <effect field="support" value="-10"/>
-            <effect field="support" value="0"/>
-        </reaction>
-        <reaction id="1">
-            <text>Set a vaccination campaign.
+			<effect field="support" value="-10"/>
+			<effect field="support" value="0"/>
+		</reaction>
+		<reaction id="1">
+			<text>Set a vaccination campaign.
 -20 👍 -50$</text>
-            <effect field="support" value="-20"/>
-            <effect field="money" value="-50"/>
-        </reaction>
-        <reaction id="2">
-            <text>Wait for herd immunity.</text>
-            <effect field="support" value="0"/>
-        </reaction>
-        <reward>
-            <text>...</text>
-            <effect field="support" value="-20"/>
-            <effect field="money" value="50"/>
-        </reward>
-    </shock>
+			<effect field="support" value="-20"/>
+			<effect field="money" value="-50"/>
+		</reaction>
+		<reaction id="2">
+			<text>Wait for herd immunity.</text>
+			<effect field="support" value="0"/>
+		</reaction>
+		<reward>
+			<text>...</text>
+			<effect field="support" value="-20"/>
+			<effect field="money" value="50"/>
+		</reward>
+	</shock>
 
-    <shock id="nuc_accident" tag="env">
-        <name>Nuclear accident</name>
-        <img>nuclear</img>
-        <text>There was a nuclear accident in one of the nuclear plants.</text>
-        <requirement id="0" field="energyW" value="0" bound="min"/>
-        <reaction id="0">
-            <text>OK</text>
-            <effect field="support" value="-50"/>
-        </reaction>
-        <reward>
-            <text>Your nuclear plants will switch off 1 turn earlier.</text>
-            <effect field="support" value="0"/>
-            <effect field="money" value="0"/>
-        </reward>
-    </shock>
+	<shock id="nuc_accident" tag="env">
+		<name>Nuclear accident</name>
+		<img>nuclear</img>
+		<text>There was a nuclear accident in one of the nuclear plants.</text>
+		<requirement id="0" field="energyW" value="0" bound="min"/>
+		<reaction id="0">
+			<text>OK</text>
+			<effect field="support" value="-50"/>
+		</reaction>
+		<reward>
+			<text>Your nuclear plants will switch off 1 turn earlier.</text>
+			<effect field="support" value="0"/>
+			<effect field="money" value="0"/>
+		</reward>
+	</shock>
 
-    <shock id="renewables_support" tag="env">
-        <name>Increase in support</name>
-        <img>flower</img>
-        <text>There was an increase in political support for renewable energies.</text>
-        <requirement id="0" field="energyW" value="0" bound="min"/>
-        <reaction id="0">
-            <text>OK</text>
-            <effect field="support" value="-50"/>
-        </reaction>
-        <reward>
-            <text>Your support increases by +10</text>
-            <effect field="support" value="10"/>
-            <effect field="money" value="0"/>
-        </reward>
-    </shock>
-    
-    <shock id="nuc_reintro" tag="env">
-        <name>Nuclear Re-introduction</name>
-        <img>vote</img>
-        <text>The population wants to vote on the future of the nuclear again.</text>
-        <requirement id="0" field="energyW" value="5000" bound="min"/>
-        <reaction id="0">
-            <text>Yes for reintroducig nuclear power.</text>
-            <effect field="support" value="0"/>
-        </reaction>
-        <reaction id="1">
-            <text>No, it's time to de-transition from nuclear.</text>
-            <effect field="env" value="0"/>
-        </reaction>
-        <reward>
-            <text>If you can read this, there is a problem.</text>
-            <effect field="support" value="50"/>
-            <effect field="money" value="50"/>
-        </reward>
-    </shock>
+	<shock id="renewables_support" tag="env">
+		<name>Increase in support</name>
+		<img>flower</img>
+		<text>There was an increase in political support for renewable energies.</text>
+		<requirement id="0" field="energyW" value="0" bound="min"/>
+		<reaction id="0">
+			<text>OK</text>
+			<effect field="support" value="-50"/>
+		</reaction>
+		<reward>
+			<text>Your support increases by +10</text>
+			<effect field="support" value="10"/>
+			<effect field="money" value="0"/>
+		</reward>
+	</shock>
+	
+	<shock id="nuc_reintro" tag="env">
+		<name>Nuclear Re-introduction</name>
+		<img>vote</img>
+		<text>The population wants to vote on the future of the nuclear again.</text>
+		<requirement id="0" field="energyW" value="5000" bound="min"/>
+		<reaction id="0">
+			<text>Yes for reintroducig nuclear power.</text>
+			<effect field="support" value="0"/>
+		</reaction>
+		<reaction id="1">
+			<text>No, it's time to de-transition from nuclear.</text>
+			<effect field="env" value="0"/>
+		</reaction>
+		<reward>
+			<text>If you can read this, there is a problem.</text>
+			<effect field="support" value="50"/>
+			<effect field="money" value="50"/>
+		</reward>
+	</shock>
 
 <!--
-    <shock id="remote_jobs" tag="env">
-        <name>Remote Jobs</name>
-        <text>The past few winters have been colder than usual, increasing the energy demand in winter by 50 ⚡.</text>
-        <requirement id="0" field="energyW" value="50" bound="min"/>
-        <reaction id="0">
-            <text>Ask the population to lower their energy consumption.\n- 50 Support 😡</text>
-            <effect field="support" value="-50"/>
-        </reaction>
-        <reaction id="1">
-            <text>Turn on the spare coal plant.\n- 50 Environment 🏭</text>
-            <effect field="env" value="-50"/>
-        </reaction>
-        <reaction id="2">
-            <text>Import electricity from neighbouring countries.\n- 50 💰</text>
-            <effect field="money" value="-50"/>
-        </reaction>
-        <reward>
-            <text>Energy production was high enough to wistand the shock.\n + 50 Support + 50 💰</text>
-            <effect field="support" value="50"/>
-            <effect field="money" value="50"/>
-        </reward>
-    </shock>
-    -->
+	<shock id="remote_jobs" tag="env">
+		<name>Remote Jobs</name>
+		<text>The past few winters have been colder than usual, increasing the energy demand in winter by 50 ⚡.</text>
+		<requirement id="0" field="energyW" value="50" bound="min"/>
+		<reaction id="0">
+			<text>Ask the population to lower their energy consumption.\n- 50 Support 😡</text>
+			<effect field="support" value="-50"/>
+		</reaction>
+		<reaction id="1">
+			<text>Turn on the spare coal plant.\n- 50 Environment 🏭</text>
+			<effect field="env" value="-50"/>
+		</reaction>
+		<reaction id="2">
+			<text>Import electricity from neighbouring countries.\n- 50 💰</text>
+			<effect field="money" value="-50"/>
+		</reaction>
+		<reward>
+			<text>Energy production was high enough to wistand the shock.\n + 50 Support + 50 💰</text>
+			<effect field="support" value="50"/>
+			<effect field="money" value="50"/>
+		</reward>
+	</shock>
+	-->
 </db>
