@@ -142,23 +142,7 @@ func _on_request_finished(_result, _response_code, _headers, _body):
 	var land_key = plant_name_to_metric_id[plant_name + "_LAND"]
 	var cost_key = plant_name_to_metric_id[plant_name + "_COST"]
 	
-	if plant_name == "NUCLEAR":
-		capacity = int(Context1.ctx1[0][model_key]) / 100 / 3 # there's 3 nuclear plants
-		pollution = float(Context1.ctx1[0][poll_key]) / 3
-		land_use = float(Context1.ctx1[0][land_key]) / 3
-		production_cost = float(Context1.ctx1[0][cost_key]) / 10 / 3
-	if plant_name == "HYDRO" || plant_name == "RIVER":
-		capacity = int(Context1.ctx1[0][model_key]) / 100 / 2
-		cnv_capacity = float(Context1.ctx1[0][plant_id])
-		pollution = float(Context1.ctx1[0][poll_key]) / 4 # needs to divide by the number of water plants
-		land_use = float(Context1.ctx1[0][land_key]) / 4
-		production_cost = float(Context1.ctx1[0][cost_key]) / 10 / 4
-	else:
-		capacity = int(Context1.ctx1[0][model_key]) / 100
-		cnv_capacity = float(Context1.ctx1[0][plant_id])
-		pollution = float(Context1.ctx1[0][poll_key])
-		land_use = float(Context1.ctx1[0][land_key])
-		production_cost = float(Context1.ctx1[0][cost_key]) / 10
+
 	
 	base_capacity = capacity
 	base_pollution = pollution

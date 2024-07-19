@@ -23,6 +23,7 @@ driver/mix_rate=48000
 
 Context1="*res://src/gdscript/Context1.gd"
 Gameloop="*res://src/gdscript/gameloop.gd"
+ShockSystem="*res://src/gdscript/shocks/shock_system.gd"
 
 [display]
 
