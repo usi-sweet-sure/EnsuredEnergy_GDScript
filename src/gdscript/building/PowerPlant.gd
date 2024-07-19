@@ -52,7 +52,6 @@ var plant_name_to_ups_id = {
 	"BIOMASS": "192",
 	"SOLAR": "170",
 	"WIND": "171",
-	"PUMP": "379",
 	"GEOTHERMAL": "246"
 }
 
@@ -99,7 +98,7 @@ var plant_name_to_metric_id = {
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Context1.http1.request_completed.connect(_on_request_finished)
-	Context1.http1.request_completed.connect(_on_request_completed)
+	#Context1.http1.request_completed.connect(_on_request_completed)
 	Gameloop.next_turn.connect(_check_life_span)
 	
 	_update_info()
@@ -178,9 +177,9 @@ func _on_request_finished(_result, _response_code, _headers, _body):
 	Context1.http1.request_completed.disconnect(_on_request_finished)
 	Gameloop._update_supply()
 
-func _on_request_completed(_result, _response_code, _headers, _body):
-	$BuildInfo/EnergyContainer/Multiplier/Inc.disabled = false
-	$BuildInfo/EnergyContainer/Multiplier/Dec.disabled = false
+#func _on_request_completed(_result, _response_code, _headers, _body):
+	#$BuildInfo/EnergyContainer/Multiplier/Inc.disabled = false
+	#$BuildInfo/EnergyContainer/Multiplier/Dec.disabled = false
 
 func _on_info_button_pressed():
 	$BuildInfo.visible = !$BuildInfo.visible
@@ -198,16 +197,13 @@ func _on_mult_inc_pressed():
 		land_use = base_land_use + (base_land_use * mult_factor * upgrade)
 		production_cost = base_production_cost + (base_production_cost * mult_factor * upgrade)
 		
-		Context1.prm_id = plant_id
-		Context1.yr = Gameloop.year_list[Gameloop.current_turn]
-		Context1.tj = value
-		Context1.prm_ups()
+		Gameloop.ups_list[plant_id] += value
 		
 		_update_info()
 		Gameloop._update_supply()
 		
-		$BuildInfo/EnergyContainer/Multiplier/Inc.disabled = true
-		$BuildInfo/EnergyContainer/Multiplier/Dec.disabled = true
+		#$BuildInfo/EnergyContainer/Multiplier/Inc.disabled = true
+		#$BuildInfo/EnergyContainer/Multiplier/Dec.disabled = true
 
 
 func _on_mult_dec_pressed():
@@ -215,16 +211,18 @@ func _on_mult_dec_pressed():
 		upgrade -= 1
 		
 		var plant_id = plant_name_to_ups_id[plant_name]
-		var value = cnv_capacity + (cnv_capacity * mult_factor * upgrade)
+		var value = (cnv_capacity * mult_factor * upgrade)
 		capacity = base_capacity + (base_capacity * mult_factor * upgrade)
 		pollution = base_pollution + (base_pollution * mult_factor * upgrade)
 		land_use = base_land_use + (base_land_use * mult_factor * upgrade)
 		production_cost = base_production_cost + (base_production_cost * mult_factor * upgrade)
 		
-		Context1.prm_id = plant_id
-		Context1.yr = Gameloop.year_list[Gameloop.current_turn]
-		Context1.tj = value
-		Context1.prm_ups()
+		
+		Gameloop.ups_list[plant_id] += value
+		#Context1.prm_id = plant_id
+		#Context1.yr = Gameloop.year_list[Gameloop.current_turn]
+		#Context1.tj = value
+		#Context1.prm_ups()
 		
 		_update_info()
 		Gameloop._update_supply()
@@ -253,13 +251,44 @@ func _on_switch_toggled(toggled_on):
 		$BuildInfo/Switch/LEDOn.show()
 		#play animation
 		_update_info()
-		add_to_group("PP")
+		#add_to_group("PP")
+		
+		var plant_id = plant_name_to_ups_id[plant_name]
+				
+		Context1.prm_id = plant_id
+		Context1.yr = Gameloop.year_list[Gameloop.current_turn]
+		var plant_total = 0
+		var off_plant_total = 0
+		for pp in Gameloop.all_power_plants:
+			if pp.plant_name == plant_name:
+				plant_total += 1
+				if !pp.is_alive:
+					off_plant_total += 1
+		
+		Gameloop.ups_list[plant_id] += -(cnv_capacity / plant_total) * off_plant_total
+		#Context1.tj = -(cnv_capacity / plant_total) * off_plant_total
+		#Context1.prm_ups()
 	else:
 		modulate = Color(0.8, 0.8, 0.8, 1)
 		$BuildInfo/Switch/LEDOn.hide()
 		#stop animation
 		summer_energy.text = "0"
 		winter_energy.text = "0"
-		remove_from_group("PP")
+		#remove_from_group("PP")
+		
+		var plant_id = plant_name_to_ups_id[plant_name]
+				
+		var plant_total = 0
+		var off_plant_total = 0
+		for pp in Gameloop.all_power_plants:
+			if pp.plant_name == plant_name:
+				plant_total += 1
+				if !pp.is_alive:
+					off_plant_total += 1
+		Gameloop.ups_list[plant_id] += -(cnv_capacity / plant_total) * off_plant_total
+		print(Gameloop.ups_list)
+		#Context1.prm_id = plant_id
+		#Context1.tj = -(cnv_capacity / plant_total) * off_plant_total
+		#Context1.prm_ups()
 		
 	Gameloop._update_supply()

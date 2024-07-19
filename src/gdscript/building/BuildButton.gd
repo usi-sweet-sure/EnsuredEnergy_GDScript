@@ -60,12 +60,16 @@ func _build_plant(plant):
 	self_modulate = Color(1,1,1,0)
 	disabled = true
 	
+	var plant_total = 0
+	for pp in Gameloop.all_power_plants:
+		if pp.plant_name == plant.plant_name:
+			plant_total += 1
 	var plant_id = plant.plant_name_to_ups_id[plant.plant_name]
-	
-	Context1.prm_id = plant_id
-	Context1.yr = Gameloop.year_list[Gameloop.current_turn]
-	Context1.tj = plant.cnv_capacity * 2 #to be changed with the new model
-	Context1.prm_ups()
+	Gameloop.ups_list[plant_id] += plant.cnv_capacity / plant_total
+	#Context1.prm_id = plant_id
+	#Context1.yr = Gameloop.year_list[Gameloop.current_turn]
+	#Context1.tj = plant.cnv_capacity
+	#Context1.prm_ups()
 	Gameloop._update_supply()
 
 func _on_close_button_pressed():
@@ -82,7 +86,7 @@ func _on_pp_delete(pp):
 				
 		Context1.prm_id = plant_id
 		Context1.yr = Gameloop.year_list[Gameloop.current_turn]
-		Context1.tj = pp.cnv_capacity
+		Context1.tj = -pp.cnv_capacity
 		Context1.prm_ups()
 		
 		Gameloop._update_supply()
