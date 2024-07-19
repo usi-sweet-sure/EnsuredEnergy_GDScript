@@ -15,9 +15,9 @@ func _on_imported_energy_amount_updated(_value):
 	$NextTurn.disabled = !Gameloop._check_supply()
 	
 func _on_next_turn_pressed():
-	$TimePanelBlank._set_next_years_anim()
-	$TimePanelBlank/TimelineAnimation.play("NextTurnAnim")
-	await $TimePanelBlank/TimelineAnimation.animation_finished
+	$Clock/TimePanelBlank._set_next_years_anim()
+	$Clock/TimePanelBlank/TimelineAnimation.play("NextTurnAnim")
+	await $Clock/TimePanelBlank/TimelineAnimation.animation_finished
 	# display shock after anim
 	
 	if Gameloop.current_turn == Gameloop.n_turns:
