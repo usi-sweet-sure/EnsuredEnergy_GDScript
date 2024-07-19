@@ -109,9 +109,8 @@ func _update_info():
 	# updates the energy produced by a plant in summer and winter
 	$PreviewInfo/EnergyS.text = str(availability.x * capacity).pad_decimals(0)
 	$PreviewInfo/EnergyW.text = str(availability.y * capacity).pad_decimals(0)
-	summer_energy.text = str(availability.x * capacity).pad_decimals(2)
-	winter_energy.text = str(availability.y * capacity).pad_decimals(2)
-	print(winter_energy.text)
+	summer_energy.text = str(availability.x * capacity).pad_decimals(0)
+	winter_energy.text = str(availability.y * capacity).pad_decimals(0)
 	
 	# updates metrics
 	$BuildInfo/ColorRect/ContainerN/Prod.text = "-" + str(production_cost).pad_decimals(0)
