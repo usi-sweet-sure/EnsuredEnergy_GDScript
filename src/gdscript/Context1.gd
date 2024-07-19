@@ -46,6 +46,10 @@ func get_ctx():
 		push_error("http error")
 	
 	
+	# TODO get river and hydro avl from dsp
+func get_dsp():
+	var url = "https://sure.euler.usi.ch/json.php?mth=dsp"
+	
 #handle response
 func _http1_completed(_result, _response_code, _headers, body):
 	var json = JSON.new()
