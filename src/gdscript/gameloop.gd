@@ -58,7 +58,7 @@ var green_energy_import_on := false:
 var imported_energy_amount: int = 0:
 	set(new_value):
 		imported_energy_amount = new_value
-		print("Imported amount : ", imported_energy_amount)
+		#print("Imported amount : ", imported_energy_amount)
 		imported_energy_amount_updated.emit(imported_energy_amount)
 
 # Called when the node enters the scene tree for the first time.
@@ -78,7 +78,7 @@ func _update_supply():
 			total_production_costs += power_plant.production_cost
 	supply_summer = summer
 	supply_winter = winter
-	print(total_production_costs)
+	#print(total_production_costs)
 	
 	
 func _check_supply():
