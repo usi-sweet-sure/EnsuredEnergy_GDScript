@@ -2,15 +2,15 @@ extends Node2D
 
 
 @export var availability = Vector2(0.5, 0.5)
-@export var capacity: float = 10
+@export var capacity: float = 10.0
 @export var plant_name: String = "gas"
 @export var life_span: int = 11
 @export var max_upgrade: int = 3
 @export var build_time: int = 0
 @export var build_cost: int = 100
-@export var production_cost: float = 0
-@export var pollution: float = 0
-@export var land_use: float = 1
+@export var production_cost: float = 0.0
+@export var pollution: float = 0.0
+@export var land_use: float = 1.0
 @export var upgrade_cost: int = 25
 
 
@@ -44,16 +44,16 @@ var plant_name_to_model = {
 
 					
 var plant_name_to_ups_id = {
-			"GAS": "186",
-			"NUCLEAR": "151",
-			"RIVER": "162",
-			"HYDRO": "163",
-			"WASTE": "189",
-			"BIOMASS": "192",
-			"SOLAR": "170",
-			"WIND": "171",
-			"PUMP": "379",
-			"GEOTHERMAL": "246"
+	"GAS": "186",
+	"NUCLEAR": "151",
+	"RIVER": "162",
+	"HYDRO": "163",
+	"WASTE": "189",
+	"BIOMASS": "192",
+	"SOLAR": "170",
+	"WIND": "171",
+	"PUMP": "379",
+	"GEOTHERMAL": "246"
 }
 
 var plant_name_to_metric_id = {
@@ -157,13 +157,11 @@ func _on_request_finished(_result, _response_code, _headers, _body):
 			availability.y = 1 - float(i["tj"])
 	
 	if plant_name == "NUCLEAR":
-		#print(capacity)
-		capacity = capacity / 100 / 3 # there's 3 nuclear plants
-		print(capacity * availability.x)
+		capacity = capacity / 100.0 / 3.0 # there's 3 nuclear plants
 		pollution /= 3
 		land_use /= 3
 		production_cost = production_cost / 10 / 3
-	if plant_name == "HYDRO" || plant_name == "RIVER":
+	elif plant_name == "HYDRO" || plant_name == "RIVER":
 		capacity = capacity / 100 / 2
 		pollution /= 4 # needs to divide by the number of water plants
 		land_use /= 4
