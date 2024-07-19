@@ -8,9 +8,11 @@ var current_turn: int = 1 #player action always take place in the following year
 var green_energy_import_factor: float = 1.5
 var debt_percentage_on_borrowed_money: int = 20
 
-var demand_availability = Vector2(0.45, 0.55)
+var demand_summer_list = []
+var demand_winter_list = []
 var year_list = []
 var all_power_plants
+
 var ups_list = {
 	"186": 0,
 	"151": 0,
@@ -39,12 +41,12 @@ signal imports_emissions_updated
 signal next_turn
 signal end
 
-var demand_summer: int = 1000:
+var demand_summer: float = 1000:
 	set(new_value):
 		demand_summer = new_value;
-		#print("Summer demand updated : " + str(demand_summer))
+		print("Summer demand updated : " + str(demand_summer))
 		energy_demand_updated_summer.emit(new_value)
-var demand_winter: int = 1200:
+var demand_winter: float = 1200:
 	set(new_value):
 		demand_winter = new_value
 		#print("Winter demand updated : " + str(demand_winter))
@@ -109,6 +111,20 @@ func _ready():
 		year_list.append(start_year + (i * 3))
 		
 	next_turn.connect(_send_prm_ups)
+	#Context1.http1.request_completed.connect(_on_request_completed)
+	
+	# TODO get all the demands for each year for the graph (nice to have)
+#func _on_request_completed(_result, _response_code, _headers, _body):
+	#for year in year_list:
+		#Context1.yr = str(year)
+		#Context1.get_ctx()
+		#for i in Context1.ctx1:
+			#if i["prm_id"] == "454":
+				#Gameloop.demand_summer_list.append(float(i["tj"]) / 100)
+			#if i["prm_id"] == "455":
+				#Gameloop.demand_winter_list.append(float(i["tj"]) / 100)
+		#await Context1.http1.request_completed
+			
 
 func _update_supply():
 	all_power_plants = get_tree().get_nodes_in_group("PP")
