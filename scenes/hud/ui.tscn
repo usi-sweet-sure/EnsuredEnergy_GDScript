@@ -1944,7 +1944,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="OpenPoliciesFrameButton" type="TextureButton" parent="TopLeftZone/Policies"]
+[node name="OpenPoliciesWindowButton" type="TextureButton" parent="TopLeftZone/Policies"]
 layout_mode = 0
 offset_left = 228.0
 offset_top = 74.0
@@ -1954,12 +1954,12 @@ texture_normal = ExtResource("36_xxsv6")
 texture_pressed = ExtResource("37_533gb")
 texture_hover = ExtResource("38_7v12r")
 
-[node name="Button-hole2" type="Sprite2D" parent="TopLeftZone/Policies/OpenPoliciesFrameButton"]
+[node name="Button-hole2" type="Sprite2D" parent="TopLeftZone/Policies/OpenPoliciesWindowButton"]
 show_behind_parent = true
 position = Vector2(32, 32)
 texture = ExtResource("39_jsaox")
 
-[node name="Notif" type="Label" parent="TopLeftZone/Policies/OpenPoliciesFrameButton"]
+[node name="Notif" type="Label" parent="TopLeftZone/Policies/OpenPoliciesWindowButton"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -1974,21 +1974,21 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_4ww80")
 text = "1"
 
-[node name="CancelIcon" type="Sprite2D" parent="TopLeftZone/Policies/OpenPoliciesFrameButton/Notif"]
+[node name="CancelIcon" type="Sprite2D" parent="TopLeftZone/Policies/OpenPoliciesWindowButton/Notif"]
 self_modulate = Color(1, 0, 0, 1)
 show_behind_parent = true
 position = Vector2(5, 12)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("40_h6a6a")
 
-[node name="ColorRect" type="ColorRect" parent="TopLeftZone/Policies/OpenPoliciesFrameButton/Notif/CancelIcon"]
+[node name="ColorRect" type="ColorRect" parent="TopLeftZone/Policies/OpenPoliciesWindowButton/Notif/CancelIcon"]
 offset_left = -12.0
 offset_top = -12.0
 offset_right = 12.0
 offset_bottom = 12.0
 color = Color(0.580392, 0, 0, 1)
 
-[node name="Label" type="Label" parent="TopLeftZone/Policies/OpenPoliciesFrameButton"]
+[node name="Label" type="Label" parent="TopLeftZone/Policies/OpenPoliciesWindowButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2874,6 +2874,7 @@ text = "Test button bottom
 [connection signal="pressed" from="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame/Cancel" to="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame" method="_on_cancel_pressed"]
 [connection signal="value_changed" from="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame/BorrowSlider/Slider" to="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame/Money/BorrowAmount" method="_on_borrow_money_slider_value_changed"]
 [connection signal="value_changed" from="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame/BorrowSlider/Slider" to="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame/Debt/DebtAmount" method="_on_borrow_money_slider_value_changed"]
+[connection signal="pressed" from="TopLeftZone/Policies/OpenPoliciesWindowButton" to="TopLeftZone/Policies/Window" method="_on_open_policies_window_button_pressed"]
 [connection signal="pressed" from="EnvironmentAndPollution/Environment/Info/MoreInfo" to="EnvironmentAndPollution/Environment/Info/MarginContainer/BubbleOpen" method="_on_more_info_button_pressed"]
 [connection signal="pressed" from="EnvironmentAndPollution/Environment/Info/MoreInfo" to="EnvironmentAndPollution/Environment/Info/MarginContainer/MarginContainer/VBoxContainer/InfoText" method="_on_more_info_button_pressed"]
 [connection signal="pressed" from="EnvironmentAndPollution/Environment/Info/MoreInfo" to="EnvironmentAndPollution/Environment/Info/MarginContainer/MarginContainer/VBoxContainer/InfoText2" method="_on_more_info_button_pressed"]
