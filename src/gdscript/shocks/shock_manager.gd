@@ -1,6 +1,7 @@
 extends Node
 
 var shocks: Array[Shock] = []
+var shocks_full : Array[Shock] = []
 
 func _ready():
 	var cold_spell = Shock.new("SHOCK_COLD_SPELL_TITLE", "SHOCK_COLD_SPELL_TEXT", "cold.png")
@@ -53,12 +54,18 @@ func _ready():
 
 	shocks = [cold_spell, heat_wave, glaciers_melting, severe_weather, inc_raw_cost_10,
 			inc_raw_cost_20, dec_raw_cost_20, no_shock, mass_immigration, renewable_support, nuc_reintro]
+	shocks_full = shocks.duplicate()
+	shocks.shuffle()
 	
 	
 func pick_shock():
-	var new_shock = shocks[randi() % shocks.size()]
-	print("shock picked: ", new_shock.title_key)
-	Gameloop.most_recent_shock = new_shock
+	if shocks.is_empty():
+		shocks = shocks_full.duplicate()
+		shocks.shuffle()
+		
+	var random_shock = shocks.pop_front()
+	print("shock picked: ", random_shock.title_key)
+	Gameloop.most_recent_shock = random_shock
 
 func apply_shock():
 	if Gameloop.most_recent_shock != null:
