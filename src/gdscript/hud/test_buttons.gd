@@ -3,7 +3,7 @@ extends Control
 
 
 func _on_button_top_pressed():
-	print(ShockSystem.draw_random_shock())
+	ShockManager.pick_shock()
 
 func _on_button_bottom_pressed():
-	pass
+	ShockManager.apply_shock()

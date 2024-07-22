@@ -18,7 +18,8 @@ func _on_next_turn_pressed():
 	$Clock/TimePanelBlank._set_next_years_anim()
 	$Clock/TimePanelBlank/TimelineAnimation.play("NextTurnAnim")
 	await $Clock/TimePanelBlank/TimelineAnimation.animation_finished
-	# display shock after anim
+	ShockManager.pick_shock()
+	ShockManager.apply_shock()
 	
 	if Gameloop.current_turn == Gameloop.n_turns:
 		Gameloop.end.emit()

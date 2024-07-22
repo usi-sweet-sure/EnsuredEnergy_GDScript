@@ -148,7 +148,7 @@ func _on_request_finished(_result, _response_code, _headers, _body):
 		if i["prm_id"] == poll_key:
 			pollution = float(i["tj"])
 		if i["prm_id"] == land_key:
-			land_use == float(i["tj"])
+			land_use = float(i["tj"])
 		if i["prm_id"] == cost_key:
 			production_cost = float(i["tj"]) / 10
 		if i["prm_id"] == avail_key:

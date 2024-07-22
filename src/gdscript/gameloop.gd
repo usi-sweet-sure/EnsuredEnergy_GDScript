@@ -30,11 +30,13 @@ signal energy_demand_updated_summer
 signal green_energy_import_on_updated
 signal imported_energy_amount_updated
 signal borrowed_money_amount_updated
+signal players_own_money_amount_updated
 signal available_money_amount_updated
 signal land_use_percentage_updated
 signal biodiversity_percentage_updated
 signal co2_emissions_updated
 signal imports_emissions_updated
+signal most_recent_shock_updated
 
 signal next_turn
 signal end
@@ -80,11 +82,16 @@ var borrowed_money_amount: int = 0:
 		borrowed_money_amount = new_value
 		borrowed_money_amount_updated.emit(borrowed_money_amount)
 		available_money_amount_updated.emit(available_money_amount)
+var players_own_money_amount: int = 0:
+	set(new_value):
+		players_own_money_amount = new_value
+		players_own_money_amount_updated.emit(players_own_money_amount)
+		available_money_amount_updated.emit(available_money_amount)
 # This is a sum of all the money sources, so don't set this variable, but the
 # parts used to compute it
 var available_money_amount: int = 0:
 	get:
-		return borrowed_money_amount # E. add other money resources as we add them
+		return players_own_money_amount + borrowed_money_amount # E. add other money resources as we add them
 var land_use_percentage: int = 37:
 	set(new_value):
 		land_use_percentage = clamp(new_value, 0, 100)
@@ -101,9 +108,14 @@ var imports_emissions: int = 0:
 	set(new_value):
 		imports_emissions = clamp(new_value, 0, 100)
 		imports_emissions_updated.emit(imports_emissions)
+var most_recent_shock: Shock = null:
+	set(new_value):
+		most_recent_shock = new_value
+		most_recent_shock_updated.emit(most_recent_shock)
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	players_own_money_amount = start_money
 	all_power_plants = get_tree().get_nodes_in_group("PP")
 	for i in n_turns + 1:
 		year_list.append(start_year + (i * 3))
