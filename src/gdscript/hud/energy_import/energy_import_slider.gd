@@ -1,8 +1,5 @@
 extends VSlider
 
-@onready var clean_import_led: Sprite2D = $LEDOn
-@onready var imported_energy_cost_label: Label = $"../ImportCost"
-
 
 func _ready():
 	Gameloop.energy_demand_updated_winter.connect(_on_energy_demand_updated_winter)

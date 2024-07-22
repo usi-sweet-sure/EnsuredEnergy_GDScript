@@ -42,64 +42,10 @@ show_behind_parent = true
 position = Vector2(-8, 123)
 texture = ExtResource("7_ielfg")
 
-[node name="Text" type="Label" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.707
-anchor_bottom = 1.0
-offset_left = 3.992
-offset_top = -5.0
-offset_right = -12.0
-offset_bottom = 5.0
-text = "Imports"
-horizontal_alignment = 2
-vertical_alignment = 1
-
 [node name="TargetLine" type="Line2D" parent="."]
 position = Vector2(-111, 9)
 points = PackedVector2Array(144, 16, 120, 16)
 width = 2.0
-
-[node name="Range" type="Label" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 3.0
-offset_top = -24.0
-offset_right = 267.0
-offset_bottom = 2.0
-theme_override_font_sizes/font_size = 10
-text = " 0                                                           100"
-vertical_alignment = 2
-
-[node name="Amount" type="Label" parent="."]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 262.0
-offset_right = 48.0
-offset_bottom = 288.0
-text = "0 %"
-
-[node name="Apply" type="Button" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 232.0
-offset_top = -7.0
-offset_right = 263.0
-offset_bottom = 23.0
-focus_mode = 0
-theme_override_font_sizes/font_size = 15
-text = "OK"
-
-[node name="Cancel" type="Button" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 270.0
-offset_top = -8.0
-offset_right = 288.0
-offset_bottom = 23.0
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-text = "X"
 
 [node name="ImportSwitch" type="CheckButton" parent="."]
 layout_mode = 0

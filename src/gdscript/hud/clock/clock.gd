@@ -42,3 +42,19 @@ func clock_pressed():
 func _unhandled_input(event):
 	if event is InputEventMouseButton and event.button_mask == MOUSE_BUTTON_MASK_LEFT:
 		clock_info_sticker.hide()
+		
+func _on_next_turn_button_pressed():
+	_set_next_years_anim()
+	$TimelineAnimation.play("NextTurnAnim")
+	await $TimelineAnimation.animation_finished
+	ShockManager.pick_shock()
+	ShockManager.apply_shock()
+	
+	if Gameloop.current_turn == Gameloop.n_turns:
+		Gameloop.end.emit()
+		$"../../NextTurn".hide()
+	else:
+		Gameloop.next_turn.emit()
+		Gameloop.current_turn += 1
+		Context1.yr = Gameloop.year_list[Gameloop.current_turn]
+	

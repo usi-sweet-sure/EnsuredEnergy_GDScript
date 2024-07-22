@@ -64,20 +64,19 @@ var supply_winter: int = 0:
 		#print("Summer supply updated : " + str(supply_winter))
 		#print("Winter supply updated : " + str(supply_winter))
 		energy_supply_updated_winter.emit(supply_winter)
-var energy_import_cost: int = 0:
+var energy_import_cost: float = 0:
 	get:
 		if not green_energy_import_on:
-			return floor(imported_energy_amount * 0.01)
+			return imported_energy_amount 
 		else:
-			return round(floor(imported_energy_amount * 0.01) * green_energy_import_factor)
+			return imported_energy_amount * green_energy_import_factor
 var green_energy_import_on := false:
 	set(new_value):
 		green_energy_import_on = new_value
 		green_energy_import_on_updated.emit(green_energy_import_on)
-var imported_energy_amount: int = 0:
+var imported_energy_amount: float = 0:
 	set(new_value):
 		imported_energy_amount = new_value
-		#print("Imported amount : ", imported_energy_amount)
 		imported_energy_amount_updated.emit(imported_energy_amount)
 var borrowed_money_amount: int = 0:
 	set(new_value):
@@ -154,8 +153,11 @@ func _update_supply():
 	
 	
 func _check_supply():
-	return (supply_summer >= demand_summer && 
-	supply_winter + imported_energy_amount >= demand_winter)
+	print("check supply")
+	print("summer demand ", demand_summer, " summer supply ", supply_summer)
+	print("winter demand ", demand_winter, " winter supply ", supply_winter + imported_energy_amount)
+	print(supply_summer >= demand_summer and supply_winter + imported_energy_amount >= demand_winter)
+	return supply_summer >= demand_summer and supply_winter + imported_energy_amount >= demand_winter
 	
 
 func _send_prm_ups():
