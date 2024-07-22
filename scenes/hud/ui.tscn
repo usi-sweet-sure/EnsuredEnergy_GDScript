@@ -1,4 +1,4 @@
-[gd_scene load_steps=139 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=141 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Texture2D" uid="uid://dik8jskwri4ev" path="res://assets/UI Elements/Profil-metal.png" id="1_ooswe"]
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/UI Elements/Button-Next-Normal.png" id="2_aobed"]
@@ -97,6 +97,8 @@
 [ext_resource type="Script" path="res://src/gdscript/hud/emissions/info_box/imports_emissions_info_text_label.gd" id="72_2h8vj"]
 [ext_resource type="Script" path="res://src/gdscript/hud/energy_import/green_import_led_on_sprite.gd" id="72_ytkph"]
 [ext_resource type="Script" path="res://src/gdscript/hud/test_buttons.gd" id="86_id1hi"]
+[ext_resource type="Script" path="res://src/gdscript/hud/clock/current_turn_label.gd" id="95_2utc1"]
+[ext_resource type="Script" path="res://src/gdscript/hud/clock/remaining_turns_label.gd" id="96_6b673"]
 [ext_resource type="Script" path="res://src/gdscript/hud/next_turn_button.gd" id="96_c1i3i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_21dh1"]
@@ -2676,7 +2678,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 34
 text = "Turn"
 
-[node name="CTurn" type="Label" parent="Clock/TimePanelBlank/TurnInfoContainer/MarginContainer/VBoxContainer/CurrentTurn"]
+[node name="CurrentTurn" type="Label" parent="Clock/TimePanelBlank/TurnInfoContainer/MarginContainer/VBoxContainer/CurrentTurn"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -2695,6 +2697,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 34
 text = "N"
 horizontal_alignment = 2
+script = ExtResource("95_2utc1")
 
 [node name="RemainingTurns" type="Label" parent="Clock/TimePanelBlank/TurnInfoContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -2705,7 +2708,7 @@ theme_override_font_sizes/font_size = 34
 text = "Remaining turns"
 autowrap_mode = 2
 
-[node name="RTurn" type="Label" parent="Clock/TimePanelBlank/TurnInfoContainer/MarginContainer/VBoxContainer/RemainingTurns"]
+[node name="RemainingTurns" type="Label" parent="Clock/TimePanelBlank/TurnInfoContainer/MarginContainer/VBoxContainer/RemainingTurns"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -2724,6 +2727,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 34
 text = "N"
 horizontal_alignment = 2
+script = ExtResource("96_6b673")
 
 [node name="TurnInfo" type="Button" parent="Clock/TimePanelBlank"]
 anchors_preset = 15

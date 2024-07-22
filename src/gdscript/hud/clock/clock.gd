@@ -50,7 +50,7 @@ func _on_next_turn_button_pressed():
 	ShockManager.pick_shock()
 	ShockManager.apply_shock()
 	
-	if Gameloop.current_turn == Gameloop.n_turns:
+	if Gameloop.current_turn == Gameloop.total_number_of_turns:
 		Gameloop.end.emit()
 		$"../../NextTurn".hide()
 	else:

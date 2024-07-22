@@ -1,10 +1,9 @@
 extends Node2D
 
 var start_year: int = 2022
-var n_turns: int = 10
+var total_number_of_turns: int = 10
 var start_money: int = 250
 var money_per_turn: int = 250
-var current_turn: int = 1 #player action always take place in the following year
 var green_energy_import_factor: float = 1.5
 var debt_percentage_on_borrowed_money: int = 20
 
@@ -39,6 +38,7 @@ signal biodiversity_percentage_updated
 signal co2_emissions_updated
 signal imports_emissions_updated
 signal most_recent_shock_updated
+signal current_turn_updated
 
 signal next_turn
 signal end
@@ -113,12 +113,16 @@ var most_recent_shock: Shock = null:
 	set(new_value):
 		most_recent_shock = new_value
 		most_recent_shock_updated.emit(most_recent_shock)
+var current_turn: int = 1:# Player action always take place in the following year
+	set(new_value):
+		current_turn = new_value
+		current_turn_updated.emit(current_turn)
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	players_own_money_amount = start_money
 	all_power_plants = get_tree().get_nodes_in_group("PP")
-	for i in n_turns + 1:
+	for i in total_number_of_turns + 1:
 		year_list.append(start_year + (i * 3))
 		
 	next_turn.connect(_send_prm_ups)
@@ -153,9 +157,6 @@ func _update_supply():
 	
 	
 func _check_supply():
-	print("check supply")
-	print("summer demand ", demand_summer, " summer supply ", supply_summer)
-	print("winter demand ", demand_winter, " winter supply ", supply_winter + imported_energy_amount)
 	print(supply_summer >= demand_summer and supply_winter + imported_energy_amount >= demand_winter)
 	return supply_summer >= demand_summer and supply_winter + imported_energy_amount >= demand_winter
 	
