@@ -7,30 +7,56 @@ func _ready():
 	cold_spell.add_effect(func(): Gameloop.demand_winter += 5)
 	cold_spell.add_requirements("SHOCK_COLD_SPELL_REQUIREMENT_MET",
 			[func(): return Gameloop.supply_winter + Gameloop.imported_energy_amount >= Gameloop.demand_winter + 5],
-			[func(): print("Support + 5"), func(): Gameloop.players_own_money += 50] # E. implement
+			[func(): print("Support + 5"), func(): Gameloop.players_own_money_amount += 50] # E. implement
 		)
 	cold_spell.add_player_reaction("SHOCK_COLD_SPELL_PLAYER_REACTION_1", func(): print("Support -10")) # E. Implement
 	cold_spell.add_player_reaction("SHOCK_COLD_SPELL_PLAYER_REACTION_2", func(): print("gaz upgrade")) # E. Implement
 	cold_spell.add_player_reaction("SHOCK_COLD_SPELL_PLAYER_REACTION_3", func(): Gameloop.players_own_money_amount -= 50)
 	
-	var	heat_wave: = Shock.new("SHOCK_HEAT_WAVE_TITLE", "SHOCK_HEAT_WAVE_TEXT", "hot.png")
+	var heat_wave: = Shock.new("SHOCK_HEAT_WAVE_TITLE", "SHOCK_HEAT_WAVE_TEXT", "hot.png")
+	heat_wave.add_effect(func(): Gameloop.demand_summer += 5)
+	heat_wave.add_requirements("SHOCK_HEAT_WAVE_REQUIREMENT_MET",
+			[func():  return Gameloop.supply_summer >= Gameloop.demand_summer + 5],
+			[func(): print("Support + 5"), func(): Gameloop.players_own_money_amount += 50] # E. implement
+		)
+	heat_wave.add_player_reaction("SHOCK_HEAT_WAVE_PLAYER_REACTION_1", func(): print("Support -10")) # E. Implement
+	heat_wave.add_player_reaction("SHOCK_HEAT_WAVE_PLAYER_REACTION_2", func(): print("gaz upgrade")) # E. Implement
+	heat_wave.add_player_reaction("SHOCK_HEAT_WAVE_PLAYER_REACTION_3", func(): Gameloop.players_own_money_amount -= 50)
+	
 	var glaciers_melting = Shock.new("SHOCK_GLACIERS_MELTING_TITLE", "SHOCK_GLACIERS_MELTING_TEXT", "ice.png")
+	glaciers_melting.add_effect(func(): print("decreasing hydraulic water supply")) # E. Implement
+	
 	var severe_weather = Shock.new("SHOCK_SEVERE_WEATHER_TITLE", "SHOCK_SEVERE_WEATHER_TEXT", "weathe.pngr")
+	severe_weather.add_effect(func(): print("decreasing wind and solar energy by 10%")) # E. Implement
+	
 	var inc_raw_cost_10 = Shock.new("SHOCK_INC_RAW_COST_10_TITLE", "SHOCK_INC_RAW_COST_10_TEXT", "money.png")
+	inc_raw_cost_10.add_effect(func(): print("increasing production costs by 10%")) # E. Implement
+	
 	var inc_raw_cost_20 = Shock.new("SHOCK_INC_RAW_COST_20_TITLE", "SHOCK_INC_RAW_COST_20_TEXT", "money.png")
+	inc_raw_cost_20.add_effect(func(): print("increasing production costs by 20%")) # E. Implement
+	
 	var dec_raw_cost_20 = Shock.new("SHOCK_DEC_RAW_COST_20_TITLE", "SHOCK_DEC_RAW_COST_20_TEXT", "receive.png")
-	var no_shock = Shock.new("SHOCK_NO_SHOCK_TITLE", "SHOCK_NO_SHOCK_TEXT", "sunrise.png", false)
+	dec_raw_cost_20.add_effect(func(): print("decreasing production costs by 20%")) # E. Implement
+	
 	var mass_immigration = Shock.new("SHOCK_MASS_IMMIGRATION_TITLE", "SHOCK_MASS_IMMIGRATION_TEXT", "people.png")
-	var renewable_support = Shock.new("SHOCK_RENEWABLE_SUPPORT_TITLE", "SHOCK_RENEWABLE_SUPPORTL_TEXT", "flower.png")
+	mass_immigration.add_effect(func(): Gameloop.demand_winter + 5)
+	mass_immigration.add_effect(func(): Gameloop.demand_summer + 5)
+	
+	var renewable_support = Shock.new("SHOCK_RENEWABLE_SUPPORT_TITLE", "SHOCK_RENEWABLE_SUPPORT_TEXT", "flower.png")
+	renewable_support.add_effect(func(): print("support + 10%")) # E. Implement
+	
 	var nuc_reintro = Shock.new("SHOCK_NUC_REINTRO_TITLE", "SHOCK_NUC_REINTRO_TEXT", "vote.png")
+	nuc_reintro.add_player_reaction("SHOCK_NUC_REINTRO_PLAYER_REACTION_1", func(): print("Reintroduce nuclear power")) # E. Implement
+	nuc_reintro.add_player_reaction("SHOCK_NUC_REINTRO_PLAYER_REACTION_2", func(): print("de-transition from nuclear power")) # E. Implement
+	
+	var no_shock = Shock.new("SHOCK_NO_SHOCK_TITLE", "SHOCK_NO_SHOCK_TEXT", "sunrise.png", false)
 
 	shocks = [cold_spell, heat_wave, glaciers_melting, severe_weather, inc_raw_cost_10,
 			inc_raw_cost_20, dec_raw_cost_20, no_shock, mass_immigration, renewable_support, nuc_reintro]
 	
 	
 func pick_shock():
-	#var new_shock = shocks[randi() % shocks.size()]
-	var new_shock = shocks[0]
+	var new_shock = shocks[randi() % shocks.size()]
 	print("shock picked: ", new_shock.title_key)
 	Gameloop.most_recent_shock = new_shock
 

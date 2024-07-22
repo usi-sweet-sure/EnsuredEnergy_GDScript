@@ -7,4 +7,4 @@ func _ready():
 
 
 func _on_most_recent_shock_updated(shock: Shock):
-	text = shock.requirements_met_text
+	text = tr(shock.requirements_met_text_key)
