@@ -94,3 +94,4 @@ SHOCK_NUC_REINTRO_TEXT,The population wants to vote on the future of the nuclear
 SHOCK_NUC_REINTRO_PLAYER_REACTION_1,Yes for reintroducig nuclear power.,Oui pour la ré-introduction du nucléaire.,Ja zur Wiedereinführung der Kernenergie.,Sì alla reintroduzione dell'energia nucleare.
 SHOCK_NUC_REINTRO_PLAYER_REACTION_2,"No, it's time to de-transition from nuclear.","Non, il est temps de dé-transitioner du nucléaire.","Nein, es ist Zeit, definitiv aus der Kernenergie auszusteigen.","No, è ora di abbandonare il nucleare."
 NEXT_TURN_BUTTON_LABEL,Next turn,Tour suivant,Nächste Runde,Prossimo turno
+NOT_ENOUGH_ENERGY,Not enough energy,Pas assez d'énergie,Nicht genug Energie,Non c'è abbastanza energia

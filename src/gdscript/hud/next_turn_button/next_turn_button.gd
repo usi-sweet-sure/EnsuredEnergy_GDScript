@@ -8,7 +8,7 @@ func _ready():
 
 # If the player supplies enough energy in summer and winter, can go to the next turn
 func _on_energy_supply_updated(_value):
-	disabled = !Gameloop._check_supply()
+	disabled = !Gameloop.can_go_to_next_turn()
 
 func _on_imported_energy_amount_updated(_value):
-	disabled = !Gameloop._check_supply()
+	disabled = !Gameloop.can_go_to_next_turn()

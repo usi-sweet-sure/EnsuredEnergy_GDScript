@@ -1,4 +1,4 @@
-[gd_scene load_steps=141 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=142 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Texture2D" uid="uid://dik8jskwri4ev" path="res://assets/UI Elements/Profil-metal.png" id="1_ooswe"]
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/UI Elements/Button-Next-Normal.png" id="2_aobed"]
@@ -99,7 +99,8 @@
 [ext_resource type="Script" path="res://src/gdscript/hud/test_buttons.gd" id="86_id1hi"]
 [ext_resource type="Script" path="res://src/gdscript/hud/clock/current_turn_label.gd" id="95_2utc1"]
 [ext_resource type="Script" path="res://src/gdscript/hud/clock/remaining_turns_label.gd" id="96_6b673"]
-[ext_resource type="Script" path="res://src/gdscript/hud/next_turn_button.gd" id="96_c1i3i"]
+[ext_resource type="Script" path="res://src/gdscript/hud/next_turn_button/next_turn_button.gd" id="97_wp832"]
+[ext_resource type="Script" path="res://src/gdscript/hud/next_turn_button/error_animation.gd" id="99_3seiv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_21dh1"]
 atlas = ExtResource("50_inaxr")
@@ -780,7 +781,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-40, -40), Vector2(-40, -70)]
+"values": [Vector2(-28, -40), Vector2(-28, -72)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -2778,7 +2779,7 @@ texture_hover = ExtResource("4_mh4j1")
 texture_disabled = ExtResource("5_hh5pc")
 ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("96_c1i3i")
+script = ExtResource("97_wp832")
 
 [node name="Label" type="Label" parent="NextTurn"]
 layout_mode = 1
@@ -2803,6 +2804,7 @@ uppercase = true
 libraries = {
 "": SubResource("AnimationLibrary_jpw4y")
 }
+script = ExtResource("99_3seiv")
 
 [node name="Button-next-base" type="Sprite2D" parent="NextTurn"]
 show_behind_parent = true
@@ -2814,13 +2816,14 @@ visible = false
 layout_mode = 0
 offset_left = 25.0
 offset_top = -25.0
-offset_right = 475.0
+offset_right = 276.0
 offset_bottom = 10.0
 theme = ExtResource("70_2ktfd")
 theme_override_colors/font_color = Color(0.683594, 0.238281, 0.195313, 1)
 theme_override_colors/font_shadow_color = Color(0.141176, 0.192157, 0.2, 0.592157)
 theme_override_constants/outline_size = 0
-text = "Not enough energy!"
+text = "NOT_ENOUGH_ENERGY"
+horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
@@ -2877,7 +2880,7 @@ text = "Test button bottom
 [connection signal="pressed" from="ImportAndEnergy/Import/ImportSlider/UpButton" to="ImportAndEnergy/Import/ImportSlider" method="_on_import_up_button_pressed"]
 [connection signal="pressed" from="ImportAndEnergy/Import/ImportSlider/DownButton" to="ImportAndEnergy/Import/ImportSlider" method="_on_import_down_button_pressed"]
 [connection signal="pressed" from="Clock/TimePanelBlank/TurnInfo" to="Clock/TimePanelBlank" method="clock_pressed"]
-[connection signal="gui_input" from="NextTurn" to="." method="_on_next_turn_gui_input"]
+[connection signal="gui_input" from="NextTurn" to="NextTurn/NextTurnAP" method="_on_next_turn_gui_input"]
 [connection signal="pressed" from="NextTurn" to="Clock/TimePanelBlank" method="_on_next_turn_button_pressed"]
 [connection signal="pressed" from="TestButtons/ButtonTop" to="TestButtons" method="_on_button_top_pressed"]
 [connection signal="pressed" from="TestButtons/ButtonBottom" to="TestButtons" method="_on_button_bottom_pressed"]

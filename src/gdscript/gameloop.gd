@@ -157,7 +157,6 @@ func _update_supply():
 	
 	
 func _check_supply():
-	print(supply_summer >= demand_summer and supply_winter + imported_energy_amount >= demand_winter)
 	return supply_summer >= demand_summer and supply_winter + imported_energy_amount >= demand_winter
 	
 
@@ -174,3 +173,6 @@ func _unhandled_input(event):
 	if event is InputEventKey:
 		if event.pressed and event.keycode == KEY_ESCAPE:
 			get_tree().quit()
+			
+func can_go_to_next_turn():
+	return _check_supply()
