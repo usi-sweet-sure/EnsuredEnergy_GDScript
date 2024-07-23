@@ -40,9 +40,8 @@ var plant_name_to_model = {
 	"WIND": "169",
 	"GEOTHERMAL": "246",
 	"BIOGAS" : "173"
-	}
+}
 
-					
 var plant_name_to_ups_id = {
 	"GAS": "186",
 	"NUCLEAR": "151",
@@ -141,19 +140,20 @@ func _on_request_finished(_result, _response_code, _headers, _body):
 	var avail_key = plant_name_to_metric_id[plant_name + "_AVAIL"]
 	
 	for i in Context1.ctx1:
-		if i["prm_id"] == model_key:
-			capacity = float(i["tj"])
-		if i["prm_id"] == plant_id:
-			cnv_capacity = float(i["tj"])
-		if i["prm_id"] == poll_key:
-			pollution = float(i["tj"])
-		if i["prm_id"] == land_key:
-			land_use = float(i["tj"])
-		if i["prm_id"] == cost_key:
-			production_cost = float(i["tj"]) / 10
-		if i["prm_id"] == avail_key:
-			availability.x = float(i["tj"])
-			availability.y = 1 - float(i["tj"])
+		match i["prm_id"]:
+			model_key:
+				capacity = float(i["tj"])
+			plant_id:
+				cnv_capacity = float(i["tj"])
+			poll_key:
+				pollution = float(i["tj"])
+			land_key:
+				land_use = float(i["tj"])
+			cost_key:
+				production_cost = float(i["tj"]) / 10
+			avail_key:
+				availability.x = float(i["tj"])
+				availability.y = 1 - float(i["tj"])
 	
 	if plant_name == "NUCLEAR":
 		capacity = capacity / 100.0 / 3.0 # there's 3 nuclear plants
@@ -180,6 +180,7 @@ func _on_request_finished(_result, _response_code, _headers, _body):
 #func _on_request_completed(_result, _response_code, _headers, _body):
 	#$BuildInfo/EnergyContainer/Multiplier/Inc.disabled = false
 	#$BuildInfo/EnergyContainer/Multiplier/Dec.disabled = false
+
 
 func _on_info_button_pressed():
 	$BuildInfo.visible = !$BuildInfo.visible
@@ -217,7 +218,6 @@ func _on_mult_dec_pressed():
 		land_use = base_land_use + (base_land_use * mult_factor * upgrade)
 		production_cost = base_production_cost + (base_production_cost * mult_factor * upgrade)
 		
-		
 		Gameloop.ups_list[plant_id] += value
 		#Context1.prm_id = plant_id
 		#Context1.yr = Gameloop.year_list[Gameloop.current_turn]
@@ -227,8 +227,10 @@ func _on_mult_dec_pressed():
 		_update_info()
 		Gameloop._update_supply()
 		
+		# E. Is this intended ?
 		$BuildInfo/EnergyContainer/Multiplier/Inc.disabled = true
 		$BuildInfo/EnergyContainer/Multiplier/Dec.disabled = true
+		
 		
 func _connect_next_turn_signal():
 	if !Gameloop.next_turn.is_connected(_hide_delete_on_next_turn):

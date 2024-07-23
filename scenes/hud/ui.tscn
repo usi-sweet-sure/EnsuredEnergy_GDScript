@@ -1,4 +1,4 @@
-[gd_scene load_steps=142 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=145 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Texture2D" uid="uid://dik8jskwri4ev" path="res://assets/UI Elements/Profil-metal.png" id="1_ooswe"]
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/UI Elements/Button-Next-Normal.png" id="2_aobed"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cgf1xjsx0mfot" path="res://assets/UI Elements/Button-Next-Base.png" id="7_g7ih8"]
 [ext_resource type="PackedScene" uid="uid://jj476u8yn2g8" path="res://scenes/windows/window.tscn" id="7_yu7g8"]
 [ext_resource type="AudioStream" uid="uid://ben5r72x0p8pr" path="res://assets/Sounds/Move_03.wav" id="10_po2ll"]
+[ext_resource type="Script" path="res://src/gdscript/settings/settings_frame.gd" id="11_3o2f5"]
 [ext_resource type="Texture2D" uid="uid://bjeebs7uy4hpn" path="res://assets/UI Elements/Button-small-Hole.png" id="11_i0u5d"]
 [ext_resource type="Texture2D" uid="uid://bbnupxdtp78l5" path="res://assets/UI Elements/Icon-Wind.png" id="11_qepre"]
 [ext_resource type="AudioStream" uid="uid://00apgxjmwgw0" path="res://assets/Sounds/Click_020.wav" id="11_tr1n1"]
@@ -23,8 +24,11 @@
 [ext_resource type="Texture2D" uid="uid://xyxroar1ffyt" path="res://assets/UI Elements/Envirornment-Bar-Metal.png" id="18_oaaki"]
 [ext_resource type="Texture2D" uid="uid://bu3fwwb31gmuw" path="res://assets/UI Elements/Import_energy-Metal.png" id="19_1inpw"]
 [ext_resource type="Texture2D" uid="uid://52o3k8juwbmd" path="res://assets/UI Elements/Clock_Meter-1.png" id="19_bcm0u"]
+[ext_resource type="Script" path="res://src/gdscript/settings/language_button.gd" id="19_hlb1m"]
 [ext_resource type="Texture2D" uid="uid://bmjee8ocqy0ge" path="res://assets/UI Elements/Enviornment-Base.png" id="21_i8c3o"]
 [ext_resource type="Texture2D" uid="uid://bwmnloeklg76n" path="res://assets/UI Elements/Enviornment-Hand.png" id="23_3qgyr"]
+[ext_resource type="Script" path="res://src/gdscript/settings/show_credits_button.gd" id="23_du1cc"]
+[ext_resource type="Script" path="res://src/gdscript/settings/credits_sprite.gd" id="24_8iu2c"]
 [ext_resource type="Texture2D" uid="uid://lxqt8kspr35q" path="res://assets/UI Elements/Icon-Environment-.png" id="24_t8vy5"]
 [ext_resource type="Texture2D" uid="uid://0mihvtaw003w" path="res://assets/UI Elements/Icon-Pollution-.png" id="25_7q1c5"]
 [ext_resource type="Script" path="res://src/gdscript/hud/energy_import/energy_import_slider.gd" id="25_pkr0e"]
@@ -80,7 +84,6 @@
 [ext_resource type="Texture2D" uid="uid://b4m67oni44dpg" path="res://assets/UI Elements/Button-normal.png" id="62_orw34"]
 [ext_resource type="Texture2D" uid="uid://cuhckno2t6g0r" path="res://assets/UI Elements/Button-hover.png" id="63_c1xpc"]
 [ext_resource type="Texture2D" uid="uid://0od1i8cgelas" path="res://assets/UI Elements/Button-Play-hover.png" id="63_klrtp"]
-[ext_resource type="PackedScene" uid="uid://ciphd0cmpslrn" path="res://scenes/hud/tutorial.tscn" id="63_perny"]
 [ext_resource type="Script" path="res://src/gdscript/hud/money_management/borrow_money_frame/borrow_money_frame.gd" id="63_sky43"]
 [ext_resource type="Script" path="res://src/gdscript/hud/money_management/borrow_money_frame/borrow_amount_label.gd" id="65_rjxqh"]
 [ext_resource type="Script" path="res://src/gdscript/hud/money_management/borrow_money_frame/borrow_money_slider.gd" id="66_0vfa5"]
@@ -900,7 +903,7 @@ offset_bottom = 16.0
 theme = ExtResource("70_2ktfd")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 12
-text = "Resources"
+text = "RESOURCES"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
@@ -920,7 +923,7 @@ show_behind_parent = true
 position = Vector2(32, 32)
 texture = ExtResource("39_jsaox")
 
-[node name="ColorRect" type="ColorRect" parent="TopLeftZone/OpenSettingsFrameButton"]
+[node name="SettingsFrame" type="ColorRect" parent="TopLeftZone/OpenSettingsFrameButton"]
 visible = false
 z_index = 1
 layout_mode = 1
@@ -934,13 +937,14 @@ offset_bottom = 232.704
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.313726, 0.313726, 0.313726, 0.196078)
+script = ExtResource("11_3o2f5")
 
-[node name="Sprite2D" type="Sprite2D" parent="TopLeftZone/OpenSettingsFrameButton/ColorRect"]
+[node name="BackPlate" type="Sprite2D" parent="TopLeftZone/OpenSettingsFrameButton/SettingsFrame"]
 position = Vector2(959, 496)
 scale = Vector2(1, 1.17784)
 texture = SubResource("AtlasTexture_21dh1")
 
-[node name="SettingsBox" type="ColorRect" parent="TopLeftZone/OpenSettingsFrameButton/ColorRect"]
+[node name="SettingsBox" type="ColorRect" parent="TopLeftZone/OpenSettingsFrameButton/SettingsFrame"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -955,7 +959,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.4, 0.4, 0.4, 0)
 
-[node name="Title" type="Label" parent="TopLeftZone/OpenSettingsFrameButton/ColorRect/SettingsBox"]
+[node name="Title" type="Label" parent="TopLeftZone/OpenSettingsFrameButton/SettingsFrame/SettingsBox"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -972,7 +976,7 @@ ENERGY"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Close" type="Button" parent="TopLeftZone/OpenSettingsFrameButton/ColorRect/SettingsBox"]
+[node name="Close" type="Button" parent="TopLeftZone/OpenSettingsFrameButton/SettingsFrame/SettingsBox"]
 layout_mode = 0
 offset_left = -817.0
 offset_top = -224.0
@@ -981,7 +985,7 @@ offset_bottom = 860.0
 focus_mode = 0
 flat = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TopLeftZone/OpenSettingsFrameButton/ColorRect/SettingsBox"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TopLeftZone/OpenSettingsFrameButton/SettingsFrame/SettingsBox"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -992,20 +996,20 @@ offset_right = 102.0
 offset_bottom = 659.0
 grow_horizontal = 2
 
-[node name="ScreenOption" type="CheckBox" parent="TopLeftZone/OpenSettingsFrameButton/ColorRect/SettingsBox/VBoxContainer"]
+[node name="ScreenOption" type="CheckBox" parent="TopLeftZone/OpenSettingsFrameButton/SettingsFrame/SettingsBox/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = SubResource("FontVariation_efn7l")
 button_pressed = true
-text = "Fullscreen"
+text = "FULLSCREEN"
 icon_alignment = 2
 
-[node name="Label" type="Label" parent="TopLeftZone/OpenSettingsFrameButton/ColorRect/SettingsBox/VBoxContainer"]
+[node name="Label" type="Label" parent="TopLeftZone/OpenSettingsFrameButton/SettingsFrame/SettingsBox/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_tjn0r")
-text = "Music"
+text = "MUSIC"
 
-[node name="VolMusic" type="HSlider" parent="TopLeftZone/OpenSettingsFrameButton/ColorRect/SettingsBox/VBoxContainer"]
+[node name="VolMusic" type="HSlider" parent="TopLeftZone/OpenSettingsFrameButton/SettingsFrame/SettingsBox/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
 theme_override_styles/slider = SubResource("StyleBoxFlat_exw71")
@@ -1016,12 +1020,12 @@ step = 0.001
 value = 0.8
 scrollable = false
 
-[node name="Label2" type="Label" parent="TopLeftZone/OpenSettingsFrameButton/ColorRect/SettingsBox/VBoxContainer"]
+[node name="Label2" type="Label" parent="TopLeftZone/OpenSettingsFrameButton/SettingsFrame/SettingsBox/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_jfp53")
 text = "SFX"
 
-[node name="VolSound" type="HSlider" parent="TopLeftZone/OpenSettingsFrameButton/ColorRect/SettingsBox/VBoxContainer"]
+[node name="VolSound" type="HSlider" parent="TopLeftZone/OpenSettingsFrameButton/SettingsFrame/SettingsBox/VBoxContainer"]
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 focus_mode = 0
@@ -1033,35 +1037,36 @@ step = 0.001
 value = 0.8
 scrollable = false
 
-[node name="Space" type="Label" parent="TopLeftZone/OpenSettingsFrameButton/ColorRect/SettingsBox/VBoxContainer"]
+[node name="Space" type="Label" parent="TopLeftZone/OpenSettingsFrameButton/SettingsFrame/SettingsBox/VBoxContainer"]
 layout_mode = 2
 
-[node name="Space2" type="Label" parent="TopLeftZone/OpenSettingsFrameButton/ColorRect/SettingsBox/VBoxContainer"]
+[node name="Space2" type="Label" parent="TopLeftZone/OpenSettingsFrameButton/SettingsFrame/SettingsBox/VBoxContainer"]
 layout_mode = 2
 
-[node name="Space3" type="Label" parent="TopLeftZone/OpenSettingsFrameButton/ColorRect/SettingsBox/VBoxContainer"]
+[node name="Space3" type="Label" parent="TopLeftZone/OpenSettingsFrameButton/SettingsFrame/SettingsBox/VBoxContainer"]
 layout_mode = 2
 
-[node name="Space4" type="Label" parent="TopLeftZone/OpenSettingsFrameButton/ColorRect/SettingsBox/VBoxContainer"]
+[node name="Space4" type="Label" parent="TopLeftZone/OpenSettingsFrameButton/SettingsFrame/SettingsBox/VBoxContainer"]
 layout_mode = 2
 
-[node name="Space5" type="Label" parent="TopLeftZone/OpenSettingsFrameButton/ColorRect/SettingsBox/VBoxContainer"]
+[node name="Space5" type="Label" parent="TopLeftZone/OpenSettingsFrameButton/SettingsFrame/SettingsBox/VBoxContainer"]
 layout_mode = 2
 
-[node name="BuildMenu0004Build-menu-screen" type="Sprite2D" parent="TopLeftZone/OpenSettingsFrameButton/ColorRect/SettingsBox/VBoxContainer"]
+[node name="BuildMenu0004Build-menu-screen" type="Sprite2D" parent="TopLeftZone/OpenSettingsFrameButton/SettingsFrame/SettingsBox/VBoxContainer"]
 position = Vector2(96, 451.25)
 scale = Vector2(1.02525, 1.61211)
 texture = ExtResource("61_ni5qv")
 
-[node name="Language" type="TextureButton" parent="TopLeftZone/OpenSettingsFrameButton/ColorRect/SettingsBox/VBoxContainer"]
+[node name="Language" type="TextureButton" parent="TopLeftZone/OpenSettingsFrameButton/SettingsFrame/SettingsBox/VBoxContainer"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 focus_mode = 0
 texture_normal = ExtResource("61_i4pr1")
 texture_pressed = ExtResource("62_40aw8")
 texture_hover = ExtResource("63_klrtp")
+script = ExtResource("19_hlb1m")
 
-[node name="Label" type="Label" parent="TopLeftZone/OpenSettingsFrameButton/ColorRect/SettingsBox/VBoxContainer/Language"]
+[node name="Label" type="Label" parent="TopLeftZone/OpenSettingsFrameButton/SettingsFrame/SettingsBox/VBoxContainer/Language"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1074,13 +1079,13 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("70_2ktfd")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "Lang"
+text = "LANG"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 uppercase = true
 
-[node name="Instructions" type="TextureButton" parent="TopLeftZone/OpenSettingsFrameButton/ColorRect/SettingsBox/VBoxContainer"]
+[node name="Instructions" type="TextureButton" parent="TopLeftZone/OpenSettingsFrameButton/SettingsFrame/SettingsBox/VBoxContainer"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 focus_mode = 0
@@ -1088,7 +1093,7 @@ texture_normal = ExtResource("62_orw34")
 texture_pressed = ExtResource("5_hh5pc")
 texture_hover = ExtResource("63_c1xpc")
 
-[node name="Label" type="Label" parent="TopLeftZone/OpenSettingsFrameButton/ColorRect/SettingsBox/VBoxContainer/Instructions"]
+[node name="Label" type="Label" parent="TopLeftZone/OpenSettingsFrameButton/SettingsFrame/SettingsBox/VBoxContainer/Instructions"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1101,23 +1106,21 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("70_2ktfd")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "Instructions"
+text = "INSTRUCTIONS"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Tutorial" parent="TopLeftZone/OpenSettingsFrameButton/ColorRect/SettingsBox/VBoxContainer/Instructions" instance=ExtResource("63_perny")]
-visible = false
-
-[node name="Credits" type="TextureButton" parent="TopLeftZone/OpenSettingsFrameButton/ColorRect/SettingsBox/VBoxContainer"]
+[node name="Credits" type="TextureButton" parent="TopLeftZone/OpenSettingsFrameButton/SettingsFrame/SettingsBox/VBoxContainer"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 focus_mode = 0
 texture_normal = ExtResource("62_orw34")
 texture_pressed = ExtResource("5_hh5pc")
 texture_hover = ExtResource("63_c1xpc")
+script = ExtResource("23_du1cc")
 
-[node name="Label" type="Label" parent="TopLeftZone/OpenSettingsFrameButton/ColorRect/SettingsBox/VBoxContainer/Credits"]
+[node name="Label" type="Label" parent="TopLeftZone/OpenSettingsFrameButton/SettingsFrame/SettingsBox/VBoxContainer/Credits"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1130,17 +1133,18 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("70_2ktfd")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "Credits"
+text = "CREDITS"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Paper-big" type="Sprite2D" parent="TopLeftZone/OpenSettingsFrameButton/ColorRect/SettingsBox/VBoxContainer/Credits"]
+[node name="CreditsSprite" type="Sprite2D" parent="TopLeftZone/OpenSettingsFrameButton/SettingsFrame/SettingsBox/VBoxContainer/Credits"]
 visible = false
 position = Vector2(85.5, -206)
 texture = ExtResource("46_31xep")
+script = ExtResource("24_8iu2c")
 
-[node name="Label3" type="Label" parent="TopLeftZone/OpenSettingsFrameButton/ColorRect/SettingsBox/VBoxContainer/Credits/Paper-big"]
+[node name="Label3" type="Label" parent="TopLeftZone/OpenSettingsFrameButton/SettingsFrame/SettingsBox/VBoxContainer/Credits/CreditsSprite"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -1157,7 +1161,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Label" type="Label" parent="TopLeftZone/OpenSettingsFrameButton/ColorRect/SettingsBox/VBoxContainer/Credits/Paper-big"]
+[node name="Label" type="Label" parent="TopLeftZone/OpenSettingsFrameButton/SettingsFrame/SettingsBox/VBoxContainer/Credits/CreditsSprite"]
 offset_left = -208.0
 offset_top = -120.0
 offset_right = -165.0
@@ -1167,7 +1171,7 @@ theme_type_variation = &"Paper"
 text = "Team"
 uppercase = true
 
-[node name="Label2" type="Label" parent="TopLeftZone/OpenSettingsFrameButton/ColorRect/SettingsBox/VBoxContainer/Credits/Paper-big"]
+[node name="Label2" type="Label" parent="TopLeftZone/OpenSettingsFrameButton/SettingsFrame/SettingsBox/VBoxContainer/Credits/CreditsSprite"]
 offset_left = -208.0
 offset_top = -56.0
 offset_right = -75.0
@@ -1185,7 +1189,7 @@ Gracia Brückmann
 Walid El-Ajou
 "
 
-[node name="Reset" type="TextureButton" parent="TopLeftZone/OpenSettingsFrameButton/ColorRect/SettingsBox/VBoxContainer"]
+[node name="Reset" type="TextureButton" parent="TopLeftZone/OpenSettingsFrameButton/SettingsFrame/SettingsBox/VBoxContainer"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 focus_mode = 0
@@ -1194,7 +1198,7 @@ texture_normal = ExtResource("2_aobed")
 texture_pressed = ExtResource("3_qtdni")
 texture_hover = ExtResource("4_mh4j1")
 
-[node name="Label" type="Label" parent="TopLeftZone/OpenSettingsFrameButton/ColorRect/SettingsBox/VBoxContainer/Reset"]
+[node name="Label" type="Label" parent="TopLeftZone/OpenSettingsFrameButton/SettingsFrame/SettingsBox/VBoxContainer/Reset"]
 layout_mode = 0
 offset_left = 11.0
 offset_top = 10.0
@@ -1202,12 +1206,12 @@ offset_right = 183.0
 offset_bottom = 74.0
 theme = ExtResource("70_2ktfd")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "Reset"
+text = "RESTART"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="ResetConfirm" type="ColorRect" parent="TopLeftZone/OpenSettingsFrameButton/ColorRect/SettingsBox/VBoxContainer/Reset"]
+[node name="ResetConfirm" type="ColorRect" parent="TopLeftZone/OpenSettingsFrameButton/SettingsFrame/SettingsBox/VBoxContainer/Reset"]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -1223,12 +1227,12 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.560784, 0.560784, 0.560784, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="TopLeftZone/OpenSettingsFrameButton/ColorRect/SettingsBox/VBoxContainer/Reset/ResetConfirm"]
+[node name="Sprite2D" type="Sprite2D" parent="TopLeftZone/OpenSettingsFrameButton/SettingsFrame/SettingsBox/VBoxContainer/Reset/ResetConfirm"]
 position = Vector2(368, 187)
 scale = Vector2(1.7, 1.7)
 texture = ExtResource("18_oaaki")
 
-[node name="Label" type="Label" parent="TopLeftZone/OpenSettingsFrameButton/ColorRect/SettingsBox/VBoxContainer/Reset/ResetConfirm"]
+[node name="Label" type="Label" parent="TopLeftZone/OpenSettingsFrameButton/SettingsFrame/SettingsBox/VBoxContainer/Reset/ResetConfirm"]
 layout_mode = 0
 offset_left = 125.0
 offset_top = 99.0
@@ -1241,7 +1245,7 @@ text = "Are you sure that you want to restart?"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Yes" type="TextureButton" parent="TopLeftZone/OpenSettingsFrameButton/ColorRect/SettingsBox/VBoxContainer/Reset/ResetConfirm"]
+[node name="Yes" type="TextureButton" parent="TopLeftZone/OpenSettingsFrameButton/SettingsFrame/SettingsBox/VBoxContainer/Reset/ResetConfirm"]
 layout_mode = 0
 offset_left = 164.0
 offset_top = 222.0
@@ -1252,7 +1256,7 @@ texture_normal = ExtResource("2_aobed")
 texture_pressed = ExtResource("3_qtdni")
 texture_hover = ExtResource("4_mh4j1")
 
-[node name="Label" type="Label" parent="TopLeftZone/OpenSettingsFrameButton/ColorRect/SettingsBox/VBoxContainer/Reset/ResetConfirm/Yes"]
+[node name="Label" type="Label" parent="TopLeftZone/OpenSettingsFrameButton/SettingsFrame/SettingsBox/VBoxContainer/Reset/ResetConfirm/Yes"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1266,7 +1270,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="No" type="TextureButton" parent="TopLeftZone/OpenSettingsFrameButton/ColorRect/SettingsBox/VBoxContainer/Reset/ResetConfirm"]
+[node name="No" type="TextureButton" parent="TopLeftZone/OpenSettingsFrameButton/SettingsFrame/SettingsBox/VBoxContainer/Reset/ResetConfirm"]
 layout_mode = 0
 offset_left = 396.0
 offset_top = 222.0
@@ -1277,7 +1281,7 @@ texture_normal = ExtResource("62_orw34")
 texture_pressed = ExtResource("5_hh5pc")
 texture_hover = ExtResource("63_c1xpc")
 
-[node name="Label" type="Label" parent="TopLeftZone/OpenSettingsFrameButton/ColorRect/SettingsBox/VBoxContainer/Reset/ResetConfirm/No"]
+[node name="Label" type="Label" parent="TopLeftZone/OpenSettingsFrameButton/SettingsFrame/SettingsBox/VBoxContainer/Reset/ResetConfirm/No"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2141,7 +2145,7 @@ size_flags_horizontal = 0
 theme = ExtResource("70_2ktfd")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 12
-text = "Environment"
+text = "ENVIRONMENT"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
@@ -2234,7 +2238,7 @@ size_flags_horizontal = 0
 theme = ExtResource("70_2ktfd")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 12
-text = "Pollution"
+text = "EMISSIONS"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
@@ -2387,6 +2391,7 @@ offset_bottom = -3.0
 theme = ExtResource("70_2ktfd")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 12
+text = "IMPORT"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -2853,6 +2858,11 @@ offset_bottom = 66.0
 text = "Test button bottom
 "
 
+[connection signal="pressed" from="TopLeftZone/OpenSettingsFrameButton" to="TopLeftZone/OpenSettingsFrameButton/SettingsFrame" method="_on_open_settings_frame_button_pressed"]
+[connection signal="pressed" from="TopLeftZone/OpenSettingsFrameButton/SettingsFrame/SettingsBox/VBoxContainer/Language" to="TopLeftZone/OpenSettingsFrameButton/SettingsFrame/SettingsBox/VBoxContainer/Language" method="_on_pressed"]
+[connection signal="pressed" from="TopLeftZone/OpenSettingsFrameButton/SettingsFrame/SettingsBox/VBoxContainer/Instructions" to="TopLeftZone/OpenSettingsFrameButton/SettingsFrame" method="_on_instructions_button_pressed"]
+[connection signal="pressed" from="TopLeftZone/OpenSettingsFrameButton/SettingsFrame/SettingsBox/VBoxContainer/Credits" to="TopLeftZone/OpenSettingsFrameButton/SettingsFrame/SettingsBox/VBoxContainer/Credits" method="_on_pressed"]
+[connection signal="pressed" from="TopLeftZone/OpenSettingsFrameButton/SettingsFrame/SettingsBox/VBoxContainer/Credits" to="TopLeftZone/OpenSettingsFrameButton/SettingsFrame/SettingsBox/VBoxContainer/Credits/CreditsSprite" method="_on_credits_button_pressed"]
 [connection signal="pressed" from="TopLeftZone/MoneyManagement/MoneyInfo/ToggleMoneyInfoBoxButton" to="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox" method="_on_toggle_money_info_box_button_pressed"]
 [connection signal="pressed" from="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MoreMoneyInfoButton" to="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/InfoMoneyClosed" method="_on_more_money_info_button_pressed"]
 [connection signal="pressed" from="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MoreMoneyInfoButton" to="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/InfoMoneyOpen" method="_on_more_money_info_button_pressed"]

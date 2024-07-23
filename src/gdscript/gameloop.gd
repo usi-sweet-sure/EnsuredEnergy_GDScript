@@ -13,16 +13,16 @@ var year_list = []
 var all_power_plants
 
 var ups_list = {
-	"186": 0,
-	"151": 0,
-	"162": 0,
-	"163": 0,
-	"189": 0,
-	"192": 0,
-	"170": 0,
-	"171": 0,
-	"246": 0
-	}
+	"186": 0, # GAS
+	"151": 0, # NUCLEAR
+	"162": 0, # RIVER
+	"163": 0, # HYDRO
+	"189": 0, # WASTE
+	"192": 0, # BIOMASS
+	"170": 0, # SOLAR
+	"171": 0, # WIND
+	"246": 0, # GEOTHERMAL
+}
 
 signal energy_supply_updated_winter
 signal energy_supply_updated_summer
@@ -39,6 +39,7 @@ signal co2_emissions_updated
 signal imports_emissions_updated
 signal most_recent_shock_updated
 signal current_turn_updated
+signal show_tutorial
 
 signal next_turn
 signal end
@@ -118,7 +119,7 @@ var current_turn: int = 1:# Player action always take place in the following yea
 		current_turn = new_value
 		current_turn_updated.emit(current_turn)
 	
-# Called when the node enters the scene tree for the first time.
+	
 func _ready():
 	players_own_money_amount = start_money
 	all_power_plants = get_tree().get_nodes_in_group("PP")

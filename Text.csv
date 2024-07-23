@@ -3,6 +3,12 @@ PLAY,Play,Jouer,Spielen,Giocare
 LANG,Language : English,Langue : Français,Sprache : Deutsch,Lingua : Italiano
 HOLD,Hold and drag to move,Maintenir et faire glisser pour déplacer,Zum Verschieben halten und ziehen,Tenere premuto e trascinare per spostare
 SCROLL,Scroll to zoom,Utilise la molette pour zoomer,Scrollen zum Zoomen,Scorrere per ingrandire
+INSTRUCTIONS,Instructions,Instructions,Anleitung,Istruzioni
+CREDITS,Credits,Crédits,Mitwirkende,Accreditamenti
+RESTART,Restart,Redémarrer,New Starten,Ricomincia
+FULLSCREEN,Fullscreen,Plein écran,Vollbild,Schermo intero
+MUSIC,Music,Musique,Musik,Musica
+SFX,Sound effects,Effets sonores,Sound-Effekte,Effetti sonori
 TUTORIAL0,"Congratulations !\n
 You have been designated to [b]manage the Swiss power supply[/b] and to ensure a sustainable and resilient energy sector for the next 30 years (10 turns).","Félicitations ! \n
 Tu as été désigné pour [b]gérer le réseau énergétique[/b] afin de garantir un secteur durable et résilient pour les 30 prochaines années (10 tours).","Glückwunsch !\n
@@ -93,5 +99,12 @@ SHOCK_NUC_REINTRO_TITLE,Nuclear Re-introduction,Ré-introduction du nucléaire,W
 SHOCK_NUC_REINTRO_TEXT,The population wants to vote on the future of the nuclear again.,La population souhaite voter sur la question du nucléaire. Que faire ?,Die Bevölkerung will erneut über die Zukunft der Kernenergie abstimmen.,L'opinione pubblica vuole votare sul nucleare. Cosa possiamo fare?
 SHOCK_NUC_REINTRO_PLAYER_REACTION_1,Yes for reintroducig nuclear power.,Oui pour la ré-introduction du nucléaire.,Ja zur Wiedereinführung der Kernenergie.,Sì alla reintroduzione dell'energia nucleare.
 SHOCK_NUC_REINTRO_PLAYER_REACTION_2,"No, it's time to de-transition from nuclear.","Non, il est temps de dé-transitioner du nucléaire.","Nein, es ist Zeit, definitiv aus der Kernenergie auszusteigen.","No, è ora di abbandonare il nucleare."
-NEXT_TURN_BUTTON_LABEL,Next turn,Tour suivant,Nächste Runde,Prossimo turno
+NEXT_TURN_BUTTON_LABEL,Next turn,Prochain tour,Nächste Runde,Prossimo turno
 NOT_ENOUGH_ENERGY,Not enough energy,Pas assez d'énergie,Nicht genug Energie,Non c'è abbastanza energia
+SETTINGS,Settings,Réglages,Einstellungen,Impostazioni
+POLICIES,Policies,Politique,Politische\nMassnahmen,Politiche
+RESOURCES,Resources,Ressources,Ressourcen,Risorse
+ENVIRONMENT,Environment,Environnement,Umfeld,Ambiente
+EMISSIONS,Emissions,Emissions,Verschmutzung,Emissioni
+IMPORT,Import,Import,Import,Importazione
+ENERGY,Energy,Energie,Energie,Energia

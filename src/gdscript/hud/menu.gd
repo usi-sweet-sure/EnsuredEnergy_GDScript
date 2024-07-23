@@ -14,7 +14,7 @@ func _process(_delta):
 
 func _on_play_pressed():
 	hide()
-
+	
 
 func _on_lang_pressed():
 	if i == lang.size()-1:
