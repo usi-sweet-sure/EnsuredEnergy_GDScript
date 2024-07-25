@@ -108,3 +108,41 @@ ENVIRONMENT,Environment,Environnement,Umfeld,Ambiente
 EMISSIONS,Emissions,Emissions,Verschmutzung,Emissioni
 IMPORT,Import,Import,Import,Importazione
 ENERGY,Energy,Energie,Energie,Energia
+POLICIES_EXPLANATION_CAMPAIGNS_TITLE,- Campaigns -,- Campagnes -, - Kampagnen -,- Campagne -
+POLICIES_EXPLANATION_CAMPAIGNS_TEXT,Information campaigns help boost the popularity of your policies,Les campagnes d'information contribuent à renforcer la popularité de vos politiques,"Informationskampagnen tragen dazu bei, die Popularität Ihrer Politik zu steigern",Le campagne di informazione contribuiscono ad aumentare la popolarità delle vostre polizze
+POLICIES_EXPLANATION_POLICIES_TITLE,- Policies -,- Politiques -,- Politik -,- Politiche -
+POLICIES_EXPLANATION_POLICIES_TEXT,"Policies can help improve existing renewable power plants or lower demand in energy. The population gets to decide, so your support score needs to be good if you want to implement policies","Les politiques peuvent contribuer à améliorer les centrales d'énergie renouvelable existantes ou à réduire la demande en énergie. La population décide, donc votre score de soutien doit être bon si vous voulez mettre en œuvre des politiques.","Politische Maßnahmen können dazu beitragen, bestehende erneuerbare Kraftwerke zu verbessern oder die Energienachfrage zu senken. Die Bevölkerung entscheidet, daher muss Ihr Unterstützungsergebnis gut sein, wenn Sie eine Politik umsetzen wollen","Le politiche possono aiutare a migliorare le centrali elettriche rinnovabili esistenti o a ridurre la domanda di energia. È la popolazione a decidere, quindi il punteggio di supporto deve essere buono se si vogliono implementare le politiche."
+POLICIES_ENVIRONMENTAL_CAMPAIGN,Environmental campaign,Campagne environnementale,Umweltkampagne,Campagna ambientale
+POLICIES_ENERGY_CAMPAIGN,Energy campaign,Campagne énergétique,Energiekampagne,Campagna energetica
+POLICIES,Policies,Politiques,Politik,Politiche
+EFFECT,Effects,Effets,Effekte,Effetti
+POLICIES_ENVIRONMENTAL_CAMPAIGN_TITLE,Renewable energy,Energies renouvelables,Erneuerbare Energie,Energia rinnovabile
+POLICIES_ENVIRONMENTAL_CAMPAIGN_TEXT,Start an information campaign on the advantages of renewable energy.,Démarre une campagne d'information sur les avantages des énergies renouvelables,Start einer Informationskampagne über die Vorteile der erneuerbaren Energien.,Inizia una campagna di informazione sui vantaggi dell'energia rinnovabile
+POLICIES_ENVIRONMENTAL_CAMPAIGN_EFFECT,- Increase environmental policy,- Augmente le soutien pour les politiques environnementales de 10%,- Erhöhung der Unterstützung für Umweltpolitik um 10%,- Aumenta il supporto delle potiche ambientali del 10%
+POLICIES_ENERGY_CAMPAIGN_TITLE,Home insulation,Isolation de l'habitat,Hausisolierungen,Isolamento termico della casa
+POLICIES_ENERGY_CAMPAIGN_TEXT,Start an information campaign explaining the advantages of home insulation.,Lancer une campagne d'information expliquant les avantages de l'isolation des habitations.,Start einer Informationskampagne über die Vorteile der Gebäudeisolierung.,Inizia una campagna di informazione spiegando i vantaggi dell'isolamento termico della casa.
+POLICIES_ENERGY_CAMPAIGN_EFFECT,- Increase energy policy support by 10%,- Augmente le soutien pour les politiques énergétiques de 10%,- Erhöhung der Unterstützung für Energiepolitik um 10%,- Aumenta il supporto delle potiche energetiche del 10%
+POLICIES_ENVIRONMENTAL_POLICY_1_TITLE,Enable alpine solar PV,Autoriser la construction de centrales solaires dans les Alpes,Alpine PV ermöglichen,Permetti la costruzione di impianti solari alpini
+POLICIES_ENVIRONMENTAL_POLICY_1_TEXT,Limitation of appeals to large scale solar projects,Limitation des recours aux projets solaires à grande échelle,Beschränkung der Einspachemöglichkeiten bei grossen Solarprojekten.,Limitazione del sostegno alla costruzione di impianti solari di grandi dimensioni.
+POLICIES_ENVIRONMENTAL_POLICY_1_EFFECT_1,- Increase solar plant upgrades from 1 to 3,- Augmentation du nombre de centrales solaires de 1 à 3,- Erhöht Solaranlagen-Upgrades von 1 auf 3.,- Incrementa innovazione degli impianti solari da 1 a 3
+POLICIES_ENVIRONMENTAL_POLICY_2_TITLE,Fast track wind parks,Innovation dans les délais de construction des parcs éoliens,Schneller zu neuen Windparks,Innovazione nei tempi di costruzione dei parchi eolici
+POLICIES_ENVIRONMENTAL_POLICY_2_TEXT,Limitation of the possibilities of appeal for wind parks.,Limitation des possibilités de recours pour les parcs éoliens.,Beschränkung der Einspachemöglichkeiten bei Windpark-Projekten.,Limitazione del sostegno alla costruzione di parchi eolici.
+POLICIES_ENVIRONMENTAL_POLICY_2_EFFECT_1,- Lowers required building time for wind parks from 2 to 0 turns,- Réduction du temps de construction requis pour les parcs éoliens de 2 à 0 tours,- Verringert die Wartezeit für den Bau von Windparsk von 2 auf 0.,- Riduce il tempo per la costruzione di parchi eolici da 2 a 0
+POLICIES_ENVIRONMENTAL_POLICY_3_TITLE,Wind parks regulation,Réglementation des parcs éoliens,Windpark-Regulierung,Regolazione dei parchi eolici
+POLICIES_ENVIRONMENTAL_POLICY_3_TEXT,Limitation of the possibilities of appeal for wind parks.,Limitation des possibilités de recours pour les parcs éoliens.,Beschränkung der Einspachemöglichkeiten bei Windpark-Projekten.,Limitazione del sostegno alla costruzione di parchi eolic.
+POLICIES_ENVIRONMENTAL_POLICY_3_EFFECT_1,- Increase wind parks upgrades from 2 to 5.,- Augmentation du nombre de parcs éoliens de 2 à 5.,- Erhöht Windpart-Upgrades von 2 auf 5.,- Aumenta innovazione dei parchi eolici da 2 a 5
+POLICIES_ENERGY_POLICY_1_TITLE,Mandatory Building Insulation,Isolation obligatoire des bâtiments,Obligatorische Gebäudeisolierung,L'isolazione termica degli edifici è obligatoria
+POLICIES_ENERGY_POLICY_1_TEXT,All buildings must be better insulated.,Tous les bâtiments doivent être mieux isolés.,Alle Gebäude müssen innerhalb von n Runden isoliert werden.,Tutti gli edifici devono essere termicamente isolati nei prossimi n turni di gioco.
+POLICIES_ENERGY_POLICY_1_EFFECT_1,- Lowers energy demand by 5 in the Summer,- Réduit la demande d'énergie de 5 en été,- Reduziert den Energiebedarf im Sommer um 5,- La domanda di energia diminuisce di 5 in estate
+POLICIES_ENERGY_POLICY_1_EFFECT_2,- Lowers energy demand by 5 in the Winter,- Réduit la demande d'énergie de 5 en hiver,- Reduziert den Energiebedarf im Winter um 5,- La domanda di energia diminuisce di 5 in inverno
+POLICIES_ENERGY_POLICY_2_TITLE,Industry Subsidy,Subventions à l'industrie,Unterstützung für die Industrie,Sussidi per industria
+POLICIES_ENERGY_POLICY_2_TEXT,Provide industries with grants for less energy intensive production.,Fournir aux industries des subventions pour une production moins gourmande en énergie.,"Gewährung von Subventionen an die Industrie, um eine weniger energieintensive Produktion zu fördern",Fornisce alle industrie finanziamenti per ridurre la produzione energetica intesiva
+POLICIES_ENERGY_POLICY_2_EFFECT_1,- Lowers energy demand by 5 in the Summer,- Réduit la demande d'énergie de 5 en été,- Reduziert den Energiebedarf im Sommer um 5,- Riduce la domanda di energia di 5 in estate
+POLICIES_ENERGY_POLICY_2_EFFECT_2,- Lowers energy demand by 5 in the Winter,- Réduit la demande d'énergie de 5 en hiver,- Reduziert den Energiebedarf im Winter um 5,- Riduce la domanda di energia di 5 in inverno
+ESTIMATED_ACCEPTANCE_CHANCE,Estimated accpetance chance,Estimation des chances d'acceptation,Geschätzte Akzeptanzchance,Probabilità di accettazione stimata
+DURATION_OF_CAMPAIGN,Duration of campaign : 1 turn,Durée de la campagne : 1 tour,Dauer der Kampagne : 1 Runde,Durata della campagna: 1 turno
+START_CAMPAIGN,Start,Démarrer,Beginnen,Inizio
+CAMPAIGN_STARTED,The campaign has started!,La campagne a commencé !,Die Kampagne hat begonnen!,La campagna è iniziata!
+VOTE,Vote,Voter,Abstimmen,Voto
+VOTE_FAILED,Policy failed to be passed...,La politique n'a pas été adoptée...,Die Politik wurde nicht verabschiedet...,La politica non è stata approvata...
+VOTE_SUCCEEDED,Policy was passed successfully!,La politique a été adoptée avec succès !,Die Richtlinie wurde erfolgreich verabschiedet!,La politica è stata approvata con successo!

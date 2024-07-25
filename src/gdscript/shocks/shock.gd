@@ -43,7 +43,7 @@ func add_requirements(p_requirements_met_text_key: String, p_conditions_to_meet_
 	self.requirements_met_effects = p_requirements_met_effects
 	
 
-func add_player_reaction(text:String, effect: Callable):
+func add_player_reaction(text: String, effect: Callable):
 	player_reactions.push_back(effect)
 	player_reactions_texts.push_back(text)
 	
