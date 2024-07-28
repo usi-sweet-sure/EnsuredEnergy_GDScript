@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dna2006dnsx2x"]
+[gd_scene load_steps=7 format=3 uid="uid://dna2006dnsx2x"]
 
 [ext_resource type="Texture2D" uid="uid://ga6yaa7ss7pa" path="res://assets/UI Elements/Policies-Button-SmallNormal.png" id="1_tbkhm"]
 [ext_resource type="Texture2D" uid="uid://cihbwmo1t85av" path="res://assets/UI Elements/Policies-Button-Small-Press.png" id="2_daym8"]
 [ext_resource type="Texture2D" uid="uid://br23brh4f3qqe" path="res://assets/UI Elements/Policies-Button-Small-Hover.png" id="3_7eos0"]
 [ext_resource type="Texture2D" uid="uid://dnr3tvwn2pcnj" path="res://assets/UI Elements/Policies_Button_small_Hole.png" id="3_lax6w"]
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/policy_button.gd" id="4_vhi6a"]
+[ext_resource type="Texture2D" uid="uid://bam7su0aw6q65" path="res://assets/UI Elements/Icon-Popularity.png" id="6_gjogc"]
 
 [node name="PolicyButton" type="TextureButton"]
 custom_minimum_size = Vector2(0, 80)
@@ -35,5 +36,11 @@ grow_vertical = 2
 text = "Policy"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ThumbsUp" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(154, 29)
+scale = Vector2(0.826087, 0.75)
+texture = ExtResource("6_gjogc")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

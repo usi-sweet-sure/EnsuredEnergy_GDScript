@@ -7,4 +7,4 @@ func _ready():
 	
 
 func _on_policy_voted(vote_passed: bool):
-	show()
+	visible = PolicyManager.last_policy_clicked.is_campaign()

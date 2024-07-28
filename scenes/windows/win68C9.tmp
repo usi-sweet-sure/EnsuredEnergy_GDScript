@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://ib8vmuvdtmtt" path="res://assets/UI Elements/Policies-Button-green-Normal.png" id="14_noxck"]
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/start_campaign_zone/start_campaign_zone.gd" id="15_11d6x"]
 [ext_resource type="Texture2D" uid="uid://b0tnnwt624fhu" path="res://assets/UI Elements/Policies-Button-green-Press.png" id="15_whec6"]
-[ext_resource type="Script" path="res://src/gdscript/policies/policies_window/start_campaign_zone/campaign_started_label.gd" id="16_j45qg"]
+[ext_resource type="Script" path="res://src/gdscript/policies/policies_window/start_campaign_zone/Campaign_started_label.gd" id="16_neokh"]
 [ext_resource type="Texture2D" uid="uid://ir1mqepln7p7" path="res://assets/UI Elements/Policies-Button-green-Hover.png" id="16_scuxu"]
 [ext_resource type="Texture2D" uid="uid://m8sqi2c1vb8w" path="res://assets/UI Elements/Policies-Button-yellow-Normal.png" id="19_pws74"]
 [ext_resource type="Texture2D" uid="uid://cufu62j0t1t6p" path="res://assets/UI Elements/Policies-Button-yellow-Press.png" id="20_e53ft"]
@@ -189,6 +189,7 @@ text = "Policies can help improve existing renewable power plants or lower deman
 autowrap_mode = 3
 
 [node name="Vote" type="TextureButton" parent="Control/CenterFrame"]
+visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -281,7 +282,6 @@ texture = ExtResource("3_34k6p")
 
 [node name="Implemented" type="Label" parent="Control/CenterFrame/Vote"]
 visible = false
-layout_mode = 0
 offset_left = -61.0
 offset_top = -42.0
 offset_right = 266.0
@@ -319,7 +319,6 @@ text = "DURATION_OF_CAMPAIGN"
 horizontal_alignment = 1
 
 [node name="CampaignStartedLabel" type="Label" parent="Control/CenterFrame/StartCampaign"]
-visible = false
 layout_mode = 0
 offset_left = -90.0
 offset_top = 111.0
@@ -329,7 +328,7 @@ theme = ExtResource("3_yevmu")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "CAMPAIGN_STARTED"
 horizontal_alignment = 1
-script = ExtResource("16_j45qg")
+script = ExtResource("16_neokh")
 
 [node name="ButtonLabel" type="Label" parent="Control/CenterFrame/StartCampaign"]
 layout_mode = 1
@@ -562,10 +561,6 @@ policy = "MANDATORY BUILDING INSULATION"
 [node name="Label" parent="Control/RightFrame/home_regulation" index="1"]
 text = "♨️"
 
-[node name="ThumbsUp" parent="Control/RightFrame/home_regulation" index="2"]
-position = Vector2(-26, 27)
-flip_h = true
-
 [node name="industry_subsidy" parent="Control/RightFrame" instance=ExtResource("3_wnx31")]
 anchors_preset = 7
 anchor_left = 0.5
@@ -583,10 +578,6 @@ policy = "INDUSTRY SUBSIDY"
 
 [node name="Label" parent="Control/RightFrame/industry_subsidy" index="1"]
 text = "🌇"
-
-[node name="ThumbsUp" parent="Control/RightFrame/industry_subsidy" index="2"]
-position = Vector2(-26, 30)
-flip_h = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

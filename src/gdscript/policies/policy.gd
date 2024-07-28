@@ -21,7 +21,6 @@ var acceptance_probability: float = 0.0: # Probability of the policy to be accep
 		return acceptance_probability + modifier
 
 
-
 func _init(p_title_key: String, p_text_key: String, p_acceptance_probability: float,
 		p_policy_type: PolicyType, p_inspector_id := ""):
 	self.title_key = p_title_key
@@ -43,3 +42,15 @@ func vote():
 func apply_effects():
 	for effect in effects:
 		effect.call()
+
+
+func is_campaign():
+	return policy_type == PolicyType.CAMPAIGN
+	
+	
+func is_environmental():
+	return policy_type == PolicyType.ENVIRONMENTAL
+
+
+func is_energy():
+	return policy_type == PolicyType.ENERGY
