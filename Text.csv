@@ -54,21 +54,17 @@ TUTOBUBBLE1,Import more energy here,Voici la barre d'importation,Hier kannst du 
 TUTOBUBBLE2,Build new power plants,Le bouton de construction,Du kannst neue Kraftwerke bauen,Costruire nuove centrali elettriche
 TUTOBUBBLE3,Upgrade existing power plant,Améliorer les centrales existantes,Du kannst bestehende Kraftwerk aufrüsten,Ampiamento della centrale elettrica esistente
 TUTOBUBBLE4,Implement policies,Le bouton de politique,Du kannst politische Massnahmen ergreifen,Implementare le politiche
+DEMAND,Demand,Demande,Energiebedarg,Domanda
+SUPPLY,Supply,Apport,Energieversorgung,Fornitura
+LAND_USE,Land use,Utilisation des sols,Landverbrauch,Uso del Terreno
+BIODIVERSITY,Biodiversity,Biodiversité,Biodiversität,Biodiversità
+CO2_EMISSIONS,CO2 Emissions,Emissions,Verschmutzung,Emissioni
+IMPORTS_EMISSIONS,Imports Emissions,Pollution de l'importation,Import Verschmutzung,Inquinamento dall'importazione
 POLLUTION,Emissions,,,
-LAND_USE,Land use,,,
 PROD_COST,Production costs,,,
-GAS,Gas,,,
-NUCLEAR,Nuclear,,,
-HYDRO,Hydro,,,
-WASTE,Waste,,,
-BIOMASS,Biomass,,,
-SOLAR,Solar,,,
-WIND,Wind,,,
-GEOTHERMAL,Geothermal,,,
-SHUT_DOWN,Shutting down in,,,
 SHOCK_REQUIREMENT_MET_TITLE,Bonus,Bonus,Bonus,Bonus
 SHOCK_COLD_SPELL_TITLE,Cold Spell,Hiver Glacial,Kältezauber,Inverno gelido
-SHOCK_COLD_SPELL_TEXT,"The past few winters have been colder than usual, increasing the energy demand in winter by 5 ⚡.",Ces derniers hivers ont été plus froids que d'habitude. Ceci a augmenté la demande d'énergie en hiver de 5 ⚡.,"In den letzten Wintern war es kälter als sonst, was den Energiebedarf im Winter um 5 ⚡ erhöht hat.",Gli ultimi inverni sono stati più freddi del solito. Questo ha aumentato la domanda di energia invernale di 5 ⚡.
+SHOCK_COLD_SPELL_TEXT,Apport,Ces derniers hivers ont été plus froids que d'habitude. Ceci a augmenté la demande d'énergie en hiver de 5 ⚡.,"In den letzten Wintern war es kälter als sonst, was den Energiebedarf im Winter um 5 ⚡ erhöht hat.",Gli ultimi inverni sono stati più freddi del solito. Questo ha aumentato la domanda di energia invernale di 5 ⚡.
 SHOCK_COLD_SPELL_REQUIREMENT_MET,Energy production was high enough to wistand the shock.\n\n+5 👍 +50 💰,La production d'énergie était assez élevée pour amortir l'imprévu.\n\n+ 5 👍 + 50 💰,"Die Energieproduktion war hoch genug, um den Schock zu überstehen.\n\n+5 👍 +50 💰",La produzione di energia è stata sufficientemente elevata da attutire gli imprevisti.\n\n+ 5 👍 + 50 💰
 SHOCK_COLD_SPELL_PLAYER_REACTION_1,Ask the population to lower their energy consumption.\n-10 👍,Demander à la population de diminuer leur consomation d'énergie.\n-10 👍,"Fordere die Bevölkerung auf, ihren Energieverbrauch zu senken.\n-10 👍",Chiedere alle persone di ridurre il loro consumo energetico. -10 👍
 SHOCK_COLD_SPELL_PLAYER_REACTION_2,Turn on the spare gas plant.\n+10 Pollution 🏭,Améliorer l'usine à gaz.\n+ 10 pollution 🏭,Einschalten der Ersatzgasanlage.\n+10 Verschmutzung 🏭.,Attivare l'impianto a gas di riserva.\n+10 inquinamento 🏭
@@ -146,3 +142,12 @@ CAMPAIGN_STARTED,The campaign has started!,La campagne a commencé !,Die Kampagn
 VOTE,Vote,Voter,Abstimmen,Voto
 VOTE_FAILED,Policy failed to be passed...,La politique n'a pas été adoptée...,Die Politik wurde nicht verabschiedet...,La politica non è stata approvata...
 VOTE_SUCCEEDED,Policy was passed successfully!,La politique a été adoptée avec succès !,Die Richtlinie wurde erfolgreich verabschiedet!,La politica è stata approvata con successo!
+GAS,Gas,,,
+NUCLEAR,Nuclear,,,
+HYDRO,Hydro,,,
+WASTE,Waste,,,
+BIOMASS,Biomass,,,
+SOLAR,Solar,,,
+WIND,Wind,,,
+GEOTHERMAL,Geothermal,,,
+SHUT_DOWN,Shutting down in,,,

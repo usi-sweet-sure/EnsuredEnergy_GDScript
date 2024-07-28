@@ -64,12 +64,14 @@ func _on_more_info_pressed():
 	info_text.visible = not info_text.visible
 	info_text_2.visible = not info_text_2.visible
 
+
 # Hides the info box
 func _unhandled_input(event):
 	if event is InputEventMouseButton and event.button_mask == MOUSE_BUTTON_MASK_LEFT:
 		info_text.hide()
 		info_text_2.hide()
 		info_box.hide()
+
 
 func get_season_text(season_value: int):
 	match season_value:

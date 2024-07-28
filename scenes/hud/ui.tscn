@@ -1,4 +1,4 @@
-[gd_scene load_steps=145 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=149 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Texture2D" uid="uid://dik8jskwri4ev" path="res://assets/UI Elements/Profil-metal.png" id="1_ooswe"]
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/UI Elements/Button-Next-Normal.png" id="2_aobed"]
@@ -100,6 +100,10 @@
 [ext_resource type="Script" path="res://src/gdscript/hud/emissions/info_box/imports_emissions_info_text_label.gd" id="72_2h8vj"]
 [ext_resource type="Script" path="res://src/gdscript/hud/energy_import/green_import_led_on_sprite.gd" id="72_ytkph"]
 [ext_resource type="Script" path="res://src/gdscript/hud/test_buttons.gd" id="86_id1hi"]
+[ext_resource type="Script" path="res://src/gdscript/hud/energy_bars/winter/infos/winter_demand_label.gd" id="91_butgj"]
+[ext_resource type="Script" path="res://src/gdscript/hud/energy_bars/winter/infos/winter_supply_label.gd" id="92_bqjhv"]
+[ext_resource type="Script" path="res://src/gdscript/hud/energy_bars/summer/infos/summer_demand_label.gd" id="92_j1ii1"]
+[ext_resource type="Script" path="res://src/gdscript/hud/energy_bars/summer/infos/summer_supply_label.gd" id="94_bcqhm"]
 [ext_resource type="Script" path="res://src/gdscript/hud/clock/current_turn_label.gd" id="95_2utc1"]
 [ext_resource type="Script" path="res://src/gdscript/hud/clock/remaining_turns_label.gd" id="96_6b673"]
 [ext_resource type="Script" path="res://src/gdscript/hud/next_turn_button/next_turn_button.gd" id="97_wp832"]
@@ -2120,12 +2124,19 @@ metadata/_edit_group_ = true
 [node name="BubbleOpen" parent="EnvironmentAndPollution/Environment/Info/MarginContainer" index="1"]
 script = ExtResource("57_v13k6")
 
+[node name="Text0" parent="EnvironmentAndPollution/Environment/Info/MarginContainer/MarginContainer/VBoxContainer" index="0"]
+text = "LAND_USE"
+autowrap_mode = 2
+
 [node name="n" parent="EnvironmentAndPollution/Environment/Info/MarginContainer/MarginContainer/VBoxContainer/Text0" index="0"]
 script = ExtResource("58_pvl5y")
 
 [node name="InfoText" parent="EnvironmentAndPollution/Environment/Info/MarginContainer/MarginContainer/VBoxContainer" index="1"]
 text = "Land use shows how much land is used by the energy system. The smaller the indicator, the less impact from the energy system on land use. Some power plants need more land than others. This can negatively impact biodiversity."
 script = ExtResource("59_lf76s")
+
+[node name="Text1" parent="EnvironmentAndPollution/Environment/Info/MarginContainer/MarginContainer/VBoxContainer" index="2"]
+text = "BIODIVERSITY"
 
 [node name="n1" parent="EnvironmentAndPollution/Environment/Info/MarginContainer/MarginContainer/VBoxContainer/Text1" index="0"]
 script = ExtResource("60_scj6d")
@@ -2209,6 +2220,9 @@ metadata/_edit_group_ = true
 [node name="BubbleOpen" parent="EnvironmentAndPollution/Pollution/Info/MarginContainer" index="1"]
 script = ExtResource("68_0ckm3")
 
+[node name="Text0" parent="EnvironmentAndPollution/Pollution/Info/MarginContainer/MarginContainer/VBoxContainer" index="0"]
+text = "CO2_EMISSIONS"
+
 [node name="n" parent="EnvironmentAndPollution/Pollution/Info/MarginContainer/MarginContainer/VBoxContainer/Text0" index="0"]
 script = ExtResource("69_g60cp")
 
@@ -2218,6 +2232,7 @@ script = ExtResource("70_444pk")
 
 [node name="Text1" parent="EnvironmentAndPollution/Pollution/Info/MarginContainer/MarginContainer/VBoxContainer" index="2"]
 theme_override_colors/font_color = Color(0.666667, 0, 0, 1)
+text = "IMPORTS_EMISSIONS"
 
 [node name="n1" parent="EnvironmentAndPollution/Pollution/Info/MarginContainer/MarginContainer/VBoxContainer/Text1" index="0"]
 theme_override_colors/font_color = Color(0.666667, 0, 0, 1)
@@ -2448,8 +2463,20 @@ offset_right = 826.768
 offset_bottom = 293.055
 rotation = 1.5708
 
+[node name="Text0" parent="ImportAndEnergy/Energy/EnergyBarWinter/BarInfo/MarginContainer/MarginContainer/VBoxContainer" index="0"]
+text = "DEMAND"
+
+[node name="n" parent="ImportAndEnergy/Energy/EnergyBarWinter/BarInfo/MarginContainer/MarginContainer/VBoxContainer/Text0" index="0"]
+script = ExtResource("91_butgj")
+
 [node name="InfoText" parent="ImportAndEnergy/Energy/EnergyBarWinter/BarInfo/MarginContainer/MarginContainer/VBoxContainer" index="1"]
 text = "In winter, energy demand is higher due to the need for heating. Switzerland often has to import the missing energy supply."
+
+[node name="Text1" parent="ImportAndEnergy/Energy/EnergyBarWinter/BarInfo/MarginContainer/MarginContainer/VBoxContainer" index="2"]
+text = "SUPPLY"
+
+[node name="n1" parent="ImportAndEnergy/Energy/EnergyBarWinter/BarInfo/MarginContainer/MarginContainer/VBoxContainer/Text1" index="0"]
+script = ExtResource("92_bqjhv")
 
 [node name="InfoText2" parent="ImportAndEnergy/Energy/EnergyBarWinter/BarInfo/MarginContainer/MarginContainer/VBoxContainer" index="3"]
 text = "You need to reach the demand in energy. The target is the white line on the energy bar.
@@ -2475,9 +2502,21 @@ offset_bottom = 398.788
 rotation = 1.5708
 metadata/_edit_group_ = true
 
+[node name="Text0" parent="ImportAndEnergy/Energy/EnergyBarSummer/BarInfo/MarginContainer/MarginContainer/VBoxContainer" index="0"]
+text = "DEMAND"
+
+[node name="n" parent="ImportAndEnergy/Energy/EnergyBarSummer/BarInfo/MarginContainer/MarginContainer/VBoxContainer/Text0" index="0"]
+script = ExtResource("92_j1ii1")
+
 [node name="InfoText" parent="ImportAndEnergy/Energy/EnergyBarSummer/BarInfo/MarginContainer/MarginContainer/VBoxContainer" index="1"]
 text = "Energy demand in summer tends to be lower than winter because the need for cooling is lower than the need for heating in winter.
 "
+
+[node name="Text1" parent="ImportAndEnergy/Energy/EnergyBarSummer/BarInfo/MarginContainer/MarginContainer/VBoxContainer" index="2"]
+text = "SUPPLY"
+
+[node name="n1" parent="ImportAndEnergy/Energy/EnergyBarSummer/BarInfo/MarginContainer/MarginContainer/VBoxContainer/Text1" index="0"]
+script = ExtResource("94_bcqhm")
 
 [node name="InfoText2" parent="ImportAndEnergy/Energy/EnergyBarSummer/BarInfo/MarginContainer/MarginContainer/VBoxContainer" index="3"]
 text = "You need to reach the demand in energy. The target is the white line on the energy bar.
