@@ -175,5 +175,6 @@ func _unhandled_input(event):
 		if event.pressed and event.keycode == KEY_ESCAPE:
 			get_tree().quit()
 			
+			
 func can_go_to_next_turn():
 	return _check_supply()

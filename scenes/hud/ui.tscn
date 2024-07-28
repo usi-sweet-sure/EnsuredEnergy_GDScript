@@ -1,4 +1,4 @@
-[gd_scene load_steps=149 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=150 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Texture2D" uid="uid://dik8jskwri4ev" path="res://assets/UI Elements/Profil-metal.png" id="1_ooswe"]
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/UI Elements/Button-Next-Normal.png" id="2_aobed"]
@@ -108,6 +108,7 @@
 [ext_resource type="Script" path="res://src/gdscript/hud/clock/remaining_turns_label.gd" id="96_6b673"]
 [ext_resource type="Script" path="res://src/gdscript/hud/next_turn_button/next_turn_button.gd" id="97_wp832"]
 [ext_resource type="Script" path="res://src/gdscript/hud/next_turn_button/error_animation.gd" id="99_3seiv"]
+[ext_resource type="Script" path="res://src/gdscript/hud/nuclear_shut_down_warning.gd" id="104_qc8c4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_21dh1"]
 atlas = ExtResource("50_inaxr")
@@ -2801,6 +2802,7 @@ text = "Nuclear plant shutting down next turn ⚠️"
 horizontal_alignment = 2
 vertical_alignment = 1
 autowrap_mode = 2
+script = ExtResource("104_qc8c4")
 
 [node name="ColorRect" type="Sprite2D" parent="NuclearWarning"]
 show_behind_parent = true
@@ -2931,6 +2933,7 @@ text = "Test button bottom
 [connection signal="pressed" from="Clock/TimePanelBlank/TurnInfo" to="Clock/TimePanelBlank" method="clock_pressed"]
 [connection signal="gui_input" from="NextTurn" to="NextTurn/NextTurnAP" method="_on_next_turn_gui_input"]
 [connection signal="pressed" from="NextTurn" to="Clock/TimePanelBlank" method="_on_next_turn_button_pressed"]
+[connection signal="pressed" from="NextTurn" to="NuclearWarning" method="_on_next_turn_button_pressed"]
 [connection signal="pressed" from="TestButtons/ButtonTop" to="TestButtons" method="_on_button_top_pressed"]
 [connection signal="pressed" from="TestButtons/ButtonBottom" to="TestButtons" method="_on_button_bottom_pressed"]
 

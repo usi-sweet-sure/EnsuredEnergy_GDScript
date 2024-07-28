@@ -155,12 +155,12 @@ func _on_request_finished(_result, _response_code, _headers, _body):
 				availability.x = float(i["tj"])
 				availability.y = 1 - float(i["tj"])
 	
-	if plant_name == "NUCLEAR":
+	if is_nuclear():
 		capacity = capacity / 100.0 / 3.0 # there's 3 nuclear plants
 		pollution /= 3
 		land_use /= 3
 		production_cost = production_cost / 10 / 3
-	elif plant_name == "HYDRO" || plant_name == "RIVER":
+	elif is_hydro() || is_river():
 		capacity = capacity / 100 / 2
 		pollution /= 4 # needs to divide by the number of water plants
 		land_use /= 4
@@ -238,13 +238,15 @@ func _connect_next_turn_signal():
 
 func _hide_delete_on_next_turn():
 	delete_button.hide()
-	
+
+
 func _check_life_span():
 	if life_span <= Gameloop.current_turn:
 		is_alive = false
 		_on_switch_toggled(false)
 		$BuildInfo/Switch.disabled = true #add disabled sprite
-
+		
+		
 func _on_switch_toggled(toggled_on):
 	is_alive = toggled_on
 	
@@ -295,3 +297,43 @@ func _on_switch_toggled(toggled_on):
 		#Context1.prm_ups()
 		
 	Gameloop._update_supply()
+	
+	
+func is_gas() -> bool:
+		return plant_name == "GAS"
+		
+		
+func is_nuclear() -> bool:
+		return plant_name == "NUCLEAR"
+		
+		
+func is_river() -> bool:
+		return plant_name == "RIVER"
+
+
+func is_hydro() -> bool:
+		return plant_name == "HYDRO"
+
+
+func is_waste() -> bool:
+		return plant_name == "WASTE"
+
+
+func is_biomass() -> bool:
+		return plant_name == "BIOMASS"
+
+
+func is_solar() -> bool:
+		return plant_name == "SOLAR"
+
+
+func is_wind() -> bool:
+		return plant_name == "WIND"
+
+
+func is_geothermal() -> bool:
+		return plant_name == "GEOTHERMAL"
+
+
+func is_biogas() -> bool:
+		return plant_name == "BIOGAS"
