@@ -109,11 +109,11 @@ var biodiversity_percentage: int = 67:
 	set(new_value):
 		biodiversity_percentage = clamp(new_value, 0, 100)
 		biodiversity_percentage_updated.emit(biodiversity_percentage)
-var co2_emissions: int = 17:
+var co2_emissions: float = 0.0:
 	set(new_value):
 		co2_emissions = clamp(new_value, 0, 100)
 		co2_emissions_updated.emit(co2_emissions)
-var imports_emissions: int = 0:
+var imports_emissions: float = 0.0:
 	set(new_value):
 		imports_emissions = clamp(new_value, 0, 100)
 		imports_emissions_updated.emit(imports_emissions)
@@ -163,15 +163,18 @@ func _update_buildings_impact():
 	var summer = 0
 	var winter = 0
 	var total_production_costs = 0
+	var total_emissions = 0
 	for power_plant in all_power_plants:
 		if power_plant.is_alive:
 			summer += power_plant.capacity * power_plant.availability.x
 			winter += power_plant.capacity * power_plant.availability.y
 			total_production_costs += power_plant.production_cost
+			total_emissions += power_plant.pollution
 	supply_summer = summer
 	supply_winter = winter
 	powerplants_production_costs = total_production_costs
-	
+	co2_emissions = total_emissions
+	print("emission: ", co2_emissions)
 	
 func _check_supply():
 	return supply_summer >= demand_summer and supply_winter + imported_energy_amount >= demand_winter

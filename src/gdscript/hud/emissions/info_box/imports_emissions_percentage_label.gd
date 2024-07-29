@@ -7,4 +7,4 @@ func _ready():
 	
 	
 func _on_imports_emissions_updated(value):
-	text = str(value) + "%"
+	text = str(value).pad_decimals(1) + "%"

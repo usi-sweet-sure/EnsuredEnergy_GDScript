@@ -2243,7 +2243,7 @@ text = "CO2_EMISSIONS"
 script = ExtResource("69_g60cp")
 
 [node name="InfoText" parent="EnvironmentAndPollution/Pollution/Info/MarginContainer/MarginContainer/VBoxContainer" index="1"]
-text = "CO2 emission shows how much greenhouse gas is released by the energy system. Lower emissions mean a lower impact on global warming. Some power plants emit CO2. Switzerland has decided to be carbon neutral and reach net zero by 2050."
+text = "CO2_EMISSIONS_TEXT"
 script = ExtResource("70_444pk")
 
 [node name="Text1" parent="EnvironmentAndPollution/Pollution/Info/MarginContainer/MarginContainer/VBoxContainer" index="2"]
@@ -2255,8 +2255,7 @@ theme_override_colors/font_color = Color(0.666667, 0, 0, 1)
 script = ExtResource("71_benl5")
 
 [node name="InfoText2" parent="EnvironmentAndPollution/Pollution/Info/MarginContainer/MarginContainer/VBoxContainer" index="3"]
-text = "Importing energy from neighbouring countries can also create emissions unless you pay more for green imports.
-"
+text = "IMPORTS_EMISSIONS_TEXT"
 script = ExtResource("72_2h8vj")
 
 [node name="Name" type="Label" parent="EnvironmentAndPollution/Pollution"]
