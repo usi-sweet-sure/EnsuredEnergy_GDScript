@@ -118,7 +118,10 @@ func _update_info():
 	$BuildInfo/ColorRect/LifeSpan.text = str(life_span - Gameloop.current_turn + 1)
 	if life_span < Gameloop.current_turn:
 		$BuildInfo/ColorRect/LifeSpan.hide()
+		$LifeSpanWarning.hide()
 	else:
+		if Gameloop.current_turn == life_span:
+			$LifeSpanWarning.show()
 		$BuildInfo/ColorRect/LifeSpan.text = str(life_span - Gameloop.current_turn + 1)
 	$PreviewInfo/Price.text = str(build_cost)
 	$PreviewInfo/Time.text = str(build_time)

@@ -2805,6 +2805,7 @@ mouse_default_cursor_shape = 2
 flat = true
 
 [node name="NuclearWarning" type="Label" parent="."]
+visible = false
 offset_left = 1647.0
 offset_top = 659.0
 offset_right = 1904.0
