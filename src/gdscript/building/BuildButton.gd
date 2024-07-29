@@ -70,12 +70,14 @@ func _build_plant(plant):
 	#Context1.yr = Gameloop.year_list[Gameloop.current_turn]
 	#Context1.tj = plant.cnv_capacity
 	#Context1.prm_ups()
+	Gameloop.building_costs += plant.build_cost
 	Gameloop._update_buildings_impact()
 
 func _on_close_button_pressed():
 	$BuildMenu.hide()
 	
 func _on_pp_delete(pp):
+		Gameloop.building_costs -= pp.build_cost
 		pp.hide()
 		pp.remove_from_group("PP")
 		pp.delete_button.hide()
@@ -89,6 +91,7 @@ func _on_pp_delete(pp):
 		Context1.tj = -pp.cnv_capacity
 		Context1.prm_ups()
 		
+
 		Gameloop._update_buildings_impact()
 
 func _on_pp_mouse_entered(pp):
