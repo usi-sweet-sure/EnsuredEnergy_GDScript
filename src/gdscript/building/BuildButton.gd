@@ -70,7 +70,7 @@ func _build_plant(plant):
 	#Context1.yr = Gameloop.year_list[Gameloop.current_turn]
 	#Context1.tj = plant.cnv_capacity
 	#Context1.prm_ups()
-	Gameloop._update_supply()
+	Gameloop._update_buildings_impact()
 
 func _on_close_button_pressed():
 	$BuildMenu.hide()
@@ -89,7 +89,7 @@ func _on_pp_delete(pp):
 		Context1.tj = -pp.cnv_capacity
 		Context1.prm_ups()
 		
-		Gameloop._update_supply()
+		Gameloop._update_buildings_impact()
 
 func _on_pp_mouse_entered(pp):
 	pp.build_info.show()

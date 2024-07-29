@@ -116,7 +116,6 @@ var most_recent_shock: Shock = null:
 		most_recent_shock_updated.emit(most_recent_shock)
 var current_turn: int = 1:# Player action always take place in the following year
 	set(new_value):
-		print("current turn : ", new_value)
 		current_turn = new_value
 		current_turn_updated.emit(current_turn)
 	
@@ -141,9 +140,10 @@ func _ready():
 			#if i["prm_id"] == "455":
 				#Gameloop.demand_winter_list.append(float(i["tj"]) / 100)
 		#await Context1.http1.request_completed
+		
 			
-
-func _update_supply():
+# Update everything that buildings affects, like supply, emissions, land_use, etc.
+func _update_buildings_impact():
 	all_power_plants = get_tree().get_nodes_in_group("PP")
 	var summer = 0
 	var winter = 0

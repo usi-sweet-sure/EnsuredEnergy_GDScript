@@ -115,7 +115,11 @@ func _update_info():
 	$BuildInfo/ColorRect/ContainerN/Poll.text = str(pollution).pad_decimals(2)
 	$BuildInfo/ColorRect/ContainerN/Land.text = str(land_use).pad_decimals(2)
 	
-	$BuildInfo/ColorRect/LifeSpan.text = str(life_span - Gameloop.current_turn)
+	$BuildInfo/ColorRect/LifeSpan.text = str(life_span - Gameloop.current_turn + 1)
+	if life_span < Gameloop.current_turn:
+		$BuildInfo/ColorRect/LifeSpan.hide()
+	else:
+		$BuildInfo/ColorRect/LifeSpan.text = str(life_span - Gameloop.current_turn + 1)
 	$PreviewInfo/Price.text = str(build_cost)
 	$PreviewInfo/Time.text = str(build_time)
 	
@@ -175,7 +179,7 @@ func _on_request_finished(_result, _response_code, _headers, _body):
 	
 	_update_info()
 	Context1.http1.request_completed.disconnect(_on_request_finished)
-	Gameloop._update_supply()
+	Gameloop._update_buildings_impact()
 
 #func _on_request_completed(_result, _response_code, _headers, _body):
 	#$BuildInfo/EnergyContainer/Multiplier/Inc.disabled = false
@@ -201,7 +205,7 @@ func _on_mult_inc_pressed():
 		Gameloop.ups_list[plant_id] += value
 		
 		_update_info()
-		Gameloop._update_supply()
+		Gameloop._update_buildings_impact()
 		
 		#$BuildInfo/EnergyContainer/Multiplier/Inc.disabled = true
 		#$BuildInfo/EnergyContainer/Multiplier/Dec.disabled = true
@@ -225,23 +229,26 @@ func _on_mult_dec_pressed():
 		#Context1.prm_ups()
 		
 		_update_info()
-		Gameloop._update_supply()
+		Gameloop._update_buildings_impact()
 		
-		# E. Is this intended ?
-		$BuildInfo/EnergyContainer/Multiplier/Inc.disabled = true
-		$BuildInfo/EnergyContainer/Multiplier/Dec.disabled = true
+		# E. Is this intended ? Commenting it in the meantime
+		#$BuildInfo/EnergyContainer/Multiplier/Inc.disabled = true
+		#$BuildInfo/EnergyContainer/Multiplier/Dec.disabled = true
 		
 		
 func _connect_next_turn_signal():
 	if !Gameloop.next_turn.is_connected(_hide_delete_on_next_turn):
 		Gameloop.next_turn.connect(_hide_delete_on_next_turn)
 
+
 func _hide_delete_on_next_turn():
 	delete_button.hide()
 
 
 func _check_life_span():
-	if life_span <= Gameloop.current_turn:
+	# A life span of 3 means the power plants lives 3 full turns, then shuts down on the fourth.
+	# The game start counting at 1, not zero.
+	if life_span < Gameloop.current_turn:
 		is_alive = false
 		_on_switch_toggled(false)
 		$BuildInfo/Switch.disabled = true #add disabled sprite
@@ -296,7 +303,7 @@ func _on_switch_toggled(toggled_on):
 		#Context1.tj = -(cnv_capacity / plant_total) * off_plant_total
 		#Context1.prm_ups()
 		
-	Gameloop._update_supply()
+	Gameloop._update_buildings_impact()
 	
 
 func _on_next_turn():
