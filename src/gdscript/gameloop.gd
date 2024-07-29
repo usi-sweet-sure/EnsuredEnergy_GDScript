@@ -40,6 +40,9 @@ signal imports_emissions_updated
 signal most_recent_shock_updated
 signal current_turn_updated
 signal show_tutorial
+signal powerplants_production_costs_updated
+signal energy_import_cost_updated
+signal building_costs_updated
 
 signal next_turn
 signal end
@@ -75,10 +78,14 @@ var green_energy_import_on := false:
 	set(new_value):
 		green_energy_import_on = new_value
 		green_energy_import_on_updated.emit(green_energy_import_on)
+		energy_import_cost_updated.emit(energy_import_cost)
+		
 var imported_energy_amount: float = 0:
 	set(new_value):
 		imported_energy_amount = new_value
 		imported_energy_amount_updated.emit(imported_energy_amount)
+		energy_import_cost_updated.emit(energy_import_cost)
+		
 var borrowed_money_amount: int = 0:
 	set(new_value):
 		borrowed_money_amount = new_value
@@ -93,7 +100,7 @@ var players_own_money_amount: int = 0:
 # parts used to compute it
 var available_money_amount: int = 0:
 	get:
-		return players_own_money_amount + borrowed_money_amount # E. add other money resources as we add them
+		return players_own_money_amount + borrowed_money_amount
 var land_use_percentage: int = 37:
 	set(new_value):
 		land_use_percentage = clamp(new_value, 0, 100)
@@ -114,11 +121,18 @@ var most_recent_shock: Shock = null:
 	set(new_value):
 		most_recent_shock = new_value
 		most_recent_shock_updated.emit(most_recent_shock)
-var current_turn: int = 1:# Player action always take place in the following year
+var current_turn: int = 1: # Player action always take place in the following year
 	set(new_value):
 		current_turn = new_value
 		current_turn_updated.emit(current_turn)
-	
+var powerplants_production_costs: float = 0:
+	set(new_value):
+		powerplants_production_costs = new_value
+		powerplants_production_costs_updated.emit(powerplants_production_costs)
+var building_costs: float = 0: # Costs of building and upgrading buildings
+	set(new_value):
+		building_costs = new_value
+		building_costs_updated.emit(building_costs)
 	
 func _ready():
 	players_own_money_amount = start_money
@@ -142,7 +156,7 @@ func _ready():
 		#await Context1.http1.request_completed
 		
 			
-# Update everything that buildings affects, like supply, emissions, land_use, etc.
+# Update everything that buildings affects like supply, emissions, land_use, etc.
 func _update_buildings_impact():
 	all_power_plants = get_tree().get_nodes_in_group("PP")
 	var summer = 0
@@ -155,7 +169,7 @@ func _update_buildings_impact():
 			total_production_costs += power_plant.production_cost
 	supply_summer = summer
 	supply_winter = winter
-	#print(total_production_costs)
+	powerplants_production_costs = total_production_costs
 	
 	
 func _check_supply():
