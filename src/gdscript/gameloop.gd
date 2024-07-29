@@ -96,11 +96,11 @@ var players_own_money_amount: int = 0:
 		players_own_money_amount = new_value
 		players_own_money_amount_updated.emit(players_own_money_amount)
 		available_money_amount_updated.emit(available_money_amount)
-# This is a sum of all the money sources, so don't set this variable, but the
+# This is a sum of all the money sources, minus costs, so don't set this variable, but the
 # parts used to compute it
 var available_money_amount: int = 0:
 	get:
-		return players_own_money_amount + borrowed_money_amount
+		return players_own_money_amount + borrowed_money_amount - building_costs
 var land_use_percentage: int = 37:
 	set(new_value):
 		land_use_percentage = clamp(new_value, 0, 100)
@@ -133,6 +133,7 @@ var building_costs: float = 0: # Costs of building and upgrading buildings
 	set(new_value):
 		building_costs = new_value
 		building_costs_updated.emit(building_costs)
+		available_money_amount_updated.emit(available_money_amount)
 	
 func _ready():
 	players_own_money_amount = start_money

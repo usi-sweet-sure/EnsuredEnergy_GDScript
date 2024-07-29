@@ -312,6 +312,7 @@ func _on_switch_toggled(toggled_on):
 func _on_next_turn():
 	_check_life_span()
 	_update_info()
+	
 
 func is_gas() -> bool:
 		return plant_name == "GAS"
