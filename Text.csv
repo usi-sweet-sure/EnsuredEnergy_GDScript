@@ -166,3 +166,4 @@ CURRENT_TURN,Now,Ce tour,Jetzt,Ora
 NEXT_TURN,Next turn,Prochain tour,Nächste Runde,Prossimo turno
 TURN,Turn,Tour,Runde,Turno
 REMAINING_TURNS,Remaining turns,Tours restants,Restliche Runden,Turni rimanenti
+NUCLEAR_WARNING,A nuclear plant is shutting down next turn\n⚠️,Une centrale nucléaire sera fermée au prochain tour\n⚠️,Ein Kernkraftwerk wird in der nächsten Runde abgeschaltet\n⚠️,Una centrale nucleare sarà chiusa nella prossima tornata\n⚠️

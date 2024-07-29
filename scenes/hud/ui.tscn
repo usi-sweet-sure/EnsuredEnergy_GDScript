@@ -2805,23 +2805,23 @@ mouse_default_cursor_shape = 2
 flat = true
 
 [node name="NuclearWarning" type="Label" parent="."]
-visible = false
-offset_left = 1689.0
-offset_top = 740.0
-offset_right = 1889.0
-offset_bottom = 860.0
+offset_left = 1647.0
+offset_top = 659.0
+offset_right = 1904.0
+offset_bottom = 857.0
 theme = ExtResource("70_2ktfd")
 theme_type_variation = &"Paper"
 theme_override_font_sizes/font_size = 26
-text = "Nuclear plant shutting down next turn ⚠️"
-horizontal_alignment = 2
+text = "NUCLEAR_WARNING"
+horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 script = ExtResource("104_qc8c4")
 
 [node name="ColorRect" type="Sprite2D" parent="NuclearWarning"]
 show_behind_parent = true
-position = Vector2(97, 55)
+position = Vector2(119.5, 92)
+scale = Vector2(1.161, 1.5)
 texture = ExtResource("55_5ylb2")
 flip_h = true
 flip_v = true
