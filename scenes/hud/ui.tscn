@@ -1348,6 +1348,7 @@ flat = true
 alignment = 0
 
 [node name="MoneyInfoBox" type="Control" parent="TopLeftZone/MoneyManagement/MoneyInfo"]
+visible = false
 layout_mode = 1
 anchor_left = 0.233
 anchor_top = 0.076
@@ -2736,7 +2737,7 @@ theme = ExtResource("70_2ktfd")
 theme_type_variation = &"Paper"
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 34
-text = "Turn"
+text = "TURN"
 
 [node name="CurrentTurn" type="Label" parent="Clock/TimePanelBlank/TurnInfoContainer/MarginContainer/VBoxContainer/CurrentTurn"]
 layout_mode = 1
@@ -2765,7 +2766,7 @@ theme = ExtResource("70_2ktfd")
 theme_type_variation = &"Paper"
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 34
-text = "Remaining turns"
+text = "REMAINING_TURNS"
 autowrap_mode = 2
 
 [node name="RemainingTurns" type="Label" parent="Clock/TimePanelBlank/TurnInfoContainer/MarginContainer/VBoxContainer/RemainingTurns"]
