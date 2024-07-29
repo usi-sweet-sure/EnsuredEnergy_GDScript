@@ -116,6 +116,7 @@ var most_recent_shock: Shock = null:
 		most_recent_shock_updated.emit(most_recent_shock)
 var current_turn: int = 1:# Player action always take place in the following year
 	set(new_value):
+		print("current turn : ", new_value)
 		current_turn = new_value
 		current_turn_updated.emit(current_turn)
 	

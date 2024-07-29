@@ -98,7 +98,7 @@ var plant_name_to_metric_id = {
 func _ready():
 	Context1.http1.request_completed.connect(_on_request_finished)
 	#Context1.http1.request_completed.connect(_on_request_completed)
-	Gameloop.next_turn.connect(_check_life_span)
+	Gameloop.next_turn.connect(_on_next_turn)
 	
 	_update_info()
 	
@@ -115,7 +115,7 @@ func _update_info():
 	$BuildInfo/ColorRect/ContainerN/Poll.text = str(pollution).pad_decimals(2)
 	$BuildInfo/ColorRect/ContainerN/Land.text = str(land_use).pad_decimals(2)
 	
-	$BuildInfo/ColorRect/LifeSpan.text = str(life_span)
+	$BuildInfo/ColorRect/LifeSpan.text = str(life_span - Gameloop.current_turn)
 	$PreviewInfo/Price.text = str(build_cost)
 	$PreviewInfo/Time.text = str(build_time)
 	
@@ -298,7 +298,11 @@ func _on_switch_toggled(toggled_on):
 		
 	Gameloop._update_supply()
 	
-	
+
+func _on_next_turn():
+	_check_life_span()
+	_update_info()
+
 func is_gas() -> bool:
 		return plant_name == "GAS"
 		

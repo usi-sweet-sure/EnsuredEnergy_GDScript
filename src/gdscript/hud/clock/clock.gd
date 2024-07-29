@@ -54,7 +54,7 @@ func _on_next_turn_button_pressed():
 		Gameloop.end.emit()
 		$"../../NextTurn".hide()
 	else:
-		Gameloop.next_turn.emit()
 		Gameloop.current_turn += 1
+		Gameloop.next_turn.emit()
 		Context1.yr = Gameloop.year_list[Gameloop.current_turn]
 	
