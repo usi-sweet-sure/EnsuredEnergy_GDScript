@@ -43,15 +43,20 @@ func _on_energy_demand_updated(demand):
 
 # Updates the progress bar
 func _on_energy_supply_updated(supply):
-	if season == Season.WINTER:
-		value = supply + Gameloop.imported_energy_amount
-	else:
-		value = supply
+	var new_value = 0
 	
+	if season == Season.WINTER:
+		new_value = supply + Gameloop.imported_energy_amount
+	else:
+		new_value = supply
+		
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "value", new_value, 0.5)
 	
 # Updates the progress bar
 func _on_imported_energy_amount_updated(amount):
-	value = Gameloop.supply_winter + amount
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "value", Gameloop.supply_winter + amount, 0.5)
 		
 		
 # Displays basic information on energy supply and demand
