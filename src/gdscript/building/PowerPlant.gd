@@ -208,27 +208,33 @@ func _on_info_button_pressed():
 
 func _on_mult_inc_pressed():
 	if upgrade < max_upgrade:
-		$BuildInfo/EnergyContainer/Multiplier/Dec.show()
-		upgrade += 1
-		
-		var plant_id = plant_name_to_ups_id[plant_name]
-		var value = (cnv_capacity * mult_factor * upgrade) # !! Check rounding of the value in model
-		capacity = base_capacity + (base_capacity * mult_factor * upgrade)
-		pollution = base_pollution + (base_pollution * mult_factor * upgrade)
-		land_use = base_land_use + (base_land_use * mult_factor * upgrade)
-		production_cost = base_production_cost + (base_production_cost * mult_factor * upgrade)
-		
-		Gameloop.ups_list[plant_id] += value
-		
-		_update_info()
-		Gameloop._update_buildings_impact()
-		
-		#$BuildInfo/EnergyContainer/Multiplier/Inc.disabled = true
-		#$BuildInfo/EnergyContainer/Multiplier/Dec.disabled = true
-
+		if upgrade_cost <= Gameloop.available_money_amount:
+			Gameloop.building_costs += upgrade_cost
+			$BuildInfo/EnergyContainer/Multiplier/Dec.show()
+			upgrade += 1
+			
+			var plant_id = plant_name_to_ups_id[plant_name]
+			var value = (cnv_capacity * mult_factor * upgrade) # !! Check rounding of the value in model
+			capacity = base_capacity + (base_capacity * mult_factor * upgrade)
+			pollution = base_pollution + (base_pollution * mult_factor * upgrade)
+			land_use = base_land_use + (base_land_use * mult_factor * upgrade)
+			production_cost = base_production_cost + (base_production_cost * mult_factor * upgrade)
+			
+			Gameloop.ups_list[plant_id] += value
+			
+			_update_info()
+			Gameloop._update_buildings_impact()
+			
+			#$BuildInfo/EnergyContainer/Multiplier/Inc.disabled = true
+			#$BuildInfo/EnergyContainer/Multiplier/Dec.disabled = true
+		else:
+			# E. Notify user they don't have enough money
+			pass
 
 func _on_mult_dec_pressed():
 	if upgrade > 0:
+		Gameloop.building_costs -= upgrade_cost
+		
 		upgrade -= 1
 		
 		var plant_id = plant_name_to_ups_id[plant_name]
