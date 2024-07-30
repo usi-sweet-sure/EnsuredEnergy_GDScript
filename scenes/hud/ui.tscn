@@ -870,16 +870,14 @@ position = Vector2(202, 178.5)
 texture = ExtResource("1_ooswe")
 
 [node name="Icon-popularity" type="Sprite2D" parent="TopLeftZone/BackPlate"]
+visible = false
 position = Vector2(-71, 91)
 texture = ExtResource("34_xcgyc")
 
 [node name="Popularity-" type="Sprite2D" parent="TopLeftZone/BackPlate"]
+visible = false
 position = Vector2(3.5, 91)
 texture = ExtResource("35_qiawk")
-
-[node name="Sprite2D" type="Sprite2D" parent="TopLeftZone/BackPlate"]
-position = Vector2(93, 55)
-texture = ExtResource("11_i0u5d")
 
 [node name="Policies" type="Label" parent="TopLeftZone/BackPlate"]
 offset_left = 14.0
@@ -1326,6 +1324,14 @@ vertical_alignment = 1
 [node name="MoneyManagement" type="Control" parent="TopLeftZone"]
 layout_mode = 3
 anchors_preset = 0
+offset_left = -1.0
+offset_top = 25.0
+offset_right = -1.0
+offset_bottom = 25.0
+
+[node name="Sprite2D" type="Sprite2D" parent="TopLeftZone/MoneyManagement"]
+position = Vector2(295, 233.5)
+texture = ExtResource("11_i0u5d")
 
 [node name="MoneyInfo" type="Control" parent="TopLeftZone/MoneyManagement"]
 anchors_preset = 0
@@ -2032,6 +2038,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Trust" type="ProgressBar" parent="TopLeftZone/Policies"]
+visible = false
 layout_mode = 0
 offset_left = 164.0
 offset_top = 250.5

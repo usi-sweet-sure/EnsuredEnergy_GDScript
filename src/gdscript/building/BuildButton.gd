@@ -23,7 +23,7 @@ func _check_building_ready():
 	if $BuildingInfo.visible:
 		if turn_left_to_build == 1:
 			$BuildingInfo.hide()
-			_build_plant(building_plant)
+			_build_plant(building_plant, false)
 		else:
 			turn_left_to_build -= 1
 			$BuildingInfo/BuildingCancel.hide()
@@ -51,10 +51,10 @@ func _on_pp_pressed(pp):
 					$BuildingInfo/Building/Plate/WinterE/WinterE.text = str(plant.availability.y * plant.capacity).pad_decimals(0)
 					$BuildingInfo/Building/Plate/SummerE/SummerE.text = str(plant.availability.x * plant.capacity).pad_decimals(0)
 				
-func _build_plant(plant):
+func _build_plant(plant, can_cancel := true):
 	plant.show()
 	plant.add_to_group("PP")
-	plant.delete_button.show()
+	plant.delete_button.visible = can_cancel
 	plant._connect_next_turn_signal()
 	
 	self_modulate = Color(1,1,1,0)
