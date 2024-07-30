@@ -1,6 +1,8 @@
 extends Node2D
 
 
+@export var is_in_menu := false
+
 @export var availability = Vector2(0.5, 0.5)
 @export var capacity: float = 10.0
 @export var plant_name: String = "gas"
@@ -100,6 +102,7 @@ func _ready():
 	#Context1.http1.request_completed.connect(_on_request_completed)
 	Gameloop.next_turn.connect(_on_next_turn)
 	Gameloop.locale_updated.connect(_on_locale_updated)
+	Gameloop.available_money_amount_updated.connect(_on_available_money_updated)
 	
 	_update_info()
 	
@@ -127,7 +130,14 @@ func _update_info():
 	$BuildInfo/ColorRect/LifeSpan.text = tr("SHUT_DOWN").format({nbr = str(life_span - Gameloop.current_turn + 1)}) 
 		
 	$PreviewInfo/Price.text = str(build_cost) + "$"
-	$PreviewInfo/Time.text = str(build_time)
+	
+	if build_time > 0:
+		$PreviewInfo/Time.show()
+		$PreviewInfo/Time3.show()
+		$PreviewInfo/Time.text = str(build_time)
+	else:
+		$PreviewInfo/Time.hide()
+		$PreviewInfo/Time3.hide()
 	
 	# multiplier upgrade infos
 	if max_upgrade > 1:
@@ -315,6 +325,11 @@ func _on_switch_toggled(toggled_on):
 func _on_next_turn():
 	_check_life_span()
 	_update_info()
+	
+
+func _on_available_money_updated(available_money):
+	if is_in_menu:
+		$NoMoneyOverlay.visible = available_money < build_cost
 	
 
 func is_gas() -> bool:

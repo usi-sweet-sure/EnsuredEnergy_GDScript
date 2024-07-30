@@ -36,21 +36,21 @@ func _on_pressed():
 	
 # when pressing on a powerplant in buildmenu
 func _on_pp_pressed(pp):
-	$BuildMenu.hide()
 	for plant in $PowerPlants.get_children():
 		if pp.name == plant.name:
-			if pp.build_time < 1:
+			if pp.build_cost <= Gameloop.available_money_amount:
+				$BuildMenu.hide()
+				if pp.build_time < 1:
+					_build_plant(plant)
+				else:
+					turn_left_to_build = plant.build_time
+					$BuildingInfo/TurnsLeft.text = str(turn_left_to_build)
+					$BuildingInfo.show()
+					building_plant = plant
+					$BuildingInfo/Building/Plate/PlantName.text = plant.plant_name
+					$BuildingInfo/Building/Plate/WinterE/WinterE.text = str(plant.availability.y * plant.capacity).pad_decimals(0)
+					$BuildingInfo/Building/Plate/SummerE/SummerE.text = str(plant.availability.x * plant.capacity).pad_decimals(0)
 				
-				_build_plant(plant)
-			else:
-				turn_left_to_build = plant.build_time
-				$BuildingInfo/TurnsLeft.text = str(turn_left_to_build)
-				$BuildingInfo.show()
-				building_plant = plant
-				$BuildingInfo/Building/Plate/PlantName.text = plant.plant_name
-				$BuildingInfo/Building/Plate/WinterE/WinterE.text = str(plant.availability.y * plant.capacity).pad_decimals(0)
-				$BuildingInfo/Building/Plate/SummerE/SummerE.text = str(plant.availability.x * plant.capacity).pad_decimals(0)
-	
 func _build_plant(plant):
 	plant.show()
 	plant.add_to_group("PP")

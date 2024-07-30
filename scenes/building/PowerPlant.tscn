@@ -1125,8 +1125,23 @@ libraries = {
 
 [node name="Error" type="AudioStreamPlayer" parent="AP"]
 
-[node name="NoMoneySprite" type="Sprite2D" parent="."]
+[node name="NoMoneyOverlay" type="Control" parent="."]
 visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -117.0
+offset_top = -151.0
+offset_right = 123.0
+offset_bottom = 201.0
+
+[node name="ColorRect" type="ColorRect" parent="NoMoneyOverlay"]
+layout_mode = 0
+offset_right = 241.0
+offset_bottom = 352.0
+color = Color(0.247059, 0.247059, 0.247059, 0.670588)
+
+[node name="NoMoneySprite" type="Sprite2D" parent="NoMoneyOverlay"]
+position = Vector2(117, 150)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("14_x1bya")
 

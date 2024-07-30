@@ -98,6 +98,7 @@ color = Color(0.180392, 0.180392, 0.180392, 0)
 [node name="Solar" parent="Container" instance=ExtResource("2_236y8")]
 position = Vector2(194, 167)
 scale = Vector2(0.9, 0.9)
+is_in_menu = true
 availability = Vector2(0.8, 0.2)
 plant_name = "SOLAR"
 metadata/_edit_group_ = true
@@ -124,6 +125,7 @@ flat = true
 [node name="Wind" parent="Container" instance=ExtResource("2_236y8")]
 position = Vector2(420, 167)
 scale = Vector2(0.9, 0.9)
+is_in_menu = true
 availability = Vector2(0.1, 0.9)
 plant_name = "WIND"
 build_time = 2
@@ -168,6 +170,7 @@ flat = true
 [node name="Tree" parent="Container" instance=ExtResource("2_236y8")]
 position = Vector2(1322, 166)
 scale = Vector2(0.9, 0.9)
+is_in_menu = true
 availability = Vector2(0, 0)
 plant_name = "GAS"
 metadata/_edit_group_ = true
@@ -203,6 +206,7 @@ flat = true
 visible = false
 position = Vector2(194, 167)
 scale = Vector2(0.9, 0.9)
+is_in_menu = true
 plant_name = "HYDRO"
 metadata/_edit_group_ = true
 
@@ -239,6 +243,7 @@ flat = true
 [node name="Gas" parent="Container" instance=ExtResource("2_236y8")]
 position = Vector2(647, 166)
 scale = Vector2(0.9, 0.9)
+is_in_menu = true
 plant_name = "GAS"
 metadata/_edit_group_ = true
 
@@ -270,6 +275,7 @@ flat = true
 [node name="Waste" parent="Container" instance=ExtResource("2_236y8")]
 position = Vector2(872.001, 166)
 scale = Vector2(0.9, 0.9)
+is_in_menu = true
 plant_name = "WASTE"
 metadata/_edit_group_ = true
 
@@ -318,6 +324,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Biomass" parent="Container" instance=ExtResource("2_236y8")]
 position = Vector2(1097, 166)
 scale = Vector2(0.9, 0.9)
+is_in_menu = true
 plant_name = "BIOMASS"
 metadata/_edit_group_ = true
 
@@ -368,6 +375,7 @@ metadata/_edit_use_anchors_ = true
 visible = false
 position = Vector2(420, 167)
 scale = Vector2(0.9, 0.9)
+is_in_menu = true
 availability = Vector2(0.6, 0.4)
 plant_name = "RIVER"
 metadata/_edit_group_ = true
@@ -422,6 +430,7 @@ metadata/_edit_use_anchors_ = true
 visible = false
 position = Vector2(647, 166)
 scale = Vector2(0.9, 0.9)
+is_in_menu = true
 plant_name = "HYDRO"
 metadata/_edit_group_ = true
 
