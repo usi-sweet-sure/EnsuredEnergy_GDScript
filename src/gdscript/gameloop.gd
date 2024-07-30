@@ -46,6 +46,12 @@ signal building_costs_updated
 
 signal next_turn
 signal end
+
+# We need to send this signal because some translations 
+# don't update automatically when changing the language at runtime,
+# and only update when the tr() statement is called again.
+# So we listen to this signal and call those statements again where needed.
+# This signal is emitted in language_button.gd
 signal locale_updated
 
 var demand_summer: float = 1000:

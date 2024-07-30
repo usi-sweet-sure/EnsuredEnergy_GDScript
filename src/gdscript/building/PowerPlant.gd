@@ -127,6 +127,7 @@ func _update_info():
 	else:
 		if Gameloop.current_turn == life_span:
 			$LifeSpanWarning.show()
+			
 	$BuildInfo/ColorRect/LifeSpan.text = tr("SHUT_DOWN").format({nbr = str(life_span - Gameloop.current_turn + 1)}) 
 		
 	$PreviewInfo/Price.text = str(build_cost) + "$"
@@ -379,5 +380,8 @@ func is_biogas() -> bool:
 		
 
 func _on_locale_updated(_locale):
+	$NameRect/Name.text = tr(plant_name)
+	$BuildInfo/Name.text = tr(plant_name)
+	
 	if life_span >= Gameloop.current_turn:
 		$BuildInfo/ColorRect/LifeSpan.text = tr("SHUT_DOWN").format({nbr = str(life_span - Gameloop.current_turn + 1)}) 
