@@ -459,25 +459,15 @@ color = Color(0.596078, 0.596078, 0.596078, 0)
 [node name="LifeSpan" type="Label" parent="BuildInfo/ColorRect"]
 visible = false
 layout_mode = 2
-offset_left = 64.0
+offset_left = -77.0
 offset_top = 230.0
-offset_right = 391.0
+offset_right = 514.0
 offset_bottom = 280.0
 theme = ExtResource("11_iy3hd")
 theme_type_variation = &"Screen"
 theme_override_font_sizes/font_size = 50
-text = "9"
-horizontal_alignment = 2
-
-[node name="LifeSpanL" type="Label" parent="BuildInfo/ColorRect/LifeSpan"]
-layout_mode = 2
-offset_left = -38.0
-offset_right = 282.0
-offset_bottom = 50.0
-theme = ExtResource("11_iy3hd")
-theme_type_variation = &"Screen"
-theme_override_font_sizes/font_size = 50
 text = "SHUT_DOWN"
+horizontal_alignment = 1
 
 [node name="ContainerL" type="VBoxContainer" parent="BuildInfo/ColorRect"]
 layout_mode = 0

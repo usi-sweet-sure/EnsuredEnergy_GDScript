@@ -46,6 +46,7 @@ signal building_costs_updated
 
 signal next_turn
 signal end
+signal locale_updated
 
 var demand_summer: float = 1000:
 	set(new_value):

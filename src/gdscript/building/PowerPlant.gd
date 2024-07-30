@@ -99,6 +99,7 @@ func _ready():
 	Context1.http1.request_completed.connect(_on_request_finished)
 	#Context1.http1.request_completed.connect(_on_request_completed)
 	Gameloop.next_turn.connect(_on_next_turn)
+	Gameloop.locale_updated.connect(_on_locale_updated)
 	
 	_update_info()
 	
@@ -116,14 +117,16 @@ func _update_info():
 	$BuildInfo/ColorRect/ContainerN/Land.text = str(land_use).pad_decimals(2)
 	
 	$BuildInfo/ColorRect/LifeSpan.text = str(life_span - Gameloop.current_turn + 1)
+	
 	if life_span < Gameloop.current_turn:
 		$BuildInfo/ColorRect/LifeSpan.hide()
 		$LifeSpanWarning.hide()
 	else:
 		if Gameloop.current_turn == life_span:
 			$LifeSpanWarning.show()
-		$BuildInfo/ColorRect/LifeSpan.text = str(life_span - Gameloop.current_turn + 1)
-	$PreviewInfo/Price.text = str(build_cost)
+	$BuildInfo/ColorRect/LifeSpan.text = tr("SHUT_DOWN").format({nbr = str(life_span - Gameloop.current_turn + 1)}) 
+		
+	$PreviewInfo/Price.text = str(build_cost) + "$"
 	$PreviewInfo/Time.text = str(build_time)
 	
 	# multiplier upgrade infos
@@ -352,3 +355,8 @@ func is_geothermal() -> bool:
 
 func is_biogas() -> bool:
 		return plant_name == "BIOGAS"
+		
+
+func _on_locale_updated(_locale):
+	if life_span >= Gameloop.current_turn:
+		$BuildInfo/ColorRect/LifeSpan.text = tr("SHUT_DOWN").format({nbr = str(life_span - Gameloop.current_turn + 1)}) 
