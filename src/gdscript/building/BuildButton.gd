@@ -38,7 +38,7 @@ func _on_pressed():
 func _on_pp_pressed(pp):
 	for plant in $PowerPlants.get_children():
 		if pp.name == plant.name:
-			if pp.build_cost <= Gameloop.available_money_amount:
+			if Gameloop.can_spend_the_money(pp.build_cost):
 				$BuildMenu.hide()
 				if pp.build_time < 1:
 					_build_plant(plant)

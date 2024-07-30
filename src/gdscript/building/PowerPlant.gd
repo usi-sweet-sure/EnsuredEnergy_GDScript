@@ -208,7 +208,7 @@ func _on_info_button_pressed():
 
 func _on_mult_inc_pressed():
 	if upgrade < max_upgrade:
-		if upgrade_cost <= Gameloop.available_money_amount:
+		if Gameloop.can_spend_the_money(upgrade_cost):
 			Gameloop.building_costs += upgrade_cost
 			$BuildInfo/EnergyContainer/Multiplier/Dec.show()
 			upgrade += 1

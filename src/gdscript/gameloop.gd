@@ -198,3 +198,7 @@ func _unhandled_input(event):
 			
 func can_go_to_next_turn():
 	return _check_supply()
+	
+
+func can_spend_the_money(money_to_spend: float):
+	return money_to_spend <= available_money_amount
