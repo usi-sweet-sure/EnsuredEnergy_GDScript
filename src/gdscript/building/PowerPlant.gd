@@ -212,6 +212,9 @@ func _on_mult_inc_pressed():
 		if Gameloop.can_spend_the_money(upgrade_cost):
 			Gameloop.building_costs += upgrade_cost
 			$BuildInfo/EnergyContainer/Multiplier/Dec.show()
+			$Money.text = "-" + str(upgrade_cost) + "$"
+			$AP.stop()
+			$AP.play("Money-")
 			upgrade += 1
 			
 			var plant_id = plant_name_to_ups_id[plant_name]
@@ -235,6 +238,10 @@ func _on_mult_inc_pressed():
 func _on_mult_dec_pressed():
 	if upgrade > 0:
 		Gameloop.building_costs -= upgrade_cost
+		
+		$Money.text = "+" + str(upgrade_cost) + "$"
+		$AP.stop()
+		$AP.play("Money+")
 		
 		upgrade -= 1
 		
