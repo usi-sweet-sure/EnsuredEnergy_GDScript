@@ -13,9 +13,6 @@ func _ready():
 		pp.get_child(-1).mouse_exited.connect(_on_pp_mouse_exited.bind(pp))
 	for pp in $PowerPlants.get_children():
 		pp.delete_button.pressed.connect(_on_pp_delete.bind(pp))
-	# E. Commented the two following line, there's a bug with delete_button
-	#for pp in $PowerPlants.get_children():
-		#pp.delete_button.pressed.connect(_on_pp_delete.bind(pp))
 		
 	Gameloop.next_turn.connect(_check_building_ready)
 
@@ -34,12 +31,15 @@ func _on_pressed():
 	$BuildMenu.show()
 	$BuildMenu/AnimationPlayer.play("SlideUp")
 	
+	
 # when pressing on a powerplant in buildmenu
 func _on_pp_pressed(pp):
 	for plant in $PowerPlants.get_children():
 		if pp.name == plant.name:
 			if Gameloop.can_spend_the_money(pp.build_cost):
 				$BuildMenu.hide()
+				$Money.text = "-" + str(pp.build_cost) + "$"
+				$AnimationPlayer.play("Money-")
 				if pp.build_time < 1:
 					_build_plant(plant)
 				else:
@@ -50,6 +50,7 @@ func _on_pp_pressed(pp):
 					$BuildingInfo/Building/Plate/PlantName.text = plant.plant_name
 					$BuildingInfo/Building/Plate/WinterE/WinterE.text = str(plant.availability.y * plant.capacity).pad_decimals(0)
 					$BuildingInfo/Building/Plate/SummerE/SummerE.text = str(plant.availability.x * plant.capacity).pad_decimals(0)
+				
 				
 func _build_plant(plant, can_cancel := true):
 	plant.show()
@@ -82,6 +83,8 @@ func _on_pp_delete(pp):
 		pp.remove_from_group("PP")
 		pp.delete_button.hide()
 		self_modulate = Color(1,1,1,1)
+		$Money.text = "+" + str(pp.build_cost) + "$"
+		$AnimationPlayer.play("Money+")
 		disabled = false
 		
 		var plant_id = pp.plant_name_to_ups_id[pp.plant_name]

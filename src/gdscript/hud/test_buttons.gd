@@ -3,8 +3,7 @@ extends Control
 
 
 func _on_button_top_pressed():
-	ShockManager.pick_shock()
-	ShockManager.apply_shock()
+	Poc.perform_requests_in_sequence()
 
 func _on_button_bottom_pressed():
-	pass
+	Poc.perform_requests_in_sequence()
