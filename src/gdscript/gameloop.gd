@@ -47,6 +47,8 @@ signal building_costs_updated
 signal next_turn
 signal end
 
+signal toggle_settings
+
 # We need to send this signal because some translations 
 # don't update automatically when changing the language at runtime,
 # and only update when the tr() statement is called again.
