@@ -43,6 +43,7 @@ func _unhandled_input(event):
 	if event is InputEventMouseButton and event.button_mask == MOUSE_BUTTON_MASK_LEFT:
 		clock_info_sticker.hide()
 		
+		
 func _on_next_turn_button_pressed():
 	_set_next_years_anim()
 	$TimelineAnimation.play("NextTurnAnim")

@@ -38,7 +38,7 @@ func _on_open_policies_window_button_pressed():
 	show()
 	
 
-func _on_policy_button_clicked(policy_id):
+func _on_policy_button_clicked(_policy_id):
 	explanation.hide()
 
 

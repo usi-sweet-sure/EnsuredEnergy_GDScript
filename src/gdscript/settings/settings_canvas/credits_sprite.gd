@@ -10,5 +10,4 @@ func _on_credits_button_pressed():
 	
 	
 func _on_toggle_settings():
-	print("fdslkjhflksdjh")
 	hide()

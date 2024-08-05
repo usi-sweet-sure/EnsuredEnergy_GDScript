@@ -107,7 +107,7 @@ var players_own_money_amount: int = 0:
 		available_money_amount_updated.emit(available_money_amount)
 # This is a sum of all the money sources, minus costs, so don't set this variable, but the
 # parts used to compute it
-var available_money_amount: int = 0:
+var available_money_amount: float = 0:
 	get:
 		return players_own_money_amount + borrowed_money_amount - building_costs
 var land_use_percentage: int = 37:
@@ -183,7 +183,6 @@ func _update_buildings_impact():
 	supply_winter = winter
 	powerplants_production_costs = total_production_costs
 	co2_emissions = total_emissions
-	print("emission: ", co2_emissions)
 	
 func _check_supply():
 	return supply_summer >= demand_summer and supply_winter + imported_energy_amount >= demand_winter
