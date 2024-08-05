@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://dna2006dnsx2x"]
 
-[ext_resource type="Texture2D" uid="uid://ga6yaa7ss7pa" path="res://assets/UI Elements/Policies-Button-SmallNormal.png" id="1_tbkhm"]
-[ext_resource type="Texture2D" uid="uid://cihbwmo1t85av" path="res://assets/UI Elements/Policies-Button-Small-Press.png" id="2_daym8"]
-[ext_resource type="Texture2D" uid="uid://br23brh4f3qqe" path="res://assets/UI Elements/Policies-Button-Small-Hover.png" id="3_7eos0"]
-[ext_resource type="Texture2D" uid="uid://dnr3tvwn2pcnj" path="res://assets/UI Elements/Policies_Button_small_Hole.png" id="3_lax6w"]
+[ext_resource type="Texture2D" uid="uid://hmcjyyrl7dv2" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0034_Policies-normal-(small)-button.png" id="1_7yv6u"]
+[ext_resource type="Texture2D" uid="uid://cjxrgcwrcynwf" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0035_Policies-press-(small)-button.png" id="2_aqrlf"]
+[ext_resource type="Texture2D" uid="uid://80u4mcjyisb7" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0033_Policies-hover-(small)-button.png" id="3_03pvm"]
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/policy_button.gd" id="4_vhi6a"]
+[ext_resource type="Texture2D" uid="uid://cu5qdg6vletaj" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0004_Policies-(small)-button-hole.png" id="5_xiqse"]
 [ext_resource type="Texture2D" uid="uid://bam7su0aw6q65" path="res://assets/UI Elements/Icon-Popularity.png" id="6_gjogc"]
 
 [node name="PolicyButton" type="TextureButton"]
@@ -16,15 +16,15 @@ offset_bottom = 120.0
 focus_mode = 0
 toggle_mode = true
 action_mode = 0
-texture_normal = ExtResource("1_tbkhm")
-texture_pressed = ExtResource("2_daym8")
-texture_hover = ExtResource("3_7eos0")
+texture_normal = ExtResource("1_7yv6u")
+texture_pressed = ExtResource("2_aqrlf")
+texture_hover = ExtResource("3_03pvm")
 script = ExtResource("4_vhi6a")
 
 [node name="PoliciesButtonSmallHole" type="Sprite2D" parent="."]
 show_behind_parent = true
 position = Vector2(63, 33)
-texture = ExtResource("3_lax6w")
+texture = ExtResource("5_xiqse")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1

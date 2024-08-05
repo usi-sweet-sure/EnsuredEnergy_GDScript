@@ -8,4 +8,5 @@ func _ready():
 
 
 func _on_most_recent_shock_updated(shock: Shock):
-	texture = load("res://assets/icons/" + shock.img)
+	pass
+	#texture = load("res://assets/icons/" + shock.img)
