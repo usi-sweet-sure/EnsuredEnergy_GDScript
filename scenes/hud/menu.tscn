@@ -1,19 +1,28 @@
-[gd_scene load_steps=16 format=3 uid="uid://pvoi2mcc3oc1"]
+[gd_scene load_steps=21 format=3 uid="uid://pvoi2mcc3oc1"]
 
 [ext_resource type="Script" path="res://src/gdscript/hud/menu.gd" id="1_2w7hu"]
 [ext_resource type="Texture2D" uid="uid://bdjbeos1j2wsr" path="res://assets/Map/MAP-BG.png" id="2_rie33"]
 [ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="3_l0e0n"]
-[ext_resource type="Texture2D" uid="uid://bfeet7msl5o2h" path="res://assets/UI Elements/Start_Menu_Base-01.png" id="4_hviw1"]
+[ext_resource type="Texture2D" uid="uid://d2xmfb55o0osw" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0014_Start-menu-metal-base.png" id="4_dgun4"]
 [ext_resource type="Texture2D" uid="uid://d2dxa7x362j3j" path="res://assets/Elements/NEXTTURNBUTTONDisabled.png" id="5_gh7te"]
+[ext_resource type="Texture2D" uid="uid://bspccm3p1o4q8" path="res://assets/UI Elements/All-HQ-Assets-D_0005s_0008_Player-name-screen.png" id="5_rxjck"]
+[ext_resource type="Texture2D" uid="uid://cvr8ptliyw7oc" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0013_1-slot-button-hole.png" id="9_j0rns"]
 [ext_resource type="Texture2D" uid="uid://cqekiqjn8gvh7" path="res://assets/UI Elements/Button-Play-normal.png" id="11_v1gn1"]
 [ext_resource type="Texture2D" uid="uid://c5tgx0yng476j" path="res://assets/UI Elements/Button-Play-press.png" id="12_2e306"]
 [ext_resource type="Texture2D" uid="uid://id0egjudmljv" path="res://assets/UI Elements/Blueprint_normal.png" id="12_eqfmq"]
 [ext_resource type="Texture2D" uid="uid://bhipsxe5qj5kh" path="res://assets/UI Elements/Blueprint_active_1.png" id="13_bf784"]
 [ext_resource type="Texture2D" uid="uid://0od1i8cgelas" path="res://assets/UI Elements/Button-Play-hover.png" id="13_ngmjh"]
 [ext_resource type="Texture2D" uid="uid://b4m67oni44dpg" path="res://assets/UI Elements/Button-normal.png" id="14_38vq8"]
+[ext_resource type="Texture2D" uid="uid://ctraf5ssdx7wt" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0049_CTA-Normal-metal.png" id="14_n5xse"]
 [ext_resource type="Texture2D" uid="uid://bdqqnt7g3ojt8" path="res://assets/UI Elements/Blueprint_active_2.png" id="14_wbube"]
 [ext_resource type="Texture2D" uid="uid://60dl810b25fd" path="res://assets/UI Elements/Button-press.png" id="15_4vyug"]
 [ext_resource type="Texture2D" uid="uid://cuhckno2t6g0r" path="res://assets/UI Elements/Button-hover.png" id="16_gqjv5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k5cxq"]
+texture = ExtResource("5_rxjck")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4jtbl"]
+texture = ExtResource("5_rxjck")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fibyn"]
 animations = [{
@@ -52,7 +61,8 @@ centered = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = -692.0
+offset_top = 104.0
+offset_bottom = -588.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_l0e0n")
@@ -68,7 +78,19 @@ uppercase = true
 
 [node name="StartMenuBase" type="Sprite2D" parent="."]
 position = Vector2(696, 680)
-texture = ExtResource("4_hviw1")
+texture = ExtResource("4_dgun4")
+
+[node name="PlayerName" type="LineEdit" parent="."]
+offset_left = 613.0
+offset_top = 511.0
+offset_right = 778.0
+offset_bottom = 547.0
+theme = ExtResource("3_l0e0n")
+theme_type_variation = &"Screen"
+theme_override_styles/normal = SubResource("StyleBoxTexture_k5cxq")
+theme_override_styles/focus = SubResource("StyleBoxTexture_4jtbl")
+placeholder_text = "NAME"
+alignment = 1
 
 [node name="Play" type="TextureButton" parent="."]
 anchors_preset = 8
@@ -77,12 +99,11 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -364.0
-offset_top = 18.0
+offset_top = 30.0
 offset_right = -167.0
-offset_bottom = 82.0
+offset_bottom = 94.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_default_cursor_shape = 2
 texture_normal = ExtResource("11_v1gn1")
 texture_pressed = ExtResource("12_2e306")
 texture_hover = ExtResource("13_ngmjh")
@@ -106,6 +127,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
+[node name="Sprite2D3" type="Sprite2D" parent="Play"]
+show_behind_parent = true
+position = Vector2(-1, -12)
+texture = ExtResource("9_j0rns")
+centered = false
+
 [node name="Lang" type="TextureButton" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
@@ -113,12 +140,11 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -364.0
-offset_top = 105.0
+offset_top = 117.0
 offset_right = -167.0
-offset_bottom = 169.0
+offset_bottom = 181.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_default_cursor_shape = 2
 texture_normal = ExtResource("14_38vq8")
 texture_pressed = ExtResource("15_4vyug")
 texture_hover = ExtResource("16_gqjv5")
@@ -145,20 +171,25 @@ vertical_alignment = 1
 autowrap_mode = 2
 uppercase = true
 
-[node name="Offline" type="TextureButton" parent="."]
+[node name="Sprite2D2" type="Sprite2D" parent="Lang"]
+show_behind_parent = true
+position = Vector2(-1, -12)
+texture = ExtResource("9_j0rns")
+centered = false
+
+[node name="Credits" type="TextureButton" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -364.0
-offset_top = 193.0
+offset_top = 205.0
 offset_right = -167.0
-offset_bottom = 257.0
+offset_bottom = 269.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("14_38vq8")
+texture_normal = ExtResource("14_n5xse")
 texture_pressed = ExtResource("15_4vyug")
 texture_hover = ExtResource("16_gqjv5")
 texture_disabled = ExtResource("15_4vyug")
@@ -166,7 +197,7 @@ ignore_texture_size = true
 stretch_mode = 3
 metadata/_edit_group_ = true
 
-[node name="OfflineL" type="Label" parent="Offline"]
+[node name="OfflineL" type="Label" parent="Credits"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -177,11 +208,17 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_l0e0n")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "Mode: Online"
+text = "CREDITS"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 uppercase = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Credits"]
+show_behind_parent = true
+position = Vector2(-1, -12)
+texture = ExtResource("9_j0rns")
+centered = false
 
 [node name="BlueprintNormal" type="AnimatedSprite2D" parent="."]
 position = Vector2(1232, 680)
@@ -224,30 +261,6 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 22
 text = "MENU"
 
-[node name="PlayerName" type="LineEdit" parent="."]
-offset_left = 610.0
-offset_top = 499.0
-offset_right = 775.0
-offset_bottom = 535.0
-placeholder_text = "NAME"
-alignment = 1
-
-[node name="OptionButton" type="OptionButton" parent="."]
-visible = false
-offset_left = 641.0
-offset_top = 661.0
-offset_right = 751.0
-offset_bottom = 692.0
-item_count = 4
-selected = 0
-popup/item_0/text = "English"
-popup/item_0/id = 0
-popup/item_1/text = "Français"
-popup/item_1/id = 1
-popup/item_2/text = "Deutsch"
-popup/item_2/id = 2
-popup/item_3/text = "Italiano"
-popup/item_3/id = 3
-
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Lang" to="." method="_on_lang_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]

@@ -51,6 +51,7 @@ points = PackedVector2Array(144, 16, 120, 16)
 width = 2.0
 
 [node name="ImportSwitch" type="CheckButton" parent="."]
+visible = false
 layout_mode = 0
 offset_left = -14.0
 offset_top = 287.0
@@ -89,7 +90,7 @@ uppercase = true
 
 [node name="Import-bar-hole" type="Sprite2D" parent="."]
 show_behind_parent = true
-position = Vector2(26, 122)
+position = Vector2(19, 122)
 texture = ExtResource("5_dclfl")
 
 [node name="Icon-import" type="Sprite2D" parent="."]
@@ -139,6 +140,7 @@ text = "Import"
 uppercase = true
 
 [node name="LEDOff" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(111, 308)
 texture = ExtResource("14_bnj43")
 

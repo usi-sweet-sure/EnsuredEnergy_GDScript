@@ -145,8 +145,8 @@ offset_top = 19.0
 offset_right = 391.0
 offset_bottom = 56.0
 texture_normal = ExtResource("4_0qsle")
-texture_pressed = ExtResource("5_h8nss")
-texture_hover = ExtResource("6_f4vpc")
+texture_pressed = ExtResource("6_f4vpc")
+texture_hover = ExtResource("5_h8nss")
 
 [node name="Label" type="Label" parent="MoreInfo"]
 layout_mode = 0

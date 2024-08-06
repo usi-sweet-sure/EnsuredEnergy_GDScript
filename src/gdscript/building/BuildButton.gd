@@ -27,7 +27,7 @@ func _check_building_ready():
 		else:
 			turn_left_to_build -= 1
 			$BuildingInfo/BuildingCancel.hide()
-		$BuildingInfo/TurnsLeft.text = str(turn_left_to_build)
+		$BuildingInfo/Plate/TurnsLeft/TurnsLeft.text = str(turn_left_to_build)
 
 # when pressing on a buildbutton
 func _on_pressed():
@@ -44,12 +44,12 @@ func _on_pp_pressed(pp):
 					_build_plant(plant)
 				else:
 					turn_left_to_build = plant.build_time
-					$BuildingInfo/TurnsLeft.text = str(turn_left_to_build)
+					$BuildingInfo/Plate/TurnsLeft/TurnsLeft.text = str(turn_left_to_build)
 					$BuildingInfo.show()
 					building_plant = plant
-					$BuildingInfo/Building/Plate/PlantName.text = plant.plant_name
-					$BuildingInfo/Building/Plate/WinterE/WinterE.text = str(plant.availability.y * plant.capacity).pad_decimals(0)
-					$BuildingInfo/Building/Plate/SummerE/SummerE.text = str(plant.availability.x * plant.capacity).pad_decimals(0)
+					$BuildingInfo/Plate/PlantName.text = plant.plant_name
+					$BuildingInfo/Plate/WinterE/WinterE.text = str(plant.availability.y * plant.capacity).pad_decimals(0)
+					$BuildingInfo/Plate/SummerE/SummerE.text = str(plant.availability.x * plant.capacity).pad_decimals(0)
 				
 func _build_plant(plant, can_cancel := true):
 	plant.show()
@@ -110,4 +110,4 @@ func _on_mouse_entered():
 
 
 func _on_building_info_pressed():
-	$BuildingInfo/Building/Plate.visible = !$BuildingInfo/Building/Plate.visible
+	$BuildingInfo/Plate.visible = !$BuildingInfo/Plate.visible

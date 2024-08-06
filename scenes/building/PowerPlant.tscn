@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://ct4blqwh4y6ab"]
+[gd_scene load_steps=47 format=3 uid="uid://ct4blqwh4y6ab"]
 
 [ext_resource type="Script" path="res://src/gdscript/building/PowerPlant.gd" id="1_rcgoa"]
 [ext_resource type="Texture2D" uid="uid://b76v2w1on0f0u" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0004_Money-symbol.png" id="3_20yso"]
@@ -8,15 +8,16 @@
 [ext_resource type="Texture2D" uid="uid://b3fajud3sgo5m" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0000_Build-Menu-metal-base.png" id="5_ghe1t"]
 [ext_resource type="AudioStream" uid="uid://d0mx81kv2vlha" path="res://assets/Sounds/Negative 2_1.wav" id="6_5wr63"]
 [ext_resource type="Texture2D" uid="uid://vg02ewph3pco" path="res://assets/UI Elements/All-HQ-Assets-D_0005s_0000_Build-Plant-Screen.png" id="6_8dptp"]
-[ext_resource type="Texture2D" uid="uid://ca5ev88u31iqa" path="res://assets/UI Elements/Icon-Solar.png" id="6_qkc2p"]
-[ext_resource type="Texture2D" uid="uid://bbnupxdtp78l5" path="res://assets/UI Elements/Icon-Wind.png" id="7_fjg03"]
+[ext_resource type="Texture2D" uid="uid://bsa55enbm5cwg" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0028_Icon-Solar.png" id="9_efv0j"]
+[ext_resource type="Texture2D" uid="uid://cischtrjvknyl" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0027_Icon-Wind.png" id="10_pcbt1"]
 [ext_resource type="Texture2D" uid="uid://sdv07wonj5bg" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0007_Power-plant-metal-base.png" id="11_2siwy"]
+[ext_resource type="FontFile" uid="uid://dxtsp51pqna2o" path="res://assets/Fonts/static/OpenSans-Bold.ttf" id="11_3tt6c"]
 [ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="11_iy3hd"]
 [ext_resource type="Texture2D" uid="uid://dwys7y27kiabl" path="res://assets/UI Elements/Import-Switch-On.png" id="11_o2k5p"]
 [ext_resource type="Texture2D" uid="uid://d2btaduc1gq0j" path="res://assets/UI Elements/All-HQ-Assets-D_0005s_0005_Power-plant-screen.png" id="12_q8p15"]
 [ext_resource type="Texture2D" uid="uid://dhxkhfg2qxlgx" path="res://assets/UI Elements/Import-Switch-Off.png" id="12_yxhto"]
-[ext_resource type="Texture2D" uid="uid://cslvh11lib8sy" path="res://assets/UI Elements/Post-it-yellow.png" id="14_12evj"]
 [ext_resource type="Texture2D" uid="uid://cbfiq38udssn1" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0011_Counter-hole-3-slots.png" id="14_48cmp"]
+[ext_resource type="Texture2D" uid="uid://4vaswckm2bvc" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0030_Post-it-yellow.png" id="14_o8nf6"]
 [ext_resource type="FontFile" uid="uid://bwuskgw4ek8y" path="res://assets/Fonts/static/OpenSans-Medium.ttf" id="15_6udtn"]
 [ext_resource type="Texture2D" uid="uid://cdn0h6b873gbk" path="res://assets/UI Elements/Build_Menu_counter_yellow-1.png" id="16_svf0w"]
 [ext_resource type="Texture2D" uid="uid://duxc28wuegrwc" path="res://assets/UI Elements/Button-small-normal.png" id="17_1peyq"]
@@ -27,23 +28,24 @@
 [ext_resource type="Texture2D" uid="uid://bi5hfr0hha1w0" path="res://assets/UI Elements/Post-it-red.png" id="21_baxyr"]
 [ext_resource type="Texture2D" uid="uid://cy2dqdgln1uij" path="res://assets/UI Elements/LED-Off.png" id="21_owd4v"]
 [ext_resource type="Texture2D" uid="uid://bdifhvhbdals5" path="res://assets/UI Elements/LED-On.png" id="22_0ieop"]
+[ext_resource type="Texture2D" uid="uid://0m82kv8v8x8j" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0029_Post-it-green.png" id="23_ap1eh"]
 [ext_resource type="Texture2D" uid="uid://4s62sj1p8eja" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0019_Icon-red-normal-button.png" id="27_qw4y5"]
 [ext_resource type="Texture2D" uid="uid://b86vm4agcnisw" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0020_Icon-red-press-button.png" id="28_0mcut"]
 [ext_resource type="Texture2D" uid="uid://b066igcqidlny" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0018_Icon-red-hover-button.png" id="29_wtk7g"]
 [ext_resource type="Texture2D" uid="uid://b0c3ywqarx8b7" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0002_Icon-round-button-hole.png" id="30_v80d1"]
+[ext_resource type="Texture2D" uid="uid://dghaekaa6d2q" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0023_Icon-Warning.png" id="31_ss13a"]
 [ext_resource type="Texture2D" uid="uid://d3vcg8408jiv6" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0002_no-Money-symbol.png" id="32_peacu"]
 
-[sub_resource type="FontVariation" id="FontVariation_nky5f"]
-
 [sub_resource type="FontVariation" id="FontVariation_uwmcg"]
-base_font = SubResource("FontVariation_nky5f")
+base_font = ExtResource("11_3tt6c")
 spacing_glyph = 6
 
 [sub_resource type="FontVariation" id="FontVariation_r1iqv"]
+base_font = ExtResource("11_3tt6c")
 spacing_glyph = 6
 
 [sub_resource type="FontVariation" id="FontVariation_ji1at"]
-base_font = ExtResource("15_6udtn")
+base_font = ExtResource("11_3tt6c")
 spacing_glyph = 7
 
 [sub_resource type="FontVariation" id="FontVariation_muro4"]
@@ -386,20 +388,20 @@ scale = Vector2(0.9, 0.9)
 texture = ExtResource("5_bit08")
 
 [node name="Icon-solar" type="Sprite2D" parent="PreviewInfo/BuildMenuBG"]
-position = Vector2(23, 127)
-scale = Vector2(0.9, 0.9)
-texture = ExtResource("6_qkc2p")
+position = Vector2(21, 127)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("9_efv0j")
 
 [node name="Icon-wind" type="Sprite2D" parent="PreviewInfo/BuildMenuBG"]
-position = Vector2(-87, 126)
-scale = Vector2(0.9, 0.9)
-texture = ExtResource("7_fjg03")
+position = Vector2(-90, 126)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("10_pcbt1")
 
 [node name="EnergyS" type="Label" parent="PreviewInfo"]
 layout_mode = 0
-offset_left = 147.0
+offset_left = 146.0
 offset_top = -17.0
-offset_right = 195.0
+offset_right = 194.0
 offset_bottom = 21.0
 theme_override_colors/font_color = Color(0.0352941, 0.156863, 0.168627, 1)
 theme_override_fonts/font = SubResource("FontVariation_uwmcg")
@@ -413,7 +415,7 @@ offset_left = 29.0
 offset_top = -16.0
 offset_right = 83.0
 offset_bottom = 22.0
-theme_override_colors/font_color = Color(0.0352941, 0.156863, 0.168627, 1)
+theme = ExtResource("11_iy3hd")
 theme_override_fonts/font = SubResource("FontVariation_r1iqv")
 theme_override_font_sizes/font_size = 21
 text = "100"
@@ -700,6 +702,7 @@ text = "→"
 horizontal_alignment = 2
 
 [node name="MultWinterE" type="Label" parent="BuildInfo"]
+visible = false
 layout_mode = 0
 offset_left = 10.0
 offset_top = 285.0
@@ -715,9 +718,10 @@ horizontal_alignment = 1
 show_behind_parent = true
 position = Vector2(21.3705, 12.9731)
 rotation = 0.261799
-texture = ExtResource("14_12evj")
+texture = ExtResource("14_o8nf6")
 
 [node name="MultSummerE" type="Label" parent="BuildInfo"]
+visible = false
 layout_mode = 0
 offset_left = 147.0
 offset_top = 282.0
@@ -733,7 +737,7 @@ horizontal_alignment = 1
 show_behind_parent = true
 position = Vector2(18.2139, 13.1626)
 rotation = 0.261799
-texture = ExtResource("14_12evj")
+texture = ExtResource("14_o8nf6")
 
 [node name="Name" type="Label" parent="BuildInfo"]
 layout_mode = 0
@@ -762,19 +766,19 @@ custom_minimum_size = Vector2(210, 0)
 layout_mode = 2
 
 [node name="BuildMenuNumHole2" type="Sprite2D" parent="BuildInfo/EnergyContainer/Winter"]
-position = Vector2(225, 177)
+position = Vector2(215.667, 177)
 texture = ExtResource("14_48cmp")
 
 [node name="BuildMenuNumCounter" type="Sprite2D" parent="BuildInfo/EnergyContainer/Winter"]
-position = Vector2(203.5, 177)
+position = Vector2(194.167, 177)
 texture = ExtResource("5_bit08")
 
 [node name="BuildMenuNumCounter2" type="Sprite2D" parent="BuildInfo/EnergyContainer/Winter"]
-position = Vector2(223.5, 177)
+position = Vector2(214.167, 177)
 texture = ExtResource("5_bit08")
 
 [node name="BuildMenuNumCounter3" type="Sprite2D" parent="BuildInfo/EnergyContainer/Winter"]
-position = Vector2(243.5, 177)
+position = Vector2(234.167, 177)
 texture = ExtResource("5_bit08")
 
 [node name="WinterE" type="Label" parent="BuildInfo/EnergyContainer/Winter/BuildMenuNumCounter3"]
@@ -791,27 +795,27 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Icon-wind" type="Sprite2D" parent="BuildInfo/EnergyContainer/Winter"]
-position = Vector2(165.5, 177)
-texture = ExtResource("7_fjg03")
+position = Vector2(153.5, 174.333)
+texture = ExtResource("10_pcbt1")
 
 [node name="Summer" type="Control" parent="BuildInfo/EnergyContainer"]
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 
 [node name="BuildMenuNumHole" type="Sprite2D" parent="BuildInfo/EnergyContainer/Summer"]
-position = Vector2(128, 177)
+position = Vector2(128.667, 177)
 texture = ExtResource("14_48cmp")
 
 [node name="BuildMenuNumCounter" type="Sprite2D" parent="BuildInfo/EnergyContainer/Summer"]
-position = Vector2(107, 177)
+position = Vector2(107.667, 177)
 texture = ExtResource("5_bit08")
 
 [node name="BuildMenuNumCounter2" type="Sprite2D" parent="BuildInfo/EnergyContainer/Summer"]
-position = Vector2(127, 177)
+position = Vector2(127.667, 177)
 texture = ExtResource("5_bit08")
 
 [node name="BuildMenuNumCounter3" type="Sprite2D" parent="BuildInfo/EnergyContainer/Summer"]
-position = Vector2(147, 177)
+position = Vector2(147.667, 177)
 texture = ExtResource("5_bit08")
 
 [node name="SummerE" type="Label" parent="BuildInfo/EnergyContainer/Summer/BuildMenuNumCounter3"]
@@ -828,8 +832,8 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Icon-solar" type="Sprite2D" parent="BuildInfo/EnergyContainer/Summer"]
-position = Vector2(71, 177)
-texture = ExtResource("6_qkc2p")
+position = Vector2(68.3333, 177)
+texture = ExtResource("9_efv0j")
 
 [node name="Multiplier" type="ColorRect" parent="BuildInfo/EnergyContainer"]
 z_index = 1
@@ -845,6 +849,7 @@ offset_right = -28.0
 offset_bottom = 208.0
 theme_override_colors/font_color = Color(0.0431373, 0.141176, 0.14902, 1)
 theme_override_fonts/font = SubResource("FontVariation_muro4")
+theme_override_font_sizes/font_size = 23
 text = "1"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -889,6 +894,7 @@ position = Vector2(29.6667, 34)
 texture = ExtResource("20_6s7vn")
 
 [node name="Dec" type="TextureButton" parent="BuildInfo/EnergyContainer/Multiplier"]
+visible = false
 layout_mode = 0
 offset_left = -11.0
 offset_top = 176.0
@@ -918,23 +924,31 @@ position = Vector2(29.5, 34.6667)
 texture = ExtResource("20_6s7vn")
 
 [node name="MultPrice" type="Label" parent="BuildInfo/EnergyContainer/Multiplier"]
+visible = false
 layout_mode = 0
-offset_left = 34.0
-offset_top = 165.0
-offset_right = 79.0
-offset_bottom = 200.0
+offset_left = 39.0
+offset_top = 133.333
+offset_right = 84.0
+offset_bottom = 168.333
 rotation = -0.261799
 theme = ExtResource("11_iy3hd")
-theme_override_colors/font_color = Color(0.529412, 0.129412, 0.0901961, 1)
-theme_override_font_sizes/font_size = 25
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
 text = "$$$"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Postit" type="Sprite2D" parent="BuildInfo/EnergyContainer/Multiplier/MultPrice"]
 show_behind_parent = true
 position = Vector2(21.3011, 17.0956)
 rotation = 0.261799
 texture = ExtResource("21_baxyr")
+
+[node name="GreenPostit" type="Sprite2D" parent="BuildInfo/EnergyContainer/Multiplier/MultPrice"]
+visible = false
+show_behind_parent = true
+position = Vector2(21.3011, 17.0956)
+rotation = 0.261799
+texture = ExtResource("23_ap1eh")
 
 [node name="Switch" type="CheckButton" parent="BuildInfo"]
 layout_mode = 1
@@ -1013,7 +1027,7 @@ anchor_right = 0.5
 offset_left = -72.0
 offset_top = 7.0
 offset_right = 104.0
-offset_bottom = 43.0
+offset_bottom = 40.0
 grow_horizontal = 2
 theme = ExtResource("11_iy3hd")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -1053,20 +1067,13 @@ offset_top = -152.0
 offset_right = 144.0
 offset_bottom = 200.0
 focus_mode = 0
-mouse_default_cursor_shape = 2
 flat = true
 
-[node name="LifeSpanWarning" type="Label" parent="."]
+[node name="LifeSpanWarning" type="Sprite2D" parent="."]
 visible = false
 z_index = 1
-offset_left = 128.0
-offset_top = 128.0
-offset_right = 205.0
-offset_bottom = 205.0
-tooltip_text = "Shutting down next turn"
-mouse_filter = 0
-theme_override_font_sizes/font_size = 56
-text = "⚠️"
+position = Vector2(176, 192)
+texture = ExtResource("31_ss13a")
 
 [node name="NoMoney" type="Label" parent="."]
 visible = false
@@ -1124,7 +1131,11 @@ color = Color(0.247059, 0.247059, 0.247059, 0.670588)
 position = Vector2(126, 159)
 texture = ExtResource("32_peacu")
 
+[connection signal="mouse_entered" from="BuildInfo/EnergyContainer/Multiplier/Inc" to="." method="_on_multinc_mouse_entered"]
+[connection signal="mouse_exited" from="BuildInfo/EnergyContainer/Multiplier/Inc" to="." method="_on_multinc_mouse_exited"]
 [connection signal="pressed" from="BuildInfo/EnergyContainer/Multiplier/Inc" to="." method="_on_mult_inc_pressed"]
+[connection signal="mouse_entered" from="BuildInfo/EnergyContainer/Multiplier/Dec" to="." method="_on_multdec_mouse_entered"]
+[connection signal="mouse_exited" from="BuildInfo/EnergyContainer/Multiplier/Dec" to="." method="_on_multdec_mouse_exited"]
 [connection signal="pressed" from="BuildInfo/EnergyContainer/Multiplier/Dec" to="." method="_on_mult_dec_pressed"]
 [connection signal="toggled" from="BuildInfo/Switch" to="." method="_on_switch_toggled"]
 [connection signal="pressed" from="InfoButton" to="." method="_on_info_button_pressed"]

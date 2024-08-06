@@ -32,6 +32,7 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
 window/stretch/mode="canvas_items"
+mouse_cursor/custom_image="res://assets/UI Elements/All-HQ-Assets-D_0004s_0021_Icon-Pointer.png"
 
 [dotnet]
 

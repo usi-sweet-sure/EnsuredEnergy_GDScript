@@ -385,3 +385,30 @@ func _on_locale_updated(_locale):
 	
 	if life_span >= Gameloop.current_turn:
 		$BuildInfo/ColorRect/LifeSpan.text = tr("SHUT_DOWN").format({nbr = str(life_span - Gameloop.current_turn + 1)}) 
+
+
+func _on_multinc_mouse_entered():
+	$BuildInfo/EnergyContainer/Multiplier/MultPrice.text = "-" + str(upgrade_cost)
+	$BuildInfo/EnergyContainer/Multiplier/MultPrice.show()
+	$BuildInfo/MultWinterE.show()
+	$BuildInfo/MultSummerE.show()
+	
+
+
+func _on_multinc_mouse_exited():
+	$BuildInfo/EnergyContainer/Multiplier/MultPrice.hide()
+	$BuildInfo/MultWinterE.hide()
+	$BuildInfo/MultSummerE.hide()
+
+func _on_multdec_mouse_entered():
+	$BuildInfo/EnergyContainer/Multiplier/MultPrice.text = "+" + str(upgrade_cost)
+	$BuildInfo/EnergyContainer/Multiplier/MultPrice.show()
+	$BuildInfo/MultWinterE.show()
+	$BuildInfo/MultSummerE.show()
+	$BuildInfo/EnergyContainer/Multiplier/MultPrice/GreenPostit.show()
+
+func _on_multdec_mouse_exited():
+	$BuildInfo/EnergyContainer/Multiplier/MultPrice.hide()
+	$BuildInfo/MultWinterE.hide()
+	$BuildInfo/MultSummerE.hide()
+	$BuildInfo/EnergyContainer/Multiplier/MultPrice/GreenPostit.hide()
