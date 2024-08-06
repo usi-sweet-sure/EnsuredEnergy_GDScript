@@ -134,11 +134,11 @@ func _update_info():
 	
 	if build_time > 0:
 		$PreviewInfo/Time.show()
-		$PreviewInfo/Time3.show()
+		$PreviewInfo/TimeIcon.show()
 		$PreviewInfo/Time.text = str(build_time)
 	else:
 		$PreviewInfo/Time.hide()
-		$PreviewInfo/Time3.hide()
+		$PreviewInfo/TimeIcon.hide()
 	
 	# multiplier upgrade infos
 	if max_upgrade > 1:

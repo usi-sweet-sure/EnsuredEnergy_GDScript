@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://dna2006dnsx2x"]
+[gd_scene load_steps=8 format=3 uid="uid://dna2006dnsx2x"]
 
 [ext_resource type="Texture2D" uid="uid://hmcjyyrl7dv2" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0034_Policies-normal-(small)-button.png" id="1_7yv6u"]
 [ext_resource type="Texture2D" uid="uid://cjxrgcwrcynwf" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0035_Policies-press-(small)-button.png" id="2_aqrlf"]
 [ext_resource type="Texture2D" uid="uid://80u4mcjyisb7" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0033_Policies-hover-(small)-button.png" id="3_03pvm"]
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/policy_button.gd" id="4_vhi6a"]
 [ext_resource type="Texture2D" uid="uid://cu5qdg6vletaj" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0004_Policies-(small)-button-hole.png" id="5_xiqse"]
-[ext_resource type="Texture2D" uid="uid://bam7su0aw6q65" path="res://assets/UI Elements/Icon-Popularity.png" id="6_gjogc"]
+[ext_resource type="Texture2D" uid="uid://iaa6i5ocoaer" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0022_Icon-Popularity.png" id="6_tp2hn"]
+[ext_resource type="Texture2D" uid="uid://bnuj5hhtj86sa" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0008_Solar-symbol.png" id="7_klwhl"]
 
 [node name="PolicyButton" type="TextureButton"]
 custom_minimum_size = Vector2(0, 80)
@@ -26,21 +27,15 @@ show_behind_parent = true
 position = Vector2(63, 33)
 texture = ExtResource("5_xiqse")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 0.6
-grow_horizontal = 2
-grow_vertical = 2
-text = "Policy"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="ThumbsUp" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(154, 29)
 scale = Vector2(0.826087, 0.75)
-texture = ExtResource("6_gjogc")
+texture = ExtResource("6_tp2hn")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(63, 24)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_klwhl")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
