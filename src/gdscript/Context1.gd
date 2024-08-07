@@ -52,8 +52,6 @@ func get_dsp():
 	
 #handle response
 func _http1_completed(_result, _response_code, _headers, body):
-	print("http response")
-	print(body.get_string_from_utf8())
 	var json = JSON.new()
 	json.parse(body.get_string_from_utf8())
 	ctx1 = json.get_data()

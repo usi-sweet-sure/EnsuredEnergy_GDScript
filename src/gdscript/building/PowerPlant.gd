@@ -243,6 +243,8 @@ func _on_mult_inc_pressed():
 			_update_info()
 			Gameloop._update_buildings_impact()
 			
+			if upgrade == max_upgrade:
+				$BuildInfo/EnergyContainer/Multiplier/Inc.hide()
 			#$BuildInfo/EnergyContainer/Multiplier/Inc.disabled = true
 			#$BuildInfo/EnergyContainer/Multiplier/Dec.disabled = true
 		else:
@@ -252,6 +254,7 @@ func _on_mult_inc_pressed():
 func _on_mult_dec_pressed():
 	if upgrade > 0:
 		Gameloop.building_costs -= upgrade_cost
+		$BuildInfo/EnergyContainer/Multiplier/Inc.show()
 		
 		$Money.text = "+" + str(upgrade_cost) + "$"
 		$AP.stop()
@@ -275,10 +278,11 @@ func _on_mult_dec_pressed():
 		_update_info()
 		Gameloop._update_buildings_impact()
 		
+		if upgrade == 0:
+			$BuildInfo/EnergyContainer/Multiplier/Dec.hide()
 		# E. Is this intended ? Commenting it in the meantime
 		#$BuildInfo/EnergyContainer/Multiplier/Inc.disabled = true
 		#$BuildInfo/EnergyContainer/Multiplier/Dec.disabled = true
-		
 		
 func _connect_next_turn_signal():
 	if !Gameloop.next_turn.is_connected(_hide_delete_on_next_turn):

@@ -823,6 +823,7 @@ flat = true
 alignment = 0
 
 [node name="MoneyInfoBox" type="Control" parent="TopLeftZone/MoneyManagement/MoneyInfo"]
+visible = false
 layout_mode = 1
 anchor_left = 0.233
 anchor_top = 0.076
@@ -2248,10 +2249,10 @@ script = ExtResource("96_6b673")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -245.0
-offset_top = -247.5
-offset_right = -245.0
-offset_bottom = -247.5
+offset_left = -123.0
+offset_top = -122.0
+offset_right = -123.0
+offset_bottom = -122.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
