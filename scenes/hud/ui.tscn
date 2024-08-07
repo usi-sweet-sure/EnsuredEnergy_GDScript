@@ -1,4 +1,4 @@
-[gd_scene load_steps=143 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=145 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/UI Elements/Button-Next-Normal.png" id="2_aobed"]
 [ext_resource type="Texture2D" uid="uid://ccsapuvkqqt1b" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0009_Profile-metal-base.png" id="2_nu7y6"]
@@ -101,6 +101,8 @@
 [ext_resource type="Script" path="res://src/gdscript/hud/energy_bars/winter/infos/winter_demand_label.gd" id="91_butgj"]
 [ext_resource type="Script" path="res://src/gdscript/hud/energy_bars/winter/infos/winter_supply_label.gd" id="92_bqjhv"]
 [ext_resource type="Script" path="res://src/gdscript/hud/energy_bars/summer/infos/summer_demand_label.gd" id="92_j1ii1"]
+[ext_resource type="StyleBox" uid="uid://yqtdxtw3vpjp" path="res://scenes/hud/energy_bar_green.tres" id="93_6koeb"]
+[ext_resource type="StyleBox" uid="uid://lco0fbxgcpii" path="res://scenes/hud/energy_bar_low.tres" id="94_b4xie"]
 [ext_resource type="Script" path="res://src/gdscript/hud/energy_bars/summer/infos/summer_supply_label.gd" id="94_bcqhm"]
 [ext_resource type="Script" path="res://src/gdscript/hud/clock/current_turn_label.gd" id="95_2utc1"]
 [ext_resource type="Script" path="res://src/gdscript/hud/clock/remaining_turns_label.gd" id="96_6b673"]
@@ -1926,6 +1928,8 @@ offset_bottom = 116.0
 mouse_default_cursor_shape = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_qglqh")
 max_value = 200.0
+green_bar = ExtResource("93_6koeb")
+red_bar = ExtResource("94_b4xie")
 
 [node name="BarInfo" parent="ImportAndEnergy/Energy/EnergyBarWinter" index="1"]
 z_index = 1
@@ -1965,6 +1969,8 @@ theme_override_constants/outline_size = 1
 theme_override_styles/background = SubResource("StyleBoxFlat_siya7")
 max_value = 200.0
 season = 1
+green_bar = ExtResource("93_6koeb")
+red_bar = ExtResource("94_b4xie")
 
 [node name="BarInfo" parent="ImportAndEnergy/Energy/EnergyBarSummer" index="1"]
 z_index = 1
