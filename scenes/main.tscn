@@ -1,4 +1,4 @@
-[gd_scene load_steps=117 format=3 uid="uid://g58p7rxvcdik"]
+[gd_scene load_steps=114 format=3 uid="uid://g58p7rxvcdik"]
 
 [ext_resource type="Script" path="res://src/gdscript/main.gd" id="1_6q0gk"]
 [ext_resource type="PackedScene" uid="uid://ba56oxmvcxpos" path="res://scenes/world.tscn" id="1_prp6q"]
@@ -43,16 +43,17 @@
 [ext_resource type="PackedScene" uid="uid://cuuj2s4h1588i" path="res://scenes/audio.tscn" id="34_smnob"]
 [ext_resource type="Script" path="res://src/gdscript/tutorial/tutorial.gd" id="38_ni5d4"]
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/settings_canvas.gd" id="42_jouqr"]
-[ext_resource type="Texture2D" uid="uid://ckf6s1uhm87ae" path="res://assets/UI Elements/Policies_Base-1.png" id="43_c3smf"]
-[ext_resource type="FontFile" uid="uid://jsoamputail4" path="res://assets/Fonts/static/OpenSans-SemiBold.ttf" id="44_cosxb"]
+[ext_resource type="Texture2D" uid="uid://cvwhghlarnumd" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0004_Settings-metal-base.png" id="44_dom71"]
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/close_button.gd" id="45_bc8l6"]
 [ext_resource type="FontFile" uid="uid://bwuskgw4ek8y" path="res://assets/Fonts/static/OpenSans-Medium.ttf" id="45_bdlos"]
-[ext_resource type="Texture2D" uid="uid://behxblj10y4lm" path="res://assets/UI Elements/Build_Menu_0004_Build-Menu-Screen.png" id="46_uf7va"]
-[ext_resource type="Texture2D" uid="uid://cqekiqjn8gvh7" path="res://assets/UI Elements/Button-Play-normal.png" id="47_qsg3u"]
-[ext_resource type="Texture2D" uid="uid://c5tgx0yng476j" path="res://assets/UI Elements/Button-Play-press.png" id="48_p6ufo"]
-[ext_resource type="Texture2D" uid="uid://0od1i8cgelas" path="res://assets/UI Elements/Button-Play-hover.png" id="49_fcpeh"]
+[ext_resource type="Texture2D" uid="uid://xmi4fk7xmp5j" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0032_Ball-Slider.png" id="47_j3bv3"]
+[ext_resource type="Texture2D" uid="uid://fe0i52vl7ck6" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0006_Slider-bar-horizontal.png" id="48_e1jni"]
+[ext_resource type="Texture2D" uid="uid://bfwxh2i2cmi6x" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0014_3-slots-button-hole.png" id="49_6hr2c"]
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/language_button.gd" id="50_1mrvk"]
+[ext_resource type="Texture2D" uid="uid://dcmk3ydewbiv1" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0053_CTA-Normal-yellow-.png" id="50_257n3"]
+[ext_resource type="Texture2D" uid="uid://du2p1deh0wc0w" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0052_CTA-Press-yellow.png" id="51_ul1bn"]
 [ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="51_xe5da"]
+[ext_resource type="Texture2D" uid="uid://cjob6p34oigtg" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0051_CTA-Hover-yellow.png" id="52_d7ijo"]
 [ext_resource type="Texture2D" uid="uid://b4m67oni44dpg" path="res://assets/UI Elements/Button-normal.png" id="52_lk41l"]
 [ext_resource type="Texture2D" uid="uid://60dl810b25fd" path="res://assets/UI Elements/Button-press.png" id="53_lwovg"]
 [ext_resource type="Texture2D" uid="uid://cuhckno2t6g0r" path="res://assets/UI Elements/Button-hover.png" id="54_pjr7u"]
@@ -62,7 +63,8 @@
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/UI Elements/Button-Next-Normal.png" id="58_2ikp6"]
 [ext_resource type="Texture2D" uid="uid://biq6v1m7nc6l" path="res://assets/UI Elements/Button-Next-Press.png" id="59_g21e0"]
 [ext_resource type="Texture2D" uid="uid://c25aef4m4yd40" path="res://assets/UI Elements/Button-Next-Hover.png" id="60_c1roj"]
-[ext_resource type="Texture2D" uid="uid://xyxroar1ffyt" path="res://assets/UI Elements/Envirornment-Bar-Metal.png" id="61_i4q8w"]
+[ext_resource type="Texture2D" uid="uid://8igpvay7modk" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0003_Settings-warning-metal-base.png" id="64_c4467"]
+[ext_resource type="Texture2D" uid="uid://cvr8ptliyw7oc" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0013_1-slot-button-hole.png" id="65_p0ru6"]
 
 [sub_resource type="Animation" id="Animation_k4it7"]
 length = 0.001
@@ -1903,87 +1905,32 @@ _data = {
 "Water": SubResource("Animation_sjpt4")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sqhrg"]
-atlas = ExtResource("43_c3smf")
-region = Rect2(0, 0, 328, 776)
-
-[sub_resource type="FontVariation" id="FontVariation_nwehh"]
-base_font = ExtResource("44_cosxb")
-
 [sub_resource type="FontVariation" id="FontVariation_fnayw"]
 base_font = ExtResource("45_bdlos")
 
 [sub_resource type="FontVariation" id="FontVariation_5yxgv"]
 base_font = ExtResource("45_bdlos")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8wn5j"]
-bg_color = Color(0.0703125, 0.191406, 0.203125, 1)
-border_width_left = 3
-border_width_top = 6
-border_width_right = 3
-border_width_bottom = 6
-border_color = Color(0.0703125, 0.191406, 0.203125, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-shadow_color = Color(0, 0, 0, 0.407843)
-shadow_size = 1
-shadow_offset = Vector2(0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ai648"]
-bg_color = Color(0.278431, 0.772549, 0.803922, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-shadow_color = Color(0, 0, 0, 0.423529)
-shadow_size = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ecaa"]
-bg_color = Color(0.458824, 0.898039, 0.929412, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-shadow_color = Color(0, 0, 0, 0.356863)
-shadow_size = 1
-
-[sub_resource type="FontVariation" id="FontVariation_vvk74"]
-base_font = ExtResource("45_bdlos")
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldwmd"]
-bg_color = Color(0.0703125, 0.191406, 0.203125, 1)
+bg_color = Color(0.0705882, 0.192157, 0.203922, 0)
 border_width_left = 3
 border_width_top = 6
 border_width_right = 3
 border_width_bottom = 6
-border_color = Color(0.0703125, 0.191406, 0.203125, 1)
+border_color = Color(0.0705882, 0.192157, 0.203922, 0)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
-shadow_color = Color(0, 0, 0, 0.419608)
+shadow_color = Color(0, 0, 0, 0)
 shadow_size = 1
 shadow_offset = Vector2(0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eyg2q"]
-bg_color = Color(0.278431, 0.772549, 0.803922, 1)
-border_width_left = 1
-border_width_top = 1
+bg_color = Color(0.223529, 0.654902, 0.678431, 1)
 border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 1, 1, 1)
+border_width_bottom = 3
+border_color = Color(0.654902, 0.776471, 0.788235, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -1997,13 +1944,16 @@ border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(1, 1, 1, 1)
+border_color = Color(0.658824, 0.780392, 0.792157, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 shadow_color = Color(0, 0, 0, 0.368627)
 shadow_size = 1
+
+[sub_resource type="FontVariation" id="FontVariation_vvk74"]
+base_font = ExtResource("45_bdlos")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pwy5b"]
 bg_color = Color(0.988235, 0, 0, 1)
@@ -2424,6 +2374,12 @@ libraries = {
 }
 autoplay = "Wind"
 
+[node name="Money" parent="World/BuildButton" index="4"]
+offset_left = -286.0
+offset_top = -132.5
+offset_right = -126.0
+offset_bottom = -43.5
+
 [node name="BuildButton2" parent="World" index="15"]
 offset_left = 624.0
 offset_top = 480.0
@@ -2500,10 +2456,10 @@ autoplay = "Sun"
 position = Vector2(308, 205)
 
 [node name="Money" parent="World/BuildButton9" index="4"]
-offset_left = 57.0
-offset_top = 68.0
-offset_right = 217.0
-offset_bottom = 157.0
+offset_left = -279.0
+offset_top = -124.0
+offset_right = -119.0
+offset_bottom = -35.0
 
 [node name="Solar" parent="World/BuildButton9/BuildMenu/Container" index="0"]
 visible = false
@@ -2790,7 +2746,6 @@ visible = false
 visible = false
 
 [node name="Settings" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("42_jouqr")
 
 [node name="Backdrop" type="ColorRect" parent="Settings"]
@@ -2840,21 +2795,22 @@ grow_vertical = 2
 color = Color(0.4, 0.4, 0.4, 0)
 
 [node name="BackPlate" type="Sprite2D" parent="Settings/Control/SettingsBox"]
+position = Vector2(162.5, 456.5)
 scale = Vector2(1, 1.17784)
-texture = SubResource("AtlasTexture_sqhrg")
-centered = false
+texture = ExtResource("44_dom71")
 
 [node name="Title" type="Label" parent="Settings/Control/SettingsBox"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -156.5
-offset_top = 106.0
-offset_right = 158.5
-offset_bottom = 174.0
+offset_left = -175.5
+offset_top = 2.0
+offset_right = 174.5
+offset_bottom = 70.0
 grow_horizontal = 2
-theme_override_fonts/font = SubResource("FontVariation_nwehh")
+theme = ExtResource("51_xe5da")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 22
 text = "ENSURED
 ENERGY"
@@ -2867,10 +2823,11 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -92.5
-offset_top = 221.0
+offset_top = 148.0
 offset_right = 100.5
-offset_bottom = 844.0
+offset_bottom = 845.0
 grow_horizontal = 2
+theme_override_constants/separation = 0
 
 [node name="ScreenOption" type="CheckBox" parent="Settings/Control/SettingsBox/VBoxContainer"]
 layout_mode = 2
@@ -2886,25 +2843,12 @@ theme_override_fonts/font = SubResource("FontVariation_5yxgv")
 text = "MUSIC"
 
 [node name="VolMusic" type="HSlider" parent="Settings/Control/SettingsBox/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 focus_mode = 0
-theme_override_styles/slider = SubResource("StyleBoxFlat_8wn5j")
-theme_override_styles/grabber_area = SubResource("StyleBoxFlat_ai648")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_8ecaa")
-max_value = 1.0
-step = 0.001
-value = 0.8
-scrollable = false
-
-[node name="Label2" type="Label" parent="Settings/Control/SettingsBox/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = SubResource("FontVariation_vvk74")
-text = "SFX"
-
-[node name="VolSound" type="HSlider" parent="Settings/Control/SettingsBox/VBoxContainer"]
-custom_minimum_size = Vector2(0, 25)
-layout_mode = 2
-focus_mode = 0
+theme_override_icons/grabber = ExtResource("47_j3bv3")
+theme_override_icons/grabber_highlight = ExtResource("47_j3bv3")
+theme_override_icons/grabber_disabled = ExtResource("47_j3bv3")
 theme_override_styles/slider = SubResource("StyleBoxFlat_ldwmd")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_eyg2q")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_vluk5")
@@ -2912,6 +2856,40 @@ max_value = 1.0
 step = 0.001
 value = 0.8
 scrollable = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Settings/Control/SettingsBox/VBoxContainer/VolMusic"]
+show_behind_parent = true
+position = Vector2(0.5, 9.5)
+scale = Vector2(0.705036, 1.2)
+texture = ExtResource("48_e1jni")
+centered = false
+
+[node name="Label2" type="Label" parent="Settings/Control/SettingsBox/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_vvk74")
+text = "SFX"
+
+[node name="VolSound" type="HSlider" parent="Settings/Control/SettingsBox/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+focus_mode = 0
+theme_override_icons/grabber = ExtResource("47_j3bv3")
+theme_override_icons/grabber_highlight = ExtResource("47_j3bv3")
+theme_override_icons/grabber_disabled = ExtResource("47_j3bv3")
+theme_override_styles/slider = SubResource("StyleBoxFlat_ldwmd")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_eyg2q")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_vluk5")
+max_value = 1.0
+step = 0.001
+value = 0.8
+scrollable = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Settings/Control/SettingsBox/VBoxContainer/VolSound"]
+show_behind_parent = true
+position = Vector2(0.5, 9.5)
+scale = Vector2(0.705036, 1.2)
+texture = ExtResource("48_e1jni")
+centered = false
 
 [node name="Space" type="Label" parent="Settings/Control/SettingsBox/VBoxContainer"]
 layout_mode = 2
@@ -2928,18 +2906,18 @@ layout_mode = 2
 [node name="Space5" type="Label" parent="Settings/Control/SettingsBox/VBoxContainer"]
 layout_mode = 2
 
-[node name="BuildMenu0004Build-menu-screen" type="Sprite2D" parent="Settings/Control/SettingsBox/VBoxContainer"]
-position = Vector2(96, 451.25)
-scale = Vector2(1.02525, 1.61211)
-texture = ExtResource("46_uf7va")
+[node name="ButtonHole" type="Sprite2D" parent="Settings/Control/SettingsBox/VBoxContainer"]
+position = Vector2(-5, 247)
+texture = ExtResource("49_6hr2c")
+centered = false
 
 [node name="Language" type="TextureButton" parent="Settings/Control/SettingsBox/VBoxContainer"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 focus_mode = 0
-texture_normal = ExtResource("47_qsg3u")
-texture_pressed = ExtResource("48_p6ufo")
-texture_hover = ExtResource("49_fcpeh")
+texture_normal = ExtResource("50_257n3")
+texture_pressed = ExtResource("51_ul1bn")
+texture_hover = ExtResource("52_d7ijo")
 script = ExtResource("50_1mrvk")
 
 [node name="Label" type="Label" parent="Settings/Control/SettingsBox/VBoxContainer/Language"]
@@ -3065,16 +3043,19 @@ Gracia Brückmann
 Walid El-Ajou
 "
 
-[node name="Reset" type="TextureButton" parent="Settings/Control/SettingsBox/VBoxContainer"]
+[node name="Reset" type="TextureButton" parent="Settings/Control/SettingsBox"]
 custom_minimum_size = Vector2(0, 48)
-layout_mode = 2
+offset_left = 71.0
+offset_top = 784.0
+offset_right = 264.0
+offset_bottom = 867.0
 focus_mode = 0
 theme = SubResource("Theme_gphvl")
 texture_normal = ExtResource("58_2ikp6")
 texture_pressed = ExtResource("59_g21e0")
 texture_hover = ExtResource("60_c1roj")
 
-[node name="Label" type="Label" parent="Settings/Control/SettingsBox/VBoxContainer/Reset"]
+[node name="Label" type="Label" parent="Settings/Control/SettingsBox/Reset"]
 layout_mode = 0
 offset_left = 11.0
 offset_top = 10.0
@@ -3087,8 +3068,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="ResetConfirm" type="ColorRect" parent="Settings/Control/SettingsBox/VBoxContainer/Reset"]
-visible = false
+[node name="ResetConfirm" type="ColorRect" parent="Settings/Control/SettingsBox/Reset"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -3103,25 +3083,24 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.560784, 0.560784, 0.560784, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Settings/Control/SettingsBox/VBoxContainer/Reset/ResetConfirm"]
-position = Vector2(368, 187)
-scale = Vector2(1.7, 1.7)
-texture = ExtResource("61_i4q8w")
+[node name="Sprite2D" type="Sprite2D" parent="Settings/Control/SettingsBox/Reset/ResetConfirm"]
+position = Vector2(343, 194.5)
+texture = ExtResource("64_c4467")
 
-[node name="Label" type="Label" parent="Settings/Control/SettingsBox/VBoxContainer/Reset/ResetConfirm"]
+[node name="Label" type="Label" parent="Settings/Control/SettingsBox/Reset/ResetConfirm"]
 layout_mode = 0
 offset_left = 125.0
-offset_top = 99.0
+offset_top = 123.0
 offset_right = 565.0
-offset_bottom = 214.0
+offset_bottom = 238.0
 theme = ExtResource("51_xe5da")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 24
 text = "Are you sure that you want to restart?"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Yes" type="TextureButton" parent="Settings/Control/SettingsBox/VBoxContainer/Reset/ResetConfirm"]
+[node name="Yes" type="TextureButton" parent="Settings/Control/SettingsBox/Reset/ResetConfirm"]
 layout_mode = 0
 offset_left = 164.0
 offset_top = 222.0
@@ -3132,7 +3111,7 @@ texture_normal = ExtResource("58_2ikp6")
 texture_pressed = ExtResource("59_g21e0")
 texture_hover = ExtResource("60_c1roj")
 
-[node name="Label" type="Label" parent="Settings/Control/SettingsBox/VBoxContainer/Reset/ResetConfirm/Yes"]
+[node name="Label" type="Label" parent="Settings/Control/SettingsBox/Reset/ResetConfirm/Yes"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -3146,7 +3125,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="No" type="TextureButton" parent="Settings/Control/SettingsBox/VBoxContainer/Reset/ResetConfirm"]
+[node name="Sprite2D" type="Sprite2D" parent="Settings/Control/SettingsBox/Reset/ResetConfirm/Yes"]
+show_behind_parent = true
+position = Vector2(-2.85706, -2.85718)
+texture = ExtResource("65_p0ru6")
+centered = false
+
+[node name="No" type="TextureButton" parent="Settings/Control/SettingsBox/Reset/ResetConfirm"]
 layout_mode = 0
 offset_left = 396.0
 offset_top = 222.0
@@ -3157,7 +3142,7 @@ texture_normal = ExtResource("52_lk41l")
 texture_pressed = ExtResource("53_lwovg")
 texture_hover = ExtResource("54_pjr7u")
 
-[node name="Label" type="Label" parent="Settings/Control/SettingsBox/VBoxContainer/Reset/ResetConfirm/No"]
+[node name="Label" type="Label" parent="Settings/Control/SettingsBox/Reset/ResetConfirm/No"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -3170,6 +3155,19 @@ text = "Cancel"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="Settings/Control/SettingsBox/Reset/ResetConfirm/No"]
+show_behind_parent = true
+position = Vector2(-2.85718, -2.14291)
+scale = Vector2(1, 1)
+texture = ExtResource("65_p0ru6")
+centered = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Settings/Control/SettingsBox/Reset"]
+show_behind_parent = true
+position = Vector2(-3, -3)
+texture = ExtResource("65_p0ru6")
+centered = false
 
 [node name="Audio" parent="." instance=ExtResource("34_smnob")]
 
