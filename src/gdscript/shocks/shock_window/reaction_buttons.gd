@@ -7,7 +7,7 @@ func _ready():
 
 
 func _on_most_recent_shock_updated(shock: Shock):
-	if shock.player_reactions.size() > 0:
+	if shock.player_reactions.size() > 0 && not shock._are_requirements_to_absorb_shock_met():
 		show()
 
 

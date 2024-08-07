@@ -49,7 +49,7 @@ func add_player_reaction(text: String, effect: Callable):
 	
 
 func _are_requirements_to_absorb_shock_met():
-	var conditions_met := true;
+	var conditions_met := true
 	print("testing requirements")
 	
 	if conditions_to_meet_requirements.size() == 0:
