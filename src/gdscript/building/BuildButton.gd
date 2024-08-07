@@ -37,6 +37,7 @@ func _on_pp_pressed(pp):
 	for plant in $PowerPlants.get_children():
 		if pp.name == plant.name:
 			if Gameloop.can_spend_the_money(pp.build_cost):
+				$Hammer.hide()
 				$BuildMenu.hide()
 				$Money.text = "-" + str(pp.build_cost) + "$"
 				$AnimationPlayer.play("Money-")
@@ -85,6 +86,7 @@ func _on_pp_delete(pp):
 		self_modulate = Color(1,1,1,1)
 		$Money.text = "+" + str(pp.build_cost) + "$"
 		$AnimationPlayer.play("Money+")
+		$Hammer.show()
 		disabled = false
 		
 		var plant_id = pp.plant_name_to_ups_id[pp.plant_name]
