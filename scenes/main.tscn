@@ -2109,18 +2109,28 @@ texture = ExtResource("7_vvt3h")
 flip_h = true
 
 [node name="BuildInfo" parent="World/Nuclear3" index="3"]
-offset_left = -56.0
-offset_top = -519.0
-offset_right = -16.0
-offset_bottom = -479.0
+offset_left = -104.0
+offset_top = -667.0
+offset_right = -64.0
+offset_bottom = -627.0
 
 [node name="LifeSpan" parent="World/Nuclear3/BuildInfo/ColorRect" index="0"]
 visible = true
 
 [node name="ContainerL" parent="World/Nuclear3/BuildInfo/ColorRect" index="1"]
-offset_top = -59.0
-offset_right = 238.0
-offset_bottom = 213.0
+offset_left = 86.0
+offset_top = 78.6667
+offset_right = 234.0
+offset_bottom = 350.667
+
+[node name="ContainerN" parent="World/Nuclear3/BuildInfo/ColorRect" index="2"]
+offset_left = -74.0
+offset_top = -165.0
+offset_right = -74.0
+offset_bottom = 85.0
+
+[node name="Multiplier" parent="World/Nuclear3/BuildInfo/EnergyContainer" index="2"]
+visible = false
 
 [node name="NameRect" parent="World/Nuclear3" index="4"]
 visible = false
@@ -2168,18 +2178,28 @@ scale = Vector2(0.647423, 1.21787)
 texture = ExtResource("7_vvt3h")
 
 [node name="BuildInfo" parent="World/Nuclear2" index="3"]
-offset_left = -42.0
-offset_top = -548.0
-offset_right = -2.0
-offset_bottom = -508.0
+offset_left = -103.0
+offset_top = -672.0
+offset_right = -63.0
+offset_bottom = -632.0
 
 [node name="LifeSpan" parent="World/Nuclear2/BuildInfo/ColorRect" index="0"]
 visible = true
 
 [node name="ContainerL" parent="World/Nuclear2/BuildInfo/ColorRect" index="1"]
-offset_top = -60.0
-offset_right = 238.0
-offset_bottom = 212.0
+offset_left = 89.3333
+offset_top = 82.6667
+offset_right = 237.333
+offset_bottom = 354.667
+
+[node name="ContainerN" parent="World/Nuclear2/BuildInfo/ColorRect" index="2"]
+offset_left = -76.0
+offset_top = -160.333
+offset_right = -76.0
+offset_bottom = 89.6667
+
+[node name="Multiplier" parent="World/Nuclear2/BuildInfo/EnergyContainer" index="2"]
+visible = false
 
 [node name="NameRect" parent="World/Nuclear2" index="4"]
 visible = false
@@ -2239,18 +2259,26 @@ position = Vector2(57, -249.25)
 texture = ExtResource("6_swuok")
 
 [node name="BuildInfo" parent="World/Nuclear" index="3"]
-offset_left = -41.0
-offset_top = -506.0
-offset_right = -1.0
-offset_bottom = -466.0
+offset_left = -113.0
+offset_top = -674.0
+offset_right = -73.0
+offset_bottom = -634.0
 
 [node name="LifeSpan" parent="World/Nuclear/BuildInfo/ColorRect" index="0"]
 visible = true
 
 [node name="ContainerL" parent="World/Nuclear/BuildInfo/ColorRect" index="1"]
-offset_top = -59.0
-offset_right = 238.0
-offset_bottom = 213.0
+offset_left = 89.3333
+offset_top = 82.6667
+offset_right = 237.333
+offset_bottom = 354.667
+
+[node name="ContainerN" parent="World/Nuclear/BuildInfo/ColorRect" index="2"]
+offset_top = -159.333
+offset_bottom = 90.6667
+
+[node name="Multiplier" parent="World/Nuclear/BuildInfo/EnergyContainer" index="2"]
+visible = false
 
 [node name="NameRect" parent="World/Nuclear" index="4"]
 visible = false
@@ -2499,9 +2527,6 @@ visible = false
 visible = false
 
 [node name="River" parent="World/BuildButton9/BuildMenu/Container" index="7"]
-visible = true
-
-[node name="Pump" parent="World/BuildButton9/BuildMenu/Container" index="8"]
 visible = true
 
 [node name="Hydro" parent="World" index="26" groups=["PP"]]

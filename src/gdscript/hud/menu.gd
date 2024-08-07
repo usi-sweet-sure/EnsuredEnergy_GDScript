@@ -23,3 +23,7 @@ func _on_lang_pressed():
 		i += 1
 	TranslationServer.set_locale(lang[i])
 		
+
+
+func _on_credits_pressed():
+	pass # Replace with function body.

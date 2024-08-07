@@ -1,11 +1,10 @@
-[gd_scene load_steps=27 format=3 uid="uid://885lty3v1qbq"]
+[gd_scene load_steps=26 format=3 uid="uid://885lty3v1qbq"]
 
 [ext_resource type="Script" path="res://src/gdscript/shocks/shock_window/shock_window.gd" id="1_h0du7"]
+[ext_resource type="Texture2D" uid="uid://bk3lb51erle8l" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0002_Socks-metal-base.png" id="2_06ydw"]
 [ext_resource type="Texture2D" uid="uid://burmdec041k3k" path="res://assets/UI Elements/Shocks-Metal.png" id="2_37dlb"]
-[ext_resource type="Texture2D" uid="uid://dddi6bd53d7t" path="res://assets/Icons/ice.png" id="3_fweec"]
-[ext_resource type="Texture2D" uid="uid://djviaoys4utb" path="res://assets/UI Elements/Shocks-Screen.png" id="3_jcd22"]
+[ext_resource type="Texture2D" uid="uid://cbgfs7wym1x5a" path="res://assets/UI Elements/All-HQ-Assets-D_0005s_0003_Shock-screen.png" id="3_wa4y3"]
 [ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="5_0qiv1"]
-[ext_resource type="Script" path="res://src/gdscript/shocks/shock_window/shock_img.gd" id="5_g4enk"]
 [ext_resource type="Texture2D" uid="uid://d1or1v15j7r7u" path="res://assets/UI Elements/Shocks-Button-Hole.png" id="6_021ab"]
 [ext_resource type="Script" path="res://src/gdscript/shocks/shock_window/shock_title.gd" id="6_ocx2u"]
 [ext_resource type="Script" path="res://src/gdscript/shocks/shock_window/shock_text.gd" id="7_6m7uh"]
@@ -75,7 +74,7 @@ grow_vertical = 2
 
 [node name="ShockWindow" type="Sprite2D" parent="."]
 position = Vector2(920, 584)
-texture = ExtResource("2_37dlb")
+texture = ExtResource("2_06ydw")
 
 [node name="ColorRect" type="ColorRect" parent="ShockWindow"]
 self_modulate = Color(1, 1, 1, 0)
@@ -96,14 +95,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Shocks-screen" type="Sprite2D" parent="ShockWindow/ColorRect"]
 position = Vector2(248, 40)
-texture = ExtResource("3_jcd22")
-
-[node name="Img" type="Sprite2D" parent="ShockWindow/ColorRect"]
-visible = false
-position = Vector2(-13, 47)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("3_fweec")
-script = ExtResource("5_g4enk")
+texture = ExtResource("3_wa4y3")
 
 [node name="Title" type="Label" parent="ShockWindow/ColorRect"]
 layout_mode = 1
@@ -136,7 +128,6 @@ autowrap_mode = 3
 script = ExtResource("7_6m7uh")
 
 [node name="Reactions" type="Control" parent="ShockWindow/ColorRect"]
-visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -161,7 +152,6 @@ offset_right = 309.5
 offset_bottom = 146.0
 grow_horizontal = 2
 grow_vertical = 0
-mouse_default_cursor_shape = 2
 texture_normal = ExtResource("7_st5u1")
 texture_pressed = ExtResource("8_7oeqa")
 texture_hover = ExtResource("9_kf34e")
@@ -207,7 +197,6 @@ offset_right = 308.5
 offset_bottom = 213.0
 grow_horizontal = 2
 grow_vertical = 0
-mouse_default_cursor_shape = 2
 texture_normal = ExtResource("7_st5u1")
 texture_pressed = ExtResource("8_7oeqa")
 texture_hover = ExtResource("9_kf34e")
@@ -253,7 +242,6 @@ offset_right = 308.5
 offset_bottom = 281.0
 grow_horizontal = 2
 grow_vertical = 0
-mouse_default_cursor_shape = 2
 texture_normal = ExtResource("7_st5u1")
 texture_pressed = ExtResource("8_7oeqa")
 texture_hover = ExtResource("9_kf34e")
@@ -298,7 +286,6 @@ offset_right = -138.0
 offset_bottom = -5.0
 grow_horizontal = 0
 grow_vertical = 0
-mouse_default_cursor_shape = 2
 texture_normal = ExtResource("10_hydvu")
 texture_pressed = ExtResource("11_are4j")
 texture_hover = ExtResource("12_hwdxm")

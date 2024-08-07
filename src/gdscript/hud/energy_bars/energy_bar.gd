@@ -2,6 +2,8 @@ extends ProgressBar
 
 enum Season {WINTER, SUMMER}
 @export var season: Season
+@export var green_bar: Resource
+@export var red_bar: Resource
 
 @onready var info_box = $BarInfo
 @onready var info_text = $BarInfo/MarginContainer/MarginContainer/VBoxContainer/InfoText
@@ -34,6 +36,8 @@ func _ready():
 			# so we have to updates the bars manually when they're created
 			_on_energy_demand_updated(Gameloop.demand_summer)
 			_on_energy_supply_updated(Gameloop.supply_summer)
+			
+	change_bar_color()
 
 # Updates the position of the line representing the demand and the max value of the progress bar
 func _on_energy_demand_updated(demand):
@@ -52,12 +56,28 @@ func _on_energy_supply_updated(supply):
 		
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "value", new_value, 0.5)
+	change_bar_color()
 	
 # Updates the progress bar
 func _on_imported_energy_amount_updated(amount):
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "value", Gameloop.supply_winter + amount, 0.5)
+	change_bar_color()
 		
+func change_bar_color():
+	match season:
+		Season.SUMMER:
+			print(value)
+			if value >= Gameloop.demand_summer:
+				self["theme_override_styles/fill"] = green_bar
+			else:
+				self["theme_override_styles/fill"] = red_bar
+				
+		Season.WINTER:
+			if value + Gameloop.imported_energy_amount >= Gameloop.demand_winter:
+				self["theme_override_styles/fill"] = green_bar
+			else:
+				self["theme_override_styles/fill"] = red_bar
 		
 # Displays basic information on energy supply and demand
 func _on_bar_button_pressed():
