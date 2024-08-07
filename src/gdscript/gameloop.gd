@@ -2,7 +2,7 @@ extends Node2D
 
 var start_year: int = 2022
 var total_number_of_turns: int = 10
-var start_money: int = 250
+var start_money: int = 700
 var money_per_turn: int = 250
 var green_energy_import_factor: float = 1.5
 var debt_percentage_on_borrowed_money: int = 20
@@ -103,11 +103,10 @@ var players_own_money_amount: int = 0:
 		players_own_money_amount = new_value
 		players_own_money_amount_updated.emit(players_own_money_amount)
 		available_money_amount_updated.emit(available_money_amount)
-# This is a sum of all the money sources, minus costs, so don't set this variable, but the
-# parts used to compute it
+# This is a compute of all the money sources, minus costs. Do not set it
 var available_money_amount: float = 0:
 	get:
-		return players_own_money_amount + borrowed_money_amount - building_costs
+		return players_own_money_amount + borrowed_money_amount - building_costs - powerplants_production_costs
 var land_use_percentage: int = 37:
 	set(new_value):
 		land_use_percentage = clamp(new_value, 0, 100)
@@ -136,6 +135,7 @@ var powerplants_production_costs: float = 0:
 	set(new_value):
 		powerplants_production_costs = new_value
 		powerplants_production_costs_updated.emit(powerplants_production_costs)
+		available_money_amount_updated.emit(available_money_amount)
 var building_costs: float = 0: # Costs of building and upgrading buildings
 	set(new_value):
 		building_costs = new_value
@@ -207,3 +207,18 @@ func can_go_to_next_turn():
 
 func can_spend_the_money(money_to_spend: float):
 	return money_to_spend <= available_money_amount
+
+
+func compute_money_for_next_turn() -> float: 
+	var income = players_own_money_amount + money_per_turn + borrowed_money_amount
+	var outcome = borrowed_money_amount * (1.0 + (debt_percentage_on_borrowed_money / 100.0)) + energy_import_cost + building_costs + powerplants_production_costs
+	
+	return income - outcome
+	
+	
+func set_money_for_new_turn():
+	var income = players_own_money_amount + money_per_turn + borrowed_money_amount
+	var outcome = borrowed_money_amount * (1.0 + (debt_percentage_on_borrowed_money / 100.0)) + building_costs
+	players_own_money_amount = income - outcome
+	borrowed_money_amount = 0
+	building_costs = 0

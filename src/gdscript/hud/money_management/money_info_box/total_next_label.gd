@@ -11,7 +11,4 @@ func _ready():
 	
 	
 func _on_money_change(_unused_signal_param):
-	text = str(round(Gameloop.available_money_amount + Gameloop.money_per_turn
-			- Gameloop.powerplants_production_costs 
-			- Gameloop.borrowed_money_amount * (1.0 + (Gameloop.debt_percentage_on_borrowed_money / 100.0))
-			- Gameloop.energy_import_cost))
+	text = str(round(Gameloop.compute_money_for_next_turn()))

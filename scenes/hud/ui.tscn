@@ -137,21 +137,6 @@ border_blend = true
 bg_color = Color(0.137255, 0.470588, 0.760784, 0.701961)
 border_color = Color(0, 0, 0, 1)
 
-[sub_resource type="FontVariation" id="FontVariation_bwdpt"]
-base_font = ExtResource("53_v477p")
-
-[sub_resource type="FontVariation" id="FontVariation_t46uf"]
-base_font = ExtResource("53_v477p")
-
-[sub_resource type="Theme" id="Theme_yjcuk"]
-/font_sizes/Big = 22
-/fonts/font = SubResource("FontVariation_bwdpt")
-MetalLabel/colors/White = Color(1, 1, 1, 1)
-MetalLabel/font_sizes/size = 22
-MetalLabel/fonts/font = SubResource("FontVariation_t46uf")
-PaperLabel/font_sizes/size = 22
-PaperLabel/fonts/font = ExtResource("30_d1m8l")
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nm6d8"]
 bg_color = Color(0.317647, 0.317647, 0.317647, 0.87451)
 border_color = Color(0, 0, 0, 1)
@@ -185,6 +170,21 @@ corner_radius_bottom_left = 8
 [sub_resource type="FontVariation" id="FontVariation_n3vpe"]
 base_font = ExtResource("51_joowr")
 spacing_glyph = 7
+
+[sub_resource type="FontVariation" id="FontVariation_bwdpt"]
+base_font = ExtResource("53_v477p")
+
+[sub_resource type="FontVariation" id="FontVariation_t46uf"]
+base_font = ExtResource("53_v477p")
+
+[sub_resource type="Theme" id="Theme_yjcuk"]
+/font_sizes/Big = 22
+/fonts/font = SubResource("FontVariation_bwdpt")
+MetalLabel/colors/White = Color(1, 1, 1, 1)
+MetalLabel/font_sizes/size = 22
+MetalLabel/fonts/font = SubResource("FontVariation_t46uf")
+PaperLabel/font_sizes/size = 22
+PaperLabel/fonts/font = ExtResource("30_d1m8l")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qglqh"]
 bg_color = Color(0.215686, 0.337255, 0.34902, 1)
@@ -812,10 +812,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = 67.0
-offset_top = 192.0
-offset_right = 210.0
-offset_bottom = 242.0
+offset_left = 62.0
+offset_top = 171.0
+offset_right = 208.0
+offset_bottom = 219.0
 grow_horizontal = 0
 focus_mode = 0
 mouse_default_cursor_shape = 2
@@ -823,7 +823,6 @@ flat = true
 alignment = 0
 
 [node name="MoneyInfoBox" type="Control" parent="TopLeftZone/MoneyManagement/MoneyInfo"]
-visible = false
 layout_mode = 1
 anchor_left = 0.233
 anchor_top = 0.076
@@ -975,7 +974,7 @@ vertical_alignment = 1
 
 [node name="ProductionCost" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer/Production"]
 layout_mode = 0
-offset_left = 203.0
+offset_left = 196.0
 offset_top = -5.0
 offset_right = 343.0
 offset_bottom = 35.0
@@ -984,7 +983,6 @@ theme_type_variation = &"Paper"
 theme_override_colors/font_color = Color(0.945098, 0, 0.0705882, 1)
 theme_override_font_sizes/font_size = 26
 text = "000"
-horizontal_alignment = 2
 vertical_alignment = 1
 script = ExtResource("36_288kb")
 
@@ -1532,21 +1530,6 @@ text = "Political support shows how popular your decisions are. The higher the s
 
 [node name="InfoText2" parent="TopLeftZone/Policies/Trust/BarInfo/MarginContainer/MarginContainer/VBoxContainer" index="3"]
 text = ""
-
-[node name="Button" type="Button" parent="TopLeftZone/Policies/Trust"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -38.0
-offset_top = -5.5
-offset_right = 67.0
-offset_bottom = 13.5
-grow_horizontal = 2
-grow_vertical = 2
-focus_mode = 0
-theme = SubResource("Theme_yjcuk")
-flat = true
 
 [node name="Window" parent="TopLeftZone/Policies" instance=ExtResource("7_yu7g8")]
 visible = false
