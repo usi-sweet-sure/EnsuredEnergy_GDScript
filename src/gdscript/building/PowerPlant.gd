@@ -30,6 +30,19 @@ var base_production_cost
 @onready var multiplier = $BuildInfo/EnergyContainer/Multiplier
 @onready var summer_energy = $BuildInfo/EnergyContainer/Summer/BuildMenuNumCounter3/SummerE
 @onready var winter_energy = $BuildInfo/EnergyContainer/Winter/BuildMenuNumCounter3/WinterE
+@onready var metrics_container = $BuildInfo/ColorRect/ContainerN
+var metrics_container_original_position: Vector2
+@onready var modifiers_preview_elements = {
+	"winter_sticker": $BuildInfo/MultWinterE,
+	"summer_sticker": $BuildInfo/MultSummerE,
+	"cost_sticker": $BuildInfo/EnergyContainer/Multiplier/MultPrice,
+	"prod_upgrade": $BuildInfo/ColorRect/ContainerN/Prod/Upgrade,
+	"prod_downgrade": $BuildInfo/ColorRect/ContainerN/Prod/Downgrade,
+	"poll_upgrade": $BuildInfo/ColorRect/ContainerN/Poll/Upgrade,
+	"poll_downgrade": $BuildInfo/ColorRect/ContainerN/Poll/Downgrade,
+	"land_upgrade": $BuildInfo/ColorRect/ContainerN/Land/Upgrade,
+	"land_downgrade": $BuildInfo/ColorRect/ContainerN/Land/Downgrade,
+}
 
 var plant_name_to_model = {
 	"GAS": "187",
@@ -105,6 +118,7 @@ func _ready():
 	Gameloop.available_money_amount_updated.connect(_on_available_money_updated)
 	
 	_update_info()
+	metrics_container_original_position = metrics_container.position
 	
 
 func _update_info():
@@ -345,6 +359,97 @@ func _on_available_money_updated(available_money):
 	if is_in_menu:
 		$NoMoneyOverlay.visible = available_money < build_cost
 	
+func _on_upgrade_button_mouse_entered():
+	var tween = get_tree().create_tween()
+	tween.tween_property(metrics_container, "position", 
+			Vector2(metrics_container_original_position.x - 100,
+			metrics_container_original_position.y), 0.1)
+	
+	for element in modifiers_preview_elements:
+		var node = modifiers_preview_elements[element]
+		node.show()
+		
+		match element:
+			"winter_sticker":
+				node.text = "+ " + str(base_capacity * mult_factor).pad_decimals(2)
+			"summer_sticker":
+				node.text = "+ " + str(base_capacity * mult_factor).pad_decimals(2)
+			"cost_sticker":
+				node.text = "- " + str(upgrade_cost) + "$"
+			"prod_downgrade":
+				node.text = "+ " + str(production_cost * mult_factor).pad_decimals(2)
+			"prod_upgrade":
+				node.hide()
+			"poll_upgrade":
+				node.hide()
+			"poll_downgrade":
+				if(str(pollution * mult_factor).pad_decimals(2) != "0.00"):
+					node.text = "+ " + str(pollution * mult_factor).pad_decimals(2)
+				else:
+					node.hide()
+			"land_upgrade":
+				node.hide()
+			"land_downgrade":
+				if(str(land_use * mult_factor).pad_decimals(2) != "0.00"):
+					node.text = "+ " + str(land_use * mult_factor).pad_decimals(2)
+				else:
+					node.hide()
+
+
+func _on_downgrade_button_mouse_entered():
+	var tween = get_tree().create_tween()
+	tween.tween_property(metrics_container, "position", 
+			Vector2(metrics_container_original_position.x - 100,
+			metrics_container_original_position.y), 0.1)
+			
+	for element in modifiers_preview_elements:
+		var node = modifiers_preview_elements[element]
+		node.show()
+		
+		match element:
+			"winter_sticker":
+				node.text = "- " + str(base_capacity * mult_factor).pad_decimals(2)
+			"summer_sticker":
+				node.text = "- " + str(base_capacity * mult_factor).pad_decimals(2)
+			"cost_sticker":
+				node.text = "+ " + str(upgrade_cost) + "$"
+			"prod_downgrade":
+				node.hide()
+			"prod_upgrade":
+				node.text = "- " + str(production_cost * mult_factor).pad_decimals(2)
+			"poll_upgrade":
+				if(str(pollution * mult_factor).pad_decimals(2) != "0.00"):
+					node.text = "- " + str(pollution * mult_factor).pad_decimals(2)
+				else:
+					node.hide()
+			"poll_downgrade":
+				node.hide()
+			"land_upgrade":
+				if(str(land_use * mult_factor).pad_decimals(2) != "0.00"):
+					node.text = "- " + str(land_use * mult_factor).pad_decimals(2)
+				else:
+					node.hide()
+			"land_downgrade":
+				node.hide()
+
+
+func _on_upgrade_button_mouse_exited():
+	var tween = get_tree().create_tween()
+	tween.tween_property(metrics_container, "position", 
+			metrics_container_original_position, 0.1)
+			
+	for element in modifiers_preview_elements:
+		modifiers_preview_elements[element].hide()
+
+
+func _on_downgrade_button_mouse_exited():
+	var tween = get_tree().create_tween()
+	tween.tween_property(metrics_container, "position", 
+			metrics_container_original_position, 0.1)
+			
+	for element in modifiers_preview_elements:
+		modifiers_preview_elements[element].hide()
+
 
 func is_gas() -> bool:
 		return plant_name == "GAS"
@@ -391,4 +496,4 @@ func _on_locale_updated(_locale):
 	$BuildInfo/Name.text = tr(plant_name)
 	
 	if life_span >= Gameloop.current_turn:
-		$BuildInfo/ColorRect/LifeSpan.text = tr("SHUT_DOWN").format({nbr = str(life_span - Gameloop.current_turn + 1)}) 
+		$BuildInfo/ColorRect/LifeSpan.text = tr("SHUT_DOWN").format({nbr = str(life_span - Gameloop.current_turn + 1)})

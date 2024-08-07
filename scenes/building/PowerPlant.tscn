@@ -524,10 +524,10 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 15.0
-offset_top = -304.0
-offset_right = 15.0
-offset_bottom = -54.0
+offset_left = 59.0
+offset_top = -303.0
+offset_right = 59.0
+offset_bottom = -53.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 0
@@ -540,6 +540,32 @@ theme_type_variation = &"Screen"
 theme_override_colors/font_color = Color(1, 0.129412, 0.207843, 1)
 theme_override_font_sizes/font_size = 50
 text = "100"
+horizontal_alignment = 2
+
+[node name="Upgrade" type="Label" parent="BuildInfo/ColorRect/ContainerN/Prod"]
+visible = false
+layout_mode = 0
+offset_left = 445.0
+offset_top = 3.0
+offset_right = 564.0
+offset_bottom = 45.0
+theme = ExtResource("11_iy3hd")
+theme_override_colors/font_color = Color(0.0627451, 0.572549, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "+ 100.00"
+horizontal_alignment = 2
+
+[node name="Downgrade" type="Label" parent="BuildInfo/ColorRect/ContainerN/Prod"]
+visible = false
+layout_mode = 0
+offset_left = 452.0
+offset_top = 3.0
+offset_right = 564.0
+offset_bottom = 45.0
+theme = ExtResource("11_iy3hd")
+theme_override_colors/font_color = Color(1, 0.129412, 0.207843, 1)
+theme_override_font_sizes/font_size = 30
+text = "- 100.00"
 horizontal_alignment = 2
 
 [node name="MultProd" type="Label" parent="BuildInfo/ColorRect/ContainerN/Prod"]
@@ -593,6 +619,32 @@ theme_override_font_sizes/font_size = 50
 text = "10"
 horizontal_alignment = 2
 
+[node name="Upgrade" type="Label" parent="BuildInfo/ColorRect/ContainerN/Poll"]
+visible = false
+layout_mode = 0
+offset_left = 445.0
+offset_top = 4.0
+offset_right = 564.0
+offset_bottom = 46.0
+theme = ExtResource("11_iy3hd")
+theme_override_colors/font_color = Color(0.0627451, 0.572549, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "+ 100.00"
+horizontal_alignment = 2
+
+[node name="Downgrade" type="Label" parent="BuildInfo/ColorRect/ContainerN/Poll"]
+visible = false
+layout_mode = 0
+offset_left = 452.0
+offset_top = 4.0
+offset_right = 564.0
+offset_bottom = 46.0
+theme = ExtResource("11_iy3hd")
+theme_override_colors/font_color = Color(1, 0.129412, 0.207843, 1)
+theme_override_font_sizes/font_size = 30
+text = "- 100.00"
+horizontal_alignment = 2
+
 [node name="MultPoll" type="Label" parent="BuildInfo/ColorRect/ContainerN/Poll"]
 visible = false
 layout_mode = 2
@@ -633,6 +685,32 @@ theme_type_variation = &"Screen"
 theme_override_colors/font_color = Color(1, 0.129412, 0.207843, 1)
 theme_override_font_sizes/font_size = 50
 text = "3"
+horizontal_alignment = 2
+
+[node name="Upgrade" type="Label" parent="BuildInfo/ColorRect/ContainerN/Land"]
+visible = false
+layout_mode = 0
+offset_left = 445.0
+offset_top = 3.0
+offset_right = 564.0
+offset_bottom = 45.0
+theme = ExtResource("11_iy3hd")
+theme_override_colors/font_color = Color(0.0627451, 0.572549, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "+ 100.00"
+horizontal_alignment = 2
+
+[node name="Downgrade" type="Label" parent="BuildInfo/ColorRect/ContainerN/Land"]
+visible = false
+layout_mode = 0
+offset_left = 452.0
+offset_top = 3.0
+offset_right = 564.0
+offset_bottom = 45.0
+theme = ExtResource("11_iy3hd")
+theme_override_colors/font_color = Color(1, 0.129412, 0.207843, 1)
+theme_override_font_sizes/font_size = 30
+text = "- 100.00"
 horizontal_alignment = 2
 
 [node name="MultLand" type="Label" parent="BuildInfo/ColorRect/ContainerN/Land"]
@@ -727,7 +805,7 @@ horizontal_alignment = 1
 
 [node name="PostitE" type="Sprite2D" parent="BuildInfo/MultWinterE"]
 show_behind_parent = true
-position = Vector2(21.3705, 12.9731)
+position = Vector2(31.0298, 15.5613)
 rotation = 0.261799
 scale = Vector2(2, 2)
 texture = ExtResource("14_12evj")
@@ -748,7 +826,7 @@ horizontal_alignment = 1
 
 [node name="PostitE2" type="Sprite2D" parent="BuildInfo/MultSummerE"]
 show_behind_parent = true
-position = Vector2(18.2139, 13.1626)
+position = Vector2(27.8732, 15.7508)
 rotation = 0.261799
 scale = Vector2(2, 2)
 texture = ExtResource("14_12evj")
@@ -967,7 +1045,7 @@ horizontal_alignment = 1
 
 [node name="Postit" type="Sprite2D" parent="BuildInfo/EnergyContainer/Multiplier/MultPrice"]
 show_behind_parent = true
-position = Vector2(21.8188, 15.1638)
+position = Vector2(33.9275, 16.3378)
 rotation = 0.261799
 scale = Vector2(2, 2)
 texture = ExtResource("21_baxyr")
@@ -1145,7 +1223,11 @@ position = Vector2(117, 150)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("14_x1bya")
 
+[connection signal="mouse_entered" from="BuildInfo/EnergyContainer/Multiplier/Inc" to="." method="_on_upgrade_button_mouse_entered"]
+[connection signal="mouse_exited" from="BuildInfo/EnergyContainer/Multiplier/Inc" to="." method="_on_upgrade_button_mouse_exited"]
 [connection signal="pressed" from="BuildInfo/EnergyContainer/Multiplier/Inc" to="." method="_on_mult_inc_pressed"]
+[connection signal="mouse_entered" from="BuildInfo/EnergyContainer/Multiplier/Dec" to="." method="_on_downgrade_button_mouse_entered"]
+[connection signal="mouse_exited" from="BuildInfo/EnergyContainer/Multiplier/Dec" to="." method="_on_downgrade_button_mouse_exited"]
 [connection signal="pressed" from="BuildInfo/EnergyContainer/Multiplier/Dec" to="." method="_on_mult_dec_pressed"]
 [connection signal="toggled" from="BuildInfo/Switch" to="." method="_on_switch_toggled"]
 [connection signal="pressed" from="InfoButton" to="." method="_on_info_button_pressed"]

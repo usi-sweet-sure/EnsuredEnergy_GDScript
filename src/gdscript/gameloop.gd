@@ -88,13 +88,11 @@ var green_energy_import_on := false:
 		green_energy_import_on = new_value
 		green_energy_import_on_updated.emit(green_energy_import_on)
 		energy_import_cost_updated.emit(energy_import_cost)
-		
 var imported_energy_amount: float = 0:
 	set(new_value):
 		imported_energy_amount = new_value
 		imported_energy_amount_updated.emit(imported_energy_amount)
 		energy_import_cost_updated.emit(energy_import_cost)
-		
 var borrowed_money_amount: int = 0:
 	set(new_value):
 		borrowed_money_amount = new_value
