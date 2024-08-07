@@ -11,4 +11,4 @@ func _ready():
 	
 	
 func _on_money_change(_unused_signal_param):
-	text = str(round(Gameloop.compute_money_for_next_turn()))
+	text = str(round(Gameloop.get_money_for_next_turn()))

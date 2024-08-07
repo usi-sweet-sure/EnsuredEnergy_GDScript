@@ -209,7 +209,7 @@ func can_spend_the_money(money_to_spend: float):
 	return money_to_spend <= available_money_amount
 
 
-func compute_money_for_next_turn() -> float: 
+func get_money_for_next_turn() -> float: 
 	var income = players_own_money_amount + money_per_turn + borrowed_money_amount
 	var outcome = borrowed_money_amount * (1.0 + (debt_percentage_on_borrowed_money / 100.0)) + energy_import_cost + building_costs + powerplants_production_costs
 	
@@ -218,7 +218,7 @@ func compute_money_for_next_turn() -> float:
 	
 func set_money_for_new_turn():
 	var income = players_own_money_amount + money_per_turn + borrowed_money_amount
-	var outcome = borrowed_money_amount * (1.0 + (debt_percentage_on_borrowed_money / 100.0)) + building_costs
+	var outcome = borrowed_money_amount * (1.0 + (debt_percentage_on_borrowed_money / 100.0)) + building_costs + energy_import_cost
 	players_own_money_amount = income - outcome
 	borrowed_money_amount = 0
 	building_costs = 0
