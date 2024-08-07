@@ -2746,6 +2746,7 @@ visible = false
 visible = false
 
 [node name="Settings" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("42_jouqr")
 
 [node name="Backdrop" type="ColorRect" parent="Settings"]
@@ -2907,7 +2908,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="ButtonHole" type="Sprite2D" parent="Settings/Control/SettingsBox/VBoxContainer"]
-position = Vector2(-5, 247)
+position = Vector2(-5, 248)
 texture = ExtResource("49_6hr2c")
 centered = false
 
@@ -3045,6 +3046,7 @@ Walid El-Ajou
 
 [node name="Reset" type="TextureButton" parent="Settings/Control/SettingsBox"]
 custom_minimum_size = Vector2(0, 48)
+layout_mode = 0
 offset_left = 71.0
 offset_top = 784.0
 offset_right = 264.0
@@ -3159,7 +3161,6 @@ uppercase = true
 [node name="Sprite2D2" type="Sprite2D" parent="Settings/Control/SettingsBox/Reset/ResetConfirm/No"]
 show_behind_parent = true
 position = Vector2(-2.85718, -2.14291)
-scale = Vector2(1, 1)
 texture = ExtResource("65_p0ru6")
 centered = false
 
