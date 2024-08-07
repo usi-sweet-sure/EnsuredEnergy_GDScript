@@ -3,9 +3,14 @@ extends Node
 signal policy_button_clicked
 signal vote_button_clicked # Start button for campaigns also call that signal
 signal policy_voted
+signal personal_support_updated
 
 var environmental_policies_support: float = 0.0 # In [0,1]
 var energy_policies_support: float = 0.0 # In [0,1]
+var personal_support: float = 0.5: # In [0,1]
+	set(new_value):
+		personal_support = new_value
+		personal_support_updated.emit(personal_support)
 var policies: Array[Policy] = []
 var last_policy_clicked: Policy
 

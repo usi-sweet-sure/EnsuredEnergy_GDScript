@@ -12,7 +12,6 @@ func _ready():
 	
 func _http_completed(_result, _response_code, _headers, body):
 	var json = JSON.parse_string(body.get_string_from_utf8())
-	print(json)
 	
 
 func perform_requests_in_sequence():

@@ -20,13 +20,27 @@ func _init(p_title_key:String,p_text_key: String, p_img: String, p_show_shock_wi
 	self.img = p_img
 	self.show_shock_window = p_show_shock_window
 
+func _apply_requirements_met_effects():
+	print("applying shock requirement met effects")
+	var count = 0
+	for effect in requirements_met_effects:
+		print("shock requirement met effect ", ++count)
+		effect.call()
 
+
+func _apply_effects():
+	print("applying shock effects")
+	var count = 0
+	for effect in effects:
+		print("shock effect ", ++count)
+		effect.call()
+		
 func apply():
+	print("shock apply()")
 	if _are_requirements_to_absorb_shock_met():
 		_apply_requirements_met_effects()
 	
 	_apply_effects()
-	
 
 func apply_reaction(reaction_index: int):
 	if(player_reactions.size() > reaction_index):
@@ -62,15 +76,3 @@ func _are_requirements_to_absorb_shock_met():
 		
 	print("conditions met ? ", conditions_met)
 	return conditions_met
-	
-	
-func _apply_requirements_met_effects():
-	print("applying requirement met effects")
-	for effect in requirements_met_effects:
-		effect.call()
-
-
-func _apply_effects():
-	print("applying effects")
-	for effect in effects:
-		effect.call()

@@ -17,7 +17,9 @@ var acceptance_probability: float = 0.0: # Probability of the policy to be accep
 			modifier = PolicyManager.environmental_policies_support
 		elif policy_type == PolicyType.ENERGY:
 			modifier = PolicyManager.energy_policies_support
-			
+		
+		modifier += PolicyManager.personal_support - 0.5
+		
 		return acceptance_probability + modifier
 
 
@@ -40,7 +42,10 @@ func vote():
 	
 	
 func apply_effects():
+	print("applying policy effects")
+	var count = 0
 	for effect in effects:
+		print("policy effect ", ++count)
 		effect.call()
 
 

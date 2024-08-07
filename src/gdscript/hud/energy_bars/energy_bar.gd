@@ -63,7 +63,6 @@ func _on_imported_energy_amount_updated(amount):
 func change_bar_color():
 	match season:
 		Season.SUMMER:
-			print(value)
 			if value >= Gameloop.demand_summer:
 				self["theme_override_styles/fill"] = green_bar
 			else:

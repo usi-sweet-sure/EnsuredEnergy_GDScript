@@ -342,7 +342,6 @@ func _on_switch_toggled(toggled_on):
 					off_plant_total += 1
 		# TODO fix problem of building new powerplant then switching off same turn
 		Gameloop.ups_list[plant_id] += -(cnv_capacity / plant_total) * off_plant_total
-		print(Gameloop.ups_list)
 		#Context1.prm_id = plant_id
 		#Context1.tj = -(cnv_capacity / plant_total) * off_plant_total
 		#Context1.prm_ups()

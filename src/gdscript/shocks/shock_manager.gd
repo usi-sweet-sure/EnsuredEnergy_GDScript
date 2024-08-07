@@ -8,9 +8,9 @@ func _ready():
 	cold_spell.add_effect(func(): Gameloop.demand_winter += 5)
 	cold_spell.add_requirements("SHOCK_COLD_SPELL_REQUIREMENT_MET",
 			[func(): return Gameloop.supply_winter + Gameloop.imported_energy_amount >= Gameloop.demand_winter + 5],
-			[func(): print("Support + 5"), func(): Gameloop.players_own_money_amount += 50] # E. implement
+			[func(): PolicyManager.personal_support += 0.05, func(): Gameloop.players_own_money_amount += 50]
 		)
-	cold_spell.add_player_reaction("SHOCK_COLD_SPELL_PLAYER_REACTION_1", func(): print("Support -10")) # E. Implement
+	cold_spell.add_player_reaction("SHOCK_COLD_SPELL_PLAYER_REACTION_1", func(): PolicyManager.personal_support -= 0.1)
 	cold_spell.add_player_reaction("SHOCK_COLD_SPELL_PLAYER_REACTION_2", func(): print("gaz upgrade")) # E. Implement
 	cold_spell.add_player_reaction("SHOCK_COLD_SPELL_PLAYER_REACTION_3", func(): Gameloop.players_own_money_amount -= 50)
 	
@@ -18,9 +18,9 @@ func _ready():
 	heat_wave.add_effect(func(): Gameloop.demand_summer += 5)
 	heat_wave.add_requirements("SHOCK_HEAT_WAVE_REQUIREMENT_MET",
 			[func():  return Gameloop.supply_summer >= Gameloop.demand_summer + 5],
-			[func(): print("Support + 5"), func(): Gameloop.players_own_money_amount += 50] # E. implement
+			[func(): PolicyManager.personal_support += 0.05, func(): Gameloop.players_own_money_amount += 50]
 		)
-	heat_wave.add_player_reaction("SHOCK_HEAT_WAVE_PLAYER_REACTION_1", func(): print("Support -10")) # E. Implement
+	heat_wave.add_player_reaction("SHOCK_HEAT_WAVE_PLAYER_REACTION_1", func(): PolicyManager.personal_support -= 0.1)
 	heat_wave.add_player_reaction("SHOCK_HEAT_WAVE_PLAYER_REACTION_2", func(): print("gaz upgrade")) # E. Implement
 	heat_wave.add_player_reaction("SHOCK_HEAT_WAVE_PLAYER_REACTION_3", func(): Gameloop.players_own_money_amount -= 50)
 	
@@ -44,7 +44,7 @@ func _ready():
 	mass_immigration.add_effect(func(): Gameloop.demand_summer + 5)
 	
 	var renewable_support = Shock.new("SHOCK_RENEWABLE_SUPPORT_TITLE", "SHOCK_RENEWABLE_SUPPORT_TEXT", "flower.png")
-	renewable_support.add_effect(func(): print("support + 10%")) # E. Implement
+	renewable_support.add_effect(func(): PolicyManager.personal_support += 0.1)
 	
 	var nuc_reintro = Shock.new("SHOCK_NUC_REINTRO_TITLE", "SHOCK_NUC_REINTRO_TEXT", "vote.png")
 	nuc_reintro.add_player_reaction("SHOCK_NUC_REINTRO_PLAYER_REACTION_1", func(): print("Reintroduce nuclear power")) # E. Implement
