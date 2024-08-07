@@ -2012,18 +2012,6 @@ pitch_scale = 0.5
 position = Vector2(0, 58)
 texture = ExtResource("101_ykn2m")
 
-[node name="Year" type="Label" parent="Clock/TimePanelBlank"]
-visible = false
-offset_left = -78.0
-offset_top = 88.0
-offset_right = 85.0
-offset_bottom = 158.0
-theme_override_colors/font_color = Color(0.0390625, 0.160156, 0.171875, 1)
-theme_override_font_sizes/font_size = 48
-text = "2022"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Num1" type="Sprite2D" parent="Clock/TimePanelBlank"]
 position = Vector2(-31, 58)
 texture = ExtResource("102_5ki0w")
@@ -2154,14 +2142,15 @@ libraries = {
 
 [node name="TurnInfoContainer" type="MarginContainer" parent="Clock/TimePanelBlank"]
 visible = false
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -316.0
-offset_top = -239.0
-offset_right = -433.0
-offset_bottom = 26.0
+anchors_preset = -1
+anchor_left = -0.152
+anchor_top = 1.038
+anchor_right = 1.117
+anchor_bottom = 1.992
+offset_left = -123.456
+offset_top = -120.386
+offset_right = -227.899
+offset_bottom = -201.024
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(1.5, 1.5)
@@ -2169,21 +2158,18 @@ scale = Vector2(1.5, 1.5)
 [node name="NinePatchRect" type="NinePatchRect" parent="Clock/TimePanelBlank/TurnInfoContainer"]
 layout_mode = 2
 texture = ExtResource("36_vc5yj")
-patch_margin_left = 56
-patch_margin_top = 96
-patch_margin_right = 54
-patch_margin_bottom = 107
 
 [node name="MarginContainer" type="MarginContainer" parent="Clock/TimePanelBlank/TurnInfoContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 80
-theme_override_constants/margin_right = 70
-theme_override_constants/margin_bottom = 70
+theme_override_constants/margin_left = 23
+theme_override_constants/margin_top = 36
+theme_override_constants/margin_right = 39
+theme_override_constants/margin_bottom = 30
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Clock/TimePanelBlank/TurnInfoContainer/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 10
+alignment = 1
 
 [node name="CurrentTurn" type="Label" parent="Clock/TimePanelBlank/TurnInfoContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 20)
@@ -2191,7 +2177,7 @@ layout_mode = 2
 theme = ExtResource("70_2ktfd")
 theme_type_variation = &"Paper"
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 34
+theme_override_font_sizes/font_size = 15
 text = "TURN"
 
 [node name="CurrentTurn" type="Label" parent="Clock/TimePanelBlank/TurnInfoContainer/MarginContainer/VBoxContainer/CurrentTurn"]
@@ -2210,9 +2196,10 @@ grow_vertical = 2
 theme = ExtResource("70_2ktfd")
 theme_type_variation = &"Paper"
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 34
+theme_override_font_sizes/font_size = 15
 text = "N"
 horizontal_alignment = 2
+vertical_alignment = 1
 script = ExtResource("95_2utc1")
 
 [node name="RemainingTurns" type="Label" parent="Clock/TimePanelBlank/TurnInfoContainer/MarginContainer/VBoxContainer"]
@@ -2220,7 +2207,7 @@ layout_mode = 2
 theme = ExtResource("70_2ktfd")
 theme_type_variation = &"Paper"
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 34
+theme_override_font_sizes/font_size = 15
 text = "REMAINING_TURNS"
 autowrap_mode = 2
 
@@ -2240,9 +2227,10 @@ grow_vertical = 2
 theme = ExtResource("70_2ktfd")
 theme_type_variation = &"Paper"
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 34
+theme_override_font_sizes/font_size = 15
 text = "N"
 horizontal_alignment = 2
+vertical_alignment = 1
 script = ExtResource("96_6b673")
 
 [node name="TurnInfo" type="Button" parent="Clock/TimePanelBlank"]
