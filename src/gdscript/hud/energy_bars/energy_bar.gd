@@ -36,8 +36,6 @@ func _ready():
 			# so we have to updates the bars manually when they're created
 			_on_energy_demand_updated(Gameloop.demand_summer)
 			_on_energy_supply_updated(Gameloop.supply_summer)
-			
-	change_bar_color()
 
 # Updates the position of the line representing the demand and the max value of the progress bar
 func _on_energy_demand_updated(demand):
@@ -56,13 +54,11 @@ func _on_energy_supply_updated(supply):
 		
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "value", new_value, 0.5)
-	change_bar_color()
 	
 # Updates the progress bar
 func _on_imported_energy_amount_updated(amount):
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "value", Gameloop.supply_winter + amount, 0.5)
-	change_bar_color()
 		
 func change_bar_color():
 	match season:
@@ -102,3 +98,7 @@ func get_season_text(season_value: int):
 	match season_value:
 		0: return "Winter"
 		1: return "Summer"
+
+
+func _on_value_changed(value):
+	change_bar_color()

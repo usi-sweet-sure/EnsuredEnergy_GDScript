@@ -73,6 +73,7 @@ grow_horizontal = 2
 grow_vertical = 2
 flat = true
 
+[connection signal="value_changed" from="." to="." method="_on_value_changed"]
 [connection signal="pressed" from="BarInfo/MoreInfo" to="." method="_on_more_info_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_bar_button_pressed"]
 
