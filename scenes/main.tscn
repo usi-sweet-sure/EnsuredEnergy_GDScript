@@ -1,4 +1,4 @@
-[gd_scene load_steps=114 format=3 uid="uid://g58p7rxvcdik"]
+[gd_scene load_steps=115 format=3 uid="uid://g58p7rxvcdik"]
 
 [ext_resource type="Script" path="res://src/gdscript/main.gd" id="1_6q0gk"]
 [ext_resource type="PackedScene" uid="uid://ba56oxmvcxpos" path="res://scenes/world.tscn" id="1_prp6q"]
@@ -65,6 +65,7 @@
 [ext_resource type="Texture2D" uid="uid://c25aef4m4yd40" path="res://assets/UI Elements/Button-Next-Hover.png" id="60_c1roj"]
 [ext_resource type="Texture2D" uid="uid://8igpvay7modk" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0003_Settings-warning-metal-base.png" id="64_c4467"]
 [ext_resource type="Texture2D" uid="uid://cvr8ptliyw7oc" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0013_1-slot-button-hole.png" id="65_p0ru6"]
+[ext_resource type="PackedScene" uid="uid://dc3s5eeg1c0uv" path="res://scenes/windows/graphs.tscn" id="66_s8n66"]
 
 [sub_resource type="Animation" id="Animation_k4it7"]
 length = 0.001
@@ -3179,6 +3180,9 @@ position = Vector2(-568, 576)
 volume_db = 10.0
 stream_paused = false
 bus = &"Sound"
+
+[node name="Graphs" parent="." instance=ExtResource("66_s8n66")]
+visible = false
 
 [connection signal="pressed" from="Settings/Control/Close" to="Settings/Control/Close" method="_on_pressed"]
 [connection signal="pressed" from="Settings/Control/SettingsBox/VBoxContainer/Language" to="Settings/Control/SettingsBox/VBoxContainer/Language" method="_on_pressed"]
