@@ -167,3 +167,4 @@ texture = ExtResource("11_pjrco")
 stretch_mode = 3
 
 [connection signal="pressed" from="Backdrop/Close" to="Backdrop/Close" method="_on_pressed"]
+[connection signal="toggled" from="MainFrame/RightContainer/SeasonSwitch/Switch" to="." method="_on_season_switch_toggled"]
