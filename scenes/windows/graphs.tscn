@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://dc3s5eeg1c0uv"]
 
-[ext_resource type="Script" path="res://src/gdscript/graphs/graphs.gd" id="1_vog1l"]
+[ext_resource type="Script" path="res://src/gdscript/graphs/graphs_window.gd" id="1_vog1l"]
 [ext_resource type="Texture2D" uid="uid://ceuxpu5iujr05" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0001_Stats-metal-base.png" id="2_cyklw"]
 [ext_resource type="Script" path="res://src/gdscript/graphs/close_button.gd" id="2_g21s1"]
 [ext_resource type="Texture2D" uid="uid://cd23afs6x11al" path="res://assets/UI Elements/All-HQ-Assets-D_0005s_0002_Stats-screen.png" id="4_n0bh3"]
@@ -61,36 +61,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -555.0
-offset_top = -360.0
-offset_right = 397.0
-offset_bottom = 360.0
+offset_left = -527.5
+offset_top = -359.5
+offset_right = 398.5
+offset_bottom = 360.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
 texture = ExtResource("4_n0bh3")
-
-[node name="Demand" type="Control" parent="MainFrame/Screen"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="DemandWinter" type="Line2D" parent="MainFrame/Screen/Demand"]
-width = 4.0
-default_color = Color(0, 0.568627, 1, 1)
-joint_mode = 2
-begin_cap_mode = 2
-end_cap_mode = 2
-
-[node name="DemandSummer" type="Line2D" parent="MainFrame/Screen/Demand"]
-width = 4.0
-default_color = Color(1, 0.701961, 0.254902, 1)
-joint_mode = 2
-begin_cap_mode = 2
-end_cap_mode = 2
 
 [node name="RightContainer" type="MarginContainer" parent="MainFrame"]
 layout_mode = 1
