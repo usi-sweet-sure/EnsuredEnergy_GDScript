@@ -15,7 +15,7 @@ enum Season {WINTER, SUMMER}
 func _ready():
 	# The bars will have the same max_value, wich is the maximum demand
 	# between winter and summer
-	max_value = max(Gameloop.demand_winter * 1.5, Gameloop.demand_summer * 1.5)
+	max_value = max(Gameloop.demand_winter * 1.25, Gameloop.demand_summer * 1.25)
 	
 	# Determines which season the bar will be monitoring
 	match season:
