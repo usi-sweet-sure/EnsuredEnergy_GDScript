@@ -50,7 +50,6 @@ func _on_next_turn_button_pressed():
 	await $TimelineAnimation.animation_finished
 	ShockManager.pick_shock()
 	ShockManager.apply_shock()
-	Gameloop.set_money_for_new_turn()
 	
 	if Gameloop.current_turn == Gameloop.total_number_of_turns:
 		Gameloop.end.emit()
@@ -59,4 +58,6 @@ func _on_next_turn_button_pressed():
 		Gameloop.current_turn += 1
 		Gameloop.next_turn.emit()
 		Context1.yr = Gameloop.year_list[Gameloop.current_turn]
+		
+	Gameloop.set_money_for_new_turn()
 	

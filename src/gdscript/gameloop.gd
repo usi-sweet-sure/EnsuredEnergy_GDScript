@@ -144,6 +144,7 @@ var building_costs: float = 0: # Costs of building and upgrading buildings
 		building_costs_updated.emit(building_costs)
 		available_money_amount_updated.emit(available_money_amount)
 	
+	
 func _ready():
 	players_own_money_amount = start_money
 	all_power_plants = get_tree().get_nodes_in_group("PP")

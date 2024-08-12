@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dc3s5eeg1c0uv"]
+[gd_scene load_steps=15 format=3 uid="uid://dc3s5eeg1c0uv"]
 
 [ext_resource type="Script" path="res://src/gdscript/graphs/graphs_window.gd" id="1_vog1l"]
 [ext_resource type="Texture2D" uid="uid://ceuxpu5iujr05" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0001_Stats-metal-base.png" id="2_cyklw"]
@@ -7,8 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://hmcjyyrl7dv2" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0034_Policies-normal-(small)-button.png" id="5_lt1jf"]
 [ext_resource type="Texture2D" uid="uid://cjxrgcwrcynwf" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0035_Policies-press-(small)-button.png" id="6_hmhdq"]
 [ext_resource type="Texture2D" uid="uid://80u4mcjyisb7" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0033_Policies-hover-(small)-button.png" id="7_k8yxn"]
+[ext_resource type="Script" path="res://src/gdscript/graphs/environment_button.gd" id="8_an3q8"]
 [ext_resource type="Texture2D" uid="uid://ca5ev88u31iqa" path="res://assets/UI Elements/Icon-Solar.png" id="8_bfbea"]
+[ext_resource type="Script" path="res://src/gdscript/graphs/economy_button.gd" id="8_gyxb0"]
 [ext_resource type="Texture2D" uid="uid://dwys7y27kiabl" path="res://assets/UI Elements/Import-Switch-On.png" id="9_iw48x"]
+[ext_resource type="Script" path="res://src/gdscript/graphs/energy_button.gd" id="10_7tukf"]
 [ext_resource type="Texture2D" uid="uid://dhxkhfg2qxlgx" path="res://assets/UI Elements/Import-Switch-Off.png" id="10_t8yel"]
 [ext_resource type="Texture2D" uid="uid://bbnupxdtp78l5" path="res://assets/UI Elements/Icon-Wind.png" id="11_pjrco"]
 
@@ -70,6 +73,15 @@ grow_vertical = 2
 size_flags_horizontal = 0
 texture = ExtResource("4_n0bh3")
 
+[node name="LineNamesContainer" type="HBoxContainer" parent="MainFrame"]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 27.0
+offset_right = 1206.0
+offset_bottom = 75.0
+theme_override_constants/separation = 40
+alignment = 1
+
 [node name="RightContainer" type="MarginContainer" parent="MainFrame"]
 layout_mode = 1
 anchors_preset = 15
@@ -93,6 +105,7 @@ texture_normal = ExtResource("5_lt1jf")
 texture_pressed = ExtResource("6_hmhdq")
 texture_hover = ExtResource("7_k8yxn")
 stretch_mode = 0
+script = ExtResource("8_an3q8")
 
 [node name="Label" type="Label" parent="MainFrame/RightContainer/FilterButtons/Environment"]
 layout_mode = 1
@@ -110,6 +123,7 @@ texture_normal = ExtResource("5_lt1jf")
 texture_pressed = ExtResource("6_hmhdq")
 texture_hover = ExtResource("7_k8yxn")
 stretch_mode = 0
+script = ExtResource("8_gyxb0")
 
 [node name="Label" type="Label" parent="MainFrame/RightContainer/FilterButtons/Economy"]
 layout_mode = 1
@@ -129,6 +143,7 @@ texture_normal = ExtResource("5_lt1jf")
 texture_pressed = ExtResource("6_hmhdq")
 texture_hover = ExtResource("7_k8yxn")
 stretch_mode = 0
+script = ExtResource("10_7tukf")
 
 [node name="Label" type="Label" parent="MainFrame/RightContainer/FilterButtons/Energy"]
 layout_mode = 1
@@ -167,4 +182,16 @@ texture = ExtResource("11_pjrco")
 stretch_mode = 3
 
 [connection signal="pressed" from="Backdrop/Close" to="Backdrop/Close" method="_on_pressed"]
+[connection signal="pressed" from="MainFrame/RightContainer/FilterButtons/Environment" to="." method="_on_environment_button_pressed"]
+[connection signal="pressed" from="MainFrame/RightContainer/FilterButtons/Environment" to="MainFrame/RightContainer/FilterButtons/Environment" method="_on_pressed"]
+[connection signal="pressed" from="MainFrame/RightContainer/FilterButtons/Environment" to="MainFrame/RightContainer/FilterButtons/Economy" method="_on_environment_button_pressed"]
+[connection signal="pressed" from="MainFrame/RightContainer/FilterButtons/Environment" to="MainFrame/RightContainer/FilterButtons/Energy" method="_on_environment_button_pressed"]
+[connection signal="pressed" from="MainFrame/RightContainer/FilterButtons/Economy" to="." method="_on_economy_button_pressed"]
+[connection signal="pressed" from="MainFrame/RightContainer/FilterButtons/Economy" to="MainFrame/RightContainer/FilterButtons/Environment" method="_on_economy_button_pressed"]
+[connection signal="pressed" from="MainFrame/RightContainer/FilterButtons/Economy" to="MainFrame/RightContainer/FilterButtons/Economy" method="_on_pressed"]
+[connection signal="pressed" from="MainFrame/RightContainer/FilterButtons/Economy" to="MainFrame/RightContainer/FilterButtons/Energy" method="_on_economy_button_pressed"]
+[connection signal="pressed" from="MainFrame/RightContainer/FilterButtons/Energy" to="." method="_on_energy_button_pressed"]
+[connection signal="pressed" from="MainFrame/RightContainer/FilterButtons/Energy" to="MainFrame/RightContainer/FilterButtons/Environment" method="_on_energy_button_pressed"]
+[connection signal="pressed" from="MainFrame/RightContainer/FilterButtons/Energy" to="MainFrame/RightContainer/FilterButtons/Economy" method="_on_energy_button_pressed"]
+[connection signal="pressed" from="MainFrame/RightContainer/FilterButtons/Energy" to="MainFrame/RightContainer/FilterButtons/Energy" method="_on_pressed"]
 [connection signal="toggled" from="MainFrame/RightContainer/SeasonSwitch/Switch" to="." method="_on_season_switch_toggled"]
