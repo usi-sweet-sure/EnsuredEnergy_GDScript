@@ -111,7 +111,8 @@ func _on_building_cancel_pressed():
 
 
 func _on_mouse_entered():
-	$AnimationPlayer.play("HammerHit")
+	if !$AnimationPlayer.is_playing():
+		$AnimationPlayer.play("HammerHit")
 
 
 func _on_building_info_pressed():
