@@ -66,7 +66,8 @@ var plant_name_to_ups_id = {
 	"BIOMASS": "192",
 	"SOLAR": "170",
 	"WIND": "171",
-	"GEOTHERMAL": "246"
+	"GEOTHERMAL": "246",
+	"BIOGAS": "175"
 }
 
 var plant_name_to_metric_id = {
@@ -106,7 +107,10 @@ var plant_name_to_metric_id = {
 	"BIOGAS_AVAIL": "337",
 	"SOLAR_AVAIL": "338",
 	"WIND_AVAIL": "339",
-	"GEOTHERMAL_AVAIL": "334" #geo has no avail
+	"GEOTHERMAL_AVAIL": "334", #geo has no avail
+	"BIOGAS_EMI": "257",
+	"BIOGAS_LAND": "287",
+	"BIOGAS_COST": "327"
 }
 
 # Called when the node enters the scene tree for the first time.
@@ -129,9 +133,9 @@ func _update_info():
 	winter_energy.text = str(availability.y * capacity).pad_decimals(0)
 	
 	# updates metrics
-	$BuildInfo/ColorRect/ContainerN/Prod.text = "-" + str(production_cost).pad_decimals(0)
-	$BuildInfo/ColorRect/ContainerN/Poll.text = str(pollution).pad_decimals(2)
-	$BuildInfo/ColorRect/ContainerN/Land.text = str(land_use).pad_decimals(2)
+	$BuildInfo/ColorRect/ContainerN/Prod.text = "-" + str(production_cost).pad_decimals(0) + "M CHF"
+	$BuildInfo/ColorRect/ContainerN/Poll.text = str(pollution).pad_decimals(2) + "t CO2"
+	$BuildInfo/ColorRect/ContainerN/Land.text = str(land_use).pad_decimals(2) + " ha"
 	
 	$BuildInfo/ColorRect/LifeSpan.text = str(life_span - Gameloop.current_turn + 1)
 	
@@ -527,3 +531,9 @@ func _on_multdec_mouse_exited():
 	$BuildInfo/MultWinterE.hide()
 	$BuildInfo/MultSummerE.hide()
 	$BuildInfo/EnergyContainer/Multiplier/MultPrice/GreenPostit.hide()
+	
+func _unhandled_input(event):
+	# Mouse drag moves the camera
+	if event is InputEventMouseButton:
+		if event.button_mask == MOUSE_BUTTON_MASK_LEFT:
+			$BuildInfo.hide()

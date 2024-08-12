@@ -4,7 +4,7 @@ var start_year: int = 2022
 var total_number_of_turns: int = 10
 var years_in_a_turn = 3
 var start_money: int = 700
-var money_per_turn: int = 250
+var money_per_turn: int = 450
 var green_energy_import_factor: float = 1.5
 var debt_percentage_on_borrowed_money: int = 20
 

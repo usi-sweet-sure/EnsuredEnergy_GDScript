@@ -21,8 +21,8 @@ func _set_next_years_anim():
 	
 	for i in n_keys:
 		#anim.track_set_key_value(anim_track, i, str(year + i))
-		anim.track_set_key_value(arrow_track, i, remap(year+i, Gameloop.start_year, 2050, -2.18, 2.18))
-		anim.track_set_key_value(shadow_track, i, remap(year+i, Gameloop.start_year, 2050, -2.22, 2.22))
+		anim.track_set_key_value(arrow_track, i, remap(year+i, Gameloop.start_year, 2052, -2.18, 2.18))
+		anim.track_set_key_value(shadow_track, i, remap(year+i, Gameloop.start_year, 2052, -2.22, 2.22))
 		var year_num = str(year + i)
 		anim.track_set_key_value(year_track, i, str(year_num[3]))
 		if (i < n_keys-1):

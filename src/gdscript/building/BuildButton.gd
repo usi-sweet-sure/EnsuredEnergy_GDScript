@@ -76,6 +76,8 @@ func _build_plant(plant, can_cancel := true):
 	Gameloop._update_buildings_impact()
 
 func _on_close_button_pressed():
+	$BuildMenu/AnimationPlayer.play_backwards("SlideUp")
+	await $BuildMenu/AnimationPlayer.animation_finished
 	$BuildMenu.hide()
 	
 func _on_pp_delete(pp):
@@ -111,7 +113,8 @@ func _on_building_cancel_pressed():
 
 
 func _on_mouse_entered():
-	$AnimationPlayer.play("HammerHit")
+	if !$AnimationPlayer.is_playing():
+		$AnimationPlayer.play("HammerHit")
 
 
 func _on_building_info_pressed():
