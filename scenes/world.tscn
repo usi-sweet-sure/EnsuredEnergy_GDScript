@@ -92,7 +92,7 @@ offset_right = 52.0
 offset_bottom = 35.0
 grow_vertical = 1
 
-[node name="Geothermal" parent="." instance=ExtResource("7_6x5m2")]
+[node name="Biogas" parent="." instance=ExtResource("7_6x5m2")]
 plant_name = "geothermal"
 
 [node name="Waste" parent="." instance=ExtResource("7_6x5m2")]
@@ -361,7 +361,7 @@ position = Vector2(2776, 160)
 [editable path="Nuclear3"]
 [editable path="Nuclear2"]
 [editable path="Nuclear"]
-[editable path="Geothermal"]
+[editable path="Biogas"]
 [editable path="Waste"]
 [editable path="Biomass"]
 [editable path="Wind"]

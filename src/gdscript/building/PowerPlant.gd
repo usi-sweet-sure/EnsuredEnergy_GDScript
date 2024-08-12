@@ -66,7 +66,8 @@ var plant_name_to_ups_id = {
 	"BIOMASS": "192",
 	"SOLAR": "170",
 	"WIND": "171",
-	"GEOTHERMAL": "246"
+	"GEOTHERMAL": "246",
+	"BIOGAS": "175"
 }
 
 var plant_name_to_metric_id = {
@@ -106,7 +107,10 @@ var plant_name_to_metric_id = {
 	"BIOGAS_AVAIL": "337",
 	"SOLAR_AVAIL": "338",
 	"WIND_AVAIL": "339",
-	"GEOTHERMAL_AVAIL": "334" #geo has no avail
+	"GEOTHERMAL_AVAIL": "334", #geo has no avail
+	"BIOGAS_EMI": "257",
+	"BIOGAS_LAND": "287",
+	"BIOGAS_COST": "327"
 }
 
 # Called when the node enters the scene tree for the first time.
