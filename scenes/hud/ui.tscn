@@ -1,4 +1,4 @@
-[gd_scene load_steps=146 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=147 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/UI Elements/Button-Next-Normal.png" id="2_aobed"]
 [ext_resource type="Texture2D" uid="uid://ccsapuvkqqt1b" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0009_Profile-metal-base.png" id="2_nu7y6"]
@@ -53,6 +53,7 @@
 [ext_resource type="Texture2D" uid="uid://bj6ubksmn350n" path="res://assets/UI Elements/Button-Hole.png" id="39_jsaox"]
 [ext_resource type="Script" path="res://src/gdscript/hud/money_management/money_info_box/building_cost_label.gd" id="39_y30hd"]
 [ext_resource type="Texture2D" uid="uid://b34opid7c6qf6" path="res://assets/UI Elements/Pollution-Bar.png" id="41_ctrnv"]
+[ext_resource type="Script" path="res://src/gdscript/hud/money_management/borrow_money_frame/cancel_button.gd" id="42_j30d0"]
 [ext_resource type="Script" path="res://src/gdscript/hud/money_management/money_info_box/total_now_label.gd" id="42_l0rtw"]
 [ext_resource type="Texture2D" uid="uid://dcbjy5kxo2vbm" path="res://assets/Elements/INFO ICON.png" id="42_v8iq7"]
 [ext_resource type="Script" path="res://src/gdscript/hud/money_management/money_info_box/total_next_label.gd" id="43_lu1ke"]
@@ -1358,9 +1359,12 @@ offset_left = 276.0
 offset_top = 419.0
 offset_right = 469.0
 offset_bottom = 502.0
+disabled = true
 texture_normal = ExtResource("2_aobed")
 texture_pressed = ExtResource("3_qtdni")
 texture_hover = ExtResource("4_mh4j1")
+texture_disabled = ExtResource("5_hh5pc")
+script = ExtResource("42_j30d0")
 
 [node name="Label2" type="Label" parent="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame/Cancel"]
 layout_mode = 1
@@ -2362,6 +2366,7 @@ text = "Test button bottom
 [connection signal="pressed" from="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame/Cancel" to="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame" method="_on_cancel_pressed"]
 [connection signal="value_changed" from="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame/BorrowSlider/Slider" to="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame/Money/BorrowAmount" method="_on_borrow_money_slider_value_changed"]
 [connection signal="value_changed" from="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame/BorrowSlider/Slider" to="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame/Debt/DebtAmount" method="_on_borrow_money_slider_value_changed"]
+[connection signal="value_changed" from="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame/BorrowSlider/Slider" to="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame/Cancel" method="_on_slider_value_changed"]
 [connection signal="pressed" from="TopLeftZone/Policies/OpenPoliciesWindowButton" to="TopLeftZone/Policies/Window" method="_on_open_policies_window_button_pressed"]
 [connection signal="pressed" from="EnvironmentAndPollution/Environment/Info/MoreInfo" to="EnvironmentAndPollution/Environment/Info/MarginContainer/BubbleOpen" method="_on_more_info_button_pressed"]
 [connection signal="pressed" from="EnvironmentAndPollution/Environment/Info/MoreInfo" to="EnvironmentAndPollution/Environment/Info/MarginContainer/MarginContainer/VBoxContainer/InfoText" method="_on_more_info_button_pressed"]
