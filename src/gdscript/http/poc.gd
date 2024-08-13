@@ -10,8 +10,9 @@ func _ready():
 	http.request_completed.connect(self._http_completed)
 	
 	
-func _http_completed(_result, _response_code, _headers, body):
-	var json = JSON.parse_string(body.get_string_from_utf8())
+func _http_completed(_result, _response_code, _headers, _body):
+	pass
+	#var json = JSON.parse_string(body.get_string_from_utf8())
 	
 
 func perform_requests_in_sequence():

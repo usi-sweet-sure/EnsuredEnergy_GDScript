@@ -99,5 +99,5 @@ func get_season_text(season_value: int):
 		1: return "Summer"
 
 
-func _on_value_changed(value):
+func _on_value_changed(_val):
 	change_bar_color()

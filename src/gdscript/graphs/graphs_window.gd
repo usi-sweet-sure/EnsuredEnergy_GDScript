@@ -190,9 +190,6 @@ func _draw_axis_tick_lines(axis: String, ticks_value_delta: int):
 	# Draw the lines and the labels
 	var tick_index = 0
 	while tick_index * distance_between_ticks <= axis_size:
-		var abscissa = 0
-		var ordinate = 0
-		
 		var new_line = Line2D.new()
 		new_line.width = 2
 		
@@ -300,7 +297,7 @@ func change_line_highlight(line_name, highlight := true):
 
 # Highlights the point when the mouse is hovering above it
 func change_point_highlight(point: ColorRect, highlight := true):
-	var size_factor := 2
+	var size_factor := 2.0
 	var move_factor = size_factor # Used for the points
 		
 	if not highlight: # Reverts the size back

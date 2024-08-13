@@ -100,7 +100,7 @@ var borrowed_money_amount: int = 0:
 		borrowed_money_amount = new_value
 		borrowed_money_amount_updated.emit(borrowed_money_amount)
 		available_money_amount_updated.emit(available_money_amount)
-var players_own_money_amount: int = 0:
+var players_own_money_amount: float = 0:
 	set(new_value):
 		players_own_money_amount = new_value
 		players_own_money_amount_updated.emit(players_own_money_amount)
