@@ -134,8 +134,15 @@ var current_turn: int = 1: # Player action always take place in the following ye
 		current_turn = new_value
 		current_turn_updated.emit(current_turn)
 var powerplants_production_costs: float = 0:
+	get:
+		return powerplants_production_costs * production_costs_modifier
 	set(new_value):
 		powerplants_production_costs = new_value
+		powerplants_production_costs_updated.emit(powerplants_production_costs)
+		available_money_amount_updated.emit(available_money_amount)
+var production_costs_modifier: float = 1: # Shocks can affect this
+	set(new_value):
+		production_costs_modifier = new_value
 		powerplants_production_costs_updated.emit(powerplants_production_costs)
 		available_money_amount_updated.emit(available_money_amount)
 var building_costs: float = 0: # Costs of building and upgrading buildings

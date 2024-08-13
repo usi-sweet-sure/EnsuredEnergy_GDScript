@@ -31,13 +31,13 @@ func _ready():
 	severe_weather.add_effect(func(): print("decreasing wind and solar energy by 10%")) # E. Implement
 	
 	var inc_raw_cost_10 = Shock.new("SHOCK_INC_RAW_COST_10_TITLE", "SHOCK_INC_RAW_COST_10_TEXT", "money.png")
-	inc_raw_cost_10.add_effect(func(): print("increasing production costs by 10%")) # E. Implement
+	inc_raw_cost_10.add_effect(func(): Gameloop.production_costs_modifier += 0.1)
 	
 	var inc_raw_cost_20 = Shock.new("SHOCK_INC_RAW_COST_20_TITLE", "SHOCK_INC_RAW_COST_20_TEXT", "money.png")
-	inc_raw_cost_20.add_effect(func(): print("increasing production costs by 20%")) # E. Implement
+	inc_raw_cost_20.add_effect(func(): Gameloop.production_costs_modifier += 0.2)
 	
 	var dec_raw_cost_20 = Shock.new("SHOCK_DEC_RAW_COST_20_TITLE", "SHOCK_DEC_RAW_COST_20_TEXT", "receive.png")
-	dec_raw_cost_20.add_effect(func(): print("decreasing production costs by 20%")) # E. Implement
+	dec_raw_cost_20.add_effect(func(): Gameloop.production_costs_modifier -= 0.2)
 	
 	var mass_immigration = Shock.new("SHOCK_MASS_IMMIGRATION_TITLE", "SHOCK_MASS_IMMIGRATION_TEXT", "people.png")
 	mass_immigration.add_effect(func(): Gameloop.demand_winter + 5)
