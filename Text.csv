@@ -181,3 +181,6 @@ WINTER_ENERGY_SUPPLY_LINE_NAME,Winter energy supply,Apport énergétique hiverna
 SUMMER_ENERGY_SUPPLY_LINE_NAME,Summer energy supply,Apport énergétique estival,Energieversorgung im Sommer,Fornitura di energia estiva
 WINTER_ENERGY_IMPORT_LINE_NAME,Winter energy import,Energie importée en hiver,Energieimport im Winter,Importazione di energia invernale
 LAND_USE_LINE_NAME,Land use,Utilisation des sols,Landnutzung,Uso del suolo
+RESET,Reset,Recommencer,Neu anfangen,Ricominciare
+CANCEL,Cancel,Annuler,Abbrechen,Annullare
+RESET_CONFIRM,Are you sure you want to restart the game ?,Es-tu sûr de vouloir recommencer le jeu ?,"Sind Sie sicher, dass Sie das Spiel neu starten wollen?",Sei sicuro di voler ricominciare il gioco?
