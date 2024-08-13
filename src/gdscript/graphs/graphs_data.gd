@@ -4,16 +4,28 @@ extends Node
 # This is a dictionnary of the form
 # data = {
 #	 "name" = {
-#		 "2022" = 100.0,
-#		 "2023" = 140.0,
+#		 2022 = 100.0,
+#		 2023 = 140.0,
 #		 ...
 #		 },
 #	 "name" = {
-#		 "2022" = 200.0,
-#		 "2023" = 350.0,
+#		 2022 = 200.0,
+#		 2023 = 350.0,
 #		 ...
 #		 },
 # }
+# This is tightly linked to the fact we know x-axis will always display years.
+# If this changes, adapt the data accordingly.
+# In any case, graphs_window.gd doesn't know the form of the data, it is only
+# needed that "get_data_set" returns a dictionnary of the form
+#	{
+#		x: float = y: float,
+#		x = y,
+#		...
+#	}
+# "graphs_window.gd" takes care of everything, so x and y have to be the real
+# values you want to display, nothing else to do appart from setting axis values
+# in "graphs_window.gd" context that goes with the values you want to display.
 var data = {}
 
 
@@ -31,15 +43,22 @@ func _ready():
 	
 	_on_building_cost_updated(0)
 	
+
+# Must return a dictionnary of the form
+#	{
+#		x: float = y: float,
+#		x = y,
+#		...
+#	}
 func get_data_set(key_name: String):
-	_add_new_data_set(key_name)
+	_add_new_data_set(key_name) # Initializes empty data if needed 
 	return data[key_name]
-
-
-func _on_building_cost_updated(cost):
-	data["building"][Gameloop.start_year + (Gameloop.current_turn - 1) * Gameloop.years_in_a_turn] = cost
 
 
 func _add_new_data_set(key_name: String):
 	if not data.has(key_name):
 		data[key_name] = {}
+		
+		
+func _on_building_cost_updated(cost):
+	data["building"][Gameloop.start_year + (Gameloop.current_turn - 1) * Gameloop.years_in_a_turn] = cost

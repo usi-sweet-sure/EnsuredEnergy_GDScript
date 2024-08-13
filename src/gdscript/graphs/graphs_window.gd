@@ -1,10 +1,19 @@
+# Used to draw the graphs.
+# This the way to add data to the graphs:
+# 1. Add the data with a dataset name and the way to update it
+#	 (via signal, etc.) in "graphs_data.gd".
+# 2. Add a context in "set_graph_context".
+#	 You define the axis min and max values and axis scales (ticks value) and the
+#	 data to add from "graphs_data.gd" by using a dataset name
+#
+# The whole context is redrawn when the graphs are opened, so the last data from
+# "graphs_data" is fetched every time.
 extends CanvasLayer
 
 var x_axis_min_value: int
 var x_axis_max_value: int
 var y_axis_min_value: int
 var y_axis_max_value: int
-
 
 var context: String = "none" # Allows to know what the graph is displaying
 var season := "winter"
@@ -16,13 +25,12 @@ var default_point_size = Vector2(15.0,15.0)
 @onready var line_names_container = $MainFrame/LineNamesContainer
 
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Gameloop.toggle_graphs.connect(_on_toggle_graphs)
-			
-
-# Adapts the graph axis,labels and lines for a known context, add them as needed
+		
+		
+# Adapts the graph axis,labels and lines for a known context, add them as needed.
 func _set_graph_context(context_name: String):
 	context = context_name
 	_reset_graph()
@@ -53,20 +61,15 @@ func _set_graph_context(context_name: String):
 			y_axis_min_value = 0
 			y_axis_max_value = 2000
 			_draw_base_graph(Gameloop.years_in_a_turn, 200)
-		
-		
+			
 	if season == "winter":
 		_on_season_switch_toggled(false)
 	elif season == "summer":
 		_on_season_switch_toggled(true)
 
 
-# Draws the axis tick lines and labels
-func _draw_base_graph(x_axis_ticks_delta: int, y_axis_ticks_delta):
-	_draw_axis_tick_lines("x", x_axis_ticks_delta)
-	_draw_axis_tick_lines("y", y_axis_ticks_delta)
-	
-	
+# This is what you want to use in a normal use case when adding data to the graph.
+# Takes care of everything
 func _add_data_set_to_graph(data_set_name: String, line_color = Color(0.836, 0.718, 0.898, 1)):	
 	_remove_dataset_from_graph(data_set_name)
 		
@@ -78,9 +81,17 @@ func _add_data_set_to_graph(data_set_name: String, line_color = Color(0.836, 0.7
 	
 	for i in range(points.size()):
 		_add_new_point_to_line(data_set_name, abscissas[i], ordinates[i])
+		
+		
+# Draws the axis tick lines and labels
+func _draw_base_graph(x_axis_ticks_delta: int, y_axis_ticks_delta):
+	_draw_axis_tick_lines("x", x_axis_ticks_delta)
+	_draw_axis_tick_lines("y", y_axis_ticks_delta)
 	
-	
+
+# Adds the line to the graph and the line name at the top
 func _add_new_line_to_graph(line_name: String, line_color: Color = Color(1,1,1,1), line_width = 2):
+	# The line in the grap
 	var new_line = Line2D.new()
 	new_line.name = line_name
 	new_line.antialiased = true
@@ -89,22 +100,30 @@ func _add_new_line_to_graph(line_name: String, line_color: Color = Color(1,1,1,1
 	new_line.z_index = 1 # So axis lines doesnt draw over the lines
 	graph.add_child(new_line)
 	
-	# Line name at the top
+	# Container of the line name at the top
 	var vertical_container := VBoxContainer.new()
 	vertical_container.name = line_name
+	
+	# Highlights the line when hovering the line name at the top
 	vertical_container.mouse_entered.connect(func(): change_line_highlight(line_name))
 	vertical_container.mouse_exited.connect(func(): change_line_highlight(line_name, false))
 	line_names_container.add_child(vertical_container)
+	
+	# The line above the line name
 	var line := Line2D.new()
 	line.add_point(Vector2(0,0))
 	line.add_point(Vector2(150,0))
 	line.default_color = line_color
 	line.width = default_line_width
+	
+	# The line name
 	var label := Label.new()
 	label.text = tr(line_name.to_upper() + "_LINE_NAME")
 	vertical_container.add_child(line)
 	vertical_container.add_child(label)
 
+
+# Add a point at the end of the line
 func _add_new_point_to_line(line_name: String, x, y) -> Line2D:
 	var line: Line2D = graph.get_node(line_name)
 	var x_in_pixels = (graph.size.x / (x_axis_max_value - x_axis_min_value)) * (x - x_axis_min_value)
@@ -124,6 +143,7 @@ func _add_new_point_to_line(line_name: String, x, y) -> Line2D:
 	return line
 
 
+# Removes the line and the line names linked to a dataset
 func _remove_dataset_from_graph(data_set_name: String):
 	if graph.has_node(data_set_name):
 		var line = graph.get_node(data_set_name)
@@ -146,16 +166,15 @@ func _draw_axis_tick_lines(axis: String, ticks_value_delta: int):
 	var distance_between_ticks = (axis_size / (x_axis_max_value - x_axis_min_value)) * ticks_value_delta
 	var first_tick_value = x_axis_min_value
 	
-	# Switch to y axis values if needed
+	# Switch to y axis values as needed
 	if not isXAxis:
 		axis_size = graph.size.y
 		line_size = graph.size.x
 		distance_between_ticks = (axis_size / (y_axis_max_value - y_axis_min_value)) * ticks_value_delta
 		first_tick_value = y_axis_min_value
 	
-	# Draw the lines
+	# Draw the lines and the labels
 	var tick_index = 0
-	
 	while tick_index * distance_between_ticks <= axis_size:
 		var abscissa = 0
 		var ordinate = 0
@@ -177,19 +196,22 @@ func _draw_axis_tick_lines(axis: String, ticks_value_delta: int):
 			new_line.add_point(Vector2(line_size, tick_position))
 			new_label.position = Vector2(-40, axis_size - tick_position - 15)
 
-		
 		new_line.add_child(new_label)
 		graph.add_child(new_line)
 		
 		tick_index += 1
 
+
 func _on_toggle_graphs():
 	visible = not visible
 	
+	# All the lines are redrawn when the window is shown
 	if visible:
 		_set_graph_context(context)
 
 
+# Season demands aren't linked to a contest, since we want to display them as will
+# with the switch
 func _on_season_switch_toggled(toggled_on):
 	if toggled_on:
 		season = "summer"
@@ -226,25 +248,28 @@ func _on_energy_button_pressed():
 # Makes a line grow in size to highlight it
 func change_line_highlight(line_name, highlight := true):
 	var size_factor := 2.5
-	var move_factor = size_factor
+	var move_factor = size_factor # Used for the points
 	
-	if not highlight:
+	if not highlight: # Reverts the size back
 		size_factor = 1.0
 	
 	if graph.has_node(line_name):
-		# Line size
+		# Tweens line size
 		var line = graph.get_node(line_name)
 		var tween = get_tree().create_tween()
 		tween.tween_property(line, "width", default_line_width * size_factor, 0.1)
 		
-		# Points size (only grow if only one point (no line), it's ugly otherwise)
-		if line.get_children().size() == 1:
+		# Tweens points size (only if only one point (no line), find it ugly otherwise)
+		# Works only because ColorRect points are the only children
+		if line.get_children().size() == 1: 
 			for child in line.get_children():
-				if child is ColorRect:
-					tween = get_tree().create_tween()
-					tween.tween_property(child, "size", default_point_size * size_factor, 0.1)
-					
-					if highlight:
-						child.position -= default_point_size / (move_factor / 2)
-					else:
-						child.position += default_point_size / (move_factor / 2)
+				tween = get_tree().create_tween()
+				tween.tween_property(child, "size", default_point_size * size_factor, 0.1)
+				
+				# Those formula are to be adapated if the size_factor changes
+				# For example, a size_factor of 2 doesn't require the move_factor to be divided
+				# I'd find a formula but hey
+				if highlight:
+					child.position -= default_point_size / (move_factor / 2)
+				else:
+					child.position += default_point_size / (move_factor / 2)
