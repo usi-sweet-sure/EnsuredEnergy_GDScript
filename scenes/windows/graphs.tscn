@@ -65,22 +65,29 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -527.5
-offset_top = -359.5
+offset_top = -329.5
 offset_right = 398.5
-offset_bottom = 360.5
+offset_bottom = 363.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
 texture = ExtResource("4_n0bh3")
 
-[node name="LineNamesContainer" type="HBoxContainer" parent="MainFrame"]
+[node name="Drawable" type="Control" parent="MainFrame/Screen"]
+anchors_preset = 0
+offset_left = 8.0
+offset_top = 10.0
+offset_right = 919.0
+offset_bottom = 687.0
+
+[node name="LineNamesContainer" type="HFlowContainer" parent="MainFrame"]
 layout_mode = 0
-offset_left = 95.0
+offset_left = 121.0
 offset_top = 27.0
-offset_right = 1206.0
+offset_right = 1192.0
 offset_bottom = 75.0
-theme_override_constants/separation = 40
-alignment = 1
+theme_override_constants/h_separation = 120
+theme_override_constants/v_separation = 17
 
 [node name="RightContainer" type="MarginContainer" parent="MainFrame"]
 layout_mode = 1

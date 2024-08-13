@@ -10,25 +10,27 @@
 # "graphs_data" is fetched every time.
 extends CanvasLayer
 
+@export var draw_axes_outer_lines := false
+
 var x_axis_min_value: int
 var x_axis_max_value: int
 var y_axis_min_value: int
 var y_axis_max_value: int
 
-var context: String = "none" # Allows to know what the graph is displaying
+var context: String = "energy" # Allows to know what the graph is displaying
 var season := "winter"
 var default_line_width = 4
 var default_point_size = Vector2(15.0,15.0)
 
 @onready var label_theme = load("res://scenes/windows/label_themes.tres")
-@onready var graph = $MainFrame/Screen
+@onready var graph = $MainFrame/Screen/Drawable
 @onready var line_names_container = $MainFrame/LineNamesContainer
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Gameloop.toggle_graphs.connect(_on_toggle_graphs)
-		
+	
 		
 # Adapts the graph axis,labels and lines for a known context, add them as needed.
 func _set_graph_context(context_name: String):
@@ -42,19 +44,27 @@ func _set_graph_context(context_name: String):
 			y_axis_min_value = -1000
 			y_axis_max_value = 2000
 			_draw_base_graph(Gameloop.years_in_a_turn, 200)
-			_add_data_set_to_graph("building")
+			_add_data_set_to_graph("building_costs", Color(0.929, 0.651, 0.247))
+			_add_data_set_to_graph("production_costs", Color(0.902, 0.49, 0.384))
+			_add_data_set_to_graph("import_costs", Color(1, 0.875, 0.255))
+			_add_data_set_to_graph("borrowed_money", Color(0.522, 0.98, 0.404))
+			_add_data_set_to_graph("available_money", Color(0.2, 0.89, 0.282))
 		"environment":
 			x_axis_min_value = Gameloop.start_year
 			x_axis_max_value = Gameloop.start_year + (Gameloop.total_number_of_turns * Gameloop.years_in_a_turn)
 			y_axis_min_value = 0
 			y_axis_max_value = 2000
 			_draw_base_graph(Gameloop.years_in_a_turn, 200)
+			_add_data_set_to_graph("land_use", Color(0.663, 0.929, 0.416))
 		"energy":
 			x_axis_min_value = Gameloop.start_year
 			x_axis_max_value = Gameloop.start_year + (Gameloop.total_number_of_turns * Gameloop.years_in_a_turn)
 			y_axis_min_value = 0
 			y_axis_max_value = 3000
 			_draw_base_graph(Gameloop.years_in_a_turn, 200)
+			_add_data_set_to_graph("winter_energy_supply", Color(0.196, 0.573, 0.929))
+			_add_data_set_to_graph("summer_energy_supply", Color(0.929, 0.875, 0.416))
+			_add_data_set_to_graph("winter_energy_import", Color(0.431, 0.961, 0.957))
 		"none":
 			x_axis_min_value = Gameloop.start_year
 			x_axis_max_value = Gameloop.start_year + (Gameloop.total_number_of_turns * Gameloop.years_in_a_turn)
@@ -89,9 +99,10 @@ func _draw_base_graph(x_axis_ticks_delta: int, y_axis_ticks_delta):
 	_draw_axis_tick_lines("y", y_axis_ticks_delta)
 	
 
-# Adds the line to the graph and the line name at the top
+# Adds the line to the graph and the line name at the top.
+# The points are to be added individually after with "_add_new_point_to_line"
 func _add_new_line_to_graph(line_name: String, line_color: Color = Color(1,1,1,1), line_width = 2):
-	# The line in the grap
+	# The line in the graph
 	var new_line = Line2D.new()
 	new_line.name = line_name
 	new_line.antialiased = true
@@ -107,8 +118,9 @@ func _add_new_line_to_graph(line_name: String, line_color: Color = Color(1,1,1,1
 	# Highlights the line when hovering the line name at the top
 	vertical_container.mouse_entered.connect(func(): change_line_highlight(line_name))
 	vertical_container.mouse_exited.connect(func(): change_line_highlight(line_name, false))
-	line_names_container.add_child(vertical_container)
 	
+	line_names_container.add_child(vertical_container)
+
 	# The line above the line name
 	var line := Line2D.new()
 	line.add_point(Vector2(0,0))
@@ -130,15 +142,17 @@ func _add_new_point_to_line(line_name: String, x, y) -> Line2D:
 	var y_in_pixels = graph.size.y - ((graph.size.y / (y_axis_max_value - y_axis_min_value)) * (y - y_axis_min_value))
 	line.add_point(Vector2(x_in_pixels, y_in_pixels))
 	
-	# Button for the value point
-	var new_button = ColorRect.new()
-	new_button.custom_minimum_size = default_point_size
-	new_button.position = Vector2(x_in_pixels - default_point_size.x / 2, y_in_pixels - default_point_size.y / 2)
-	new_button.tooltip_text = str(round(y))
-	new_button.color = line.default_color
-	new_button.color.a = 0.75
+	# Square for the value point
+	var visual_point = ColorRect.new()
+	visual_point.custom_minimum_size = default_point_size
+	visual_point.position = Vector2(x_in_pixels - default_point_size.x / 2, y_in_pixels - default_point_size.y / 2)
+	visual_point.tooltip_text = str(round(y))
+	visual_point.color = line.default_color
+	visual_point.color.a = 0.75
+	visual_point.mouse_entered.connect(func(): change_point_highlight(visual_point))
+	visual_point.mouse_exited.connect(func(): change_point_highlight(visual_point, false))
 	
-	line.add_child(new_button)
+	line.add_child(visual_point)
 	
 	return line
 
@@ -181,9 +195,16 @@ func _draw_axis_tick_lines(axis: String, ticks_value_delta: int):
 		
 		var new_line = Line2D.new()
 		new_line.width = 2
-		new_line.default_color = Color(1,1,1,0.4)
 		
+		if not draw_axes_outer_lines && (tick_index == 0 || tick_index * distance_between_ticks == axis_size):
+			new_line.default_color = Color(1,1,1,0)
+		else:
+			new_line.default_color = Color(1,1,1,0.4)
+			
 		var new_label = Label.new()
+		var label_size_x = 100
+		new_label.size.x = label_size_x
+		new_line.add_child(new_label)
 		new_label.text = str(first_tick_value + (tick_index * ticks_value_delta))
 		
 		var tick_position = tick_index * distance_between_ticks
@@ -192,11 +213,11 @@ func _draw_axis_tick_lines(axis: String, ticks_value_delta: int):
 			new_line.add_point(Vector2(tick_position, line_size))
 			new_label.position = Vector2(tick_position - 20, line_size + 3)
 		else:
+			new_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 			new_line.add_point(Vector2(0, tick_position))
 			new_line.add_point(Vector2(line_size, tick_position))
-			new_label.position = Vector2(-40, axis_size - tick_position - 15)
+			new_label.position = Vector2((label_size_x + 15) * -1, axis_size - tick_position - 15)
 
-		new_line.add_child(new_label)
 		graph.add_child(new_line)
 		
 		tick_index += 1
@@ -243,19 +264,22 @@ func _on_environment_button_pressed():
 
 
 func _on_energy_button_pressed():
-	_set_graph_context("environment")
+	_set_graph_context("energy")
 
 # Makes a line grow in size to highlight it
 func change_line_highlight(line_name, highlight := true):
 	var size_factor := 2.5
 	var move_factor = size_factor # Used for the points
+	var z_index = 2
 	
 	if not highlight: # Reverts the size back
 		size_factor = 1.0
+		z_index = 1
 	
 	if graph.has_node(line_name):
 		# Tweens line size
-		var line = graph.get_node(line_name)
+		var line: Line2D = graph.get_node(line_name)
+		line.z_index = z_index
 		var tween = get_tree().create_tween()
 		tween.tween_property(line, "width", default_line_width * size_factor, 0.1)
 		
@@ -273,3 +297,21 @@ func change_line_highlight(line_name, highlight := true):
 					child.position -= default_point_size / (move_factor / 2)
 				else:
 					child.position += default_point_size / (move_factor / 2)
+
+# Highlights the point when the mouse is hovering above it
+func change_point_highlight(point: ColorRect, highlight := true):
+	var size_factor := 2
+	var move_factor = size_factor # Used for the points
+		
+	if not highlight: # Reverts the size back
+		size_factor = 1.0
+		
+	var tween = get_tree().create_tween()
+	tween.tween_property(point, "size", default_point_size * size_factor, 0.02)
+	
+	# Those formula are to be adapated if the size_factor changes
+	# For example, a size_factor of 2 doesn't require the move_factor to be divided
+	if highlight:
+		point.position -= default_point_size / (move_factor)
+	else:
+		point.position += default_point_size / (move_factor)

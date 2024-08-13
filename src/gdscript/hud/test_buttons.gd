@@ -7,9 +7,11 @@ extends Control
 
 func _ready():
 	button_top.text = "Open graphs"
+	button_bottom.text = "next turn"
 
 func _on_button_top_pressed():
 	Gameloop.toggle_graphs.emit()
 	
 func _on_button_bottom_pressed():
-	pass
+	Gameloop.current_turn += 1
+	Gameloop.next_turn.emit()

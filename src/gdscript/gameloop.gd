@@ -34,7 +34,7 @@ signal imported_energy_amount_updated
 signal borrowed_money_amount_updated
 signal players_own_money_amount_updated
 signal available_money_amount_updated
-signal land_use_percentage_updated
+signal land_use_updated
 signal biodiversity_percentage_updated
 signal co2_emissions_updated
 signal imports_emissions_updated
@@ -109,10 +109,10 @@ var players_own_money_amount: int = 0:
 var available_money_amount: float = 0:
 	get:
 		return players_own_money_amount + borrowed_money_amount - building_costs - powerplants_production_costs
-var land_use_percentage: int = 37:
+var land_use: int = 37:
 	set(new_value):
-		land_use_percentage = clamp(new_value, 0, 100)
-		land_use_percentage_updated.emit(land_use_percentage)
+		land_use = clamp(new_value, 0, 100)
+		land_use_updated.emit(land_use)
 var biodiversity_percentage: int = 67:
 	set(new_value):
 		biodiversity_percentage = clamp(new_value, 0, 100)
@@ -185,6 +185,7 @@ func _update_buildings_impact():
 	powerplants_production_costs = total_production_costs
 	co2_emissions = total_emissions
 	
+	
 func _check_supply():
 	return supply_summer >= demand_summer and supply_winter + imported_energy_amount >= demand_winter
 	
@@ -212,7 +213,7 @@ func can_spend_the_money(money_to_spend: float):
 	return money_to_spend <= available_money_amount
 
 
-func get_money_for_next_turn() -> float: 
+func get_money_for_next_turn() -> float:
 	var income = players_own_money_amount + money_per_turn + borrowed_money_amount
 	var outcome = borrowed_money_amount * (1.0 + (debt_percentage_on_borrowed_money / 100.0)) + energy_import_cost + building_costs + powerplants_production_costs
 	

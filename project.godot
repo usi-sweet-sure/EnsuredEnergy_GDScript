@@ -43,7 +43,7 @@ project/assembly_name="sure_energy_tycoon"
 
 [gui]
 
-timers/tooltip_delay_sec=0.1
+timers/tooltip_delay_sec=0.0
 
 [internationalization]
 

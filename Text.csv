@@ -170,3 +170,14 @@ TURN,Turn,Tour,Runde,Turno
 REMAINING_TURNS,Remaining turns,Tours restants,Restliche Runden,Turni rimanenti
 NUCLEAR_WARNING,A nuclear plant is shutting down next turn\n⚠️,Une centrale nucléaire sera fermée au prochain tour\n⚠️,Ein Kernkraftwerk wird in der nächsten Runde abgeschaltet\n⚠️,Una centrale nucleare sarà chiusa nella prossima tornata\n⚠️
 ECONOMY,Economy,Economie,Wirtschaft,Economia
+SUMMER_DEMAND_LINE_NAME,Summer demand,Demande estivale,Bedarf im Sommer,Domanda estiva
+WINTER_DEMAND_LINE_NAME,Winter demand,Demande hivernale,Bedarf im Winter,Domanda invernale
+BUILDING_COSTS_LINE_NAME,Building costs,Coûts de construction,Gebäudekosten,Costi di costruzione
+PRODUCTION_COSTS_LINE_NAME,Production costs,Coûts de production,Produktionskosten,Costi di produzione
+IMPORT_COSTS_LINE_NAME,Energy import costs,Coûts d'importation,Kosten für Energieimporte,Costi di importazione dell'energia
+BORROWED_MONEY_LINE_NAME,Borrowed money,Argent emprunté,Geliehenes Geld,Denaro preso in prestito
+AVAILABLE_MONEY_LINE_NAME,Available money,Budget,Budget,Bilancio
+WINTER_ENERGY_SUPPLY_LINE_NAME,Winter energy supply,Apport énergétique hivernal,Energieversorgung im Winter,Fornitura di energiainvernale
+SUMMER_ENERGY_SUPPLY_LINE_NAME,Summer energy supply,Apport énergétique estival,Energieversorgung im Sommer,Fornitura di energia estiva
+WINTER_ENERGY_IMPORT_LINE_NAME,Winter energy import,Energie importée en hiver,Energieimport im Winter,Importazione di energia invernale
+LAND_USE_LINE_NAME,Land use,Utilisation des sols,Landnutzung,Uso del suolo
