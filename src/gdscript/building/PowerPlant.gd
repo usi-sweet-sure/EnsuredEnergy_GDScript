@@ -171,50 +171,52 @@ func _update_info():
 
 # add the model numbers to the plant
 func _on_request_finished(_result, _response_code, _headers, _body):
-	var model_key = plant_name_to_model[plant_name]
-	var plant_id = plant_name_to_ups_id[plant_name]
-	var poll_key = plant_name_to_metric_id[plant_name + "_EMI"]
-	var land_key = plant_name_to_metric_id[plant_name + "_LAND"]
-	var cost_key = plant_name_to_metric_id[plant_name + "_COST"]
-	var avail_key = plant_name_to_metric_id[plant_name + "_AVAIL"]
-	
-	for i in Context1.ctx1:
-		match i["prm_id"]:
-			model_key:
-				capacity = float(i["tj"])
-			plant_id:
-				cnv_capacity = float(i["tj"])
-			poll_key:
-				pollution = float(i["tj"])
-			land_key:
-				land_use = float(i["tj"])
-			cost_key:
-				production_cost = float(i["tj"]) / 10
-			avail_key:
-				availability.x = float(i["tj"])
-				availability.y = 1 - float(i["tj"])
-	
-	if is_nuclear():
-		capacity = capacity / 100.0 / 3.0 # there's 3 nuclear plants
-		pollution /= 3
-		land_use /= 3
-		production_cost = production_cost / 10 / 3
-	elif is_hydro() || is_river():
-		capacity = capacity / 100 / 2
-		pollution /= 4 # needs to divide by the number of water plants
-		land_use /= 4
-		production_cost = production_cost / 10 / 4
-	else:
-		capacity /= 100
-	
-	base_capacity = capacity
-	base_pollution = pollution
-	base_land_use = land_use
-	base_production_cost = production_cost
-	
-	_update_info()
-	Context1.http1.request_completed.disconnect(_on_request_finished)
-	Gameloop._update_buildings_impact()
+	# E. Had to add this after geothermal removal, for the game to not crash
+	if plant_name != "geothermal":
+		var model_key = plant_name_to_model[plant_name]
+		var plant_id = plant_name_to_ups_id[plant_name]
+		var poll_key = plant_name_to_metric_id[plant_name + "_EMI"]
+		var land_key = plant_name_to_metric_id[plant_name + "_LAND"]
+		var cost_key = plant_name_to_metric_id[plant_name + "_COST"]
+		var avail_key = plant_name_to_metric_id[plant_name + "_AVAIL"]
+		
+		for i in Context1.ctx1:
+			match i["prm_id"]:
+				model_key:
+					capacity = float(i["tj"])
+				plant_id:
+					cnv_capacity = float(i["tj"])
+				poll_key:
+					pollution = float(i["tj"])
+				land_key:
+					land_use = float(i["tj"])
+				cost_key:
+					production_cost = float(i["tj"]) / 10
+				avail_key:
+					availability.x = float(i["tj"])
+					availability.y = 1 - float(i["tj"])
+		
+		if is_nuclear():
+			capacity = capacity / 100.0 / 3.0 # there's 3 nuclear plants
+			pollution /= 3
+			land_use /= 3
+			production_cost = production_cost / 10 / 3
+		elif is_hydro() || is_river():
+			capacity = capacity / 100 / 2
+			pollution /= 4 # needs to divide by the number of water plants
+			land_use /= 4
+			production_cost = production_cost / 10 / 4
+		else:
+			capacity /= 100
+		
+		base_capacity = capacity
+		base_pollution = pollution
+		base_land_use = land_use
+		base_production_cost = production_cost
+		
+		_update_info()
+		Context1.http1.request_completed.disconnect(_on_request_finished)
+		Gameloop._update_buildings_impact()
 
 #func _on_request_completed(_result, _response_code, _headers, _body):
 	#$BuildInfo/EnergyContainer/Multiplier/Inc.disabled = false
