@@ -2732,6 +2732,7 @@ visible = false
 visible = false
 
 [node name="Settings" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("42_jouqr")
 
 [node name="Backdrop" type="ColorRect" parent="Settings"]
