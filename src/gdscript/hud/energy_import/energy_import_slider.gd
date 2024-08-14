@@ -40,5 +40,5 @@ func _on_import_down_button_pressed():
 
 # Updates properties of the slider so we don't have to update the node manually
 func _on_energy_demand_updated_winter(demand):
-	max_value = demand
-	step = round(demand / size.x)
+	max_value = demand / 4 #I want the player to feel like they are importing a lot
+	#step = round(demand / size.x)

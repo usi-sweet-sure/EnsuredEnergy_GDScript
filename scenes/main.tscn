@@ -2011,6 +2011,7 @@ texture_filter = 2
 
 [node name="Nuclear3" parent="World" index="5" groups=["PP"]]
 position = Vector2(1205, -431)
+availability = Vector2(0.4, 0.6)
 plant_name = "NUCLEAR"
 life_span = 9
 max_upgrade = 0
@@ -2088,6 +2089,7 @@ visible = false
 
 [node name="Nuclear2" parent="World" index="6" groups=["PP"]]
 position = Vector2(1479, -248)
+availability = Vector2(0.4, 0.6)
 plant_name = "NUCLEAR"
 life_span = 6
 max_upgrade = 0
@@ -2157,6 +2159,7 @@ visible = false
 
 [node name="Nuclear" parent="World" index="7" groups=["PP"]]
 position = Vector2(1001, 130)
+availability = Vector2(0.4, 0.6)
 plant_name = "NUCLEAR"
 life_span = 3
 max_upgrade = 0
@@ -2373,12 +2376,6 @@ libraries = {
 }
 autoplay = "Wind"
 
-[node name="Money" parent="World/BuildButton" index="4"]
-offset_left = -286.0
-offset_top = -132.5
-offset_right = -126.0
-offset_bottom = -43.5
-
 [node name="BuildButton2" parent="World" index="15"]
 offset_left = 624.0
 offset_top = 480.0
@@ -2453,12 +2450,6 @@ autoplay = "Sun"
 
 [node name="Hammer" parent="World/BuildButton9" index="0"]
 position = Vector2(308, 205)
-
-[node name="Money" parent="World/BuildButton9" index="4"]
-offset_left = -279.0
-offset_top = -124.0
-offset_right = -119.0
-offset_bottom = -35.0
 
 [node name="Solar" parent="World/BuildButton9/BuildMenu/Container" index="0"]
 visible = false

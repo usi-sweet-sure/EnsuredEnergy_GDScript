@@ -1,16 +1,16 @@
 [gd_scene load_steps=16 format=3 uid="uid://i802aa7uc538"]
 
 [ext_resource type="PackedScene" uid="uid://ct4blqwh4y6ab" path="res://scenes/building/PowerPlant.tscn" id="2_236y8"]
-[ext_resource type="Texture2D" uid="uid://cssrlygtxiak" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0008_Power-plant-solar-1-screen.png" id="2_trovx"]
-[ext_resource type="Texture2D" uid="uid://b2gbtnhgkx7jk" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0007_Power-plant-wind-1-screen.png" id="3_og7da"]
-[ext_resource type="Texture2D" uid="uid://0rkruyk7ou0k" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0006_Power-plant-tree-screen.png" id="4_tr8di"]
-[ext_resource type="Texture2D" uid="uid://blsfp2folqofg" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0014_Power-plant-reservoir-screen.png" id="5_katjr"]
-[ext_resource type="Texture2D" uid="uid://bqcub63frxj38" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0001_Power-plant-gas-screen.png" id="7_bxb5o"]
+[ext_resource type="Texture2D" uid="uid://2kwo4o62dluh" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0008_Power-plant-solar-1-screen.png" id="2_trovx"]
+[ext_resource type="Texture2D" uid="uid://domdrqua4mxtc" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0007_Power-plant-wind-1-screen.png" id="3_og7da"]
+[ext_resource type="Texture2D" uid="uid://ci0j8e5sgyudf" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0006_Power-plant-tree-screen.png" id="4_tr8di"]
+[ext_resource type="Texture2D" uid="uid://6u0v1j5fqjex" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0014_Power-plant-reservoir-screen.png" id="5_katjr"]
+[ext_resource type="Texture2D" uid="uid://bo0cvlo027nod" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0001_Power-plant-gas-screen.png" id="7_bxb5o"]
 [ext_resource type="Texture2D" uid="uid://dt3vgdfiymmbl" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0018_Hydrolic-Reservoir.png" id="7_n0676"]
-[ext_resource type="Texture2D" uid="uid://b20t5eecd5dmi" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0005_Power-plant-waste-screen.png" id="8_f783d"]
+[ext_resource type="Texture2D" uid="uid://ip20ojc1fi3a" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0005_Power-plant-waste-screen.png" id="8_f783d"]
 [ext_resource type="Texture2D" uid="uid://40ncc2tsu56l" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0008_Water-Pump-3.png" id="8_ypqld"]
-[ext_resource type="Texture2D" uid="uid://bj4tvp2lyt062" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0002_Power-plant-biomass-screen.png" id="9_a2e8y"]
-[ext_resource type="Texture2D" uid="uid://cklce5oocr611" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0013_Power-plant-river-screen.png" id="10_lpxim"]
+[ext_resource type="Texture2D" uid="uid://c4ivvq0eir5js" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0002_Power-plant-biomass-screen.png" id="9_a2e8y"]
+[ext_resource type="Texture2D" uid="uid://c3pjktru51bq5" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0013_Power-plant-river-screen.png" id="10_lpxim"]
 [ext_resource type="Texture2D" uid="uid://doe7y0txnwax7" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0005_Water-3.png" id="13_wuh2w"]
 
 [sub_resource type="Animation" id="Animation_j4va7"]
@@ -219,11 +219,11 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_ypqld")
 
 [node name="BuildInfo" parent="Container/Hydro" index="2"]
-offset_left = -65.0
-offset_top = -360.0
-offset_right = -25.0
-offset_bottom = -320.0
-scale = Vector2(0.5, 0.5)
+offset_left = -82.2222
+offset_top = -474.444
+offset_right = -42.2222
+offset_bottom = -434.444
+scale = Vector2(1, 1)
 
 [node name="HydroButton" type="Button" parent="Container/Hydro"]
 offset_left = -104.0
@@ -250,11 +250,11 @@ position = Vector2(17.7778, 15.5556)
 texture = ExtResource("7_bxb5o")
 
 [node name="BuildInfo" parent="Container/Gas" index="2"]
-offset_left = -65.0
-offset_top = -360.0
-offset_right = -25.0
-offset_bottom = -320.0
-scale = Vector2(0.5, 0.5)
+offset_left = -87.7778
+offset_top = -473.333
+offset_right = -47.7778
+offset_bottom = -433.333
+scale = Vector2(1, 1)
 
 [node name="GasButton" type="Button" parent="Container/Gas"]
 offset_left = -102.0
@@ -288,11 +288,11 @@ position = Vector2(17.7767, 15.5556)
 texture = ExtResource("8_f783d")
 
 [node name="BuildInfo" parent="Container/Waste" index="2"]
-offset_left = -65.0
-offset_top = -360.0
-offset_right = -25.0
-offset_bottom = -320.0
-scale = Vector2(0.5, 0.5)
+offset_left = -88.89
+offset_top = -473.333
+offset_right = -48.89
+offset_bottom = -433.333
+scale = Vector2(1, 1)
 
 [node name="NameRect" parent="Container/Waste" index="3"]
 metadata/_edit_use_anchors_ = true
@@ -337,11 +337,11 @@ position = Vector2(16.6667, 15.5556)
 texture = ExtResource("9_a2e8y")
 
 [node name="BuildInfo" parent="Container/Biomass" index="2"]
-offset_left = -65.0
-offset_top = -360.0
-offset_right = -25.0
-offset_bottom = -320.0
-scale = Vector2(0.5, 0.5)
+offset_left = -81.1111
+offset_top = -473.333
+offset_right = -41.1111
+offset_bottom = -433.333
+scale = Vector2(1, 1)
 
 [node name="NameRect" parent="Container/Biomass" index="3"]
 metadata/_edit_use_anchors_ = true
@@ -392,11 +392,11 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("13_wuh2w")
 
 [node name="BuildInfo" parent="Container/River" index="2"]
-offset_left = -65.0
-offset_top = -360.0
-offset_right = -25.0
-offset_bottom = -320.0
-scale = Vector2(0.5, 0.5)
+offset_left = -84.4444
+offset_top = -474.444
+offset_right = -44.4444
+offset_bottom = -434.444
+scale = Vector2(1, 1)
 
 [node name="NameRect" parent="Container/River" index="3"]
 metadata/_edit_use_anchors_ = true
