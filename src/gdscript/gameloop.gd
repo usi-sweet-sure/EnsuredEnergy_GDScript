@@ -22,7 +22,7 @@ var ups_list = {
 	"192": 0, # BIOMASS
 	"170": 0, # SOLAR
 	"171": 0, # WIND
-	"246": 0, # GEOTHERMAL
+	"175": 0, # BIOGAS
 }
 
 signal energy_supply_updated_winter
