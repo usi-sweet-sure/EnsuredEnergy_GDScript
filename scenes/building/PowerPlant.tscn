@@ -426,7 +426,6 @@ texture_filter = 2
 position = Vector2(-1, 44)
 
 [node name="BuildInfo" type="Control" parent="."]
-visible = false
 z_index = 2
 z_as_relative = false
 layout_mode = 3
@@ -438,18 +437,20 @@ offset_bottom = -592.0
 scale = Vector2(1.5, 1.5)
 
 [node name="PlantMenuBase" type="Sprite2D" parent="BuildInfo"]
-position = Vector2(102, 115)
+position = Vector2(89.5, 115)
+scale = Vector2(1.18992, 1)
 texture = ExtResource("11_2siwy")
 
 [node name="Screen" type="Sprite2D" parent="BuildInfo"]
-position = Vector2(96, 107)
+position = Vector2(85.1667, 107)
+scale = Vector2(1.20909, 1)
 texture = ExtResource("12_q8p15")
 
 [node name="ColorRect" type="ColorRect" parent="BuildInfo"]
 layout_mode = 0
-offset_left = -132.0
+offset_left = -134.0
 offset_top = -232.0
-offset_right = 310.0
+offset_right = 308.0
 offset_bottom = 33.0
 color = Color(0.596078, 0.596078, 0.596078, 0)
 
@@ -469,10 +470,10 @@ horizontal_alignment = 1
 
 [node name="ContainerL" type="VBoxContainer" parent="BuildInfo/ColorRect"]
 layout_mode = 0
-offset_left = 90.0
-offset_top = 107.0
-offset_right = 350.0
-offset_bottom = 357.0
+offset_left = 38.0
+offset_top = 106.0
+offset_right = 298.0
+offset_bottom = 356.0
 theme_override_constants/separation = 0
 alignment = 2
 
@@ -518,9 +519,9 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -69.3333
+offset_left = -42.6667
 offset_top = -159.0
-offset_right = -69.3333
+offset_right = -42.6667
 offset_bottom = 91.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -782,39 +783,41 @@ horizontal_alignment = 2
 [node name="MultWinterE" type="Label" parent="BuildInfo"]
 visible = false
 layout_mode = 0
-offset_left = 10.0
-offset_top = 285.0
-offset_right = 50.0
-offset_bottom = 313.0
+offset_left = -14.6667
+offset_top = 302.667
+offset_right = 31.3333
+offset_bottom = 330.667
 rotation = -0.261799
 theme = ExtResource("11_iy3hd")
 theme_override_colors/font_color = Color(0.113725, 0.215686, 0.227451, 1)
-text = "+ 2"
+text = "+ 2.92"
 horizontal_alignment = 1
 
 [node name="PostitE" type="Sprite2D" parent="BuildInfo/MultWinterE"]
 show_behind_parent = true
-position = Vector2(31.0298, 15.5613)
+position = Vector2(23.3193, 14.1696)
 rotation = 0.261799
+scale = Vector2(1.4148, 1.4148)
 texture = ExtResource("14_o8nf6")
 
 [node name="MultSummerE" type="Label" parent="BuildInfo"]
 visible = false
 layout_mode = 0
-offset_left = 147.0
-offset_top = 282.0
-offset_right = 190.0
-offset_bottom = 317.0
+offset_left = 113.333
+offset_top = 302.0
+offset_right = 155.333
+offset_bottom = 330.0
 rotation = -0.261799
 theme = ExtResource("11_iy3hd")
 theme_override_colors/font_color = Color(0.113725, 0.215686, 0.227451, 1)
-text = "+ 2"
+text = "- 2.93"
 horizontal_alignment = 1
 
 [node name="PostitE2" type="Sprite2D" parent="BuildInfo/MultSummerE"]
 show_behind_parent = true
-position = Vector2(27.8732, 15.7508)
+position = Vector2(23.3193, 14.1696)
 rotation = 0.261799
+scale = Vector2(1.4148, 1.4148)
 texture = ExtResource("14_o8nf6")
 
 [node name="Name" type="Label" parent="BuildInfo"]
@@ -1004,28 +1007,30 @@ texture = ExtResource("20_6s7vn")
 [node name="MultPrice" type="Label" parent="BuildInfo/EnergyContainer/Multiplier"]
 visible = false
 layout_mode = 0
-offset_left = 39.0
-offset_top = 133.333
-offset_right = 84.0
-offset_bottom = 168.333
+offset_left = 61.0
+offset_top = 124.0
+offset_right = 142.0
+offset_bottom = 159.0
 rotation = -0.261799
 theme = ExtResource("11_iy3hd")
 theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
-text = "$$$"
+text = "+ 25 CHF"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Postit" type="Sprite2D" parent="BuildInfo/EnergyContainer/Multiplier/MultPrice"]
 show_behind_parent = true
-position = Vector2(33.9275, 16.3378)
+position = Vector2(41.1481, 16.2001)
 rotation = 0.261799
+scale = Vector2(1.8492, 1.75956)
 texture = ExtResource("21_baxyr")
 
 [node name="GreenPostit" type="Sprite2D" parent="BuildInfo/EnergyContainer/Multiplier/MultPrice"]
 visible = false
 show_behind_parent = true
-position = Vector2(21.3011, 17.0956)
+position = Vector2(41.1943, 14.7909)
 rotation = 0.261799
+scale = Vector2(1.78279, 1.78279)
 texture = ExtResource("23_ap1eh")
 
 [node name="Switch" type="CheckButton" parent="BuildInfo"]
@@ -1035,10 +1040,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 196.0
-offset_top = -106.0
-offset_right = 276.0
-offset_bottom = -30.0
+offset_left = 174.667
+offset_top = -86.0
+offset_right = 254.667
+offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
