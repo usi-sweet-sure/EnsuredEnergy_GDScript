@@ -2250,11 +2250,10 @@ focus_mode = 0
 flat = true
 
 [node name="NuclearWarning" type="Label" parent="."]
-visible = false
-offset_left = 1656.0
-offset_top = 712.0
-offset_right = 1913.0
-offset_bottom = 857.0
+offset_left = 1964.0
+offset_top = 700.0
+offset_right = 2234.0
+offset_bottom = 845.0
 theme = ExtResource("70_2ktfd")
 theme_type_variation = &"Paper"
 text = "NUCLEAR_WARNING"
@@ -2265,7 +2264,8 @@ script = ExtResource("104_qc8c4")
 
 [node name="ColorRect" type="Sprite2D" parent="NuclearWarning"]
 show_behind_parent = true
-position = Vector2(128.5, 73.25)
+position = Vector2(126, 71)
+scale = Vector2(1.23814, 1)
 texture = ExtResource("108_pjhnp")
 region_rect = Rect2(2, 0, 278, 194)
 
@@ -2386,7 +2386,6 @@ text = "Test button bottom
 [connection signal="pressed" from="Clock/TimePanelBlank/TurnInfo" to="Clock/TimePanelBlank" method="clock_pressed"]
 [connection signal="gui_input" from="NextTurn" to="NextTurn/NextTurnAP" method="_on_next_turn_gui_input"]
 [connection signal="pressed" from="NextTurn" to="Clock/TimePanelBlank" method="_on_next_turn_button_pressed"]
-[connection signal="pressed" from="NextTurn" to="NuclearWarning" method="_on_next_turn_button_pressed"]
 [connection signal="pressed" from="TestButtons/ButtonTop" to="TestButtons" method="_on_button_top_pressed"]
 [connection signal="pressed" from="TestButtons/ButtonBottom" to="TestButtons" method="_on_button_bottom_pressed"]
 
