@@ -7,7 +7,7 @@ extends Control
 
 func _ready():
 	button_top.text = "Open graphs"
-	button_bottom.text = "pick production cost shock"
+	button_bottom.text = "Next turn"
 
 
 func _on_button_top_pressed():
@@ -15,11 +15,5 @@ func _on_button_top_pressed():
 	
 	
 func _on_button_bottom_pressed():
-	var wanted_shock_title = "SHOCK_INC_RAW_COST_10_TITLE"
-	var wanted_shock: Shock
-	
-	for i in ShockManager.shocks:
-		if i.title_key == wanted_shock_title:
-			wanted_shock = i
-
-	wanted_shock.apply()
+	Gameloop.current_turn += 1
+	Gameloop.next_turn.emit()

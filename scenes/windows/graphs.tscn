@@ -89,31 +89,6 @@ offset_bottom = 75.0
 theme_override_constants/h_separation = 275
 theme_override_constants/v_separation = 35
 
-[node name="Node2D" type="Control" parent="MainFrame/LineNamesContainer"]
-layout_mode = 2
-
-[node name="Line2D" type="Line2D" parent="MainFrame/LineNamesContainer/Node2D"]
-points = PackedVector2Array(0, 0, 150, 0)
-width = 4.0
-
-[node name="Label" type="Label" parent="MainFrame/LineNamesContainer/Node2D"]
-offset_right = 150.0
-offset_bottom = 23.0
-mouse_filter = 0
-text = "fdsafdsa"
-
-[node name="Node2D2" type="Control" parent="MainFrame/LineNamesContainer"]
-layout_mode = 2
-
-[node name="Line2D" type="Line2D" parent="MainFrame/LineNamesContainer/Node2D2"]
-points = PackedVector2Array(0, 0, 150, 0)
-width = 4.0
-
-[node name="Label" type="Label" parent="MainFrame/LineNamesContainer/Node2D2"]
-offset_right = 150.0
-offset_bottom = 23.0
-text = "fdsafdsa"
-
 [node name="RightContainer" type="MarginContainer" parent="MainFrame"]
 layout_mode = 1
 anchors_preset = 15
