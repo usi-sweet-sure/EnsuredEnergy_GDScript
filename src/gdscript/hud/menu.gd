@@ -8,13 +8,13 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 
 func _on_play_pressed():
 	hide()
-
+	
 
 func _on_lang_pressed():
 	if i == lang.size()-1:
@@ -23,3 +23,7 @@ func _on_lang_pressed():
 		i += 1
 	TranslationServer.set_locale(lang[i])
 		
+
+
+func _on_credits_pressed():
+	pass # Replace with function body.

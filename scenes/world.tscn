@@ -1,24 +1,24 @@
 [gd_scene load_steps=21 format=3 uid="uid://ba56oxmvcxpos"]
 
-[ext_resource type="Texture2D" uid="uid://bdjbeos1j2wsr" path="res://assets/MAP-BG.png" id="1_prbrp"]
-[ext_resource type="Texture2D" uid="uid://dnuq60vou7jic" path="res://assets/Mountains/MAP-mountains_0000_A.png" id="6_4yo2s"]
+[ext_resource type="Texture2D" uid="uid://bdjbeos1j2wsr" path="res://assets/Map/MAP-BG.png" id="1_prbrp"]
+[ext_resource type="Texture2D" uid="uid://dnuq60vou7jic" path="res://assets/Map/Mountains/MAP-mountains_0000_A.png" id="6_4yo2s"]
 [ext_resource type="PackedScene" uid="uid://ct4blqwh4y6ab" path="res://scenes/building/PowerPlant.tscn" id="7_6x5m2"]
-[ext_resource type="Texture2D" uid="uid://dk8ammfufvvq8" path="res://assets/Mountains/MAP-mountains_0001_A.png" id="7_oigb5"]
-[ext_resource type="Texture2D" uid="uid://curvmq4s83e7w" path="res://assets/Mountains/MAP-mountains_0002_A.png" id="8_600g3"]
-[ext_resource type="Texture2D" uid="uid://d0nonmo0jroqa" path="res://assets/Mountains/MAP-mountains_0003_A.png" id="9_6ffyi"]
-[ext_resource type="Texture2D" uid="uid://buseob4ix0xih" path="res://assets/Mountains/MAP-mountains_0004_A.png" id="10_c3oti"]
+[ext_resource type="Texture2D" uid="uid://dk8ammfufvvq8" path="res://assets/Map/Mountains/MAP-mountains_0001_A.png" id="7_oigb5"]
+[ext_resource type="Texture2D" uid="uid://curvmq4s83e7w" path="res://assets/Map/Mountains/MAP-mountains_0002_A.png" id="8_600g3"]
+[ext_resource type="Texture2D" uid="uid://d0nonmo0jroqa" path="res://assets/Map/Mountains/MAP-mountains_0003_A.png" id="9_6ffyi"]
+[ext_resource type="Texture2D" uid="uid://buseob4ix0xih" path="res://assets/Map/Mountains/MAP-mountains_0004_A.png" id="10_c3oti"]
 [ext_resource type="Texture2D" uid="uid://hwov71epfekc" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0024_River-Slot.png" id="11_3jxcs"]
-[ext_resource type="Texture2D" uid="uid://cpcm2hmku8t83" path="res://assets/Mountains/MAP-mountains_0005_A.png" id="11_6ys5y"]
-[ext_resource type="Texture2D" uid="uid://ex0mlwlymf7k" path="res://assets/Forest/MAP-forest_0000_A.png" id="12_eor4b"]
-[ext_resource type="Texture2D" uid="uid://gw7tutfgps6v" path="res://assets/Forest/MAP-forest_0001_A.png" id="13_c4oex"]
+[ext_resource type="Texture2D" uid="uid://cpcm2hmku8t83" path="res://assets/Map/Mountains/MAP-mountains_0005_A.png" id="11_6ys5y"]
+[ext_resource type="Texture2D" uid="uid://ex0mlwlymf7k" path="res://assets/Map/Forest/MAP-forest_0000_A.png" id="12_eor4b"]
+[ext_resource type="Texture2D" uid="uid://gw7tutfgps6v" path="res://assets/Map/Forest/MAP-forest_0001_A.png" id="13_c4oex"]
 [ext_resource type="Texture2D" uid="uid://cjla34vrrgb7i" path="res://assets/new Power plants/Power plants/Power_Plants_4-River-Slot.png" id="13_urnb4"]
-[ext_resource type="Texture2D" uid="uid://b6x10nevsnqw3" path="res://assets/Forest/MAP-forest_0002_A.png" id="14_5idrw"]
-[ext_resource type="Texture2D" uid="uid://cvxhltk38jeyo" path="res://assets/Forest/MAP-forest_0003_A.png" id="15_mndp2"]
-[ext_resource type="Texture2D" uid="uid://bk5676dvr2vrc" path="res://assets/Forest/MAP-forest_0004_A.png" id="16_53p1h"]
+[ext_resource type="Texture2D" uid="uid://b6x10nevsnqw3" path="res://assets/Map/Forest/MAP-forest_0002_A.png" id="14_5idrw"]
+[ext_resource type="Texture2D" uid="uid://cvxhltk38jeyo" path="res://assets/Map/Forest/MAP-forest_0003_A.png" id="15_mndp2"]
+[ext_resource type="Texture2D" uid="uid://bk5676dvr2vrc" path="res://assets/Map/Forest/MAP-forest_0004_A.png" id="16_53p1h"]
 [ext_resource type="PackedScene" uid="uid://banvqdghwoj3p" path="res://scenes/building/BuildButton.tscn" id="16_pnu0i"]
-[ext_resource type="Texture2D" uid="uid://b0b88h1h3qru2" path="res://assets/Forest/MAP-forest_0005_A.png" id="17_vyoia"]
-[ext_resource type="Texture2D" uid="uid://cww2obs22h5na" path="res://assets/Forest/MAP-forest_0006_A.png" id="18_0rr2p"]
-[ext_resource type="Texture2D" uid="uid://imn01mt51ob8" path="res://assets/Forest/MAP-forest_0007_A.png" id="19_2806d"]
+[ext_resource type="Texture2D" uid="uid://b0b88h1h3qru2" path="res://assets/Map/Forest/MAP-forest_0005_A.png" id="17_vyoia"]
+[ext_resource type="Texture2D" uid="uid://cww2obs22h5na" path="res://assets/Map/Forest/MAP-forest_0006_A.png" id="18_0rr2p"]
+[ext_resource type="Texture2D" uid="uid://imn01mt51ob8" path="res://assets/Map/Forest/MAP-forest_0007_A.png" id="19_2806d"]
 
 [sub_resource type="Theme" id="Theme_mklkc"]
 
@@ -92,7 +92,7 @@ offset_right = 52.0
 offset_bottom = 35.0
 grow_vertical = 1
 
-[node name="Geothermal" parent="." instance=ExtResource("7_6x5m2")]
+[node name="Biogas" parent="." instance=ExtResource("7_6x5m2")]
 plant_name = "geothermal"
 
 [node name="Waste" parent="." instance=ExtResource("7_6x5m2")]
@@ -252,12 +252,6 @@ scale = Vector2(1, 1)
 position = Vector2(-314, -307)
 scale = Vector2(1, 1)
 
-[node name="Money" parent="BuildButton9" index="4"]
-offset_left = -279.0
-offset_top = -124.0
-offset_right = -119.0
-offset_bottom = -35.0
-
 [node name="Hydro" parent="." instance=ExtResource("7_6x5m2")]
 position = Vector2(384, 1864)
 plant_name = "hydro"
@@ -367,7 +361,7 @@ position = Vector2(2776, 160)
 [editable path="Nuclear3"]
 [editable path="Nuclear2"]
 [editable path="Nuclear"]
-[editable path="Geothermal"]
+[editable path="Biogas"]
 [editable path="Waste"]
 [editable path="Biomass"]
 [editable path="Wind"]

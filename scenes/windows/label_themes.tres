@@ -20,7 +20,7 @@ base_font = ExtResource("3_f6d62")
 base_font = ExtResource("3_tk8xd")
 
 [resource]
-/colors/Dark = Color(0.0941176, 0.172549, 0.180392, 1)
+/colors/Dark = Color(0.0627451, 0.572549, 0, 1)
 /font_sizes/Big = 18
 /fonts/font = ExtResource("3_f6d62")
 Label/colors/font_color = Color(0.0784314, 0.180392, 0.192157, 1)

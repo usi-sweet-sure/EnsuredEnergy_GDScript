@@ -23,6 +23,10 @@ driver/mix_rate=48000
 
 Context1="*res://src/gdscript/Context1.gd"
 Gameloop="*res://src/gdscript/gameloop.gd"
+ShockManager="*res://src/gdscript/shocks/shock_manager.gd"
+PolicyManager="*res://src/gdscript/policies/policy_manager.gd"
+Poc="*res://src/gdscript/http/poc.gd"
+GraphsData="*res://src/gdscript/graphs/graphs_data.gd"
 
 [display]
 
@@ -30,10 +34,16 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
 window/stretch/mode="canvas_items"
+mouse_cursor/custom_image="res://assets/UI Elements/All-HQ-Assets-D_0004s_0021_Icon-Pointer.png"
+mouse_cursor/tooltip_position_offset=Vector2(10, -35)
 
 [dotnet]
 
 project/assembly_name="sure_energy_tycoon"
+
+[gui]
+
+timers/tooltip_delay_sec=0.0
 
 [internationalization]
 

@@ -62,3 +62,10 @@ func _http1_completed(_result, _response_code, _headers, body):
 	#print(ctx1[0]["res_id"])
 	#print(ctx1[0]["yr"])
 	#print(ctx1[0]["cnv_gas_gas"])
+	for i in ctx1:
+		print(i)
+		if i["prm_id"] == "454":
+			Gameloop.demand_summer = float(i["tj"]) / 100
+		if i["prm_id"] == "455":
+			Gameloop.demand_winter = float(i["tj"]) / 100
+	

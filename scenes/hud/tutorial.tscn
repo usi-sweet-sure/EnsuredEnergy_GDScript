@@ -1,54 +1,24 @@
-[gd_scene load_steps=12 format=3 uid="uid://ciphd0cmpslrn"]
+[gd_scene load_steps=14 format=3 uid="uid://ciphd0cmpslrn"]
 
-[ext_resource type="Script" path="res://src/gdscript/hud/tutorial.gd" id="1_le0k1"]
-[ext_resource type="Texture2D" uid="uid://di8qa6b8ro5rr" path="res://assets/UI Elements/Paper-Small.png" id="2_ob33a"]
+[ext_resource type="Texture2D" uid="uid://dnbd3anohlmvn" path="res://assets/UI Elements/All-HQ-Assets-D_0008s_0001_Small-right-paper.png" id="1_p4eo2"]
 [ext_resource type="Texture2D" uid="uid://03lloca0uata" path="res://assets/Elements/ARROW INFO – 1.png" id="3_xv1gs"]
 [ext_resource type="Texture2D" uid="uid://mwohu8ubla1b" path="res://assets/UpgradeSprite.png" id="4_yf1o7"]
+[ext_resource type="Texture2D" uid="uid://4yafxnl2h5s" path="res://assets/UI Elements/All-HQ-Assets-D_0008s_0004_Big-paper.png" id="5_3h0cr"]
 [ext_resource type="Texture2D" uid="uid://ikiclp3p8k8k" path="res://assets/key_tab_icon.png" id="5_mivsl"]
-[ext_resource type="Texture2D" uid="uid://dvph1wklx4pfh" path="res://assets/UI Elements/Paper-Big.png" id="5_yecw8"]
 [ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="7_6e2hn"]
+[ext_resource type="Texture2D" uid="uid://bquoeoy4thhh6" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0022_Icon-green-normal-button.png" id="7_8vy8x"]
+[ext_resource type="Texture2D" uid="uid://dg124t0v8162j" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0023_Icon-green-press-button.png" id="8_lbpbe"]
+[ext_resource type="Texture2D" uid="uid://c48hquir78en7" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0021_Icon-green-hover-button.png" id="9_xeviv"]
+[ext_resource type="Texture2D" uid="uid://ubsfoucc2064" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0000_Marks-vertical.png" id="10_1hlsa"]
+[ext_resource type="Texture2D" uid="uid://b0c3ywqarx8b7" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0002_Icon-round-button-hole.png" id="11_4rv1s"]
 
 [sub_resource type="Theme" id="Theme_dnnnk"]
 
-[sub_resource type="Animation" id="Animation_b0nkl"]
-resource_name = "Float"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer/TutoPopUp/Arrow:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0.7, 0.7), Vector2(1.1, 1.1), Vector2(0.7, 0.7)]
-}
-
-[sub_resource type="Animation" id="Animation_kfxwr"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer/TutoPopUp/Arrow:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.8, 0.8)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_b6dub"]
-_data = {
-"Float": SubResource("Animation_b0nkl"),
-"RESET": SubResource("Animation_kfxwr")
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_ioq42"]
+atlas = ExtResource("10_1hlsa")
+region = Rect2(0, 0, 12.6752, 14)
 
 [node name="Tutorial" type="CanvasLayer"]
-script = ExtResource("1_le0k1")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -57.0
@@ -78,15 +48,14 @@ color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 
 [node name="InfoBubble" type="MarginContainer" parent="Bubbles/InfoBubble"]
 layout_mode = 0
-offset_left = 5.0
 offset_top = 801.0
-offset_right = 449.0
+offset_right = 444.0
 offset_bottom = 1005.0
 
 [node name="InfoBubble" type="NinePatchRect" parent="Bubbles/InfoBubble/InfoBubble"]
 layout_mode = 2
-texture = ExtResource("2_ob33a")
-region_rect = Rect2(0, -2, 284, 192)
+texture = ExtResource("1_p4eo2")
+region_rect = Rect2(0, -2, 284, 179.455)
 patch_margin_left = 22
 patch_margin_top = 56
 patch_margin_right = 74
@@ -153,7 +122,7 @@ offset_bottom = 957.0
 
 [node name="InfoBubble" type="NinePatchRect" parent="Bubbles/InfoBubble2/InfoBubble2"]
 layout_mode = 2
-texture = ExtResource("2_ob33a")
+texture = ExtResource("1_p4eo2")
 region_rect = Rect2(0, 0, 282, 190)
 patch_margin_left = 26
 patch_margin_top = 52
@@ -255,7 +224,7 @@ offset_bottom = 795.0
 
 [node name="InfoBubble" type="NinePatchRect" parent="Bubbles/InfoBubble3/InfoBubble3"]
 layout_mode = 2
-texture = ExtResource("2_ob33a")
+texture = ExtResource("1_p4eo2")
 region_rect = Rect2(0, -2, 282, 196)
 patch_margin_left = 48
 patch_margin_top = 50
@@ -312,7 +281,7 @@ offset_bottom = 300.0
 
 [node name="InfoBubble" type="NinePatchRect" parent="Bubbles/InfoBubble4/InfoBubble4"]
 layout_mode = 2
-texture = ExtResource("2_ob33a")
+texture = ExtResource("1_p4eo2")
 region_rect = Rect2(0, 0, 280, 194)
 patch_margin_left = 22
 patch_margin_top = 46
@@ -401,7 +370,7 @@ offset_bottom = 137.0
 
 [node name="InfoBubble" type="NinePatchRect" parent="Bubbles/InfoBubble5/InfoBubble5"]
 layout_mode = 2
-texture = ExtResource("2_ob33a")
+texture = ExtResource("1_p4eo2")
 region_rect = Rect2(-2, 0, 284, 190)
 patch_margin_left = 28
 patch_margin_top = 48
@@ -489,30 +458,12 @@ theme_override_constants/margin_bottom = 4
 
 [node name="TutoPopUp" type="NinePatchRect" parent="MarginContainer"]
 layout_mode = 2
-texture = ExtResource("5_yecw8")
-region_rect = Rect2(0, 8, 592, 520)
+texture = ExtResource("5_3h0cr")
+region_rect = Rect2(0, -3.83349, 577.814, 513.899)
 patch_margin_left = 48
 patch_margin_top = 56
 patch_margin_right = 56
 patch_margin_bottom = 64
-
-[node name="Arrow" type="TextureRect" parent="MarginContainer/TutoPopUp"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -105.0
-offset_top = -114.0
-offset_right = -25.0001
-offset_bottom = -34.0
-grow_horizontal = 0
-grow_vertical = 0
-rotation = 3.14159
-scale = Vector2(0.8, 0.8)
-pivot_offset = Vector2(40, 40)
-texture = ExtResource("3_xv1gs")
 
 [node name="Skip" type="Label" parent="MarginContainer/TutoPopUp"]
 layout_mode = 1
@@ -533,6 +484,45 @@ position = Vector2(-25.1, 13)
 scale = Vector2(0.329687, 0.225)
 texture = ExtResource("5_mivsl")
 
+[node name="Button" type="TextureButton" parent="MarginContainer/TutoPopUp"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -82.0
+offset_top = -82.0
+offset_right = -47.0
+offset_bottom = -45.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("7_8vy8x")
+texture_pressed = ExtResource("8_lbpbe")
+texture_hover = ExtResource("9_xeviv")
+
+[node name="Arrow" type="TextureRect" parent="MarginContainer/TutoPopUp/Button"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -55.0
+offset_top = -62.0
+offset_right = 24.9999
+offset_bottom = 18.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(40, 40)
+texture = SubResource("AtlasTexture_ioq42")
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/TutoPopUp/Button"]
+show_behind_parent = true
+position = Vector2(18, 20)
+texture = ExtResource("11_4rv1s")
+
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 50
@@ -552,16 +542,13 @@ text = "TUTORIAL0"
 fit_content = true
 scroll_active = false
 
-[node name="NextButton" type="Button" parent="MarginContainer"]
-layout_mode = 2
+[node name="NextButton" type="Button" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 focus_mode = 0
-mouse_default_cursor_shape = 2
 flat = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_b6dub")
-}
-autoplay = "Float"
-
-[connection signal="pressed" from="MarginContainer/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]
