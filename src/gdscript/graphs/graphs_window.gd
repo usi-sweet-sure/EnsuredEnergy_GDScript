@@ -112,14 +112,9 @@ func _add_new_line_to_graph(line_name: String, line_color: Color = Color(1,1,1,1
 	graph.add_child(new_line)
 	
 	# Container of the line name at the top
-	var vertical_container := VBoxContainer.new()
-	vertical_container.name = line_name
-	
-	# Highlights the line when hovering the line name at the top
-	vertical_container.mouse_entered.connect(func(): change_line_highlight(line_name))
-	vertical_container.mouse_exited.connect(func(): change_line_highlight(line_name, false))
-	
-	line_names_container.add_child(vertical_container)
+	var container := Control.new()
+	container.name = line_name
+	line_names_container.add_child(container)
 
 	# The line above the line name
 	var line := Line2D.new()
@@ -130,9 +125,16 @@ func _add_new_line_to_graph(line_name: String, line_color: Color = Color(1,1,1,1
 	
 	# The line name
 	var label := Label.new()
+	label.mouse_filter = Control.MOUSE_FILTER_STOP
 	label.text = tr(line_name.to_upper() + "_LINE_NAME")
-	vertical_container.add_child(line)
-	vertical_container.add_child(label)
+	label.size.x = 150
+	# Highlights the line when hovering the line name at the top
+	label.mouse_entered.connect(func(): change_line_highlight(line_name))
+	label.mouse_exited.connect(func(): change_line_highlight(line_name, false))
+	
+	container.add_child(line)
+	container.add_child(label)
+
 
 
 # Add a point at the end of the line
