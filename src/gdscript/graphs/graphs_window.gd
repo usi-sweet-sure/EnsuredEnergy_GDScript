@@ -149,6 +149,13 @@ func _add_new_point_to_line(line_name: String, x, y) -> Line2D:
 	visual_point.custom_minimum_size = default_point_size
 	visual_point.position = Vector2(x_in_pixels - default_point_size.x / 2, y_in_pixels - default_point_size.y / 2)
 	visual_point.tooltip_text = str(round(y))
+	
+	# Custom label to show the value instead of tooltip
+	var label = Label.new()
+	visual_point.add_child(label)
+	label.text = str(round(y))
+	label.set_anchors_and_offsets_preset(Control.PRESET_CENTER_TOP)
+	label.hide()
 	visual_point.color = line.default_color
 	visual_point.color.a = 0.75
 	visual_point.mouse_entered.connect(func(): change_point_highlight(visual_point))
@@ -279,23 +286,38 @@ func change_line_highlight(line_name, highlight := true):
 		# Tweens line size
 		var line: Line2D = graph.get_node(line_name)
 		line.z_index = z_index
+		
 		var tween = get_tree().create_tween()
 		tween.tween_property(line, "width", default_line_width * size_factor, 0.1)
 		
-		# Tweens points size (only if only one point (no line), find it ugly otherwise)
-		# Works only because ColorRect points are the only children
-		if line.get_children().size() == 1: 
-			for child in line.get_children():
-				tween = get_tree().create_tween()
-				tween.tween_property(child, "size", default_point_size * size_factor, 0.1)
+		# Change points size only if one point (no line), find it ugly otherwise
+		var change_point_size = line.get_children().size() == 1
+		
+		for child in line.get_children():
+			if change_point_size:
+				var tween2 = get_tree().create_tween()
+				tween2.tween_property(child, "size", default_point_size * size_factor, 0.1)
+			
+			# Those formula are to be adapated if the size_factor changes
+			# For example, a size_factor of 2 doesn't require the move_factor to be divided
+			# I'd find a formula but hey
+			var label = child.get_children()[0]
+			var tween3 = get_tree().create_tween()
+			var tween4 = get_tree().create_tween()
+			
+			if highlight:
+				label.show()
 				
-				# Those formula are to be adapated if the size_factor changes
-				# For example, a size_factor of 2 doesn't require the move_factor to be divided
-				# I'd find a formula but hey
-				if highlight:
-					child.position -= default_point_size / (move_factor / 2)
+				if change_point_size:
+					child.position -= default_point_size / (move_factor / 2)	
+					tween3.tween_property(label, "position", Vector2(label.position.x, label.position.y - 25), 0.1)
 				else:
+					tween3.tween_property(label, "position", Vector2(label.position.x, label.position.y - 25), 0.1)
+			else:
+				if change_point_size:
 					child.position += default_point_size / (move_factor / 2)
+				tween3.tween_property(label, "position", Vector2(label.position.x, 0), 0.1)
+				tween4.tween_property(label, "visible", false, 0.1)
 
 # Highlights the point when the mouse is hovering above it
 func change_point_highlight(point: ColorRect, highlight := true):
