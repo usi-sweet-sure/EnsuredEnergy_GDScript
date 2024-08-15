@@ -10,13 +10,11 @@ enum Season {WINTER, SUMMER}
 @onready var info_text_2 = $BarInfo/MarginContainer/MarginContainer/VBoxContainer/InfoText2
 @onready var demand_line = $DemandLine
 
-
+var max_value_set := false
 # Called when the node enters the scene tree for the first time.
+
+
 func _ready():
-	# The bars will have the same max_value, wich is the maximum demand
-	# between winter and summer
-	max_value = max(Gameloop.demand_winter * 1.25, Gameloop.demand_summer * 1.25)
-	
 	# Determines which season the bar will be monitoring
 	match season:
 		Season.WINTER:
@@ -37,15 +35,27 @@ func _ready():
 			_on_energy_demand_updated(Gameloop.demand_summer)
 			_on_energy_supply_updated(Gameloop.supply_summer)
 
+
+func _process(delta):
+	change_bar_color()
+
+
 # Updates the position of the line representing the demand and the max value of the progress bar
-func _on_energy_demand_updated(demand):
+func _on_energy_demand_updated(demand: float):
+	# The bars will have the same max_value, wich is the maximum demand
+	# between winter and summer.
+	# It's set once at the beginning and must not change again
+	if not max_value_set and demand != 0.0:
+		max_value = max(Gameloop.demand_winter * 1.25, Gameloop.demand_summer * 1.25)
+		max_value_set = true
+	
 	var bar_height = size.x
 	demand_line.position.x = bar_height / max_value * demand
 
 
 # Updates the progress bar
-func _on_energy_supply_updated(supply):
-	var new_value = 0
+func _on_energy_supply_updated(supply: float):
+	var new_value := 0.0
 	
 	if season == Season.WINTER:
 		new_value = supply + Gameloop.imported_energy_amount
@@ -55,24 +65,27 @@ func _on_energy_supply_updated(supply):
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "value", new_value, 0.5)
 	
+	
 # Updates the progress bar
-func _on_imported_energy_amount_updated(amount):
+func _on_imported_energy_amount_updated(amount: float):
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "value", Gameloop.supply_winter + amount, 0.5)
+		
 		
 func change_bar_color():
 	match season:
 		Season.SUMMER:
-			if value >= Gameloop.demand_summer:
+			if Gameloop.supply_summer >= Gameloop.demand_summer:
 				self["theme_override_styles/fill"] = green_bar
 			else:
 				self["theme_override_styles/fill"] = red_bar
 				
 		Season.WINTER:
-			if value + Gameloop.imported_energy_amount >= Gameloop.demand_winter:
+			if Gameloop.supply_winter + Gameloop.imported_energy_amount >= Gameloop.demand_winter:
 				self["theme_override_styles/fill"] = green_bar
 			else:
 				self["theme_override_styles/fill"] = red_bar
+		
 		
 # Displays basic information on energy supply and demand
 func _on_bar_button_pressed():
@@ -97,7 +110,3 @@ func get_season_text(season_value: int):
 	match season_value:
 		0: return "Winter"
 		1: return "Summer"
-
-
-func _on_value_changed(_val):
-	change_bar_color()

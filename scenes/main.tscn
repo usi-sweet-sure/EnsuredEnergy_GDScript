@@ -1,4 +1,4 @@
-[gd_scene load_steps=115 format=3 uid="uid://g58p7rxvcdik"]
+[gd_scene load_steps=116 format=3 uid="uid://g58p7rxvcdik"]
 
 [ext_resource type="Script" path="res://src/gdscript/main.gd" id="1_6q0gk"]
 [ext_resource type="PackedScene" uid="uid://ba56oxmvcxpos" path="res://scenes/world.tscn" id="1_prp6q"]
@@ -66,6 +66,7 @@
 [ext_resource type="Texture2D" uid="uid://8igpvay7modk" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0003_Settings-warning-metal-base.png" id="64_c4467"]
 [ext_resource type="Texture2D" uid="uid://cvr8ptliyw7oc" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0013_1-slot-button-hole.png" id="65_p0ru6"]
 [ext_resource type="PackedScene" uid="uid://dc3s5eeg1c0uv" path="res://scenes/windows/graphs.tscn" id="66_s8n66"]
+[ext_resource type="Script" path="res://src/gdscript/hud/test_buttons.gd" id="67_xot01"]
 
 [sub_resource type="Animation" id="Animation_k4it7"]
 length = 0.001
@@ -3185,10 +3186,46 @@ bus = &"Sound"
 [node name="Graphs" parent="." instance=ExtResource("66_s8n66")]
 visible = false
 
+[node name="TestLayer" type="CanvasLayer" parent="."]
+
+[node name="TestButtons" type="Control" parent="TestLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 924.0
+offset_top = 36.0
+offset_right = 964.0
+offset_bottom = 76.0
+script = ExtResource("67_xot01")
+
+[node name="ButtonTop" type="Button" parent="TestLayer/TestButtons"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Test button top"
+
+[node name="ButtonBottom" type="Button" parent="TestLayer/TestButtons"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 35.0
+offset_right = 160.0
+offset_bottom = 66.0
+text = "Test button bottom
+"
+
+[node name="HttpRequestIndicator" type="Button" parent="TestLayer/TestButtons"]
+layout_mode = 0
+offset_top = 71.0
+offset_right = 213.0
+offset_bottom = 109.0
+theme_override_colors/font_color = Color(0.372419, 0.746602, 0.424331, 1)
+text = "HTTP Request Active"
+
 [connection signal="pressed" from="Settings/Control/Close" to="Settings/Control/Close" method="_on_pressed"]
 [connection signal="pressed" from="Settings/Control/SettingsBox/VBoxContainer/Language" to="Settings/Control/SettingsBox/VBoxContainer/Language" method="_on_pressed"]
 [connection signal="pressed" from="Settings/Control/SettingsBox/VBoxContainer/Instructions" to="Settings/Control/SettingsBox/VBoxContainer/Instructions" method="_on_pressed"]
 [connection signal="pressed" from="Settings/Control/SettingsBox/VBoxContainer/Credits" to="Settings/Control/SettingsBox/VBoxContainer/Credits/CreditsSprite" method="_on_credits_button_pressed"]
+[connection signal="pressed" from="TestLayer/TestButtons/ButtonTop" to="TestLayer/TestButtons" method="_on_button_top_pressed"]
+[connection signal="pressed" from="TestLayer/TestButtons/ButtonBottom" to="TestLayer/TestButtons" method="_on_button_bottom_pressed"]
 
 [editable path="World"]
 [editable path="World/Nuclear3"]

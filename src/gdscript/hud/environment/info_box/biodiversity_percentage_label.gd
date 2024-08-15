@@ -2,9 +2,9 @@ extends Label
 
 
 func _ready():
-	Gameloop.biodiversity_percentage_updated.connect(_on_biodiversity_percentage_updated)
-	_on_biodiversity_percentage_updated(Gameloop.biodiversity_percentage)
+	Gameloop.biodiversity_updated.connect(_on_biodiversity_updated)
+	_on_biodiversity_updated(Gameloop.biodiversity)
 	
 	
-func _on_biodiversity_percentage_updated(value):
+func _on_biodiversity_updated(value):
 	text = str(value) + "%"

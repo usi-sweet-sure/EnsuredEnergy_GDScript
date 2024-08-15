@@ -303,20 +303,20 @@ func change_line_highlight(line_name, highlight := true):
 			# I'd find a formula but hey
 			var label = child.get_children()[0]
 			var tween3 = get_tree().create_tween()
-			var tween4 = get_tree().create_tween()
 			
 			if highlight:
 				label.show()
 				
 				if change_point_size:
-					child.position -= default_point_size / (move_factor / 2)	
-					tween3.tween_property(label, "position", Vector2(label.position.x, label.position.y - 25), 0.1)
-				else:
-					tween3.tween_property(label, "position", Vector2(label.position.x, label.position.y - 25), 0.1)
+					child.position -= default_point_size / (move_factor / 2)
+					
+				tween3.tween_property(label, "position", Vector2(label.position.x, label.position.y - 25), 0.1)
 			else:
 				if change_point_size:
 					child.position += default_point_size / (move_factor / 2)
 				tween3.tween_property(label, "position", Vector2(label.position.x, 0), 0.1)
+				
+				var tween4 = get_tree().create_tween()
 				tween4.tween_property(label, "visible", false, 0.1)
 
 # Highlights the point when the mouse is hovering above it

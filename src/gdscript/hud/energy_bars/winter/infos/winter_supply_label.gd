@@ -8,7 +8,7 @@ func _ready():
 	_on_imported_energy_amount_updated(Gameloop.imported_energy_amount)
 	
 	
-func _on_winter_energy_supply_updated(value: int):
+func _on_winter_energy_supply_updated(value: float):
 	text = str(round(value + Gameloop.imported_energy_amount))
 
 

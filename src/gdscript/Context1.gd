@@ -25,6 +25,7 @@ func _ready():
 #new game	
 func res_ins():
 	var url = "https://sure.euler.usi.ch/json.php?mth=ins&res_name={res_name}"
+	HttpManager.http_request_active = true
 	var error = http1.request(url.format({"res_name": res_name.uri_encode()}))
 	if error != OK:
 		push_error("http error")
@@ -33,6 +34,7 @@ func res_ins():
 #upsert param
 func prm_ups():
 	var url = "https://sure.euler.usi.ch/json.php?mth=ups&res_id={res_id}&prm_id={prm_id}&yr={yr}&tj={tj}"
+	HttpManager.http_request_active = true
 	var error = http1.request(url.format({"res_id": res_id, "yr": yr, "prm_id": prm_id, "tj": tj}))
 	if error != OK:
 		push_error("http error")
@@ -41,6 +43,7 @@ func prm_ups():
 #you dont need this function - res_ins or prm_ups returns the context
 func get_ctx():
 	var url = "https://sure.euler.usi.ch/json.php?mth=ctx&res_id={res_id}&yr={yr}"
+	HttpManager.http_request_active = true
 	var error = http1.request(url.format({"res_id": res_id, "yr": yr}))
 	if error != OK:
 		push_error("http error")
@@ -52,6 +55,7 @@ func get_dsp():
 	
 #handle response
 func _http1_completed(_result, _response_code, _headers, body):
+	HttpManager.http_request_active = false
 	var json = JSON.new()
 	json.parse(body.get_string_from_utf8())
 	ctx1 = json.get_data()

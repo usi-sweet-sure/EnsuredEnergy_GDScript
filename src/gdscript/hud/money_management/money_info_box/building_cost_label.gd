@@ -6,7 +6,7 @@ func _ready():
 	Gameloop.building_costs_updated.connect(_on_building_cost_updated)
 	_on_building_cost_updated(Gameloop.building_costs)
 
-func _on_building_cost_updated(new_value):
+func _on_building_cost_updated(new_value: float):
 	if new_value != 0:
 		show()
 		text = "-" + str(round(new_value))

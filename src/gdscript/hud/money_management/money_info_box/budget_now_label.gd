@@ -8,5 +8,5 @@ func _ready():
 	_on_money_change(0)
 
 
-func _on_money_change(_value):
+func _on_money_change(_value: float):
 	text = str(round(Gameloop.players_own_money_amount + Gameloop.borrowed_money_amount))

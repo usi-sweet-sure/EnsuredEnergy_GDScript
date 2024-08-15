@@ -7,5 +7,5 @@ func _ready():
 	_on_summer_energy_supply_updated(Gameloop.supply_summer)
 	
 	
-func _on_summer_energy_supply_updated(value: int):
-	text = str(value)
+func _on_summer_energy_supply_updated(value: float):
+	text = str(round(value))

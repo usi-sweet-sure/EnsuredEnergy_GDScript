@@ -23,7 +23,7 @@ func _on_import_slider_value_changed(_new_value: float):
 
 
 # We reduce the energy supplied by imports if other sources supply enough energy
-func _on_energy_supply_updated_winter(winter_supply):
+func _on_energy_supply_updated_winter(winter_supply: float):
 	var energy_supply_excess = winter_supply + Gameloop.imported_energy_amount - Gameloop.demand_winter
 	if energy_supply_excess > 0 :
 		# This will call _on_import_slider_value_changed, which takes care of updating the
@@ -39,6 +39,6 @@ func _on_import_down_button_pressed():
 
 
 # Updates properties of the slider so we don't have to update the node manually
-func _on_energy_demand_updated_winter(demand):
-	max_value = demand / 4 #I want the player to feel like they are importing a lot
+func _on_energy_demand_updated_winter(demand: float):
+	max_value = demand / 4.0 # S. I want the player to feel like they are importing a lot
 	#step = round(demand / size.x)

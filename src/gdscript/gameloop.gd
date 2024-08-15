@@ -3,10 +3,10 @@ extends Node2D
 var start_year: int = 2022
 var total_number_of_turns: int = 10
 var years_in_a_turn = 3
-var start_money: int = 700
-var money_per_turn: int = 450
+var start_money: float = 700.0
+var money_per_turn: float = 450.0
 var green_energy_import_factor: float = 1.5
-var debt_percentage_on_borrowed_money: int = 20
+var debt_percentage_on_borrowed_money: float = 20.0
 
 var demand_summer_list = []
 var demand_winter_list = []
@@ -35,7 +35,7 @@ signal borrowed_money_amount_updated
 signal players_own_money_amount_updated
 signal available_money_amount_updated
 signal land_use_updated
-signal biodiversity_percentage_updated
+signal biodiversity_updated
 signal co2_emissions_updated
 signal imports_emissions_updated
 signal most_recent_shock_updated
@@ -58,26 +58,21 @@ signal toggle_graphs
 # This signal is emitted in language_button.gd
 signal locale_updated
 
-var demand_summer: float = 1000:
+var demand_summer: float = 0.0:
 	set(new_value):
 		demand_summer = new_value;
-		print("Summer demand updated : " + str(demand_summer))
 		energy_demand_updated_summer.emit(new_value)
-var demand_winter: float = 1200:
+var demand_winter: float = 0.0:
 	set(new_value):
 		demand_winter = new_value
-		#print("Winter demand updated : " + str(demand_winter))
 		energy_demand_updated_winter.emit(new_value)
-var supply_summer: int = 0:
+var supply_summer: float = 0:
 	set(new_value):
 		supply_summer = new_value
-		#print("Summer supply updated : " + str(supply_summer))
 		energy_supply_updated_summer.emit(supply_summer)
-var supply_winter: int = 0:
+var supply_winter: float = 0:
 	set(new_value):
 		supply_winter = new_value
-		#print("Summer supply updated : " + str(supply_winter))
-		#print("Winter supply updated : " + str(supply_winter))
 		energy_supply_updated_winter.emit(supply_winter)
 var energy_import_cost: float = 0:
 	get:
@@ -95,7 +90,7 @@ var imported_energy_amount: float = 0:
 		imported_energy_amount = new_value
 		imported_energy_amount_updated.emit(imported_energy_amount)
 		energy_import_cost_updated.emit(energy_import_cost)
-var borrowed_money_amount: int = 0:
+var borrowed_money_amount: float = 0.0:
 	set(new_value):
 		borrowed_money_amount = new_value
 		borrowed_money_amount_updated.emit(borrowed_money_amount)
@@ -109,43 +104,43 @@ var players_own_money_amount: float = 0:
 var available_money_amount: float = 0:
 	get:
 		return players_own_money_amount + borrowed_money_amount - building_costs - powerplants_production_costs
-var land_use: int = 37:
+var land_use: float = 0.0:
 	set(new_value):
-		land_use = clamp(new_value, 0, 100)
+		land_use = new_value
 		land_use_updated.emit(land_use)
-var biodiversity_percentage: int = 67:
+var biodiversity: float = 0.0:
 	set(new_value):
-		biodiversity_percentage = clamp(new_value, 0, 100)
-		biodiversity_percentage_updated.emit(biodiversity_percentage)
+		biodiversity = new_value
+		biodiversity_updated.emit(biodiversity)
 var co2_emissions: float = 0.0:
 	set(new_value):
-		co2_emissions = clamp(new_value, 0, 100)
+		co2_emissions = new_value
 		co2_emissions_updated.emit(co2_emissions)
 var imports_emissions: float = 0.0:
 	set(new_value):
-		imports_emissions = clamp(new_value, 0, 100)
+		imports_emissions = new_value
 		imports_emissions_updated.emit(imports_emissions)
 var most_recent_shock: Shock = null:
 	set(new_value):
 		most_recent_shock = new_value
 		most_recent_shock_updated.emit(most_recent_shock)
-var current_turn: int = 1: # Player action always take place in the following year
+var current_turn: int = 1:
 	set(new_value):
 		current_turn = new_value
 		current_turn_updated.emit(current_turn)
-var powerplants_production_costs: float = 0:
+var powerplants_production_costs: float = 0.0:
 	get:
 		return powerplants_production_costs * production_costs_modifier
 	set(new_value):
 		powerplants_production_costs = new_value
 		powerplants_production_costs_updated.emit(powerplants_production_costs)
 		available_money_amount_updated.emit(available_money_amount)
-var production_costs_modifier: float = 1: # Shocks can affect this
+var production_costs_modifier: float = 1.0: # Shocks can affect this
 	set(new_value):
 		production_costs_modifier = new_value
 		powerplants_production_costs_updated.emit(powerplants_production_costs)
 		available_money_amount_updated.emit(available_money_amount)
-var building_costs: float = 0: # Costs of building and upgrading buildings
+var building_costs: float = 0.0: # Costs of building and upgrading buildings
 	set(new_value):
 		building_costs = new_value
 		building_costs_updated.emit(building_costs)
@@ -198,7 +193,6 @@ func _check_supply():
 	
 
 func _send_prm_ups():
-	print("sending params")
 	for i in ups_list:
 		if ups_list[i] != 0:
 			Context1.prm_id = i
@@ -221,7 +215,7 @@ func can_go_to_next_turn():
 func can_spend_the_money(money_to_spend: float):
 	return money_to_spend <= available_money_amount
 
-
+# Returns the money the player would have available on next turn
 func get_money_for_next_turn() -> float:
 	var income = players_own_money_amount + money_per_turn + borrowed_money_amount
 	var outcome = borrowed_money_amount * (1.0 + (debt_percentage_on_borrowed_money / 100.0)) + energy_import_cost + building_costs + powerplants_production_costs

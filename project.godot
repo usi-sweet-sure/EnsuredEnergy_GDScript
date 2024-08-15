@@ -25,8 +25,8 @@ Context1="*res://src/gdscript/Context1.gd"
 Gameloop="*res://src/gdscript/gameloop.gd"
 ShockManager="*res://src/gdscript/shocks/shock_manager.gd"
 PolicyManager="*res://src/gdscript/policies/policy_manager.gd"
-Poc="*res://src/gdscript/http/poc.gd"
 GraphsData="*res://src/gdscript/graphs/graphs_data.gd"
+HttpManager="*res://src/gdscript/http/http_manager.gd"
 
 [display]
 

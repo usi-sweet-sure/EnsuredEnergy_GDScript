@@ -1,4 +1,4 @@
-[gd_scene load_steps=147 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=146 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/UI Elements/Button-Next-Normal.png" id="2_aobed"]
 [ext_resource type="Texture2D" uid="uid://ccsapuvkqqt1b" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0009_Profile-metal-base.png" id="2_nu7y6"]
@@ -99,7 +99,6 @@
 [ext_resource type="Script" path="res://src/gdscript/hud/money_management/available_money_amount_label.gd" id="71_xcmoe"]
 [ext_resource type="Script" path="res://src/gdscript/hud/emissions/info_box/imports_emissions_info_text_label.gd" id="72_2h8vj"]
 [ext_resource type="Script" path="res://src/gdscript/hud/energy_import/green_import_led_on_sprite.gd" id="72_ytkph"]
-[ext_resource type="Script" path="res://src/gdscript/hud/test_buttons.gd" id="86_id1hi"]
 [ext_resource type="Script" path="res://src/gdscript/hud/energy_bars/winter/infos/winter_demand_label.gd" id="91_butgj"]
 [ext_resource type="Script" path="res://src/gdscript/hud/energy_bars/winter/infos/winter_supply_label.gd" id="92_bqjhv"]
 [ext_resource type="Script" path="res://src/gdscript/hud/energy_bars/summer/infos/summer_demand_label.gd" id="92_j1ii1"]
@@ -2331,30 +2330,6 @@ uppercase = true
 
 [node name="Error" type="AudioStreamPlayer" parent="NextTurn"]
 
-[node name="TestButtons" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 924.0
-offset_top = 36.0
-offset_right = 964.0
-offset_bottom = 76.0
-script = ExtResource("86_id1hi")
-
-[node name="ButtonTop" type="Button" parent="TestButtons"]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-text = "Test button top"
-
-[node name="ButtonBottom" type="Button" parent="TestButtons"]
-layout_mode = 0
-offset_left = 1.0
-offset_top = 35.0
-offset_right = 160.0
-offset_bottom = 66.0
-text = "Test button bottom
-"
-
 [connection signal="pressed" from="TopLeftZone/OpenSettingsFrameButton" to="TopLeftZone/OpenSettingsFrameButton" method="_on_pressed"]
 [connection signal="pressed" from="TopLeftZone/MoneyManagement/MoneyInfo/ToggleMoneyInfoBoxButton" to="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox" method="_on_toggle_money_info_box_button_pressed"]
 [connection signal="pressed" from="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MoreMoneyInfoButton" to="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/InfoMoneyClosed" method="_on_more_money_info_button_pressed"]
@@ -2386,8 +2361,6 @@ text = "Test button bottom
 [connection signal="pressed" from="Clock/TimePanelBlank/TurnInfo" to="Clock/TimePanelBlank" method="clock_pressed"]
 [connection signal="gui_input" from="NextTurn" to="NextTurn/NextTurnAP" method="_on_next_turn_gui_input"]
 [connection signal="pressed" from="NextTurn" to="Clock/TimePanelBlank" method="_on_next_turn_button_pressed"]
-[connection signal="pressed" from="TestButtons/ButtonTop" to="TestButtons" method="_on_button_top_pressed"]
-[connection signal="pressed" from="TestButtons/ButtonBottom" to="TestButtons" method="_on_button_bottom_pressed"]
 
 [editable path="TopLeftZone/Policies/Trust/BarInfo"]
 [editable path="EnvironmentAndPollution/Environment/Info"]
