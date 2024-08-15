@@ -198,12 +198,14 @@ func _check_supply():
 	
 
 func _send_prm_ups():
+	print("sending params")
 	for i in ups_list:
-		Context1.prm_id = i
-		Context1.yr = Gameloop.year_list[Gameloop.current_turn-1]
-		Context1.tj = ups_list[i]
-		Context1.prm_ups()
-		await Context1.http1.request_completed
+		if ups_list[i] != 0:
+			Context1.prm_id = i
+			Context1.yr = Gameloop.year_list[Gameloop.current_turn - 1]
+			Context1.tj = ups_list[i]
+			Context1.prm_ups()
+			await Context1.http1.request_completed
 		 
 
 func _unhandled_input(event):
