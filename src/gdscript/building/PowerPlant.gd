@@ -192,9 +192,12 @@ func _on_request_finished(_result, _response_code, _headers, _body):
 					land_use = float(i["tj"])
 				cost_key:
 					production_cost = float(i["tj"]) / 10
-				#avail_key:
-				#	availability.x = float(i["tj"])
-				#	availability.y = 1 - float(i["tj"])
+				avail_key:
+					availability.x = float(i["tj"]) / cnv_capacity
+					availability.y = 1 - availability.x
+					if is_hydro() || is_river():
+						availability.x = float(i["tj"]) / 2 / cnv_capacity
+						availability.y = 1 - availability.x
 		
 		if is_nuclear():
 			capacity = capacity / 100.0 / 3.0 # there's 3 nuclear plants
