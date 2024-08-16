@@ -2,6 +2,9 @@ extends CanvasLayer
 
 var lang = ["en", "fr", "de", "it"]
 var i = 0
+
+@onready var player_name_field = $PlayerName
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	TranslationServer.set_locale("en")
@@ -13,7 +16,9 @@ func _process(_delta):
 
 
 func _on_play_pressed():
+	Gameloop.player_name = player_name_field.text
 	hide()
+	Gameloop.start_game()
 	
 
 func _on_lang_pressed():

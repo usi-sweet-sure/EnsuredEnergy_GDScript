@@ -5,8 +5,9 @@ func _ready():
 	
 	
 func _on_most_recent_shock_updated(shock):
-	if(shock.show_shock_window):
-		show()
+	if shock != null:
+		if(shock.show_shock_window):
+			show()
 
 
 func _on_continue_button_pressed():

@@ -1,12 +1,13 @@
-[gd_scene load_steps=21 format=3 uid="uid://pvoi2mcc3oc1"]
+[gd_scene load_steps=22 format=3 uid="uid://pvoi2mcc3oc1"]
 
-[ext_resource type="Script" path="res://src/gdscript/hud/menu.gd" id="1_2w7hu"]
+[ext_resource type="Script" path="res://src/gdscript/starting_screen/menu.gd" id="1_hl1kv"]
 [ext_resource type="Texture2D" uid="uid://bdjbeos1j2wsr" path="res://assets/Map/MAP-BG.png" id="2_rie33"]
 [ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="3_l0e0n"]
 [ext_resource type="Texture2D" uid="uid://d2xmfb55o0osw" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0014_Start-menu-metal-base.png" id="4_dgun4"]
 [ext_resource type="Texture2D" uid="uid://d2dxa7x362j3j" path="res://assets/Elements/NEXTTURNBUTTONDisabled.png" id="5_gh7te"]
 [ext_resource type="Texture2D" uid="uid://bspccm3p1o4q8" path="res://assets/UI Elements/All-HQ-Assets-D_0005s_0008_Player-name-screen.png" id="5_rxjck"]
 [ext_resource type="Texture2D" uid="uid://cvr8ptliyw7oc" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0013_1-slot-button-hole.png" id="9_j0rns"]
+[ext_resource type="Script" path="res://src/gdscript/starting_screen/play_button.gd" id="9_oo472"]
 [ext_resource type="Texture2D" uid="uid://cqekiqjn8gvh7" path="res://assets/UI Elements/Button-Play-normal.png" id="11_v1gn1"]
 [ext_resource type="Texture2D" uid="uid://c5tgx0yng476j" path="res://assets/UI Elements/Button-Play-press.png" id="12_2e306"]
 [ext_resource type="Texture2D" uid="uid://id0egjudmljv" path="res://assets/UI Elements/Blueprint_normal.png" id="12_eqfmq"]
@@ -42,7 +43,7 @@ animations = [{
 }]
 
 [node name="Menu" type="CanvasLayer"]
-script = ExtResource("1_2w7hu")
+script = ExtResource("1_hl1kv")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -81,16 +82,20 @@ position = Vector2(696, 680)
 texture = ExtResource("4_dgun4")
 
 [node name="PlayerName" type="LineEdit" parent="."]
-offset_left = 613.0
+offset_left = 596.0
 offset_top = 511.0
-offset_right = 778.0
+offset_right = 793.0
 offset_bottom = 547.0
 theme = ExtResource("3_l0e0n")
 theme_type_variation = &"Screen"
+theme_override_colors/caret_color = Color(0.629675, 0.629675, 0.629675, 0.92549)
+theme_override_constants/caret_width = 4
 theme_override_styles/normal = SubResource("StyleBoxTexture_k5cxq")
 theme_override_styles/focus = SubResource("StyleBoxTexture_4jtbl")
-placeholder_text = "NAME"
+placeholder_text = "PLAYER_NAME_PLACEHOLDER"
 alignment = 1
+max_length = 15
+caret_blink = true
 
 [node name="Play" type="TextureButton" parent="."]
 anchors_preset = 8
@@ -104,11 +109,14 @@ offset_right = -167.0
 offset_bottom = 94.0
 grow_horizontal = 2
 grow_vertical = 2
+disabled = true
 texture_normal = ExtResource("11_v1gn1")
 texture_pressed = ExtResource("12_2e306")
 texture_hover = ExtResource("13_ngmjh")
+texture_disabled = ExtResource("12_2e306")
 ignore_texture_size = true
 stretch_mode = 3
+script = ExtResource("9_oo472")
 
 [node name="PlayL" type="Label" parent="Play"]
 layout_mode = 1
@@ -261,6 +269,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 22
 text = "MENU"
 
+[connection signal="text_changed" from="PlayerName" to="Play" method="_on_player_name_text_changed"]
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Lang" to="." method="_on_lang_pressed"]
 [connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]

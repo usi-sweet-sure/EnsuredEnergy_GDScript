@@ -1,35 +1,65 @@
 extends Node
 
+signal res_id_updated
+signal res_name_updated
+signal yr_updated
+signal prm_id_updated
+signal tj_updated
+signal survey_token_updated
+
 #the context
 var ctx1
 var http1
 
 #globals
-var res_id = 1
-var res_name = "new123"
-var yr = 2022
-var prm_id = 186
-var tj = 8000
+var res_id: int:
+	set(new_value):
+		res_id = new_value
+		res_id_updated.emit(res_id)
+var res_name: String:
+	set(new_value):
+		res_name = new_value
+		res_name_updated.emit(res_name)
+var yr: int:
+	set(new_value):
+		yr = new_value
+		yr_updated.emit(yr)
+var prm_id: int:
+	set(new_value):
+		prm_id = new_value
+		prm_id_updated.emit(prm_id)
+var tj: int:
+	set(new_value):
+		tj = new_value
+		tj_updated.emit(tj)
+var survey_token: String:
+	set(new_value):
+		survey_token = new_value
+		survey_token_updated.emit(survey_token)
 
 
 #init
 func _ready():
+	Gameloop.player_name_updated.connect(_on_player_name_updated)
+	_on_player_name_updated(Gameloop.player_name)
+	
 	http1 = HTTPRequest.new()
 	add_child(http1)
 	http1.request_completed.connect(self._http1_completed)
 	#res_ins()
 	#prm_ups()
-	get_ctx()
 	
 	
 #new game	
 func res_ins():
-	var url = "https://sure.euler.usi.ch/json.php?mth=ins&res_name={res_name}"
-	HttpManager.http_request_active = true
-	var error = http1.request(url.format({"res_name": res_name.uri_encode()}))
-	if error != OK:
-		push_error("http error")
-		
+	if res_name != "":
+		var url = "https://sure.euler.usi.ch/json.php?mth=ins&res_name={res_name}".format({"res_name": res_name.uri_encode()})
+		HttpManager.http_request_active = true
+		var error = http1.request(url)
+		if error != OK:
+			push_error("http error")
+	else:
+		printerr("A res_name is needed (Player's name is probably missing)")
 		
 #upsert param
 func prm_ups():
@@ -71,4 +101,7 @@ func _http1_completed(_result, _response_code, _headers, body):
 			Gameloop.demand_summer = float(i["tj"]) / 100
 		if i["prm_id"] == "455":
 			Gameloop.demand_winter = float(i["tj"]) / 100
-	
+
+
+func _on_player_name_updated(player_name):
+	res_name = player_name
