@@ -27,6 +27,7 @@ ShockManager="*res://src/gdscript/shocks/shock_manager.gd"
 PolicyManager="*res://src/gdscript/policies/policy_manager.gd"
 GraphsData="*res://src/gdscript/graphs/graphs_data.gd"
 HttpManager="*res://src/gdscript/http/http_manager.gd"
+SurveyManager="*res://src/gdscript/survey/survey_manager.gd"
 
 [display]
 

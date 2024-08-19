@@ -7,18 +7,17 @@ extends Control
 
 
 func _ready():
-	button_top.text = "Open graphs"
-	button_bottom.text = "Next turn"
+	button_top.text = "read token"
+	button_bottom.text = "no use"
 	HttpManager.http_request_active_updated.connect(_on_http_request_active_updated)
 	_on_http_request_active_updated(HttpManager.http_request_active)
 
 func _on_button_top_pressed():
-	Gameloop.toggle_graphs.emit()
+	SurveyManager.update_token()
 	
 	
 func _on_button_bottom_pressed():
-	Gameloop.current_turn += 1
-	Gameloop.next_turn.emit()
+	pass
 
 func _on_http_request_active_updated(active: bool):
 	http_request_indicator.visible = active

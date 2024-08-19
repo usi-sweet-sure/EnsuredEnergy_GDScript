@@ -50,10 +50,17 @@ func _ready():
 	#prm_ups()
 	
 	
-#new game	
+#new game
 func res_ins():
+	if SurveyManager.token == "":
+		SurveyManager.update_token()
+		
 	if res_name != "":
 		var url = "https://sure.euler.usi.ch/json.php?mth=ins&res_name={res_name}".format({"res_name": res_name.uri_encode()})
+		
+		if SurveyManager.token != "":
+			url += "&res_tok={tok}".format({"tok": SurveyManager.token.uri_encode()})
+				
 		HttpManager.http_request_active = true
 		var error = http1.request(url)
 		if error != OK:

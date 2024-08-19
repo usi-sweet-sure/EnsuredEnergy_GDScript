@@ -185,3 +185,4 @@ RESET,Reset,Recommencer,Neu anfangen,Ricominciare
 CANCEL,Cancel,Annuler,Abbrechen,Annullare
 RESET_CONFIRM,Are you sure you want to restart the game ?,Es-tu sûr de vouloir recommencer le jeu ?,"Sind Sie sicher, dass Sie das Spiel neu starten wollen?",Sei sicuro di voler ricominciare il gioco?
 PLAYER_NAME_PLACEHOLDER,NAME,NOM,NAME,NOME
+SURVEY_TOKEN,Survey token,Num. sondage,Umfrage-Nr.,Indagine n.
