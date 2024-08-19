@@ -1,4 +1,4 @@
-[gd_scene load_steps=146 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=145 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/UI Elements/Button-Next-Normal.png" id="2_aobed"]
 [ext_resource type="Texture2D" uid="uid://ccsapuvkqqt1b" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0009_Profile-metal-base.png" id="2_nu7y6"]
@@ -32,7 +32,6 @@
 [ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/Fonts/Special_Elite/SpecialElite-Regular.ttf" id="30_d1m8l"]
 [ext_resource type="Texture2D" uid="uid://bequk5qlb5qj6" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0007_Smaller-+-hover-button.png" id="30_n1n8n"]
 [ext_resource type="Texture2D" uid="uid://h78kteff8v5d" path="res://assets/UI Elements/Money-counter-hole.png" id="31_jcf3k"]
-[ext_resource type="Texture2D" uid="uid://dnbd3anohlmvn" path="res://assets/UI Elements/All-HQ-Assets-D_0008s_0001_Small-right-paper.png" id="31_kajnd"]
 [ext_resource type="Texture2D" uid="uid://p2nyvgv4j2ll" path="res://assets/UI Elements/Money-counter-1.png" id="32_2wt40"]
 [ext_resource type="Texture2D" uid="uid://bp0pnobdmwbyl" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0008_Borrow-money-metal-base.png" id="33_fiabg"]
 [ext_resource type="Texture2D" uid="uid://sopgul71025f" path="res://assets/UI Elements/Icon-Money.png" id="33_my285"]
@@ -1202,30 +1201,7 @@ texture_pressed = ExtResource("29_e2ga5")
 texture_hover = ExtResource("30_n1n8n")
 ignore_texture_size = true
 
-[node name="Debt" type="Sprite2D" parent="TopLeftZone/MoneyManagement/BorrowMoney/ToggleBorrowMoneyFrameButton"]
-visible = false
-z_index = -1
-position = Vector2(117, 19)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("31_kajnd")
-
-[node name="DebtAmount" type="Label" parent="TopLeftZone/MoneyManagement/BorrowMoney/ToggleBorrowMoneyFrameButton/Debt"]
-offset_left = -113.333
-offset_top = -50.0
-offset_right = -50.3333
-offset_bottom = -8.0
-scale = Vector2(3, 3)
-theme = ExtResource("70_2ktfd")
-theme_type_variation = &"Paper"
-theme_override_colors/font_color = Color(0.741176, 0, 0, 1)
-theme_override_constants/line_spacing = 0
-theme_override_font_sizes/font_size = 22
-text = "-000"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="BorrowMoneyFrame" type="Control" parent="TopLeftZone/MoneyManagement/BorrowMoney"]
-visible = false
 anchors_preset = 0
 offset_left = 685.0
 offset_top = 252.0
