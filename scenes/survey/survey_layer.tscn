@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://mnj2kr6urhvk"]
+[gd_scene load_steps=3 format=3 uid="uid://mnj2kr6urhvk"]
 
 [ext_resource type="Script" path="res://src/gdscript/survey/token_label.gd" id="1_1bkmg"]
+[ext_resource type="Script" path="res://src/gdscript/survey/token_title_label.gd" id="1_5u74m"]
 
 [node name="SurveyLayer" type="CanvasLayer"]
 
@@ -26,6 +27,7 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 text = "SURVEY_TOKEN"
+script = ExtResource("1_5u74m")
 
 [node name="TokenLabel" type="Label" parent="SurveyToken/HBoxContainer"]
 layout_mode = 2

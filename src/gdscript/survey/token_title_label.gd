@@ -8,4 +8,3 @@ func _ready():
 
 func _on_token_updated(token: String):
 	visible = token != ""
-	text = token
