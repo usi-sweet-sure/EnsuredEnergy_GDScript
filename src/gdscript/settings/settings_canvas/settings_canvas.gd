@@ -8,3 +8,8 @@ func _ready():
 
 func _on_toggle_settings():
 	visible = not visible
+
+
+func _on_quit_button_pressed():
+	hide()
+	Gameloop.game_quit_requested.emit()

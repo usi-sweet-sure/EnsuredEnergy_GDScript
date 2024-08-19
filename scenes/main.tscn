@@ -2387,6 +2387,12 @@ libraries = {
 }
 autoplay = "Wind"
 
+[node name="Money" parent="World/BuildButton" index="4"]
+offset_left = -286.0
+offset_top = -132.5
+offset_right = -126.0
+offset_bottom = -43.5
+
 [node name="BuildButton2" parent="World" index="15"]
 offset_left = 624.0
 offset_top = 480.0
@@ -2461,6 +2467,12 @@ autoplay = "Sun"
 
 [node name="Hammer" parent="World/BuildButton9" index="0"]
 position = Vector2(308, 205)
+
+[node name="Money" parent="World/BuildButton9" index="4"]
+offset_left = -279.0
+offset_top = -124.0
+offset_right = -119.0
+offset_bottom = -35.0
 
 [node name="Solar" parent="World/BuildButton9/BuildMenu/Container" index="0"]
 visible = false
@@ -2760,7 +2772,7 @@ offset_right = 62.0
 offset_bottom = 37.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.313726, 0.313726, 0.313726, 0.196078)
+color = Color(0.0352941, 0.0352941, 0.0352941, 0.54902)
 
 [node name="Control" type="Control" parent="Settings"]
 layout_mode = 3
@@ -2825,9 +2837,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -92.5
-offset_top = 148.0
+offset_top = 163.0
 offset_right = 100.5
-offset_bottom = 845.0
+offset_bottom = 664.0
 grow_horizontal = 2
 theme_override_constants/separation = 0
 
@@ -3046,6 +3058,7 @@ Walid El-Ajou
 "
 
 [node name="Reset" type="TextureButton" parent="Settings/Control/SettingsBox"]
+visible = false
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 0
 offset_left = 71.0
@@ -3168,6 +3181,54 @@ centered = false
 [node name="Sprite2D" type="Sprite2D" parent="Settings/Control/SettingsBox/Reset"]
 show_behind_parent = true
 position = Vector2(-1358.5, 162.5)
+texture = ExtResource("65_p0ru6")
+centered = false
+
+[node name="MarginContainer" type="MarginContainer" parent="Settings/Control/SettingsBox"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -190.0
+offset_top = -167.5
+offset_right = 188.0
+offset_bottom = -18.5
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="QuitButton" type="TextureButton" parent="Settings/Control/SettingsBox/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("58_2ikp6")
+texture_pressed = ExtResource("59_g21e0")
+texture_hover = ExtResource("60_c1roj")
+
+[node name="Label" type="Label" parent="Settings/Control/SettingsBox/MarginContainer/QuitButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.5
+offset_top = -11.5
+offset_right = 120.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("51_xe5da")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "QUIT_CONFIRM_BUTTON_TEXT"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Settings/Control/SettingsBox/MarginContainer/QuitButton"]
+show_behind_parent = true
+position = Vector2(-2.85706, -2.85718)
 texture = ExtResource("65_p0ru6")
 centered = false
 
@@ -3376,6 +3437,7 @@ visible = false
 [connection signal="pressed" from="Settings/Control/SettingsBox/VBoxContainer/Language" to="Settings/Control/SettingsBox/VBoxContainer/Language" method="_on_pressed"]
 [connection signal="pressed" from="Settings/Control/SettingsBox/VBoxContainer/Instructions" to="Settings/Control/SettingsBox/VBoxContainer/Instructions" method="_on_pressed"]
 [connection signal="pressed" from="Settings/Control/SettingsBox/VBoxContainer/Credits" to="Settings/Control/SettingsBox/VBoxContainer/Credits/CreditsSprite" method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Settings/Control/SettingsBox/MarginContainer/QuitButton" to="Settings" method="_on_quit_button_pressed"]
 [connection signal="pressed" from="TestLayer/TestButtons/ButtonTop" to="TestLayer/TestButtons" method="_on_button_top_pressed"]
 [connection signal="pressed" from="TestLayer/TestButtons/ButtonBottom" to="TestLayer/TestButtons" method="_on_button_bottom_pressed"]
 [connection signal="pressed" from="TestLayer/PlayTestButton" to="TestLayer/PlayTestButton" method="_on_pressed"]

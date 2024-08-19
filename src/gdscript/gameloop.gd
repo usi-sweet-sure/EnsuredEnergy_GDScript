@@ -223,7 +223,7 @@ func _send_prm_ups():
 func _unhandled_input(event):
 	if event is InputEventKey:
 		if event.pressed and event.keycode == KEY_ESCAPE:
-			game_quit_requested.emit()
+			toggle_settings.emit()
 			
 			
 func can_go_to_next_turn():
