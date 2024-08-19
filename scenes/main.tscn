@@ -1,4 +1,4 @@
-[gd_scene load_steps=125 format=3 uid="uid://g58p7rxvcdik"]
+[gd_scene load_steps=126 format=3 uid="uid://g58p7rxvcdik"]
 
 [ext_resource type="Script" path="res://src/gdscript/main.gd" id="1_6q0gk"]
 [ext_resource type="PackedScene" uid="uid://ba56oxmvcxpos" path="res://scenes/world.tscn" id="1_prp6q"]
@@ -75,7 +75,8 @@
 [ext_resource type="Script" path="res://src/gdscript/test_layer/tj_label.gd" id="72_e32ek"]
 [ext_resource type="Script" path="res://src/gdscript/test_layer/play_test_button.gd" id="73_c8dpd"]
 [ext_resource type="Script" path="res://src/gdscript/test_layer/test_button_explanation_label.gd" id="75_bk8o4"]
-[ext_resource type="Script" path="res://src/gdscript/survey/token_label.gd" id="76_onjh5"]
+[ext_resource type="PackedScene" uid="uid://mnj2kr6urhvk" path="res://scenes/survey/survey_layer.tscn" id="76_y7xdi"]
+[ext_resource type="PackedScene" uid="uid://cb7movoe2pf7u" path="res://scenes/windows/quit_game.tscn" id="77_iwdt8"]
 
 [sub_resource type="Animation" id="Animation_k4it7"]
 length = 0.001
@@ -2386,12 +2387,6 @@ libraries = {
 }
 autoplay = "Wind"
 
-[node name="Money" parent="World/BuildButton" index="4"]
-offset_left = -286.0
-offset_top = -132.5
-offset_right = -126.0
-offset_bottom = -43.5
-
 [node name="BuildButton2" parent="World" index="15"]
 offset_left = 624.0
 offset_top = 480.0
@@ -2466,12 +2461,6 @@ autoplay = "Sun"
 
 [node name="Hammer" parent="World/BuildButton9" index="0"]
 position = Vector2(308, 205)
-
-[node name="Money" parent="World/BuildButton9" index="4"]
-offset_left = -279.0
-offset_top = -124.0
-offset_right = -119.0
-offset_bottom = -35.0
 
 [node name="Solar" parent="World/BuildButton9/BuildMenu/Container" index="0"]
 visible = false
@@ -3378,36 +3367,10 @@ text = "Use this button to test the game without creating a new game
 autowrap_mode = 2
 script = ExtResource("75_bk8o4")
 
-[node name="SurveyLayer" type="CanvasLayer" parent="."]
+[node name="SurveyLayer" parent="." instance=ExtResource("76_y7xdi")]
 
-[node name="Survey" type="Control" parent="SurveyLayer"]
-layout_mode = 3
-anchors_preset = 10
-anchor_right = 1.0
-grow_horizontal = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="SurveyLayer/Survey"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -286.0
-offset_right = 286.0
-offset_bottom = 40.0
-grow_horizontal = 2
-theme_override_constants/separation = 15
-alignment = 1
-
-[node name="Title" type="Label" parent="SurveyLayer/Survey/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "SURVEY_TOKEN"
-
-[node name="TokenLabel" type="Label" parent="SurveyLayer/Survey/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-horizontal_alignment = 1
-script = ExtResource("76_onjh5")
+[node name="QuitGame" parent="." instance=ExtResource("77_iwdt8")]
+visible = false
 
 [connection signal="pressed" from="Settings/Control/Close" to="Settings/Control/Close" method="_on_pressed"]
 [connection signal="pressed" from="Settings/Control/SettingsBox/VBoxContainer/Language" to="Settings/Control/SettingsBox/VBoxContainer/Language" method="_on_pressed"]

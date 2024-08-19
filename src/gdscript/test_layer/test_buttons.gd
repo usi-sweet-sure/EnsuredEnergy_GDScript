@@ -8,9 +8,10 @@ extends Control
 
 func _ready():
 	button_top.text = "read token"
-	button_bottom.text = "no use"
+	button_bottom.text = "open back to survey page"
 	HttpManager.http_request_active_updated.connect(_on_http_request_active_updated)
 	_on_http_request_active_updated(HttpManager.http_request_active)
+
 
 func _on_button_top_pressed():
 	SurveyManager.update_token()

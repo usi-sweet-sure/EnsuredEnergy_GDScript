@@ -53,6 +53,7 @@ signal end
 signal toggle_settings
 signal toggle_graphs
 signal game_started
+signal game_quit_requested
 
 # We need to send this signal because some translations 
 # don't update automatically when changing the language at runtime,
@@ -155,7 +156,7 @@ var building_costs: float: # Costs of building and upgrading buildings
 		available_money_amount_updated.emit(available_money_amount)
 	
 	
-func _ready():
+func _ready():	
 	players_own_money_amount = start_money
 	all_power_plants = get_tree().get_nodes_in_group("PP")
 	for i in total_number_of_turns + 1:
@@ -222,7 +223,7 @@ func _send_prm_ups():
 func _unhandled_input(event):
 	if event is InputEventKey:
 		if event.pressed and event.keycode == KEY_ESCAPE:
-			get_tree().quit()
+			game_quit_requested.emit()
 			
 			
 func can_go_to_next_turn():

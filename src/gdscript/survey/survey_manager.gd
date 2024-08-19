@@ -20,3 +20,11 @@ func update_token():
 		temp_token = ""
 		
 	token = temp_token
+
+
+func open_back_to_survey_tab(target := "_blank"):
+	var url = "https://unibe.eu.qualtrics.com/jfe/form/SV_2lvvzqrI2fWxiwC?keyback={tok}".format({"tok": token})
+	var window = JavaScriptBridge.get_interface("window")
+	
+	if window != null and token != "":
+		window.open(url, target)

@@ -1,0 +1,146 @@
+[gd_scene load_steps=12 format=3 uid="uid://cb7movoe2pf7u"]
+
+[ext_resource type="Texture2D" uid="uid://ceuxpu5iujr05" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0001_Stats-metal-base.png" id="1_4e6fl"]
+[ext_resource type="Script" path="res://src/gdscript/quit_game/quit_game_window.gd" id="1_v5470"]
+[ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/UI Elements/Button-Next-Normal.png" id="2_2gllk"]
+[ext_resource type="Texture2D" uid="uid://biq6v1m7nc6l" path="res://assets/UI Elements/Button-Next-Press.png" id="3_43hvl"]
+[ext_resource type="Script" path="res://src/gdscript/quit_game/survey_tab_label.gd" id="3_yfao8"]
+[ext_resource type="Texture2D" uid="uid://c25aef4m4yd40" path="res://assets/UI Elements/Button-Next-Hover.png" id="4_b30ox"]
+[ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="5_jgsj0"]
+[ext_resource type="Texture2D" uid="uid://cvr8ptliyw7oc" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0013_1-slot-button-hole.png" id="6_ibg61"]
+[ext_resource type="Texture2D" uid="uid://b4m67oni44dpg" path="res://assets/UI Elements/Button-normal.png" id="7_6jtyr"]
+[ext_resource type="Texture2D" uid="uid://60dl810b25fd" path="res://assets/UI Elements/Button-press.png" id="8_l1ht0"]
+[ext_resource type="Texture2D" uid="uid://cuhckno2t6g0r" path="res://assets/UI Elements/Button-hover.png" id="9_x476d"]
+
+[node name="QuitGame" type="CanvasLayer"]
+script = ExtResource("1_v5470")
+
+[node name="ClosingGameWarning" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Backdrop" type="Control" parent="ClosingGameWarning"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackdropColor" type="ColorRect" parent="ClosingGameWarning/Backdrop"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0338533, 0.0338533, 0.0338533, 0.54902)
+
+[node name="MainFrame" type="TextureRect" parent="ClosingGameWarning"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -491.0
+offset_top = -332.0
+offset_right = 492.0
+offset_bottom = 333.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4e6fl")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ClosingGameWarning/MainFrame"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 112.0
+offset_top = -259.5
+offset_right = -110.0
+offset_bottom = 265.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 90
+theme_override_constants/margin_top = 70
+theme_override_constants/margin_right = 90
+theme_override_constants/margin_bottom = 65
+
+[node name="WarningText" type="Label" parent="ClosingGameWarning/MainFrame/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 31
+text = "QUIT_WARNING_TEXT"
+horizontal_alignment = 1
+
+[node name="SurveyTabLabel" type="Label" parent="ClosingGameWarning/MainFrame/MarginContainer"]
+layout_mode = 2
+text = "QUIT_WITH_SURVEY_TEXT"
+horizontal_alignment = 1
+script = ExtResource("3_yfao8")
+
+[node name="ConfirmButton" type="TextureButton" parent="ClosingGameWarning/MainFrame/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+texture_normal = ExtResource("2_2gllk")
+texture_pressed = ExtResource("3_43hvl")
+texture_hover = ExtResource("4_b30ox")
+
+[node name="Label" type="Label" parent="ClosingGameWarning/MainFrame/MarginContainer/ConfirmButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_jgsj0")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "QUIT_CONFIRM_BUTTON_TEXT"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ClosingGameWarning/MainFrame/MarginContainer/ConfirmButton"]
+show_behind_parent = true
+position = Vector2(-2.85706, -2.85718)
+texture = ExtResource("6_ibg61")
+centered = false
+
+[node name="CancelButton" type="TextureButton" parent="ClosingGameWarning/MainFrame/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture_normal = ExtResource("7_6jtyr")
+texture_pressed = ExtResource("8_l1ht0")
+texture_hover = ExtResource("9_x476d")
+
+[node name="Label" type="Label" parent="ClosingGameWarning/MainFrame/MarginContainer/CancelButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_jgsj0")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "CANCEL"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="ClosingGameWarning/MainFrame/MarginContainer/CancelButton"]
+show_behind_parent = true
+position = Vector2(-2.85718, -2.14291)
+texture = ExtResource("6_ibg61")
+centered = false
+
+[connection signal="pressed" from="ClosingGameWarning/MainFrame/MarginContainer/ConfirmButton" to="." method="_on_confirm_button_pressed"]
+[connection signal="pressed" from="ClosingGameWarning/MainFrame/MarginContainer/CancelButton" to="." method="_on_cancel_button_pressed"]

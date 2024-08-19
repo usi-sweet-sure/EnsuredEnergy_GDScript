@@ -186,3 +186,6 @@ CANCEL,Cancel,Annuler,Abbrechen,Annullare
 RESET_CONFIRM,Are you sure you want to restart the game ?,Es-tu sûr de vouloir recommencer le jeu ?,"Sind Sie sicher, dass Sie das Spiel neu starten wollen?",Sei sicuro di voler ricominciare il gioco?
 PLAYER_NAME_PLACEHOLDER,NAME,NOM,NAME,NOME
 SURVEY_TOKEN,Survey token,Num. sondage,Umfrage-Nr.,Indagine n.
+QUIT_WARNING_TEXT,Exit the game?\nProgress will be lost,Quitter le jeu ?\nLa progression sera perdue,Das Spiel verlassen?\nDer Fortschritt geht verloren,Uscire dal gioco?\nI progressi andranno persi
+QUIT_WITH_SURVEY_TEXT,A tab directing you to the survey will automatically open,Un onglet vous renvoyant vers l'enquête s'ouvrira automatiquement,"Es öffnet sich automatisch ein Tab, der Sie zur Umfrage weiterleitet",Si aprirà automaticamente una scheda che ti indirizza al sondaggio
+QUIT_CONFIRM_BUTTON_TEXT,Quit,Quitter,Beenden,Fine

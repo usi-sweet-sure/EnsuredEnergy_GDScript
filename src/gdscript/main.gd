@@ -13,9 +13,3 @@ func _show_end_score():
 		power_plant.multiplier.hide()
 	for build_button in get_tree().get_nodes_in_group("BB"):
 		build_button.disabled = true
-
-
-func _unhandled_input(event):
-	if event is InputEventKey:
-		if event.pressed and event.keycode == KEY_ESCAPE:
-			get_tree().quit()
