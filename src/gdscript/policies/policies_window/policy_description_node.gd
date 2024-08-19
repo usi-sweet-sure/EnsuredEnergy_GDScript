@@ -1,8 +1,7 @@
 extends Control
 
-@onready var title = $Title
-@onready var text = $Text
-
+@onready var title = $VBoxContainer/Title
+@onready var text = $VBoxContainer/Text
 
 
 # Called when the node enters the scene tree for the first time.

@@ -1202,6 +1202,7 @@ texture_hover = ExtResource("30_n1n8n")
 ignore_texture_size = true
 
 [node name="BorrowMoneyFrame" type="Control" parent="TopLeftZone/MoneyManagement/BorrowMoney"]
+visible = false
 anchors_preset = 0
 offset_left = 685.0
 offset_top = 252.0

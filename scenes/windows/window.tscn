@@ -117,82 +117,81 @@ position = Vector2(549.5, 388.5)
 texture = ExtResource("2_bdksa")
 
 [node name="Screen" type="Sprite2D" parent="Control/CenterFrame"]
-position = Vector2(2.5, -181.5)
+position = Vector2(2.5, -165.5)
+scale = Vector2(1, 1.10323)
 texture = ExtResource("3_jt4rt")
 
 [node name="Description" type="Control" parent="Control/CenterFrame"]
 visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -180.0
+offset_top = -330.0
+offset_right = 183.0
+offset_bottom = 2.0
 script = ExtResource("3_db8we")
 
-[node name="Title" type="Label" parent="Control/CenterFrame/Description"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterFrame/Description"]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -193.0
-offset_top = -316.0
-offset_right = 152.0
-offset_bottom = -286.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 5.0
+offset_right = -20.0
+offset_bottom = -1.0
 grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="Control/CenterFrame/Description/VBoxContainer"]
+layout_mode = 2
 theme = ExtResource("3_yevmu")
 theme_type_variation = &"Screen"
 text = "- Campaign -"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Text" type="Label" parent="Control/CenterFrame/Description"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -175.5
-offset_top = -251.5
-offset_right = 143.5
-offset_bottom = -190.5
-grow_horizontal = 2
+[node name="Text" type="Label" parent="Control/CenterFrame/Description/VBoxContainer"]
+layout_mode = 2
 theme = ExtResource("3_yevmu")
 theme_type_variation = &"Screen"
 theme_override_font_sizes/font_size = 20
 text = "Information campaigns help boost the popularity of your policies."
+horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="Effect" type="Control" parent="Control/CenterFrame"]
 visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -183.0
+offset_top = -141.0
+offset_right = 179.0
+offset_bottom = 7.0
 script = ExtResource("5_14j7w")
 
-[node name="Title" type="Label" parent="Control/CenterFrame/Effect"]
-layout_mode = 0
-offset_left = -165.0
-offset_top = -181.0
-offset_right = 163.0
-offset_bottom = -151.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterFrame/Effect"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 23.0
+offset_top = -9.0
+offset_right = -12.0
+offset_bottom = 160.0
+grow_horizontal = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="Control/CenterFrame/Effect/VBoxContainer"]
+layout_mode = 2
 theme = ExtResource("3_yevmu")
 theme_type_variation = &"Screen"
 text = "EFFECT"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Text" type="Label" parent="Control/CenterFrame/Effect"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -177.0
-offset_top = -162.0
-offset_right = 135.0
-offset_bottom = -24.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Text" type="Label" parent="Control/CenterFrame/Effect/VBoxContainer"]
+layout_mode = 2
 theme = ExtResource("3_yevmu")
 theme_type_variation = &"Screen"
 theme_override_font_sizes/font_size = 20
@@ -224,25 +223,26 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -139.0
-offset_top = -285.0
-offset_right = 132.0
-offset_bottom = -259.0
+offset_left = -192.5
+offset_top = -266.0
+offset_right = 186.5
+offset_bottom = -240.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("3_yevmu")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "ESTIMATED_ACCEPTANCE_CHANCE"
+horizontal_alignment = 1
 
 [node name="Popularity" type="ProgressBar" parent="Control/CenterFrame/Vote"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -28.5
-offset_top = -152.5
-offset_right = 49.5
-offset_bottom = -113.5
+offset_left = -15.5
+offset_top = -147.5
+offset_right = 62.5
+offset_bottom = -108.5
 grow_horizontal = 2
 theme_override_styles/background = SubResource("StyleBoxEmpty_3qlni")
 theme_override_styles/fill = SubResource("StyleBoxFlat_77vk0")
@@ -252,11 +252,13 @@ script = ExtResource("10_bdp3x")
 
 [node name="Popularity-" type="Sprite2D" parent="Control/CenterFrame/Vote/Popularity"]
 show_behind_parent = true
-position = Vector2(41, 21)
+position = Vector2(39.2745, 19.5)
+scale = Vector2(0.960785, 1.01961)
 texture = ExtResource("8_mlb0j")
 
 [node name="Icon" type="Sprite2D" parent="Control/CenterFrame/Vote/Popularity"]
-position = Vector2(-40, 16)
+position = Vector2(-43.6273, 20.5)
+scale = Vector2(0.872727, 0.872727)
 texture = ExtResource("13_sjt8j")
 
 [node name="VoteResult" type="Label" parent="Control/CenterFrame/Vote"]
@@ -367,40 +369,42 @@ visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -163.0
-offset_top = -305.0
+offset_top = -329.0
 offset_right = 161.0
-offset_bottom = -36.0
+offset_bottom = -60.0
 
-[node name="Title1" type="Label" parent="Control/CenterFrame/Explanation"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterFrame/Explanation"]
 layout_mode = 0
-offset_right = 324.0
-offset_bottom = 23.0
+offset_left = -5.0
+offset_top = 4.0
+offset_right = 331.0
+offset_bottom = 308.0
+alignment = 1
+
+[node name="Title1" type="Label" parent="Control/CenterFrame/Explanation/VBoxContainer"]
+layout_mode = 2
 text = "POLICIES_EXPLANATION_CAMPAIGNS_TITLE"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Text1" type="Label" parent="Control/CenterFrame/Explanation"]
-layout_mode = 0
-offset_top = 24.0
-offset_right = 324.0
-offset_bottom = 47.0
+[node name="Text1" type="Label" parent="Control/CenterFrame/Explanation/VBoxContainer"]
+layout_mode = 2
 text = "POLICIES_EXPLANATION_CAMPAIGNS_TEXT"
+horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Title2" type="Label" parent="Control/CenterFrame/Explanation"]
-layout_mode = 0
-offset_top = 99.0
-offset_right = 324.0
-offset_bottom = 122.0
+[node name="Spacer" type="Label" parent="Control/CenterFrame/Explanation/VBoxContainer"]
+layout_mode = 2
+
+[node name="Title2" type="Label" parent="Control/CenterFrame/Explanation/VBoxContainer"]
+layout_mode = 2
 text = "POLICIES_EXPLANATION_POLICIES_TITLE"
 horizontal_alignment = 1
 
-[node name="Text2" type="Label" parent="Control/CenterFrame/Explanation"]
-layout_mode = 0
-offset_top = 125.0
-offset_right = 324.0
-offset_bottom = 148.0
+[node name="Text2" type="Label" parent="Control/CenterFrame/Explanation/VBoxContainer"]
+layout_mode = 2
 text = "POLICIES_EXPLANATION_POLICIES_TEXT"
+horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="LeftFrame" type="Sprite2D" parent="Control"]

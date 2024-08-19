@@ -2387,12 +2387,6 @@ libraries = {
 }
 autoplay = "Wind"
 
-[node name="Money" parent="World/BuildButton" index="4"]
-offset_left = -286.0
-offset_top = -132.5
-offset_right = -126.0
-offset_bottom = -43.5
-
 [node name="BuildButton2" parent="World" index="15"]
 offset_left = 624.0
 offset_top = 480.0
@@ -2467,12 +2461,6 @@ autoplay = "Sun"
 
 [node name="Hammer" parent="World/BuildButton9" index="0"]
 position = Vector2(308, 205)
-
-[node name="Money" parent="World/BuildButton9" index="4"]
-offset_left = -279.0
-offset_top = -124.0
-offset_right = -119.0
-offset_bottom = -35.0
 
 [node name="Solar" parent="World/BuildButton9/BuildMenu/Container" index="0"]
 visible = false
@@ -2757,6 +2745,204 @@ visible = false
 
 [node name="End" parent="." instance=ExtResource("21_7pke6")]
 visible = false
+
+[node name="Audio" parent="." instance=ExtResource("34_smnob")]
+
+[node name="ForestAmbiance" parent="Audio" index="0"]
+bus = &"Sound"
+
+[node name="Water" parent="Audio" index="1"]
+position = Vector2(808, 2080)
+volume_db = -5.0
+autoplay = true
+bus = &"Sound"
+
+[node name="Water2" parent="Audio" index="2"]
+position = Vector2(2056, 2080)
+autoplay = true
+bus = &"Sound"
+
+[node name="Wind" parent="Audio" index="3"]
+position = Vector2(-568, 576)
+volume_db = 10.0
+stream_paused = false
+bus = &"Sound"
+
+[node name="Graphs" parent="." instance=ExtResource("66_s8n66")]
+visible = false
+
+[node name="TestLayer" type="CanvasLayer" parent="."]
+
+[node name="TestButtons" type="Control" parent="TestLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 972.0
+offset_top = 43.0
+offset_right = 1012.0
+offset_bottom = 83.0
+script = ExtResource("67_xot01")
+
+[node name="ButtonTop" type="Button" parent="TestLayer/TestButtons"]
+visible = false
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Test button top"
+
+[node name="ButtonBottom" type="Button" parent="TestLayer/TestButtons"]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_top = 35.0
+offset_right = 160.0
+offset_bottom = 66.0
+text = "Test button bottom
+"
+
+[node name="HttpRequestIndicator" type="Button" parent="TestLayer/TestButtons"]
+layout_mode = 0
+offset_left = 673.0
+offset_top = 299.0
+offset_right = 886.0
+offset_bottom = 337.0
+theme_override_colors/font_color = Color(0.372419, 0.746602, 0.424331, 1)
+text = "HTTP Request Active"
+
+[node name="ContextInfos" type="VBoxContainer" parent="TestLayer"]
+offset_left = 1643.0
+offset_top = 391.0
+offset_right = 1753.0
+offset_bottom = 550.0
+
+[node name="Context infos" type="Label" parent="TestLayer/ContextInfos"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.964706, 0, 0.305882, 1)
+theme_override_font_sizes/font_size = 17
+text = "Context Infos"
+
+[node name="res_id" type="Label" parent="TestLayer/ContextInfos"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TestLayer/ContextInfos/res_id"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.964706, 0, 0.305882, 1)
+text = "res_id:"
+
+[node name="value" type="Label" parent="TestLayer/ContextInfos/res_id"]
+layout_mode = 0
+offset_left = 100.0
+offset_right = 140.0
+offset_bottom = 23.0
+script = ExtResource("68_vv85d")
+
+[node name="res_name" type="Label" parent="TestLayer/ContextInfos"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TestLayer/ContextInfos/res_name"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.964706, 0, 0.305882, 1)
+text = "res_name:"
+
+[node name="value" type="Label" parent="TestLayer/ContextInfos/res_name"]
+layout_mode = 0
+offset_left = 100.0
+offset_right = 140.0
+offset_bottom = 23.0
+script = ExtResource("69_tx34c")
+
+[node name="token" type="Label" parent="TestLayer/ContextInfos"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TestLayer/ContextInfos/token"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.964706, 0, 0.305882, 1)
+text = "token:"
+
+[node name="value" type="Label" parent="TestLayer/ContextInfos/token"]
+layout_mode = 0
+offset_left = 100.0
+offset_right = 140.0
+offset_bottom = 23.0
+script = ExtResource("70_d30of")
+
+[node name="year" type="Label" parent="TestLayer/ContextInfos"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TestLayer/ContextInfos/year"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.964706, 0, 0.305882, 1)
+text = "yr:"
+
+[node name="value" type="Label" parent="TestLayer/ContextInfos/year"]
+layout_mode = 0
+offset_left = 100.0
+offset_right = 140.0
+offset_bottom = 23.0
+script = ExtResource("70_j6q0p")
+
+[node name="prm_id" type="Label" parent="TestLayer/ContextInfos"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TestLayer/ContextInfos/prm_id"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.964859, 0, 0.304106, 1)
+text = "prm_id:"
+
+[node name="value" type="Label" parent="TestLayer/ContextInfos/prm_id"]
+layout_mode = 0
+offset_left = 100.0
+offset_right = 140.0
+offset_bottom = 23.0
+script = ExtResource("71_q27fr")
+
+[node name="tj" type="Label" parent="TestLayer/ContextInfos"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TestLayer/ContextInfos/tj"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.964706, 0, 0.305882, 1)
+text = "tj:"
+
+[node name="value" type="Label" parent="TestLayer/ContextInfos/tj"]
+layout_mode = 0
+offset_left = 100.0
+offset_right = 140.0
+offset_bottom = 23.0
+script = ExtResource("72_e32ek")
+
+[node name="PlayTestButton" type="Button" parent="TestLayer"]
+offset_left = 365.0
+offset_top = 556.0
+offset_right = 515.0
+offset_bottom = 660.0
+text = "Play test"
+script = ExtResource("73_c8dpd")
+
+[node name="Label" type="Label" parent="TestLayer"]
+offset_left = 156.0
+offset_top = 571.0
+offset_right = 356.0
+offset_bottom = 646.0
+text = "Use this button to test the game without creating a new game
+"
+autowrap_mode = 2
+script = ExtResource("75_bk8o4")
+
+[node name="SurveyLayer" parent="." instance=ExtResource("76_y7xdi")]
 
 [node name="Settings" type="CanvasLayer" parent="."]
 visible = false
@@ -3232,216 +3418,18 @@ position = Vector2(-2.85706, -2.85718)
 texture = ExtResource("65_p0ru6")
 centered = false
 
-[node name="Audio" parent="." instance=ExtResource("34_smnob")]
-
-[node name="ForestAmbiance" parent="Audio" index="0"]
-bus = &"Sound"
-
-[node name="Water" parent="Audio" index="1"]
-position = Vector2(808, 2080)
-volume_db = -5.0
-autoplay = true
-bus = &"Sound"
-
-[node name="Water2" parent="Audio" index="2"]
-position = Vector2(2056, 2080)
-autoplay = true
-bus = &"Sound"
-
-[node name="Wind" parent="Audio" index="3"]
-position = Vector2(-568, 576)
-volume_db = 10.0
-stream_paused = false
-bus = &"Sound"
-
-[node name="Graphs" parent="." instance=ExtResource("66_s8n66")]
-visible = false
-
-[node name="TestLayer" type="CanvasLayer" parent="."]
-
-[node name="TestButtons" type="Control" parent="TestLayer"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 972.0
-offset_top = 43.0
-offset_right = 1012.0
-offset_bottom = 83.0
-script = ExtResource("67_xot01")
-
-[node name="ButtonTop" type="Button" parent="TestLayer/TestButtons"]
-visible = false
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-text = "Test button top"
-
-[node name="ButtonBottom" type="Button" parent="TestLayer/TestButtons"]
-visible = false
-layout_mode = 0
-offset_left = 1.0
-offset_top = 35.0
-offset_right = 160.0
-offset_bottom = 66.0
-text = "Test button bottom
-"
-
-[node name="HttpRequestIndicator" type="Button" parent="TestLayer/TestButtons"]
-layout_mode = 0
-offset_left = 673.0
-offset_top = 299.0
-offset_right = 886.0
-offset_bottom = 337.0
-theme_override_colors/font_color = Color(0.372419, 0.746602, 0.424331, 1)
-text = "HTTP Request Active"
-
-[node name="ContextInfos" type="VBoxContainer" parent="TestLayer"]
-offset_left = 1643.0
-offset_top = 391.0
-offset_right = 1753.0
-offset_bottom = 550.0
-
-[node name="Context infos" type="Label" parent="TestLayer/ContextInfos"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.964706, 0, 0.305882, 1)
-theme_override_font_sizes/font_size = 17
-text = "Context Infos"
-
-[node name="res_id" type="Label" parent="TestLayer/ContextInfos"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="TestLayer/ContextInfos/res_id"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_colors/font_color = Color(0.964706, 0, 0.305882, 1)
-text = "res_id:"
-
-[node name="value" type="Label" parent="TestLayer/ContextInfos/res_id"]
-layout_mode = 0
-offset_left = 100.0
-offset_right = 140.0
-offset_bottom = 23.0
-script = ExtResource("68_vv85d")
-
-[node name="res_name" type="Label" parent="TestLayer/ContextInfos"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="TestLayer/ContextInfos/res_name"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_colors/font_color = Color(0.964706, 0, 0.305882, 1)
-text = "res_name:"
-
-[node name="value" type="Label" parent="TestLayer/ContextInfos/res_name"]
-layout_mode = 0
-offset_left = 100.0
-offset_right = 140.0
-offset_bottom = 23.0
-script = ExtResource("69_tx34c")
-
-[node name="token" type="Label" parent="TestLayer/ContextInfos"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="TestLayer/ContextInfos/token"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_colors/font_color = Color(0.964706, 0, 0.305882, 1)
-text = "token:"
-
-[node name="value" type="Label" parent="TestLayer/ContextInfos/token"]
-layout_mode = 0
-offset_left = 100.0
-offset_right = 140.0
-offset_bottom = 23.0
-script = ExtResource("70_d30of")
-
-[node name="year" type="Label" parent="TestLayer/ContextInfos"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="TestLayer/ContextInfos/year"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_colors/font_color = Color(0.964706, 0, 0.305882, 1)
-text = "yr:"
-
-[node name="value" type="Label" parent="TestLayer/ContextInfos/year"]
-layout_mode = 0
-offset_left = 100.0
-offset_right = 140.0
-offset_bottom = 23.0
-script = ExtResource("70_j6q0p")
-
-[node name="prm_id" type="Label" parent="TestLayer/ContextInfos"]
-visible = false
-layout_mode = 2
-
-[node name="Label" type="Label" parent="TestLayer/ContextInfos/prm_id"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_colors/font_color = Color(0.964859, 0, 0.304106, 1)
-text = "prm_id:"
-
-[node name="value" type="Label" parent="TestLayer/ContextInfos/prm_id"]
-layout_mode = 0
-offset_left = 100.0
-offset_right = 140.0
-offset_bottom = 23.0
-script = ExtResource("71_q27fr")
-
-[node name="tj" type="Label" parent="TestLayer/ContextInfos"]
-visible = false
-layout_mode = 2
-
-[node name="Label" type="Label" parent="TestLayer/ContextInfos/tj"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_colors/font_color = Color(0.964706, 0, 0.305882, 1)
-text = "tj:"
-
-[node name="value" type="Label" parent="TestLayer/ContextInfos/tj"]
-layout_mode = 0
-offset_left = 100.0
-offset_right = 140.0
-offset_bottom = 23.0
-script = ExtResource("72_e32ek")
-
-[node name="PlayTestButton" type="Button" parent="TestLayer"]
-offset_left = 365.0
-offset_top = 556.0
-offset_right = 515.0
-offset_bottom = 660.0
-text = "Play test"
-script = ExtResource("73_c8dpd")
-
-[node name="Label" type="Label" parent="TestLayer"]
-offset_left = 156.0
-offset_top = 571.0
-offset_right = 356.0
-offset_bottom = 646.0
-text = "Use this button to test the game without creating a new game
-"
-autowrap_mode = 2
-script = ExtResource("75_bk8o4")
-
-[node name="SurveyLayer" parent="." instance=ExtResource("76_y7xdi")]
-
 [node name="QuitGame" parent="." instance=ExtResource("77_iwdt8")]
 visible = false
 
+[connection signal="pressed" from="TestLayer/TestButtons/ButtonTop" to="TestLayer/TestButtons" method="_on_button_top_pressed"]
+[connection signal="pressed" from="TestLayer/TestButtons/ButtonBottom" to="TestLayer/TestButtons" method="_on_button_bottom_pressed"]
+[connection signal="pressed" from="TestLayer/PlayTestButton" to="TestLayer/PlayTestButton" method="_on_pressed"]
+[connection signal="pressed" from="TestLayer/PlayTestButton" to="TestLayer/Label" method="_on_play_test_button_pressed"]
 [connection signal="pressed" from="Settings/Control/Close" to="Settings/Control/Close" method="_on_pressed"]
 [connection signal="pressed" from="Settings/Control/SettingsBox/VBoxContainer/Language" to="Settings/Control/SettingsBox/VBoxContainer/Language" method="_on_pressed"]
 [connection signal="pressed" from="Settings/Control/SettingsBox/VBoxContainer/Instructions" to="Settings/Control/SettingsBox/VBoxContainer/Instructions" method="_on_pressed"]
 [connection signal="pressed" from="Settings/Control/SettingsBox/VBoxContainer/Credits" to="Settings/Control/SettingsBox/VBoxContainer/Credits/CreditsSprite" method="_on_credits_button_pressed"]
 [connection signal="pressed" from="Settings/Control/SettingsBox/MarginContainer/QuitButton" to="Settings" method="_on_quit_button_pressed"]
-[connection signal="pressed" from="TestLayer/TestButtons/ButtonTop" to="TestLayer/TestButtons" method="_on_button_top_pressed"]
-[connection signal="pressed" from="TestLayer/TestButtons/ButtonBottom" to="TestLayer/TestButtons" method="_on_button_bottom_pressed"]
-[connection signal="pressed" from="TestLayer/PlayTestButton" to="TestLayer/PlayTestButton" method="_on_pressed"]
-[connection signal="pressed" from="TestLayer/PlayTestButton" to="TestLayer/Label" method="_on_play_test_button_pressed"]
 
 [editable path="World"]
 [editable path="World/Nuclear3"]
