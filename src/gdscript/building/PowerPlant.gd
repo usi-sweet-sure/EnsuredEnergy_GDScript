@@ -375,7 +375,7 @@ func _on_available_money_updated(available_money):
 func _on_upgrade_button_mouse_entered():
 	var tween = get_tree().create_tween()
 	tween.tween_property(metrics_container, "position", 
-			Vector2(metrics_container_original_position.x - 100,
+			Vector2(metrics_container_original_position.x - 62,
 			metrics_container_original_position.y), 0.1)
 	
 	for element in modifiers_preview_elements:
@@ -414,7 +414,7 @@ func _on_upgrade_button_mouse_entered():
 func _on_downgrade_button_mouse_entered():
 	var tween = get_tree().create_tween()
 	tween.tween_property(metrics_container, "position", 
-			Vector2(metrics_container_original_position.x - 100,
+			Vector2(metrics_container_original_position.x - 62,
 			metrics_container_original_position.y), 0.1)
 			
 	for element in modifiers_preview_elements:
