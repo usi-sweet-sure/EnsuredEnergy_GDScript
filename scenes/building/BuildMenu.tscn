@@ -147,9 +147,9 @@ position = Vector2(16.6667, 32.2222)
 texture = ExtResource("3_og7da")
 
 [node name="BuildInfo" parent="Container/Wind" index="2"]
-offset_left = -84.4444
+offset_left = -131.111
 offset_top = -474.444
-offset_right = -44.4444
+offset_right = -91.111
 offset_bottom = -434.444
 scale = Vector2(1, 1)
 
@@ -250,9 +250,9 @@ position = Vector2(17.7778, 15.5556)
 texture = ExtResource("7_bxb5o")
 
 [node name="BuildInfo" parent="Container/Gas" index="2"]
-offset_left = -87.7778
+offset_left = -132.223
 offset_top = -473.333
-offset_right = -47.7778
+offset_right = -92.2227
 offset_bottom = -433.333
 scale = Vector2(1, 1)
 
@@ -288,9 +288,9 @@ position = Vector2(17.7767, 15.5556)
 texture = ExtResource("8_f783d")
 
 [node name="BuildInfo" parent="Container/Waste" index="2"]
-offset_left = -88.89
+offset_left = -135.557
 offset_top = -473.333
-offset_right = -48.89
+offset_right = -95.5566
 offset_bottom = -433.333
 scale = Vector2(1, 1)
 
@@ -337,9 +337,9 @@ position = Vector2(16.6667, 15.5556)
 texture = ExtResource("9_a2e8y")
 
 [node name="BuildInfo" parent="Container/Biomass" index="2"]
-offset_left = -81.1111
+offset_left = -134.444
 offset_top = -473.333
-offset_right = -41.1111
+offset_right = -94.4445
 offset_bottom = -433.333
 scale = Vector2(1, 1)
 

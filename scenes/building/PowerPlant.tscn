@@ -426,6 +426,7 @@ texture_filter = 2
 position = Vector2(-1, 44)
 
 [node name="BuildInfo" type="Control" parent="."]
+visible = false
 z_index = 2
 z_as_relative = false
 layout_mode = 3
