@@ -161,9 +161,10 @@ func _update_info():
 	
 	# multiplier upgrade infos
 	if max_upgrade > 1:
-		$BuildInfo/EnergyContainer/Multiplier.show()
+		if not is_in_menu:
+			$BuildInfo/EnergyContainer/Multiplier.show()
+			$BuildInfo/EnergyContainer/Multiplier/Inc.show()
 		$BuildInfo/EnergyContainer/Multiplier/MultAmount.text = str(upgrade)
-		$BuildInfo/EnergyContainer/Multiplier/Inc.show()
 	$BuildInfo/EnergyContainer/Multiplier/MultAmount.text = str(upgrade)
 	
 	# updates texts
