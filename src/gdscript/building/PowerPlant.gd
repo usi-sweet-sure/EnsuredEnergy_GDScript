@@ -33,9 +33,10 @@ var base_production_cost
 @onready var metrics_container = $BuildInfo/ColorRect/ContainerN
 var metrics_container_original_position: Vector2
 @onready var modifiers_preview_elements = {
-	"winter_sticker": $BuildInfo/MultWinterE,
-	"summer_sticker": $BuildInfo/MultSummerE,
-	"cost_sticker": $BuildInfo/EnergyContainer/Multiplier/MultPrice,
+	"winter_sticker": $BuildInfo/WinterMultSticker,
+	"summer_sticker": $BuildInfo/SummerMultSticker,
+	"red_cost_sticker": $BuildInfo/EnergyContainer/Multiplier/PriceMultRedSticker,
+	"green_cost_sticker": $BuildInfo/EnergyContainer/Multiplier/PriceMultGreenSticker,
 	"prod_upgrade": $BuildInfo/ColorRect/ContainerN/Prod/Upgrade,
 	"prod_downgrade": $BuildInfo/ColorRect/ContainerN/Prod/Downgrade,
 	"poll_upgrade": $BuildInfo/ColorRect/ContainerN/Poll/Upgrade,
@@ -148,7 +149,7 @@ func _update_info():
 			
 	$BuildInfo/ColorRect/LifeSpan.text = tr("SHUT_DOWN").format({nbr = str(life_span - Gameloop.current_turn + 1)}) 
 		
-	$PreviewInfo/Price.text = str(build_cost) + "$"
+	$PreviewInfo/Price.text = str(build_cost) + " CHF"
 	
 	if build_time > 0:
 		$PreviewInfo/Time.show()
@@ -380,14 +381,16 @@ func _on_upgrade_button_mouse_entered():
 	for element in modifiers_preview_elements:
 		var node = modifiers_preview_elements[element]
 		node.show()
-		
+		   
 		match element:
 			"winter_sticker":
-				node.text = "+ " + str(base_capacity * mult_factor).pad_decimals(2)
+				node.get_children()[0].text = "+ " + str(base_capacity * mult_factor).pad_decimals(2)
 			"summer_sticker":
-				node.text = "+ " + str(base_capacity * mult_factor).pad_decimals(2)
-			"cost_sticker":
-				node.text = "- " + str(upgrade_cost) + "$"
+				node.get_children()[0].text = "+ " + str(base_capacity * mult_factor).pad_decimals(2)
+			"red_cost_sticker":
+				node.get_children()[0].text = "+ " + str(upgrade_cost) + " CHF"
+			"green_cost_sticker":
+				node.hide()
 			"prod_downgrade":
 				node.text = "+ " + str(production_cost * mult_factor).pad_decimals(2)
 			"prod_upgrade":
@@ -420,11 +423,13 @@ func _on_downgrade_button_mouse_entered():
 		
 		match element:
 			"winter_sticker":
-				node.text = "- " + str(base_capacity * mult_factor).pad_decimals(2)
+				node.get_children()[0] = "- " + str(base_capacity * mult_factor).pad_decimals(2)
 			"summer_sticker":
-				node.text = "- " + str(base_capacity * mult_factor).pad_decimals(2)
-			"cost_sticker":
-				node.text = "+ " + str(upgrade_cost) + "$"
+				node.get_children()[0] = "- " + str(base_capacity * mult_factor).pad_decimals(2)
+			"red_cost_sticker":
+				node.hide()
+			"green_cost_sticker":
+				node.get_children()[0].text = "- " + str(upgrade_cost) + " CHF"
 			"prod_downgrade":
 				node.hide()
 			"prod_upgrade":
@@ -512,30 +517,30 @@ func _on_locale_updated(_locale):
 
 
 func _on_multinc_mouse_entered():
-	$BuildInfo/EnergyContainer/Multiplier/MultPrice.text = "-" + str(upgrade_cost)
-	$BuildInfo/EnergyContainer/Multiplier/MultPrice.show()
-	$BuildInfo/MultWinterE.show()
-	$BuildInfo/MultSummerE.show()
+	$BuildInfo/EnergyContainer/Multiplier/PriceMultRedSticker.text = "-" + str(upgrade_cost)
+	$BuildInfo/EnergyContainer/Multiplier/PriceMultRedSticker.show()
+	$BuildInfo/WinterMultSticker.show()
+	$BuildInfo/SummerMultSticker.show()
 	
 
 
 func _on_multinc_mouse_exited():
-	$BuildInfo/EnergyContainer/Multiplier/MultPrice.hide()
-	$BuildInfo/MultWinterE.hide()
-	$BuildInfo/MultSummerE.hide()
+	$BuildInfo/EnergyContainer/Multiplier/PriceMultRedSticker.hide()
+	$BuildInfo/WinterMultSticker.hide()
+	$BuildInfo/SummerMultSticker.hide()
 
 func _on_multdec_mouse_entered():
-	$BuildInfo/EnergyContainer/Multiplier/MultPrice.text = "+" + str(upgrade_cost)
-	$BuildInfo/EnergyContainer/Multiplier/MultPrice.show()
-	$BuildInfo/MultWinterE.show()
-	$BuildInfo/MultSummerE.show()
-	$BuildInfo/EnergyContainer/Multiplier/MultPrice/GreenPostit.show()
+	$BuildInfo/EnergyContainer/Multiplier/PriceMultRedSticker.text = "+" + str(upgrade_cost)
+	$BuildInfo/EnergyContainer/Multiplier/PriceMultRedSticker.show()
+	$BuildInfo/WinterMultSticker.show()
+	$BuildInfo/SummerMultSticker.show()
+	$BuildInfo/EnergyContainer/Multiplier/PriceMultRedSticker/GreenPostit.show()
 
 func _on_multdec_mouse_exited():
-	$BuildInfo/EnergyContainer/Multiplier/MultPrice.hide()
-	$BuildInfo/MultWinterE.hide()
-	$BuildInfo/MultSummerE.hide()
-	$BuildInfo/EnergyContainer/Multiplier/MultPrice/GreenPostit.hide()
+	$BuildInfo/EnergyContainer/Multiplier/PriceMultRedSticker.hide()
+	$BuildInfo/WinterMultSticker.hide()
+	$BuildInfo/SummerMultSticker.hide()
+	$BuildInfo/EnergyContainer/Multiplier/PriceMultRedSticker/GreenPostit.hide()
 	
 func _unhandled_input(event):
 	# Mouse drag moves the camera

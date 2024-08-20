@@ -426,7 +426,6 @@ texture_filter = 2
 position = Vector2(-1, 44)
 
 [node name="BuildInfo" type="Control" parent="."]
-visible = false
 z_index = 2
 z_as_relative = false
 layout_mode = 3
@@ -779,43 +778,65 @@ theme_override_font_sizes/font_size = 50
 text = "→"
 horizontal_alignment = 2
 
-[node name="MultWinterE" type="Label" parent="BuildInfo"]
+[node name="WinterMultSticker" type="TextureRect" parent="BuildInfo"]
 visible = false
-layout_mode = 0
-offset_left = 10.0
-offset_top = 285.0
-offset_right = 50.0
-offset_bottom = 313.0
-rotation = -0.261799
-theme = ExtResource("11_iy3hd")
-theme_override_colors/font_color = Color(0.113725, 0.215686, 0.227451, 1)
-text = "+ 2"
-horizontal_alignment = 1
-
-[node name="PostitE" type="Sprite2D" parent="BuildInfo/MultWinterE"]
 show_behind_parent = true
-position = Vector2(31.0298, 15.5613)
-rotation = 0.261799
+z_index = 1
+layout_mode = 2
+offset_left = -24.6667
+offset_top = 276.0
+offset_right = 40.3333
+offset_bottom = 336.0
+rotation = -0.261799
 texture = ExtResource("14_o8nf6")
 
-[node name="MultSummerE" type="Label" parent="BuildInfo"]
-visible = false
-layout_mode = 0
-offset_left = 147.0
-offset_top = 282.0
-offset_right = 190.0
-offset_bottom = 317.0
-rotation = -0.261799
+[node name="MultWinterE" type="Label" parent="BuildInfo/WinterMultSticker"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.6439
+offset_top = -11.6725
+offset_right = 22.3561
+offset_bottom = 11.3275
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("11_iy3hd")
 theme_override_colors/font_color = Color(0.113725, 0.215686, 0.227451, 1)
-text = "+ 2"
+text = "+ 2.56"
 horizontal_alignment = 1
 
-[node name="PostitE2" type="Sprite2D" parent="BuildInfo/MultSummerE"]
+[node name="SummerMultSticker" type="TextureRect" parent="BuildInfo"]
+visible = false
 show_behind_parent = true
-position = Vector2(27.8732, 15.7508)
-rotation = 0.261799
+z_index = 1
+layout_mode = 2
+offset_left = 108.0
+offset_top = 276.0
+offset_right = 173.0
+offset_bottom = 336.0
+rotation = -0.261799
 texture = ExtResource("14_o8nf6")
+
+[node name="MultSummerE" type="Label" parent="BuildInfo/SummerMultSticker"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.6439
+offset_top = -11.6725
+offset_right = 22.3561
+offset_bottom = 11.3275
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("11_iy3hd")
+theme_override_colors/font_color = Color(0.113725, 0.215686, 0.227451, 1)
+text = "+ 2.56"
+horizontal_alignment = 1
 
 [node name="Name" type="Label" parent="BuildInfo"]
 layout_mode = 0
@@ -1001,32 +1022,65 @@ show_behind_parent = true
 position = Vector2(29.5, 34.6667)
 texture = ExtResource("20_6s7vn")
 
-[node name="MultPrice" type="Label" parent="BuildInfo/EnergyContainer/Multiplier"]
-visible = false
-layout_mode = 0
-offset_left = 39.0
-offset_top = 133.333
-offset_right = 84.0
-offset_bottom = 168.333
-rotation = -0.261799
-theme = ExtResource("11_iy3hd")
-theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
-text = "$$$"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Postit" type="Sprite2D" parent="BuildInfo/EnergyContainer/Multiplier/MultPrice"]
+[node name="PriceMultRedSticker" type="TextureRect" parent="BuildInfo/EnergyContainer/Multiplier"]
 show_behind_parent = true
-position = Vector2(33.9275, 16.3378)
-rotation = 0.261799
+layout_mode = 0
+offset_left = 23.0
+offset_top = 66.0388
+offset_right = 103.0
+offset_bottom = 146.039
+rotation = -0.261799
 texture = ExtResource("21_baxyr")
 
-[node name="GreenPostit" type="Sprite2D" parent="BuildInfo/EnergyContainer/Multiplier/MultPrice"]
-visible = false
+[node name="PriceLabel" type="Label" parent="BuildInfo/EnergyContainer/Multiplier/PriceMultRedSticker"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -34.0
+offset_right = 31.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
+theme_override_font_sizes/font_size = 13
+text = "+ 25 CHF"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="PriceMultGreenSticker" type="TextureRect" parent="BuildInfo/EnergyContainer/Multiplier"]
 show_behind_parent = true
-position = Vector2(21.3011, 17.0956)
-rotation = 0.261799
+layout_mode = 0
+offset_left = 22.3333
+offset_top = 64.0388
+offset_right = 102.333
+offset_bottom = 145.039
+rotation = -0.261799
 texture = ExtResource("23_ap1eh")
+
+[node name="PriceLabel" type="Label" parent="BuildInfo/EnergyContainer/Multiplier/PriceMultGreenSticker"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = -31.5
+offset_right = 32.0
+offset_bottom = 31.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.137255, 0.137255, 0.137255, 1)
+theme_override_font_sizes/font_size = 13
+text = "+ 25 CHF"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Switch" type="CheckButton" parent="BuildInfo"]
 layout_mode = 1
