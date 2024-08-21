@@ -1555,6 +1555,7 @@ show_percentage = false
 metadata/_edit_group_ = true
 
 [node name="Info" parent="EnvironmentAndPollution/Environment" instance=ExtResource("4_67rbh")]
+visible = false
 layout_mode = 1
 offset_left = 415.0
 offset_top = -80.0
@@ -1903,7 +1904,9 @@ offset_right = 243.0
 offset_bottom = 116.0
 mouse_default_cursor_shape = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_qglqh")
-max_value = 200.0
+min_value = 500.0
+max_value = 1000.0
+value = 500.0
 green_bar = ExtResource("93_6koeb")
 red_bar = ExtResource("94_b4xie")
 
@@ -1945,7 +1948,9 @@ mouse_default_cursor_shape = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_styles/background = SubResource("StyleBoxFlat_siya7")
-max_value = 200.0
+min_value = 500.0
+max_value = 1000.0
+value = 500.0
 season = 1
 green_bar = ExtResource("93_6koeb")
 red_bar = ExtResource("94_b4xie")
