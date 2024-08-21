@@ -210,12 +210,12 @@ func _on_request_finished(_result, _response_code, _headers, _body):
 			land_use /= 3
 			production_cost = production_cost / 10 / 3
 		elif is_hydro() || is_river():
-			capacity = capacity / 100 / 2
+			capacity = capacity / 100.0 / 2.0
 			pollution /= 4 # needs to divide by the number of water plants
 			land_use /= 4
 			production_cost = production_cost / 10 / 4
 		else:
-			capacity /= 100
+			capacity /= 100.0
 		
 		base_capacity = capacity
 		base_pollution = pollution
