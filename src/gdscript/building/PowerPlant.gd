@@ -78,9 +78,9 @@ var plant_name_to_metric_id = {
 	"NUCLEAR_EMI": "252",
 	"NUCLEAR_LAND": "282",
 	"NUCLEAR_COST": "322",
-	"HYDRO_EMI": "253",
-	"HYDRO_LAND": "283",
-	"HYDRO_COST": "323",
+	"HYDRO_EMI": "458",
+	"HYDRO_LAND": "459",
+	"HYDRO_COST": "460",
 	"RIVER_EMI": "253",
 	"RIVER_LAND": "283",
 	"RIVER_COST": "323",
@@ -102,7 +102,7 @@ var plant_name_to_metric_id = {
 	"GAS_AVAIL": "334",
 	"NUCLEAR_AVAIL" : "332",
 	"RIVER_AVAIL": "333",
-	"HYDRO_AVAIL": "333",
+	"HYDRO_AVAIL": "461",
 	"WASTE_AVAIL": "335",
 	"BIOMASS_AVAIL": "336",
 	"BIOGAS_AVAIL": "337",
@@ -203,9 +203,6 @@ func _on_request_finished(_result, _response_code, _headers, _body):
 				avail_key:
 					availability.x = float(i["tj"]) / cnv_capacity
 					availability.y = 1 - availability.x
-					if is_hydro() || is_river():
-						availability.x = float(i["tj"]) / 2 / cnv_capacity
-						availability.y = 1 - availability.x
 		
 		if is_nuclear():
 			capacity = capacity / 100.0 / 3.0 # there's 3 nuclear plants
