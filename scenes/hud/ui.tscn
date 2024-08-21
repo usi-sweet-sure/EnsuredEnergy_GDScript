@@ -12,9 +12,9 @@
 [ext_resource type="AudioStream" uid="uid://d0mx81kv2vlha" path="res://assets/Sounds/Negative 2_1.wav" id="6_jw1cb"]
 [ext_resource type="Texture2D" uid="uid://cgf1xjsx0mfot" path="res://assets/UI Elements/Button-Next-Base.png" id="7_g7ih8"]
 [ext_resource type="PackedScene" uid="uid://jj476u8yn2g8" path="res://scenes/windows/window.tscn" id="7_yu7g8"]
-[ext_resource type="Script" path="res://src/gdscript/settings/open_settings_frame_button.gd" id="9_xq6mg"]
+[ext_resource type="Texture2D" uid="uid://en44frv5c6jy" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0014_graphs-symbol.png" id="9_01q4h"]
+[ext_resource type="Script" path="res://src/gdscript/graphs/open_graphs_frame_button.gd" id="9_xq6mg"]
 [ext_resource type="AudioStream" uid="uid://ben5r72x0p8pr" path="res://assets/Sounds/Move_03.wav" id="10_po2ll"]
-[ext_resource type="Texture2D" uid="uid://b2jlabpuug28x" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0015_Settings-symbol.png" id="11_4wrky"]
 [ext_resource type="Texture2D" uid="uid://bjeebs7uy4hpn" path="res://assets/UI Elements/Button-small-Hole.png" id="11_i0u5d"]
 [ext_resource type="Texture2D" uid="uid://bbnupxdtp78l5" path="res://assets/UI Elements/Icon-Wind.png" id="11_qepre"]
 [ext_resource type="AudioStream" uid="uid://00apgxjmwgw0" path="res://assets/Sounds/Click_020.wav" id="11_tr1n1"]
@@ -745,7 +745,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Settings" type="Label" parent="TopLeftZone/BackPlate"]
+[node name="Graphs" type="Label" parent="TopLeftZone/BackPlate"]
 offset_left = -101.0
 offset_top = -138.0
 offset_right = -13.0
@@ -753,7 +753,7 @@ offset_bottom = -112.0
 theme = ExtResource("70_2ktfd")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 12
-text = "SETTINGS"
+text = "GRAPHS"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
@@ -771,7 +771,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="OpenSettingsFrameButton" type="TextureButton" parent="TopLeftZone"]
+[node name="OpenGraphsFrameButton" type="TextureButton" parent="TopLeftZone"]
 layout_mode = 0
 offset_left = 113.0
 offset_top = 72.5
@@ -782,15 +782,15 @@ texture_pressed = ExtResource("37_533gb")
 texture_hover = ExtResource("38_7v12r")
 script = ExtResource("9_xq6mg")
 
-[node name="Button-hole" type="Sprite2D" parent="TopLeftZone/OpenSettingsFrameButton"]
+[node name="Button-hole" type="Sprite2D" parent="TopLeftZone/OpenGraphsFrameButton"]
 show_behind_parent = true
 position = Vector2(32, 32)
 texture = ExtResource("39_jsaox")
 
-[node name="Icon" type="Sprite2D" parent="TopLeftZone/OpenSettingsFrameButton"]
-position = Vector2(10, 10)
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("11_4wrky")
+[node name="Icon" type="Sprite2D" parent="TopLeftZone/OpenGraphsFrameButton"]
+position = Vector2(10, 8.5)
+scale = Vector2(0.954545, 0.954545)
+texture = ExtResource("9_01q4h")
 centered = false
 
 [node name="MoneyManagement" type="Control" parent="TopLeftZone"]
@@ -2308,7 +2308,7 @@ uppercase = true
 
 [node name="Error" type="AudioStreamPlayer" parent="NextTurn"]
 
-[connection signal="pressed" from="TopLeftZone/OpenSettingsFrameButton" to="TopLeftZone/OpenSettingsFrameButton" method="_on_pressed"]
+[connection signal="pressed" from="TopLeftZone/OpenGraphsFrameButton" to="TopLeftZone/OpenGraphsFrameButton" method="_on_pressed"]
 [connection signal="pressed" from="TopLeftZone/MoneyManagement/MoneyInfo/ToggleMoneyInfoBoxButton" to="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox" method="_on_toggle_money_info_box_button_pressed"]
 [connection signal="pressed" from="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MoreMoneyInfoButton" to="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/InfoMoneyClosed" method="_on_more_money_info_button_pressed"]
 [connection signal="pressed" from="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MoreMoneyInfoButton" to="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/InfoMoneyOpen" method="_on_more_money_info_button_pressed"]
