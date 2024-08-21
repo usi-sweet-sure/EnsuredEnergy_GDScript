@@ -55,6 +55,8 @@ signal toggle_graphs
 signal game_started
 signal game_quit_requested
 
+signal hide_energy_bar_info_requested
+
 # We need to send this signal because some translations 
 # don't update automatically when changing the language at runtime,
 # and only update when the tr() statement is called again.

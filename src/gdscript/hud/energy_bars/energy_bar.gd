@@ -1,5 +1,6 @@
 extends ProgressBar
 
+
 enum Season {WINTER, SUMMER}
 @export var season: Season
 @export var green_bar: Resource
@@ -15,6 +16,7 @@ var max_value_set := false
 
 
 func _ready():
+	Gameloop.hide_energy_bar_info_requested.connect(_on_hide_info_box)
 	# Determines which season the bar will be monitoring
 	match season:
 		Season.WINTER:
@@ -89,6 +91,11 @@ func change_bar_color():
 		
 # Displays basic information on energy supply and demand
 func _on_bar_button_pressed():
+	match season:
+		Season.WINTER:
+			Gameloop.hide_energy_bar_info_requested.emit(Season.SUMMER)
+		Season.SUMMER:
+			Gameloop.hide_energy_bar_info_requested.emit(Season.WINTER)
 	info_box.visible = not info_box.visible
 	
 
@@ -110,3 +117,8 @@ func get_season_text(season_value: int):
 	match season_value:
 		0: return "Winter"
 		1: return "Summer"
+
+
+func _on_hide_info_box(season_to_hide: Season):
+	if season_to_hide == season:
+		info_box.hide()
