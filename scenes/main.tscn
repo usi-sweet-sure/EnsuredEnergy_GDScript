@@ -2092,9 +2092,6 @@ offset_top = -165.0
 offset_right = -74.0
 offset_bottom = 85.0
 
-[node name="Multiplier" parent="World/Nuclear3/BuildInfo/EnergyContainer" index="2"]
-visible = false
-
 [node name="NameRect" parent="World/Nuclear3" index="4"]
 visible = false
 
@@ -2161,9 +2158,6 @@ offset_left = -76.0
 offset_top = -160.333
 offset_right = -76.0
 offset_bottom = 89.6667
-
-[node name="Multiplier" parent="World/Nuclear2/BuildInfo/EnergyContainer" index="2"]
-visible = false
 
 [node name="NameRect" parent="World/Nuclear2" index="4"]
 visible = false
@@ -2241,9 +2235,6 @@ offset_bottom = 354.667
 [node name="ContainerN" parent="World/Nuclear/BuildInfo/ColorRect" index="2"]
 offset_top = -159.333
 offset_bottom = 90.6667
-
-[node name="Multiplier" parent="World/Nuclear/BuildInfo/EnergyContainer" index="2"]
-visible = false
 
 [node name="NameRect" parent="World/Nuclear" index="4"]
 visible = false
@@ -3107,7 +3098,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="ButtonHole" type="Sprite2D" parent="Settings/Control/SettingsBox/VBoxContainer"]
-position = Vector2(-5, 248)
+position = Vector2(-5, 251)
 texture = ExtResource("49_6hr2c")
 centered = false
 

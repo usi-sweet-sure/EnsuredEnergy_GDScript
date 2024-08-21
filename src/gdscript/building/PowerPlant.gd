@@ -148,9 +148,15 @@ func _update_info():
 			$LifeSpanWarning.show()
 			
 	$BuildInfo/ColorRect/LifeSpan.text = tr("SHUT_DOWN").format({nbr = str(life_span - Gameloop.current_turn + 1)}) 
+	# Below we add a decimal to round values so it looks like a money value
+	build_cost = 100.69
+	if floor(build_cost) == build_cost:
+		# 100 becomes 100.0
+		$PreviewInfo/Price.text = str(build_cost).pad_decimals(1)
+	else:
+		# 100.xx stays 100.xx
+		$PreviewInfo/Price.text = str(build_cost).pad_decimals(2)
 		
-	$PreviewInfo/Price.text = str(build_cost) + " CHF"
-	
 	if build_time > 0:
 		$PreviewInfo/Time.show()
 		$PreviewInfo/TimeIcon.show()
@@ -389,7 +395,7 @@ func _on_upgrade_button_mouse_entered():
 			"summer_sticker":
 				node.get_children()[0].text = "+ " + str(base_capacity * mult_factor).pad_decimals(2)
 			"red_cost_sticker":
-				node.get_children()[0].text = "+ " + str(upgrade_cost) + " CHF"
+				node.get_children()[0].text = "- " + str(upgrade_cost) + " CHF"
 			"green_cost_sticker":
 				node.hide()
 			"prod_downgrade":
@@ -430,7 +436,7 @@ func _on_downgrade_button_mouse_entered():
 			"red_cost_sticker":
 				node.hide()
 			"green_cost_sticker":
-				node.get_children()[0].text = "- " + str(upgrade_cost) + " CHF"
+				node.get_children()[0].text = "+ " + str(upgrade_cost) + " CHF"
 			"prod_downgrade":
 				node.hide()
 			"prod_upgrade":

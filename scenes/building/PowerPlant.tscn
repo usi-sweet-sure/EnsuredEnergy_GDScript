@@ -313,8 +313,8 @@ text = "0"
 
 [node name="MoneyIcon" type="Sprite2D" parent="PreviewInfo"]
 modulate = Color(0.219608, 0.756863, 0.788235, 1)
-position = Vector2(24, -232)
-scale = Vector2(0.5, 0.5)
+position = Vector2(22.25, -231.75)
+scale = Vector2(0.583333, 0.583333)
 texture = ExtResource("3_20yso")
 
 [node name="TimeIcon" type="Sprite2D" parent="PreviewInfo"]
@@ -328,9 +328,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 41.0
+offset_left = 43.0
 offset_top = -282.0
-offset_right = 133.0
+offset_right = 135.0
 offset_bottom = -246.0
 grow_vertical = 2
 theme = ExtResource("11_iy3hd")

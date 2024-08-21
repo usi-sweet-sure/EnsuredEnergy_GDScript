@@ -1,4 +1,4 @@
-[gd_scene load_steps=145 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=148 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/UI Elements/Button-Next-Normal.png" id="2_aobed"]
 [ext_resource type="Texture2D" uid="uid://ccsapuvkqqt1b" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0009_Profile-metal-base.png" id="2_nu7y6"]
@@ -24,9 +24,13 @@
 [ext_resource type="Texture2D" uid="uid://bwmnloeklg76n" path="res://assets/UI Elements/Enviornment-Hand.png" id="23_3qgyr"]
 [ext_resource type="Texture2D" uid="uid://lxqt8kspr35q" path="res://assets/UI Elements/Icon-Environment-.png" id="24_t8vy5"]
 [ext_resource type="Texture2D" uid="uid://0mihvtaw003w" path="res://assets/UI Elements/Icon-Pollution-.png" id="25_7q1c5"]
+[ext_resource type="Texture2D" uid="uid://c78xktsl3cnxc" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0016_Icon-yellow-normal-button.png" id="25_o5q30"]
 [ext_resource type="Script" path="res://src/gdscript/hud/energy_import/energy_import_slider.gd" id="25_pkr0e"]
+[ext_resource type="Texture2D" uid="uid://b07rwrrjjeock" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0017_Icon-yellow-press-button.png" id="26_kd3a6"]
+[ext_resource type="Texture2D" uid="uid://dm51vy4uvlpvd" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0015_Icon-yellow-hover-button.png" id="27_sye1h"]
 [ext_resource type="Texture2D" uid="uid://cnpo8atg0jpm8" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0011_Smaller-+-normal-button.png" id="28_2dbj3"]
 [ext_resource type="Texture2D" uid="uid://vff0e83ytund" path="res://assets/UI Elements/Energy-base.png" id="28_mr6x7"]
+[ext_resource type="Texture2D" uid="uid://b0c3ywqarx8b7" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0002_Icon-round-button-hole.png" id="28_oub76"]
 [ext_resource type="Texture2D" uid="uid://2t2eqb1uo5cb" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0003_Smaller-+-press-button.png" id="29_e2ga5"]
 [ext_resource type="Texture2D" uid="uid://dm24o8isvyq3f" path="res://assets/UI Elements/Import-Slider.png" id="29_j3wwc"]
 [ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/Fonts/Special_Elite/SpecialElite-Regular.ttf" id="30_d1m8l"]
@@ -54,7 +58,6 @@
 [ext_resource type="Texture2D" uid="uid://b34opid7c6qf6" path="res://assets/UI Elements/Pollution-Bar.png" id="41_ctrnv"]
 [ext_resource type="Script" path="res://src/gdscript/hud/money_management/borrow_money_frame/cancel_button.gd" id="42_j30d0"]
 [ext_resource type="Script" path="res://src/gdscript/hud/money_management/money_info_box/total_now_label.gd" id="42_l0rtw"]
-[ext_resource type="Texture2D" uid="uid://dcbjy5kxo2vbm" path="res://assets/Elements/INFO ICON.png" id="42_v8iq7"]
 [ext_resource type="Script" path="res://src/gdscript/hud/money_management/money_info_box/total_next_label.gd" id="43_lu1ke"]
 [ext_resource type="Texture2D" uid="uid://fe0i52vl7ck6" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0006_Slider-bar-horizontal.png" id="44_d3ema"]
 [ext_resource type="Texture2D" uid="uid://xmi4fk7xmp5j" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0032_Ball-Slider.png" id="45_oympp"]
@@ -802,6 +805,7 @@ position = Vector2(295, 209.5)
 texture = ExtResource("11_i0u5d")
 
 [node name="MoneyInfo" type="Control" parent="TopLeftZone/MoneyManagement"]
+z_index = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -829,9 +833,9 @@ anchor_top = 0.076
 anchor_right = 0.233
 anchor_bottom = 0.076
 offset_left = 350.68
-offset_top = 4.96
+offset_top = 9.96
 offset_right = 803.68
-offset_bottom = 349.96
+offset_bottom = 354.96
 grow_horizontal = 0
 script = ExtResource("53_cwkn3")
 
@@ -1158,32 +1162,30 @@ script = ExtResource("43_lu1ke")
 
 [node name="MoreMoneyInfoButton" type="TextureButton" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox"]
 layout_mode = 0
-offset_left = 400.0
-offset_top = -8.0
-offset_right = 480.0
-offset_bottom = 72.0
-texture_normal = ExtResource("42_v8iq7")
-texture_pressed = ExtResource("42_v8iq7")
-texture_hover = ExtResource("42_v8iq7")
-
-[node name="ColorRect" type="ColorRect" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MoreMoneyInfoButton"]
-layout_mode = 0
-offset_left = 32.0
-offset_top = 29.0
-offset_right = 47.0
-offset_bottom = 50.0
-mouse_filter = 2
-color = Color(0.941176, 0.941176, 0.941176, 1)
+offset_left = 410.0
+offset_top = 1.0
+offset_right = 455.0
+offset_bottom = 46.0
+texture_normal = ExtResource("25_o5q30")
+texture_pressed = ExtResource("26_kd3a6")
+texture_hover = ExtResource("27_sye1h")
 
 [node name="Label" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MoreMoneyInfoButton"]
 layout_mode = 0
-offset_left = 35.0
-offset_top = 25.0
-offset_right = 75.0
-offset_bottom = 56.0
-theme_override_colors/font_color = Color(0.356863, 0.356863, 0.356863, 1)
+offset_left = -8.0
+offset_top = -3.0
+offset_right = 42.0
+offset_bottom = 33.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
 text = "?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MoreMoneyInfoButton"]
+show_behind_parent = true
+position = Vector2(18, 20)
+texture = ExtResource("28_oub76")
 
 [node name="BorrowMoney" type="Control" parent="TopLeftZone/MoneyManagement"]
 anchors_preset = 0
@@ -1912,7 +1914,7 @@ text = "DEMAND"
 script = ExtResource("91_butgj")
 
 [node name="InfoText" parent="ImportAndEnergy/Energy/EnergyBarWinter/BarInfo/MarginContainer/MarginContainer/VBoxContainer" index="1"]
-text = "In winter, energy demand is higher due to the need for heating. Switzerland often has to import the missing energy supply."
+text = "WINTER_DEMAND_INFO_TEXT"
 
 [node name="Text1" parent="ImportAndEnergy/Energy/EnergyBarWinter/BarInfo/MarginContainer/MarginContainer/VBoxContainer" index="2"]
 text = "SUPPLY"
@@ -1921,8 +1923,7 @@ text = "SUPPLY"
 script = ExtResource("92_bqjhv")
 
 [node name="InfoText2" parent="ImportAndEnergy/Energy/EnergyBarWinter/BarInfo/MarginContainer/MarginContainer/VBoxContainer" index="3"]
-text = "You need to reach the demand in energy. The target is the white line on the energy bar.
-"
+text = "WINTER_SUPPLY_INFO_TEXT"
 
 [node name="EnergyBarSummer" parent="ImportAndEnergy/Energy" instance=ExtResource("3_fm1y6")]
 offset_left = 119.001
@@ -1954,8 +1955,7 @@ text = "DEMAND"
 script = ExtResource("92_j1ii1")
 
 [node name="InfoText" parent="ImportAndEnergy/Energy/EnergyBarSummer/BarInfo/MarginContainer/MarginContainer/VBoxContainer" index="1"]
-text = "Energy demand in summer tends to be lower than winter because the need for cooling is lower than the need for heating in winter.
-"
+text = "SUMMER_DEMAND_INFO_TEXT"
 
 [node name="Text1" parent="ImportAndEnergy/Energy/EnergyBarSummer/BarInfo/MarginContainer/MarginContainer/VBoxContainer" index="2"]
 text = "SUPPLY"
@@ -1964,8 +1964,7 @@ text = "SUPPLY"
 script = ExtResource("94_bcqhm")
 
 [node name="InfoText2" parent="ImportAndEnergy/Energy/EnergyBarSummer/BarInfo/MarginContainer/MarginContainer/VBoxContainer" index="3"]
-text = "You need to reach the demand in energy. The target is the white line on the energy bar.
-"
+text = "SUMMER_SUPPLY_INFO_TEXT"
 
 [node name="Clock" type="Control" parent="."]
 layout_mode = 3
