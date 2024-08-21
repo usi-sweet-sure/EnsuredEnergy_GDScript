@@ -40,6 +40,7 @@ signal land_use_updated
 signal biodiversity_updated
 signal co2_emissions_updated
 signal imports_emissions_updated
+signal total_emissions_updated
 signal most_recent_shock_updated
 signal current_turn_updated
 signal show_tutorial
@@ -127,10 +128,15 @@ var co2_emissions: float:
 	set(new_value):
 		co2_emissions = new_value
 		co2_emissions_updated.emit(co2_emissions)
+		total_emissions_updated.emit(total_emissions)
 var imports_emissions: float:
 	set(new_value):
 		imports_emissions = new_value
 		imports_emissions_updated.emit(imports_emissions)
+		total_emissions_updated.emit(total_emissions)
+var total_emissions: float: # This is not intended to be set
+	get:
+		return co2_emissions + imports_emissions
 var most_recent_shock: Shock:
 	set(new_value):
 		most_recent_shock = new_value

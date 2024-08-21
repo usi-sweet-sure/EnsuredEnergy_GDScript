@@ -1652,7 +1652,6 @@ show_percentage = false
 metadata/_edit_group_ = true
 
 [node name="Info" parent="EnvironmentAndPollution/Pollution" instance=ExtResource("4_67rbh")]
-visible = false
 layout_mode = 1
 offset_left = 245.0
 offset_top = -80.0

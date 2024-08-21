@@ -1,22 +1,39 @@
 extends Sprite2D
 
-# This is used to make the arrow move more or less depending on the scale of the data we use
-var move_factor = 3
+# This is a supposition on the maximum value players could get to.
+# This value may seems low, but some powerplants only had like 0.3 in emission
+# So we have to be this low to see the arrow move.
+# Just in case users go over that value, we clamp the value.
+var emissions_max_value = 40
+# Since we clamp the value above. When the emission is above the clamp,
+# we make the arrow jitter so the user has a visual indicator that they are
+# above the max, and that reducing emissions of only a small value may not be
+# enough to make the arrow go lower
+@export var arrow_shake_amplitude_in_degrees := 2
+@export var arrow_shake_speed_in_s := 0.1
+var time_elapsed_since_last_shake := 0.0
+var shake_arrow := false
 
 func _ready():
-	Gameloop.co2_emissions_updated.connect(_on_emissions_data_updated)
-	Gameloop.imports_emissions_updated.connect(_on_emissions_data_updated)
+	Gameloop.total_emissions_updated.connect(_on_total_emissions_updated)
+	_on_total_emissions_updated(Gameloop.total_emissions)
 	
-	_on_emissions_data_updated(0)
-
-func _on_emissions_data_updated(_percentage):
+func _process(delta):
+	time_elapsed_since_last_shake += delta
+	
+	if shake_arrow && time_elapsed_since_last_shake > arrow_shake_speed_in_s:
+		time_elapsed_since_last_shake = 0
+		rotation_degrees += arrow_shake_amplitude_in_degrees
+		arrow_shake_amplitude_in_degrees *= -1
+	
+	
+func _on_total_emissions_updated(emissions: float):
 	# The arrow rotation percentage goes from -75% (full left) to 75% (full right)
 	# No emission points the arrow at -75%
-	# Emissions arent given in percentage but the max value is 100, so that's the same as if
-	# they were
-	# E. to be corrected if the max values don't go to 100 or the comput is different
-	var co2_emissions_normalised = (Gameloop.co2_emissions * 75 / 100.0) * move_factor
-	var imports_emissions_normalised = (Gameloop.imports_emissions * 75 / 100.0) * move_factor
-	var tween = get_tree().create_tween()
-	tween.tween_property(self, "rotation_degrees",
-			clamp(-75.0 + co2_emissions_normalised + imports_emissions_normalised, -75, 75), 0.5)
+	var arrow_was_shaking = shake_arrow
+	shake_arrow = emissions > emissions_max_value
+	var arrow_value = remap(clamp(emissions, 0, emissions_max_value), 0, emissions_max_value, -75, 75)
+	
+	if not arrow_was_shaking or not shake_arrow:
+		var tween = get_tree().create_tween()
+		tween.tween_property(self, "rotation_degrees", arrow_value, 0.5)

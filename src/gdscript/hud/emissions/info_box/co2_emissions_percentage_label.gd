@@ -7,4 +7,4 @@ func _ready():
 	
 	
 func _on_co2_emissions_updated(value: float):
-	text = str(value).pad_decimals(1) + "%"
+	text = str(value).pad_decimals(1)
