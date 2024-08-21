@@ -37,7 +37,6 @@ signal borrowed_money_amount_updated
 signal players_own_money_amount_updated
 signal available_money_amount_updated
 signal land_use_updated
-signal biodiversity_updated
 signal co2_emissions_updated
 signal imports_emissions_updated
 signal total_emissions_updated
@@ -120,10 +119,6 @@ var land_use: float:
 	set(new_value):
 		land_use = new_value
 		land_use_updated.emit(land_use)
-var biodiversity: float = 0.0:
-	set(new_value):
-		biodiversity = new_value
-		biodiversity_updated.emit(biodiversity)
 var co2_emissions: float:
 	set(new_value):
 		co2_emissions = new_value
@@ -195,6 +190,7 @@ func start_game():
 	else:
 		printerr("A player name is needed")
 			
+			
 # Update everything that buildings affects like supply, emissions, land_use, etc.
 func _update_buildings_impact():
 	all_power_plants = get_tree().get_nodes_in_group("PP")
@@ -202,17 +198,19 @@ func _update_buildings_impact():
 	var winter = 0
 	var total_production_costs = 0
 	var total_emissions = 0
+	var total_land_use = 0
 	for power_plant in all_power_plants:
 		if power_plant.is_alive:
 			summer += power_plant.capacity * power_plant.availability.x
 			winter += power_plant.capacity * power_plant.availability.y
 			total_production_costs += power_plant.production_cost
 			total_emissions += power_plant.pollution
+			total_land_use += power_plant.land_use
 	supply_summer = summer
 	supply_winter = winter
 	powerplants_production_costs = total_production_costs
 	co2_emissions = total_emissions
-	
+	land_use = total_land_use
 	
 func _check_supply():
 	return supply_summer >= demand_summer and supply_winter + imported_energy_amount >= demand_winter

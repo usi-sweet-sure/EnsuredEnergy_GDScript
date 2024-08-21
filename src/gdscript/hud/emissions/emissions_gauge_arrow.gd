@@ -1,7 +1,7 @@
 extends Sprite2D
 
 # This is a supposition on the maximum value players could get to.
-# This value may seems low, but some powerplants only had like 0.3 in emission
+# This value may seems low, but some powerplants only add like 0.3 in emission
 # So we have to be this low to see the arrow move.
 # Just in case users go over that value, we clamp the value.
 var emissions_max_value = 40

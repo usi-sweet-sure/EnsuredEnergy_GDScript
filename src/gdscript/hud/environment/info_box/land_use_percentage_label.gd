@@ -7,4 +7,4 @@ func _ready():
 	
 	
 func _on_land_use_updated(value):
-	text = str(value) + "%"
+	text = str(value).pad_decimals(2)
