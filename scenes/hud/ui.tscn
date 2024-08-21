@@ -1,4 +1,4 @@
-[gd_scene load_steps=148 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=149 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/UI Elements/Button-Next-Normal.png" id="2_aobed"]
 [ext_resource type="Texture2D" uid="uid://ccsapuvkqqt1b" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0009_Profile-metal-base.png" id="2_nu7y6"]
@@ -67,6 +67,7 @@
 [ext_resource type="Texture2D" uid="uid://c3opgyhsh61y8" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0014_Policies-symbol.png" id="53_3a7gr"]
 [ext_resource type="Script" path="res://src/gdscript/hud/money_management/money_info_box/money_info_box.gd" id="53_cwkn3"]
 [ext_resource type="FontFile" uid="uid://bwuskgw4ek8y" path="res://assets/Fonts/static/OpenSans-Medium.ttf" id="53_v477p"]
+[ext_resource type="Script" path="res://src/gdscript/policies/hud/vote_available_notif.gd" id="54_2kuuo"]
 [ext_resource type="Script" path="res://src/gdscript/policies/hud/personal_trust_bar.gd" id="54_3uqxf"]
 [ext_resource type="Texture2D" uid="uid://od33hjtqpm14" path="res://assets/UI Elements/Build_Menu_0003_Numbers-hole.png" id="54_7juy1"]
 [ext_resource type="Texture2D" uid="uid://bobwaj4wxr0fj" path="res://assets/UI Elements/Build_Menu_0002_Numbers-counter-1.png" id="55_5s2up"]
@@ -1452,6 +1453,12 @@ show_behind_parent = true
 position = Vector2(32, 32)
 texture = ExtResource("39_jsaox")
 
+[node name="Label" type="Sprite2D" parent="TopLeftZone/Policies/OpenPoliciesWindowButton"]
+position = Vector2(12, 11)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("53_3a7gr")
+centered = false
+
 [node name="Notif" type="Label" parent="TopLeftZone/Policies/OpenPoliciesWindowButton"]
 layout_mode = 1
 anchors_preset = 1
@@ -1459,25 +1466,20 @@ anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -10.0
 offset_top = -13.0
-offset_right = 30.0
+offset_right = 9.0
 offset_bottom = 13.0
 grow_horizontal = 0
 theme = ExtResource("70_2ktfd")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_4ww80")
 text = "1"
+script = ExtResource("54_2kuuo")
 
 [node name="CancelIcon" type="Sprite2D" parent="TopLeftZone/Policies/OpenPoliciesWindowButton/Notif"]
 self_modulate = Color(1, 0, 0, 1)
 show_behind_parent = true
 position = Vector2(6, 13)
 texture = ExtResource("52_j4tdm")
-
-[node name="Label" type="Sprite2D" parent="TopLeftZone/Policies/OpenPoliciesWindowButton"]
-position = Vector2(12, 11)
-scale = Vector2(0.9, 0.9)
-texture = ExtResource("53_3a7gr")
-centered = false
 
 [node name="Icon-popularity" type="Sprite2D" parent="TopLeftZone/Policies"]
 position = Vector2(130, 274)

@@ -90,7 +90,6 @@ func change_bar_color():
 # Displays basic information on energy supply and demand
 func _on_bar_button_pressed():
 	info_box.visible = not info_box.visible
-	info_box.z_index = info_box.visible
 	
 
 # Displays more detailed information about energy supply and demand
