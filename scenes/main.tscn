@@ -3440,10 +3440,10 @@ autowrap_mode = 2
 script = ExtResource("75_bk8o4")
 
 [node name="OpenDebugFrameButton" type="Button" parent="TestLayer"]
-offset_left = 1813.0
-offset_top = 32.0
-offset_right = 1898.0
-offset_bottom = 63.0
+offset_left = 1554.0
+offset_top = 26.0
+offset_right = 1639.0
+offset_bottom = 57.0
 text = "Debug"
 
 [node name="DebugFrame" type="ColorRect" parent="TestLayer"]

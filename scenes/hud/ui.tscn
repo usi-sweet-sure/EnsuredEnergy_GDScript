@@ -1,11 +1,13 @@
-[gd_scene load_steps=143 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=145 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/UI Elements/Button-Next-Normal.png" id="2_aobed"]
 [ext_resource type="Texture2D" uid="uid://ccsapuvkqqt1b" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0009_Profile-metal-base.png" id="2_nu7y6"]
 [ext_resource type="PackedScene" uid="uid://d2hyunjbx7qb7" path="res://scenes/hud/energy_bar.tscn" id="3_fm1y6"]
 [ext_resource type="Texture2D" uid="uid://biq6v1m7nc6l" path="res://assets/UI Elements/Button-Next-Press.png" id="3_qtdni"]
+[ext_resource type="Script" path="res://src/gdscript/hud/open_settings_button.gd" id="4_8mw6h"]
 [ext_resource type="PackedScene" uid="uid://u1nvhv5ceok" path="res://scenes/hud/BarInfo.tscn" id="4_67rbh"]
 [ext_resource type="Texture2D" uid="uid://c25aef4m4yd40" path="res://assets/UI Elements/Button-Next-Hover.png" id="4_mh4j1"]
+[ext_resource type="Texture2D" uid="uid://b2jlabpuug28x" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0015_Settings-symbol.png" id="5_55id7"]
 [ext_resource type="Texture2D" uid="uid://60dl810b25fd" path="res://assets/UI Elements/Button-press.png" id="5_hh5pc"]
 [ext_resource type="PackedScene" uid="uid://c81iji81uc4g7" path="res://scenes/hud/import.tscn" id="5_ps4b6"]
 [ext_resource type="PackedScene" uid="uid://885lty3v1qbq" path="res://scenes/windows/shock.tscn" id="5_tj765"]
@@ -703,6 +705,30 @@ _data = {
 
 [node name="UI" type="CanvasLayer"]
 follow_viewport_enabled = true
+
+[node name="OpenSettingsButton" type="TextureButton" parent="."]
+offset_left = 1864.0
+offset_top = 8.0
+offset_right = 1912.0
+offset_bottom = 55.0
+texture_normal = ExtResource("36_xxsv6")
+texture_pressed = ExtResource("37_533gb")
+texture_hover = ExtResource("38_7v12r")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("4_8mw6h")
+
+[node name="Button-hole" type="Sprite2D" parent="OpenSettingsButton"]
+show_behind_parent = true
+position = Vector2(23.5, 23.3786)
+scale = Vector2(0.757143, 0.757143)
+texture = ExtResource("39_jsaox")
+
+[node name="Icon" type="Sprite2D" parent="OpenSettingsButton"]
+position = Vector2(11, 11)
+scale = Vector2(0.471698, 0.471698)
+texture = ExtResource("5_55id7")
+centered = false
 
 [node name="Shock" parent="." instance=ExtResource("5_tj765")]
 visible = false
@@ -2320,6 +2346,7 @@ uppercase = true
 
 [node name="Error" type="AudioStreamPlayer" parent="NextTurn"]
 
+[connection signal="pressed" from="OpenSettingsButton" to="OpenSettingsButton" method="_on_pressed"]
 [connection signal="pressed" from="TopLeftZone/OpenGraphsFrameButton" to="TopLeftZone/OpenGraphsFrameButton" method="_on_pressed"]
 [connection signal="pressed" from="TopLeftZone/MoneyManagement/MoneyInfo/ToggleMoneyInfoBoxButton" to="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox" method="_on_toggle_money_info_box_button_pressed"]
 [connection signal="pressed" from="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MoreMoneyInfoButton" to="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/InfoMoneyClosed" method="_on_more_money_info_button_pressed"]
