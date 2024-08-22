@@ -9,6 +9,7 @@ func _ready():
 
 	_on_money_change(0)
 	
-	
+
+# Shows how much money the player will have next turn
 func _on_money_change(_unused_signal_param):
 	text = str(round(Gameloop.get_money_for_next_turn()))

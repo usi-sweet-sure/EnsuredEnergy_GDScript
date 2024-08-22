@@ -1,4 +1,4 @@
-[gd_scene load_steps=126 format=3 uid="uid://g58p7rxvcdik"]
+[gd_scene load_steps=127 format=3 uid="uid://g58p7rxvcdik"]
 
 [ext_resource type="Script" path="res://src/gdscript/main.gd" id="1_6q0gk"]
 [ext_resource type="PackedScene" uid="uid://ba56oxmvcxpos" path="res://scenes/world.tscn" id="1_prp6q"]
@@ -55,6 +55,7 @@
 [ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="51_xe5da"]
 [ext_resource type="Texture2D" uid="uid://cjob6p34oigtg" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0051_CTA-Hover-yellow.png" id="52_d7ijo"]
 [ext_resource type="Texture2D" uid="uid://b4m67oni44dpg" path="res://assets/UI Elements/Button-normal.png" id="52_lk41l"]
+[ext_resource type="Script" path="res://src/gdscript/test_layer/debug_frame.gd" id="53_j41xb"]
 [ext_resource type="Texture2D" uid="uid://60dl810b25fd" path="res://assets/UI Elements/Button-press.png" id="53_lwovg"]
 [ext_resource type="Texture2D" uid="uid://cuhckno2t6g0r" path="res://assets/UI Elements/Button-hover.png" id="54_pjr7u"]
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/instructions_button.gd" id="55_b6h3d"]
@@ -2378,6 +2379,12 @@ libraries = {
 }
 autoplay = "Wind"
 
+[node name="Money" parent="World/BuildButton" index="4"]
+offset_left = -286.0
+offset_top = -132.5
+offset_right = -126.0
+offset_bottom = -43.5
+
 [node name="BuildButton2" parent="World" index="15"]
 offset_left = 624.0
 offset_top = 480.0
@@ -2452,6 +2459,12 @@ autoplay = "Sun"
 
 [node name="Hammer" parent="World/BuildButton9" index="0"]
 position = Vector2(308, 205)
+
+[node name="Money" parent="World/BuildButton9" index="4"]
+offset_left = -279.0
+offset_top = -124.0
+offset_right = -119.0
+offset_bottom = -35.0
 
 [node name="Solar" parent="World/BuildButton9/BuildMenu/Container" index="0"]
 visible = false
@@ -2800,6 +2813,7 @@ theme_override_colors/font_color = Color(0.372419, 0.746602, 0.424331, 1)
 text = "HTTP Request Active"
 
 [node name="ContextInfos" type="VBoxContainer" parent="TestLayer"]
+visible = false
 offset_left = 1643.0
 offset_top = 391.0
 offset_right = 1753.0
@@ -2932,6 +2946,44 @@ text = "Use this button to test the game without creating a new game
 "
 autowrap_mode = 2
 script = ExtResource("75_bk8o4")
+
+[node name="OpenDebugFrameButton" type="Button" parent="TestLayer"]
+offset_left = 1813.0
+offset_top = 32.0
+offset_right = 1898.0
+offset_bottom = 63.0
+text = "Debug"
+
+[node name="DebugFrame" type="ColorRect" parent="TestLayer"]
+visible = false
+offset_left = 681.0
+offset_top = 10.0
+offset_right = 1185.0
+offset_bottom = 1067.0
+color = Color(0.0862745, 0.0862745, 0.0862745, 0.333333)
+script = ExtResource("53_j41xb")
+
+[node name="MarginContainer" type="MarginContainer" parent="TestLayer/DebugFrame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TestLayer/DebugFrame/MarginContainer"]
+layout_mode = 2
+bbcode_enabled = true
+
+[node name="CloseButton" type="Button" parent="TestLayer/DebugFrame/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "Close"
 
 [node name="SurveyLayer" parent="." instance=ExtResource("76_y7xdi")]
 
@@ -3416,6 +3468,8 @@ visible = false
 [connection signal="pressed" from="TestLayer/TestButtons/ButtonBottom" to="TestLayer/TestButtons" method="_on_button_bottom_pressed"]
 [connection signal="pressed" from="TestLayer/PlayTestButton" to="TestLayer/PlayTestButton" method="_on_pressed"]
 [connection signal="pressed" from="TestLayer/PlayTestButton" to="TestLayer/Label" method="_on_play_test_button_pressed"]
+[connection signal="pressed" from="TestLayer/OpenDebugFrameButton" to="TestLayer/DebugFrame" method="_on_open_debug_frame_button_pressed"]
+[connection signal="pressed" from="TestLayer/DebugFrame/MarginContainer/CloseButton" to="TestLayer/DebugFrame" method="_on_close_button_pressed"]
 [connection signal="pressed" from="Settings/Control/Close" to="Settings/Control/Close" method="_on_pressed"]
 [connection signal="pressed" from="Settings/Control/SettingsBox/VBoxContainer/Language" to="Settings/Control/SettingsBox/VBoxContainer/Language" method="_on_pressed"]
 [connection signal="pressed" from="Settings/Control/SettingsBox/VBoxContainer/Instructions" to="Settings/Control/SettingsBox/VBoxContainer/Instructions" method="_on_pressed"]
