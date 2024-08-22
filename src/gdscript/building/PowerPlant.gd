@@ -315,15 +315,15 @@ func _check_life_span():
 		
 # Make the pp unusable
 func _disable():
-	is_alive = false
+	var switch: CheckButton = $BuildInfo/Switch
 	_on_switch_toggled(false)
-	$BuildInfo/Switch.disabled = true
+	switch.disabled = true
 	
 # Make the pp usable
 # Do not activate it, it costs money and the player should manage this
 func _enable():
-	is_alive = true
 	$BuildInfo/Switch.disabled = false
+	_on_switch_toggled(true)
 
 func _on_switch_toggled(toggled_on):
 	is_alive = toggled_on

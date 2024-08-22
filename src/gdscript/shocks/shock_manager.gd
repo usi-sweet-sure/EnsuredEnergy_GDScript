@@ -87,11 +87,10 @@ func apply_reaction(reaction_index: int):
 func _reintroduce_nuclear():
 	for pp in get_tree().get_nodes_in_group("PP"):
 		if pp.is_nuclear():
+			pp.life_span = 11
+			pp.get_node("BuildInfo/ColorRect/LifeSpan").hide()
 			pp._enable()
 
-
+# Do nothing, nuclears will shut down as planned
 func _leave_nuclear():
-	for pp in get_tree().get_nodes_in_group("PP"):
-		if pp.is_nuclear():
-			pp._disable()
-
+	pass
