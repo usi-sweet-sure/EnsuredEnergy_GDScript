@@ -37,6 +37,8 @@ func _on_pp_pressed(pp):
 	for plant in $PowerPlants.get_children():
 		if pp.name == plant.name:
 			if Gameloop.can_spend_the_money(pp.build_cost):
+				Gameloop.building_costs += plant.build_cost
+				Gameloop._update_buildings_impact()
 				$Hammer.hide()
 				$BuildMenu.hide()
 				$Money.text = "-" + str(pp.build_cost) + "$"
@@ -72,8 +74,7 @@ func _build_plant(plant, can_cancel := true):
 	#Context1.yr = Gameloop.year_list[Gameloop.current_turn]
 	#Context1.tj = plant.cnv_capacity
 	#Context1.prm_ups()
-	Gameloop.building_costs += plant.build_cost
-	Gameloop._update_buildings_impact()
+
 
 func _on_close_button_pressed():
 	$BuildMenu/AnimationPlayer.play_backwards("SlideUp")
@@ -107,9 +108,13 @@ func _on_pp_mouse_exited(pp):
 	pp.build_info.hide()
 
 func _on_building_cancel_pressed():
+	Gameloop.building_costs -= building_plant.build_cost
 	$BuildingInfo.hide()
+	$Hammer.show()
 	self_modulate = Color(1,1,1,1)
 	disabled = false
+	$Money.text = "+" + str(building_plant.build_cost) + "$"
+	$AnimationPlayer.play("Money+")
 
 
 func _on_mouse_entered():

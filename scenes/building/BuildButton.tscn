@@ -2072,6 +2072,7 @@ offset = Vector2(18, -15)
 visible = false
 position = Vector2(369, 78)
 plant_name = "GAS"
+build_cost = 32
 
 [node name="PreviewInfo" parent="PowerPlants/Gas" index="0"]
 visible = false
@@ -2143,6 +2144,7 @@ texture = ExtResource("6_3vcfd")
 visible = false
 position = Vector2(370, 80)
 plant_name = "HYDRO"
+build_time = 6
 
 [node name="PreviewInfo" parent="PowerPlants/Hydro" index="0"]
 visible = false
@@ -2198,6 +2200,7 @@ visible = false
 position = Vector2(431, 151)
 availability = Vector2(0.8, 0.2)
 plant_name = "SOLAR"
+build_cost = 22
 
 [node name="PreviewInfo" parent="PowerPlants/Solar" index="0"]
 visible = false
@@ -2249,6 +2252,7 @@ autoplay = "sun"
 visible = false
 position = Vector2(431, 151)
 plant_name = "BIOGAS"
+build_cost = 24
 
 [node name="PreviewInfo" parent="PowerPlants/Tree" index="0"]
 visible = false
@@ -2276,6 +2280,7 @@ position = Vector2(431, 151)
 availability = Vector2(0.1, 0.9)
 plant_name = "WIND"
 build_time = 2
+build_cost = 2
 
 [node name="PreviewInfo" parent="PowerPlants/Wind" index="0"]
 visible = false
@@ -2389,6 +2394,7 @@ autoplay = "spin"
 visible = false
 position = Vector2(431, 151)
 plant_name = "WASTE"
+build_cost = 125
 
 [node name="PreviewInfo" parent="PowerPlants/Waste" index="0"]
 visible = false
@@ -2451,6 +2457,7 @@ autoplay = "Smoke"
 visible = false
 position = Vector2(431, 151)
 plant_name = "BIOMASS"
+build_cost = 37
 
 [node name="PreviewInfo" parent="PowerPlants/Biomass" index="0"]
 visible = false
@@ -2508,6 +2515,7 @@ autoplay = "Smoke"
 visible = false
 position = Vector2(431, 151)
 plant_name = "RIVER"
+build_time = 3
 
 [node name="PreviewInfo" parent="PowerPlants/River" index="0"]
 visible = false
