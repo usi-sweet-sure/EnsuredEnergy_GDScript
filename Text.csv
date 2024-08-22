@@ -10,11 +10,11 @@ FULLSCREEN,Fullscreen,Plein écran,Vollbild,Schermo intero
 MUSIC,Music,Musique,Musik,Musica
 SFX,Sound effects,Effets sonores,Sound-Effekte,Effetti sonori
 TUTORIAL0,"Congratulations !\n
-You have been designated to [b]manage the Swiss power supply[/b] and to ensure a sustainable and resilient energy sector for the next 30 years (10 turns).","Félicitations ! \n
+You have been designated to [b]manage the Swiss power supply[/b] and and to ensure the transition to a sustainable and resilient energy sector over the next 30 years (10 turns).","Félicitations ! \n
 Tu as été désigné pour [b]gérer le réseau énergétique[/b] afin de garantir un secteur durable et résilient pour les 30 prochaines années (10 tours).","Glückwunsch !\n
 Du wurdest dazu ausgewählt, [b]das Stromnetz[/b] zu managen und einen nachhaltigen und widerstandsfähigen Energiesektor für die nächsten 30 Jahre (10 Runden) sicherzustellen.","Congratulazioni! \n
 Siete stati incaricati di [b]gestire la rete energetica[/b] per garantire un settore sostenibile e resiliente per i prossimi 30 anni (10 turni di gioco)."
-TUTORIAL1,"You can decide what the future energy system will look like, but always keep in mind that you need to [b]cover the Energy demand[/b].","Tu peux choisir à quoi le futur système énergétique ressemblera, mais tu dois toujours [b]couvrir la demande d'énergie[/b].","Du kannst entscheiden, wie das zukünftige Energiesystem aussehen soll, \n\t
+TUTORIAL1,It is up to you what the future energy system looks like. But always keep in mind that you need to [b]cover the Energy demand[/b].,"Tu peux choisir à quoi le futur système énergétique ressemblera, mais tu dois toujours [b]couvrir la demande d'énergie[/b].","Du kannst entscheiden, wie das zukünftige Energiesystem aussehen soll, \n\t
 	aber denke immer daran, dass du [b]genügend Energie produzieren musst, um den Energiebedarf[/b] zu decken.","Puoi scegliere come sarà il sistema energetico futuro, ma deve comunque [b]coprire la domanda di energia[/b]."
 TUTORIAL2,You need to [b]supply[/b] enough [b]energy[/b] for your population. They need to charge their phones and play their favourite video games.,Tu dois [b]fournir[/b] suffisamment d'[b]énergie[/b] pour toute la population. Les gens ont besoin de charger leurs téléphones et de jouer à leurs jeux vidéo préférés.,"Du musst genügend [b]Energie[/b] für deine Bevölkerung zur Verfügung stellen.\n
 Die Menschen müssen ihre Telefone aufladen und ihre Lieblingsvideospiele spielen können.",Dovete [b]fornire[/b] abbastanza [b]energia[/b] per tutta la popolazione. Le persone hanno bisogno di caricare i loro telefoni e di giocare ai loro videogiochi preferiti.
@@ -49,7 +49,47 @@ TUTORIAL6,"There are different ways to supply more energy:\n\n\t
 	- È possibile potenziare alcune delle centrali elettriche esistenti."
 TUTORIAL7,You can also hold information campaigns or try to implement different policies to reduce energy demand or facilitate the construction of power plants.,Tu peux également organiser des campagnes d'information ou tenter de mettre en oeuvre différentes politiques visant à réduire la demande d'énergie ou à faciliter la construction de centrales électriques.,"Du kannst auch Informationskampagnen durchführen oder versuchen, politische Maßnahmen umzusetzen, um 
 		\t den Energiebedarf zu senken oder den Bau von Kraftwerken zu erleichtern.",Potete anche organizzare campagne di informazione o cercare di attuare varie politiche per ridurre la domanda di energia o facilitare la costruzione di centrali elettriche!
-TUTOBUBBLE0,"Each turn, you have to reach the demand for winter ❄️ and summer 🔆","Chaque tour, tu dois atteindre la demande pour l'hiver ❄️ et l'été 🔆",In jeder Runde musst du den Strombedarf für den Winter ❄️ und den Sommer 🔆 erreichen.,"Ad ogni turno, bisogna soddisfare la domanda per l'inverno ❄️ e per l'estate 🔆"
+CLIMATE_TUTORIAL0,"Congratulations !\n
+You have been designated to [b]manage the Swiss power supply[/b] and and to [b]ensure the transition to a sustainable and resilient[/b] energy sector over the next 30 years (10 turns).","Félicitations ! \n
+Tu as été désigné pour [b]gérer le réseau énergétique[/b] afin de [b]transitionner vers un secteur durable et résilient[/b] pendant les 30 prochaines années (10 tours).","Glückwunsch !\n
+Du wurdest dazu ausgewählt, [b]das Stromnetz[/b] zu managen und einen [b]nachhaltigen und widerstandsfähigen[/b] Energiesektor für die nächsten 30 Jahre (10 Runden) sicherzustellen.","Congratulazioni! \n
+Siete stati incaricati di [b]gestire la rete energetica[/b] per garantire un settore sostenibile e resiliente per i prossimi 30 anni (10 turni di gioco)."
+CLIMATE_TUTORIAL1,Be aware that Switzerland has [b]committed to being CO2-neutral by 2050[/b]. A majority of voters approved this goal in a referendum.,La Suisse s'est engagée à être neutre en carbone d'ici 2050. La majorité a approuvé cet objectif dans un référendum.,"Du kannst entscheiden, wie das zukünftige Energiesystem aussehen soll, \n\t
+	aber denke immer daran, dass du [b]genügend Energie produzieren musst, um den Energiebedarf[/b] zu decken.","Puoi scegliere come sarà il sistema energetico futuro, ma deve comunque [b]coprire la domanda di energia[/b]."
+CLIMATE_TUTORIAL2,"But still, you need to supply enough energy for your population. They need to charge their phones and play their favourite video games.","Cependant, tu dois fournir suffisamment d'énergie pour toute la population. Les gens ont besoin de charger leurs téléphones et de jouer à leurs jeux vidéo préférés.","Du musst genügend Energie für deine Bevölkerung zur Verfügung stellen.\n
+Die Menschen müssen ihre Telefone aufladen und ihre Lieblingsvideospiele spielen können.",Dovete fornire abbastanza energia per tutta la popolazione. Le persone hanno bisogno di caricare i loro telefoni e di giocare ai loro videogiochi preferiti.
+CLIMATE_TUTORIAL3,"But still, you need to supply enough energy for your population. They need to charge their phones and play their favourite video games.","Cependant, tu dois fournir suffisamment d'énergie pour toute la population. Les gens ont besoin de charger leurs téléphones et de jouer à leurs jeux vidéo préférés.","Du musst genügend Energie für deine Bevölkerung zur Verfügung stellen.\n
+Die Menschen müssen ihre Telefone aufladen und ihre Lieblingsvideospiele spielen können.",Dovete fornire abbastanza energia per tutta la popolazione. Le persone hanno bisogno di caricare i loro telefoni e di giocare ai loro videogiochi preferiti.
+CLIMATE_TUTORIAL4,"There are different ways to supply more energy:\n\n
+
+- You can import energy in winter, but it creates pollution and can be expensive.","Il existe différentes façons d'approvisionner plus d'énergie :\n\n
+
+- Tu peux importer de l'énergie, mais cela pollue et peut être coûteux.","Es gibt verschiedene Möglichkeiten, mehr Energie zur Verfügung zu stellen:\n\n
+
+- Man kann Energie importieren, aber das führt zu Verschmutzung und kann teuer sein.","Ci sono diversi modi per fornire più energia:\n\n
+
+si può importare energia, ma questo inquina e può essere costoso."
+CLIMATE_TUTORIAL5,"There are different ways to supply more energy:\n\n
+
+- You can build new power plants, but it costs time and money.","Il existe différentes façons d'approvisionner plus d'énergie :\n\n
+
+- Tu peux construire de nouvelles centrales électriques, mais cela coûte du temps et de l'argent.","Es gibt verschiedene Möglichkeiten, mehr Energie zu liefern: \n\n
+
+- Man kann neue Kraftwerke bauen, aber das kostet Zeit und Geld.","Ci sono diversi modi per fornire più energia:\n\n
+
+si possono costruire nuove centrali elettriche, ma questo costa tempo e denaro."
+CLIMATE_TUTORIAL6,"There are different ways to supply more energy:\n\n\t
+
+	- You can upgrade some of the existing power plants","Il existe différentes façons d'approvisionner plus d'énergie :\n\n\t
+
+        - Tu peux améliorer les centrales existantes","Es gibt verschiedene Möglichkeiten, mehr Energie zu liefern:\n\n\t
+
+	- Du kannst einige der bestehenden Kraftwerke aufrüsten","Ci sono diversi modi per fornire più energia:\n\n\t
+
+	- È possibile potenziare alcune delle centrali elettriche esistenti."
+CLIMATE_TUTORIAL7,You can also hold information campaigns or try to implement different policies to reduce energy demand or facilitate the construction of power plants.,Tu peux également organiser des campagnes d'information ou tenter de mettre en oeuvre différentes politiques visant à réduire la demande d'énergie ou à faciliter la construction de centrales électriques.,"Du kannst auch Informationskampagnen durchführen oder versuchen, politische Maßnahmen umzusetzen, um 
+		\t den Energiebedarf zu senken oder den Bau von Kraftwerken zu erleichtern.",Potete anche organizzare campagne di informazione o cercare di attuare varie politiche per ridurre la domanda di energia o facilitare la costruzione di centrali elettriche!
+TUTOBUBBLE0,"Each turn, you have to reach the demand for winter and summer","Chaque tour, tu dois atteindre la demande pour l'hiver et l'été",In jeder Runde musst du den Strombedarf für den Winter und den Sommer erreichen.,"Ad ogni turno, bisogna soddisfare la domanda per l'inverno e per l'estate"
 TUTOBUBBLE1,Import more energy here,Voici la barre d'importation,Hier kannst du mehr Strom importieren,Importa più energia qui
 TUTOBUBBLE2,Build new power plants,Le bouton de construction,Du kannst neue Kraftwerke bauen,Costruire nuove centrali elettriche
 TUTOBUBBLE3,Upgrade existing power plant,Améliorer les centrales existantes,Du kannst bestehende Kraftwerk aufrüsten,Ampiamento della centrale elettrica esistente
@@ -67,7 +107,7 @@ SHOCK_COLD_SPELL_TEXT,Recent winters have been colder than usual. This has incre
 SHOCK_COLD_SPELL_REQUIREMENT_MET,Energy production was high enough to wistand the shock.\n\n+5 👍 +50 💰,La production d'énergie était assez élevée pour amortir l'imprévu.\n\n+ 5 👍 + 50 💰,"Die Energieproduktion war hoch genug, um den Schock zu überstehen.\n\n+5 👍 +50 💰",La produzione di energia è stata sufficientemente elevata da attutire gli imprevisti.\n\n+ 5 👍 + 50 💰
 SHOCK_COLD_SPELL_PLAYER_REACTION_1,Ask the population to lower their energy consumption.\n-10 👍,Demander à la population de diminuer leur consomation d'énergie.\n-10 👍,"Fordere die Bevölkerung auf, ihren Energieverbrauch zu senken.\n-10 👍",Chiedere alle persone di ridurre il loro consumo energetico. -10 👍
 SHOCK_COLD_SPELL_PLAYER_REACTION_2,Turn on the spare gas plant.\n+10 Pollution 🏭,Améliorer l'usine à gaz.\n+ 10 pollution 🏭,Einschalten der Ersatzgasanlage.\n+10 Verschmutzung 🏭.,Attivare l'impianto a gas di riserva.\n+10 inquinamento 🏭
-SHOCK_COLD_SPELL_PLAYER_REACTION_3,Import electricity from neighbouring countries.\n-50 💰,Importer de l'électricité des pays voisins.\n-50 💰,Strom aus Nachbarländern importieren.\n- 50 💰,Importazione di energia elettrica dai paesi limitrofi.\n- 50 💰Ondata di calore
+SHOCK_COLD_SPELL_PLAYER_REACTION_3,Import electricity from neighbouring countries.\n-50 💰,Importer de l'électricité des pays voisins.\n-50 💰,Strom aus Nachbarländern importieren.\n- 50 💰,Importazione di energia elettrica dai paesi limitrofi.\n- 50 💰
 SHOCK_HEAT_WAVE_TITLE,Heat Wave,Canicule,Hitzewelle,Ondata di calore
 SHOCK_HEAT_WAVE_TEXT,"The summers have been hotter than usual, increasing the energy demand in summer by 5 ⚡",Les étés sont de plus en plus chaud. La demande en énergie a augmenté de 5 ⚡,"Die Sommer waren heisser als üblich, was den Energiebedarf im Sommer um 5 ⚡ erhöhte.",Le estati sono sempre più calde. La domanda di energia è aumentata di 5 ⚡
 SHOCK_HEAT_WAVE_REQUIREMENT_MET,Energy production was high enough to wistand the shock.\n\n+5 👍 +50 💰,La production d'énergie était assez élevée pour amortir l'imprévu.\n\n+ 5 👍 + 50 💰,"Die Energieproduktion war hoch genug, um den Schock zu überstehen.\n\n+5 👍 +50 💰",La produzione di energia è stata sufficientemente elevata da attutire gli imprevisti.\n\n+10 👍 +50 💰
