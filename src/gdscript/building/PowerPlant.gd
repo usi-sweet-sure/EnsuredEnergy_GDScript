@@ -383,7 +383,7 @@ func _on_next_turn():
 
 func _on_available_money_updated(available_money):
 	if is_in_menu:
-		$NoMoneyOverlay.visible = available_money < build_cost
+		$NoMoneyOverlay.visible = not Gameloop.can_spend_the_money(build_cost + production_cost)
 	
 func _on_upgrade_button_mouse_entered():
 	var tween = get_tree().create_tween()
