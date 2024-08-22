@@ -7,7 +7,7 @@ extends Control
 
 
 func _ready():
-	button_top.text = "read token"
+	button_top.text = "Debug window"
 	button_bottom.text = "open back to survey page"
 	HttpManager.http_request_active_updated.connect(_on_http_request_active_updated)
 	_on_http_request_active_updated(HttpManager.http_request_active)

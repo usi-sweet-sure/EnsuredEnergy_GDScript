@@ -212,6 +212,7 @@ func _update_buildings_impact():
 	co2_emissions = total_emissions
 	land_use = total_land_use
 	
+
 func _check_supply():
 	return supply_summer >= demand_summer and supply_winter + imported_energy_amount >= demand_winter
 	

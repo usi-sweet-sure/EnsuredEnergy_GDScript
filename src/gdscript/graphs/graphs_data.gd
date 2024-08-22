@@ -74,8 +74,8 @@ func _add_new_data_set(key_name: String):
 		data[key_name] = {}
 		
 		
-# This is used at _ready and on a new turn, since some data don't change when a new
-# starts, but we want to to draw a point for that turn anyway
+# This is used at _ready and on a new turn. Some data don't change when a new turn
+# starts, but we want to to draw a point for that turn right away
 func _refresh_data():
 	_on_building_cost_updated(Gameloop.building_costs)
 	_on_production_cost_updated(Gameloop.powerplants_production_costs)
