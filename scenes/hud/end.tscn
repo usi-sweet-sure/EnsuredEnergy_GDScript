@@ -89,6 +89,14 @@ patch_margin_top = 36
 patch_margin_right = 44
 patch_margin_bottom = 38
 
+[node name="Leaderboard" type="Label" parent="EndWindow"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 326.0
+offset_right = 1446.0
+offset_bottom = 627.0
+autowrap_mode = 3
+
 [node name="HBoxContainer" type="HBoxContainer" parent="EndWindow"]
 custom_minimum_size = Vector2(55, 0)
 layout_mode = 1
