@@ -705,8 +705,6 @@ _data = {
 
 [node name="UI" type="CanvasLayer"]
 follow_viewport_enabled = true
-metadata/_edit_vertical_guides_ = [-314.0]
-metadata/_edit_horizontal_guides_ = [23.0]
 
 [node name="OpenSettingsButton" type="TextureButton" parent="."]
 offset_left = 1864.0
@@ -748,9 +746,8 @@ color = Color(1, 1, 0.941176, 0)
 layout_mode = 3
 anchors_preset = 0
 offset_left = 44.0
-offset_top = 8.0
 offset_right = 84.0
-offset_bottom = 48.0
+offset_bottom = 40.0
 
 [node name="BackPlate" type="Sprite2D" parent="TopLeftZone"]
 position = Vector2(202, 178.5)
