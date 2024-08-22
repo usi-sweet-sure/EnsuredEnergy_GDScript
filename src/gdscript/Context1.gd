@@ -11,6 +11,8 @@ signal context_error
 #the context
 var ctx1
 var http1
+var leaderboard = false
+var leaderboard_json
 
 #globals
 var res_id: int:
@@ -87,31 +89,43 @@ func get_ctx():
 		push_error("http error")
 	
 	
-	# TODO get river and hydro avl from dsp
-func get_dsp():
-	var url = "https://sure.euler.usi.ch/json.php?mth=dsp"
+func get_leaderboard():
+	leaderboard = true
+	var url = "https://sure.euler.usi.ch/json.php?mth=lst&lim=3&ord=5"
+	HttpManager.http_request_active = true
+	var error = http1.request(url)
+	if error != OK:
+		push_error("http error")
 	
 #handle response
 func _http1_completed(_result, _response_code, _headers, body):
-	HttpManager.http_request_active = false
-	var json = JSON.new()
-	json.parse(body.get_string_from_utf8())
-	ctx1 = json.get_data()
-	#set globals
-	#res_id = ctx1[0]["res_id"]
-	#yr = ctx1[0]["yr"]
-	#debug
-	#print(ctx1[0]["res_id"])
-	#print(ctx1[0]["yr"])
-	#print(ctx1[0]["cnv_gas_gas"])
-	if ctx1 == null:
-		context_error.emit()
+	if !leaderboard:
+		HttpManager.http_request_active = false
+		var json = JSON.new()
+		json.parse(body.get_string_from_utf8())
+		ctx1 = json.get_data()
+		#set globals
+		#res_id = ctx1[0]["res_id"]
+		#yr = ctx1[0]["yr"]
+		#debug
+		#print(ctx1[0]["res_id"])
+		#print(ctx1[0]["yr"])
+		#print(ctx1[0]["cnv_gas_gas"])
+		if ctx1 == null:
+			context_error.emit()
+		else:
+			for i in ctx1:
+				if i["prm_id"] == "454":
+					Gameloop.demand_summer = float(i["tj"]) / 100
+				if i["prm_id"] == "455":
+					Gameloop.demand_winter = float(i["tj"]) / 100
+					
 	else:
-		for i in ctx1:
-			if i["prm_id"] == "454":
-				Gameloop.demand_summer = float(i["tj"]) / 100
-			if i["prm_id"] == "455":
-				Gameloop.demand_winter = float(i["tj"]) / 100
+		HttpManager.http_request_active = false
+		var json = JSON.new()
+		leaderboard_json = JSON.stringify(JSON.parse_string(body.get_string_from_utf8()))
+		#leaderboard_json = json.get_data()
+		print(leaderboard_json)
 
 
 func _on_player_name_updated(player_name):
