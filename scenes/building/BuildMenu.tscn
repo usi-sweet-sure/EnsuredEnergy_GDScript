@@ -101,6 +101,7 @@ scale = Vector2(0.9, 0.9)
 is_in_menu = true
 availability = Vector2(0.8, 0.2)
 plant_name = "SOLAR"
+build_cost = 22
 metadata/_edit_group_ = true
 
 [node name="Sprite" parent="Container/Solar" index="1"]
@@ -138,6 +139,7 @@ is_in_menu = true
 availability = Vector2(0.1, 0.9)
 plant_name = "WIND"
 build_time = 2
+build_cost = 2
 metadata/_edit_group_ = true
 
 [node name="Price" parent="Container/Wind/PreviewInfo" index="3"]
@@ -185,6 +187,7 @@ scale = Vector2(0.9, 0.9)
 is_in_menu = true
 availability = Vector2(0, 0)
 plant_name = "BIOGAS"
+build_cost = 24
 metadata/_edit_group_ = true
 
 [node name="Price" parent="Container/Tree/PreviewInfo" index="3"]
@@ -228,6 +231,7 @@ position = Vector2(194, 167)
 scale = Vector2(0.9, 0.9)
 is_in_menu = true
 plant_name = "HYDRO"
+build_time = 6
 metadata/_edit_group_ = true
 
 [node name="Price" parent="Container/Hydro/PreviewInfo" index="3"]
@@ -274,6 +278,7 @@ position = Vector2(647, 166)
 scale = Vector2(0.9, 0.9)
 is_in_menu = true
 plant_name = "GAS"
+build_cost = 32
 metadata/_edit_group_ = true
 
 [node name="Price" parent="Container/Gas/PreviewInfo" index="3"]
@@ -314,6 +319,7 @@ position = Vector2(872.001, 166)
 scale = Vector2(0.9, 0.9)
 is_in_menu = true
 plant_name = "WASTE"
+build_cost = 125
 metadata/_edit_group_ = true
 
 [node name="PreviewInfo" parent="Container/Waste" index="0"]
@@ -368,6 +374,7 @@ position = Vector2(1097, 166)
 scale = Vector2(0.9, 0.9)
 is_in_menu = true
 plant_name = "BIOMASS"
+build_cost = 37
 metadata/_edit_group_ = true
 
 [node name="PreviewInfo" parent="Container/Biomass" index="0"]
@@ -428,6 +435,7 @@ scale = Vector2(0.9, 0.9)
 is_in_menu = true
 availability = Vector2(0.6, 0.4)
 plant_name = "RIVER"
+build_time = 3
 metadata/_edit_group_ = true
 
 [node name="PreviewInfo" parent="Container/River" index="0"]
