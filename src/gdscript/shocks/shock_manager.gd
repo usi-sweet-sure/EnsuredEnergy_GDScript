@@ -28,7 +28,7 @@ func _ready():
 	glaciers_melting.add_effect(func(): print("decreasing hydraulic water supply")) # E. Implement
 	
 	var severe_weather = Shock.new("SHOCK_SEVERE_WEATHER_TITLE", "SHOCK_SEVERE_WEATHER_TEXT", "weather.png")
-	severe_weather.add_effect(func(): print("decreasing wind and solar energy by 10%")) # E. Implement
+	severe_weather.add_effect(func(): _severe_wether_prm_ups()) # E. Implement
 	
 	var inc_raw_cost_10 = Shock.new("SHOCK_INC_RAW_COST_10_TITLE", "SHOCK_INC_RAW_COST_10_TEXT", "money.png")
 	inc_raw_cost_10.add_effect(func(): Gameloop.production_costs_modifier += 0.1)
@@ -49,8 +49,7 @@ func _ready():
 	
 	var no_shock = Shock.new("SHOCK_NO_SHOCK_TITLE", "SHOCK_NO_SHOCK_TEXT", "sunrise.png", false)
 
-	shocks = [cold_spell, heat_wave, glaciers_melting, severe_weather, inc_raw_cost_10,
-			inc_raw_cost_20, dec_raw_cost_20, no_shock, mass_immigration, renewable_support]
+	shocks = [cold_spell, heat_wave, glaciers_melting, severe_weather, no_shock, mass_immigration, renewable_support]
 	shocks_full = shocks.duplicate()
 	shocks.shuffle()
 	
@@ -94,3 +93,25 @@ func _reintroduce_nuclear():
 # Do nothing, nuclears will shut down as planned
 func _leave_nuclear():
 	pass
+	
+func _severe_wether_prm_ups():
+		Context1.prm_id = 471 #solar availability
+		Context1.yr = Gameloop.year_list[Gameloop.current_turn-1]
+		Context1.tj = -0.1
+		Context1.prm_ups()
+		await Context1.http1.request_completed
+		Context1.prm_id = 472 #solar availability
+		Context1.yr = Gameloop.year_list[Gameloop.current_turn-1]
+		Context1.tj = -0.1
+		Context1.prm_ups()
+		await Context1.http1.request_completed
+		Context1.prm_id = 471 #solar availability
+		Context1.yr = Gameloop.year_list[Gameloop.current_turn]
+		Context1.tj = 0.1
+		Context1.prm_ups()
+		await Context1.http1.request_completed
+		Context1.prm_id = 472 #solar availability
+		Context1.yr = Gameloop.year_list[Gameloop.current_turn]
+		Context1.tj = 0.1
+		Context1.prm_ups()
+		await Context1.http1.request_completed

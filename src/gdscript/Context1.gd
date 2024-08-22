@@ -31,7 +31,7 @@ var prm_id: int:
 	set(new_value):
 		prm_id = new_value
 		prm_id_updated.emit(prm_id)
-var tj: int:
+var tj: float:
 	set(new_value):
 		tj = new_value
 		tj_updated.emit(tj)
