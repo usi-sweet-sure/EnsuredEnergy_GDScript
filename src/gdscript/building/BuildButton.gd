@@ -36,7 +36,7 @@ func _on_pressed():
 func _on_pp_pressed(pp):
 	for plant in $PowerPlants.get_children():
 		if pp.name == plant.name:
-			if Gameloop.can_spend_the_money(pp.build_cost):
+			if Gameloop.can_spend_the_money(pp.build_cost + pp.production_cost):
 				Gameloop.building_costs += plant.build_cost
 				$Hammer.hide()
 				$BuildMenu.hide()
@@ -93,12 +93,16 @@ func _on_pp_delete(pp):
 	self_modulate = Color(1,1,1,1)
 	disabled = false
 	
+	var plant_total = 0
+	for plant in Gameloop.all_power_plants:
+		if pp.plant_name == plant.plant_name:
+			plant_total += 1
 	var plant_id = pp.plant_name_to_ups_id[pp.plant_name]
-			
-	Context1.prm_id = plant_id
-	Context1.yr = Gameloop.year_list[Gameloop.current_turn]
-	Context1.tj = -pp.cnv_capacity
-	Context1.prm_ups()
+	Gameloop.ups_list[plant_id] += pp.cnv_capacity / plant_total
+	#Context1.prm_id = plant_id
+	#Context1.yr = Gameloop.year_list[Gameloop.current_turn]
+	#Context1.tj = -pp.cnv_capacity
+	#Context1.prm_ups()
 	
 
 	Gameloop._update_buildings_impact()
