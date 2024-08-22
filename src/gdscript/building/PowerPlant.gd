@@ -311,11 +311,20 @@ func _check_life_span():
 	# A life span of 3 means the power plants lives 3 full turns, then shuts down on the fourth.
 	# The game start counting at 1, not zero.
 	if life_span < Gameloop.current_turn:
-		is_alive = false
-		_on_switch_toggled(false)
-		$BuildInfo/Switch.disabled = true #add disabled sprite
+		_disable()
 		
-		
+# Make the pp unusable
+func _disable():
+	is_alive = false
+	_on_switch_toggled(false)
+	$BuildInfo/Switch.disabled = true
+	
+# Make the pp usable
+# Do not activate it, it costs money and the player should manage this
+func _enable():
+	is_alive = true
+	$BuildInfo/Switch.disabled = false
+
 func _on_switch_toggled(toggled_on):
 	is_alive = toggled_on
 	

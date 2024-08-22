@@ -59,8 +59,8 @@ func pick_shock():
 	# Nuclear reintro always happens in 2034, which is turn 5
 	if Gameloop.current_turn == 5:
 		var nuc_reintro = Shock.new("SHOCK_NUC_REINTRO_TITLE", "SHOCK_NUC_REINTRO_TEXT", "vote.png")
-		nuc_reintro.add_player_reaction("SHOCK_NUC_REINTRO_PLAYER_REACTION_1", func(): print("Reintroduce nuclear power")) # E. Implement
-		nuc_reintro.add_player_reaction("SHOCK_NUC_REINTRO_PLAYER_REACTION_2", func(): print("de-transition from nuclear power")) # E. Implement
+		nuc_reintro.add_player_reaction("SHOCK_NUC_REINTRO_PLAYER_REACTION_1", func(): _reintroduce_nuclear()) # E. Implement
+		nuc_reintro.add_player_reaction("SHOCK_NUC_REINTRO_PLAYER_REACTION_2", func(): _leave_nuclear()) # E. Implement
 		print("shock picked: ", nuc_reintro.title_key)
 		Gameloop.most_recent_shock = nuc_reintro
 	else:
@@ -82,3 +82,16 @@ func apply_shock():
 func apply_reaction(reaction_index: int):
 	if Gameloop.most_recent_shock != null:
 		Gameloop.most_recent_shock.apply_reaction(reaction_index)
+
+
+func _reintroduce_nuclear():
+	for pp in get_tree().get_nodes_in_group("PP"):
+		if pp.is_nuclear():
+			pp._enable()
+
+
+func _leave_nuclear():
+	for pp in get_tree().get_nodes_in_group("PP"):
+		if pp.is_nuclear():
+			pp._disable()
+
