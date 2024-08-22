@@ -46,30 +46,38 @@ func _ready():
 	var renewable_support = Shock.new("SHOCK_RENEWABLE_SUPPORT_TITLE", "SHOCK_RENEWABLE_SUPPORT_TEXT", "flower.png")
 	renewable_support.add_effect(func(): PolicyManager.personal_support += 0.1)
 	
-	var nuc_reintro = Shock.new("SHOCK_NUC_REINTRO_TITLE", "SHOCK_NUC_REINTRO_TEXT", "vote.png")
-	nuc_reintro.add_player_reaction("SHOCK_NUC_REINTRO_PLAYER_REACTION_1", func(): print("Reintroduce nuclear power")) # E. Implement
-	nuc_reintro.add_player_reaction("SHOCK_NUC_REINTRO_PLAYER_REACTION_2", func(): print("de-transition from nuclear power")) # E. Implement
 	
 	var no_shock = Shock.new("SHOCK_NO_SHOCK_TITLE", "SHOCK_NO_SHOCK_TEXT", "sunrise.png", false)
 
 	shocks = [cold_spell, heat_wave, glaciers_melting, severe_weather, inc_raw_cost_10,
-			inc_raw_cost_20, dec_raw_cost_20, no_shock, mass_immigration, renewable_support, nuc_reintro]
+			inc_raw_cost_20, dec_raw_cost_20, no_shock, mass_immigration, renewable_support]
 	shocks_full = shocks.duplicate()
 	shocks.shuffle()
 	
 	
 func pick_shock():
-	if shocks.is_empty():
-		shocks = shocks_full.duplicate()
-		shocks.shuffle()
-		
-	var random_shock = shocks.pop_front()
-	print("shock picked: ", random_shock.title_key)
-	Gameloop.most_recent_shock = random_shock
+	# Nuclear reintro always happens in 2034, which is turn 5
+	if Gameloop.current_turn == 5:
+		var nuc_reintro = Shock.new("SHOCK_NUC_REINTRO_TITLE", "SHOCK_NUC_REINTRO_TEXT", "vote.png")
+		nuc_reintro.add_player_reaction("SHOCK_NUC_REINTRO_PLAYER_REACTION_1", func(): print("Reintroduce nuclear power")) # E. Implement
+		nuc_reintro.add_player_reaction("SHOCK_NUC_REINTRO_PLAYER_REACTION_2", func(): print("de-transition from nuclear power")) # E. Implement
+		print("shock picked: ", nuc_reintro.title_key)
+		Gameloop.most_recent_shock = nuc_reintro
+	else:
+		# Picks a random shock
+		if shocks.is_empty():
+			shocks = shocks_full.duplicate()
+			shocks.shuffle()
+			
+		var random_shock = shocks.pop_front()
+		print("shock picked: ", random_shock.title_key)
+		Gameloop.most_recent_shock = random_shock
+
 
 func apply_shock():
 	if Gameloop.most_recent_shock != null:
 		Gameloop.most_recent_shock.apply()
+
 
 func apply_reaction(reaction_index: int):
 	if Gameloop.most_recent_shock != null:

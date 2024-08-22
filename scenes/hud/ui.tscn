@@ -1427,7 +1427,7 @@ vertical_alignment = 1
 script = ExtResource("71_xcmoe")
 
 [node name="MoneyIcon" type="Sprite2D" parent="TopLeftZone/MoneyManagement"]
-position = Vector2(130.5, 195)
+position = Vector2(130.5, 191)
 texture = ExtResource("51_8sidw")
 
 [node name="Policies" type="Control" parent="TopLeftZone"]
