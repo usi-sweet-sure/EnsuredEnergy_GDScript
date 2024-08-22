@@ -95,6 +95,7 @@ func _leave_nuclear():
 	pass
 	
 func _severe_wether_prm_ups():
+		await Context1.http1.request_completed
 		Context1.prm_id = 471 #solar availability
 		Context1.yr = Gameloop.year_list[Gameloop.current_turn-1]
 		Context1.tj = -0.1
