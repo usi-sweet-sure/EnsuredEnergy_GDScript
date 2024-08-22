@@ -6,6 +6,7 @@ signal yr_updated
 signal prm_id_updated
 signal tj_updated
 signal survey_token_updated
+signal context_error
 
 #the context
 var ctx1
@@ -103,11 +104,14 @@ func _http1_completed(_result, _response_code, _headers, body):
 	#print(ctx1[0]["res_id"])
 	#print(ctx1[0]["yr"])
 	#print(ctx1[0]["cnv_gas_gas"])
-	for i in ctx1:
-		if i["prm_id"] == "454":
-			Gameloop.demand_summer = float(i["tj"]) / 100
-		if i["prm_id"] == "455":
-			Gameloop.demand_winter = float(i["tj"]) / 100
+	if ctx1 == null:
+		context_error.emit()
+	else:
+		for i in ctx1:
+			if i["prm_id"] == "454":
+				Gameloop.demand_summer = float(i["tj"]) / 100
+			if i["prm_id"] == "455":
+				Gameloop.demand_winter = float(i["tj"]) / 100
 
 
 func _on_player_name_updated(player_name):
