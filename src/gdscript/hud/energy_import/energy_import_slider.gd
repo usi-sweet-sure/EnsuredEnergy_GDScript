@@ -5,8 +5,6 @@ func _ready():
 	Gameloop.energy_demand_updated_winter.connect(_on_energy_demand_updated_winter)
 	Gameloop.energy_supply_updated_winter.connect(_on_energy_supply_updated_winter)
 	
-	# We have to do this to initialize the bar since it is created after the demand
-	# has been set for the first time in Gameloop
 	_on_energy_demand_updated_winter(Gameloop.demand_winter)
 
 
@@ -40,5 +38,8 @@ func _on_import_down_button_pressed():
 
 # Updates properties of the slider so we don't have to update the node manually
 func _on_energy_demand_updated_winter(demand: float):
-	max_value = demand / 4.0 # S. I want the player to feel like they are importing a lot
+	# S. I want the player to feel like they are importing a lot
+	# E. I removed the / 4. But I get you, we need to find a way, this is just for
+	# the temporary version we have to send out
+	max_value = demand / 2
 	#step = round(demand / size.x)
