@@ -1,16 +1,16 @@
 [gd_scene load_steps=16 format=3 uid="uid://i802aa7uc538"]
 
 [ext_resource type="PackedScene" uid="uid://ct4blqwh4y6ab" path="res://scenes/building/PowerPlant.tscn" id="2_236y8"]
-[ext_resource type="Texture2D" uid="uid://cssrlygtxiak" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0008_Power-plant-solar-1-screen.png" id="2_trovx"]
-[ext_resource type="Texture2D" uid="uid://b2gbtnhgkx7jk" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0007_Power-plant-wind-1-screen.png" id="3_og7da"]
-[ext_resource type="Texture2D" uid="uid://0rkruyk7ou0k" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0006_Power-plant-tree-screen.png" id="4_tr8di"]
-[ext_resource type="Texture2D" uid="uid://blsfp2folqofg" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0014_Power-plant-reservoir-screen.png" id="5_katjr"]
-[ext_resource type="Texture2D" uid="uid://bqcub63frxj38" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0001_Power-plant-gas-screen.png" id="7_bxb5o"]
+[ext_resource type="Texture2D" uid="uid://2kwo4o62dluh" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0008_Power-plant-solar-1-screen.png" id="2_trovx"]
+[ext_resource type="Texture2D" uid="uid://domdrqua4mxtc" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0007_Power-plant-wind-1-screen.png" id="3_og7da"]
+[ext_resource type="Texture2D" uid="uid://dcle7hus8g367" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0004_Power-plant-H2-screen.png" id="4_j6x8a"]
+[ext_resource type="Texture2D" uid="uid://6u0v1j5fqjex" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0014_Power-plant-reservoir-screen.png" id="5_katjr"]
+[ext_resource type="Texture2D" uid="uid://bo0cvlo027nod" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0001_Power-plant-gas-screen.png" id="7_bxb5o"]
 [ext_resource type="Texture2D" uid="uid://dt3vgdfiymmbl" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0018_Hydrolic-Reservoir.png" id="7_n0676"]
-[ext_resource type="Texture2D" uid="uid://b20t5eecd5dmi" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0005_Power-plant-waste-screen.png" id="8_f783d"]
+[ext_resource type="Texture2D" uid="uid://ip20ojc1fi3a" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0005_Power-plant-waste-screen.png" id="8_f783d"]
 [ext_resource type="Texture2D" uid="uid://40ncc2tsu56l" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0008_Water-Pump-3.png" id="8_ypqld"]
-[ext_resource type="Texture2D" uid="uid://bj4tvp2lyt062" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0002_Power-plant-biomass-screen.png" id="9_a2e8y"]
-[ext_resource type="Texture2D" uid="uid://cklce5oocr611" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0013_Power-plant-river-screen.png" id="10_lpxim"]
+[ext_resource type="Texture2D" uid="uid://c4ivvq0eir5js" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0002_Power-plant-biomass-screen.png" id="9_a2e8y"]
+[ext_resource type="Texture2D" uid="uid://c3pjktru51bq5" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0013_Power-plant-river-screen.png" id="10_lpxim"]
 [ext_resource type="Texture2D" uid="uid://doe7y0txnwax7" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0005_Water-3.png" id="13_wuh2w"]
 
 [sub_resource type="Animation" id="Animation_j4va7"]
@@ -184,7 +184,7 @@ position = Vector2(1322, 166)
 scale = Vector2(0.9, 0.9)
 is_in_menu = true
 availability = Vector2(0, 0)
-plant_name = "GAS"
+plant_name = "BIOGAS"
 metadata/_edit_group_ = true
 
 [node name="Price" parent="Container/Tree/PreviewInfo" index="3"]
@@ -193,7 +193,7 @@ offset_right = 64.0
 
 [node name="Sprite" parent="Container/Tree" index="1"]
 position = Vector2(16.6667, 24.4445)
-texture = ExtResource("4_tr8di")
+texture = ExtResource("4_j6x8a")
 
 [node name="BuildInfo" parent="Container/Tree" index="2"]
 offset_left = -292.222
