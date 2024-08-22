@@ -15,8 +15,8 @@ var time_elapsed_since_last_shake := 0.0
 var shake_arrow := false
 
 func _ready():
-	Gameloop.total_emissions_updated.connect(_on_total_emissions_updated)
-	_on_total_emissions_updated(Gameloop.total_emissions)
+	Gameloop.co2_emissions_updated.connect(_on_emissions_updated)
+	_on_emissions_updated(Gameloop.co2_emissions)
 	
 func _process(delta):
 	time_elapsed_since_last_shake += delta
@@ -27,7 +27,7 @@ func _process(delta):
 		arrow_shake_amplitude_in_degrees *= -1
 	
 	
-func _on_total_emissions_updated(emissions: float):
+func _on_emissions_updated(emissions: float):
 	# The arrow rotation percentage goes from -75% (full left) to 75% (full right)
 	# No emission points the arrow at -75%
 	var arrow_was_shaking = shake_arrow

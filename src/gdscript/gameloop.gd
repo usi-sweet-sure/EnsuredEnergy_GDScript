@@ -5,7 +5,6 @@ var total_number_of_turns: int = 10
 var years_in_a_turn = 3
 var start_money: float = 700.0
 var money_per_turn: float = 450.0
-var green_energy_import_factor: float = 1.5
 var debt_percentage_on_borrowed_money: float = 20.0
 
 var demand_summer_list = []
@@ -31,15 +30,12 @@ signal energy_supply_updated_winter
 signal energy_supply_updated_summer
 signal energy_demand_updated_winter
 signal energy_demand_updated_summer
-signal green_energy_import_on_updated
 signal imported_energy_amount_updated
 signal borrowed_money_amount_updated
 signal players_own_money_amount_updated
 signal available_money_amount_updated
 signal land_use_updated
 signal co2_emissions_updated
-signal imports_emissions_updated
-signal total_emissions_updated
 signal most_recent_shock_updated
 signal current_turn_updated
 signal show_tutorial
@@ -87,15 +83,7 @@ var supply_winter: float:
 		energy_supply_updated_winter.emit(supply_winter)
 var energy_import_cost: float:
 	get:
-		if not green_energy_import_on:
-			return imported_energy_amount 
-		else:
-			return imported_energy_amount * green_energy_import_factor
-var green_energy_import_on : bool:
-	set(new_value):
-		green_energy_import_on = new_value
-		green_energy_import_on_updated.emit(green_energy_import_on)
-		energy_import_cost_updated.emit(energy_import_cost)
+		return imported_energy_amount 
 var imported_energy_amount: float:
 	set(new_value):
 		imported_energy_amount = new_value
@@ -123,15 +111,6 @@ var co2_emissions: float:
 	set(new_value):
 		co2_emissions = new_value
 		co2_emissions_updated.emit(co2_emissions)
-		total_emissions_updated.emit(total_emissions)
-var imports_emissions: float:
-	set(new_value):
-		imports_emissions = new_value
-		imports_emissions_updated.emit(imports_emissions)
-		total_emissions_updated.emit(total_emissions)
-var total_emissions: float: # This is not intended to be set
-	get:
-		return co2_emissions + imports_emissions
 var most_recent_shock: Shock:
 	set(new_value):
 		most_recent_shock = new_value
@@ -261,13 +240,11 @@ func reset_all_values():
 	demand_winter = 0
 	supply_summer = 0
 	supply_winter = 0
-	green_energy_import_on = false
 	imported_energy_amount = 0
 	borrowed_money_amount = 0
 	players_own_money_amount = start_money
 	land_use = 0
 	co2_emissions = 0
-	imports_emissions = 0
 	most_recent_shock = null
 	current_turn = 1
 	powerplants_production_costs = 0

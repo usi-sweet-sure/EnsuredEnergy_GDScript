@@ -1,4 +1,4 @@
-[gd_scene load_steps=147 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=143 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/UI Elements/Button-Next-Normal.png" id="2_aobed"]
 [ext_resource type="Texture2D" uid="uid://ccsapuvkqqt1b" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0009_Profile-metal-base.png" id="2_nu7y6"]
@@ -95,11 +95,7 @@
 [ext_resource type="Script" path="res://src/gdscript/hud/emissions/info_box/co2_emissions_percentage_label.gd" id="69_g60cp"]
 [ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="70_2ktfd"]
 [ext_resource type="Script" path="res://src/gdscript/hud/emissions/info_box/co2_emissions_info_text_label.gd" id="70_444pk"]
-[ext_resource type="Script" path="res://src/gdscript/hud/emissions/info_box/imports_emissions_percentage_label.gd" id="71_benl5"]
-[ext_resource type="Script" path="res://src/gdscript/hud/energy_import/green_import_switch.gd" id="71_dp47n"]
 [ext_resource type="Script" path="res://src/gdscript/hud/money_management/available_money_amount_label.gd" id="71_xcmoe"]
-[ext_resource type="Script" path="res://src/gdscript/hud/emissions/info_box/imports_emissions_info_text_label.gd" id="72_2h8vj"]
-[ext_resource type="Script" path="res://src/gdscript/hud/energy_import/green_import_led_on_sprite.gd" id="72_ytkph"]
 [ext_resource type="Script" path="res://src/gdscript/hud/energy_bars/winter/infos/winter_demand_label.gd" id="91_butgj"]
 [ext_resource type="Script" path="res://src/gdscript/hud/energy_bars/winter/infos/winter_supply_label.gd" id="92_bqjhv"]
 [ext_resource type="Script" path="res://src/gdscript/hud/energy_bars/summer/infos/summer_demand_label.gd" id="92_j1ii1"]
@@ -718,7 +714,7 @@ offset_left = -167.0
 offset_top = -113.0
 offset_right = 2120.0
 offset_bottom = 1225.0
-color = Color(1, 1, 1, 0)
+color = Color(1, 1, 0.941176, 0)
 
 [node name="TopLeftZone" type="Control" parent="."]
 layout_mode = 3
@@ -1679,17 +1675,18 @@ script = ExtResource("69_g60cp")
 text = "CO2_EMISSIONS_TEXT"
 script = ExtResource("70_444pk")
 
+[node name="HBoxContainer2" parent="EnvironmentAndPollution/Pollution/Info/MarginContainer/MarginContainer/VBoxContainer" index="3"]
+visible = false
+
 [node name="Text1" parent="EnvironmentAndPollution/Pollution/Info/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2" index="0"]
 theme_override_colors/font_color = Color(0.666667, 0, 0, 1)
 text = "IMPORTS_EMISSIONS"
 
 [node name="n1" parent="EnvironmentAndPollution/Pollution/Info/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2" index="1"]
 theme_override_colors/font_color = Color(0.666667, 0, 0, 1)
-script = ExtResource("71_benl5")
 
 [node name="InfoText2" parent="EnvironmentAndPollution/Pollution/Info/MarginContainer/MarginContainer/VBoxContainer" index="4"]
 text = "IMPORTS_EMISSIONS_TEXT"
-script = ExtResource("72_2h8vj")
 
 [node name="MoreInfo" parent="EnvironmentAndPollution/Pollution/Info" index="1"]
 offset_top = -17.0
@@ -1808,7 +1805,6 @@ offset_left = -3.0
 offset_top = 296.0
 offset_right = 77.0
 offset_bottom = 372.0
-script = ExtResource("71_dp47n")
 
 [node name="OnL" parent="ImportAndEnergy/Import/ImportSlider/ImportSwitch" index="0"]
 visible = false
@@ -1866,7 +1862,6 @@ position = Vector2(66, 296)
 
 [node name="LEDOn" parent="ImportAndEnergy/Import/ImportSlider" index="9"]
 position = Vector2(66, 296)
-script = ExtResource("72_ytkph")
 
 [node name="Energy" type="Node2D" parent="ImportAndEnergy"]
 position = Vector2(238, 856)
@@ -2350,7 +2345,6 @@ uppercase = true
 [connection signal="pressed" from="EnvironmentAndPollution/Pollution/OpenInfoBoxButton" to="EnvironmentAndPollution/Pollution/Info" method="_on_open_info_box_button_pressed"]
 [connection signal="drag_ended" from="ImportAndEnergy/Import/ImportSlider" to="ImportAndEnergy/Import/ImportSlider" method="_on_import_slider_drag_ended"]
 [connection signal="value_changed" from="ImportAndEnergy/Import/ImportSlider" to="ImportAndEnergy/Import/ImportSlider" method="_on_import_slider_value_changed"]
-[connection signal="toggled" from="ImportAndEnergy/Import/ImportSlider/ImportSwitch" to="ImportAndEnergy/Import/ImportSlider/ImportSwitch" method="_on_toggled"]
 [connection signal="pressed" from="ImportAndEnergy/Import/ImportSlider/UpButton" to="ImportAndEnergy/Import/ImportSlider" method="_on_import_up_button_pressed"]
 [connection signal="pressed" from="ImportAndEnergy/Import/ImportSlider/DownButton" to="ImportAndEnergy/Import/ImportSlider" method="_on_import_down_button_pressed"]
 [connection signal="pressed" from="Clock/TimePanelBlank/TurnInfo" to="Clock/TimePanelBlank" method="clock_pressed"]

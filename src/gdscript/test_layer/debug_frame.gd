@@ -10,15 +10,12 @@ func _ready():
 	Gameloop.energy_supply_updated_summer.connect(_update_text)
 	Gameloop.energy_demand_updated_winter.connect(_update_text)
 	Gameloop.energy_demand_updated_summer.connect(_update_text)
-	Gameloop.green_energy_import_on_updated.connect(_update_text)
 	Gameloop.imported_energy_amount_updated.connect(_update_text)
 	Gameloop.borrowed_money_amount_updated.connect(_update_text)
 	Gameloop.players_own_money_amount_updated.connect(_update_text)
 	Gameloop.available_money_amount_updated.connect(_update_text)
 	Gameloop.land_use_updated.connect(_update_text)
 	Gameloop.co2_emissions_updated.connect(_update_text)
-	Gameloop.imports_emissions_updated.connect(_update_text)
-	Gameloop.total_emissions_updated.connect(_update_text)
 	Gameloop.most_recent_shock_updated.connect(_update_text)
 	Gameloop.current_turn_updated.connect(_update_text)
 	Gameloop.powerplants_production_costs_updated.connect(_update_text)
@@ -77,9 +74,7 @@ func _update_text(_val):
 		
 		"[b]Environment[/b]\n",
 		"Land use: [b]" + str(Gameloop.land_use) + "[/b]\n",
-		"Total emissions: [b]" + str(Gameloop.total_emissions) + "[/b]\n",
-		"CO2 emissions: [b]" + str(Gameloop.co2_emissions) + "[/b]\n",
-		"Imports emissions: [b]" + str(Gameloop.imports_emissions) + "[/b]\n\n",
+		"CO2 emissions: [b]" + str(Gameloop.co2_emissions) + "[/b]\n\n",
 		
 		"[b]Context[/b]\n",
 		"res_id: [b]" + str(Context1.res_id) + "[/b]\n",
