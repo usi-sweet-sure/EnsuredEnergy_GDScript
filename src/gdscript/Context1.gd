@@ -110,7 +110,7 @@ func _http1_completed(_result, _response_code, _headers, body):
 		#debug
 		#print(ctx1[0]["res_id"])
 		#print(ctx1[0]["yr"])
-		#print(ctx1[0]["cnv_gas_gas"])
+		res_id = int(ctx1[0]["res_id"])
 		if ctx1 == null:
 			context_error.emit()
 		else:

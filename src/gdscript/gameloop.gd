@@ -204,6 +204,7 @@ func _send_prm_ups():
 			Context1.tj = ups_list[i]
 			Context1.prm_ups()
 			await Context1.http1.request_completed
+			ups_list[i] = 0
 		 
 
 func _unhandled_input(event):
