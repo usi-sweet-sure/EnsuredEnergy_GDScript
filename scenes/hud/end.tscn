@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cej4dlw11su6f"]
+[gd_scene load_steps=28 format=3 uid="uid://cej4dlw11su6f"]
 
 [ext_resource type="Script" path="res://src/gdscript/end/end.gd" id="1_eio5g"]
 [ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="4_n8g63"]
@@ -6,8 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://ceuxpu5iujr05" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0001_Stats-metal-base.png" id="5_xqx4k"]
 [ext_resource type="Texture2D" uid="uid://iaa6i5ocoaer" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0022_Icon-Popularity.png" id="6_88lh6"]
 [ext_resource type="Texture2D" uid="uid://cd23afs6x11al" path="res://assets/UI Elements/All-HQ-Assets-D_0005s_0002_Stats-screen.png" id="6_us122"]
+[ext_resource type="Script" path="res://src/gdscript/end/money_label.gd" id="7_1k3ff"]
 [ext_resource type="Texture2D" uid="uid://gp11t1mp6sc3" path="res://assets/UI Elements/All-HQ-Assets-D_0009s_0003_Stats-(side)-metal-plate.png" id="7_57dx7"]
 [ext_resource type="Texture2D" uid="uid://bsa55enbm5cwg" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0028_Icon-Solar.png" id="7_x2355"]
+[ext_resource type="Script" path="res://src/gdscript/end/trust_bar.gd" id="8_8tlhp"]
 [ext_resource type="Texture2D" uid="uid://cischtrjvknyl" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0027_Icon-Wind.png" id="8_a3fds"]
 [ext_resource type="Texture2D" uid="uid://j7b41prot7rw" path="res://assets/UI Elements/All-HQ-Assets-D_0005s_0007_Popularity-screen.png" id="8_uuhoe"]
 [ext_resource type="Texture2D" uid="uid://ceywqq4wa4ocw" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0026_Icon-Import.png" id="9_uutud"]
@@ -111,14 +113,35 @@ position = Vector2(101.5, 188.5)
 scale = Vector2(0.645, 0.645)
 texture = ExtResource("5_goags")
 
-[node name="Screen" type="TextureRect" parent="MainFrame/BottomFrames/LeftFrame/Money"]
+[node name="Screen" type="NinePatchRect" parent="MainFrame/BottomFrames/LeftFrame/Money"]
 layout_mode = 0
 offset_left = 30.5
-offset_top = 57.5
+offset_top = 65.5
 offset_right = 173.5
-offset_bottom = 137.5
+offset_bottom = 145.5
 texture = ExtResource("6_us122")
-expand_mode = 1
+patch_margin_left = 5
+patch_margin_top = 6
+patch_margin_right = 7
+patch_margin_bottom = 5
+
+[node name="MoneyLabel" type="Label" parent="MainFrame/BottomFrames/LeftFrame/Money/Screen"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -15.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
+theme_override_constants/shadow_offset_x = 2
+text = "000.00 CHF"
+horizontal_alignment = 1
+script = ExtResource("7_1k3ff")
 
 [node name="Trust" type="Control" parent="MainFrame/BottomFrames/LeftFrame"]
 anchors_preset = 0
@@ -132,15 +155,15 @@ texture = ExtResource("6_88lh6")
 
 [node name="ProgressBar" type="ProgressBar" parent="MainFrame/BottomFrames/LeftFrame/Trust"]
 offset_left = 190.5
-offset_top = 80.5
+offset_top = 86.5
 offset_right = 270.5
-offset_bottom = 118.5
+offset_bottom = 124.5
 theme = ExtResource("4_n8g63")
 theme_override_font_sizes/font_size = 23
 theme_override_styles/background = SubResource("StyleBoxFlat_d1wpm")
 theme_override_styles/fill = SubResource("StyleBoxFlat_w7rq5")
 step = 1.0
-value = 50.0
+script = ExtResource("8_8tlhp")
 
 [node name="Grid" type="Sprite2D" parent="MainFrame/BottomFrames/LeftFrame/Trust/ProgressBar"]
 show_behind_parent = true
