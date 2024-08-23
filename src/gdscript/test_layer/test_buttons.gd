@@ -7,14 +7,14 @@ extends Control
 
 
 func _ready():
-	button_top.text = "Debug window"
+	button_top.text = "Trigger the end"
 	button_bottom.text = "open back to survey page"
 	HttpManager.http_request_active_updated.connect(_on_http_request_active_updated)
 	_on_http_request_active_updated(HttpManager.http_request_active)
 
 
 func _on_button_top_pressed():
-	SurveyManager.update_token()
+	Gameloop.show_ending_screen_requested.emit()
 	
 	
 func _on_button_bottom_pressed():

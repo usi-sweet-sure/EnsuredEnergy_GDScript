@@ -1,7 +1,13 @@
 extends CanvasLayer
 
 
-@onready var leaderboard = $EndWindow/Leaderboard
+func _ready():
+	Gameloop.show_ending_screen_requested.connect(_on_show_ending_screen)
+	
+	
+func _on_show_ending_screen():
+	show()
 
-func _on_score_toggled(toggled_on):
-	$EndWindow.visible = !toggled_on
+
+func _on_close_button_pressed():
+	hide()

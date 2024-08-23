@@ -44,7 +44,7 @@ signal energy_import_cost_updated
 signal building_costs_updated
 
 signal next_turn
-signal end
+signal show_ending_screen_requested
 
 signal toggle_settings
 signal toggle_graphs

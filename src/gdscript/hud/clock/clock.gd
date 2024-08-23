@@ -50,7 +50,7 @@ func _on_next_turn_button_pressed():
 	await $TimelineAnimation.animation_finished
 	
 	if Gameloop.current_turn == Gameloop.total_number_of_turns:
-		Gameloop.end.emit()
+		Gameloop.show_ending_screen_requested.emit()
 		$"../../NextTurn".hide()
 	else:
 		Gameloop.current_turn += 1
