@@ -43,6 +43,7 @@ func _ready():
 	_add_new_data_set("winter_energy_import")
 	_add_new_data_set("land_use")
 	_add_new_data_set("co2_emissions")
+	_add_new_data_set("personal_support")
 	
 	Gameloop.building_costs_updated.connect(_on_building_cost_updated)
 	Gameloop.powerplants_production_costs_updated.connect(_on_production_cost_updated)
@@ -56,6 +57,7 @@ func _ready():
 	Gameloop.energy_demand_updated_summer.connect(_on_summer_energy_demand_updated)
 	Gameloop.energy_demand_updated_winter.connect(_on_winter_energy_demand_updated)
 	Gameloop.co2_emissions_updated.connect(_on_co2_emissions_updated)
+	PolicyManager.personal_support_updated.connect(_on_personnal_support_updated)
 	Gameloop.next_turn.connect(_refresh_data)
 	
 	_refresh_data()
@@ -91,6 +93,7 @@ func _refresh_data():
 	_on_summer_energy_demand_updated(Gameloop.demand_summer)
 	_on_winter_energy_demand_updated(Gameloop.demand_winter)
 	_on_co2_emissions_updated(Gameloop.co2_emissions)
+	_on_personnal_support_updated(PolicyManager.personal_support)
 
 func _on_building_cost_updated(cost):
 	data["building_costs"][Gameloop.start_year + (Gameloop.current_turn - 1) * Gameloop.years_in_a_turn] = cost
@@ -131,8 +134,14 @@ func _on_land_use_updated(land_use):
 func _on_summer_energy_demand_updated(value):
 	data["summer_demand"][Gameloop.start_year + (Gameloop.current_turn - 1) * Gameloop.years_in_a_turn] = value
 	
+	
 func _on_winter_energy_demand_updated(value):
 	data["winter_demand"][Gameloop.start_year + (Gameloop.current_turn - 1) * Gameloop.years_in_a_turn] = value
 	
+	
 func _on_co2_emissions_updated(value):
 	data["co2_emissions"][Gameloop.start_year + (Gameloop.current_turn - 1) * Gameloop.years_in_a_turn] = value	
+
+
+func _on_personnal_support_updated(value):
+	data["personal_support"][Gameloop.start_year + (Gameloop.current_turn - 1) * Gameloop.years_in_a_turn] = value * 100	

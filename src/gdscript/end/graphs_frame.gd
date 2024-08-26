@@ -6,9 +6,9 @@
 #	 You define the axis min and max values and axis scales (ticks value) and the
 #	 data to add from "graphs_data.gd" by using a dataset name
 #
-# The whole context is redrawn when the graphs are opened, so the last data from
+# The whole context is redrawn when the graphs are displayed, so the last data from
 # "graphs_data" is fetched every time.
-extends CanvasLayer
+extends Control
 
 @export var draw_axes_outer_lines := false
 
@@ -17,25 +17,27 @@ var x_axis_max_value: int
 var y_axis_min_value: int
 var y_axis_max_value: int
 
-var context: String = "energy" # Allows to know what the graph is displaying
-var season := "winter"
+signal context_changed
+
+var context: String = "none" # Allows to know what the graph is displaying
 var default_line_width = 4
 var default_point_size = Vector2(15.0,15.0)
 
 @onready var label_theme = load("res://scenes/windows/label_themes.tres")
-@onready var graph = $MainFrame/Screen/Drawable
-@onready var line_names_container = $MainFrame/LineNamesContainer
+@onready var graph = $"."
+@onready var line_names_container = $"../../LineNamesContainer"
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Gameloop.toggle_graphs.connect(_on_toggle_graphs)
+	pass
 	
-		
+
 # Adapts the graph axis,labels and lines for a known context, add them as needed.
 func _set_graph_context(context_name: String):
 	context = context_name
 	_reset_graph()
+	context_changed.emit(context_name)
 	
 	match context_name:
 		"economy":
@@ -49,15 +51,21 @@ func _set_graph_context(context_name: String):
 			_add_data_set_to_graph("import_costs", Color(1, 0.875, 0.255))
 			_add_data_set_to_graph("borrowed_money", Color(0.522, 0.98, 0.404))
 			_add_data_set_to_graph("available_money", Color(0.2, 0.89, 0.282))
-		"environment":
+		"land_use":
 			x_axis_min_value = Gameloop.start_year
 			x_axis_max_value = Gameloop.start_year + (Gameloop.total_number_of_turns * Gameloop.years_in_a_turn)
 			y_axis_min_value = 0
 			y_axis_max_value = 2000
 			_draw_base_graph(Gameloop.years_in_a_turn, 200)
 			_add_data_set_to_graph("land_use", Color(0.663, 0.929, 0.416))
+		"emissions":
+			x_axis_min_value = Gameloop.start_year
+			x_axis_max_value = Gameloop.start_year + (Gameloop.total_number_of_turns * Gameloop.years_in_a_turn)
+			y_axis_min_value = 0
+			y_axis_max_value = 2000
+			_draw_base_graph(Gameloop.years_in_a_turn, 200)
 			_add_data_set_to_graph("co2_emissions", Color(0.91, 0.38, 0.38))
-		"energy":
+		"winter":
 			x_axis_min_value = Gameloop.start_year
 			x_axis_max_value = Gameloop.start_year + (Gameloop.total_number_of_turns * Gameloop.years_in_a_turn)
 			y_axis_min_value = 0
@@ -65,20 +73,28 @@ func _set_graph_context(context_name: String):
 			_draw_base_graph(Gameloop.years_in_a_turn, 200)
 			_add_data_set_to_graph("winter_energy_supply", Color(0.431, 0.961, 0.957))
 			_add_data_set_to_graph("winter_energy_import", Color(0.988, 0.973, 0.855))
+			_add_data_set_to_graph("winter_demand", Color(0, 0.569, 1, 1))
+		"summer":
+			x_axis_min_value = Gameloop.start_year
+			x_axis_max_value = Gameloop.start_year + (Gameloop.total_number_of_turns * Gameloop.years_in_a_turn)
+			y_axis_min_value = 0
+			y_axis_max_value = 2000
+			_draw_base_graph(Gameloop.years_in_a_turn, 200)
 			_add_data_set_to_graph("summer_energy_supply", Color(0.929, 0.875, 0.416))
-
+			_add_data_set_to_graph("summer_demand", Color(1, 0.702, 0.255, 1))
+		"policies":
+			x_axis_min_value = Gameloop.start_year
+			x_axis_max_value = Gameloop.start_year + (Gameloop.total_number_of_turns * Gameloop.years_in_a_turn)
+			y_axis_min_value = 0
+			y_axis_max_value = 100
+			_draw_base_graph(Gameloop.years_in_a_turn, 10)
+			_add_data_set_to_graph("personal_support", Color(0.4, 0.871, 0.843))
 		"none":
 			x_axis_min_value = Gameloop.start_year
 			x_axis_max_value = Gameloop.start_year + (Gameloop.total_number_of_turns * Gameloop.years_in_a_turn)
 			y_axis_min_value = 0
 			y_axis_max_value = 2000
 			_draw_base_graph(Gameloop.years_in_a_turn, 200)
-			
-	if season == "winter":
-		_on_season_switch_toggled(false)
-	elif season == "summer":
-		_on_season_switch_toggled(true)
-
 
 # This is what you want to use in a normal use case when adding data to the graph.
 # Takes care of everything
@@ -121,7 +137,7 @@ func _add_new_line_to_graph(line_name: String, line_color: Color = Color(1,1,1,1
 	# The line above the line name
 	var line := Line2D.new()
 	line.add_point(Vector2(0,0))
-	line.add_point(Vector2(150,0))
+	line.add_point(Vector2(100,0))
 	line.default_color = line_color
 	line.width = default_line_width
 	
@@ -129,14 +145,14 @@ func _add_new_line_to_graph(line_name: String, line_color: Color = Color(1,1,1,1
 	var label := Label.new()
 	label.mouse_filter = Control.MOUSE_FILTER_STOP
 	label.text = tr(line_name.to_upper() + "_LINE_NAME")
-	label.size.x = 150
+	label.custom_minimum_size.x = 105
+	label.autowrap_mode = TextServer.AUTOWRAP_WORD
 	# Highlights the line when hovering the line name at the top
 	label.mouse_entered.connect(func(): change_line_highlight(line_name))
 	label.mouse_exited.connect(func(): change_line_highlight(line_name, false))
 	
 	container.add_child(line)
 	container.add_child(label)
-
 
 
 # Add a point at the end of the line
@@ -230,28 +246,6 @@ func _draw_axis_tick_lines(axis: String, ticks_value_delta: int):
 		
 		tick_index += 1
 
-
-func _on_toggle_graphs():
-	visible = not visible
-	
-	# All the lines are redrawn when the window is shown
-	if visible:
-		_set_graph_context(context)
-
-
-# Season demands aren't linked to a contest, since we want to display them as will
-# with the switch
-func _on_season_switch_toggled(toggled_on):
-	if toggled_on:
-		season = "summer"
-		
-		_remove_dataset_from_graph("winter_demand")
-		_add_data_set_to_graph("summer_demand", Color(1, 0.702, 0.255, 1))
-	else:
-		season = "winter"
-	
-		_remove_dataset_from_graph("summer_demand")
-		_add_data_set_to_graph("winter_demand", Color(0, 0.569, 1, 1))
 		
 func _reset_graph():
 	for n in graph.get_children():
@@ -261,18 +255,6 @@ func _reset_graph():
 	for n in line_names_container.get_children():
 		line_names_container.remove_child(n)
 		n.queue_free()
-
-
-func _on_economy_button_pressed():
-	_set_graph_context("economy")
-
-
-func _on_environment_button_pressed():
-	_set_graph_context("environment")
-
-
-func _on_energy_button_pressed():
-	_set_graph_context("energy")
 
 # Makes a line grow in size to highlight it
 func change_line_highlight(line_name, highlight := true):
@@ -321,6 +303,7 @@ func change_line_highlight(line_name, highlight := true):
 				var tween4 = get_tree().create_tween()
 				tween4.tween_property(label, "visible", false, 0.1)
 
+
 # Highlights the point when the mouse is hovering above it
 func change_point_highlight(point: ColorRect, highlight := true):
 	var size_factor := 2.0
@@ -338,3 +321,58 @@ func change_point_highlight(point: ColorRect, highlight := true):
 		point.position -= default_point_size / (move_factor)
 	else:
 		point.position += default_point_size / (move_factor)
+
+
+func _on_money_button_toggled(toggled_on: bool):
+	if toggled_on:
+		show()
+		_set_graph_context("economy")
+	else:
+		_set_graph_context("none")
+		hide()
+
+
+func _on_winter_button_toggled(toggled_on: bool):
+	if toggled_on:
+		show()
+		_set_graph_context("winter")
+	else:
+		_set_graph_context("none")
+		hide()
+
+
+func _on_summer_button_toggled(toggled_on: bool):
+		if toggled_on:
+			show()
+			_set_graph_context("summer")
+		else:
+			_set_graph_context("none")
+			hide()
+
+
+func _on_land_use_button_toggled(toggled_on: bool):
+	if toggled_on:
+		show()
+		_set_graph_context("land_use")
+	else:
+		_set_graph_context("none")
+		hide()
+
+
+func _on_emissions_button_toggled(toggled_on: bool):
+	if toggled_on:
+		show()
+		_set_graph_context("emissions")
+	else:
+		_set_graph_context("none")
+		hide()
+
+
+func _on_trust_button_toggled(toggled_on: bool):
+	if toggled_on:
+		show()
+		_set_graph_context("policies")
+	else:
+		_set_graph_context("none")
+		hide()
+

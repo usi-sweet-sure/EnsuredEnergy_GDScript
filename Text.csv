@@ -219,6 +219,7 @@ SUMMER_ENERGY_SUPPLY_LINE_NAME,Summer energy supply,Apport énergétique estival
 WINTER_ENERGY_IMPORT_LINE_NAME,Winter energy import,Energie importée en hiver,Energieimport im Winter,Importazione di energia invernale
 LAND_USE_LINE_NAME,Land use,Utilisation des sols,Landnutzung,Uso del suolo
 CO2_EMISSIONS_LINE_NAME,CO2 Emissions,Émissions de CO2,CO2 Emissionen,Emissioni di CO2
+PERSONAL_SUPPORT_LINE_NAME,Political support,Soutien politique,Politische Unterstützung,Supporto politico
 RESET,Reset,Recommencer,Neu anfangen,Ricominciare
 CANCEL,Cancel,Annuler,Abbrechen,Annullare
 RESET_CONFIRM,Are you sure you want to restart the game ?,Es-tu sûr de vouloir recommencer le jeu ?,"Sind Sie sicher, dass Sie das Spiel neu starten wollen?",Sei sicuro di voler ricominciare il gioco?
