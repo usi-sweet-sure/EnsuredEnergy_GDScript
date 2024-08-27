@@ -188,21 +188,22 @@ func _on_request_finished(_result, _response_code, _headers, _body):
 		var cost_key = plant_name_to_metric_id[plant_name + "_COST"]
 		var avail_key = plant_name_to_metric_id[plant_name + "_AVAIL"]
 		
-		for i in Context1.ctx1:
-			match i["prm_id"]:
-				model_key:
-					capacity = float(i["tj"])
-				plant_id:
-					cnv_capacity = float(i["tj"])
-				poll_key:
-					pollution = float(i["tj"])
-				land_key:
-					land_use = float(i["tj"])
-				cost_key:
-					production_cost = float(i["tj"]) / 10
-				avail_key:
-					availability.x = float(i["tj"]) / cnv_capacity
-					availability.y = 1 - availability.x
+		if Context1.ctx1 != null:
+			for i in Context1.ctx1:
+				match i["prm_id"]:
+					model_key:
+						capacity = float(i["tj"])
+					plant_id:
+						cnv_capacity = float(i["tj"])
+					poll_key:
+						pollution = float(i["tj"])
+					land_key:
+						land_use = float(i["tj"])
+					cost_key:
+						production_cost = float(i["tj"]) / 10
+					avail_key:
+						availability.x = float(i["tj"]) / cnv_capacity
+						availability.y = 1 - availability.x
 		
 		if is_nuclear():
 			capacity = capacity / 100.0 / 3.0 # there's 3 nuclear plants

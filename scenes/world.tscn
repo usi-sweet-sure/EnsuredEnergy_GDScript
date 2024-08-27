@@ -28,7 +28,7 @@
 anchor_mode = 0
 
 [node name="Map" type="Sprite2D" parent="."]
-position = Vector2(-2432, -960)
+position = Vector2(-3536, -1567)
 texture = ExtResource("1_prbrp")
 centered = false
 

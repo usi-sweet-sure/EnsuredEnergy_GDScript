@@ -110,10 +110,11 @@ func _http1_completed(_result, _response_code, _headers, body):
 		#debug
 		#print(ctx1[0]["res_id"])
 		#print(ctx1[0]["yr"])
-		res_id = int(ctx1[0]["res_id"])
+		
 		if ctx1 == null:
 			context_error.emit()
 		else:
+			res_id = int(ctx1[0]["res_id"])
 			for i in ctx1:
 				if i["prm_id"] == "454":
 					Gameloop.demand_summer = float(i["tj"]) / 100

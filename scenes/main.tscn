@@ -43,17 +43,17 @@
 [ext_resource type="PackedScene" uid="uid://cuuj2s4h1588i" path="res://scenes/audio.tscn" id="34_smnob"]
 [ext_resource type="Script" path="res://src/gdscript/tutorial/tutorial.gd" id="38_ni5d4"]
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/settings_canvas.gd" id="42_jouqr"]
-[ext_resource type="Texture2D" uid="uid://cvwhghlarnumd" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0004_Settings-metal-base.png" id="44_dom71"]
+[ext_resource type="Texture2D" uid="uid://dvvb785yrhk3q" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0004_Settings-metal-base.png" id="44_dom71"]
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/close_button.gd" id="45_bc8l6"]
 [ext_resource type="FontFile" uid="uid://bwuskgw4ek8y" path="res://assets/Fonts/static/OpenSans-Medium.ttf" id="45_bdlos"]
-[ext_resource type="Texture2D" uid="uid://xmi4fk7xmp5j" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0032_Ball-Slider.png" id="47_j3bv3"]
-[ext_resource type="Texture2D" uid="uid://fe0i52vl7ck6" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0006_Slider-bar-horizontal.png" id="48_e1jni"]
-[ext_resource type="Texture2D" uid="uid://bfwxh2i2cmi6x" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0014_3-slots-button-hole.png" id="49_6hr2c"]
+[ext_resource type="Texture2D" uid="uid://cpekfcjjsl4be" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0032_Ball-Slider.png" id="47_j3bv3"]
+[ext_resource type="Texture2D" uid="uid://bi44d2i2bfb0a" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0006_Slider-bar-horizontal.png" id="48_e1jni"]
+[ext_resource type="Texture2D" uid="uid://cqqh40i371nvb" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0014_3-slots-button-hole.png" id="49_6hr2c"]
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/language_button.gd" id="50_1mrvk"]
-[ext_resource type="Texture2D" uid="uid://dcmk3ydewbiv1" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0053_CTA-Normal-yellow-.png" id="50_257n3"]
-[ext_resource type="Texture2D" uid="uid://du2p1deh0wc0w" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0052_CTA-Press-yellow.png" id="51_ul1bn"]
+[ext_resource type="Texture2D" uid="uid://dpi3jt1njx3mb" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0053_CTA-Normal-yellow-.png" id="50_257n3"]
+[ext_resource type="Texture2D" uid="uid://dtwdnrgifywy7" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0052_CTA-Press-yellow.png" id="51_ul1bn"]
 [ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="51_xe5da"]
-[ext_resource type="Texture2D" uid="uid://cjob6p34oigtg" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0051_CTA-Hover-yellow.png" id="52_d7ijo"]
+[ext_resource type="Texture2D" uid="uid://lof88mcvwdwf" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0051_CTA-Hover-yellow.png" id="52_d7ijo"]
 [ext_resource type="Texture2D" uid="uid://b4m67oni44dpg" path="res://assets/UI Elements/Button-normal.png" id="52_lk41l"]
 [ext_resource type="Script" path="res://src/gdscript/test_layer/debug_frame.gd" id="53_j41xb"]
 [ext_resource type="Texture2D" uid="uid://60dl810b25fd" path="res://assets/UI Elements/Button-press.png" id="53_lwovg"]
@@ -64,8 +64,8 @@
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/UI Elements/Button-Next-Normal.png" id="58_2ikp6"]
 [ext_resource type="Texture2D" uid="uid://biq6v1m7nc6l" path="res://assets/UI Elements/Button-Next-Press.png" id="59_g21e0"]
 [ext_resource type="Texture2D" uid="uid://c25aef4m4yd40" path="res://assets/UI Elements/Button-Next-Hover.png" id="60_c1roj"]
-[ext_resource type="Texture2D" uid="uid://8igpvay7modk" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0003_Settings-warning-metal-base.png" id="64_c4467"]
-[ext_resource type="Texture2D" uid="uid://cvr8ptliyw7oc" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0013_1-slot-button-hole.png" id="65_p0ru6"]
+[ext_resource type="Texture2D" uid="uid://bqvkxni7744rf" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0003_Settings-warning-metal-base.png" id="64_c4467"]
+[ext_resource type="Texture2D" uid="uid://cypv3kshe6tm4" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0013_1-slot-button-hole.png" id="65_p0ru6"]
 [ext_resource type="PackedScene" uid="uid://dc3s5eeg1c0uv" path="res://scenes/windows/graphs.tscn" id="66_s8n66"]
 [ext_resource type="Script" path="res://src/gdscript/test_layer/test_buttons.gd" id="67_xot01"]
 [ext_resource type="Script" path="res://src/gdscript/test_layer/res_id_label.gd" id="68_vv85d"]
@@ -2014,7 +2014,7 @@ position = Vector2(858, 685)
 anchor_mode = 1
 zoom = Vector2(0.6, 0.6)
 limit_left = -3500
-limit_top = -1600
+limit_top = -1550
 limit_right = 5240
 limit_bottom = 3400
 script = ExtResource("3_2lui3")
@@ -2455,6 +2455,12 @@ autoplay = "Sun"
 [node name="Hammer" parent="World/BuildButton9" index="0"]
 position = Vector2(308, 205)
 
+[node name="Money" parent="World/BuildButton9" index="4"]
+offset_left = 57.0
+offset_top = 68.0
+offset_right = 217.0
+offset_bottom = 157.0
+
 [node name="Solar" parent="World/BuildButton9/BuildMenu/Container" index="0"]
 visible = false
 
@@ -2744,23 +2750,23 @@ metadata/_edit_vertical_guides_ = [725.0, 1270.0, 1417.0, 509.0]
 [node name="Audio" parent="." instance=ExtResource("34_smnob")]
 
 [node name="ForestAmbiance" parent="Audio" index="0"]
+volume_db = -20.0
 bus = &"Sound"
 
 [node name="Water" parent="Audio" index="1"]
 position = Vector2(808, 2080)
-volume_db = -5.0
+volume_db = -15.0
 autoplay = true
 bus = &"Sound"
 
 [node name="Water2" parent="Audio" index="2"]
 position = Vector2(2056, 2080)
+volume_db = -10.0
 autoplay = true
 bus = &"Sound"
 
 [node name="Wind" parent="Audio" index="3"]
 position = Vector2(-568, 576)
-volume_db = 10.0
-stream_paused = false
 bus = &"Sound"
 
 [node name="Graphs" parent="." instance=ExtResource("66_s8n66")]
