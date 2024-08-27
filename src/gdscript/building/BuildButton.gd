@@ -3,15 +3,18 @@ extends TextureButton
 var building_plant
 var turn_left_to_build
 
+@onready var powerplants = $PowerPlants.get_children()
+@onready var build_menu_plants = $BuildMenu/Container.get_children()
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
 	# for each last button in powerplants in buildmenu, connect to pp_pressed
-	for pp in $BuildMenu/Container.get_children():
+	for pp in build_menu_plants:
 		pp.get_child(-1).pressed.connect(_on_pp_pressed.bind(pp))
 		pp.get_child(-1).mouse_entered.connect(_on_pp_mouse_entered.bind(pp))
 		pp.get_child(-1).mouse_exited.connect(_on_pp_mouse_exited.bind(pp))
-	for pp in $PowerPlants.get_children():
+	for pp in powerplants:
 		pp.delete_button.pressed.connect(_on_pp_delete.bind(pp))
 		
 	Gameloop.next_turn.connect(_check_building_ready)
@@ -19,7 +22,6 @@ func _ready():
 func _check_building_ready():
 	if $BuildingInfo.visible:
 		if turn_left_to_build == 1:
-			$BuildingInfo.hide()
 			_build_plant(building_plant, false)
 		else:
 			turn_left_to_build -= 1
@@ -34,7 +36,7 @@ func _on_pressed():
 	
 # when pressing on a powerplant in buildmenu
 func _on_pp_pressed(pp):
-	for plant in $PowerPlants.get_children():
+	for plant in powerplants:
 		if pp.name == plant.name:
 			if Gameloop.can_spend_the_money(pp.build_cost + pp.production_cost):
 				Gameloop.building_costs += plant.build_cost
@@ -55,6 +57,7 @@ func _on_pp_pressed(pp):
 				
 				
 func _build_plant(plant, can_cancel := true):
+	$BuildingInfo.hide()
 	plant.show()
 	plant.add_to_group("PP")
 	plant.delete_button.visible = can_cancel

@@ -2200,6 +2200,7 @@ visible = false
 position = Vector2(431, 151)
 availability = Vector2(0.8, 0.2)
 plant_name = "SOLAR"
+max_upgrade = 0
 build_cost = 22
 
 [node name="PreviewInfo" parent="PowerPlants/Solar" index="0"]
@@ -2279,6 +2280,7 @@ visible = false
 position = Vector2(431, 151)
 availability = Vector2(0.1, 0.9)
 plant_name = "WIND"
+max_upgrade = 2
 build_time = 2
 build_cost = 2
 

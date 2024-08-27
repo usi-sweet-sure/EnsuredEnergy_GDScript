@@ -35,18 +35,18 @@ func _ready():
 			"POLICIES_ENVIRONMENTAL_POLICY_1_TEXT", 0.6, Policy.PolicyType.ENVIRONMENTAL,
 			"ENABLE ALPINE SOLAR PV")
 	env_policy_1.add_effect("POLICIES_ENVIRONMENTAL_POLICY_1_EFFECT_1", 
-			func(): print("upgrade solar plant upgrades from 1 to 3")) # E. Implement
+			func(): increase_max_upgrade(3, "SOLAR"))
 			
 	var env_policy_2 = Policy.new("POLICIES_ENVIRONMENTAL_POLICY_2_TITLE",
 			"POLICIES_ENVIRONMENTAL_POLICY_2_TEXT", 0.5, Policy.PolicyType.ENVIRONMENTAL,
 			"FAST TRACK WIND PARKS")
 	env_policy_2.add_effect("POLICIES_ENVIRONMENTAL_POLICY_2_EFFECT_1", 
-			func(): print("Lower required building time for wind parks from 2 to 0 turns")) # E. Implement
+			func(): lower_build_time()) # E. Implement
 	
 	var env_policy_3 = Policy.new("POLICIES_ENVIRONMENTAL_POLICY_3_TITLE",
 			"POLICIES_ENVIRONMENTAL_POLICY_3_TEXT", 0.4, Policy.PolicyType.ENVIRONMENTAL, "WIND PARKS REGULATION")		
 	env_policy_3.add_effect("POLICIES_ENVIRONMENTAL_POLICY_3_EFFECT_1", 
-			func(): print("Increase wind parks upgrades from 2 to 5.")) # E. Implement
+			func(): increase_max_upgrade(5, "WIND"))
 	
 	var energy_policy_1 = Policy.new("POLICIES_ENERGY_POLICY_1_TITLE",
 			"POLICIES_ENERGY_POLICY_1_TEXT", 0.5, Policy.PolicyType.ENERGY, "MANDATORY BUILDING INSULATION")
@@ -65,6 +65,27 @@ func _ready():
 	policies = [env_campaign, energy_campaign, env_policy_1, env_policy_2, 
 			env_policy_3, energy_policy_1, energy_policy_2]
 
+func increase_max_upgrade(new_max: int, name: String):
+	for plant in  get_tree().get_nodes_in_group("PP"):
+		if plant.plant_name == name:
+			plant.max_upgrade = new_max
+			plant._update_info()
+	for bb in get_tree().get_nodes_in_group("BB"):
+		for plant in bb.powerplants:
+			if plant.plant_name == name:
+				plant.max_upgrade = new_max
+				plant._update_info()
+				
+func lower_build_time():
+	for bb in get_tree().get_nodes_in_group("BB"):
+		for plant in bb.build_menu_plants:
+			if plant.plant_name == "WIND":
+				plant.build_time = 0
+				plant._update_info()
+		if bb.building_plant != null:
+			if bb.building_plant.plant_name == "WIND":
+				bb._build_plant(bb.building_plant, false)
+	
 
 func get_policy(inspector_id: String):
 	return policies.filter(func(policy): return policy.inspector_id == inspector_id)[0]

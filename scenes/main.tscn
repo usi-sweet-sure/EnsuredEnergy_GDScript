@@ -2331,6 +2331,7 @@ visible = false
 [node name="Wind" parent="World" index="12" groups=["PP"]]
 position = Vector2(-556, 553)
 plant_name = "WIND"
+max_upgrade = 2
 
 [node name="PreviewInfo" parent="World/Wind" index="0"]
 visible = false
@@ -2380,6 +2381,12 @@ libraries = {
 }
 autoplay = "Wind"
 
+[node name="Money" parent="World/BuildButton" index="4"]
+offset_left = 57.0
+offset_top = 68.0
+offset_right = 217.0
+offset_bottom = 157.0
+
 [node name="BuildButton2" parent="World" index="15"]
 offset_left = 624.0
 offset_top = 480.0
@@ -2416,6 +2423,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Solar" parent="World" index="22" groups=["PP"]]
 position = Vector2(3456, 1224)
 plant_name = "SOLAR"
+max_upgrade = 0
 
 [node name="PreviewInfo" parent="World/Solar" index="0"]
 visible = false
