@@ -252,12 +252,6 @@ scale = Vector2(1, 1)
 position = Vector2(-314, -307)
 scale = Vector2(1, 1)
 
-[node name="Money" parent="BuildButton9" index="4"]
-offset_left = -279.0
-offset_top = -124.0
-offset_right = -119.0
-offset_bottom = -35.0
-
 [node name="Hydro" parent="." instance=ExtResource("7_6x5m2")]
 position = Vector2(384, 1864)
 plant_name = "hydro"

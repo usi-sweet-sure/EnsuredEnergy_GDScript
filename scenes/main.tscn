@@ -2023,7 +2023,38 @@ script = ExtResource("3_2lui3")
 [node name="Map" parent="World" index="1"]
 texture_filter = 2
 
-[node name="Nuclear3" parent="World" index="5" groups=["PP"]]
+[node name="BuildButton5" parent="World" index="5"]
+offset_left = 72.0
+offset_top = 72.0
+offset_right = 758.0
+offset_bottom = 472.0
+
+[node name="BuildButton2" parent="World" index="7"]
+offset_left = 624.0
+offset_right = 1310.0
+metadata/_edit_use_anchors_ = true
+
+[node name="BuildButton4" parent="World" index="9"]
+texture_pressed = ExtResource("14_eqh1c")
+texture_hover = ExtResource("14_eqh1c")
+
+[node name="BuildButton6" parent="World" index="10"]
+offset_left = -472.0
+offset_top = 1488.0
+offset_right = 214.0
+offset_bottom = 1888.0
+
+[node name="BuildButton7" parent="World" index="11"]
+offset_left = 2480.0
+offset_top = 1368.0
+offset_right = 3166.0
+offset_bottom = 1768.0
+metadata/_edit_use_anchors_ = true
+
+[node name="BuildButton8" parent="World" index="12"]
+metadata/_edit_use_anchors_ = true
+
+[node name="Nuclear3" parent="World" index="13" groups=["PP"]]
 position = Vector2(1205, -431)
 availability = Vector2(0.4, 0.6)
 plant_name = "NUCLEAR"
@@ -2098,7 +2129,7 @@ offset_bottom = 85.0
 [node name="NameRect" parent="World/Nuclear3" index="4"]
 visible = false
 
-[node name="Nuclear2" parent="World" index="6" groups=["PP"]]
+[node name="Nuclear2" parent="World" index="14" groups=["PP"]]
 position = Vector2(1479, -248)
 availability = Vector2(0.4, 0.6)
 plant_name = "NUCLEAR"
@@ -2165,7 +2196,7 @@ offset_bottom = 89.6667
 [node name="NameRect" parent="World/Nuclear2" index="4"]
 visible = false
 
-[node name="Nuclear" parent="World" index="7" groups=["PP"]]
+[node name="Nuclear" parent="World" index="15" groups=["PP"]]
 position = Vector2(1001, 130)
 availability = Vector2(0.4, 0.6)
 plant_name = "NUCLEAR"
@@ -2242,7 +2273,7 @@ offset_bottom = 90.6667
 [node name="NameRect" parent="World/Nuclear" index="4"]
 visible = false
 
-[node name="Biogas" parent="World" index="8" groups=["PP"]]
+[node name="Biogas" parent="World" index="16" groups=["PP"]]
 plant_name = "BIOGAS"
 
 [node name="PreviewInfo" parent="World/Biogas" index="0"]
@@ -2254,7 +2285,7 @@ texture = ExtResource("8_odcis")
 [node name="NameRect" parent="World/Biogas" index="3"]
 visible = false
 
-[node name="Waste" parent="World" index="9" groups=["PP"]]
+[node name="Waste" parent="World" index="17" groups=["PP"]]
 position = Vector2(-16, 1056)
 plant_name = "WASTE"
 
@@ -2289,7 +2320,7 @@ texture = ExtResource("9_2lgj4")
 [node name="NameRect" parent="World/Waste" index="4"]
 visible = false
 
-[node name="Biomass" parent="World" index="11" groups=["PP"]]
+[node name="Biomass" parent="World" index="19" groups=["PP"]]
 position = Vector2(-784, 1288)
 plant_name = "BIOMASS"
 
@@ -2329,7 +2360,7 @@ texture = ExtResource("8_jh2tr")
 [node name="NameRect" parent="World/Biomass" index="4"]
 visible = false
 
-[node name="Wind" parent="World" index="12" groups=["PP"]]
+[node name="Wind" parent="World" index="20" groups=["PP"]]
 position = Vector2(-556, 553)
 plant_name = "WIND"
 max_upgrade = 2
@@ -2382,45 +2413,6 @@ libraries = {
 }
 autoplay = "Wind"
 
-[node name="Money" parent="World/BuildButton" index="4"]
-offset_left = -286.0
-offset_top = -132.5
-offset_right = -126.0
-offset_bottom = -43.5
-
-[node name="BuildButton2" parent="World" index="15"]
-offset_left = 624.0
-offset_top = 480.0
-offset_right = 1310.0
-offset_bottom = 880.0
-metadata/_edit_use_anchors_ = true
-
-[node name="BuildButton4" parent="World" index="17"]
-texture_pressed = ExtResource("14_eqh1c")
-texture_hover = ExtResource("14_eqh1c")
-
-[node name="BuildButton5" parent="World" index="18"]
-offset_left = 72.0
-offset_top = 72.0
-offset_right = 758.0
-offset_bottom = 472.0
-
-[node name="BuildButton6" parent="World" index="19"]
-offset_left = -472.0
-offset_top = 1488.0
-offset_right = 214.0
-offset_bottom = 1888.0
-
-[node name="BuildButton7" parent="World" index="20"]
-offset_left = 2480.0
-offset_top = 1368.0
-offset_right = 3166.0
-offset_bottom = 1768.0
-metadata/_edit_use_anchors_ = true
-
-[node name="BuildButton8" parent="World" index="21"]
-metadata/_edit_use_anchors_ = true
-
 [node name="Solar" parent="World" index="22" groups=["PP"]]
 position = Vector2(3456, 1224)
 plant_name = "SOLAR"
@@ -2465,10 +2457,10 @@ autoplay = "Sun"
 position = Vector2(308, 205)
 
 [node name="Money" parent="World/BuildButton9" index="4"]
-offset_left = -279.0
-offset_top = -124.0
-offset_right = -119.0
-offset_bottom = -35.0
+offset_left = 57.0
+offset_top = 68.0
+offset_right = 217.0
+offset_bottom = 157.0
 
 [node name="Solar" parent="World/BuildButton9/BuildMenu/Container" index="0"]
 visible = false
@@ -3503,13 +3495,6 @@ text = "Close"
 [connection signal="pressed" from="TestLayer/DebugFrame/MarginContainer/CloseButton" to="TestLayer/DebugFrame" method="_on_close_button_pressed"]
 
 [editable path="World"]
-[editable path="World/Nuclear3"]
-[editable path="World/Nuclear2"]
-[editable path="World/Nuclear"]
-[editable path="World/Biogas"]
-[editable path="World/Waste"]
-[editable path="World/Biomass"]
-[editable path="World/Wind"]
 [editable path="World/BuildButton"]
 [editable path="World/BuildButton/PowerPlants/Gas"]
 [editable path="World/BuildButton/PowerPlants/Hydro"]
@@ -3530,6 +3515,13 @@ text = "Close"
 [editable path="World/BuildButton/BuildMenu/Container/Biomass"]
 [editable path="World/BuildButton/BuildMenu/Container/River"]
 [editable path="World/BuildButton/BuildMenu/Container/Pump"]
+[editable path="World/Nuclear3"]
+[editable path="World/Nuclear2"]
+[editable path="World/Nuclear"]
+[editable path="World/Biogas"]
+[editable path="World/Waste"]
+[editable path="World/Biomass"]
+[editable path="World/Wind"]
 [editable path="World/Solar"]
 [editable path="World/BuildButton9"]
 [editable path="World/BuildButton9/PowerPlants/Gas"]
