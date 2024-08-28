@@ -191,6 +191,106 @@ bg_color = Color(0.215686, 0.337255, 0.34902, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_siya7"]
 bg_color = Color(0.215686, 0.337255, 0.34902, 1)
 
+[sub_resource type="Animation" id="Animation_pjxim"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Warning:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(25, -25)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Warning:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Warning:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kvnnc"]
+resource_name = "warning"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Warning:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-28, -40), Vector2(-28, -72)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Warning:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Warning:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Error")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_jw1cb")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jpw4y"]
+_data = {
+"RESET": SubResource("Animation_pjxim"),
+"warning": SubResource("Animation_kvnnc")
+}
+
 [sub_resource type="Animation" id="Animation_f32o7"]
 resource_name = "NextTurnAnim"
 length = 4.0
@@ -606,120 +706,12 @@ _data = {
 "RESET": SubResource("Animation_qpho6")
 }
 
-[sub_resource type="Animation" id="Animation_pjxim"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Warning:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(25, -25)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Warning:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Warning:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_kvnnc"]
-resource_name = "warning"
-length = 1.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Warning:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-28, -40), Vector2(-28, -72)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Warning:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Warning:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.9, 1.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/3/type = "audio"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Error")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("6_jw1cb")
-}],
-"times": PackedFloat32Array(0)
-}
-tracks/3/use_blend = true
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_jpw4y"]
-_data = {
-"RESET": SubResource("Animation_pjxim"),
-"warning": SubResource("Animation_kvnnc")
-}
-
 [node name="UI" type="CanvasLayer"]
 follow_viewport_enabled = true
 
 [node name="Shock" parent="." instance=ExtResource("5_tj765")]
 visible = false
 script = null
-
-[node name="MouseBlock" type="ColorRect" parent="."]
-visible = false
-offset_left = -167.0
-offset_top = -113.0
-offset_right = 2120.0
-offset_bottom = 1225.0
-color = Color(1, 1, 0.941176, 0)
 
 [node name="TopLeftZone" type="Control" parent="."]
 layout_mode = 3
@@ -2001,6 +1993,120 @@ script = ExtResource("94_bcqhm")
 [node name="InfoText2" parent="ImportAndEnergy/Energy/EnergyBarSummer/BarInfo/MarginContainer/MarginContainer/VBoxContainer" index="4"]
 text = "SUMMER_SUPPLY_INFO_TEXT"
 
+[node name="OpenSettingsButton" type="TextureButton" parent="."]
+offset_left = 1864.0
+offset_top = 8.0
+offset_right = 1912.0
+offset_bottom = 55.0
+texture_normal = ExtResource("36_xxsv6")
+texture_pressed = ExtResource("37_533gb")
+texture_hover = ExtResource("38_7v12r")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("4_8mw6h")
+
+[node name="Button-hole" type="Sprite2D" parent="OpenSettingsButton"]
+show_behind_parent = true
+position = Vector2(23.5, 23.3786)
+scale = Vector2(0.757143, 0.757143)
+texture = ExtResource("39_jsaox")
+
+[node name="Icon" type="Sprite2D" parent="OpenSettingsButton"]
+position = Vector2(11, 11)
+scale = Vector2(0.471698, 0.471698)
+texture = ExtResource("5_55id7")
+centered = false
+
+[node name="NuclearWarning" type="Label" parent="."]
+offset_left = 1964.0
+offset_top = 700.0
+offset_right = 2234.0
+offset_bottom = 845.0
+theme = ExtResource("70_2ktfd")
+theme_type_variation = &"Paper"
+text = "NUCLEAR_WARNING"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+script = ExtResource("104_qc8c4")
+
+[node name="ColorRect" type="Sprite2D" parent="NuclearWarning"]
+show_behind_parent = true
+position = Vector2(126, 71)
+scale = Vector2(1.23814, 1)
+texture = ExtResource("108_pjhnp")
+region_rect = Rect2(2, 0, 278, 194)
+
+[node name="NextTurn" type="TextureButton" parent="."]
+offset_left = 1639.0
+offset_top = 938.0
+offset_right = 1831.0
+offset_bottom = 1024.0
+focus_mode = 0
+texture_normal = ExtResource("2_aobed")
+texture_pressed = ExtResource("3_qtdni")
+texture_hover = ExtResource("4_mh4j1")
+texture_disabled = ExtResource("5_hh5pc")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("97_wp832")
+
+[node name="Label" type="Label" parent="NextTurn"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 5.0
+offset_right = -10.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("70_2ktfd")
+theme_override_colors/font_color = Color(0.964706, 0.964706, 0.964706, 1)
+text = "NEXT_TURN_BUTTON_LABEL"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+uppercase = true
+
+[node name="NextTurnAP" type="AnimationPlayer" parent="NextTurn"]
+libraries = {
+"": SubResource("AnimationLibrary_jpw4y")
+}
+script = ExtResource("99_3seiv")
+
+[node name="Button-next-base" type="Sprite2D" parent="NextTurn"]
+show_behind_parent = true
+position = Vector2(95, 43)
+texture = ExtResource("7_g7ih8")
+
+[node name="Warning" type="Label" parent="NextTurn"]
+visible = false
+layout_mode = 0
+offset_left = 25.0
+offset_top = -25.0
+offset_right = 276.0
+offset_bottom = 10.0
+theme = ExtResource("70_2ktfd")
+theme_override_colors/font_color = Color(0.683594, 0.238281, 0.195313, 1)
+theme_override_colors/font_shadow_color = Color(0.141176, 0.192157, 0.2, 0.592157)
+theme_override_constants/outline_size = 0
+text = "NOT_ENOUGH_ENERGY"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Error" type="AudioStreamPlayer" parent="NextTurn"]
+
+[node name="MouseBlock" type="ColorRect" parent="."]
+visible = false
+offset_left = -167.0
+offset_top = -113.0
+offset_right = 2120.0
+offset_bottom = 1225.0
+color = Color(1, 1, 0.941176, 0)
+
 [node name="Clock" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -2260,112 +2366,6 @@ grow_vertical = 2
 focus_mode = 0
 flat = true
 
-[node name="OpenSettingsButton" type="TextureButton" parent="."]
-offset_left = 1864.0
-offset_top = 8.0
-offset_right = 1912.0
-offset_bottom = 55.0
-texture_normal = ExtResource("36_xxsv6")
-texture_pressed = ExtResource("37_533gb")
-texture_hover = ExtResource("38_7v12r")
-ignore_texture_size = true
-stretch_mode = 0
-script = ExtResource("4_8mw6h")
-
-[node name="Button-hole" type="Sprite2D" parent="OpenSettingsButton"]
-show_behind_parent = true
-position = Vector2(23.5, 23.3786)
-scale = Vector2(0.757143, 0.757143)
-texture = ExtResource("39_jsaox")
-
-[node name="Icon" type="Sprite2D" parent="OpenSettingsButton"]
-position = Vector2(11, 11)
-scale = Vector2(0.471698, 0.471698)
-texture = ExtResource("5_55id7")
-centered = false
-
-[node name="NuclearWarning" type="Label" parent="."]
-offset_left = 1964.0
-offset_top = 700.0
-offset_right = 2234.0
-offset_bottom = 845.0
-theme = ExtResource("70_2ktfd")
-theme_type_variation = &"Paper"
-text = "NUCLEAR_WARNING"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-script = ExtResource("104_qc8c4")
-
-[node name="ColorRect" type="Sprite2D" parent="NuclearWarning"]
-show_behind_parent = true
-position = Vector2(126, 71)
-scale = Vector2(1.23814, 1)
-texture = ExtResource("108_pjhnp")
-region_rect = Rect2(2, 0, 278, 194)
-
-[node name="NextTurn" type="TextureButton" parent="."]
-offset_left = 1639.0
-offset_top = 938.0
-offset_right = 1831.0
-offset_bottom = 1024.0
-focus_mode = 0
-texture_normal = ExtResource("2_aobed")
-texture_pressed = ExtResource("3_qtdni")
-texture_hover = ExtResource("4_mh4j1")
-texture_disabled = ExtResource("5_hh5pc")
-ignore_texture_size = true
-stretch_mode = 0
-script = ExtResource("97_wp832")
-
-[node name="Label" type="Label" parent="NextTurn"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 8.0
-offset_top = 5.0
-offset_right = -10.0
-offset_bottom = -12.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("70_2ktfd")
-theme_override_colors/font_color = Color(0.964706, 0.964706, 0.964706, 1)
-text = "NEXT_TURN_BUTTON_LABEL"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-uppercase = true
-
-[node name="NextTurnAP" type="AnimationPlayer" parent="NextTurn"]
-libraries = {
-"": SubResource("AnimationLibrary_jpw4y")
-}
-script = ExtResource("99_3seiv")
-
-[node name="Button-next-base" type="Sprite2D" parent="NextTurn"]
-show_behind_parent = true
-position = Vector2(95, 43)
-texture = ExtResource("7_g7ih8")
-
-[node name="Warning" type="Label" parent="NextTurn"]
-visible = false
-layout_mode = 0
-offset_left = 25.0
-offset_top = -25.0
-offset_right = 276.0
-offset_bottom = 10.0
-theme = ExtResource("70_2ktfd")
-theme_override_colors/font_color = Color(0.683594, 0.238281, 0.195313, 1)
-theme_override_colors/font_shadow_color = Color(0.141176, 0.192157, 0.2, 0.592157)
-theme_override_constants/outline_size = 0
-text = "NOT_ENOUGH_ENERGY"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
-
-[node name="Error" type="AudioStreamPlayer" parent="NextTurn"]
-
 [connection signal="pressed" from="TopLeftZone/OpenGraphsFrameButton" to="TopLeftZone/OpenGraphsFrameButton" method="_on_pressed"]
 [connection signal="pressed" from="TopLeftZone/MoneyManagement/MoneyInfo/ToggleMoneyInfoBoxButton" to="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox" method="_on_toggle_money_info_box_button_pressed"]
 [connection signal="pressed" from="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MoreMoneyInfoButton" to="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/InfoMoneyClosed" method="_on_more_money_info_button_pressed"]
@@ -2393,10 +2393,10 @@ uppercase = true
 [connection signal="value_changed" from="ImportAndEnergy/Import/ImportSlider" to="ImportAndEnergy/Import/ImportSlider" method="_on_import_slider_value_changed"]
 [connection signal="pressed" from="ImportAndEnergy/Import/ImportSlider/UpButton" to="ImportAndEnergy/Import/ImportSlider" method="_on_import_up_button_pressed"]
 [connection signal="pressed" from="ImportAndEnergy/Import/ImportSlider/DownButton" to="ImportAndEnergy/Import/ImportSlider" method="_on_import_down_button_pressed"]
-[connection signal="pressed" from="Clock/TimePanelBlank/TurnInfo" to="Clock/TimePanelBlank" method="clock_pressed"]
 [connection signal="pressed" from="OpenSettingsButton" to="OpenSettingsButton" method="_on_pressed"]
 [connection signal="gui_input" from="NextTurn" to="NextTurn/NextTurnAP" method="_on_next_turn_gui_input"]
 [connection signal="pressed" from="NextTurn" to="Clock/TimePanelBlank" method="_on_next_turn_button_pressed"]
+[connection signal="pressed" from="Clock/TimePanelBlank/TurnInfo" to="Clock/TimePanelBlank" method="clock_pressed"]
 
 [editable path="TopLeftZone/Policies/Trust/BarInfo"]
 [editable path="EnvironmentAndPollution/Environment/Info"]
