@@ -1560,8 +1560,12 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="BackPlateSprite" type="Sprite2D" parent="EnvironmentAndPollution"]
-position = Vector2(251, 557)
+[node name="BackPlateSprite" type="TextureRect" parent="EnvironmentAndPollution"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 433.0
+offset_right = 472.0
+offset_bottom = 683.0
 texture = ExtResource("37_q7ul8")
 
 [node name="Environment" type="ProgressBar" parent="EnvironmentAndPollution"]
