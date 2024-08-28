@@ -749,15 +749,19 @@ offset_left = 44.0
 offset_right = 84.0
 offset_bottom = 40.0
 
-[node name="BackPlate" type="Sprite2D" parent="TopLeftZone"]
-position = Vector2(202, 178.5)
+[node name="BackPlate" type="TextureRect" parent="TopLeftZone"]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 23.0
+offset_right = 338.0
+offset_bottom = 336.0
 texture = ExtResource("2_nu7y6")
 
 [node name="Policies" type="Label" parent="TopLeftZone/BackPlate"]
-offset_left = 14.0
-offset_top = -138.0
-offset_right = 102.0
-offset_bottom = -112.0
+offset_left = 156.0
+offset_top = 18.0
+offset_right = 244.0
+offset_bottom = 44.0
 theme = ExtResource("70_2ktfd")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 12
@@ -767,10 +771,10 @@ vertical_alignment = 1
 uppercase = true
 
 [node name="Graphs" type="Label" parent="TopLeftZone/BackPlate"]
-offset_left = -101.0
-offset_top = -138.0
-offset_right = -13.0
-offset_bottom = -112.0
+offset_left = 42.0
+offset_top = 18.0
+offset_right = 130.0
+offset_bottom = 44.0
 theme = ExtResource("70_2ktfd")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 12
@@ -780,10 +784,10 @@ vertical_alignment = 1
 uppercase = true
 
 [node name="Resources" type="Label" parent="TopLeftZone/BackPlate"]
-offset_left = -98.0
-offset_top = -10.0
-offset_right = 102.0
-offset_bottom = 16.0
+offset_left = 40.0
+offset_top = 144.0
+offset_right = 240.0
+offset_bottom = 170.0
 theme = ExtResource("70_2ktfd")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 12
