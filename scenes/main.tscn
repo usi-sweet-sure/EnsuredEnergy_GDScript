@@ -1,4 +1,4 @@
-[gd_scene load_steps=128 format=3 uid="uid://g58p7rxvcdik"]
+[gd_scene load_steps=129 format=3 uid="uid://g58p7rxvcdik"]
 
 [ext_resource type="Script" path="res://src/gdscript/main.gd" id="1_6q0gk"]
 [ext_resource type="PackedScene" uid="uid://ba56oxmvcxpos" path="res://scenes/world.tscn" id="1_prp6q"]
@@ -51,6 +51,7 @@
 [ext_resource type="Texture2D" uid="uid://cqqh40i371nvb" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0014_3-slots-button-hole.png" id="49_6hr2c"]
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/language_button.gd" id="50_1mrvk"]
 [ext_resource type="Texture2D" uid="uid://dpi3jt1njx3mb" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0053_CTA-Normal-yellow-.png" id="50_257n3"]
+[ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/volume_slider.gd" id="51_l7bgo"]
 [ext_resource type="Texture2D" uid="uid://dtwdnrgifywy7" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0052_CTA-Press-yellow.png" id="51_ul1bn"]
 [ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="51_xe5da"]
 [ext_resource type="Texture2D" uid="uid://lof88mcvwdwf" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0051_CTA-Hover-yellow.png" id="52_d7ijo"]
@@ -2382,10 +2383,10 @@ libraries = {
 autoplay = "Wind"
 
 [node name="Money" parent="World/BuildButton" index="4"]
-offset_left = 57.0
-offset_top = 68.0
-offset_right = 217.0
-offset_bottom = 157.0
+offset_left = -286.0
+offset_top = -132.5
+offset_right = -126.0
+offset_bottom = -43.5
 
 [node name="BuildButton2" parent="World" index="15"]
 offset_left = 624.0
@@ -2464,10 +2465,10 @@ autoplay = "Sun"
 position = Vector2(308, 205)
 
 [node name="Money" parent="World/BuildButton9" index="4"]
-offset_left = 57.0
-offset_top = 68.0
-offset_right = 217.0
-offset_bottom = 157.0
+offset_left = -279.0
+offset_top = -124.0
+offset_right = -119.0
+offset_bottom = -35.0
 
 [node name="Solar" parent="World/BuildButton9/BuildMenu/Container" index="0"]
 visible = false
@@ -2758,24 +2759,27 @@ metadata/_edit_vertical_guides_ = [725.0, 1270.0, 1417.0, 509.0]
 [node name="Audio" parent="." instance=ExtResource("34_smnob")]
 
 [node name="ForestAmbiance" parent="Audio" index="0"]
-volume_db = -20.0
+volume_db = -16.0
 bus = &"Sound"
 
 [node name="Water" parent="Audio" index="1"]
 position = Vector2(808, 2080)
-volume_db = -15.0
+volume_db = -10.0
 autoplay = true
 bus = &"Sound"
 
 [node name="Water2" parent="Audio" index="2"]
 position = Vector2(2056, 2080)
-volume_db = -10.0
+volume_db = -8.0
 autoplay = true
 bus = &"Sound"
 
 [node name="Wind" parent="Audio" index="3"]
 position = Vector2(-568, 576)
 bus = &"Sound"
+
+[node name="Music" parent="Audio" index="4"]
+bus = &"Music"
 
 [node name="Graphs" parent="." instance=ExtResource("66_s8n66")]
 visible = false
@@ -2894,6 +2898,8 @@ max_value = 1.0
 step = 0.001
 value = 0.8
 scrollable = false
+script = ExtResource("51_l7bgo")
+audio_bus_name = "Music"
 
 [node name="Sprite2D" type="Sprite2D" parent="Settings/Control/SettingsBox/VBoxContainer/VolMusic"]
 show_behind_parent = true
@@ -2921,6 +2927,8 @@ max_value = 1.0
 step = 0.001
 value = 0.8
 scrollable = false
+script = ExtResource("51_l7bgo")
+audio_bus_name = "Sound"
 
 [node name="Sprite2D" type="Sprite2D" parent="Settings/Control/SettingsBox/VBoxContainer/VolSound"]
 show_behind_parent = true
@@ -3481,6 +3489,8 @@ size_flags_vertical = 0
 text = "Close"
 
 [connection signal="pressed" from="Settings/Control/Close" to="Settings/Control/Close" method="_on_pressed"]
+[connection signal="value_changed" from="Settings/Control/SettingsBox/VBoxContainer/VolMusic" to="Settings/Control/SettingsBox/VBoxContainer/VolMusic" method="_on_value_changed"]
+[connection signal="value_changed" from="Settings/Control/SettingsBox/VBoxContainer/VolSound" to="Settings/Control/SettingsBox/VBoxContainer/VolSound" method="_on_value_changed"]
 [connection signal="pressed" from="Settings/Control/SettingsBox/VBoxContainer/Language" to="Settings/Control/SettingsBox/VBoxContainer/Language" method="_on_pressed"]
 [connection signal="pressed" from="Settings/Control/SettingsBox/VBoxContainer/Instructions" to="Settings/Control/SettingsBox/VBoxContainer/Instructions" method="_on_pressed"]
 [connection signal="pressed" from="Settings/Control/SettingsBox/VBoxContainer/Credits" to="Settings/Control/SettingsBox/VBoxContainer/Credits/CreditsSprite" method="_on_credits_button_pressed"]
