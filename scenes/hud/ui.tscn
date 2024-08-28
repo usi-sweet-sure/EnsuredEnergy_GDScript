@@ -709,30 +709,6 @@ _data = {
 [node name="UI" type="CanvasLayer"]
 follow_viewport_enabled = true
 
-[node name="OpenSettingsButton" type="TextureButton" parent="."]
-offset_left = 1864.0
-offset_top = 8.0
-offset_right = 1912.0
-offset_bottom = 55.0
-texture_normal = ExtResource("36_xxsv6")
-texture_pressed = ExtResource("37_533gb")
-texture_hover = ExtResource("38_7v12r")
-ignore_texture_size = true
-stretch_mode = 0
-script = ExtResource("4_8mw6h")
-
-[node name="Button-hole" type="Sprite2D" parent="OpenSettingsButton"]
-show_behind_parent = true
-position = Vector2(23.5, 23.3786)
-scale = Vector2(0.757143, 0.757143)
-texture = ExtResource("39_jsaox")
-
-[node name="Icon" type="Sprite2D" parent="OpenSettingsButton"]
-position = Vector2(11, 11)
-scale = Vector2(0.471698, 0.471698)
-texture = ExtResource("5_55id7")
-centered = false
-
 [node name="Shock" parent="." instance=ExtResource("5_tj765")]
 visible = false
 script = null
@@ -2284,6 +2260,30 @@ grow_vertical = 2
 focus_mode = 0
 flat = true
 
+[node name="OpenSettingsButton" type="TextureButton" parent="."]
+offset_left = 1864.0
+offset_top = 8.0
+offset_right = 1912.0
+offset_bottom = 55.0
+texture_normal = ExtResource("36_xxsv6")
+texture_pressed = ExtResource("37_533gb")
+texture_hover = ExtResource("38_7v12r")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("4_8mw6h")
+
+[node name="Button-hole" type="Sprite2D" parent="OpenSettingsButton"]
+show_behind_parent = true
+position = Vector2(23.5, 23.3786)
+scale = Vector2(0.757143, 0.757143)
+texture = ExtResource("39_jsaox")
+
+[node name="Icon" type="Sprite2D" parent="OpenSettingsButton"]
+position = Vector2(11, 11)
+scale = Vector2(0.471698, 0.471698)
+texture = ExtResource("5_55id7")
+centered = false
+
 [node name="NuclearWarning" type="Label" parent="."]
 offset_left = 1964.0
 offset_top = 700.0
@@ -2366,7 +2366,6 @@ uppercase = true
 
 [node name="Error" type="AudioStreamPlayer" parent="NextTurn"]
 
-[connection signal="pressed" from="OpenSettingsButton" to="OpenSettingsButton" method="_on_pressed"]
 [connection signal="pressed" from="TopLeftZone/OpenGraphsFrameButton" to="TopLeftZone/OpenGraphsFrameButton" method="_on_pressed"]
 [connection signal="pressed" from="TopLeftZone/MoneyManagement/MoneyInfo/ToggleMoneyInfoBoxButton" to="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox" method="_on_toggle_money_info_box_button_pressed"]
 [connection signal="pressed" from="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MoreMoneyInfoButton" to="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/InfoMoneyClosed" method="_on_more_money_info_button_pressed"]
@@ -2395,6 +2394,7 @@ uppercase = true
 [connection signal="pressed" from="ImportAndEnergy/Import/ImportSlider/UpButton" to="ImportAndEnergy/Import/ImportSlider" method="_on_import_up_button_pressed"]
 [connection signal="pressed" from="ImportAndEnergy/Import/ImportSlider/DownButton" to="ImportAndEnergy/Import/ImportSlider" method="_on_import_down_button_pressed"]
 [connection signal="pressed" from="Clock/TimePanelBlank/TurnInfo" to="Clock/TimePanelBlank" method="clock_pressed"]
+[connection signal="pressed" from="OpenSettingsButton" to="OpenSettingsButton" method="_on_pressed"]
 [connection signal="gui_input" from="NextTurn" to="NextTurn/NextTurnAP" method="_on_next_turn_gui_input"]
 [connection signal="pressed" from="NextTurn" to="Clock/TimePanelBlank" method="_on_next_turn_button_pressed"]
 
