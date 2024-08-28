@@ -1,4 +1,4 @@
-[gd_scene load_steps=145 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=146 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/UI Elements/Button-Next-Normal.png" id="2_aobed"]
 [ext_resource type="Texture2D" uid="uid://ccsapuvkqqt1b" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0009_Profile-metal-base.png" id="2_nu7y6"]
@@ -106,9 +106,9 @@
 [ext_resource type="Script" path="res://src/gdscript/hud/energy_bars/summer/infos/summer_supply_label.gd" id="94_bcqhm"]
 [ext_resource type="Script" path="res://src/gdscript/hud/clock/current_turn_label.gd" id="95_2utc1"]
 [ext_resource type="Script" path="res://src/gdscript/hud/clock/remaining_turns_label.gd" id="96_6b673"]
-[ext_resource type="Texture2D" uid="uid://cl3bfng1ighdd" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0033_Clock-base.png" id="97_cj5up"]
 [ext_resource type="Script" path="res://src/gdscript/hud/next_turn_button/next_turn_button.gd" id="97_wp832"]
 [ext_resource type="Script" path="res://src/gdscript/hud/next_turn_button/error_animation.gd" id="99_3seiv"]
+[ext_resource type="Texture2D" uid="uid://cnqa4g3r3kra5" path="res://assets/UI Elements/All-HQ-Assets-E_Clock-base.png" id="100_2c0ru"]
 [ext_resource type="Texture2D" uid="uid://chirnmv8mjb7b" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0012_Counter-hole-4-slots.png" id="101_ykn2m"]
 [ext_resource type="Texture2D" uid="uid://cmmduw4thqeuh" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0020_Counter-1-blue.png" id="102_5ki0w"]
 [ext_resource type="Texture2D" uid="uid://m3fi1m10cw7j" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0007_Clock-hand-shadow.png" id="103_hihu7"]
@@ -477,12 +477,15 @@ _data = {
 "RESET": SubResource("Animation_lrye6")
 }
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ycy67"]
+load_path = "res://.godot/imported/All-HQ-Assets-D_0007s_0033_Clock-base.png-9f95193895b245fcbf5b1cc8c4be170a.ctex"
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_2dw2x"]
-atlas = ExtResource("97_cj5up")
+atlas = SubResource("CompressedTexture2D_ycy67")
 region = Rect2(120, 135, 46.112, 31)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ou8cv"]
-atlas = ExtResource("97_cj5up")
+atlas = ExtResource("100_2c0ru")
 region = Rect2(108, 198.061, 67, 31.9389)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8gg1h"]
@@ -758,6 +761,7 @@ offset_bottom = 336.0
 texture = ExtResource("2_nu7y6")
 
 [node name="Policies" type="Label" parent="TopLeftZone/BackPlate"]
+layout_mode = 0
 offset_left = 156.0
 offset_top = 18.0
 offset_right = 244.0
@@ -771,6 +775,7 @@ vertical_alignment = 1
 uppercase = true
 
 [node name="Graphs" type="Label" parent="TopLeftZone/BackPlate"]
+layout_mode = 0
 offset_left = 42.0
 offset_top = 18.0
 offset_right = 130.0
@@ -784,6 +789,7 @@ vertical_alignment = 1
 uppercase = true
 
 [node name="Resources" type="Label" parent="TopLeftZone/BackPlate"]
+layout_mode = 0
 offset_left = 40.0
 offset_top = 144.0
 offset_right = 240.0
@@ -2027,7 +2033,7 @@ offset_bottom = 40.0
 
 [node name="TimePanelBlank" type="Sprite2D" parent="Clock"]
 position = Vector2(1736, 144)
-texture = ExtResource("97_cj5up")
+texture = ExtResource("100_2c0ru")
 script = ExtResource("57_lg17s")
 
 [node name="TimelineAnimation" type="AnimationPlayer" parent="Clock/TimePanelBlank"]
@@ -2143,7 +2149,8 @@ position = Vector2(20, 27)
 texture = SubResource("AtlasTexture_2dw2x")
 
 [node name="HideNum2" type="Sprite2D" parent="Clock/TimePanelBlank"]
-position = Vector2(18, 90)
+position = Vector2(10.8749, 88.375)
+scale = Vector2(0.869401, 0.879032)
 texture = SubResource("AtlasTexture_ou8cv")
 
 [node name="HideNum3" type="Sprite2D" parent="Clock/TimePanelBlank"]
