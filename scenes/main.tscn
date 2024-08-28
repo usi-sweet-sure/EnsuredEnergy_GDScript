@@ -2029,6 +2029,12 @@ offset_top = 72.0
 offset_right = 758.0
 offset_bottom = 472.0
 
+[node name="Money" parent="World/BuildButton" index="4"]
+offset_left = -286.0
+offset_top = -132.5
+offset_right = -126.0
+offset_bottom = -43.5
+
 [node name="BuildButton2" parent="World" index="7"]
 offset_left = 624.0
 offset_right = 1310.0
@@ -2457,10 +2463,10 @@ autoplay = "Sun"
 position = Vector2(308, 205)
 
 [node name="Money" parent="World/BuildButton9" index="4"]
-offset_left = 57.0
-offset_top = 68.0
-offset_right = 217.0
-offset_bottom = 157.0
+offset_left = -279.0
+offset_top = -124.0
+offset_right = -119.0
+offset_bottom = -35.0
 
 [node name="Solar" parent="World/BuildButton9/BuildMenu/Container" index="0"]
 visible = false
@@ -2779,7 +2785,6 @@ visible = false
 [node name="SurveyLayer" parent="." instance=ExtResource("76_y7xdi")]
 
 [node name="Settings" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("42_jouqr")
 
 [node name="Backdrop" type="ColorRect" parent="Settings"]
@@ -2828,8 +2833,12 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.4, 0.4, 0.4, 0)
 
-[node name="BackPlate" type="Sprite2D" parent="Settings/Control/SettingsBox"]
-position = Vector2(162.5, 456.5)
+[node name="BackPlate" type="TextureRect" parent="Settings/Control/SettingsBox"]
+layout_mode = 0
+offset_left = -59.5
+offset_top = -31.5
+offset_right = 386.5
+offset_bottom = 795.5
 scale = Vector2(1, 1.17784)
 texture = ExtResource("44_dom71")
 
