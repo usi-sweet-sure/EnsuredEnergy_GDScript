@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dc3s5eeg1c0uv"]
+[gd_scene load_steps=19 format=3 uid="uid://dc3s5eeg1c0uv"]
 
 [ext_resource type="Script" path="res://src/gdscript/graphs/graphs_window.gd" id="1_vog1l"]
 [ext_resource type="Texture2D" uid="uid://ceuxpu5iujr05" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0001_Stats-metal-base.png" id="2_cyklw"]
@@ -14,6 +14,10 @@
 [ext_resource type="Script" path="res://src/gdscript/graphs/energy_button.gd" id="10_7tukf"]
 [ext_resource type="Texture2D" uid="uid://dhxkhfg2qxlgx" path="res://assets/UI Elements/Import-Switch-Off.png" id="10_t8yel"]
 [ext_resource type="Texture2D" uid="uid://bbnupxdtp78l5" path="res://assets/UI Elements/Icon-Wind.png" id="11_pjrco"]
+[ext_resource type="Texture2D" uid="uid://4s62sj1p8eja" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0019_Icon-red-normal-button.png" id="15_75x5m"]
+[ext_resource type="Texture2D" uid="uid://b86vm4agcnisw" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0020_Icon-red-press-button.png" id="16_5rpnb"]
+[ext_resource type="Texture2D" uid="uid://b066igcqidlny" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0018_Icon-red-hover-button.png" id="17_f7k5x"]
+[ext_resource type="Texture2D" uid="uid://b0c3ywqarx8b7" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0002_Icon-round-button-hole.png" id="18_0oju8"]
 
 [node name="Graphs" type="CanvasLayer"]
 script = ExtResource("1_vog1l")
@@ -188,6 +192,50 @@ layout_mode = 2
 texture = ExtResource("11_pjrco")
 stretch_mode = 3
 
+[node name="CloseButton" type="TextureButton" parent="MainFrame"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 593.0
+offset_top = -423.0
+offset_right = 628.0
+offset_bottom = -386.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+texture_normal = ExtResource("15_75x5m")
+texture_pressed = ExtResource("16_5rpnb")
+texture_hover = ExtResource("17_f7k5x")
+texture_disabled = ExtResource("16_5rpnb")
+stretch_mode = 0
+script = ExtResource("2_g21s1")
+
+[node name="Sprite2D" type="Sprite2D" parent="MainFrame/CloseButton"]
+show_behind_parent = true
+position = Vector2(17.6487, 19.7188)
+scale = Vector2(0.97338, 0.97338)
+texture = ExtResource("18_0oju8")
+
+[node name="Label" type="Label" parent="MainFrame/CloseButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.5
+offset_top = -19.5
+offset_right = 7.5
+offset_bottom = 14.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "x"
+
 [connection signal="pressed" from="Backdrop/Close" to="Backdrop/Close" method="_on_pressed"]
 [connection signal="pressed" from="MainFrame/RightContainer/FilterButtons/Environment" to="." method="_on_environment_button_pressed"]
 [connection signal="pressed" from="MainFrame/RightContainer/FilterButtons/Environment" to="MainFrame/RightContainer/FilterButtons/Environment" method="_on_pressed"]
@@ -202,3 +250,4 @@ stretch_mode = 3
 [connection signal="pressed" from="MainFrame/RightContainer/FilterButtons/Energy" to="MainFrame/RightContainer/FilterButtons/Economy" method="_on_energy_button_pressed"]
 [connection signal="pressed" from="MainFrame/RightContainer/FilterButtons/Energy" to="MainFrame/RightContainer/FilterButtons/Energy" method="_on_pressed"]
 [connection signal="toggled" from="MainFrame/RightContainer/SeasonSwitch/Switch" to="." method="_on_season_switch_toggled"]
+[connection signal="pressed" from="MainFrame/CloseButton" to="MainFrame/CloseButton" method="_on_pressed"]

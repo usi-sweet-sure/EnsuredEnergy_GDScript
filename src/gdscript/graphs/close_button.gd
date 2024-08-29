@@ -1,4 +1,4 @@
-extends Button
+extends BaseButton
 
 
 func _on_pressed():
