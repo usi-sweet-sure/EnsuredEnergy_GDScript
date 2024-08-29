@@ -1997,6 +1997,25 @@ Button/styles/pressed = SubResource("StyleBoxFlat_fgbvl")
 [node name="Main" type="Node2D"]
 metadata/_edit_vertical_guides_ = [1047.0]
 
+[node name="Audio" parent="." instance=ExtResource("34_smnob")]
+
+[node name="ForestAmbiance" parent="Audio" index="0"]
+volume_db = -16.0
+bus = &"Sound"
+
+[node name="Water" parent="Audio" index="1"]
+position = Vector2(808, 2080)
+volume_db = -10.0
+autoplay = true
+
+[node name="Water2" parent="Audio" index="2"]
+position = Vector2(2056, 2080)
+volume_db = -8.0
+autoplay = true
+
+[node name="Wind" parent="Audio" index="3"]
+position = Vector2(-568, 576)
+
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
 offset_left = -4272.0
@@ -2740,31 +2759,6 @@ visible = false
 metadata/_edit_horizontal_guides_ = [862.0]
 metadata/_edit_vertical_guides_ = [725.0, 1270.0, 1417.0, 509.0]
 
-[node name="Audio" parent="." instance=ExtResource("34_smnob")]
-
-[node name="ForestAmbiance" parent="Audio" index="0"]
-volume_db = -16.0
-bus = &"Sound"
-
-[node name="Water" parent="Audio" index="1"]
-position = Vector2(808, 2080)
-volume_db = -10.0
-autoplay = true
-bus = &"Sound"
-
-[node name="Water2" parent="Audio" index="2"]
-position = Vector2(2056, 2080)
-volume_db = -8.0
-autoplay = true
-bus = &"Sound"
-
-[node name="Wind" parent="Audio" index="3"]
-position = Vector2(-568, 576)
-bus = &"Sound"
-
-[node name="Music" parent="Audio" index="4"]
-bus = &"Music"
-
 [node name="Graphs" parent="." instance=ExtResource("66_s8n66")]
 visible = false
 
@@ -3485,11 +3479,13 @@ text = "Close"
 [connection signal="pressed" from="Settings/Control/SettingsBox/MarginContainer/QuitButton" to="Settings" method="_on_quit_button_pressed"]
 [connection signal="pressed" from="TestLayer/TestButtons/ButtonTop" to="TestLayer/TestButtons" method="_on_button_top_pressed"]
 [connection signal="pressed" from="TestLayer/TestButtons/ButtonBottom" to="TestLayer/TestButtons" method="_on_button_bottom_pressed"]
+[connection signal="pressed" from="TestLayer/PlayTestButton" to="Audio" method="_on_play_test_button_pressed"]
 [connection signal="pressed" from="TestLayer/PlayTestButton" to="TestLayer/PlayTestButton" method="_on_pressed"]
 [connection signal="pressed" from="TestLayer/PlayTestButton" to="TestLayer/Label" method="_on_play_test_button_pressed"]
 [connection signal="pressed" from="TestLayer/OpenDebugFrameButton" to="TestLayer/DebugFrame" method="_on_open_debug_frame_button_pressed"]
 [connection signal="pressed" from="TestLayer/DebugFrame/MarginContainer/CloseButton" to="TestLayer/DebugFrame" method="_on_close_button_pressed"]
 
+[editable path="Audio"]
 [editable path="World"]
 [editable path="World/BuildButton"]
 [editable path="World/BuildButton/PowerPlants/Gas"]
@@ -3544,4 +3540,3 @@ text = "Close"
 [editable path="World/River"]
 [editable path="World/River2"]
 [editable path="World/Gas"]
-[editable path="Audio"]

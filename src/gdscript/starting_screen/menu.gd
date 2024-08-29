@@ -5,16 +5,12 @@ var i = 0
 
 @onready var player_name_field = $PlayerName
 
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	TranslationServer.set_locale("en")
 	Gameloop.locale_updated.emit("en")
-	
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
 
 
 func _on_play_pressed():
