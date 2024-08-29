@@ -44,6 +44,7 @@ func scale_plants(zoom_val: Vector2):
 		for build_button in get_tree().get_nodes_in_group("BB"):
 			animate_power_plant_zoom(build_button, new_zoom)
 
+
 # Adds control to inputs that otherwise would not have triggered any events  
 # In our case, this includes 2 events:  
 #     1) When the player clicks the screen, in which case we want to drag the camera around
@@ -77,14 +78,17 @@ func _unhandled_input(event):
 			var new_zoom = clamp(zoom + ZOOM_SPEED, ZOOM_OUT_LIMIT, ZOOM_IN_LIMIT)
 			animate_camera_zoom(new_zoom)
 
+
 func animate_camera_zoom(new_zoom):
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "zoom", new_zoom, ZOOM_ANIMATION_DURATION)
 	scale_plants(new_zoom)
 
+
 func animate_camera_position(new_position):
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "position", new_position, ZOOM_ANIMATION_DURATION)
+	
 	
 # Animate power plants and build buttons zoom
 func animate_power_plant_zoom(object, new_zoom):

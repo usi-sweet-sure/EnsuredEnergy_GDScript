@@ -18,9 +18,7 @@
 [ext_resource type="Script" path="res://src/gdscript/graphs/open_graphs_frame_button.gd" id="9_xq6mg"]
 [ext_resource type="AudioStream" uid="uid://ben5r72x0p8pr" path="res://assets/Sounds/Move_03.wav" id="10_po2ll"]
 [ext_resource type="Texture2D" uid="uid://bjeebs7uy4hpn" path="res://assets/UI Elements/Button-small-Hole.png" id="11_i0u5d"]
-[ext_resource type="Texture2D" uid="uid://bbnupxdtp78l5" path="res://assets/UI Elements/Icon-Wind.png" id="11_qepre"]
 [ext_resource type="AudioStream" uid="uid://00apgxjmwgw0" path="res://assets/Sounds/Click_020.wav" id="11_tr1n1"]
-[ext_resource type="Texture2D" uid="uid://ca5ev88u31iqa" path="res://assets/UI Elements/Icon-Solar.png" id="12_72t8i"]
 [ext_resource type="Texture2D" uid="uid://bu3fwwb31gmuw" path="res://assets/UI Elements/Import_energy-Metal.png" id="19_1inpw"]
 [ext_resource type="Texture2D" uid="uid://bmjee8ocqy0ge" path="res://assets/UI Elements/Enviornment-Base.png" id="21_i8c3o"]
 [ext_resource type="Texture2D" uid="uid://bwmnloeklg76n" path="res://assets/UI Elements/Enviornment-Hand.png" id="23_3qgyr"]
@@ -101,6 +99,8 @@
 [ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="70_2ktfd"]
 [ext_resource type="Script" path="res://src/gdscript/hud/emissions/info_box/co2_emissions_info_text_label.gd" id="70_444pk"]
 [ext_resource type="Script" path="res://src/gdscript/hud/money_management/available_money_amount_label.gd" id="71_xcmoe"]
+[ext_resource type="Texture2D" uid="uid://cischtrjvknyl" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0027_Icon-Wind.png" id="88_lv1v1"]
+[ext_resource type="Texture2D" uid="uid://bsa55enbm5cwg" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0028_Icon-Solar.png" id="89_6asbj"]
 [ext_resource type="Script" path="res://src/gdscript/hud/energy_bars/winter/infos/winter_demand_label.gd" id="91_butgj"]
 [ext_resource type="Script" path="res://src/gdscript/hud/energy_bars/winter/infos/winter_supply_label.gd" id="92_bqjhv"]
 [ext_resource type="Script" path="res://src/gdscript/hud/energy_bars/summer/infos/summer_demand_label.gd" id="92_j1ii1"]
@@ -711,7 +711,7 @@ _data = {
 
 [node name="UI" type="CanvasLayer"]
 follow_viewport_enabled = true
-metadata/_edit_vertical_guides_ = [960.0, -349.0]
+metadata/_edit_vertical_guides_ = [960.0, -349.0, 379.0, 312.0]
 metadata/_edit_horizontal_guides_ = [540.0]
 
 [node name="Shock" parent="." instance=ExtResource("5_tj765")]
@@ -1864,7 +1864,8 @@ theme = SubResource("Theme_yjcuk")
 theme_override_font_sizes/font_size = 10
 
 [node name="Icon-import" parent="ImportAndEnergy/Import/ImportSlider" index="4"]
-position = Vector2(-33, 333)
+position = Vector2(-36.25, 332.431)
+scale = Vector2(0.872549, 0.872549)
 
 [node name="UpButton" parent="ImportAndEnergy/Import/ImportSlider" index="5"]
 offset_left = -88.0
@@ -1924,12 +1925,14 @@ position = Vector2(107, -23)
 texture = ExtResource("28_mr6x7")
 
 [node name="WindIcon" type="Sprite2D" parent="ImportAndEnergy/Energy"]
-position = Vector2(71, 161)
-texture = ExtResource("11_qepre")
+position = Vector2(75, 156)
+scale = Vector2(0.772727, 0.772727)
+texture = ExtResource("88_lv1v1")
 
 [node name="SolarIcon" type="Sprite2D" parent="ImportAndEnergy/Energy"]
-position = Vector2(143, 161)
-texture = ExtResource("12_72t8i")
+position = Vector2(143, 155)
+scale = Vector2(0.790909, 0.790909)
+texture = ExtResource("89_6asbj")
 
 [node name="EnergyBarWinter" parent="ImportAndEnergy/Energy" instance=ExtResource("3_fm1y6")]
 offset_left = 52.0
