@@ -2103,6 +2103,7 @@ vertical_alignment = 1
 uppercase = true
 
 [node name="Error" type="AudioStreamPlayer" parent="NextTurn"]
+bus = &"Sound"
 
 [node name="MouseBlock" type="ColorRect" parent="."]
 visible = false
@@ -2131,6 +2132,7 @@ libraries = {
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Clock/TimePanelBlank"]
 volume_db = -20.0
 pitch_scale = 0.5
+bus = &"Sound"
 
 [node name="CounterHole" type="Sprite2D" parent="Clock/TimePanelBlank"]
 position = Vector2(0, 58)

@@ -1153,6 +1153,7 @@ libraries = {
 }
 
 [node name="Error" type="AudioStreamPlayer" parent="AP"]
+bus = &"Sound"
 
 [node name="NoMoneyOverlay" type="Control" parent="."]
 visible = false
