@@ -1392,6 +1392,7 @@ script = ExtResource("66_0vfa5")
 
 [node name="Close" type="TextureButton" parent="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame"]
 z_index = 1
+layout_mode = 0
 offset_left = 450.0
 offset_top = 12.0
 offset_right = 485.0

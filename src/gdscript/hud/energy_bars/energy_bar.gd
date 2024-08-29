@@ -38,7 +38,7 @@ func _process(delta):
 	# It's set once at the beginning and must not change again
 	if not max_value_set and Gameloop.demand_winter != 0.0 and Gameloop.demand_summer != 0.0:
 		max_value = max(Gameloop.demand_winter * 1.25, Gameloop.demand_summer * 1.25)
-		min_value = 900
+		min_value = 700
 		max_value_set = true
 		
 		var bar_height = size.x

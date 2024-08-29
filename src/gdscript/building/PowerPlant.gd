@@ -247,7 +247,7 @@ func _on_mult_inc_pressed():
 			upgrade += 1
 			
 			var plant_id = plant_name_to_ups_id[plant_name]
-			var value = (cnv_capacity * mult_factor * upgrade) # !! Check rounding of the value in model
+			var value = (cnv_capacity * mult_factor * upgrade) #S. !! Check rounding of the value in model
 			capacity = base_capacity + (base_capacity * mult_factor * upgrade)
 			pollution = base_pollution + (base_pollution * mult_factor * upgrade)
 			land_use = base_land_use + (base_land_use * mult_factor * upgrade)
