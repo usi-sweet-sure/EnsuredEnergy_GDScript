@@ -8,6 +8,7 @@ var i = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	TranslationServer.set_locale("en")
+	Gameloop.locale_updated.emit("en")
 	
 
 
@@ -28,7 +29,7 @@ func _on_lang_pressed():
 	else:
 		i += 1
 	TranslationServer.set_locale(lang[i])
-		
+	Gameloop.locale_updated.emit(lang[i])
 
 
 func _on_credits_pressed():

@@ -14,7 +14,9 @@ func _ready():
 	bubble_list = $Bubbles.get_children()
 	Gameloop.show_tutorial.connect(_on_show_tutorial)
 	selected_tuto = randi_range(0,1)
+	print(TranslationServer.get_locale())
 	$MarginContainer/MarginContainer/Text.text = tr(tutorial_texts[selected_tuto] % i)
+	Gameloop.locale_updated.connect(_on_locale_updated)
 
 
 func _on_next_button_pressed():
@@ -46,3 +48,8 @@ func _reset_tutorial():
 
 func _on_skip_pressed():
 	hide()
+
+
+func _on_locale_updated(_locale):
+	print(TranslationServer.get_locale())
+	$MarginContainer/MarginContainer/Text.text = tr(tutorial_texts[selected_tuto] % i)

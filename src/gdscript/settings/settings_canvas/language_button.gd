@@ -13,5 +13,4 @@ func _on_pressed():
 		
 		var new_locale = lang[new_locale_index]
 		TranslationServer.set_locale(new_locale)
-	
 		Gameloop.locale_updated.emit(new_locale)
