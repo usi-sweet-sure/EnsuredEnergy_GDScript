@@ -2723,6 +2723,7 @@ visible = false
 
 [node name="UI" parent="." instance=ExtResource("2_d60f5")]
 follow_viewport_enabled = false
+metadata/_edit_vertical_guides_ = [960.0, -349.0]
 
 [node name="BuildMenu" parent="." instance=ExtResource("2_wrh8p")]
 
