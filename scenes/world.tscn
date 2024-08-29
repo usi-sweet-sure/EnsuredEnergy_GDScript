@@ -111,6 +111,14 @@ offset_right = 52.0
 offset_bottom = 35.0
 grow_vertical = 1
 
+[node name="ContainerL" parent="Nuclear3/BuildInfo/ColorRect" index="1"]
+offset_left = 68.0001
+offset_right = 328.0
+
+[node name="ContainerN" parent="Nuclear3/BuildInfo/ColorRect" index="2"]
+offset_left = 47.3334
+offset_right = 47.3334
+
 [node name="Nuclear2" parent="." instance=ExtResource("7_6x5m2")]
 position = Vector2(1504, -103)
 plant_name = "nuclear"
@@ -127,6 +135,18 @@ offset_right = 52.0
 offset_bottom = 35.0
 grow_vertical = 1
 
+[node name="BuildInfo" parent="Nuclear2" index="2"]
+offset_left = -137.0
+offset_right = -97.0
+
+[node name="ContainerL" parent="Nuclear2/BuildInfo/ColorRect" index="1"]
+offset_left = 68.0001
+offset_right = 328.0
+
+[node name="ContainerN" parent="Nuclear2/BuildInfo/ColorRect" index="2"]
+offset_left = 47.3334
+offset_right = 47.3334
+
 [node name="Nuclear" parent="." instance=ExtResource("7_6x5m2")]
 position = Vector2(953, 215)
 plant_name = "nuclear"
@@ -142,6 +162,10 @@ offset_top = 0.0
 offset_right = 52.0
 offset_bottom = 35.0
 grow_vertical = 1
+
+[node name="ContainerL" parent="Nuclear/BuildInfo/ColorRect" index="1"]
+offset_left = 68.0
+offset_right = 328.0
 
 [node name="Biogas" parent="." instance=ExtResource("7_6x5m2")]
 plant_name = "geothermal"
@@ -251,6 +275,12 @@ scale = Vector2(1, 1)
 [node name="Planting" parent="BuildButton9/BuildingInfo" index="2"]
 position = Vector2(-314, -307)
 scale = Vector2(1, 1)
+
+[node name="Money" parent="BuildButton9" index="4"]
+offset_left = -279.0
+offset_top = -124.0
+offset_right = -119.0
+offset_bottom = -35.0
 
 [node name="Hydro" parent="." instance=ExtResource("7_6x5m2")]
 position = Vector2(384, 1864)
