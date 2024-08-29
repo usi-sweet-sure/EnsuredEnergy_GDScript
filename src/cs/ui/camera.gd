@@ -19,7 +19,10 @@ func _ready():
 	init_pos = position
 	init_zoom = zoom
 	
-	# !!! Do or remove
+	# Allows to reset the zoom, so the tutorial windows are placed correctly
+	Gameloop.show_tutorial.connect(_on_show_tutorial)
+	
+	#E. !!! Do or remove
 	#for power_plant in get_tree().get_nodes_in_group("PP"):
 		#power_plant.ZoomSignal.connect(plant_zoom);
 		
@@ -27,6 +30,7 @@ func _physics_process(delta):
 	# Arrow key camera movement
 	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	position = position.lerp(position + direction * CAMERA_SPEED * zoom, CAMERA_SPEED * delta)
+
 
 # Updates the size of power plants and build buttons according to the zoom
 func scale_plants(zoom_val: Vector2):
@@ -77,13 +81,23 @@ func animate_camera_zoom(new_zoom):
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "zoom", new_zoom, ZOOM_ANIMATION_DURATION)
 	scale_plants(new_zoom)
+
+func animate_camera_position(new_position):
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "position", new_position, ZOOM_ANIMATION_DURATION)
 	
 # Animate power plants and build buttons zoom
 func animate_power_plant_zoom(object, new_zoom):
 	var tween = get_tree().create_tween()
 	tween.tween_property(object, "scale", new_zoom, ZOOM_ANIMATION_DURATION)
 
-# !!! Do or remove
+
+func _on_show_tutorial():
+	animate_camera_position(init_pos)
+	animate_camera_zoom(init_zoom)
+	
+	
+#E. Do or remove
 # func plant_zoom(_plant_pos: Vector2):
 	#pass
 	#var position_tween = get_tree().create_tween();

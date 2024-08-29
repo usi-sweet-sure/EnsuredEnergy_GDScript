@@ -20,33 +20,9 @@ TUTORIAL2,You need to [b]supply[/b] enough [b]energy[/b] for your population. Th
 Die Menschen müssen ihre Telefone aufladen und ihre Lieblingsvideospiele spielen können.",Dovete [b]fornire[/b] abbastanza [b]energia[/b] per tutta la popolazione. Le persone hanno bisogno di caricare i loro telefoni e di giocare ai loro videogiochi preferiti.
 TUTORIAL3,You need to [b]supply[/b] enough [b]energy[/b] for your population. They need to charge their phones and play their favourite video games.,Tu dois [b]fournir[/b] suffisamment d'[b]énergie[/b] pour toute la population. Les gens ont besoin de charger leurs téléphones et de jouer à leurs jeux vidéo préférés.,"Du musst genügend [b]Energie[/b] für deine Bevölkerung zur Verfügung stellen.\n
 Die Menschen müssen ihre Telefone aufladen und ihre Lieblingsvideospiele spielen können.",È necessario [b]fornire[/b] abbastanza [b]energia[/b] per tutta la popolazione. Le persone hanno bisogno di ricaricare i loro telefoni e di giocare ai loro videogiochi preferiti.
-TUTORIAL4,"There are different ways to supply more energy:\n\n
-
-- You can import energy in winter, but it creates pollution and can be expensive.","Il existe différentes façons d'approvisionner plus d'énergie :\n\n
-
-- Tu peux importer de l'énergie, mais cela pollue et peut être coûteux.","Es gibt verschiedene Möglichkeiten, mehr Energie zur Verfügung zu stellen:\n\n
-
-- Man kann Energie importieren, aber das führt zu Verschmutzung und kann teuer sein.","Ci sono diversi modi per fornire più energia:\n\n
-
-si può importare energia, ma questo inquina e può essere costoso."
-TUTORIAL5,"There are different ways to supply more energy:\n\n
-
-- You can build new power plants, but it costs time and money.","Il existe différentes façons d'approvisionner plus d'énergie :\n\n
-
-- Tu peux construire de nouvelles centrales électriques, mais cela coûte du temps et de l'argent.","Es gibt verschiedene Möglichkeiten, mehr Energie zu liefern: \n\n
-
-- Man kann neue Kraftwerke bauen, aber das kostet Zeit und Geld.","Ci sono diversi modi per fornire più energia:\n\n
-
-si possono costruire nuove centrali elettriche, ma questo costa tempo e denaro."
-TUTORIAL6,"There are different ways to supply more energy:\n\n\t
-
-	- You can upgrade some of the existing power plants","Il existe différentes façons d'approvisionner plus d'énergie :\n\n\t
-
-        - Tu peux améliorer les centrales existantes","Es gibt verschiedene Möglichkeiten, mehr Energie zu liefern:\n\n\t
-
-	- Du kannst einige der bestehenden Kraftwerke aufrüsten","Ci sono diversi modi per fornire più energia:\n\n\t
-
-	- È possibile potenziare alcune delle centrali elettriche esistenti."
+TUTORIAL4,"There are different ways to supply more energy:\n\n- You can import energy in winter, but it creates pollution and can be expensive.","Il existe différentes façons d'approvisionner plus d'énergie :\n\n- Tu peux importer de l'énergie, mais cela pollue et peut être coûteux.","Es gibt verschiedene Möglichkeiten, mehr Energie zur Verfügung zu stellen:\n\n- Man kann Energie importieren, aber das führt zu Verschmutzung und kann teuer sein.","Ci sono diversi modi per fornire più energia:\n\n-si può importare energia, ma questo inquina e può essere costoso."
+TUTORIAL5,"There are different ways to supply more energy:\n\n- You can build new power plants, but it costs time and money.","Il existe différentes façons d'approvisionner plus d'énergie :\n\n- Tu peux construire de nouvelles centrales électriques, mais cela coûte du temps et de l'argent.","Es gibt verschiedene Möglichkeiten, mehr Energie zu liefern: \n\n- Man kann neue Kraftwerke bauen, aber das kostet Zeit und Geld.","Ci sono diversi modi per fornire più energia:\n\n-si possono costruire nuove centrali elettriche, ma questo costa tempo e denaro."
+TUTORIAL6,There are different ways to supply more energy:\n\n- You can upgrade some of the existing power plants,Il existe différentes façons d'approvisionner plus d'énergie :\n\n- Tu peux améliorer les centrales existantes,"Es gibt verschiedene Möglichkeiten, mehr Energie zu liefern:\n\n- Du kannst einige der bestehenden Kraftwerke aufrüsten",Ci sono diversi modi per fornire più energia:\n\n- È possibile potenziare alcune delle centrali elettriche esistenti.
 TUTORIAL7,You can also hold information campaigns or try to implement different policies to reduce energy demand or facilitate the construction of power plants.,Tu peux également organiser des campagnes d'information ou tenter de mettre en oeuvre différentes politiques visant à réduire la demande d'énergie ou à faciliter la construction de centrales électriques.,"Du kannst auch Informationskampagnen durchführen oder versuchen, politische Maßnahmen umzusetzen, um 
 		\t den Energiebedarf zu senken oder den Bau von Kraftwerken zu erleichtern.",Potete anche organizzare campagne di informazione o cercare di attuare varie politiche per ridurre la domanda di energia o facilitare la costruzione di centrali elettriche!
 CLIMATE_TUTORIAL0,"Congratulations !\n

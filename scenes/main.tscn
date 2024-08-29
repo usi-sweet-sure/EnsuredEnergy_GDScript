@@ -1,4 +1,4 @@
-[gd_scene load_steps=128 format=3 uid="uid://g58p7rxvcdik"]
+[gd_scene load_steps=127 format=3 uid="uid://g58p7rxvcdik"]
 
 [ext_resource type="PackedScene" uid="uid://ba56oxmvcxpos" path="res://scenes/world.tscn" id="1_prp6q"]
 [ext_resource type="PackedScene" uid="uid://bs48lirfn2fp2" path="res://scenes/hud/ui.tscn" id="2_d60f5"]
@@ -40,7 +40,6 @@
 [ext_resource type="Texture2D" uid="uid://8ayrv8fy7apy" path="res://assets/new Power plants/Power plants/Power_Plants_4-water-Hydrolic-River-3.png" id="33_1wxp6"]
 [ext_resource type="Texture2D" uid="uid://cigv4d5ij1ymx" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0011_Gas.png" id="34_jc6ff"]
 [ext_resource type="PackedScene" uid="uid://cuuj2s4h1588i" path="res://scenes/audio.tscn" id="34_smnob"]
-[ext_resource type="Script" path="res://src/gdscript/tutorial/tutorial.gd" id="38_ni5d4"]
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/settings_canvas.gd" id="42_jouqr"]
 [ext_resource type="Texture2D" uid="uid://cvwhghlarnumd" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0004_Settings-metal-base.png" id="44_dom71"]
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/close_button.gd" id="45_bc8l6"]
@@ -2728,7 +2727,6 @@ follow_viewport_enabled = false
 [node name="BuildMenu" parent="." instance=ExtResource("2_wrh8p")]
 
 [node name="Tutorial" parent="." instance=ExtResource("11_uite1")]
-script = ExtResource("38_ni5d4")
 
 [node name="Menu" parent="." instance=ExtResource("18_h65u3")]
 

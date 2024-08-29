@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://ciphd0cmpslrn"]
+[gd_scene load_steps=18 format=3 uid="uid://ciphd0cmpslrn"]
 
 [ext_resource type="Texture2D" uid="uid://dnbd3anohlmvn" path="res://assets/UI Elements/All-HQ-Assets-D_0008s_0001_Small-right-paper.png" id="1_p4eo2"]
+[ext_resource type="Script" path="res://src/gdscript/tutorial/tutorial.gd" id="1_yrums"]
 [ext_resource type="Texture2D" uid="uid://03lloca0uata" path="res://assets/Elements/ARROW INFO – 1.png" id="3_xv1gs"]
 [ext_resource type="Texture2D" uid="uid://mwohu8ubla1b" path="res://assets/UpgradeSprite.png" id="4_yf1o7"]
 [ext_resource type="Texture2D" uid="uid://4yafxnl2h5s" path="res://assets/UI Elements/All-HQ-Assets-D_0008s_0004_Big-paper.png" id="5_3h0cr"]
@@ -11,6 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://c48hquir78en7" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0021_Icon-green-hover-button.png" id="9_xeviv"]
 [ext_resource type="Texture2D" uid="uid://ubsfoucc2064" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0000_Marks-vertical.png" id="10_1hlsa"]
 [ext_resource type="Texture2D" uid="uid://b0c3ywqarx8b7" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0002_Icon-round-button-hole.png" id="11_4rv1s"]
+[ext_resource type="Texture2D" uid="uid://4s62sj1p8eja" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0019_Icon-red-normal-button.png" id="13_83lpu"]
+[ext_resource type="Texture2D" uid="uid://b86vm4agcnisw" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0020_Icon-red-press-button.png" id="14_br0h0"]
+[ext_resource type="Texture2D" uid="uid://b066igcqidlny" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0018_Icon-red-hover-button.png" id="15_uhfuu"]
 
 [sub_resource type="Theme" id="Theme_dnnnk"]
 
@@ -19,13 +23,14 @@ atlas = ExtResource("10_1hlsa")
 region = Rect2(0, 0, 12.6752, 14)
 
 [node name="Tutorial" type="CanvasLayer"]
+script = ExtResource("1_yrums")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -57.0
 offset_top = -48.0
 offset_right = 1966.0
 offset_bottom = 1129.0
-color = Color(1, 1, 1, 0)
+color = Color(0.0901961, 0.0901961, 0.0901961, 0.27451)
 metadata/_edit_lock_ = true
 
 [node name="Bubbles" type="Control" parent="."]
@@ -33,6 +38,7 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -3.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -40,8 +46,8 @@ grow_vertical = 2
 visible = false
 show_behind_parent = true
 layout_mode = 0
-offset_left = 456.0
-offset_right = 1920.0
+offset_left = 448.0
+offset_right = 1912.0
 offset_bottom = 1080.0
 theme = SubResource("Theme_dnnnk")
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
@@ -55,11 +61,11 @@ offset_bottom = 1005.0
 [node name="InfoBubble" type="NinePatchRect" parent="Bubbles/InfoBubble/InfoBubble"]
 layout_mode = 2
 texture = ExtResource("1_p4eo2")
-region_rect = Rect2(0, -2, 284, 179.455)
-patch_margin_left = 22
-patch_margin_top = 56
-patch_margin_right = 74
-patch_margin_bottom = 44
+region_rect = Rect2(1.4227, -0.306576, 279.979, 177.245)
+patch_margin_left = 27
+patch_margin_top = 45
+patch_margin_right = 57
+patch_margin_bottom = 35
 metadata/_edit_group_ = true
 
 [node name="Arrow" type="Sprite2D" parent="Bubbles/InfoBubble/InfoBubble/InfoBubble"]
@@ -86,6 +92,7 @@ bbcode_enabled = true
 text = "TUTOBUBBLE0"
 fit_content = true
 scroll_active = false
+autowrap_mode = 2
 
 [node name="ColorRect" type="ColorRect" parent="Bubbles/InfoBubble"]
 layout_mode = 0
@@ -102,28 +109,35 @@ offset_right = -208.0
 offset_bottom = 1080.0
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 
+[node name="ColorRect3" type="ColorRect" parent="Bubbles/InfoBubble"]
+layout_mode = 0
+offset_left = -208.0
+offset_top = 1048.0
+offset_bottom = 1080.0
+color = Color(0.156863, 0.156863, 0.156863, 0.784314)
+
 [node name="InfoBubble2" type="ColorRect" parent="Bubbles"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 264.0
+offset_left = 245.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 
 [node name="InfoBubble2" type="MarginContainer" parent="Bubbles/InfoBubble2"]
 layout_mode = 0
-offset_left = 4.0
+offset_left = -1.0
 offset_top = 829.0
-offset_right = 304.0
+offset_right = 299.0
 offset_bottom = 957.0
 
 [node name="InfoBubble" type="NinePatchRect" parent="Bubbles/InfoBubble2/InfoBubble2"]
 layout_mode = 2
 texture = ExtResource("1_p4eo2")
-region_rect = Rect2(0, 0, 282, 190)
+region_rect = Rect2(0.971897, 0, 281.028, 190)
 patch_margin_left = 26
 patch_margin_top = 52
 patch_margin_right = 78
@@ -161,8 +175,34 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -264.0
-offset_right = -1656.0
-offset_bottom = -440.0
+offset_right = -1678.0
+offset_bottom = -431.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.156863, 0.156863, 0.156863, 0.784314)
+
+[node name="ColorRect4" type="ColorRect" parent="Bubbles/InfoBubble2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -307.0
+offset_top = 649.0
+offset_right = -1890.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.156863, 0.156863, 0.156863, 0.784314)
+
+[node name="ColorRect5" type="ColorRect" parent="Bubbles/InfoBubble2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -247.0
+offset_top = 1062.0
+offset_right = -1675.0
+offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
@@ -173,7 +213,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -736.0
+offset_right = -739.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
@@ -185,7 +225,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 1184.0
 offset_right = 736.0
-offset_bottom = -440.0
+offset_bottom = -400.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
@@ -196,7 +236,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 1184.0
-offset_top = 856.0
+offset_top = 873.0
 offset_right = 736.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -207,29 +247,29 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1552.0
-offset_top = 640.0
+offset_left = 1521.0
+offset_top = 680.0
 offset_right = 736.0
-offset_bottom = -224.0
+offset_bottom = -207.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 
 [node name="InfoBubble3" type="MarginContainer" parent="Bubbles/InfoBubble3"]
 layout_mode = 0
-offset_left = 1558.0
-offset_top = 654.0
-offset_right = 1834.0
-offset_bottom = 795.0
+offset_left = 1520.0
+offset_top = 685.0
+offset_right = 1796.0
+offset_bottom = 826.0
 
 [node name="InfoBubble" type="NinePatchRect" parent="Bubbles/InfoBubble3/InfoBubble3"]
 layout_mode = 2
 texture = ExtResource("1_p4eo2")
-region_rect = Rect2(0, -2, 282, 196)
+region_rect = Rect2(0, -2, 282, 179.205)
 patch_margin_left = 48
 patch_margin_top = 50
 patch_margin_right = 66
-patch_margin_bottom = 50
+patch_margin_bottom = 30
 metadata/_edit_group_ = true
 
 [node name="Arrow" type="Sprite2D" parent="Bubbles/InfoBubble3/InfoBubble3/InfoBubble"]
@@ -266,27 +306,77 @@ anchor_bottom = 1.0
 offset_left = 792.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.156863, 0.156863, 0.156863, 0.784314)
+color = Color(0.156863, 0.156863, 0.156863, 0)
 
 [node name="Upgrade" type="Sprite2D" parent="Bubbles/InfoBubble4"]
-position = Vector2(-232, 168)
+position = Vector2(190, 195)
 texture = ExtResource("4_yf1o7")
+
+[node name="ColorRect3" type="ColorRect" parent="Bubbles/InfoBubble4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -792.0
+offset_top = 336.0
+offset_right = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.156863, 0.156863, 0.156863, 0.784314)
+
+[node name="ColorRect4" type="ColorRect" parent="Bubbles/InfoBubble4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -792.0
+offset_right = -855.0
+offset_bottom = -744.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.156863, 0.156863, 0.156863, 0.784314)
+
+[node name="ColorRect6" type="ColorRect" parent="Bubbles/InfoBubble4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 391.0
+offset_top = 219.0
+offset_right = 153.0
+offset_bottom = -744.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.156863, 0.156863, 0.156863, 0.784314)
+
+[node name="ColorRect5" type="ColorRect" parent="Bubbles/InfoBubble4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 276.0
+offset_top = -10.0
+offset_right = 35.0
+offset_bottom = -861.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 
 [node name="InfoBubble4" type="MarginContainer" parent="Bubbles/InfoBubble4"]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 172.0
-offset_right = 384.0
-offset_bottom = 300.0
+offset_left = 392.0
+offset_top = 183.0
+offset_right = 774.0
+offset_bottom = 311.0
 
 [node name="InfoBubble" type="NinePatchRect" parent="Bubbles/InfoBubble4/InfoBubble4"]
 layout_mode = 2
 texture = ExtResource("1_p4eo2")
-region_rect = Rect2(0, 0, 280, 194)
-patch_margin_left = 22
+region_rect = Rect2(1.19095, 0, 278.809, 179.079)
+patch_margin_left = 34
 patch_margin_top = 46
-patch_margin_right = 64
-patch_margin_bottom = 46
+patch_margin_right = 56
+patch_margin_bottom = 33
 metadata/_edit_group_ = true
 
 [node name="Arrow" type="Sprite2D" parent="Bubbles/InfoBubble4/InfoBubble4/InfoBubble"]
@@ -314,64 +404,27 @@ text = "TUTOBUBBLE3"
 fit_content = true
 scroll_active = false
 
-[node name="ColorRect3" type="ColorRect" parent="Bubbles/InfoBubble4"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -792.0
-offset_top = 336.0
-offset_right = -1128.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.156863, 0.156863, 0.156863, 0.784314)
-
-[node name="ColorRect4" type="ColorRect" parent="Bubbles/InfoBubble4"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -792.0
-offset_right = -1272.0
-offset_bottom = -744.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.156863, 0.156863, 0.156863, 0.784314)
-
-[node name="ColorRect5" type="ColorRect" parent="Bubbles/InfoBubble4"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -144.0
-offset_right = -1128.0
-offset_bottom = -880.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.156863, 0.156863, 0.156863, 0.784314)
-
 [node name="InfoBubble5" type="ColorRect" parent="Bubbles"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 336.0
+offset_left = 371.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 
 [node name="InfoBubble5" type="MarginContainer" parent="Bubbles/InfoBubble5"]
 layout_mode = 0
-offset_left = 6.0
-offset_top = 9.0
-offset_right = 296.0
-offset_bottom = 137.0
+offset_top = 13.0
+offset_right = 290.0
+offset_bottom = 141.0
 
 [node name="InfoBubble" type="NinePatchRect" parent="Bubbles/InfoBubble5/InfoBubble5"]
 layout_mode = 2
 texture = ExtResource("1_p4eo2")
-region_rect = Rect2(-2, 0, 284, 190)
+region_rect = Rect2(0.972874, 0, 281.027, 190)
 patch_margin_left = 28
 patch_margin_top = 48
 patch_margin_right = 48
@@ -408,9 +461,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -336.0
+offset_left = -382.0
 offset_top = 168.0
-offset_right = -1584.0
+offset_right = -1552.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
@@ -420,8 +473,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -344.0
-offset_right = -1728.0
+offset_left = -381.0
+offset_right = -1685.0
 offset_bottom = -912.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -432,12 +485,22 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -144.0
-offset_right = -1584.0
-offset_bottom = -1056.0
+offset_left = -133.0
+offset_right = -1552.0
+offset_bottom = -1048.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
+
+[node name="NextButton" type="Button" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+flat = true
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 8
@@ -466,14 +529,15 @@ patch_margin_right = 56
 patch_margin_bottom = 64
 
 [node name="Skip" type="Label" parent="MarginContainer/TutoPopUp"]
+visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 63.0
-offset_top = -20.0
-offset_right = 620.0
-offset_bottom = 6.0
+offset_top = -18.0
+offset_right = 117.0
+offset_bottom = 8.0
 grow_vertical = 0
 theme = ExtResource("7_6e2hn")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -483,45 +547,6 @@ text = "to skip"
 position = Vector2(-25.1, 13)
 scale = Vector2(0.329687, 0.225)
 texture = ExtResource("5_mivsl")
-
-[node name="Button" type="TextureButton" parent="MarginContainer/TutoPopUp"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -82.0
-offset_top = -82.0
-offset_right = -47.0
-offset_bottom = -45.0
-grow_horizontal = 0
-grow_vertical = 0
-texture_normal = ExtResource("7_8vy8x")
-texture_pressed = ExtResource("8_lbpbe")
-texture_hover = ExtResource("9_xeviv")
-
-[node name="Arrow" type="TextureRect" parent="MarginContainer/TutoPopUp/Button"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -55.0
-offset_top = -62.0
-offset_right = 24.9999
-offset_bottom = 18.0
-grow_horizontal = 0
-grow_vertical = 0
-scale = Vector2(0.2, 0.2)
-pivot_offset = Vector2(40, 40)
-texture = SubResource("AtlasTexture_ioq42")
-
-[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/TutoPopUp/Button"]
-show_behind_parent = true
-position = Vector2(18, 20)
-texture = ExtResource("11_4rv1s")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -542,13 +567,73 @@ text = "TUTORIAL0"
 fit_content = true
 scroll_active = false
 
-[node name="NextButton" type="Button" parent="."]
-anchors_preset = 15
+[node name="NavigationButtons" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 53
+
+[node name="Skip" type="TextureButton" parent="MarginContainer/NavigationButtons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture_normal = ExtResource("13_83lpu")
+texture_pressed = ExtResource("14_br0h0")
+texture_hover = ExtResource("15_uhfuu")
+
+[node name="Arrow" type="Label" parent="MarginContainer/NavigationButtons/Skip"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-focus_mode = 0
-flat = true
+offset_left = -53.0
+offset_top = -63.0
+offset_right = 26.9999
+offset_bottom = 23.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(40, 40)
+theme_override_font_sizes/font_size = 62
+text = "X"
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/NavigationButtons/Skip"]
+show_behind_parent = true
+position = Vector2(18, 20)
+texture = ExtResource("11_4rv1s")
+
+[node name="Next" type="TextureButton" parent="MarginContainer/NavigationButtons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture_normal = ExtResource("7_8vy8x")
+texture_pressed = ExtResource("8_lbpbe")
+texture_hover = ExtResource("9_xeviv")
+
+[node name="Arrow" type="TextureRect" parent="MarginContainer/NavigationButtons/Next"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -55.0
+offset_top = -62.0
+offset_right = 24.9999
+offset_bottom = 18.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(40, 40)
+texture = SubResource("AtlasTexture_ioq42")
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/NavigationButtons/Next"]
+show_behind_parent = true
+position = Vector2(18, 20)
+texture = ExtResource("11_4rv1s")
 
 [connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="MarginContainer/NavigationButtons/Skip" to="." method="_on_skip_pressed"]
+[connection signal="pressed" from="MarginContainer/NavigationButtons/Next" to="." method="_on_next_button_pressed"]
