@@ -1,6 +1,5 @@
-[gd_scene load_steps=129 format=3 uid="uid://g58p7rxvcdik"]
+[gd_scene load_steps=128 format=3 uid="uid://g58p7rxvcdik"]
 
-[ext_resource type="Script" path="res://src/gdscript/main.gd" id="1_6q0gk"]
 [ext_resource type="PackedScene" uid="uid://ba56oxmvcxpos" path="res://scenes/world.tscn" id="1_prp6q"]
 [ext_resource type="PackedScene" uid="uid://bs48lirfn2fp2" path="res://scenes/hud/ui.tscn" id="2_d60f5"]
 [ext_resource type="PackedScene" uid="uid://i802aa7uc538" path="res://scenes/building/BuildMenu.tscn" id="2_wrh8p"]
@@ -1997,7 +1996,6 @@ Button/styles/normal = SubResource("StyleBoxFlat_vka7n")
 Button/styles/pressed = SubResource("StyleBoxFlat_fgbvl")
 
 [node name="Main" type="Node2D"]
-script = ExtResource("1_6q0gk")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false

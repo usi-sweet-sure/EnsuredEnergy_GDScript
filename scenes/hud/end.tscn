@@ -1,9 +1,11 @@
-[gd_scene load_steps=48 format=3 uid="uid://cej4dlw11su6f"]
+[gd_scene load_steps=51 format=3 uid="uid://cej4dlw11su6f"]
 
 [ext_resource type="Script" path="res://src/gdscript/end/end.gd" id="1_eio5g"]
 [ext_resource type="Script" path="res://src/gdscript/end/graphs_frame.gd" id="4_dq0ds"]
 [ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="4_n8g63"]
+[ext_resource type="Script" path="res://src/gdscript/end/metrics_leaderboard_text.gd" id="5_65thp"]
 [ext_resource type="Texture2D" uid="uid://bulftkbpqxib" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0024_Icon-Money.png" id="5_goags"]
+[ext_resource type="Script" path="res://src/gdscript/end/metrics_ranking_screen.gd" id="5_luxph"]
 [ext_resource type="Texture2D" uid="uid://ceuxpu5iujr05" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0001_Stats-metal-base.png" id="5_xqx4k"]
 [ext_resource type="Texture2D" uid="uid://iaa6i5ocoaer" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0022_Icon-Popularity.png" id="6_88lh6"]
 [ext_resource type="Texture2D" uid="uid://cd23afs6x11al" path="res://assets/UI Elements/All-HQ-Assets-D_0005s_0002_Stats-screen.png" id="6_us122"]
@@ -44,6 +46,7 @@
 [ext_resource type="Script" path="res://src/gdscript/end/land_use_gauge_label.gd" id="33_38kwm"]
 [ext_resource type="Script" path="res://src/gdscript/end/emissions_button.gd" id="35_ymyta"]
 [ext_resource type="Script" path="res://src/gdscript/end/emissions_gauge_label.gd" id="37_hchcy"]
+[ext_resource type="Script" path="res://src/gdscript/end/close_button.gd" id="44_iv8kv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d1wpm"]
 bg_color = Color(0.317647, 0.317647, 0.317647, 0)
@@ -84,6 +87,7 @@ offset_bottom = 436.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 0
+mouse_force_pass_scroll_events = false
 texture = ExtResource("5_xqx4k")
 
 [node name="LineNamesContainer" type="VBoxContainer" parent="MainFrame"]
@@ -123,6 +127,34 @@ offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_dq0ds")
+
+[node name="MetricsRanking" type="Control" parent="MainFrame/Screen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_luxph")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MainFrame/Screen/MetricsRanking"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 7.0
+offset_right = -6.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
+theme_override_constants/shadow_offset_x = 2
+text = "
+"
+script = ExtResource("5_65thp")
 
 [node name="BottomFrames" type="HBoxContainer" parent="MainFrame"]
 layout_mode = 1
@@ -181,6 +213,7 @@ horizontal_alignment = 1
 script = ExtResource("7_1k3ff")
 
 [node name="Button" type="TextureButton" parent="MainFrame/BottomFrames/LeftFrame/Money"]
+layout_mode = 0
 offset_left = 57.0
 offset_top = 165.0
 offset_right = 115.0
@@ -229,6 +262,7 @@ scale = Vector2(1.13068, 1)
 texture = ExtResource("8_uuhoe")
 
 [node name="Button" type="TextureButton" parent="MainFrame/BottomFrames/LeftFrame/Trust"]
+layout_mode = 0
 offset_left = 198.5
 offset_top = 164.5
 offset_right = 256.5
@@ -296,6 +330,7 @@ texture = ExtResource("14_tu03u")
 region_rect = Rect2(34, 22, 41, 196)
 
 [node name="Button" type="TextureButton" parent="MainFrame/BottomFrames/CenterFrame/Winter"]
+layout_mode = 0
 offset_left = 136.0
 offset_top = 164.0
 offset_right = 194.0
@@ -320,6 +355,7 @@ scale = Vector2(0.645455, 0.645455)
 texture = ExtResource("8_a3fds")
 
 [node name="SupplyScreen" type="NinePatchRect" parent="MainFrame/BottomFrames/CenterFrame/Winter"]
+layout_mode = 0
 offset_left = -19.0
 offset_top = 111.0
 offset_right = 86.0
@@ -395,6 +431,7 @@ texture = ExtResource("14_tu03u")
 region_rect = Rect2(34, 22, 41, 196)
 
 [node name="Button" type="TextureButton" parent="MainFrame/BottomFrames/CenterFrame/Solar"]
+layout_mode = 0
 offset_left = 121.0
 offset_top = 164.0
 offset_right = 179.0
@@ -429,6 +466,7 @@ position = Vector2(339.5, 93.5)
 texture = ExtResource("23_pq3eq")
 
 [node name="Button" type="TextureButton" parent="MainFrame/BottomFrames/CenterFrame/Imports"]
+layout_mode = 0
 offset_left = 314.0
 offset_top = 165.0
 offset_right = 372.0
@@ -482,6 +520,7 @@ offset = Vector2(0, -22)
 script = ExtResource("23_gtgnc")
 
 [node name="Screen" type="NinePatchRect" parent="MainFrame/BottomFrames/RightFrame/LandUse/Gauge"]
+layout_mode = 0
 offset_left = 47.0
 offset_top = 118.0
 offset_right = 135.0
@@ -523,6 +562,7 @@ theme_override_font_sizes/font_size = 10
 text = "Km2"
 
 [node name="Button" type="TextureButton" parent="MainFrame/BottomFrames/RightFrame/LandUse"]
+layout_mode = 0
 offset_left = 54.0
 offset_top = 165.0
 offset_right = 112.0
@@ -575,6 +615,7 @@ offset = Vector2(0, -22)
 script = ExtResource("26_kgqfc")
 
 [node name="Screen" type="NinePatchRect" parent="MainFrame/BottomFrames/RightFrame/Emissions/Gauge"]
+layout_mode = 0
 offset_left = 47.0
 offset_top = 118.0
 offset_right = 135.0
@@ -607,6 +648,7 @@ horizontal_alignment = 1
 script = ExtResource("37_hchcy")
 
 [node name="Unit" type="Label" parent="MainFrame/BottomFrames/RightFrame/Emissions/Gauge"]
+layout_mode = 0
 offset_left = 100.5
 offset_top = 66.5
 offset_right = 136.5
@@ -616,6 +658,7 @@ theme_override_font_sizes/font_size = 10
 text = "Mt CO2"
 
 [node name="Button" type="TextureButton" parent="MainFrame/BottomFrames/RightFrame/Emissions"]
+layout_mode = 0
 offset_left = 199.0
 offset_top = 165.0
 offset_right = 257.0
@@ -657,7 +700,9 @@ focus_mode = 0
 texture_normal = ExtResource("12_7s7b3")
 texture_pressed = ExtResource("13_snkrc")
 texture_hover = ExtResource("14_84fak")
+texture_disabled = ExtResource("13_snkrc")
 stretch_mode = 0
+script = ExtResource("44_iv8kv")
 
 [node name="Sprite2D" type="Sprite2D" parent="MainFrame/CloseButton"]
 show_behind_parent = true
@@ -681,12 +726,14 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 18
 text = "x"
 
+[connection signal="metrics_leaderboard_updated" from="." to="MainFrame/Screen/MetricsRanking/RichTextLabel" method="_on_metrics_leaderboard_updated"]
 [connection signal="context_changed" from="MainFrame/Screen/Graph" to="MainFrame/BottomFrames/LeftFrame/Money/Button" method="_on_graph_context_changed"]
 [connection signal="context_changed" from="MainFrame/Screen/Graph" to="MainFrame/BottomFrames/LeftFrame/Trust/Button" method="_on_graph_context_changed"]
 [connection signal="context_changed" from="MainFrame/Screen/Graph" to="MainFrame/BottomFrames/CenterFrame/Winter/Button" method="_on_graph_context_changed"]
 [connection signal="context_changed" from="MainFrame/Screen/Graph" to="MainFrame/BottomFrames/CenterFrame/Solar/Button" method="_on_graph_context_changed"]
-[connection signal="context_changed" from="MainFrame/Screen/Graph" to="MainFrame/BottomFrames/RightFrame/Emissions/Button" method="_on_graph_context_changed"]
 [connection signal="context_changed" from="MainFrame/Screen/Graph" to="MainFrame/BottomFrames/RightFrame/LandUse/Button" method="_on_graph_context_changed"]
+[connection signal="context_changed" from="MainFrame/Screen/Graph" to="MainFrame/BottomFrames/RightFrame/Emissions/Button" method="_on_graph_context_changed"]
+[connection signal="context_changed" from="MainFrame/Screen/Graph" to="MainFrame/Screen/MetricsRanking" method="_on_graph_context_changed"]
 [connection signal="toggled" from="MainFrame/BottomFrames/LeftFrame/Money/Button" to="MainFrame/Screen/Graph" method="_on_money_button_toggled"]
 [connection signal="toggled" from="MainFrame/BottomFrames/LeftFrame/Trust/Button" to="MainFrame/Screen/Graph" method="_on_trust_button_toggled"]
 [connection signal="toggled" from="MainFrame/BottomFrames/CenterFrame/Winter/Button" to="MainFrame/Screen/Graph" method="_on_winter_button_toggled"]

@@ -14,7 +14,7 @@ func _ready():
 
 
 func _on_button_top_pressed():
-	Gameloop.show_ending_screen_requested.emit()
+	Gameloop.game_ended.emit()
 	
 	
 func _on_button_bottom_pressed():

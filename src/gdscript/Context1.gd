@@ -124,9 +124,8 @@ func _http1_completed(_result, _response_code, _headers, body):
 	else:
 		HttpManager.http_request_active = false
 		var json = JSON.new()
-		leaderboard_json = JSON.stringify(JSON.parse_string(body.get_string_from_utf8()))
+		leaderboard_json = JSON.stringify(JSON.parse_string(body.get_string_from_utf8()), "\t")
 		#leaderboard_json = json.get_data()
-		print(leaderboard_json)
 
 
 func _on_player_name_updated(player_name):
