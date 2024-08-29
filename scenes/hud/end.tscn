@@ -727,13 +727,13 @@ theme_override_font_sizes/font_size = 18
 text = "x"
 
 [connection signal="metrics_leaderboard_updated" from="." to="MainFrame/Screen/MetricsRanking/RichTextLabel" method="_on_metrics_leaderboard_updated"]
+[connection signal="context_changed" from="MainFrame/Screen/Graph" to="MainFrame/Screen/MetricsRanking" method="_on_graph_context_changed"]
 [connection signal="context_changed" from="MainFrame/Screen/Graph" to="MainFrame/BottomFrames/LeftFrame/Money/Button" method="_on_graph_context_changed"]
 [connection signal="context_changed" from="MainFrame/Screen/Graph" to="MainFrame/BottomFrames/LeftFrame/Trust/Button" method="_on_graph_context_changed"]
 [connection signal="context_changed" from="MainFrame/Screen/Graph" to="MainFrame/BottomFrames/CenterFrame/Winter/Button" method="_on_graph_context_changed"]
 [connection signal="context_changed" from="MainFrame/Screen/Graph" to="MainFrame/BottomFrames/CenterFrame/Solar/Button" method="_on_graph_context_changed"]
 [connection signal="context_changed" from="MainFrame/Screen/Graph" to="MainFrame/BottomFrames/RightFrame/LandUse/Button" method="_on_graph_context_changed"]
 [connection signal="context_changed" from="MainFrame/Screen/Graph" to="MainFrame/BottomFrames/RightFrame/Emissions/Button" method="_on_graph_context_changed"]
-[connection signal="context_changed" from="MainFrame/Screen/Graph" to="MainFrame/Screen/MetricsRanking" method="_on_graph_context_changed"]
 [connection signal="toggled" from="MainFrame/BottomFrames/LeftFrame/Money/Button" to="MainFrame/Screen/Graph" method="_on_money_button_toggled"]
 [connection signal="toggled" from="MainFrame/BottomFrames/LeftFrame/Trust/Button" to="MainFrame/Screen/Graph" method="_on_trust_button_toggled"]
 [connection signal="toggled" from="MainFrame/BottomFrames/CenterFrame/Winter/Button" to="MainFrame/Screen/Graph" method="_on_winter_button_toggled"]
