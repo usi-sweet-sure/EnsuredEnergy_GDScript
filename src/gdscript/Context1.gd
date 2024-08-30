@@ -117,10 +117,10 @@ func _http1_completed(_result, _response_code, _headers, body):
 			res_id = int(ctx1[0]["res_id"])
 			for i in ctx1:
 				if i["prm_id"] == "455":
-					Gameloop.demand_summer = float(i["tj"]) / 100
+					Gameloop.demand_summer = float(i["tj"]) / 100.0
 			for i in ctx1: # sorry le code est cheum mais j'ai besoin de la demand_summer avant de pouvoir mettre la winter
 				if i["prm_id"] == "435":
-					Gameloop.demand_winter = (float(i["tj"]) / 100) - Gameloop.demand_summer
+					Gameloop.demand_winter = (float(i["tj"]) / 100.0) - Gameloop.demand_summer
 					
 	else:
 		HttpManager.http_request_active = false
