@@ -115,18 +115,21 @@ func _http1_completed(_result, _response_code, _headers, body):
 			context_error.emit()
 		else:
 			res_id = int(ctx1[0]["res_id"])
-			for i in ctx1:
-				if i["prm_id"] == "455":
-					Gameloop.demand_summer = float(i["tj"]) / 100.0
-			for i in ctx1: # sorry le code est cheum mais j'ai besoin de la demand_summer avant de pouvoir mettre la winter
-				if i["prm_id"] == "435":
-					Gameloop.demand_winter = (float(i["tj"]) / 100.0) - Gameloop.demand_summer
+			get_model_demand()
 					
 	else:
 		HttpManager.http_request_active = false
 		var json = JSON.new()
 		leaderboard_json = JSON.stringify(JSON.parse_string(body.get_string_from_utf8()), "\t")
 		#leaderboard_json = json.get_data()
+
+func get_model_demand():
+	for i in ctx1:
+		if i["prm_id"] == "455":
+			Gameloop.demand_summer = float(i["tj"]) / 100.0
+	for i in ctx1: # sorry le code est cheum mais j'ai besoin de la demand_summer avant de pouvoir mettre la winter
+		if i["prm_id"] == "435":
+			Gameloop.demand_winter = (float(i["tj"]) / 100.0) - Gameloop.demand_summer
 
 
 func _on_player_name_updated(player_name):

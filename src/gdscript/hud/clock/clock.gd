@@ -59,6 +59,7 @@ func _on_next_turn_button_pressed():
 		Gameloop.set_money_for_new_turn()
 		ShockManager.pick_shock()
 		ShockManager.apply_shock()
+		Context1.get_model_demand() #not sure where to put this and the line doesnt update
 	
 
 

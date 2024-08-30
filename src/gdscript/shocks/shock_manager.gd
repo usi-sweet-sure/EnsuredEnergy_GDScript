@@ -3,9 +3,15 @@ extends Node
 var shocks: Array[Shock] = []
 var shocks_full : Array[Shock] = []
 
+var household_demand: float
+var industry_demand: float
+var service_demand: float
+var transport_demand: float
+var agriculture_demand: float
+
 func _ready():
 	var cold_spell = Shock.new("SHOCK_COLD_SPELL_TITLE", "SHOCK_COLD_SPELL_TEXT", "cold.png")
-	cold_spell.add_effect(func(): Gameloop.demand_winter += 5)
+	cold_spell.add_effect(func(): increase_demand(false))
 	cold_spell.add_requirements("SHOCK_COLD_SPELL_REQUIREMENT_MET",
 			[func(): return Gameloop.supply_winter + Gameloop.imported_energy_amount >= Gameloop.demand_winter + 5],
 			[func(): PolicyManager.personal_support += 0.05, func(): Gameloop.players_own_money_amount += 50]
@@ -15,7 +21,7 @@ func _ready():
 	cold_spell.add_player_reaction("SHOCK_COLD_SPELL_PLAYER_REACTION_3", func(): Gameloop.players_own_money_amount -= 50)
 	
 	var heat_wave: = Shock.new("SHOCK_HEAT_WAVE_TITLE", "SHOCK_HEAT_WAVE_TEXT", "hot.png")
-	heat_wave.add_effect(func(): Gameloop.demand_summer += 5)
+	heat_wave.add_effect(func(): increase_demand(false))
 	heat_wave.add_requirements("SHOCK_HEAT_WAVE_REQUIREMENT_MET",
 			[func():  return Gameloop.supply_summer >= Gameloop.demand_summer + 5],
 			[func(): PolicyManager.personal_support += 0.05, func(): Gameloop.players_own_money_amount += 50]
@@ -40,8 +46,7 @@ func _ready():
 	dec_raw_cost_20.add_effect(func(): Gameloop.production_costs_modifier -= 0.2)
 	
 	var mass_immigration = Shock.new("SHOCK_MASS_IMMIGRATION_TITLE", "SHOCK_MASS_IMMIGRATION_TEXT", "people.png")
-	mass_immigration.add_effect(func(): Gameloop.demand_winter + 5)
-	mass_immigration.add_effect(func(): Gameloop.demand_summer + 5)
+	mass_immigration.add_effect(func(): increase_demand(true))
 	
 	var renewable_support = Shock.new("SHOCK_RENEWABLE_SUPPORT_TITLE", "SHOCK_RENEWABLE_SUPPORT_TEXT", "flower.png")
 	renewable_support.add_effect(func(): PolicyManager.personal_support += 0.1)
@@ -94,25 +99,81 @@ func _reintroduce_nuclear():
 func _leave_nuclear():
 	pass
 	
+# sorry for the ugly code
+func increase_demand(longterm: bool):
+	for i in Context1.ctx1:
+		if i["prm_id"] == "7":
+			household_demand = float(i["tj"])
+		if i["prm_id"] == "22":
+			industry_demand = float(i["tj"])
+		if i["prm_id"] == "37":
+			service_demand = float(i["tj"])
+		if i["prm_id"] == "52":
+			transport_demand = float(i["tj"])
+		if i["prm_id"] == "67":
+			agriculture_demand = float(i["tj"])
+	Context1.prm_id = 7
+	Context1.yr = Gameloop.year_list[Gameloop.current_turn-1]
+	Context1.tj = household_demand * 5.0 / 100.0
+	Context1.prm_ups()
+	await Context1.http1.request_completed
+	Context1.prm_id = 22
+	Context1.tj = industry_demand * 5.0 / 100.0
+	Context1.prm_ups()
+	await Context1.http1.request_completed
+	Context1.prm_id = 37
+	Context1.tj = service_demand * 5.0 / 100.0
+	Context1.prm_ups()
+	await Context1.http1.request_completed
+	Context1.prm_id = 52
+	Context1.tj = transport_demand * 5.0 / 100.0
+	Context1.prm_ups()
+	await Context1.http1.request_completed
+	Context1.prm_id = 67
+	Context1.tj = agriculture_demand * 5.0 / 100.0
+	Context1.prm_ups()
+	if longterm:
+		await Context1.http1.request_completed
+		Context1.prm_id = 7
+		Context1.yr = Gameloop.year_list[Gameloop.current_turn]
+		Context1.tj = -household_demand * 5.0 / 100.0
+		Context1.prm_ups()
+		await Context1.http1.request_completed
+		Context1.prm_id = 22
+		Context1.tj = -industry_demand * 5.0 / 100.0
+		Context1.prm_ups()
+		await Context1.http1.request_completed
+		Context1.prm_id = 37
+		Context1.tj = -service_demand * 5.0 / 100.0
+		Context1.prm_ups()
+		await Context1.http1.request_completed
+		Context1.prm_id = 52
+		Context1.tj = -transport_demand * 5.0 / 100.0
+		Context1.prm_ups()
+		await Context1.http1.request_completed
+		Context1.prm_id = 67
+		Context1.tj = -agriculture_demand * 5.0 / 100.0
+		Context1.prm_ups()
+		
+	
 func _severe_wether_prm_ups():
-		await Context1.http1.request_completed
-		Context1.prm_id = 471 #solar availability
-		Context1.yr = Gameloop.year_list[Gameloop.current_turn-1]
-		Context1.tj = -0.1
-		Context1.prm_ups()
-		await Context1.http1.request_completed
-		Context1.prm_id = 472 #solar availability
-		Context1.yr = Gameloop.year_list[Gameloop.current_turn-1]
-		Context1.tj = -0.1
-		Context1.prm_ups()
-		await Context1.http1.request_completed
-		Context1.prm_id = 471 #solar availability
-		Context1.yr = Gameloop.year_list[Gameloop.current_turn]
-		Context1.tj = 0.1
-		Context1.prm_ups()
-		await Context1.http1.request_completed
-		Context1.prm_id = 472 #solar availability
-		Context1.yr = Gameloop.year_list[Gameloop.current_turn]
-		Context1.tj = 0.1
-		Context1.prm_ups()
-		await Context1.http1.request_completed
+	await Context1.http1.request_completed
+	Context1.prm_id = 471 #solar availability
+	Context1.yr = Gameloop.year_list[Gameloop.current_turn-1]
+	Context1.tj = -0.1
+	Context1.prm_ups()
+	await Context1.http1.request_completed
+	Context1.prm_id = 472 #solar availability
+	Context1.yr = Gameloop.year_list[Gameloop.current_turn-1]
+	Context1.tj = -0.1
+	Context1.prm_ups()
+	await Context1.http1.request_completed
+	Context1.prm_id = 471 #solar availability
+	Context1.yr = Gameloop.year_list[Gameloop.current_turn]
+	Context1.tj = 0.1
+	Context1.prm_ups()
+	await Context1.http1.request_completed
+	Context1.prm_id = 472 #solar availability
+	Context1.yr = Gameloop.year_list[Gameloop.current_turn]
+	Context1.tj = 0.1
+	Context1.prm_ups()
