@@ -96,9 +96,6 @@ var plant_name_to_metric_id = {
 	"WIND_EMI": "259",
 	"WIND_LAND": "289",
 	"WIND_COST": "329",
-	"GEOTHERMAL_EMI": "260",
-	"GEOTHERMAL_LAND": "290",
-	"GEOTHERMAL_COST": "330",
 	"GAS_AVAIL": "334",
 	"NUCLEAR_AVAIL" : "332",
 	"RIVER_AVAIL": "333",
@@ -108,7 +105,6 @@ var plant_name_to_metric_id = {
 	"BIOGAS_AVAIL": "337",
 	"SOLAR_AVAIL": "338",
 	"WIND_AVAIL": "339",
-	"GEOTHERMAL_AVAIL": "334", #geo has no avail
 	"BIOGAS_EMI": "257",
 	"BIOGAS_LAND": "287",
 	"BIOGAS_COST": "327"
@@ -202,7 +198,7 @@ func _on_request_finished(_result, _response_code, _headers, _body):
 					cost_key:
 						production_cost = float(i["tj"]) / 10
 					avail_key:
-						availability.x = float(i["tj"]) / cnv_capacity
+						availability.x = float(i["tj"]) / capacity
 						availability.y = 1 - availability.x
 		
 		if is_nuclear():
