@@ -16,11 +16,13 @@ func _ready():
 
 func _on_game_started():
 	forest_ambiance.play()
-	dark_fantasy.stop()
+	$AnimationPlayer.play("fade_out")
+	#dark_fantasy.stop()
 
 
 func _on_game_ended():
 	dark_fantasy.play()
+	# animation player fade in
 	forest_ambiance.stop()
 
 # E. To remove
