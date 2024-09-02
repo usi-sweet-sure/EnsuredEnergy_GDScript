@@ -9,14 +9,14 @@ extends Node
 
 
 func _ready():
-	dark_fantasy.play()
+	#dark_fantasy.play()
 	Gameloop.game_started.connect(_on_game_started)
 	Gameloop.game_ended.connect(_on_game_ended)
 
 
 func _on_game_started():
 	forest_ambiance.play()
-	$AnimationPlayer.play("fade_out")
+	#$AnimationPlayer.play("fade_out")
 	
 
 func _on_game_ended():

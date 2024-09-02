@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dc3s5eeg1c0uv"]
+[gd_scene load_steps=25 format=3 uid="uid://dc3s5eeg1c0uv"]
 
 [ext_resource type="Script" path="res://src/gdscript/graphs/graphs_window.gd" id="1_vog1l"]
 [ext_resource type="Texture2D" uid="uid://ceuxpu5iujr05" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0001_Stats-metal-base.png" id="2_cyklw"]
@@ -8,16 +8,28 @@
 [ext_resource type="Texture2D" uid="uid://cjxrgcwrcynwf" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0035_Policies-press-(small)-button.png" id="6_hmhdq"]
 [ext_resource type="Texture2D" uid="uid://80u4mcjyisb7" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0033_Policies-hover-(small)-button.png" id="7_k8yxn"]
 [ext_resource type="Script" path="res://src/gdscript/graphs/environment_button.gd" id="8_an3q8"]
-[ext_resource type="Texture2D" uid="uid://ca5ev88u31iqa" path="res://assets/UI Elements/Icon-Solar.png" id="8_bfbea"]
 [ext_resource type="Script" path="res://src/gdscript/graphs/economy_button.gd" id="8_gyxb0"]
 [ext_resource type="Texture2D" uid="uid://dwys7y27kiabl" path="res://assets/UI Elements/Import-Switch-On.png" id="9_iw48x"]
 [ext_resource type="Script" path="res://src/gdscript/graphs/energy_button.gd" id="10_7tukf"]
 [ext_resource type="Texture2D" uid="uid://dhxkhfg2qxlgx" path="res://assets/UI Elements/Import-Switch-Off.png" id="10_t8yel"]
-[ext_resource type="Texture2D" uid="uid://bbnupxdtp78l5" path="res://assets/UI Elements/Icon-Wind.png" id="11_pjrco"]
+[ext_resource type="Texture2D" uid="uid://bsa55enbm5cwg" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0028_Icon-Solar.png" id="11_t7ckv"]
+[ext_resource type="Texture2D" uid="uid://cischtrjvknyl" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0027_Icon-Wind.png" id="14_how0c"]
 [ext_resource type="Texture2D" uid="uid://4s62sj1p8eja" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0019_Icon-red-normal-button.png" id="15_75x5m"]
 [ext_resource type="Texture2D" uid="uid://b86vm4agcnisw" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0020_Icon-red-press-button.png" id="16_5rpnb"]
 [ext_resource type="Texture2D" uid="uid://b066igcqidlny" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0018_Icon-red-hover-button.png" id="17_f7k5x"]
 [ext_resource type="Texture2D" uid="uid://b0c3ywqarx8b7" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0002_Icon-round-button-hole.png" id="18_0oju8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oeq43"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_68mq4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5rdm6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fj5ch"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ll5vj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ylbn1"]
 
 [node name="Graphs" type="CanvasLayer"]
 script = ExtResource("1_vog1l")
@@ -175,7 +187,7 @@ theme_override_constants/separation = 0
 
 [node name="Summer" type="TextureRect" parent="MainFrame/RightContainer/SeasonSwitch"]
 layout_mode = 2
-texture = ExtResource("8_bfbea")
+texture = ExtResource("11_t7ckv")
 stretch_mode = 3
 
 [node name="Switch" type="CheckButton" parent="MainFrame/RightContainer/SeasonSwitch"]
@@ -186,10 +198,16 @@ theme_override_icons/checked = ExtResource("9_iw48x")
 theme_override_icons/checked_disabled = ExtResource("9_iw48x")
 theme_override_icons/unchecked = ExtResource("10_t8yel")
 theme_override_icons/unchecked_disabled = ExtResource("10_t8yel")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_oeq43")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_68mq4")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5rdm6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_fj5ch")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_ll5vj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ylbn1")
 
 [node name="Winter" type="TextureRect" parent="MainFrame/RightContainer/SeasonSwitch"]
 layout_mode = 2
-texture = ExtResource("11_pjrco")
+texture = ExtResource("14_how0c")
 stretch_mode = 3
 
 [node name="CloseButton" type="TextureButton" parent="MainFrame"]
