@@ -18,7 +18,7 @@ func _on_game_ended():
 	for power_plant in get_tree().get_nodes_in_group("PP"):
 		power_plant._disable_with_no_effect()
 	for build_button in get_tree().get_nodes_in_group("BB"):
-		build_button.disabled = true
+		build_button._disable_for_end_of_game()
 	
 	
 

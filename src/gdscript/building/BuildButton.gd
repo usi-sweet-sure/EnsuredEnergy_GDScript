@@ -133,3 +133,9 @@ func _on_mouse_entered():
 
 func _on_building_info_pressed():
 	$BuildingInfo/Plate.visible = !$BuildingInfo/Plate.visible
+
+
+func _disable_for_end_of_game():
+	disabled = true
+	$Hammer.hide()
+	modulate = Color(0.8, 0.8, 0.8, 1)

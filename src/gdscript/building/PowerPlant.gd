@@ -523,7 +523,6 @@ func _disable_with_no_effect():
 	$BuildInfo/Switch.disabled = true
 	$BuildInfo/Switch/LEDOn.hide()
 	is_alive = false
-	modulate = Color(0.8, 0.8, 0.8, 1)
 
 func _on_locale_updated(_locale):
 	$NameRect/Name.text = tr(plant_name)

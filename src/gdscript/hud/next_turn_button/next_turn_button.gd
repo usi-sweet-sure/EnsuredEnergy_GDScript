@@ -25,3 +25,4 @@ func _on_energy_demand_updated(_value: float):
 
 func _on_game_ended():
 	disabled = true
+	hide()
