@@ -4,6 +4,7 @@ extends VSlider
 func _ready():
 	Gameloop.energy_demand_updated_winter.connect(_on_energy_demand_updated_winter)
 	Gameloop.energy_supply_updated_winter.connect(_on_energy_supply_updated_winter)
+	Gameloop.game_ended.connect(_on_game_ended)
 	
 	_on_energy_demand_updated_winter(Gameloop.demand_winter)
 
@@ -43,3 +44,7 @@ func _on_energy_demand_updated_winter(demand: float):
 	# the temporary version we have to send out
 	max_value = demand / 2
 	#step = round(demand / size.x)
+
+
+func _on_game_ended():
+	editable = false
