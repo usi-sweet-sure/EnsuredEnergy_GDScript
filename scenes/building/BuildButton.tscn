@@ -524,7 +524,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Water:skew")
+tracks/0/path = NodePath("Sprite/Water:skew")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -536,7 +536,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Water:modulate")
+tracks/1/path = NodePath("Sprite/Water:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -548,7 +548,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Water2:modulate")
+tracks/2/path = NodePath("Sprite/Water2:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -560,7 +560,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Water3:modulate")
+tracks/3/path = NodePath("Sprite/Water3:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -577,7 +577,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Water:skew")
+tracks/0/path = NodePath("Sprite/Water:skew")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -589,7 +589,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Water:modulate")
+tracks/1/path = NodePath("Sprite/Water:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -601,7 +601,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Water2:modulate")
+tracks/2/path = NodePath("Sprite/Water2:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -613,7 +613,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Water3:modulate")
+tracks/3/path = NodePath("Sprite/Water3:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -2163,31 +2163,33 @@ grow_vertical = 1
 [node name="Sprite" parent="PowerPlants/Hydro" index="1"]
 texture = ExtResource("10_ueb8a")
 
-[node name="NameRect" parent="PowerPlants/Hydro" index="3"]
-visible = false
-
-[node name="Water" type="Sprite2D" parent="PowerPlants/Hydro"]
+[node name="Water" type="Sprite2D" parent="PowerPlants/Hydro/Sprite" index="0"]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(-40.2271, 108.085)
+position = Vector2(-39.2271, 64.085)
 skew = -0.0349066
 texture = ExtResource("11_4yjee")
 
-[node name="Water2" type="Sprite2D" parent="PowerPlants/Hydro"]
+[node name="Water2" type="Sprite2D" parent="PowerPlants/Hydro/Sprite" index="1"]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(-40.2271, 108.085)
-skew = -0.00681517
+position = Vector2(-39.2271, 64.085)
+scale = Vector2(1, 1)
+skew = -0.0068152
 texture = ExtResource("8_gdfhs")
 
-[node name="Water3" type="Sprite2D" parent="PowerPlants/Hydro"]
+[node name="Water3" type="Sprite2D" parent="PowerPlants/Hydro/Sprite" index="2"]
 modulate = Color(1, 1, 1, 0.0784314)
-position = Vector2(-40.2271, 108.085)
-skew = -0.00681517
+position = Vector2(-39.2271, 64.085)
+scale = Vector2(1, 1)
+skew = -0.0068152
 texture = ExtResource("10_r5m2o")
 
-[node name="Water4" type="Sprite2D" parent="PowerPlants/Hydro"]
+[node name="Water4" type="Sprite2D" parent="PowerPlants/Hydro/Sprite" index="3"]
 modulate = Color(1, 1, 1, 0.784314)
-position = Vector2(-34.224, 104.091)
+position = Vector2(-33.224, 60.091)
 texture = ExtResource("11_4yjee")
+
+[node name="NameRect" parent="PowerPlants/Hydro" index="3"]
+visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PowerPlants/Hydro"]
 libraries = {
@@ -2776,10 +2778,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -286.0
-offset_top = -132.5
-offset_right = -126.0
-offset_bottom = -43.5
+offset_left = 57.0
+offset_top = 68.0
+offset_right = 217.0
+offset_bottom = 157.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)

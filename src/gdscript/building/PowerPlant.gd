@@ -223,6 +223,7 @@ func _on_request_finished(_result, _response_code, _headers, _body):
 		Context1.http1.request_completed.disconnect(_on_request_finished)
 		Gameloop._update_buildings_impact()
 
+
 #func _on_request_completed(_result, _response_code, _headers, _body):
 	#$BuildInfo/EnergyContainer/Multiplier/Inc.disabled = false
 	#$BuildInfo/EnergyContainer/Multiplier/Dec.disabled = false
@@ -310,17 +311,20 @@ func _check_life_span():
 	if life_span < Gameloop.current_turn:
 		_disable()
 		
+		
 # Make the pp unusable
 func _disable():
 	var switch: CheckButton = $BuildInfo/Switch
 	_on_switch_toggled(false)
 	switch.disabled = true
 	
+	
 # Make the pp usable
 # Do not activate it, it costs money and the player should manage this
 func _enable():
 	$BuildInfo/Switch.disabled = false
 	_on_switch_toggled(true)
+	
 
 func _on_switch_toggled(toggled_on):
 	is_alive = toggled_on
@@ -333,6 +337,11 @@ func _on_switch_toggled(toggled_on):
 		#add_to_group("PP")
 		
 		var plant_id = plant_name_to_ups_id[plant_name]
+		
+		var effect_sprites = get_node("Sprite").get_children()
+		
+		for effect in effect_sprites:
+			effect.show()
 				
 		Context1.prm_id = plant_id
 		Context1.yr = Gameloop.year_list[Gameloop.current_turn]
@@ -354,6 +363,12 @@ func _on_switch_toggled(toggled_on):
 		summer_energy.text = "0"
 		winter_energy.text = "0"
 		#remove_from_group("PP")
+		
+		var effect_sprites = get_node("Sprite").get_children()
+		
+		for effect in effect_sprites:
+			effect.hide()
+		
 		
 		var plant_id = plant_name_to_ups_id[plant_name]
 				
@@ -524,6 +539,7 @@ func _disable_with_no_effect():
 	$BuildInfo/Switch/LEDOn.hide()
 	is_alive = false
 
+
 func _on_locale_updated(_locale):
 	$NameRect/Name.text = tr(plant_name)
 	$BuildInfo/Name.text = tr(plant_name)
@@ -538,7 +554,6 @@ func _on_multinc_mouse_entered():
 	$BuildInfo/WinterMultSticker.show()
 	$BuildInfo/SummerMultSticker.show()
 	
-
 
 func _on_multinc_mouse_exited():
 	$BuildInfo/EnergyContainer/Multiplier/PriceMultRedSticker.hide()

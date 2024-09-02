@@ -8,7 +8,6 @@ var turn_left_to_build
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
 	# for each last button in powerplants in buildmenu, connect to pp_pressed
 	for pp in build_menu_plants:
 		pp.get_child(-1).pressed.connect(_on_pp_pressed.bind(pp))
@@ -78,10 +77,12 @@ func _build_plant(plant, can_cancel := true):
 	#Context1.prm_ups()
 	Gameloop._update_buildings_impact()
 
+
 func _on_close_button_pressed():
 	$BuildMenu/AnimationPlayer.play_backwards("SlideUp")
 	await $BuildMenu/AnimationPlayer.animation_finished
 	$BuildMenu.hide()
+	
 	
 # This is called for a pp that was actually built, not one that takes more than one turn to build,
 # see _on_building_cancel_pressed() below for that
@@ -107,13 +108,14 @@ func _on_pp_delete(pp):
 	#Context1.tj = -pp.cnv_capacity
 	#Context1.prm_ups()
 	
-
 	Gameloop._update_buildings_impact()
+
 
 func _on_pp_mouse_entered(pp):
 	pp.build_info.show()
 func _on_pp_mouse_exited(pp):
 	pp.build_info.hide()
+
 
 # This is called for a building still in construction
 func _on_building_cancel_pressed():
