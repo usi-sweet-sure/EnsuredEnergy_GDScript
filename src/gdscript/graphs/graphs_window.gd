@@ -12,6 +12,8 @@ extends CanvasLayer
 
 @export var draw_axes_outer_lines := false
 
+signal context_changed
+
 var x_axis_min_value: int
 var x_axis_max_value: int
 var y_axis_min_value: int
@@ -36,6 +38,7 @@ func _ready():
 func _set_graph_context(context_name: String):
 	context = context_name
 	_reset_graph()
+	context_changed.emit(context)
 	
 	match context_name:
 		"economy":
@@ -63,21 +66,20 @@ func _set_graph_context(context_name: String):
 			y_axis_min_value = 0
 			y_axis_max_value = 2000
 			_draw_base_graph(Gameloop.years_in_a_turn, 200)
-			_add_data_set_to_graph("winter_energy_supply", Color(0.431, 0.961, 0.957))
-			_add_data_set_to_graph("winter_energy_import", Color(0.988, 0.973, 0.855))
-			_add_data_set_to_graph("summer_energy_supply", Color(0.929, 0.875, 0.416))
-
+			
+			if season == "summer":
+				_add_data_set_to_graph("summer_demand", Color(1, 0.702, 0.255, 1))
+				_add_data_set_to_graph("summer_energy_supply", Color(0.929, 0.875, 0.416))
+			else:
+				_add_data_set_to_graph("winter_demand", Color(0, 0.569, 1, 1))
+				_add_data_set_to_graph("winter_energy_supply", Color(0.431, 0.961, 0.957))
+				_add_data_set_to_graph("winter_energy_import", Color(0.988, 0.973, 0.855))
 		"none":
 			x_axis_min_value = Gameloop.start_year
 			x_axis_max_value = Gameloop.start_year + (Gameloop.total_number_of_turns * Gameloop.years_in_a_turn)
 			y_axis_min_value = 0
 			y_axis_max_value = 2000
 			_draw_base_graph(Gameloop.years_in_a_turn, 200)
-			
-	if season == "winter":
-		_on_season_switch_toggled(false)
-	elif season == "summer":
-		_on_season_switch_toggled(true)
 
 
 # This is what you want to use in a normal use case when adding data to the graph.
@@ -241,17 +243,13 @@ func _on_toggle_graphs():
 
 # Season demands aren't linked to a contest, since we want to display them as will
 # with the switch
-func _on_season_switch_toggled(toggled_on):
+func _on_season_switch_toggled(toggled_on):	
 	if toggled_on:
 		season = "summer"
-		
-		_remove_dataset_from_graph("winter_demand")
-		_add_data_set_to_graph("summer_demand", Color(1, 0.702, 0.255, 1))
 	else:
 		season = "winter"
-	
-		_remove_dataset_from_graph("summer_demand")
-		_add_data_set_to_graph("winter_demand", Color(0, 0.569, 1, 1))
+		
+	_set_graph_context("energy")
 		
 func _reset_graph():
 	for n in graph.get_children():

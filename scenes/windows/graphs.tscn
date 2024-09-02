@@ -236,18 +236,12 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 18
 text = "x"
 
+[connection signal="context_changed" from="." to="MainFrame/RightContainer/FilterButtons/Environment" method="_on_graphs_context_changed"]
+[connection signal="context_changed" from="." to="MainFrame/RightContainer/FilterButtons/Economy" method="_on_graphs_context_changed"]
+[connection signal="context_changed" from="." to="MainFrame/RightContainer/FilterButtons/Energy" method="_on_graphs_context_changed"]
 [connection signal="pressed" from="Backdrop/Close" to="Backdrop/Close" method="_on_pressed"]
 [connection signal="pressed" from="MainFrame/RightContainer/FilterButtons/Environment" to="." method="_on_environment_button_pressed"]
-[connection signal="pressed" from="MainFrame/RightContainer/FilterButtons/Environment" to="MainFrame/RightContainer/FilterButtons/Environment" method="_on_pressed"]
-[connection signal="pressed" from="MainFrame/RightContainer/FilterButtons/Environment" to="MainFrame/RightContainer/FilterButtons/Economy" method="_on_environment_button_pressed"]
-[connection signal="pressed" from="MainFrame/RightContainer/FilterButtons/Environment" to="MainFrame/RightContainer/FilterButtons/Energy" method="_on_environment_button_pressed"]
 [connection signal="pressed" from="MainFrame/RightContainer/FilterButtons/Economy" to="." method="_on_economy_button_pressed"]
-[connection signal="pressed" from="MainFrame/RightContainer/FilterButtons/Economy" to="MainFrame/RightContainer/FilterButtons/Environment" method="_on_economy_button_pressed"]
-[connection signal="pressed" from="MainFrame/RightContainer/FilterButtons/Economy" to="MainFrame/RightContainer/FilterButtons/Economy" method="_on_pressed"]
-[connection signal="pressed" from="MainFrame/RightContainer/FilterButtons/Economy" to="MainFrame/RightContainer/FilterButtons/Energy" method="_on_economy_button_pressed"]
 [connection signal="pressed" from="MainFrame/RightContainer/FilterButtons/Energy" to="." method="_on_energy_button_pressed"]
-[connection signal="pressed" from="MainFrame/RightContainer/FilterButtons/Energy" to="MainFrame/RightContainer/FilterButtons/Environment" method="_on_energy_button_pressed"]
-[connection signal="pressed" from="MainFrame/RightContainer/FilterButtons/Energy" to="MainFrame/RightContainer/FilterButtons/Economy" method="_on_energy_button_pressed"]
-[connection signal="pressed" from="MainFrame/RightContainer/FilterButtons/Energy" to="MainFrame/RightContainer/FilterButtons/Energy" method="_on_pressed"]
 [connection signal="toggled" from="MainFrame/RightContainer/SeasonSwitch/Switch" to="." method="_on_season_switch_toggled"]
 [connection signal="pressed" from="MainFrame/CloseButton" to="MainFrame/CloseButton" method="_on_pressed"]
