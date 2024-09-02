@@ -16,7 +16,7 @@ func _on_game_ended():
 	metrics_leaderboard_updated.emit(Context1.leaderboard_json)
 	
 	for power_plant in get_tree().get_nodes_in_group("PP"):
-		power_plant.multiplier.hide()
+		power_plant._disable_with_no_effect()
 	for build_button in get_tree().get_nodes_in_group("BB"):
 		build_button.disabled = true
 	
