@@ -14,6 +14,7 @@ var http1
 var leaderboard = false
 var leaderboard_json
 
+
 #globals
 var res_id: int:
 	set(new_value):
@@ -113,7 +114,7 @@ func _http1_completed(_result, _response_code, _headers, body):
 		
 		if ctx1 == null:
 			context_error.emit()
-		else:
+		elif Gameloop.current_turn == 1:
 			res_id = int(ctx1[0]["res_id"])
 			get_model_demand()
 					
