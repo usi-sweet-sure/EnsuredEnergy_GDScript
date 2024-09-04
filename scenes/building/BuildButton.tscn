@@ -2072,7 +2072,9 @@ offset = Vector2(18, -15)
 visible = false
 position = Vector2(369, 78)
 plant_name = "GAS"
+max_upgrade = 0
 build_cost = 32
+mult_factor = 0.1
 
 [node name="PreviewInfo" parent="PowerPlants/Gas" index="0"]
 visible = false
@@ -2144,6 +2146,7 @@ texture = ExtResource("6_3vcfd")
 visible = false
 position = Vector2(370, 80)
 plant_name = "HYDRO"
+max_upgrade = 5
 build_time = 6
 
 [node name="PreviewInfo" parent="PowerPlants/Hydro" index="0"]
@@ -2172,14 +2175,12 @@ texture = ExtResource("11_4yjee")
 [node name="Water2" type="Sprite2D" parent="PowerPlants/Hydro/Sprite" index="1"]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(-39.2271, 64.085)
-scale = Vector2(1, 1)
 skew = -0.0068152
 texture = ExtResource("8_gdfhs")
 
 [node name="Water3" type="Sprite2D" parent="PowerPlants/Hydro/Sprite" index="2"]
 modulate = Color(1, 1, 1, 0.0784314)
 position = Vector2(-39.2271, 64.085)
-scale = Vector2(1, 1)
 skew = -0.0068152
 texture = ExtResource("10_r5m2o")
 
@@ -2255,7 +2256,9 @@ autoplay = "sun"
 visible = false
 position = Vector2(431, 151)
 plant_name = "BIOGAS"
+max_upgrade = 5
 build_cost = 24
+mult_factor = 0.1
 
 [node name="PreviewInfo" parent="PowerPlants/Tree" index="0"]
 visible = false
@@ -2285,6 +2288,7 @@ plant_name = "WIND"
 max_upgrade = 2
 build_time = 2
 build_cost = 2
+mult_factor = 0.25
 
 [node name="PreviewInfo" parent="PowerPlants/Wind" index="0"]
 visible = false
@@ -2398,7 +2402,9 @@ autoplay = "spin"
 visible = false
 position = Vector2(431, 151)
 plant_name = "WASTE"
+max_upgrade = 5
 build_cost = 125
+mult_factor = 0.1
 
 [node name="PreviewInfo" parent="PowerPlants/Waste" index="0"]
 visible = false
@@ -2461,6 +2467,7 @@ autoplay = "Smoke"
 visible = false
 position = Vector2(431, 151)
 plant_name = "BIOMASS"
+max_upgrade = 5
 build_cost = 37
 
 [node name="PreviewInfo" parent="PowerPlants/Biomass" index="0"]
@@ -2519,6 +2526,7 @@ autoplay = "Smoke"
 visible = false
 position = Vector2(431, 151)
 plant_name = "RIVER"
+max_upgrade = 5
 build_time = 3
 
 [node name="PreviewInfo" parent="PowerPlants/River" index="0"]
@@ -2572,6 +2580,7 @@ autoplay = "water"
 visible = false
 position = Vector2(431, 151)
 plant_name = "HYDRO"
+max_upgrade = 5
 
 [node name="PreviewInfo" parent="PowerPlants/Pump" index="0"]
 visible = false

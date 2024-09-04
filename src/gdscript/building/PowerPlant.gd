@@ -24,6 +24,7 @@ var base_capacity
 var base_pollution
 var base_land_use
 var base_production_cost
+var upgrade_per_turn = 0
 
 @onready var delete_button = $Delete
 @onready var build_info = $BuildInfo
@@ -54,7 +55,7 @@ var plant_name_to_model = {
 	"BIOMASS": "193",
 	"SOLAR": "168",
 	"WIND": "169",
-	"GEOTHERMAL": "246",
+	"CARBON": "774",
 	"BIOGAS" : "173"
 }
 
@@ -67,7 +68,7 @@ var plant_name_to_ups_id = {
 	"BIOMASS": "192",
 	"SOLAR": "170",
 	"WIND": "171",
-	"GEOTHERMAL": "246",
+	"CARBON": "774",
 	"BIOGAS": "175"
 }
 
@@ -107,7 +108,9 @@ var plant_name_to_metric_id = {
 	"WIND_AVAIL": "339",
 	"BIOGAS_EMI": "257",
 	"BIOGAS_LAND": "287",
-	"BIOGAS_COST": "327"
+	"BIOGAS_COST": "327",
+	"CARBON_COST": "526",
+	"CARBON_EMI": "525",
 }
 
 # Called when the node enters the scene tree for the first time.
@@ -131,7 +134,7 @@ func _update_info():
 	
 	# updates metrics
 	$BuildInfo/ColorRect/ContainerN/Prod.text = "-" + str(production_cost).pad_decimals(0) + "M CHF"
-	$BuildInfo/ColorRect/ContainerN/Poll.text = str(pollution).pad_decimals(2) + "t CO2"
+	$BuildInfo/ColorRect/ContainerN/Poll.text = str(pollution).pad_decimals(2) + "M CO2"
 	$BuildInfo/ColorRect/ContainerN/Land.text = str(land_use).pad_decimals(2) + " ha"
 	
 	$BuildInfo/ColorRect/LifeSpan.text = str(life_span - Gameloop.current_turn + 1)
@@ -176,7 +179,7 @@ func _update_info():
 # add the model numbers to the plant
 func _on_request_finished(_result, _response_code, _headers, _body):
 	# E. Had to add this after geothermal removal, for the game to not crash
-	if plant_name != "geothermal":
+	if plant_name != "CARBON":
 		var model_key = plant_name_to_model[plant_name]
 		var plant_id = plant_name_to_ups_id[plant_name]
 		var poll_key = plant_name_to_metric_id[plant_name + "_EMI"]
@@ -219,9 +222,27 @@ func _on_request_finished(_result, _response_code, _headers, _body):
 		base_land_use = land_use
 		base_production_cost = production_cost
 		
-		_update_info()
-		Context1.http1.request_completed.disconnect(_on_request_finished)
-		Gameloop._update_buildings_impact()
+	else:
+		var plant_id = plant_name_to_ups_id[plant_name]
+		var poll_key = plant_name_to_metric_id[plant_name + "_EMI"]
+		var cost_key = plant_name_to_metric_id[plant_name + "_COST"]
+		
+		if Context1.ctx1 != null:
+			for i in Context1.ctx1:
+				match i["prm_id"]:
+					plant_id:
+						cnv_capacity = float(i["tj"])
+					poll_key:
+						pollution = float(i["tj"])
+					cost_key:
+						production_cost = float(i["tj"]) / 10
+						
+		base_pollution = pollution
+		base_production_cost = production_cost
+		
+	_update_info()
+	Context1.http1.request_completed.disconnect(_on_request_finished)
+	Gameloop._update_buildings_impact()
 
 
 #func _on_request_completed(_result, _response_code, _headers, _body):
@@ -243,14 +264,38 @@ func _on_mult_inc_pressed():
 			$AP.play("Money-")
 			upgrade += 1
 			
-			var plant_id = plant_name_to_ups_id[plant_name]
-			var value = (cnv_capacity * mult_factor * upgrade) #S. !! Check rounding of the value in model
-			capacity = base_capacity + (base_capacity * mult_factor * upgrade)
-			pollution = base_pollution + (base_pollution * mult_factor * upgrade)
-			land_use = base_land_use + (base_land_use * mult_factor * upgrade)
-			production_cost = base_production_cost + (base_production_cost * mult_factor * upgrade)
-			
-			Gameloop.ups_list[plant_id] += value
+			if plant_name != "CARBON":
+				var plant_id = plant_name_to_ups_id[plant_name]
+				var value = (cnv_capacity * mult_factor * upgrade) #S. !! Check rounding of the value in model
+				capacity = base_capacity + (base_capacity * mult_factor * upgrade)
+				pollution = base_pollution + (base_pollution * mult_factor * upgrade)
+				land_use = base_land_use + (base_land_use * mult_factor * upgrade)
+				production_cost = base_production_cost + (base_production_cost * mult_factor * upgrade)
+				
+				Gameloop.ups_list[plant_id] += value
+				
+			else:
+				var plant_id = plant_name_to_ups_id[plant_name]
+				upgrade_per_turn += 1
+				var value = 0.5 * upgrade_per_turn
+				Context1.prm_id = plant_id
+				Context1.yr = Gameloop.year_list[Gameloop.current_turn]
+				Context1.tj = value
+				Context1.prm_ups()
+				
+				await Context1.http1.request_completed
+				
+				var poll_key = plant_name_to_metric_id[plant_name + "_EMI"]
+				var cost_key = plant_name_to_metric_id[plant_name + "_COST"]
+		
+				if Context1.ctx1 != null:
+					for i in Context1.ctx1:
+						match i["prm_id"]:
+							poll_key:
+								pollution = float(i["tj"])
+							cost_key:
+								production_cost = float(i["tj"]) / 10
+				
 			
 			_update_info()
 			Gameloop._update_buildings_impact()
@@ -391,6 +436,7 @@ func _on_switch_toggled(toggled_on):
 func _on_next_turn():
 	_check_life_span()
 	_update_info()
+	upgrade_per_turn = 0
 	
 
 func _on_available_money_updated(available_money):
@@ -398,81 +444,83 @@ func _on_available_money_updated(available_money):
 		$NoMoneyOverlay.visible = not Gameloop.can_spend_the_money(build_cost + production_cost)
 	
 func _on_upgrade_button_mouse_entered():
-	var tween = get_tree().create_tween()
-	tween.tween_property(metrics_container, "position", 
-			Vector2(metrics_container_original_position.x - 62,
-			metrics_container_original_position.y), 0.1)
-	
-	for element in modifiers_preview_elements:
-		var node = modifiers_preview_elements[element]
-		node.show()
-		   
-		match element:
-			"winter_sticker":
-				node.get_children()[0].text = "+ " + str(base_capacity * mult_factor).pad_decimals(2)
-			"summer_sticker":
-				node.get_children()[0].text = "+ " + str(base_capacity * mult_factor).pad_decimals(2)
-			"red_cost_sticker":
-				node.get_children()[0].text = "- " + str(upgrade_cost) + " CHF"
-			"green_cost_sticker":
-				node.hide()
-			"prod_downgrade":
-				node.text = "+ " + str(production_cost * mult_factor).pad_decimals(2)
-			"prod_upgrade":
-				node.hide()
-			"poll_upgrade":
-				node.hide()
-			"poll_downgrade":
-				if(str(pollution * mult_factor).pad_decimals(2) != "0.00"):
-					node.text = "+ " + str(pollution * mult_factor).pad_decimals(2)
-				else:
+	if plant_name != "CARBON":
+		var tween = get_tree().create_tween()
+		tween.tween_property(metrics_container, "position", 
+				Vector2(metrics_container_original_position.x - 62,
+				metrics_container_original_position.y), 0.1)
+		
+		for element in modifiers_preview_elements:
+			var node = modifiers_preview_elements[element]
+			node.show()
+			   
+			match element:
+				"winter_sticker":
+					node.get_children()[0].text = "+ " + str(base_capacity * mult_factor).pad_decimals(2)
+				"summer_sticker":
+					node.get_children()[0].text = "+ " + str(base_capacity * mult_factor).pad_decimals(2)
+				"red_cost_sticker":
+					node.get_children()[0].text = "- " + str(upgrade_cost) + " CHF"
+				"green_cost_sticker":
 					node.hide()
-			"land_upgrade":
-				node.hide()
-			"land_downgrade":
-				if(str(land_use * mult_factor).pad_decimals(2) != "0.00"):
-					node.text = "+ " + str(land_use * mult_factor).pad_decimals(2)
-				else:
+				"prod_downgrade":
+					node.text = "+ " + str(production_cost * mult_factor).pad_decimals(2)
+				"prod_upgrade":
 					node.hide()
+				"poll_upgrade":
+					node.hide()
+				"poll_downgrade":
+					if(str(pollution * mult_factor).pad_decimals(2) != "0.00"):
+						node.text = "+ " + str(pollution * mult_factor).pad_decimals(2)
+					else:
+						node.hide()
+				"land_upgrade":
+					node.hide()
+				"land_downgrade":
+					if(str(land_use * mult_factor).pad_decimals(2) != "0.00"):
+						node.text = "+ " + str(land_use * mult_factor).pad_decimals(2)
+					else:
+						node.hide()
 
 
 func _on_downgrade_button_mouse_entered():
-	var tween = get_tree().create_tween()
-	tween.tween_property(metrics_container, "position", 
-			Vector2(metrics_container_original_position.x - 62,
-			metrics_container_original_position.y), 0.1)
+	if plant_name != "CARBON":
+		var tween = get_tree().create_tween()
+		tween.tween_property(metrics_container, "position", 
+				Vector2(metrics_container_original_position.x - 62,
+				metrics_container_original_position.y), 0.1)
+				
+		for element in modifiers_preview_elements:
+			var node = modifiers_preview_elements[element]
+			node.show()
 			
-	for element in modifiers_preview_elements:
-		var node = modifiers_preview_elements[element]
-		node.show()
-		
-		match element:
-			"winter_sticker":
-				node.get_children()[0] = "- " + str(base_capacity * mult_factor).pad_decimals(2)
-			"summer_sticker":
-				node.get_children()[0] = "- " + str(base_capacity * mult_factor).pad_decimals(2)
-			"red_cost_sticker":
-				node.hide()
-			"green_cost_sticker":
-				node.get_children()[0].text = "+ " + str(upgrade_cost) + " CHF"
-			"prod_downgrade":
-				node.hide()
-			"prod_upgrade":
-				node.text = "- " + str(production_cost * mult_factor).pad_decimals(2)
-			"poll_upgrade":
-				if(str(pollution * mult_factor).pad_decimals(2) != "0.00"):
-					node.text = "- " + str(pollution * mult_factor).pad_decimals(2)
-				else:
+			match element:
+				"winter_sticker":
+					node.get_children()[0] = "- " + str(base_capacity * mult_factor).pad_decimals(2)
+				"summer_sticker":
+					node.get_children()[0] = "- " + str(base_capacity * mult_factor).pad_decimals(2)
+				"red_cost_sticker":
 					node.hide()
-			"poll_downgrade":
-				node.hide()
-			"land_upgrade":
-				if(str(land_use * mult_factor).pad_decimals(2) != "0.00"):
-					node.text = "- " + str(land_use * mult_factor).pad_decimals(2)
-				else:
+				"green_cost_sticker":
+					node.get_children()[0].text = "+ " + str(upgrade_cost) + " CHF"
+				"prod_downgrade":
 					node.hide()
-			"land_downgrade":
-				node.hide()
+				"prod_upgrade":
+					node.text = "- " + str(production_cost * mult_factor).pad_decimals(2)
+				"poll_upgrade":
+					if(str(pollution * mult_factor).pad_decimals(2) != "0.00"):
+						node.text = "- " + str(pollution * mult_factor).pad_decimals(2)
+					else:
+						node.hide()
+				"poll_downgrade":
+					node.hide()
+				"land_upgrade":
+					if(str(land_use * mult_factor).pad_decimals(2) != "0.00"):
+						node.text = "- " + str(land_use * mult_factor).pad_decimals(2)
+					else:
+						node.hide()
+				"land_downgrade":
+					node.hide()
 
 
 func _on_upgrade_button_mouse_exited():

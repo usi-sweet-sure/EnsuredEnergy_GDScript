@@ -21,11 +21,13 @@ func _ready():
 	match season:
 		Season.WINTER:
 			Gameloop.energy_supply_updated_winter.connect(_on_energy_supply_updated)
-			Gameloop.imported_energy_amount_updated.connect(_on_imported_energy_amount_updated)	
+			Gameloop.imported_energy_amount_updated.connect(_on_imported_energy_amount_updated)
+			Gameloop.energy_demand_updated_winter.connect(_on_energy_demand_updated)
 
 			_on_energy_supply_updated(Gameloop.supply_winter)
 		Season.SUMMER:
 			Gameloop.energy_supply_updated_summer.connect(_on_energy_supply_updated)
+			Gameloop.energy_demand_updated_summer.connect(_on_energy_demand_updated)
 			
 			_on_energy_supply_updated(Gameloop.supply_summer)
 
@@ -37,7 +39,7 @@ func _process(delta):
 	# between winter and summer.
 	# It's set once at the beginning and must not change again
 	if not max_value_set and Gameloop.demand_winter != 0.0 and Gameloop.demand_summer != 0.0:
-		max_value = max(Gameloop.demand_winter * 1.25, Gameloop.demand_summer * 1.25)
+		max_value = max(Gameloop.demand_winter * 1.35, Gameloop.demand_summer * 1.35)
 		min_value = 700
 		max_value_set = true
 		
@@ -45,11 +47,19 @@ func _process(delta):
 		match season:
 			Season.WINTER:
 				demand_line.position.x = remap(Gameloop.demand_winter, min_value, max_value, 0, bar_height)
+				print(demand_line.position.x)
 				#demand_line.position.x = bar_height / (max_value - min_value) * Gameloop.demand_winter
 			Season.SUMMER:
 				demand_line.position.x = remap(Gameloop.demand_summer, min_value, max_value, 0, bar_height)
 				#demand_line.position.x = bar_height / (max_value - min_value) * Gameloop.demand_summer
 
+func _on_energy_demand_updated(demand: float):
+	var bar_height = size.x
+	match season:
+			Season.WINTER:
+				demand_line.position.x = remap(Gameloop.demand_winter, min_value, max_value, 0, bar_height)
+			Season.SUMMER:
+				demand_line.position.x = remap(Gameloop.demand_summer, min_value, max_value, 0, bar_height)
 
 # Updates the progress bar
 func _on_energy_supply_updated(supply: float):

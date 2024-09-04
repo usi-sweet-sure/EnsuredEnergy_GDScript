@@ -1,4 +1,4 @@
-[gd_scene load_steps=127 format=3 uid="uid://g58p7rxvcdik"]
+[gd_scene load_steps=128 format=3 uid="uid://g58p7rxvcdik"]
 
 [ext_resource type="PackedScene" uid="uid://ba56oxmvcxpos" path="res://scenes/world.tscn" id="1_prp6q"]
 [ext_resource type="PackedScene" uid="uid://bs48lirfn2fp2" path="res://scenes/hud/ui.tscn" id="2_d60f5"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://885lty3v1qbq" path="res://scenes/windows/shock.tscn" id="12_vvejj"]
 [ext_resource type="Texture2D" uid="uid://py2jqgbip8j4" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0022_Wind-3.png" id="13_n0wou"]
 [ext_resource type="Texture2D" uid="uid://dcpr8ukl4bkqc" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0006_Water-Pump-1.png" id="13_udqyc"]
+[ext_resource type="Texture2D" uid="uid://cbqebssavvctr" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0013_Geothermal.png" id="14_8dcbt"]
 [ext_resource type="Texture2D" uid="uid://hwov71epfekc" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0024_River-Slot.png" id="14_eqh1c"]
 [ext_resource type="Texture2D" uid="uid://dn4l161c4rmxe" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0026_Solar-2.png" id="15_rfjt7"]
 [ext_resource type="Texture2D" uid="uid://qq50ou5x8jbb" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0003_Water-1.png" id="15_terxt"]
@@ -2046,12 +2047,6 @@ offset_top = 72.0
 offset_right = 758.0
 offset_bottom = 472.0
 
-[node name="Money" parent="World/BuildButton" index="4"]
-offset_left = 57.0
-offset_top = 68.0
-offset_right = 217.0
-offset_bottom = 157.0
-
 [node name="BuildButton2" parent="World" index="7"]
 offset_left = 624.0
 offset_right = 1310.0
@@ -2298,6 +2293,8 @@ visible = false
 
 [node name="Biogas" parent="World" index="16" groups=["PP"]]
 plant_name = "BIOGAS"
+max_upgrade = 5
+mult_factor = 0.1
 
 [node name="PreviewInfo" parent="World/Biogas" index="0"]
 visible = false
@@ -2311,6 +2308,8 @@ visible = false
 [node name="Waste" parent="World" index="17" groups=["PP"]]
 position = Vector2(-16, 1056)
 plant_name = "WASTE"
+max_upgrade = 5
+mult_factor = 0.1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="World/Waste" index="0"]
 root_node = NodePath("../Sprite")
@@ -2343,9 +2342,28 @@ texture = ExtResource("9_2lgj4")
 [node name="NameRect" parent="World/Waste" index="4"]
 visible = false
 
-[node name="Biomass" parent="World" index="19" groups=["PP"]]
+[node name="CarbonSeq" parent="World" index="18"]
+max_upgrade = 10
+
+[node name="PreviewInfo" parent="World/CarbonSeq" index="0"]
+visible = false
+
+[node name="Sprite" parent="World/CarbonSeq" index="1"]
+texture = ExtResource("14_8dcbt")
+
+[node name="Land" parent="World/CarbonSeq/BuildInfo/ColorRect/ContainerL" index="2"]
+visible = false
+
+[node name="Land" parent="World/CarbonSeq/BuildInfo/ColorRect/ContainerN" index="2"]
+visible = false
+
+[node name="NameRect" parent="World/CarbonSeq" index="3"]
+visible = false
+
+[node name="Biomass" parent="World" index="20" groups=["PP"]]
 position = Vector2(-784, 1288)
 plant_name = "BIOMASS"
+max_upgrade = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="World/Biomass" index="0"]
 root_node = NodePath("../Sprite")
@@ -2383,10 +2401,11 @@ texture = ExtResource("8_jh2tr")
 [node name="NameRect" parent="World/Biomass" index="4"]
 visible = false
 
-[node name="Wind" parent="World" index="20" groups=["PP"]]
+[node name="Wind" parent="World" index="21" groups=["PP"]]
 position = Vector2(-556, 553)
 plant_name = "WIND"
 max_upgrade = 2
+mult_factor = 0.25
 
 [node name="PreviewInfo" parent="World/Wind" index="0"]
 visible = false
@@ -2436,7 +2455,7 @@ libraries = {
 }
 autoplay = "Wind"
 
-[node name="Solar" parent="World" index="22" groups=["PP"]]
+[node name="Solar" parent="World" index="23" groups=["PP"]]
 position = Vector2(3456, 1224)
 plant_name = "SOLAR"
 max_upgrade = 0
@@ -2480,10 +2499,10 @@ autoplay = "Sun"
 position = Vector2(308, 205)
 
 [node name="Money" parent="World/BuildButton9" index="4"]
-offset_left = 57.0
-offset_top = 68.0
-offset_right = 217.0
-offset_bottom = 157.0
+offset_left = -279.0
+offset_top = -124.0
+offset_right = -119.0
+offset_bottom = -35.0
 
 [node name="Solar" parent="World/BuildButton9/BuildMenu/Container" index="0"]
 visible = false
@@ -2509,9 +2528,10 @@ visible = false
 [node name="River" parent="World/BuildButton9/BuildMenu/Container" index="7"]
 visible = true
 
-[node name="Hydro" parent="World" index="26" groups=["PP"]]
+[node name="Hydro" parent="World" index="27" groups=["PP"]]
 position = Vector2(360, 1982)
 plant_name = "HYDRO"
+max_upgrade = 5
 
 [node name="PreviewInfo" parent="World/Hydro" index="0"]
 visible = false
@@ -2581,8 +2601,9 @@ libraries = {
 }
 autoplay = "Water"
 
-[node name="Pump" parent="World" index="29" groups=["PP"]]
+[node name="Pump" parent="World" index="30" groups=["PP"]]
 plant_name = "HYDRO"
+max_upgrade = 5
 
 [node name="PreviewInfo" parent="World/Pump" index="0"]
 visible = false
@@ -2632,9 +2653,10 @@ libraries = {
 }
 autoplay = "Water"
 
-[node name="River" parent="World" index="30" groups=["PP"]]
+[node name="River" parent="World" index="31" groups=["PP"]]
 availability = Vector2(0.6, 0.4)
 plant_name = "RIVER"
+max_upgrade = 5
 
 [node name="PreviewInfo" parent="World/River" index="0"]
 visible = false
@@ -2696,10 +2718,11 @@ libraries = {
 }
 autoplay = "Water"
 
-[node name="River2" parent="World" index="31" groups=["PP"]]
+[node name="River2" parent="World" index="32" groups=["PP"]]
 scale = Vector2(0.8, 0.8)
 availability = Vector2(0.6, 0.4)
 plant_name = "RIVER"
+max_upgrade = 5
 
 [node name="PreviewInfo" parent="World/River2" index="0"]
 visible = false
@@ -2740,7 +2763,7 @@ position = Vector2(70.4502, 104.5)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("33_1wxp6")
 
-[node name="Gas" parent="World" index="38" groups=["PP"]]
+[node name="Gas" parent="World" index="39" groups=["PP"]]
 plant_name = "GAS"
 max_upgrade = 0
 
@@ -3524,6 +3547,7 @@ text = "Close"
 [editable path="World/Nuclear"]
 [editable path="World/Biogas"]
 [editable path="World/Waste"]
+[editable path="World/CarbonSeq"]
 [editable path="World/Biomass"]
 [editable path="World/Wind"]
 [editable path="World/Solar"]
