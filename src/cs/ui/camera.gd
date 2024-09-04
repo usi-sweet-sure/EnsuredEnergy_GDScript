@@ -55,8 +55,8 @@ func _unhandled_input(event):
 		zoom = target_zoom
 		scale_plants(target_zoom)
 	
-	if event is InputEventPanGesture:
-		var target_zoom = clamp(zoom + (event.delta * PAN_ZOOM_SENSITIVITY), ZOOM_OUT_LIMIT, ZOOM_IN_LIMIT)
+	elif event is InputEventPanGesture:
+		var target_zoom = clamp(zoom + Vector2(event.delta.y * PAN_ZOOM_SENSITIVITY, event.delta.y * PAN_ZOOM_SENSITIVITY), ZOOM_OUT_LIMIT, ZOOM_IN_LIMIT)
 		zoom = target_zoom
 		scale_plants(target_zoom)
 	
