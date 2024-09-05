@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dna2006dnsx2x"]
+[gd_scene load_steps=10 format=3 uid="uid://dna2006dnsx2x"]
 
 [ext_resource type="Texture2D" uid="uid://hmcjyyrl7dv2" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0034_Policies-normal-(small)-button.png" id="1_7yv6u"]
 [ext_resource type="Texture2D" uid="uid://cjxrgcwrcynwf" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0035_Policies-press-(small)-button.png" id="2_aqrlf"]
@@ -7,6 +7,50 @@
 [ext_resource type="Texture2D" uid="uid://cu5qdg6vletaj" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0004_Policies-(small)-button-hole.png" id="5_xiqse"]
 [ext_resource type="Texture2D" uid="uid://iaa6i5ocoaer" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0022_Icon-Popularity.png" id="6_tp2hn"]
 [ext_resource type="Texture2D" uid="uid://bnuj5hhtj86sa" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0008_Solar-symbol.png" id="7_klwhl"]
+
+[sub_resource type="Animation" id="Animation_eentv"]
+resource_name = "show_thumbs_up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ThumbsUp:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(102, 29), Vector2(158, 29), Vector2(147, 29), Vector2(152, 29)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ThumbsUp:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ThumbsUp:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.436332, 0.436332, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lk7c1"]
+_data = {
+"show_thumbs_up": SubResource("Animation_eentv")
+}
 
 [node name="PolicyButton" type="TextureButton"]
 custom_minimum_size = Vector2(0, 80)
@@ -28,8 +72,8 @@ position = Vector2(63, 33)
 texture = ExtResource("5_xiqse")
 
 [node name="ThumbsUp" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(154, 29)
+show_behind_parent = true
+position = Vector2(152, 29)
 scale = Vector2(0.826087, 0.75)
 texture = ExtResource("6_tp2hn")
 
@@ -37,5 +81,11 @@ texture = ExtResource("6_tp2hn")
 position = Vector2(63, 24)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("7_klwhl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_lk7c1")
+}
+speed_scale = 1.25
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

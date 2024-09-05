@@ -8,9 +8,12 @@ extends TextureButton
 	"INDUSTRY SUBSIDY") var policy: String
 	
 @onready var thumbs_up = $ThumbsUp
+@onready var animation_player = $AnimationPlayer
 
 	
 func _ready():
+	thumbs_up.position = Vector2(102, 29)
+	thumbs_up.visible = false
 	PolicyManager.policy_voted.connect(_on_policy_voted)
 
 
@@ -23,7 +26,8 @@ func _on_policy_voted(vote_passed: bool):
 		var was_the_voted_policy = PolicyManager.last_policy_clicked.inspector_id == policy
 		var is_campaign = PolicyManager.last_policy_clicked.policy_type == Policy.PolicyType.CAMPAIGN
 		var disable = vote_passed and was_the_voted_policy and not is_campaign
+		
 		if disable:
 			disabled = true
 			texture_normal = texture_pressed
-			thumbs_up.show()
+			animation_player.play("show_thumbs_up")
