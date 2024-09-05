@@ -8,7 +8,7 @@ extends Control
 
 func _ready():
 	button_top.text = "Trigger the end"
-	button_bottom.text = "open back to survey page"
+	button_bottom.text = "Enable graph button"
 	HttpManager.http_request_active_updated.connect(_on_http_request_active_updated)
 	_on_http_request_active_updated(HttpManager.http_request_active)
 
@@ -18,7 +18,8 @@ func _on_button_top_pressed():
 	
 	
 func _on_button_bottom_pressed():
-	pass
+	Gameloop.enable_graphs_button.emit()
+	
 
 func _on_http_request_active_updated(active: bool):
 	http_request_indicator.visible = active

@@ -73,7 +73,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ShockWindow" type="Sprite2D" parent="."]
-position = Vector2(920, 584)
+position = Vector2(1044, 487)
 texture = ExtResource("2_06ydw")
 
 [node name="ColorRect" type="ColorRect" parent="ShockWindow"]

@@ -12,3 +12,6 @@ func _on_most_recent_shock_updated(shock):
 
 func _on_continue_button_pressed():
 	hide()
+	
+	if Gameloop.current_turn == 2:
+		Gameloop.enable_graphs_button.emit()

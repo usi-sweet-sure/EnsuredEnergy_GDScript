@@ -54,7 +54,7 @@ func _ready():
 	
 	var no_shock = Shock.new("SHOCK_NO_SHOCK_TITLE", "SHOCK_NO_SHOCK_TEXT", "sunrise.png", false)
 
-	shocks = [cold_spell, heat_wave, glaciers_melting, severe_weather, no_shock, mass_immigration, renewable_support]
+	shocks = [cold_spell, heat_wave, glaciers_melting, no_shock, severe_weather, mass_immigration, renewable_support]
 	shocks_full = shocks.duplicate()
 	shocks.shuffle()
 	
@@ -76,6 +76,15 @@ func pick_shock():
 		var random_shock = shocks.pop_front()
 		print("shock picked: ", random_shock.title_key)
 		Gameloop.most_recent_shock = random_shock
+		
+		# Graph button is enable on turn 2, but on a new turn the shock window
+		# hides the middle of the screen. So we trigger the apparition of the
+		# graph button when the player clicks on the "continue" button of the
+		# shock window (which hides the shock window).
+		# But if the shock is the "no_shock", no frame is shown, so we trigger
+		# the apparition of the graph button directly
+		if Gameloop.current_turn == 2 and not random_shock.show_shock_window:
+			Gameloop.enable_graphs_button.emit()
 
 
 func apply_shock():

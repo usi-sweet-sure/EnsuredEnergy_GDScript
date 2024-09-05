@@ -51,6 +51,7 @@ func _on_energy_demand_updated_winter(demand: float):
 func _on_game_ended():
 	editable = false
 
+
 # Moves the slider to the bottom. Doesn't send the signal because the value
 # is already set back to zero in "gameloop.gd" on a new turn
 func _on_next_turn():

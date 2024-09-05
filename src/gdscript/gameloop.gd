@@ -51,6 +51,7 @@ signal toggle_graphs
 signal game_started
 signal game_ended
 signal game_quit_requested
+signal enable_graphs_button
 
 signal hide_energy_bar_info_requested
 
