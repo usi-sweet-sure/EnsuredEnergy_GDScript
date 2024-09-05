@@ -242,7 +242,7 @@ texture = ExtResource("5_xiqse")
 
 [node name="ThumbsUp" type="Sprite2D" parent="."]
 show_behind_parent = true
-position = Vector2(-26, 29)
+position = Vector2(24, 29)
 scale = Vector2(0.826087, 0.75)
 texture = ExtResource("6_tp2hn")
 flip_h = true

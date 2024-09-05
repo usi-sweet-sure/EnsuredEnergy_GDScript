@@ -2570,7 +2570,7 @@ visible = false
 [connection signal="value_changed" from="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame/BorrowSlider/Slider" to="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame/DebtAmount" method="_on_borrow_money_slider_value_changed"]
 [connection signal="value_changed" from="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame/BorrowSlider/Slider" to="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame/Apply" method="_on_slider_value_changed"]
 [connection signal="pressed" from="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame/Close" to="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame" method="_on_close_button_pressed"]
-[connection signal="pressed" from="TopLeftZone/Policies/OpenPoliciesWindowButton" to="Window" method="_on_open_policies_window_button_pressed"]
+[connection signal="pressed" from="TopLeftZone/Policies/OpenPoliciesWindowButton" to="TopLeftZone/Policies/OpenPoliciesWindowButton" method="_on_pressed"]
 [connection signal="pressed" from="EnvironmentAndPollution/Environment/Info/MoreInfo" to="EnvironmentAndPollution/Environment/Info/MarginContainer/BubbleOpen" method="_on_more_info_button_pressed"]
 [connection signal="pressed" from="EnvironmentAndPollution/Environment/Info/MoreInfo" to="EnvironmentAndPollution/Environment/Info/MarginContainer/MarginContainer/VBoxContainer/InfoText" method="_on_more_info_button_pressed"]
 [connection signal="pressed" from="EnvironmentAndPollution/Environment/Info/MoreInfo" to="EnvironmentAndPollution/Environment/Info/MarginContainer/MarginContainer/VBoxContainer/InfoText2" method="_on_more_info_button_pressed"]

@@ -28,3 +28,7 @@ func _on_next_turn():
 
 func _on_game_ended():
 	disabled = true
+
+
+func _on_policy_window_opened():
+	hide()

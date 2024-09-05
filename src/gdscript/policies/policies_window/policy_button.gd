@@ -12,7 +12,7 @@ extends TextureButton
 @onready var thumbs_down = $ThumbsDown
 @onready var animation_player = $AnimationPlayer
 
-	
+
 func _ready():
 	if side == "LEFT":
 		thumbs_up.position = Vector2(102, 29)
@@ -40,21 +40,17 @@ func _on_next_turn():
 
 
 func _on_policy_voted(vote_passed: bool):
-	if not disabled:
-		var was_the_voted_policy = PolicyManager.last_policy_clicked.inspector_id == policy
-		var is_campaign = PolicyManager.last_policy_clicked.policy_type == Policy.PolicyType.CAMPAIGN
-		var disable = vote_passed and was_the_voted_policy and not is_campaign
-		
-		if disable:
-			disabled = true
-			texture_normal = texture_pressed
-			if side == "LEFT":
-				animation_player.play("show_left_thumbs_up")
-			else:
-				animation_player.play("show_right_thumbs_up")
-		elif not vote_passed and not is_campaign and was_the_voted_policy:
-			if side == "LEFT":
-				animation_player.play("show_left_thumbs_down")
-			else:
-				animation_player.play("show_right_thumbs_down")
+	var was_the_voted_policy = PolicyManager.last_policy_clicked.inspector_id == policy
+	var is_campaign = PolicyManager.last_policy_clicked.policy_type == Policy.PolicyType.CAMPAIGN
+	
+	if vote_passed and not is_campaign and was_the_voted_policy:
+		if side == "LEFT":
+			animation_player.play("show_left_thumbs_up")
+		else:
+			animation_player.play("show_right_thumbs_up")
+	elif not vote_passed and not is_campaign and was_the_voted_policy:
+		if side == "LEFT":
+			animation_player.play("show_left_thumbs_down")
+		else:
+			animation_player.play("show_right_thumbs_down")
 

@@ -127,7 +127,7 @@ POLICIES,Policies,Politiques,Politik,Politiche
 EFFECT,Effects,Effets,Effekte,Effetti
 POLICIES_ENVIRONMENTAL_CAMPAIGN_TITLE,Renewable energy,Energies renouvelables,Erneuerbare Energie,Energia rinnovabile
 POLICIES_ENVIRONMENTAL_CAMPAIGN_TEXT,Start an information campaign on the advantages of renewable energy.,Démarre une campagne d'information sur les avantages des énergies renouvelables,Start einer Informationskampagne über die Vorteile der erneuerbaren Energien.,Inizia una campagna di informazione sui vantaggi dell'energia rinnovabile
-POLICIES_ENVIRONMENTAL_CAMPAIGN_EFFECT,- Increase environmental policy,- Augmente le soutien pour les politiques environnementales de 10%,- Erhöhung der Unterstützung für Umweltpolitik um 10%,- Aumenta il supporto delle potiche ambientali del 10%
+POLICIES_ENVIRONMENTAL_CAMPAIGN_EFFECT,- Increase environmental policy support by 10%,- Augmente le soutien pour les politiques environnementales de 10%,- Erhöhung der Unterstützung für Umweltpolitik um 10%,- Aumenta il supporto delle potiche ambientali del 10%
 POLICIES_ENERGY_CAMPAIGN_TITLE,Home insulation,Isolation de l'habitat,Hausisolierungen,Isolamento termico della casa
 POLICIES_ENERGY_CAMPAIGN_TEXT,Start an information campaign explaining the advantages of home insulation.,Lancer une campagne d'information expliquant les avantages de l'isolation des habitations.,Start einer Informationskampagne über die Vorteile der Gebäudeisolierung.,Inizia una campagna di informazione spiegando i vantaggi dell'isolamento termico della casa.
 POLICIES_ENERGY_CAMPAIGN_EFFECT,- Increase energy policy support by 10%,- Augmente le soutien pour les politiques énergétiques de 10%,- Erhöhung der Unterstützung für Energiepolitik um 10%,- Aumenta il supporto delle potiche energetiche del 10%
@@ -148,13 +148,15 @@ POLICIES_ENERGY_POLICY_2_TITLE,Industry Subsidy,Subventions à l'industrie,Unter
 POLICIES_ENERGY_POLICY_2_TEXT,Provide industries with grants for less energy intensive production.,Fournir aux industries des subventions pour une production moins gourmande en énergie.,"Gewährung von Subventionen an die Industrie, um eine weniger energieintensive Produktion zu fördern",Fornisce alle industrie finanziamenti per ridurre la produzione energetica intesiva
 POLICIES_ENERGY_POLICY_2_EFFECT_1,- Lowers energy demand by 5 in the Summer,- Réduit la demande d'énergie de 5 en été,- Reduziert den Energiebedarf im Sommer um 5,- Riduce la domanda di energia di 5 in estate
 POLICIES_ENERGY_POLICY_2_EFFECT_2,- Lowers energy demand by 5 in the Winter,- Réduit la demande d'énergie de 5 en hiver,- Reduziert den Energiebedarf im Winter um 5,- Riduce la domanda di energia di 5 in inverno
-ESTIMATED_ACCEPTANCE_CHANCE,Estimated accpetance chance,Estimation des chances d'acceptation,Geschätzte Akzeptanzchance,Probabilità di accettazione stimata
+ESTIMATED_ACCEPTANCE_CHANCE,Accptance chance,Chances d'acceptation,Akzeptanzchance,Probabilità di accettazione
 DURATION_OF_CAMPAIGN,Duration of campaign : 1 turn,Durée de la campagne : 1 tour,Dauer der Kampagne : 1 Runde,Durata della campagna: 1 turno
+DURATION_OF_CAMPAIGN_2,You won't be able to vote for policies until next turn,Vous ne pourrez pas ouvrir un vote pour une politique avant le prochain tour.,Sie können erst in der nächsten Runde eine Abstimmung über Politiken eröffnen,Non sarà possibile aprire una votazione per le politiche fino al prossimo turno.
 START_CAMPAIGN,Start,Démarrer,Beginnen,Inizio
 CAMPAIGN_STARTED,The campaign has started!,La campagne a commencé !,Die Kampagne hat begonnen!,La campagna è iniziata!
 VOTE,Vote,Voter,Abstimmen,Voto
 VOTE_FAILED,Policy failed to be passed...,La politique n'a pas été adoptée...,Die Politik wurde nicht verabschiedet...,La politica non è stata approvata...
 VOTE_SUCCEEDED,Policy was passed successfully!,La politique a été adoptée avec succès !,Die Richtlinie wurde erfolgreich verabschiedet!,La politica è stata approvata con successo!
+VOTING_BONUS,Voting bonus:,Bonus aux votations :,Bonus bei Volksabstimmungen :,Bonus di voto:
 GAS,Gas,Gaz,Gas,Gas
 NUCLEAR,Nuclear,Nucléaire,Atomkraftwerk,Nucleare
 HYDRO,Hydro,Hydraulique,Wasserkraft,Idroelettrica

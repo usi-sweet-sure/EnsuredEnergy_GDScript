@@ -1,24 +1,23 @@
-[gd_scene load_steps=45 format=3 uid="uid://jj476u8yn2g8"]
+[gd_scene load_steps=42 format=3 uid="uid://jj476u8yn2g8"]
 
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/policies_window.gd" id="1_iwuuw"]
 [ext_resource type="Texture2D" uid="uid://coki776cjtqrp" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0006_Policies-metal-base.png" id="2_bdksa"]
 [ext_resource type="Texture2D" uid="uid://dnr3tvwn2pcnj" path="res://assets/UI Elements/Policies_Button_small_Hole.png" id="3_34k6p"]
-[ext_resource type="Script" path="res://src/gdscript/policies/policies_window/policy_description_node.gd" id="3_db8we"]
 [ext_resource type="Texture2D" uid="uid://d134bmkq0exi6" path="res://assets/UI Elements/All-HQ-Assets-D_0005s_0004_Policies-screen.png" id="3_jt4rt"]
 [ext_resource type="PackedScene" uid="uid://dna2006dnsx2x" path="res://scenes/windows/policy_button.tscn" id="3_wnx31"]
 [ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="3_yevmu"]
 [ext_resource type="Texture2D" uid="uid://b4m67oni44dpg" path="res://assets/UI Elements/Button-normal.png" id="4_b2slr"]
 [ext_resource type="ButtonGroup" uid="uid://ei788aoab46g" path="res://scenes/windows/policyButtonGroup.tres" id="4_wme6q"]
-[ext_resource type="Script" path="res://src/gdscript/policies/policies_window/policy_effect_node.gd" id="5_14j7w"]
 [ext_resource type="Texture2D" uid="uid://60dl810b25fd" path="res://assets/UI Elements/Button-press.png" id="5_dqo5y"]
 [ext_resource type="Texture2D" uid="uid://cuhckno2t6g0r" path="res://assets/UI Elements/Button-hover.png" id="6_8ixy2"]
+[ext_resource type="Script" path="res://src/gdscript/policies/policies_window/center_frame/info_screen_2/top_label.gd" id="7_cyhh6"]
+[ext_resource type="Script" path="res://src/gdscript/policies/policies_window/center_frame/info_screen_2/bottom_label.gd" id="8_4nde8"]
 [ext_resource type="Texture2D" uid="uid://ddd6qplj5q6p4" path="res://assets/UI Elements/Policies_Button_Hole.png" id="8_iiaj0"]
-[ext_resource type="Texture2D" uid="uid://b2g8qas0h64m8" path="res://assets/UI Elements/Popularity-.png" id="8_mlb0j"]
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/vote_zone/vote_zone.gd" id="9_21wnm"]
-[ext_resource type="Script" path="res://src/gdscript/policies/policies_window/vote_zone/popularity_progress_bar.gd" id="10_bdp3x"]
-[ext_resource type="Script" path="res://src/gdscript/policies/policies_window/vote_zone/vote_result_label.gd" id="13_d7yyd"]
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/start_campaign_zone/start_campaign_zone.gd" id="15_11d6x"]
-[ext_resource type="Script" path="res://src/gdscript/policies/policies_window/start_campaign_zone/campaign_started_label.gd" id="16_j45qg"]
+[ext_resource type="Texture2D" uid="uid://cd23afs6x11al" path="res://assets/UI Elements/All-HQ-Assets-D_0005s_0002_Stats-screen.png" id="17_hftqp"]
+[ext_resource type="Script" path="res://src/gdscript/policies/policies_window/center_frame/info_screen_1/general_explanation.gd" id="17_uqeid"]
+[ext_resource type="Script" path="res://src/gdscript/policies/policies_window/campaing_screen_label.gd" id="18_tfmt2"]
 [ext_resource type="Texture2D" uid="uid://dnf85brf6fkbf" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0005_Policies-(side)-metal-base.png" id="18_yk6um"]
 [ext_resource type="Texture2D" uid="uid://m8sqi2c1vb8w" path="res://assets/UI Elements/Policies-Button-yellow-Normal.png" id="19_pws74"]
 [ext_resource type="Texture2D" uid="uid://cufu62j0t1t6p" path="res://assets/UI Elements/Policies-Button-yellow-Press.png" id="20_e53ft"]
@@ -30,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://rsi3865gd46t" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0010_Hammer-symbol.png" id="25_o6wyt"]
 [ext_resource type="Texture2D" uid="uid://dm4sc8s54816e" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0009_Wind-symbol.png" id="26_30gpl"]
 [ext_resource type="Texture2D" uid="uid://bx0cxko72v5ui" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0020_Icon-Environment-.png" id="27_g53jr"]
+[ext_resource type="Script" path="res://src/gdscript/policies/policies_window/campaing_screen_label_2.gd" id="28_uikld"]
 [ext_resource type="Texture2D" uid="uid://ceywqq4wa4ocw" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0026_Icon-Import.png" id="32_6o0tj"]
 [ext_resource type="Texture2D" uid="uid://ci730aw1uci4x" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0011_House-symbol.png" id="33_xhuvb"]
 [ext_resource type="Texture2D" uid="uid://trn8noyxvhuf" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0012_Heat-symbol.png" id="34_xehlb"]
@@ -37,17 +37,6 @@
 [ext_resource type="Texture2D" uid="uid://b86vm4agcnisw" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0020_Icon-red-press-button.png" id="36_lf8fb"]
 [ext_resource type="Texture2D" uid="uid://b066igcqidlny" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0018_Icon-red-hover-button.png" id="37_2wxtq"]
 [ext_resource type="Texture2D" uid="uid://b0c3ywqarx8b7" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0002_Icon-round-button-hole.png" id="38_04ggy"]
-
-[sub_resource type="GDScript" id="GDScript_lymiu"]
-script/source = "extends ColorRect
-
-
-"
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3qlni"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_77vk0"]
-bg_color = Color(0.196078, 0.545098, 0.968627, 0.792157)
 
 [sub_resource type="Theme" id="Theme_6bviu"]
 
@@ -91,6 +80,8 @@ _data = {
 
 [node name="Policy" type="CanvasLayer"]
 script = ExtResource("1_iwuuw")
+metadata/_edit_vertical_guides_ = [210.0]
+metadata/_edit_horizontal_guides_ = [349.0]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -99,7 +90,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.168627, 0.168627, 0.168627, 0.392157)
-script = SubResource("GDScript_lymiu")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -119,87 +109,90 @@ size_flags_horizontal = 4
 position = Vector2(549.5, 388.5)
 texture = ExtResource("2_bdksa")
 
-[node name="Screen" type="Sprite2D" parent="Control/CenterFrame"]
-position = Vector2(2.5, -165.5)
-scale = Vector2(1, 1.10323)
+[node name="InfoScreen1" type="Sprite2D" parent="Control/CenterFrame"]
+position = Vector2(2.5, -164.379)
+scale = Vector2(1, 1.09588)
 texture = ExtResource("3_jt4rt")
 
-[node name="Description" type="Control" parent="Control/CenterFrame"]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_left = -180.0
-offset_top = -330.0
-offset_right = 183.0
-offset_bottom = 2.0
-script = ExtResource("3_db8we")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterFrame/Description"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 18.0
-offset_top = 5.0
-offset_right = -20.0
-offset_bottom = -1.0
+[node name="Text" type="RichTextLabel" parent="Control/CenterFrame/InfoScreen1"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -352.5
+offset_top = -294.5
+offset_right = -12.5
+offset_bottom = -7.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 10
-
-[node name="Title" type="Label" parent="Control/CenterFrame/Description/VBoxContainer"]
-layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_force_pass_scroll_events = false
 theme = ExtResource("3_yevmu")
 theme_type_variation = &"Screen"
-text = "- Campaign -"
-horizontal_alignment = 1
+theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
+theme_override_constants/shadow_offset_x = 2
+bbcode_enabled = true
+text = "
+"
 autowrap_mode = 2
+script = ExtResource("17_uqeid")
 
-[node name="Text" type="Label" parent="Control/CenterFrame/Description/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("3_yevmu")
-theme_type_variation = &"Screen"
-theme_override_font_sizes/font_size = 20
-text = "Information campaigns help boost the popularity of your policies."
-horizontal_alignment = 1
-autowrap_mode = 3
-
-[node name="Effect" type="Control" parent="Control/CenterFrame"]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_left = -183.0
-offset_top = -141.0
-offset_right = 179.0
-offset_bottom = 7.0
-script = ExtResource("5_14j7w")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterFrame/Effect"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = 23.0
-offset_top = -9.0
-offset_right = -12.0
-offset_bottom = 160.0
+[node name="InfoScreen2" type="NinePatchRect" parent="Control/CenterFrame"]
+clip_children = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -392.5
+offset_top = -375.0
+offset_right = -51.5
+offset_bottom = -299.0
 grow_horizontal = 2
-theme_override_constants/separation = 10
+grow_vertical = 2
+texture = ExtResource("17_hftqp")
+patch_margin_left = 5
+patch_margin_top = 6
+patch_margin_right = 7
+patch_margin_bottom = 5
 
-[node name="Title" type="Label" parent="Control/CenterFrame/Effect/VBoxContainer"]
+[node name="Infos" type="VBoxContainer" parent="Control/CenterFrame/InfoScreen2"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = -7.0
+offset_right = 334.0
+offset_bottom = 79.0
+alignment = 1
+
+[node name="TopLabel" type="Label" parent="Control/CenterFrame/InfoScreen2/Infos"]
+custom_minimum_size = Vector2(329, 0)
 layout_mode = 2
 theme = ExtResource("3_yevmu")
 theme_type_variation = &"Screen"
-text = "EFFECT"
+theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
+theme_override_constants/shadow_offset_x = 2
+theme_override_font_sizes/font_size = 21
+text = "You can't start a campaign this turn because you submitted a votation"
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
+script = ExtResource("7_cyhh6")
 
-[node name="Text" type="Label" parent="Control/CenterFrame/Effect/VBoxContainer"]
+[node name="BottomLabel" type="Label" parent="Control/CenterFrame/InfoScreen2/Infos"]
+visible = false
+custom_minimum_size = Vector2(329, 0)
 layout_mode = 2
 theme = ExtResource("3_yevmu")
 theme_type_variation = &"Screen"
-theme_override_font_sizes/font_size = 20
-text = "Policies can help improve existing renewable power plants or lower demand in energy. The population gets to decide, so your support score needs to be good if you want to implement policies."
-autowrap_mode = 3
+theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
+theme_override_constants/shadow_offset_x = 2
+text = "..."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+script = ExtResource("8_4nde8")
 
 [node name="Vote" type="TextureButton" parent="Control/CenterFrame"]
 anchors_preset = 7
@@ -218,57 +211,6 @@ texture_pressed = ExtResource("5_dqo5y")
 texture_hover = ExtResource("6_8ixy2")
 texture_disabled = ExtResource("5_dqo5y")
 script = ExtResource("9_21wnm")
-
-[node name="PopularityL" type="Label" parent="Control/CenterFrame/Vote"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -192.5
-offset_top = -266.0
-offset_right = 186.5
-offset_bottom = -240.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("3_yevmu")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "ESTIMATED_ACCEPTANCE_CHANCE"
-horizontal_alignment = 1
-
-[node name="Popularity" type="ProgressBar" parent="Control/CenterFrame/Vote"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -46.5
-offset_top = -147.5
-offset_right = 31.5
-offset_bottom = -108.5
-grow_horizontal = 2
-theme_override_styles/background = SubResource("StyleBoxEmpty_3qlni")
-theme_override_styles/fill = SubResource("StyleBoxFlat_77vk0")
-max_value = 1.0
-value = 0.15
-script = ExtResource("10_bdp3x")
-
-[node name="Popularity-" type="Sprite2D" parent="Control/CenterFrame/Vote/Popularity"]
-show_behind_parent = true
-position = Vector2(39.2745, 19.5)
-scale = Vector2(0.960785, 1.01961)
-texture = ExtResource("8_mlb0j")
-
-[node name="VoteResult" type="Label" parent="Control/CenterFrame/Vote"]
-layout_mode = 0
-offset_left = -90.0
-offset_top = 111.0
-offset_right = 288.0
-offset_bottom = 134.0
-theme = ExtResource("3_yevmu")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-horizontal_alignment = 1
-script = ExtResource("13_d7yyd")
 
 [node name="VoteL" type="Label" parent="Control/CenterFrame/Vote"]
 layout_mode = 1
@@ -290,19 +232,7 @@ position = Vector2(95, 42.5)
 scale = Vector2(1.47857, 1.35714)
 texture = ExtResource("3_34k6p")
 
-[node name="Implemented" type="Label" parent="Control/CenterFrame/Vote"]
-visible = false
-layout_mode = 0
-offset_left = -61.0
-offset_top = -42.0
-offset_right = 266.0
-offset_bottom = -16.0
-theme = ExtResource("3_yevmu")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "This policy is already implemented."
-
 [node name="StartCampaign" type="TextureButton" parent="Control/CenterFrame"]
-visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -319,28 +249,6 @@ texture_pressed = ExtResource("5_dqo5y")
 texture_hover = ExtResource("6_8ixy2")
 texture_disabled = ExtResource("5_dqo5y")
 script = ExtResource("15_11d6x")
-
-[node name="CampaignDuration" type="Label" parent="Control/CenterFrame/StartCampaign"]
-layout_mode = 0
-offset_left = -76.0
-offset_top = -158.0
-offset_right = 275.0
-offset_bottom = -135.0
-text = "DURATION_OF_CAMPAIGN"
-horizontal_alignment = 1
-
-[node name="CampaignStartedLabel" type="Label" parent="Control/CenterFrame/StartCampaign"]
-visible = false
-layout_mode = 0
-offset_left = -90.0
-offset_top = 111.0
-offset_right = 288.0
-offset_bottom = 134.0
-theme = ExtResource("3_yevmu")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "CAMPAIGN_STARTED"
-horizontal_alignment = 1
-script = ExtResource("16_j45qg")
 
 [node name="ButtonLabel" type="Label" parent="Control/CenterFrame/StartCampaign"]
 layout_mode = 1
@@ -361,49 +269,6 @@ show_behind_parent = true
 position = Vector2(95, 42.5)
 scale = Vector2(1.47857, 1.35714)
 texture = ExtResource("3_34k6p")
-
-[node name="Explanation" type="Control" parent="Control/CenterFrame"]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_left = -163.0
-offset_top = -329.0
-offset_right = 161.0
-offset_bottom = -60.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterFrame/Explanation"]
-layout_mode = 0
-offset_left = -5.0
-offset_top = 4.0
-offset_right = 331.0
-offset_bottom = 308.0
-alignment = 1
-
-[node name="Title1" type="Label" parent="Control/CenterFrame/Explanation/VBoxContainer"]
-layout_mode = 2
-text = "POLICIES_EXPLANATION_CAMPAIGNS_TITLE"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Text1" type="Label" parent="Control/CenterFrame/Explanation/VBoxContainer"]
-layout_mode = 2
-text = "POLICIES_EXPLANATION_CAMPAIGNS_TEXT"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Spacer" type="Label" parent="Control/CenterFrame/Explanation/VBoxContainer"]
-layout_mode = 2
-
-[node name="Title2" type="Label" parent="Control/CenterFrame/Explanation/VBoxContainer"]
-layout_mode = 2
-text = "POLICIES_EXPLANATION_POLICIES_TITLE"
-horizontal_alignment = 1
-
-[node name="Text2" type="Label" parent="Control/CenterFrame/Explanation/VBoxContainer"]
-layout_mode = 2
-text = "POLICIES_EXPLANATION_POLICIES_TEXT"
-horizontal_alignment = 1
-autowrap_mode = 2
 
 [node name="LeftFrame" type="Sprite2D" parent="Control"]
 position = Vector2(163.5, 388.5)
@@ -434,14 +299,60 @@ horizontal_alignment = 1
 autowrap_mode = 2
 uppercase = true
 
+[node name="Screen" type="NinePatchRect" parent="Control/LeftFrame"]
+clip_children = 2
+offset_left = -104.0
+offset_top = -164.0
+offset_right = 110.0
+offset_bottom = -74.0
+texture = ExtResource("17_hftqp")
+patch_margin_left = 5
+patch_margin_top = 6
+patch_margin_right = 7
+patch_margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/LeftFrame/Screen"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 6.0
+offset_right = 207.0
+offset_bottom = 84.0
+alignment = 1
+
+[node name="Label3" type="Label" parent="Control/LeftFrame/Screen/VBoxContainer"]
+custom_minimum_size = Vector2(202, 0)
+layout_mode = 2
+theme = ExtResource("3_yevmu")
+theme_type_variation = &"Screen"
+theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
+theme_override_constants/shadow_offset_x = 2
+theme_override_font_sizes/font_size = 21
+text = "VOTING_BONUS"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="Control/LeftFrame/Screen/VBoxContainer"]
+custom_minimum_size = Vector2(202, 0)
+layout_mode = 2
+theme = ExtResource("3_yevmu")
+theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(0, 0.929412, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
+theme_override_constants/shadow_offset_x = 2
+theme_override_font_sizes/font_size = 25
+text = "10 %"
+horizontal_alignment = 1
+autowrap_mode = 2
+script = ExtResource("18_tfmt2")
+
 [node name="campaign_env" parent="Control/LeftFrame" instance=ExtResource("3_wnx31")]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -227.0
-offset_top = -268.5
-offset_right = -98.0
-offset_bottom = -140.5
+offset_left = -221.0
+offset_top = -309.5
+offset_right = -92.0
+offset_bottom = -181.5
 grow_horizontal = 2
 button_group = ExtResource("4_wme6q")
 texture_normal = ExtResource("21_wjauf")
@@ -453,9 +364,6 @@ side = "LEFT"
 [node name="PoliciesButtonSmallHole" parent="Control/LeftFrame/campaign_env" index="0"]
 position = Vector2(65, 65)
 texture = ExtResource("24_dbcf4")
-
-[node name="ThumbsDown" parent="Control/LeftFrame/campaign_env" index="2"]
-flip_h = false
 
 [node name="Icon" parent="Control/LeftFrame/campaign_env" index="3"]
 visible = false
@@ -470,9 +378,6 @@ button_group = ExtResource("4_wme6q")
 policy = "ENABLE ALPINE SOLAR PV"
 side = "LEFT"
 
-[node name="ThumbsDown" parent="Control/LeftFrame/Upgrade_PV" index="2"]
-flip_h = false
-
 [node name="Wind_buildtime" parent="Control/LeftFrame" instance=ExtResource("3_wnx31")]
 anchors_preset = -1
 anchor_left = 0.472
@@ -486,9 +391,6 @@ offset_bottom = 79.255
 button_group = ExtResource("4_wme6q")
 policy = "FAST TRACK WIND PARKS"
 side = "LEFT"
-
-[node name="ThumbsDown" parent="Control/LeftFrame/Wind_buildtime" index="2"]
-flip_h = false
 
 [node name="Icon" parent="Control/LeftFrame/Wind_buildtime" index="3"]
 texture = ExtResource("25_o6wyt")
@@ -507,14 +409,11 @@ button_group = ExtResource("4_wme6q")
 policy = "WIND PARKS REGULATION"
 side = "LEFT"
 
-[node name="ThumbsDown" parent="Control/LeftFrame/Upgrade_wind" index="2"]
-flip_h = false
-
 [node name="Icon" parent="Control/LeftFrame/Upgrade_wind" index="3"]
 texture = ExtResource("26_30gpl")
 
 [node name="Icon-environment-" type="Sprite2D" parent="Control/LeftFrame"]
-position = Vector2(-5, -212)
+position = Vector2(3, -253)
 texture = ExtResource("27_g53jr")
 
 [node name="RightFrame" type="Sprite2D" parent="Control"]
@@ -546,14 +445,60 @@ horizontal_alignment = 1
 autowrap_mode = 2
 uppercase = true
 
+[node name="Screen" type="NinePatchRect" parent="Control/RightFrame"]
+clip_children = 2
+offset_left = -104.0
+offset_top = -164.0
+offset_right = 110.0
+offset_bottom = -74.0
+texture = ExtResource("17_hftqp")
+patch_margin_left = 5
+patch_margin_top = 6
+patch_margin_right = 7
+patch_margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/RightFrame/Screen"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 6.0
+offset_right = 207.0
+offset_bottom = 84.0
+alignment = 1
+
+[node name="Label3" type="Label" parent="Control/RightFrame/Screen/VBoxContainer"]
+custom_minimum_size = Vector2(202, 0)
+layout_mode = 2
+theme = ExtResource("3_yevmu")
+theme_type_variation = &"Screen"
+theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
+theme_override_constants/shadow_offset_x = 2
+theme_override_font_sizes/font_size = 21
+text = "VOTING_BONUS"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="Control/RightFrame/Screen/VBoxContainer"]
+custom_minimum_size = Vector2(202, 0)
+layout_mode = 2
+theme = ExtResource("3_yevmu")
+theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(0, 0.929412, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
+theme_override_constants/shadow_offset_x = 2
+theme_override_font_sizes/font_size = 25
+text = "10 %"
+horizontal_alignment = 1
+autowrap_mode = 2
+script = ExtResource("28_uikld")
+
 [node name="campaign_demand" parent="Control/RightFrame" instance=ExtResource("3_wnx31")]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -222.0
-offset_top = -264.5
+offset_top = -309.5
 offset_right = -93.0
-offset_bottom = -136.5
+offset_bottom = -181.5
 grow_horizontal = 2
 button_group = ExtResource("4_wme6q")
 texture_normal = ExtResource("19_pws74")
@@ -565,9 +510,6 @@ side = "RIGHT"
 [node name="PoliciesButtonSmallHole" parent="Control/RightFrame/campaign_demand" index="0"]
 position = Vector2(65, 65)
 texture = ExtResource("8_iiaj0")
-
-[node name="ThumbsDown" parent="Control/RightFrame/campaign_demand" index="2"]
-flip_h = false
 
 [node name="Icon" parent="Control/RightFrame/campaign_demand" index="3"]
 position = Vector2(63, 58)
@@ -593,9 +535,6 @@ side = "RIGHT"
 [node name="ThumbsUp" parent="Control/RightFrame/home_regulation" index="1"]
 position = Vector2(-26, 27)
 
-[node name="ThumbsDown" parent="Control/RightFrame/home_regulation" index="2"]
-flip_h = false
-
 [node name="Icon" parent="Control/RightFrame/home_regulation" index="3"]
 texture = ExtResource("33_xhuvb")
 
@@ -617,9 +556,6 @@ side = "RIGHT"
 
 [node name="ThumbsUp" parent="Control/RightFrame/industry_subsidy" index="1"]
 position = Vector2(-26, 30)
-
-[node name="ThumbsDown" parent="Control/RightFrame/industry_subsidy" index="2"]
-flip_h = false
 
 [node name="Icon" parent="Control/RightFrame/industry_subsidy" index="3"]
 texture = ExtResource("34_xehlb")
@@ -673,6 +609,11 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 18
 text = "x"
 
+[connection signal="window_opened" from="." to="Control/CenterFrame/InfoScreen1/Text" method="_on_policy_window_opened"]
+[connection signal="window_opened" from="." to="Control/CenterFrame/InfoScreen2/Infos/TopLabel" method="_on_policy_window_opened"]
+[connection signal="window_opened" from="." to="Control/CenterFrame/InfoScreen2/Infos/BottomLabel" method="_on_policy_window_opened"]
+[connection signal="window_opened" from="." to="Control/CenterFrame/Vote" method="_on_policy_window_opened"]
+[connection signal="window_opened" from="." to="Control/CenterFrame/StartCampaign" method="_on_policy_window_opened"]
 [connection signal="gui_input" from="ColorRect" to="." method="_on_backdrop_gui_input"]
 [connection signal="pressed" from="Control/CenterFrame/Vote" to="Control/CenterFrame/Vote" method="_on_pressed"]
 [connection signal="pressed" from="Control/CenterFrame/StartCampaign" to="Control/CenterFrame/StartCampaign" method="_on_pressed"]

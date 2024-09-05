@@ -4,20 +4,46 @@ signal policy_button_clicked
 signal vote_button_clicked # Start button for campaigns also call that signal
 signal policy_voted
 signal personal_support_updated
+signal energy_policies_support_updated
+signal environmental_policies_support_updated
 
-var environmental_policies_support: float = 0.0 # In [0,1]
-var energy_policies_support: float = 0.0 # In [0,1]
+var environmental_policies_support: float = 0.0: # In [0,1]
+	set(new_value):
+		environmental_policies_support = new_value
+		environmental_policies_support_updated.emit(environmental_policies_support)
+var energy_policies_support: float = 0.0: # In [0,1]
+	set(new_value):
+		energy_policies_support = new_value
+		energy_policies_support_updated.emit(energy_policies_support)
 var personal_support: float = 0.5: # In [0,1]
 	set(new_value):
 		personal_support = new_value
 		personal_support_updated.emit(personal_support)
 var policies: Array[Policy] = []
 var last_policy_clicked: Policy
+var campaign_is_running = false
+var policy_voted_this_turn: Policy = null
+# This is an array of the form
+# voted_policies = [
+#	{
+#		"policy" = Policy,
+#		"passed" = true,
+#		"turn" = 1
+#	},
+#	{
+#		"policy" = Policy,
+#		"passed" = false,
+#		"turn" = 2
+#	},
+# ]
+var voted_policies: Array = []
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	policy_button_clicked.connect(_on_policy_button_clicked)
 	vote_button_clicked.connect(_on_vote_button_clicked)
+	Gameloop.next_turn.connect(_on_next_turn)
 	
 	# Campaigns are treated as policies than don't need a vote
 	var env_campaign = Policy.new("POLICIES_ENVIRONMENTAL_CAMPAIGN_TITLE",
@@ -61,6 +87,7 @@ func _ready():
 	policies = [env_campaign, energy_campaign, env_policy_1, env_policy_2, 
 			env_policy_3, energy_policy_1, energy_policy_2]
 
+
 func increase_max_upgrade(new_max: int, name: String):
 	for plant in  get_tree().get_nodes_in_group("PP"):
 		if plant.plant_name == name:
@@ -72,6 +99,7 @@ func increase_max_upgrade(new_max: int, name: String):
 				plant.max_upgrade = new_max
 				plant._update_info()
 				
+				
 func lower_build_time():
 	for bb in get_tree().get_nodes_in_group("BB"):
 		for plant in bb.build_menu_plants:
@@ -81,6 +109,7 @@ func lower_build_time():
 		if bb.building_plant != null:
 			if bb.building_plant.plant_name == "WIND":
 				bb._build_plant(bb.building_plant, false)
+			
 				
 func lower_industry_demand():
 	var industry_demand = 0.0
@@ -91,6 +120,7 @@ func lower_industry_demand():
 	Context1.yr = Gameloop.year_list[Gameloop.current_turn] #affects following turn
 	Context1.tj = -(industry_demand * 5.0 / 100.0)
 	Context1.prm_ups()
+	
 	
 func lower_household_demand():
 	var household_demand = 0.0
@@ -103,8 +133,6 @@ func lower_household_demand():
 	Context1.prm_ups()
 	
 	
-	
-
 func get_policy(inspector_id: String):
 	return policies.filter(func(policy): return policy.inspector_id == inspector_id)[0]
 	
@@ -115,8 +143,32 @@ func _on_policy_button_clicked(policy_id):
 
 func _on_vote_button_clicked():
 	var vote_passed = last_policy_clicked.vote()
+	policy_voted_this_turn = last_policy_clicked
 	
 	if vote_passed:
 		last_policy_clicked.apply_effects()
-
+	
+	voted_policies.push_back({
+			"policy" = policy_voted_this_turn,
+			"passed" = vote_passed,
+			"turn" = Gameloop.current_turn
+		})
+	print(voted_policies)
 	policy_voted.emit(vote_passed)
+
+
+func _on_next_turn():
+	policy_voted_this_turn = null
+
+
+func policy_already_passed(policy: Policy):
+	var policy_already_passed = false
+	
+	for entry in voted_policies:
+		var entry_policy: Policy = entry["policy"]
+		
+		if entry_policy.title_key == policy.title_key and entry["passed"]:
+			policy_already_passed = true
+			break
+	
+	return policy_already_passed
