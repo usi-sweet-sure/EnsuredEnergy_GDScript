@@ -5,6 +5,7 @@ func _ready():
 	Gameloop.energy_demand_updated_winter.connect(_on_energy_demand_updated_winter)
 	Gameloop.energy_supply_updated_winter.connect(_on_energy_supply_updated_winter)
 	Gameloop.game_ended.connect(_on_game_ended)
+	Gameloop.next_turn.connect(_on_next_turn)
 	
 	_on_energy_demand_updated_winter(Gameloop.demand_winter)
 
@@ -29,6 +30,7 @@ func _on_energy_supply_updated_winter(winter_supply: float):
 		# imported amount the same way as if the user used the slider
 		value = max(0, Gameloop.demand_winter - winter_supply)
 
+
 func _on_import_up_button_pressed():
 	value += step
 
@@ -48,3 +50,8 @@ func _on_energy_demand_updated_winter(demand: float):
 
 func _on_game_ended():
 	editable = false
+
+# Moves the slider to the bottom. Doesn't send the signal because the value
+# is already set back to zero in "gameloop.gd" on a new turn
+func _on_next_turn():
+	set_value_no_signal(0)

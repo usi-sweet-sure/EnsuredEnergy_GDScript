@@ -145,7 +145,7 @@ func _ready():
 	for i in total_number_of_turns + 1:
 		year_list.append(start_year + (i * 3))
 		
-	next_turn.connect(_send_prm_ups)
+	next_turn.connect(_on_next_turn)
 	#Context1.http1.request_completed.connect(_on_request_completed)
 	
 	# TODO get all the demands for each year for the graph (nice to have)
@@ -195,6 +195,16 @@ func _update_buildings_impact():
 
 func _check_supply():
 	return supply_summer >= demand_summer and supply_winter + imported_energy_amount >= demand_winter
+
+
+func _on_next_turn():
+	Context1.yr = Gameloop.year_list[Gameloop.current_turn]
+	_send_prm_ups()
+	imported_energy_amount = 0
+	set_money_for_new_turn()
+	ShockManager.pick_shock()
+	ShockManager.apply_shock()
+	Context1.get_model_demand() #S. Not sure where to put this and the line doesnt update
 	
 
 func _send_prm_ups():

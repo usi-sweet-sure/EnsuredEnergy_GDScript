@@ -55,11 +55,4 @@ func _on_next_turn_button_pressed():
 	else:
 		Gameloop.current_turn += 1
 		Gameloop.next_turn.emit()
-		Context1.yr = Gameloop.year_list[Gameloop.current_turn]
-		Gameloop.set_money_for_new_turn()
-		ShockManager.pick_shock()
-		ShockManager.apply_shock()
-		Context1.get_model_demand() #S. Not sure where to put this and the line doesnt update
 	
-
-
