@@ -6,6 +6,7 @@ extends TextureButton
 @export_enum("ENVIRONMENTAL CAMPAIGN", "ENERGY CAMPAIGN", "ENABLE ALPINE SOLAR PV",
 	"FAST TRACK WIND PARKS", "WIND PARKS REGULATION", "MANDATORY BUILDING INSULATION",
 	"INDUSTRY SUBSIDY") var policy: String
+@export_enum("LEFT", "RIGHT") var side: String
 	
 @onready var thumbs_up = $ThumbsUp
 @onready var thumbs_down = $ThumbsDown
@@ -13,8 +14,19 @@ extends TextureButton
 
 	
 func _ready():
-	thumbs_up.position = Vector2(102, 29)
+	if side == "LEFT":
+		thumbs_up.position = Vector2(102, 29)
+		thumbs_down.position = Vector2(102, 29)
+		thumbs_up.flip_h = false
+		thumbs_down.flip_h = true
+	else:
+		thumbs_up.position = Vector2(24, 29)
+		thumbs_down.position = Vector2(24, 29)
+		thumbs_up.flip_h = true
+		thumbs_down.flip_h = false
+		
 	thumbs_up.visible = false
+	thumbs_down.visible = false
 	PolicyManager.policy_voted.connect(_on_policy_voted)
 	Gameloop.next_turn.connect(_on_next_turn)
 
@@ -36,6 +48,13 @@ func _on_policy_voted(vote_passed: bool):
 		if disable:
 			disabled = true
 			texture_normal = texture_pressed
-			animation_player.play("show_thumbs_up")
+			if side == "LEFT":
+				animation_player.play("show_left_thumbs_up")
+			else:
+				animation_player.play("show_right_thumbs_up")
 		elif not vote_passed and not is_campaign and was_the_voted_policy:
-			animation_player.play("show_thumbs_down")
+			if side == "LEFT":
+				animation_player.play("show_left_thumbs_down")
+			else:
+				animation_player.play("show_right_thumbs_down")
+

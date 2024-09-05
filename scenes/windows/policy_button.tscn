@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dna2006dnsx2x"]
+[gd_scene load_steps=14 format=3 uid="uid://dna2006dnsx2x"]
 
 [ext_resource type="Texture2D" uid="uid://hmcjyyrl7dv2" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0034_Policies-normal-(small)-button.png" id="1_7yv6u"]
 [ext_resource type="Texture2D" uid="uid://cjxrgcwrcynwf" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0035_Policies-press-(small)-button.png" id="2_aqrlf"]
@@ -9,47 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://bnuj5hhtj86sa" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0008_Solar-symbol.png" id="7_klwhl"]
 [ext_resource type="Texture2D" uid="uid://iaa6i5ocoaer" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0022_Icon-Popularity-down.png" id="7_ukulm"]
 
-[sub_resource type="Animation" id="Animation_eentv"]
-resource_name = "show_thumbs_up"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ThumbsUp:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(102, 29), Vector2(158, 29), Vector2(147, 29), Vector2(152, 29)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ThumbsUp:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ThumbsUp:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.5, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [0.0, -0.436332, 0.436332, 0.0]
-}
-
 [sub_resource type="Animation" id="Animation_6nac2"]
-resource_name = "show_thumbs_down"
+resource_name = "show_left_thumbs_down"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -86,11 +47,178 @@ tracks/2/keys = {
 "update": 0,
 "values": [0.0, -0.436332, 0.436332, 0.0]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ThumbsDown:flip_h")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_eentv"]
+resource_name = "show_left_thumbs_up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ThumbsUp:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(102, 29), Vector2(158, 29), Vector2(147, 29), Vector2(152, 29)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ThumbsUp:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ThumbsUp:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.436332, 0.436332, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ThumbsUp:flip_h")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_qt8e8"]
+resource_name = "show_right_thumbs_up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ThumbsUp:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(24, 29), Vector2(-30, 29), Vector2(-22, 29), Vector2(-26, 29)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ThumbsUp:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ThumbsUp:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.436332, -0.436332, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ThumbsUp:flip_h")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_1ygp7"]
+resource_name = "show_right_thumbs_down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ThumbsDown:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(24, 29), Vector2(-30, 29), Vector2(-22, 29), Vector2(-26, 29)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ThumbsDown:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ThumbsDown:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.436332, -0.436332, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ThumbsDown:flip_h")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lk7c1"]
 _data = {
-"show_thumbs_down": SubResource("Animation_6nac2"),
-"show_thumbs_up": SubResource("Animation_eentv")
+"show_left_thumbs_down": SubResource("Animation_6nac2"),
+"show_left_thumbs_up": SubResource("Animation_eentv"),
+"show_right_thumbs_down": SubResource("Animation_1ygp7"),
+"show_right_thumbs_up": SubResource("Animation_qt8e8")
 }
 
 [node name="PolicyButton" type="TextureButton"]
@@ -114,16 +242,16 @@ texture = ExtResource("5_xiqse")
 
 [node name="ThumbsUp" type="Sprite2D" parent="."]
 show_behind_parent = true
-position = Vector2(102, 29)
+position = Vector2(-26, 29)
 scale = Vector2(0.826087, 0.75)
 texture = ExtResource("6_tp2hn")
+flip_h = true
 
 [node name="ThumbsDown" type="Sprite2D" parent="."]
 show_behind_parent = true
-position = Vector2(102, 29)
+position = Vector2(-26, 29)
 scale = Vector2(0.826087, 0.75)
 texture = ExtResource("7_ukulm")
-flip_h = true
 
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(63, 24)

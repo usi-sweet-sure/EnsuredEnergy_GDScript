@@ -448,10 +448,14 @@ texture_normal = ExtResource("21_wjauf")
 texture_pressed = ExtResource("22_ckcsn")
 texture_hover = ExtResource("23_v3h5s")
 policy = "ENVIRONMENTAL CAMPAIGN"
+side = "LEFT"
 
 [node name="PoliciesButtonSmallHole" parent="Control/LeftFrame/campaign_env" index="0"]
 position = Vector2(65, 65)
 texture = ExtResource("24_dbcf4")
+
+[node name="ThumbsDown" parent="Control/LeftFrame/campaign_env" index="2"]
+flip_h = false
 
 [node name="Icon" parent="Control/LeftFrame/campaign_env" index="3"]
 visible = false
@@ -464,6 +468,10 @@ offset_bottom = 124.0
 theme = SubResource("Theme_6bviu")
 button_group = ExtResource("4_wme6q")
 policy = "ENABLE ALPINE SOLAR PV"
+side = "LEFT"
+
+[node name="ThumbsDown" parent="Control/LeftFrame/Upgrade_PV" index="2"]
+flip_h = false
 
 [node name="Wind_buildtime" parent="Control/LeftFrame" instance=ExtResource("3_wnx31")]
 anchors_preset = -1
@@ -477,6 +485,10 @@ offset_right = -81.344
 offset_bottom = 79.255
 button_group = ExtResource("4_wme6q")
 policy = "FAST TRACK WIND PARKS"
+side = "LEFT"
+
+[node name="ThumbsDown" parent="Control/LeftFrame/Wind_buildtime" index="2"]
+flip_h = false
 
 [node name="Icon" parent="Control/LeftFrame/Wind_buildtime" index="3"]
 texture = ExtResource("25_o6wyt")
@@ -493,6 +505,10 @@ offset_right = -85.922
 offset_bottom = -286.499
 button_group = ExtResource("4_wme6q")
 policy = "WIND PARKS REGULATION"
+side = "LEFT"
+
+[node name="ThumbsDown" parent="Control/LeftFrame/Upgrade_wind" index="2"]
+flip_h = false
 
 [node name="Icon" parent="Control/LeftFrame/Upgrade_wind" index="3"]
 texture = ExtResource("26_30gpl")
@@ -544,10 +560,14 @@ texture_normal = ExtResource("19_pws74")
 texture_pressed = ExtResource("20_e53ft")
 texture_hover = ExtResource("21_n5r62")
 policy = "ENERGY CAMPAIGN"
+side = "RIGHT"
 
 [node name="PoliciesButtonSmallHole" parent="Control/RightFrame/campaign_demand" index="0"]
 position = Vector2(65, 65)
 texture = ExtResource("8_iiaj0")
+
+[node name="ThumbsDown" parent="Control/RightFrame/campaign_demand" index="2"]
+flip_h = false
 
 [node name="Icon" parent="Control/RightFrame/campaign_demand" index="3"]
 position = Vector2(63, 58)
@@ -568,10 +588,13 @@ grow_horizontal = 2
 grow_vertical = 2
 button_group = ExtResource("4_wme6q")
 policy = "MANDATORY BUILDING INSULATION"
+side = "RIGHT"
 
 [node name="ThumbsUp" parent="Control/RightFrame/home_regulation" index="1"]
 position = Vector2(-26, 27)
-flip_h = true
+
+[node name="ThumbsDown" parent="Control/RightFrame/home_regulation" index="2"]
+flip_h = false
 
 [node name="Icon" parent="Control/RightFrame/home_regulation" index="3"]
 texture = ExtResource("33_xhuvb")
@@ -590,10 +613,13 @@ grow_horizontal = 2
 grow_vertical = 0
 button_group = ExtResource("4_wme6q")
 policy = "INDUSTRY SUBSIDY"
+side = "RIGHT"
 
 [node name="ThumbsUp" parent="Control/RightFrame/industry_subsidy" index="1"]
 position = Vector2(-26, 30)
-flip_h = true
+
+[node name="ThumbsDown" parent="Control/RightFrame/industry_subsidy" index="2"]
+flip_h = false
 
 [node name="Icon" parent="Control/RightFrame/industry_subsidy" index="3"]
 texture = ExtResource("34_xehlb")
