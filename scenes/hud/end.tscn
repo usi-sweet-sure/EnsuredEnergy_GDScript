@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bulftkbpqxib" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0024_Icon-Money.png" id="5_goags"]
 [ext_resource type="Script" path="res://src/gdscript/end/metrics_ranking_screen.gd" id="5_luxph"]
 [ext_resource type="Texture2D" uid="uid://ceuxpu5iujr05" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0001_Stats-metal-base.png" id="5_xqx4k"]
-[ext_resource type="Texture2D" uid="uid://iaa6i5ocoaer" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0022_Icon-Popularity.png" id="6_88lh6"]
+[ext_resource type="Texture2D" uid="uid://iaa6i5ocoaer" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0022_Icon-Popularity-down.png" id="6_88lh6"]
 [ext_resource type="Texture2D" uid="uid://cd23afs6x11al" path="res://assets/UI Elements/All-HQ-Assets-D_0005s_0002_Stats-screen.png" id="6_us122"]
 [ext_resource type="Script" path="res://src/gdscript/end/money_label.gd" id="7_1k3ff"]
 [ext_resource type="Texture2D" uid="uid://gp11t1mp6sc3" path="res://assets/UI Elements/All-HQ-Assets-D_0009s_0003_Stats-(side)-metal-plate.png" id="7_57dx7"]

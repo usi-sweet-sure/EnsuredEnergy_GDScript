@@ -8,6 +8,7 @@ extends TextureButton
 	"INDUSTRY SUBSIDY") var policy: String
 	
 @onready var thumbs_up = $ThumbsUp
+@onready var thumbs_down = $ThumbsDown
 @onready var animation_player = $AnimationPlayer
 
 	
@@ -15,10 +16,15 @@ func _ready():
 	thumbs_up.position = Vector2(102, 29)
 	thumbs_up.visible = false
 	PolicyManager.policy_voted.connect(_on_policy_voted)
+	Gameloop.next_turn.connect(_on_next_turn)
 
 
 func _on_pressed():
 	PolicyManager.policy_button_clicked.emit(policy)
+	
+
+func _on_next_turn():
+	thumbs_down.hide()
 
 
 func _on_policy_voted(vote_passed: bool):
@@ -31,3 +37,5 @@ func _on_policy_voted(vote_passed: bool):
 			disabled = true
 			texture_normal = texture_pressed
 			animation_player.play("show_thumbs_up")
+		elif not vote_passed and not is_campaign and was_the_voted_policy:
+			animation_player.play("show_thumbs_down")

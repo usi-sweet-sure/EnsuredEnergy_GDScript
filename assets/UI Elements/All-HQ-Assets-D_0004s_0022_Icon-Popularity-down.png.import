@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2mj0ht318q3j"
-path="res://.godot/imported/All-HQ-Assets-D_0004s_0022_Icon-Popularity.png-e1bddd8b6f2717e2a5b4b738c03a049a.ctex"
+uid="uid://iaa6i5ocoaer"
+path="res://.godot/imported/All-HQ-Assets-D_0004s_0022_Icon-Popularity-down.png-065603334e5cabf2d624a7fa8ba0b011.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI Elements/All-HQ-Assets-D_0004s_0022_Icon-Popularity.png"
-dest_files=["res://.godot/imported/All-HQ-Assets-D_0004s_0022_Icon-Popularity.png-e1bddd8b6f2717e2a5b4b738c03a049a.ctex"]
+source_file="res://assets/UI Elements/All-HQ-Assets-D_0004s_0022_Icon-Popularity-down.png"
+dest_files=["res://.godot/imported/All-HQ-Assets-D_0004s_0022_Icon-Popularity-down.png-065603334e5cabf2d624a7fa8ba0b011.ctex"]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://jj476u8yn2g8"]
+[gd_scene load_steps=45 format=3 uid="uid://jj476u8yn2g8"]
 
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/policies_window.gd" id="1_iwuuw"]
 [ext_resource type="Texture2D" uid="uid://coki776cjtqrp" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0006_Policies-metal-base.png" id="2_bdksa"]
@@ -17,7 +17,6 @@
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/vote_zone/vote_zone.gd" id="9_21wnm"]
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/vote_zone/popularity_progress_bar.gd" id="10_bdp3x"]
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/vote_zone/vote_result_label.gd" id="13_d7yyd"]
-[ext_resource type="Texture2D" uid="uid://iaa6i5ocoaer" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0022_Icon-Popularity.png" id="13_sjt8j"]
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/start_campaign_zone/start_campaign_zone.gd" id="15_11d6x"]
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/start_campaign_zone/campaign_started_label.gd" id="16_j45qg"]
 [ext_resource type="Texture2D" uid="uid://dnf85brf6fkbf" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0005_Policies-(side)-metal-base.png" id="18_yk6um"]
@@ -243,9 +242,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -15.5
+offset_left = -46.5
 offset_top = -147.5
-offset_right = 62.5
+offset_right = 31.5
 offset_bottom = -108.5
 grow_horizontal = 2
 theme_override_styles/background = SubResource("StyleBoxEmpty_3qlni")
@@ -259,11 +258,6 @@ show_behind_parent = true
 position = Vector2(39.2745, 19.5)
 scale = Vector2(0.960785, 1.01961)
 texture = ExtResource("8_mlb0j")
-
-[node name="Icon" type="Sprite2D" parent="Control/CenterFrame/Vote/Popularity"]
-position = Vector2(-43.6273, 20.5)
-scale = Vector2(0.872727, 0.872727)
-texture = ExtResource("13_sjt8j")
 
 [node name="VoteResult" type="Label" parent="Control/CenterFrame/Vote"]
 layout_mode = 0
@@ -459,7 +453,7 @@ policy = "ENVIRONMENTAL CAMPAIGN"
 position = Vector2(65, 65)
 texture = ExtResource("24_dbcf4")
 
-[node name="Icon" parent="Control/LeftFrame/campaign_env" index="2"]
+[node name="Icon" parent="Control/LeftFrame/campaign_env" index="3"]
 visible = false
 
 [node name="Upgrade_PV" parent="Control/LeftFrame" instance=ExtResource("3_wnx31")]
@@ -484,7 +478,7 @@ offset_bottom = 79.255
 button_group = ExtResource("4_wme6q")
 policy = "FAST TRACK WIND PARKS"
 
-[node name="Icon" parent="Control/LeftFrame/Wind_buildtime" index="2"]
+[node name="Icon" parent="Control/LeftFrame/Wind_buildtime" index="3"]
 texture = ExtResource("25_o6wyt")
 
 [node name="Upgrade_wind" parent="Control/LeftFrame" instance=ExtResource("3_wnx31")]
@@ -500,7 +494,7 @@ offset_bottom = -286.499
 button_group = ExtResource("4_wme6q")
 policy = "WIND PARKS REGULATION"
 
-[node name="Icon" parent="Control/LeftFrame/Upgrade_wind" index="2"]
+[node name="Icon" parent="Control/LeftFrame/Upgrade_wind" index="3"]
 texture = ExtResource("26_30gpl")
 
 [node name="Icon-environment-" type="Sprite2D" parent="Control/LeftFrame"]
@@ -555,7 +549,7 @@ policy = "ENERGY CAMPAIGN"
 position = Vector2(65, 65)
 texture = ExtResource("8_iiaj0")
 
-[node name="Icon" parent="Control/RightFrame/campaign_demand" index="2"]
+[node name="Icon" parent="Control/RightFrame/campaign_demand" index="3"]
 position = Vector2(63, 58)
 scale = Vector2(1, 1)
 texture = ExtResource("32_6o0tj")
@@ -579,7 +573,7 @@ policy = "MANDATORY BUILDING INSULATION"
 position = Vector2(-26, 27)
 flip_h = true
 
-[node name="Icon" parent="Control/RightFrame/home_regulation" index="2"]
+[node name="Icon" parent="Control/RightFrame/home_regulation" index="3"]
 texture = ExtResource("33_xhuvb")
 
 [node name="industry_subsidy" parent="Control/RightFrame" instance=ExtResource("3_wnx31")]
@@ -601,7 +595,7 @@ policy = "INDUSTRY SUBSIDY"
 position = Vector2(-26, 30)
 flip_h = true
 
-[node name="Icon" parent="Control/RightFrame/industry_subsidy" index="2"]
+[node name="Icon" parent="Control/RightFrame/industry_subsidy" index="3"]
 texture = ExtResource("34_xehlb")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
