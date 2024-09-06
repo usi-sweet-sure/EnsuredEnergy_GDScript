@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://jj476u8yn2g8"]
+[gd_scene load_steps=43 format=3 uid="uid://jj476u8yn2g8"]
 
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/policies_window.gd" id="1_iwuuw"]
 [ext_resource type="Texture2D" uid="uid://q747u8v4c8js" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0006_Policies-metal-base.png" id="2_bdksa"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b4m67oni44dpg" path="res://assets/UI Elements/Button-normal.png" id="4_b2slr"]
 [ext_resource type="ButtonGroup" uid="uid://ei788aoab46g" path="res://scenes/windows/policyButtonGroup.tres" id="4_wme6q"]
 [ext_resource type="Texture2D" uid="uid://60dl810b25fd" path="res://assets/UI Elements/Button-press.png" id="5_dqo5y"]
+[ext_resource type="FontFile" uid="uid://bt2f3flr7psn5" path="res://assets/Fonts/VT323/VT323-Regular.ttf" id="5_hjkk7"]
 [ext_resource type="Texture2D" uid="uid://cuhckno2t6g0r" path="res://assets/UI Elements/Button-hover.png" id="6_8ixy2"]
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/center_frame/info_screen_2/top_label.gd" id="7_cyhh6"]
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/center_frame/info_screen_2/bottom_label.gd" id="8_4nde8"]
@@ -129,11 +130,16 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_force_pass_scroll_events = false
+theme = ExtResource("3_yevmu")
+theme_override_colors/default_color = Color(0.219608, 0.756863, 0.788235, 1)
 theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
 theme_override_constants/shadow_offset_x = 2
+theme_override_fonts/normal_font = ExtResource("5_hjkk7")
+theme_override_font_sizes/normal_font_size = 18
 bbcode_enabled = true
 text = "
 "
+scroll_active = false
 autowrap_mode = 2
 script = ExtResource("17_uqeid")
 
