@@ -22,8 +22,10 @@ func _on_import_slider_value_changed(_new_value: float):
 	Gameloop.imported_energy_amount = new_imported_amount
 
 
-# We reduce the energy supplied by imports if other sources supply enough energy
 func _on_energy_supply_updated_winter(winter_supply: float):
+	_update_slider_properties()
+	
+	# We reduce the energy supplied by imports if other sources supply enough energy
 	var energy_supply_excess = winter_supply + Gameloop.imported_energy_amount - Gameloop.demand_winter
 	if energy_supply_excess > 0 :
 		# This will call _on_import_slider_value_changed, which takes care of updating the
@@ -39,14 +41,28 @@ func _on_import_down_button_pressed():
 	value -= step
 
 
-# Updates properties of the slider so we don't have to update the node manually
 func _on_energy_demand_updated_winter(demand: float):
-	# S. I want the player to feel like they are importing a lot
-	# E. I removed the / 4. But I get you, we need to find a way, this is just for
-	# the temporary version we have to send out
-	max_value = demand / 2
-	#step = round(demand / size.x)
+	_update_slider_properties()
 
+
+# Updates the slider properties when the winter demand or supply change
+func _update_slider_properties():
+	# The player can't import more than needed
+	var max_amount_that_can_be_imported = Gameloop.demand_winter - Gameloop.supply_winter
+	var previous_value = Gameloop.imported_energy_amount
+	# Step must not update, otherwise the value will be changed too when
+	# properties update to adapt to the new step
+	step = 0.5
+	# We must add the step, otherwise the user may not always be able to
+	# move the slider all the way up if the last step would go higher than the
+	# max than can be imported
+	max_value = max_amount_that_can_be_imported + step
+	
+
+	print("Max value : ", max_value)
+	print("Step : ", step)
+	print("value : ", value)
+	print("Actual import : ", Gameloop.imported_energy_amount)
 
 func _on_game_ended():
 	editable = false
