@@ -151,10 +151,10 @@ func _update_info():
 	#build_cost = 100.69
 	if floor(build_cost) == build_cost:
 		# 100 becomes 100.0
-		$PreviewInfo/Price.text = str(build_cost).pad_decimals(1)
+		$PreviewInfo/Price.text = str(build_cost + production_cost).pad_decimals(1)
 	else:
 		# 100.xx stays 100.xx
-		$PreviewInfo/Price.text = str(build_cost).pad_decimals(2)
+		$PreviewInfo/Price.text = str(build_cost + production_cost).pad_decimals(2)
 		
 	if build_time > 0:
 		$PreviewInfo/Time.show()
@@ -282,9 +282,10 @@ func _on_mult_inc_pressed():
 				Context1.yr = Gameloop.year_list[Gameloop.current_turn]
 				Context1.tj = value
 				Context1.prm_ups()
+				$BuildInfo/EnergyContainer/Multiplier/Inc.disabled = true
 				
 				await Context1.http1.request_completed
-				
+				$BuildInfo/EnergyContainer/Multiplier/Inc.disabled = false
 				var poll_key = plant_name_to_metric_id[plant_name + "_EMI"]
 				var cost_key = plant_name_to_metric_id[plant_name + "_COST"]
 		
@@ -318,19 +319,41 @@ func _on_mult_dec_pressed():
 		$AP.play("Money+")
 		
 		upgrade -= 1
-		
-		var plant_id = plant_name_to_ups_id[plant_name]
-		var value = (cnv_capacity * mult_factor * upgrade)
-		capacity = base_capacity + (base_capacity * mult_factor * upgrade)
-		pollution = base_pollution + (base_pollution * mult_factor * upgrade)
-		land_use = base_land_use + (base_land_use * mult_factor * upgrade)
-		production_cost = base_production_cost + (base_production_cost * mult_factor * upgrade)
-		
-		Gameloop.ups_list[plant_id] += value
-		#Context1.prm_id = plant_id
-		#Context1.yr = Gameloop.year_list[Gameloop.current_turn]
-		#Context1.tj = value
-		#Context1.prm_ups()
+		if plant_name != "CARBON":
+			var plant_id = plant_name_to_ups_id[plant_name]
+			var value = (cnv_capacity * mult_factor * upgrade)
+			capacity = base_capacity + (base_capacity * mult_factor * upgrade)
+			pollution = base_pollution + (base_pollution * mult_factor * upgrade)
+			land_use = base_land_use + (base_land_use * mult_factor * upgrade)
+			production_cost = base_production_cost + (base_production_cost * mult_factor * upgrade)
+			
+			Gameloop.ups_list[plant_id] += value
+			#Context1.prm_id = plant_id
+			#Context1.yr = Gameloop.year_list[Gameloop.current_turn]
+			#Context1.tj = value
+			#Context1.prm_ups()
+		else:
+			var plant_id = plant_name_to_ups_id[plant_name]
+			upgrade_per_turn -= 1
+			var value = 0.5 * upgrade_per_turn
+			Context1.prm_id = plant_id
+			Context1.yr = Gameloop.year_list[Gameloop.current_turn]
+			Context1.tj = value
+			Context1.prm_ups()
+			$BuildInfo/EnergyContainer/Multiplier/Dec.disabled = true
+			
+			await Context1.http1.request_completed
+			$BuildInfo/EnergyContainer/Multiplier/Dec.disabled = false
+			var poll_key = plant_name_to_metric_id[plant_name + "_EMI"]
+			var cost_key = plant_name_to_metric_id[plant_name + "_COST"]
+	
+			if Context1.ctx1 != null:
+				for i in Context1.ctx1:
+					match i["prm_id"]:
+						poll_key:
+							pollution = float(i["tj"])
+						cost_key:
+							production_cost = float(i["tj"]) / 10
 		
 		_update_info()
 		Gameloop._update_buildings_impact()
