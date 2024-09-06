@@ -456,9 +456,9 @@ func _on_upgrade_button_mouse_entered():
 			   
 			match element:
 				"winter_sticker":
-					node.get_children()[0].text = "+ " + str(base_capacity * mult_factor).pad_decimals(2)
+					node.get_children()[0].text = "+ " + str(base_capacity * mult_factor * availability.y).pad_decimals(2)
 				"summer_sticker":
-					node.get_children()[0].text = "+ " + str(base_capacity * mult_factor).pad_decimals(2)
+					node.get_children()[0].text = "+ " + str(base_capacity * mult_factor * availability.x).pad_decimals(2)
 				"red_cost_sticker":
 					node.get_children()[0].text = "- " + str(upgrade_cost) + " CHF"
 				"green_cost_sticker":
@@ -496,9 +496,9 @@ func _on_downgrade_button_mouse_entered():
 			
 			match element:
 				"winter_sticker":
-					node.get_children()[0] = "- " + str(base_capacity * mult_factor).pad_decimals(2)
+					node.get_children()[0].text = "- " + str(base_capacity * mult_factor * availability.y).pad_decimals(2)
 				"summer_sticker":
-					node.get_children()[0] = "- " + str(base_capacity * mult_factor).pad_decimals(2)
+					node.get_children()[0].text = "- " + str(base_capacity * mult_factor  * availability.x).pad_decimals(2)
 				"red_cost_sticker":
 					node.hide()
 				"green_cost_sticker":
