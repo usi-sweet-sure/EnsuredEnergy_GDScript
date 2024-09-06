@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://d2hyunjbx7qb7"]
+[gd_scene load_steps=9 format=3 uid="uid://d2hyunjbx7qb7"]
 
 [ext_resource type="Script" path="res://src/gdscript/hud/energy_bars/energy_bar.gd" id="2_c6use"]
 [ext_resource type="StyleBox" uid="uid://yqtdxtw3vpjp" path="res://scenes/hud/energy_bar_green.tres" id="3_0cuo8"]
 [ext_resource type="PackedScene" uid="uid://u1nvhv5ceok" path="res://scenes/hud/BarInfo.tscn" id="3_an05x"]
-[ext_resource type="Texture2D" uid="uid://b421l4qq7mg5n" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0024_Line-energy.png" id="3_fqlbn"]
+[ext_resource type="Texture2D" uid="uid://7kknywl8yrji" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0024_Line-energy.png" id="3_fqlbn"]
+[ext_resource type="Texture2D" uid="uid://c5w8v4i1hvmrr" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0000_Marks-vertical.png" id="4_uo7q2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kaeus"]
 bg_color = Color(0.317647, 0.317647, 0.317647, 0)
@@ -13,6 +14,14 @@ corner_radius_top_left = 2
 corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ecnd"]
+atlas = ExtResource("4_uo7q2")
+region = Rect2(0, 0, 11, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tix6"]
+atlas = ExtResource("4_uo7q2")
+region = Rect2(25, 0, 12, 14)
 
 [node name="Energy" type="ProgressBar"]
 offset_left = 86.0
@@ -33,6 +42,16 @@ z_index = 1
 position = Vector2(0, 20)
 rotation = 1.5708
 texture = ExtResource("3_fqlbn")
+
+[node name="Sprite2D" type="Sprite2D" parent="DemandLine"]
+position = Vector2(-27.5, -0.5)
+scale = Vector2(1.39474, 1)
+texture = SubResource("AtlasTexture_2ecnd")
+
+[node name="Sprite2D2" type="Sprite2D" parent="DemandLine"]
+position = Vector2(24.5, -0.5)
+scale = Vector2(1.39474, 1)
+texture = SubResource("AtlasTexture_4tix6")
 
 [node name="BarInfo" parent="." instance=ExtResource("3_an05x")]
 visible = false
