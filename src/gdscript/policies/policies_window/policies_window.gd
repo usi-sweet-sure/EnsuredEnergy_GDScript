@@ -16,6 +16,7 @@ signal window_opened
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Gameloop.toggle_policies_window.connect(_on_toggle_policies_window)
+	PolicyManager.policy_button_unclicked.connect(func(): window_opened.emit())
 
 
 func _on_toggle_policies_window():

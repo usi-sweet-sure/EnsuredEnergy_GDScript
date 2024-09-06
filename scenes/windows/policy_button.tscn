@@ -264,4 +264,4 @@ libraries = {
 }
 speed_scale = 1.25
 
-[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="toggled" from="." to="." method="_on_toggled"]

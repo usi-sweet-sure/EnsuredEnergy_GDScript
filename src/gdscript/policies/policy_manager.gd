@@ -6,6 +6,7 @@ signal policy_voted
 signal personal_support_updated
 signal energy_policies_support_updated
 signal environmental_policies_support_updated
+signal policy_button_unclicked
 
 var environmental_policies_support: float = 0.0: # In [0,1]
 	set(new_value):
@@ -161,7 +162,7 @@ func _on_next_turn():
 	policy_voted_this_turn = null
 
 
-func policy_already_passed(policy: Policy):
+func did_policy_already_passed(policy: Policy):
 	var policy_already_passed = false
 	
 	for entry in voted_policies:
@@ -172,3 +173,16 @@ func policy_already_passed(policy: Policy):
 			break
 	
 	return policy_already_passed
+
+
+func get_turn_of_successful_policy(policy: Policy):
+	var turn = -1
+	
+	for entry in voted_policies:
+		var entry_policy: Policy = entry["policy"]
+		
+		if entry_policy.title_key == policy.title_key and entry["passed"]:
+			turn = entry["turn"]
+			break
+	
+	return turn

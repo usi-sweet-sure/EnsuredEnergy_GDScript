@@ -142,13 +142,13 @@ POLICIES_ENVIRONMENTAL_POLICY_3_TEXT,Limitation of the possibilities of appeal f
 POLICIES_ENVIRONMENTAL_POLICY_3_EFFECT_1,- Increase wind parks upgrades from 2 to 5.,- Augmentation du nombre de parcs éoliens de 2 à 5.,- Erhöht Windpart-Upgrades von 2 auf 5.,- Aumenta innovazione dei parchi eolici da 2 a 5
 POLICIES_ENERGY_POLICY_1_TITLE,Mandatory Building Insulation,Isolation obligatoire des bâtiments,Obligatorische Gebäudeisolierung,L'isolazione termica degli edifici è obligatoria
 POLICIES_ENERGY_POLICY_1_TEXT,All buildings must be better insulated.,Tous les bâtiments doivent être mieux isolés.,Alle Gebäude müssen innerhalb von n Runden isoliert werden.,Tutti gli edifici devono essere termicamente isolati nei prossimi n turni di gioco.
-POLICIES_ENERGY_POLICY_1_EFFECT_1,- Lowers energy demand by 5 in the Summer,- Réduit la demande d'énergie de 5 en été,- Reduziert den Energiebedarf im Sommer um 5,- La domanda di energia diminuisce di 5 in estate
-POLICIES_ENERGY_POLICY_1_EFFECT_2,- Lowers energy demand by 5 in the Winter,- Réduit la demande d'énergie de 5 en hiver,- Reduziert den Energiebedarf im Winter um 5,- La domanda di energia diminuisce di 5 in inverno
+POLICIES_ENERGY_POLICY_1_EFFECT_1,- Lowers energy demand by 5% in the Summer,- Réduit la demande d'énergie de 5% en été,- Reduziert den Energiebedarf im Sommer um 5%,- La domanda di energia diminuisce di 5% in estate
+POLICIES_ENERGY_POLICY_1_EFFECT_2,- Lowers energy demand by 5% in the Winter,- Réduit la demande d'énergie de 5% en hiver,- Reduziert den Energiebedarf im Winter um 5%,- La domanda di energia diminuisce di 5% in inverno
 POLICIES_ENERGY_POLICY_2_TITLE,Industry Subsidy,Subventions à l'industrie,Unterstützung für die Industrie,Sussidi per industria
 POLICIES_ENERGY_POLICY_2_TEXT,Provide industries with grants for less energy intensive production.,Fournir aux industries des subventions pour une production moins gourmande en énergie.,"Gewährung von Subventionen an die Industrie, um eine weniger energieintensive Produktion zu fördern",Fornisce alle industrie finanziamenti per ridurre la produzione energetica intesiva
-POLICIES_ENERGY_POLICY_2_EFFECT_1,- Lowers energy demand by 5 in the Summer,- Réduit la demande d'énergie de 5 en été,- Reduziert den Energiebedarf im Sommer um 5,- Riduce la domanda di energia di 5 in estate
-POLICIES_ENERGY_POLICY_2_EFFECT_2,- Lowers energy demand by 5 in the Winter,- Réduit la demande d'énergie de 5 en hiver,- Reduziert den Energiebedarf im Winter um 5,- Riduce la domanda di energia di 5 in inverno
-ESTIMATED_ACCEPTANCE_CHANCE,Accptance chance,Chances d'acceptation,Akzeptanzchance,Probabilità di accettazione
+POLICIES_ENERGY_POLICY_2_EFFECT_1,- Lowers energy demand by 5% in the Summer,- Réduit la demande d'énergie de 5% en été,- Reduziert den Energiebedarf im Sommer um 5%,- Riduce la domanda di energia di 5% in estate
+POLICIES_ENERGY_POLICY_2_EFFECT_2,- Lowers energy demand by 5% in the Winter,- Réduit la demande d'énergie de 5% en hiver,- Reduziert den Energiebedarf im Winter um 5%,- Riduce la domanda di energia di 5% in inverno
+ESTIMATED_ACCEPTANCE_CHANCE,Acceptance chance,Chances d'acceptation,Akzeptanzchance,Probabilità di accettazione
 DURATION_OF_CAMPAIGN,Duration of campaign : 1 turn,Durée de la campagne : 1 tour,Dauer der Kampagne : 1 Runde,Durata della campagna: 1 turno
 DURATION_OF_CAMPAIGN_2,You won't be able to vote for policies until next turn,Vous ne pourrez pas ouvrir un vote pour une politique avant le prochain tour.,Sie können erst in der nächsten Runde eine Abstimmung über Politiken eröffnen,Non sarà possibile aprire una votazione per le politiche fino al prossimo turno.
 START_CAMPAIGN,Start,Démarrer,Beginnen,Inizio
@@ -156,7 +156,17 @@ CAMPAIGN_STARTED,The campaign has started!,La campagne a commencé !,Die Kampagn
 VOTE,Vote,Voter,Abstimmen,Voto
 VOTE_FAILED,Policy failed to be passed...,La politique n'a pas été adoptée...,Die Politik wurde nicht verabschiedet...,La politica non è stata approvata...
 VOTE_SUCCEEDED,Policy was passed successfully!,La politique a été adoptée avec succès !,Die Richtlinie wurde erfolgreich verabschiedet!,La politica è stata approvata con successo!
-VOTING_BONUS,Voting bonus:,Bonus aux votations :,Bonus bei Volksabstimmungen :,Bonus di voto:
+VOTING_BONUS,Bonus during votations :,Bonus lors des votations :,Bonus bei Abstimmungen :,Bonus di votazione:
+CANNOT_VOTE_OR_START_CAMPAIGN,You already voted or started a campaign this turn,Vous avez déjà voté ou lancé une campagne ce tour-ci,Sie haben in dieser Runde bereits gewählt oder eine Kampagne gestartet,Avete già votato o avviato una campagna in questo turno
+CANNOT_START_CAMPAIGN,You already voted or started a campaign this turn,Vous avez déjà voté ou lancé une campagne ce tour-ci,Sie haben in dieser Runde bereits gewählt oder eine Kampagne gestartet,Avete già votato o avviato una campagna in questo turno
+CANNOT_VOTE,You already voted or started a campaign this turn,Vous avez déjà voté ou lancé une campagne ce tour-ci,Sie haben in dieser Runde bereits gewählt oder eine Kampagne gestartet,Avete già votato o avviato una campagna in questo turno
+CAN_VOTE_OR_START_CAMPAIGN,You can start a campaign or vote for a policy !,Vous pouvez lancer une campagne ou voter pour une politique !,Sie können eine Kampagne starten oder für eine Politik stimmen!,Potete avviare una campagna o votare per una politica!
+CAN_START_CAMPAIGN,"You can start a campaign, you'll get more support for futur votations !","Vous pouvez lancer une campagne, vous obtiendrez ainsi plus de soutien pour les futures votations !","Sie können eine Kampagne starten, um mehr Unterstützung für künftige Abstimmungen zu erhalten!","Puoi avviare una campagna, otterrai più sostegno per le votazioni future!"
+VOTE_PASSED,The votation was a success !,La votation a été un succès !,Die Abstimmung war ein Erfolg!,La votazione è stata un successo!
+POLICY_ALREADY_PASSED,The politic is already approved !,La politique est déjà approuvée !,Die Politik ist bereits genehmigt!,La politica è già approvata!
+CAMPAIGN_ONGOING,"The campaign is oingoing, you'll get more support on your politics on the futur !","La campagne est en cours, vous obtiendrez plus de soutien sur votre politique à l'avenir !","Die Kampagne ist im Gange, Sie werden in Zukunft mehr Unterstützung für Ihre Politik erhalten!","La campagna è in corso, riceverete più sostegno per la vostra politica nel futuro!"
+JUST_VOTED_AND_FAILED,This policy was just voted and it wasn't approved...,Cette politique vient d'être votée et n'a pas été approuvée...,Über diese Politik wurde gerade abgestimmt und sie wurde nicht angenommen...,Questa politica è stata appena votata e non è stata approvata...
+JUST_VOTED_AND_SUCCEEDED,This policy was just voted and was approved !,Cette politique vient d'être votée et a été approuvée !,Über diese Politik wurde gerade abgestimmt und sie wurde angenommen!,Questa politica è stata appena votata ed è stata approvata!
 GAS,Gas,Gaz,Gas,Gas
 NUCLEAR,Nuclear,Nucléaire,Atomkraftwerk,Nucleare
 HYDRO,Hydro,Hydraulique,Wasserkraft,Idroelettrica
@@ -168,6 +178,7 @@ GEOTHERMAL,Geothermal,Geothermique,Geothermische,Geotermica
 SHUT_DOWN,Shutting down in {nbr} turns,S'arrête dans {nbr} tours,Abschaltung in {nbr} Runden,Spegnimento in {nbr} giri
 PROD_COST,Production costs,Coûts de production,Produktionskosten,Costi di produzione
 POLLUTION,CO2 Emissions,Émissions,Verschmutzung,Emissioni
+CARBON,Carbon sequestration,Séquestration du carbone,Kohlenstoff Sequestrierung,Sequestro di carbonio
 BUDGET,Budget:,Budget :,Haushalt:,Bilancio:
 BUDGET_TEXT,The budget shows you how much money you have and can spend. You start the game with 250.- and at the beginning of each turn receive 250.-,"Le budget vous indique combien d'argent vous avez et pouvez dépenser. Vous commencez la partie avec 250.- et au début de chaque tour, vous recevez 250.-.","Das Budget zeigt dir, wie viel Geld du hast und ausgeben kannst. Sie beginnen das Spiel mit 250.- und erhalten zu Beginn jeder Runde 250.-.",Il budget mostra quanto denaro si ha e si può spendere. Si inizia la partita con 250.- e all'inizio di ogni turno si ricevono 250.-
 PRODUCTION,Production:,Production :,Produktion:,Produzione:

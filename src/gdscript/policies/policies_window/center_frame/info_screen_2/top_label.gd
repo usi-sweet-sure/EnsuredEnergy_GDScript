@@ -10,51 +10,65 @@ func _ready():
 func _on_policy_window_opened():
 	if PolicyManager.policy_voted_this_turn != null:
 		text = tr("CANNOT_VOTE_OR_START_CAMPAIGN")
-		set("theme_override_colors/font_color", Color(0.948, 0.489, 0.437))
-		set("theme_override_colors/font_shadow_color", Color(0.656, 0, 0.079, 0.518))
+		_change_text_to_red()
 	else:
 		text = tr("CAN_VOTE_OR_START_CAMPAIGN")
-		set("theme_override_colors/font_color", Color(0,0.882,0))
-		set("theme_override_colors/font_shadow_color", Color(1, 0.541, 0.596, 0.518))
+		_change_text_to_green()
 
 
 func _on_policy_button_clicked(policy_id: String):
 	var policy: Policy = PolicyManager.get_policy(policy_id)
-	set("theme_override_colors/font_shadow_color", Color(1, 0.541, 0.596, 0.518))
 	
 	if not policy.is_campaign():
-		if PolicyManager.policy_already_passed(policy):
-			text = tr("POLICY_ALREADY_PASSED")
-			set("theme_override_colors/font_color", Color(0,0.882,0))
+		if PolicyManager.did_policy_already_passed(policy):
+			if PolicyManager.get_turn_of_successful_policy(policy) == Gameloop.current_turn:
+				text = tr("JUST_VOTED_AND_SUCCEEDED")
+			else:
+				text = tr("POLICY_ALREADY_PASSED")
+			
+			_change_text_to_green()
 		else:
 			if PolicyManager.policy_voted_this_turn == null:
 				text = tr("ESTIMATED_ACCEPTANCE_CHANCE")
-				set("theme_override_colors/font_color", Color(0,0.882,0))
+				_change_text_to_green()
 			else:
-				text = tr("CANNOT_VOTE")
-				set("theme_override_colors/font_color", Color(0.948, 0.489, 0.437))
-				set("theme_override_colors/font_shadow_color", Color(0.656, 0, 0.079, 0.518))
+				if PolicyManager.policy_voted_this_turn.title_key == policy.title_key:
+					text = tr("JUST_VOTED_AND_FAILED")
+				else:
+					text = tr("CANNOT_VOTE")
+				
+				_change_text_to_red()
 	else:
 		if PolicyManager.policy_voted_this_turn == null:
 			text = tr("CAN_START_CAMPAIGN")
-			set("theme_override_colors/font_color", Color(0,0.882,0))
+			_change_text_to_green()
 		else:
-			text = tr("CANNOT_START_CAMPAIGN")
-			set("theme_override_colors/font_color", Color(0.948, 0.489, 0.437))
-			set("theme_override_colors/font_shadow_color", Color(0.656, 0, 0.079, 0.518))
+			if PolicyManager.policy_voted_this_turn.title_key == policy.title_key:
+				text = tr("CAMPAIGN_ONGOING")
+				_change_text_to_green()
+			else:
+				text = tr("CANNOT_START_CAMPAIGN")
+				_change_text_to_red()
 
 
 func _on_policy_voted(vote_passed: bool):
 	if not PolicyManager.policy_voted_this_turn.is_campaign():
 		if vote_passed:
 			text = tr("VOTE_PASSED")
-			set("theme_override_colors/font_color", Color(0,0.882,0))
-			set("theme_override_colors/font_shadow_color", Color(1, 0.541, 0.596, 0.518))
+			_change_text_to_green()
 		else:
-			text = tr("VOTE_DIDNT_PASSED")
-			set("theme_override_colors/font_color", Color(0.948, 0.489, 0.437))
-			set("theme_override_colors/font_shadow_color", Color(0.656, 0, 0.079, 0.518))
+			text = tr("VOTE_FAILED")
+			_change_text_to_red()
 	else:
 		text = tr("CAMPAIGN_ONGOING")
-		set("theme_override_colors/font_color", Color(0,0.882,0))
-		set("theme_override_colors/font_shadow_color", Color(1, 0.541, 0.596, 0.518))
+		_change_text_to_green()
+
+
+func _change_text_to_green():
+	set("theme_override_colors/font_color", Color(0,0.882,0))
+	set("theme_override_colors/font_shadow_color", Color(1, 0.541, 0.596, 0.518))
+	
+
+func _change_text_to_red():
+	set("theme_override_colors/font_color", Color(0.948, 0.489, 0.437))
+	set("theme_override_colors/font_shadow_color", Color(0.656, 0, 0.079, 0.518))

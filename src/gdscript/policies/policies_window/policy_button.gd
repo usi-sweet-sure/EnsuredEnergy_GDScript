@@ -29,10 +29,6 @@ func _ready():
 	thumbs_down.visible = false
 	PolicyManager.policy_voted.connect(_on_policy_voted)
 	Gameloop.next_turn.connect(_on_next_turn)
-
-
-func _on_pressed():
-	PolicyManager.policy_button_clicked.emit(policy)
 	
 
 func _on_next_turn():
@@ -54,3 +50,10 @@ func _on_policy_voted(vote_passed: bool):
 		else:
 			animation_player.play("show_right_thumbs_down")
 
+
+
+func _on_toggled(toggled_on: bool):
+	if toggled_on:
+		PolicyManager.policy_button_clicked.emit(policy)
+	else:
+		PolicyManager.policy_button_unclicked.emit()

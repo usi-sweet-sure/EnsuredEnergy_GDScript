@@ -12,7 +12,7 @@ func _ready():
 func _on_policy_button_clicked(policy_id):
 	var policy = PolicyManager.get_policy(policy_id)
 	visible = not policy.policy_type == Policy.PolicyType.CAMPAIGN
-	disabled = PolicyManager.policy_already_passed(policy) or PolicyManager.policy_voted_this_turn != null
+	disabled = PolicyManager.did_policy_already_passed(policy) or PolicyManager.policy_voted_this_turn != null
 
 
 func _on_pressed():

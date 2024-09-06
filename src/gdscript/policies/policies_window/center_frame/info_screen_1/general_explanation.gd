@@ -12,7 +12,7 @@ func _on_policy_window_opened():
 
 
 func _on_policy_button_clicked(policy_id: String):
-	var policy: Policy = PolicyManager.get_policy(policy_id)	
+	var policy: Policy = PolicyManager.get_policy(policy_id)
 	var effects_text = ""
 	
 	for effect_text: String in policy.effects_texts:
