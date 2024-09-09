@@ -3,8 +3,12 @@ extends TextureButton
 var building_plant
 var turn_left_to_build
 
+signal plant_tested
+signal plant_canceled
+
 @onready var powerplants = $PowerPlants.get_children()
 @onready var build_menu_plants = $BuildMenu/Container.get_children()
+@onready var bm_anim_player = $BuildMenu/AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -43,6 +47,9 @@ func _on_pp_pressed(pp):
 				$BuildMenu.hide()
 				$Money.text = "-" + str(pp.build_cost + pp.production_cost) + " CHF"
 				$AnimationPlayer.play("Money-")
+				
+				plant_tested.emit()
+				
 				if pp.build_time < 1:
 					_build_plant(plant)
 				else:
@@ -79,6 +86,7 @@ func _build_plant(plant, can_cancel := true):
 
 
 func _on_close_button_pressed():
+	plant_canceled.emit()
 	$BuildMenu/AnimationPlayer.play_backwards("SlideUp")
 	await $BuildMenu/AnimationPlayer.animation_finished
 	$BuildMenu.hide()
@@ -87,6 +95,7 @@ func _on_close_button_pressed():
 # This is called for a pp that was actually built, not one that takes more than one turn to build,
 # see _on_building_cancel_pressed() below for that
 func _on_pp_delete(pp):
+	plant_canceled.emit()
 	Gameloop.building_costs -= pp.build_cost
 	pp.hide()
 	pp.remove_from_group("PP")
@@ -119,6 +128,7 @@ func _on_pp_mouse_exited(pp):
 
 # This is called for a building still in construction
 func _on_building_cancel_pressed():
+	plant_canceled.emit()
 	Gameloop.building_costs -= building_plant.build_cost
 	$BuildingInfo.hide()
 	$Hammer.show()
