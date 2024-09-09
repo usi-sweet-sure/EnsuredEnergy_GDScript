@@ -24,6 +24,7 @@ func _ready():
 	Gameloop.show_tutorial.connect(_on_show_tutorial)
 	
 	#E. !!! Do or remove
+	# Maybe TODO for carbon sequestration if we add a button for it !!
 	#for power_plant in get_tree().get_nodes_in_group("PP"):
 		#power_plant.ZoomSignal.connect(plant_zoom);
 		

@@ -1,9 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://ciphd0cmpslrn"]
+[gd_scene load_steps=17 format=3 uid="uid://ciphd0cmpslrn"]
 
 [ext_resource type="Texture2D" uid="uid://c55d82it2owgs" path="res://assets/UI Elements/All-HQ-Assets-D_0008s_0001_Small-right-paper.png" id="1_p4eo2"]
 [ext_resource type="Script" path="res://src/gdscript/tutorial/tutorial.gd" id="1_yrums"]
 [ext_resource type="Texture2D" uid="uid://03lloca0uata" path="res://assets/Elements/ARROW INFO – 1.png" id="3_xv1gs"]
-[ext_resource type="Texture2D" uid="uid://mwohu8ubla1b" path="res://assets/UpgradeSprite.png" id="4_yf1o7"]
 [ext_resource type="Texture2D" uid="uid://b0m13trb53j5o" path="res://assets/UI Elements/All-HQ-Assets-D_0008s_0004_Big-paper.png" id="5_3h0cr"]
 [ext_resource type="Texture2D" uid="uid://ikiclp3p8k8k" path="res://assets/key_tab_icon.png" id="5_mivsl"]
 [ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="7_6e2hn"]
@@ -36,6 +35,8 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="MouseBlock" type="ColorRect" parent="Bubbles"]
+visible = false
+layout_mode = 0
 offset_left = -54.0
 offset_top = -48.0
 offset_right = 1969.0
@@ -222,9 +223,9 @@ color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 [node name="InfoBubble3" type="MarginContainer" parent="Bubbles/InfoBubble3"]
 layout_mode = 0
 offset_left = -1.0
-offset_top = 829.0
+offset_top = 719.0
 offset_right = 299.0
-offset_bottom = 957.0
+offset_bottom = 847.0
 
 [node name="InfoBubble" type="NinePatchRect" parent="Bubbles/InfoBubble3/InfoBubble3"]
 layout_mode = 2
@@ -305,7 +306,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -739.0
+offset_right = -656.0
+offset_bottom = -328.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
@@ -315,9 +317,22 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1184.0
+offset_left = 1267.0
 offset_right = 736.0
-offset_bottom = -400.0
+offset_bottom = -272.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.156863, 0.156863, 0.156863, 0.784314)
+
+[node name="ColorRect6" type="ColorRect" parent="Bubbles/InfoBubble4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 752.0
+offset_right = -768.0
+offset_bottom = 344.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
@@ -327,9 +342,22 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1184.0
-offset_top = 873.0
-offset_right = 736.0
+offset_left = 1267.0
+offset_top = 664.0
+offset_right = 656.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.156863, 0.156863, 0.156863, 0.784314)
+
+[node name="ColorRect7" type="ColorRect" parent="Bubbles/InfoBubble4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1851.0
+offset_top = 752.0
+offset_right = 664.0
+offset_bottom = 336.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
@@ -340,9 +368,22 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 1521.0
-offset_top = 680.0
+offset_top = 480.0
 offset_right = 736.0
-offset_bottom = -207.0
+offset_bottom = -88.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.156863, 0.156863, 0.156863, 0.784314)
+
+[node name="BuildBlock" type="ColorRect" parent="Bubbles/InfoBubble4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 499.0
+offset_top = 752.0
+offset_right = 584.0
+offset_bottom = 344.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
@@ -350,9 +391,9 @@ color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 [node name="InfoBubble4" type="MarginContainer" parent="Bubbles/InfoBubble4"]
 layout_mode = 0
 offset_left = 1520.0
-offset_top = 685.0
+offset_top = 462.0
 offset_right = 1796.0
-offset_bottom = 826.0
+offset_bottom = 603.0
 
 [node name="InfoBubble" type="NinePatchRect" parent="Bubbles/InfoBubble4/InfoBubble4"]
 layout_mode = 2
@@ -395,35 +436,20 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 792.0
+offset_right = -624.0
+offset_bottom = -328.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.156863, 0.156863, 0.156863, 0)
-
-[node name="Upgrade" type="Sprite2D" parent="Bubbles/InfoBubble5"]
-position = Vector2(190, 195)
-texture = ExtResource("4_yf1o7")
+color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 
 [node name="ColorRect3" type="ColorRect" parent="Bubbles/InfoBubble5"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -792.0
-offset_top = 336.0
-offset_right = 40.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.156863, 0.156863, 0.156863, 0.784314)
-
-[node name="ColorRect4" type="ColorRect" parent="Bubbles/InfoBubble5"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -792.0
-offset_right = -855.0
-offset_bottom = -744.0
+offset_left = 1299.0
+offset_right = 736.0
+offset_bottom = -336.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
@@ -433,10 +459,35 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 391.0
-offset_top = 219.0
-offset_right = 153.0
-offset_bottom = -744.0
+offset_left = 3.0
+offset_top = 752.0
+offset_right = -768.0
+offset_bottom = 344.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.156863, 0.156863, 0.156863, 0.784314)
+
+[node name="ColorRect4" type="ColorRect" parent="Bubbles/InfoBubble5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1299.0
+offset_top = 664.0
+offset_right = 656.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.156863, 0.156863, 0.156863, 0.784314)
+
+[node name="ColorRect7" type="ColorRect" parent="Bubbles/InfoBubble5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1883.0
+offset_top = 752.0
+offset_right = 664.0
+offset_bottom = 336.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
@@ -446,46 +497,59 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 276.0
-offset_top = -10.0
-offset_right = 35.0
-offset_bottom = -861.0
+offset_left = 1521.0
+offset_top = 416.0
+offset_right = 736.0
+offset_bottom = -88.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 
-[node name="InfoBubble5" type="MarginContainer" parent="Bubbles/InfoBubble5"]
-layout_mode = 0
-offset_left = 392.0
-offset_top = 183.0
-offset_right = 774.0
-offset_bottom = 311.0
+[node name="BuildBlock" type="ColorRect" parent="Bubbles/InfoBubble5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 531.0
+offset_top = 752.0
+offset_right = 584.0
+offset_bottom = 344.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 
-[node name="InfoBubble" type="NinePatchRect" parent="Bubbles/InfoBubble5/InfoBubble5"]
+[node name="InfoBubble4" type="MarginContainer" parent="Bubbles/InfoBubble5"]
+layout_mode = 0
+offset_left = 1521.0
+offset_top = 395.0
+offset_right = 1844.0
+offset_bottom = 536.0
+
+[node name="InfoBubble" type="NinePatchRect" parent="Bubbles/InfoBubble5/InfoBubble4"]
 layout_mode = 2
 texture = ExtResource("1_p4eo2")
-region_rect = Rect2(1.19095, 0, 278.809, 179.079)
-patch_margin_left = 34
-patch_margin_top = 46
-patch_margin_right = 56
-patch_margin_bottom = 33
+region_rect = Rect2(0, -2, 282, 179.205)
+patch_margin_left = 48
+patch_margin_top = 50
+patch_margin_right = 66
+patch_margin_bottom = 30
 metadata/_edit_group_ = true
 
-[node name="Arrow" type="Sprite2D" parent="Bubbles/InfoBubble5/InfoBubble5/InfoBubble"]
+[node name="Arrow" type="Sprite2D" parent="Bubbles/InfoBubble5/InfoBubble4/InfoBubble"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
 position = Vector2(-12, 66)
 texture = ExtResource("3_xv1gs")
 region_rect = Rect2(24, 24, 30, 32)
 
-[node name="MarginContainer" type="MarginContainer" parent="Bubbles/InfoBubble5/InfoBubble5"]
+[node name="MarginContainer" type="MarginContainer" parent="Bubbles/InfoBubble5/InfoBubble4"]
 layout_mode = 2
 theme_override_constants/margin_left = 40
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 44
 
-[node name="Text" type="RichTextLabel" parent="Bubbles/InfoBubble5/InfoBubble5/MarginContainer"]
+[node name="Text" type="RichTextLabel" parent="Bubbles/InfoBubble5/InfoBubble4/MarginContainer"]
 layout_mode = 2
 theme = ExtResource("7_6e2hn")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -502,42 +566,122 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 371.0
+offset_left = 792.0
+offset_bottom = -768.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0.156863, 0.156863, 0.156863, 0)
+
+[node name="ColorRect3" type="ColorRect" parent="Bubbles/InfoBubble6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -792.0
+offset_top = 1032.0
+offset_right = 40.0
+offset_bottom = 824.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 
-[node name="InfoBubble6" type="MarginContainer" parent="Bubbles/InfoBubble6"]
-layout_mode = 0
-offset_top = 13.0
-offset_right = 290.0
-offset_bottom = 141.0
+[node name="ColorRect7" type="ColorRect" parent="Bubbles/InfoBubble6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -792.0
+offset_top = 896.0
+offset_right = -704.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 
-[node name="InfoBubble" type="NinePatchRect" parent="Bubbles/InfoBubble6/InfoBubble6"]
+[node name="ColorRect4" type="ColorRect" parent="Bubbles/InfoBubble6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -792.0
+offset_right = -720.0
+offset_bottom = 584.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.156863, 0.156863, 0.156863, 0.784314)
+
+[node name="ColorRect8" type="ColorRect" parent="Bubbles/InfoBubble6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 747.0
+offset_top = 672.0
+offset_right = 40.0
+offset_bottom = 584.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.156863, 0.156863, 0.156863, 0.784314)
+
+[node name="ColorRect6" type="ColorRect" parent="Bubbles/InfoBubble6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 643.0
+offset_top = 896.0
+offset_right = 32.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.156863, 0.156863, 0.156863, 0.784314)
+
+[node name="ColorRect5" type="ColorRect" parent="Bubbles/InfoBubble6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 411.0
+offset_top = -53.0
+offset_right = 35.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.156863, 0.156863, 0.156863, 0.784314)
+
+[node name="InfoBubble5" type="MarginContainer" parent="Bubbles/InfoBubble6"]
+layout_mode = 0
+offset_left = 750.0
+offset_top = 768.0
+offset_right = 1054.0
+offset_bottom = 896.0
+
+[node name="InfoBubble" type="NinePatchRect" parent="Bubbles/InfoBubble6/InfoBubble5"]
 layout_mode = 2
 texture = ExtResource("1_p4eo2")
-region_rect = Rect2(0.972874, 0, 281.027, 190)
-patch_margin_left = 28
-patch_margin_top = 48
-patch_margin_right = 48
-patch_margin_bottom = 44
+region_rect = Rect2(1.19095, 0.276505, 278.809, 177.506)
+patch_margin_left = 16
+patch_margin_top = 40
+patch_margin_right = 56
+patch_margin_bottom = 33
 metadata/_edit_group_ = true
 
-[node name="Arrow" type="Sprite2D" parent="Bubbles/InfoBubble6/InfoBubble6/InfoBubble"]
+[node name="Arrow" type="Sprite2D" parent="Bubbles/InfoBubble6/InfoBubble5/InfoBubble"]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
-position = Vector2(-12, 47)
+position = Vector2(-12, 66)
 texture = ExtResource("3_xv1gs")
 region_rect = Rect2(24, 24, 30, 32)
 
-[node name="MarginContainer" type="MarginContainer" parent="Bubbles/InfoBubble6/InfoBubble6"]
+[node name="MarginContainer" type="MarginContainer" parent="Bubbles/InfoBubble6/InfoBubble5"]
 layout_mode = 2
 theme_override_constants/margin_left = 40
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 44
 
-[node name="Text" type="RichTextLabel" parent="Bubbles/InfoBubble6/InfoBubble6/MarginContainer"]
+[node name="Text" type="RichTextLabel" parent="Bubbles/InfoBubble6/InfoBubble5/MarginContainer"]
 layout_mode = 2
 theme = ExtResource("7_6e2hn")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -548,37 +692,88 @@ text = "TUTOBUBBLE5"
 fit_content = true
 scroll_active = false
 
-[node name="ColorRect3" type="ColorRect" parent="Bubbles/InfoBubble6"]
+[node name="InfoBubble7" type="ColorRect" parent="Bubbles"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 307.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.156863, 0.156863, 0.156863, 0.784314)
+
+[node name="InfoBubble6" type="MarginContainer" parent="Bubbles/InfoBubble7"]
+layout_mode = 0
+offset_top = 13.0
+offset_right = 290.0
+offset_bottom = 141.0
+
+[node name="InfoBubble" type="NinePatchRect" parent="Bubbles/InfoBubble7/InfoBubble6"]
+layout_mode = 2
+texture = ExtResource("1_p4eo2")
+region_rect = Rect2(0.972874, 0, 281.027, 190)
+patch_margin_left = 28
+patch_margin_top = 48
+patch_margin_right = 48
+patch_margin_bottom = 44
+metadata/_edit_group_ = true
+
+[node name="Arrow" type="Sprite2D" parent="Bubbles/InfoBubble7/InfoBubble6/InfoBubble"]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(-12, 47)
+texture = ExtResource("3_xv1gs")
+region_rect = Rect2(24, 24, 30, 32)
+
+[node name="MarginContainer" type="MarginContainer" parent="Bubbles/InfoBubble7/InfoBubble6"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 44
+
+[node name="Text" type="RichTextLabel" parent="Bubbles/InfoBubble7/InfoBubble6/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("7_6e2hn")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 26
+theme_override_font_sizes/bold_font_size = 26
+bbcode_enabled = true
+text = "TUTOBUBBLE6"
+fit_content = true
+scroll_active = false
+
+[node name="ColorRect3" type="ColorRect" parent="Bubbles/InfoBubble7"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -382.0
 offset_top = 168.0
-offset_right = -1552.0
+offset_right = -1616.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 
-[node name="ColorRect4" type="ColorRect" parent="Bubbles/InfoBubble6"]
+[node name="ColorRect4" type="ColorRect" parent="Bubbles/InfoBubble7"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -381.0
-offset_right = -1685.0
+offset_right = -1736.0
 offset_bottom = -912.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 
-[node name="ColorRect5" type="ColorRect" parent="Bubbles/InfoBubble6"]
+[node name="ColorRect5" type="ColorRect" parent="Bubbles/InfoBubble7"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -133.0
-offset_right = -1552.0
+offset_left = -120.0
+offset_right = -1616.0
 offset_bottom = -1048.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -591,9 +786,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -305.0
-offset_top = -179.0
+offset_top = -239.0
 offset_right = 305.0
-offset_bottom = 179.0
+offset_bottom = 119.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 4
