@@ -122,6 +122,8 @@ SHOCK_NUC_REINTRO_TITLE,Nuclear Re-introduction,Ré-introduction du nucléaire,W
 SHOCK_NUC_REINTRO_TEXT,The population wants to vote on the future of the nuclear again.,La population souhaite voter sur la question du nucléaire. Que faire ?,Die Bevölkerung will erneut über die Zukunft der Kernenergie abstimmen.,L'opinione pubblica vuole votare sul nucleare. Cosa possiamo fare?
 SHOCK_NUC_REINTRO_PLAYER_REACTION_1,Yes for reintroducig nuclear power.,Oui pour la ré-introduction du nucléaire.,Ja zur Wiedereinführung der Kernenergie.,Sì alla reintroduzione dell'energia nucleare.
 SHOCK_NUC_REINTRO_PLAYER_REACTION_2,"No, it's time to de-transition from nuclear.","Non, il est temps de dé-transitioner du nucléaire.","Nein, es ist Zeit, definitiv aus der Kernenergie auszusteigen.","No, è ora di abbandonare il nucleare."
+REQUIREMENTS_MET,You mitigated the shock,Vous avez atténué le choc,Sie haben den Schock gemildert,Avete attenuato lo shock
+ACTION_TAKEN,Action taken,Mesures prises,Getroffene Maßnahmen,Azione intrapresa
 NEXT_TURN_BUTTON_LABEL,Next turn,Prochain tour,Nächste Runde,Prossimo turno
 NOT_ENOUGH_ENERGY,Not enough energy,Pas assez d'énergie,Nicht genug Energie,Non c'è abbastanza energia
 SETTINGS,Settings,Réglages,Einstellungen,Impostazioni

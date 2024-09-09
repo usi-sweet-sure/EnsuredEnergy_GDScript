@@ -9,10 +9,10 @@ func _on_shock_changed(shock: Shock):
 	text = "\n[center][font_size=25]" + tr(shock.title_key) + "[/font_size]\n\n" + tr(shock.text_key)
 	
 	if shock.met_requirements_conditions_when_picked:
-		text += "\n\n" + tr("REQUIREMENTS_MET") + "\n" + tr(shock.requirements_met_text_key)
+		text += "\n\n[font_size=20]" + tr("REQUIREMENTS_MET") + "[/font_size]\n" + tr(shock.requirements_met_text_key)
 		
 	if shock.chosen_reaction_index != -1:
-		text += "\n\n" +  tr("ACTION_TAKEN") + "\n" + tr(shock.player_reactions_texts[shock.chosen_reaction_index])
+		text += "\n\n[font_size=20]" +  tr("ACTION_TAKEN") + "[/font_size]\n" + tr(shock.player_reactions_texts[shock.chosen_reaction_index])
 	
 	text += "[/center]\n\n"
 	
