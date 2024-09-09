@@ -2452,12 +2452,12 @@ anchor_left = -0.152
 anchor_top = 1.038
 anchor_right = 1.117
 anchor_bottom = 1.992
-offset_left = -142.456
-offset_top = -144.386
-offset_right = -246.899
-offset_bottom = -225.024
-grow_horizontal = 2
-grow_vertical = 0
+offset_left = -462.264
+offset_top = -401.184
+offset_right = -566.707
+offset_bottom = -481.822
+grow_horizontal = 0
+grow_vertical = 2
 scale = Vector2(1.5, 1.5)
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Clock/TimePanelBlank/TurnInfoContainer"]
