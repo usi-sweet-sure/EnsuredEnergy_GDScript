@@ -24,6 +24,7 @@ func _on_next_button_pressed():
 		i += 1
 		$MarginContainer/MarginContainer/Text.text = tr(tutorial_texts[selected_tuto] % i)
 		if i > 2:
+			$Bubbles/MouseBlock.hide()
 			for b in bubble_list:
 				b.hide()
 			bubble_list[j].show()
