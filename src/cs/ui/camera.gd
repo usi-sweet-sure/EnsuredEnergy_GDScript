@@ -8,6 +8,7 @@ const PLANT_ZOOM := Vector2(0.55, 0.55)
 const CAMERA_SPEED := 40
 const ZOOM_ANIMATION_DURATION := 0.3
 const PAN_ZOOM_SENSITIVITY := 0.05
+var camera_blocked = false
 
 # Record initial position and zoom for reset
 var init_pos := Vector2()
@@ -22,22 +23,24 @@ func _ready():
 	
 	# Allows to reset the zoom, so the tutorial windows are placed correctly
 	Gameloop.show_tutorial.connect(_on_show_tutorial)
-	
+	Gameloop.tutorial_ended.connect(_on_tutorial_ended)
 	#E. !!! Do or remove
 	# Maybe TODO for carbon sequestration if we add a button for it !!
 	#for power_plant in get_tree().get_nodes_in_group("PP"):
 		#power_plant.ZoomSignal.connect(plant_zoom);
+	camera_blocked = true # Unblocked at the end of the tutorial
 		
 func _physics_process(delta):
-	# Arrow key camera movement
-	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	position = position.lerp(position + direction * CAMERA_SPEED * zoom, CAMERA_SPEED * delta)
+	if not camera_blocked:
+		# Arrow key camera movement
+		var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+		position = position.lerp(position + direction * CAMERA_SPEED * zoom, CAMERA_SPEED * delta)
 
 
 # Updates the size of power plants and build buttons according to the zoom
 func scale_plants(zoom_val: Vector2):
 	# Is zoom valid ?
-	if zoom_val < POWER_PLANT_ZOOM_IN_LIMIT:
+	if zoom_val < POWER_PLANT_ZOOM_IN_LIMIT and not camera_blocked:
 		var new_zoom = Vector2(1.0, 1.0) / (zoom_val * 2.5)
 		
 		for power_plant in get_tree().get_nodes_in_group("PP"):
@@ -52,25 +55,25 @@ func scale_plants(zoom_val: Vector2):
 #     1) When the player clicks the screen, in which case we want to drag the camera around
 #     2) When the player uses the mouse wheel, in which case we want to zoom in or out
 func _unhandled_input(event):
-	if event is InputEventMagnifyGesture:
+	if event is InputEventMagnifyGesture and not camera_blocked:
 		var target_zoom = clamp(zoom * event.factor, ZOOM_OUT_LIMIT, ZOOM_IN_LIMIT)
 		zoom = target_zoom
 		scale_plants(target_zoom)
 	
-	elif event is InputEventPanGesture:
+	elif event is InputEventPanGesture and not camera_blocked:
 		var target_zoom = clamp(zoom + Vector2(event.delta.y * PAN_ZOOM_SENSITIVITY, event.delta.y * PAN_ZOOM_SENSITIVITY), ZOOM_OUT_LIMIT, ZOOM_IN_LIMIT)
 		zoom = target_zoom
 		scale_plants(target_zoom)
 	
 	# Mouse drag moves the camera
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and not camera_blocked:
 		if event.button_mask == MOUSE_BUTTON_MASK_LEFT:
 			position -= event.relative / zoom
 			
 	# Mouse wheel zooms the camera
 	# Scrolling down zooms out, scrolling up zooms in
 	# The higher the zoom value, the more zoom in we are
-	if event is InputEventMouseButton:
+	if event is InputEventMouseButton and not camera_blocked:
 		# Zoom out if within limits
 		if event.button_index == MOUSE_BUTTON_WHEEL_DOWN && zoom > ZOOM_OUT_LIMIT:
 			var new_zoom = clamp(zoom - ZOOM_SPEED, ZOOM_OUT_LIMIT, ZOOM_IN_LIMIT)
@@ -82,14 +85,16 @@ func _unhandled_input(event):
 
 
 func animate_camera_zoom(new_zoom):
-	var tween = get_tree().create_tween()
-	tween.tween_property(self, "zoom", new_zoom, ZOOM_ANIMATION_DURATION)
-	scale_plants(new_zoom)
+	if not camera_blocked:
+		var tween = get_tree().create_tween()
+		tween.tween_property(self, "zoom", new_zoom, ZOOM_ANIMATION_DURATION)
+		scale_plants(new_zoom)
 
 
 func animate_camera_position(new_position):
-	var tween = get_tree().create_tween()
-	tween.tween_property(self, "position", new_position, ZOOM_ANIMATION_DURATION)
+	if not camera_blocked:
+		var tween = get_tree().create_tween()
+		tween.tween_property(self, "position", new_position, ZOOM_ANIMATION_DURATION)
 	
 	
 # Animate power plants and build buttons zoom
@@ -101,7 +106,12 @@ func animate_power_plant_zoom(object, new_zoom):
 func _on_show_tutorial():
 	animate_camera_position(init_pos)
 	animate_camera_zoom(init_zoom)
+	camera_blocked = true
 	
+	
+
+func _on_tutorial_ended():
+	camera_blocked = false
 	
 #E. Do or remove
 # func plant_zoom(_plant_pos: Vector2):

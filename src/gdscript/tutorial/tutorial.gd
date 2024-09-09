@@ -50,6 +50,7 @@ func _on_next_button_pressed():
 	else:
 		hide()
 		tutorial_started = false
+		Gameloop.tutorial_ended.emit()
 		
 	if i == 4 || i == 6 || i == 7 || i == 10:
 		$MarginContainer/NavigationButtons/Next.hide()
@@ -103,6 +104,7 @@ func _on_policies_pressed():
 
 func _on_skip_pressed():
 	hide()
+	Gameloop.tutorial_ended.emit()
 
 
 func _on_locale_updated(_locale):

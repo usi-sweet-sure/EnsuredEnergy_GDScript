@@ -1,19 +1,19 @@
 [gd_scene load_steps=17 format=3 uid="uid://ciphd0cmpslrn"]
 
-[ext_resource type="Texture2D" uid="uid://c55d82it2owgs" path="res://assets/UI Elements/All-HQ-Assets-D_0008s_0001_Small-right-paper.png" id="1_p4eo2"]
+[ext_resource type="Texture2D" uid="uid://dnbd3anohlmvn" path="res://assets/UI Elements/All-HQ-Assets-D_0008s_0001_Small-right-paper.png" id="1_p4eo2"]
 [ext_resource type="Script" path="res://src/gdscript/tutorial/tutorial.gd" id="1_yrums"]
 [ext_resource type="Texture2D" uid="uid://03lloca0uata" path="res://assets/Elements/ARROW INFO – 1.png" id="3_xv1gs"]
-[ext_resource type="Texture2D" uid="uid://b0m13trb53j5o" path="res://assets/UI Elements/All-HQ-Assets-D_0008s_0004_Big-paper.png" id="5_3h0cr"]
+[ext_resource type="Texture2D" uid="uid://4yafxnl2h5s" path="res://assets/UI Elements/All-HQ-Assets-D_0008s_0004_Big-paper.png" id="5_3h0cr"]
 [ext_resource type="Texture2D" uid="uid://ikiclp3p8k8k" path="res://assets/key_tab_icon.png" id="5_mivsl"]
 [ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="7_6e2hn"]
-[ext_resource type="Texture2D" uid="uid://dqjq3sd7wb2jk" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0022_Icon-green-normal-button.png" id="7_8vy8x"]
-[ext_resource type="Texture2D" uid="uid://bh74ypofxmlqe" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0023_Icon-green-press-button.png" id="8_lbpbe"]
-[ext_resource type="Texture2D" uid="uid://7sqlk6li3xrh" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0021_Icon-green-hover-button.png" id="9_xeviv"]
-[ext_resource type="Texture2D" uid="uid://c5w8v4i1hvmrr" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0000_Marks-vertical.png" id="10_1hlsa"]
-[ext_resource type="Texture2D" uid="uid://b0p1wag6bqd8o" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0002_Icon-round-button-hole.png" id="11_4rv1s"]
-[ext_resource type="Texture2D" uid="uid://cc6pichgkbjbj" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0019_Icon-red-normal-button.png" id="13_83lpu"]
-[ext_resource type="Texture2D" uid="uid://p2jcuf5ansad" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0020_Icon-red-press-button.png" id="14_br0h0"]
-[ext_resource type="Texture2D" uid="uid://c541775cyiwyf" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0018_Icon-red-hover-button.png" id="15_uhfuu"]
+[ext_resource type="Texture2D" uid="uid://bquoeoy4thhh6" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0022_Icon-green-normal-button.png" id="7_8vy8x"]
+[ext_resource type="Texture2D" uid="uid://dg124t0v8162j" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0023_Icon-green-press-button.png" id="8_lbpbe"]
+[ext_resource type="Texture2D" uid="uid://c48hquir78en7" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0021_Icon-green-hover-button.png" id="9_xeviv"]
+[ext_resource type="Texture2D" uid="uid://ubsfoucc2064" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0000_Marks-vertical.png" id="10_1hlsa"]
+[ext_resource type="Texture2D" uid="uid://b0c3ywqarx8b7" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0002_Icon-round-button-hole.png" id="11_4rv1s"]
+[ext_resource type="Texture2D" uid="uid://4s62sj1p8eja" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0019_Icon-red-normal-button.png" id="13_83lpu"]
+[ext_resource type="Texture2D" uid="uid://b86vm4agcnisw" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0020_Icon-red-press-button.png" id="14_br0h0"]
+[ext_resource type="Texture2D" uid="uid://b066igcqidlny" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0018_Icon-red-hover-button.png" id="15_uhfuu"]
 
 [sub_resource type="Theme" id="Theme_dnnnk"]
 
@@ -33,6 +33,7 @@ offset_left = -3.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+mouse_force_pass_scroll_events = false
 
 [node name="MouseBlock" type="ColorRect" parent="Bubbles"]
 layout_mode = 0
@@ -50,6 +51,7 @@ layout_mode = 0
 offset_left = 453.0
 offset_right = 1949.0
 offset_bottom = 1080.0
+mouse_force_pass_scroll_events = false
 theme = SubResource("Theme_dnnnk")
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 
@@ -126,6 +128,7 @@ anchor_bottom = 1.0
 offset_left = 355.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_force_pass_scroll_events = false
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 
 [node name="InfoBubble2" type="MarginContainer" parent="Bubbles/InfoBubble2"]
@@ -217,6 +220,7 @@ anchor_bottom = 1.0
 offset_left = 355.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_force_pass_scroll_events = false
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 
 [node name="InfoBubble3" type="MarginContainer" parent="Bubbles/InfoBubble3"]
@@ -309,6 +313,7 @@ offset_right = -656.0
 offset_bottom = -328.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_force_pass_scroll_events = false
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 
 [node name="ColorRect3" type="ColorRect" parent="Bubbles/InfoBubble4"]
@@ -439,6 +444,7 @@ offset_right = -624.0
 offset_bottom = -328.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_force_pass_scroll_events = false
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 
 [node name="ColorRect3" type="ColorRect" parent="Bubbles/InfoBubble5"]
@@ -569,7 +575,7 @@ offset_left = 792.0
 offset_bottom = -768.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
+mouse_force_pass_scroll_events = false
 color = Color(0.156863, 0.156863, 0.156863, 0)
 
 [node name="ColorRect3" type="ColorRect" parent="Bubbles/InfoBubble6"]
@@ -700,6 +706,7 @@ anchor_bottom = 1.0
 offset_left = 307.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_force_pass_scroll_events = false
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 
 [node name="InfoBubble6" type="MarginContainer" parent="Bubbles/InfoBubble7"]
