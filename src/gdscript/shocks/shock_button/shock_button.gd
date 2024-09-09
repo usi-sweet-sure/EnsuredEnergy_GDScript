@@ -28,7 +28,7 @@ func get_button():
 func _on_texture_button_mouse_entered():
 	ShockManager.shock_button_entered.emit(shock)
 	
-	if shock.title_key == Gameloop.most_recent_shock.title_key:
+	if shock.title_key == Gameloop.most_recent_shock.title_key or not Gameloop.most_recent_shock.show_shock_window:
 		ShockManager.toggle_shock_buttons.emit(true)
 
 
