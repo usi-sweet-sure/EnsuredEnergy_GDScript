@@ -1,5 +1,10 @@
 extends Node
 
+signal shock_resolved
+signal toggle_shock_buttons
+signal shock_button_entered
+signal shock_button_exited
+
 var shocks: Array[Shock] = []
 var shocks_full : Array[Shock] = []
 
@@ -8,8 +13,13 @@ var industry_demand: float
 var service_demand: float
 var transport_demand: float
 var agriculture_demand: float
+var shock_buttons_hovered: Array[Shock] = []
+
 
 func _ready():
+	shock_button_entered.connect(_on_shock_button_entered)
+	shock_button_exited.connect(_on_shock_button_exited)
+	
 	var cold_spell = Shock.new("SHOCK_COLD_SPELL_TITLE", "SHOCK_COLD_SPELL_TEXT", "cold.png")
 	cold_spell.add_effect(func(): increase_demand(false))
 	cold_spell.add_requirements("SHOCK_COLD_SPELL_REQUIREMENT_MET",
@@ -75,6 +85,7 @@ func pick_shock():
 			
 		var random_shock = shocks.pop_front()
 		print("shock picked: ", random_shock.title_key)
+		random_shock.turn_picked = Gameloop.current_turn
 		Gameloop.most_recent_shock = random_shock
 		
 		# Graph button is enable on turn 2, but on a new turn the shock window
@@ -86,7 +97,6 @@ func pick_shock():
 		if Gameloop.current_turn == 2 and not random_shock.show_shock_window:
 			Gameloop.enable_graphs_button.emit()
 
-
 func apply_shock():
 	if Gameloop.most_recent_shock != null:
 		Gameloop.most_recent_shock.apply()
@@ -95,6 +105,11 @@ func apply_shock():
 func apply_reaction(reaction_index: int):
 	if Gameloop.most_recent_shock != null:
 		Gameloop.most_recent_shock.apply_reaction(reaction_index)
+		
+		var requirements_met_text = ""
+		
+		if Gameloop.most_recent_shock.met_requirements_conditions_when_picked:
+			requirements_met_text = Gameloop.most_recent_shock.requirements_met_text_key
 
 
 func _reintroduce_nuclear():
@@ -186,3 +201,23 @@ func _severe_wether_prm_ups():
 	Context1.yr = Gameloop.year_list[Gameloop.current_turn]
 	Context1.tj = 0.1
 	Context1.prm_ups()
+
+
+func _on_shock_button_entered(shock: Shock):
+	shock_buttons_hovered.push_back(shock)
+	print(shock_buttons_hovered)
+	
+
+func _on_shock_button_exited(shock: Shock):
+	var index = 0
+	
+	await get_tree().create_timer(0.4).timeout
+	
+	for button in shock_buttons_hovered:
+		if button.title_key == shock.title_key:
+			shock_buttons_hovered.remove_at(index)
+			break
+		index += 1
+		
+	if shock_buttons_hovered.size() == 0:
+		toggle_shock_buttons.emit(false)

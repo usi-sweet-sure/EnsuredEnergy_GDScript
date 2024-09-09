@@ -6,6 +6,9 @@ var show_shock_window := true
 var title_key := ""
 var text_key := ""
 var img := ""
+var met_requirements_conditions_when_picked = false
+var chosen_reaction_index: int = -1
+var turn_picked: int = -1
 var requirements_met_text_key := "" # Requirement to absorb the shock
 var conditions_to_meet_requirements: Array[Callable] = [] # Conditions to meet the requirement, must return boolean
 var requirements_met_effects: Array[Callable] = [] # Effect of meeting the requirement
@@ -44,6 +47,7 @@ func apply():
 
 func apply_reaction(reaction_index: int):
 	if(player_reactions.size() > reaction_index):
+		chosen_reaction_index = reaction_index
 		player_reactions[reaction_index].call()
 		
 
@@ -75,4 +79,5 @@ func _are_requirements_to_absorb_shock_met():
 				break
 		
 	print("conditions met ? ", conditions_met)
+	met_requirements_conditions_when_picked = conditions_met
 	return conditions_met
