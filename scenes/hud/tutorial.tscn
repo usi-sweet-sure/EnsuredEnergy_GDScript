@@ -35,7 +35,6 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="MouseBlock" type="ColorRect" parent="Bubbles"]
-visible = false
 layout_mode = 0
 offset_left = -54.0
 offset_top = -48.0
@@ -693,6 +692,7 @@ fit_content = true
 scroll_active = false
 
 [node name="InfoBubble7" type="ColorRect" parent="Bubbles"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
