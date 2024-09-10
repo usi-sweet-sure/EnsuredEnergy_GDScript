@@ -1,11 +1,14 @@
 extends VSlider
 
+var value_before_tutorial = 0
 
 func _ready():
 	Gameloop.energy_demand_updated_winter.connect(_on_energy_demand_updated_winter)
 	Gameloop.energy_supply_updated_winter.connect(_on_energy_supply_updated_winter)
 	Gameloop.game_ended.connect(_on_game_ended)
 	Gameloop.next_turn.connect(_on_next_turn)
+	Gameloop.show_tutorial.connect(func(): value_before_tutorial = Gameloop.imported_energy_amount)
+	Gameloop.tutorial_ended.connect(func(): value = value_before_tutorial)
 	
 	_on_energy_demand_updated_winter(Gameloop.demand_winter)
 
