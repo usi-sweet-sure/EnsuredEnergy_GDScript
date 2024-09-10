@@ -2306,12 +2306,6 @@ offset_top = 72.0
 offset_right = 758.0
 offset_bottom = 472.0
 
-[node name="Money" parent="World/BuildButton" index="4"]
-offset_left = -286.0
-offset_top = -132.5
-offset_right = -126.0
-offset_bottom = -43.5
-
 [node name="BuildButton2" parent="World" index="12"]
 offset_left = 624.0
 offset_right = 1310.0
@@ -2751,12 +2745,6 @@ autoplay = "Water"
 [node name="Hammer" parent="World/BuildButton9" index="0"]
 position = Vector2(308, 205)
 
-[node name="Money" parent="World/BuildButton9" index="4"]
-offset_left = -279.0
-offset_top = -124.0
-offset_right = -119.0
-offset_bottom = -35.0
-
 [node name="Solar" parent="World/BuildButton9/BuildMenu/Container" index="0"]
 visible = false
 
@@ -2993,7 +2981,7 @@ position = Vector2(-5, 251)
 texture = ExtResource("49_6hr2c")
 centered = false
 
-[node name="Language" type="TextureButton" parent="Settings/Control/SettingsBox/VBoxContainer"]
+[node name="Language" type="TextureButton" parent="Settings/Control/SettingsBox/VBoxContainer" groups=["buttons"]]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 focus_mode = 0
@@ -3021,7 +3009,7 @@ vertical_alignment = 1
 autowrap_mode = 3
 uppercase = true
 
-[node name="Instructions" type="TextureButton" parent="Settings/Control/SettingsBox/VBoxContainer"]
+[node name="Instructions" type="TextureButton" parent="Settings/Control/SettingsBox/VBoxContainer" groups=["buttons"]]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 focus_mode = 0
@@ -3048,7 +3036,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Credits" type="TextureButton" parent="Settings/Control/SettingsBox/VBoxContainer"]
+[node name="Credits" type="TextureButton" parent="Settings/Control/SettingsBox/VBoxContainer" groups=["buttons"]]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 focus_mode = 0
@@ -3266,7 +3254,7 @@ offset_bottom = -18.5
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="QuitButton" type="TextureButton" parent="Settings/Control/SettingsBox/MarginContainer"]
+[node name="QuitButton" type="TextureButton" parent="Settings/Control/SettingsBox/MarginContainer" groups=["buttons"]]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -3300,7 +3288,7 @@ position = Vector2(-2.85706, -2.85718)
 texture = ExtResource("65_p0ru6")
 centered = false
 
-[node name="CloseButton" type="TextureButton" parent="Settings"]
+[node name="CloseButton" type="TextureButton" parent="Settings" groups=["buttons"]]
 z_index = 1
 anchors_preset = 8
 anchor_left = 0.5
