@@ -6,7 +6,7 @@ var ibeam = preload("res://assets/UI Elements/All-HQ-Assets-D_0004s_0021_Icon-ib
 var block_cursor_change = false
 
 func _ready():
-	var inputs: Array = get_tree().get_nodes_in_group("input")
+	var inputs: Array = get_tree().get_nodes_in_group("inputs")
 	for input in inputs:
 		input.mouse_entered.connect(_on_input_mouse_entered)
 		input.mouse_exited.connect(_on_input_mouse_exited)

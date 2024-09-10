@@ -16,3 +16,8 @@ func _on_focus_exited():
 
 func _on_locale_updated(_locale):
 	placeholder_text = tr("PLAYER_NAME_PLACEHOLDER")
+
+
+func _on_play_button_clicked_when_disabled():
+	if not has_focus():
+		grab_focus()

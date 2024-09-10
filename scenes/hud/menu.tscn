@@ -93,7 +93,7 @@ position = Vector2(696, 680)
 scale = Vector2(1, 1.19487)
 texture = ExtResource("4_dgun4")
 
-[node name="PlayerName" type="LineEdit" parent="." groups=["input"]]
+[node name="PlayerName" type="LineEdit" parent="." groups=["inputs"]]
 offset_left = 570.0
 offset_top = 500.0
 offset_right = 822.0
@@ -285,6 +285,8 @@ text = "MENU"
 [connection signal="focus_entered" from="PlayerName" to="PlayerName" method="_on_focus_entered"]
 [connection signal="focus_exited" from="PlayerName" to="PlayerName" method="_on_focus_exited"]
 [connection signal="text_changed" from="PlayerName" to="Play" method="_on_player_name_text_changed"]
+[connection signal="clicked_when_disabled" from="Play" to="PlayerName" method="_on_play_button_clicked_when_disabled"]
+[connection signal="gui_input" from="Play" to="Play" method="_on_gui_input"]
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Lang" to="." method="_on_lang_pressed"]
 [connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]

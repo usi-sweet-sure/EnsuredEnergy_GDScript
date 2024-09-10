@@ -9,6 +9,8 @@ extends Node
 @onready var button_hover = $ButtonHover
 @onready var button_press = $ButtonPress
 @onready var button_error = $ButtonError
+@onready var input_entered = $InputEntered
+
 
 func _ready():
 	#dark_fantasy.play()
@@ -18,35 +20,7 @@ func _ready():
 	GroupManager.disabled_buttons_group_updated.connect(_on_disabled_buttons_group_updated)
 	_on_buttons_group_updated()
 	_on_disabled_buttons_group_updated()
-
-
-func _on_buttons_group_updated():
-	var buttons: Array = get_tree().get_nodes_in_group("buttons")
-	
-	for button in buttons:
-		if not button.mouse_entered.is_connected(_on_button_mouse_entered):
-			button.mouse_entered.connect(_on_button_mouse_entered)
-		
-		if not button.pressed.is_connected(_on_button_pressed):
-			button.pressed.connect(_on_button_pressed)
-			
-		if button.gui_input.is_connected(_on_disabled_buttons_gui_input):
-			button.gui_input.disconnect(_on_disabled_buttons_gui_input)
-		
-		
-func _on_disabled_buttons_group_updated():
-	var disabled_buttons: Array = get_tree().get_nodes_in_group("disabled_buttons")
-	
-	for button in disabled_buttons:
-		if not button.gui_input.is_connected(_on_disabled_buttons_gui_input):
-			button.gui_input.connect(_on_disabled_buttons_gui_input)
-			
-		if button.mouse_entered.is_connected(_on_button_mouse_entered):
-			button.mouse_entered.disconnect(_on_button_mouse_entered)
-		
-		if button.pressed.is_connected(_on_button_pressed):
-			button.pressed.disconnect(_on_button_pressed)
-			
+	_on_inputs_group_updated()
 
 
 func _on_game_started():
@@ -77,3 +51,43 @@ func _on_button_pressed():
 func _on_disabled_buttons_gui_input(event: InputEvent):
 	if event is InputEventMouseButton and event.button_mask == MOUSE_BUTTON_MASK_LEFT:
 		button_error.play()
+
+			
+func _on_input_focus_entered():
+	input_entered.play()
+
+
+func _on_buttons_group_updated():
+	var buttons: Array = get_tree().get_nodes_in_group("buttons")
+	
+	for button in buttons:
+		if not button.mouse_entered.is_connected(_on_button_mouse_entered):
+			button.mouse_entered.connect(_on_button_mouse_entered)
+		
+		if not button.pressed.is_connected(_on_button_pressed):
+			button.pressed.connect(_on_button_pressed)
+			
+		if button.gui_input.is_connected(_on_disabled_buttons_gui_input):
+			button.gui_input.disconnect(_on_disabled_buttons_gui_input)
+		
+		
+func _on_disabled_buttons_group_updated():
+	var disabled_buttons: Array = get_tree().get_nodes_in_group("disabled_buttons")
+	
+	for button in disabled_buttons:
+		if not button.gui_input.is_connected(_on_disabled_buttons_gui_input):
+			button.gui_input.connect(_on_disabled_buttons_gui_input)
+			
+		if button.mouse_entered.is_connected(_on_button_mouse_entered):
+			button.mouse_entered.disconnect(_on_button_mouse_entered)
+		
+		if button.pressed.is_connected(_on_button_pressed):
+			button.pressed.disconnect(_on_button_pressed)
+			
+			
+func _on_inputs_group_updated():
+	var inputs: Array = get_tree().get_nodes_in_group("inputs")
+	
+	for input in inputs:
+		if not input.focus_entered.is_connected(_on_input_focus_entered):
+			input.focus_entered.connect(_on_input_focus_entered)
