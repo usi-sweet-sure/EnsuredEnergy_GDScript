@@ -2819,6 +2819,7 @@ visible = false
 [node name="SurveyLayer" parent="." instance=ExtResource("76_y7xdi")]
 
 [node name="Settings" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("42_jouqr")
 
 [node name="Backdrop" type="ColorRect" parent="Settings"]
@@ -3300,7 +3301,6 @@ texture = ExtResource("65_p0ru6")
 centered = false
 
 [node name="CloseButton" type="TextureButton" parent="Settings"]
-visible = false
 z_index = 1
 anchors_preset = 8
 anchor_left = 0.5
