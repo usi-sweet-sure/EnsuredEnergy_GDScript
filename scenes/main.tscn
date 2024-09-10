@@ -1,4 +1,4 @@
-[gd_scene load_steps=128 format=3 uid="uid://g58p7rxvcdik"]
+[gd_scene load_steps=133 format=3 uid="uid://g58p7rxvcdik"]
 
 [ext_resource type="PackedScene" uid="uid://ba56oxmvcxpos" path="res://scenes/world.tscn" id="1_prp6q"]
 [ext_resource type="PackedScene" uid="uid://bs48lirfn2fp2" path="res://scenes/hud/ui.tscn" id="2_d60f5"]
@@ -68,12 +68,17 @@
 [ext_resource type="Texture2D" uid="uid://cvr8ptliyw7oc" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0013_1-slot-button-hole.png" id="65_p0ru6"]
 [ext_resource type="PackedScene" uid="uid://dc3s5eeg1c0uv" path="res://scenes/windows/graphs.tscn" id="66_s8n66"]
 [ext_resource type="Script" path="res://src/gdscript/test_layer/test_buttons.gd" id="67_xot01"]
+[ext_resource type="Texture2D" uid="uid://4s62sj1p8eja" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0019_Icon-red-normal-button.png" id="68_4h2gt"]
 [ext_resource type="Script" path="res://src/gdscript/test_layer/res_id_label.gd" id="68_vv85d"]
 [ext_resource type="Script" path="res://src/gdscript/test_layer/http_error_label.gd" id="69_s8bte"]
 [ext_resource type="Script" path="res://src/gdscript/test_layer/res_name_label.gd" id="69_tx34c"]
+[ext_resource type="Texture2D" uid="uid://b86vm4agcnisw" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0020_Icon-red-press-button.png" id="69_xxrn0"]
+[ext_resource type="Texture2D" uid="uid://b066igcqidlny" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0018_Icon-red-hover-button.png" id="70_7s0pe"]
 [ext_resource type="Script" path="res://src/gdscript/test_layer/token_label.gd" id="70_d30of"]
 [ext_resource type="Script" path="res://src/gdscript/test_layer/yr_label.gd" id="70_j6q0p"]
+[ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/close_button_2.gd" id="71_1071y"]
 [ext_resource type="Script" path="res://src/gdscript/test_layer/prm_id_label.gd" id="71_q27fr"]
+[ext_resource type="Texture2D" uid="uid://b0c3ywqarx8b7" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0002_Icon-round-button-hole.png" id="71_qcqj2"]
 [ext_resource type="Script" path="res://src/gdscript/test_layer/tj_label.gd" id="72_e32ek"]
 [ext_resource type="Script" path="res://src/gdscript/test_layer/play_test_button.gd" id="73_c8dpd"]
 [ext_resource type="Script" path="res://src/gdscript/test_layer/test_button_explanation_label.gd" id="75_bk8o4"]
@@ -2301,6 +2306,12 @@ offset_top = 72.0
 offset_right = 758.0
 offset_bottom = 472.0
 
+[node name="Money" parent="World/BuildButton" index="4"]
+offset_left = -286.0
+offset_top = -132.5
+offset_right = -126.0
+offset_bottom = -43.5
+
 [node name="BuildButton2" parent="World" index="12"]
 offset_left = 624.0
 offset_right = 1310.0
@@ -2740,6 +2751,12 @@ autoplay = "Water"
 [node name="Hammer" parent="World/BuildButton9" index="0"]
 position = Vector2(308, 205)
 
+[node name="Money" parent="World/BuildButton9" index="4"]
+offset_left = -279.0
+offset_top = -124.0
+offset_right = -119.0
+offset_bottom = -35.0
+
 [node name="Solar" parent="World/BuildButton9/BuildMenu/Container" index="0"]
 visible = false
 
@@ -2802,7 +2819,6 @@ visible = false
 [node name="SurveyLayer" parent="." instance=ExtResource("76_y7xdi")]
 
 [node name="Settings" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("42_jouqr")
 
 [node name="Backdrop" type="ColorRect" parent="Settings"]
@@ -3283,6 +3299,53 @@ position = Vector2(-2.85706, -2.85718)
 texture = ExtResource("65_p0ru6")
 centered = false
 
+[node name="CloseButton" type="TextureButton" parent="Settings"]
+visible = false
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 190.0
+offset_top = -492.0
+offset_right = 222.0
+offset_bottom = -458.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+texture_normal = ExtResource("68_4h2gt")
+texture_pressed = ExtResource("69_xxrn0")
+texture_hover = ExtResource("70_7s0pe")
+texture_disabled = ExtResource("69_xxrn0")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("71_1071y")
+
+[node name="Sprite2D" type="Sprite2D" parent="Settings/CloseButton"]
+show_behind_parent = true
+position = Vector2(16.519, 18.7188)
+scale = Vector2(0.862268, 0.862268)
+texture = ExtResource("71_qcqj2")
+
+[node name="Label" type="Label" parent="Settings/CloseButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.5
+offset_top = -17.5
+offset_right = 7.5
+offset_bottom = 16.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+text = "x"
+
 [node name="QuitGame" parent="." instance=ExtResource("77_iwdt8")]
 visible = false
 
@@ -3513,6 +3576,7 @@ text = "Close"
 [connection signal="pressed" from="Settings/Control/SettingsBox/VBoxContainer/Instructions" to="Settings/Control/SettingsBox/VBoxContainer/Instructions" method="_on_pressed"]
 [connection signal="pressed" from="Settings/Control/SettingsBox/VBoxContainer/Credits" to="Settings/Control/SettingsBox/VBoxContainer/Credits/CreditsSprite" method="_on_credits_button_pressed"]
 [connection signal="pressed" from="Settings/Control/SettingsBox/MarginContainer/QuitButton" to="Settings" method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Settings/CloseButton" to="Settings/CloseButton" method="_on_pressed"]
 [connection signal="pressed" from="TestLayer/TestButtons/ButtonTop" to="TestLayer/TestButtons" method="_on_button_top_pressed"]
 [connection signal="pressed" from="TestLayer/TestButtons/ButtonBottom" to="TestLayer/TestButtons" method="_on_button_bottom_pressed"]
 [connection signal="pressed" from="TestLayer/PlayTestButton" to="Audio" method="_on_play_test_button_pressed"]
