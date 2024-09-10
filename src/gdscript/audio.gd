@@ -10,6 +10,8 @@ extends Node
 @onready var button_press = $ButtonPress
 @onready var button_error = $ButtonError
 @onready var input_entered = $InputEntered
+@onready var paper_open = $PaperOpen
+@onready var paper_close = $PaperClose
 
 
 func _ready():
@@ -21,6 +23,7 @@ func _ready():
 	_on_buttons_group_updated()
 	_on_disabled_buttons_group_updated()
 	_on_inputs_group_updated()
+	_on_papers_group_updated()
 
 
 func _on_game_started():
@@ -57,6 +60,14 @@ func _on_input_focus_entered():
 	input_entered.play()
 
 
+func _on_paper_draw():
+	paper_open.play()
+
+
+func _on_paper_hidden():
+	paper_close.play()
+
+
 func _on_buttons_group_updated():
 	var buttons: Array = get_tree().get_nodes_in_group("buttons")
 	
@@ -91,3 +102,15 @@ func _on_inputs_group_updated():
 	for input in inputs:
 		if not input.focus_entered.is_connected(_on_input_focus_entered):
 			input.focus_entered.connect(_on_input_focus_entered)
+	
+			
+func _on_papers_group_updated():
+	var papers: Array = get_tree().get_nodes_in_group("papers")
+	
+	for paper in papers:
+		if not paper.draw.is_connected(_on_paper_draw):
+			paper.draw.connect(_on_paper_draw)
+			
+		if not paper.hidden.is_connected(_on_paper_hidden):
+			paper.hidden.connect(_on_paper_hidden)
+	

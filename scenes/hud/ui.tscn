@@ -958,7 +958,7 @@ mouse_default_cursor_shape = 2
 flat = true
 alignment = 0
 
-[node name="MoneyInfoBox" type="Control" parent="TopLeftZone/MoneyManagement/MoneyInfo"]
+[node name="MoneyInfoBox" type="Control" parent="TopLeftZone/MoneyManagement/MoneyInfo" groups=["papers"]]
 visible = false
 layout_mode = 1
 anchor_left = 0.233
@@ -1325,7 +1325,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ToggleBorrowMoneyFrameButton" type="TextureButton" parent="TopLeftZone/MoneyManagement/BorrowMoney"]
+[node name="ToggleBorrowMoneyFrameButton" type="TextureButton" parent="TopLeftZone/MoneyManagement/BorrowMoney" groups=["buttons"]]
 layout_mode = 0
 offset_left = 264.5
 offset_top = 175.0
@@ -1596,7 +1596,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="OpenPoliciesWindowButton" type="TextureButton" parent="TopLeftZone/Policies"]
+[node name="OpenPoliciesWindowButton" type="TextureButton" parent="TopLeftZone/Policies" groups=["buttons"]]
 layout_mode = 0
 offset_left = 166.0
 offset_top = 80.0
@@ -1754,7 +1754,7 @@ fill_mode = 3
 show_percentage = false
 metadata/_edit_group_ = true
 
-[node name="Info" parent="EnvironmentAndPollution/Environment" instance=ExtResource("4_67rbh")]
+[node name="Info" parent="EnvironmentAndPollution/Environment" groups=["papers"] instance=ExtResource("4_67rbh")]
 visible = false
 layout_mode = 1
 offset_left = 415.0
@@ -1848,7 +1848,7 @@ fill_mode = 3
 show_percentage = false
 metadata/_edit_group_ = true
 
-[node name="Info" parent="EnvironmentAndPollution/Pollution" instance=ExtResource("4_67rbh")]
+[node name="Info" parent="EnvironmentAndPollution/Pollution" groups=["papers"] instance=ExtResource("4_67rbh")]
 visible = false
 layout_mode = 1
 offset_left = 245.0
@@ -2037,7 +2037,7 @@ theme_override_font_sizes/font_size = 10
 position = Vector2(-36.25, 332.431)
 scale = Vector2(0.872549, 0.872549)
 
-[node name="UpButton" parent="ImportAndEnergy/Import/ImportSlider" index="5"]
+[node name="UpButton" parent="ImportAndEnergy/Import/ImportSlider" index="5" groups=["buttons"]]
 offset_left = -88.0
 offset_top = 91.0
 offset_right = -56.0
@@ -2047,7 +2047,7 @@ script = ExtResource("87_wunut")
 [node name="Button-arrow-hole2" parent="ImportAndEnergy/Import/ImportSlider/UpButton" index="0"]
 position = Vector2(14, 15)
 
-[node name="DownButton" parent="ImportAndEnergy/Import/ImportSlider" index="6"]
+[node name="DownButton" parent="ImportAndEnergy/Import/ImportSlider" index="6" groups=["buttons"]]
 offset_left = -89.0
 offset_top = 127.0
 offset_right = -57.0
@@ -2119,7 +2119,7 @@ value = 500.0
 green_bar = ExtResource("93_6koeb")
 red_bar = ExtResource("94_b4xie")
 
-[node name="BarInfo" parent="ImportAndEnergy/Energy/EnergyBarWinter" index="1"]
+[node name="BarInfo" parent="ImportAndEnergy/Energy/EnergyBarWinter" index="1" groups=["papers"]]
 z_index = 1
 offset_left = 523.999
 offset_top = 169.002
@@ -2164,7 +2164,7 @@ season = 1
 green_bar = ExtResource("93_6koeb")
 red_bar = ExtResource("94_b4xie")
 
-[node name="BarInfo" parent="ImportAndEnergy/Energy/EnergyBarSummer" index="1"]
+[node name="BarInfo" parent="ImportAndEnergy/Energy/EnergyBarSummer" index="1" groups=["papers"]]
 z_index = 1
 offset_left = 525.0
 offset_top = 106.002
