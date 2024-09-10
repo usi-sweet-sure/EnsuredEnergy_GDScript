@@ -110,7 +110,7 @@ max_length = 15
 caret_blink = true
 script = ExtResource("6_h11gm")
 
-[node name="Play" type="TextureButton" parent="." groups=["buttons"]]
+[node name="Play" type="TextureButton" parent="." groups=["disabled_buttons"]]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

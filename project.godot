@@ -22,6 +22,7 @@ driver/mix_rate=48000
 [autoload]
 
 Context1="*res://src/gdscript/Context1.gd"
+GroupManager="*res://src/gdscript/group_manager.gd"
 Gameloop="*res://src/gdscript/gameloop.gd"
 ShockManager="*res://src/gdscript/shocks/shock_manager.gd"
 PolicyManager="*res://src/gdscript/policies/policy_manager.gd"

@@ -86,7 +86,7 @@ text = "QUIT_WITH_SURVEY_TEXT"
 horizontal_alignment = 1
 script = ExtResource("3_yfao8")
 
-[node name="ConfirmButton" type="TextureButton" parent="ClosingGameWarning/MainFrame/MarginContainer"]
+[node name="ConfirmButton" type="TextureButton" parent="ClosingGameWarning/MainFrame/MarginContainer" groups=["buttons"]]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
@@ -114,7 +114,7 @@ position = Vector2(-2.85706, -2.85718)
 texture = ExtResource("6_ibg61")
 centered = false
 
-[node name="CancelButton" type="TextureButton" parent="ClosingGameWarning/MainFrame/MarginContainer"]
+[node name="CancelButton" type="TextureButton" parent="ClosingGameWarning/MainFrame/MarginContainer" groups=["buttons"]]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8

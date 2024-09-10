@@ -221,7 +221,7 @@ _data = {
 "show_right_thumbs_up": SubResource("Animation_qt8e8")
 }
 
-[node name="PolicyButton" type="TextureButton"]
+[node name="PolicyButton" type="TextureButton" groups=["buttons"]]
 custom_minimum_size = Vector2(0, 80)
 offset_left = 145.0
 offset_top = 40.0
