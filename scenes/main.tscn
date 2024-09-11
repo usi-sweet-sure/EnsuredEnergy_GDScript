@@ -2306,6 +2306,12 @@ offset_top = 72.0
 offset_right = 758.0
 offset_bottom = 472.0
 
+[node name="Money" parent="World/BuildButton" index="4"]
+offset_left = -286.0
+offset_top = -132.5
+offset_right = -126.0
+offset_bottom = -43.5
+
 [node name="BuildButton2" parent="World" index="12"]
 offset_left = 624.0
 offset_right = 1310.0
@@ -2745,6 +2751,12 @@ autoplay = "Water"
 [node name="Hammer" parent="World/BuildButton9" index="0"]
 position = Vector2(308, 205)
 
+[node name="Money" parent="World/BuildButton9" index="4"]
+offset_left = -279.0
+offset_top = -124.0
+offset_right = -119.0
+offset_bottom = -35.0
+
 [node name="Solar" parent="World/BuildButton9/BuildMenu/Container" index="0"]
 visible = false
 
@@ -2908,7 +2920,7 @@ layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_5yxgv")
 text = "MUSIC"
 
-[node name="VolMusic" type="HSlider" parent="Settings/Control/SettingsBox/VBoxContainer"]
+[node name="VolMusic" type="HSlider" parent="Settings/Control/SettingsBox/VBoxContainer" groups=["draggables"]]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 focus_mode = 0
@@ -2937,7 +2949,7 @@ layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_vvk74")
 text = "SFX"
 
-[node name="VolSound" type="HSlider" parent="Settings/Control/SettingsBox/VBoxContainer"]
+[node name="VolSound" type="HSlider" parent="Settings/Control/SettingsBox/VBoxContainer" groups=["draggables"]]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 focus_mode = 0
