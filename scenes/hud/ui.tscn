@@ -1,4 +1,4 @@
-[gd_scene load_steps=160 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=159 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/UI Elements/Button-Next-Normal.png" id="2_aobed"]
 [ext_resource type="Texture2D" uid="uid://ccsapuvkqqt1b" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0009_Profile-metal-base.png" id="2_nu7y6"]
@@ -13,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://60dl810b25fd" path="res://assets/UI Elements/Button-press.png" id="5_hh5pc"]
 [ext_resource type="PackedScene" uid="uid://c81iji81uc4g7" path="res://scenes/hud/import.tscn" id="5_ps4b6"]
 [ext_resource type="PackedScene" uid="uid://885lty3v1qbq" path="res://scenes/windows/shock.tscn" id="5_tj765"]
-[ext_resource type="AudioStream" uid="uid://d0mx81kv2vlha" path="res://assets/Sounds/Negative 2_1.wav" id="6_jw1cb"]
 [ext_resource type="Texture2D" uid="uid://cgf1xjsx0mfot" path="res://assets/UI Elements/Button-Next-Base.png" id="7_g7ih8"]
 [ext_resource type="PackedScene" uid="uid://jj476u8yn2g8" path="res://scenes/windows/window.tscn" id="7_yu7g8"]
 [ext_resource type="Texture2D" uid="uid://en44frv5c6jy" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0014_graphs-symbol.png" id="9_01q4h"]
@@ -374,21 +373,6 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
-tracks/3/type = "audio"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Error")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("6_jw1cb")
-}],
-"times": PackedFloat32Array(0)
-}
-tracks/3/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jpw4y"]
 _data = {
@@ -902,7 +886,7 @@ offset_bottom = 164.0
 texture = ExtResource("2_nu7y6")
 region_rect = Rect2(148.123, 34.403, 100.885, 97.2876)
 
-[node name="OpenGraphsFrameButton" type="TextureButton" parent="TopLeftZone"]
+[node name="OpenGraphsFrameButton" type="TextureButton" parent="TopLeftZone" groups=["buttons"]]
 visible = false
 layout_mode = 0
 offset_left = 113.0
@@ -943,7 +927,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ToggleMoneyInfoBoxButton" type="Button" parent="TopLeftZone/MoneyManagement/MoneyInfo"]
+[node name="ToggleMoneyInfoBoxButton" type="Button" parent="TopLeftZone/MoneyManagement/MoneyInfo" groups=["help_buttons"]]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -1339,7 +1323,6 @@ ignore_texture_size = true
 script = ExtResource("32_ynjjj")
 
 [node name="BorrowMoneyFrame" type="Control" parent="TopLeftZone/MoneyManagement/BorrowMoney"]
-visible = false
 anchors_preset = 0
 offset_left = 754.0
 offset_top = 230.0
@@ -1464,7 +1447,7 @@ text = "0"
 horizontal_alignment = 1
 script = ExtResource("66_c76li")
 
-[node name="Apply" type="TextureButton" parent="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame"]
+[node name="Apply" type="TextureButton" parent="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame" groups=["disabled_buttons"]]
 layout_mode = 0
 offset_left = 137.5
 offset_top = 357.0
@@ -1520,7 +1503,7 @@ tick_count = 6
 ticks_on_borders = true
 script = ExtResource("66_0vfa5")
 
-[node name="Close" type="TextureButton" parent="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame"]
+[node name="Close" type="TextureButton" parent="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame" groups=["buttons"]]
 z_index = 1
 layout_mode = 0
 offset_left = 450.0
@@ -1808,7 +1791,7 @@ uppercase = true
 position = Vector2(45, 46)
 texture = ExtResource("21_i8c3o")
 
-[node name="OpenInfoBoxButton" type="Button" parent="EnvironmentAndPollution/Environment"]
+[node name="OpenInfoBoxButton" type="Button" parent="EnvironmentAndPollution/Environment" groups=["help_buttons"]]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.17
@@ -1911,7 +1894,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="OpenInfoBoxButton" type="Button" parent="EnvironmentAndPollution/Pollution"]
+[node name="OpenInfoBoxButton" type="Button" parent="EnvironmentAndPollution/Pollution" groups=["help_buttons"]]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2148,6 +2131,8 @@ script = ExtResource("92_bqjhv")
 [node name="InfoText2" parent="ImportAndEnergy/Energy/EnergyBarWinter/BarInfo/MarginContainer/MarginContainer/VBoxContainer" index="4"]
 text = "WINTER_SUPPLY_INFO_TEXT"
 
+[node name="Button" parent="ImportAndEnergy/Energy/EnergyBarWinter" index="3" groups=["help_buttons"]]
+
 [node name="EnergyBarSummer" parent="ImportAndEnergy/Energy" instance=ExtResource("3_fm1y6")]
 offset_left = 119.001
 offset_top = 72.0
@@ -2193,6 +2178,8 @@ script = ExtResource("94_bcqhm")
 
 [node name="InfoText2" parent="ImportAndEnergy/Energy/EnergyBarSummer/BarInfo/MarginContainer/MarginContainer/VBoxContainer" index="4"]
 text = "SUMMER_SUPPLY_INFO_TEXT"
+
+[node name="Button" parent="ImportAndEnergy/Energy/EnergyBarSummer" index="3" groups=["help_buttons"]]
 
 [node name="NuclearWarning" type="Label" parent="."]
 offset_left = 1964.0
@@ -2291,7 +2278,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TurnInfo" type="TextureButton" parent="Clock"]
+[node name="TurnInfo" type="TextureButton" parent="Clock" groups=["help_buttons"]]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2457,7 +2444,7 @@ libraries = {
 "": SubResource("AnimationLibrary_5dlvf")
 }
 
-[node name="TurnInfoContainer" type="MarginContainer" parent="Clock/TimePanelBlank"]
+[node name="TurnInfoContainer" type="MarginContainer" parent="Clock/TimePanelBlank" groups=["papers"]]
 visible = false
 anchors_preset = -1
 anchor_left = -0.152

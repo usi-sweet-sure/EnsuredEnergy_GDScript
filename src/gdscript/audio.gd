@@ -12,6 +12,7 @@ extends Node
 @onready var input_entered = $InputEntered
 @onready var paper_open = $PaperOpen
 @onready var paper_close = $PaperClose
+@onready var switch_toggle = $SwitchToggle
 
 
 func _ready():
@@ -24,6 +25,7 @@ func _ready():
 	_on_disabled_buttons_group_updated()
 	_on_inputs_group_updated()
 	_on_papers_group_updated()
+	_on_switches_group_updated()
 
 
 func _on_game_started():
@@ -66,6 +68,10 @@ func _on_paper_draw():
 
 func _on_paper_hidden():
 	paper_close.play()
+
+
+func _on_switch_toggled(_toggled: bool):
+	switch_toggle.play()
 
 
 func _on_buttons_group_updated():
@@ -114,3 +120,10 @@ func _on_papers_group_updated():
 		if not paper.hidden.is_connected(_on_paper_hidden):
 			paper.hidden.connect(_on_paper_hidden)
 	
+
+func _on_switches_group_updated():
+	var switches: Array = get_tree().get_nodes_in_group("switches")
+	
+	for switch in switches:
+		if not switch.toggled.is_connected(_on_switch_toggled):
+			switch.toggled.connect(_on_switch_toggled)

@@ -122,7 +122,7 @@ layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 23
 
-[node name="Environment" type="TextureButton" parent="MainFrame/RightContainer/FilterButtons"]
+[node name="Environment" type="TextureButton" parent="MainFrame/RightContainer/FilterButtons" groups=["buttons"]]
 layout_mode = 2
 texture_normal = ExtResource("5_lt1jf")
 texture_pressed = ExtResource("6_hmhdq")
@@ -140,7 +140,7 @@ text = "ENVIRONMENT"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Economy" type="TextureButton" parent="MainFrame/RightContainer/FilterButtons"]
+[node name="Economy" type="TextureButton" parent="MainFrame/RightContainer/FilterButtons" groups=["buttons"]]
 layout_mode = 2
 texture_normal = ExtResource("5_lt1jf")
 texture_pressed = ExtResource("6_hmhdq")
@@ -159,7 +159,7 @@ text = "ECONOMY"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Energy" type="TextureButton" parent="MainFrame/RightContainer/FilterButtons"]
+[node name="Energy" type="TextureButton" parent="MainFrame/RightContainer/FilterButtons" groups=["buttons"]]
 layout_mode = 2
 size_flags_vertical = 8
 texture_normal = ExtResource("5_lt1jf")
@@ -190,7 +190,7 @@ layout_mode = 2
 texture = ExtResource("11_t7ckv")
 stretch_mode = 3
 
-[node name="Switch" type="CheckButton" parent="MainFrame/RightContainer/SeasonSwitch"]
+[node name="Switch" type="CheckButton" parent="MainFrame/RightContainer/SeasonSwitch" groups=["switches"]]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -210,7 +210,7 @@ layout_mode = 2
 texture = ExtResource("14_how0c")
 stretch_mode = 3
 
-[node name="CloseButton" type="TextureButton" parent="MainFrame"]
+[node name="CloseButton" type="TextureButton" parent="MainFrame" groups=["buttons"]]
 z_index = 1
 layout_mode = 1
 anchors_preset = 8

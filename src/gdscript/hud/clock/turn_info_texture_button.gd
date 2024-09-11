@@ -12,8 +12,3 @@ func _ready():
 		bitmap.create_from_image_alpha(image)
 		# Assign it to the mask
 		texture_click_mask = bitmap
-	
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
