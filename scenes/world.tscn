@@ -27,10 +27,12 @@
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 
-[node name="Map" type="Sprite2D" parent="."]
-position = Vector2(-3536, -1567)
+[node name="Map" type="TextureRect" parent="." groups=["draggables"]]
+offset_left = -3536.0
+offset_top = -1567.0
+offset_right = -3536.0
+offset_bottom = -1567.0
 texture = ExtResource("1_prbrp")
-centered = false
 
 [node name="Forest2" type="Sprite2D" parent="."]
 position = Vector2(292, -251)
@@ -375,6 +377,12 @@ scale = Vector2(1, 1)
 [node name="Planting" parent="BuildButton9/BuildingInfo" index="2"]
 position = Vector2(-314, -307)
 scale = Vector2(1, 1)
+
+[node name="Money" parent="BuildButton9" index="4"]
+offset_left = -279.0
+offset_top = -124.0
+offset_right = -119.0
+offset_bottom = -35.0
 
 [node name="Forest" type="Sprite2D" parent="."]
 position = Vector2(-1143, 1674)
