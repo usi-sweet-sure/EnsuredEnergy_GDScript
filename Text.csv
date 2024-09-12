@@ -79,9 +79,9 @@ CLIMATE_TUTORIAL9,You can also hold information campaigns or try to implement di
 		\t den Energiebedarf zu senken oder den Bau von Kraftwerken zu erleichtern.",Potete anche organizzare campagne di informazione o cercare di attuare varie politiche per ridurre la domanda di energia o facilitare la costruzione di centrali elettriche!
 TUTOBUBBLE0,"Each turn, you have to reach the demand for both winter and summer","Chaque tour, tu dois atteindre la demande pour l'hiver et l'été",In jeder Runde musst du den Strombedarf für den Winter und den Sommer erreichen.,"Ad ogni turno, bisogna soddisfare la domanda per l'inverno e per l'estate"
 TUTOBUBBLE1,Try importing some energy,Voici la barre d'importation,Hier kannst du mehr Strom importieren,Importa più energia qui
-TUTOBUBBLE2,You cannot import more than what is needed.,,,
+TUTOBUBBLE2,You cannot import more than what is needed,Vous ne pouvez pas importer plus que ce qui est nécessaire,"Sie können nicht mehr importieren, als benötigt wird",Non è possibile importare più del necessario
 TUTOBUBBLE3,Try building a new power plant,Le bouton de construction,Du kannst neue Kraftwerke bauen,Costruire nuove centrali elettriche
-TUTOBUBBLE4,You can only cancel a power plant in the same turn it was built,,,
+TUTOBUBBLE4,You can only cancel a power plant in the same turn it was built,Une centrale ne peut être annulée qu'au cours du même tour où elle a été construite,"Ein Kraftwerk kann nur in derselben Runde abgebrochen werden, in der es gebaut wurde",È possibile annullare una centrale elettrica solo nello stesso turno in cui è stata costruita
 TUTOBUBBLE5,Upgrade it here,Améliorer les centrales existantes,Du kannst bestehende Kraftwerk aufrüsten,Ampiamento della centrale elettrica esistente
 TUTOBUBBLE6,Open the policy window,Le bouton de politique,Du kannst politische Massnahmen ergreifen,Implementare le politiche
 DEMAND,Demand,Demande,Energiebedarg,Domanda
@@ -112,8 +112,8 @@ SHOCK_INC_RAW_COST_20_TITLE,Rise of material costs,Augmentation des prix,Anstieg
 SHOCK_INC_RAW_COST_20_TEXT,The prices of raw material have increased resulting in production costs going up by 20%.,"Le prix des matières premières ont augmenté, les coûts de production ont augmenté de 20%","Die Rohstoffpreise sind gestiegen, was zu einem Anstieg der Produktionskosten um 20 % geführt hat.",I prezzi delle materie prime sono aumentati e i costi di produzione sono cresciuti del 20%.
 SHOCK_DEC_RAW_COST_20_TITLE,Reduction of material costs,Réduction des prix,Reduktion der Materialkosten,Riduzione dei prezzi dei materiali
 SHOCK_DEC_RAW_COST_20_TEXT,The prices of raw material have decreased resulting in production costs going down by 20%.,"Les prix des matières premières ont diminué, ce qui a entraîné une baisse des coûts de production de 20 %.","Die Preise für Rohstoffe sind gesunken, was zu einer Verminderung der Produktionskosten um 20% geführt hat.",Il prezzo delle matere prime è dimumito. Il costo di produzione diminuisce del 20%.
-SHOCK_NO_SHOCK_TITLE,Calm years,,Ruhige Jahre,In questi anni non ci sono variazioni signficative
-SHOCK_NO_SHOCK_TEXT,The past years were calmer than usual,,Die letzten Jahre waren ruhiger als gewöhnlich.,Gli anni passati sono stati piu calmi del solito
+SHOCK_NO_SHOCK_TITLE,Calm years,Années calmes,Ruhige Jahre,In questi anni non ci sono variazioni signficative
+SHOCK_NO_SHOCK_TEXT,The past years were calmer than usual,Les années passées étaient plus calmes que d'habitude,Die letzten Jahre waren ruhiger als gewöhnlich.,Gli anni passati sono stati piu calmi del solito
 SHOCK_MASS_IMMIGRATION_TITLE,Refugee Crisis,Réfugiés climatiques,Flüchtlingskrise,Rifugiati climatic
 SHOCK_MASS_IMMIGRATION_TEXT,The population has been increasing faster due to the climate refugee crisis. Energy demand in winter and summer +5 ⚡,La population a augmenté plus rapidement que prévu à cause de la crise climatique. Augmentation de la demande en énergie +5⚡,Die Bevölkerung ist aufgrund der Klimaflüchtlingskrise schneller gewachsen. Energiebedarf im Winter und Sommer +5 ⚡,La popolazione è cresciuta più velocemente del previsto a causa della crisi climatica. Aumento della domanda di energia +5⚡
 SHOCK_RENEWABLE_SUPPORT_TITLE,Increase in support,Augmentation du soutien,Bevölkerung für Erneuerbare,La popolarità verso le rinnovabili è aumentata
@@ -244,4 +244,4 @@ BORROW_MONEY_TITLE_2,How much would you like to borrow ?,Quel est le montant que
 BORROW_MONEY_TEXT_1,Borrow,Emprunter,Ausleihen,Prendere in prestito
 BORROW_MONEY_TEXT_2,Pay back\n(next turn),Rembourser\n(tour suivant),Zurückzahlen\n(nächste Runde),Rimborso\n(turno successivo)
 BORROW_MONEY_APPLY,Apply,Appliquer,Anwenden,Applicare
-PLAYER_NAME_NEEDED,Enter a name,Entrez un nom,Geben Sie einen Namen ein,Inserire un nome
+PLAYER_NAME_NEEDED,Enter a name,Entrez un nom,Name eingeben,Inserire un nome
