@@ -13,6 +13,7 @@ extends Node
 @onready var paper_open = $PaperOpen
 @onready var paper_close = $PaperClose
 @onready var switch_toggle = $SwitchToggle
+@onready var paper_manip = $PaperManip
 
 
 func _ready():
@@ -23,6 +24,7 @@ func _ready():
 	GroupManager.disabled_buttons_group_updated.connect(_on_disabled_buttons_group_updated)
 	_on_buttons_group_updated()
 	_on_disabled_buttons_group_updated()
+	_on_more_help_buttons_group_updated()
 	_on_inputs_group_updated()
 	_on_papers_group_updated()
 	_on_switches_group_updated()
@@ -51,6 +53,14 @@ func _on_button_mouse_entered():
 
 func _on_button_pressed():
 	button_press.play()
+	
+	
+func _on_more_help_button_mouse_entered():
+	button_hover.play()
+
+
+func _on_more_help_button_pressed():
+	paper_manip.play()
 	
 	
 func _on_disabled_buttons_gui_input(event: InputEvent):
@@ -127,3 +137,17 @@ func _on_switches_group_updated():
 	for switch in switches:
 		if not switch.toggled.is_connected(_on_switch_toggled):
 			switch.toggled.connect(_on_switch_toggled)
+			
+			
+func _on_more_help_buttons_group_updated():
+	var buttons: Array = get_tree().get_nodes_in_group("more_help_buttons")
+	
+	for button in buttons:
+		if not button.mouse_entered.is_connected(_on_more_help_button_mouse_entered):
+			button.mouse_entered.connect(_on_more_help_button_mouse_entered)
+		
+		if not button.pressed.is_connected(_on_more_help_button_pressed):
+			button.pressed.connect(_on_more_help_button_pressed)
+			
+		if button.gui_input.is_connected(_on_disabled_buttons_gui_input):
+			button.gui_input.disconnect(_on_disabled_buttons_gui_input)
