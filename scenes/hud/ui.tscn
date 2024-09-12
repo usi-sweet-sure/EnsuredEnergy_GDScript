@@ -1,4 +1,4 @@
-[gd_scene load_steps=160 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=162 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/UI Elements/Button-Next-Normal.png" id="2_aobed"]
 [ext_resource type="Texture2D" uid="uid://ccsapuvkqqt1b" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0009_Profile-metal-base.png" id="2_nu7y6"]
@@ -102,6 +102,8 @@
 [ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="70_2ktfd"]
 [ext_resource type="Script" path="res://src/gdscript/hud/emissions/info_box/co2_emissions_info_text_label.gd" id="70_444pk"]
 [ext_resource type="Script" path="res://src/gdscript/hud/money_management/available_money_amount_label.gd" id="71_xcmoe"]
+[ext_resource type="Script" path="res://src/gdscript/hud/emissions/info_box/sequestrated_co2_value.gd" id="79_7os60"]
+[ext_resource type="Script" path="res://src/gdscript/hud/emissions/info_box/total_emissions_value.gd" id="80_lk5v6"]
 [ext_resource type="Texture2D" uid="uid://61oa2tq2xw7y" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0034_Import-Slider.png" id="83_hii8n"]
 [ext_resource type="Script" path="res://src/gdscript/hud/energy_import/up_button.gd" id="87_wunut"]
 [ext_resource type="Script" path="res://src/gdscript/hud/energy_import/down_button.gd" id="88_cvkym"]
@@ -1834,7 +1836,6 @@ show_percentage = false
 metadata/_edit_group_ = true
 
 [node name="Info" parent="EnvironmentAndPollution/Pollution" groups=["papers"] instance=ExtResource("4_67rbh")]
-visible = false
 layout_mode = 1
 offset_left = 245.0
 offset_top = -80.0
@@ -1847,6 +1848,7 @@ metadata/_edit_group_ = true
 
 [node name="MarginContainer" parent="EnvironmentAndPollution/Pollution/Info" index="0"]
 offset_top = -15.0
+offset_bottom = 340.0
 
 [node name="BubbleOpen" parent="EnvironmentAndPollution/Pollution/Info/MarginContainer" index="1"]
 script = ExtResource("68_0ckm3")
@@ -1855,29 +1857,59 @@ script = ExtResource("68_0ckm3")
 text = "Mt CO2"
 
 [node name="Text0" parent="EnvironmentAndPollution/Pollution/Info/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer" index="0"]
+theme_override_font_sizes/font_size = 22
 text = "CO2_EMISSIONS"
 
 [node name="n" parent="EnvironmentAndPollution/Pollution/Info/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer" index="1"]
+theme_override_font_sizes/font_size = 22
 script = ExtResource("69_g60cp")
 
 [node name="InfoText" parent="EnvironmentAndPollution/Pollution/Info/MarginContainer/MarginContainer/VBoxContainer" index="2"]
 text = "CO2_EMISSIONS_TEXT"
 script = ExtResource("70_444pk")
 
-[node name="HBoxContainer2" parent="EnvironmentAndPollution/Pollution/Info/MarginContainer/MarginContainer/VBoxContainer" index="3"]
-visible = false
-
 [node name="Text1" parent="EnvironmentAndPollution/Pollution/Info/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2" index="0"]
-theme_override_colors/font_color = Color(0.666667, 0, 0, 1)
-text = "IMPORTS_EMISSIONS"
+theme_override_colors/font_color = Color(0, 0.45098, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "CARBON"
 
 [node name="n1" parent="EnvironmentAndPollution/Pollution/Info/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2" index="1"]
-theme_override_colors/font_color = Color(0.666667, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0.45098, 0, 1)
+theme_override_font_sizes/font_size = 22
+script = ExtResource("79_7os60")
 
-[node name="InfoText2" parent="EnvironmentAndPollution/Pollution/Info/MarginContainer/MarginContainer/VBoxContainer" index="4"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="EnvironmentAndPollution/Pollution/Info/MarginContainer/MarginContainer/VBoxContainer" index="4"]
+layout_mode = 2
+
+[node name="Text0" type="Label" parent="EnvironmentAndPollution/Pollution/Info/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("70_2ktfd")
+theme_type_variation = &"Paper"
+theme_override_colors/font_color = Color(0.666667, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = "TOTAL"
+autowrap_mode = 2
+
+[node name="n" type="Label" parent="EnvironmentAndPollution/Pollution/Info/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(142, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme = ExtResource("70_2ktfd")
+theme_type_variation = &"Paper"
+theme_override_colors/font_color = Color(0.666667, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = "n"
+horizontal_alignment = 2
+autowrap_mode = 2
+script = ExtResource("80_lk5v6")
+
+[node name="InfoText2" parent="EnvironmentAndPollution/Pollution/Info/MarginContainer/MarginContainer/VBoxContainer" index="5"]
 text = "IMPORTS_EMISSIONS_TEXT"
 
-[node name="MoreInfo" parent="EnvironmentAndPollution/Pollution/Info" index="1"]
+[node name="MoreInfo" parent="EnvironmentAndPollution/Pollution/Info" index="1" groups=["help_buttons"]]
 offset_top = -17.0
 offset_bottom = 20.0
 
@@ -1896,7 +1928,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="OpenInfoBoxButton" type="Button" parent="EnvironmentAndPollution/Pollution" groups=["help_buttons"]]
+[node name="OpenInfoBoxButton" type="Button" parent="EnvironmentAndPollution/Pollution" groups=["buttons"]]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

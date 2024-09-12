@@ -36,6 +36,7 @@ signal players_own_money_amount_updated
 signal available_money_amount_updated
 signal land_use_updated
 signal co2_emissions_updated
+signal sequestrated_co2_updated(val: float)
 signal most_recent_shock_updated
 signal current_turn_updated
 signal show_tutorial
@@ -142,7 +143,11 @@ var building_costs: float: # Costs of building and upgrading buildings
 		building_costs = new_value
 		building_costs_updated.emit(building_costs)
 		available_money_amount_updated.emit(available_money_amount)
-	
+var sequestrated_co2: float = 0.0:
+	set(new_value):
+		sequestrated_co2 = new_value
+		sequestrated_co2_updated.emit(sequestrated_co2)
+		co2_emissions_updated.emit(co2_emissions)
 	
 func _ready():	
 	players_own_money_amount = start_money
@@ -184,17 +189,23 @@ func _update_buildings_impact():
 	var total_production_costs = 0
 	var total_emissions = 0
 	var total_land_use = 0
+	var total_emissions_sequestrated = 0
 	for power_plant in all_power_plants:
 		if power_plant.is_alive:
 			summer += power_plant.capacity * power_plant.availability.x
 			winter += power_plant.capacity * power_plant.availability.y
 			total_production_costs += power_plant.production_cost
 			total_emissions += power_plant.pollution
+			
+			if power_plant.pollution < 0:
+				total_emissions_sequestrated += abs(power_plant.pollution)
+			
 			total_land_use += power_plant.land_use
 	supply_summer = summer
 	supply_winter = winter
 	powerplants_production_costs = total_production_costs
 	co2_emissions = total_emissions
+	sequestrated_co2 = total_emissions_sequestrated
 	land_use = total_land_use
 	
 
