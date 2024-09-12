@@ -57,6 +57,8 @@ signal tutorial_ended
 
 signal hide_energy_bar_info_requested
 
+signal tutorial_step_updated(step: int)
+
 # We need to send this signal because some translations 
 # don't update automatically when changing the language at runtime,
 # and only update when the tr() statement is called again.

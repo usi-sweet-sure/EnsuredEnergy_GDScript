@@ -46,6 +46,7 @@ func _on_next_button_pressed():
 			for b in bubble_list:
 				b.hide()
 			bubble_list[j].show()
+			Gameloop.tutorial_step_updated.emit(i)
 			j += 1
 	else:
 		hide()
@@ -70,13 +71,19 @@ func _reset_tutorial():
 	j = 0
 	
 	$MarginContainer/MarginContainer/Text.text = tr(tutorial_texts[selected_tuto] % i)
-	
+	$Bubbles/InfoBubble2/ShowHand.show()
+	$Bubbles/InfoBubble4/ShowHand.show()
+	$Bubbles/InfoBubble5/ShowHand.show()
+
 	for b in bubble_list:
 		b.hide()
+	
+	$Bubbles/MouseBlock.show()
 		
 # E. Ideally the signal should be on drag ended and show the next bubble (i++ and j++)
 func _on_import_tested(new_val):
 	if tutorial_started:
+		$Bubbles/InfoBubble2/ShowHand.hide()
 		$MarginContainer/NavigationButtons/Next.show()
 		
 func _on_plant_pressed():
@@ -86,6 +93,7 @@ func _on_plant_pressed():
 		
 func _on_plant_tested():
 	if tutorial_started:
+		$Bubbles/InfoBubble4/ShowHand.hide()
 		$MarginContainer/NavigationButtons/Next.show()
 		$Bubbles/InfoBubble4/BuildBlock.show()
 	
@@ -96,6 +104,7 @@ func _on_plant_canceled():
 			$Bubbles/InfoBubble4/BuildBlock.show()
 			$MarginContainer/NavigationButtons/Next.hide()
 		if i == 7:
+			$Bubbles/InfoBubble5/ShowHand.hide()
 			$MarginContainer/NavigationButtons/Next.show()
 			
 func _on_policies_pressed():

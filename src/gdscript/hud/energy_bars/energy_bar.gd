@@ -10,12 +10,15 @@ enum Season {WINTER, SUMMER}
 @onready var info_text = $BarInfo/MarginContainer/MarginContainer/VBoxContainer/InfoText
 @onready var info_text_2 = $BarInfo/MarginContainer/MarginContainer/VBoxContainer/InfoText2
 @onready var demand_line = $DemandLine
+@onready var show_hand = $ShowHand # For the tutorial
+
 
 var max_value_set := false
 # Called when the node enters the scene tree for the first time.
 
 
 func _ready():
+	Gameloop.tutorial_step_updated.connect(_on_tutorial_step_updated)
 	Gameloop.hide_energy_bar_info_requested.connect(_on_hide_info_box)
 	# Determines which season the bar will be monitoring
 	match season:
@@ -26,12 +29,15 @@ func _ready():
 
 			_on_energy_supply_updated(Gameloop.supply_winter)
 		Season.SUMMER:
+			$ShowHand/Sprite2D.flip_h = true
+			$ShowHand/AnimationPlayer.play("show_left")
+			show_hand.position.y += 195
 			Gameloop.energy_supply_updated_summer.connect(_on_energy_supply_updated)
 			Gameloop.energy_demand_updated_summer.connect(_on_energy_demand_updated)
 			
 			_on_energy_supply_updated(Gameloop.supply_summer)
-
-
+			
+			
 func _process(delta):
 	change_bar_color()
 	
@@ -47,19 +53,21 @@ func _process(delta):
 		match season:
 			Season.WINTER:
 				demand_line.position.x = remap(Gameloop.demand_winter, min_value, max_value, 0, bar_height)
-				print(demand_line.position.x)
-				#demand_line.position.x = bar_height / (max_value - min_value) * Gameloop.demand_winter
+				show_hand.position.x = remap(Gameloop.demand_winter, min_value, max_value, 0, bar_height)
 			Season.SUMMER:
 				demand_line.position.x = remap(Gameloop.demand_summer, min_value, max_value, 0, bar_height)
-				#demand_line.position.x = bar_height / (max_value - min_value) * Gameloop.demand_summer
-
+				show_hand.position.x = remap(Gameloop.demand_summer, min_value, max_value, 0, bar_height)
+				
+				
 func _on_energy_demand_updated(demand: float):
 	var bar_height = size.x
 	match season:
 			Season.WINTER:
 				demand_line.position.x = remap(Gameloop.demand_winter, min_value, max_value, 0, bar_height)
+				show_hand.position.x = remap(Gameloop.demand_winter, min_value, max_value, 0, bar_height)
 			Season.SUMMER:
 				demand_line.position.x = remap(Gameloop.demand_summer, min_value, max_value, 0, bar_height)
+				show_hand.position.x = remap(Gameloop.demand_summer, min_value, max_value, 0, bar_height)
 
 # Updates the progress bar
 func _on_energy_supply_updated(supply: float):
@@ -128,3 +136,7 @@ func get_season_text(season_value: int):
 func _on_hide_info_box(season_to_hide: Season):
 	if season_to_hide == season:
 		info_box.hide()
+
+
+func _on_tutorial_step_updated(step: int):
+	show_hand.visible = (step == 5 and season == Season.WINTER) or step == 3
