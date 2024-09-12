@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://pvoi2mcc3oc1"]
+[gd_scene load_steps=24 format=3 uid="uid://pvoi2mcc3oc1"]
 
 [ext_resource type="Script" path="res://src/gdscript/starting_screen/menu.gd" id="1_hl1kv"]
 [ext_resource type="Texture2D" uid="uid://bdjbeos1j2wsr" path="res://assets/Map/MAP-BG.png" id="2_rie33"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://bdqqnt7g3ojt8" path="res://assets/UI Elements/Blueprint_active_2.png" id="14_wbube"]
 [ext_resource type="Texture2D" uid="uid://60dl810b25fd" path="res://assets/UI Elements/Button-press.png" id="15_4vyug"]
 [ext_resource type="Texture2D" uid="uid://cuhckno2t6g0r" path="res://assets/UI Elements/Button-hover.png" id="16_gqjv5"]
+[ext_resource type="Script" path="res://src/gdscript/starting_screen/error_label.gd" id="20_gyh2s"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k5cxq"]
 texture = ExtResource("5_rxjck")
@@ -88,16 +89,20 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="StartMenuBase" type="Sprite2D" parent="."]
-position = Vector2(696, 680)
-scale = Vector2(1, 1.19487)
+[node name="StartMenuBase" type="NinePatchRect" parent="."]
+offset_left = 511.0
+offset_top = 446.0
+offset_right = 873.0
+offset_bottom = 907.0
 texture = ExtResource("4_dgun4")
+patch_margin_top = 223
+patch_margin_bottom = 238
 
 [node name="PlayerName" type="LineEdit" parent="." groups=["inputs"]]
-offset_left = 570.0
-offset_top = 500.0
-offset_right = 822.0
-offset_bottom = 560.0
+offset_left = 569.0
+offset_top = 501.0
+offset_right = 821.0
+offset_bottom = 561.0
 theme = ExtResource("3_l0e0n")
 theme_type_variation = &"Screen"
 theme_override_colors/caret_color = Color(0.843184, 0.843184, 0.843184, 0.92549)
@@ -271,21 +276,23 @@ text = "SCROLL"
 autowrap_mode = 3
 uppercase = true
 
-[node name="Label" type="Label" parent="."]
-visible = false
-offset_left = 654.0
-offset_top = 498.0
-offset_right = 728.0
-offset_bottom = 532.0
-theme = ExtResource("3_l0e0n")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 22
-text = "MENU"
+[node name="Error" type="Label" parent="."]
+offset_left = 550.0
+offset_top = 481.0
+offset_right = 839.0
+offset_bottom = 504.0
+theme_override_colors/font_color = Color(0.716162, 0.0800382, 0, 1)
+text = "PLAYER_NAME_NEEDED"
+horizontal_alignment = 1
+autowrap_mode = 2
+script = ExtResource("20_gyh2s")
 
 [connection signal="focus_entered" from="PlayerName" to="PlayerName" method="_on_focus_entered"]
 [connection signal="focus_exited" from="PlayerName" to="PlayerName" method="_on_focus_exited"]
 [connection signal="text_changed" from="PlayerName" to="Play" method="_on_player_name_text_changed"]
+[connection signal="text_changed" from="PlayerName" to="Error" method="_on_player_name_text_changed"]
 [connection signal="clicked_when_disabled" from="Play" to="PlayerName" method="_on_play_button_clicked_when_disabled"]
+[connection signal="clicked_when_disabled" from="Play" to="Error" method="_on_play_clicked_when_disabled"]
 [connection signal="gui_input" from="Play" to="Play" method="_on_gui_input"]
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Lang" to="." method="_on_lang_pressed"]
