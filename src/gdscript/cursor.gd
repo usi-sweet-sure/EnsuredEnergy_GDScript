@@ -34,7 +34,8 @@ func _process(delta):
 	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and mode_to_switch_to_on_mouse_release != "":
 		mode = mode_to_switch_to_on_mouse_release
 		mode_to_switch_to_on_mouse_release = ""
-		
+	
+	# The cursor mode is not changed, doing so make the cursor jitter on high refresh rate screens
 	match mode:
 		"normal":
 			if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
@@ -43,17 +44,18 @@ func _process(delta):
 				Input.set_custom_mouse_cursor(hand_normal, Input.CURSOR_ARROW, Vector2(0,0))
 		"help":
 			if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-				Input.set_custom_mouse_cursor(hand_help_press, Input.CURSOR_HELP, Vector2(2, 26))
+				Input.set_custom_mouse_cursor(hand_help_press, Input.CURSOR_ARROW, Vector2(0, 26))
 			else:
-				Input.set_custom_mouse_cursor(hand_help, Input.CURSOR_HELP, Vector2(2, 26))
+				Input.set_custom_mouse_cursor(hand_help, Input.CURSOR_ARROW, Vector2(0, 26))
 		"drag":
 			if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-				Input.set_custom_mouse_cursor(hand_drag_press, Input.CURSOR_DRAG, Vector2(16, 16))
+				Input.set_custom_mouse_cursor(hand_drag_press, Input.CURSOR_ARROW, Vector2(0, 0))
 			else:
-				Input.set_custom_mouse_cursor(hand_drag, Input.CURSOR_DRAG, Vector2(16,21))
+				Input.set_custom_mouse_cursor(hand_drag, Input.CURSOR_ARROW, Vector2(0,11))
 		"ibeam":
-			Input.set_custom_mouse_cursor(ibeam, Input.CURSOR_IBEAM, Vector2(8, 16))
-				
+			Input.set_custom_mouse_cursor(ibeam, Input.CURSOR_ARROW, Vector2(8, 16))
+			
+
 
 func _on_input_mouse_entered():
 	if not (mode == "drag" and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)):
