@@ -19,5 +19,8 @@ func _on_locale_updated(_locale):
 
 
 func _on_play_button_clicked_when_disabled():
-	if not has_focus():
-		grab_focus()
+	#if not has_focus():
+	#	grab_focus()
+	placeholder_text = tr("PLAYER_NAME_NEEDED")
+	placeholder_text = placeholder_text.to_upper()
+	set("theme_override_colors/font_placeholder_color", Color.INDIAN_RED)
