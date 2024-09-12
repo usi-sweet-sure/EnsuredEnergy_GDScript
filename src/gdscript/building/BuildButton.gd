@@ -45,7 +45,7 @@ func _on_pp_pressed(pp):
 				Gameloop.building_costs += plant.build_cost
 				$Hammer.hide()
 				$BuildMenu.hide()
-				$Money.text = "-" + str(pp.build_cost + pp.production_cost) + " CHF"
+				$Money.text = "-" + str(pp.build_cost + pp.production_cost).pad_decimals(1) + "M CHF"
 				$AnimationPlayer.play("Money-")
 				
 				plant_tested.emit()
@@ -100,7 +100,7 @@ func _on_pp_delete(pp):
 	pp.hide()
 	pp.remove_from_group("PP")
 	$Hammer.show()
-	$Money.text = "+" + str(pp.build_cost + pp.production_cost) + " CHF"
+	$Money.text = "+" + str(pp.build_cost + pp.production_cost).pad_decimals(1) + "M CHF"
 	$AnimationPlayer.play("Money+")
 	pp.delete_button.hide()
 	self_modulate = Color(1,1,1,1)
@@ -132,7 +132,7 @@ func _on_building_cancel_pressed():
 	Gameloop.building_costs -= building_plant.build_cost
 	$BuildingInfo.hide()
 	$Hammer.show()
-	$Money.text = "+" + str(building_plant.build_cost) + " CHF"
+	$Money.text = "+" + str(building_plant.build_cost).pad_decimals(1) + "M CHF"
 	$AnimationPlayer.play("Money+")
 	self_modulate = Color(1,1,1,1)
 	disabled = false
