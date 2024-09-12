@@ -7,7 +7,7 @@ func _ready():
 
 
 func _on_play_clicked_when_disabled():
-	show()
+	pass
 
 
 func _on_player_name_text_changed(new_text: String):
