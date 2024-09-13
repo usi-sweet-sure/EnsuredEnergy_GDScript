@@ -2090,6 +2090,10 @@ texture = ExtResource("5_4jvt0")
 
 [node name="TurnsToBuild" parent="PowerPlants/Gas/BuildInfo" index="3"]
 layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 449.0
+offset_bottom = 30.0
 
 [node name="NameRect" parent="PowerPlants/Gas" index="3"]
 visible = false
@@ -2189,6 +2193,10 @@ texture = ExtResource("11_4yjee")
 
 [node name="TurnsToBuild" parent="PowerPlants/Hydro/BuildInfo" index="3"]
 layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 449.0
+offset_bottom = 30.0
 
 [node name="NameRect" parent="PowerPlants/Hydro" index="3"]
 visible = false
@@ -2233,6 +2241,10 @@ texture = SubResource("GradientTexture2D_ekq5o")
 
 [node name="TurnsToBuild" parent="PowerPlants/Solar/BuildInfo" index="3"]
 layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 449.0
+offset_bottom = 30.0
 
 [node name="NameRect" parent="PowerPlants/Solar" index="3"]
 visible = false
@@ -2283,6 +2295,10 @@ texture = ExtResource("17_6lyj6")
 
 [node name="TurnsToBuild" parent="PowerPlants/Tree/BuildInfo" index="3"]
 layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 449.0
+offset_bottom = 30.0
 
 [node name="NameRect" parent="PowerPlants/Tree" index="3"]
 visible = false
@@ -2358,6 +2374,10 @@ offset = Vector2(0, 16)
 
 [node name="TurnsToBuild" parent="PowerPlants/Wind/BuildInfo" index="3"]
 layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 449.0
+offset_bottom = 30.0
 
 [node name="NameRect" parent="PowerPlants/Wind" index="3"]
 visible = false
@@ -2465,6 +2485,10 @@ texture = ExtResource("6_3vcfd")
 
 [node name="TurnsToBuild" parent="PowerPlants/Waste/BuildInfo" index="3"]
 layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 449.0
+offset_bottom = 30.0
 
 [node name="NameRect" parent="PowerPlants/Waste" index="3"]
 visible = false
@@ -2527,6 +2551,10 @@ texture = ExtResource("5_s6f5j")
 
 [node name="TurnsToBuild" parent="PowerPlants/Biomass/BuildInfo" index="3"]
 layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 449.0
+offset_bottom = 30.0
 
 [node name="NameRect" parent="PowerPlants/Biomass" index="3"]
 visible = false
@@ -2584,6 +2612,10 @@ texture = ExtResource("21_g2ord")
 
 [node name="TurnsToBuild" parent="PowerPlants/River/BuildInfo" index="3"]
 layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 449.0
+offset_bottom = 30.0
 
 [node name="NameRect" parent="PowerPlants/River" index="3"]
 visible = false
@@ -2620,6 +2652,10 @@ texture = ExtResource("10_ueb8a")
 
 [node name="TurnsToBuild" parent="PowerPlants/Pump/BuildInfo" index="3"]
 layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 449.0
+offset_bottom = 30.0
 
 [node name="NameRect" parent="PowerPlants/Pump" index="3"]
 visible = false
@@ -2799,10 +2835,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -286.0
-offset_top = -132.5
-offset_right = -126.0
-offset_bottom = -43.5
+offset_left = 57.0
+offset_top = 68.0
+offset_right = 217.0
+offset_bottom = 157.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -2903,30 +2939,66 @@ texture = ExtResource("6_3vcfd")
 
 [node name="TurnsToBuild" parent="BuildMenu/Container/Solar/BuildInfo" index="3"]
 layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 449.0
+offset_bottom = 30.0
 
 [node name="TurnsToBuild" parent="BuildMenu/Container/Wind/BuildInfo" index="3"]
 layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 449.0
+offset_bottom = 30.0
 
 [node name="TurnsToBuild" parent="BuildMenu/Container/Tree/BuildInfo" index="3"]
 layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 449.0
+offset_bottom = 30.0
 
 [node name="TurnsToBuild" parent="BuildMenu/Container/Hydro/BuildInfo" index="3"]
 layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 449.0
+offset_bottom = 30.0
 
 [node name="TurnsToBuild" parent="BuildMenu/Container/Gas/BuildInfo" index="3"]
 layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 449.0
+offset_bottom = 30.0
 
 [node name="TurnsToBuild" parent="BuildMenu/Container/Waste/BuildInfo" index="3"]
 layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 449.0
+offset_bottom = 30.0
 
 [node name="TurnsToBuild" parent="BuildMenu/Container/Biomass/BuildInfo" index="3"]
 layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 449.0
+offset_bottom = 30.0
 
 [node name="TurnsToBuild" parent="BuildMenu/Container/River/BuildInfo" index="3"]
 layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 449.0
+offset_bottom = 30.0
 
 [node name="TurnsToBuild" parent="BuildMenu/Container/Pump/BuildInfo" index="3"]
 layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 449.0
+offset_bottom = 30.0
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
