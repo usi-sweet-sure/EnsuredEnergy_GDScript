@@ -1,16 +1,16 @@
-[gd_scene load_steps=16 format=3 uid="uid://i802aa7uc538"]
+[gd_scene load_steps=17 format=3 uid="uid://i802aa7uc538"]
 
 [ext_resource type="PackedScene" uid="uid://ct4blqwh4y6ab" path="res://scenes/building/PowerPlant.tscn" id="2_236y8"]
-[ext_resource type="Texture2D" uid="uid://2kwo4o62dluh" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0008_Power-plant-solar-1-screen.png" id="2_trovx"]
-[ext_resource type="Texture2D" uid="uid://domdrqua4mxtc" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0007_Power-plant-wind-1-screen.png" id="3_og7da"]
-[ext_resource type="Texture2D" uid="uid://dcle7hus8g367" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0004_Power-plant-H2-screen.png" id="4_j6x8a"]
-[ext_resource type="Texture2D" uid="uid://6u0v1j5fqjex" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0014_Power-plant-reservoir-screen.png" id="5_katjr"]
-[ext_resource type="Texture2D" uid="uid://bo0cvlo027nod" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0001_Power-plant-gas-screen.png" id="7_bxb5o"]
+[ext_resource type="Texture2D" uid="uid://cssrlygtxiak" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0008_Power-plant-solar-1-screen.png" id="2_trovx"]
+[ext_resource type="Texture2D" uid="uid://b2gbtnhgkx7jk" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0007_Power-plant-wind-1-screen.png" id="3_og7da"]
+[ext_resource type="Texture2D" uid="uid://ddlljpbljj4x0" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0004_Power-plant-H2-screen.png" id="4_j6x8a"]
+[ext_resource type="Texture2D" uid="uid://blsfp2folqofg" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0014_Power-plant-reservoir-screen.png" id="5_katjr"]
+[ext_resource type="Texture2D" uid="uid://bqcub63frxj38" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0001_Power-plant-gas-screen.png" id="7_bxb5o"]
 [ext_resource type="Texture2D" uid="uid://dt3vgdfiymmbl" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0018_Hydrolic-Reservoir.png" id="7_n0676"]
-[ext_resource type="Texture2D" uid="uid://ip20ojc1fi3a" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0005_Power-plant-waste-screen.png" id="8_f783d"]
+[ext_resource type="Texture2D" uid="uid://b20t5eecd5dmi" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0005_Power-plant-waste-screen.png" id="8_f783d"]
 [ext_resource type="Texture2D" uid="uid://40ncc2tsu56l" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0008_Water-Pump-3.png" id="8_ypqld"]
-[ext_resource type="Texture2D" uid="uid://c4ivvq0eir5js" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0002_Power-plant-biomass-screen.png" id="9_a2e8y"]
-[ext_resource type="Texture2D" uid="uid://c3pjktru51bq5" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0013_Power-plant-river-screen.png" id="10_lpxim"]
+[ext_resource type="Texture2D" uid="uid://bj4tvp2lyt062" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0002_Power-plant-biomass-screen.png" id="9_a2e8y"]
+[ext_resource type="Texture2D" uid="uid://cklce5oocr611" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0013_Power-plant-river-screen.png" id="10_lpxim"]
 [ext_resource type="Texture2D" uid="uid://doe7y0txnwax7" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0005_Water-3.png" id="13_wuh2w"]
 
 [sub_resource type="Animation" id="Animation_j4va7"]
@@ -42,7 +42,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_kodya"]
 resource_name = "SlideUp"
-length = 0.4
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -50,10 +50,10 @@ tracks/0/path = NodePath("Container:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(400, 1100), Vector2(400, 725)]
+"values": [Vector2(400, 1100), Vector2(400, 725), Vector2(400, 730), Vector2(400, 725)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -67,11 +67,64 @@ tracks/1/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_553eq"]
+resource_name = "slide_down"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Container:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(400, 725), Vector2(400, 715), Vector2(400, 1100)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CloseButton:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cqvg1"]
 _data = {
 "RESET": SubResource("Animation_j4va7"),
-"SlideUp": SubResource("Animation_kodya")
+"SlideUp": SubResource("Animation_kodya"),
+"slide_down": SubResource("Animation_553eq")
 }
 
 [node name="BuildMenu" type="CanvasLayer"]
@@ -114,6 +167,9 @@ offset_top = -474.444
 offset_right = 65.5557
 offset_bottom = -434.444
 scale = Vector2(1, 1)
+
+[node name="TurnsToBuild" parent="Container/Solar/BuildInfo/ColorRect" index="0"]
+layout_mode = 0
 
 [node name="MultAmount" parent="Container/Solar/BuildInfo/EnergyContainer/Multiplier" index="0"]
 visible = false
@@ -164,6 +220,9 @@ offset_right = -91.111
 offset_bottom = -434.444
 scale = Vector2(1, 1)
 
+[node name="TurnsToBuild" parent="Container/Wind/BuildInfo/ColorRect" index="0"]
+layout_mode = 0
+
 [node name="MultAmount" parent="Container/Wind/BuildInfo/EnergyContainer/Multiplier" index="0"]
 visible = false
 
@@ -207,6 +266,9 @@ scale = Vector2(1, 1)
 
 [node name="Name" parent="Container/Tree/BuildInfo" index="1"]
 theme_override_font_sizes/font_size = 20
+
+[node name="TurnsToBuild" parent="Container/Tree/BuildInfo/ColorRect" index="0"]
+layout_mode = 0
 
 [node name="MultAmount" parent="Container/Tree/BuildInfo/EnergyContainer/Multiplier" index="0"]
 visible = false
@@ -256,6 +318,9 @@ offset_right = -42.2222
 offset_bottom = -434.444
 scale = Vector2(1, 1)
 
+[node name="TurnsToBuild" parent="Container/Hydro/BuildInfo/ColorRect" index="0"]
+layout_mode = 0
+
 [node name="MultAmount" parent="Container/Hydro/BuildInfo/EnergyContainer/Multiplier" index="0"]
 visible = false
 
@@ -296,6 +361,9 @@ offset_top = -473.333
 offset_right = -92.2227
 offset_bottom = -433.333
 scale = Vector2(1, 1)
+
+[node name="TurnsToBuild" parent="Container/Gas/BuildInfo/ColorRect" index="0"]
+layout_mode = 0
 
 [node name="MultAmount" parent="Container/Gas/BuildInfo/EnergyContainer/Multiplier" index="0"]
 visible = false
@@ -344,6 +412,9 @@ offset_top = -473.333
 offset_right = -95.5566
 offset_bottom = -433.333
 scale = Vector2(1, 1)
+
+[node name="TurnsToBuild" parent="Container/Waste/BuildInfo/ColorRect" index="0"]
+layout_mode = 0
 
 [node name="MultAmount" parent="Container/Waste/BuildInfo/EnergyContainer/Multiplier" index="0"]
 visible = false
@@ -403,6 +474,9 @@ offset_top = -473.333
 offset_right = -94.4445
 offset_bottom = -433.333
 scale = Vector2(1, 1)
+
+[node name="TurnsToBuild" parent="Container/Biomass/BuildInfo/ColorRect" index="0"]
+layout_mode = 0
 
 [node name="MultAmount" parent="Container/Biomass/BuildInfo/EnergyContainer/Multiplier" index="0"]
 visible = false
@@ -469,6 +543,9 @@ offset_right = -44.4444
 offset_bottom = -434.444
 scale = Vector2(1, 1)
 
+[node name="TurnsToBuild" parent="Container/River/BuildInfo/ColorRect" index="0"]
+layout_mode = 0
+
 [node name="MultAmount" parent="Container/River/BuildInfo/EnergyContainer/Multiplier" index="0"]
 visible = false
 
@@ -524,6 +601,9 @@ offset_top = -360.0
 offset_right = -25.0
 offset_bottom = -320.0
 scale = Vector2(0.5, 0.5)
+
+[node name="TurnsToBuild" parent="Container/Pump/BuildInfo/ColorRect" index="0"]
+layout_mode = 0
 
 [node name="MultAmount" parent="Container/Pump/BuildInfo/EnergyContainer/Multiplier" index="0"]
 visible = false

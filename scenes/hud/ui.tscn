@@ -1872,12 +1872,10 @@ text = "CO2_EMISSIONS_TEXT"
 script = ExtResource("70_444pk")
 
 [node name="Text1" parent="EnvironmentAndPollution/Pollution/Info/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2" index="0"]
-theme_override_colors/font_color = Color(0, 0.45098, 0, 1)
 theme_override_font_sizes/font_size = 22
 text = "CARBON"
 
 [node name="n1" parent="EnvironmentAndPollution/Pollution/Info/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2" index="1"]
-theme_override_colors/font_color = Color(0, 0.45098, 0, 1)
 theme_override_font_sizes/font_size = 22
 script = ExtResource("79_7os60")
 

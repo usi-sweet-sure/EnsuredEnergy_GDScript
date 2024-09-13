@@ -95,7 +95,6 @@ flat = true
 
 [node name="ShowHand" parent="." instance=ExtResource("6_cdm1e")]
 visible = false
-z_index = 1
 position = Vector2(0, -78)
 rotation = 1.5708
 

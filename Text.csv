@@ -246,3 +246,5 @@ BORROW_MONEY_TEXT_2,Pay back\n(next turn),Rembourser\n(tour suivant),Zurückzahl
 BORROW_MONEY_APPLY,Apply,Appliquer,Anwenden,Applicare
 PLAYER_NAME_NEEDED,Enter a name,Entrez un nom,Name eingeben,Inserire un nome
 IMPORTED,Imported,Importé,Importiert,Importato
+TURNS_TO_BUILD,Constrution time:,Temps de construction :,Bauzeit:,Tempo di costruzione:
+TURNS,Turns,Tours ,Runden,Turni

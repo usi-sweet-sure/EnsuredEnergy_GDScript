@@ -1,6 +1,7 @@
 extends TextureButton
 
-var building_plant
+var building_plant # True when a plant is taking multiple turns to build
+var plant_built_temporarily # True when a plant is built directily
 var turn_left_to_build
 
 signal plant_tested
@@ -33,7 +34,6 @@ func _check_building_ready():
 
 # when pressing on a buildbutton
 func _on_pressed():
-	$BuildMenu.show()
 	$BuildMenu/AnimationPlayer.play("SlideUp")
 	
 	
@@ -67,6 +67,10 @@ func _build_plant(plant, can_cancel := true):
 	plant.show()
 	plant.add_to_group("PP")
 	plant.delete_button.visible = can_cancel
+	
+	if can_cancel:
+		plant_built_temporarily = true
+		
 	plant._connect_next_turn_signal()
 	
 	self_modulate = Color(1,1,1,0)
@@ -87,15 +91,15 @@ func _build_plant(plant, can_cancel := true):
 
 func _on_close_button_pressed():
 	plant_canceled.emit()
-	$BuildMenu/AnimationPlayer.play_backwards("SlideUp")
+	$BuildMenu/AnimationPlayer.play("slide_down")
 	await $BuildMenu/AnimationPlayer.animation_finished
-	$BuildMenu.hide()
 	
 	
 # This is called for a pp that was actually built, not one that takes more than one turn to build,
 # see _on_building_cancel_pressed() below for that
 func _on_pp_delete(pp):
 	plant_canceled.emit()
+	plant_built_temporarily = false
 	Gameloop.building_costs -= pp.build_cost
 	pp.hide()
 	pp.remove_from_group("PP")
@@ -139,8 +143,16 @@ func _on_building_cancel_pressed():
 
 
 func _on_mouse_entered():
+	if not plant_built_temporarily:
+		set_modulate(Color(1.1, 1.1, 1.1))
+		
 	if !$AnimationPlayer.is_playing():
 		$AnimationPlayer.play("HammerHit")
+		
+		
+func _on_mouse_exited():
+	if not plant_built_temporarily:
+		set_modulate(Color(1, 1, 1))
 
 
 func _on_building_info_pressed():
@@ -151,3 +163,4 @@ func _disable_for_end_of_game():
 	disabled = true
 	$Hammer.hide()
 	modulate = Color(0.8, 0.8, 0.8, 1)
+

@@ -176,6 +176,11 @@ func _update_info():
 	$NameRect/Name.text = tr(plant_name)
 	$BuildInfo/Name.text = tr(plant_name)
 
+	if is_in_menu and build_time > 0:
+		$BuildInfo/TurnsToBuild.show()
+	else:
+		$BuildInfo/TurnsToBuild.hide()
+
 # add the model numbers to the plant
 func _on_request_finished(_result, _response_code, _headers, _body):
 	# E. Had to add this after geothermal removal, for the game to not crash
@@ -614,6 +619,7 @@ func _disable_with_no_effect():
 func _on_locale_updated(_locale):
 	$NameRect/Name.text = tr(plant_name)
 	$BuildInfo/Name.text = tr(plant_name)
+	$BuildInfo/TurnsToBuild.text = tr("TURNS_TO_BUILD") + " " + str(build_time) + " " + tr("TURNS")
 	
 	if life_span >= Gameloop.current_turn:
 		$BuildInfo/ColorRect/LifeSpan.text = tr("SHUT_DOWN").format({nbr = str(life_span - Gameloop.current_turn + 1)}) 
