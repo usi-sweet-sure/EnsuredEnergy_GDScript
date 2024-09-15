@@ -1,15 +1,15 @@
 [gd_scene load_steps=49 format=3 uid="uid://ct4blqwh4y6ab"]
 
 [ext_resource type="Script" path="res://src/gdscript/building/PowerPlant.gd" id="1_rcgoa"]
-[ext_resource type="Texture2D" uid="uid://b76v2w1on0f0u" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0004_Money-symbol.png" id="3_20yso"]
+[ext_resource type="Texture2D" uid="uid://b76v2w1on0f0u" path="res://assets/used_assets/textures/icons/chalk_money.png" id="3_vgh4u"]
 [ext_resource type="Texture2D" uid="uid://d1wj2kyds82uv" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0000_Time-symbol.png" id="4_fcllk"]
-[ext_resource type="Texture2D" uid="uid://od33hjtqpm14" path="res://assets/UI Elements/Build_Menu_0003_Numbers-hole.png" id="4_ovnj6"]
-[ext_resource type="Texture2D" uid="uid://bobwaj4wxr0fj" path="res://assets/UI Elements/Build_Menu_0002_Numbers-counter-1.png" id="5_bit08"]
-[ext_resource type="Texture2D" uid="uid://b3fajud3sgo5m" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0000_Build-Menu-metal-base.png" id="5_ghe1t"]
+[ext_resource type="Texture2D" uid="uid://od33hjtqpm14" path="res://assets/used_assets/textures/digit_panels/num_hole.png" id="4_ovnj6"]
+[ext_resource type="Texture2D" uid="uid://bobwaj4wxr0fj" path="res://assets/used_assets/textures/digit_panels/num_counter.png" id="5_bit08"]
+[ext_resource type="Texture2D" uid="uid://b3fajud3sgo5m" path="res://assets/used_assets/textures/powerplants/menu_pp_button_backplate.png" id="5_ghe1t"]
 [ext_resource type="AudioStream" uid="uid://d0mx81kv2vlha" path="res://assets/Sounds/Negative 2_1.wav" id="6_5wr63"]
-[ext_resource type="Texture2D" uid="uid://vg02ewph3pco" path="res://assets/UI Elements/All-HQ-Assets-D_0005s_0000_Build-Plant-Screen.png" id="6_8dptp"]
-[ext_resource type="Texture2D" uid="uid://bsa55enbm5cwg" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0028_Icon-Solar.png" id="9_efv0j"]
-[ext_resource type="Texture2D" uid="uid://cischtrjvknyl" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0027_Icon-Wind.png" id="10_pcbt1"]
+[ext_resource type="Texture2D" uid="uid://vg02ewph3pco" path="res://assets/used_assets/textures/powerplants/menu_pp_button_screen.png" id="6_8dptp"]
+[ext_resource type="Texture2D" uid="uid://bsa55enbm5cwg" path="res://assets/used_assets/textures/icons/sticker_summer.png" id="9_efv0j"]
+[ext_resource type="Texture2D" uid="uid://cischtrjvknyl" path="res://assets/used_assets/textures/icons/sticker_winter.png" id="10_pcbt1"]
 [ext_resource type="Texture2D" uid="uid://sdv07wonj5bg" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0007_Power-plant-metal-base.png" id="11_2siwy"]
 [ext_resource type="FontFile" uid="uid://dxtsp51pqna2o" path="res://assets/Fonts/static/OpenSans-Bold.ttf" id="11_3tt6c"]
 [ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="11_iy3hd"]
@@ -317,7 +317,7 @@ text = "0"
 modulate = Color(0.219608, 0.756863, 0.788235, 1)
 position = Vector2(22.25, -231.75)
 scale = Vector2(0.583333, 0.583333)
-texture = ExtResource("3_20yso")
+texture = ExtResource("3_vgh4u")
 
 [node name="TimeIcon" type="Sprite2D" parent="PreviewInfo"]
 modulate = Color(0.219608, 0.756863, 0.788235, 1)
@@ -711,7 +711,7 @@ horizontal_alignment = 2
 modulate = Color(1, 0.541176, 0.596078, 0.517647)
 position = Vector2(87.3333, 283)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_20yso")
+texture = ExtResource("3_vgh4u")
 
 [node name="Emi Icon2" type="Sprite2D" parent="BuildInfo/ColorRect"]
 modulate = Color(1, 0.541176, 0.596078, 0.517647)
@@ -729,7 +729,7 @@ texture = ExtResource("15_nvd5u")
 modulate = Color(0.219608, 0.756863, 0.788235, 1)
 position = Vector2(86, 281.667)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_20yso")
+texture = ExtResource("3_vgh4u")
 
 [node name="Emi Icon" type="Sprite2D" parent="BuildInfo/ColorRect"]
 modulate = Color(0.219608, 0.756863, 0.788235, 1)

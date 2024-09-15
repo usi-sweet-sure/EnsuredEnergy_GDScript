@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cischtrjvknyl"
-path="res://.godot/imported/All-HQ-Assets-D_0004s_0027_Icon-Wind.png-b682d238c4d27f20d7bd72d91281027d.ctex"
+uid="uid://od33hjtqpm14"
+path="res://.godot/imported/num_hole.png-4e927a768de5199ac07679097097424a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI Elements/All-HQ-Assets-D_0004s_0027_Icon-Wind.png"
-dest_files=["res://.godot/imported/All-HQ-Assets-D_0004s_0027_Icon-Wind.png-b682d238c4d27f20d7bd72d91281027d.ctex"]
+source_file="res://assets/used_assets/textures/digit_panels/num_hole.png"
+dest_files=["res://.godot/imported/num_hole.png-4e927a768de5199ac07679097097424a.ctex"]
 
 [params]
 

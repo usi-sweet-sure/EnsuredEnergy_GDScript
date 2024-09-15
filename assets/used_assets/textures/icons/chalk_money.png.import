@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsa55enbm5cwg"
-path="res://.godot/imported/All-HQ-Assets-D_0004s_0028_Icon-Solar.png-394fe199fa8a6de519129d58984eed3d.ctex"
+uid="uid://b76v2w1on0f0u"
+path="res://.godot/imported/chalk_money.png-94d244ea27249c99972cef7fb8c012a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI Elements/All-HQ-Assets-D_0004s_0028_Icon-Solar.png"
-dest_files=["res://.godot/imported/All-HQ-Assets-D_0004s_0028_Icon-Solar.png-394fe199fa8a6de519129d58984eed3d.ctex"]
+source_file="res://assets/used_assets/textures/icons/chalk_money.png"
+dest_files=["res://.godot/imported/chalk_money.png-94d244ea27249c99972cef7fb8c012a8.ctex"]
 
 [params]
 

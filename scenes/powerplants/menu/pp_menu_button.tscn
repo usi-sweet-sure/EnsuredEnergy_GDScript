@@ -1,15 +1,15 @@
 [gd_scene load_steps=13 format=3 uid="uid://dkoknjsrtig82"]
 
-[ext_resource type="Texture2D" uid="uid://b3fajud3sgo5m" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0000_Build-Menu-metal-base.png" id="1_yeeaq"]
-[ext_resource type="Texture2D" uid="uid://vg02ewph3pco" path="res://assets/UI Elements/All-HQ-Assets-D_0005s_0000_Build-Plant-Screen.png" id="2_o7fp7"]
-[ext_resource type="Texture2D" uid="uid://b76v2w1on0f0u" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0004_Money-symbol.png" id="3_aairg"]
+[ext_resource type="Texture2D" uid="uid://b3fajud3sgo5m" path="res://assets/used_assets/textures/powerplants/menu_pp_button_backplate.png" id="1_yeeaq"]
+[ext_resource type="Texture2D" uid="uid://vg02ewph3pco" path="res://assets/used_assets/textures/powerplants/menu_pp_button_screen.png" id="2_o7fp7"]
+[ext_resource type="Texture2D" uid="uid://b76v2w1on0f0u" path="res://assets/used_assets/textures/icons/chalk_money.png" id="3_aairg"]
 [ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="4_jmg7v"]
-[ext_resource type="Texture2D" uid="uid://cm7cds6soi7e4" path="res://assets/used_assets/textures/icons/hourglass.png" id="5_jf22d"]
-[ext_resource type="Texture2D" uid="uid://cischtrjvknyl" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0027_Icon-Wind.png" id="6_x8xxk"]
-[ext_resource type="Texture2D" uid="uid://od33hjtqpm14" path="res://assets/UI Elements/Build_Menu_0003_Numbers-hole.png" id="7_6mfcg"]
-[ext_resource type="Texture2D" uid="uid://bobwaj4wxr0fj" path="res://assets/UI Elements/Build_Menu_0002_Numbers-counter-1.png" id="8_bb7jv"]
+[ext_resource type="Texture2D" uid="uid://cm7cds6soi7e4" path="res://assets/used_assets/textures/icons/chalk_hourglass.png" id="5_jf22d"]
+[ext_resource type="Texture2D" uid="uid://cischtrjvknyl" path="res://assets/used_assets/textures/icons/sticker_winter.png" id="6_x8xxk"]
+[ext_resource type="Texture2D" uid="uid://od33hjtqpm14" path="res://assets/used_assets/textures/digit_panels/num_hole.png" id="7_6mfcg"]
+[ext_resource type="Texture2D" uid="uid://bobwaj4wxr0fj" path="res://assets/used_assets/textures/digit_panels/num_counter.png" id="8_bb7jv"]
 [ext_resource type="FontFile" uid="uid://dxtsp51pqna2o" path="res://assets/Fonts/static/OpenSans-Bold.ttf" id="9_w6oub"]
-[ext_resource type="Texture2D" uid="uid://bsa55enbm5cwg" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0028_Icon-Solar.png" id="10_1fv7e"]
+[ext_resource type="Texture2D" uid="uid://bsa55enbm5cwg" path="res://assets/used_assets/textures/icons/sticker_summer.png" id="10_1fv7e"]
 
 [sub_resource type="FontVariation" id="FontVariation_xfgeu"]
 base_font = ExtResource("9_w6oub")
@@ -140,8 +140,8 @@ scale = Vector2(0.8, 0.8)
 texture = ExtResource("6_x8xxk")
 
 [node name="NumHole" type="Sprite2D" parent="Backplate/Energy/Winter"]
-position = Vector2(51.0002, 20.2)
-scale = Vector2(1.30233, 0.9)
+position = Vector2(77.5233, 20.2)
+scale = Vector2(1.2816, 0.9)
 texture = ExtResource("7_6mfcg")
 
 [node name="NumCounter" type="Sprite2D" parent="Backplate/Energy/Winter"]
@@ -182,12 +182,12 @@ scale = Vector2(0.8, 0.8)
 texture = ExtResource("10_1fv7e")
 
 [node name="NumHole" type="Sprite2D" parent="Backplate/Energy/Summer"]
-position = Vector2(166.5, 18)
-scale = Vector2(1.2907, 0.9)
+position = Vector2(192.593, 18)
+scale = Vector2(1.28665, 0.9)
 texture = ExtResource("7_6mfcg")
 
 [node name="NumCounter" type="Sprite2D" parent="Backplate/Energy/Summer"]
-position = Vector2(174.721, 18)
+position = Vector2(173.721, 18)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("8_bb7jv")
 

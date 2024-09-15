@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://od33hjtqpm14"
-path="res://.godot/imported/Build_Menu_0003_Numbers-hole.png-18b0f34dd1f52146eaa7b69b7621b0ba.ctex"
+uid="uid://cm7cds6soi7e4"
+path="res://.godot/imported/chalk_hourglass.png-a3ff5c15813422f602f044f75ab24158.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI Elements/Build_Menu_0003_Numbers-hole.png"
-dest_files=["res://.godot/imported/Build_Menu_0003_Numbers-hole.png-18b0f34dd1f52146eaa7b69b7621b0ba.ctex"]
+source_file="res://assets/used_assets/textures/icons/chalk_hourglass.png"
+dest_files=["res://.godot/imported/chalk_hourglass.png-a3ff5c15813422f602f044f75ab24158.ctex"]
 
 [params]
 

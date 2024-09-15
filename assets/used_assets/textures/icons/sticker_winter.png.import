@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b76v2w1on0f0u"
-path="res://.godot/imported/All-HQ-Assets-D_0004s_0004_Money-symbol.png-1443a6ff648f3115a89ceb4a254b4099.ctex"
+uid="uid://cischtrjvknyl"
+path="res://.godot/imported/sticker_winter.png-d32ea3d91fd28aa845acf794da26727f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI Elements/All-HQ-Assets-D_0004s_0004_Money-symbol.png"
-dest_files=["res://.godot/imported/All-HQ-Assets-D_0004s_0004_Money-symbol.png-1443a6ff648f3115a89ceb4a254b4099.ctex"]
+source_file="res://assets/used_assets/textures/icons/sticker_winter.png"
+dest_files=["res://.godot/imported/sticker_winter.png-d32ea3d91fd28aa845acf794da26727f.ctex"]
 
 [params]
 
