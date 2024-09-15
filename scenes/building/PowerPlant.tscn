@@ -469,6 +469,7 @@ scale = Vector2(1.43434, 1)
 texture = ExtResource("12_q8p15")
 
 [node name="TurnsToBuild" type="Label" parent="BuildInfo"]
+layout_mode = 0
 offset_left = -76.6667
 offset_top = 160.667
 offset_right = 372.333

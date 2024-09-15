@@ -168,7 +168,7 @@ offset_right = 65.5557
 offset_bottom = -434.444
 scale = Vector2(1, 1)
 
-[node name="TurnsToBuild" parent="Container/Solar/BuildInfo/ColorRect" index="0"]
+[node name="TurnsToBuild" parent="Container/Solar/BuildInfo" index="3"]
 layout_mode = 0
 
 [node name="MultAmount" parent="Container/Solar/BuildInfo/EnergyContainer/Multiplier" index="0"]
@@ -177,7 +177,7 @@ visible = false
 [node name="Inc" parent="Container/Solar/BuildInfo/EnergyContainer/Multiplier" index="1"]
 visible = false
 
-[node name="Switch" parent="Container/Solar/BuildInfo" index="7"]
+[node name="Switch" parent="Container/Solar/BuildInfo" index="8"]
 visible = false
 
 [node name="SolarButton" type="Button" parent="Container/Solar"]
@@ -220,7 +220,7 @@ offset_right = -91.111
 offset_bottom = -434.444
 scale = Vector2(1, 1)
 
-[node name="TurnsToBuild" parent="Container/Wind/BuildInfo/ColorRect" index="0"]
+[node name="TurnsToBuild" parent="Container/Wind/BuildInfo" index="3"]
 layout_mode = 0
 
 [node name="MultAmount" parent="Container/Wind/BuildInfo/EnergyContainer/Multiplier" index="0"]
@@ -229,7 +229,7 @@ visible = false
 [node name="Inc" parent="Container/Wind/BuildInfo/EnergyContainer/Multiplier" index="1"]
 visible = false
 
-[node name="Switch" parent="Container/Wind/BuildInfo" index="7"]
+[node name="Switch" parent="Container/Wind/BuildInfo" index="8"]
 visible = false
 
 [node name="WindButton" type="Button" parent="Container/Wind"]
@@ -267,7 +267,7 @@ scale = Vector2(1, 1)
 [node name="Name" parent="Container/Tree/BuildInfo" index="1"]
 theme_override_font_sizes/font_size = 20
 
-[node name="TurnsToBuild" parent="Container/Tree/BuildInfo/ColorRect" index="0"]
+[node name="TurnsToBuild" parent="Container/Tree/BuildInfo" index="3"]
 layout_mode = 0
 
 [node name="MultAmount" parent="Container/Tree/BuildInfo/EnergyContainer/Multiplier" index="0"]
@@ -276,7 +276,7 @@ visible = false
 [node name="Inc" parent="Container/Tree/BuildInfo/EnergyContainer/Multiplier" index="1"]
 visible = false
 
-[node name="Switch" parent="Container/Tree/BuildInfo" index="7"]
+[node name="Switch" parent="Container/Tree/BuildInfo" index="8"]
 visible = false
 
 [node name="TreeButton" type="Button" parent="Container/Tree"]
@@ -318,7 +318,7 @@ offset_right = -42.2222
 offset_bottom = -434.444
 scale = Vector2(1, 1)
 
-[node name="TurnsToBuild" parent="Container/Hydro/BuildInfo/ColorRect" index="0"]
+[node name="TurnsToBuild" parent="Container/Hydro/BuildInfo" index="3"]
 layout_mode = 0
 
 [node name="MultAmount" parent="Container/Hydro/BuildInfo/EnergyContainer/Multiplier" index="0"]
@@ -327,7 +327,7 @@ visible = false
 [node name="Inc" parent="Container/Hydro/BuildInfo/EnergyContainer/Multiplier" index="1"]
 visible = false
 
-[node name="Switch" parent="Container/Hydro/BuildInfo" index="7"]
+[node name="Switch" parent="Container/Hydro/BuildInfo" index="8"]
 visible = false
 
 [node name="HydroButton" type="Button" parent="Container/Hydro"]
@@ -362,7 +362,7 @@ offset_right = -92.2227
 offset_bottom = -433.333
 scale = Vector2(1, 1)
 
-[node name="TurnsToBuild" parent="Container/Gas/BuildInfo/ColorRect" index="0"]
+[node name="TurnsToBuild" parent="Container/Gas/BuildInfo" index="3"]
 layout_mode = 0
 
 [node name="MultAmount" parent="Container/Gas/BuildInfo/EnergyContainer/Multiplier" index="0"]
@@ -371,7 +371,7 @@ visible = false
 [node name="Inc" parent="Container/Gas/BuildInfo/EnergyContainer/Multiplier" index="1"]
 visible = false
 
-[node name="Switch" parent="Container/Gas/BuildInfo" index="7"]
+[node name="Switch" parent="Container/Gas/BuildInfo" index="8"]
 visible = false
 
 [node name="GasButton" type="Button" parent="Container/Gas"]
@@ -413,7 +413,7 @@ offset_right = -95.5566
 offset_bottom = -433.333
 scale = Vector2(1, 1)
 
-[node name="TurnsToBuild" parent="Container/Waste/BuildInfo/ColorRect" index="0"]
+[node name="TurnsToBuild" parent="Container/Waste/BuildInfo" index="3"]
 layout_mode = 0
 
 [node name="MultAmount" parent="Container/Waste/BuildInfo/EnergyContainer/Multiplier" index="0"]
@@ -422,7 +422,7 @@ visible = false
 [node name="Inc" parent="Container/Waste/BuildInfo/EnergyContainer/Multiplier" index="1"]
 visible = false
 
-[node name="Switch" parent="Container/Waste/BuildInfo" index="7"]
+[node name="Switch" parent="Container/Waste/BuildInfo" index="8"]
 visible = false
 
 [node name="NameRect" parent="Container/Waste" index="3"]
@@ -475,7 +475,7 @@ offset_right = -94.4445
 offset_bottom = -433.333
 scale = Vector2(1, 1)
 
-[node name="TurnsToBuild" parent="Container/Biomass/BuildInfo/ColorRect" index="0"]
+[node name="TurnsToBuild" parent="Container/Biomass/BuildInfo" index="3"]
 layout_mode = 0
 
 [node name="MultAmount" parent="Container/Biomass/BuildInfo/EnergyContainer/Multiplier" index="0"]
@@ -484,7 +484,7 @@ visible = false
 [node name="Inc" parent="Container/Biomass/BuildInfo/EnergyContainer/Multiplier" index="1"]
 visible = false
 
-[node name="Switch" parent="Container/Biomass/BuildInfo" index="7"]
+[node name="Switch" parent="Container/Biomass/BuildInfo" index="8"]
 visible = false
 
 [node name="NameRect" parent="Container/Biomass" index="3"]
@@ -543,7 +543,7 @@ offset_right = -44.4444
 offset_bottom = -434.444
 scale = Vector2(1, 1)
 
-[node name="TurnsToBuild" parent="Container/River/BuildInfo/ColorRect" index="0"]
+[node name="TurnsToBuild" parent="Container/River/BuildInfo" index="3"]
 layout_mode = 0
 
 [node name="MultAmount" parent="Container/River/BuildInfo/EnergyContainer/Multiplier" index="0"]
@@ -552,7 +552,7 @@ visible = false
 [node name="Inc" parent="Container/River/BuildInfo/EnergyContainer/Multiplier" index="1"]
 visible = false
 
-[node name="Switch" parent="Container/River/BuildInfo" index="7"]
+[node name="Switch" parent="Container/River/BuildInfo" index="8"]
 visible = false
 
 [node name="NameRect" parent="Container/River" index="3"]
@@ -602,7 +602,7 @@ offset_right = -25.0
 offset_bottom = -320.0
 scale = Vector2(0.5, 0.5)
 
-[node name="TurnsToBuild" parent="Container/Pump/BuildInfo/ColorRect" index="0"]
+[node name="TurnsToBuild" parent="Container/Pump/BuildInfo" index="3"]
 layout_mode = 0
 
 [node name="MultAmount" parent="Container/Pump/BuildInfo/EnergyContainer/Multiplier" index="0"]
