@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1esf36575js0"
-path="res://.godot/imported/All-HQ-Assets-D_0004s_0007_Enviorment-symbol.png-19852bdf3efa2885ac28472ff6b3a1f0.ctex"
+uid="uid://vg02ewph3pco"
+path="res://.godot/imported/pp_menu_button_screen.png-0e4630a30da36f274f0c4a73b9bb8338.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI Elements/All-HQ-Assets-D_0004s_0007_Enviorment-symbol.png"
-dest_files=["res://.godot/imported/All-HQ-Assets-D_0004s_0007_Enviorment-symbol.png-19852bdf3efa2885ac28472ff6b3a1f0.ctex"]
+source_file="res://assets/used_assets/textures/powerplants/pp_menu_button_screen.png"
+dest_files=["res://.godot/imported/pp_menu_button_screen.png-0e4630a30da36f274f0c4a73b9bb8338.ctex"]
 
 [params]
 

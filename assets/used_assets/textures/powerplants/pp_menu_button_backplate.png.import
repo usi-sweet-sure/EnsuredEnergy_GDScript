@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2btaduc1gq0j"
-path="res://.godot/imported/All-HQ-Assets-D_0005s_0005_Power-plant-screen.png-069f94739df822dfd9f8567cae439802.ctex"
+uid="uid://b3fajud3sgo5m"
+path="res://.godot/imported/pp_menu_button_backplate.png-47c403a39ba2574361d2a93e0a32117d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI Elements/All-HQ-Assets-D_0005s_0005_Power-plant-screen.png"
-dest_files=["res://.godot/imported/All-HQ-Assets-D_0005s_0005_Power-plant-screen.png-069f94739df822dfd9f8567cae439802.ctex"]
+source_file="res://assets/used_assets/textures/powerplants/pp_menu_button_backplate.png"
+dest_files=["res://.godot/imported/pp_menu_button_backplate.png-47c403a39ba2574361d2a93e0a32117d.ctex"]
 
 [params]
 

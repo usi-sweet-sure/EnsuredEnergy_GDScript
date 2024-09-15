@@ -2089,7 +2089,6 @@ grow_vertical = 1
 texture = ExtResource("5_4jvt0")
 
 [node name="TurnsToBuild" parent="PowerPlants/Gas/BuildInfo" index="3"]
-layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 449.0
@@ -2192,7 +2191,6 @@ position = Vector2(-33.224, 60.091)
 texture = ExtResource("11_4yjee")
 
 [node name="TurnsToBuild" parent="PowerPlants/Hydro/BuildInfo" index="3"]
-layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 449.0
@@ -2240,7 +2238,6 @@ energy = 0.0
 texture = SubResource("GradientTexture2D_ekq5o")
 
 [node name="TurnsToBuild" parent="PowerPlants/Solar/BuildInfo" index="3"]
-layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 449.0
@@ -2294,7 +2291,6 @@ grow_vertical = 1
 texture = ExtResource("17_6lyj6")
 
 [node name="TurnsToBuild" parent="PowerPlants/Tree/BuildInfo" index="3"]
-layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 449.0
@@ -2373,7 +2369,6 @@ texture = SubResource("AtlasTexture_tned4")
 offset = Vector2(0, 16)
 
 [node name="TurnsToBuild" parent="PowerPlants/Wind/BuildInfo" index="3"]
-layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 449.0
@@ -2484,7 +2479,6 @@ position = Vector2(25, -345)
 texture = ExtResource("6_3vcfd")
 
 [node name="TurnsToBuild" parent="PowerPlants/Waste/BuildInfo" index="3"]
-layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 449.0
@@ -2550,7 +2544,6 @@ position = Vector2(-115, -300)
 texture = ExtResource("5_s6f5j")
 
 [node name="TurnsToBuild" parent="PowerPlants/Biomass/BuildInfo" index="3"]
-layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 449.0
@@ -2611,7 +2604,6 @@ position = Vector2(77.25, 68.75)
 texture = ExtResource("21_g2ord")
 
 [node name="TurnsToBuild" parent="PowerPlants/River/BuildInfo" index="3"]
-layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 449.0
@@ -2651,7 +2643,6 @@ grow_vertical = 1
 texture = ExtResource("10_ueb8a")
 
 [node name="TurnsToBuild" parent="PowerPlants/Pump/BuildInfo" index="3"]
-layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 449.0
@@ -2661,6 +2652,7 @@ offset_bottom = 30.0
 visible = false
 
 [node name="BuildingInfo" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -2954,69 +2946,6 @@ scale = Vector2(1.84021, 1.6984)
 texture = ExtResource("6_3vcfd")
 
 [node name="BuildMenu" parent="." instance=ExtResource("41_kwlf5")]
-
-[node name="TurnsToBuild" parent="BuildMenu/Container/Solar/BuildInfo" index="3"]
-layout_mode = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 449.0
-offset_bottom = 30.0
-
-[node name="TurnsToBuild" parent="BuildMenu/Container/Wind/BuildInfo" index="3"]
-layout_mode = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 449.0
-offset_bottom = 30.0
-
-[node name="TurnsToBuild" parent="BuildMenu/Container/Tree/BuildInfo" index="3"]
-layout_mode = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 449.0
-offset_bottom = 30.0
-
-[node name="TurnsToBuild" parent="BuildMenu/Container/Hydro/BuildInfo" index="3"]
-layout_mode = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 449.0
-offset_bottom = 30.0
-
-[node name="TurnsToBuild" parent="BuildMenu/Container/Gas/BuildInfo" index="3"]
-layout_mode = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 449.0
-offset_bottom = 30.0
-
-[node name="TurnsToBuild" parent="BuildMenu/Container/Waste/BuildInfo" index="3"]
-layout_mode = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 449.0
-offset_bottom = 30.0
-
-[node name="TurnsToBuild" parent="BuildMenu/Container/Biomass/BuildInfo" index="3"]
-layout_mode = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 449.0
-offset_bottom = 30.0
-
-[node name="TurnsToBuild" parent="BuildMenu/Container/River/BuildInfo" index="3"]
-layout_mode = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 449.0
-offset_bottom = 30.0
-
-[node name="TurnsToBuild" parent="BuildMenu/Container/Pump/BuildInfo" index="3"]
-layout_mode = 0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 449.0
-offset_bottom = 30.0
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

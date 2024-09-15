@@ -1,7 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://ba56oxmvcxpos"]
+[gd_scene load_steps=23 format=3 uid="uid://ba56oxmvcxpos"]
 
 [ext_resource type="Texture2D" uid="uid://bdjbeos1j2wsr" path="res://assets/Map/MAP-BG.png" id="1_prbrp"]
 [ext_resource type="Texture2D" uid="uid://dnuq60vou7jic" path="res://assets/Map/Mountains/MAP-mountains_0000_A.png" id="6_4yo2s"]
+[ext_resource type="PackedScene" uid="uid://bp4i40e8i68xv" path="res://scenes/powerplants/pp_map_emplacement.tscn" id="7_3e8ib"]
 [ext_resource type="PackedScene" uid="uid://ct4blqwh4y6ab" path="res://scenes/building/PowerPlant.tscn" id="7_6x5m2"]
 [ext_resource type="Texture2D" uid="uid://dk8ammfufvvq8" path="res://assets/Map/Mountains/MAP-mountains_0001_A.png" id="7_oigb5"]
 [ext_resource type="Texture2D" uid="uid://curvmq4s83e7w" path="res://assets/Map/Mountains/MAP-mountains_0002_A.png" id="8_600g3"]
@@ -19,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://b0b88h1h3qru2" path="res://assets/Map/Forest/MAP-forest_0005_A.png" id="17_vyoia"]
 [ext_resource type="Texture2D" uid="uid://cww2obs22h5na" path="res://assets/Map/Forest/MAP-forest_0006_A.png" id="18_0rr2p"]
 [ext_resource type="Texture2D" uid="uid://imn01mt51ob8" path="res://assets/Map/Forest/MAP-forest_0007_A.png" id="19_2806d"]
+[ext_resource type="PackedScene" uid="uid://b0gxr46y1af1j" path="res://scenes/powerplants/menu/pp_menu.tscn" id="21_n4f12"]
 
 [sub_resource type="Theme" id="Theme_mklkc"]
 
@@ -153,11 +155,8 @@ offset_right = 2792.0
 offset_bottom = -3.0
 theme = SubResource("Theme_mklkc")
 
-[node name="BuildButton2" parent="." instance=ExtResource("16_pnu0i")]
-offset_left = 508.0
-offset_top = 554.0
-offset_right = 1194.0
-offset_bottom = 954.0
+[node name="PpMapEmplacement" parent="." instance=ExtResource("7_3e8ib")]
+position = Vector2(624, 513)
 
 [node name="BuildButton3" parent="." instance=ExtResource("16_pnu0i")]
 offset_left = 1952.0
@@ -374,9 +373,11 @@ offset_bottom = 42.0
 position = Vector2(-285, -380)
 scale = Vector2(1, 1)
 
-[node name="Planting" parent="BuildButton9/BuildingInfo" index="2"]
-position = Vector2(-314, -307)
-scale = Vector2(1, 1)
+[node name="Money" parent="BuildButton9" index="4"]
+offset_left = -279.0
+offset_top = -124.0
+offset_right = -119.0
+offset_bottom = -35.0
 
 [node name="Forest" type="Sprite2D" parent="."]
 position = Vector2(-1143, 1674)
@@ -402,6 +403,8 @@ texture = ExtResource("19_2806d")
 
 [node name="Gas" parent="." instance=ExtResource("7_6x5m2")]
 position = Vector2(2776, 160)
+
+[node name="PpMenu" parent="." instance=ExtResource("21_n4f12")]
 
 [editable path="Nuclear3"]
 [editable path="Nuclear2"]

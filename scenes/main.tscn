@@ -2101,7 +2101,6 @@ offset_right = -64.0
 offset_bottom = -627.0
 
 [node name="TurnsToBuild" parent="World/Nuclear3/BuildInfo" index="3"]
-layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 449.0
@@ -2175,7 +2174,6 @@ offset_right = -63.0
 offset_bottom = -632.0
 
 [node name="TurnsToBuild" parent="World/Nuclear2/BuildInfo" index="3"]
-layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 449.0
@@ -2261,7 +2259,6 @@ offset_right = -73.0
 offset_bottom = -634.0
 
 [node name="TurnsToBuild" parent="World/Nuclear/BuildInfo" index="3"]
-layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 449.0
@@ -2293,7 +2290,6 @@ visible = false
 texture = ExtResource("14_8dcbt")
 
 [node name="TurnsToBuild" parent="World/CarbonSeq/BuildInfo" index="3"]
-layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 449.0
@@ -2323,7 +2319,6 @@ visible = false
 texture = ExtResource("8_odcis")
 
 [node name="TurnsToBuild" parent="World/Biogas/BuildInfo" index="3"]
-layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 449.0
@@ -2339,15 +2334,10 @@ offset_right = 758.0
 offset_bottom = 472.0
 
 [node name="Money" parent="World/BuildButton" index="4"]
-offset_left = -286.0
-offset_top = -132.5
-offset_right = -126.0
-offset_bottom = -43.5
-
-[node name="BuildButton2" parent="World" index="12"]
-offset_left = 624.0
-offset_right = 1310.0
-metadata/_edit_use_anchors_ = true
+offset_left = 57.0
+offset_top = 68.0
+offset_right = 217.0
+offset_bottom = 157.0
 
 [node name="BuildButton3" parent="World" index="13" groups=["TUTO_BB"]]
 
@@ -2390,7 +2380,6 @@ position = Vector2(76, -330)
 texture = ExtResource("9_2lgj4")
 
 [node name="TurnsToBuild" parent="World/Waste/BuildInfo" index="3"]
-layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 449.0
@@ -2448,7 +2437,6 @@ position = Vector2(-127, -282)
 texture = ExtResource("8_jh2tr")
 
 [node name="TurnsToBuild" parent="World/Biomass/BuildInfo" index="3"]
-layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 449.0
@@ -2503,7 +2491,6 @@ texture = SubResource("AtlasTexture_obbpa")
 offset = Vector2(3, 16)
 
 [node name="TurnsToBuild" parent="World/Wind/BuildInfo" index="3"]
-layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 449.0
@@ -2551,7 +2538,6 @@ energy = 0.0
 texture = SubResource("GradientTexture2D_mhl0d")
 
 [node name="TurnsToBuild" parent="World/Solar/BuildInfo" index="3"]
-layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 449.0
@@ -2579,7 +2565,6 @@ visible = false
 texture = ExtResource("9_agn8w")
 
 [node name="TurnsToBuild" parent="World/River2/BuildInfo" index="3"]
-layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 449.0
@@ -2638,7 +2623,6 @@ texture = ExtResource("11_nggna")
 flip_h = true
 
 [node name="TurnsToBuild" parent="World/Hydro/BuildInfo" index="3"]
-layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 449.0
@@ -2717,7 +2701,6 @@ position = Vector2(0, 0)
 texture = ExtResource("11_nggna")
 
 [node name="TurnsToBuild" parent="World/Pump/BuildInfo" index="3"]
-layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 449.0
@@ -2776,7 +2759,6 @@ visible = false
 texture = ExtResource("9_agn8w")
 
 [node name="TurnsToBuild" parent="World/River/BuildInfo" index="3"]
-layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 449.0
@@ -2839,12 +2821,6 @@ autoplay = "Water"
 [node name="Hammer" parent="World/BuildButton9" index="0"]
 position = Vector2(308, 205)
 
-[node name="Money" parent="World/BuildButton9" index="4"]
-offset_left = -279.0
-offset_top = -124.0
-offset_right = -119.0
-offset_bottom = -35.0
-
 [node name="Solar" parent="World/BuildButton9/BuildMenu/Container" index="0"]
 visible = false
 
@@ -2881,7 +2857,6 @@ visible = false
 texture = ExtResource("34_jc6ff")
 
 [node name="TurnsToBuild" parent="World/Gas/BuildInfo" index="3"]
-layout_mode = 0
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 449.0

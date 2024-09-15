@@ -1,0 +1,36 @@
+extends CanvasLayer
+
+
+@onready var animation_player = $AnimationPlayer
+@onready var pp_buttons_container = $ColorRect/HBoxContainer
+
+var pp_button_scene = preload("res://scenes/powerplants/menu/pp_menu_button.tscn")
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	PowerplantsManager.toggle_menu.connect(_on_toggle_menu)
+
+
+
+func _on_toggle_menu(can_build: Array[PowerplantsManager.EngineTypeIds]):		
+	if visible:
+		animation_player.play("slide_down")
+	else:
+		for id in can_build:
+			pp_buttons_container.add_child(pp_button_scene.instantiate())
+		animation_player.play("slide_up")
+
+
+# Hides the menu
+func _unhandled_input(event):
+	if event is InputEventMouseButton and event.button_mask == MOUSE_BUTTON_MASK_LEFT and visible:
+		animation_player.play("slide_down")
+
+
+# Removes all buttons when menu is hidden
+func _on_animation_player_animation_finished(anim_name: String):
+	if anim_name == "slide_down":
+		for n in pp_buttons_container.get_children():
+			pp_buttons_container.remove_child(n)
+			n.queue_free() 

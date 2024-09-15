@@ -1,3 +1,290 @@
-[gd_scene format=3 uid="uid://cxwb7rdkdb66y"]
+[gd_scene load_steps=14 format=3 uid="uid://cxwb7rdkdb66y"]
+
+[ext_resource type="Texture2D" uid="uid://sdv07wonj5bg" path="res://assets/used_assets/textures/powerplants/pp_menu_info_backplate.png" id="1_uab7v"]
+[ext_resource type="Texture2D" uid="uid://d2btaduc1gq0j" path="res://assets/used_assets/textures/powerplants/pp_menu_info_screen.png" id="2_gbns8"]
+[ext_resource type="Texture2D" uid="uid://b76v2w1on0f0u" path="res://assets/used_assets/textures/icons/chalk_money.png" id="3_67k2m"]
+[ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="4_byerx"]
+[ext_resource type="Texture2D" uid="uid://bpt1e486wuscd" path="res://assets/used_assets/textures/icons/chalk_emission.png" id="5_xulj0"]
+[ext_resource type="Texture2D" uid="uid://1esf36575js0" path="res://assets/used_assets/textures/icons/chalk_land_use.png" id="6_hcnx5"]
+[ext_resource type="Texture2D" uid="uid://cischtrjvknyl" path="res://assets/used_assets/textures/icons/sticker_winter.png" id="7_ffmcd"]
+[ext_resource type="Texture2D" uid="uid://od33hjtqpm14" path="res://assets/used_assets/textures/digit_panels/num_hole.png" id="8_8125m"]
+[ext_resource type="Texture2D" uid="uid://bobwaj4wxr0fj" path="res://assets/used_assets/textures/digit_panels/num_counter.png" id="9_y65x7"]
+[ext_resource type="FontFile" uid="uid://dxtsp51pqna2o" path="res://assets/Fonts/static/OpenSans-Bold.ttf" id="10_xapmc"]
+[ext_resource type="Texture2D" uid="uid://bsa55enbm5cwg" path="res://assets/used_assets/textures/icons/sticker_summer.png" id="11_iixox"]
+
+[sub_resource type="FontVariation" id="FontVariation_54gcs"]
+base_font = ExtResource("10_xapmc")
+spacing_glyph = 6
+
+[sub_resource type="FontVariation" id="FontVariation_t7e2d"]
+base_font = ExtResource("10_xapmc")
+spacing_glyph = 6
 
 [node name="PpMenuInfo" type="Node2D"]
+
+[node name="BackPlate" type="NinePatchRect" parent="."]
+offset_right = 594.0
+offset_bottom = 370.0
+texture = ExtResource("1_uab7v")
+patch_margin_left = 60
+patch_margin_right = 60
+
+[node name="PlantName" type="Label" parent="BackPlate"]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 34.0
+offset_right = 528.0
+offset_bottom = 57.0
+text = "Plant name"
+horizontal_alignment = 1
+
+[node name="Screen" type="TextureRect" parent="BackPlate"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 82.0
+offset_right = 547.0
+offset_bottom = 269.0
+texture = ExtResource("2_gbns8")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BackPlate/Screen"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 491.0
+offset_bottom = 179.0
+theme_override_constants/separation = 23
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BackPlate/Screen/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 13
+
+[node name="ProductionCosts" type="MarginContainer" parent="BackPlate/Screen/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Title" type="Control" parent="BackPlate/Screen/VBoxContainer/VBoxContainer/ProductionCosts"]
+layout_mode = 2
+
+[node name="IconBlue" type="Sprite2D" parent="BackPlate/Screen/VBoxContainer/VBoxContainer/ProductionCosts/Title"]
+modulate = Color(0.219608, 0.756863, 0.788235, 1)
+z_index = 4
+position = Vector2(20, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_67k2m")
+
+[node name="IconRed" type="Sprite2D" parent="BackPlate/Screen/VBoxContainer/VBoxContainer/ProductionCosts/Title"]
+modulate = Color(1, 0.541176, 0.596078, 0.517647)
+position = Vector2(22, 16)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_67k2m")
+
+[node name="Label" type="Label" parent="BackPlate/Screen/VBoxContainer/VBoxContainer/ProductionCosts/Title"]
+layout_mode = 2
+offset_left = 46.0
+offset_right = 154.0
+offset_bottom = 30.0
+size_flags_horizontal = 0
+theme = ExtResource("4_byerx")
+theme_type_variation = &"Screen"
+theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
+theme_override_constants/shadow_offset_x = 2
+text = "PROD_COST"
+
+[node name="Value" type="Label" parent="BackPlate/Screen/VBoxContainer/VBoxContainer/ProductionCosts"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("4_byerx")
+theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(1, 0.129412, 0.207843, 1)
+text = "000X YY"
+horizontal_alignment = 2
+
+[node name="Pollution" type="MarginContainer" parent="BackPlate/Screen/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Title" type="Control" parent="BackPlate/Screen/VBoxContainer/VBoxContainer/Pollution"]
+layout_mode = 2
+
+[node name="IconBlue" type="Sprite2D" parent="BackPlate/Screen/VBoxContainer/VBoxContainer/Pollution/Title"]
+modulate = Color(0.219608, 0.756863, 0.788235, 1)
+z_index = 4
+position = Vector2(20, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_xulj0")
+
+[node name="IconRed" type="Sprite2D" parent="BackPlate/Screen/VBoxContainer/VBoxContainer/Pollution/Title"]
+modulate = Color(1, 0.541176, 0.596078, 0.517647)
+position = Vector2(22, 16)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_xulj0")
+
+[node name="Label" type="Label" parent="BackPlate/Screen/VBoxContainer/VBoxContainer/Pollution/Title"]
+layout_mode = 2
+offset_left = 46.0
+offset_right = 154.0
+offset_bottom = 30.0
+size_flags_horizontal = 0
+theme = ExtResource("4_byerx")
+theme_type_variation = &"Screen"
+theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
+theme_override_constants/shadow_offset_x = 2
+text = "PROD_COST"
+
+[node name="Value" type="Label" parent="BackPlate/Screen/VBoxContainer/VBoxContainer/Pollution"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("4_byerx")
+theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(1, 0.129412, 0.207843, 1)
+text = "000X YY"
+horizontal_alignment = 2
+
+[node name="LandUse" type="MarginContainer" parent="BackPlate/Screen/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Title" type="Control" parent="BackPlate/Screen/VBoxContainer/VBoxContainer/LandUse"]
+layout_mode = 2
+
+[node name="IconBlue" type="Sprite2D" parent="BackPlate/Screen/VBoxContainer/VBoxContainer/LandUse/Title"]
+modulate = Color(0.219608, 0.756863, 0.788235, 1)
+z_index = 4
+position = Vector2(20, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_hcnx5")
+
+[node name="IconRed" type="Sprite2D" parent="BackPlate/Screen/VBoxContainer/VBoxContainer/LandUse/Title"]
+modulate = Color(1, 0.541176, 0.596078, 0.517647)
+position = Vector2(22, 16)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_hcnx5")
+
+[node name="Label" type="Label" parent="BackPlate/Screen/VBoxContainer/VBoxContainer/LandUse/Title"]
+layout_mode = 2
+offset_left = 46.0
+offset_right = 154.0
+offset_bottom = 30.0
+size_flags_horizontal = 0
+theme = ExtResource("4_byerx")
+theme_type_variation = &"Screen"
+theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
+theme_override_constants/shadow_offset_x = 2
+text = "PROD_COST"
+
+[node name="Value" type="Label" parent="BackPlate/Screen/VBoxContainer/VBoxContainer/LandUse"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("4_byerx")
+theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(1, 0.129412, 0.207843, 1)
+text = "000X YY"
+horizontal_alignment = 2
+
+[node name="TurnsToBuild" type="Label" parent="BackPlate/Screen/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_byerx")
+theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(0.932727, 0.41041, 0.257221, 1)
+theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
+theme_override_constants/shadow_offset_x = 2
+theme_override_font_sizes/font_size = 26
+text = "TURNS_TO_BUILD"
+horizontal_alignment = 1
+
+[node name="Energy" type="Control" parent="BackPlate"]
+layout_mode = 1
+anchor_left = 0.0723906
+anchor_top = 0.772973
+anchor_right = 0.927609
+anchor_bottom = 0.881081
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Winter" type="Control" parent="BackPlate/Energy"]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 113.0
+offset_right = 113.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="IconWinter" type="Sprite2D" parent="BackPlate/Energy/Winter"]
+position = Vector2(24.0002, 19.2)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_ffmcd")
+
+[node name="NumHole" type="Sprite2D" parent="BackPlate/Energy/Winter"]
+position = Vector2(77.5233, 20.2)
+scale = Vector2(1.2816, 0.9)
+texture = ExtResource("8_8125m")
+
+[node name="NumCounter" type="Sprite2D" parent="BackPlate/Energy/Winter"]
+position = Vector2(58.5118, 20.2)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("9_y65x7")
+
+[node name="NumCounter2" type="Sprite2D" parent="BackPlate/Energy/Winter"]
+position = Vector2(76.0932, 20.2)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("9_y65x7")
+
+[node name="NumCounter3" type="Sprite2D" parent="BackPlate/Energy/Winter"]
+position = Vector2(94.0932, 20.2)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("9_y65x7")
+
+[node name="Label" type="Label" parent="BackPlate/Energy/Winter"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 5.0
+offset_right = 101.0
+offset_bottom = 35.0
+theme = ExtResource("4_byerx")
+theme_override_fonts/font = SubResource("FontVariation_54gcs")
+theme_override_font_sizes/font_size = 21
+text = "000"
+horizontal_alignment = 2
+
+[node name="Summer" type="Control" parent="BackPlate/Energy"]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 152.0
+offset_right = 152.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="IconSummer" type="Sprite2D" parent="BackPlate/Energy/Summer"]
+position = Vector2(139, 19)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("11_iixox")
+
+[node name="NumHole" type="Sprite2D" parent="BackPlate/Energy/Summer"]
+position = Vector2(192.593, 18)
+scale = Vector2(1.28665, 0.9)
+texture = ExtResource("8_8125m")
+
+[node name="NumCounter" type="Sprite2D" parent="BackPlate/Energy/Summer"]
+position = Vector2(173.721, 18)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("9_y65x7")
+
+[node name="NumCounter2" type="Sprite2D" parent="BackPlate/Energy/Summer"]
+position = Vector2(191.768, 18)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("9_y65x7")
+
+[node name="NumCounter3" type="Sprite2D" parent="BackPlate/Energy/Summer"]
+position = Vector2(208.768, 18)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("9_y65x7")
+
+[node name="Label" type="Label" parent="BackPlate/Energy/Summer"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 2.0
+offset_right = 216.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.0352941, 0.156863, 0.168627, 1)
+theme_override_fonts/font = SubResource("FontVariation_t7e2d")
+theme_override_font_sizes/font_size = 21
+text = "000"
+horizontal_alignment = 2

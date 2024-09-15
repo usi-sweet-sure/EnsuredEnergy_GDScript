@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpt1e486wuscd"
-path="res://.godot/imported/All-HQ-Assets-D_0004s_0006_Pollution-symbol.png-87feb9260de38f9baa825b4df8a4bcf9.ctex"
+uid="uid://sdv07wonj5bg"
+path="res://.godot/imported/pp_menu_info_backplate.png-df851f7e3ebbb5e416623d6bd5206633.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI Elements/All-HQ-Assets-D_0004s_0006_Pollution-symbol.png"
-dest_files=["res://.godot/imported/All-HQ-Assets-D_0004s_0006_Pollution-symbol.png-87feb9260de38f9baa825b4df8a4bcf9.ctex"]
+source_file="res://assets/used_assets/textures/powerplants/pp_menu_info_backplate.png"
+dest_files=["res://.godot/imported/pp_menu_info_backplate.png-df851f7e3ebbb5e416623d6bd5206633.ctex"]
 
 [params]
 

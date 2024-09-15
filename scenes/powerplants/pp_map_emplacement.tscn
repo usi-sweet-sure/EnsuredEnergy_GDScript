@@ -9,7 +9,11 @@
 script = ExtResource("1_r0121")
 
 [node name="Pp" parent="." instance=ExtResource("4_3x0iq")]
+visible = false
 
 [node name="BbNormal" parent="." instance=ExtResource("2_16jqd")]
 
 [node name="BbInConstruction" parent="." instance=ExtResource("3_h2t5l")]
+visible = false
+
+[connection signal="pressed" from="BbNormal" to="." method="_on_bb_normal_pressed"]

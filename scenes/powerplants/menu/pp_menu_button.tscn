@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://dkoknjsrtig82"]
 
-[ext_resource type="Texture2D" uid="uid://b3fajud3sgo5m" path="res://assets/used_assets/textures/powerplants/menu_pp_button_backplate.png" id="1_yeeaq"]
-[ext_resource type="Texture2D" uid="uid://vg02ewph3pco" path="res://assets/used_assets/textures/powerplants/menu_pp_button_screen.png" id="2_o7fp7"]
+[ext_resource type="Texture2D" uid="uid://b3fajud3sgo5m" path="res://assets/used_assets/textures/powerplants/pp_menu_button_backplate.png" id="1_yeeaq"]
+[ext_resource type="Texture2D" uid="uid://vg02ewph3pco" path="res://assets/used_assets/textures/powerplants/pp_menu_button_screen.png" id="2_o7fp7"]
 [ext_resource type="Texture2D" uid="uid://b76v2w1on0f0u" path="res://assets/used_assets/textures/icons/chalk_money.png" id="3_aairg"]
 [ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="4_jmg7v"]
 [ext_resource type="Texture2D" uid="uid://cm7cds6soi7e4" path="res://assets/used_assets/textures/icons/chalk_hourglass.png" id="5_jf22d"]
@@ -19,39 +19,44 @@ spacing_glyph = 6
 base_font = ExtResource("9_w6oub")
 spacing_glyph = 6
 
-[node name="PpMenuButton" type="Node2D"]
-
-[node name="Backplate" type="TextureRect" parent="."]
+[node name="PpMenuButton" type="TextureRect"]
 show_behind_parent = true
-offset_right = 254.0
-offset_bottom = 354.0
+offset_right = 226.0
+offset_bottom = 320.0
 texture = ExtResource("1_yeeaq")
 
-[node name="Name" type="Label" parent="Backplate"]
+[node name="Name" type="Label" parent="."]
 layout_mode = 0
-offset_left = 46.0
+offset_left = 40.0
 offset_top = 17.0
-offset_right = 209.0
+offset_right = 188.0
 offset_bottom = 40.0
 text = "Powerplant name"
 horizontal_alignment = 1
 
-[node name="Screen" type="Control" parent="Backplate"]
+[node name="Screen" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 26.0
-offset_top = 37.0
-offset_right = 229.0
-offset_bottom = 269.0
+offset_left = 23.0
+offset_top = 57.0
+offset_right = 204.0
+offset_bottom = 244.0
 
-[node name="Screen" type="TextureRect" parent="Backplate/Screen"]
+[node name="Screen" type="TextureRect" parent="Screen"]
 layout_mode = 1
-offset_left = 4.0
-offset_top = 7.0
-offset_right = 202.0
-offset_bottom = 230.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -84.0
+offset_top = -189.0
+offset_right = 84.0
+grow_horizontal = 2
+grow_vertical = 0
 texture = ExtResource("2_o7fp7")
+expand_mode = 1
 
-[node name="Money" type="Control" parent="Backplate/Screen/Screen"]
+[node name="Money" type="Control" parent="Screen/Screen"]
 layout_mode = 1
 anchors_preset = 0
 offset_left = 8.0
@@ -59,7 +64,7 @@ offset_top = 10.0
 offset_right = 98.0
 offset_bottom = 46.0
 
-[node name="Texture" type="TextureRect" parent="Backplate/Screen/Screen/Money"]
+[node name="Texture" type="TextureRect" parent="Screen/Screen/Money"]
 modulate = Color(0.219608, 0.756863, 0.788235, 1)
 layout_mode = 1
 offset_right = 54.0
@@ -67,7 +72,7 @@ offset_bottom = 54.0
 scale = Vector2(0.583333, 0.583333)
 texture = ExtResource("3_aairg")
 
-[node name="Label" type="Label" parent="Backplate/Screen/Screen/Money"]
+[node name="Label" type="Label" parent="Screen/Screen/Money"]
 layout_mode = 1
 offset_left = 35.0
 offset_right = 87.0
@@ -77,7 +82,7 @@ theme_type_variation = &"Screen"
 theme_override_font_sizes/font_size = 32
 text = "000M"
 
-[node name="BuildTime" type="Control" parent="Backplate/Screen/Screen"]
+[node name="BuildTime" type="Control" parent="Screen/Screen"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -88,7 +93,7 @@ offset_right = -8.0
 offset_bottom = 41.0
 grow_horizontal = 0
 
-[node name="Texture" type="TextureRect" parent="Backplate/Screen/Screen/BuildTime"]
+[node name="Texture" type="TextureRect" parent="Screen/Screen/BuildTime"]
 modulate = Color(0.219608, 0.756863, 0.788235, 1)
 layout_mode = 1
 anchors_preset = 6
@@ -105,7 +110,7 @@ grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_jf22d")
 
-[node name="Label" type="Label" parent="Backplate/Screen/Screen/BuildTime"]
+[node name="Label" type="Label" parent="Screen/Screen/BuildTime"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.48
@@ -121,91 +126,92 @@ text = "0"
 horizontal_alignment = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Energy" type="Control" parent="Backplate"]
+[node name="Energy" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 13.0
-offset_top = 283.0
-offset_right = 243.0
-offset_bottom = 323.0
+offset_left = -5.0
+offset_top = 255.0
+offset_right = 225.0
+offset_bottom = 295.0
 
-[node name="Winter" type="Control" parent="Backplate/Energy"]
+[node name="Winter" type="Control" parent="Energy"]
 layout_mode = 1
 anchors_preset = 0
-offset_right = 40.0
+offset_left = 15.0
+offset_right = 112.0
 offset_bottom = 40.0
 
-[node name="IconWinter" type="Sprite2D" parent="Backplate/Energy/Winter"]
-position = Vector2(24.0002, 19.2)
-scale = Vector2(0.8, 0.8)
+[node name="IconWinter" type="Sprite2D" parent="Energy/Winter"]
+position = Vector2(21, 19)
+scale = Vector2(0.491, 0.491)
 texture = ExtResource("6_x8xxk")
 
-[node name="NumHole" type="Sprite2D" parent="Backplate/Energy/Winter"]
-position = Vector2(77.5233, 20.2)
+[node name="NumHole" type="Sprite2D" parent="Energy/Winter"]
+position = Vector2(66.5233, 19.75)
 scale = Vector2(1.2816, 0.9)
 texture = ExtResource("7_6mfcg")
 
-[node name="NumCounter" type="Sprite2D" parent="Backplate/Energy/Winter"]
-position = Vector2(58.5118, 20.2)
+[node name="NumCounter" type="Sprite2D" parent="Energy/Winter"]
+position = Vector2(47.5118, 19.75)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("8_bb7jv")
 
-[node name="NumCounter2" type="Sprite2D" parent="Backplate/Energy/Winter"]
-position = Vector2(76.0932, 20.2)
+[node name="NumCounter2" type="Sprite2D" parent="Energy/Winter"]
+position = Vector2(65.0932, 19.75)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("8_bb7jv")
 
-[node name="NumCounter3" type="Sprite2D" parent="Backplate/Energy/Winter"]
-position = Vector2(94.0932, 20.2)
+[node name="NumCounter3" type="Sprite2D" parent="Energy/Winter"]
+position = Vector2(83.0932, 19.75)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("8_bb7jv")
 
-[node name="Label" type="Label" parent="Backplate/Energy/Winter"]
+[node name="Label" type="Label" parent="Energy/Winter"]
 layout_mode = 0
-offset_left = 46.0
-offset_top = 5.0
-offset_right = 101.0
-offset_bottom = 35.0
+offset_left = 35.0
+offset_top = 4.54999
+offset_right = 90.0
+offset_bottom = 34.55
 theme = ExtResource("4_jmg7v")
 theme_override_fonts/font = SubResource("FontVariation_xfgeu")
 theme_override_font_sizes/font_size = 21
 text = "000"
 horizontal_alignment = 2
 
-[node name="Summer" type="Control" parent="Backplate/Energy"]
+[node name="Summer" type="Control" parent="Energy"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="IconSummer" type="Sprite2D" parent="Backplate/Energy/Summer"]
-position = Vector2(139, 19)
-scale = Vector2(0.8, 0.8)
+[node name="IconSummer" type="Sprite2D" parent="Energy/Summer"]
+position = Vector2(140, 18)
+scale = Vector2(0.491, 0.491)
 texture = ExtResource("10_1fv7e")
 
-[node name="NumHole" type="Sprite2D" parent="Backplate/Energy/Summer"]
-position = Vector2(192.593, 18)
+[node name="NumHole" type="Sprite2D" parent="Energy/Summer"]
+position = Vector2(185.593, 18)
 scale = Vector2(1.28665, 0.9)
 texture = ExtResource("7_6mfcg")
 
-[node name="NumCounter" type="Sprite2D" parent="Backplate/Energy/Summer"]
-position = Vector2(173.721, 18)
+[node name="NumCounter" type="Sprite2D" parent="Energy/Summer"]
+position = Vector2(166.721, 18)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("8_bb7jv")
 
-[node name="NumCounter2" type="Sprite2D" parent="Backplate/Energy/Summer"]
-position = Vector2(191.768, 18)
+[node name="NumCounter2" type="Sprite2D" parent="Energy/Summer"]
+position = Vector2(184.768, 18)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("8_bb7jv")
 
-[node name="NumCounter3" type="Sprite2D" parent="Backplate/Energy/Summer"]
-position = Vector2(208.768, 18)
+[node name="NumCounter3" type="Sprite2D" parent="Energy/Summer"]
+position = Vector2(201.768, 18)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("8_bb7jv")
 
-[node name="Label" type="Label" parent="Backplate/Energy/Summer"]
+[node name="Label" type="Label" parent="Energy/Summer"]
 layout_mode = 0
-offset_left = 164.0
+offset_left = 157.0
 offset_top = 2.0
-offset_right = 216.0
+offset_right = 209.0
 offset_bottom = 32.0
 theme_override_colors/font_color = Color(0.0352941, 0.156863, 0.168627, 1)
 theme_override_fonts/font = SubResource("FontVariation_qxud5")

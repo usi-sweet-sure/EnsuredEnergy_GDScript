@@ -169,7 +169,10 @@ offset_bottom = -434.444
 scale = Vector2(1, 1)
 
 [node name="TurnsToBuild" parent="Container/Solar/BuildInfo" index="3"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 449.0
+offset_bottom = 30.0
 
 [node name="MultAmount" parent="Container/Solar/BuildInfo/EnergyContainer/Multiplier" index="0"]
 visible = false
@@ -221,7 +224,10 @@ offset_bottom = -434.444
 scale = Vector2(1, 1)
 
 [node name="TurnsToBuild" parent="Container/Wind/BuildInfo" index="3"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 449.0
+offset_bottom = 30.0
 
 [node name="MultAmount" parent="Container/Wind/BuildInfo/EnergyContainer/Multiplier" index="0"]
 visible = false
@@ -268,7 +274,10 @@ scale = Vector2(1, 1)
 theme_override_font_sizes/font_size = 20
 
 [node name="TurnsToBuild" parent="Container/Tree/BuildInfo" index="3"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 449.0
+offset_bottom = 30.0
 
 [node name="MultAmount" parent="Container/Tree/BuildInfo/EnergyContainer/Multiplier" index="0"]
 visible = false
@@ -319,7 +328,10 @@ offset_bottom = -434.444
 scale = Vector2(1, 1)
 
 [node name="TurnsToBuild" parent="Container/Hydro/BuildInfo" index="3"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 449.0
+offset_bottom = 30.0
 
 [node name="MultAmount" parent="Container/Hydro/BuildInfo/EnergyContainer/Multiplier" index="0"]
 visible = false
@@ -363,7 +375,10 @@ offset_bottom = -433.333
 scale = Vector2(1, 1)
 
 [node name="TurnsToBuild" parent="Container/Gas/BuildInfo" index="3"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 449.0
+offset_bottom = 30.0
 
 [node name="MultAmount" parent="Container/Gas/BuildInfo/EnergyContainer/Multiplier" index="0"]
 visible = false
@@ -414,7 +429,10 @@ offset_bottom = -433.333
 scale = Vector2(1, 1)
 
 [node name="TurnsToBuild" parent="Container/Waste/BuildInfo" index="3"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 449.0
+offset_bottom = 30.0
 
 [node name="MultAmount" parent="Container/Waste/BuildInfo/EnergyContainer/Multiplier" index="0"]
 visible = false
@@ -476,7 +494,10 @@ offset_bottom = -433.333
 scale = Vector2(1, 1)
 
 [node name="TurnsToBuild" parent="Container/Biomass/BuildInfo" index="3"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 449.0
+offset_bottom = 30.0
 
 [node name="MultAmount" parent="Container/Biomass/BuildInfo/EnergyContainer/Multiplier" index="0"]
 visible = false
@@ -544,7 +565,10 @@ offset_bottom = -434.444
 scale = Vector2(1, 1)
 
 [node name="TurnsToBuild" parent="Container/River/BuildInfo" index="3"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 449.0
+offset_bottom = 30.0
 
 [node name="MultAmount" parent="Container/River/BuildInfo/EnergyContainer/Multiplier" index="0"]
 visible = false
@@ -603,7 +627,10 @@ offset_bottom = -320.0
 scale = Vector2(0.5, 0.5)
 
 [node name="TurnsToBuild" parent="Container/Pump/BuildInfo" index="3"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 449.0
+offset_bottom = 30.0
 
 [node name="MultAmount" parent="Container/Pump/BuildInfo/EnergyContainer/Multiplier" index="0"]
 visible = false
