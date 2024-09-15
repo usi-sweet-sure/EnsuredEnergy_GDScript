@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bp4i40e8i68xv"]
 
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement.gd" id="1_r0121"]
-[ext_resource type="PackedScene" uid="uid://dbdgpa4pfgryb" path="res://scenes/powerplants/build_button.tscn" id="2_16jqd"]
-[ext_resource type="PackedScene" uid="uid://d2hhtw1popthi" path="res://scenes/powerplants/in_construction.tscn" id="3_h2t5l"]
+[ext_resource type="PackedScene" uid="uid://dbdgpa4pfgryb" path="res://scenes/powerplants/bb_normal.tscn" id="2_16jqd"]
+[ext_resource type="PackedScene" uid="uid://d2hhtw1popthi" path="res://scenes/powerplants/bb_in_construction.tscn" id="3_h2t5l"]
 [ext_resource type="PackedScene" uid="uid://c0eyi0rxgb2y8" path="res://scenes/powerplants/powerplant.tscn" id="4_3x0iq"]
 
 [node name="PpMapEmplacement" type="Node2D"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cd8341rl44tws"
-path="res://.godot/imported/build_button_normal.png-7ae55ce2ebe2a46dbabcbe5d0b1e8a8b.ctex"
+uid="uid://duoff2c7r1hdy"
+path="res://.godot/imported/close_button_normal.png-4fb7dfe554debb5812738422e31ef2c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/used_assets/textures/powerplants/build_button_normal.png"
-dest_files=["res://.godot/imported/build_button_normal.png-7ae55ce2ebe2a46dbabcbe5d0b1e8a8b.ctex"]
+source_file="res://assets/used_assets/textures/buttons/close_button_normal.png"
+dest_files=["res://.godot/imported/close_button_normal.png-4fb7dfe554debb5812738422e31ef2c6.ctex"]
 
 [params]
 

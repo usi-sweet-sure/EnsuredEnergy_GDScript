@@ -2661,7 +2661,6 @@ offset_bottom = 30.0
 visible = false
 
 [node name="BuildingInfo" type="ColorRect" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -2784,6 +2783,25 @@ scale = Vector2(0.8, 0.8)
 texture = SubResource("AtlasTexture_6vwjw")
 
 [node name="BuildingInfo" type="Button" parent="BuildingInfo/Building"]
+anchors_preset = -1
+anchor_left = 0.052
+anchor_top = 0.089
+anchor_right = 0.957
+anchor_bottom = 0.867
+offset_left = -0.192001
+offset_top = -0.0499992
+offset_right = -0.0720215
+offset_bottom = -0.150024
+focus_mode = 0
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="Building" type="Sprite2D" parent="BuildingInfo/Building"]
+show_behind_parent = true
+scale = Vector2(0.8, 0.8)
+texture = SubResource("AtlasTexture_6vwjw")
+
+[node name="BuildingInfo" type="Button" parent="BuildingInfo/Building/Building"]
 anchors_preset = -1
 anchor_left = 0.052
 anchor_top = 0.089
@@ -3004,6 +3022,7 @@ offset_bottom = 30.0
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="pressed" from="." to="." method="_on_pressed"]
 [connection signal="pressed" from="BuildingInfo/Building/BuildingInfo" to="." method="_on_building_info_pressed"]
+[connection signal="pressed" from="BuildingInfo/Building/Building/BuildingInfo" to="." method="_on_building_info_pressed"]
 [connection signal="pressed" from="BuildingInfo/BuildingCancel" to="." method="_on_building_cancel_pressed"]
 [connection signal="pressed" from="BuildMenu/CloseButton" to="." method="_on_close_button_pressed"]
 
