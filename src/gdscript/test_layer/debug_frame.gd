@@ -23,9 +23,9 @@ func _ready():
 	#Gameloop.energy_import_cost_updated.connect(_update_text)
 	#Gameloop.building_costs_updated.connect(_update_text)
 	#Gameloop.next_turn.connect(_on_signal_with_no_value)
-	#Context1.res_id_updated.connect(_update_text)
-	#Context1.res_name_updated.connect(_update_text)
-	#Context1.survey_token_updated.connect(_update_text)
+	#Context.res_id_updated.connect(_update_text)
+	#Context.res_name_updated.connect(_update_text)
+	#Context.survey_token_updated.connect(_update_text)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -77,9 +77,9 @@ func _update_text(_val):
 		"CO2 emissions: [b]" + str(Gameloop.co2_emissions) + "[/b]\n\n",
 		
 		"[b]Context[/b]\n",
-		"res_id: [b]" + str(Context1.res_id) + "[/b]\n",
-		"res_name: [b]" + str(Context1.res_name) + "[/b]\n",
-		"survey_token: [b]" + str(Context1.survey_token) + "[/b]\n",
+		"res_id: [b]" + str(Context.res_id) + "[/b]\n",
+		"res_name: [b]" + str(Context.res_name) + "[/b]\n",
+		"survey_token: [b]" + str(Context.survey_token) + "[/b]\n",
 	]
 	
 	debug_text.text = ""

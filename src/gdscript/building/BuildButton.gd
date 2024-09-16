@@ -82,10 +82,10 @@ func _build_plant(plant, can_cancel := true):
 			plant_total += 1
 	var plant_id = plant.plant_name_to_ups_id[plant.plant_name]
 	Gameloop.ups_list[plant_id] += plant.cnv_capacity / plant_total
-	#Context1.prm_id = plant_id
-	#Context1.yr = Gameloop.year_list[Gameloop.current_turn]
-	#Context1.tj = plant.cnv_capacity
-	#Context1.prm_ups()
+	#Context.prm_id = plant_id
+	#Context.yr = Gameloop.year_list[Gameloop.current_turn]
+	#Context.tj = plant.cnv_capacity
+	#Context.send_parameters_to_model()
 	Gameloop._update_buildings_impact()
 
 
@@ -116,10 +116,10 @@ func _on_pp_delete(pp):
 			plant_total += 1
 	var plant_id = pp.plant_name_to_ups_id[pp.plant_name]
 	Gameloop.ups_list[plant_id] += pp.cnv_capacity / plant_total
-	#Context1.prm_id = plant_id
-	#Context1.yr = Gameloop.year_list[Gameloop.current_turn]
-	#Context1.tj = -pp.cnv_capacity
-	#Context1.prm_ups()
+	#Context.prm_id = plant_id
+	#Context.yr = Gameloop.year_list[Gameloop.current_turn]
+	#Context.tj = -pp.cnv_capacity
+	#Context.send_parameters_to_model()
 	
 	Gameloop._update_buildings_impact()
 

@@ -44,7 +44,7 @@ func _ready():
 	glaciers_melting.add_effect(func(): print("decreasing hydraulic water supply")) # E. Implement
 	
 	var severe_weather = Shock.new("SHOCK_SEVERE_WEATHER_TITLE", "SHOCK_SEVERE_WEATHER_TEXT", "weather.png")
-	severe_weather.add_effect(func(): _severe_wether_prm_ups()) # E. Implement
+	severe_weather.add_effect(func(): _severe_wether_send_parameters_to_model()) # E. Implement
 	
 	var inc_raw_cost_10 = Shock.new("SHOCK_INC_RAW_COST_10_TITLE", "SHOCK_INC_RAW_COST_10_TEXT", "money.png")
 	inc_raw_cost_10.add_effect(func(): Gameloop.production_costs_modifier += 0.1)
@@ -125,7 +125,7 @@ func _leave_nuclear():
 	
 # sorry for the ugly code
 func increase_demand(longterm: bool):
-	for i in Context1.ctx1:
+	for i in Context.ctx:
 		if i["prm_id"] == "7":
 			household_demand = float(i["tj"])
 		if i["prm_id"] == "22":
@@ -136,71 +136,71 @@ func increase_demand(longterm: bool):
 			transport_demand = float(i["tj"])
 		if i["prm_id"] == "67":
 			agriculture_demand = float(i["tj"])
-	Context1.prm_id = 7
-	Context1.yr = Gameloop.year_list[Gameloop.current_turn-1]
-	Context1.tj = household_demand * 5.0 / 100.0
-	Context1.prm_ups()
-	await Context1.http1.request_completed
-	Context1.prm_id = 22
-	Context1.tj = industry_demand * 5.0 / 100.0
-	Context1.prm_ups()
-	await Context1.http1.request_completed
-	Context1.prm_id = 37
-	Context1.tj = service_demand * 5.0 / 100.0
-	Context1.prm_ups()
-	await Context1.http1.request_completed
-	Context1.prm_id = 52
-	Context1.tj = transport_demand * 5.0 / 100.0
-	Context1.prm_ups()
-	await Context1.http1.request_completed
-	Context1.prm_id = 67
-	Context1.tj = agriculture_demand * 5.0 / 100.0
-	Context1.prm_ups()
+	Context.prm_id = 7
+	Context.yr = Gameloop.year_list[Gameloop.current_turn-1]
+	Context.tj = household_demand * 5.0 / 100.0
+	Context.send_parameters_to_model()
+	await Context.http.request_completed
+	Context.prm_id = 22
+	Context.tj = industry_demand * 5.0 / 100.0
+	Context.send_parameters_to_model()
+	await Context.http.request_completed
+	Context.prm_id = 37
+	Context.tj = service_demand * 5.0 / 100.0
+	Context.send_parameters_to_model()
+	await Context.http.request_completed
+	Context.prm_id = 52
+	Context.tj = transport_demand * 5.0 / 100.0
+	Context.send_parameters_to_model()
+	await Context.http.request_completed
+	Context.prm_id = 67
+	Context.tj = agriculture_demand * 5.0 / 100.0
+	Context.send_parameters_to_model()
 	if longterm:
-		await Context1.http1.request_completed
-		Context1.prm_id = 7
-		Context1.yr = Gameloop.year_list[Gameloop.current_turn]
-		Context1.tj = -household_demand * 5.0 / 100.0
-		Context1.prm_ups()
-		await Context1.http1.request_completed
-		Context1.prm_id = 22
-		Context1.tj = -industry_demand * 5.0 / 100.0
-		Context1.prm_ups()
-		await Context1.http1.request_completed
-		Context1.prm_id = 37
-		Context1.tj = -service_demand * 5.0 / 100.0
-		Context1.prm_ups()
-		await Context1.http1.request_completed
-		Context1.prm_id = 52
-		Context1.tj = -transport_demand * 5.0 / 100.0
-		Context1.prm_ups()
-		await Context1.http1.request_completed
-		Context1.prm_id = 67
-		Context1.tj = -agriculture_demand * 5.0 / 100.0
-		Context1.prm_ups()
+		await Context.http.request_completed
+		Context.prm_id = 7
+		Context.yr = Gameloop.year_list[Gameloop.current_turn]
+		Context.tj = -household_demand * 5.0 / 100.0
+		Context.send_parameters_to_model()
+		await Context.http.request_completed
+		Context.prm_id = 22
+		Context.tj = -industry_demand * 5.0 / 100.0
+		Context.send_parameters_to_model()
+		await Context.http.request_completed
+		Context.prm_id = 37
+		Context.tj = -service_demand * 5.0 / 100.0
+		Context.send_parameters_to_model()
+		await Context.http.request_completed
+		Context.prm_id = 52
+		Context.tj = -transport_demand * 5.0 / 100.0
+		Context.send_parameters_to_model()
+		await Context.http.request_completed
+		Context.prm_id = 67
+		Context.tj = -agriculture_demand * 5.0 / 100.0
+		Context.send_parameters_to_model()
 		
 	
-func _severe_wether_prm_ups():
-	await Context1.http1.request_completed
-	Context1.prm_id = 471 #solar availability
-	Context1.yr = Gameloop.year_list[Gameloop.current_turn-1]
-	Context1.tj = -0.1
-	Context1.prm_ups()
-	await Context1.http1.request_completed
-	Context1.prm_id = 472 #solar availability
-	Context1.yr = Gameloop.year_list[Gameloop.current_turn-1]
-	Context1.tj = -0.1
-	Context1.prm_ups()
-	await Context1.http1.request_completed
-	Context1.prm_id = 471 #solar availability
-	Context1.yr = Gameloop.year_list[Gameloop.current_turn]
-	Context1.tj = 0.1
-	Context1.prm_ups()
-	await Context1.http1.request_completed
-	Context1.prm_id = 472 #solar availability
-	Context1.yr = Gameloop.year_list[Gameloop.current_turn]
-	Context1.tj = 0.1
-	Context1.prm_ups()
+func _severe_wether_send_parameters_to_model():
+	await Context.http.request_completed
+	Context.prm_id = 471 #solar availability
+	Context.yr = Gameloop.year_list[Gameloop.current_turn-1]
+	Context.tj = -0.1
+	Context.send_parameters_to_model()
+	await Context.http.request_completed
+	Context.prm_id = 472 #solar availability
+	Context.yr = Gameloop.year_list[Gameloop.current_turn-1]
+	Context.tj = -0.1
+	Context.send_parameters_to_model()
+	await Context.http.request_completed
+	Context.prm_id = 471 #solar availability
+	Context.yr = Gameloop.year_list[Gameloop.current_turn]
+	Context.tj = 0.1
+	Context.send_parameters_to_model()
+	await Context.http.request_completed
+	Context.prm_id = 472 #solar availability
+	Context.yr = Gameloop.year_list[Gameloop.current_turn]
+	Context.tj = 0.1
+	Context.send_parameters_to_model()
 
 
 func _on_shock_button_entered(shock: Shock):

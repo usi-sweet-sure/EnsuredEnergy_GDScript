@@ -156,19 +156,19 @@ func _ready():
 		year_list.append(start_year + (i * 3))
 		
 	next_turn.connect(_on_next_turn)
-	#Context1.http1.request_completed.connect(_on_request_completed)
+	#Context.http.request_completed.connect(_on_request_completed)
 	
 	# TODO get all the demands for each year for the graph (nice to have)
 #func _on_request_completed(_result, _response_code, _headers, _body):
 	#for year in year_list:
-		#Context1.yr = str(year)
-		#Context1.get_ctx()
-		#for i in Context1.ctx1:
+		#Context.yr = str(year)
+		#Context.get_context_from_model()
+		#for i in Context.ctx:
 			#if i["prm_id"] == "454":
 				#Gameloop.demand_summer_list.append(float(i["tj"]) / 100)
 			#if i["prm_id"] == "455":
 				#Gameloop.demand_winter_list.append(float(i["tj"]) / 100)
-		#await Context1.http1.request_completed
+		#await Context.http.request_completed
 
 # Call this when play is pressed or the game is restarted
 func start_game():
@@ -176,8 +176,9 @@ func start_game():
 	game_started.emit()
 	
 	if player_name != "":
-		Context1.res_ins() # New game in model
+		Context.register_new_game_on_model() # New game in model
 	else:
+		# This should not happen
 		printerr("A player name is needed")
 			
 			
@@ -214,23 +215,23 @@ func _check_supply():
 
 
 func _on_next_turn():
-	Context1.yr = Gameloop.year_list[Gameloop.current_turn]
-	_send_prm_ups()
+	Context.yr = Gameloop.year_list[Gameloop.current_turn]
+	_send_send_parameters_to_model()
 	imported_energy_amount = 0
 	set_money_for_new_turn()
 	ShockManager.pick_shock()
 	ShockManager.apply_shock()
-	Context1.get_model_demand() #S. Not sure where to put this and the line doesnt update
+	Context.get_demand_from_model() #S. Not sure where to put this and the line doesnt update
 	
 
-func _send_prm_ups():
+func _send_send_parameters_to_model():
 	for i in ups_list:
 		if ups_list[i] != 0:
-			Context1.prm_id = i
-			Context1.yr = Gameloop.year_list[Gameloop.current_turn - 1]
-			Context1.tj = ups_list[i]
-			Context1.prm_ups()
-			await Context1.http1.request_completed
+			Context.prm_id = i
+			Context.yr = Gameloop.year_list[Gameloop.current_turn - 1]
+			Context.tj = ups_list[i]
+			Context.send_parameters_to_model()
+			await Context.http.request_completed
 			ups_list[i] = 0
 		 
 
@@ -278,4 +279,4 @@ func reset_all_values():
 	powerplants_production_costs = 0
 	production_costs_modifier = 1
 	building_costs = 0
-	Context1.yr = 2022
+	Context.yr = 2022

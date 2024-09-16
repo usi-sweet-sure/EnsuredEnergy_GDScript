@@ -9,8 +9,8 @@ signal survey_token_updated
 signal context_error
 
 #the context
-var ctx1
-var http1
+var ctx
+var http
 var leaderboard = false
 var leaderboard_json
 
@@ -47,15 +47,12 @@ func _ready():
 	Gameloop.player_name_updated.connect(_on_player_name_updated)
 	_on_player_name_updated(Gameloop.player_name)
 	
-	http1 = HTTPRequest.new()
-	add_child(http1)
-	http1.request_completed.connect(self._http1_completed)
-	#res_ins()
-	#prm_ups()
+	http = HTTPRequest.new()
+	add_child(http)
+	http.request_completed.connect(self._http_completed)
 	
 	
-#new game
-func res_ins():
+func register_new_game_on_model():
 	if SurveyManager.token == "":
 		SurveyManager.update_token()
 		
@@ -66,57 +63,56 @@ func res_ins():
 			url += "&res_tok={tok}".format({"tok": SurveyManager.token.uri_encode()})
 				
 		HttpManager.http_request_active = true
-		var error = http1.request(url)
+		var error = http.request(url)
 		if error != OK:
 			push_error("http error")
 	else:
 		printerr("A res_name is needed (Player's name is probably missing)")
 		
 #upsert param
-func prm_ups():
+func send_parameters_to_model():
 	var url = "https://sure.euler.usi.ch/json.php?mth=ups&res_id={res_id}&prm_id={prm_id}&yr={yr}&tj={tj}"
 	HttpManager.http_request_active = true
-	var error = http1.request(url.format({"res_id": res_id, "yr": yr, "prm_id": prm_id, "tj": tj}))
+	var error = http.request(url.format({"res_id": res_id, "yr": yr, "prm_id": prm_id, "tj": tj}))
 	if error != OK:
 		push_error("http error")
 	
-		
-#you dont need this function - res_ins or prm_ups returns the context
-func get_ctx():
+
+func get_context_from_model():
 	var url = "https://sure.euler.usi.ch/json.php?mth=ctx&res_id={res_id}&yr={yr}"
 	HttpManager.http_request_active = true
-	var error = http1.request(url.format({"res_id": res_id, "yr": yr}))
+	var error = http.request(url.format({"res_id": res_id, "yr": yr}))
 	if error != OK:
 		push_error("http error")
 	
 	
-func get_leaderboard():
+func get_leaderboard_from_model():
 	leaderboard = true
 	var url = "https://sure.euler.usi.ch/json.php?mth=lst&lim=3&ord=5"
 	HttpManager.http_request_active = true
-	var error = http1.request(url)
+	var error = http.request(url)
 	if error != OK:
 		push_error("http error")
 	
 #handle response
-func _http1_completed(_result, _response_code, _headers, body):
+func _http_completed(_result, _response_code, _headers, body):
 	if !leaderboard:
 		HttpManager.http_request_active = false
 		var json = JSON.new()
 		json.parse(body.get_string_from_utf8())
-		ctx1 = json.get_data()
+		ctx = json.get_data()
 		#set globals
-		#res_id = ctx1[0]["res_id"]
-		#yr = ctx1[0]["yr"]
+		#res_id = ctx[0]["res_id"]
+		#yr = ctx[0]["yr"]
 		#debug
-		#print(ctx1[0]["res_id"])
-		#print(ctx1[0]["yr"])
+		#print(ctx[0]["res_id"])
+		#print(ctx[0]["yr"])
 		
-		if ctx1 == null:
+		if ctx == null:
 			context_error.emit()
 		elif Gameloop.current_turn == 1:
-			res_id = int(ctx1[0]["res_id"])
-			get_model_demand()
+			res_id = int(ctx[0]["res_id"])
+			get_demand_from_model()
 					
 	else:
 		HttpManager.http_request_active = false
@@ -124,11 +120,12 @@ func _http1_completed(_result, _response_code, _headers, body):
 		leaderboard_json = JSON.stringify(JSON.parse_string(body.get_string_from_utf8()), "\t")
 		#leaderboard_json = json.get_data()
 
-func get_model_demand():
-	for i in ctx1:
+
+func get_demand_from_model():
+	for i in ctx:
 		if i["prm_id"] == "455":
 			Gameloop.demand_summer = float(i["tj"]) / 100.0
-	for i in ctx1: # sorry le code est cheum mais j'ai besoin de la demand_summer avant de pouvoir mettre la winter
+	for i in ctx: # sorry le code est cheum mais j'ai besoin de la demand_summer avant de pouvoir mettre la winter
 		if i["prm_id"] == "435":
 			Gameloop.demand_winter = (float(i["tj"]) / 100.0) - Gameloop.demand_summer
 

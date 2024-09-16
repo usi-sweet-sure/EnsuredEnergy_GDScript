@@ -1,19 +1,19 @@
 extends CanvasLayer
 
 
-@onready var animation_player = $AnimationPlayer
+# Will be populated at run time when clicking on a build button
 @onready var pp_buttons_container = $ColorRect/HBoxContainer
+@onready var animation_player = $AnimationPlayer
 
 var pp_button_scene = preload("res://scenes/powerplants/menu/pp_menu_button.tscn")
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
+	visible = false
 	PowerplantsManager.toggle_menu.connect(_on_toggle_menu)
 
 
-
-func _on_toggle_menu(can_build: Array[PowerplantsManager.EngineTypeIds]):		
+func _on_toggle_menu(can_build: Array[PowerplantsManager.EngineTypeIds]):
 	if visible:
 		animation_player.play("slide_down")
 	else:

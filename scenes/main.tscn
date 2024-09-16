@@ -2334,10 +2334,10 @@ offset_right = 758.0
 offset_bottom = 472.0
 
 [node name="Money" parent="World/BuildButton" index="4"]
-offset_left = 57.0
-offset_top = 68.0
-offset_right = 217.0
-offset_bottom = 157.0
+offset_left = -286.0
+offset_top = -132.5
+offset_right = -126.0
+offset_bottom = -43.5
 
 [node name="BuildButton3" parent="World" index="13" groups=["TUTO_BB"]]
 

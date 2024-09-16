@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://dkoknjsrtig82"]
+[gd_scene load_steps=25 format=3 uid="uid://dkoknjsrtig82"]
 
 [ext_resource type="Texture2D" uid="uid://b3fajud3sgo5m" path="res://assets/used_assets/textures/powerplants/pp_menu_button_backplate.png" id="1_yeeaq"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_menu/pp_menu_button.gd" id="2_ncwsc"]
 [ext_resource type="Texture2D" uid="uid://vg02ewph3pco" path="res://assets/used_assets/textures/powerplants/pp_menu_button_screen.png" id="2_o7fp7"]
 [ext_resource type="Texture2D" uid="uid://b76v2w1on0f0u" path="res://assets/used_assets/textures/icons/chalk_money.png" id="3_aairg"]
 [ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="4_jmg7v"]
@@ -10,6 +11,11 @@
 [ext_resource type="Texture2D" uid="uid://bobwaj4wxr0fj" path="res://assets/used_assets/textures/digit_panels/num_counter.png" id="8_bb7jv"]
 [ext_resource type="FontFile" uid="uid://dxtsp51pqna2o" path="res://assets/Fonts/static/OpenSans-Bold.ttf" id="9_w6oub"]
 [ext_resource type="Texture2D" uid="uid://bsa55enbm5cwg" path="res://assets/used_assets/textures/icons/sticker_summer.png" id="10_1fv7e"]
+[ext_resource type="Texture2D" uid="uid://sdv07wonj5bg" path="res://assets/used_assets/textures/powerplants/pp_menu_info_backplate.png" id="11_5ykpk"]
+[ext_resource type="Texture2D" uid="uid://d2btaduc1gq0j" path="res://assets/used_assets/textures/powerplants/pp_menu_info_screen.png" id="12_pdn03"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_menu/pp_menu_button_info_frame.gd" id="13_038v1"]
+[ext_resource type="Texture2D" uid="uid://bpt1e486wuscd" path="res://assets/used_assets/textures/icons/chalk_emission.png" id="13_ulnr8"]
+[ext_resource type="Texture2D" uid="uid://1esf36575js0" path="res://assets/used_assets/textures/icons/chalk_land_use.png" id="14_n13et"]
 
 [sub_resource type="FontVariation" id="FontVariation_xfgeu"]
 base_font = ExtResource("9_w6oub")
@@ -19,11 +25,72 @@ spacing_glyph = 6
 base_font = ExtResource("9_w6oub")
 spacing_glyph = 6
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u0exm"]
+
+[sub_resource type="FontVariation" id="FontVariation_u7ut2"]
+base_font = ExtResource("9_w6oub")
+spacing_glyph = 6
+
+[sub_resource type="FontVariation" id="FontVariation_2c7hu"]
+base_font = ExtResource("9_w6oub")
+spacing_glyph = 6
+
+[sub_resource type="Animation" id="Animation_jah35"]
+resource_name = "info_frame_show"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InfoFrame:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(0.75, 0.75)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("InfoFrame:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_f31ak"]
+resource_name = "info_frame_hide"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InfoFrame:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8cwk4"]
+_data = {
+"info_frame_hide": SubResource("Animation_f31ak"),
+"info_frame_show": SubResource("Animation_jah35")
+}
+
 [node name="PpMenuButton" type="TextureRect"]
 show_behind_parent = true
 offset_right = 226.0
 offset_bottom = 320.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 texture = ExtResource("1_yeeaq")
+script = ExtResource("2_ncwsc")
 
 [node name="Name" type="Label" parent="."]
 layout_mode = 0
@@ -218,3 +285,307 @@ theme_override_fonts/font = SubResource("FontVariation_qxud5")
 theme_override_font_sizes/font_size = 21
 text = "000"
 horizontal_alignment = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_force_pass_scroll_events = false
+theme_type_variation = &"FlatButton"
+theme_override_styles/focus = SubResource("StyleBoxEmpty_u0exm")
+flat = true
+
+[node name="InfoFrame" type="NinePatchRect" parent="."]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -297.0
+offset_top = -661.0
+offset_right = 297.0
+offset_bottom = -291.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(297, 185)
+texture = ExtResource("11_5ykpk")
+patch_margin_left = 60
+patch_margin_right = 60
+script = ExtResource("13_038v1")
+
+[node name="PlantName" type="Label" parent="InfoFrame"]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 34.0
+offset_right = 528.0
+offset_bottom = 57.0
+text = "Plant name"
+horizontal_alignment = 1
+
+[node name="Screen" type="TextureRect" parent="InfoFrame"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 82.0
+offset_right = 547.0
+offset_bottom = 269.0
+texture = ExtResource("12_pdn03")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InfoFrame/Screen"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 491.0
+offset_bottom = 179.0
+theme_override_constants/separation = 23
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InfoFrame/Screen/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 13
+
+[node name="ProductionCosts" type="MarginContainer" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Title" type="Control" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/ProductionCosts"]
+layout_mode = 2
+
+[node name="IconBlue" type="Sprite2D" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/ProductionCosts/Title"]
+modulate = Color(0.219608, 0.756863, 0.788235, 1)
+z_index = 4
+position = Vector2(20, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_aairg")
+
+[node name="IconRed" type="Sprite2D" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/ProductionCosts/Title"]
+modulate = Color(1, 0.541176, 0.596078, 0.517647)
+position = Vector2(22, 16)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_aairg")
+
+[node name="Label" type="Label" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/ProductionCosts/Title"]
+layout_mode = 2
+offset_left = 46.0
+offset_right = 154.0
+offset_bottom = 30.0
+size_flags_horizontal = 0
+theme = ExtResource("4_jmg7v")
+theme_type_variation = &"Screen"
+theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
+theme_override_constants/shadow_offset_x = 2
+text = "PROD_COST"
+
+[node name="Value" type="Label" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/ProductionCosts"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("4_jmg7v")
+theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(1, 0.129412, 0.207843, 1)
+text = "000X YY"
+horizontal_alignment = 2
+
+[node name="Pollution" type="MarginContainer" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Title" type="Control" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/Pollution"]
+layout_mode = 2
+
+[node name="IconBlue" type="Sprite2D" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/Pollution/Title"]
+modulate = Color(0.219608, 0.756863, 0.788235, 1)
+z_index = 4
+position = Vector2(20, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_ulnr8")
+
+[node name="IconRed" type="Sprite2D" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/Pollution/Title"]
+modulate = Color(1, 0.541176, 0.596078, 0.517647)
+position = Vector2(22, 16)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_ulnr8")
+
+[node name="Label" type="Label" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/Pollution/Title"]
+layout_mode = 2
+offset_left = 46.0
+offset_right = 154.0
+offset_bottom = 30.0
+size_flags_horizontal = 0
+theme = ExtResource("4_jmg7v")
+theme_type_variation = &"Screen"
+theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
+theme_override_constants/shadow_offset_x = 2
+text = "POLLUTION"
+
+[node name="Value" type="Label" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/Pollution"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("4_jmg7v")
+theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(1, 0.129412, 0.207843, 1)
+text = "000X YY"
+horizontal_alignment = 2
+
+[node name="LandUse" type="MarginContainer" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Title" type="Control" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/LandUse"]
+layout_mode = 2
+
+[node name="IconBlue" type="Sprite2D" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/LandUse/Title"]
+modulate = Color(0.219608, 0.756863, 0.788235, 1)
+z_index = 4
+position = Vector2(20, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_n13et")
+
+[node name="IconRed" type="Sprite2D" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/LandUse/Title"]
+modulate = Color(1, 0.541176, 0.596078, 0.517647)
+position = Vector2(22, 16)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_n13et")
+
+[node name="Label" type="Label" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/LandUse/Title"]
+layout_mode = 2
+offset_left = 46.0
+offset_right = 154.0
+offset_bottom = 30.0
+size_flags_horizontal = 0
+theme = ExtResource("4_jmg7v")
+theme_type_variation = &"Screen"
+theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
+theme_override_constants/shadow_offset_x = 2
+text = "LAND_USE"
+
+[node name="Value" type="Label" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/LandUse"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("4_jmg7v")
+theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(1, 0.129412, 0.207843, 1)
+text = "000X YY"
+horizontal_alignment = 2
+
+[node name="TurnsToBuild" type="Label" parent="InfoFrame/Screen/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_jmg7v")
+theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(0.932727, 0.41041, 0.257221, 1)
+theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
+theme_override_constants/shadow_offset_x = 2
+theme_override_font_sizes/font_size = 26
+text = "TURNS_TO_BUILD"
+horizontal_alignment = 1
+
+[node name="Energy" type="Control" parent="InfoFrame"]
+layout_mode = 1
+anchor_left = 0.0723906
+anchor_top = 0.772973
+anchor_right = 0.927609
+anchor_bottom = 0.881081
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Winter" type="Control" parent="InfoFrame/Energy"]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 113.0
+offset_right = 113.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="IconWinter" type="Sprite2D" parent="InfoFrame/Energy/Winter"]
+position = Vector2(24.0002, 19.2)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("6_x8xxk")
+
+[node name="NumHole" type="Sprite2D" parent="InfoFrame/Energy/Winter"]
+position = Vector2(77.5233, 20.2)
+scale = Vector2(1.2816, 0.9)
+texture = ExtResource("7_6mfcg")
+
+[node name="NumCounter" type="Sprite2D" parent="InfoFrame/Energy/Winter"]
+position = Vector2(58.5118, 20.2)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("8_bb7jv")
+
+[node name="NumCounter2" type="Sprite2D" parent="InfoFrame/Energy/Winter"]
+position = Vector2(76.0932, 20.2)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("8_bb7jv")
+
+[node name="NumCounter3" type="Sprite2D" parent="InfoFrame/Energy/Winter"]
+position = Vector2(94.0932, 20.2)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("8_bb7jv")
+
+[node name="Label" type="Label" parent="InfoFrame/Energy/Winter"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 5.0
+offset_right = 101.0
+offset_bottom = 35.0
+theme = ExtResource("4_jmg7v")
+theme_override_fonts/font = SubResource("FontVariation_u7ut2")
+theme_override_font_sizes/font_size = 21
+text = "000"
+horizontal_alignment = 2
+
+[node name="Summer" type="Control" parent="InfoFrame/Energy"]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 152.0
+offset_right = 152.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="IconSummer" type="Sprite2D" parent="InfoFrame/Energy/Summer"]
+position = Vector2(139, 19)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("10_1fv7e")
+
+[node name="NumHole" type="Sprite2D" parent="InfoFrame/Energy/Summer"]
+position = Vector2(192.593, 18)
+scale = Vector2(1.28665, 0.9)
+texture = ExtResource("7_6mfcg")
+
+[node name="NumCounter" type="Sprite2D" parent="InfoFrame/Energy/Summer"]
+position = Vector2(173.721, 18)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("8_bb7jv")
+
+[node name="NumCounter2" type="Sprite2D" parent="InfoFrame/Energy/Summer"]
+position = Vector2(191.768, 18)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("8_bb7jv")
+
+[node name="NumCounter3" type="Sprite2D" parent="InfoFrame/Energy/Summer"]
+position = Vector2(208.768, 18)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("8_bb7jv")
+
+[node name="Label" type="Label" parent="InfoFrame/Energy/Summer"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 2.0
+offset_right = 216.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.0352941, 0.156863, 0.168627, 1)
+theme_override_fonts/font = SubResource("FontVariation_2c7hu")
+theme_override_font_sizes/font_size = 21
+text = "000"
+horizontal_alignment = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8cwk4")
+}
+speed_scale = 10.0
+
+[connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]
+[connection signal="animation_finished" from="AnimationPlayer" to="InfoFrame" method="_on_animation_player_animation_finished"]

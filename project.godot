@@ -21,7 +21,7 @@ driver/mix_rate=48000
 
 [autoload]
 
-Context1="*res://src/gdscript/Context1.gd"
+Context="*res://src/gdscript/Context.gd"
 GroupManager="*res://src/gdscript/group_manager.gd"
 Gameloop="*res://src/gdscript/gameloop.gd"
 PowerplantsManager="*res://src/gdscript/powerplants/powerplants_manager.gd"

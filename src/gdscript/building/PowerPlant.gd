@@ -115,8 +115,8 @@ var plant_name_to_metric_id = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Context1.http1.request_completed.connect(_on_request_finished)
-	#Context1.http1.request_completed.connect(_on_request_completed)
+	Context.http.request_completed.connect(_on_request_finished)
+	#Context.http.request_completed.connect(_on_request_completed)
 	Gameloop.next_turn.connect(_on_next_turn)
 	Gameloop.locale_updated.connect(_on_locale_updated)
 	Gameloop.available_money_amount_updated.connect(_on_available_money_updated)
@@ -192,8 +192,8 @@ func _on_request_finished(_result, _response_code, _headers, _body):
 		var cost_key = plant_name_to_metric_id[plant_name + "_COST"]
 		var avail_key = plant_name_to_metric_id[plant_name + "_AVAIL"]
 		
-		if Context1.ctx1 != null:
-			for i in Context1.ctx1:
+		if Context.ctx != null:
+			for i in Context.ctx:
 				match i["prm_id"]:
 					model_key:
 						capacity = float(i["tj"])
@@ -232,8 +232,8 @@ func _on_request_finished(_result, _response_code, _headers, _body):
 		var poll_key = plant_name_to_metric_id[plant_name + "_EMI"]
 		var cost_key = plant_name_to_metric_id[plant_name + "_COST"]
 		
-		if Context1.ctx1 != null:
-			for i in Context1.ctx1:
+		if Context.ctx != null:
+			for i in Context.ctx:
 				match i["prm_id"]:
 					plant_id:
 						cnv_capacity = float(i["tj"])
@@ -246,7 +246,7 @@ func _on_request_finished(_result, _response_code, _headers, _body):
 		base_production_cost = production_cost
 		
 	_update_info()
-	Context1.http1.request_completed.disconnect(_on_request_finished)
+	Context.http.request_completed.disconnect(_on_request_finished)
 	Gameloop._update_buildings_impact()
 
 
@@ -283,19 +283,19 @@ func _on_mult_inc_pressed():
 				var plant_id = plant_name_to_ups_id[plant_name]
 				upgrade_per_turn += 1
 				var value = 0.5 * upgrade_per_turn
-				Context1.prm_id = plant_id
-				Context1.yr = Gameloop.year_list[Gameloop.current_turn]
-				Context1.tj = value
-				Context1.prm_ups()
+				Context.prm_id = plant_id
+				Context.yr = Gameloop.year_list[Gameloop.current_turn]
+				Context.tj = value
+				Context.send_parameters_to_model()
 				$BuildInfo/EnergyContainer/Multiplier/Inc.disabled = true
 				
-				await Context1.http1.request_completed
+				await Context.http.request_completed
 				$BuildInfo/EnergyContainer/Multiplier/Inc.disabled = false
 				var poll_key = plant_name_to_metric_id[plant_name + "_EMI"]
 				var cost_key = plant_name_to_metric_id[plant_name + "_COST"]
 		
-				if Context1.ctx1 != null:
-					for i in Context1.ctx1:
+				if Context.ctx != null:
+					for i in Context.ctx:
 						match i["prm_id"]:
 							poll_key:
 								pollution = float(i["tj"])
@@ -333,27 +333,27 @@ func _on_mult_dec_pressed():
 			production_cost = base_production_cost + (base_production_cost * mult_factor * upgrade)
 			
 			Gameloop.ups_list[plant_id] += value
-			#Context1.prm_id = plant_id
-			#Context1.yr = Gameloop.year_list[Gameloop.current_turn]
-			#Context1.tj = value
-			#Context1.prm_ups()
+			#Context.prm_id = plant_id
+			#Context.yr = Gameloop.year_list[Gameloop.current_turn]
+			#Context.tj = value
+			#Context.send_parameters_to_model()
 		else:
 			var plant_id = plant_name_to_ups_id[plant_name]
 			upgrade_per_turn -= 1
 			var value = 0.5 * upgrade_per_turn
-			Context1.prm_id = plant_id
-			Context1.yr = Gameloop.year_list[Gameloop.current_turn]
-			Context1.tj = value
-			Context1.prm_ups()
+			Context.prm_id = plant_id
+			Context.yr = Gameloop.year_list[Gameloop.current_turn]
+			Context.tj = value
+			Context.send_parameters_to_model()
 			$BuildInfo/EnergyContainer/Multiplier/Dec.disabled = true
 			
-			await Context1.http1.request_completed
+			await Context.http.request_completed
 			$BuildInfo/EnergyContainer/Multiplier/Dec.disabled = false
 			var poll_key = plant_name_to_metric_id[plant_name + "_EMI"]
 			var cost_key = plant_name_to_metric_id[plant_name + "_COST"]
 	
-			if Context1.ctx1 != null:
-				for i in Context1.ctx1:
+			if Context.ctx != null:
+				for i in Context.ctx:
 					match i["prm_id"]:
 						poll_key:
 							pollution = float(i["tj"])
@@ -416,8 +416,8 @@ func _on_switch_toggled(toggled_on):
 		for effect in effect_sprites:
 			effect.show()
 				
-		Context1.prm_id = plant_id
-		Context1.yr = Gameloop.year_list[Gameloop.current_turn]
+		Context.prm_id = plant_id
+		Context.yr = Gameloop.year_list[Gameloop.current_turn]
 		var plant_total = 0
 		var off_plant_total = 0
 		for pp in Gameloop.all_power_plants:
@@ -427,8 +427,8 @@ func _on_switch_toggled(toggled_on):
 					off_plant_total += 1
 		
 		Gameloop.ups_list[plant_id] += -(cnv_capacity / plant_total) * off_plant_total
-		#Context1.tj = -(cnv_capacity / plant_total) * off_plant_total
-		#Context1.prm_ups()
+		#Context.tj = -(cnv_capacity / plant_total) * off_plant_total
+		#Context.send_parameters_to_model()
 	else:
 		modulate = Color(0.8, 0.8, 0.8, 1)
 		$BuildInfo/Switch/LEDOn.hide()
@@ -454,9 +454,9 @@ func _on_switch_toggled(toggled_on):
 					off_plant_total += 1
 		# TODO fix problem of building new powerplant then switching off same turn
 		Gameloop.ups_list[plant_id] += -(cnv_capacity / plant_total) * off_plant_total
-		#Context1.prm_id = plant_id
-		#Context1.tj = -(cnv_capacity / plant_total) * off_plant_total
-		#Context1.prm_ups()
+		#Context.prm_id = plant_id
+		#Context.tj = -(cnv_capacity / plant_total) * off_plant_total
+		#Context.send_parameters_to_model()
 		
 	Gameloop._update_buildings_impact()
 	
