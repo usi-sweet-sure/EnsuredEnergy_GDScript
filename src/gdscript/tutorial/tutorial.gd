@@ -36,7 +36,7 @@ func _ready():
 
 
 func _on_next_button_pressed():
-	$MarginContainer/NavigationButtons/Skip.hide()
+	$MarginContainer/NavigationButtons/SkipButton.hide()
 	tutorial_started = true
 	if i < tuto_length:
 		i += 1
@@ -54,7 +54,7 @@ func _on_next_button_pressed():
 		Gameloop.tutorial_ended.emit()
 		
 	if i == 4 || i == 6 || i == 7 || i == 10:
-		$MarginContainer/NavigationButtons/Next.hide()
+		$MarginContainer/NavigationButtons/NextButton.hide()
 	if i == 8:
 		tuto_plant.build_info.show()
 	if i == 9:
@@ -84,7 +84,7 @@ func _reset_tutorial():
 func _on_import_tested(new_val):
 	if tutorial_started:
 		$Bubbles/InfoBubble2/ShowHand.hide()
-		$MarginContainer/NavigationButtons/Next.show()
+		$MarginContainer/NavigationButtons/NextButton.show()
 		
 func _on_plant_pressed():
 	if tutorial_started:
@@ -94,7 +94,7 @@ func _on_plant_pressed():
 func _on_plant_tested():
 	if tutorial_started:
 		$Bubbles/InfoBubble4/ShowHand.hide()
-		$MarginContainer/NavigationButtons/Next.show()
+		$MarginContainer/NavigationButtons/NextButton.show()
 		$Bubbles/InfoBubble4/BuildBlock.show()
 	
 		
@@ -102,10 +102,10 @@ func _on_plant_canceled():
 	if tutorial_started:
 		if i == 6:
 			$Bubbles/InfoBubble4/BuildBlock.show()
-			$MarginContainer/NavigationButtons/Next.hide()
+			$MarginContainer/NavigationButtons/NextButton.hide()
 		if i == 7:
 			$Bubbles/InfoBubble5/ShowHand.hide()
-			$MarginContainer/NavigationButtons/Next.show()
+			$MarginContainer/NavigationButtons/NextButton.show()
 			
 func _on_policies_pressed():
 	hide()
@@ -119,3 +119,4 @@ func _on_skip_pressed():
 func _on_locale_updated(_locale):
 	print(TranslationServer.get_locale())
 	$MarginContainer/MarginContainer/Text.text = tr(tutorial_texts[selected_tuto] % i)
+

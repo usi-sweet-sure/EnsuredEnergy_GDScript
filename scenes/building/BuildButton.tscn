@@ -6,9 +6,9 @@
 [ext_resource type="Script" path="res://src/gdscript/building/BuildButton.gd" id="3_8jyvl"]
 [ext_resource type="Texture2D" uid="uid://d1nj3wl5q4pnv" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0017_Icon-Hammer.png" id="4_lwgg3"]
 [ext_resource type="Texture2D" uid="uid://blskwje2kl2w5" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0000_Smoke-1.png" id="4_xclwe"]
-[ext_resource type="Texture2D" uid="uid://cigv4d5ij1ymx" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0011_Gas.png" id="5_4jvt0"]
 [ext_resource type="Texture2D" uid="uid://cehdhadcxkehx" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0001_Smoke-2.png" id="5_s6f5j"]
 [ext_resource type="Texture2D" uid="uid://7igraqqaltxx" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0002_Smoke-3.png" id="6_3vcfd"]
+[ext_resource type="Texture2D" uid="uid://cigv4d5ij1ymx" path="res://assets/new Power plants/Power plants/pp_sprite_on_gas.png" id="6_46ro4"]
 [ext_resource type="Texture2D" uid="uid://dnvf0ua70317k" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0007_Water-Pump-2.png" id="8_gdfhs"]
 [ext_resource type="Texture2D" uid="uid://40ncc2tsu56l" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0008_Water-Pump-3.png" id="10_r5m2o"]
 [ext_resource type="Texture2D" uid="uid://dt3vgdfiymmbl" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0018_Hydrolic-Reservoir.png" id="10_ueb8a"]
@@ -2064,7 +2064,6 @@ offset = Vector2(18, -15)
 [node name="PowerPlants" type="Node2D" parent="."]
 
 [node name="Gas" parent="PowerPlants" instance=ExtResource("1_wi5q3")]
-visible = false
 position = Vector2(369, 78)
 plant_name = "GAS"
 max_upgrade = 0
@@ -2086,7 +2085,7 @@ offset_bottom = 35.0
 grow_vertical = 1
 
 [node name="Sprite" parent="PowerPlants/Gas" index="1"]
-texture = ExtResource("5_4jvt0")
+texture = ExtResource("6_46ro4")
 
 [node name="TurnsToBuild" parent="PowerPlants/Gas/BuildInfo" index="3"]
 offset_left = 0.0

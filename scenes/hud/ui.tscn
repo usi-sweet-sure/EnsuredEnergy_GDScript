@@ -1,4 +1,4 @@
-[gd_scene load_steps=162 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=164 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/UI Elements/Button-Next-Normal.png" id="2_aobed"]
 [ext_resource type="Texture2D" uid="uid://ccsapuvkqqt1b" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0009_Profile-metal-base.png" id="2_nu7y6"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://60dl810b25fd" path="res://assets/UI Elements/Button-press.png" id="5_hh5pc"]
 [ext_resource type="PackedScene" uid="uid://c81iji81uc4g7" path="res://scenes/hud/import.tscn" id="5_ps4b6"]
 [ext_resource type="PackedScene" uid="uid://885lty3v1qbq" path="res://scenes/windows/shock.tscn" id="5_tj765"]
+[ext_resource type="FontFile" uid="uid://domoiqitlbtwi" path="res://assets/used_assets/fonts/llewie/Llewie.ttf" id="7_77kb8"]
 [ext_resource type="Texture2D" uid="uid://cgf1xjsx0mfot" path="res://assets/UI Elements/Button-Next-Base.png" id="7_g7ih8"]
 [ext_resource type="PackedScene" uid="uid://jj476u8yn2g8" path="res://scenes/windows/window.tscn" id="7_yu7g8"]
 [ext_resource type="Texture2D" uid="uid://en44frv5c6jy" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0014_graphs-symbol.png" id="9_01q4h"]
@@ -62,12 +63,13 @@
 [ext_resource type="Script" path="res://src/gdscript/hud/money_management/money_info_box/total_next_label.gd" id="43_lu1ke"]
 [ext_resource type="Texture2D" uid="uid://fe0i52vl7ck6" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0006_Slider-bar-horizontal.png" id="44_d3ema"]
 [ext_resource type="Texture2D" uid="uid://xmi4fk7xmp5j" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0032_Ball-Slider.png" id="45_oympp"]
-[ext_resource type="Texture2D" uid="uid://4s62sj1p8eja" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0019_Icon-red-normal-button.png" id="45_smjcx"]
-[ext_resource type="Texture2D" uid="uid://b86vm4agcnisw" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0020_Icon-red-press-button.png" id="46_l5hbn"]
-[ext_resource type="Texture2D" uid="uid://b066igcqidlny" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0018_Icon-red-hover-button.png" id="47_naajj"]
+[ext_resource type="Texture2D" uid="uid://duoff2c7r1hdy" path="res://assets/used_assets/textures/buttons/close_button_normal.png" id="49_8dui0"]
+[ext_resource type="Texture2D" uid="uid://bdq26gwsmigwy" path="res://assets/used_assets/textures/buttons/close_button_pressed.png" id="50_gyl2g"]
 [ext_resource type="Texture2D" uid="uid://bulftkbpqxib" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0024_Icon-Money.png" id="51_8sidw"]
 [ext_resource type="FontFile" uid="uid://dxtsp51pqna2o" path="res://assets/Fonts/static/OpenSans-Bold.ttf" id="51_joowr"]
+[ext_resource type="Texture2D" uid="uid://myf36tn1pspq" path="res://assets/used_assets/textures/buttons/close_button_hover.png" id="51_wnliv"]
 [ext_resource type="Texture2D" uid="uid://b2s2c41bays6t" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0016_Icon-Notification.png" id="52_j4tdm"]
+[ext_resource type="Texture2D" uid="uid://bhl7ei1bspfbw" path="res://assets/used_assets/textures/buttons/close_button_disabled.png" id="52_klkvg"]
 [ext_resource type="Texture2D" uid="uid://c3opgyhsh61y8" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0014_Policies-symbol.png" id="53_3a7gr"]
 [ext_resource type="Script" path="res://src/gdscript/hud/money_management/money_info_box/money_info_box.gd" id="53_cwkn3"]
 [ext_resource type="FontFile" uid="uid://bwuskgw4ek8y" path="res://assets/Fonts/static/OpenSans-Medium.ttf" id="53_v477p"]
@@ -812,8 +814,8 @@ _data = {
 
 [node name="UI" type="CanvasLayer"]
 follow_viewport_enabled = true
-metadata/_edit_vertical_guides_ = [960.0, 1041.0]
-metadata/_edit_horizontal_guides_ = [540.0]
+metadata/_edit_vertical_guides_ = [960.0, 1041.0, -52.0]
+metadata/_edit_horizontal_guides_ = [690.0, 482.0]
 
 [node name="Shock" parent="." instance=ExtResource("5_tj765")]
 visible = false
@@ -841,9 +843,9 @@ offset_left = 65.0
 offset_top = 18.0
 offset_right = 215.0
 offset_bottom = 44.0
-theme = ExtResource("70_2ktfd")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(1, 1, 1, 0.831373)
+theme_override_fonts/font = ExtResource("7_77kb8")
+theme_override_font_sizes/font_size = 14
 text = "POLICIES"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -857,9 +859,9 @@ offset_left = 44.0
 offset_top = 18.0
 offset_right = 132.0
 offset_bottom = 44.0
-theme = ExtResource("70_2ktfd")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("7_77kb8")
+theme_override_font_sizes/font_size = 14
 text = "GRAPHS"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -869,12 +871,12 @@ script = ExtResource("4_23kal")
 [node name="Resources" type="Label" parent="TopLeftZone/BackPlate"]
 layout_mode = 0
 offset_left = 40.0
-offset_top = 144.0
+offset_top = 141.0
 offset_right = 240.0
-offset_bottom = 170.0
-theme = ExtResource("70_2ktfd")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 12
+offset_bottom = 167.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.831373)
+theme_override_fonts/font = ExtResource("7_77kb8")
+theme_override_font_sizes/font_size = 14
 text = "RESOURCES"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1381,7 +1383,8 @@ offset_right = 202.0
 offset_bottom = 49.0
 grow_horizontal = 2
 theme = ExtResource("70_2ktfd")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 0.960784)
+theme_override_fonts/font = ExtResource("7_77kb8")
 text = "BORROW_MONEY_TITLE"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1472,7 +1475,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("70_2ktfd")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 0.960784)
+theme_override_fonts/font = ExtResource("7_77kb8")
 text = "BORROW_MONEY_APPLY"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1510,28 +1514,16 @@ script = ExtResource("66_0vfa5")
 [node name="Close" type="TextureButton" parent="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame" groups=["buttons"]]
 z_index = 1
 layout_mode = 0
-offset_left = 450.0
-offset_top = 12.0
-offset_right = 485.0
-offset_bottom = 49.0
+offset_left = 445.0
+offset_top = 7.0
+offset_right = 500.0
+offset_bottom = 61.0
 scale = Vector2(0.65, 0.65)
 focus_mode = 0
-texture_normal = ExtResource("45_smjcx")
-texture_pressed = ExtResource("46_l5hbn")
-texture_hover = ExtResource("47_naajj")
-
-[node name="Sprite2D" type="Sprite2D" parent="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame/Close"]
-show_behind_parent = true
-position = Vector2(18, 21)
-texture = ExtResource("28_oub76")
-
-[node name="Label" type="Label" parent="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame/Close"]
-layout_mode = 0
-offset_left = 13.0
-offset_top = 2.0
-offset_right = 53.0
-offset_bottom = 25.0
-text = "x"
+texture_normal = ExtResource("49_8dui0")
+texture_pressed = ExtResource("50_gyl2g")
+texture_hover = ExtResource("51_wnliv")
+texture_disabled = ExtResource("52_klkvg")
 
 [node name="AvailableMoneyAmount" type="Control" parent="TopLeftZone/MoneyManagement"]
 anchors_preset = 0
@@ -1638,12 +1630,13 @@ texture = ExtResource("35_qiawk")
 
 [node name="Trust" type="ProgressBar" parent="TopLeftZone/Policies"]
 layout_mode = 0
-offset_left = 165.5
-offset_top = 255.5
-offset_right = 245.5
-offset_bottom = 293.5
-theme = ExtResource("70_2ktfd")
-theme_override_font_sizes/font_size = 23
+offset_left = 166.0
+offset_top = 256.0
+offset_right = 246.0
+offset_bottom = 294.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.992157)
+theme_override_fonts/font = ExtResource("7_77kb8")
+theme_override_font_sizes/font_size = 19
 theme_override_styles/background = SubResource("StyleBoxFlat_uqc36")
 theme_override_styles/fill = SubResource("StyleBoxFlat_mru71")
 value = 60.0
@@ -1781,13 +1774,13 @@ text = "Biodiversity shows the environmental impact of the energy system. The hi
 [node name="Name" type="Label" parent="EnvironmentAndPollution/Environment"]
 layout_mode = 2
 offset_left = -19.0
-offset_top = -32.0
+offset_top = -35.0
 offset_right = 112.0
-offset_bottom = -6.0
+offset_bottom = -14.0
 size_flags_horizontal = 0
-theme = ExtResource("70_2ktfd")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(1, 1, 1, 0.831373)
+theme_override_fonts/font = ExtResource("7_77kb8")
+theme_override_font_sizes/font_size = 14
 text = "ENVIRONMENT"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1917,13 +1910,13 @@ offset_bottom = 20.0
 [node name="Name" type="Label" parent="EnvironmentAndPollution/Pollution"]
 layout_mode = 2
 offset_left = -19.0
-offset_top = -32.0
+offset_top = -35.0
 offset_right = 112.0
-offset_bottom = -6.0
+offset_bottom = -14.0
 size_flags_horizontal = 0
-theme = ExtResource("70_2ktfd")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(1, 1, 1, 0.831373)
+theme_override_fonts/font = ExtResource("7_77kb8")
+theme_override_font_sizes/font_size = 14
 text = "EMISSIONS"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1980,7 +1973,7 @@ position = Vector2(-155, 113)
 texture = ExtResource("33_my285")
 
 [node name="NumberHole" type="Sprite2D" parent="ImportAndEnergy/Import"]
-position = Vector2(-119, 112.5)
+position = Vector2(-92, 112.5)
 scale = Vector2(1.37209, 1)
 texture = ExtResource("54_7juy1")
 
@@ -2077,12 +2070,12 @@ position = Vector2(17, 18)
 
 [node name="ImportLabel" parent="ImportAndEnergy/Import/ImportSlider" index="7"]
 offset_left = -123.0
-offset_top = -29.0
+offset_top = -30.0
 offset_right = 55.0
-offset_bottom = -3.0
-theme = ExtResource("70_2ktfd")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 12
+offset_bottom = -9.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.831373)
+theme_override_fonts/font = ExtResource("7_77kb8")
+theme_override_font_sizes/font_size = 14
 text = "IMPORT"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -2098,12 +2091,12 @@ position = Vector2(238, 856)
 
 [node name="Title" type="Label" parent="ImportAndEnergy/Energy"]
 offset_left = 22.0
-offset_top = -187.0
+offset_top = -185.0
 offset_right = 190.0
-offset_bottom = -156.0
-theme = ExtResource("70_2ktfd")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 12
+offset_bottom = -164.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.752941)
+theme_override_fonts/font = ExtResource("7_77kb8")
+theme_override_font_sizes/font_size = 14
 text = "ENERGY"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -2290,13 +2283,13 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 8.0
-offset_top = 5.0
+offset_top = 3.0
 offset_right = -10.0
-offset_bottom = -12.0
+offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("70_2ktfd")
-theme_override_colors/font_color = Color(0.964706, 0.964706, 0.964706, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_77kb8")
 text = "NEXT_TURN_BUTTON_LABEL"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -2631,6 +2624,7 @@ texture = ExtResource("5_55id7")
 centered = false
 
 [node name="Window" parent="." instance=ExtResource("7_yu7g8")]
+layer = 3
 visible = false
 
 [node name="ShockButtonsDrawer" type="Control" parent="."]

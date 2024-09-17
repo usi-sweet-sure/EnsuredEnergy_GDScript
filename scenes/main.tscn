@@ -1,4 +1,4 @@
-[gd_scene load_steps=130 format=3 uid="uid://g58p7rxvcdik"]
+[gd_scene load_steps=127 format=3 uid="uid://g58p7rxvcdik"]
 
 [ext_resource type="PackedScene" uid="uid://ba56oxmvcxpos" path="res://scenes/world.tscn" id="1_prp6q"]
 [ext_resource type="PackedScene" uid="uid://bs48lirfn2fp2" path="res://scenes/hud/ui.tscn" id="2_d60f5"]
@@ -39,13 +39,13 @@
 [ext_resource type="Texture2D" uid="uid://uk6wm4ud6hp" path="res://assets/new Power plants/Power plants/Power_Plants_4-water-Hydrolic-Reservoir-1.png" id="26_fkwhx"]
 [ext_resource type="Texture2D" uid="uid://bxet6f7y04qar" path="res://assets/new Power plants/Power plants/Power_Plants_4-water-Hydrolic-River-2.png" id="32_dhm8b"]
 [ext_resource type="Texture2D" uid="uid://8ayrv8fy7apy" path="res://assets/new Power plants/Power plants/Power_Plants_4-water-Hydrolic-River-3.png" id="33_1wxp6"]
-[ext_resource type="Texture2D" uid="uid://cigv4d5ij1ymx" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0011_Gas.png" id="34_jc6ff"]
+[ext_resource type="Texture2D" uid="uid://cigv4d5ij1ymx" path="res://assets/new Power plants/Power plants/pp_sprite_on_gas.png" id="34_jc6ff"]
 [ext_resource type="PackedScene" uid="uid://cuuj2s4h1588i" path="res://scenes/audio.tscn" id="34_smnob"]
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/settings_canvas.gd" id="42_jouqr"]
 [ext_resource type="Texture2D" uid="uid://cvwhghlarnumd" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0004_Settings-metal-base.png" id="44_dom71"]
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/close_button.gd" id="45_bc8l6"]
-[ext_resource type="FontFile" uid="uid://bwuskgw4ek8y" path="res://assets/Fonts/static/OpenSans-Medium.ttf" id="45_bdlos"]
 [ext_resource type="Texture2D" uid="uid://xmi4fk7xmp5j" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0032_Ball-Slider.png" id="47_j3bv3"]
+[ext_resource type="FontFile" uid="uid://domoiqitlbtwi" path="res://assets/used_assets/fonts/llewie/Llewie.ttf" id="47_khyjv"]
 [ext_resource type="Texture2D" uid="uid://fe0i52vl7ck6" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0006_Slider-bar-horizontal.png" id="48_e1jni"]
 [ext_resource type="Texture2D" uid="uid://bfwxh2i2cmi6x" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0014_3-slots-button-hole.png" id="49_6hr2c"]
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/language_button.gd" id="50_1mrvk"]
@@ -1921,12 +1921,6 @@ _data = {
 "Water": SubResource("Animation_q07b7")
 }
 
-[sub_resource type="FontVariation" id="FontVariation_fnayw"]
-base_font = ExtResource("45_bdlos")
-
-[sub_resource type="FontVariation" id="FontVariation_5yxgv"]
-base_font = ExtResource("45_bdlos")
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldwmd"]
 bg_color = Color(0.0705882, 0.192157, 0.203922, 0)
 border_width_left = 3
@@ -1967,9 +1961,6 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 shadow_color = Color(0, 0, 0, 0.368627)
 shadow_size = 1
-
-[sub_resource type="FontVariation" id="FontVariation_vvk74"]
-base_font = ExtResource("45_bdlos")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pwy5b"]
 bg_color = Color(0.988235, 0, 0, 1)
@@ -2332,6 +2323,12 @@ offset_left = 72.0
 offset_top = 72.0
 offset_right = 758.0
 offset_bottom = 472.0
+
+[node name="Money" parent="World/BuildButton" index="4"]
+offset_left = -286.0
+offset_top = -132.5
+offset_right = -126.0
+offset_bottom = -43.5
 
 [node name="BuildButton3" parent="World" index="13" groups=["TUTO_BB"]]
 
@@ -2815,6 +2812,12 @@ autoplay = "Water"
 [node name="Hammer" parent="World/BuildButton9" index="0"]
 position = Vector2(308, 205)
 
+[node name="Money" parent="World/BuildButton9" index="4"]
+offset_left = -279.0
+offset_top = -124.0
+offset_right = -119.0
+offset_bottom = -35.0
+
 [node name="Solar" parent="World/BuildButton9/BuildMenu/Container" index="0"]
 visible = false
 
@@ -2862,6 +2865,7 @@ visible = false
 [node name="UI" parent="." instance=ExtResource("2_d60f5")]
 follow_viewport_enabled = false
 metadata/_edit_vertical_guides_ = [960.0, -349.0]
+metadata/_edit_horizontal_guides_ = [540.0]
 
 [node name="BuildMenu" parent="." instance=ExtResource("2_wrh8p")]
 
@@ -2948,14 +2952,14 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -175.5
-offset_top = 2.0
+offset_top = -6.0
 offset_right = 174.5
-offset_bottom = 70.0
+offset_bottom = 85.0
 grow_horizontal = 2
-theme = ExtResource("51_xe5da")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 22
-text = "ENSURED
+theme_override_colors/font_color = Color(0.975918, 1, 0.829976, 0.960784)
+theme_override_fonts/font = ExtResource("47_khyjv")
+theme_override_font_sizes/font_size = 38
+text = "ENSURED 
 ENERGY"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -2966,23 +2970,28 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -92.5
-offset_top = 163.0
+offset_top = 154.0
 offset_right = 100.5
-offset_bottom = 664.0
+offset_bottom = 665.0
 grow_horizontal = 2
 theme_override_constants/separation = 0
 
 [node name="ScreenOption" type="CheckBox" parent="Settings/Control/SettingsBox/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
-theme_override_fonts/font = SubResource("FontVariation_fnayw")
+theme_override_colors/font_color = Color(1, 1, 1, 0.960784)
+theme_override_fonts/font = ExtResource("47_khyjv")
 button_pressed = true
 text = "FULLSCREEN"
 icon_alignment = 2
 
+[node name="Space6" type="Label" parent="Settings/Control/SettingsBox/VBoxContainer"]
+layout_mode = 2
+
 [node name="Label" type="Label" parent="Settings/Control/SettingsBox/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = SubResource("FontVariation_5yxgv")
+theme_override_colors/font_color = Color(1, 1, 1, 0.960784)
+theme_override_fonts/font = ExtResource("47_khyjv")
 text = "MUSIC"
 
 [node name="VolMusic" type="HSlider" parent="Settings/Control/SettingsBox/VBoxContainer" groups=["draggables"]]
@@ -3011,7 +3020,8 @@ centered = false
 
 [node name="Label2" type="Label" parent="Settings/Control/SettingsBox/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = SubResource("FontVariation_vvk74")
+theme_override_colors/font_color = Color(1, 1, 1, 0.960784)
+theme_override_fonts/font = ExtResource("47_khyjv")
 text = "SFX"
 
 [node name="VolSound" type="HSlider" parent="Settings/Control/SettingsBox/VBoxContainer" groups=["draggables"]]
@@ -3050,11 +3060,8 @@ layout_mode = 2
 [node name="Space4" type="Label" parent="Settings/Control/SettingsBox/VBoxContainer"]
 layout_mode = 2
 
-[node name="Space5" type="Label" parent="Settings/Control/SettingsBox/VBoxContainer"]
-layout_mode = 2
-
 [node name="ButtonHole" type="Sprite2D" parent="Settings/Control/SettingsBox/VBoxContainer"]
-position = Vector2(-5, 251)
+position = Vector2(-5, 248)
 texture = ExtResource("49_6hr2c")
 centered = false
 
@@ -3078,8 +3085,8 @@ offset_right = -9.0
 offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("51_xe5da")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 0.960784)
+theme_override_fonts/font = ExtResource("47_khyjv")
 text = "LANG"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -3106,8 +3113,8 @@ offset_right = -10.0
 offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("51_xe5da")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 0.960784)
+theme_override_fonts/font = ExtResource("47_khyjv")
 text = "INSTRUCTIONS"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -3132,8 +3139,8 @@ offset_right = -11.0
 offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("51_xe5da")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 0.960784)
+theme_override_fonts/font = ExtResource("47_khyjv")
 text = "CREDITS"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -3353,7 +3360,8 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("51_xe5da")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 0.960784)
+theme_override_fonts/font = ExtResource("47_khyjv")
 text = "QUIT_CONFIRM_BUTTON_TEXT"
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://cb7movoe2pf7u"]
+[gd_scene load_steps=13 format=3 uid="uid://cb7movoe2pf7u"]
 
 [ext_resource type="Texture2D" uid="uid://ceuxpu5iujr05" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0001_Stats-metal-base.png" id="1_4e6fl"]
 [ext_resource type="Script" path="res://src/gdscript/quit_game/quit_game_window.gd" id="1_v5470"]
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/UI Elements/Button-Next-Normal.png" id="2_2gllk"]
 [ext_resource type="Texture2D" uid="uid://biq6v1m7nc6l" path="res://assets/UI Elements/Button-Next-Press.png" id="3_43hvl"]
+[ext_resource type="FontFile" uid="uid://domoiqitlbtwi" path="res://assets/used_assets/fonts/llewie/Llewie.ttf" id="3_onf37"]
 [ext_resource type="Script" path="res://src/gdscript/quit_game/survey_tab_label.gd" id="3_yfao8"]
 [ext_resource type="Texture2D" uid="uid://c25aef4m4yd40" path="res://assets/UI Elements/Button-Next-Hover.png" id="4_b30ox"]
 [ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="5_jgsj0"]
@@ -76,12 +77,18 @@ theme_override_constants/margin_bottom = 65
 [node name="WarningText" type="Label" parent="ClosingGameWarning/MainFrame/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 0.960784)
+theme_override_fonts/font = ExtResource("3_onf37")
 theme_override_font_sizes/font_size = 31
 text = "QUIT_WARNING_TEXT"
 horizontal_alignment = 1
 
 [node name="SurveyTabLabel" type="Label" parent="ClosingGameWarning/MainFrame/MarginContainer"]
+visible = false
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.960784)
+theme_override_fonts/font = ExtResource("3_onf37")
+theme_override_font_sizes/font_size = 18
 text = "QUIT_WITH_SURVEY_TEXT"
 horizontal_alignment = 1
 script = ExtResource("3_yfao8")
@@ -102,7 +109,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("5_jgsj0")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 0.960784)
+theme_override_fonts/font = ExtResource("3_onf37")
 text = "QUIT_CONFIRM_BUTTON_TEXT"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -130,7 +138,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("5_jgsj0")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 0.960784)
+theme_override_fonts/font = ExtResource("3_onf37")
 text = "CANCEL"
 horizontal_alignment = 1
 vertical_alignment = 1

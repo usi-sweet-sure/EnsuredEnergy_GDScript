@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://jj476u8yn2g8"]
+[gd_scene load_steps=48 format=3 uid="uid://jj476u8yn2g8"]
 
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/policies_window.gd" id="1_iwuuw"]
 [ext_resource type="Texture2D" uid="uid://coki776cjtqrp" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0006_Policies-metal-base.png" id="2_bdksa"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/center_frame/info_screen_2/bottom_label.gd" id="8_4nde8"]
 [ext_resource type="Texture2D" uid="uid://ddd6qplj5q6p4" path="res://assets/UI Elements/Policies_Button_Hole.png" id="8_iiaj0"]
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/vote_zone/vote_zone.gd" id="9_21wnm"]
+[ext_resource type="FontFile" uid="uid://domoiqitlbtwi" path="res://assets/used_assets/fonts/llewie/Llewie.ttf" id="14_gxya2"]
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/start_campaign_zone/start_campaign_zone.gd" id="15_11d6x"]
 [ext_resource type="Texture2D" uid="uid://cd23afs6x11al" path="res://assets/UI Elements/All-HQ-Assets-D_0005s_0002_Stats-screen.png" id="17_hftqp"]
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/center_frame/info_screen_1/general_explanation.gd" id="17_uqeid"]
@@ -34,10 +35,10 @@
 [ext_resource type="Texture2D" uid="uid://ceywqq4wa4ocw" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0026_Icon-Import.png" id="32_6o0tj"]
 [ext_resource type="Texture2D" uid="uid://ci730aw1uci4x" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0011_House-symbol.png" id="33_xhuvb"]
 [ext_resource type="Texture2D" uid="uid://trn8noyxvhuf" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0012_Heat-symbol.png" id="34_xehlb"]
-[ext_resource type="Texture2D" uid="uid://4s62sj1p8eja" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0019_Icon-red-normal-button.png" id="35_q7fhl"]
-[ext_resource type="Texture2D" uid="uid://b86vm4agcnisw" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0020_Icon-red-press-button.png" id="36_lf8fb"]
-[ext_resource type="Texture2D" uid="uid://b066igcqidlny" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0018_Icon-red-hover-button.png" id="37_2wxtq"]
-[ext_resource type="Texture2D" uid="uid://b0c3ywqarx8b7" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0002_Icon-round-button-hole.png" id="38_04ggy"]
+[ext_resource type="Texture2D" uid="uid://duoff2c7r1hdy" path="res://assets/used_assets/textures/buttons/close_button_normal.png" id="36_gtkq5"]
+[ext_resource type="Texture2D" uid="uid://bdq26gwsmigwy" path="res://assets/used_assets/textures/buttons/close_button_pressed.png" id="37_x85g4"]
+[ext_resource type="Texture2D" uid="uid://myf36tn1pspq" path="res://assets/used_assets/textures/buttons/close_button_hover.png" id="38_om48a"]
+[ext_resource type="Texture2D" uid="uid://bhl7ei1bspfbw" path="res://assets/used_assets/textures/buttons/close_button_disabled.png" id="39_srsre"]
 [ext_resource type="AudioStream" uid="uid://tyth6kqexsy5" path="res://assets/Sounds/Notification_processed_4a.wav" id="39_xwmm6"]
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/vote_success_audio.gd" id="40_nr2ig"]
 [ext_resource type="AudioStream" uid="uid://dt7vm8d0cxli3" path="res://assets/Sounds/classic-game-action-negativ.mp3" id="41_38gqg"]
@@ -227,8 +228,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("3_yevmu")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 0.960784)
+theme_override_fonts/font = ExtResource("14_gxya2")
 text = "VOTE"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -265,8 +266,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("3_yevmu")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 0.960784)
+theme_override_fonts/font = ExtResource("14_gxya2")
 text = "START_CAMPAIGN"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -288,7 +289,8 @@ offset_top = -367.0
 offset_right = 66.0
 offset_bottom = -315.0
 theme = ExtResource("3_yevmu")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 0.960784)
+theme_override_fonts/font = ExtResource("14_gxya2")
 theme_override_font_sizes/font_size = 15
 text = "POLICIES_ENVIRONMENTAL_CAMPAIGN"
 horizontal_alignment = 1
@@ -300,8 +302,9 @@ offset_left = -62.0
 offset_top = -45.0
 offset_right = 66.0
 offset_bottom = -19.0
-theme = ExtResource("3_yevmu")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 0.960784)
+theme_override_fonts/font = ExtResource("14_gxya2")
+theme_override_font_sizes/font_size = 15
 text = "POLICIES"
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -434,7 +437,8 @@ offset_top = -364.0
 offset_right = 62.0
 offset_bottom = -312.0
 theme = ExtResource("3_yevmu")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 0.960784)
+theme_override_fonts/font = ExtResource("14_gxya2")
 theme_override_font_sizes/font_size = 15
 text = "POLICIES_ENERGY_CAMPAIGN"
 horizontal_alignment = 1
@@ -446,8 +450,9 @@ offset_left = -58.0
 offset_top = -44.0
 offset_right = 62.0
 offset_bottom = -18.0
-theme = ExtResource("3_yevmu")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 0.960784)
+theme_override_fonts/font = ExtResource("14_gxya2")
+theme_override_font_sizes/font_size = 15
 text = "POLICIES"
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -580,42 +585,21 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 504.0
+offset_left = 499.0
 offset_top = -400.0
-offset_right = 539.0
-offset_bottom = -363.0
+offset_right = 543.0
+offset_bottom = -357.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 focus_mode = 0
-texture_normal = ExtResource("35_q7fhl")
-texture_pressed = ExtResource("36_lf8fb")
-texture_hover = ExtResource("37_2wxtq")
-texture_disabled = ExtResource("36_lf8fb")
+texture_normal = ExtResource("36_gtkq5")
+texture_pressed = ExtResource("37_x85g4")
+texture_hover = ExtResource("38_om48a")
+texture_disabled = ExtResource("39_srsre")
+ignore_texture_size = true
 stretch_mode = 0
-
-[node name="Sprite2D" type="Sprite2D" parent="CloseButton"]
-show_behind_parent = true
-position = Vector2(17.6487, 19.7188)
-scale = Vector2(0.97338, 0.97338)
-texture = ExtResource("38_04ggy")
-
-[node name="Label" type="Label" parent="CloseButton"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -5.5
-offset_top = -19.5
-offset_right = 7.5
-offset_bottom = 14.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 18
-text = "x"
 
 [node name="VoteSuccess" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("39_xwmm6")
