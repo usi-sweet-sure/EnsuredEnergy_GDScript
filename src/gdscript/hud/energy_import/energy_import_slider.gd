@@ -62,11 +62,6 @@ func _update_slider_properties():
 	max_value = max_amount_that_can_be_imported + step
 	
 
-	print("Max value : ", max_value)
-	print("Step : ", step)
-	print("value : ", value)
-	print("Actual import : ", Gameloop.imported_energy_amount)
-
 func _on_game_ended():
 	editable = false
 

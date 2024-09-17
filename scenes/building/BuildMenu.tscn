@@ -1,16 +1,16 @@
 [gd_scene load_steps=17 format=3 uid="uid://i802aa7uc538"]
 
 [ext_resource type="PackedScene" uid="uid://ct4blqwh4y6ab" path="res://scenes/building/PowerPlant.tscn" id="2_236y8"]
-[ext_resource type="Texture2D" uid="uid://cssrlygtxiak" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0008_Power-plant-solar-1-screen.png" id="2_trovx"]
-[ext_resource type="Texture2D" uid="uid://b2gbtnhgkx7jk" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0007_Power-plant-wind-1-screen.png" id="3_og7da"]
-[ext_resource type="Texture2D" uid="uid://ddlljpbljj4x0" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0004_Power-plant-H2-screen.png" id="4_j6x8a"]
-[ext_resource type="Texture2D" uid="uid://blsfp2folqofg" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0014_Power-plant-reservoir-screen.png" id="5_katjr"]
-[ext_resource type="Texture2D" uid="uid://bqcub63frxj38" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0001_Power-plant-gas-screen.png" id="7_bxb5o"]
+[ext_resource type="Texture2D" uid="uid://cssrlygtxiak" path="res://assets/used_assets/textures/powerplants/pp_sprite_neon_solar.png" id="2_b3y21"]
+[ext_resource type="Texture2D" uid="uid://b2gbtnhgkx7jk" path="res://assets/used_assets/textures/powerplants/pp_sprite_neon_wind.png" id="3_tbm0u"]
+[ext_resource type="Texture2D" uid="uid://ddlljpbljj4x0" path="res://assets/used_assets/textures/powerplants/pp_sprite_neon_biogas.png" id="4_blgr5"]
+[ext_resource type="Texture2D" uid="uid://blsfp2folqofg" path="res://assets/used_assets/textures/powerplants/pp_sprite_neon_hydro.png" id="5_gn4fp"]
+[ext_resource type="Texture2D" uid="uid://bqcub63frxj38" path="res://assets/used_assets/textures/powerplants/pp_sprite_neon_gas.png" id="7_g26yb"]
 [ext_resource type="Texture2D" uid="uid://dt3vgdfiymmbl" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0018_Hydrolic-Reservoir.png" id="7_n0676"]
-[ext_resource type="Texture2D" uid="uid://b20t5eecd5dmi" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0005_Power-plant-waste-screen.png" id="8_f783d"]
+[ext_resource type="Texture2D" uid="uid://b20t5eecd5dmi" path="res://assets/used_assets/textures/powerplants/pp_sprite_neon_waste.png" id="8_3laoh"]
 [ext_resource type="Texture2D" uid="uid://40ncc2tsu56l" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0008_Water-Pump-3.png" id="8_ypqld"]
-[ext_resource type="Texture2D" uid="uid://bj4tvp2lyt062" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0002_Power-plant-biomass-screen.png" id="9_a2e8y"]
-[ext_resource type="Texture2D" uid="uid://cklce5oocr611" path="res://assets/UI Elements/All-HQ-Assets-D_0002s_0013_Power-plant-river-screen.png" id="10_lpxim"]
+[ext_resource type="Texture2D" uid="uid://bj4tvp2lyt062" path="res://assets/used_assets/textures/powerplants/pp_sprite_neon_biomass.png" id="9_cdq5k"]
+[ext_resource type="Texture2D" uid="uid://cklce5oocr611" path="res://assets/used_assets/textures/powerplants/pp_sprite_neon_river.png" id="10_41v8a"]
 [ext_resource type="Texture2D" uid="uid://doe7y0txnwax7" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0005_Water-3.png" id="13_wuh2w"]
 
 [sub_resource type="Animation" id="Animation_j4va7"]
@@ -159,7 +159,7 @@ metadata/_edit_group_ = true
 
 [node name="Sprite" parent="Container/Solar" index="1"]
 position = Vector2(16.6667, 32.2222)
-texture = ExtResource("2_trovx")
+texture = ExtResource("2_b3y21")
 
 [node name="BuildInfo" parent="Container/Solar" index="2"]
 offset_left = 25.5557
@@ -214,7 +214,7 @@ grow_vertical = 1
 
 [node name="Sprite" parent="Container/Wind" index="1"]
 position = Vector2(16.6667, 32.2222)
-texture = ExtResource("3_og7da")
+texture = ExtResource("3_tbm0u")
 
 [node name="BuildInfo" parent="Container/Wind" index="2"]
 offset_left = -131.111
@@ -261,7 +261,7 @@ offset_right = 64.0
 
 [node name="Sprite" parent="Container/Tree" index="1"]
 position = Vector2(16.6667, 24.4445)
-texture = ExtResource("4_j6x8a")
+texture = ExtResource("4_blgr5")
 
 [node name="BuildInfo" parent="Container/Tree" index="2"]
 offset_left = -292.222
@@ -313,7 +313,7 @@ offset_bottom = -246.5
 
 [node name="Sprite" parent="Container/Hydro" index="1"]
 position = Vector2(16.6667, 23.3334)
-texture = ExtResource("5_katjr")
+texture = ExtResource("5_gn4fp")
 
 [node name="Water" type="Sprite2D" parent="Container/Hydro/Sprite" index="0"]
 position = Vector2(-22.2222, 30)
@@ -365,7 +365,7 @@ offset_bottom = -245.5
 
 [node name="Sprite" parent="Container/Gas" index="1"]
 position = Vector2(17.7778, 15.5556)
-texture = ExtResource("7_bxb5o")
+texture = ExtResource("7_g26yb")
 
 [node name="BuildInfo" parent="Container/Gas" index="2"]
 offset_left = -132.223
@@ -419,7 +419,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Sprite" parent="Container/Waste" index="1"]
 position = Vector2(17.7767, 15.5556)
-texture = ExtResource("8_f783d")
+texture = ExtResource("8_3laoh")
 
 [node name="BuildInfo" parent="Container/Waste" index="2"]
 offset_left = -135.557
@@ -484,7 +484,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Sprite" parent="Container/Biomass" index="1"]
 position = Vector2(16.6667, 15.5556)
-texture = ExtResource("9_a2e8y")
+texture = ExtResource("9_cdq5k")
 
 [node name="BuildInfo" parent="Container/Biomass" index="2"]
 offset_left = -134.444
@@ -550,7 +550,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Sprite" parent="Container/River" index="1"]
 position = Vector2(17.7778, 14.4445)
-texture = ExtResource("10_lpxim")
+texture = ExtResource("10_41v8a")
 
 [node name="Water" type="Sprite2D" parent="Container/River/Sprite" index="0"]
 position = Vector2(22.2222, 26.6667)

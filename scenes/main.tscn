@@ -2333,12 +2333,6 @@ offset_top = 72.0
 offset_right = 758.0
 offset_bottom = 472.0
 
-[node name="Money" parent="World/BuildButton" index="4"]
-offset_left = -286.0
-offset_top = -132.5
-offset_right = -126.0
-offset_bottom = -43.5
-
 [node name="BuildButton3" parent="World" index="13" groups=["TUTO_BB"]]
 
 [node name="BuildButton4" parent="World" index="14"]
@@ -2889,6 +2883,7 @@ visible = false
 [node name="SurveyLayer" parent="." instance=ExtResource("76_y7xdi")]
 
 [node name="Settings" type="CanvasLayer" parent="."]
+layer = 3
 visible = false
 script = ExtResource("42_jouqr")
 
@@ -3380,6 +3375,7 @@ stretch_mode = 0
 script = ExtResource("71_1071y")
 
 [node name="QuitGame" parent="." instance=ExtResource("77_iwdt8")]
+layer = 4
 visible = false
 
 [node name="TestLayer" type="CanvasLayer" parent="."]

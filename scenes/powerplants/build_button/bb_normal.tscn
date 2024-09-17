@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cd8341rl44tws" path="res://assets/used_assets/textures/powerplants/bb_normal.png" id="1_mtdfr"]
 [ext_resource type="BitMap" uid="uid://1iqu0g7vgbmb" path="res://assets/used_assets/textures/powerplants/bb_click_mask.png" id="2_v7c1n"]
-[ext_resource type="Script" path="res://src/gdscript/powerplants/bb_normal/texture_button.gd" id="3_0n8n5"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/bb_normal/texture_button.gd" id="3_5prkk"]
 [ext_resource type="Texture2D" uid="uid://d1nj3wl5q4pnv" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0017_Icon-Hammer.png" id="3_8j8b0"]
 
 [node name="BbNormal" type="TextureButton" groups=["BB"]]
@@ -13,7 +13,7 @@ texture_normal = ExtResource("1_mtdfr")
 texture_click_mask = ExtResource("2_v7c1n")
 ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("3_0n8n5")
+script = ExtResource("3_5prkk")
 
 [node name="Hammer" type="Sprite2D" parent="."]
 position = Vector2(260, 182)

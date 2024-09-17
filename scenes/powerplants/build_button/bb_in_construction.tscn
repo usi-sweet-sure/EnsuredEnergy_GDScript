@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cr0xdhpqcjqjd" path="res://assets/used_assets/textures/powerplants/bb_in_construction_2.png" id="1_sb6gk"]
 [ext_resource type="BitMap" uid="uid://1iqu0g7vgbmb" path="res://assets/used_assets/textures/powerplants/bb_click_mask.png" id="2_lmaq0"]
-[ext_resource type="Script" path="res://src/gdscript/powerplants/bb_in_construction/texture_button.gd" id="3_sk5xb"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/bb_in_construction/texture_button.gd" id="3_iq2d4"]
 [ext_resource type="PackedScene" uid="uid://chpn7t75mmbkh" path="res://scenes/buttons/close_button.tscn" id="4_ui17c"]
 
 [node name="BbInConstruction" type="TextureButton" groups=["BB"]]
@@ -13,7 +13,7 @@ texture_normal = ExtResource("1_sb6gk")
 texture_click_mask = ExtResource("2_lmaq0")
 ignore_texture_size = true
 stretch_mode = 0
-script = ExtResource("3_sk5xb")
+script = ExtResource("3_iq2d4")
 
 [node name="CloseButton" parent="." instance=ExtResource("4_ui17c")]
 layout_mode = 1

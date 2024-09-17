@@ -11,5 +11,4 @@ func _on_toggle_settings():
 
 
 func _on_quit_button_pressed():
-	hide()
 	Gameloop.game_quit_requested.emit()

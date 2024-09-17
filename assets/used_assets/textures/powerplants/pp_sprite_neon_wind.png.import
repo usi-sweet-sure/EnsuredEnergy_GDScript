@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cklce5oocr611"
-path="res://.godot/imported/All-HQ-Assets-D_0002s_0013_Power-plant-river-screen.png-0db83fd1dcb1e33f2d6b68529653d14e.ctex"
+uid="uid://b2gbtnhgkx7jk"
+path="res://.godot/imported/pp_sprite_neon_wind.png-bc984d7002279c4822b01582073b0f2b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI Elements/All-HQ-Assets-D_0002s_0013_Power-plant-river-screen.png"
-dest_files=["res://.godot/imported/All-HQ-Assets-D_0002s_0013_Power-plant-river-screen.png-0db83fd1dcb1e33f2d6b68529653d14e.ctex"]
+source_file="res://assets/used_assets/textures/powerplants/pp_sprite_neon_wind.png"
+dest_files=["res://.godot/imported/pp_sprite_neon_wind.png-bc984d7002279c4822b01582073b0f2b.ctex"]
 
 [params]
 

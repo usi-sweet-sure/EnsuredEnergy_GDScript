@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b20t5eecd5dmi"
-path="res://.godot/imported/All-HQ-Assets-D_0002s_0005_Power-plant-waste-screen.png-6a1fa28c05248268f8d6f559ba62dbc9.ctex"
+path="res://.godot/imported/pp_sprite_neon_waste.png-3a5fb7c11083c18b85c7ae2ccb0fe8e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI Elements/All-HQ-Assets-D_0002s_0005_Power-plant-waste-screen.png"
-dest_files=["res://.godot/imported/All-HQ-Assets-D_0002s_0005_Power-plant-waste-screen.png-6a1fa28c05248268f8d6f559ba62dbc9.ctex"]
+source_file="res://assets/used_assets/textures/powerplants/pp_sprite_neon_waste.png"
+dest_files=["res://.godot/imported/pp_sprite_neon_waste.png-3a5fb7c11083c18b85c7ae2ccb0fe8e0.ctex"]
 
 [params]
 

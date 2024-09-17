@@ -13,12 +13,17 @@ func _ready():
 	PowerplantsManager.toggle_menu.connect(_on_toggle_menu)
 
 
+# Hides or show the menu
 func _on_toggle_menu(can_build: Array[PowerplantsManager.EngineTypeIds]):
 	if visible:
 		animation_player.play("slide_down")
 	else:
+		# Adds buttons to the menu
 		for id in can_build:
-			pp_buttons_container.add_child(pp_button_scene.instantiate())
+			var new_pp_button = pp_button_scene.instantiate()
+			pp_buttons_container.add_child(new_pp_button)
+			new_pp_button.assign_powerplant(id)
+		
 		animation_player.play("slide_up")
 
 

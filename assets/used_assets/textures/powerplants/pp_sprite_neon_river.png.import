@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bj4tvp2lyt062"
-path="res://.godot/imported/All-HQ-Assets-D_0002s_0002_Power-plant-biomass-screen.png-7970f91be7b955bbf808ccb78ac48138.ctex"
+uid="uid://cklce5oocr611"
+path="res://.godot/imported/pp_sprite_neon_river.png-fd81016c80297953172a916a583c262d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI Elements/All-HQ-Assets-D_0002s_0002_Power-plant-biomass-screen.png"
-dest_files=["res://.godot/imported/All-HQ-Assets-D_0002s_0002_Power-plant-biomass-screen.png-7970f91be7b955bbf808ccb78ac48138.ctex"]
+source_file="res://assets/used_assets/textures/powerplants/pp_sprite_neon_river.png"
+dest_files=["res://.godot/imported/pp_sprite_neon_river.png-fd81016c80297953172a916a583c262d.ctex"]
 
 [params]
 

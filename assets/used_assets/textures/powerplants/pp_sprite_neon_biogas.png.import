@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blsfp2folqofg"
-path="res://.godot/imported/All-HQ-Assets-D_0002s_0014_Power-plant-reservoir-screen.png-a848b269cc5ab1486f9afb16979e120d.ctex"
+uid="uid://ddlljpbljj4x0"
+path="res://.godot/imported/pp_sprite_neon_biogas.png-b5c53273711c53e0dad841f6bf50e4c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI Elements/All-HQ-Assets-D_0002s_0014_Power-plant-reservoir-screen.png"
-dest_files=["res://.godot/imported/All-HQ-Assets-D_0002s_0014_Power-plant-reservoir-screen.png-a848b269cc5ab1486f9afb16979e120d.ctex"]
+source_file="res://assets/used_assets/textures/powerplants/pp_sprite_neon_biogas.png"
+dest_files=["res://.godot/imported/pp_sprite_neon_biogas.png-b5c53273711c53e0dad841f6bf50e4c9.ctex"]
 
 [params]
 

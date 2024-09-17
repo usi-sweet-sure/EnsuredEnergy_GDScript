@@ -13,4 +13,4 @@ func _on_winter_energy_supply_updated(value: float):
 
 
 func _on_imported_energy_amount_updated(value: float):
-		text = str(round(value + Gameloop.supply_winter))
+	text = str(round(value + Gameloop.supply_winter))
