@@ -92,7 +92,9 @@ func get_ctx():
 	
 func get_leaderboard():
 	leaderboard = true
-	var url = "https://sure.euler.usi.ch/json.php?mth=lst&lim=3&ord=5"
+	# TODO ask toby for a URL that gives the top 5 for all categories......
+	# and a URL for the player's score
+	var url = "https://sure.euler.usi.ch/json.php?mth=lst&lim=5&ord=5"
 	HttpManager.http_request_active = true
 	var error = http1.request(url)
 	if error != OK:
@@ -121,8 +123,10 @@ func _http1_completed(_result, _response_code, _headers, body):
 	else:
 		HttpManager.http_request_active = false
 		var json = JSON.new()
-		leaderboard_json = JSON.stringify(JSON.parse_string(body.get_string_from_utf8()), "\t")
+		#leaderboard_json = JSON.stringify(JSON.parse_string(body.get_string_from_utf8()), "\t")
 		#leaderboard_json = json.get_data()
+		json.parse(body.get_string_from_utf8())
+		leaderboard_json = json.get_data()
 
 func get_model_demand():
 	for i in ctx1:
