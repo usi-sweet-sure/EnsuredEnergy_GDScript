@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bh1jd2q534s57"
-path="res://.godot/imported/230601_CH_SUREgame_Power-Plants.psd_0020_Wind-1.png-da8ede51409a12dfa58c7664debbb59c.ctex"
+uid="uid://dt3vgdfiymmbl"
+path="res://.godot/imported/pp_sprite_on_hydro.png-5a0e31de4df251f62e2ae9632b76ad34.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0020_Wind-1.png"
-dest_files=["res://.godot/imported/230601_CH_SUREgame_Power-Plants.psd_0020_Wind-1.png-da8ede51409a12dfa58c7664debbb59c.ctex"]
+source_file="res://assets/used_assets/textures/powerplants/pp_sprite_on_hydro.png"
+dest_files=["res://.godot/imported/pp_sprite_on_hydro.png-5a0e31de4df251f62e2ae9632b76ad34.ctex"]
 
 [params]
 

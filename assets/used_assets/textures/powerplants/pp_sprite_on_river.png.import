@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://eou3fo8c40ne"
-path="res://.godot/imported/230601_CH_SUREgame_Power-Plants.psd_0015_Waste.png-45eb727b9486a0b624f18cb83cfba4d3.ctex"
+uid="uid://cumvhtc05t8h5"
+path="res://.godot/imported/pp_sprite_on_river.png-f9f1cab142bc09d1f0fc4a58e4c15fb6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0015_Waste.png"
-dest_files=["res://.godot/imported/230601_CH_SUREgame_Power-Plants.psd_0015_Waste.png-45eb727b9486a0b624f18cb83cfba4d3.ctex"]
+source_file="res://assets/used_assets/textures/powerplants/pp_sprite_on_river.png"
+dest_files=["res://.godot/imported/pp_sprite_on_river.png-f9f1cab142bc09d1f0fc4a58e4c15fb6.ctex"]
 
 [params]
 

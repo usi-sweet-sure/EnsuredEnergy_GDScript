@@ -39,3 +39,8 @@ func _ready():
 		
 func _on_bb_normal_pressed():
 	PowerplantsManager.toggle_menu.emit(can_build)
+	PowerplantsManager.powerplant_build_requested.connect(_on_powerplant_build_requested)
+	print("listening")
+	
+func _on_powerplant_build_requested(metrics: PowerplantMetrics):
+	print("build")

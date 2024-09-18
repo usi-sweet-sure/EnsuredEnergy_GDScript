@@ -6,11 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://ddlljpbljj4x0" path="res://assets/used_assets/textures/powerplants/pp_sprite_neon_biogas.png" id="4_blgr5"]
 [ext_resource type="Texture2D" uid="uid://blsfp2folqofg" path="res://assets/used_assets/textures/powerplants/pp_sprite_neon_hydro.png" id="5_gn4fp"]
 [ext_resource type="Texture2D" uid="uid://bqcub63frxj38" path="res://assets/used_assets/textures/powerplants/pp_sprite_neon_gas.png" id="7_g26yb"]
-[ext_resource type="Texture2D" uid="uid://dt3vgdfiymmbl" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0018_Hydrolic-Reservoir.png" id="7_n0676"]
 [ext_resource type="Texture2D" uid="uid://b20t5eecd5dmi" path="res://assets/used_assets/textures/powerplants/pp_sprite_neon_waste.png" id="8_3laoh"]
 [ext_resource type="Texture2D" uid="uid://40ncc2tsu56l" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0008_Water-Pump-3.png" id="8_ypqld"]
 [ext_resource type="Texture2D" uid="uid://bj4tvp2lyt062" path="res://assets/used_assets/textures/powerplants/pp_sprite_neon_biomass.png" id="9_cdq5k"]
 [ext_resource type="Texture2D" uid="uid://cklce5oocr611" path="res://assets/used_assets/textures/powerplants/pp_sprite_neon_river.png" id="10_41v8a"]
+[ext_resource type="Texture2D" uid="uid://dt3vgdfiymmbl" path="res://assets/used_assets/textures/powerplants/pp_sprite_on_hydro.png" id="12_drari"]
 [ext_resource type="Texture2D" uid="uid://doe7y0txnwax7" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0005_Water-3.png" id="13_wuh2w"]
 
 [sub_resource type="Animation" id="Animation_j4va7"]
@@ -617,7 +617,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite" parent="Container/Pump" index="1"]
 position = Vector2(-1, 24)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("7_n0676")
+texture = ExtResource("12_drari")
 
 [node name="BuildInfo" parent="Container/Pump" index="2"]
 offset_left = -65.0

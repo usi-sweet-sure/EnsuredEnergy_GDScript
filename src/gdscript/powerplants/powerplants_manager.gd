@@ -3,6 +3,10 @@ extends Node
 signal toggle_menu(can_build: Array[EngineTypeIds])
 signal powerplants_metrics_updated(metrics: Array[PowerplantMetrics])
 
+# Only the pp_map_emplacement node that opened the menu will be listening to this
+# at any given time
+signal powerplant_build_requested(metrics: PowerplantMetrics)
+
 # Ids used to identify the powerplants inside the engine in a consistent manner
 enum EngineTypeIds {
 	SOLAR,
@@ -22,6 +26,20 @@ enum EngineTypeIds {
 # Each powerplant type data is stored at the index corresponding to EngineTypeIds.
 # MUST BE in the same order as EngineTypeIds.
 var powerplants_metrics: Array[PowerplantMetrics] = []
+
+# MUST BE in the same order as EngineTypeIds
+var powerplants_scenes: Array[PackedScene] = [
+	preload("res://scenes/powerplants/pp_gas/pp_gas.tscn"), # Solar
+	preload("res://scenes/powerplants/pp_gas/pp_gas.tscn"), # Wind
+	preload("res://scenes/powerplants/pp_gas/pp_gas.tscn"), # Gas
+	preload("res://scenes/powerplants/pp_gas/pp_gas.tscn"), # Waste
+	preload("res://scenes/powerplants/pp_gas/pp_gas.tscn"), # Biomass
+	preload("res://scenes/powerplants/pp_gas/pp_gas.tscn"), # Biogas
+	preload("res://scenes/powerplants/pp_gas/pp_gas.tscn"), # Nuclear
+	preload("res://scenes/powerplants/pp_gas/pp_gas.tscn"), # Carbon sequestration
+	preload("res://scenes/powerplants/pp_gas/pp_gas.tscn"), # Hydro
+	preload("res://scenes/powerplants/pp_gas/pp_gas.tscn"), # River 
+]
 
 # MUST BE in the same order as EngineTypeIds
 var powerplants_build_times_in_turns: Array[int] = [

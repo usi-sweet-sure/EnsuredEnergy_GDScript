@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cigv4d5ij1ymx"
-path="res://.godot/imported/pp_sprite_on_gas.png-0535ba1b156d38f6833808b62eae441e.ctex"
+path="res://.godot/imported/pp_sprite_on_gas.png-4b03bcac030abf5a69dcfefc61f964a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/new Power plants/Power plants/pp_sprite_on_gas.png"
-dest_files=["res://.godot/imported/pp_sprite_on_gas.png-0535ba1b156d38f6833808b62eae441e.ctex"]
+source_file="res://assets/used_assets/textures/powerplants/pp_sprite_on_gas.png"
+dest_files=["res://.godot/imported/pp_sprite_on_gas.png-4b03bcac030abf5a69dcfefc61f964a3.ctex"]
 
 [params]
 

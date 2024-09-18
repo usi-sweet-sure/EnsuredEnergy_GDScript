@@ -4,6 +4,7 @@ extends TextureRect
 
 var powerplant_type = null
 
+
 # Used by childrens to update their state
 signal powerplant_metrics_updated(metrics: PowerplantMetrics)
 

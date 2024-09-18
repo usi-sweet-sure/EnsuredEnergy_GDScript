@@ -7,7 +7,6 @@ extends CanvasLayer
 
 var pp_button_scene = preload("res://scenes/powerplants/menu/pp_menu_button.tscn")
 
-
 func _ready():
 	visible = false
 	PowerplantsManager.toggle_menu.connect(_on_toggle_menu)

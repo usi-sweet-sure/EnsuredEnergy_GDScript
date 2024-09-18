@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c83qs7d4owesp"
-path="res://.godot/imported/230601_CH_SUREgame_Power-Plants.psd_0012_Biomass.png-98219c49aff428284e8bf0c52bf08d24.ctex"
+path="res://.godot/imported/pp_sprite_on_biomass.png-905eb0043eadadde8e877a7e5f685da6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0012_Biomass.png"
-dest_files=["res://.godot/imported/230601_CH_SUREgame_Power-Plants.psd_0012_Biomass.png-98219c49aff428284e8bf0c52bf08d24.ctex"]
+source_file="res://assets/used_assets/textures/powerplants/pp_sprite_on_biomass.png"
+dest_files=["res://.godot/imported/pp_sprite_on_biomass.png-905eb0043eadadde8e877a7e5f685da6.ctex"]
 
 [params]
 

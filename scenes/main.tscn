@@ -6,19 +6,19 @@
 [ext_resource type="Script" path="res://src/cs/ui/camera.gd" id="3_2lui3"]
 [ext_resource type="Texture2D" uid="uid://56mnndf1ggaj" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0010_Nuclear.png" id="4_e6lsk"]
 [ext_resource type="Texture2D" uid="uid://dbx2rmjpjd6qx" path="res://assets/new Power plants/Power plants/Power_Plants-smoke-1.png" id="5_n6wof"]
-[ext_resource type="Texture2D" uid="uid://eou3fo8c40ne" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0015_Waste.png" id="5_vx3tb"]
-[ext_resource type="Texture2D" uid="uid://c83qs7d4owesp" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0012_Biomass.png" id="6_q3df2"]
+[ext_resource type="Texture2D" uid="uid://eou3fo8c40ne" path="res://assets/used_assets/textures/powerplants/pp_sprite_on_waste.png" id="5_vx3tb"]
+[ext_resource type="Texture2D" uid="uid://c83qs7d4owesp" path="res://assets/used_assets/textures/powerplants/pp_sprite_on_biomass.png" id="6_q3df2"]
 [ext_resource type="Texture2D" uid="uid://delmd6x2b1mpv" path="res://assets/new Power plants/Power plants/Power_Plants-smoke-2.png" id="6_swuok"]
-[ext_resource type="Texture2D" uid="uid://bh1jd2q534s57" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0020_Wind-1.png" id="7_4q6ww"]
+[ext_resource type="Texture2D" uid="uid://bh1jd2q534s57" path="res://assets/used_assets/textures/powerplants/pp_sprite_on_wind.png" id="7_4q6ww"]
 [ext_resource type="Texture2D" uid="uid://blskwje2kl2w5" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0000_Smoke-1.png" id="7_ugl8s"]
 [ext_resource type="Texture2D" uid="uid://d3i7u4tlllbpv" path="res://assets/new Power plants/Power plants/Power_Plants-smoke-3.png" id="7_vvt3h"]
 [ext_resource type="Texture2D" uid="uid://c47ihdkfwask6" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0009_Propeller-1.png" id="8_7bikf"]
 [ext_resource type="Texture2D" uid="uid://cehdhadcxkehx" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0001_Smoke-2.png" id="8_jh2tr"]
 [ext_resource type="Texture2D" uid="uid://dhlbnxuj2tce7" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0014_H2-Stock.png" id="8_odcis"]
 [ext_resource type="Texture2D" uid="uid://7igraqqaltxx" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0002_Smoke-3.png" id="9_2lgj4"]
-[ext_resource type="Texture2D" uid="uid://cumvhtc05t8h5" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0016_Hydrolic-River.png" id="9_agn8w"]
+[ext_resource type="Texture2D" uid="uid://cumvhtc05t8h5" path="res://assets/used_assets/textures/powerplants/pp_sprite_on_river.png" id="9_agn8w"]
 [ext_resource type="Texture2D" uid="uid://bgbm8t4r0m4a0" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0025_Solar-1.png" id="10_3byff"]
-[ext_resource type="Texture2D" uid="uid://dt3vgdfiymmbl" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0018_Hydrolic-Reservoir.png" id="11_nggna"]
+[ext_resource type="Texture2D" uid="uid://dt3vgdfiymmbl" path="res://assets/used_assets/textures/powerplants/pp_sprite_on_hydro.png" id="11_nggna"]
 [ext_resource type="PackedScene" uid="uid://ciphd0cmpslrn" path="res://scenes/hud/tutorial.tscn" id="11_uite1"]
 [ext_resource type="Texture2D" uid="uid://40ncc2tsu56l" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0008_Water-Pump-3.png" id="11_y3iyb"]
 [ext_resource type="Texture2D" uid="uid://cwno5l0u5mavx" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0021_Wind-2.png" id="12_fhjpd"]
@@ -39,7 +39,7 @@
 [ext_resource type="Texture2D" uid="uid://uk6wm4ud6hp" path="res://assets/new Power plants/Power plants/Power_Plants_4-water-Hydrolic-Reservoir-1.png" id="26_fkwhx"]
 [ext_resource type="Texture2D" uid="uid://bxet6f7y04qar" path="res://assets/new Power plants/Power plants/Power_Plants_4-water-Hydrolic-River-2.png" id="32_dhm8b"]
 [ext_resource type="Texture2D" uid="uid://8ayrv8fy7apy" path="res://assets/new Power plants/Power plants/Power_Plants_4-water-Hydrolic-River-3.png" id="33_1wxp6"]
-[ext_resource type="Texture2D" uid="uid://cigv4d5ij1ymx" path="res://assets/new Power plants/Power plants/pp_sprite_on_gas.png" id="34_jc6ff"]
+[ext_resource type="Texture2D" uid="uid://cigv4d5ij1ymx" path="res://assets/used_assets/textures/powerplants/pp_sprite_on_gas.png" id="34_jc6ff"]
 [ext_resource type="PackedScene" uid="uid://cuuj2s4h1588i" path="res://scenes/audio.tscn" id="34_smnob"]
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/settings_canvas.gd" id="42_jouqr"]
 [ext_resource type="Texture2D" uid="uid://cvwhghlarnumd" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0004_Settings-metal-base.png" id="44_dom71"]
@@ -2324,11 +2324,29 @@ offset_top = 72.0
 offset_right = 758.0
 offset_bottom = 472.0
 
+[node name="Cloud" parent="World/BuildButton/PowerPlants/Gas" index="12"]
+position = Vector2(323, 78.5)
+
+[node name="Cloud2" parent="World/BuildButton/PowerPlants/Gas" index="13"]
+position = Vector2(272, 46.5)
+
+[node name="Cloud3" parent="World/BuildButton/PowerPlants/Gas" index="14"]
+position = Vector2(308, 65.5)
+
+[node name="Cloud4" parent="World/BuildButton/PowerPlants/Gas" index="15"]
+position = Vector2(378, 109.5)
+
+[node name="Cloud5" parent="World/BuildButton/PowerPlants/Gas" index="16"]
+position = Vector2(380, 93.5)
+
+[node name="Cloud6" parent="World/BuildButton/PowerPlants/Gas" index="17"]
+position = Vector2(344, 100.5)
+
 [node name="Money" parent="World/BuildButton" index="4"]
-offset_left = -286.0
-offset_top = -132.5
-offset_right = -126.0
-offset_bottom = -43.5
+offset_left = 57.0
+offset_top = 68.0
+offset_right = 217.0
+offset_bottom = 157.0
 
 [node name="BuildButton3" parent="World" index="13" groups=["TUTO_BB"]]
 
@@ -2812,11 +2830,29 @@ autoplay = "Water"
 [node name="Hammer" parent="World/BuildButton9" index="0"]
 position = Vector2(308, 205)
 
+[node name="Cloud" parent="World/BuildButton9/PowerPlants/Gas" index="12"]
+position = Vector2(323, 78.5)
+
+[node name="Cloud2" parent="World/BuildButton9/PowerPlants/Gas" index="13"]
+position = Vector2(272, 46.5)
+
+[node name="Cloud3" parent="World/BuildButton9/PowerPlants/Gas" index="14"]
+position = Vector2(308, 65.5)
+
+[node name="Cloud4" parent="World/BuildButton9/PowerPlants/Gas" index="15"]
+position = Vector2(378, 109.5)
+
+[node name="Cloud5" parent="World/BuildButton9/PowerPlants/Gas" index="16"]
+position = Vector2(380, 93.5)
+
+[node name="Cloud6" parent="World/BuildButton9/PowerPlants/Gas" index="17"]
+position = Vector2(344, 100.5)
+
 [node name="Money" parent="World/BuildButton9" index="4"]
-offset_left = -279.0
-offset_top = -124.0
-offset_right = -119.0
-offset_bottom = -35.0
+offset_left = 57.0
+offset_top = 68.0
+offset_right = 217.0
+offset_bottom = 157.0
 
 [node name="Solar" parent="World/BuildButton9/BuildMenu/Container" index="0"]
 visible = false
