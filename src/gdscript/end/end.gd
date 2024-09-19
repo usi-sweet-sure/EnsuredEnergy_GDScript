@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 signal metrics_leaderboard_updated
+signal metrics_rank_updated
 
 func _ready():
 	Gameloop.game_ended.connect(_on_game_ended)
@@ -9,11 +10,17 @@ func _ready():
 
 func _on_game_ended():
 	show()
+	
+	Context1.get_rank()
+	await Context1.http1.request_completed
+	
+	metrics_rank_updated.emit(Context1.rank_json)
  
 	Context1.get_leaderboard()
 	await Context1.http1.request_completed
 	
 	metrics_leaderboard_updated.emit(Context1.leaderboard_json)
+
 	
 	for power_plant in get_tree().get_nodes_in_group("PP"):
 		power_plant._disable_with_no_effect()

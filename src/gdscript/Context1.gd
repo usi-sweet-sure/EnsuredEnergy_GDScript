@@ -13,6 +13,8 @@ var ctx1
 var http1
 var leaderboard = false
 var leaderboard_json
+var rank = false
+var rank_json
 
 
 #globals
@@ -93,40 +95,44 @@ func get_ctx():
 func get_leaderboard():
 	leaderboard = true
 	# TODO ask toby for a URL that gives the top 5 for all categories......
-	# and a URL for the player's score
 	var url = "https://sure.euler.usi.ch/json.php?mth=lst&lim=5&ord=5"
 	HttpManager.http_request_active = true
 	var error = http1.request(url)
 	if error != OK:
 		push_error("http error")
+		
+func get_rank():
+	rank = true
+	var url = "https://sure.euler.usi.ch/json.php?mth=rnk&res_id={res_id}"
+	HttpManager.http_request_active = true
+	var error = http1.request(url.format({"res_id": res_id}))
+	if error != OK:
+		push_error("http error")
+		
+	
 	
 #handle response
 func _http1_completed(_result, _response_code, _headers, body):
-	if !leaderboard:
+	if leaderboard:
+		HttpManager.http_request_active = false
+		var json = JSON.new()
+		json.parse(body.get_string_from_utf8())
+		leaderboard_json = json.get_data()
+	elif !rank:
 		HttpManager.http_request_active = false
 		var json = JSON.new()
 		json.parse(body.get_string_from_utf8())
 		ctx1 = json.get_data()
-		#set globals
-		#res_id = ctx1[0]["res_id"]
-		#yr = ctx1[0]["yr"]
-		#debug
-		#print(ctx1[0]["res_id"])
-		#print(ctx1[0]["yr"])
-		
 		if ctx1 == null:
 			context_error.emit()
 		elif Gameloop.current_turn == 1:
 			res_id = int(ctx1[0]["res_id"])
 			get_model_demand()
-					
 	else:
 		HttpManager.http_request_active = false
 		var json = JSON.new()
-		#leaderboard_json = JSON.stringify(JSON.parse_string(body.get_string_from_utf8()), "\t")
-		#leaderboard_json = json.get_data()
 		json.parse(body.get_string_from_utf8())
-		leaderboard_json = json.get_data()
+		rank_json = json.get_data()
 
 func get_model_demand():
 	for i in ctx1:
