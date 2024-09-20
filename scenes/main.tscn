@@ -2324,30 +2324,6 @@ offset_top = 72.0
 offset_right = 758.0
 offset_bottom = 472.0
 
-[node name="Cloud" parent="World/BuildButton/PowerPlants/Gas" index="12"]
-position = Vector2(323, 78.5)
-
-[node name="Cloud2" parent="World/BuildButton/PowerPlants/Gas" index="13"]
-position = Vector2(272, 46.5)
-
-[node name="Cloud3" parent="World/BuildButton/PowerPlants/Gas" index="14"]
-position = Vector2(308, 65.5)
-
-[node name="Cloud4" parent="World/BuildButton/PowerPlants/Gas" index="15"]
-position = Vector2(378, 109.5)
-
-[node name="Cloud5" parent="World/BuildButton/PowerPlants/Gas" index="16"]
-position = Vector2(380, 93.5)
-
-[node name="Cloud6" parent="World/BuildButton/PowerPlants/Gas" index="17"]
-position = Vector2(344, 100.5)
-
-[node name="Money" parent="World/BuildButton" index="4"]
-offset_left = 57.0
-offset_top = 68.0
-offset_right = 217.0
-offset_bottom = 157.0
-
 [node name="BuildButton3" parent="World" index="13" groups=["TUTO_BB"]]
 
 [node name="BuildButton4" parent="World" index="14"]
@@ -2829,30 +2805,6 @@ autoplay = "Water"
 
 [node name="Hammer" parent="World/BuildButton9" index="0"]
 position = Vector2(308, 205)
-
-[node name="Cloud" parent="World/BuildButton9/PowerPlants/Gas" index="12"]
-position = Vector2(323, 78.5)
-
-[node name="Cloud2" parent="World/BuildButton9/PowerPlants/Gas" index="13"]
-position = Vector2(272, 46.5)
-
-[node name="Cloud3" parent="World/BuildButton9/PowerPlants/Gas" index="14"]
-position = Vector2(308, 65.5)
-
-[node name="Cloud4" parent="World/BuildButton9/PowerPlants/Gas" index="15"]
-position = Vector2(378, 109.5)
-
-[node name="Cloud5" parent="World/BuildButton9/PowerPlants/Gas" index="16"]
-position = Vector2(380, 93.5)
-
-[node name="Cloud6" parent="World/BuildButton9/PowerPlants/Gas" index="17"]
-position = Vector2(344, 100.5)
-
-[node name="Money" parent="World/BuildButton9" index="4"]
-offset_left = 57.0
-offset_top = 68.0
-offset_right = 217.0
-offset_bottom = 157.0
 
 [node name="Solar" parent="World/BuildButton9/BuildMenu/Container" index="0"]
 visible = false

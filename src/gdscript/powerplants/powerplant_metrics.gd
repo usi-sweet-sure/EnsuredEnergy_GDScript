@@ -13,6 +13,7 @@ var availability: Vector2
 var building_costs: float
 var build_time_in_turns: int
 var life_time_in_turns: int
+var active: bool
 
 
 func _init(
@@ -26,6 +27,7 @@ func _init(
 		building_costs: float,
 		build_time_in_turns: int,
 		life_time_in_turns: int,
+		active: bool
 	):
 		self.type = type
 		self.capacity = capacity
@@ -37,3 +39,12 @@ func _init(
 		self.building_costs = building_costs
 		self.build_time_in_turns = build_time_in_turns
 		self.life_time_in_turns = life_time_in_turns
+		self.active = active
+
+
+func copy() -> PowerplantMetrics:
+	var metrics = PowerplantMetrics.new(type, capacity, cnv_capacity,
+			emissions, land_use, production_costs, availability, building_costs,
+			build_time_in_turns, life_time_in_turns, active)
+			
+	return metrics

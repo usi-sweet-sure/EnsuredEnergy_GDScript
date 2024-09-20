@@ -158,11 +158,8 @@ theme = SubResource("Theme_mklkc")
 [node name="PpMapEmplacement" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(624, 513)
 
-[node name="BuildButton3" parent="." instance=ExtResource("16_pnu0i")]
-offset_left = 1952.0
-offset_top = 630.0
-offset_right = 2638.0
-offset_bottom = 1030.0
+[node name="PpMapEmplacement2" parent="." instance=ExtResource("7_3e8ib")]
+position = Vector2(2020, 664)
 
 [node name="BuildButton4" parent="." instance=ExtResource("16_pnu0i")]
 visible = false
@@ -362,24 +359,6 @@ pivot_offset = Vector2(300, 200)
 texture_normal = ExtResource("13_urnb4")
 texture_pressed = ExtResource("13_urnb4")
 texture_hover = ExtResource("13_urnb4")
-
-[node name="Cloud" parent="BuildButton9/PowerPlants/Gas" index="12"]
-position = Vector2(323, 78.5)
-
-[node name="Cloud2" parent="BuildButton9/PowerPlants/Gas" index="13"]
-position = Vector2(272, 46.5)
-
-[node name="Cloud3" parent="BuildButton9/PowerPlants/Gas" index="14"]
-position = Vector2(308, 65.5)
-
-[node name="Cloud4" parent="BuildButton9/PowerPlants/Gas" index="15"]
-position = Vector2(378, 109.5)
-
-[node name="Cloud5" parent="BuildButton9/PowerPlants/Gas" index="16"]
-position = Vector2(380, 93.5)
-
-[node name="Cloud6" parent="BuildButton9/PowerPlants/Gas" index="17"]
-position = Vector2(344, 100.5)
 
 [node name="BuildingInfo" parent="BuildButton9" index="2"]
 offset_left = -84.0

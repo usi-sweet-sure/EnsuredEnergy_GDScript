@@ -12,9 +12,15 @@ extends Node2D
 @export var hydro := false
 @export var river := false
 
+@onready var bb_normal = $BbNormal
+@onready var bb_in_construction = $BbInConstruction
+
 var can_build: Array[PowerplantsManager.EngineTypeIds] = []
 
+
 func _ready():
+	PowerplantsManager.powerplant_build_requested.connect(_on_powerplant_build_requested)
+	
 	if solar:
 		can_build.push_back(PowerplantsManager.EngineTypeIds.SOLAR)
 	if wind:
@@ -38,9 +44,18 @@ func _ready():
 		
 		
 func _on_bb_normal_pressed():
-	PowerplantsManager.toggle_menu.emit(can_build)
-	PowerplantsManager.powerplant_build_requested.connect(_on_powerplant_build_requested)
-	print("listening")
+	PowerplantsManager.map_emplacement_pressed.emit(self, can_build)
 	
-func _on_powerplant_build_requested(metrics: PowerplantMetrics):
-	print("build")
+	
+func _on_powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMetrics):
+	if map_emplacement == self:
+		bb_normal.hide()
+		
+		if metrics.build_time_in_turns > 0:
+			bb_in_construction.show()
+		else:
+			var pp_scene = PowerplantsManager.powerplants_scenes[metrics.type].instantiate()
+			add_child(pp_scene)
+			pp_scene.set_metrics(metrics)
+			pp_scene.activate()
+			

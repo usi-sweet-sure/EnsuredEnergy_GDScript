@@ -1,11 +1,11 @@
 extends Node
 
-signal toggle_menu(can_build: Array[EngineTypeIds])
+# All empty map emplacements listen to this, but will only build if they are
+# the node passed in the parameters
+signal powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMetrics)
+signal map_emplacement_pressed(target_map_emplacement: Node2D, can_build: Array[EngineTypeIds])
 signal powerplants_metrics_updated(metrics: Array[PowerplantMetrics])
 
-# Only the pp_map_emplacement node that opened the menu will be listening to this
-# at any given time
-signal powerplant_build_requested(metrics: PowerplantMetrics)
 
 # Ids used to identify the powerplants inside the engine in a consistent manner
 enum EngineTypeIds {
@@ -230,6 +230,6 @@ func _store_powerplant_metrics(engine_type_id: EngineTypeIds):
 	
 	var metrics = PowerplantMetrics.new(engine_type_id, capacity, cnv_capacity,
 			emissions, land_use, production_cost, availability, building_costs,
-			build_time_in_turns, life_time_in_turns)
+			build_time_in_turns, life_time_in_turns, false)
 			
 	powerplants_metrics[engine_type_id] = metrics
