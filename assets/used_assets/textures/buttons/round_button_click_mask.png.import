@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://x4jtfk6giqd3"
+path="res://.godot/imported/round_button_click_mask.png-c33a775f2338688e1e3984a32b827128.res"
+
+[deps]
+
+source_file="res://assets/used_assets/textures/buttons/round_button_click_mask.png"
+dest_files=["res://.godot/imported/round_button_click_mask.png-c33a775f2338688e1e3984a32b827128.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

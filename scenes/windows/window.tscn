@@ -17,7 +17,7 @@
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/vote_zone/vote_zone.gd" id="9_21wnm"]
 [ext_resource type="FontFile" uid="uid://domoiqitlbtwi" path="res://assets/used_assets/fonts/llewie/Llewie.ttf" id="14_gxya2"]
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/start_campaign_zone/start_campaign_zone.gd" id="15_11d6x"]
-[ext_resource type="Texture2D" uid="uid://cd23afs6x11al" path="res://assets/UI Elements/All-HQ-Assets-D_0005s_0002_Stats-screen.png" id="17_hftqp"]
+[ext_resource type="Texture2D" uid="uid://cd23afs6x11al" path="res://assets/used_assets/textures/screens/screen_1.png" id="17_hftqp"]
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/center_frame/info_screen_1/general_explanation.gd" id="17_uqeid"]
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/campaing_screen_label.gd" id="18_tfmt2"]
 [ext_resource type="Texture2D" uid="uid://dnf85brf6fkbf" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0005_Policies-(side)-metal-base.png" id="18_yk6um"]

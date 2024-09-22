@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://vg02ewph3pco"
-path="res://.godot/imported/pp_menu_button_screen.png-0e4630a30da36f274f0c4a73b9bb8338.ctex"
+path="res://.godot/imported/screen_2.png-a855ee25d82468c990981e326c0b42be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/used_assets/textures/powerplants/pp_menu_button_screen.png"
-dest_files=["res://.godot/imported/pp_menu_button_screen.png-0e4630a30da36f274f0c4a73b9bb8338.ctex"]
+source_file="res://assets/used_assets/textures/screens/screen_2.png"
+dest_files=["res://.godot/imported/screen_2.png-a855ee25d82468c990981e326c0b42be.ctex"]
 
 [params]
 

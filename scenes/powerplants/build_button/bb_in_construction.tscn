@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cr0xdhpqcjqjd" path="res://assets/used_assets/textures/powerplants/bb_in_construction_2.png" id="1_sb6gk"]
 [ext_resource type="BitMap" uid="uid://1iqu0g7vgbmb" path="res://assets/used_assets/textures/powerplants/bb_click_mask.png" id="2_lmaq0"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/bb_in_construction/texture_button.gd" id="3_iq2d4"]
-[ext_resource type="PackedScene" uid="uid://chpn7t75mmbkh" path="res://scenes/buttons/close_button.tscn" id="4_ui17c"]
+[ext_resource type="PackedScene" uid="uid://chpn7t75mmbkh" path="res://scenes/buttons/button_close.tscn" id="4_ui17c"]
 
 [node name="BbInConstruction" type="TextureButton" groups=["BB"]]
 offset_right = 591.0

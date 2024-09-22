@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://src/gdscript/graphs/graphs_window.gd" id="1_vog1l"]
 [ext_resource type="Texture2D" uid="uid://ceuxpu5iujr05" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0001_Stats-metal-base.png" id="2_cyklw"]
 [ext_resource type="Script" path="res://src/gdscript/graphs/close_button.gd" id="2_g21s1"]
-[ext_resource type="Texture2D" uid="uid://cd23afs6x11al" path="res://assets/UI Elements/All-HQ-Assets-D_0005s_0002_Stats-screen.png" id="4_n0bh3"]
+[ext_resource type="Texture2D" uid="uid://cd23afs6x11al" path="res://assets/used_assets/textures/screens/screen_1.png" id="4_n0bh3"]
 [ext_resource type="Texture2D" uid="uid://hmcjyyrl7dv2" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0034_Policies-normal-(small)-button.png" id="5_lt1jf"]
 [ext_resource type="Texture2D" uid="uid://cjxrgcwrcynwf" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0035_Policies-press-(small)-button.png" id="6_hmhdq"]
 [ext_resource type="Texture2D" uid="uid://80u4mcjyisb7" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0033_Policies-hover-(small)-button.png" id="7_k8yxn"]

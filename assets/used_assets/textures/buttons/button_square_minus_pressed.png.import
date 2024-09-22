@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sdv07wonj5bg"
-path="res://.godot/imported/pp_menu_info_backplate.png-df851f7e3ebbb5e416623d6bd5206633.ctex"
+uid="uid://beidu4a1wcvya"
+path="res://.godot/imported/button_square_minus_pressed.png-b495e784148c1b1998c007f424a7904d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/used_assets/textures/powerplants/pp_menu_info_backplate.png"
-dest_files=["res://.godot/imported/pp_menu_info_backplate.png-df851f7e3ebbb5e416623d6bd5206633.ctex"]
+source_file="res://assets/used_assets/textures/buttons/button_square_minus_pressed.png"
+dest_files=["res://.godot/imported/button_square_minus_pressed.png-b495e784148c1b1998c007f424a7904d.ctex"]
 
 [params]
 

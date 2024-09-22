@@ -45,6 +45,14 @@ func scale_plants(zoom_val: Vector2):
 		
 		for power_plant in get_tree().get_nodes_in_group("PP"):
 			animate_power_plant_zoom(power_plant, new_zoom)
+			
+			
+		for sprite in get_tree().get_nodes_in_group("pp_sprites"):
+			animate_power_plant_zoom(sprite, new_zoom)
+			
+		
+		for frame in get_tree().get_nodes_in_group("pp_info_frames"):
+			animate_power_plant_zoom(frame, new_zoom)
 		
 		for build_button in get_tree().get_nodes_in_group("BB"):
 			animate_power_plant_zoom(build_button, new_zoom)

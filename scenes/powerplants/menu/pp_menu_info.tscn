@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://cmh312q7ja6y2"]
 
-[ext_resource type="Texture2D" uid="uid://sdv07wonj5bg" path="res://assets/used_assets/textures/powerplants/pp_menu_info_backplate.png" id="1_uab7v"]
-[ext_resource type="Texture2D" uid="uid://d2btaduc1gq0j" path="res://assets/used_assets/textures/powerplants/pp_menu_info_screen.png" id="2_gbns8"]
+[ext_resource type="Texture2D" uid="uid://sdv07wonj5bg" path="res://assets/used_assets/textures/backplates/backplate_3.png" id="1_uab7v"]
+[ext_resource type="Texture2D" uid="uid://d2btaduc1gq0j" path="res://assets/used_assets/textures/screens/screen_3.png" id="2_gbns8"]
 [ext_resource type="Texture2D" uid="uid://b76v2w1on0f0u" path="res://assets/used_assets/textures/icons/chalk_money.png" id="3_67k2m"]
 [ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="4_byerx"]
 [ext_resource type="Texture2D" uid="uid://bpt1e486wuscd" path="res://assets/used_assets/textures/icons/chalk_emission.png" id="5_xulj0"]

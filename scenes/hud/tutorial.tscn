@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://ikiclp3p8k8k" path="res://assets/key_tab_icon.png" id="5_mivsl"]
 [ext_resource type="PackedScene" uid="uid://cqn5kk1o4vep4" path="res://scenes/hud/show_hand.tscn" id="5_rwmh0"]
 [ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="7_6e2hn"]
-[ext_resource type="PackedScene" uid="uid://chpn7t75mmbkh" path="res://scenes/buttons/close_button.tscn" id="8_j1an2"]
-[ext_resource type="PackedScene" uid="uid://cuajo0ocbdx2d" path="res://scenes/buttons/play_button.tscn" id="9_shki2"]
+[ext_resource type="PackedScene" uid="uid://chpn7t75mmbkh" path="res://scenes/buttons/button_close.tscn" id="8_j1an2"]
+[ext_resource type="PackedScene" uid="uid://cuajo0ocbdx2d" path="res://scenes/buttons/button_play.tscn" id="9_shki2"]
 
 [sub_resource type="Theme" id="Theme_dnnnk"]
 
