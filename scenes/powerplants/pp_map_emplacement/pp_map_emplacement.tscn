@@ -1,0 +1,120 @@
+[gd_scene load_steps=8 format=3 uid="uid://bp4i40e8i68xv"]
+
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_map_emplacement.gd" id="1_unu4e"]
+[ext_resource type="PackedScene" uid="uid://dbdgpa4pfgryb" path="res://scenes/powerplants/pp_map_emplacement/build_button/bb_normal.tscn" id="2_h8dd4"]
+[ext_resource type="PackedScene" uid="uid://d2hhtw1popthi" path="res://scenes/powerplants/pp_map_emplacement/build_button/bb_in_construction.tscn" id="3_xoig2"]
+
+[sub_resource type="Shader" id="Shader_qllht"]
+resource_local_to_scene = true
+code = "shader_type canvas_item;
+
+uniform vec4 line_color = vec4(1);
+uniform float line_thickness = 1.0;
+uniform float frequency = 10.0;
+uniform float phase_speed = 1.0;
+uniform bool show = false;
+
+void fragment() {
+	if(show) {
+		vec2 size = TEXTURE_PIXEL_SIZE * line_thickness;
+		
+		float outline = texture(TEXTURE, UV + vec2(-size.x, 0)).a;
+		outline += texture(TEXTURE, UV + vec2(0, size.y)).a;
+		outline += texture(TEXTURE, UV + vec2(size.x, 0)).a;
+		outline += texture(TEXTURE, UV + vec2(0, -size.y)).a;
+		outline += texture(TEXTURE, UV + vec2(-size.x, size.y)).a;
+		outline += texture(TEXTURE, UV + vec2(-size.x, size.y * 0.5)).a;
+		outline += texture(TEXTURE, UV + vec2(size.x, size.y)).a;
+		outline += texture(TEXTURE, UV + vec2(size.x, size.y * 0.5)).a;
+		outline += texture(TEXTURE, UV + vec2(-size.x, -size.y)).a;
+		outline += texture(TEXTURE, UV + vec2(-size.x, -size.y * 0.5)).a;
+		outline += texture(TEXTURE, UV + vec2(size.x, -size.y)).a;
+		outline += texture(TEXTURE, UV + vec2(size.x, -size.y * 0.5)).a;
+		outline = round(min(outline, 1.0));
+		float mul = round(texture(TEXTURE, UV).a);
+		if (mul > 0.5) {
+			COLOR = texture(TEXTURE, UV);
+		}else if (outline > 0.5) {
+			vec2 pos = UV - vec2(0.5);
+			float angle = atan(pos.y, pos.x);
+			if (angle < 0.0) {
+			angle += 2.0 * PI;
+			}
+			float ring = step(0.0, sin(frequency * angle + TIME * phase_speed));
+			COLOR = vec4(line_color.rgb, ring * line_color.a);
+		}
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kixpu"]
+resource_local_to_scene = true
+shader = SubResource("Shader_qllht")
+shader_parameter/line_color = Vector4(1, 1, 1, 1)
+shader_parameter/line_thickness = 1.0
+shader_parameter/frequency = 10.0
+shader_parameter/phase_speed = 5.0
+shader_parameter/show = false
+
+[sub_resource type="Shader" id="Shader_1pb2q"]
+resource_local_to_scene = true
+code = "shader_type canvas_item;
+
+uniform vec4 line_color = vec4(1);
+uniform float line_thickness = 1.0;
+uniform float frequency = 10.0;
+uniform float phase_speed = 1.0;
+uniform bool show = false;
+
+void fragment() {
+	if(show) {
+		vec2 size = TEXTURE_PIXEL_SIZE * line_thickness;
+		
+		float outline = texture(TEXTURE, UV + vec2(-size.x, 0)).a;
+		outline += texture(TEXTURE, UV + vec2(0, size.y)).a;
+		outline += texture(TEXTURE, UV + vec2(size.x, 0)).a;
+		outline += texture(TEXTURE, UV + vec2(0, -size.y)).a;
+		outline += texture(TEXTURE, UV + vec2(-size.x, size.y)).a;
+		outline += texture(TEXTURE, UV + vec2(-size.x, size.y * 0.5)).a;
+		outline += texture(TEXTURE, UV + vec2(size.x, size.y)).a;
+		outline += texture(TEXTURE, UV + vec2(size.x, size.y * 0.5)).a;
+		outline += texture(TEXTURE, UV + vec2(-size.x, -size.y)).a;
+		outline += texture(TEXTURE, UV + vec2(-size.x, -size.y * 0.5)).a;
+		outline += texture(TEXTURE, UV + vec2(size.x, -size.y)).a;
+		outline += texture(TEXTURE, UV + vec2(size.x, -size.y * 0.5)).a;
+		outline = round(min(outline, 1.0));
+		float mul = round(texture(TEXTURE, UV).a);
+		if (mul > 0.5) {
+			COLOR = texture(TEXTURE, UV);
+		}else if (outline > 0.5) {
+			vec2 pos = UV - vec2(0.5);
+			float angle = atan(pos.y, pos.x);
+			if (angle < 0.0) {
+			angle += 2.0 * PI;
+			}
+			float ring = step(0.0, sin(frequency * angle + TIME * phase_speed));
+			COLOR = vec4(line_color.rgb, ring * line_color.a);
+		}
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g2jol"]
+resource_local_to_scene = true
+shader = SubResource("Shader_1pb2q")
+shader_parameter/line_color = Vector4(1, 1, 1, 1)
+shader_parameter/line_thickness = 1.0
+shader_parameter/frequency = 10.0
+shader_parameter/phase_speed = 1.0
+shader_parameter/show = false
+
+[node name="PpMapEmplacement" type="Node2D"]
+script = ExtResource("1_unu4e")
+
+[node name="BbNormal" parent="." instance=ExtResource("2_h8dd4")]
+material = SubResource("ShaderMaterial_kixpu")
+
+[node name="BbInConstruction" parent="." instance=ExtResource("3_xoig2")]
+visible = false
+material = SubResource("ShaderMaterial_g2jol")
+
+[connection signal="toggled" from="BbNormal" to="." method="_on_bb_normal_toggled"]
+[connection signal="powerplant_cancel_construction_requested" from="BbInConstruction" to="." method="_on_powerplant_cancel_construction_requested"]

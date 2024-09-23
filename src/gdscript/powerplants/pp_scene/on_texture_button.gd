@@ -1,7 +1,5 @@
 extends TextureButton
 
-@onready var animation_player = $AnimationPlayer
-
 # Used to detect a drag
 var mouse_position_on_press: Vector2
 # Sometimes when we click we move the mouse event if we didn't want to,
@@ -9,13 +7,14 @@ var mouse_position_on_press: Vector2
 # be detected
 var drag_tolerance = Vector2(5.0, 5.0)
 
+signal hide_info_frame_requested
+signal show_info_frame_requested
+
 
 func _ready():
+	PowerplantsManager.build_button_normal_toggled.connect(_on_build_button_toggled)
 	PowerplantsManager.pp_scene_toggled.connect(_on_pp_scene_toggled)
-	PowerplantsManager.build_button_normal_toggled.connect(_on_build_button_normal_toggled)
-	PowerplantsManager.powerplant_build_requested.connect(_on_powerplant_build_requested)
-	
-	
+
 func _on_mouse_entered():
 	set_modulate(Color(1.1, 1.1, 1.1))
 
@@ -24,8 +23,27 @@ func _on_mouse_exited():
 	set_modulate(Color(1, 1, 1))
 
 
+func _on_close_button_mouse_entered():
+	set_modulate(Color(1.1, 1.1, 1.1))
+
+
+func _on_close_button_mouse_exited():
+	set_modulate(Color(1, 1, 1))
+
+
+func _on_pp_scene_texture_on_changed(image: Image):
+	texture_normal = ImageTexture.create_from_image(image)
+	
+	# Click mask
+	var bitmap = BitMap.new()
+	# Fill it from the image alpha
+	bitmap.create_from_image_alpha(image)
+	# Assign it to the mask
+	texture_click_mask = bitmap
+
+
 # Triggers the lost of focus.
-# We lose focus when we click outside of the button, but we don't want to loose focus
+# We lose focus when we click outside of the pp, but we don't want to loose focus
 # when we drag.
 func _unhandled_input(event):
 	# Mouse press
@@ -35,37 +53,28 @@ func _unhandled_input(event):
 	# Mouse release
 	if event is InputEventMouseButton and event.button_mask == 0:
 		if not mouse_position_on_press - drag_tolerance >= event.position and not mouse_position_on_press + drag_tolerance <= event.position:
-			PowerplantsManager.hide_build_menu.emit()
-			set_pressed_no_signal(false)
 			material.set_shader_parameter("show", false)
-			animation_player.stop()
+			set_pressed_no_signal(false)
+			hide_info_frame_requested.emit()
 
 
-func _on_pp_scene_toggled(_toggled_on: bool, pp_scene: PpScene):
-	PowerplantsManager.hide_build_menu.emit()
-	set_pressed_no_signal(false)
+func _on_build_button_toggled(toggled_on: bool, map_emplacement: Node, can_build: Array[PowerplantsManager.EngineTypeIds]):
 	material.set_shader_parameter("show", false)
-	animation_player.stop()
-	
+	set_pressed_no_signal(false)
+	hide_info_frame_requested.emit()
+
 
 func _on_toggled(toggled_on: bool):
 	if toggled_on:
 		material.set_shader_parameter("show", true)
-		animation_player.play("animate_focus")
+		show_info_frame_requested.emit()
 	else:
 		material.set_shader_parameter("show", false)
-		animation_player.stop()
-		
+		hide_info_frame_requested.emit()
 
-func _on_build_button_normal_toggled(toggled_on:bool, map_emplacement: Node, _can_build: Array[PowerplantsManager.EngineTypeIds]):
-	if toggled_on and map_emplacement.get_node("BbNormal") != self:
-		set_pressed_no_signal(false)
-		material.set_shader_parameter("show", false)
-		animation_player.stop()
-	
 
-func _on_powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMetrics):
-	if map_emplacement == self:
-		set_pressed_no_signal(false)
+func _on_pp_scene_toggled(toggled_on: bool, pp_scene: PpScene):
+	if pp_scene.get_node("On") != self:
 		material.set_shader_parameter("show", false)
-		animation_player.stop()
+		set_pressed_no_signal(false)
+		hide_info_frame_requested.emit()

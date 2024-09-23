@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhlbnxuj2tce7"
-path="res://.godot/imported/230601_CH_SUREgame_Power-Plants.psd_0014_H2-Stock.png-23e2a20ac48e30f85df89c763f083dbf.ctex"
+uid="uid://cr0xdhpqcjqjd"
+path="res://.godot/imported/bb_in_construction.png-7239fae3dcb47ee7e2b504f0d103e8d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0014_H2-Stock.png"
-dest_files=["res://.godot/imported/230601_CH_SUREgame_Power-Plants.psd_0014_H2-Stock.png-23e2a20ac48e30f85df89c763f083dbf.ctex"]
+source_file="res://assets/used_assets/textures/powerplants/bb_in_construction.png"
+dest_files=["res://.godot/imported/bb_in_construction.png-7239fae3dcb47ee7e2b504f0d103e8d9.ctex"]
 
 [params]
 

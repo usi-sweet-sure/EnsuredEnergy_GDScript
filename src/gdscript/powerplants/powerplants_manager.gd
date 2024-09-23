@@ -3,7 +3,9 @@ extends Node
 # All empty map emplacements listen to this, but will only build if they are
 # the node passed in the parameters
 signal powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMetrics)
-signal map_emplacement_pressed(target_map_emplacement: Node2D, can_build: Array[EngineTypeIds])
+signal build_button_normal_toggled(toggled_on: bool, target_map_emplacement: Node2D, can_build: Array[EngineTypeIds])
+signal pp_scene_toggled(toggled_on: bool, pp_scene: PpScene)
+signal hide_build_menu
 signal powerplants_metrics_updated(metrics: Array[PowerplantMetrics])
 
 
@@ -27,18 +29,35 @@ enum EngineTypeIds {
 # MUST BE in the same order as EngineTypeIds.
 var powerplants_metrics: Array[PowerplantMetrics] = []
 
+# Used by all the types. Texture is set at runtime when the scene is instantiated
+var powerplant_scene = preload("res://scenes/powerplants/pp_map_emplacement/pp_scene.tscn")
+
 # MUST BE in the same order as EngineTypeIds
-var powerplants_scenes: Array[PackedScene] = [
-	preload("res://scenes/powerplants/pp_gas/pp_gas.tscn"), # Solar
-	preload("res://scenes/powerplants/pp_gas/pp_gas.tscn"), # Wind
-	preload("res://scenes/powerplants/pp_gas/pp_gas.tscn"), # Gas
-	preload("res://scenes/powerplants/pp_gas/pp_gas.tscn"), # Waste
-	preload("res://scenes/powerplants/pp_gas/pp_gas.tscn"), # Biomass
-	preload("res://scenes/powerplants/pp_gas/pp_gas.tscn"), # Biogas
-	preload("res://scenes/powerplants/pp_gas/pp_gas.tscn"), # Nuclear
-	preload("res://scenes/powerplants/pp_gas/pp_gas.tscn"), # Carbon sequestration
-	preload("res://scenes/powerplants/pp_gas/pp_gas.tscn"), # Hydro
-	preload("res://scenes/powerplants/pp_gas/pp_gas.tscn"), # River 
+var powerplants_textures_on: Array[Image] = [
+	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_on_solar.png"), # Solar
+	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_on_wind.png"), # Wind
+	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_on_gas.png"), # Gas
+	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_on_waste.png"), # Waste
+	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_on_biomass.png"), # Biomass
+	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_on_biogas.png"), # Biogas
+	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_on_nuclear.png"), # Nuclear
+	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_on_carbon_sequestration.png"), # Carbon sequestration
+	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_on_hydro.png"), # Hydro
+	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_on_river.png"), # River 
+]
+
+# MUST BE in the same order as EngineTypeIds
+var powerplants_textures_off: Array[Image] = [
+	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_on_solar.png"), # Solar
+	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_on_wind.png"), # Wind
+	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_on_gas.png"), # Gas
+	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_on_waste.png"), # Waste
+	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_on_biomass.png"), # Biomass
+	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_on_biogas.png"), # Biogas
+	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_on_nuclear.png"), # Nuclear
+	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_on_carbon_sequestration.png"), # Carbon sequestration
+	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_on_hydro.png"), # Hydro
+	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_on_river.png"), # River 
 ]
 
 # MUST BE in the same order as EngineTypeIds
@@ -230,6 +249,6 @@ func _store_powerplant_metrics(engine_type_id: EngineTypeIds):
 	
 	var metrics = PowerplantMetrics.new(engine_type_id, capacity, cnv_capacity,
 			emissions, land_use, production_cost, availability, building_costs,
-			build_time_in_turns, life_time_in_turns, false)
+			build_time_in_turns, life_time_in_turns, false, true)
 			
 	powerplants_metrics[engine_type_id] = metrics

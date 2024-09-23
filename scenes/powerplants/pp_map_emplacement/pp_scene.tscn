@@ -1,697 +1,51 @@
-[gd_scene load_steps=40 format=3 uid="uid://vaxkewvk14v6"]
+[gd_scene load_steps=37 format=3 uid="uid://vaxkewvk14v6"]
 
-[ext_resource type="Texture2D" uid="uid://cigv4d5ij1ymx" path="res://assets/used_assets/textures/powerplants/pp_sprite_on_gas.png" id="1_m4t54"]
-[ext_resource type="Script" path="res://src/gdscript/powerplants/powerplant.gd" id="1_trefd"]
-[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_gas/on_texture_button.gd" id="2_sr1pj"]
-[ext_resource type="Texture2D" uid="uid://blskwje2kl2w5" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0000_Smoke-1.png" id="3_01gn6"]
-[ext_resource type="Texture2D" uid="uid://cehdhadcxkehx" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0001_Smoke-2.png" id="4_ybrwi"]
-[ext_resource type="Texture2D" uid="uid://7igraqqaltxx" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0002_Smoke-3.png" id="5_fxb3v"]
-[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_gas/off_texture_button.gd" id="6_uvqxp"]
-[ext_resource type="PackedScene" uid="uid://chpn7t75mmbkh" path="res://scenes/buttons/button_close.tscn" id="7_qfinj"]
-[ext_resource type="Texture2D" uid="uid://bk3lb51erle8l" path="res://assets/used_assets/textures/backplates/backplate_1.png" id="9_hgra0"]
-[ext_resource type="FontFile" uid="uid://domoiqitlbtwi" path="res://assets/used_assets/fonts/llewie/Llewie.ttf" id="10_ly52y"]
-[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_gas/info_frame/info_frame.gd" id="10_tpsg8"]
-[ext_resource type="Texture2D" uid="uid://cd23afs6x11al" path="res://assets/used_assets/textures/screens/screen_1.png" id="11_rm4vs"]
-[ext_resource type="Texture2D" uid="uid://b76v2w1on0f0u" path="res://assets/used_assets/textures/icons/chalk_money.png" id="12_ss1b0"]
-[ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="13_w0xii"]
-[ext_resource type="Texture2D" uid="uid://bpt1e486wuscd" path="res://assets/used_assets/textures/icons/chalk_emission.png" id="14_1mk3c"]
-[ext_resource type="Texture2D" uid="uid://1esf36575js0" path="res://assets/used_assets/textures/icons/chalk_land_use.png" id="15_u2ts6"]
-[ext_resource type="Texture2D" uid="uid://cischtrjvknyl" path="res://assets/used_assets/textures/icons/sticker_winter.png" id="16_sj80r"]
-[ext_resource type="Texture2D" uid="uid://od33hjtqpm14" path="res://assets/used_assets/textures/digit_panels/num_hole.png" id="17_07hlh"]
-[ext_resource type="Texture2D" uid="uid://bobwaj4wxr0fj" path="res://assets/used_assets/textures/digit_panels/num_counter.png" id="18_sn01x"]
-[ext_resource type="FontFile" uid="uid://dxtsp51pqna2o" path="res://assets/Fonts/static/OpenSans-Bold.ttf" id="19_q1dv5"]
-[ext_resource type="Texture2D" uid="uid://bsa55enbm5cwg" path="res://assets/used_assets/textures/icons/sticker_summer.png" id="20_b3l8u"]
-[ext_resource type="FontFile" uid="uid://bwuskgw4ek8y" path="res://assets/Fonts/static/OpenSans-Medium.ttf" id="21_fnlyj"]
-[ext_resource type="PackedScene" uid="uid://fyc7mfdq5sh5" path="res://scenes/buttons/button_plus.tscn" id="21_fno5s"]
-[ext_resource type="Texture2D" uid="uid://cdn0h6b873gbk" path="res://assets/UI Elements/Build_Menu_counter_yellow-1.png" id="22_x7sl3"]
-[ext_resource type="Texture2D" uid="uid://bmka8bclye0ff" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0009_Counter-hole-1-slot.png" id="23_7to5d"]
-[ext_resource type="Texture2D" uid="uid://dwys7y27kiabl" path="res://assets/UI Elements/Import-Switch-On.png" id="26_qxn06"]
-[ext_resource type="PackedScene" uid="uid://2ddxars5xyyd" path="res://scenes/buttons/button_minus.tscn" id="27_f2vka"]
-[ext_resource type="Texture2D" uid="uid://dhxkhfg2qxlgx" path="res://assets/UI Elements/Import-Switch-Off.png" id="27_nnenv"]
-[ext_resource type="Texture2D" uid="uid://cy2dqdgln1uij" path="res://assets/UI Elements/LED-Off.png" id="28_icv7p"]
-[ext_resource type="Texture2D" uid="uid://bdifhvhbdals5" path="res://assets/UI Elements/LED-On.png" id="29_24ug7"]
-[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_gas/info_frame/animation_player.gd" id="31_uv2in"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/pp_scene.gd" id="1_aeq33"]
+[ext_resource type="Shader" path="res://src/gdscript/shaders/outline.gdshader" id="2_ln53j"]
+[ext_resource type="Texture2D" uid="uid://eou3fo8c40ne" path="res://assets/used_assets/textures/powerplants/pp_sprite_on_waste.png" id="2_qlphv"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/on_texture_button.gd" id="3_wyk15"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/delete_button.gd" id="5_qmmyq"]
+[ext_resource type="PackedScene" uid="uid://chpn7t75mmbkh" path="res://scenes/buttons/button_close.tscn" id="7_peksn"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/off_texture_button.gd" id="8_qcoih"]
+[ext_resource type="Texture2D" uid="uid://bk3lb51erle8l" path="res://assets/used_assets/textures/backplates/backplate_1.png" id="9_t41l1"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/info_frame.gd" id="10_f6a2e"]
+[ext_resource type="FontFile" uid="uid://domoiqitlbtwi" path="res://assets/used_assets/fonts/llewie/Llewie.ttf" id="11_22hcs"]
+[ext_resource type="Texture2D" uid="uid://cd23afs6x11al" path="res://assets/used_assets/textures/screens/screen_1.png" id="12_qiat4"]
+[ext_resource type="Texture2D" uid="uid://b76v2w1on0f0u" path="res://assets/used_assets/textures/icons/chalk_money.png" id="13_088gv"]
+[ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="14_nud8r"]
+[ext_resource type="Texture2D" uid="uid://bpt1e486wuscd" path="res://assets/used_assets/textures/icons/chalk_emission.png" id="15_ro3in"]
+[ext_resource type="Texture2D" uid="uid://1esf36575js0" path="res://assets/used_assets/textures/icons/chalk_land_use.png" id="16_7j4y8"]
+[ext_resource type="Texture2D" uid="uid://cischtrjvknyl" path="res://assets/used_assets/textures/icons/sticker_winter.png" id="17_3npoq"]
+[ext_resource type="Texture2D" uid="uid://od33hjtqpm14" path="res://assets/used_assets/textures/digit_panels/num_hole.png" id="18_tr7ia"]
+[ext_resource type="Texture2D" uid="uid://bobwaj4wxr0fj" path="res://assets/used_assets/textures/digit_panels/num_counter.png" id="19_jebe2"]
+[ext_resource type="FontFile" uid="uid://dxtsp51pqna2o" path="res://assets/Fonts/static/OpenSans-Bold.ttf" id="20_pg4ln"]
+[ext_resource type="Texture2D" uid="uid://bsa55enbm5cwg" path="res://assets/used_assets/textures/icons/sticker_summer.png" id="21_ikos6"]
+[ext_resource type="PackedScene" uid="uid://fyc7mfdq5sh5" path="res://scenes/buttons/button_plus.tscn" id="22_imnx4"]
+[ext_resource type="PackedScene" uid="uid://2ddxars5xyyd" path="res://scenes/buttons/button_minus.tscn" id="23_e0l3t"]
+[ext_resource type="FontFile" uid="uid://bwuskgw4ek8y" path="res://assets/Fonts/static/OpenSans-Medium.ttf" id="24_xedn0"]
+[ext_resource type="Texture2D" uid="uid://cdn0h6b873gbk" path="res://assets/UI Elements/Build_Menu_counter_yellow-1.png" id="25_8lcse"]
+[ext_resource type="Texture2D" uid="uid://bmka8bclye0ff" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0009_Counter-hole-1-slot.png" id="26_0mvvx"]
+[ext_resource type="Texture2D" uid="uid://dwys7y27kiabl" path="res://assets/UI Elements/Import-Switch-On.png" id="27_hrhql"]
+[ext_resource type="Texture2D" uid="uid://dhxkhfg2qxlgx" path="res://assets/UI Elements/Import-Switch-Off.png" id="28_8uysp"]
+[ext_resource type="Texture2D" uid="uid://cy2dqdgln1uij" path="res://assets/UI Elements/LED-Off.png" id="29_bhvoq"]
+[ext_resource type="Texture2D" uid="uid://bdifhvhbdals5" path="res://assets/UI Elements/LED-On.png" id="30_hejn8"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/animation_player.gd" id="31_6iqfa"]
 
-[sub_resource type="Animation" id="Animation_q0r05"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Cloud4:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1e-05, 1e-05)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Cloud2:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1e-05, 1e-05)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Cloud3:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1e-05, 1e-05)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Cloud:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1e-05, 1e-05)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Cloud5:skew")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-0.141372]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Cloud6:scale")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1e-05, 1e-05)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Cloud:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(323, 78.5)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Cloud2:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(272, 46.5)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Cloud3:position")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(308, 65.5)]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Cloud4:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(378, 109.5)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("Cloud5:position")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(380, 93.5)]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("Cloud6:position")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(344, 100.5)]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("Cloud5:scale")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("Cloud:modulate")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.333333, 0.333333, 0.333333, 0.784314)]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("Cloud2:modulate")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.333333, 0.333333, 0.333333, 0.784314)]
-}
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("Cloud3:modulate")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.333333, 0.333333, 0.333333, 0.784314)]
-}
-tracks/16/type = "value"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("Cloud4:modulate")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.333333, 0.333333, 0.333333, 0.784314)]
-}
-tracks/17/type = "value"
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/path = NodePath("Cloud5:modulate")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.333333, 0.333333, 0.333333, 0.784314)]
-}
-tracks/18/type = "value"
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/path = NodePath("Cloud6:modulate")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.333333, 0.333333, 0.333333, 0.784314)]
-}
-
-[sub_resource type="Animation" id="Animation_qonkf"]
-resource_name = "smoke"
-length = 5.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Cloud4:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(3, 3.9, 5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(1e-05, 1e-05), Vector2(1, 1), Vector2(1e-05, 1e-05)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Cloud2:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(1, 2.2, 3.8),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(1e-05, 1e-05), Vector2(1, 1), Vector2(1e-05, 1e-05)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Cloud3:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.6, 3.3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(1e-05, 1e-05), Vector2(1, 1), Vector2(1e-05, 1e-05)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Cloud:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1, 3.9),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(1e-05, 1e-05), Vector2(1, 1), Vector2(1e-05, 1e-05)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Cloud5:skew")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 1.2, 2.4, 3.9, 5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, -0.141372, 0.102974, -0.141372, 0.102974]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Cloud6:scale")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 1.8, 1.9, 5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1e-05, 1e-05), Vector2(1e-05, 1e-05), Vector2(1, 1)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Cloud:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(323, 78.5), Vector2(324, 26.5)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Cloud2:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(1, 4.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(272, 27.5), Vector2(271, -14.5)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Cloud3:position")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(306, 27.5), Vector2(306, -37.5)]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Cloud4:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(378, 109.5), Vector2(380, 14.5)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("Cloud5:position")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(380, 93.5), Vector2(382, 8.5)]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("Cloud6:position")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0, 1.8, 1.9, 5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(335, -6.5), Vector2(340, -63.5), Vector2(343, 97.5), Vector2(335, -6.5)]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("Cloud5:scale")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0, 1.5, 3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(1e-05, 1e-05), Vector2(1, 1), Vector2(1e-05, 1e-05)]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("Cloud:modulate")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0, 1, 3.9),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(0.333333, 0.333333, 0.333333, 0), Color(0.333333, 0.333333, 0.333333, 0.784314), Color(0.333333, 0.333333, 0.333333, 0)]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("Cloud2:modulate")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"times": PackedFloat32Array(1, 2.2, 3.8),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(0.333333, 0.333333, 0.333333, 0), Color(0.333333, 0.333333, 0.333333, 0.784314), Color(0.333333, 0.333333, 0.333333, 0)]
-}
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("Cloud3:modulate")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
-"times": PackedFloat32Array(0, 1.6, 3.3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(0.333333, 0.333333, 0.333333, 0), Color(0.333333, 0.333333, 0.333333, 0.784314), Color(0.333333, 0.333333, 0.333333, 0)]
-}
-tracks/16/type = "value"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("Cloud4:modulate")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
-"times": PackedFloat32Array(3, 3.9, 5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(0.333333, 0.333333, 0.333333, 0), Color(0.333333, 0.333333, 0.333333, 0.784314), Color(0.333333, 0.333333, 0.333333, 0)]
-}
-tracks/17/type = "value"
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/path = NodePath("Cloud5:modulate")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/keys = {
-"times": PackedFloat32Array(0, 1.5, 3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(0.333333, 0.333333, 0.333333, 0), Color(0.333333, 0.333333, 0.333333, 0.784314), Color(0.333333, 0.333333, 0.333333, 0)]
-}
-tracks/18/type = "value"
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/path = NodePath("Cloud6:modulate")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/keys = {
-"times": PackedFloat32Array(0, 1.9, 5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(0.333333, 0.333333, 0.333333, 0.784314), Color(0.333333, 0.333333, 0.333333, 0), Color(0.333333, 0.333333, 0.333333, 0.784314)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_wuk7f"]
-_data = {
-"RESET": SubResource("Animation_q0r05"),
-"smoke": SubResource("Animation_qonkf")
-}
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rxno2"]
+resource_local_to_scene = true
+shader = ExtResource("2_ln53j")
+shader_parameter/line_color = Vector4(1, 1, 1, 1)
+shader_parameter/line_thickness = 1.0
+shader_parameter/frequency = 10.0
+shader_parameter/phase_speed = 1.0
+shader_parameter/show = false
 
 [sub_resource type="FontVariation" id="FontVariation_n1hys"]
-base_font = ExtResource("19_q1dv5")
+base_font = ExtResource("20_pg4ln")
 spacing_glyph = 6
 
 [sub_resource type="FontVariation" id="FontVariation_e3u58"]
-base_font = ExtResource("21_fnlyj")
-
-[sub_resource type="Animation" id="Animation_7s5wq"]
-resource_name = "show_modifiers"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Modifier/PriceLabel:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(2, 2), Vector2(2, 2), Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Modifier/WinterLabel:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(2, 2), Vector2(1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Modifier/PriceLabel:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Modifier/WinterLabel:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Modifier/SummerLabel:scale")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(2, 2), Vector2(1, 1)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Modifier/SummerLabel:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Screen/VBoxContainer/VBoxContainer/ProductionCosts/Value/Value:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-140, 18), Vector2(-290, 18)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Screen/VBoxContainer/VBoxContainer/Pollution/Value/Value:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-140, 20), Vector2(-290, 20)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Screen/VBoxContainer/VBoxContainer/LandUse/Value/Value:position")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-140, 22), Vector2(-290, 22)]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Modifier/ProdLabel:visible")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("Modifier/ProdLabel:position")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(160, -376), Vector2(3, -376)]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("Modifier/EmissionLabel:visible")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("Modifier/EmissionLabel:position")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(160, -290), Vector2(3, -290)]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("Modifier/LandUseLabel:visible")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("Modifier/LandUseLabel:position")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(160, -204), Vector2(3, -204)]
-}
+base_font = ExtResource("24_xedn0")
 
 [sub_resource type="Animation" id="Animation_dlo0r"]
 resource_name = "hide_modifiers"
@@ -877,106 +231,252 @@ tracks/14/keys = {
 "values": [Vector2(3, -204), Vector2(160, -204)]
 }
 
+[sub_resource type="Animation" id="Animation_7s5wq"]
+resource_name = "show_modifiers"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Modifier/PriceLabel:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(2, 2), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Modifier/WinterLabel:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Modifier/PriceLabel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Modifier/WinterLabel:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Modifier/SummerLabel:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Modifier/SummerLabel:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Screen/VBoxContainer/VBoxContainer/ProductionCosts/Value/Value:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-140, 18), Vector2(-290, 18)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Screen/VBoxContainer/VBoxContainer/Pollution/Value/Value:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-140, 20), Vector2(-290, 20)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Screen/VBoxContainer/VBoxContainer/LandUse/Value/Value:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-140, 22), Vector2(-290, 22)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Modifier/ProdLabel:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Modifier/ProdLabel:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(160, -376), Vector2(3, -376)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Modifier/EmissionLabel:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Modifier/EmissionLabel:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(160, -290), Vector2(3, -290)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Modifier/LandUseLabel:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Modifier/LandUseLabel:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(160, -204), Vector2(3, -204)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gcppt"]
 _data = {
 "hide_modifiers": SubResource("Animation_dlo0r"),
 "show_modifiers": SubResource("Animation_7s5wq")
 }
 
-[node name="PpGas" type="Control" groups=["Powerplants"]]
+[node name="PpScene" type="Control" groups=["Powerplants"]]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_trefd")
+script = ExtResource("1_aeq33")
 
 [node name="On" type="TextureButton" parent="." groups=["pp_sprites"]]
-layout_mode = 1
-offset_right = 504.0
-offset_bottom = 429.0
+material = SubResource("ShaderMaterial_rxno2")
+layout_mode = 0
+offset_right = 701.0
+offset_bottom = 512.0
 scale = Vector2(1.3, 1.3)
-pivot_offset = Vector2(252, 215)
-texture_normal = ExtResource("1_m4t54")
-script = ExtResource("2_sr1pj")
+pivot_offset = Vector2(350.5, 256)
+toggle_mode = true
+texture_normal = ExtResource("2_qlphv")
+script = ExtResource("3_wyk15")
 
-[node name="Cloud" type="Sprite2D" parent="On"]
-modulate = Color(0.333333, 0.333333, 0.333333, 0.784314)
-position = Vector2(323, 78.5)
-scale = Vector2(1e-05, 1e-05)
-texture = ExtResource("3_01gn6")
-
-[node name="Cloud2" type="Sprite2D" parent="On"]
-modulate = Color(0.333333, 0.333333, 0.333333, 0.784314)
-position = Vector2(272, 46.5)
-scale = Vector2(1e-05, 1e-05)
-texture = ExtResource("4_ybrwi")
-
-[node name="Cloud3" type="Sprite2D" parent="On"]
-modulate = Color(0.333333, 0.333333, 0.333333, 0.784314)
-position = Vector2(308, 65.5)
-scale = Vector2(1e-05, 1e-05)
-texture = ExtResource("5_fxb3v")
-
-[node name="Cloud4" type="Sprite2D" parent="On"]
-modulate = Color(0.333333, 0.333333, 0.333333, 0.784314)
-position = Vector2(378, 109.5)
-scale = Vector2(1e-05, 1e-05)
-texture = ExtResource("3_01gn6")
-
-[node name="Cloud5" type="Sprite2D" parent="On"]
-modulate = Color(0.333333, 0.333333, 0.333333, 0.784314)
-position = Vector2(380, 93.5)
-scale = Vector2(1e-05, 1e-05)
-skew = -0.141372
-texture = ExtResource("4_ybrwi")
-
-[node name="Cloud6" type="Sprite2D" parent="On"]
-modulate = Color(0.333333, 0.333333, 0.333333, 0.784314)
-position = Vector2(344, 100.5)
-scale = Vector2(1e-05, 1e-05)
-texture = ExtResource("5_fxb3v")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="On"]
-libraries = {
-"": SubResource("AnimationLibrary_wuk7f")
-}
-autoplay = "smoke"
-
-[node name="CloseButton" parent="On" instance=ExtResource("7_qfinj")]
+[node name="CloseButton" parent="On" instance=ExtResource("7_peksn")]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -55.0
-offset_right = 0.0
-offset_bottom = 54.0
+offset_left = -109.615
+offset_top = 14.6154
+offset_right = -54.6154
+offset_bottom = 68.6154
 grow_horizontal = 0
 scale = Vector2(1.3, 1.3)
+script = ExtResource("5_qmmyq")
 
 [node name="Off" type="TextureButton" parent="." groups=["pp_sprites"]]
 visible = false
-layout_mode = 1
-offset_right = 504.0
-offset_bottom = 429.0
+layout_mode = 0
 scale = Vector2(1.3, 1.3)
-pivot_offset = Vector2(252, 215)
-texture_normal = ExtResource("1_m4t54")
-script = ExtResource("6_uvqxp")
+pivot_offset = Vector2(350.5, 256)
+texture_normal = ExtResource("2_qlphv")
+script = ExtResource("8_qcoih")
 
 [node name="InfoFrame" type="TextureRect" parent="." groups=["pp_info_frames"]]
 visible = false
 layout_mode = 1
-anchors_preset = 2
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -346.0
-offset_top = -978.0
-offset_right = 871.0
-offset_bottom = -159.0
+offset_left = -247.5
+offset_top = -887.0
+offset_right = 969.5
+offset_bottom = -68.0
+grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(1.3, 1.3)
 pivot_offset = Vector2(608, 819)
 mouse_filter = 0
-texture = ExtResource("9_hgra0")
-script = ExtResource("10_tpsg8")
+texture = ExtResource("9_t41l1")
+script = ExtResource("10_f6a2e")
 
 [node name="PlantName" type="Label" parent="InfoFrame"]
 layout_mode = 1
@@ -989,7 +489,7 @@ offset_right = 504.0
 offset_bottom = 79.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 0.752941)
-theme_override_fonts/font = ExtResource("10_ly52y")
+theme_override_fonts/font = ExtResource("11_22hcs")
 theme_override_font_sizes/font_size = 43
 text = "Plant name"
 horizontal_alignment = 1
@@ -1007,7 +507,7 @@ offset_right = 515.0
 offset_bottom = 102.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_rm4vs")
+texture = ExtResource("12_qiat4")
 expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="InfoFrame/Screen"]
@@ -1034,13 +534,13 @@ size_flags_vertical = 0
 modulate = Color(1, 0.541176, 0.596078, 0.517647)
 position = Vector2(48, 44)
 scale = Vector2(1.3, 1.3)
-texture = ExtResource("12_ss1b0")
+texture = ExtResource("13_088gv")
 
 [node name="IconBlue" type="Sprite2D" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/ProductionCosts/Title"]
 modulate = Color(0.219608, 0.756863, 0.788235, 1)
 position = Vector2(46, 43)
 scale = Vector2(1.3, 1.3)
-texture = ExtResource("12_ss1b0")
+texture = ExtResource("13_088gv")
 
 [node name="Label" type="Label" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/ProductionCosts/Title"]
 layout_mode = 2
@@ -1049,7 +549,7 @@ offset_top = 16.0
 offset_right = 284.0
 offset_bottom = 66.0
 size_flags_horizontal = 0
-theme = ExtResource("13_w0xii")
+theme = ExtResource("14_nud8r")
 theme_type_variation = &"Screen"
 theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
 theme_override_constants/shadow_offset_x = 2
@@ -1074,7 +574,7 @@ grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-theme = ExtResource("13_w0xii")
+theme = ExtResource("14_nud8r")
 theme_type_variation = &"Screen"
 theme_override_colors/font_color = Color(1, 0.129412, 0.207843, 1)
 theme_override_font_sizes/font_size = 50
@@ -1091,13 +591,13 @@ layout_mode = 2
 modulate = Color(1, 0.541176, 0.596078, 0.517647)
 position = Vector2(48, 44)
 scale = Vector2(1.2, 1.2)
-texture = ExtResource("14_1mk3c")
+texture = ExtResource("15_ro3in")
 
 [node name="IconBlue" type="Sprite2D" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/Pollution/Title"]
 modulate = Color(0.219608, 0.756863, 0.788235, 1)
 position = Vector2(46, 43.0001)
 scale = Vector2(1.2, 1.2)
-texture = ExtResource("14_1mk3c")
+texture = ExtResource("15_ro3in")
 
 [node name="Label" type="Label" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/Pollution/Title"]
 layout_mode = 2
@@ -1106,7 +606,7 @@ offset_top = 20.0
 offset_right = 284.0
 offset_bottom = 70.0
 size_flags_horizontal = 0
-theme = ExtResource("13_w0xii")
+theme = ExtResource("14_nud8r")
 theme_type_variation = &"Screen"
 theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
 theme_override_constants/shadow_offset_x = 2
@@ -1130,7 +630,7 @@ offset_bottom = 70.0
 grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 8
-theme = ExtResource("13_w0xii")
+theme = ExtResource("14_nud8r")
 theme_type_variation = &"Screen"
 theme_override_colors/font_color = Color(1, 0.129412, 0.207843, 1)
 theme_override_font_sizes/font_size = 50
@@ -1147,13 +647,13 @@ layout_mode = 2
 modulate = Color(1, 0.541176, 0.596078, 0.517647)
 position = Vector2(48, 44)
 scale = Vector2(1.15, 1.15)
-texture = ExtResource("15_u2ts6")
+texture = ExtResource("16_7j4y8")
 
 [node name="IconBlue" type="Sprite2D" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/LandUse/Title"]
 modulate = Color(0.219608, 0.756863, 0.788235, 1)
 position = Vector2(46, 43)
 scale = Vector2(1.15, 1.15)
-texture = ExtResource("15_u2ts6")
+texture = ExtResource("16_7j4y8")
 
 [node name="Label" type="Label" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/LandUse/Title"]
 layout_mode = 2
@@ -1162,7 +662,7 @@ offset_top = 19.0
 offset_right = 264.0
 offset_bottom = 69.0
 size_flags_horizontal = 0
-theme = ExtResource("13_w0xii")
+theme = ExtResource("14_nud8r")
 theme_type_variation = &"Screen"
 theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
 theme_override_constants/shadow_offset_x = 2
@@ -1186,7 +686,7 @@ offset_bottom = 72.0
 grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 8
-theme = ExtResource("13_w0xii")
+theme = ExtResource("14_nud8r")
 theme_type_variation = &"Screen"
 theme_override_colors/font_color = Color(1, 0.129412, 0.207843, 1)
 theme_override_font_sizes/font_size = 50
@@ -1195,7 +695,7 @@ horizontal_alignment = 2
 
 [node name="LifeSpan" type="Label" parent="InfoFrame/Screen/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("13_w0xii")
+theme = ExtResource("14_nud8r")
 theme_type_variation = &"Screen"
 theme_override_colors/font_color = Color(0.932727, 0.41041, 0.257221, 1)
 theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
@@ -1233,7 +733,7 @@ theme_override_constants/separation = 29
 [node name="IconWinter" type="TextureRect" parent="InfoFrame/Energy/HBoxContainer/Winter/HBoxContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("16_sj80r")
+texture = ExtResource("17_3npoq")
 expand_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="InfoFrame/Energy/HBoxContainer/Winter/HBoxContainer"]
@@ -1244,22 +744,22 @@ size_flags_vertical = 4
 [node name="NumHole" type="Sprite2D" parent="InfoFrame/Energy/HBoxContainer/Winter/HBoxContainer/MarginContainer"]
 position = Vector2(61.5, 36.5)
 scale = Vector2(3.32609, 2.31429)
-texture = ExtResource("17_07hlh")
+texture = ExtResource("18_tr7ia")
 
 [node name="NumCounter" type="Sprite2D" parent="InfoFrame/Energy/HBoxContainer/Winter/HBoxContainer/MarginContainer"]
 position = Vector2(12.5, 35)
 scale = Vector2(2.36842, 2.28571)
-texture = ExtResource("18_sn01x")
+texture = ExtResource("19_jebe2")
 
 [node name="NumCounter2" type="Sprite2D" parent="InfoFrame/Energy/HBoxContainer/Winter/HBoxContainer/MarginContainer"]
 position = Vector2(58.5, 35)
 scale = Vector2(2.36842, 2.28571)
-texture = ExtResource("18_sn01x")
+texture = ExtResource("19_jebe2")
 
 [node name="NumCounter3" type="Sprite2D" parent="InfoFrame/Energy/HBoxContainer/Winter/HBoxContainer/MarginContainer"]
 position = Vector2(104.5, 35)
 scale = Vector2(2.36842, 2.28571)
-texture = ExtResource("18_sn01x")
+texture = ExtResource("19_jebe2")
 
 [node name="Value" type="HBoxContainer" parent="InfoFrame/Energy/HBoxContainer/Winter/HBoxContainer/MarginContainer"]
 layout_mode = 2
@@ -1269,7 +769,7 @@ theme_override_constants/separation = 17
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
-theme = ExtResource("13_w0xii")
+theme = ExtResource("14_nud8r")
 theme_override_fonts/font = SubResource("FontVariation_n1hys")
 theme_override_font_sizes/font_size = 50
 text = "0"
@@ -1279,7 +779,7 @@ horizontal_alignment = 2
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
-theme = ExtResource("13_w0xii")
+theme = ExtResource("14_nud8r")
 theme_override_fonts/font = SubResource("FontVariation_n1hys")
 theme_override_font_sizes/font_size = 50
 text = "0"
@@ -1289,7 +789,7 @@ horizontal_alignment = 2
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
-theme = ExtResource("13_w0xii")
+theme = ExtResource("14_nud8r")
 theme_override_fonts/font = SubResource("FontVariation_n1hys")
 theme_override_font_sizes/font_size = 50
 text = "0"
@@ -1307,7 +807,7 @@ theme_override_constants/separation = 29
 [node name="IconSummer" type="TextureRect" parent="InfoFrame/Energy/HBoxContainer/Summer/HBoxContainer"]
 custom_minimum_size = Vector2(102, 100)
 layout_mode = 2
-texture = ExtResource("20_b3l8u")
+texture = ExtResource("21_ikos6")
 expand_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="InfoFrame/Energy/HBoxContainer/Summer/HBoxContainer"]
@@ -1318,22 +818,22 @@ size_flags_vertical = 4
 [node name="NumHole" type="Sprite2D" parent="InfoFrame/Energy/HBoxContainer/Summer/HBoxContainer/MarginContainer"]
 position = Vector2(61.5, 36.5)
 scale = Vector2(3.32609, 2.31429)
-texture = ExtResource("17_07hlh")
+texture = ExtResource("18_tr7ia")
 
 [node name="NumCounter" type="Sprite2D" parent="InfoFrame/Energy/HBoxContainer/Summer/HBoxContainer/MarginContainer"]
 position = Vector2(12.5, 35)
 scale = Vector2(2.36842, 2.28571)
-texture = ExtResource("18_sn01x")
+texture = ExtResource("19_jebe2")
 
 [node name="NumCounter2" type="Sprite2D" parent="InfoFrame/Energy/HBoxContainer/Summer/HBoxContainer/MarginContainer"]
 position = Vector2(58.5, 35)
 scale = Vector2(2.36842, 2.28571)
-texture = ExtResource("18_sn01x")
+texture = ExtResource("19_jebe2")
 
 [node name="NumCounter3" type="Sprite2D" parent="InfoFrame/Energy/HBoxContainer/Summer/HBoxContainer/MarginContainer"]
 position = Vector2(104.5, 35)
 scale = Vector2(2.36842, 2.28571)
-texture = ExtResource("18_sn01x")
+texture = ExtResource("19_jebe2")
 
 [node name="Value" type="HBoxContainer" parent="InfoFrame/Energy/HBoxContainer/Summer/HBoxContainer/MarginContainer"]
 layout_mode = 2
@@ -1343,7 +843,7 @@ theme_override_constants/separation = 17
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
-theme = ExtResource("13_w0xii")
+theme = ExtResource("14_nud8r")
 theme_override_fonts/font = SubResource("FontVariation_n1hys")
 theme_override_font_sizes/font_size = 50
 text = "0"
@@ -1353,7 +853,7 @@ horizontal_alignment = 2
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
-theme = ExtResource("13_w0xii")
+theme = ExtResource("14_nud8r")
 theme_override_fonts/font = SubResource("FontVariation_n1hys")
 theme_override_font_sizes/font_size = 50
 text = "0"
@@ -1363,7 +863,7 @@ horizontal_alignment = 2
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
-theme = ExtResource("13_w0xii")
+theme = ExtResource("14_nud8r")
 theme_override_fonts/font = SubResource("FontVariation_n1hys")
 theme_override_font_sizes/font_size = 50
 text = "0"
@@ -1380,7 +880,7 @@ size_flags_horizontal = 8
 size_flags_vertical = 0
 color = Color(0.596078, 0.596078, 0.596078, 0)
 
-[node name="ButtonPlus" parent="InfoFrame/Modifier" instance=ExtResource("21_fno5s")]
+[node name="ButtonPlus" parent="InfoFrame/Modifier" instance=ExtResource("22_imnx4")]
 layout_mode = 0
 offset_left = 96.3079
 offset_top = 28.0
@@ -1389,7 +889,7 @@ offset_bottom = 86.0
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="ButtonMinus" parent="InfoFrame/Modifier" instance=ExtResource("27_f2vka")]
+[node name="ButtonMinus" parent="InfoFrame/Modifier" instance=ExtResource("23_e0l3t")]
 layout_mode = 0
 offset_left = 97.3079
 offset_top = 124.0
@@ -1415,13 +915,13 @@ vertical_alignment = 1
 show_behind_parent = true
 position = Vector2(12, 35)
 scale = Vector2(2.69298, 2.08844)
-texture = ExtResource("22_x7sl3")
+texture = ExtResource("25_8lcse")
 
 [node name="Sprite2D2" type="Sprite2D" parent="InfoFrame/Modifier/MultAmount/Sprite2D"]
 show_behind_parent = true
 position = Vector2(0.65669, 0.311806)
 scale = Vector2(0.904762, 0.958183)
-texture = ExtResource("23_7to5d")
+texture = ExtResource("26_0mvvx")
 
 [node name="PriceLabel" type="Label" parent="InfoFrame/Modifier"]
 visible = false
@@ -1440,7 +940,7 @@ grow_vertical = 2
 rotation = -0.150098
 scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(0.830861, 0, 0.162109, 1)
-theme_override_fonts/font = ExtResource("19_q1dv5")
+theme_override_fonts/font = ExtResource("20_pg4ln")
 theme_override_font_sizes/font_size = 54
 text = "+ 00 CHF"
 horizontal_alignment = 1
@@ -1464,7 +964,7 @@ grow_vertical = 2
 rotation = -0.115072
 scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(0.830861, 0, 0.162109, 1)
-theme_override_fonts/font = ExtResource("19_q1dv5")
+theme_override_fonts/font = ExtResource("20_pg4ln")
 theme_override_font_sizes/font_size = 54
 text = "+ 00.00"
 horizontal_alignment = 1
@@ -1488,7 +988,7 @@ grow_vertical = 2
 rotation = -0.115072
 scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(0.830861, 0, 0.162109, 1)
-theme_override_fonts/font = ExtResource("19_q1dv5")
+theme_override_fonts/font = ExtResource("20_pg4ln")
 theme_override_font_sizes/font_size = 54
 text = "+ 00.00"
 horizontal_alignment = 1
@@ -1511,7 +1011,7 @@ grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-theme = ExtResource("13_w0xii")
+theme = ExtResource("14_nud8r")
 theme_type_variation = &"Screen"
 theme_override_colors/font_color = Color(1, 0.129412, 0.207843, 1)
 theme_override_font_sizes/font_size = 50
@@ -1534,7 +1034,7 @@ grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-theme = ExtResource("13_w0xii")
+theme = ExtResource("14_nud8r")
 theme_type_variation = &"Screen"
 theme_override_colors/font_color = Color(1, 0.129412, 0.207843, 1)
 theme_override_font_sizes/font_size = 50
@@ -1557,7 +1057,7 @@ grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-theme = ExtResource("13_w0xii")
+theme = ExtResource("14_nud8r")
 theme_type_variation = &"Screen"
 theme_override_colors/font_color = Color(1, 0.129412, 0.207843, 1)
 theme_override_font_sizes/font_size = 50
@@ -1577,10 +1077,10 @@ grow_horizontal = 0
 scale = Vector2(2, 2)
 focus_mode = 0
 mouse_default_cursor_shape = 2
-theme_override_icons/checked = ExtResource("26_qxn06")
-theme_override_icons/checked_disabled = ExtResource("26_qxn06")
-theme_override_icons/unchecked = ExtResource("27_nnenv")
-theme_override_icons/unchecked_disabled = ExtResource("27_nnenv")
+theme_override_icons/checked = ExtResource("27_hrhql")
+theme_override_icons/checked_disabled = ExtResource("27_hrhql")
+theme_override_icons/unchecked = ExtResource("28_8uysp")
+theme_override_icons/unchecked_disabled = ExtResource("28_8uysp")
 button_pressed = true
 action_mode = 0
 keep_pressed_outside = true
@@ -1591,23 +1091,30 @@ expand_icon = true
 [node name="LedOff" type="Sprite2D" parent="InfoFrame"]
 position = Vector2(1010.33, 69)
 scale = Vector2(2, 2)
-texture = ExtResource("28_icv7p")
+texture = ExtResource("29_bhvoq")
 
 [node name="LedOn" type="Sprite2D" parent="InfoFrame"]
 position = Vector2(1010, 69.5)
 scale = Vector2(2, 2)
-texture = ExtResource("29_24ug7")
+texture = ExtResource("30_hejn8")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="InfoFrame"]
 libraries = {
 "": SubResource("AnimationLibrary_gcppt")
 }
-script = ExtResource("31_uv2in")
+script = ExtResource("31_6iqfa")
 
-[connection signal="toggle_info_frame" from="." to="InfoFrame" method="_on_toggle_info_frame"]
+[connection signal="hide_info_frame" from="." to="InfoFrame" method="_on_hide_info_frame"]
+[connection signal="metrics_updated" from="." to="On/CloseButton" method="_on_metrics_updated"]
+[connection signal="show_info_frame" from="." to="InfoFrame" method="_on_show_info_frame"]
+[connection signal="texture_off_changed" from="." to="Off" method="_on_pp_scene_texture_off_changed"]
+[connection signal="texture_on_changed" from="." to="On" method="_on_pp_scene_texture_on_changed"]
+[connection signal="hide_info_frame_requested" from="On" to="." method="_on_on_hide_info_frame_requested"]
 [connection signal="mouse_entered" from="On" to="On" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="On" to="On" method="_on_mouse_exited"]
-[connection signal="pressed" from="On" to="." method="_on_pp_pressed"]
+[connection signal="show_info_frame_requested" from="On" to="." method="_on_on_show_info_frame_requested"]
+[connection signal="toggled" from="On" to="." method="_on_pp_toggled"]
+[connection signal="toggled" from="On" to="On" method="_on_toggled"]
 [connection signal="mouse_entered" from="On/CloseButton" to="On" method="_on_close_button_mouse_entered"]
 [connection signal="mouse_exited" from="On/CloseButton" to="On" method="_on_close_button_mouse_exited"]
 [connection signal="pressed" from="On/CloseButton" to="." method="_on_close_button_pressed"]

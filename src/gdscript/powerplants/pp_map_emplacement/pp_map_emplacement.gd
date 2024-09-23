@@ -63,10 +63,10 @@ func _ready():
 		can_build.push_back(PowerplantsManager.EngineTypeIds.RIVER)
 		
 		
-func _on_bb_normal_pressed():
+func _on_bb_normal_toggled(toggled_on: bool):
 	# The build menu listens to this and emits back a build request with necessary,
 	# data, managed in "_on_powerplant_build_requested" below
-	PowerplantsManager.map_emplacement_pressed.emit(self, can_build)
+	PowerplantsManager.build_button_normal_toggled.emit(toggled_on, self, can_build)
 	
 	
 func _on_powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMetrics):
@@ -76,7 +76,7 @@ func _on_powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMe
 		if metrics.build_time_in_turns > 0:
 			bb_in_construction.show()
 		else:
-			var pp_scene = PowerplantsManager.powerplants_scenes[metrics.type].instantiate()
+			var pp_scene = PowerplantsManager.powerplant_scene.instantiate()
 			add_child(pp_scene)
 			powerplant_node_name = pp_scene.name
 			pp_scene.set_metrics(metrics)
@@ -100,4 +100,5 @@ func _build_on_start(metrics: Array[PowerplantMetrics]):
 	PowerplantsManager.powerplants_metrics_updated.disconnect(_build_on_start)
 	var new_metrics = metrics[build_on_start].copy()
 	new_metrics.build_time_in_turns = 0
+	new_metrics.can_delete = false
 	_on_powerplant_build_requested(self, new_metrics)

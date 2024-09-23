@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cr0xdhpqcjqjd"
-path="res://.godot/imported/bb_in_construction_2.png-2300c50d9b731f96cb5bc376d40272ac.ctex"
+uid="uid://cbqebssavvctr"
+path="res://.godot/imported/pp_sprite_on_carbon_sequestration.png-004d77bf900ff841aed666128fc8e882.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/used_assets/textures/powerplants/bb_in_construction_2.png"
-dest_files=["res://.godot/imported/bb_in_construction_2.png-2300c50d9b731f96cb5bc376d40272ac.ctex"]
+source_file="res://assets/used_assets/textures/powerplants/pp_sprite_on_carbon_sequestration.png"
+dest_files=["res://.godot/imported/pp_sprite_on_carbon_sequestration.png-004d77bf900ff841aed666128fc8e882.ctex"]
 
 [params]
 

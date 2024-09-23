@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://56mnndf1ggaj"
-path="res://.godot/imported/230601_CH_SUREgame_Power-Plants.psd_0010_Nuclear.png-2af4758d1c079ea5067feb2e71a7f4d5.ctex"
+path="res://.godot/imported/pp_sprite_on_nuclear.png-2a6091151022bd6562d608df2ad4ac99.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0010_Nuclear.png"
-dest_files=["res://.godot/imported/230601_CH_SUREgame_Power-Plants.psd_0010_Nuclear.png-2af4758d1c079ea5067feb2e71a7f4d5.ctex"]
+source_file="res://assets/used_assets/textures/powerplants/pp_sprite_on_nuclear.png"
+dest_files=["res://.godot/imported/pp_sprite_on_nuclear.png-2a6091151022bd6562d608df2ad4ac99.ctex"]
 
 [params]
 

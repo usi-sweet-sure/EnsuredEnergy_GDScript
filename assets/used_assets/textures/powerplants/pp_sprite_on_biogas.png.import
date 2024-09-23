@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgbm8t4r0m4a0"
-path="res://.godot/imported/230601_CH_SUREgame_Power-Plants.psd_0025_Solar-1.png-3324237950e52930cf6f47b4ce4c6911.ctex"
+uid="uid://dhlbnxuj2tce7"
+path="res://.godot/imported/pp_sprite_on_biogas.png-95cb58cd9bd60629539144853ef10601.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0025_Solar-1.png"
-dest_files=["res://.godot/imported/230601_CH_SUREgame_Power-Plants.psd_0025_Solar-1.png-3324237950e52930cf6f47b4ce4c6911.ctex"]
+source_file="res://assets/used_assets/textures/powerplants/pp_sprite_on_biogas.png"
+dest_files=["res://.godot/imported/pp_sprite_on_biogas.png-95cb58cd9bd60629539144853ef10601.ctex"]
 
 [params]
 
