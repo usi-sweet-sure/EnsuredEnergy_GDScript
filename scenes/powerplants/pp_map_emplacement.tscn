@@ -13,3 +13,4 @@ script = ExtResource("1_xmidj")
 visible = false
 
 [connection signal="pressed" from="BbNormal" to="." method="_on_bb_normal_pressed"]
+[connection signal="powerplant_cancel_construction_requested" from="BbInConstruction" to="." method="_on_powerplant_cancel_construction_requested"]

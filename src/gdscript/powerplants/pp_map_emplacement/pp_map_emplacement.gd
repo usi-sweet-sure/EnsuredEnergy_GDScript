@@ -1,5 +1,21 @@
 extends Node2D
 
+# Editor will enumerate as 0, 1 and 2.
+# MUST BE in same order as PowerplantManager.EngineTypeIds
+@export_enum(
+	"SOLAR",
+	"WIND",
+	"GAS",
+	"WASTE",
+	"BIOMASS",
+	"BIOGAS",
+	"NUCLEAR",
+	"CARBON_SEQUESTRATION",
+	"HYDRO",
+	"RIVER",
+	"NOTHING"
+) var build_on_start: int = 10 # 10 = Nothing
+
 @export_group("Can Build")
 @export var solar := true
 @export var wind := true
@@ -16,10 +32,14 @@ extends Node2D
 @onready var bb_in_construction = $BbInConstruction
 
 var can_build: Array[PowerplantsManager.EngineTypeIds] = []
-
+var powerplant_node_name: String = ""
 
 func _ready():
 	PowerplantsManager.powerplant_build_requested.connect(_on_powerplant_build_requested)
+	
+	# Will be disconnected after the first call emition
+	if build_on_start != 10: # 10 = Nothing
+		PowerplantsManager.powerplants_metrics_updated.connect(_build_on_start)
 	
 	if solar:
 		can_build.push_back(PowerplantsManager.EngineTypeIds.SOLAR)
@@ -44,6 +64,8 @@ func _ready():
 		
 		
 func _on_bb_normal_pressed():
+	# The build menu listens to this and emits back a build request with necessary,
+	# data, managed in "_on_powerplant_build_requested" below
 	PowerplantsManager.map_emplacement_pressed.emit(self, can_build)
 	
 	
@@ -56,6 +78,26 @@ func _on_powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMe
 		else:
 			var pp_scene = PowerplantsManager.powerplants_scenes[metrics.type].instantiate()
 			add_child(pp_scene)
+			powerplant_node_name = pp_scene.name
 			pp_scene.set_metrics(metrics)
+			pp_scene.powerplant_delete_requested.connect(_on_powerplant_delete_requested)
 			pp_scene.activate()
 			
+
+func _on_powerplant_delete_requested():
+	var node = get_node(powerplant_node_name)
+	remove_child(node)
+	node.queue_free()
+	bb_normal.show()
+
+
+func _on_powerplant_cancel_construction_requested():
+	bb_in_construction.hide()
+	bb_normal.show()
+	
+
+func _build_on_start(metrics: Array[PowerplantMetrics]):
+	PowerplantsManager.powerplants_metrics_updated.disconnect(_build_on_start)
+	var new_metrics = metrics[build_on_start].copy()
+	new_metrics.build_time_in_turns = 0
+	_on_powerplant_build_requested(self, new_metrics)

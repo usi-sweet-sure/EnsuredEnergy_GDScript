@@ -31,6 +31,7 @@ _data = {
 offset_top = 7.0
 offset_right = 591.0
 offset_bottom = 372.0
+rotation = 0.020944
 pivot_offset = Vector2(288, 161)
 texture_normal = ExtResource("1_mtdfr")
 texture_click_mask = ExtResource("2_v7c1n")

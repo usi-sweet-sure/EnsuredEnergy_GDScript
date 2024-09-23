@@ -1,4 +1,4 @@
-[gd_scene load_steps=164 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=161 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/UI Elements/Button-Next-Normal.png" id="2_aobed"]
 [ext_resource type="Texture2D" uid="uid://ccsapuvkqqt1b" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0009_Profile-metal-base.png" id="2_nu7y6"]
@@ -19,7 +19,6 @@
 [ext_resource type="Texture2D" uid="uid://en44frv5c6jy" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0014_graphs-symbol.png" id="9_01q4h"]
 [ext_resource type="Script" path="res://src/gdscript/graphs/open_graphs_frame_button.gd" id="9_xq6mg"]
 [ext_resource type="AudioStream" uid="uid://ben5r72x0p8pr" path="res://assets/Sounds/Move_03.wav" id="10_po2ll"]
-[ext_resource type="Texture2D" uid="uid://bjeebs7uy4hpn" path="res://assets/UI Elements/Button-small-Hole.png" id="11_i0u5d"]
 [ext_resource type="AudioStream" uid="uid://00apgxjmwgw0" path="res://assets/Sounds/Click_020.wav" id="11_tr1n1"]
 [ext_resource type="Texture2D" uid="uid://bu3fwwb31gmuw" path="res://assets/UI Elements/Import_energy-Metal.png" id="19_1inpw"]
 [ext_resource type="Texture2D" uid="uid://bmjee8ocqy0ge" path="res://assets/UI Elements/Enviornment-Base.png" id="21_i8c3o"]
@@ -30,13 +29,11 @@
 [ext_resource type="Script" path="res://src/gdscript/hud/energy_import/energy_import_slider.gd" id="25_pkr0e"]
 [ext_resource type="Texture2D" uid="uid://b07rwrrjjeock" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0017_Icon-yellow-press-button.png" id="26_kd3a6"]
 [ext_resource type="Texture2D" uid="uid://dm51vy4uvlpvd" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0015_Icon-yellow-hover-button.png" id="27_sye1h"]
-[ext_resource type="Texture2D" uid="uid://cnpo8atg0jpm8" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0011_Smaller-+-normal-button.png" id="28_2dbj3"]
 [ext_resource type="Texture2D" uid="uid://vff0e83ytund" path="res://assets/UI Elements/Energy-base.png" id="28_mr6x7"]
 [ext_resource type="Texture2D" uid="uid://b0c3ywqarx8b7" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0002_Icon-round-button-hole.png" id="28_oub76"]
-[ext_resource type="Texture2D" uid="uid://2t2eqb1uo5cb" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0003_Smaller-+-press-button.png" id="29_e2ga5"]
 [ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/Fonts/Special_Elite/SpecialElite-Regular.ttf" id="30_d1m8l"]
-[ext_resource type="Texture2D" uid="uid://bequk5qlb5qj6" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0007_Smaller-+-hover-button.png" id="30_n1n8n"]
 [ext_resource type="Texture2D" uid="uid://h78kteff8v5d" path="res://assets/UI Elements/Money-counter-hole.png" id="31_jcf3k"]
+[ext_resource type="PackedScene" uid="uid://fyc7mfdq5sh5" path="res://scenes/buttons/button_plus.tscn" id="31_y5561"]
 [ext_resource type="Texture2D" uid="uid://p2nyvgv4j2ll" path="res://assets/UI Elements/Money-counter-1.png" id="32_2wt40"]
 [ext_resource type="Script" path="res://src/gdscript/hud/money_management/borrow_money_frame/toggle_borrow_money_frame_button.gd" id="32_ynjjj"]
 [ext_resource type="Texture2D" uid="uid://burmdec041k3k" path="res://assets/UI Elements/Shocks-Metal.png" id="33_b8djn"]
@@ -922,10 +919,6 @@ offset_top = 25.0
 offset_right = -1.0
 offset_bottom = 25.0
 
-[node name="Sprite2D" type="Sprite2D" parent="TopLeftZone/MoneyManagement"]
-position = Vector2(295, 209.5)
-texture = ExtResource("11_i0u5d")
-
 [node name="MoneyInfo" type="Control" parent="TopLeftZone/MoneyManagement"]
 z_index = 2
 anchors_preset = 0
@@ -1314,17 +1307,14 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ToggleBorrowMoneyFrameButton" type="TextureButton" parent="TopLeftZone/MoneyManagement/BorrowMoney" groups=["buttons"]]
+[node name="ButtonPlus" parent="TopLeftZone/MoneyManagement/BorrowMoney" instance=ExtResource("31_y5561")]
 layout_mode = 0
-offset_left = 264.5
-offset_top = 175.0
-offset_right = 295.5
-offset_bottom = 207.0
-texture_normal = ExtResource("28_2dbj3")
-texture_pressed = ExtResource("29_e2ga5")
-texture_hover = ExtResource("30_n1n8n")
-texture_disabled = ExtResource("29_e2ga5")
+offset_left = 257.0
+offset_top = 178.0
+offset_right = 288.0
+offset_bottom = 210.0
 ignore_texture_size = true
+stretch_mode = 0
 script = ExtResource("32_ynjjj")
 
 [node name="BorrowMoneyFrame" type="Control" parent="TopLeftZone/MoneyManagement/BorrowMoney"]
@@ -2647,8 +2637,8 @@ script = ExtResource("126_ky6x4")
 [connection signal="pressed" from="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MoreMoneyInfoButton" to="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/InfoMoneyClosed" method="_on_more_money_info_button_pressed"]
 [connection signal="pressed" from="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MoreMoneyInfoButton" to="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/InfoMoneyOpen" method="_on_more_money_info_button_pressed"]
 [connection signal="pressed" from="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MoreMoneyInfoButton" to="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer" method="_on_more_money_info_button_pressed"]
-[connection signal="pressed" from="TopLeftZone/MoneyManagement/BorrowMoney/ToggleBorrowMoneyFrameButton" to="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame" method="_on_toggle_borrow_money_frame_button_pressed"]
-[connection signal="pressed" from="TopLeftZone/MoneyManagement/BorrowMoney/ToggleBorrowMoneyFrameButton" to="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame/BorrowSlider/Slider" method="_on_toggle_borrow_money_frame_button_pressed"]
+[connection signal="pressed" from="TopLeftZone/MoneyManagement/BorrowMoney/ButtonPlus" to="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame" method="_on_toggle_borrow_money_frame_button_pressed"]
+[connection signal="pressed" from="TopLeftZone/MoneyManagement/BorrowMoney/ButtonPlus" to="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame/BorrowSlider/Slider" method="_on_toggle_borrow_money_frame_button_pressed"]
 [connection signal="pressed" from="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame/Apply" to="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame/BorrowSlider/Slider" method="_on_borrow_money_apply_button_pressed"]
 [connection signal="value_changed" from="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame/BorrowSlider/Slider" to="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame/BorrowAmount" method="_on_borrow_money_slider_value_changed"]
 [connection signal="value_changed" from="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame/BorrowSlider/Slider" to="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame/DebtAmount" method="_on_borrow_money_slider_value_changed"]

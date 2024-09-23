@@ -22,6 +22,7 @@ func _ready():
 	Gameloop.game_ended.connect(_on_game_ended)
 	GroupManager.buttons_group_updated.connect(_on_buttons_group_updated)
 	GroupManager.disabled_buttons_group_updated.connect(_on_disabled_buttons_group_updated)
+	GroupManager.switches_group_updated.connect(_on_switches_group_updated)
 	_on_buttons_group_updated()
 	_on_disabled_buttons_group_updated()
 	_on_more_help_buttons_group_updated()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://vaxkewvk14v6"]
+[gd_scene load_steps=40 format=3 uid="uid://vaxkewvk14v6"]
 
 [ext_resource type="Texture2D" uid="uid://cigv4d5ij1ymx" path="res://assets/used_assets/textures/powerplants/pp_sprite_on_gas.png" id="1_m4t54"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/powerplant.gd" id="1_trefd"]
@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://chpn7t75mmbkh" path="res://scenes/buttons/button_close.tscn" id="7_qfinj"]
 [ext_resource type="Texture2D" uid="uid://bk3lb51erle8l" path="res://assets/used_assets/textures/backplates/backplate_1.png" id="9_hgra0"]
 [ext_resource type="FontFile" uid="uid://domoiqitlbtwi" path="res://assets/used_assets/fonts/llewie/Llewie.ttf" id="10_ly52y"]
-[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_gas/info_frame.gd" id="10_rtc0q"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_gas/info_frame/info_frame.gd" id="10_tpsg8"]
 [ext_resource type="Texture2D" uid="uid://cd23afs6x11al" path="res://assets/used_assets/textures/screens/screen_1.png" id="11_rm4vs"]
 [ext_resource type="Texture2D" uid="uid://b76v2w1on0f0u" path="res://assets/used_assets/textures/icons/chalk_money.png" id="12_ss1b0"]
 [ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="13_w0xii"]
@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://dhxkhfg2qxlgx" path="res://assets/UI Elements/Import-Switch-Off.png" id="27_nnenv"]
 [ext_resource type="Texture2D" uid="uid://cy2dqdgln1uij" path="res://assets/UI Elements/LED-Off.png" id="28_icv7p"]
 [ext_resource type="Texture2D" uid="uid://bdifhvhbdals5" path="res://assets/UI Elements/LED-On.png" id="29_24ug7"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_gas/info_frame/animation_player.gd" id="31_uv2in"]
 
 [sub_resource type="Animation" id="Animation_q0r05"]
 length = 0.001
@@ -508,6 +509,380 @@ spacing_glyph = 6
 [sub_resource type="FontVariation" id="FontVariation_e3u58"]
 base_font = ExtResource("21_fnlyj")
 
+[sub_resource type="Animation" id="Animation_7s5wq"]
+resource_name = "show_modifiers"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Modifier/PriceLabel:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(2, 2), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Modifier/WinterLabel:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Modifier/PriceLabel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Modifier/WinterLabel:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Modifier/SummerLabel:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Modifier/SummerLabel:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Screen/VBoxContainer/VBoxContainer/ProductionCosts/Value/Value:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-140, 18), Vector2(-290, 18)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Screen/VBoxContainer/VBoxContainer/Pollution/Value/Value:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-140, 20), Vector2(-290, 20)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Screen/VBoxContainer/VBoxContainer/LandUse/Value/Value:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-140, 22), Vector2(-290, 22)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Modifier/ProdLabel:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Modifier/ProdLabel:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(160, -376), Vector2(3, -376)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Modifier/EmissionLabel:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Modifier/EmissionLabel:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(160, -290), Vector2(3, -290)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Modifier/LandUseLabel:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Modifier/LandUseLabel:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(160, -204), Vector2(3, -204)]
+}
+
+[sub_resource type="Animation" id="Animation_dlo0r"]
+resource_name = "hide_modifiers"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Modifier/PriceLabel:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2, 2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Modifier/WinterLabel:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2, 2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Modifier/PriceLabel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Modifier/WinterLabel:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Modifier/SummerLabel:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2, 2)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Modifier/SummerLabel:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Screen/VBoxContainer/VBoxContainer/ProductionCosts/Value/Value:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-290, 18), Vector2(-140, 18)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Screen/VBoxContainer/VBoxContainer/Pollution/Value/Value:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-290, 20), Vector2(-140, 20)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Screen/VBoxContainer/VBoxContainer/LandUse/Value/Value:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-290, 22), Vector2(-140, 22)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Modifier/ProdLabel:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Modifier/ProdLabel:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3, -376), Vector2(160, -376)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Modifier/EmissionLabel:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Modifier/EmissionLabel:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3, -290), Vector2(160, -290)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Modifier/LandUseLabel:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Modifier/LandUseLabel:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3, -204), Vector2(160, -204)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gcppt"]
+_data = {
+"hide_modifiers": SubResource("Animation_dlo0r"),
+"show_modifiers": SubResource("Animation_7s5wq")
+}
+
 [node name="PpGas" type="Control" groups=["Powerplants"]]
 layout_mode = 3
 anchors_preset = 0
@@ -517,6 +892,7 @@ script = ExtResource("1_trefd")
 layout_mode = 1
 offset_right = 504.0
 offset_bottom = 429.0
+scale = Vector2(1.3, 1.3)
 pivot_offset = Vector2(252, 215)
 texture_normal = ExtResource("1_m4t54")
 script = ExtResource("2_sr1pj")
@@ -573,17 +949,20 @@ offset_left = -55.0
 offset_right = 0.0
 offset_bottom = 54.0
 grow_horizontal = 0
+scale = Vector2(1.3, 1.3)
 
 [node name="Off" type="TextureButton" parent="." groups=["pp_sprites"]]
 visible = false
 layout_mode = 1
 offset_right = 504.0
 offset_bottom = 429.0
+scale = Vector2(1.3, 1.3)
 pivot_offset = Vector2(252, 215)
 texture_normal = ExtResource("1_m4t54")
 script = ExtResource("6_uvqxp")
 
 [node name="InfoFrame" type="TextureRect" parent="." groups=["pp_info_frames"]]
+visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -597,7 +976,7 @@ scale = Vector2(1.3, 1.3)
 pivot_offset = Vector2(608, 819)
 mouse_filter = 0
 texture = ExtResource("9_hgra0")
-script = ExtResource("10_rtc0q")
+script = ExtResource("10_tpsg8")
 
 [node name="PlantName" type="Label" parent="InfoFrame"]
 layout_mode = 1
@@ -651,16 +1030,15 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="IconBlue" type="Sprite2D" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/ProductionCosts/Title"]
-modulate = Color(0.219608, 0.756863, 0.788235, 1)
-z_index = 4
-position = Vector2(46, 43)
-scale = Vector2(1.3, 1.3)
-texture = ExtResource("12_ss1b0")
-
 [node name="IconRed" type="Sprite2D" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/ProductionCosts/Title"]
 modulate = Color(1, 0.541176, 0.596078, 0.517647)
 position = Vector2(48, 44)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("12_ss1b0")
+
+[node name="IconBlue" type="Sprite2D" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/ProductionCosts/Title"]
+modulate = Color(0.219608, 0.756863, 0.788235, 1)
+position = Vector2(46, 43)
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("12_ss1b0")
 
@@ -709,16 +1087,15 @@ layout_mode = 2
 [node name="Title" type="Control" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/Pollution"]
 layout_mode = 2
 
-[node name="IconBlue" type="Sprite2D" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/Pollution/Title"]
-modulate = Color(0.219608, 0.756863, 0.788235, 1)
-z_index = 4
-position = Vector2(46, 43)
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("14_1mk3c")
-
 [node name="IconRed" type="Sprite2D" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/Pollution/Title"]
 modulate = Color(1, 0.541176, 0.596078, 0.517647)
 position = Vector2(48, 44)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("14_1mk3c")
+
+[node name="IconBlue" type="Sprite2D" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/Pollution/Title"]
+modulate = Color(0.219608, 0.756863, 0.788235, 1)
+position = Vector2(46, 43.0001)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("14_1mk3c")
 
@@ -766,16 +1143,15 @@ layout_mode = 2
 [node name="Title" type="Control" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/LandUse"]
 layout_mode = 2
 
-[node name="IconBlue" type="Sprite2D" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/LandUse/Title"]
-modulate = Color(0.219608, 0.756863, 0.788235, 1)
-z_index = 4
-position = Vector2(46, 43)
-scale = Vector2(1.15, 1.15)
-texture = ExtResource("15_u2ts6")
-
 [node name="IconRed" type="Sprite2D" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/LandUse/Title"]
 modulate = Color(1, 0.541176, 0.596078, 0.517647)
 position = Vector2(48, 44)
+scale = Vector2(1.15, 1.15)
+texture = ExtResource("15_u2ts6")
+
+[node name="IconBlue" type="Sprite2D" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/LandUse/Title"]
+modulate = Color(0.219608, 0.756863, 0.788235, 1)
+position = Vector2(46, 43)
 scale = Vector2(1.15, 1.15)
 texture = ExtResource("15_u2ts6")
 
@@ -1006,27 +1382,27 @@ color = Color(0.596078, 0.596078, 0.596078, 0)
 
 [node name="ButtonPlus" parent="InfoFrame/Modifier" instance=ExtResource("21_fno5s")]
 layout_mode = 0
-offset_left = 84.0
+offset_left = 96.3079
 offset_top = 28.0
-offset_right = 141.0
+offset_right = 153.308
 offset_bottom = 86.0
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="ButtonMinus" parent="InfoFrame/Modifier" instance=ExtResource("27_f2vka")]
 layout_mode = 0
-offset_left = 85.0
+offset_left = 97.3079
 offset_top = 124.0
-offset_right = 142.0
+offset_right = 154.308
 offset_bottom = 182.0
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="MultAmount" type="Label" parent="InfoFrame/Modifier"]
 layout_mode = 0
-offset_left = 23.0
+offset_left = 35.3079
 offset_top = 73.0
-offset_right = 52.0
+offset_right = 64.3079
 offset_bottom = 142.0
 theme_override_colors/font_color = Color(0.0431373, 0.141176, 0.14902, 1)
 theme_override_fonts/font = SubResource("FontVariation_e3u58")
@@ -1055,13 +1431,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -1001.5
-offset_top = 37.4999
-offset_right = -706.5
-offset_bottom = 120.5
+offset_left = -986.577
+offset_top = -28.0384
+offset_right = -691.577
+offset_bottom = 54.9616
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.150098
+scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(0.830861, 0, 0.162109, 1)
 theme_override_fonts/font = ExtResource("19_q1dv5")
 theme_override_font_sizes/font_size = 54
@@ -1085,6 +1462,7 @@ offset_bottom = 182.5
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.115072
+scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(0.830861, 0, 0.162109, 1)
 theme_override_fonts/font = ExtResource("19_q1dv5")
 theme_override_font_sizes/font_size = 54
@@ -1108,6 +1486,7 @@ offset_bottom = 180.5
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.115072
+scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(0.830861, 0, 0.162109, 1)
 theme_override_fonts/font = ExtResource("19_q1dv5")
 theme_override_font_sizes/font_size = 54
@@ -1126,7 +1505,7 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -27.0
 offset_top = -435.5
-offset_right = 133.0
+offset_right = 133.002
 offset_bottom = -385.5
 grow_horizontal = 0
 grow_vertical = 2
@@ -1136,7 +1515,7 @@ theme = ExtResource("13_w0xii")
 theme_type_variation = &"Screen"
 theme_override_colors/font_color = Color(1, 0.129412, 0.207843, 1)
 theme_override_font_sizes/font_size = 50
-text = "+ 000.00"
+text = "+000.00"
 horizontal_alignment = 2
 
 [node name="EmissionLabel" type="Label" parent="InfoFrame/Modifier"]
@@ -1149,7 +1528,7 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -27.0
 offset_top = -349.5
-offset_right = 133.0
+offset_right = 133.002
 offset_bottom = -299.5
 grow_horizontal = 0
 grow_vertical = 2
@@ -1159,7 +1538,7 @@ theme = ExtResource("13_w0xii")
 theme_type_variation = &"Screen"
 theme_override_colors/font_color = Color(1, 0.129412, 0.207843, 1)
 theme_override_font_sizes/font_size = 50
-text = "+ 000.00"
+text = "+000.00"
 horizontal_alignment = 2
 
 [node name="LandUseLabel" type="Label" parent="InfoFrame/Modifier"]
@@ -1172,7 +1551,7 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -27.0
 offset_top = -263.5
-offset_right = 133.0
+offset_right = 133.001
 offset_bottom = -213.5
 grow_horizontal = 0
 grow_vertical = 2
@@ -1182,10 +1561,10 @@ theme = ExtResource("13_w0xii")
 theme_type_variation = &"Screen"
 theme_override_colors/font_color = Color(1, 0.129412, 0.207843, 1)
 theme_override_font_sizes/font_size = 50
-text = "+ 000.00"
+text = "+000.00"
 horizontal_alignment = 2
 
-[node name="Switch" type="CheckButton" parent="InfoFrame"]
+[node name="Switch" type="CheckButton" parent="InfoFrame" groups=["switches"]]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -1219,13 +1598,23 @@ position = Vector2(1010, 69.5)
 scale = Vector2(2, 2)
 texture = ExtResource("29_24ug7")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="InfoFrame"]
+libraries = {
+"": SubResource("AnimationLibrary_gcppt")
+}
+script = ExtResource("31_uv2in")
+
 [connection signal="toggle_info_frame" from="." to="InfoFrame" method="_on_toggle_info_frame"]
 [connection signal="mouse_entered" from="On" to="On" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="On" to="On" method="_on_mouse_exited"]
 [connection signal="pressed" from="On" to="." method="_on_pp_pressed"]
 [connection signal="mouse_entered" from="On/CloseButton" to="On" method="_on_close_button_mouse_entered"]
 [connection signal="mouse_exited" from="On/CloseButton" to="On" method="_on_close_button_mouse_exited"]
-[connection signal="pressed" from="On/CloseButton" to="On" method="_on_close_button_pressed"]
+[connection signal="pressed" from="On/CloseButton" to="." method="_on_close_button_pressed"]
 [connection signal="mouse_entered" from="Off" to="Off" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Off" to="Off" method="_on_mouse_exited"]
 [connection signal="pressed" from="Off" to="." method="_on_pp_pressed"]
+[connection signal="mouse_entered" from="InfoFrame/Modifier/ButtonPlus" to="InfoFrame/AnimationPlayer" method="_on_button_plus_mouse_entered"]
+[connection signal="mouse_exited" from="InfoFrame/Modifier/ButtonPlus" to="InfoFrame/AnimationPlayer" method="_on_button_plus_mouse_exited"]
+[connection signal="mouse_entered" from="InfoFrame/Modifier/ButtonMinus" to="InfoFrame/AnimationPlayer" method="_on_button_minus_mouse_entered"]
+[connection signal="mouse_exited" from="InfoFrame/Modifier/ButtonMinus" to="InfoFrame/AnimationPlayer" method="_on_button_minus_mouse_exited"]
