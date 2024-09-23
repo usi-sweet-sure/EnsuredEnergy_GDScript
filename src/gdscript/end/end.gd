@@ -2,6 +2,7 @@ extends CanvasLayer
 
 signal metrics_leaderboard_updated
 
+
 func _ready():
 	Gameloop.game_ended.connect(_on_game_ended)
 	Gameloop.show_ending_screen_requested.connect(_on_show_ending_screen)
@@ -21,7 +22,6 @@ func _on_game_ended():
 		build_button._disable_for_end_of_game()
 	
 	
-
 func _on_show_ending_screen():
 	show()
 

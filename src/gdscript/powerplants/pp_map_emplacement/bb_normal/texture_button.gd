@@ -13,6 +13,7 @@ var drag_tolerance = Vector2(5.0, 5.0)
 func _ready():
 	PowerplantsManager.pp_scene_toggled.connect(_on_pp_scene_toggled)
 	PowerplantsManager.build_button_normal_toggled.connect(_on_build_button_normal_toggled)
+	PowerplantsManager.build_button_in_construction_toggled.connect(_on_build_button_in_construction_toggled)
 	PowerplantsManager.powerplant_build_requested.connect(_on_powerplant_build_requested)
 	
 	
@@ -64,8 +65,15 @@ func _on_build_button_normal_toggled(toggled_on:bool, map_emplacement: Node, _ca
 		animation_player.stop()
 	
 
-func _on_powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMetrics):
-	if map_emplacement == self:
+func _on_powerplant_build_requested(map_emplacement: Node2D, metrics: PowerplantMetrics):
+	if map_emplacement.get_node("BbNormal") == self:
 		set_pressed_no_signal(false)
 		material.set_shader_parameter("show", false)
 		animation_player.stop()
+
+
+func _on_build_button_in_construction_toggled(toggled_on: bool, map_emplacement: Node2D):
+	PowerplantsManager.hide_build_menu.emit()
+	set_pressed_no_signal(false)
+	material.set_shader_parameter("show", false)
+	animation_player.stop()

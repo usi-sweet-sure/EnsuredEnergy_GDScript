@@ -2031,7 +2031,7 @@ script = ExtResource("3_2lui3")
 [node name="Map" parent="World" index="1"]
 texture_filter = 2
 
-[node name="Nuclear3" parent="World" index="5" groups=["PP"]]
+[node name="Nuclear3" parent="World" index="6" groups=["PP"]]
 position = Vector2(1205, -431)
 availability = Vector2(0.4, 0.6)
 plant_name = "NUCLEAR"
@@ -2112,7 +2112,7 @@ offset_bottom = 85.0
 [node name="NameRect" parent="World/Nuclear3" index="4"]
 visible = false
 
-[node name="Biogas" parent="World" index="7" groups=["PP"]]
+[node name="Biogas" parent="World" index="8" groups=["PP"]]
 plant_name = "BIOGAS"
 max_upgrade = 5
 mult_factor = 0.1
@@ -2132,7 +2132,7 @@ offset_bottom = 30.0
 [node name="NameRect" parent="World/Biogas" index="3"]
 visible = false
 
-[node name="Nuclear2" parent="World" index="10" groups=["PP"]]
+[node name="Nuclear2" parent="World" index="11" groups=["PP"]]
 position = Vector2(1479, -248)
 availability = Vector2(0.4, 0.6)
 plant_name = "NUCLEAR"
@@ -2205,7 +2205,7 @@ offset_bottom = 89.6667
 [node name="NameRect" parent="World/Nuclear2" index="4"]
 visible = false
 
-[node name="Nuclear" parent="World" index="12" groups=["PP"]]
+[node name="Nuclear" parent="World" index="13" groups=["PP"]]
 position = Vector2(1001, 130)
 availability = Vector2(0.4, 0.6)
 plant_name = "NUCLEAR"
@@ -2288,7 +2288,7 @@ offset_bottom = 90.6667
 [node name="NameRect" parent="World/Nuclear" index="4"]
 visible = false
 
-[node name="CarbonSeq" parent="World" index="16"]
+[node name="CarbonSeq" parent="World" index="17"]
 max_upgrade = 10
 
 [node name="PreviewInfo" parent="World/CarbonSeq" index="0"]
@@ -2315,7 +2315,7 @@ visible = false
 [node name="NameRect" parent="World/CarbonSeq" index="3"]
 visible = false
 
-[node name="Wind" parent="World" index="19" groups=["PP"]]
+[node name="Wind" parent="World" index="20" groups=["PP"]]
 position = Vector2(-556, 553)
 plant_name = "WIND"
 max_upgrade = 2
@@ -2375,7 +2375,7 @@ libraries = {
 }
 autoplay = "Wind"
 
-[node name="Biomass" parent="World" index="26" groups=["PP"]]
+[node name="Biomass" parent="World" index="28" groups=["PP"]]
 position = Vector2(-784, 1288)
 plant_name = "BIOMASS"
 max_upgrade = 5
@@ -2423,7 +2423,7 @@ offset_bottom = 30.0
 [node name="NameRect" parent="World/Biomass" index="4"]
 visible = false
 
-[node name="River2" parent="World" index="29" groups=["PP"]]
+[node name="River2" parent="World" index="31" groups=["PP"]]
 scale = Vector2(0.8, 0.8)
 availability = Vector2(0.6, 0.4)
 plant_name = "RIVER"
@@ -2474,7 +2474,7 @@ position = Vector2(70.4502, 104.5)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("33_1wxp6")
 
-[node name="Solar" parent="World" index="31" groups=["PP"]]
+[node name="Solar" parent="World" index="33" groups=["PP"]]
 position = Vector2(3456, 1224)
 plant_name = "SOLAR"
 max_upgrade = 0
@@ -2521,7 +2521,7 @@ libraries = {
 }
 autoplay = "Sun"
 
-[node name="Waste" parent="World" index="33" groups=["PP"]]
+[node name="Waste" parent="World" index="35" groups=["PP"]]
 position = Vector2(-16, 1056)
 plant_name = "WASTE"
 max_upgrade = 5
@@ -2564,7 +2564,7 @@ offset_bottom = 30.0
 [node name="NameRect" parent="World/Waste" index="4"]
 visible = false
 
-[node name="Pump" parent="World" index="37" groups=["PP"]]
+[node name="Pump" parent="World" index="40" groups=["PP"]]
 plant_name = "HYDRO"
 max_upgrade = 5
 
@@ -2622,7 +2622,7 @@ libraries = {
 }
 autoplay = "Water"
 
-[node name="Hydro" parent="World" index="39" groups=["PP"]]
+[node name="Hydro" parent="World" index="42" groups=["PP"]]
 position = Vector2(360, 1982)
 plant_name = "HYDRO"
 max_upgrade = 5
@@ -2701,7 +2701,7 @@ libraries = {
 }
 autoplay = "Water"
 
-[node name="River" parent="World" index="43" groups=["PP", "TUTO_PP"]]
+[node name="River" parent="World" index="47" groups=["PP", "TUTO_PP"]]
 availability = Vector2(0.6, 0.4)
 plant_name = "RIVER"
 max_upgrade = 5

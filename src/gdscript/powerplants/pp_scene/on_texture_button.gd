@@ -13,6 +13,7 @@ signal show_info_frame_requested
 
 func _ready():
 	PowerplantsManager.build_button_normal_toggled.connect(_on_build_button_toggled)
+	PowerplantsManager.build_button_in_construction_toggled.connect(_on_build_button_in_construction_toggled)
 	PowerplantsManager.pp_scene_toggled.connect(_on_pp_scene_toggled)
 
 func _on_mouse_entered():
@@ -78,3 +79,18 @@ func _on_pp_scene_toggled(toggled_on: bool, pp_scene: PpScene):
 		material.set_shader_parameter("show", false)
 		set_pressed_no_signal(false)
 		hide_info_frame_requested.emit()
+
+
+func _on_build_button_in_construction_toggled(toggled_on: bool, map_emplacement: Node2D):
+	material.set_shader_parameter("show", false)
+	set_pressed_no_signal(false)
+	hide_info_frame_requested.emit()
+
+
+func _on_switch_toggled(toggled_on: bool):
+	material.set_shader_parameter("show", toggled_on)
+	set_pressed_no_signal(toggled_on)
+
+
+func _on_metrics_updated(metrics: PowerplantMetrics):
+	visible = metrics.active

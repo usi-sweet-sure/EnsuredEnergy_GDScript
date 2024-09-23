@@ -1,7 +1,7 @@
 extends Camera2D
 
 const ZOOM_OUT_LIMIT := Vector2(0.25, 0.25)
-const ZOOM_IN_LIMIT := Vector2(0.8, 0.8)
+const ZOOM_IN_LIMIT := Vector2(0.6, 0.6)
 const ZOOM_SPEED := Vector2(0.2, 0.2)
 const POWER_PLANT_ZOOM_IN_LIMIT := Vector2(0.65, 0.65)
 const PLANT_ZOOM := Vector2(0.55, 0.55)

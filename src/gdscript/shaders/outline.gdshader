@@ -30,7 +30,7 @@ void fragment() {
 			vec2 pos = UV - vec2(0.5);
 			float angle = atan(pos.y, pos.x);
 			if (angle < 0.0) {
-			angle += 2.0 * PI;
+				angle += 2.0 * PI;
 			}
 			float ring = step(0.0, sin(frequency * angle + TIME * phase_speed));
 			COLOR = vec4(line_color.rgb, ring * line_color.a);

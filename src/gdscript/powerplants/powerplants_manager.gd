@@ -4,6 +4,7 @@ extends Node
 # the node passed in the parameters
 signal powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMetrics)
 signal build_button_normal_toggled(toggled_on: bool, target_map_emplacement: Node2D, can_build: Array[EngineTypeIds])
+signal build_button_in_construction_toggled(toggled_on: bool, target_map_emplacement: Node2D)
 signal pp_scene_toggled(toggled_on: bool, pp_scene: PpScene)
 signal hide_build_menu
 signal powerplants_metrics_updated(metrics: Array[PowerplantMetrics])
@@ -48,16 +49,16 @@ var powerplants_textures_on: Array[Image] = [
 
 # MUST BE in the same order as EngineTypeIds
 var powerplants_textures_off: Array[Image] = [
-	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_on_solar.png"), # Solar
-	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_on_wind.png"), # Wind
-	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_on_gas.png"), # Gas
-	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_on_waste.png"), # Waste
-	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_on_biomass.png"), # Biomass
-	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_on_biogas.png"), # Biogas
-	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_on_nuclear.png"), # Nuclear
-	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_on_carbon_sequestration.png"), # Carbon sequestration
-	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_on_hydro.png"), # Hydro
-	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_on_river.png"), # River 
+	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_off_solar.png"), # Solar
+	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_off_wind.png"), # Wind
+	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_off_gas.png"), # Gas
+	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_off_waste.png"), # Waste
+	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_off_biomass.png"), # Biomass
+	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_off_biogas.png"), # Biogas
+	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_off_nuclear.png"), # Nuclear
+	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_off_carbon_sequestration.png"), # Carbon sequestration
+	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_off_hydro.png"), # Hydro
+	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_off_river.png"), # River 
 ]
 
 # MUST BE in the same order as EngineTypeIds

@@ -69,6 +69,10 @@ func _on_bb_normal_toggled(toggled_on: bool):
 	PowerplantsManager.build_button_normal_toggled.emit(toggled_on, self, can_build)
 	
 	
+func _on_bb_in_construction_toggled(toggled_on):
+	PowerplantsManager.build_button_in_construction_toggled.emit(toggled_on, self)
+	
+	
 func _on_powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMetrics):
 	if map_emplacement == self:
 		bb_normal.hide()

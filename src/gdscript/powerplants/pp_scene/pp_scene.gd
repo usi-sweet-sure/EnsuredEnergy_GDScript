@@ -45,11 +45,16 @@ func _on_pp_focus_exited():
 
 func _on_pp_toggled(toggled_on: bool):
 	PowerplantsManager.pp_scene_toggled.emit(toggled_on, self)
+	
 
-
-func _on_on_hide_info_frame_requested():
+func _on_pp_hide_info_frame_requested():
 	hide_info_frame.emit()
 
 
-func _on_on_show_info_frame_requested():
+func _on_pp_show_info_frame_requested():
 	show_info_frame.emit()
+
+
+func _on_switch_toggled(toggled_on: bool):
+	metrics.active = toggled_on
+	metrics_updated.emit(metrics)
