@@ -65,7 +65,7 @@ signal tutorial_step_updated(step: int)
 # and only update when the tr() statement is called again.
 # So we listen to this signal and call those statements again where needed.
 # This signal is emitted in language_button.gd
-signal locale_updated
+signal locale_updated(locale: String)
 
 
 var player_name: String = "":

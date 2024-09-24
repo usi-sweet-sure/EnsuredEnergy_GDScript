@@ -12,9 +12,10 @@ var production_costs: float
 var availability: Vector2
 var building_costs: float
 var build_time_in_turns: int
-var life_time_in_turns: int
+var life_span_in_turns: int
 var active: bool
 var can_delete: bool
+var built_on_turn: int
 
 
 func _init(
@@ -27,9 +28,10 @@ func _init(
 		availability: Vector2,
 		building_costs: float,
 		build_time_in_turns: int,
-		life_time_in_turns: int,
+		life_span_in_turns: int,
 		active: bool,
-		can_delete: bool
+		can_delete: bool,
+		built_on_turn: int
 	):
 		self.type = type
 		self.capacity = capacity
@@ -40,14 +42,15 @@ func _init(
 		self.availability = availability
 		self.building_costs = building_costs
 		self.build_time_in_turns = build_time_in_turns
-		self.life_time_in_turns = life_time_in_turns
+		self.life_span_in_turns = life_span_in_turns
 		self.active = active
 		self.can_delete = can_delete
+		self.built_on_turn = built_on_turn
 
 
 func copy() -> PowerplantMetrics:
 	var metrics = PowerplantMetrics.new(type, capacity, cnv_capacity,
 			emissions, land_use, production_costs, availability, building_costs,
-			build_time_in_turns, life_time_in_turns, active, can_delete)
+			build_time_in_turns, life_span_in_turns, active, can_delete, built_on_turn)
 			
 	return metrics

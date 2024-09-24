@@ -28,6 +28,14 @@ extends Node2D
 @export var hydro := false
 @export var river := false
 
+@export_group("metrics overrides")
+@export var life_span_in_turns = 11:
+	set(new_value):
+		life_span_in_turns = new_value
+		override_life_span = true
+var override_life_span = false
+
+
 @onready var bb_normal = $BbNormal
 @onready var bb_in_construction = $BbInConstruction
 
@@ -77,13 +85,17 @@ func _on_powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMe
 	if map_emplacement == self:
 		bb_normal.hide()
 		
-		if metrics.build_time_in_turns > 0:
+		var new_metrics = metrics.copy()
+		override_metrics(new_metrics)
+		
+		if new_metrics.build_time_in_turns > 0:
+			bb_in_construction.set_metrics(new_metrics)
 			bb_in_construction.show()
 		else:
 			var pp_scene = PowerplantsManager.powerplant_scene.instantiate()
 			add_child(pp_scene)
 			powerplant_node_name = pp_scene.name
-			pp_scene.set_metrics(metrics)
+			pp_scene.set_metrics(new_metrics)
 			pp_scene.powerplant_delete_requested.connect(_on_powerplant_delete_requested)
 			pp_scene.activate()
 			
@@ -106,3 +118,11 @@ func _build_on_start(metrics: Array[PowerplantMetrics]):
 	new_metrics.build_time_in_turns = 0
 	new_metrics.can_delete = false
 	_on_powerplant_build_requested(self, new_metrics)
+	
+
+# Applies the changes made in the editor
+func override_metrics(metrics: PowerplantMetrics):
+	metrics.built_on_turn = Gameloop.current_turn
+	
+	if override_life_span:
+		metrics.life_span_in_turns = life_span_in_turns

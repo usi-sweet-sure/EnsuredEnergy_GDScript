@@ -195,6 +195,7 @@ SHUT_DOWN,Shutting down in {nbr} turns,S'arrête dans {nbr} tours,Abschaltung in
 PROD_COST,Production costs,Coûts de production,Produktionskosten,Costi di produzione
 POLLUTION,CO2 Emissions,Émissions,Verschmutzung,Emissioni
 CARBON,Carbon sequestration,Séquestration du carbone,Kohlenstoff Sequestrierung,Sequestro di carbonio
+CARBON_SEQUESTRATION,Carbon sequestration,Séquestration du carbone,Kohlenstoff Sequestrierung,Sequestro di carbonio
 BIOGAS,Biogas,Biogaz,Biogaz,Biogas
 BUDGET,Budget:,Budget :,Haushalt:,Bilancio:
 BUDGET_TEXT,The budget shows you how much money you have and can spend. You start the game with 250.- and at the beginning of each turn receive 250.-,"Le budget vous indique combien d'argent vous avez et pouvez dépenser. Vous commencez la partie avec 250.- et au début de chaque tour, vous recevez 250.-.","Das Budget zeigt dir, wie viel Geld du hast und ausgeben kannst. Sie beginnen das Spiel mit 250.- und erhalten zu Beginn jeder Runde 250.-.",Il budget mostra quanto denaro si ha e si può spendere. Si inizia la partita con 250.- e all'inizio di ogni turno si ricevono 250.-
@@ -249,3 +250,4 @@ PLAYER_NAME_NEEDED,Enter a name,Entrez un nom,Name eingeben,Inserire un nome
 IMPORTED,Imported,Importé,Importiert,Importato
 TURNS_TO_BUILD,Construction time:,Temps de construction :,Bauzeit:,Tempo di costruzione:
 TURNS,Turns,Tours ,Runden,Turni
+CONSTRUCTION_TIME_LEFT,Construction time left,Temps de construction restant,Verbleibende Bauzeit,Tempo di costruzione rimasto

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1wn54ow1aaee"
-path="res://.godot/imported/All-HQ-Assets-D_0002s_0003_Power-plant-geothermal-screen.png-11ff0cb190756bb30b983bebe3764e02.ctex"
+uid="uid://b3a42e5ad2u38"
+path="res://.godot/imported/pp_sprite_neon_nuclear.png-7ebb527e129198b625a274d329d2bcc2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI Elements/All-HQ-Assets-D_0002s_0003_Power-plant-geothermal-screen.png"
-dest_files=["res://.godot/imported/All-HQ-Assets-D_0002s_0003_Power-plant-geothermal-screen.png-11ff0cb190756bb30b983bebe3764e02.ctex"]
+source_file="res://assets/used_assets/textures/powerplants/pp_sprite_neon_nuclear.png"
+dest_files=["res://.godot/imported/pp_sprite_neon_nuclear.png-7ebb527e129198b625a274d329d2bcc2.ctex"]
 
 [params]
 

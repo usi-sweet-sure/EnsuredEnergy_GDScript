@@ -1,6 +1,7 @@
 extends TextureButton
 
 signal powerplant_cancel_construction_requested
+signal metrics_updated(metrics: PowerplantMetrics)
 
 # Used to detect a drag
 var mouse_position_on_press: Vector2
@@ -8,6 +9,7 @@ var mouse_position_on_press: Vector2
 # so we use a tolerance were a drag will not be triggered and a normal click will
 # be detected
 var drag_tolerance = Vector2(5.0, 5.0)
+var metrics: PowerplantMetrics
 
 
 func _ready():
@@ -15,20 +17,26 @@ func _ready():
 	PowerplantsManager.build_button_in_construction_toggled.connect(_on_build_button_in_construction_toggled)
 	PowerplantsManager.pp_scene_toggled.connect(_on_pp_scene_toggled)
 
+
+func set_metrics(metrics: PowerplantMetrics):
+	self.metrics = metrics.copy()
+	metrics_updated.emit(self.metrics)
+	
+	
 func _on_mouse_entered():
-	set_modulate(Color(1.1, 1.1, 1.1))
+	set_self_modulate(Color(1.1, 1.1, 1.1))
 
 
 func _on_mouse_exited():
-	set_modulate(Color(1, 1, 1))
+	set_self_modulate(Color(1, 1, 1))
 
 
 func _on_close_button_mouse_entered():
-	set_modulate(Color(1.1, 1.1, 1.1))
+	set_self_modulate(Color(1.1, 1.1, 1.1))
 
 
 func _on_close_button_mouse_exited():
-	set_modulate(Color(1, 1, 1))
+	set_self_modulate(Color(1, 1, 1))
 
 
 func _on_close_button_pressed():

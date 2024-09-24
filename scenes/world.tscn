@@ -121,6 +121,7 @@ offset_right = 47.3334
 [node name="PpMapEmplacement5" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(663, -81)
 build_on_start = 6
+life_span_in_turns = 3
 
 [node name="Nuclear" parent="." instance=ExtResource("7_6x5m2")]
 visible = false

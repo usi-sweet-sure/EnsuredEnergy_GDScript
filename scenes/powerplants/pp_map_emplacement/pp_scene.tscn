@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://vaxkewvk14v6"]
+[gd_scene load_steps=51 format=3 uid="uid://vaxkewvk14v6"]
 
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/pp_scene.gd" id="1_aeq33"]
 [ext_resource type="Shader" path="res://src/gdscript/shaders/outline.gdshader" id="2_ln53j"]
@@ -10,28 +10,39 @@
 [ext_resource type="Texture2D" uid="uid://bk3lb51erle8l" path="res://assets/used_assets/textures/backplates/backplate_1.png" id="9_t41l1"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/info_frame.gd" id="10_f6a2e"]
 [ext_resource type="FontFile" uid="uid://domoiqitlbtwi" path="res://assets/used_assets/fonts/llewie/Llewie.ttf" id="11_22hcs"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/pant_name.gd" id="11_44a1v"]
 [ext_resource type="Texture2D" uid="uid://cd23afs6x11al" path="res://assets/used_assets/textures/screens/screen_1.png" id="12_qiat4"]
 [ext_resource type="Texture2D" uid="uid://b76v2w1on0f0u" path="res://assets/used_assets/textures/icons/chalk_money.png" id="13_088gv"]
 [ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="14_nud8r"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/production_costs_value.gd" id="15_dvlef"]
 [ext_resource type="Texture2D" uid="uid://bpt1e486wuscd" path="res://assets/used_assets/textures/icons/chalk_emission.png" id="15_ro3in"]
 [ext_resource type="Texture2D" uid="uid://1esf36575js0" path="res://assets/used_assets/textures/icons/chalk_land_use.png" id="16_7j4y8"]
 [ext_resource type="Texture2D" uid="uid://cischtrjvknyl" path="res://assets/used_assets/textures/icons/sticker_winter.png" id="17_3npoq"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/emissions_value.gd" id="17_l1irb"]
 [ext_resource type="Texture2D" uid="uid://od33hjtqpm14" path="res://assets/used_assets/textures/digit_panels/num_hole.png" id="18_tr7ia"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/land_use_value.gd" id="19_08r07"]
 [ext_resource type="Texture2D" uid="uid://bobwaj4wxr0fj" path="res://assets/used_assets/textures/digit_panels/num_counter.png" id="19_jebe2"]
 [ext_resource type="FontFile" uid="uid://dxtsp51pqna2o" path="res://assets/Fonts/static/OpenSans-Bold.ttf" id="20_pg4ln"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/life_span.gd" id="20_unr8a"]
 [ext_resource type="Texture2D" uid="uid://bsa55enbm5cwg" path="res://assets/used_assets/textures/icons/sticker_summer.png" id="21_ikos6"]
 [ext_resource type="PackedScene" uid="uid://fyc7mfdq5sh5" path="res://scenes/buttons/button_plus.tscn" id="22_imnx4"]
 [ext_resource type="PackedScene" uid="uid://2ddxars5xyyd" path="res://scenes/buttons/button_minus.tscn" id="23_e0l3t"]
 [ext_resource type="FontFile" uid="uid://bwuskgw4ek8y" path="res://assets/Fonts/static/OpenSans-Medium.ttf" id="24_xedn0"]
 [ext_resource type="Texture2D" uid="uid://cdn0h6b873gbk" path="res://assets/UI Elements/Build_Menu_counter_yellow-1.png" id="25_8lcse"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/winter_label_1.gd" id="25_ivvsm"]
 [ext_resource type="Texture2D" uid="uid://bmka8bclye0ff" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0009_Counter-hole-1-slot.png" id="26_0mvvx"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/winter_label_2.gd" id="26_7m4cr"]
 [ext_resource type="Texture2D" uid="uid://dwys7y27kiabl" path="res://assets/UI Elements/Import-Switch-On.png" id="27_hrhql"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/winter_label_3.gd" id="27_muvgy"]
 [ext_resource type="Texture2D" uid="uid://dhxkhfg2qxlgx" path="res://assets/UI Elements/Import-Switch-Off.png" id="28_8uysp"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/led_off.gd" id="29_1ujwf"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/summer_label_1.gd" id="29_4pdx3"]
 [ext_resource type="Texture2D" uid="uid://cy2dqdgln1uij" path="res://assets/UI Elements/LED-Off.png" id="29_bhvoq"]
 [ext_resource type="Texture2D" uid="uid://bdifhvhbdals5" path="res://assets/UI Elements/LED-On.png" id="30_hejn8"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/summer_label_2.gd" id="30_jmafp"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/led_on.gd" id="31_3nepy"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/animation_player.gd" id="31_6iqfa"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/summer_label_3.gd" id="31_e1bc8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rxno2"]
 resource_local_to_scene = true
@@ -143,7 +154,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-290, 18), Vector2(-140, 18)]
+"values": [Vector2(-380, 18), Vector2(-240, 18)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -155,7 +166,7 @@ tracks/7/keys = {
 "times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-290, 20), Vector2(-140, 20)]
+"values": [Vector2(-380, 20), Vector2(-240, 20)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -167,7 +178,7 @@ tracks/8/keys = {
 "times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-290, 22), Vector2(-140, 22)]
+"values": [Vector2(-380, 22), Vector2(-240, 22)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
@@ -327,7 +338,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-140, 18), Vector2(-290, 18)]
+"values": [Vector2(-240, 18), Vector2(-380, 18)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -339,7 +350,7 @@ tracks/7/keys = {
 "times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-140, 20), Vector2(-290, 20)]
+"values": [Vector2(-240, 20), Vector2(-380, 20)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
@@ -351,7 +362,7 @@ tracks/8/keys = {
 "times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-140, 22), Vector2(-290, 22)]
+"values": [Vector2(-240, 22), Vector2(-380, 22)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
@@ -497,15 +508,16 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -504.0
-offset_top = 19.0
+offset_top = 32.077
 offset_right = 504.0
-offset_bottom = 79.0
+offset_bottom = 92.077
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 0.752941)
 theme_override_fonts/font = ExtResource("11_22hcs")
 theme_override_font_sizes/font_size = 43
 text = "Plant name"
 horizontal_alignment = 1
+script = ExtResource("11_44a1v")
 
 [node name="Screen" type="TextureRect" parent="InfoFrame"]
 layout_mode = 1
@@ -572,15 +584,17 @@ text = "PROD_COST"
 [node name="Value" type="Control" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/ProductionCosts"]
 layout_mode = 2
 size_flags_horizontal = 8
+size_flags_vertical = 8
 
 [node name="Value" type="Label" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/ProductionCosts/Value"]
+custom_minimum_size = Vector2(240, 0)
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -140.0
+offset_left = -240.0
 offset_top = 18.0
 offset_bottom = 68.0
 grow_horizontal = 0
@@ -591,8 +605,9 @@ theme = ExtResource("14_nud8r")
 theme_type_variation = &"Screen"
 theme_override_colors/font_color = Color(1, 0.129412, 0.207843, 1)
 theme_override_font_sizes/font_size = 50
-text = "000X YY"
+text = "000M CHF"
 horizontal_alignment = 2
+script = ExtResource("15_dvlef")
 
 [node name="Pollution" type="MarginContainer" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -631,13 +646,14 @@ layout_mode = 2
 size_flags_horizontal = 8
 
 [node name="Value" type="Label" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/Pollution/Value"]
+custom_minimum_size = Vector2(240, 0)
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -140.0
+offset_left = -240.0
 offset_top = 20.0
 offset_bottom = 70.0
 grow_horizontal = 0
@@ -647,8 +663,9 @@ theme = ExtResource("14_nud8r")
 theme_type_variation = &"Screen"
 theme_override_colors/font_color = Color(1, 0.129412, 0.207843, 1)
 theme_override_font_sizes/font_size = 50
-text = "000X YY"
+text = "000.00Mt CO2"
 horizontal_alignment = 2
+script = ExtResource("17_l1irb")
 
 [node name="LandUse" type="MarginContainer" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -687,13 +704,14 @@ layout_mode = 2
 size_flags_horizontal = 8
 
 [node name="Value" type="Label" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/LandUse/Value"]
+custom_minimum_size = Vector2(240, 0)
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -140.0
+offset_left = -240.0
 offset_top = 22.0
 offset_bottom = 72.0
 grow_horizontal = 0
@@ -703,8 +721,9 @@ theme = ExtResource("14_nud8r")
 theme_type_variation = &"Screen"
 theme_override_colors/font_color = Color(1, 0.129412, 0.207843, 1)
 theme_override_font_sizes/font_size = 50
-text = "000X YY"
+text = "000.00 ha"
 horizontal_alignment = 2
+script = ExtResource("19_08r07")
 
 [node name="LifeSpan" type="Label" parent="InfoFrame/Screen/VBoxContainer"]
 layout_mode = 2
@@ -716,6 +735,7 @@ theme_override_constants/shadow_offset_x = 2
 theme_override_font_sizes/font_size = 50
 text = "SHUT_DOWN"
 horizontal_alignment = 1
+script = ExtResource("20_unr8a")
 
 [node name="Energy" type="MarginContainer" parent="InfoFrame"]
 layout_mode = 1
@@ -778,7 +798,7 @@ texture = ExtResource("19_jebe2")
 layout_mode = 2
 theme_override_constants/separation = 17
 
-[node name="Label" type="Label" parent="InfoFrame/Energy/HBoxContainer/Winter/HBoxContainer/MarginContainer/Value"]
+[node name="Label1" type="Label" parent="InfoFrame/Energy/HBoxContainer/Winter/HBoxContainer/MarginContainer/Value"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
@@ -787,6 +807,7 @@ theme_override_fonts/font = SubResource("FontVariation_n1hys")
 theme_override_font_sizes/font_size = 50
 text = "0"
 horizontal_alignment = 2
+script = ExtResource("25_ivvsm")
 
 [node name="Label2" type="Label" parent="InfoFrame/Energy/HBoxContainer/Winter/HBoxContainer/MarginContainer/Value"]
 layout_mode = 2
@@ -797,6 +818,7 @@ theme_override_fonts/font = SubResource("FontVariation_n1hys")
 theme_override_font_sizes/font_size = 50
 text = "0"
 horizontal_alignment = 2
+script = ExtResource("26_7m4cr")
 
 [node name="Label3" type="Label" parent="InfoFrame/Energy/HBoxContainer/Winter/HBoxContainer/MarginContainer/Value"]
 layout_mode = 2
@@ -807,6 +829,7 @@ theme_override_fonts/font = SubResource("FontVariation_n1hys")
 theme_override_font_sizes/font_size = 50
 text = "0"
 horizontal_alignment = 2
+script = ExtResource("27_muvgy")
 
 [node name="Summer" type="MarginContainer" parent="InfoFrame/Energy/HBoxContainer"]
 layout_mode = 2
@@ -861,6 +884,7 @@ theme_override_fonts/font = SubResource("FontVariation_n1hys")
 theme_override_font_sizes/font_size = 50
 text = "0"
 horizontal_alignment = 2
+script = ExtResource("29_4pdx3")
 
 [node name="Label2" type="Label" parent="InfoFrame/Energy/HBoxContainer/Summer/HBoxContainer/MarginContainer/Value"]
 layout_mode = 2
@@ -871,6 +895,7 @@ theme_override_fonts/font = SubResource("FontVariation_n1hys")
 theme_override_font_sizes/font_size = 50
 text = "0"
 horizontal_alignment = 2
+script = ExtResource("30_jmafp")
 
 [node name="Label3" type="Label" parent="InfoFrame/Energy/HBoxContainer/Summer/HBoxContainer/MarginContainer/Value"]
 layout_mode = 2
@@ -881,6 +906,7 @@ theme_override_fonts/font = SubResource("FontVariation_n1hys")
 theme_override_font_sizes/font_size = 50
 text = "0"
 horizontal_alignment = 2
+script = ExtResource("31_e1bc8")
 
 [node name="Modifier" type="ColorRect" parent="InfoFrame"]
 custom_minimum_size = Vector2(40, 0)
@@ -1123,6 +1149,17 @@ script = ExtResource("31_6iqfa")
 [connection signal="metrics_updated" from="." to="On" method="_on_metrics_updated"]
 [connection signal="metrics_updated" from="." to="Off" method="_on_metrics_updated"]
 [connection signal="metrics_updated" from="." to="CloseButton" method="_on_metrics_updated"]
+[connection signal="metrics_updated" from="." to="InfoFrame/PlantName" method="_on_metrics_updated"]
+[connection signal="metrics_updated" from="." to="InfoFrame/Screen/VBoxContainer/VBoxContainer/ProductionCosts/Value/Value" method="_on_metrics_updated"]
+[connection signal="metrics_updated" from="." to="InfoFrame/Screen/VBoxContainer/VBoxContainer/Pollution/Value/Value" method="_on_metrics_updated"]
+[connection signal="metrics_updated" from="." to="InfoFrame/Screen/VBoxContainer/VBoxContainer/LandUse/Value/Value" method="_on_metrics_updated"]
+[connection signal="metrics_updated" from="." to="InfoFrame/Screen/VBoxContainer/LifeSpan" method="_on_metrics_updated"]
+[connection signal="metrics_updated" from="." to="InfoFrame/Energy/HBoxContainer/Winter/HBoxContainer/MarginContainer/Value/Label1" method="_on_metrics_updated"]
+[connection signal="metrics_updated" from="." to="InfoFrame/Energy/HBoxContainer/Winter/HBoxContainer/MarginContainer/Value/Label2" method="_on_metrics_updated"]
+[connection signal="metrics_updated" from="." to="InfoFrame/Energy/HBoxContainer/Winter/HBoxContainer/MarginContainer/Value/Label3" method="_on_metrics_updated"]
+[connection signal="metrics_updated" from="." to="InfoFrame/Energy/HBoxContainer/Summer/HBoxContainer/MarginContainer/Value/Label" method="_on_metrics_updated"]
+[connection signal="metrics_updated" from="." to="InfoFrame/Energy/HBoxContainer/Summer/HBoxContainer/MarginContainer/Value/Label2" method="_on_metrics_updated"]
+[connection signal="metrics_updated" from="." to="InfoFrame/Energy/HBoxContainer/Summer/HBoxContainer/MarginContainer/Value/Label3" method="_on_metrics_updated"]
 [connection signal="metrics_updated" from="." to="InfoFrame/LedOff" method="_on_metrics_updated"]
 [connection signal="metrics_updated" from="." to="InfoFrame/LedOn" method="_on_metrics_updated"]
 [connection signal="show_info_frame" from="." to="InfoFrame" method="_on_show_info_frame"]

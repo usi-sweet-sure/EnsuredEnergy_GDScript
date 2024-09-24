@@ -1,10 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://d2hhtw1popthi"]
+[gd_scene load_steps=18 format=3 uid="uid://d2hhtw1popthi"]
 
 [ext_resource type="Shader" path="res://src/gdscript/shaders/outline.gdshader" id="1_b0sg4"]
 [ext_resource type="Texture2D" uid="uid://cr0xdhpqcjqjd" path="res://assets/used_assets/textures/powerplants/bb_in_construction.png" id="1_e03ct"]
 [ext_resource type="BitMap" uid="uid://1iqu0g7vgbmb" path="res://assets/used_assets/textures/powerplants/bb_click_mask.png" id="2_lphxd"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/bb_in_construction/texture_button.gd" id="3_ddcsj"]
 [ext_resource type="PackedScene" uid="uid://chpn7t75mmbkh" path="res://scenes/buttons/button_close.tscn" id="4_ysjb1"]
+[ext_resource type="Texture2D" uid="uid://sdv07wonj5bg" path="res://assets/used_assets/textures/backplates/backplate_3.png" id="6_nx13c"]
+[ext_resource type="FontFile" uid="uid://domoiqitlbtwi" path="res://assets/used_assets/fonts/llewie/Llewie.ttf" id="7_6bso0"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/bb_in_construction/info_frame/plant_name.gd" id="8_c3q5u"]
+[ext_resource type="Texture2D" uid="uid://cd23afs6x11al" path="res://assets/used_assets/textures/screens/screen_1.png" id="8_ppjfb"]
+[ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="9_0asyi"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/bb_in_construction/info_frame/plant_texture.gd" id="10_ja4mu"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/animation_player.gd" id="10_q33v4"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/bb_in_construction/info_frame/build-_time_left.gd" id="11_16lme"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_52txu"]
 resource_local_to_scene = true
@@ -14,6 +22,380 @@ shader_parameter/line_thickness = 1.0
 shader_parameter/frequency = 10.0
 shader_parameter/phase_speed = 1.0
 shader_parameter/show = false
+
+[sub_resource type="Animation" id="Animation_dlo0r"]
+resource_name = "hide_modifiers"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Modifier/PriceLabel:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2, 2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Modifier/WinterLabel:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2, 2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Modifier/PriceLabel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Modifier/WinterLabel:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Modifier/SummerLabel:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2, 2)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Modifier/SummerLabel:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Screen/VBoxContainer/VBoxContainer/ProductionCosts/Value/Value:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-380, 18), Vector2(-240, 18)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Screen/VBoxContainer/VBoxContainer/Pollution/Value/Value:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-380, 20), Vector2(-240, 20)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Screen/VBoxContainer/VBoxContainer/LandUse/Value/Value:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-380, 22), Vector2(-240, 22)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Modifier/ProdLabel:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Modifier/ProdLabel:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3, -376), Vector2(160, -376)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Modifier/EmissionLabel:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Modifier/EmissionLabel:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3, -290), Vector2(160, -290)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Modifier/LandUseLabel:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Modifier/LandUseLabel:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3, -204), Vector2(160, -204)]
+}
+
+[sub_resource type="Animation" id="Animation_7s5wq"]
+resource_name = "show_modifiers"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Modifier/PriceLabel:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(2, 2), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Modifier/WinterLabel:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Modifier/PriceLabel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Modifier/WinterLabel:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Modifier/SummerLabel:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Modifier/SummerLabel:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Screen/VBoxContainer/VBoxContainer/ProductionCosts/Value/Value:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-240, 18), Vector2(-380, 18)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Screen/VBoxContainer/VBoxContainer/Pollution/Value/Value:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-240, 20), Vector2(-380, 20)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Screen/VBoxContainer/VBoxContainer/LandUse/Value/Value:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-240, 22), Vector2(-380, 22)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Modifier/ProdLabel:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Modifier/ProdLabel:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(160, -376), Vector2(3, -376)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Modifier/EmissionLabel:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Modifier/EmissionLabel:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(160, -290), Vector2(3, -290)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Modifier/LandUseLabel:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Modifier/LandUseLabel:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(160, -204), Vector2(3, -204)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gcppt"]
+_data = {
+"hide_modifiers": SubResource("Animation_dlo0r"),
+"show_modifiers": SubResource("Animation_7s5wq")
+}
 
 [node name="BbInConstruction" type="TextureButton" groups=["BB"]]
 material = SubResource("ShaderMaterial_52txu")
@@ -38,8 +420,114 @@ grow_horizontal = 0
 scale = Vector2(1.15, 1.15)
 stretch_mode = 0
 
+[node name="InfoFrame" type="TextureRect" parent="." groups=["pp_info_frames"]]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -382.5
+offset_top = -1389.0
+offset_right = 487.5
+offset_bottom = -570.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.3, 1.3)
+pivot_offset = Vector2(608, 819)
+mouse_filter = 0
+texture = ExtResource("6_nx13c")
+
+[node name="PlantName" type="Label" parent="InfoFrame"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -504.0
+offset_top = 72.0769
+offset_right = 504.0
+offset_bottom = 132.077
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.752941)
+theme_override_fonts/font = ExtResource("7_6bso0")
+theme_override_font_sizes/font_size = 43
+text = "Plant name"
+horizontal_alignment = 1
+script = ExtResource("8_c3q5u")
+
+[node name="Screen" type="TextureRect" parent="InfoFrame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -335.0
+offset_top = -223.5
+offset_right = 332.0
+offset_bottom = 319.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_ppjfb")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InfoFrame/Screen"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 17.3846
+offset_right = 655.0
+offset_bottom = 132.385
+theme_override_constants/separation = 15
+
+[node name="LifeSpan" type="Label" parent="InfoFrame/Screen/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("9_0asyi")
+theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(0.932727, 0.41041, 0.257221, 1)
+theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
+theme_override_constants/shadow_offset_x = 2
+theme_override_font_sizes/font_size = 50
+text = "CONSTRUCTION_TIME_LEFT"
+horizontal_alignment = 1
+
+[node name="Value" type="Label" parent="InfoFrame/Screen/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("9_0asyi")
+theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(0.932727, 0.41041, 0.257221, 1)
+theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
+theme_override_constants/shadow_offset_x = 2
+theme_override_font_sizes/font_size = 50
+text = "N Turns"
+horizontal_alignment = 1
+script = ExtResource("11_16lme")
+
+[node name="TextureRect" type="TextureRect" parent="InfoFrame/Screen"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -251.0
+offset_top = -449.923
+offset_right = 251.0
+offset_bottom = -16.923
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("10_ja4mu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="InfoFrame"]
+libraries = {
+"": SubResource("AnimationLibrary_gcppt")
+}
+script = ExtResource("10_q33v4")
+
 [connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
 [connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
+[connection signal="metrics_updated" from="." to="InfoFrame/PlantName" method="_on_metrics_updated"]
+[connection signal="metrics_updated" from="." to="InfoFrame/Screen/TextureRect" method="_on_metrics_updated"]
+[connection signal="metrics_updated" from="." to="InfoFrame/Screen/VBoxContainer/Value" method="_on_metrics_updated"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="toggled" from="." to="." method="_on_toggled"]

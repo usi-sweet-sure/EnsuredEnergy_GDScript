@@ -12,7 +12,6 @@ signal texture_off_changed(image: Image)
 
 var metrics: PowerplantMetrics
 
-
 func _ready():
 	GroupManager.buttons_group_updated.emit()
 	GroupManager.switches_group_updated.emit()

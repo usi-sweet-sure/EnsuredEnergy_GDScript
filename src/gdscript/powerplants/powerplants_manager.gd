@@ -62,6 +62,20 @@ var powerplants_textures_off: Array[Image] = [
 ]
 
 # MUST BE in the same order as EngineTypeIds
+var powerplants_textures_neon: Array[Image] = [
+	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_neon_solar.png"), # Solar
+	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_neon_wind.png"), # Wind
+	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_neon_gas.png"), # Gas
+	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_neon_waste.png"), # Waste
+	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_neon_biomass.png"), # Biomass
+	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_neon_biogas.png"), # Biogas
+	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_neon_nuclear.png"), # Nuclear
+	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_neon_carbon_sequestration.png"), # Carbon sequestration
+	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_neon_hydro.png"), # Hydro
+	Image.load_from_file("res://assets/used_assets/textures/powerplants/pp_sprite_neon_river.png"), # River 
+]
+
+# MUST BE in the same order as EngineTypeIds
 var powerplants_build_times_in_turns: Array[int] = [
 	0, # Solar
 	2, # Wind
@@ -76,7 +90,7 @@ var powerplants_build_times_in_turns: Array[int] = [
 ]
 
 # MUST BE in the same order as EngineTypeIds
-var powerplants_life_times_in_turns: Array[int] = [
+var powerplants_life_spans_in_turns: Array[int] = [
 	11, # Solar
 	11, # Wind
 	11, # Gas
@@ -215,7 +229,7 @@ func _store_powerplant_metrics(engine_type_id: EngineTypeIds):
 	var availability := Vector2(0.0, 0.0)
 	var building_costs := 0.0
 	var build_time_in_turns = powerplants_build_times_in_turns[engine_type_id]
-	var life_time_in_turns = powerplants_life_times_in_turns[engine_type_id]
+	var life_span_in_turns = powerplants_life_spans_in_turns[engine_type_id]
 	
 	if Context.ctx != null:
 		for i in Context.ctx:
@@ -250,6 +264,6 @@ func _store_powerplant_metrics(engine_type_id: EngineTypeIds):
 	
 	var metrics = PowerplantMetrics.new(engine_type_id, capacity, cnv_capacity,
 			emissions, land_use, production_cost, availability, building_costs,
-			build_time_in_turns, life_time_in_turns, false, true)
+			build_time_in_turns, life_span_in_turns, false, true, 0)
 			
 	powerplants_metrics[engine_type_id] = metrics
