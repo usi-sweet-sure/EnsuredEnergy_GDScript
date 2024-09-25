@@ -66,9 +66,9 @@ func _on_policy_voted(vote_passed: bool):
 
 func _change_text_to_green():
 	set("theme_override_colors/font_color", Color(0,0.882,0))
-	set("theme_override_colors/font_shadow_color", Color(1, 0.541, 0.596, 0.518))
+	#set("theme_override_colors/font_shadow_color", Color(1, 0.541, 0.596, 0.518))
 	
 
 func _change_text_to_red():
 	set("theme_override_colors/font_color", Color(0.948, 0.489, 0.437))
-	set("theme_override_colors/font_shadow_color", Color(0.656, 0, 0.079, 0.518))
+	#set("theme_override_colors/font_shadow_color", Color(0.656, 0, 0.079, 0.518))
