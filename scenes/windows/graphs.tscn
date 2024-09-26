@@ -1,23 +1,24 @@
-[gd_scene load_steps=25 format=3 uid="uid://dc3s5eeg1c0uv"]
+[gd_scene load_steps=26 format=3 uid="uid://dc3s5eeg1c0uv"]
 
 [ext_resource type="Script" path="res://src/gdscript/graphs/graphs_window.gd" id="1_vog1l"]
-[ext_resource type="Texture2D" uid="uid://ceuxpu5iujr05" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0001_Stats-metal-base.png" id="2_cyklw"]
+[ext_resource type="Texture2D" uid="uid://dg00njwc1buvp" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0001_Stats-metal-base.png" id="2_cyklw"]
 [ext_resource type="Script" path="res://src/gdscript/graphs/close_button.gd" id="2_g21s1"]
 [ext_resource type="Texture2D" uid="uid://cd23afs6x11al" path="res://assets/used_assets/textures/screens/screen_1.png" id="4_n0bh3"]
-[ext_resource type="Texture2D" uid="uid://hmcjyyrl7dv2" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0034_Policies-normal-(small)-button.png" id="5_lt1jf"]
-[ext_resource type="Texture2D" uid="uid://cjxrgcwrcynwf" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0035_Policies-press-(small)-button.png" id="6_hmhdq"]
-[ext_resource type="Texture2D" uid="uid://80u4mcjyisb7" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0033_Policies-hover-(small)-button.png" id="7_k8yxn"]
-[ext_resource type="Script" path="res://src/gdscript/graphs/environment_button.gd" id="8_an3q8"]
+[ext_resource type="Texture2D" uid="uid://bqndady4lg1eg" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0034_Policies-normal-(small)-button.png" id="5_lt1jf"]
+[ext_resource type="Texture2D" uid="uid://by8h7vw51s4jd" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0035_Policies-press-(small)-button.png" id="6_hmhdq"]
+[ext_resource type="Texture2D" uid="uid://gxaf1ll3o07a" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0033_Policies-hover-(small)-button.png" id="7_k8yxn"]
+[ext_resource type="Script" path="res://src/gdscript/graphs/landuse_button.gd" id="8_an3q8"]
 [ext_resource type="Script" path="res://src/gdscript/graphs/economy_button.gd" id="8_gyxb0"]
+[ext_resource type="Script" path="res://src/gdscript/graphs/emissions_button.gd" id="8_kppka"]
 [ext_resource type="Texture2D" uid="uid://dwys7y27kiabl" path="res://assets/UI Elements/Import-Switch-On.png" id="9_iw48x"]
 [ext_resource type="Script" path="res://src/gdscript/graphs/energy_button.gd" id="10_7tukf"]
 [ext_resource type="Texture2D" uid="uid://dhxkhfg2qxlgx" path="res://assets/UI Elements/Import-Switch-Off.png" id="10_t8yel"]
 [ext_resource type="Texture2D" uid="uid://bsa55enbm5cwg" path="res://assets/used_assets/textures/icons/sticker_summer.png" id="11_t7ckv"]
 [ext_resource type="Texture2D" uid="uid://cischtrjvknyl" path="res://assets/used_assets/textures/icons/sticker_winter.png" id="14_how0c"]
-[ext_resource type="Texture2D" uid="uid://4s62sj1p8eja" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0019_Icon-red-normal-button.png" id="15_75x5m"]
-[ext_resource type="Texture2D" uid="uid://b86vm4agcnisw" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0020_Icon-red-press-button.png" id="16_5rpnb"]
-[ext_resource type="Texture2D" uid="uid://b066igcqidlny" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0018_Icon-red-hover-button.png" id="17_f7k5x"]
-[ext_resource type="Texture2D" uid="uid://b0c3ywqarx8b7" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0002_Icon-round-button-hole.png" id="18_0oju8"]
+[ext_resource type="Texture2D" uid="uid://cc6pichgkbjbj" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0019_Icon-red-normal-button.png" id="15_75x5m"]
+[ext_resource type="Texture2D" uid="uid://p2jcuf5ansad" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0020_Icon-red-press-button.png" id="16_5rpnb"]
+[ext_resource type="Texture2D" uid="uid://c541775cyiwyf" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0018_Icon-red-hover-button.png" id="17_f7k5x"]
+[ext_resource type="Texture2D" uid="uid://b0p1wag6bqd8o" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0002_Icon-round-button-hole.png" id="18_0oju8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oeq43"]
 
@@ -122,7 +123,25 @@ layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 23
 
-[node name="Environment" type="TextureButton" parent="MainFrame/RightContainer/FilterButtons" groups=["buttons"]]
+[node name="Emissions" type="TextureButton" parent="MainFrame/RightContainer/FilterButtons" groups=["buttons"]]
+layout_mode = 2
+texture_normal = ExtResource("5_lt1jf")
+texture_pressed = ExtResource("6_hmhdq")
+texture_hover = ExtResource("7_k8yxn")
+stretch_mode = 0
+script = ExtResource("8_kppka")
+
+[node name="Label" type="Label" parent="MainFrame/RightContainer/FilterButtons/Emissions"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 46.0
+grow_horizontal = 2
+text = "EMISSIONS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Landuse" type="TextureButton" parent="MainFrame/RightContainer/FilterButtons" groups=["buttons"]]
 layout_mode = 2
 texture_normal = ExtResource("5_lt1jf")
 texture_pressed = ExtResource("6_hmhdq")
@@ -130,13 +149,13 @@ texture_hover = ExtResource("7_k8yxn")
 stretch_mode = 0
 script = ExtResource("8_an3q8")
 
-[node name="Label" type="Label" parent="MainFrame/RightContainer/FilterButtons/Environment"]
+[node name="Label" type="Label" parent="MainFrame/RightContainer/FilterButtons/Landuse"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 46.0
 grow_horizontal = 2
-text = "ENVIRONMENT"
+text = "LAND_USE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -180,6 +199,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SeasonSwitch" type="VBoxContainer" parent="MainFrame/RightContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
@@ -254,11 +274,12 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 18
 text = "x"
 
-[connection signal="context_changed" from="." to="MainFrame/RightContainer/FilterButtons/Environment" method="_on_graphs_context_changed"]
+[connection signal="context_changed" from="." to="MainFrame/RightContainer/FilterButtons/Emissions" method="_on_graphs_context_changed"]
 [connection signal="context_changed" from="." to="MainFrame/RightContainer/FilterButtons/Economy" method="_on_graphs_context_changed"]
 [connection signal="context_changed" from="." to="MainFrame/RightContainer/FilterButtons/Energy" method="_on_graphs_context_changed"]
 [connection signal="pressed" from="Backdrop/Close" to="Backdrop/Close" method="_on_pressed"]
-[connection signal="pressed" from="MainFrame/RightContainer/FilterButtons/Environment" to="." method="_on_environment_button_pressed"]
+[connection signal="pressed" from="MainFrame/RightContainer/FilterButtons/Emissions" to="." method="_on_emissions_button_pressed"]
+[connection signal="pressed" from="MainFrame/RightContainer/FilterButtons/Landuse" to="." method="_on_landuse_button_pressed"]
 [connection signal="pressed" from="MainFrame/RightContainer/FilterButtons/Economy" to="." method="_on_economy_button_pressed"]
 [connection signal="pressed" from="MainFrame/RightContainer/FilterButtons/Energy" to="." method="_on_energy_button_pressed"]
 [connection signal="toggled" from="MainFrame/RightContainer/SeasonSwitch/Switch" to="." method="_on_season_switch_toggled"]
