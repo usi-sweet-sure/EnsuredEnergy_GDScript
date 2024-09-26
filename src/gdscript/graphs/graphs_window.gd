@@ -39,6 +39,7 @@ func _set_graph_context(context_name: String):
 	context = context_name
 	_reset_graph()
 	context_changed.emit(context)
+	$MainFrame/RightContainer/SeasonSwitch.hide()
 	
 	match context_name:
 		"economy":
@@ -56,8 +57,8 @@ func _set_graph_context(context_name: String):
 			x_axis_min_value = Gameloop.start_year
 			x_axis_max_value = Gameloop.start_year + (Gameloop.total_number_of_turns * Gameloop.years_in_a_turn)
 			y_axis_min_value = 0
-			y_axis_max_value = 2000
-			_draw_base_graph(Gameloop.years_in_a_turn, 200)
+			y_axis_max_value = 250
+			_draw_base_graph(Gameloop.years_in_a_turn, 10)
 			_add_data_set_to_graph("land_use", Color(0.663, 0.929, 0.416))
 			_add_data_set_to_graph("co2_emissions", Color(0.91, 0.38, 0.38))
 		"energy":
@@ -66,6 +67,7 @@ func _set_graph_context(context_name: String):
 			y_axis_min_value = 0
 			y_axis_max_value = 2000
 			_draw_base_graph(Gameloop.years_in_a_turn, 200)
+			$MainFrame/RightContainer/SeasonSwitch.show()
 			
 			if season == "summer":
 				_add_data_set_to_graph("summer_demand", Color(1, 0.702, 0.255, 1))
@@ -248,8 +250,6 @@ func _on_season_switch_toggled(toggled_on):
 		season = "summer"
 	else:
 		season = "winter"
-		
-	_set_graph_context("energy")
 		
 func _reset_graph():
 	for n in graph.get_children():
