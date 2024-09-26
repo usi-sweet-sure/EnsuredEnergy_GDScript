@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name PpMapEmplacement
+
 # Editor will enumerate as 0, 1 and 2.
 # MUST BE in same order as PowerplantManager.EngineTypeIds
 @export_enum(
@@ -40,12 +42,15 @@ var override_life_span = false
 @onready var bb_in_construction = $BbInConstruction
 
 var can_build: Array[PowerplantsManager.EngineTypeIds] = []
+# Used to save the name of the pp node when it's built, to know it's name to delete it
+# later
 var powerplant_node_name: String = ""
+
 
 func _ready():
 	PowerplantsManager.powerplant_build_requested.connect(_on_powerplant_build_requested)
 	
-	# Will be disconnected after the first call emition
+	# Will be disconnected after the first signal emition
 	if build_on_start != 10: # 10 = Nothing
 		PowerplantsManager.powerplants_metrics_updated.connect(_build_on_start)
 	
@@ -117,6 +122,7 @@ func _build_on_start(metrics: Array[PowerplantMetrics]):
 	var new_metrics = metrics[build_on_start].copy()
 	new_metrics.build_time_in_turns = 0
 	new_metrics.can_delete = false
+	new_metrics.building_costs = 0
 	_on_powerplant_build_requested(self, new_metrics)
 	
 
@@ -126,3 +132,9 @@ func override_metrics(metrics: PowerplantMetrics):
 	
 	if override_life_span:
 		metrics.life_span_in_turns = life_span_in_turns
+
+
+func _on_powerplant_construction_ended(metrics: PowerplantMetrics):
+	metrics.build_time_in_turns = 0
+	metrics.building_costs = 0 # already paid when the construction started
+	PowerplantsManager.powerplant_build_requested.emit(self, metrics)

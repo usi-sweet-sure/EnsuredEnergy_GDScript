@@ -2,9 +2,10 @@ extends Node
 
 # All empty map emplacements listen to this, but will only build if they are
 # the node passed in the parameters
-signal powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMetrics)
-signal build_button_normal_toggled(toggled_on: bool, target_map_emplacement: Node2D, can_build: Array[EngineTypeIds])
-signal build_button_in_construction_toggled(toggled_on: bool, target_map_emplacement: Node2D)
+signal powerplant_build_requested(map_emplacement: PpMapEmplacement, metrics: PowerplantMetrics)
+# The 3 signals below are used by the 3 concerned node types so they can update their focus state
+signal build_button_normal_toggled(toggled_on: bool, target_map_emplacement: PpMapEmplacement, can_build: Array[EngineTypeIds])
+signal build_button_in_construction_toggled(toggled_on: bool, target_map_emplacement: PpMapEmplacement)
 signal pp_scene_toggled(toggled_on: bool, pp_scene: PpScene)
 signal hide_build_menu
 signal powerplants_metrics_updated(metrics: Array[PowerplantMetrics])
@@ -101,6 +102,45 @@ var powerplants_life_spans_in_turns: Array[int] = [
 	11, # Carbon sequestration
 	11, # Hydro
 	11, # River
+]
+
+var powerplants_max_upgrades: Array[int] = [
+	3, # Solar
+	3, # Wind
+	3, # Gas
+	3, # Waste
+	3, # Biomass
+	3, # Biogas
+	3, # Nuclear
+	3, # Carbon sequestration
+	3, # Hydro
+	3, # River
+]
+
+var powerplants_min_upgrades: Array[int] = [
+	0, # Solar
+	0, # Wind
+	0, # Gas
+	0, # Waste
+	0, # Biomass
+	0, # Biogas
+	0, # Nuclear
+	0, # Carbon sequestration
+	0, # Hydro
+	0, # River
+]
+
+var powerplants_upgrade_factors: Array[float] = [
+	0.025, # Solar
+	0.025, # Wind
+	0.025, # Gas
+	0.025, # Waste
+	0.025, # Biomass
+	0.025, # Biogas
+	0.025, # Nuclear
+	0.025, # Carbon sequestration
+	0.025, # Hydro
+	0.025, # River
 ]
 
 # MUST BE in the same order as EngineTypeIds
@@ -262,8 +302,16 @@ func _store_powerplant_metrics(engine_type_id: EngineTypeIds):
 	else:
 		capacity /= 100.0
 	
+	var active = false
+	var can_delete = true
+	var built_on_turn = 0
+	var min_upgrade = powerplants_min_upgrades[engine_type_id]
+	var max_upgrade = powerplants_max_upgrades[engine_type_id]
+	var upgrade_factor = powerplants_upgrade_factors[engine_type_id]
+	
 	var metrics = PowerplantMetrics.new(engine_type_id, capacity, cnv_capacity,
 			emissions, land_use, production_cost, availability, building_costs,
-			build_time_in_turns, life_span_in_turns, false, true, 0)
+			build_time_in_turns, life_span_in_turns, active, can_delete,
+			built_on_turn, min_upgrade, max_upgrade, upgrade_factor)
 			
 	powerplants_metrics[engine_type_id] = metrics

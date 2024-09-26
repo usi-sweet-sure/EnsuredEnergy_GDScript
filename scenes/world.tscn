@@ -1,11 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://ba56oxmvcxpos"]
+[gd_scene load_steps=18 format=3 uid="uid://ba56oxmvcxpos"]
 
 [ext_resource type="Texture2D" uid="uid://dug4cy4mgxa1b" path="res://assets/used_assets/textures/map/map.jpg" id="1_exly2"]
 [ext_resource type="Texture2D" uid="uid://dnuq60vou7jic" path="res://assets/used_assets/textures/map/mountains/mountain_0.png" id="2_0wbri"]
 [ext_resource type="Texture2D" uid="uid://b6x10nevsnqw3" path="res://assets/used_assets/textures/map/forests/forest_0.png" id="3_2q20x"]
 [ext_resource type="Texture2D" uid="uid://gw7tutfgps6v" path="res://assets/used_assets/textures/map/forests/forest_1.png" id="4_8vcaw"]
 [ext_resource type="PackedScene" uid="uid://bp4i40e8i68xv" path="res://scenes/powerplants/pp_map_emplacement/pp_map_emplacement.tscn" id="7_3e8ib"]
-[ext_resource type="PackedScene" uid="uid://ct4blqwh4y6ab" path="res://scenes/building/PowerPlant.tscn" id="7_6x5m2"]
 [ext_resource type="Texture2D" uid="uid://cvxhltk38jeyo" path="res://assets/used_assets/textures/map/forests/forest_2.png" id="7_ptaf0"]
 [ext_resource type="Texture2D" uid="uid://cpcm2hmku8t83" path="res://assets/used_assets/textures/map/mountains/mountain_1.png" id="8_1irv8"]
 [ext_resource type="Texture2D" uid="uid://bk5676dvr2vrc" path="res://assets/used_assets/textures/map/forests/forest_3.png" id="9_ai24k"]
@@ -48,39 +47,9 @@ texture = ExtResource("4_8vcaw")
 position = Vector2(844, -575)
 build_on_start = 6
 
-[node name="Nuclear3" parent="." instance=ExtResource("7_6x5m2")]
-visible = false
-position = Vector2(1241, -398)
-plant_name = "nuclear"
-metadata/_edit_group_ = true
-
-[node name="Price" parent="Nuclear3/PreviewInfo" index="3"]
-layout_mode = 0
-anchors_preset = 0
-anchor_top = 0.0
-anchor_bottom = 0.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 52.0
-offset_bottom = 35.0
-grow_vertical = 1
-
-[node name="ContainerL" parent="Nuclear3/BuildInfo/ColorRect" index="1"]
-offset_left = 68.0001
-offset_right = 328.0
-
-[node name="ContainerN" parent="Nuclear3/BuildInfo/ColorRect" index="2"]
-offset_left = 47.3334
-offset_right = 47.3334
-
 [node name="PpMapEmplacement2" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(-372, -250)
 build_on_start = 5
-
-[node name="Biogas" parent="." instance=ExtResource("7_6x5m2")]
-visible = false
-position = Vector2(-68, -226)
-plant_name = "geothermal"
 
 [node name="PpMapEmplacement3" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(2121, -505)
@@ -89,60 +58,10 @@ position = Vector2(2121, -505)
 position = Vector2(1174, -359)
 build_on_start = 6
 
-[node name="Nuclear2" parent="." instance=ExtResource("7_6x5m2")]
-visible = false
-position = Vector2(1504, -103)
-plant_name = "nuclear"
-metadata/_edit_group_ = true
-
-[node name="Price" parent="Nuclear2/PreviewInfo" index="3"]
-layout_mode = 0
-anchors_preset = 0
-anchor_top = 0.0
-anchor_bottom = 0.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 52.0
-offset_bottom = 35.0
-grow_vertical = 1
-
-[node name="BuildInfo" parent="Nuclear2" index="2"]
-offset_left = -137.0
-offset_right = -97.0
-
-[node name="ContainerL" parent="Nuclear2/BuildInfo/ColorRect" index="1"]
-offset_left = 68.0001
-offset_right = 328.0
-
-[node name="ContainerN" parent="Nuclear2/BuildInfo/ColorRect" index="2"]
-offset_left = 47.3334
-offset_right = 47.3334
-
 [node name="PpMapEmplacement5" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(663, -81)
 build_on_start = 6
 life_span_in_turns = 3
-
-[node name="Nuclear" parent="." instance=ExtResource("7_6x5m2")]
-visible = false
-position = Vector2(953, 215)
-plant_name = "nuclear"
-metadata/_edit_group_ = true
-
-[node name="Price" parent="Nuclear/PreviewInfo" index="3"]
-layout_mode = 0
-anchors_preset = 0
-anchor_top = 0.0
-anchor_bottom = 0.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 52.0
-offset_bottom = 35.0
-grow_vertical = 1
-
-[node name="ContainerL" parent="Nuclear/BuildInfo/ColorRect" index="1"]
-offset_left = 68.0
-offset_right = 328.0
 
 [node name="Forest3" type="Sprite2D" parent="."]
 position = Vector2(2580, 244)
@@ -156,49 +75,12 @@ build_on_start = 2
 position = Vector2(1359, 163)
 build_on_start = 7
 
-[node name="CarbonSeq" parent="." groups=["PP"] instance=ExtResource("7_6x5m2")]
-visible = false
-position = Vector2(1700, 355)
-availability = Vector2(0, 0)
-plant_name = "CARBON"
-upgrade_cost = 0
-metadata/_edit_group_ = true
-
-[node name="Price" parent="CarbonSeq/PreviewInfo" index="3"]
-layout_mode = 0
-anchors_preset = 0
-anchor_top = 0.0
-anchor_bottom = 0.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 52.0
-offset_bottom = 35.0
-grow_vertical = 1
-
 [node name="PpMapEmplacement8" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(-110, 299)
 
 [node name="PpMapEmplacement9" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(-918, 325)
 build_on_start = 1
-
-[node name="Wind" parent="." instance=ExtResource("7_6x5m2")]
-visible = false
-position = Vector2(-636, 439)
-availability = Vector2(0.1, 0.9)
-plant_name = "wind"
-metadata/_edit_group_ = true
-
-[node name="Price" parent="Wind/PreviewInfo" index="3"]
-layout_mode = 0
-anchors_preset = 0
-anchor_top = 0.0
-anchor_bottom = 0.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 52.0
-offset_bottom = 35.0
-grow_vertical = 1
 
 [node name="PpMapEmplacement10" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(533, 370)
@@ -211,35 +93,18 @@ position = Vector2(2930, 777)
 texture = ExtResource("8_1irv8")
 
 [node name="PpMapEmplacement12" parent="." instance=ExtResource("7_3e8ib")]
-position = Vector2(-427, 1355)
-
-[node name="PpMapEmplacement13" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(1155, 785)
 
 [node name="Forest4" type="Sprite2D" parent="."]
 position = Vector2(521, 1220)
 texture = ExtResource("9_ai24k")
 
+[node name="PpMapEmplacement13" parent="." instance=ExtResource("7_3e8ib")]
+position = Vector2(-427, 1355)
+
 [node name="PpMapEmplacement14" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(-1105, 1093)
 build_on_start = 4
-
-[node name="Biomass" parent="." instance=ExtResource("7_6x5m2")]
-visible = false
-position = Vector2(-712, 1296)
-plant_name = "biomass"
-metadata/_edit_group_ = true
-
-[node name="Price" parent="Biomass/PreviewInfo" index="3"]
-layout_mode = 0
-anchors_preset = 0
-anchor_top = 0.0
-anchor_bottom = 0.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 52.0
-offset_bottom = 35.0
-grow_vertical = 1
 
 [node name="Forest5" type="Sprite2D" parent="."]
 position = Vector2(-1143, 1674)
@@ -257,66 +122,13 @@ biogas = false
 hydro = true
 river = true
 
-[node name="River2" parent="." instance=ExtResource("7_6x5m2")]
-visible = false
-position = Vector2(2919, 1028)
-availability = Vector2(0.7, 0.3)
-plant_name = "river"
-metadata/_edit_group_ = true
-
-[node name="Price" parent="River2/PreviewInfo" index="3"]
-layout_mode = 0
-anchors_preset = 0
-anchor_top = 0.0
-anchor_bottom = 0.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 52.0
-offset_bottom = 35.0
-grow_vertical = 1
-
 [node name="PpMapEmplacement16" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(3435, 870)
 build_on_start = 0
 
-[node name="Solar" parent="." instance=ExtResource("7_6x5m2")]
-visible = false
-position = Vector2(3588, 1212)
-availability = Vector2(0.8, 0.2)
-plant_name = "solar"
-metadata/_edit_group_ = true
-
-[node name="Price" parent="Solar/PreviewInfo" index="3"]
-layout_mode = 0
-anchors_preset = 0
-anchor_top = 0.0
-anchor_bottom = 0.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 52.0
-offset_bottom = 35.0
-grow_vertical = 1
-
 [node name="PpMapEmplacement17" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(-401, 844)
 build_on_start = 3
-
-[node name="Waste" parent="." instance=ExtResource("7_6x5m2")]
-visible = false
-position = Vector2(-25, 976)
-plant_name = "waste"
-metadata/_edit_group_ = true
-
-[node name="Price" parent="Waste/PreviewInfo" index="3"]
-layout_mode = 0
-anchors_preset = 0
-anchor_top = 0.0
-anchor_bottom = 0.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 52.0
-offset_bottom = 35.0
-grow_vertical = 1
 
 [node name="PpMapEmplacement18" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(2498, 1229)
@@ -341,26 +153,6 @@ river = true
 position = Vector2(816, 1830)
 texture = ExtResource("11_c0lk8")
 
-[node name="Pump" parent="." instance=ExtResource("7_6x5m2")]
-visible = false
-position = Vector2(1757, 1602)
-plant_name = "hydro"
-metadata/_edit_group_ = true
-
-[node name="Price" parent="Pump/PreviewInfo" index="3"]
-layout_mode = 0
-anchors_preset = 0
-anchor_top = 0.0
-anchor_bottom = 0.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 52.0
-offset_bottom = 35.0
-grow_vertical = 1
-
-[node name="Sprite" parent="Pump" index="1"]
-position = Vector2(42, -66)
-
 [node name="PpMapEmplacement20" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(413, 1779)
 solar = false
@@ -371,23 +163,6 @@ biomass = false
 biogas = false
 hydro = true
 river = true
-
-[node name="Hydro" parent="." instance=ExtResource("7_6x5m2")]
-visible = false
-position = Vector2(384, 1864)
-plant_name = "hydro"
-metadata/_edit_group_ = true
-
-[node name="Price" parent="Hydro/PreviewInfo" index="3"]
-layout_mode = 0
-anchors_preset = 0
-anchor_top = 0.0
-anchor_bottom = 0.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 52.0
-offset_bottom = 35.0
-grow_vertical = 1
 
 [node name="Mountain4" type="Sprite2D" parent="."]
 position = Vector2(2152, 1807)
@@ -421,24 +196,6 @@ river = true
 position = Vector2(2319, 2280)
 texture = ExtResource("14_8vk84")
 
-[node name="River" parent="." instance=ExtResource("7_6x5m2")]
-visible = false
-position = Vector2(2096, 2088)
-availability = Vector2(0.7, 0.3)
-plant_name = "river"
-metadata/_edit_group_ = true
-
-[node name="Price" parent="River/PreviewInfo" index="3"]
-layout_mode = 0
-anchors_preset = 0
-anchor_top = 0.0
-anchor_bottom = 0.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 52.0
-offset_bottom = 35.0
-grow_vertical = 1
-
 [node name="Forest8" type="Sprite2D" parent="."]
 position = Vector2(-627, 2385)
 texture = ExtResource("15_3rssc")
@@ -455,17 +212,3 @@ position = Vector2(526, 2669)
 texture = ExtResource("17_qgn3q")
 
 [node name="PpMenu" parent="." instance=ExtResource("21_n4f12")]
-
-[editable path="Nuclear3"]
-[editable path="Biogas"]
-[editable path="Nuclear2"]
-[editable path="Nuclear"]
-[editable path="CarbonSeq"]
-[editable path="Wind"]
-[editable path="Biomass"]
-[editable path="River2"]
-[editable path="Solar"]
-[editable path="Waste"]
-[editable path="Pump"]
-[editable path="Hydro"]
-[editable path="River"]

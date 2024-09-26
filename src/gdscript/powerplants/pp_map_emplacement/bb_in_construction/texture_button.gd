@@ -1,7 +1,10 @@
 extends TextureButton
 
 signal powerplant_cancel_construction_requested
+signal powerplant_construction_ended(metrics: PowerplantMetrics)
 signal metrics_updated(metrics: PowerplantMetrics)
+signal show_info_frame
+signal hide_info_frame
 
 # Used to detect a drag
 var mouse_position_on_press: Vector2
@@ -17,10 +20,20 @@ func _ready():
 	PowerplantsManager.build_button_in_construction_toggled.connect(_on_build_button_in_construction_toggled)
 	PowerplantsManager.pp_scene_toggled.connect(_on_pp_scene_toggled)
 
-
-func set_metrics(metrics: PowerplantMetrics):
-	self.metrics = metrics.copy()
-	metrics_updated.emit(self.metrics)
+	
+func set_metrics(metrics_to_copy: PowerplantMetrics):
+	metrics = metrics_to_copy.copy()
+	Gameloop.next_turn.connect(_on_next_turn)
+	metrics_updated.emit(metrics)
+	
+	
+func _on_next_turn():
+	metrics.can_delete = false
+	metrics_updated.emit(metrics)
+	
+	if metrics.built_on_turn + metrics.build_time_in_turns == Gameloop.current_turn:
+		powerplant_construction_ended.emit(metrics)
+		hide()
 	
 	
 func _on_mouse_entered():
@@ -40,14 +53,18 @@ func _on_close_button_mouse_exited():
 
 
 func _on_close_button_pressed():
+	Gameloop.next_turn.disconnect(_on_next_turn)
 	powerplant_cancel_construction_requested.emit()
+	hide_info_frame.emit()
 	
 
 func _on_toggled(toggled_on: bool):
 	if toggled_on:
 		material.set_shader_parameter("show", true)
+		show_info_frame.emit()
 	else:
 		material.set_shader_parameter("show", false)
+		hide_info_frame.emit()
 		
 		
 func _on_focus_entered():
@@ -72,19 +89,24 @@ func _unhandled_input(event):
 			PowerplantsManager.hide_build_menu.emit()
 			set_pressed_no_signal(false)
 			material.set_shader_parameter("show", false)
+			hide_info_frame.emit()
 			
 
 func _on_build_button_normal_toggled(toggled_on: bool, map_emplacement: Node2D, can_build: Array[PowerplantsManager.EngineTypeIds]):
 	set_pressed_no_signal(false)
 	material.set_shader_parameter("show", false)
+	hide_info_frame.emit()
 
 
 func _on_build_button_in_construction_toggled(toggled_on: bool, map_emplacement: Node2D):
 	if toggled_on and map_emplacement.get_node("BbInConstruction") != self:
 		set_pressed_no_signal(false)
 		material.set_shader_parameter("show", false)
+		hide_info_frame.emit()
 	
 
 func _on_pp_scene_toggled(_toggled_on: bool, pp_scene: PpScene):
 	set_pressed_no_signal(false)
 	material.set_shader_parameter("show", false)
+	hide_info_frame.emit()
+

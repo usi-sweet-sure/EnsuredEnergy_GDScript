@@ -16,6 +16,9 @@ var life_span_in_turns: int
 var active: bool
 var can_delete: bool
 var built_on_turn: int
+var min_upgrade: int
+var max_upgrade: int
+var upgrade_factor: float
 
 
 func _init(
@@ -31,7 +34,10 @@ func _init(
 		life_span_in_turns: int,
 		active: bool,
 		can_delete: bool,
-		built_on_turn: int
+		built_on_turn: int,
+		min_upgrade: int,
+		max_upgrade: int,
+		upgrade_factor: float,
 	):
 		self.type = type
 		self.capacity = capacity
@@ -46,11 +52,16 @@ func _init(
 		self.active = active
 		self.can_delete = can_delete
 		self.built_on_turn = built_on_turn
+		self.min_upgrade = min_upgrade
+		self.max_upgrade = max_upgrade
+		self.upgrade_factor = upgrade_factor
+		
 
 
 func copy() -> PowerplantMetrics:
 	var metrics = PowerplantMetrics.new(type, capacity, cnv_capacity,
 			emissions, land_use, production_costs, availability, building_costs,
-			build_time_in_turns, life_span_in_turns, active, can_delete, built_on_turn)
+			build_time_in_turns, life_span_in_turns, active, can_delete,
+			built_on_turn, min_upgrade, max_upgrade, upgrade_factor)
 			
 	return metrics

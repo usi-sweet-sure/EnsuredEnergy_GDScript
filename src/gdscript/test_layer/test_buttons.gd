@@ -7,18 +7,22 @@ extends Control
 
 
 func _ready():
-	button_top.text = "Trigger the end"
-	button_bottom.text = "Enable graph button"
+	button_top.text = "Next turn"
+	button_bottom.text = "Print 'Powerplants' group"
 	HttpManager.http_request_active_updated.connect(_on_http_request_active_updated)
 	_on_http_request_active_updated(HttpManager.http_request_active)
 
 
 func _on_button_top_pressed():
-	Gameloop.game_ended.emit()
+	Gameloop.current_turn += 1
+	Gameloop.next_turn.emit()
 	
 	
 func _on_button_bottom_pressed():
-	Gameloop.enable_graphs_button.emit()
+	var i = 0
+	for pp: PpScene in get_tree().get_nodes_in_group("Powerplants"):
+		print(i, " ", pp, " ", PowerplantsManager.EngineTypeIds.keys()[pp.metrics.type])
+		i += 1
 	
 
 func _on_http_request_active_updated(active: bool):

@@ -12,9 +12,9 @@ func _on_locale_updated(_locale: String):
 	
 	
 func _update_text():
-	var shutting_down_in = life_span - Gameloop.current_turn + 1
+	var shutting_down_in = life_span # E. not, use built on turn
 	
-	if shutting_down_in > Gameloop.total_number_of_turns:
+	if Gameloop.current_turn + shutting_down_in < Gameloop.total_number_of_turns:
 		hide()
 	else:
 		show()
