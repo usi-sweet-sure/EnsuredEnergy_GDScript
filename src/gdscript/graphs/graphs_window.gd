@@ -53,13 +53,19 @@ func _set_graph_context(context_name: String):
 			_add_data_set_to_graph("import_costs", Color(1, 0.875, 0.255))
 			_add_data_set_to_graph("borrowed_money", Color(0.522, 0.98, 0.404))
 			_add_data_set_to_graph("available_money", Color(0.2, 0.89, 0.282))
-		"environment":
+		"landuse":
 			x_axis_min_value = Gameloop.start_year
 			x_axis_max_value = Gameloop.start_year + (Gameloop.total_number_of_turns * Gameloop.years_in_a_turn)
 			y_axis_min_value = 0
 			y_axis_max_value = 250
 			_draw_base_graph(Gameloop.years_in_a_turn, 10)
 			_add_data_set_to_graph("land_use", Color(0.663, 0.929, 0.416))
+		"emissions":
+			x_axis_min_value = Gameloop.start_year
+			x_axis_max_value = Gameloop.start_year + (Gameloop.total_number_of_turns * Gameloop.years_in_a_turn)
+			y_axis_min_value = 0
+			y_axis_max_value = 5
+			_draw_base_graph(Gameloop.years_in_a_turn, 1)
 			_add_data_set_to_graph("co2_emissions", Color(0.91, 0.38, 0.38))
 		"energy":
 			x_axis_min_value = Gameloop.start_year
@@ -260,14 +266,14 @@ func _reset_graph():
 		line_names_container.remove_child(n)
 		n.queue_free()
 
+func _on_landuse_button_pressed():
+	_set_graph_context("landuse")
+
+func _on_emissions_button_pressed():
+	_set_graph_context("emissions")
 
 func _on_economy_button_pressed():
 	_set_graph_context("economy")
-
-
-func _on_environment_button_pressed():
-	_set_graph_context("environment")
-
 
 func _on_energy_button_pressed():
 	_set_graph_context("energy")
@@ -336,3 +342,4 @@ func change_point_highlight(point: ColorRect, highlight := true):
 		point.position -= default_point_size / (move_factor)
 	else:
 		point.position += default_point_size / (move_factor)
+
