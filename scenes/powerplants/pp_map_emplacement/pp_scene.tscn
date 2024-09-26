@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://vaxkewvk14v6"]
+[gd_scene load_steps=49 format=3 uid="uid://vaxkewvk14v6"]
 
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/pp_scene.gd" id="1_aeq33"]
 [ext_resource type="Shader" path="res://src/gdscript/shaders/outline.gdshader" id="2_ln53j"]
@@ -27,7 +27,6 @@
 [ext_resource type="Texture2D" uid="uid://bsa55enbm5cwg" path="res://assets/used_assets/textures/icons/sticker_summer.png" id="21_ikos6"]
 [ext_resource type="PackedScene" uid="uid://fyc7mfdq5sh5" path="res://scenes/buttons/button_plus.tscn" id="22_imnx4"]
 [ext_resource type="PackedScene" uid="uid://2ddxars5xyyd" path="res://scenes/buttons/button_minus.tscn" id="23_e0l3t"]
-[ext_resource type="FontFile" uid="uid://bwuskgw4ek8y" path="res://assets/Fonts/static/OpenSans-Medium.ttf" id="24_xedn0"]
 [ext_resource type="Texture2D" uid="uid://cdn0h6b873gbk" path="res://assets/UI Elements/Build_Menu_counter_yellow-1.png" id="25_8lcse"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/winter_label_1.gd" id="25_ivvsm"]
 [ext_resource type="Texture2D" uid="uid://bmka8bclye0ff" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0009_Counter-hole-1-slot.png" id="26_0mvvx"]
@@ -65,9 +64,6 @@ shader_parameter/show = false
 [sub_resource type="FontVariation" id="FontVariation_n1hys"]
 base_font = ExtResource("20_pg4ln")
 spacing_glyph = 6
-
-[sub_resource type="FontVariation" id="FontVariation_e3u58"]
-base_font = ExtResource("24_xedn0")
 
 [sub_resource type="Animation" id="Animation_dlo0r"]
 resource_name = "hide_modifiers"
@@ -943,8 +939,8 @@ offset_left = 35.3079
 offset_top = 73.0
 offset_right = 64.3079
 offset_bottom = 142.0
+theme = ExtResource("14_nud8r")
 theme_override_colors/font_color = Color(0.0431373, 0.141176, 0.14902, 1)
-theme_override_fonts/font = SubResource("FontVariation_e3u58")
 theme_override_font_sizes/font_size = 50
 text = "0"
 horizontal_alignment = 1
@@ -961,6 +957,18 @@ show_behind_parent = true
 position = Vector2(0.65669, 0.311806)
 scale = Vector2(0.904762, 0.958183)
 texture = ExtResource("26_0mvvx")
+
+[node name="Label" type="Label" parent="InfoFrame/Modifier/MultAmount"]
+offset_right = 29.0
+offset_bottom = 69.0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme = ExtResource("14_nud8r")
+theme_override_fonts/font = SubResource("FontVariation_n1hys")
+theme_override_font_sizes/font_size = 50
+text = "0"
+horizontal_alignment = 2
+script = ExtResource("29_4pdx3")
 
 [node name="PriceLabel" type="Label" parent="InfoFrame/Modifier"]
 visible = false
