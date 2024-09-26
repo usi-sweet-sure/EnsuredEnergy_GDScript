@@ -40,11 +40,15 @@ func _on_policy_voted(vote_passed: bool):
 	var is_campaign = PolicyManager.last_policy_clicked.policy_type == Policy.PolicyType.CAMPAIGN
 	
 	if vote_passed and not is_campaign and was_the_voted_policy:
+		%AnimationPlayer.play("Vote_yes")
+		await %AnimationPlayer.animation_finished
 		if side == "LEFT":
 			animation_player.play("show_left_thumbs_up")
 		else:
 			animation_player.play("show_right_thumbs_up")
 	elif not vote_passed and not is_campaign and was_the_voted_policy:
+		%AnimationPlayer.play("Vote_no")
+		await %AnimationPlayer.animation_finished
 		if side == "LEFT":
 			animation_player.play("show_left_thumbs_down")
 		else:
