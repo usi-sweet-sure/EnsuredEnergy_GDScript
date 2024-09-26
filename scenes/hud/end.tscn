@@ -1,45 +1,46 @@
-[gd_scene load_steps=55 format=3 uid="uid://cej4dlw11su6f"]
+[gd_scene load_steps=56 format=3 uid="uid://cej4dlw11su6f"]
 
 [ext_resource type="Script" path="res://src/gdscript/end/end.gd" id="1_eio5g"]
 [ext_resource type="Script" path="res://src/gdscript/end/graphs_frame.gd" id="4_dq0ds"]
 [ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="4_n8g63"]
 [ext_resource type="Script" path="res://src/gdscript/end/metrics_leaderboard_text.gd" id="5_65thp"]
-[ext_resource type="Texture2D" uid="uid://cjanghvyn5ku5" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0024_Icon-Money.png" id="5_goags"]
+[ext_resource type="Texture2D" uid="uid://bulftkbpqxib" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0024_Icon-Money.png" id="5_goags"]
 [ext_resource type="Script" path="res://src/gdscript/end/metrics_ranking_screen.gd" id="5_luxph"]
-[ext_resource type="Texture2D" uid="uid://dg00njwc1buvp" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0001_Stats-metal-base.png" id="5_xqx4k"]
+[ext_resource type="Texture2D" uid="uid://ceuxpu5iujr05" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0001_Stats-metal-base.png" id="5_xqx4k"]
 [ext_resource type="Texture2D" uid="uid://iaa6i5ocoaer" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0022_Icon-Popularity-down.png" id="6_88lh6"]
-[ext_resource type="Texture2D" uid="uid://bkhcg156vrl77" path="res://assets/UI Elements/All-HQ-Assets-D_0005s_0002_Stats-screen.png" id="6_us122"]
+[ext_resource type="Texture2D" uid="uid://cd23afs6x11al" path="res://assets/UI Elements/All-HQ-Assets-D_0005s_0002_Stats-screen.png" id="6_us122"]
 [ext_resource type="Script" path="res://src/gdscript/end/money_label.gd" id="7_1k3ff"]
 [ext_resource type="FontFile" uid="uid://bt2f3flr7psn5" path="res://assets/Fonts/VT323/VT323-Regular.ttf" id="7_5ymr4"]
-[ext_resource type="Texture2D" uid="uid://dmd7ntqd1ibst" path="res://assets/UI Elements/All-HQ-Assets-D_0009s_0003_Stats-(side)-metal-plate.png" id="7_57dx7"]
+[ext_resource type="Texture2D" uid="uid://gp11t1mp6sc3" path="res://assets/UI Elements/All-HQ-Assets-D_0009s_0003_Stats-(side)-metal-plate.png" id="7_57dx7"]
 [ext_resource type="Texture2D" uid="uid://bsa55enbm5cwg" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0028_Icon-Solar.png" id="7_x2355"]
 [ext_resource type="Script" path="res://src/gdscript/end/trust_bar.gd" id="8_8tlhp"]
 [ext_resource type="Texture2D" uid="uid://cischtrjvknyl" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0027_Icon-Wind.png" id="8_a3fds"]
 [ext_resource type="Texture2D" uid="uid://clnitajx25spt" path="res://assets/UI Elements/Button-Square-normal.png" id="8_hhqa5"]
-[ext_resource type="Texture2D" uid="uid://d1s86gxo582gw" path="res://assets/UI Elements/All-HQ-Assets-D_0005s_0007_Popularity-screen.png" id="8_uuhoe"]
+[ext_resource type="Texture2D" uid="uid://j7b41prot7rw" path="res://assets/UI Elements/All-HQ-Assets-D_0005s_0007_Popularity-screen.png" id="8_uuhoe"]
 [ext_resource type="Texture2D" uid="uid://4dcp6f66sdeo" path="res://assets/UI Elements/Button-Square-press.png" id="9_adpr1"]
-[ext_resource type="Texture2D" uid="uid://bktksex7ox3lw" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0026_Icon-Import.png" id="9_uutud"]
+[ext_resource type="ButtonGroup" uid="uid://bly2ooexf1g4h" path="res://scenes/windows/leaderboard_buttons.tres" id="9_h5vxw"]
+[ext_resource type="Texture2D" uid="uid://ceywqq4wa4ocw" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0026_Icon-Import.png" id="9_uutud"]
 [ext_resource type="Script" path="res://src/gdscript/end/energy_bar.gd" id="10_6lpn4"]
-[ext_resource type="Texture2D" uid="uid://c1vdtxfxphiaq" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0020_Icon-Environment-.png" id="10_induf"]
+[ext_resource type="Texture2D" uid="uid://bx0cxko72v5ui" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0020_Icon-Environment-.png" id="10_induf"]
 [ext_resource type="Texture2D" uid="uid://dlccss1xvy8tb" path="res://assets/UI Elements/Button-Square-hover.png" id="10_y0hau"]
-[ext_resource type="Texture2D" uid="uid://df5gm0u3u45u5" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0018_Icon-Pollution-.png" id="11_fjiu1"]
+[ext_resource type="Texture2D" uid="uid://b083k6d7sugyx" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0018_Icon-Pollution-.png" id="11_fjiu1"]
 [ext_resource type="Script" path="res://src/gdscript/end/money_button.gd" id="11_gk6vr"]
-[ext_resource type="Texture2D" uid="uid://7kknywl8yrji" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0024_Line-energy.png" id="11_glyce"]
+[ext_resource type="Texture2D" uid="uid://b421l4qq7mg5n" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0024_Line-energy.png" id="11_glyce"]
 [ext_resource type="StyleBox" uid="uid://yqtdxtw3vpjp" path="res://scenes/hud/energy_bar_green.tres" id="11_oy1fd"]
 [ext_resource type="Texture2D" uid="uid://bj6ubksmn350n" path="res://assets/UI Elements/Button-Hole.png" id="11_qe2lm"]
 [ext_resource type="StyleBox" uid="uid://lco0fbxgcpii" path="res://scenes/hud/energy_bar_low.tres" id="12_2ucrx"]
-[ext_resource type="Texture2D" uid="uid://cc6pichgkbjbj" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0019_Icon-red-normal-button.png" id="12_7s7b3"]
-[ext_resource type="Texture2D" uid="uid://p2jcuf5ansad" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0020_Icon-red-press-button.png" id="13_snkrc"]
-[ext_resource type="Texture2D" uid="uid://c541775cyiwyf" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0018_Icon-red-hover-button.png" id="14_84fak"]
-[ext_resource type="Texture2D" uid="uid://b4ob7thn3s6oq" path="res://assets/UI Elements/All-HQ-Assets-D_0009s_0008_Energy-Bar-base.png" id="14_tu03u"]
-[ext_resource type="Texture2D" uid="uid://b0p1wag6bqd8o" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0002_Icon-round-button-hole.png" id="15_m5wa2"]
+[ext_resource type="Texture2D" uid="uid://4s62sj1p8eja" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0019_Icon-red-normal-button.png" id="12_7s7b3"]
+[ext_resource type="Texture2D" uid="uid://b86vm4agcnisw" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0020_Icon-red-press-button.png" id="13_snkrc"]
+[ext_resource type="Texture2D" uid="uid://b066igcqidlny" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0018_Icon-red-hover-button.png" id="14_84fak"]
+[ext_resource type="Texture2D" uid="uid://da56ki5hmlw12" path="res://assets/UI Elements/All-HQ-Assets-D_0009s_0008_Energy-Bar-base.png" id="14_tu03u"]
+[ext_resource type="Texture2D" uid="uid://b0c3ywqarx8b7" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0002_Icon-round-button-hole.png" id="15_m5wa2"]
 [ext_resource type="Script" path="res://src/gdscript/end/trust_button.gd" id="16_ppd74"]
 [ext_resource type="Texture2D" uid="uid://bmjee8ocqy0ge" path="res://assets/UI Elements/Enviornment-Base.png" id="20_651ix"]
 [ext_resource type="Texture2D" uid="uid://bttco1oeukpbq" path="res://assets/UI Elements/Environment-Bar.png" id="21_n5n6k"]
 [ext_resource type="Texture2D" uid="uid://bwmnloeklg76n" path="res://assets/UI Elements/Enviornment-Hand.png" id="22_1ey0q"]
 [ext_resource type="Script" path="res://src/gdscript/end/winter_button.gd" id="22_twku5"]
 [ext_resource type="Script" path="res://src/gdscript/end/environment_arrow.gd" id="23_gtgnc"]
-[ext_resource type="Texture2D" uid="uid://d1moghp8fhsog" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0001_import-line-stats.png" id="23_pq3eq"]
+[ext_resource type="Texture2D" uid="uid://jboxm7nhk0qv" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0001_import-line-stats.png" id="23_pq3eq"]
 [ext_resource type="Script" path="res://src/gdscript/end/summer_button.gd" id="24_e8i6d"]
 [ext_resource type="Script" path="res://src/gdscript/end/import_screen_value.gd" id="25_j2xu1"]
 [ext_resource type="Script" path="res://src/gdscript/end/pollution_arrow.gd" id="26_kgqfc"]
@@ -175,6 +176,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("5_luxph")
+button_group = ExtResource("9_h5vxw")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MainFrame/Screen/MetricsRanking"]
 layout_mode = 1
@@ -206,7 +208,6 @@ libraries = {
 autoplay = "..."
 
 [node name="StatContainer" type="MarginContainer" parent="MainFrame/Screen/MetricsRanking"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -220,6 +221,78 @@ theme_override_constants/margin_bottom = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainFrame/Screen/MetricsRanking/StatContainer"]
 layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(105, 0)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_n8g63")
+toggle_mode = true
+button_group = ExtResource("9_h5vxw")
+text = "NUCLEAR"
+
+[node name="Button2" type="Button" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(105, 0)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_n8g63")
+toggle_mode = true
+button_group = ExtResource("9_h5vxw")
+text = "FOSSIL"
+
+[node name="Button3" type="Button" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(105, 0)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_n8g63")
+toggle_mode = true
+button_pressed = true
+button_group = ExtResource("9_h5vxw")
+text = "ELECRTICITY"
+
+[node name="Button4" type="Button" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(105, 0)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_n8g63")
+toggle_mode = true
+button_group = ExtResource("9_h5vxw")
+text = "EMISSIONS"
+
+[node name="Button5" type="Button" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(105, 0)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_n8g63")
+toggle_mode = true
+button_group = ExtResource("9_h5vxw")
+text = "LAND_USE"
+
+[node name="Button6" type="Button" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(105, 0)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_n8g63")
+toggle_mode = true
+button_group = ExtResource("9_h5vxw")
+text = "COSTS"
+
+[node name="Button7" type="Button" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(105, 0)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_n8g63")
+toggle_mode = true
+button_group = ExtResource("9_h5vxw")
+text = "SEASONALITY"
+
+[node name="Line2D" type="Line2D" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer"]
+points = PackedVector2Array(-20.5, 95.5, -20.5, 27.5, 835.5, 27.5, 835.5, 95.5)
+width = 2.0
+default_color = Color(0.219608, 0.756863, 0.788235, 1)
 
 [node name="StatTitle" type="Control" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)

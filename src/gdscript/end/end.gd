@@ -16,6 +16,25 @@ func _on_game_ended():
 	
 	metrics_rank_updated.emit(Context1.rank_json)
  
+	Context1.category = "5"
+	Context1.get_leaderboard()
+	await Context1.http1.request_completed
+	Context1.category = "7"
+	Context1.get_leaderboard()
+	await Context1.http1.request_completed
+	Context1.category = "9"
+	Context1.get_leaderboard()
+	await Context1.http1.request_completed
+	Context1.category = "11"
+	Context1.get_leaderboard()
+	await Context1.http1.request_completed
+	Context1.category = "13"
+	Context1.get_leaderboard()
+	await Context1.http1.request_completed
+	Context1.category = "15"
+	Context1.get_leaderboard()
+	await Context1.http1.request_completed
+	Context1.category = "17"
 	Context1.get_leaderboard()
 	await Context1.http1.request_completed
 	

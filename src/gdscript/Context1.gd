@@ -12,9 +12,10 @@ signal context_error
 var ctx1
 var http1
 var leaderboard = false
-var leaderboard_json
+var leaderboard_json = []
 var rank = false
 var rank_json
+var category
 
 
 #globals
@@ -95,9 +96,9 @@ func get_ctx():
 func get_leaderboard():
 	leaderboard = true
 	# TODO ask toby for a URL that gives the top 5 for all categories......
-	var url = "https://sure.euler.usi.ch/json.php?mth=lst&lim=5&ord=5"
+	var url = "https://sure.euler.usi.ch/json.php?mth=lst&lim=5&ord={category}"
 	HttpManager.http_request_active = true
-	var error = http1.request(url)
+	var error = http1.request(url.format({"category": category}))
 	if error != OK:
 		push_error("http error")
 		
@@ -117,7 +118,7 @@ func _http1_completed(_result, _response_code, _headers, body):
 		HttpManager.http_request_active = false
 		var json = JSON.new()
 		json.parse(body.get_string_from_utf8())
-		leaderboard_json = json.get_data()
+		leaderboard_json.append(json.get_data())
 	elif !rank:
 		HttpManager.http_request_active = false
 		var json = JSON.new()
