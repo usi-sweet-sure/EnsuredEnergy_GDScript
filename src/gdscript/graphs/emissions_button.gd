@@ -9,7 +9,6 @@ func _ready():
 
 func _on_graphs_context_changed(context: String):
 	if context == "emissions":
-		print("ok")
 		texture_normal = texture_pressed
 	else:
 		texture_normal = normal_texture

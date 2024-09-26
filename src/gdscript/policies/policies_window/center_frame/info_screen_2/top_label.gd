@@ -54,9 +54,13 @@ func _on_policy_button_clicked(policy_id: String):
 func _on_policy_voted(vote_passed: bool):
 	if not PolicyManager.policy_voted_this_turn.is_campaign():
 		if vote_passed:
+			%AnimationPlayer.play("Vote_yes")
+			await %AnimationPlayer.animation_finished
 			text = tr("VOTE_PASSED")
 			_change_text_to_green()
 		else:
+			%AnimationPlayer.play("Vote_yes")
+			await %AnimationPlayer.animation_finished
 			text = tr("VOTE_FAILED")
 			_change_text_to_red()
 	else:
