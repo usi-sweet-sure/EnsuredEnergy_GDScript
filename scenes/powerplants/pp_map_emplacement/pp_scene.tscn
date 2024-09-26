@@ -959,6 +959,7 @@ scale = Vector2(0.904762, 0.958183)
 texture = ExtResource("26_0mvvx")
 
 [node name="Label" type="Label" parent="InfoFrame/Modifier/MultAmount"]
+layout_mode = 0
 offset_right = 29.0
 offset_bottom = 69.0
 size_flags_horizontal = 8
