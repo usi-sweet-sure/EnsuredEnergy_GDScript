@@ -314,6 +314,7 @@ theme = ExtResource("4_n8g63")
 theme_type_variation = &"Screen"
 text = "RANK
 "
+horizontal_alignment = 1
 
 [node name="NAME" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/StatTitle/HBoxContainer"]
 custom_minimum_size = Vector2(250, 0)
@@ -323,11 +324,12 @@ theme_type_variation = &"Screen"
 text = "NAME"
 
 [node name="SCORE" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/StatTitle/HBoxContainer"]
-custom_minimum_size = Vector2(250, 0)
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme = ExtResource("4_n8g63")
 theme_type_variation = &"Screen"
 text = "SCORE"
+horizontal_alignment = 2
 
 [node name="Rank1" type="Control" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
@@ -348,6 +350,7 @@ theme = ExtResource("4_n8g63")
 theme_type_variation = &"Screen"
 text = "RANK
 "
+horizontal_alignment = 1
 
 [node name="NAME" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank1/HBoxContainer"]
 custom_minimum_size = Vector2(250, 0)
@@ -357,11 +360,12 @@ theme_type_variation = &"Screen"
 text = "NAME"
 
 [node name="SCORE" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank1/HBoxContainer"]
-custom_minimum_size = Vector2(250, 0)
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme = ExtResource("4_n8g63")
 theme_type_variation = &"Screen"
 text = "SCORE"
+horizontal_alignment = 2
 
 [node name="Rank2" type="Control" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
@@ -382,6 +386,7 @@ theme = ExtResource("4_n8g63")
 theme_type_variation = &"Screen"
 text = "RANK
 "
+horizontal_alignment = 1
 
 [node name="NAME" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank2/HBoxContainer"]
 custom_minimum_size = Vector2(250, 0)
@@ -391,11 +396,12 @@ theme_type_variation = &"Screen"
 text = "NAME"
 
 [node name="SCORE" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank2/HBoxContainer"]
-custom_minimum_size = Vector2(250, 0)
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme = ExtResource("4_n8g63")
 theme_type_variation = &"Screen"
 text = "SCORE"
+horizontal_alignment = 2
 
 [node name="Rank3" type="Control" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
@@ -416,6 +422,7 @@ theme = ExtResource("4_n8g63")
 theme_type_variation = &"Screen"
 text = "RANK
 "
+horizontal_alignment = 1
 
 [node name="NAME" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank3/HBoxContainer"]
 custom_minimum_size = Vector2(250, 0)
@@ -425,11 +432,12 @@ theme_type_variation = &"Screen"
 text = "NAME"
 
 [node name="SCORE" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank3/HBoxContainer"]
-custom_minimum_size = Vector2(250, 0)
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme = ExtResource("4_n8g63")
 theme_type_variation = &"Screen"
 text = "SCORE"
+horizontal_alignment = 2
 
 [node name="Rank4" type="Control" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
@@ -450,6 +458,7 @@ theme = ExtResource("4_n8g63")
 theme_type_variation = &"Screen"
 text = "RANK
 "
+horizontal_alignment = 1
 
 [node name="NAME" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank4/HBoxContainer"]
 custom_minimum_size = Vector2(250, 0)
@@ -459,11 +468,12 @@ theme_type_variation = &"Screen"
 text = "NAME"
 
 [node name="SCORE" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank4/HBoxContainer"]
-custom_minimum_size = Vector2(250, 0)
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme = ExtResource("4_n8g63")
 theme_type_variation = &"Screen"
 text = "SCORE"
+horizontal_alignment = 2
 
 [node name="Rank5" type="Control" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
@@ -484,6 +494,7 @@ theme = ExtResource("4_n8g63")
 theme_type_variation = &"Screen"
 text = "RANK
 "
+horizontal_alignment = 1
 
 [node name="NAME" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank5/HBoxContainer"]
 custom_minimum_size = Vector2(250, 0)
@@ -493,15 +504,25 @@ theme_type_variation = &"Screen"
 text = "NAME"
 
 [node name="SCORE" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank5/HBoxContainer"]
-custom_minimum_size = Vector2(250, 0)
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme = ExtResource("4_n8g63")
 theme_type_variation = &"Screen"
 text = "SCORE"
+horizontal_alignment = 2
 
 [node name="PlayerStats" type="Control" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/PlayerStats"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.219608, 0.756863, 0.788235, 1)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/PlayerStats"]
 layout_mode = 1
@@ -517,8 +538,10 @@ custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme = ExtResource("4_n8g63")
 theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(0.0470588, 0.168627, 0.180392, 1)
 text = "RANK
 "
+horizontal_alignment = 1
 
 [node name="player_name" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/PlayerStats/HBoxContainer"]
 unique_name_in_owner = true
@@ -526,15 +549,18 @@ custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 theme = ExtResource("4_n8g63")
 theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(0.0470588, 0.168627, 0.180392, 1)
 text = "NAME"
 
 [node name="player_score" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/PlayerStats/HBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(250, 0)
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme = ExtResource("4_n8g63")
 theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(0.0470588, 0.168627, 0.180392, 1)
 text = "SCORE"
+horizontal_alignment = 2
 
 [node name="BottomFrames" type="HBoxContainer" parent="MainFrame"]
 layout_mode = 1
