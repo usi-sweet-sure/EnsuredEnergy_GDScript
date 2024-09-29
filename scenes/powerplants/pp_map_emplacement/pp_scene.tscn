@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://vaxkewvk14v6"]
+[gd_scene load_steps=56 format=3 uid="uid://vaxkewvk14v6"]
 
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/pp_scene.gd" id="1_aeq33"]
 [ext_resource type="Shader" path="res://src/gdscript/shaders/outline.gdshader" id="2_ln53j"]
@@ -47,6 +47,7 @@
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/switch.gd" id="38_3g6vi"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/upgrade_label.gd" id="38_j6dwt"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/decomissioned_overlay.gd" id="47_cup6s"]
+[ext_resource type="Texture2D" uid="uid://b2yd4yb25s4ff" path="res://assets/used_assets/textures/borders/stamp_border_red.png" id="48_6o1a4"]
 [ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/Fonts/label_themes.tres" id="48_ayfs5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rxno2"]
@@ -1176,6 +1177,25 @@ grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.436332
 
+[node name="NinePatchRect" type="NinePatchRect" parent="InfoFrame/DecomissionedOverlay/CenterPivot"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -504.474
+offset_top = -71.8517
+offset_right = 515.526
+offset_bottom = 48.1483
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1, 1.1)
+pivot_offset = Vector2(634.406, 57.6041)
+texture = ExtResource("48_6o1a4")
+region_rect = Rect2(0, 0, 1020, 120)
+patch_margin_left = 49
+
 [node name="Label" type="Label" parent="InfoFrame/DecomissionedOverlay/CenterPivot"]
 layout_mode = 1
 anchors_preset = 8
@@ -1184,16 +1204,17 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -353.0
-offset_top = -45.5
+offset_top = -37.5
 offset_right = 353.0
-offset_bottom = 45.5
+offset_bottom = 37.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("48_ayfs5")
 theme_type_variation = &"Paper"
 theme_override_colors/font_color = Color(0.910287, 0.283595, 0.211318, 1)
-theme_override_font_sizes/font_size = 90
+theme_override_font_sizes/font_size = 70
 text = "DECOMISSIONED"
+horizontal_alignment = 1
 
 [connection signal="hide_info_frame" from="." to="InfoFrame" method="_on_hide_info_frame"]
 [connection signal="metrics_updated" from="." to="On" method="_on_metrics_updated"]
