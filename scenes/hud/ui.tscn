@@ -1,4 +1,4 @@
-[gd_scene load_steps=161 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=165 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/UI Elements/Button-Next-Normal.png" id="2_aobed"]
 [ext_resource type="Texture2D" uid="uid://ccsapuvkqqt1b" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0009_Profile-metal-base.png" id="2_nu7y6"]
@@ -103,7 +103,9 @@
 [ext_resource type="Script" path="res://src/gdscript/hud/money_management/available_money_amount_label.gd" id="71_xcmoe"]
 [ext_resource type="Script" path="res://src/gdscript/hud/emissions/info_box/sequestrated_co2_value.gd" id="79_7os60"]
 [ext_resource type="Script" path="res://src/gdscript/hud/emissions/info_box/total_emissions_value.gd" id="80_lk5v6"]
+[ext_resource type="Texture2D" uid="uid://h07lsn8vups3" path="res://assets/used_assets/textures/gauge_red_alert.png" id="83_g38lf"]
 [ext_resource type="Texture2D" uid="uid://61oa2tq2xw7y" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0034_Import-Slider.png" id="83_hii8n"]
+[ext_resource type="Script" path="res://src/gdscript/hud/emissions/red_alert.gd" id="84_f1r4u"]
 [ext_resource type="Script" path="res://src/gdscript/hud/energy_import/up_button.gd" id="87_wunut"]
 [ext_resource type="Script" path="res://src/gdscript/hud/energy_import/down_button.gd" id="88_cvkym"]
 [ext_resource type="Texture2D" uid="uid://cischtrjvknyl" path="res://assets/used_assets/textures/icons/sticker_winter.png" id="88_lv1v1"]
@@ -271,6 +273,27 @@ bg_color = Color(0.627451, 0.627451, 0.627451, 1)
 border_color = Color(0, 0, 0, 1)
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+
+[sub_resource type="Animation" id="Animation_sip0e"]
+resource_name = "red_alert_blink"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("alert:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.309804), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rwe8w"]
+_data = {
+"red_alert_blink": SubResource("Animation_sip0e")
+}
 
 [sub_resource type="FontVariation" id="FontVariation_n3vpe"]
 base_font = ExtResource("51_joowr")
@@ -1942,6 +1965,19 @@ script = ExtResource("62_7mist")
 [node name="Icon" type="Sprite2D" parent="EnvironmentAndPollution/Pollution"]
 position = Vector2(49, 67)
 texture = ExtResource("25_7q1c5")
+
+[node name="alert" type="Sprite2D" parent="EnvironmentAndPollution/Pollution"]
+modulate = Color(1, 1, 1, 0.921569)
+self_modulate = Color(1, 1, 1, 0.741176)
+position = Vector2(49, 43)
+texture = ExtResource("83_g38lf")
+script = ExtResource("84_f1r4u")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="EnvironmentAndPollution/Pollution"]
+libraries = {
+"": SubResource("AnimationLibrary_rwe8w")
+}
+speed_scale = 1.5
 
 [node name="ImportAndEnergy" type="Control" parent="."]
 layout_mode = 3
