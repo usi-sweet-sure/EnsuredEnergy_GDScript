@@ -31,9 +31,7 @@
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/winter_label_1.gd" id="25_ivvsm"]
 [ext_resource type="Texture2D" uid="uid://bmka8bclye0ff" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0009_Counter-hole-1-slot.png" id="26_0mvvx"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/winter_label_2.gd" id="26_7m4cr"]
-[ext_resource type="Texture2D" uid="uid://dwys7y27kiabl" path="res://assets/UI Elements/Import-Switch-On.png" id="27_hrhql"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/winter_label_3.gd" id="27_muvgy"]
-[ext_resource type="Texture2D" uid="uid://dhxkhfg2qxlgx" path="res://assets/UI Elements/Import-Switch-Off.png" id="28_8uysp"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/led_off.gd" id="29_1ujwf"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/summer_label_1.gd" id="29_4pdx3"]
 [ext_resource type="Texture2D" uid="uid://cy2dqdgln1uij" path="res://assets/UI Elements/LED-Off.png" id="29_bhvoq"]
@@ -42,6 +40,8 @@
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/led_on.gd" id="31_3nepy"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/animation_player.gd" id="31_6iqfa"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/summer_label_3.gd" id="31_e1bc8"]
+[ext_resource type="Texture2D" uid="uid://dwys7y27kiabl" path="res://assets/used_assets/textures/buttons/switch_on.png" id="36_ee44d"]
+[ext_resource type="Texture2D" uid="uid://dhxkhfg2qxlgx" path="res://assets/used_assets/textures/buttons/switch_off.png" id="37_bgkdg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rxno2"]
 resource_local_to_scene = true
@@ -1125,10 +1125,10 @@ grow_horizontal = 0
 scale = Vector2(2, 2)
 focus_mode = 0
 mouse_default_cursor_shape = 2
-theme_override_icons/checked = ExtResource("27_hrhql")
-theme_override_icons/checked_disabled = ExtResource("27_hrhql")
-theme_override_icons/unchecked = ExtResource("28_8uysp")
-theme_override_icons/unchecked_disabled = ExtResource("28_8uysp")
+theme_override_icons/checked = ExtResource("36_ee44d")
+theme_override_icons/checked_disabled = ExtResource("36_ee44d")
+theme_override_icons/unchecked = ExtResource("37_bgkdg")
+theme_override_icons/unchecked_disabled = ExtResource("37_bgkdg")
 button_pressed = true
 action_mode = 0
 keep_pressed_outside = true
