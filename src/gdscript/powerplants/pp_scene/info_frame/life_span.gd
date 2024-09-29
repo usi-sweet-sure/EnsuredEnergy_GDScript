@@ -13,15 +13,18 @@ func _on_locale_updated(_locale: String):
 	
 	
 func _update_text():
-	var shutting_down_in = life_span - (Gameloop.current_turn - built_on_turn) + 1
+	var shutting_down_in = life_span - (Gameloop.current_turn - built_on_turn)
 	var remaining_turns = Gameloop.total_number_of_turns - Gameloop.current_turn + 1
 	
 	if shutting_down_in <= remaining_turns:
 		if shutting_down_in == 1:
 			text = tr("SHUT_DOWN_NEXT_TURN")
+			show()
+		elif shutting_down_in == 0:
+			hide()
 		else:
 			text = tr("SHUT_DOWN").format({nbr = str(shutting_down_in)})
-		show()
+			show()
 
 	else:
 		hide()

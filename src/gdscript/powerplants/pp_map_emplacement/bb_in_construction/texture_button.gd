@@ -1,6 +1,6 @@
 extends TextureButton
 
-signal powerplant_cancel_construction_requested
+signal powerplant_cancel_construction_requested(metrics: PowerplantMetrics)
 signal powerplant_construction_ended(metrics: PowerplantMetrics)
 signal metrics_updated(metrics: PowerplantMetrics)
 signal show_info_frame
@@ -31,7 +31,7 @@ func _on_next_turn():
 	metrics.can_delete = false
 	metrics_updated.emit(metrics)
 	
-	if metrics.built_on_turn + metrics.build_time_in_turns == Gameloop.current_turn:
+	if metrics.construction_started_on_turn + metrics.build_time_in_turns == Gameloop.current_turn:
 		powerplant_construction_ended.emit(metrics)
 		hide()
 	
@@ -54,7 +54,7 @@ func _on_close_button_mouse_exited():
 
 func _on_close_button_pressed():
 	Gameloop.next_turn.disconnect(_on_next_turn)
-	powerplant_cancel_construction_requested.emit()
+	powerplant_cancel_construction_requested.emit(metrics)
 	hide_info_frame.emit()
 	
 

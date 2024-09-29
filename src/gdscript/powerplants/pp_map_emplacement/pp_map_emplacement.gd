@@ -94,10 +94,18 @@ func _on_powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMe
 		override_metrics(new_metrics)
 		
 		if new_metrics.build_time_in_turns > 0:
+			Gameloop.building_costs += new_metrics.building_costs
+			new_metrics.construction_started_on_turn = Gameloop.current_turn
 			bb_in_construction.set_metrics(new_metrics)
 			bb_in_construction.show()
 		else:
-			metrics.built_on_turn = Gameloop.current_turn
+			Gameloop.building_costs += new_metrics.building_costs
+			# This was never set if == 0.
+			# It's already set when the pp takes multiple turns to build
+			if new_metrics.construction_started_on_turn == 0:
+				new_metrics.construction_started_on_turn = Gameloop.current_turn
+			
+			new_metrics.built_on_turn = Gameloop.current_turn
 			var pp_scene = PowerplantsManager.powerplant_scene.instantiate()
 			add_child(pp_scene)
 			powerplant_node_name = pp_scene.name
@@ -105,15 +113,19 @@ func _on_powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMe
 			pp_scene.powerplant_delete_requested.connect(_on_powerplant_delete_requested)
 			pp_scene.activate()
 			
-
-func _on_powerplant_delete_requested():
+			
+# Connected to "powerplant_delete_requested" emitted by "pp_scene.tscn"
+func _on_powerplant_delete_requested(metrics: PowerplantMetrics):
+	Gameloop.building_costs -= metrics.building_costs
 	var node = get_node(powerplant_node_name)
 	remove_child(node)
 	node.queue_free()
 	bb_normal.show()
+	PowerplantsManager.update_buildings_impact()
 
 
-func _on_powerplant_cancel_construction_requested():
+func _on_powerplant_cancel_construction_requested(metrics: PowerplantMetrics):
+	Gameloop.building_costs -= metrics.building_costs
 	bb_in_construction.hide()
 	bb_normal.show()
 	
@@ -128,7 +140,7 @@ func _build_on_start(metrics: Array[PowerplantMetrics]):
 	
 
 # Applies the changes made in the editor
-func override_metrics(metrics: PowerplantMetrics):	
+func override_metrics(metrics: PowerplantMetrics):
 	if override_life_span:
 		metrics.life_span_in_turns = life_span_in_turns
 

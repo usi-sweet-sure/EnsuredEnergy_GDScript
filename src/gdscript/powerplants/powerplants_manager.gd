@@ -130,17 +130,69 @@ var powerplants_min_upgrades: Array[int] = [
 	0, # River
 ]
 
-var powerplants_upgrade_factors: Array[float] = [
-	0.025, # Solar
-	0.025, # Wind
-	0.025, # Gas
-	0.025, # Waste
-	0.025, # Biomass
-	0.025, # Biogas
-	0.025, # Nuclear
-	0.025, # Carbon sequestration
-	0.025, # Hydro
-	0.025, # River
+var powerplants_upgrade_factors_for_production_costs: Array[float] = [
+	0.25, # Solar
+	0.25, # Wind
+	0.25, # Gas
+	0.25, # Waste
+	0.25, # Biomass
+	0.25, # Biogas
+	0.25, # Nuclear
+	0.25, # Carbon sequestration
+	0.25, # Hydro
+	0.25, # River
+]
+
+var powerplants_upgrade_factors_for_emissions: Array[float] = [
+	0.5, # Solar
+	0.5, # Wind
+	0.5, # Gas
+	0.5, # Waste
+	0.5, # Biomass
+	0.5, # Biogas
+	0.5, # Nuclear
+	0.5, # Carbon sequestration
+	0.5, # Hydro
+	0.5, # River
+]
+
+var powerplants_upgrade_factors_for_land_use: Array[float] = [
+	0.5, # Solar
+	0.5, # Wind
+	0.5, # Gas
+	0.5, # Waste
+	0.5, # Biomass
+	0.5, # Biogas
+	0.5, # Nuclear
+	0.5, # Carbon sequestration
+	0.5, # Hydro
+	0.5, # River
+]
+
+var powerplants_upgrade_factors_for_winter_supply: Array[float] = [
+	0.25, # Solar
+	0.5, # Wind
+	0.5, # Gas
+	0.25, # Waste
+	0.5, # Biomass
+	0.5, # Biogas
+	0.1, # Nuclear
+	0.5, # Carbon sequestration
+	0.1, # Hydro
+	0.1, # River
+]
+
+var powerplants_upgrade_factors_for_summer_supply: Array[float] = [
+	0.25, # Solar
+	0.5, # Wind
+	0.5, # Gas
+	0.25, # Waste
+	0.5, # Biomass
+	0.5, # Biogas
+	0.1, # Nuclear
+	0.5, # Carbon sequestration
+	0.1, # Hydro
+	0.1, # River
 ]
 
 # MUST BE in the same order as EngineTypeIds
@@ -284,7 +336,7 @@ func _store_powerplant_metrics(engine_type_id: EngineTypeIds):
 					land_use = float(i["tj"])
 				production_cost_key:
 					production_cost = float(i["tj"]) / 10.0
-					building_costs = production_cost * 2.0
+					building_costs = production_cost
 				availability_key:
 					availability.x = float(i["tj"]) / capacity
 					availability.y = 1 - availability.x
@@ -305,15 +357,60 @@ func _store_powerplant_metrics(engine_type_id: EngineTypeIds):
 	var can_activate = true
 	var active = false
 	var can_delete = true
+	var construction_started_on_turn = 0
 	var built_on_turn = 0
 	var current_upgrade = 0
 	var min_upgrade = powerplants_min_upgrades[engine_type_id]
 	var max_upgrade = powerplants_max_upgrades[engine_type_id]
-	var upgrade_factor = powerplants_upgrade_factors[engine_type_id]
+	var upgrade_factor_for_production_costs = powerplants_upgrade_factors_for_production_costs[engine_type_id]
+	var upgrade_factor_for_emissions = powerplants_upgrade_factors_for_emissions[engine_type_id]
+	var upgrade_factor_for_land_use = powerplants_upgrade_factors_for_land_use[engine_type_id]
+	var upgrade_factor_for_winter_supply = powerplants_upgrade_factors_for_winter_supply[engine_type_id]
+	var upgrade_factor_for_summer_supply = powerplants_upgrade_factors_for_summer_supply[engine_type_id]
+	var upgrade_cost = 25
 	
 	var metrics = PowerplantMetrics.new(engine_type_id, capacity, cnv_capacity,
 			emissions, land_use, production_cost, availability, building_costs,
 			build_time_in_turns, life_span_in_turns, can_activate, active, can_delete,
-			built_on_turn, current_upgrade, min_upgrade, max_upgrade, upgrade_factor)
+			construction_started_on_turn, built_on_turn, current_upgrade,
+			min_upgrade, max_upgrade, upgrade_factor_for_production_costs,
+			upgrade_factor_for_emissions, upgrade_factor_for_land_use,
+			upgrade_factor_for_winter_supply, upgrade_factor_for_summer_supply,
+			upgrade_cost)
 			
 	powerplants_metrics[engine_type_id] = metrics
+
+
+# Update everything that buildings affects like supply, emissions, land_use, etc.
+func update_buildings_impact():
+	var powerplants: Array[Node] = get_tree().get_nodes_in_group("Powerplants")
+	print("Number of pps: ", powerplants.size())
+	print("====================================")
+	
+	var summer = 0
+	var winter = 0
+	var total_production_costs = 0
+	var total_emissions = 0
+	var total_land_use = 0
+	var total_emissions_sequestrated = 0
+	
+	for powerplant in powerplants:
+		var metrics: PowerplantMetrics = powerplant.metrics
+		
+		if metrics.active:
+			summer += metrics.capacity * metrics.availability.x
+			winter += metrics.capacity * metrics.availability.y
+			total_production_costs += metrics.production_costs
+			total_emissions += metrics.emissions
+			
+			if metrics.emissions < 0:
+				total_emissions_sequestrated += abs(metrics.emissions)
+			
+			total_land_use += metrics.land_use
+			
+	Gameloop.supply_summer = summer
+	Gameloop.supply_winter = winter
+	Gameloop.powerplants_production_costs = total_production_costs
+	Gameloop.co2_emissions = total_emissions
+	Gameloop.sequestrated_co2 = total_emissions_sequestrated
+	Gameloop.land_use = total_land_use

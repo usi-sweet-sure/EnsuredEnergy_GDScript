@@ -6,7 +6,7 @@ class_name PpScene
 signal metrics_updated(metrics: PowerplantMetrics)
 signal show_info_frame
 signal hide_info_frame
-signal powerplant_delete_requested
+signal powerplant_delete_requested(metrics: PowerplantMetrics)
 signal texture_on_changed(image: Image)
 signal texture_off_changed(image: Image)
 
@@ -36,7 +36,7 @@ func deactivate():
 
 
 func _on_close_button_pressed():
-	powerplant_delete_requested.emit()
+	powerplant_delete_requested.emit(metrics)
 
 
 func _on_pp_focus_exited():
@@ -63,7 +63,7 @@ func _on_switch_toggled(toggled_on: bool):
 func _on_next_turn():
 	metrics.can_delete = false
 	
-	var shutting_down_in = metrics.life_span_in_turns - (Gameloop.current_turn - metrics.built_on_turn) + 1
+	var shutting_down_in = metrics.life_span_in_turns - (Gameloop.current_turn - metrics.built_on_turn)
 	if shutting_down_in == 0:
 		metrics.active = false
 		metrics.can_activate = false
@@ -79,3 +79,7 @@ func _on_button_plus_pressed():
 func _on_button_minus_pressed():
 	metrics.current_upgrade -= 1
 	metrics_updated.emit(metrics)
+
+
+func _on_metrics_updated(metrics):
+	PowerplantsManager.update_buildings_impact()

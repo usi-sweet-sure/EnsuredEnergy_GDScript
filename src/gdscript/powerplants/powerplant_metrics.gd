@@ -18,11 +18,17 @@ var life_span_in_turns: int
 var can_activate: bool
 var active: bool
 var can_delete: bool
-var built_on_turn: int
+var construction_started_on_turn: int
+var built_on_turn: int # When the powerplant was really built, not when the construction started
 var current_upgrade: int
 var min_upgrade: int
 var max_upgrade: int
-var upgrade_factor: float
+var upgrade_factor_for_production_costs: float
+var upgrade_factor_for_emissions: float
+var upgrade_factor_for_land_use: float
+var upgrade_factor_for_winter_supply: float
+var upgrade_factor_for_summer_supply: float
+var upgrade_cost: float
 
 
 func _init(
@@ -39,11 +45,17 @@ func _init(
 		can_activate:bool,
 		active: bool,
 		can_delete: bool,
+		construction_started_on_turn: int,
 		built_on_turn: int,
 		current_upgrade: int,
 		min_upgrade: int,
 		max_upgrade: int,
-		upgrade_factor: float,
+		upgrade_factor_for_production_costs: float,
+		upgrade_factor_for_emissions: float,
+		upgrade_factor_for_land_use: float,
+		upgrade_factor_for_winter_supply: float,
+		upgrade_factor_for_summer_supply: float,
+		upgrade_cost: float,
 	):
 		self.type = type
 		self.capacity = capacity
@@ -58,18 +70,27 @@ func _init(
 		self.can_activate = can_activate
 		self.active = active
 		self.can_delete = can_delete
+		self.construction_started_on_turn = construction_started_on_turn
 		self.built_on_turn = built_on_turn
 		self.current_upgrade = current_upgrade
 		self.min_upgrade = min_upgrade
 		self.max_upgrade = max_upgrade
-		self.upgrade_factor = upgrade_factor
-		
+		self.upgrade_factor_for_production_costs = upgrade_factor_for_production_costs
+		self.upgrade_factor_for_emissions = upgrade_factor_for_emissions
+		self.upgrade_factor_for_land_use = upgrade_factor_for_land_use
+		self.upgrade_factor_for_winter_supply = upgrade_factor_for_winter_supply
+		self.upgrade_factor_for_summer_supply = upgrade_factor_for_summer_supply
+		self.upgrade_cost = upgrade_cost
 
 
 func copy() -> PowerplantMetrics:
 	var metrics = PowerplantMetrics.new(type, capacity, cnv_capacity,
 			emissions, land_use, production_costs, availability, building_costs,
 			build_time_in_turns, life_span_in_turns, can_activate, active, can_delete,
-			built_on_turn, current_upgrade, min_upgrade, max_upgrade, upgrade_factor)
+			construction_started_on_turn, built_on_turn, current_upgrade,
+			min_upgrade, max_upgrade, upgrade_factor_for_production_costs,
+			upgrade_factor_for_emissions, upgrade_factor_for_land_use,
+			upgrade_factor_for_winter_supply, upgrade_factor_for_summer_supply,
+			upgrade_cost)
 			
 	return metrics
