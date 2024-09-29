@@ -1,7 +1,7 @@
 [gd_scene load_steps=53 format=3 uid="uid://jj476u8yn2g8"]
 
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/policies_window.gd" id="1_iwuuw"]
-[ext_resource type="Texture2D" uid="uid://q747u8v4c8js" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0006_Policies-metal-base.png" id="2_bdksa"]
+[ext_resource type="Texture2D" uid="uid://coki776cjtqrp" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0006_Policies-metal-base.png" id="2_bdksa"]
 [ext_resource type="Texture2D" uid="uid://dnr3tvwn2pcnj" path="res://assets/UI Elements/Policies_Button_small_Hole.png" id="3_34k6p"]
 [ext_resource type="Texture2D" uid="uid://d134bmkq0exi6" path="res://assets/UI Elements/All-HQ-Assets-D_0005s_0004_Policies-screen.png" id="3_jt4rt"]
 [ext_resource type="PackedScene" uid="uid://dna2006dnsx2x" path="res://scenes/windows/policy_button.tscn" id="3_wnx31"]
@@ -20,21 +20,21 @@
 [ext_resource type="Texture2D" uid="uid://cd23afs6x11al" path="res://assets/used_assets/textures/screens/screen_1.png" id="17_hftqp"]
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/center_frame/info_screen_1/general_explanation.gd" id="17_uqeid"]
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/campaing_screen_label.gd" id="18_tfmt2"]
-[ext_resource type="Texture2D" uid="uid://cvwrs8ay45vm" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0005_Policies-(side)-metal-base.png" id="18_yk6um"]
+[ext_resource type="Texture2D" uid="uid://dnf85brf6fkbf" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0005_Policies-(side)-metal-base.png" id="18_yk6um"]
 [ext_resource type="Texture2D" uid="uid://m8sqi2c1vb8w" path="res://assets/UI Elements/Policies-Button-yellow-Normal.png" id="19_pws74"]
 [ext_resource type="Texture2D" uid="uid://cufu62j0t1t6p" path="res://assets/UI Elements/Policies-Button-yellow-Press.png" id="20_e53ft"]
 [ext_resource type="Texture2D" uid="uid://cltrnfisw3ald" path="res://assets/UI Elements/Policies-Button-yellow-Hover.png" id="21_n5r62"]
-[ext_resource type="Texture2D" uid="uid://b3e8jtdiedm3g" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0028_Policies-normal-green-button.png" id="21_wjauf"]
-[ext_resource type="Texture2D" uid="uid://dcn3x11r6olam" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0029_Policies-press-green-button.png" id="22_ckcsn"]
-[ext_resource type="Texture2D" uid="uid://dxw1fc377fb22" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0027_Policies-hover-green-button.png" id="23_v3h5s"]
-[ext_resource type="Texture2D" uid="uid://dxumbic2rulw2" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0003_Policies-button-hole.png" id="24_dbcf4"]
-[ext_resource type="Texture2D" uid="uid://dqj7evkf6fnju" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0010_Hammer-symbol.png" id="25_o6wyt"]
-[ext_resource type="Texture2D" uid="uid://di3qfoi63p0r2" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0009_Wind-symbol.png" id="26_30gpl"]
-[ext_resource type="Texture2D" uid="uid://c1vdtxfxphiaq" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0020_Icon-Environment-.png" id="27_g53jr"]
+[ext_resource type="Texture2D" uid="uid://cs8wokl8kptl" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0028_Policies-normal-green-button.png" id="21_wjauf"]
+[ext_resource type="Texture2D" uid="uid://dhfbtv1td24n2" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0029_Policies-press-green-button.png" id="22_ckcsn"]
+[ext_resource type="Texture2D" uid="uid://chnjpvqbhlneu" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0027_Policies-hover-green-button.png" id="23_v3h5s"]
+[ext_resource type="Texture2D" uid="uid://bbkowcyvsefgm" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0003_Policies-button-hole.png" id="24_dbcf4"]
+[ext_resource type="Texture2D" uid="uid://rsi3865gd46t" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0010_Hammer-symbol.png" id="25_o6wyt"]
+[ext_resource type="Texture2D" uid="uid://dm4sc8s54816e" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0009_Wind-symbol.png" id="26_30gpl"]
+[ext_resource type="Texture2D" uid="uid://bx0cxko72v5ui" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0020_Icon-Environment-.png" id="27_g53jr"]
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/campaing_screen_label_2.gd" id="28_uikld"]
-[ext_resource type="Texture2D" uid="uid://bktksex7ox3lw" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0026_Icon-Import.png" id="32_6o0tj"]
-[ext_resource type="Texture2D" uid="uid://dnjlu0sowohj3" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0011_House-symbol.png" id="33_xhuvb"]
-[ext_resource type="Texture2D" uid="uid://b18h2ga2u5jh7" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0012_Heat-symbol.png" id="34_xehlb"]
+[ext_resource type="Texture2D" uid="uid://ceywqq4wa4ocw" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0026_Icon-Import.png" id="32_6o0tj"]
+[ext_resource type="Texture2D" uid="uid://ci730aw1uci4x" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0011_House-symbol.png" id="33_xhuvb"]
+[ext_resource type="Texture2D" uid="uid://trn8noyxvhuf" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0012_Heat-symbol.png" id="34_xehlb"]
 [ext_resource type="Texture2D" uid="uid://duoff2c7r1hdy" path="res://assets/used_assets/textures/buttons/close_button_normal.png" id="36_gtkq5"]
 [ext_resource type="Texture2D" uid="uid://bdq26gwsmigwy" path="res://assets/used_assets/textures/buttons/close_button_pressed.png" id="37_x85g4"]
 [ext_resource type="Texture2D" uid="uid://xicitqwdhrq7" path="res://assets/yes.png" id="38_f8brm"]
@@ -172,21 +172,116 @@ tracks/9/keys = {
 "values": [1.0]
 }
 
-[sub_resource type="Animation" id="Animation_k75ra"]
-resource_name = "popup"
-length = 0.3
-step = 0.05
+[sub_resource type="Animation" id="Animation_352pj"]
+resource_name = "Vote_no"
+length = 2.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Control:scale")
+tracks/0/path = NodePath("Control/CenterFrame/VoteAnimation/Ballot:region_rect")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.3),
+"times": PackedFloat32Array(0, 1, 2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(1e-05, 1e-05), Vector2(1.1, 1.1), Vector2(1, 1)]
+"values": [Rect2(41, 21, 14, 16), Rect2(41, 21, 14, 16), Rect2(41, 21, 14, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/CenterFrame/VoteAnimation/Ballot:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(945, 345), Vector2(945, 386), Vector2(945, 404)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/CenterFrame/VoteAnimation/Ballot:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("45_a0spe")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/CenterFrame/InfoScreen1/Text:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control/CenterFrame/VoteAnimation:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Control/CenterFrame/InfoScreen2/Infos/TopLabel:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Control/CenterFrame/InfoScreen1/Text:visible_ratio")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(2, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Control/CenterFrame/InfoScreen2/Infos/Dots:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Control/CenterFrame/InfoScreen2/Infos/Dots:visible_ratio")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.134, 1.0]
 }
 
 [sub_resource type="Animation" id="Animation_nspa0"]
@@ -301,116 +396,21 @@ tracks/8/keys = {
 "values": [true, false]
 }
 
-[sub_resource type="Animation" id="Animation_352pj"]
-resource_name = "Vote_no"
-length = 2.2
+[sub_resource type="Animation" id="Animation_k75ra"]
+resource_name = "popup"
+length = 0.3
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Control/CenterFrame/VoteAnimation/Ballot:region_rect")
+tracks/0/path = NodePath("Control:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2),
+"times": PackedFloat32Array(0, 0.25, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Rect2(41, 21, 14, 16), Rect2(41, 21, 14, 16), Rect2(41, 21, 14, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Control/CenterFrame/VoteAnimation/Ballot:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(945, 345), Vector2(945, 386), Vector2(945, 404)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Control/CenterFrame/VoteAnimation/Ballot:texture")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("45_a0spe")]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Control/CenterFrame/InfoScreen1/Text:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Control/CenterFrame/VoteAnimation:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Control/CenterFrame/InfoScreen2/Infos/TopLabel:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Control/CenterFrame/InfoScreen1/Text:visible_ratio")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(2, 2.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Control/CenterFrame/InfoScreen2/Infos/Dots:visible")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Control/CenterFrame/InfoScreen2/Infos/Dots:visible_ratio")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0, 1.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.134, 1.0]
+"values": [Vector2(1e-05, 1e-05), Vector2(1.1, 1.1), Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8dlcw"]

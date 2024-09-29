@@ -1,30 +1,21 @@
-[gd_scene load_steps=124 format=3 uid="uid://g58p7rxvcdik"]
+[gd_scene load_steps=115 format=3 uid="uid://g58p7rxvcdik"]
 
 [ext_resource type="PackedScene" uid="uid://ba56oxmvcxpos" path="res://scenes/world.tscn" id="1_prp6q"]
 [ext_resource type="PackedScene" uid="uid://bs48lirfn2fp2" path="res://scenes/hud/ui.tscn" id="2_d60f5"]
 [ext_resource type="Script" path="res://src/cs/ui/camera.gd" id="3_2lui3"]
-[ext_resource type="Texture2D" uid="uid://56mnndf1ggaj" path="res://assets/used_assets/textures/powerplants/pp_sprite_on_nuclear.png" id="4_e6lsk"]
 [ext_resource type="Texture2D" uid="uid://dbx2rmjpjd6qx" path="res://assets/new Power plants/Power plants/Power_Plants-smoke-1.png" id="5_n6wof"]
-[ext_resource type="Texture2D" uid="uid://eou3fo8c40ne" path="res://assets/used_assets/textures/powerplants/pp_sprite_on_waste.png" id="5_vx3tb"]
-[ext_resource type="Texture2D" uid="uid://c83qs7d4owesp" path="res://assets/used_assets/textures/powerplants/pp_sprite_on_biomass.png" id="6_q3df2"]
 [ext_resource type="Texture2D" uid="uid://delmd6x2b1mpv" path="res://assets/new Power plants/Power plants/Power_Plants-smoke-2.png" id="6_swuok"]
-[ext_resource type="Texture2D" uid="uid://bh1jd2q534s57" path="res://assets/used_assets/textures/powerplants/pp_sprite_on_wind.png" id="7_4q6ww"]
 [ext_resource type="Texture2D" uid="uid://blskwje2kl2w5" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0000_Smoke-1.png" id="7_ugl8s"]
 [ext_resource type="Texture2D" uid="uid://d3i7u4tlllbpv" path="res://assets/new Power plants/Power plants/Power_Plants-smoke-3.png" id="7_vvt3h"]
 [ext_resource type="Texture2D" uid="uid://c47ihdkfwask6" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0009_Propeller-1.png" id="8_7bikf"]
 [ext_resource type="Texture2D" uid="uid://cehdhadcxkehx" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0001_Smoke-2.png" id="8_jh2tr"]
-[ext_resource type="Texture2D" uid="uid://dhlbnxuj2tce7" path="res://assets/used_assets/textures/powerplants/pp_sprite_on_biogas.png" id="8_odcis"]
 [ext_resource type="Texture2D" uid="uid://7igraqqaltxx" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0002_Smoke-3.png" id="9_2lgj4"]
-[ext_resource type="Texture2D" uid="uid://cumvhtc05t8h5" path="res://assets/used_assets/textures/powerplants/pp_sprite_on_river.png" id="9_agn8w"]
-[ext_resource type="Texture2D" uid="uid://bgbm8t4r0m4a0" path="res://assets/used_assets/textures/powerplants/pp_sprite_on_solar.png" id="10_3byff"]
-[ext_resource type="Texture2D" uid="uid://dt3vgdfiymmbl" path="res://assets/used_assets/textures/powerplants/pp_sprite_on_hydro.png" id="11_nggna"]
 [ext_resource type="PackedScene" uid="uid://ciphd0cmpslrn" path="res://scenes/hud/tutorial.tscn" id="11_uite1"]
 [ext_resource type="Texture2D" uid="uid://40ncc2tsu56l" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0008_Water-Pump-3.png" id="11_y3iyb"]
 [ext_resource type="Texture2D" uid="uid://cwno5l0u5mavx" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0021_Wind-2.png" id="12_fhjpd"]
 [ext_resource type="PackedScene" uid="uid://885lty3v1qbq" path="res://scenes/windows/shock.tscn" id="12_vvejj"]
 [ext_resource type="Texture2D" uid="uid://py2jqgbip8j4" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0022_Wind-3.png" id="13_n0wou"]
 [ext_resource type="Texture2D" uid="uid://dcpr8ukl4bkqc" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0006_Water-Pump-1.png" id="13_udqyc"]
-[ext_resource type="Texture2D" uid="uid://cbqebssavvctr" path="res://assets/used_assets/textures/powerplants/pp_sprite_on_carbon_sequestration.png" id="14_8dcbt"]
 [ext_resource type="Texture2D" uid="uid://dn4l161c4rmxe" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0026_Solar-2.png" id="15_rfjt7"]
 [ext_resource type="Texture2D" uid="uid://qq50ou5x8jbb" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0003_Water-1.png" id="15_terxt"]
 [ext_resource type="Texture2D" uid="uid://tep3shxoy2eg" path="res://assets/new Power plants/Power plants/230601_CH_SUREgame_Power-Plants.psd_0004_Water-2.png" id="16_d8kd2"]
@@ -79,48 +70,48 @@
 [ext_resource type="PackedScene" uid="uid://mnj2kr6urhvk" path="res://scenes/survey/survey_layer.tscn" id="76_y7xdi"]
 [ext_resource type="PackedScene" uid="uid://cb7movoe2pf7u" path="res://scenes/windows/quit_game.tscn" id="77_iwdt8"]
 
-[sub_resource type="Animation" id="Animation_k4it7"]
+[sub_resource type="Animation" id="Animation_0vvtx"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Smoke2:position")
+tracks/0/path = NodePath("Smoke3:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(80, -325)]
+"values": [Vector2(76, -330)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Smoke:position")
+tracks/1/path = NodePath("Smoke2:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(100, -360)]
+"values": [Vector2(106, -240)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Smoke:modulate")
+tracks/2/path = NodePath("Smoke:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Vector2(34, -265)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Smoke2:modulate")
+tracks/3/path = NodePath("Smoke:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -132,14 +123,14 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Smoke3:position")
+tracks/4/path = NodePath("Smoke2:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(50, -280)]
+"values": [Color(0.345098, 0.345098, 0.345098, 0)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -151,108 +142,72 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Smoke4:modulate")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Smoke5:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(88, -350)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Smoke5:modulate")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Color(0.345098, 0.345098, 0.345098, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_xwf17"]
+[sub_resource type="Animation" id="Animation_eps1c"]
 resource_name = "Smoke"
-length = 3.0
+length = 1.5
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Smoke2:position")
+tracks/0/path = NodePath("Smoke:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.5, 2.1),
+"times": PackedFloat32Array(0, 0.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(80, -325), Vector2(95, -355)]
+"values": [Vector2(34, -225), Vector2(34, -265)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Smoke:position")
+tracks/1/path = NodePath("Smoke2:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(1.2, 2.9),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(100, -360), Vector2(105, -400)]
+"values": [Vector2(106, -205), Vector2(106, -240)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Smoke:modulate")
+tracks/2/path = NodePath("Smoke3:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(1.2, 1.8, 2.9),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 1.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.784314), Color(1, 1, 1, 0)]
+"values": [Vector2(76, -285), Vector2(76, -330)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Smoke2:modulate")
+tracks/3/path = NodePath("Smoke:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.5, 1, 2.1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.5, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.784314), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0), Color(0.345098, 0.345098, 0.345098, 0.588235), Color(0.345098, 0.345098, 0.345098, 0.588235), Color(1, 1, 1, 0)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Smoke3:position")
+tracks/4/path = NodePath("Smoke2:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 2.4),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.3, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(55, -280), Vector2(55, -310)]
+"values": [Color(1, 1, 1, 0), Color(0.345098, 0.345098, 0.345098, 0.588235), Color(0.345098, 0.345098, 0.345098, 0.588235), Color(1, 1, 1, 0)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -261,234 +216,945 @@ tracks/5/path = NodePath("Smoke3:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.6, 1.5, 2.4),
+"times": PackedFloat32Array(0, 0.5, 1.1, 1.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.784314), Color(1, 1, 1, 0.784314), Color(1, 1, 1, 0)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Smoke4:modulate")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.8, 1.7, 2.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.780392), Color(1, 1, 1, 1), Color(1, 1, 1, 0.780392)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Smoke5:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0, 1.5, 1.7, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(80, -318), Vector2(96, -358), Vector2(80, -318), Vector2(96, -358)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Smoke5:modulate")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0, 0.3, 1.2, 1.5, 1.7, 2.3, 2.5, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.815686), Color(1, 1, 1, 0.815686), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0.815686), Color(1, 1, 1, 0.815686), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0), Color(0.345098, 0.345098, 0.345098, 0.588235), Color(0.345098, 0.345098, 0.345098, 0.588235), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_abmly"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pvye6"]
 _data = {
-"RESET": SubResource("Animation_k4it7"),
-"Smoke": SubResource("Animation_xwf17")
+"RESET": SubResource("Animation_0vvtx"),
+"Smoke": SubResource("Animation_eps1c")
 }
 
-[sub_resource type="Animation" id="Animation_j7gcx"]
+[sub_resource type="Gradient" id="Gradient_e2int"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mhl0d"]
+gradient = SubResource("Gradient_e2int")
+fill_from = Vector2(1, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Animation" id="Animation_tsl1p"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Smoke2:position")
+tracks/0/path = NodePath("Water:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(55, -295)]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
+tracks/1/path = NodePath("Water2:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(55, -340)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath(".:modulate")
+tracks/2/path = NodePath("Water3:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("../Smoke2:modulate")
+tracks/3/path = NodePath("Water5:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Vector2(72, 104)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("../Smoke4:position")
+tracks/4/path = NodePath("Water6:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(50, -265)]
+"values": [Vector2(56, 112)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("../Smoke4:modulate")
+tracks/5/path = NodePath("Water7:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Vector2(64, 96)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("../Smoke3:modulate")
+tracks/6/path = NodePath("Water7:modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0.564706)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Water6:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.623529)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Water5:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.623529)]
 }
 
-[sub_resource type="Animation" id="Animation_ojfec"]
-resource_name = "Smoke"
-length = 3.0
+[sub_resource type="Animation" id="Animation_q07b7"]
+resource_name = "Water"
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Smoke2:position")
+tracks/0/path = NodePath("Water:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.4, 2.3),
+"times": PackedFloat32Array(0.3, 0.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(55, -295), Vector2(60, -325)]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
+tracks/1/path = NodePath("Water2:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.9, 2.8),
+"times": PackedFloat32Array(0.1, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(55, -340), Vector2(79.9999, -390)]
+"values": [Color(1, 1, 1, 0), Color(0.831373, 0.890196, 1, 1)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath(".:modulate")
+tracks/2/path = NodePath("Water3:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.9, 1.5, 2, 2.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0.4, 0.9),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.784314), Color(1, 1, 1, 0.784314), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("../Smoke2:modulate")
+tracks/3/path = NodePath("Water5:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.4, 1, 1.4, 2.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.784314), Color(1, 1, 1, 0.784314), Color(1, 1, 1, 0)]
+"values": [Vector2(72, 104), Vector2(72, 102)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("../Smoke4:position")
+tracks/4/path = NodePath("Water6:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(50, -280), Vector2(50, -295)]
+"values": [Vector2(56, 112), Vector2(56, 110)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("../Smoke4:modulate")
+tracks/5/path = NodePath("Water7:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.4, 1, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.784314), Color(1, 1, 1, 0.784314), Color(1, 1, 1, 0)]
+"values": [Vector2(64, 96), Vector2(64, 92)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("../Smoke3:modulate")
+tracks/6/path = NodePath("Water7:modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.7, 1.3, 1.9, 3),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.180392), Color(1, 1, 1, 0.564706)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Water6:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.623529), Color(1, 1, 1, 0.368627), Color(1, 1, 1, 0.623529)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Water5:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.2, 0.645868),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.341176), Color(1, 1, 1, 0.623529)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5k73m"]
+_data = {
+"RESET": SubResource("Animation_tsl1p"),
+"Water": SubResource("Animation_q07b7")
+}
+
+[sub_resource type="Animation" id="Animation_w8phc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Water3:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Water5:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Water4:skew")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Water4:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Water2:skew")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Water2:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.337255)]
+}
+
+[sub_resource type="Animation" id="Animation_v16fw"]
+resource_name = "Water"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Water3:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3, 0.9, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Water5:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Water4:skew")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1, 0.4, 0.7, 1, 1.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0.784314), Color(1, 1, 1, 0.419608), Color(1, 1, 1, 0.784314), Color(1, 1, 1, 0.419608), Color(1, 1, 1, 0.784314)]
+"values": [-0.174533, 0.0, 0.174533, 0.0, -0.174533]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Water4:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.686275), Color(1, 1, 1, 0.129412), Color(1, 1, 1, 0.478431), Color(1, 1, 1, 0.0862745)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Water2:skew")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.174533, 0.174533, 0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Water2:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.337255), Color(1, 1, 1, 0.505882), Color(1, 1, 1, 0.337255)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_1shh4"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7anxu"]
 _data = {
-"RESET": SubResource("Animation_j7gcx"),
-"Smoke": SubResource("Animation_ojfec")
+"RESET": SubResource("Animation_w8phc"),
+"Water": SubResource("Animation_v16fw")
+}
+
+[sub_resource type="Animation" id="Animation_6m8wg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Water10:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Water11:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Water10:skew")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.174533]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Water11:skew")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.174533]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Water12:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.498039)]
+}
+
+[sub_resource type="Animation" id="Animation_8du0e"]
+resource_name = "Water"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Water10:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.760784), Color(1, 1, 1, 0.556863), Color(1, 1, 1, 0.776471), Color(1, 1, 1, 0.568627)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Water11:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.7, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.552941), Color(1, 1, 1, 0.709804), Color(1, 1, 1, 0.592157), Color(1, 1, 1, 0.764706)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Water10:skew")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.0872665, 0.0872665, 0.0872665]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Water11:skew")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.0872665, 0.0872665]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Water12:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.3, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.243137), Color(1, 1, 1, 0.498039)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lb77a"]
+_data = {
+"RESET": SubResource("Animation_6m8wg"),
+"Water": SubResource("Animation_8du0e")
+}
+
+[sub_resource type="Animation" id="Animation_ac3am"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Smoke:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Smoke2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Smoke3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Smoke:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-60, -325)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Smoke2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-60, -325)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Smoke4:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-127, -282)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Smoke4:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4c5b4"]
+resource_name = "Smoke"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Smoke:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.345098, 0.345098, 0.345098, 0.784314), Color(0.345098, 0.345098, 0.345098, 0.588235), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Smoke2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3, 1, 1.9, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0.345098, 0.345098, 0.345098, 0.588235), Color(0.345098, 0.345098, 0.345098, 0.588235), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Smoke3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.8, 1.7, 2.3, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0.345098, 0.345098, 0.345098, 0.588235), Color(0.345098, 0.345098, 0.345098, 0.588235), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Smoke:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.9, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-60, -250), Vector2(-60, -285), Vector2(-60, -305)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Smoke2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.7, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-60, -295), Vector2(-60, -365)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Smoke3:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.8, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-58, -315), Vector2(-58, -365)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Smoke4:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.2, 2.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-127, -222), Vector2(-127, -300)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Smoke4:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.2, 1.1, 1.7, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0.345098, 0.345098, 0.345098, 0.588235), Color(0.345098, 0.345098, 0.345098, 0.588235), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tgvt4"]
+_data = {
+"RESET": SubResource("Animation_ac3am"),
+"Smoke": SubResource("Animation_4c5b4")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_st7y5"]
+atlas = ExtResource("8_7bikf")
+region = Rect2(0, 36, 24, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7dvq"]
+atlas = ExtResource("8_7bikf")
+region = Rect2(30, 60, 32, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_obbpa"]
+atlas = ExtResource("8_7bikf")
+region = Rect2(22, 88, 14, 32)
+
+[sub_resource type="Animation" id="Animation_8k287"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite/PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite/PointLight2D:texture:fill_from")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite/PointLight2D:texture:fill_to")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kn5c8"]
+resource_name = "Sun"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite/PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.4, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.38, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite/PointLight2D:texture:fill_from")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.0794393, 0.0747664), Vector2(1, 1), Vector2(0.941241, 0.940943)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite/PointLight2D:texture:fill_to")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0.878505, 0.869159)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1rsdt"]
+_data = {
+"RESET": SubResource("Animation_8k287"),
+"Sun": SubResource("Animation_kn5c8")
+}
+
+[sub_resource type="Animation" id="Animation_gyegr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Water:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.764706)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Water2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.709804)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Water3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.662745)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Water4:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.384314)]
+}
+
+[sub_resource type="Animation" id="Animation_sjpt4"]
+resource_name = "Water"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Water:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.764706), Color(1, 1, 1, 0.407843)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Water2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.709804), Color(1, 1, 1, 0.4)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Water3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.662745), Color(1, 1, 1, 0.4), Color(1, 1, 1, 0.662745), Color(1, 1, 1, 0.4)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Water4:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.3, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.172549), Color(1, 1, 1, 0.384314)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a8121"]
+_data = {
+"RESET": SubResource("Animation_gyegr"),
+"Water": SubResource("Animation_sjpt4")
 }
 
 [sub_resource type="Animation" id="Animation_obqmd"]
@@ -745,18 +1411,6 @@ _data = {
 "Smoke": SubResource("Animation_81pcw")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_st7y5"]
-atlas = ExtResource("8_7bikf")
-region = Rect2(0, 36, 24, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p7dvq"]
-atlas = ExtResource("8_7bikf")
-region = Rect2(30, 60, 32, 22)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_obbpa"]
-atlas = ExtResource("8_7bikf")
-region = Rect2(22, 88, 14, 32)
-
 [sub_resource type="Animation" id="Animation_hyc1l"]
 length = 0.001
 tracks/0/type = "value"
@@ -843,36 +1497,36 @@ _data = {
 "Wind": SubResource("Animation_ci2t2")
 }
 
-[sub_resource type="Animation" id="Animation_ac3am"]
+[sub_resource type="Animation" id="Animation_j7gcx"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Smoke:modulate")
+tracks/0/path = NodePath("../Smoke2:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Vector2(55, -295)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Smoke2:modulate")
+tracks/1/path = NodePath(".:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Vector2(55, -340)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Smoke3:modulate")
+tracks/2/path = NodePath(".:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -884,38 +1538,220 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Smoke:position")
+tracks/3/path = NodePath("../Smoke2:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-60, -325)]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Smoke2:position")
+tracks/4/path = NodePath("../Smoke4:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-60, -325)]
+"values": [Vector2(50, -265)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Smoke4:position")
+tracks/5/path = NodePath("../Smoke4:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-127, -282)]
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Smoke3:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ojfec"]
+resource_name = "Smoke"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Smoke2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.4, 2.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(55, -295), Vector2(60, -325)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.9, 2.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(55, -340), Vector2(79.9999, -390)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.9, 1.5, 2, 2.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.784314), Color(1, 1, 1, 0.784314), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Smoke2:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.4, 1, 1.4, 2.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.784314), Color(1, 1, 1, 0.784314), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Smoke4:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(50, -280), Vector2(50, -295)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Smoke4:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.4, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.784314), Color(1, 1, 1, 0.784314), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Smoke3:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.3, 1.9, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.784314), Color(1, 1, 1, 0.419608), Color(1, 1, 1, 0.784314), Color(1, 1, 1, 0.419608), Color(1, 1, 1, 0.784314)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1shh4"]
+_data = {
+"RESET": SubResource("Animation_j7gcx"),
+"Smoke": SubResource("Animation_ojfec")
+}
+
+[sub_resource type="Animation" id="Animation_k4it7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Smoke2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(80, -325)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Smoke:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(100, -360)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Smoke:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Smoke2:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Smoke3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(50, -280)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Smoke3:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -929,377 +1765,94 @@ tracks/6/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Smoke5:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(88, -350)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Smoke5:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
-[sub_resource type="Animation" id="Animation_4c5b4"]
+[sub_resource type="Animation" id="Animation_xwf17"]
 resource_name = "Smoke"
 length = 3.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Smoke:modulate")
+tracks/0/path = NodePath("Smoke2:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.7, 2, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0.5, 2.1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0.345098, 0.345098, 0.345098, 0.784314), Color(0.345098, 0.345098, 0.345098, 0.588235), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+"values": [Vector2(80, -325), Vector2(95, -355)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Smoke2:modulate")
+tracks/1/path = NodePath("Smoke:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.3, 1, 1.9, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(1.2, 2.9),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(0.345098, 0.345098, 0.345098, 0.588235), Color(0.345098, 0.345098, 0.345098, 0.588235), Color(1, 1, 1, 0)]
+"values": [Vector2(100, -360), Vector2(105, -400)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Smoke3:modulate")
+tracks/2/path = NodePath("Smoke:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.8, 1.7, 2.3, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(1.2, 1.8, 2.9),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(0.345098, 0.345098, 0.345098, 0.588235), Color(0.345098, 0.345098, 0.345098, 0.588235), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.784314), Color(1, 1, 1, 0)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Smoke:position")
+tracks/3/path = NodePath("Smoke2:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.9, 2),
+"times": PackedFloat32Array(0.5, 1, 2.1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(-60, -250), Vector2(-60, -285), Vector2(-60, -305)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.784314), Color(1, 1, 1, 0)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Smoke2:position")
+tracks/4/path = NodePath("Smoke3:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.7, 3),
+"times": PackedFloat32Array(0, 2.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-60, -295), Vector2(-60, -365)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Smoke3:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0.8, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-58, -315), Vector2(-58, -365)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Smoke4:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0.2, 2.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-127, -222), Vector2(-127, -300)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Smoke4:modulate")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0.2, 1.1, 1.7, 2.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(0.345098, 0.345098, 0.345098, 0.588235), Color(0.345098, 0.345098, 0.345098, 0.588235), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_tgvt4"]
-_data = {
-"RESET": SubResource("Animation_ac3am"),
-"Smoke": SubResource("Animation_4c5b4")
-}
-
-[sub_resource type="Animation" id="Animation_gyegr"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Water:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.764706)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Water2:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.709804)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Water3:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.662745)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Water4:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.384314)]
-}
-
-[sub_resource type="Animation" id="Animation_sjpt4"]
-resource_name = "Water"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Water:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.764706), Color(1, 1, 1, 0.407843)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Water2:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.5, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.709804), Color(1, 1, 1, 0.4)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Water3:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.662745), Color(1, 1, 1, 0.4), Color(1, 1, 1, 0.662745), Color(1, 1, 1, 0.4)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Water4:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.3, 0.7),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.172549), Color(1, 1, 1, 0.384314)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_a8121"]
-_data = {
-"RESET": SubResource("Animation_gyegr"),
-"Water": SubResource("Animation_sjpt4")
-}
-
-[sub_resource type="Gradient" id="Gradient_e2int"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_mhl0d"]
-gradient = SubResource("Gradient_e2int")
-fill_from = Vector2(1, 1)
-fill_to = Vector2(0, 0)
-
-[sub_resource type="Animation" id="Animation_8k287"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite/PointLight2D:energy")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite/PointLight2D:texture:fill_from")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite/PointLight2D:texture:fill_to")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_kn5c8"]
-resource_name = "Sun"
-length = 4.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite/PointLight2D:energy")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.4, 0.7, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 0.38, 0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite/PointLight2D:texture:fill_from")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.4, 0.7, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0.0794393, 0.0747664), Vector2(1, 1), Vector2(0.941241, 0.940943)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite/PointLight2D:texture:fill_to")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.4, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0.878505, 0.869159)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_1rsdt"]
-_data = {
-"RESET": SubResource("Animation_8k287"),
-"Sun": SubResource("Animation_kn5c8")
-}
-
-[sub_resource type="Animation" id="Animation_0vvtx"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Smoke3:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(76, -330)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Smoke2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(106, -240)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Smoke:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(34, -265)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Smoke:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Smoke2:modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.345098, 0.345098, 0.345098, 0)]
+"values": [Vector2(55, -280), Vector2(55, -310)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -1308,614 +1861,52 @@ tracks/5/path = NodePath("Smoke3:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.345098, 0.345098, 0.345098, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_eps1c"]
-resource_name = "Smoke"
-length = 1.5
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Smoke:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(34, -225), Vector2(34, -265)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Smoke2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(106, -205), Vector2(106, -240)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Smoke3:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(76, -285), Vector2(76, -330)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Smoke:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.5, 0.8),
+"times": PackedFloat32Array(0, 0.6, 1.5, 2.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(0.345098, 0.345098, 0.345098, 0.588235), Color(0.345098, 0.345098, 0.345098, 0.588235), Color(1, 1, 1, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Smoke2:modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(0.345098, 0.345098, 0.345098, 0.588235), Color(0.345098, 0.345098, 0.345098, 0.588235), Color(1, 1, 1, 0)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Smoke3:modulate")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.5, 1.1, 1.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(0.345098, 0.345098, 0.345098, 0.588235), Color(0.345098, 0.345098, 0.345098, 0.588235), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_pvye6"]
-_data = {
-"RESET": SubResource("Animation_0vvtx"),
-"Smoke": SubResource("Animation_eps1c")
-}
-
-[sub_resource type="Animation" id="Animation_6m8wg"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Water10:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Water11:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Water10:skew")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-0.174533]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Water11:skew")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-0.174533]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Water12:modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.498039)]
-}
-
-[sub_resource type="Animation" id="Animation_8du0e"]
-resource_name = "Water"
-length = 1.5
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Water10:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 0.9, 1.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.760784), Color(1, 1, 1, 0.556863), Color(1, 1, 1, 0.776471), Color(1, 1, 1, 0.568627)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Water11:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.7, 1.1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.552941), Color(1, 1, 1, 0.709804), Color(1, 1, 1, 0.592157), Color(1, 1, 1, 0.764706)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Water10:skew")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [-0.0872665, 0.0872665, 0.0872665]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Water11:skew")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [-0.0872665, 0.0872665]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Water12:modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0.3, 0.9),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.243137), Color(1, 1, 1, 0.498039)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_lb77a"]
-_data = {
-"RESET": SubResource("Animation_6m8wg"),
-"Water": SubResource("Animation_8du0e")
-}
-
-[sub_resource type="Animation" id="Animation_w8phc"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Water3:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Water5:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Water4:skew")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Water4:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Water2:skew")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Water2:modulate")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.337255)]
-}
-
-[sub_resource type="Animation" id="Animation_v16fw"]
-resource_name = "Water"
-length = 1.5
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Water3:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.3, 0.9, 1.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Water5:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.3, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Water4:skew")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.1, 0.4, 0.7, 1, 1.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [-0.174533, 0.0, 0.174533, 0.0, -0.174533]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Water4:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.8, 1.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.686275), Color(1, 1, 1, 0.129412), Color(1, 1, 1, 0.478431), Color(1, 1, 1, 0.0862745)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Water2:skew")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.5, 1.1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [-0.174533, 0.174533, 0.0]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Water2:modulate")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.6, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.337255), Color(1, 1, 1, 0.505882), Color(1, 1, 1, 0.337255)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_7anxu"]
-_data = {
-"RESET": SubResource("Animation_w8phc"),
-"Water": SubResource("Animation_v16fw")
-}
-
-[sub_resource type="Animation" id="Animation_tsl1p"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Water:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Water2:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Water3:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Water5:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(72, 104)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Water6:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(56, 112)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Water7:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(64, 96)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.784314), Color(1, 1, 1, 0.784314), Color(1, 1, 1, 0)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Water7:modulate")
+tracks/6/path = NodePath("Smoke4:modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.8, 1.7, 2.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0.564706)]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.780392), Color(1, 1, 1, 1), Color(1, 1, 1, 0.780392)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Water6:modulate")
+tracks/7/path = NodePath("Smoke5:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.5, 1.7, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0.623529)]
+"values": [Vector2(80, -318), Vector2(96, -358), Vector2(80, -318), Vector2(96, -358)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Water5:modulate")
+tracks/8/path = NodePath("Smoke5:modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.3, 1.2, 1.5, 1.7, 2.3, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0.623529)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.815686), Color(1, 1, 1, 0.815686), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0.815686), Color(1, 1, 1, 0.815686), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_q07b7"]
-resource_name = "Water"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Water:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.3, 0.8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Water2:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.1, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(0.831373, 0.890196, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Water3:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.4, 0.9),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Water5:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(72, 104), Vector2(72, 102)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Water6:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(56, 112), Vector2(56, 110)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Water7:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(64, 96), Vector2(64, 92)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Water7:modulate")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.180392), Color(1, 1, 1, 0.564706)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Water6:modulate")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.623529), Color(1, 1, 1, 0.368627), Color(1, 1, 1, 0.623529)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Water5:modulate")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0.2, 0.645868),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.341176), Color(1, 1, 1, 0.623529)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_5k73m"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_abmly"]
 _data = {
-"RESET": SubResource("Animation_tsl1p"),
-"Water": SubResource("Animation_q07b7")
+"RESET": SubResource("Animation_k4it7"),
+"Smoke": SubResource("Animation_xwf17")
 }
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldwmd"]
@@ -1988,6 +1979,407 @@ Button/styles/pressed = SubResource("StyleBoxFlat_fgbvl")
 [node name="Main" type="Node2D"]
 metadata/_edit_vertical_guides_ = [1047.0]
 
+[node name="World_Waste_Sprite#Smoke" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(34, -265)
+texture = ExtResource("7_ugl8s")
+
+[node name="World_Waste_Sprite#Smoke2" type="Sprite2D" parent="."]
+modulate = Color(0.345098, 0.345098, 0.345098, 0)
+position = Vector2(106, -240)
+texture = ExtResource("8_jh2tr")
+
+[node name="World_Waste_Sprite#Smoke3" type="Sprite2D" parent="."]
+modulate = Color(0.345098, 0.345098, 0.345098, 0)
+position = Vector2(76, -330)
+texture = ExtResource("9_2lgj4")
+
+[node name="World_Waste#AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite")
+libraries = {
+"": SubResource("AnimationLibrary_pvye6")
+}
+autoplay = "Smoke"
+
+[node name="World_Solar_Sprite#PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(23.374, -85.6564)
+rotation = 0.523599
+scale = Vector2(1.87526, 2.35201)
+color = Color(1, 1, 0.823529, 1)
+energy = 0.0
+texture = SubResource("GradientTexture2D_mhl0d")
+
+[node name="World_Biomass_Sprite#Smoke" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-60, -325)
+texture = ExtResource("7_ugl8s")
+
+[node name="World_Solar#Sprite2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, 44)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("15_rfjt7")
+
+[node name="World_Solar#Sprite3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, 6)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("16_luswp")
+
+[node name="World_Biomass_Sprite#Smoke2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-60, -325)
+texture = ExtResource("8_jh2tr")
+
+[node name="World_Biomass_Sprite#Smoke3" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-58, -365)
+texture = ExtResource("9_2lgj4")
+
+[node name="World_River#Water" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(65.5, 106)
+texture = ExtResource("15_terxt")
+
+[node name="World_River#Water4" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.623529)
+position = Vector2(65.5, 106)
+texture = ExtResource("15_terxt")
+
+[node name="World_River#Water2" type="Sprite2D" parent="."]
+position = Vector2(78.5, 117)
+texture = ExtResource("16_d8kd2")
+
+[node name="World_River#Water3" type="Sprite2D" parent="."]
+position = Vector2(77.5, 108)
+texture = ExtResource("17_4nld4")
+
+[node name="World_River#Water5" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.623529)
+position = Vector2(72, 104)
+rotation = 0.427606
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("32_dhm8b")
+flip_h = true
+flip_v = true
+
+[node name="World_River#Water6" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.623529)
+position = Vector2(56, 112)
+rotation = 0.427606
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("32_dhm8b")
+flip_h = true
+flip_v = true
+
+[node name="World_River#Water7" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.564706)
+position = Vector2(64, 96)
+rotation = -2.57087
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("32_dhm8b")
+flip_h = true
+flip_v = true
+
+[node name="World_River#AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5k73m")
+}
+autoplay = "Water"
+
+[node name="World_Hydro#Water" type="Sprite2D" parent="."]
+position = Vector2(32, 130)
+rotation = -0.016075
+texture = ExtResource("13_udqyc")
+flip_h = true
+
+[node name="World_Hydro#Water3" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(40, 122)
+texture = ExtResource("11_y3iyb")
+flip_h = true
+
+[node name="World_Hydro#Water9" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.558772)
+position = Vector2(64, 113)
+texture = ExtResource("11_y3iyb")
+flip_h = true
+
+[node name="World_Hydro#Water5" type="Sprite2D" parent="."]
+position = Vector2(41, 119)
+rotation = -0.016075
+texture = ExtResource("13_udqyc")
+flip_h = true
+
+[node name="World_Hydro#Water6" type="Sprite2D" parent="."]
+position = Vector2(64, 122)
+rotation = -0.016075
+texture = ExtResource("13_udqyc")
+flip_h = true
+
+[node name="World_Hydro#Water8" type="Sprite2D" parent="."]
+position = Vector2(72, 154)
+texture = ExtResource("13_udqyc")
+flip_h = true
+
+[node name="World_Hydro#Water4" type="Sprite2D" parent="."]
+position = Vector2(19.3896, 123.808)
+texture = ExtResource("24_xuhq5")
+flip_v = true
+
+[node name="World_Hydro#Water2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.337255)
+position = Vector2(54, 119)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("24_xuhq5")
+
+[node name="World_Hydro#Water7" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.372549)
+position = Vector2(12.6063, 128.838)
+texture = ExtResource("24_xuhq5")
+flip_h = true
+
+[node name="World_Hydro#AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7anxu")
+}
+autoplay = "Water"
+
+[node name="World_Biomass_Sprite#Smoke4" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-127, -282)
+texture = ExtResource("8_jh2tr")
+
+[node name="World_Pump#Water13" type="Sprite2D" parent="."]
+position = Vector2(-37, 86)
+texture = ExtResource("11_y3iyb")
+
+[node name="World_Pump#Water14" type="Sprite2D" parent="."]
+position = Vector2(-61, 78)
+texture = ExtResource("24_n8myi")
+
+[node name="World_Pump#Water15" type="Sprite2D" parent="."]
+position = Vector2(-61, 118)
+texture = ExtResource("24_n8myi")
+
+[node name="World_Pump#Water10" type="Sprite2D" parent="."]
+position = Vector2(-40.3934, 73.4594)
+scale = Vector2(0.8, 0.8)
+skew = -0.174533
+texture = ExtResource("26_fkwhx")
+flip_h = true
+
+[node name="World_Pump#Water12" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.498039)
+position = Vector2(-29, 70)
+texture = ExtResource("26_fkwhx")
+
+[node name="World_Pump#Water11" type="Sprite2D" parent="."]
+position = Vector2(-32.3936, 91.4592)
+rotation = -3.14159
+scale = Vector2(0.8, 0.8)
+skew = -0.174533
+texture = ExtResource("26_fkwhx")
+flip_h = true
+
+[node name="World_Pump#AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_lb77a")
+}
+autoplay = "Water"
+
+[node name="World_Biomass#AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite")
+libraries = {
+"": SubResource("AnimationLibrary_tgvt4")
+}
+autoplay = "Smoke"
+
+[node name="World_Wind_Sprite#Turbine" type="Sprite2D" parent="."]
+position = Vector2(-135, -146.25)
+rotation = 0.785398
+scale = Vector2(1.25, 1.25)
+texture = SubResource("AtlasTexture_st7y5")
+offset = Vector2(-12, -20)
+
+[node name="World_Wind_Sprite#Turbine2" type="Sprite2D" parent="."]
+position = Vector2(-128.75, -142.5)
+rotation = 1.39626
+scale = Vector2(1.25, 1.25)
+texture = SubResource("AtlasTexture_p7dvq")
+offset = Vector2(16, -11)
+
+[node name="World_Wind_Sprite#Turbine3" type="Sprite2D" parent="."]
+position = Vector2(-133.75, -140)
+rotation = 1.39626
+scale = Vector2(1.25, 1.25)
+texture = SubResource("AtlasTexture_obbpa")
+offset = Vector2(3, 16)
+
+[node name="World_Nuclear_Sprite#Smoke" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(82, -333)
+texture = ExtResource("5_n6wof")
+
+[node name="World_Solar#AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1rsdt")
+}
+autoplay = "Sun"
+
+[node name="World_Wind#Sprite2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(24, 66)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("12_fhjpd")
+
+[node name="World_Wind#Sprite3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(40, 56)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("13_n0wou")
+
+[node name="World_River2#AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_a8121")
+}
+autoplay = "Water"
+
+[node name="World_River2#Water3" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.662745)
+position = Vector2(60, 110)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_y3iyb")
+
+[node name="World_River2#Water" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.764706)
+position = Vector2(70.4502, 104.5)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("32_dhm8b")
+
+[node name="World_River2#Water4" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.384314)
+position = Vector2(60, 90)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("32_dhm8b")
+
+[node name="World_River2#Water2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.709804)
+position = Vector2(70.4502, 104.5)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("33_1wxp6")
+
+[node name="World_Nuclear_Sprite#Smoke2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(65, -292)
+scale = Vector2(0.856532, 1.24194)
+texture = ExtResource("6_swuok")
+
+[node name="World_Nuclear_Sprite#Smoke3" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(57, -268)
+rotation = 0.143117
+scale = Vector2(0.587629, 1)
+texture = ExtResource("7_vvt3h")
+
+[node name="World_Nuclear_Sprite#Smoke5" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(47, -340)
+rotation = 0.143117
+scale = Vector2(0.681434, 1.03099)
+texture = ExtResource("7_vvt3h")
+
+[node name="World_Nuclear_Sprite#Smoke4" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(57, -283)
+texture = ExtResource("6_swuok")
+
+[node name="World_Nuclear_Sprite#Smoke6" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(57, -249.25)
+texture = ExtResource("6_swuok")
+
+[node name="World_Nuclear#AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite")
+libraries = {
+"": SubResource("AnimationLibrary_3k1tp")
+}
+autoplay = "Smoke"
+
+[node name="World_Wind#AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bm0fl")
+}
+autoplay = "Wind"
+
+[node name="World_Nuclear2_Sprite#Smoke" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(55, -340)
+texture = ExtResource("6_swuok")
+
+[node name="World_Nuclear2_Sprite#Smoke2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(55, -295)
+texture = ExtResource("6_swuok")
+
+[node name="World_Nuclear2_Sprite#Smoke3" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(69.5671, -287.61)
+rotation = 0.143117
+scale = Vector2(0.842784, 1.11635)
+texture = ExtResource("7_vvt3h")
+
+[node name="World_Nuclear2_Sprite#Smoke4" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(50, -265)
+scale = Vector2(0.647423, 1.21787)
+texture = ExtResource("7_vvt3h")
+
+[node name="World_Nuclear2#AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite/Smoke")
+libraries = {
+"": SubResource("AnimationLibrary_1shh4")
+}
+autoplay = "Smoke"
+
+[node name="World_Nuclear3_Sprite#Smoke" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(100, -360)
+texture = ExtResource("5_n6wof")
+
+[node name="World_Nuclear3_Sprite#Smoke2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(80, -325)
+texture = ExtResource("6_swuok")
+
+[node name="World_Nuclear3_Sprite#Smoke5" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(88, -350)
+rotation = 0.307178
+scale = Vector2(0.860902, 1)
+texture = ExtResource("6_swuok")
+
+[node name="World_Nuclear3_Sprite#Smoke3" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(50, -280)
+rotation = 0.153589
+scale = Vector2(0.7, 1)
+texture = ExtResource("7_vvt3h")
+
+[node name="World_Nuclear3_Sprite#Smoke4" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(60, -278)
+scale = Vector2(0.695876, 1)
+texture = ExtResource("7_vvt3h")
+flip_h = true
+
+[node name="World_Nuclear3#AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite")
+libraries = {
+"": SubResource("AnimationLibrary_abmly")
+}
+autoplay = "Smoke"
+
 [node name="Audio" parent="." instance=ExtResource("34_smnob")]
 
 [node name="ForestAmbiance" parent="Audio" index="0"]
@@ -2030,747 +2422,6 @@ script = ExtResource("3_2lui3")
 
 [node name="Map" parent="World" index="1"]
 texture_filter = 2
-
-[node name="Nuclear3" parent="World" index="6" groups=["PP"]]
-position = Vector2(1205, -431)
-availability = Vector2(0.4, 0.6)
-plant_name = "NUCLEAR"
-life_span = 9
-max_upgrade = 0
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="World/Nuclear3" index="0"]
-root_node = NodePath("../Sprite")
-libraries = {
-"": SubResource("AnimationLibrary_abmly")
-}
-autoplay = "Smoke"
-
-[node name="PreviewInfo" parent="World/Nuclear3" index="1"]
-visible = false
-
-[node name="Sprite" parent="World/Nuclear3" index="2"]
-texture = ExtResource("4_e6lsk")
-
-[node name="Smoke" type="Sprite2D" parent="World/Nuclear3/Sprite" index="0"]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(100, -360)
-texture = ExtResource("5_n6wof")
-
-[node name="Smoke2" type="Sprite2D" parent="World/Nuclear3/Sprite" index="1"]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(80, -325)
-texture = ExtResource("6_swuok")
-
-[node name="Smoke5" type="Sprite2D" parent="World/Nuclear3/Sprite" index="2"]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(88, -350)
-rotation = 0.307178
-scale = Vector2(0.860902, 1)
-texture = ExtResource("6_swuok")
-
-[node name="Smoke3" type="Sprite2D" parent="World/Nuclear3/Sprite" index="3"]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(50, -280)
-rotation = 0.153589
-scale = Vector2(0.7, 1)
-texture = ExtResource("7_vvt3h")
-
-[node name="Smoke4" type="Sprite2D" parent="World/Nuclear3/Sprite" index="4"]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(60, -278)
-scale = Vector2(0.695876, 1)
-texture = ExtResource("7_vvt3h")
-flip_h = true
-
-[node name="BuildInfo" parent="World/Nuclear3" index="3"]
-offset_left = -104.0
-offset_top = -667.0
-offset_right = -64.0
-offset_bottom = -627.0
-
-[node name="TurnsToBuild" parent="World/Nuclear3/BuildInfo" index="3"]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 449.0
-offset_bottom = 30.0
-
-[node name="LifeSpan" parent="World/Nuclear3/BuildInfo/ColorRect" index="0"]
-visible = true
-
-[node name="ContainerL" parent="World/Nuclear3/BuildInfo/ColorRect" index="1"]
-offset_left = 86.0
-offset_top = 78.6667
-offset_right = 234.0
-offset_bottom = 350.667
-
-[node name="ContainerN" parent="World/Nuclear3/BuildInfo/ColorRect" index="2"]
-offset_left = -74.0
-offset_top = -165.0
-offset_right = -74.0
-offset_bottom = 85.0
-
-[node name="NameRect" parent="World/Nuclear3" index="4"]
-visible = false
-
-[node name="Biogas" parent="World" index="8" groups=["PP"]]
-plant_name = "BIOGAS"
-max_upgrade = 5
-mult_factor = 0.1
-
-[node name="PreviewInfo" parent="World/Biogas" index="0"]
-visible = false
-
-[node name="Sprite" parent="World/Biogas" index="1"]
-texture = ExtResource("8_odcis")
-
-[node name="TurnsToBuild" parent="World/Biogas/BuildInfo" index="3"]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 449.0
-offset_bottom = 30.0
-
-[node name="NameRect" parent="World/Biogas" index="3"]
-visible = false
-
-[node name="Nuclear2" parent="World" index="11" groups=["PP"]]
-position = Vector2(1479, -248)
-availability = Vector2(0.4, 0.6)
-plant_name = "NUCLEAR"
-life_span = 6
-max_upgrade = 0
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="World/Nuclear2" index="0"]
-root_node = NodePath("../Sprite/Smoke")
-libraries = {
-"": SubResource("AnimationLibrary_1shh4")
-}
-autoplay = "Smoke"
-
-[node name="PreviewInfo" parent="World/Nuclear2" index="1"]
-visible = false
-
-[node name="Sprite" parent="World/Nuclear2" index="2"]
-texture = ExtResource("4_e6lsk")
-
-[node name="Smoke" type="Sprite2D" parent="World/Nuclear2/Sprite" index="0"]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(55, -340)
-texture = ExtResource("6_swuok")
-
-[node name="Smoke2" type="Sprite2D" parent="World/Nuclear2/Sprite" index="1"]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(55, -295)
-texture = ExtResource("6_swuok")
-
-[node name="Smoke3" type="Sprite2D" parent="World/Nuclear2/Sprite" index="2"]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(69.5671, -287.61)
-rotation = 0.143117
-scale = Vector2(0.842784, 1.11635)
-texture = ExtResource("7_vvt3h")
-
-[node name="Smoke4" type="Sprite2D" parent="World/Nuclear2/Sprite" index="3"]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(50, -265)
-scale = Vector2(0.647423, 1.21787)
-texture = ExtResource("7_vvt3h")
-
-[node name="BuildInfo" parent="World/Nuclear2" index="3"]
-offset_left = -103.0
-offset_top = -672.0
-offset_right = -63.0
-offset_bottom = -632.0
-
-[node name="TurnsToBuild" parent="World/Nuclear2/BuildInfo" index="3"]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 449.0
-offset_bottom = 30.0
-
-[node name="LifeSpan" parent="World/Nuclear2/BuildInfo/ColorRect" index="0"]
-visible = true
-
-[node name="ContainerL" parent="World/Nuclear2/BuildInfo/ColorRect" index="1"]
-offset_left = 89.3333
-offset_top = 82.6667
-offset_right = 237.333
-offset_bottom = 354.667
-
-[node name="ContainerN" parent="World/Nuclear2/BuildInfo/ColorRect" index="2"]
-offset_left = -76.0
-offset_top = -160.333
-offset_right = -76.0
-offset_bottom = 89.6667
-
-[node name="NameRect" parent="World/Nuclear2" index="4"]
-visible = false
-
-[node name="Nuclear" parent="World" index="13" groups=["PP"]]
-position = Vector2(1001, 130)
-availability = Vector2(0.4, 0.6)
-plant_name = "NUCLEAR"
-life_span = 3
-max_upgrade = 0
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="World/Nuclear" index="0"]
-root_node = NodePath("../Sprite")
-libraries = {
-"": SubResource("AnimationLibrary_3k1tp")
-}
-autoplay = "Smoke"
-
-[node name="PreviewInfo" parent="World/Nuclear" index="1"]
-visible = false
-
-[node name="Sprite" parent="World/Nuclear" index="2"]
-texture = ExtResource("4_e6lsk")
-
-[node name="Smoke" type="Sprite2D" parent="World/Nuclear/Sprite" index="0"]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(82, -333)
-texture = ExtResource("5_n6wof")
-
-[node name="Smoke2" type="Sprite2D" parent="World/Nuclear/Sprite" index="1"]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(65, -292)
-scale = Vector2(0.856532, 1.24194)
-texture = ExtResource("6_swuok")
-
-[node name="Smoke3" type="Sprite2D" parent="World/Nuclear/Sprite" index="2"]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(57, -268)
-rotation = 0.143117
-scale = Vector2(0.587629, 1)
-texture = ExtResource("7_vvt3h")
-
-[node name="Smoke5" type="Sprite2D" parent="World/Nuclear/Sprite" index="3"]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(47, -340)
-rotation = 0.143117
-scale = Vector2(0.681434, 1.03099)
-texture = ExtResource("7_vvt3h")
-
-[node name="Smoke4" type="Sprite2D" parent="World/Nuclear/Sprite" index="4"]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(57, -283)
-texture = ExtResource("6_swuok")
-
-[node name="Smoke6" type="Sprite2D" parent="World/Nuclear/Sprite" index="5"]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(57, -249.25)
-texture = ExtResource("6_swuok")
-
-[node name="BuildInfo" parent="World/Nuclear" index="3"]
-offset_left = -113.0
-offset_top = -674.0
-offset_right = -73.0
-offset_bottom = -634.0
-
-[node name="TurnsToBuild" parent="World/Nuclear/BuildInfo" index="3"]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 449.0
-offset_bottom = 30.0
-
-[node name="LifeSpan" parent="World/Nuclear/BuildInfo/ColorRect" index="0"]
-visible = true
-
-[node name="ContainerL" parent="World/Nuclear/BuildInfo/ColorRect" index="1"]
-offset_left = 89.3333
-offset_top = 82.6667
-offset_right = 237.333
-offset_bottom = 354.667
-
-[node name="ContainerN" parent="World/Nuclear/BuildInfo/ColorRect" index="2"]
-offset_top = -159.333
-offset_bottom = 90.6667
-
-[node name="NameRect" parent="World/Nuclear" index="4"]
-visible = false
-
-[node name="CarbonSeq" parent="World" index="17"]
-max_upgrade = 10
-
-[node name="PreviewInfo" parent="World/CarbonSeq" index="0"]
-visible = false
-
-[node name="Sprite" parent="World/CarbonSeq" index="1"]
-texture = ExtResource("14_8dcbt")
-
-[node name="TurnsToBuild" parent="World/CarbonSeq/BuildInfo" index="3"]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 449.0
-offset_bottom = 30.0
-
-[node name="Land" parent="World/CarbonSeq/BuildInfo/ColorRect/ContainerL" index="2"]
-visible = false
-
-[node name="Poll" parent="World/CarbonSeq/BuildInfo/ColorRect/ContainerN" index="1"]
-theme_override_colors/font_color = Color(0, 1, 0.337255, 1)
-
-[node name="Land" parent="World/CarbonSeq/BuildInfo/ColorRect/ContainerN" index="2"]
-visible = false
-
-[node name="NameRect" parent="World/CarbonSeq" index="3"]
-visible = false
-
-[node name="Wind" parent="World" index="20" groups=["PP"]]
-position = Vector2(-556, 553)
-plant_name = "WIND"
-max_upgrade = 2
-mult_factor = 0.5
-
-[node name="PreviewInfo" parent="World/Wind" index="0"]
-visible = false
-
-[node name="Sprite2" type="Sprite2D" parent="World/Wind" index="1"]
-visible = false
-position = Vector2(24, 66)
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("12_fhjpd")
-
-[node name="Sprite3" type="Sprite2D" parent="World/Wind" index="2"]
-visible = false
-position = Vector2(40, 56)
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("13_n0wou")
-
-[node name="Sprite" parent="World/Wind" index="3"]
-texture = ExtResource("7_4q6ww")
-
-[node name="Turbine" type="Sprite2D" parent="World/Wind/Sprite" index="0"]
-position = Vector2(-135, -146.25)
-rotation = 0.785398
-scale = Vector2(1.25, 1.25)
-texture = SubResource("AtlasTexture_st7y5")
-offset = Vector2(-12, -20)
-
-[node name="Turbine2" type="Sprite2D" parent="World/Wind/Sprite" index="1"]
-position = Vector2(-128.75, -142.5)
-rotation = 1.39626
-scale = Vector2(1.25, 1.25)
-texture = SubResource("AtlasTexture_p7dvq")
-offset = Vector2(16, -11)
-
-[node name="Turbine3" type="Sprite2D" parent="World/Wind/Sprite" index="2"]
-position = Vector2(-133.75, -140)
-rotation = 1.39626
-scale = Vector2(1.25, 1.25)
-texture = SubResource("AtlasTexture_obbpa")
-offset = Vector2(3, 16)
-
-[node name="TurnsToBuild" parent="World/Wind/BuildInfo" index="3"]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 449.0
-offset_bottom = 30.0
-
-[node name="NameRect" parent="World/Wind" index="5"]
-visible = false
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="World/Wind" index="12"]
-libraries = {
-"": SubResource("AnimationLibrary_bm0fl")
-}
-autoplay = "Wind"
-
-[node name="Biomass" parent="World" index="28" groups=["PP"]]
-position = Vector2(-784, 1288)
-plant_name = "BIOMASS"
-max_upgrade = 5
-mult_factor = 0.1
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="World/Biomass" index="0"]
-root_node = NodePath("../Sprite")
-libraries = {
-"": SubResource("AnimationLibrary_tgvt4")
-}
-autoplay = "Smoke"
-
-[node name="PreviewInfo" parent="World/Biomass" index="1"]
-visible = false
-
-[node name="Sprite" parent="World/Biomass" index="2"]
-texture = ExtResource("6_q3df2")
-
-[node name="Smoke" type="Sprite2D" parent="World/Biomass/Sprite" index="0"]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(-60, -325)
-texture = ExtResource("7_ugl8s")
-
-[node name="Smoke2" type="Sprite2D" parent="World/Biomass/Sprite" index="1"]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(-60, -325)
-texture = ExtResource("8_jh2tr")
-
-[node name="Smoke3" type="Sprite2D" parent="World/Biomass/Sprite" index="2"]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(-58, -365)
-texture = ExtResource("9_2lgj4")
-
-[node name="Smoke4" type="Sprite2D" parent="World/Biomass/Sprite" index="3"]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(-127, -282)
-texture = ExtResource("8_jh2tr")
-
-[node name="TurnsToBuild" parent="World/Biomass/BuildInfo" index="3"]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 449.0
-offset_bottom = 30.0
-
-[node name="NameRect" parent="World/Biomass" index="4"]
-visible = false
-
-[node name="River2" parent="World" index="31" groups=["PP"]]
-scale = Vector2(0.8, 0.8)
-availability = Vector2(0.6, 0.4)
-plant_name = "RIVER"
-max_upgrade = 5
-
-[node name="PreviewInfo" parent="World/River2" index="0"]
-visible = false
-
-[node name="Sprite" parent="World/River2" index="1"]
-texture = ExtResource("9_agn8w")
-
-[node name="TurnsToBuild" parent="World/River2/BuildInfo" index="3"]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 449.0
-offset_bottom = 30.0
-
-[node name="NameRect" parent="World/River2" index="3"]
-visible = false
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="World/River2" index="11"]
-libraries = {
-"": SubResource("AnimationLibrary_a8121")
-}
-autoplay = "Water"
-
-[node name="Water3" type="Sprite2D" parent="World/River2" index="12"]
-modulate = Color(1, 1, 1, 0.662745)
-position = Vector2(60, 110)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("11_y3iyb")
-
-[node name="Water" type="Sprite2D" parent="World/River2" index="13"]
-modulate = Color(1, 1, 1, 0.764706)
-position = Vector2(70.4502, 104.5)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("32_dhm8b")
-
-[node name="Water4" type="Sprite2D" parent="World/River2" index="14"]
-modulate = Color(1, 1, 1, 0.384314)
-position = Vector2(60, 90)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("32_dhm8b")
-
-[node name="Water2" type="Sprite2D" parent="World/River2" index="15"]
-modulate = Color(1, 1, 1, 0.709804)
-position = Vector2(70.4502, 104.5)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("33_1wxp6")
-
-[node name="Solar" parent="World" index="33" groups=["PP"]]
-position = Vector2(3456, 1224)
-plant_name = "SOLAR"
-max_upgrade = 0
-mult_factor = 0.05
-
-[node name="PreviewInfo" parent="World/Solar" index="0"]
-visible = false
-
-[node name="Sprite2" type="Sprite2D" parent="World/Solar" index="1"]
-visible = false
-position = Vector2(0, 44)
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("15_rfjt7")
-
-[node name="Sprite3" type="Sprite2D" parent="World/Solar" index="2"]
-visible = false
-position = Vector2(0, 6)
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("16_luswp")
-
-[node name="Sprite" parent="World/Solar" index="3"]
-texture = ExtResource("10_3byff")
-
-[node name="PointLight2D" type="PointLight2D" parent="World/Solar/Sprite" index="0"]
-position = Vector2(23.374, -85.6564)
-rotation = 0.523599
-scale = Vector2(1.87526, 2.35201)
-color = Color(1, 1, 0.823529, 1)
-energy = 0.0
-texture = SubResource("GradientTexture2D_mhl0d")
-
-[node name="TurnsToBuild" parent="World/Solar/BuildInfo" index="3"]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 449.0
-offset_bottom = 30.0
-
-[node name="NameRect" parent="World/Solar" index="5"]
-visible = false
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="World/Solar" index="12"]
-libraries = {
-"": SubResource("AnimationLibrary_1rsdt")
-}
-autoplay = "Sun"
-
-[node name="Waste" parent="World" index="35" groups=["PP"]]
-position = Vector2(-16, 1056)
-plant_name = "WASTE"
-max_upgrade = 5
-mult_factor = 0.05
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="World/Waste" index="0"]
-root_node = NodePath("../Sprite")
-libraries = {
-"": SubResource("AnimationLibrary_pvye6")
-}
-autoplay = "Smoke"
-
-[node name="PreviewInfo" parent="World/Waste" index="1"]
-visible = false
-
-[node name="Sprite" parent="World/Waste" index="2"]
-texture = ExtResource("5_vx3tb")
-
-[node name="Smoke" type="Sprite2D" parent="World/Waste/Sprite" index="0"]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(34, -265)
-texture = ExtResource("7_ugl8s")
-
-[node name="Smoke2" type="Sprite2D" parent="World/Waste/Sprite" index="1"]
-modulate = Color(0.345098, 0.345098, 0.345098, 0)
-position = Vector2(106, -240)
-texture = ExtResource("8_jh2tr")
-
-[node name="Smoke3" type="Sprite2D" parent="World/Waste/Sprite" index="2"]
-modulate = Color(0.345098, 0.345098, 0.345098, 0)
-position = Vector2(76, -330)
-texture = ExtResource("9_2lgj4")
-
-[node name="TurnsToBuild" parent="World/Waste/BuildInfo" index="3"]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 449.0
-offset_bottom = 30.0
-
-[node name="NameRect" parent="World/Waste" index="4"]
-visible = false
-
-[node name="Pump" parent="World" index="40" groups=["PP"]]
-plant_name = "HYDRO"
-max_upgrade = 5
-
-[node name="PreviewInfo" parent="World/Pump" index="0"]
-visible = false
-
-[node name="Sprite" parent="World/Pump" index="1"]
-position = Vector2(0, 0)
-texture = ExtResource("11_nggna")
-
-[node name="TurnsToBuild" parent="World/Pump/BuildInfo" index="3"]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 449.0
-offset_bottom = 30.0
-
-[node name="NameRect" parent="World/Pump" index="3"]
-visible = false
-
-[node name="Water13" type="Sprite2D" parent="World/Pump" index="11"]
-position = Vector2(-37, 86)
-texture = ExtResource("11_y3iyb")
-
-[node name="Water14" type="Sprite2D" parent="World/Pump" index="12"]
-position = Vector2(-61, 78)
-texture = ExtResource("24_n8myi")
-
-[node name="Water15" type="Sprite2D" parent="World/Pump" index="13"]
-position = Vector2(-61, 118)
-texture = ExtResource("24_n8myi")
-
-[node name="Water10" type="Sprite2D" parent="World/Pump" index="14"]
-position = Vector2(-40.3934, 73.4594)
-scale = Vector2(0.8, 0.8)
-skew = -0.174533
-texture = ExtResource("26_fkwhx")
-flip_h = true
-
-[node name="Water12" type="Sprite2D" parent="World/Pump" index="15"]
-modulate = Color(1, 1, 1, 0.498039)
-position = Vector2(-29, 70)
-texture = ExtResource("26_fkwhx")
-
-[node name="Water11" type="Sprite2D" parent="World/Pump" index="16"]
-position = Vector2(-32.3936, 91.4592)
-rotation = -3.14159
-scale = Vector2(0.8, 0.8)
-skew = -0.174533
-texture = ExtResource("26_fkwhx")
-flip_h = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="World/Pump" index="17"]
-libraries = {
-"": SubResource("AnimationLibrary_lb77a")
-}
-autoplay = "Water"
-
-[node name="Hydro" parent="World" index="42" groups=["PP"]]
-position = Vector2(360, 1982)
-plant_name = "HYDRO"
-max_upgrade = 5
-
-[node name="PreviewInfo" parent="World/Hydro" index="0"]
-visible = false
-
-[node name="Sprite" parent="World/Hydro" index="1"]
-texture = ExtResource("11_nggna")
-flip_h = true
-
-[node name="TurnsToBuild" parent="World/Hydro/BuildInfo" index="3"]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 449.0
-offset_bottom = 30.0
-
-[node name="NameRect" parent="World/Hydro" index="3"]
-visible = false
-
-[node name="Water" type="Sprite2D" parent="World/Hydro" index="10"]
-position = Vector2(32, 130)
-rotation = -0.016075
-texture = ExtResource("13_udqyc")
-flip_h = true
-
-[node name="Water3" type="Sprite2D" parent="World/Hydro" index="11"]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(40, 122)
-texture = ExtResource("11_y3iyb")
-flip_h = true
-
-[node name="Water9" type="Sprite2D" parent="World/Hydro" index="12"]
-modulate = Color(1, 1, 1, 0.558772)
-position = Vector2(64, 113)
-texture = ExtResource("11_y3iyb")
-flip_h = true
-
-[node name="Water5" type="Sprite2D" parent="World/Hydro" index="13"]
-position = Vector2(41, 119)
-rotation = -0.016075
-texture = ExtResource("13_udqyc")
-flip_h = true
-
-[node name="Water6" type="Sprite2D" parent="World/Hydro" index="14"]
-position = Vector2(64, 122)
-rotation = -0.016075
-texture = ExtResource("13_udqyc")
-flip_h = true
-
-[node name="Water8" type="Sprite2D" parent="World/Hydro" index="15"]
-position = Vector2(72, 154)
-texture = ExtResource("13_udqyc")
-flip_h = true
-
-[node name="Water4" type="Sprite2D" parent="World/Hydro" index="16"]
-position = Vector2(19.3896, 123.808)
-texture = ExtResource("24_xuhq5")
-flip_v = true
-
-[node name="Water2" type="Sprite2D" parent="World/Hydro" index="17"]
-modulate = Color(1, 1, 1, 0.337255)
-position = Vector2(54, 119)
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("24_xuhq5")
-
-[node name="Water7" type="Sprite2D" parent="World/Hydro" index="18"]
-modulate = Color(1, 1, 1, 0.372549)
-position = Vector2(12.6063, 128.838)
-texture = ExtResource("24_xuhq5")
-flip_h = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="World/Hydro" index="19"]
-libraries = {
-"": SubResource("AnimationLibrary_7anxu")
-}
-autoplay = "Water"
-
-[node name="River" parent="World" index="47" groups=["PP", "TUTO_PP"]]
-availability = Vector2(0.6, 0.4)
-plant_name = "RIVER"
-max_upgrade = 5
-
-[node name="PreviewInfo" parent="World/River" index="0"]
-visible = false
-
-[node name="Sprite" parent="World/River" index="1"]
-texture = ExtResource("9_agn8w")
-
-[node name="TurnsToBuild" parent="World/River/BuildInfo" index="3"]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 449.0
-offset_bottom = 30.0
-
-[node name="NameRect" parent="World/River" index="3"]
-visible = false
-
-[node name="Water" type="Sprite2D" parent="World/River" index="10"]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(65.5, 106)
-texture = ExtResource("15_terxt")
-
-[node name="Water4" type="Sprite2D" parent="World/River" index="11"]
-modulate = Color(1, 1, 1, 0.623529)
-position = Vector2(65.5, 106)
-texture = ExtResource("15_terxt")
-
-[node name="Water2" type="Sprite2D" parent="World/River" index="12"]
-position = Vector2(78.5, 117)
-texture = ExtResource("16_d8kd2")
-
-[node name="Water3" type="Sprite2D" parent="World/River" index="13"]
-position = Vector2(77.5, 108)
-texture = ExtResource("17_4nld4")
-
-[node name="Water5" type="Sprite2D" parent="World/River" index="14"]
-modulate = Color(1, 1, 1, 0.623529)
-position = Vector2(72, 104)
-rotation = 0.427606
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("32_dhm8b")
-flip_h = true
-flip_v = true
-
-[node name="Water6" type="Sprite2D" parent="World/River" index="15"]
-modulate = Color(1, 1, 1, 0.623529)
-position = Vector2(56, 112)
-rotation = 0.427606
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("32_dhm8b")
-flip_h = true
-flip_v = true
-
-[node name="Water7" type="Sprite2D" parent="World/River" index="16"]
-modulate = Color(1, 1, 1, 0.564706)
-position = Vector2(64, 96)
-rotation = -2.57087
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("32_dhm8b")
-flip_h = true
-flip_v = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="World/River" index="17"]
-libraries = {
-"": SubResource("AnimationLibrary_5k73m")
-}
-autoplay = "Water"
 
 [node name="UI" parent="." instance=ExtResource("2_d60f5")]
 follow_viewport_enabled = false
@@ -3532,16 +3183,3 @@ text = "Close"
 
 [editable path="Audio"]
 [editable path="World"]
-[editable path="World/Nuclear3"]
-[editable path="World/Biogas"]
-[editable path="World/Nuclear2"]
-[editable path="World/Nuclear"]
-[editable path="World/CarbonSeq"]
-[editable path="World/Wind"]
-[editable path="World/Biomass"]
-[editable path="World/River2"]
-[editable path="World/Solar"]
-[editable path="World/Waste"]
-[editable path="World/Pump"]
-[editable path="World/Hydro"]
-[editable path="World/River"]

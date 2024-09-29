@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwys7y27kiabl"
-path="res://.godot/imported/Import-Switch-On.png-1474f83b836ff7167b460edb65c2960f.ctex"
+uid="uid://dhxkhfg2qxlgx"
+path="res://.godot/imported/switch_off.png-e29fdc2e2706637b389e6a825d99fb86.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI Elements/Import-Switch-On.png"
-dest_files=["res://.godot/imported/Import-Switch-On.png-1474f83b836ff7167b460edb65c2960f.ctex"]
+source_file="res://assets/used_assets/textures/buttons/switch_off.png"
+dest_files=["res://.godot/imported/switch_off.png-e29fdc2e2706637b389e6a825d99fb86.ctex"]
 
 [params]
 
