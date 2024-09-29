@@ -97,6 +97,7 @@ func _on_powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMe
 			bb_in_construction.set_metrics(new_metrics)
 			bb_in_construction.show()
 		else:
+			metrics.built_on_turn = Gameloop.current_turn
 			var pp_scene = PowerplantsManager.powerplant_scene.instantiate()
 			add_child(pp_scene)
 			powerplant_node_name = pp_scene.name
@@ -127,9 +128,7 @@ func _build_on_start(metrics: Array[PowerplantMetrics]):
 	
 
 # Applies the changes made in the editor
-func override_metrics(metrics: PowerplantMetrics):
-	metrics.built_on_turn = Gameloop.current_turn
-	
+func override_metrics(metrics: PowerplantMetrics):	
 	if override_life_span:
 		metrics.life_span_in_turns = life_span_in_turns
 

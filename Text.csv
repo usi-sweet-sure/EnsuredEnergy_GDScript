@@ -192,6 +192,8 @@ SOLAR,Solar,Solaire,Solar,Solare
 WIND,Wind,Eolienne,Windrad,Eolica
 GEOTHERMAL,Geothermal,Geothermique,Geothermische,Geotermica
 SHUT_DOWN,Shutting down in {nbr} turns,S'arrête dans {nbr} tours,Abschaltung in {nbr} Runden,Spegnimento in {nbr} giri
+SHUT_DOWN_NEXT_TURN,Shuts down next turn,S'éteint au tour suivant,Schaltet in der nächsten Runde ab,Si spegne al prossimo turno
+DECOMISSIONED,Decomissioned,Déclassée,Heruntergestuft,Disattivato
 PROD_COST,Production costs,Coûts de production,Produktionskosten,Costi di produzione
 POLLUTION,CO2 Emissions,Émissions,Verschmutzung,Emissioni
 CARBON,Carbon sequestration,Séquestration du carbone,Kohlenstoff Sequestrierung,Sequestro di carbonio

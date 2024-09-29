@@ -62,4 +62,20 @@ func _on_switch_toggled(toggled_on: bool):
 
 func _on_next_turn():
 	metrics.can_delete = false
+	
+	var shutting_down_in = metrics.life_span_in_turns - (Gameloop.current_turn - metrics.built_on_turn) + 1
+	if shutting_down_in == 0:
+		metrics.active = false
+		metrics.can_activate = false
+	
+	metrics_updated.emit(metrics)
+
+
+func _on_button_plus_pressed():
+	metrics.current_upgrade += 1
+	metrics_updated.emit(metrics)
+
+
+func _on_button_minus_pressed():
+	metrics.current_upgrade -= 1
 	metrics_updated.emit(metrics)

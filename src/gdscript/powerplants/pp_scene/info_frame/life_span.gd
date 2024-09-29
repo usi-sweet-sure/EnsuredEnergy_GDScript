@@ -1,6 +1,7 @@
 extends Label
 
 var life_span := 0
+var built_on_turn := 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,15 +13,21 @@ func _on_locale_updated(_locale: String):
 	
 	
 func _update_text():
-	var shutting_down_in = life_span # E. not, use built on turn
+	var shutting_down_in = life_span - (Gameloop.current_turn - built_on_turn) + 1
+	var remaining_turns = Gameloop.total_number_of_turns - Gameloop.current_turn + 1
 	
-	if Gameloop.current_turn + shutting_down_in < Gameloop.total_number_of_turns:
-		hide()
-	else:
+	if shutting_down_in <= remaining_turns:
+		if shutting_down_in == 1:
+			text = tr("SHUT_DOWN_NEXT_TURN")
+		else:
+			text = tr("SHUT_DOWN").format({nbr = str(shutting_down_in)})
 		show()
-		text = tr("SHUT_DOWN").format({nbr = str(shutting_down_in)}) 
+
+	else:
+		hide()
 
 
 func _on_metrics_updated(metrics: PowerplantMetrics):
 	life_span = metrics.life_span_in_turns
+	built_on_turn = metrics.built_on_turn
 	_update_text()

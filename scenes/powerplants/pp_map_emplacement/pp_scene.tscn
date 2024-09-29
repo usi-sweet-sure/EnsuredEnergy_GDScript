@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://vaxkewvk14v6"]
+[gd_scene load_steps=55 format=3 uid="uid://vaxkewvk14v6"]
 
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/pp_scene.gd" id="1_aeq33"]
 [ext_resource type="Shader" path="res://src/gdscript/shaders/outline.gdshader" id="2_ln53j"]
@@ -42,6 +42,12 @@
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/led_on.gd" id="31_3nepy"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/animation_player.gd" id="31_6iqfa"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/summer_label_3.gd" id="31_e1bc8"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/button_plus.gd" id="33_33cpc"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/button_minus.gd" id="35_en8qr"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/switch.gd" id="38_3g6vi"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/upgrade_label.gd" id="38_j6dwt"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/decomissioned_overlay.gd" id="47_cup6s"]
+[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/Fonts/label_themes.tres" id="48_ayfs5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rxno2"]
 resource_local_to_scene = true
@@ -590,8 +596,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -240.0
+offset_left = -380.0
 offset_top = 18.0
+offset_right = -140.0
 offset_bottom = 68.0
 grow_horizontal = 0
 grow_vertical = 2
@@ -649,8 +656,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -240.0
+offset_left = -380.0
 offset_top = 20.0
+offset_right = -140.0
 offset_bottom = 70.0
 grow_horizontal = 0
 grow_vertical = 2
@@ -707,8 +715,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -240.0
+offset_left = -380.0
 offset_top = 22.0
+offset_right = -140.0
 offset_bottom = 72.0
 grow_horizontal = 0
 grow_vertical = 2
@@ -923,6 +932,7 @@ offset_right = 153.308
 offset_bottom = 86.0
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("33_33cpc")
 
 [node name="ButtonMinus" parent="InfoFrame/Modifier" instance=ExtResource("23_e0l3t")]
 layout_mode = 0
@@ -932,44 +942,32 @@ offset_right = 154.308
 offset_bottom = 182.0
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("35_en8qr")
 
-[node name="MultAmount" type="Label" parent="InfoFrame/Modifier"]
+[node name="UpgradeAmount" type="Label" parent="InfoFrame/Modifier"]
 layout_mode = 0
 offset_left = 35.3079
 offset_top = 73.0
 offset_right = 64.3079
 offset_bottom = 142.0
 theme = ExtResource("14_nud8r")
-theme_override_colors/font_color = Color(0.0431373, 0.141176, 0.14902, 1)
 theme_override_font_sizes/font_size = 50
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("38_j6dwt")
 
-[node name="Sprite2D" type="Sprite2D" parent="InfoFrame/Modifier/MultAmount"]
+[node name="Sprite2D" type="Sprite2D" parent="InfoFrame/Modifier/UpgradeAmount"]
 show_behind_parent = true
 position = Vector2(12, 35)
 scale = Vector2(2.69298, 2.08844)
 texture = ExtResource("25_8lcse")
 
-[node name="Sprite2D2" type="Sprite2D" parent="InfoFrame/Modifier/MultAmount/Sprite2D"]
+[node name="Sprite2D2" type="Sprite2D" parent="InfoFrame/Modifier/UpgradeAmount/Sprite2D"]
 show_behind_parent = true
 position = Vector2(0.65669, 0.311806)
 scale = Vector2(0.904762, 0.958183)
 texture = ExtResource("26_0mvvx")
-
-[node name="Label" type="Label" parent="InfoFrame/Modifier/MultAmount"]
-layout_mode = 0
-offset_right = 29.0
-offset_bottom = 69.0
-size_flags_horizontal = 8
-size_flags_vertical = 0
-theme = ExtResource("14_nud8r")
-theme_override_fonts/font = SubResource("FontVariation_n1hys")
-theme_override_font_sizes/font_size = 50
-text = "0"
-horizontal_alignment = 2
-script = ExtResource("29_4pdx3")
 
 [node name="PriceLabel" type="Label" parent="InfoFrame/Modifier"]
 visible = false
@@ -986,7 +984,6 @@ offset_bottom = 54.9616
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.150098
-scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(0.830861, 0, 0.162109, 1)
 theme_override_fonts/font = ExtResource("20_pg4ln")
 theme_override_font_sizes/font_size = 54
@@ -1010,7 +1007,6 @@ offset_bottom = 182.5
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.115072
-scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(0.830861, 0, 0.162109, 1)
 theme_override_fonts/font = ExtResource("20_pg4ln")
 theme_override_font_sizes/font_size = 54
@@ -1034,7 +1030,6 @@ offset_bottom = 180.5
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.115072
-scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(0.830861, 0, 0.162109, 1)
 theme_override_fonts/font = ExtResource("20_pg4ln")
 theme_override_font_sizes/font_size = 54
@@ -1051,9 +1046,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -27.0
+offset_left = -184.0
 offset_top = -435.5
-offset_right = 133.002
+offset_right = -23.998
 offset_bottom = -385.5
 grow_horizontal = 0
 grow_vertical = 2
@@ -1074,9 +1069,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -27.0
+offset_left = -184.0
 offset_top = -349.5
-offset_right = 133.002
+offset_right = -23.998
 offset_bottom = -299.5
 grow_horizontal = 0
 grow_vertical = 2
@@ -1097,9 +1092,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -27.0
+offset_left = -184.0
 offset_top = -263.5
-offset_right = 133.001
+offset_right = -23.9991
 offset_bottom = -213.5
 grow_horizontal = 0
 grow_vertical = 2
@@ -1135,6 +1130,7 @@ keep_pressed_outside = true
 flat = true
 alignment = 1
 expand_icon = true
+script = ExtResource("38_3g6vi")
 
 [node name="LedOff" type="Sprite2D" parent="InfoFrame"]
 position = Vector2(1010.33, 69)
@@ -1154,6 +1150,51 @@ libraries = {
 }
 script = ExtResource("31_6iqfa")
 
+[node name="DecomissionedOverlay" type="ColorRect" parent="InfoFrame"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.690196)
+script = ExtResource("47_cup6s")
+
+[node name="CenterPivot" type="Control" parent="InfoFrame/DecomissionedOverlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.436332
+
+[node name="Label" type="Label" parent="InfoFrame/DecomissionedOverlay/CenterPivot"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -353.0
+offset_top = -45.5
+offset_right = 353.0
+offset_bottom = 45.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("48_ayfs5")
+theme_type_variation = &"Paper"
+theme_override_colors/font_color = Color(0.910287, 0.283595, 0.211318, 1)
+theme_override_font_sizes/font_size = 90
+text = "DECOMISSIONED"
+
 [connection signal="hide_info_frame" from="." to="InfoFrame" method="_on_hide_info_frame"]
 [connection signal="metrics_updated" from="." to="On" method="_on_metrics_updated"]
 [connection signal="metrics_updated" from="." to="Off" method="_on_metrics_updated"]
@@ -1169,8 +1210,13 @@ script = ExtResource("31_6iqfa")
 [connection signal="metrics_updated" from="." to="InfoFrame/Energy/HBoxContainer/Summer/HBoxContainer/MarginContainer/Value/Label" method="_on_metrics_updated"]
 [connection signal="metrics_updated" from="." to="InfoFrame/Energy/HBoxContainer/Summer/HBoxContainer/MarginContainer/Value/Label2" method="_on_metrics_updated"]
 [connection signal="metrics_updated" from="." to="InfoFrame/Energy/HBoxContainer/Summer/HBoxContainer/MarginContainer/Value/Label3" method="_on_metrics_updated"]
+[connection signal="metrics_updated" from="." to="InfoFrame/Modifier/ButtonPlus" method="_on_metrics_updated"]
+[connection signal="metrics_updated" from="." to="InfoFrame/Modifier/ButtonMinus" method="_on_metrics_updated"]
+[connection signal="metrics_updated" from="." to="InfoFrame/Modifier/UpgradeAmount" method="_on_metrics_updated"]
+[connection signal="metrics_updated" from="." to="InfoFrame/Switch" method="_on_metrics_updated"]
 [connection signal="metrics_updated" from="." to="InfoFrame/LedOff" method="_on_metrics_updated"]
 [connection signal="metrics_updated" from="." to="InfoFrame/LedOn" method="_on_metrics_updated"]
+[connection signal="metrics_updated" from="." to="InfoFrame/DecomissionedOverlay" method="_on_metrics_updated"]
 [connection signal="show_info_frame" from="." to="InfoFrame" method="_on_show_info_frame"]
 [connection signal="texture_off_changed" from="." to="Off" method="_on_pp_scene_texture_off_changed"]
 [connection signal="texture_on_changed" from="." to="On" method="_on_pp_scene_texture_on_changed"]
@@ -1192,8 +1238,10 @@ script = ExtResource("31_6iqfa")
 [connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
 [connection signal="mouse_entered" from="InfoFrame/Modifier/ButtonPlus" to="InfoFrame/AnimationPlayer" method="_on_button_plus_mouse_entered"]
 [connection signal="mouse_exited" from="InfoFrame/Modifier/ButtonPlus" to="InfoFrame/AnimationPlayer" method="_on_button_plus_mouse_exited"]
+[connection signal="pressed" from="InfoFrame/Modifier/ButtonPlus" to="." method="_on_button_plus_pressed"]
 [connection signal="mouse_entered" from="InfoFrame/Modifier/ButtonMinus" to="InfoFrame/AnimationPlayer" method="_on_button_minus_mouse_entered"]
 [connection signal="mouse_exited" from="InfoFrame/Modifier/ButtonMinus" to="InfoFrame/AnimationPlayer" method="_on_button_minus_mouse_exited"]
+[connection signal="pressed" from="InfoFrame/Modifier/ButtonMinus" to="." method="_on_button_minus_pressed"]
 [connection signal="toggled" from="InfoFrame/Switch" to="." method="_on_switch_toggled"]
 [connection signal="toggled" from="InfoFrame/Switch" to="On" method="_on_switch_toggled"]
 [connection signal="toggled" from="InfoFrame/Switch" to="Off" method="_on_switch_toggled"]

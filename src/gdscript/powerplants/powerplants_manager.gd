@@ -302,16 +302,18 @@ func _store_powerplant_metrics(engine_type_id: EngineTypeIds):
 	else:
 		capacity /= 100.0
 	
+	var can_activate = true
 	var active = false
 	var can_delete = true
 	var built_on_turn = 0
+	var current_upgrade = 0
 	var min_upgrade = powerplants_min_upgrades[engine_type_id]
 	var max_upgrade = powerplants_max_upgrades[engine_type_id]
 	var upgrade_factor = powerplants_upgrade_factors[engine_type_id]
 	
 	var metrics = PowerplantMetrics.new(engine_type_id, capacity, cnv_capacity,
 			emissions, land_use, production_cost, availability, building_costs,
-			build_time_in_turns, life_span_in_turns, active, can_delete,
-			built_on_turn, min_upgrade, max_upgrade, upgrade_factor)
+			build_time_in_turns, life_span_in_turns, can_activate, active, can_delete,
+			built_on_turn, current_upgrade, min_upgrade, max_upgrade, upgrade_factor)
 			
 	powerplants_metrics[engine_type_id] = metrics
