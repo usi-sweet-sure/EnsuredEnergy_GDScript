@@ -42,12 +42,12 @@
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/summer_label_3.gd" id="31_e1bc8"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/button_plus.gd" id="33_33cpc"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/button_minus.gd" id="35_en8qr"]
+[ext_resource type="Texture2D" uid="uid://dwys7y27kiabl" path="res://assets/used_assets/textures/buttons/switch_on.png" id="36_ee44d"]
+[ext_resource type="Texture2D" uid="uid://dhxkhfg2qxlgx" path="res://assets/used_assets/textures/buttons/switch_off.png" id="37_bgkdg"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/switch.gd" id="38_3g6vi"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/upgrade_label.gd" id="38_j6dwt"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/decomissioned_overlay.gd" id="47_cup6s"]
 [ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/Fonts/label_themes.tres" id="48_ayfs5"]
-[ext_resource type="Texture2D" uid="uid://dwys7y27kiabl" path="res://assets/used_assets/textures/buttons/switch_on.png" id="36_ee44d"]
-[ext_resource type="Texture2D" uid="uid://dhxkhfg2qxlgx" path="res://assets/used_assets/textures/buttons/switch_off.png" id="37_bgkdg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rxno2"]
 resource_local_to_scene = true
