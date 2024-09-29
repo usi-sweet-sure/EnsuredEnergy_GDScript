@@ -26,8 +26,9 @@ func set_metrics(metrics: PowerplantMetrics):
 
 
 func activate():
-	metrics.active = true
-	metrics_updated.emit(metrics)
+	if metrics.can_activate:
+		metrics.active = true
+		metrics_updated.emit(metrics)
 	
 
 func deactivate():
@@ -135,3 +136,43 @@ func _on_button_minus_pressed():
 
 func _on_metrics_updated(metrics):
 	PowerplantsManager.update_buildings_impact()
+
+
+func is_gas() -> bool:
+		return metrics.type == PowerplantsManager.EngineTypeIds.GAS
+		
+		
+func is_nuclear() -> bool:
+		return metrics.type == PowerplantsManager.EngineTypeIds.NUCLEAR
+		
+		
+func is_river() -> bool:
+		return metrics.type == PowerplantsManager.EngineTypeIds.RIVER
+
+
+func is_hydro() -> bool:
+		return metrics.type == PowerplantsManager.EngineTypeIds.HYDRO
+
+
+func is_waste() -> bool:
+		return metrics.type == PowerplantsManager.EngineTypeIds.WASTE
+
+
+func is_biomass() -> bool:
+		return metrics.type == PowerplantsManager.EngineTypeIds.BIOMASS
+
+
+func is_solar() -> bool:
+		return metrics.type == PowerplantsManager.EngineTypeIds.SOLAR
+
+
+func is_wind() -> bool:
+		return metrics.type == PowerplantsManager.EngineTypeIds.WIND
+
+
+func is_biogas() -> bool:
+		return metrics.type == PowerplantsManager.EngineTypeIds.BIOGAS
+		
+
+func is_carbon_sequestration() -> bool:
+		return metrics.type == PowerplantsManager.EngineTypeIds.CARBON_SEQUESTRATION

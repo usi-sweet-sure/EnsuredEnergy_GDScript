@@ -278,7 +278,6 @@ func _on_mult_inc_pressed():
 				production_cost = base_production_cost + (base_production_cost * mult_factor * upgrade)
 				
 				Gameloop.ups_list[plant_id] += value
-				
 			else:
 				var plant_id = plant_name_to_ups_id[plant_name]
 				upgrade_per_turn += 1

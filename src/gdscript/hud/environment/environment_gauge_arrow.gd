@@ -1,11 +1,12 @@
 extends Sprite2D
 
 # This is a supposition on the maximum value players could get to.
-# This value may seems low, but some powerplants only add like 12 in land use
+# This value may seems low, but some powerplants only add like 0.2 in land use,
+# when other add 12
 # So we have to be this low to see the arrow move.
 # 
 # Just in case users go over that value, we clamp the value.
-var land_use_max_value = 300
+var land_use_max_value = 115
 # Since we clamp the value above. When the land use is above the clamp,
 # we make the arrow jitter so the user has a visual indicator that they are
 # above the max, and that reducing land use of only a small value may not be
