@@ -73,11 +73,63 @@ func _on_next_turn():
 
 func _on_button_plus_pressed():
 	metrics.current_upgrade += 1
+	
+	var base_metrics = PowerplantsManager.powerplants_metrics[metrics.type]
+	
+	# Production costs
+	var delta_prod_cost = base_metrics.production_costs * metrics.upgrade_factor_for_production_costs
+	metrics.production_costs += delta_prod_cost
+	
+	# Emissions
+	var delta_emissions = base_metrics.emissions * metrics.upgrade_factor_for_emissions
+	metrics.emissions += delta_emissions
+	
+	# Land use
+	var delta_land_use = base_metrics.land_use * metrics.upgrade_factor_for_land_use
+	metrics.land_use += delta_land_use
+	
+	# Winter supply
+	var delta_winter_supply = base_metrics.availability.y * base_metrics.capacity * metrics.upgrade_factor_for_winter_supply
+	metrics.availability.y += base_metrics.availability.y * metrics.upgrade_factor_for_winter_supply
+	
+	# Summer supply
+	var delta_summer_supply = base_metrics.availability.x * base_metrics.capacity * metrics.upgrade_factor_for_summer_supply
+	metrics.availability.x += base_metrics.availability.x * metrics.upgrade_factor_for_summer_supply
+	
+	# Upgrade cost
+	Gameloop.building_costs += metrics.upgrade_cost
+	
 	metrics_updated.emit(metrics)
 
 
 func _on_button_minus_pressed():
 	metrics.current_upgrade -= 1
+	
+	var base_metrics = PowerplantsManager.powerplants_metrics[metrics.type]
+	
+	# Production costs
+	var delta_prod_cost = base_metrics.production_costs * metrics.upgrade_factor_for_production_costs
+	metrics.production_costs -= delta_prod_cost
+	
+	# Emissions
+	var delta_emissions = base_metrics.emissions * metrics.upgrade_factor_for_emissions
+	metrics.emissions -= delta_emissions
+	
+	# Land use
+	var delta_land_use = base_metrics.land_use * metrics.upgrade_factor_for_land_use
+	metrics.land_use -= delta_land_use
+	
+	# Winter supply
+	var delta_winter_supply = base_metrics.availability.y * base_metrics.capacity * metrics.upgrade_factor_for_winter_supply
+	metrics.availability.y -= base_metrics.availability.y * metrics.upgrade_factor_for_winter_supply
+	
+	# Summer supply
+	var delta_summer_supply = base_metrics.availability.x * base_metrics.capacity * metrics.upgrade_factor_for_summer_supply
+	metrics.availability.x -= base_metrics.availability.x * metrics.upgrade_factor_for_summer_supply
+	
+	# Upgrade cost
+	Gameloop.building_costs -= metrics.upgrade_cost
+	
 	metrics_updated.emit(metrics)
 
 

@@ -20,10 +20,10 @@ func _change_text_to_red():
 
 
 func _on_button_plus_mouse_entered():
-	text = "+" + str(upgrade_cost).pad_decimals(0) + "M CHF"
+	text = "-" + str(upgrade_cost).pad_decimals(0) + "M CHF"
 	_change_text_to_red()
 
 
 func _on_button_minus_mouse_entered():
-	text = "-" + str(upgrade_cost).pad_decimals(0) + "M CHF"
+	text = "+" + str(upgrade_cost).pad_decimals(0) + "M CHF"
 	_change_text_to_green()
