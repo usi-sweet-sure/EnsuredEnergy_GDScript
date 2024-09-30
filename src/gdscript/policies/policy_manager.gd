@@ -62,7 +62,7 @@ func _ready():
 			"POLICIES_ENVIRONMENTAL_POLICY_1_TEXT", 0.8, Policy.PolicyType.ENVIRONMENTAL,
 			"ENABLE ALPINE SOLAR PV")
 	env_policy_1.add_effect("POLICIES_ENVIRONMENTAL_POLICY_1_EFFECT_1", 
-			func(): increase_max_upgrade(3, "SOLAR"))
+			func(): increase_max_upgrade(3, PowerplantsManager.EngineTypeIds.SOLAR))
 			
 	var env_policy_2 = Policy.new("POLICIES_ENVIRONMENTAL_POLICY_2_TITLE",
 			"POLICIES_ENVIRONMENTAL_POLICY_2_TEXT", 0.6, Policy.PolicyType.ENVIRONMENTAL,
@@ -73,7 +73,7 @@ func _ready():
 	var env_policy_3 = Policy.new("POLICIES_ENVIRONMENTAL_POLICY_3_TITLE",
 			"POLICIES_ENVIRONMENTAL_POLICY_3_TEXT", 0.5, Policy.PolicyType.ENVIRONMENTAL, "WIND PARKS REGULATION")		
 	env_policy_3.add_effect("POLICIES_ENVIRONMENTAL_POLICY_3_EFFECT_1", 
-			func(): increase_max_upgrade(5, "WIND"))
+			func(): increase_max_upgrade(5, PowerplantsManager.EngineTypeIds.WIND))
 	
 	var energy_policy_1 = Policy.new("POLICIES_ENERGY_POLICY_1_TITLE",
 			"POLICIES_ENERGY_POLICY_1_TEXT", 0.7, Policy.PolicyType.ENERGY, "MANDATORY BUILDING INSULATION")
@@ -89,27 +89,28 @@ func _ready():
 			env_policy_3, energy_policy_1, energy_policy_2]
 
 
-func increase_max_upgrade(new_max: int, name: String):
-	for plant in  get_tree().get_nodes_in_group("PP"):
-		if plant.plant_name == name:
-			plant.max_upgrade = new_max
-			plant._update_info()
-	for bb in get_tree().get_nodes_in_group("BB"):
-		for plant in bb.powerplants:
-			if plant.plant_name == name:
-				plant.max_upgrade = new_max
-				plant._update_info()
-				
+func increase_max_upgrade(new_max: int, type: PowerplantsManager.EngineTypeIds):
+	for plant in  get_tree().get_nodes_in_group("Powerplants"):
+		if plant.metrics.type == type:
+			plant.metrics.max_upgrade = new_max
+			plant.metrics_updated.emit(plant.metrics)
+	for bb in get_tree().get_nodes_in_group("BbsInConstruction"):
+		if bb.metrics.type == type:
+			bb.metrics.max_upgrade = new_max
+			
+	PowerplantsManager.powerplants_max_upgrades[type] = new_max
+	PowerplantsManager.powerplants_metrics[type].max_upgrade = new_max
+		
 				
 func lower_build_time():
-	for bb in get_tree().get_nodes_in_group("BB"):
-		for plant in bb.build_menu_plants:
-			if plant.plant_name == "WIND":
-				plant.build_time = 0
-				plant._update_info()
-		if bb.building_plant != null:
-			if bb.building_plant.plant_name == "WIND":
-				bb._build_plant(bb.building_plant, false)
+	var wind_id = PowerplantsManager.EngineTypeIds.WIND
+	PowerplantsManager.powerplants_build_times_in_turns[wind_id] = 0
+	PowerplantsManager.powerplants_metrics[wind_id].build_time_in_turns = 0
+	
+	for bb in get_tree().get_nodes_in_group("BbsInConstruction"):
+		if bb.metrics.type == wind_id:
+			bb.metrics.build_time_in_turns = 0
+			bb.powerplant_construction_ended.emit(bb.metrics)
 			
 				
 func lower_industry_demand():

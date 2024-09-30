@@ -401,7 +401,7 @@ _data = {
 "show_modifiers": SubResource("Animation_7s5wq")
 }
 
-[node name="BbInConstruction" type="TextureButton" groups=["BB"]]
+[node name="BbInConstruction" type="TextureButton" groups=["BbsInConstruction"]]
 material = SubResource("ShaderMaterial_52txu")
 offset_right = 701.0
 offset_bottom = 512.0

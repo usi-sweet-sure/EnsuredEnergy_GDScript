@@ -441,7 +441,6 @@ func _on_switch_toggled(toggled_on):
 		for effect in effect_sprites:
 			effect.hide()
 		
-		
 		var plant_id = plant_name_to_ups_id[plant_name]
 				
 		var plant_total = 0
@@ -469,6 +468,7 @@ func _on_next_turn():
 func _on_available_money_updated(available_money):
 	if is_in_menu:
 		$NoMoneyOverlay.visible = not Gameloop.can_spend_the_money(build_cost + production_cost)
+	
 	
 func _on_upgrade_button_mouse_entered():
 	if plant_name != "CARBON":

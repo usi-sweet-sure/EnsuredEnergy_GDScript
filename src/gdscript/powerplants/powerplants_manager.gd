@@ -104,19 +104,21 @@ var powerplants_life_spans_in_turns: Array[int] = [
 	11, # River
 ]
 
+# MUST BE in the same order as EngineTypeIds
 var powerplants_max_upgrades: Array[int] = [
-	3, # Solar
+	1, # Solar
 	3, # Wind
 	3, # Gas
 	3, # Waste
 	3, # Biomass
 	3, # Biogas
-	3, # Nuclear
+	0, # Nuclear
 	3, # Carbon sequestration
 	3, # Hydro
 	3, # River
 ]
 
+# MUST BE in the same order as EngineTypeIds
 var powerplants_min_upgrades: Array[int] = [
 	0, # Solar
 	0, # Wind
@@ -130,6 +132,7 @@ var powerplants_min_upgrades: Array[int] = [
 	0, # River
 ]
 
+# MUST BE in the same order as EngineTypeIds
 var powerplants_upgrade_factors_for_production_costs: Array[float] = [
 	0.25, # Solar
 	0.25, # Wind
@@ -143,6 +146,7 @@ var powerplants_upgrade_factors_for_production_costs: Array[float] = [
 	0.25, # River
 ]
 
+# MUST BE in the same order as EngineTypeIds
 var powerplants_upgrade_factors_for_emissions: Array[float] = [
 	0.5, # Solar
 	0.5, # Wind
@@ -156,6 +160,7 @@ var powerplants_upgrade_factors_for_emissions: Array[float] = [
 	0.5, # River
 ]
 
+# MUST BE in the same order as EngineTypeIds
 var powerplants_upgrade_factors_for_land_use: Array[float] = [
 	0.5, # Solar
 	0.5, # Wind
@@ -169,6 +174,7 @@ var powerplants_upgrade_factors_for_land_use: Array[float] = [
 	0.5, # River
 ]
 
+# MUST BE in the same order as EngineTypeIds
 var powerplants_upgrade_factors_for_winter_supply: Array[float] = [
 	0.25, # Solar
 	0.5, # Wind
@@ -182,6 +188,7 @@ var powerplants_upgrade_factors_for_winter_supply: Array[float] = [
 	0.1, # River
 ]
 
+# MUST BE in the same order as EngineTypeIds
 var powerplants_upgrade_factors_for_summer_supply: Array[float] = [
 	0.25, # Solar
 	0.5, # Wind
@@ -384,8 +391,6 @@ func _store_powerplant_metrics(engine_type_id: EngineTypeIds):
 # Update everything that buildings affects like supply, emissions, land_use, etc.
 func update_buildings_impact():
 	var powerplants: Array[Node] = get_tree().get_nodes_in_group("Powerplants")
-	print("Number of pps: ", powerplants.size())
-	print("====================================")
 	
 	var summer = 0
 	var winter = 0

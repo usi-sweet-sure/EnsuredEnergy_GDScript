@@ -207,8 +207,7 @@ func _severe_wether_send_parameters_to_model():
 
 func _on_shock_button_entered(shock: Shock):
 	shock_buttons_hovered.push_back(shock)
-	print(shock_buttons_hovered)
-	
+
 
 func _on_shock_button_exited(shock: Shock):
 	var index = 0

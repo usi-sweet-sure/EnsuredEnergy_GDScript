@@ -30,7 +30,7 @@ class_name PpMapEmplacement
 @export var hydro := false
 @export var river := false
 
-@export_group("metrics overrides")
+@export_group("Metrics Overrides")
 @export var life_span_in_turns = 11:
 	set(new_value):
 		life_span_in_turns = new_value
