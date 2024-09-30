@@ -22,6 +22,7 @@ var ups_list = {
 	"170": 0, # SOLAR
 	"171": 0, # WIND
 	"175": 0, # BIOGAS
+	"774": 0, # CARBON SEQ
 }
 
 signal player_name_updated
