@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ba56oxmvcxpos"]
+[gd_scene load_steps=19 format=3 uid="uid://ba56oxmvcxpos"]
 
 [ext_resource type="Texture2D" uid="uid://dug4cy4mgxa1b" path="res://assets/used_assets/textures/map/map.jpg" id="1_exly2"]
 [ext_resource type="Texture2D" uid="uid://dnuq60vou7jic" path="res://assets/used_assets/textures/map/mountains/mountain_0.png" id="2_0wbri"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://b0b88h1h3qru2" path="res://assets/used_assets/textures/map/forests/forest_7.png" id="15_3rssc"]
 [ext_resource type="Texture2D" uid="uid://dk8ammfufvvq8" path="res://assets/used_assets/textures/map/mountains/mountain_4.png" id="16_60cke"]
 [ext_resource type="Texture2D" uid="uid://curvmq4s83e7w" path="res://assets/used_assets/textures/map/mountains/mountain_5.png" id="17_qgn3q"]
+[ext_resource type="PackedScene" uid="uid://dw4roi1aknumh" path="res://scenes/powerplants/carbon_sequestration.tscn" id="18_pdx3e"]
 [ext_resource type="PackedScene" uid="uid://b0gxr46y1af1j" path="res://scenes/powerplants/menu/pp_menu.tscn" id="21_n4f12"]
 
 [node name="World" type="Node2D"]
@@ -212,3 +213,6 @@ position = Vector2(526, 2669)
 texture = ExtResource("17_qgn3q")
 
 [node name="PpMenu" parent="." instance=ExtResource("21_n4f12")]
+
+[node name="Carbon" parent="." instance=ExtResource("18_pdx3e")]
+position = Vector2(2223, 1035)
