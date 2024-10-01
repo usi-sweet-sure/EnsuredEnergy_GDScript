@@ -41,8 +41,8 @@ func _on_pressed():
 func _on_pp_pressed(pp):
 	for plant in powerplants:
 		if pp.name == plant.name:
-			if Gameloop.can_spend_the_money(pp.build_cost + pp.production_cost):
-				Gameloop.building_costs += plant.build_cost
+			if MoneyManager.can_spend_the_money(pp.build_cost + pp.production_cost):
+				MoneyManager.building_costs += plant.build_cost
 				$Hammer.hide()
 				$BuildMenu.hide()
 				$Money.text = "-" + str(pp.build_cost + pp.production_cost).pad_decimals(1) + "M CHF"
@@ -100,7 +100,7 @@ func _on_close_button_pressed():
 func _on_pp_delete(pp):
 	plant_canceled.emit()
 	plant_built_temporarily = false
-	Gameloop.building_costs -= pp.build_cost
+	MoneyManager.building_costs -= pp.build_cost
 	pp.hide()
 	pp.remove_from_group("PP")
 	$Hammer.show()
@@ -133,7 +133,7 @@ func _on_pp_mouse_exited(pp):
 # This is called for a building still in construction
 func _on_building_cancel_pressed():
 	plant_canceled.emit()
-	Gameloop.building_costs -= building_plant.build_cost
+	MoneyManager.building_costs -= building_plant.build_cost
 	$BuildingInfo.hide()
 	$Hammer.show()
 	$Money.text = "+" + str(building_plant.build_cost).pad_decimals(1) + "M CHF"

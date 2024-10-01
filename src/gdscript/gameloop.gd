@@ -3,9 +3,6 @@ extends Node2D
 var start_year: int = 2022
 var total_number_of_turns: int = 10
 var years_in_a_turn = 3
-var start_money: float = 700.0
-var money_per_turn: float = 350.0
-var debt_percentage_on_borrowed_money: float = 20.0
 
 var demand_summer_list = []
 var demand_winter_list = []
@@ -32,20 +29,12 @@ signal energy_supply_updated_summer
 signal energy_demand_updated_winter
 signal energy_demand_updated_summer
 signal imported_energy_amount_updated
-signal borrowed_money_amount_updated
-signal players_own_money_amount_updated
-signal available_money_amount_updated
 signal land_use_updated
 signal co2_emissions_updated
 signal sequestrated_co2_updated(val: float)
 signal most_recent_shock_updated
 signal current_turn_updated
 signal show_tutorial
-signal powerplants_production_costs_updated(val: float)
-signal carbon_sequestration_production_costs_updated(val: float)
-signal energy_import_cost_updated
-signal building_costs_updated
-signal total_production_costs_updated(val: float)
 
 signal next_turn
 signal show_ending_screen_requested
@@ -91,28 +80,11 @@ var supply_winter: float:
 	set(new_value):
 		supply_winter = new_value
 		energy_supply_updated_winter.emit(supply_winter)
-var energy_import_cost: float:
-	get:
-		return imported_energy_amount * 2
 var imported_energy_amount: float:
 	set(new_value):
 		imported_energy_amount = new_value
 		imported_energy_amount_updated.emit(imported_energy_amount)
-		energy_import_cost_updated.emit(energy_import_cost)
-var borrowed_money_amount: float:
-	set(new_value):
-		borrowed_money_amount = new_value
-		borrowed_money_amount_updated.emit(borrowed_money_amount)
-		available_money_amount_updated.emit(available_money_amount)
-var players_own_money_amount: float:
-	set(new_value):
-		players_own_money_amount = new_value
-		players_own_money_amount_updated.emit(players_own_money_amount)
-		available_money_amount_updated.emit(available_money_amount)
-# This is a compute of all the money sources, minus costs. Do not set it
-var available_money_amount: float:
-	get:
-		return players_own_money_amount + borrowed_money_amount - building_costs - total_production_costs
+		MoneyManager.energy_import_cost_updated.emit(MoneyManager.energy_import_cost)
 var land_use: float:
 	set(new_value):
 		land_use = new_value
@@ -129,37 +101,6 @@ var current_turn: int = 1:
 	set(new_value):
 		current_turn = new_value
 		current_turn_updated.emit(current_turn)
-# Do not set this directly
-var total_production_costs: float:
-	get:
-		return powerplants_production_costs + carbon_sequestration_production_costs
-var powerplants_production_costs: float:
-	get:
-		return powerplants_production_costs * production_costs_modifier
-	set(new_value):
-		powerplants_production_costs = new_value
-		powerplants_production_costs_updated.emit(powerplants_production_costs)
-		available_money_amount_updated.emit(available_money_amount)
-		total_production_costs_updated.emit(total_production_costs)
-var carbon_sequestration_production_costs: float:
-	get:
-		return carbon_sequestration_production_costs * production_costs_modifier
-	set(new_value):
-		carbon_sequestration_production_costs = new_value
-		carbon_sequestration_production_costs_updated.emit(carbon_sequestration_production_costs)
-		available_money_amount_updated.emit(available_money_amount)
-		total_production_costs_updated.emit(total_production_costs)
-var production_costs_modifier: float: # Shocks can affect this
-	set(new_value):
-		production_costs_modifier = new_value
-		powerplants_production_costs_updated.emit(powerplants_production_costs)
-		carbon_sequestration_production_costs_updated.emit(carbon_sequestration_production_costs)
-		available_money_amount_updated.emit(available_money_amount)
-var building_costs: float: # Costs of building and upgrading buildings
-	set(new_value):
-		building_costs = new_value
-		building_costs_updated.emit(building_costs)
-		available_money_amount_updated.emit(available_money_amount)
 var sequestrated_co2: float = 0.0:
 	set(new_value):
 		sequestrated_co2 = new_value
@@ -167,7 +108,6 @@ var sequestrated_co2: float = 0.0:
 		co2_emissions_updated.emit(co2_emissions)
 	
 func _ready():	
-	players_own_money_amount = start_money
 	all_power_plants = get_tree().get_nodes_in_group("PP")
 	for i in total_number_of_turns + 1:
 		year_list.append(start_year + (i * 3))
@@ -221,7 +161,7 @@ func _update_buildings_impact():
 			total_land_use += power_plant.land_use
 	supply_summer = summer
 	supply_winter = winter
-	powerplants_production_costs = total_production_costs
+	MoneyManager.powerplants_production_costs = total_production_costs
 	co2_emissions = total_emissions
 	sequestrated_co2 = total_emissions_sequestrated
 	land_use = total_land_use
@@ -235,7 +175,7 @@ func _on_next_turn():
 	Context.yr = Gameloop.year_list[Gameloop.current_turn]
 	_send_send_parameters_to_model()
 	imported_energy_amount = 0
-	set_money_for_new_turn()
+	MoneyManager.set_money_for_new_turn()
 	ShockManager.pick_shock()
 	ShockManager.apply_shock()
 	Context.get_demand_from_model() #S. Not sure where to put this and the line doesnt update
@@ -260,25 +200,6 @@ func _unhandled_input(event):
 			
 func can_go_to_next_turn():
 	return _check_supply()
-	
-
-func can_spend_the_money(money_to_spend: float):
-	return money_to_spend <= available_money_amount
-
-# Returns the money the player would have available on next turn
-func get_money_for_next_turn() -> float:
-	var income = players_own_money_amount + money_per_turn + borrowed_money_amount
-	var outcome = borrowed_money_amount * (1.0 + (debt_percentage_on_borrowed_money / 100.0)) + energy_import_cost + building_costs + total_production_costs
-	
-	return income - outcome
-	
-	
-func set_money_for_new_turn():
-	var income = players_own_money_amount + money_per_turn + borrowed_money_amount
-	var outcome = borrowed_money_amount * (1.0 + (debt_percentage_on_borrowed_money / 100.0)) + building_costs + energy_import_cost
-	players_own_money_amount = income - outcome
-	borrowed_money_amount = 0
-	building_costs = 0
 
 
 func reset_all_values():
@@ -287,14 +208,14 @@ func reset_all_values():
 	supply_summer = 0
 	supply_winter = 0
 	imported_energy_amount = 0
-	borrowed_money_amount = 0
-	players_own_money_amount = start_money
+	MoneyManager.borrowed_money_amount = 0
+	MoneyManager.players_own_money_amount = MoneyManager.start_money
 	land_use = 0
 	co2_emissions = 0
 	most_recent_shock = null
 	current_turn = 1
-	powerplants_production_costs = 0
-	carbon_sequestration_production_costs = 0
-	production_costs_modifier = 1
-	building_costs = 0
+	MoneyManager.powerplants_production_costs = 0
+	MoneyManager.carbon_sequestration_production_costs = 0
+	MoneyManager.production_costs_modifier = 1
+	MoneyManager.building_costs = 0
 	Context.yr = 2022

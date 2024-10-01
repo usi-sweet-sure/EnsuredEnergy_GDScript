@@ -95,12 +95,12 @@ func _on_powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMe
 		override_metrics(new_metrics)
 		
 		if new_metrics.build_time_in_turns > 0:
-			Gameloop.building_costs += new_metrics.building_costs
+			MoneyManager.building_costs += new_metrics.building_costs
 			new_metrics.construction_started_on_turn = Gameloop.current_turn
 			bb_in_construction.set_metrics(new_metrics)
 			bb_in_construction.show()
 		else:
-			Gameloop.building_costs += new_metrics.building_costs
+			MoneyManager.building_costs += new_metrics.building_costs
 			# This was never set if == 0.
 			# It's already set when the pp takes multiple turns to build
 			if new_metrics.construction_started_on_turn == 0:
@@ -117,7 +117,7 @@ func _on_powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMe
 			
 # Connected to "powerplant_delete_requested" emitted by "pp_scene.tscn"
 func _on_powerplant_delete_requested(metrics: PowerplantMetrics):
-	Gameloop.building_costs -= metrics.building_costs
+	MoneyManager.building_costs -= metrics.building_costs
 	var node = get_node(powerplant_node_name)
 	remove_child(node)
 	node.queue_free()
@@ -126,7 +126,7 @@ func _on_powerplant_delete_requested(metrics: PowerplantMetrics):
 
 
 func _on_powerplant_cancel_construction_requested(metrics: PowerplantMetrics):
-	Gameloop.building_costs -= metrics.building_costs
+	MoneyManager.building_costs -= metrics.building_costs
 	bb_in_construction.hide()
 	bb_normal.show()
 	

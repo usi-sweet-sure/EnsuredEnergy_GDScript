@@ -98,7 +98,7 @@ func _on_button_plus_pressed():
 	metrics.availability.x += base_metrics.availability.x * metrics.upgrade_factor_for_summer_supply
 	
 	# Upgrade cost
-	Gameloop.building_costs += metrics.upgrade_cost
+	MoneyManager.building_costs += metrics.upgrade_cost
 	
 	metrics_updated.emit(metrics)
 
@@ -129,7 +129,7 @@ func _on_button_minus_pressed():
 	metrics.availability.x -= base_metrics.availability.x * metrics.upgrade_factor_for_summer_supply
 	
 	# Upgrade cost
-	Gameloop.building_costs -= metrics.upgrade_cost
+	MoneyManager.building_costs -= metrics.upgrade_cost
 	
 	metrics_updated.emit(metrics)
 

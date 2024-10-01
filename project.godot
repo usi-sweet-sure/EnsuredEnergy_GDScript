@@ -23,6 +23,7 @@ driver/mix_rate=48000
 
 Context="*res://src/gdscript/Context.gd"
 GroupManager="*res://src/gdscript/group_manager.gd"
+MoneyManager="*res://src/gdscript/money_manager.gd"
 Gameloop="*res://src/gdscript/gameloop.gd"
 PowerplantsManager="*res://src/gdscript/powerplants/powerplants_manager.gd"
 ShockManager="*res://src/gdscript/shocks/shock_manager.gd"

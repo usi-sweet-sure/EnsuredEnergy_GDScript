@@ -419,7 +419,7 @@ func update_buildings_impact():
 			
 	Gameloop.supply_summer = summer
 	Gameloop.supply_winter = winter
-	Gameloop.powerplants_production_costs = total_production_costs
+	MoneyManager.powerplants_production_costs = total_production_costs
 	Gameloop.co2_emissions = total_emissions
 	Gameloop.sequestrated_co2 = total_emissions_sequestrated
 	Gameloop.land_use = total_land_use

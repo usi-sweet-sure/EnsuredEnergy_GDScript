@@ -119,7 +119,7 @@ func _ready():
 	#Context.http.request_completed.connect(_on_request_completed)
 	Gameloop.next_turn.connect(_on_next_turn)
 	Gameloop.locale_updated.connect(_on_locale_updated)
-	Gameloop.available_money_amount_updated.connect(_on_available_money_updated)
+	MoneyManager.available_money_amount_updated.connect(_on_available_money_updated)
 	
 	_update_info()
 	metrics_container_original_position = metrics_container.position
@@ -261,8 +261,8 @@ func _on_info_button_pressed():
 
 func _on_mult_inc_pressed():
 	if upgrade < max_upgrade:
-		if Gameloop.can_spend_the_money(upgrade_cost):
-			Gameloop.building_costs += upgrade_cost
+		if MoneyManager.can_spend_the_money(upgrade_cost):
+			MoneyManager.building_costs += upgrade_cost
 			$BuildInfo/EnergyContainer/Multiplier/Dec.show()
 			$Money.text = "-" + str(upgrade_cost) + "$"
 			$AP.stop()
@@ -315,7 +315,7 @@ func _on_mult_inc_pressed():
 
 func _on_mult_dec_pressed():
 	if upgrade > 0:
-		Gameloop.building_costs -= upgrade_cost
+		MoneyManager.building_costs -= upgrade_cost
 		$BuildInfo/EnergyContainer/Multiplier/Inc.show()
 		
 		$Money.text = "+" + str(upgrade_cost) + "$"
@@ -467,7 +467,7 @@ func _on_next_turn():
 
 func _on_available_money_updated(available_money):
 	if is_in_menu:
-		$NoMoneyOverlay.visible = not Gameloop.can_spend_the_money(build_cost + production_cost)
+		$NoMoneyOverlay.visible = not MoneyManager.can_spend_the_money(build_cost + production_cost)
 	
 	
 func _on_upgrade_button_mouse_entered():

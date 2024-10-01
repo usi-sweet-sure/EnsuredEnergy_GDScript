@@ -45,11 +45,11 @@ func _ready():
 	_add_new_data_set("co2_emissions")
 	_add_new_data_set("personal_support")
 	
-	Gameloop.building_costs_updated.connect(_on_building_cost_updated)
-	Gameloop.total_production_costs_updated.connect(_on_production_cost_updated)
-	Gameloop.energy_import_cost_updated.connect(_on_import_cost_updated)
-	Gameloop.borrowed_money_amount_updated.connect(_on_borrowed_money_updated)
-	Gameloop.available_money_amount_updated.connect(_on_available_money_updated)
+	MoneyManager.building_costs_updated.connect(_on_building_cost_updated)
+	MoneyManager.total_production_costs_updated.connect(_on_production_cost_updated)
+	MoneyManager.energy_import_cost_updated.connect(_on_import_cost_updated)
+	MoneyManager.borrowed_money_amount_updated.connect(_on_borrowed_money_updated)
+	MoneyManager.available_money_amount_updated.connect(_on_available_money_updated)
 	Gameloop.energy_supply_updated_winter.connect(_on_winter_energy_supply_updated)
 	Gameloop.energy_supply_updated_summer.connect(_on_summer_energy_supply_updated)
 	Gameloop.imported_energy_amount_updated.connect(_on_winter_energy_import_updated)
@@ -81,11 +81,11 @@ func _add_new_data_set(key_name: String):
 # This is used at _ready and on a new turn. Some data don't change when a new turn
 # starts, but we want to to draw a point for that turn right away
 func _refresh_data():
-	_on_building_cost_updated(Gameloop.building_costs)
-	_on_production_cost_updated(Gameloop.total_production_costs)
-	_on_import_cost_updated(Gameloop.energy_import_cost)
-	_on_borrowed_money_updated(Gameloop.borrowed_money_amount)
-	_on_available_money_updated(Gameloop.available_money_amount)
+	_on_building_cost_updated(MoneyManager.building_costs)
+	_on_production_cost_updated(MoneyManager.total_production_costs)
+	_on_import_cost_updated(MoneyManager.energy_import_cost)
+	_on_borrowed_money_updated(MoneyManager.borrowed_money_amount)
+	_on_available_money_updated(MoneyManager.available_money_amount)
 	_on_winter_energy_supply_updated(Gameloop.supply_winter)
 	_on_summer_energy_supply_updated(Gameloop.supply_summer)
 	_on_winter_energy_import_updated(Gameloop.imported_energy_amount)

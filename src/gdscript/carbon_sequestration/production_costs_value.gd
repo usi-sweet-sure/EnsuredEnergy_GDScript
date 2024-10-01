@@ -2,11 +2,11 @@ extends Label
 
 
 func _ready():
-	Gameloop.carbon_sequestration_production_costs_updated.connect(_on_cs_production_costs_updated)
+	MoneyManager.carbon_sequestration_production_costs_updated.connect(_on_cs_production_costs_updated)
 
 
 func _on_slider_value_changed(value: float):
-	Gameloop.carbon_sequestration_production_costs = value * 10
+	MoneyManager.carbon_sequestration_production_costs = value * 10
 
 
 func _on_cs_production_costs_updated(value: float):

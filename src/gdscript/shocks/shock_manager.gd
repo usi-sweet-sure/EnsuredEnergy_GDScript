@@ -24,21 +24,21 @@ func _ready():
 	cold_spell.add_effect(func(): increase_demand(false))
 	cold_spell.add_requirements("SHOCK_COLD_SPELL_REQUIREMENT_MET",
 			[func(): return Gameloop.supply_winter + Gameloop.imported_energy_amount >= Gameloop.demand_winter + 5],
-			[func(): PolicyManager.personal_support += 0.05, func(): Gameloop.players_own_money_amount += 50]
+			[func(): PolicyManager.personal_support += 0.05, func(): MoneyManager.players_own_money_amount += 50]
 		)
 	cold_spell.add_player_reaction("SHOCK_COLD_SPELL_PLAYER_REACTION_1", func(): PolicyManager.personal_support -= 0.1)
 	cold_spell.add_player_reaction("SHOCK_COLD_SPELL_PLAYER_REACTION_2", func(): print("gaz upgrade")) # E. Implement
-	cold_spell.add_player_reaction("SHOCK_COLD_SPELL_PLAYER_REACTION_3", func(): Gameloop.players_own_money_amount -= 50)
+	cold_spell.add_player_reaction("SHOCK_COLD_SPELL_PLAYER_REACTION_3", func(): MoneyManager.players_own_money_amount -= 50)
 	
 	var heat_wave: = Shock.new("SHOCK_HEAT_WAVE_TITLE", "SHOCK_HEAT_WAVE_TEXT", "hot.png")
 	heat_wave.add_effect(func(): increase_demand(false))
 	heat_wave.add_requirements("SHOCK_HEAT_WAVE_REQUIREMENT_MET",
 			[func():  return Gameloop.supply_summer >= Gameloop.demand_summer + 5],
-			[func(): PolicyManager.personal_support += 0.05, func(): Gameloop.players_own_money_amount += 50]
+			[func(): PolicyManager.personal_support += 0.05, func(): MoneyManager.players_own_money_amount += 50]
 		)
 	heat_wave.add_player_reaction("SHOCK_HEAT_WAVE_PLAYER_REACTION_1", func(): PolicyManager.personal_support -= 0.1)
 	heat_wave.add_player_reaction("SHOCK_HEAT_WAVE_PLAYER_REACTION_2", func(): print("gaz upgrade")) # E. Implement
-	heat_wave.add_player_reaction("SHOCK_HEAT_WAVE_PLAYER_REACTION_3", func(): Gameloop.players_own_money_amount -= 50)
+	heat_wave.add_player_reaction("SHOCK_HEAT_WAVE_PLAYER_REACTION_3", func(): MoneyManager.players_own_money_amount -= 50)
 	
 	var glaciers_melting = Shock.new("SHOCK_GLACIERS_MELTING_TITLE", "SHOCK_GLACIERS_MELTING_TEXT", "ice.png")
 	glaciers_melting.add_effect(func(): print("decreasing hydraulic water supply")) # E. Implement
@@ -47,13 +47,13 @@ func _ready():
 	severe_weather.add_effect(func(): _severe_wether_send_parameters_to_model()) # E. Implement
 	
 	var inc_raw_cost_10 = Shock.new("SHOCK_INC_RAW_COST_10_TITLE", "SHOCK_INC_RAW_COST_10_TEXT", "money.png")
-	inc_raw_cost_10.add_effect(func(): Gameloop.production_costs_modifier += 0.1)
+	inc_raw_cost_10.add_effect(func(): MoneyManager.production_costs_modifier += 0.1)
 	
 	var inc_raw_cost_20 = Shock.new("SHOCK_INC_RAW_COST_20_TITLE", "SHOCK_INC_RAW_COST_20_TEXT", "money.png")
-	inc_raw_cost_20.add_effect(func(): Gameloop.production_costs_modifier += 0.2)
+	inc_raw_cost_20.add_effect(func(): MoneyManager.production_costs_modifier += 0.2)
 	
 	var dec_raw_cost_20 = Shock.new("SHOCK_DEC_RAW_COST_20_TITLE", "SHOCK_DEC_RAW_COST_20_TEXT", "receive.png")
-	dec_raw_cost_20.add_effect(func(): Gameloop.production_costs_modifier -= 0.2)
+	dec_raw_cost_20.add_effect(func(): MoneyManager.production_costs_modifier -= 0.2)
 	
 	var mass_immigration = Shock.new("SHOCK_MASS_IMMIGRATION_TITLE", "SHOCK_MASS_IMMIGRATION_TEXT", "people.png")
 	mass_immigration.add_effect(func(): increase_demand(true))
