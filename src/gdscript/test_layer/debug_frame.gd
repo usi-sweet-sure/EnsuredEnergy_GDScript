@@ -19,7 +19,7 @@ func _ready():
 	#Gameloop.co2_emissions_updated.connect(_update_text)
 	#Gameloop.most_recent_shock_updated.connect(_update_text)
 	#Gameloop.current_turn_updated.connect(_update_text)
-	#Gameloop.powerplants_production_costs_updated.connect(_update_text)
+	#Gameloop.total_production_costs_updated.connect(_update_text)
 	#Gameloop.energy_import_cost_updated.connect(_update_text)
 	#Gameloop.building_costs_updated.connect(_update_text)
 	#Gameloop.next_turn.connect(_on_signal_with_no_value)
@@ -68,7 +68,7 @@ func _update_text(_val):
 		"Borrowed money amount: [b]" + str(Gameloop.borrowed_money_amount) + "[/b]\n",
 		"Debt percentage on borrowed money: [b]" + str(Gameloop.debt_percentage_on_borrowed_money) + "[/b]\n",
 		"Building costs: [b]" + str(Gameloop.building_costs) + "[/b]\n",
-		"Powerplants production costs: [b]" + str(Gameloop.powerplants_production_costs) + "[/b]\n",
+		"Total production costs: [b]" + str(Gameloop.total_production_costs) + "[/b]\n",
 		"Production costs modifier: [b]" + str(Gameloop.production_costs_modifier) + "[/b]\n",
 		"Imports costs: [b]" + str(Gameloop.energy_import_cost) + "[/b]\n\n",
 		

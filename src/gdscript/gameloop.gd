@@ -41,9 +41,11 @@ signal sequestrated_co2_updated(val: float)
 signal most_recent_shock_updated
 signal current_turn_updated
 signal show_tutorial
-signal powerplants_production_costs_updated
+signal powerplants_production_costs_updated(val: float)
+signal carbon_sequestration_production_costs_updated(val: float)
 signal energy_import_cost_updated
 signal building_costs_updated
+signal total_production_costs_updated(val: float)
 
 signal next_turn
 signal show_ending_screen_requested
@@ -110,7 +112,7 @@ var players_own_money_amount: float:
 # This is a compute of all the money sources, minus costs. Do not set it
 var available_money_amount: float:
 	get:
-		return players_own_money_amount + borrowed_money_amount - building_costs - powerplants_production_costs
+		return players_own_money_amount + borrowed_money_amount - building_costs - total_production_costs
 var land_use: float:
 	set(new_value):
 		land_use = new_value
@@ -127,6 +129,10 @@ var current_turn: int = 1:
 	set(new_value):
 		current_turn = new_value
 		current_turn_updated.emit(current_turn)
+# Do not set this directly
+var total_production_costs: float:
+	get:
+		return powerplants_production_costs + carbon_sequestration_production_costs
 var powerplants_production_costs: float:
 	get:
 		return powerplants_production_costs * production_costs_modifier
@@ -134,10 +140,20 @@ var powerplants_production_costs: float:
 		powerplants_production_costs = new_value
 		powerplants_production_costs_updated.emit(powerplants_production_costs)
 		available_money_amount_updated.emit(available_money_amount)
+		total_production_costs_updated.emit(total_production_costs)
+var carbon_sequestration_production_costs: float:
+	get:
+		return carbon_sequestration_production_costs * production_costs_modifier
+	set(new_value):
+		carbon_sequestration_production_costs = new_value
+		carbon_sequestration_production_costs_updated.emit(carbon_sequestration_production_costs)
+		available_money_amount_updated.emit(available_money_amount)
+		total_production_costs_updated.emit(total_production_costs)
 var production_costs_modifier: float: # Shocks can affect this
 	set(new_value):
 		production_costs_modifier = new_value
 		powerplants_production_costs_updated.emit(powerplants_production_costs)
+		carbon_sequestration_production_costs_updated.emit(carbon_sequestration_production_costs)
 		available_money_amount_updated.emit(available_money_amount)
 var building_costs: float: # Costs of building and upgrading buildings
 	set(new_value):
@@ -252,7 +268,7 @@ func can_spend_the_money(money_to_spend: float):
 # Returns the money the player would have available on next turn
 func get_money_for_next_turn() -> float:
 	var income = players_own_money_amount + money_per_turn + borrowed_money_amount
-	var outcome = borrowed_money_amount * (1.0 + (debt_percentage_on_borrowed_money / 100.0)) + energy_import_cost + building_costs + powerplants_production_costs
+	var outcome = borrowed_money_amount * (1.0 + (debt_percentage_on_borrowed_money / 100.0)) + energy_import_cost + building_costs + total_production_costs
 	
 	return income - outcome
 	
@@ -278,6 +294,7 @@ func reset_all_values():
 	most_recent_shock = null
 	current_turn = 1
 	powerplants_production_costs = 0
+	carbon_sequestration_production_costs = 0
 	production_costs_modifier = 1
 	building_costs = 0
 	Context.yr = 2022

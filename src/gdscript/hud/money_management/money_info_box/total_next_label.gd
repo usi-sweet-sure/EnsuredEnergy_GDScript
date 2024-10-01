@@ -5,7 +5,7 @@ extends Label
 func _ready():
 	Gameloop.available_money_amount_updated.connect(_on_money_change)
 	Gameloop.energy_import_cost_updated.connect(_on_money_change)
-	Gameloop.powerplants_production_costs_updated.connect(_on_money_change)
+	Gameloop.total_production_costs_updated.connect(_on_money_change)
 
 	_on_money_change(0)
 	
