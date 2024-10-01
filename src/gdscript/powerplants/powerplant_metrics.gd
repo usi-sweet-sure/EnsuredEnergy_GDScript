@@ -29,6 +29,7 @@ var upgrade_factor_for_land_use: float
 var upgrade_factor_for_winter_supply: float
 var upgrade_factor_for_summer_supply: float
 var upgrade_cost: float
+var can_upgrade: bool
 # Each entry is the history of what happened to the powerplant during the turn
 # corresponding to the index.
 # A turn history is an Array of 1, -1, true or false, or an emptry array if nothing
@@ -68,6 +69,7 @@ func _init(
 		upgrade_factor_for_winter_supply: float,
 		upgrade_factor_for_summer_supply: float,
 		upgrade_cost: float,
+		can_upgrade: bool,
 	):
 		self.type = type
 		self.capacity = capacity
@@ -93,6 +95,7 @@ func _init(
 		self.upgrade_factor_for_winter_supply = upgrade_factor_for_winter_supply
 		self.upgrade_factor_for_summer_supply = upgrade_factor_for_summer_supply
 		self.upgrade_cost = upgrade_cost
+		self.can_upgrade = can_upgrade
 
 
 func copy() -> PowerplantMetrics:
@@ -103,6 +106,6 @@ func copy() -> PowerplantMetrics:
 			min_upgrade, max_upgrade, upgrade_factor_for_production_costs,
 			upgrade_factor_for_emissions, upgrade_factor_for_land_use,
 			upgrade_factor_for_winter_supply, upgrade_factor_for_summer_supply,
-			upgrade_cost)
+			upgrade_cost, can_upgrade)
 			
 	return metrics

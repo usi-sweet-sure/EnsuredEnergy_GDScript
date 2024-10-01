@@ -204,6 +204,20 @@ var powerplants_upgrade_factors_for_summer_supply: Array[float] = [
 ]
 
 # MUST BE in the same order as EngineTypeIds
+var powerplants_can_upgrade: Array[float] = [
+	true, # Solar
+	true, # Wind
+	true, # Gas
+	true, # Waste
+	true, # Biomass
+	true, # Biogas
+	false, # Nuclear
+	true, # Carbon sequestration
+	true, # Hydro
+	true, # River
+]
+
+# MUST BE in the same order as EngineTypeIds
 var powerplants_model_id = [
 	"168", # Solar
 	"169", # Wind
@@ -376,6 +390,7 @@ func _store_powerplant_metrics(engine_type_id: EngineTypeIds):
 	var upgrade_factor_for_winter_supply = powerplants_upgrade_factors_for_winter_supply[engine_type_id]
 	var upgrade_factor_for_summer_supply = powerplants_upgrade_factors_for_summer_supply[engine_type_id]
 	var upgrade_cost = 25
+	var can_upgrade = powerplants_can_upgrade[engine_type_id]
 	
 	var metrics = PowerplantMetrics.new(engine_type_id, capacity, cnv_capacity,
 			emissions, land_use, production_cost, availability, building_costs,
@@ -384,7 +399,7 @@ func _store_powerplant_metrics(engine_type_id: EngineTypeIds):
 			min_upgrade, max_upgrade, upgrade_factor_for_production_costs,
 			upgrade_factor_for_emissions, upgrade_factor_for_land_use,
 			upgrade_factor_for_winter_supply, upgrade_factor_for_summer_supply,
-			upgrade_cost)
+			upgrade_cost, can_upgrade)
 			
 	powerplants_metrics[engine_type_id] = metrics
 	
