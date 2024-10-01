@@ -1,12 +1,12 @@
 extends Node
 
-signal borrowed_money_amount_updated
-signal players_own_money_amount_updated
-signal available_money_amount_updated
+signal borrowed_money_amount_updated(val: float)
+signal players_own_money_amount_updated(val: float)
+signal available_money_amount_updated(val: float)
 signal powerplants_production_costs_updated(val: float)
 signal carbon_sequestration_production_costs_updated(val: float)
-signal energy_import_cost_updated
-signal building_costs_updated
+signal energy_import_cost_updated(val: float)
+signal building_costs_updated(val: float)
 signal total_production_costs_updated(val: float)
 
 var start_money: float = 700.0
@@ -79,6 +79,7 @@ func get_money_for_next_turn() -> float:
 	
 	
 func set_money_for_new_turn():
+	# Production costs are not computed because they already are in "available_money",
 	var income = players_own_money_amount + money_per_turn + borrowed_money_amount
 	var outcome = borrowed_money_amount * (1.0 + (debt_percentage_on_borrowed_money / 100.0)) + building_costs + energy_import_cost
 	players_own_money_amount = income - outcome

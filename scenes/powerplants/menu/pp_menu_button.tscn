@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://dkoknjsrtig82"]
+[gd_scene load_steps=42 format=3 uid="uid://dkoknjsrtig82"]
 
 [ext_resource type="Texture2D" uid="uid://b3fajud3sgo5m" path="res://assets/used_assets/textures/backplates/backplate_2.png" id="1_yeeaq"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_menu/pp_menu_button/pp_menu_button.gd" id="2_i71um"]
@@ -31,6 +31,8 @@
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_menu/pp_menu_button/pp_info/land_use_value_label.gd" id="26_1wr5u"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_menu/pp_menu_button/pp_info/winter_label.gd" id="29_51oo6"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_menu/pp_menu_button/pp_info/summer_label.gd" id="30_dw4jh"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_menu/pp_menu_button/no_money_overlay.gd" id="32_stpvl"]
+[ext_resource type="Texture2D" uid="uid://coxj27rfhq01u" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0025_Icon-No-Money.png" id="33_mo342"]
 
 [sub_resource type="FontVariation" id="FontVariation_xfgeu"]
 base_font = ExtResource("9_w6oub")
@@ -638,6 +640,31 @@ libraries = {
 }
 speed_scale = 10.0
 
+[node name="NoMoneyOverlay" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.54902)
+script = ExtResource("32_stpvl")
+
+[node name="TextureRect" type="TextureRect" parent="NoMoneyOverlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -54.0
+offset_right = 40.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("33_mo342")
+
 [connection signal="powerplant_metrics_updated" from="." to="Name" method="_on_powerplant_metrics_updated"]
 [connection signal="powerplant_metrics_updated" from="." to="Screen/Screen/TextureRect" method="_on_powerplant_metrics_updated"]
 [connection signal="powerplant_metrics_updated" from="." to="Screen/Screen/Money/Label" method="_on_powerplant_metrics_updated"]
@@ -652,6 +679,7 @@ speed_scale = 10.0
 [connection signal="powerplant_metrics_updated" from="." to="InfoFrame/Screen/VBoxContainer/TurnsToBuild" method="_on_powerplant_metrics_updated"]
 [connection signal="powerplant_metrics_updated" from="." to="InfoFrame/Energy/Winter/Label" method="_on_powerplant_metrics_updated"]
 [connection signal="powerplant_metrics_updated" from="." to="InfoFrame/Energy/Summer/Label" method="_on_powerplant_metrics_updated"]
+[connection signal="powerplant_metrics_updated" from="." to="NoMoneyOverlay" method="_on_powerplant_metrics_updated"]
 [connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
