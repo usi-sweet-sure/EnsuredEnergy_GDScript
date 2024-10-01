@@ -1,187 +1,281 @@
-[gd_scene load_steps=11 format=3 uid="uid://dw4roi1aknumh"]
+[gd_scene load_steps=18 format=3 uid="uid://cl2v31dxkoeoq"]
 
-[ext_resource type="Script" path="res://src/gdscript/powerplants/carbon_sequestration.gd" id="1_co5wp"]
 [ext_resource type="Texture2D" uid="uid://cbqebssavvctr" path="res://assets/used_assets/textures/powerplants/pp_sprite_on_carbon_sequestration.png" id="2_jdsyi"]
-[ext_resource type="Texture2D" uid="uid://sdv07wonj5bg" path="res://assets/used_assets/textures/backplates/backplate_3.png" id="3_trkru"]
-[ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="4_wqej1"]
-[ext_resource type="Texture2D" uid="uid://d2btaduc1gq0j" path="res://assets/used_assets/textures/screens/screen_3.png" id="5_0aw1a"]
-[ext_resource type="Texture2D" uid="uid://b76v2w1on0f0u" path="res://assets/used_assets/textures/icons/chalk_money.png" id="6_s50hf"]
-[ext_resource type="Texture2D" uid="uid://bpt1e486wuscd" path="res://assets/used_assets/textures/icons/chalk_emission.png" id="7_rsvti"]
+[ext_resource type="Shader" path="res://src/gdscript/shaders/outline.gdshader" id="2_xbwqu"]
+[ext_resource type="Script" path="res://src/gdscript/carbon_sequestration/texture_button.gd" id="3_dvmlx"]
+[ext_resource type="Script" path="res://src/gdscript/carbon_sequestration/info_frame.gd" id="5_wq8x4"]
 [ext_resource type="Texture2D" uid="uid://fe0i52vl7ck6" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0006_Slider-bar-horizontal.png" id="8_2gvx8"]
+[ext_resource type="Script" path="res://src/gdscript/carbon_sequestration/production_costs_value.gd" id="8_gdhxi"]
+[ext_resource type="Texture2D" uid="uid://bk3lb51erle8l" path="res://assets/used_assets/textures/backplates/backplate_1.png" id="8_hhh10"]
 [ext_resource type="Texture2D" uid="uid://xmi4fk7xmp5j" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0032_Ball-Slider.png" id="9_om5ks"]
+[ext_resource type="Script" path="res://src/gdscript/carbon_sequestration/emissions_value.gd" id="10_g6ev4"]
+[ext_resource type="FontFile" uid="uid://domoiqitlbtwi" path="res://assets/used_assets/fonts/llewie/Llewie.ttf" id="10_v8nju"]
+[ext_resource type="Script" path="res://src/gdscript/carbon_sequestration/slider.gd" id="11_dcx5m"]
+[ext_resource type="Texture2D" uid="uid://cd23afs6x11al" path="res://assets/used_assets/textures/screens/screen_1.png" id="12_1skat"]
+[ext_resource type="Texture2D" uid="uid://b76v2w1on0f0u" path="res://assets/used_assets/textures/icons/chalk_money.png" id="13_rx8vj"]
+[ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="14_0kanp"]
+[ext_resource type="Texture2D" uid="uid://bpt1e486wuscd" path="res://assets/used_assets/textures/icons/chalk_emission.png" id="16_ot4pu"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5jm14"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8ca5d"]
+shader = ExtResource("2_xbwqu")
+shader_parameter/line_color = Vector4(1, 1, 1, 1)
+shader_parameter/line_thickness = 1.0
+shader_parameter/frequency = 10.0
+shader_parameter/phase_speed = 1.0
+shader_parameter/show = false
 
-[node name="Carbon" type="Node2D"]
-script = ExtResource("1_co5wp")
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yiqg2"]
 
-[node name="Sprite" type="Sprite2D" parent="."]
-texture_filter = 2
-position = Vector2(-1, 44)
-texture = ExtResource("2_jdsyi")
-
-[node name="BuildInfo" type="Control" parent="."]
-z_index = 2
-z_as_relative = false
+[node name="CarbonSequestration" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -224.0
-offset_top = -632.0
-offset_right = -184.0
-offset_bottom = -592.0
-scale = Vector2(1.5, 1.5)
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="PlantMenuBase" type="NinePatchRect" parent="BuildInfo"]
+[node name="TextureButton" type="TextureButton" parent="." groups=["pp_sprites"]]
+material = SubResource("ShaderMaterial_8ca5d")
 layout_mode = 0
-offset_left = -135.0
-offset_top = -61.0
-offset_right = 435.0
-offset_bottom = 309.0
-mouse_filter = 0
-texture = ExtResource("3_trkru")
-patch_margin_left = 60
-patch_margin_right = 60
+offset_left = -105.15
+offset_top = -76.8
+offset_right = 595.85
+offset_bottom = 435.2
+scale = Vector2(1.3, 1.3)
+pivot_offset = Vector2(350.5, 256)
+toggle_mode = true
+texture_normal = ExtResource("2_jdsyi")
+script = ExtResource("3_dvmlx")
 
-[node name="Name" type="Label" parent="BuildInfo"]
-layout_mode = 0
-offset_left = -75.0
-offset_top = -57.0
-offset_right = 374.0
-offset_bottom = 7.0
-theme = ExtResource("4_wqej1")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "CARBON"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
-
-[node name="Screen" type="Sprite2D" parent="BuildInfo"]
-position = Vector2(147.333, 107)
-scale = Vector2(1.43434, 1)
-texture = ExtResource("5_0aw1a")
-
-[node name="ColorRect" type="ColorRect" parent="BuildInfo"]
-layout_mode = 0
-offset_left = -132.0
-offset_top = -230.0
-offset_right = 310.0
-offset_bottom = 35.0001
-color = Color(0.596078, 0.596078, 0.596078, 0)
-
-[node name="ContainerL" type="VBoxContainer" parent="BuildInfo/ColorRect"]
-layout_mode = 0
-offset_left = 117.0
-offset_top = 121.0
-offset_right = 377.0
-offset_bottom = 337.0
-theme_override_constants/separation = 6
-alignment = 2
-
-[node name="Prod" type="Label" parent="BuildInfo/ColorRect/ContainerL"]
-layout_mode = 2
-theme = ExtResource("4_wqej1")
-theme_type_variation = &"Screen"
-theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
-theme_override_constants/shadow_offset_x = 2
-text = "PROD_COST"
-
-[node name="Poll" type="Label" parent="BuildInfo/ColorRect/ContainerL"]
-layout_mode = 2
-theme = ExtResource("4_wqej1")
-theme_type_variation = &"Screen"
-theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
-theme_override_constants/shadow_offset_x = 2
-theme_override_constants/shadow_offset_y = 0
-text = "POLLUTION"
-
-[node name="ContainerN" type="VBoxContainer" parent="BuildInfo/ColorRect"]
+[node name="InfoFrame" type="TextureRect" parent="." groups=["pp_info_frames"]]
+visible = false
 layout_mode = 1
-anchors_preset = 12
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 47.0
-offset_top = -141.333
-offset_right = 47.0
-offset_bottom = 71.6666
+offset_left = -449.9
+offset_top = -1172.7
+offset_right = 767.1
+offset_bottom = -353.7
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_constants/separation = 6
-alignment = 2
+scale = Vector2(1.3, 1.3)
+pivot_offset = Vector2(608, 819)
+mouse_filter = 0
+texture = ExtResource("8_hhh10")
+script = ExtResource("5_wq8x4")
 
-[node name="Prod" type="Label" parent="BuildInfo/ColorRect/ContainerN"]
+[node name="PlantName" type="Label" parent="InfoFrame"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -504.0
+offset_top = 32.077
+offset_right = 504.0
+offset_bottom = 92.077
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.752941)
+theme_override_fonts/font = ExtResource("10_v8nju")
+theme_override_font_sizes/font_size = 43
+text = "CARBON_SEQUESTRATION"
+horizontal_alignment = 1
+
+[node name="Screen" type="TextureRect" parent="InfoFrame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -520.0
+offset_top = -281.0
+offset_right = 515.0
+offset_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_1skat")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InfoFrame/Screen"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 13.0
+offset_right = 987.0
+offset_bottom = 368.0
+theme_override_constants/separation = 130
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InfoFrame/Screen/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("4_wqej1")
+theme_override_constants/separation = 84
+
+[node name="ProductionCosts" type="MarginContainer" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Title" type="Control" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/ProductionCosts"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="IconRed" type="Sprite2D" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/ProductionCosts/Title"]
+modulate = Color(1, 0.541176, 0.596078, 0.517647)
+position = Vector2(48, 44)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("13_rx8vj")
+
+[node name="IconBlue" type="Sprite2D" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/ProductionCosts/Title"]
+modulate = Color(0.219608, 0.756863, 0.788235, 1)
+position = Vector2(46, 43)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("13_rx8vj")
+
+[node name="Label" type="Label" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/ProductionCosts/Title"]
+layout_mode = 2
+offset_left = 104.0
+offset_top = 16.0
+offset_right = 284.0
+offset_bottom = 66.0
+size_flags_horizontal = 0
+theme = ExtResource("14_0kanp")
+theme_type_variation = &"Screen"
+theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
+theme_override_constants/shadow_offset_x = 2
+theme_override_font_sizes/font_size = 50
+text = "PROD_COST"
+
+[node name="Value" type="Control" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/ProductionCosts"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="Value" type="Label" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/ProductionCosts/Value"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = 18.0
+offset_bottom = 68.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme = ExtResource("14_0kanp")
 theme_type_variation = &"Screen"
 theme_override_colors/font_color = Color(1, 0.129412, 0.207843, 1)
-text = "0"
+theme_override_font_sizes/font_size = 50
+text = "000M CHF"
 horizontal_alignment = 2
+script = ExtResource("8_gdhxi")
 
-[node name="Poll" type="Label" parent="BuildInfo/ColorRect/ContainerN"]
+[node name="Pollution" type="MarginContainer" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("4_wqej1")
+
+[node name="Title" type="Control" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/Pollution"]
+layout_mode = 2
+
+[node name="IconRed" type="Sprite2D" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/Pollution/Title"]
+modulate = Color(1, 0.541176, 0.596078, 0.517647)
+position = Vector2(48, 44)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("16_ot4pu")
+
+[node name="IconBlue" type="Sprite2D" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/Pollution/Title"]
+modulate = Color(0.219608, 0.756863, 0.788235, 1)
+position = Vector2(46, 43.0001)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("16_ot4pu")
+
+[node name="Label" type="Label" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/Pollution/Title"]
+layout_mode = 2
+offset_left = 104.0
+offset_top = 20.0
+offset_right = 284.0
+offset_bottom = 70.0
+size_flags_horizontal = 0
+theme = ExtResource("14_0kanp")
 theme_type_variation = &"Screen"
-theme_override_colors/font_color = Color(0, 1, 0, 1)
-text = "0"
+theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
+theme_override_constants/shadow_offset_x = 2
+theme_override_font_sizes/font_size = 50
+text = "POLLUTION"
+
+[node name="Value" type="Control" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/Pollution"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Value" type="Label" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/Pollution/Value"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = 20.0
+offset_bottom = 70.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+theme = ExtResource("14_0kanp")
+theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(0, 0.882, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "000.00Mt CO2"
 horizontal_alignment = 2
+script = ExtResource("10_g6ev4")
 
-[node name="Money Icon2" type="Sprite2D" parent="BuildInfo/ColorRect"]
-modulate = Color(1, 0.541176, 0.596078, 0.517647)
-position = Vector2(87.3333, 283)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("6_s50hf")
+[node name="CarbonSlider" type="Control" parent="InfoFrame"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -250.115
+offset_top = -180.769
+offset_right = -210.115
+offset_bottom = -140.769
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2, 2)
 
-[node name="Emi Icon2" type="Sprite2D" parent="BuildInfo/ColorRect"]
-modulate = Color(1, 0.541176, 0.596078, 0.517647)
-position = Vector2(87.3333, 318)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("7_rsvti")
-
-[node name="Money Icon" type="Sprite2D" parent="BuildInfo/ColorRect"]
-modulate = Color(0.219608, 0.756863, 0.788235, 1)
-position = Vector2(86, 281.667)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("6_s50hf")
-
-[node name="Emi Icon" type="Sprite2D" parent="BuildInfo/ColorRect"]
-modulate = Color(0.219608, 0.756863, 0.788235, 1)
-position = Vector2(86, 316.667)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("7_rsvti")
-
-[node name="TextureRect" type="TextureRect" parent="BuildInfo"]
-layout_mode = 0
-offset_left = 10.6667
-offset_top = 239.333
-offset_right = 288.667
-offset_bottom = 249.333
+[node name="TextureRect" type="TextureRect" parent="InfoFrame/CarbonSlider"]
+layout_mode = 1
+offset_right = 278.0
+offset_bottom = 10.0
 texture = ExtResource("8_2gvx8")
 stretch_mode = 2
 
-[node name="CarbonSlider" type="HSlider" parent="BuildInfo"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 5.0
-offset_top = 229.0
-offset_right = 288.0
-offset_bottom = 259.0
+[node name="HSlider" type="HSlider" parent="InfoFrame/CarbonSlider" groups=["draggables"]]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -30.3846
+offset_right = 283.0
+offset_bottom = -0.384613
+grow_vertical = 2
 focus_mode = 0
 theme_override_icons/grabber = ExtResource("9_om5ks")
 theme_override_icons/grabber_highlight = ExtResource("9_om5ks")
 theme_override_icons/grabber_disabled = ExtResource("9_om5ks")
-theme_override_styles/slider = SubResource("StyleBoxEmpty_5jm14")
+theme_override_styles/slider = SubResource("StyleBoxEmpty_yiqg2")
 max_value = 5.5
 step = 0.02
 scrollable = false
 ticks_on_borders = true
+script = ExtResource("11_dcx5m")
 
-[node name="InfoButton" type="Button" parent="."]
-offset_left = -112.0
-offset_top = -152.0
-offset_right = 144.0
-offset_bottom = 200.0
-focus_mode = 0
-flat = true
-
-[connection signal="drag_ended" from="BuildInfo/CarbonSlider" to="." method="_on_carbon_slider_drag_ended"]
-[connection signal="value_changed" from="BuildInfo/CarbonSlider" to="." method="_on_carbon_slider_value_changed"]
+[connection signal="hide_info_frame_requested" from="TextureButton" to="InfoFrame" method="_on_hide_info_frame_requested"]
+[connection signal="mouse_entered" from="TextureButton" to="TextureButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TextureButton" to="TextureButton" method="_on_mouse_exited"]
+[connection signal="show_info_frame_requested" from="TextureButton" to="InfoFrame" method="_on_show_info_frame_requested"]
+[connection signal="toggled" from="TextureButton" to="TextureButton" method="_on_toggled"]
+[connection signal="value_changed" from="InfoFrame/CarbonSlider/HSlider" to="InfoFrame/Screen/VBoxContainer/VBoxContainer/ProductionCosts/Value/Value" method="_on_slider_value_changed"]
+[connection signal="value_changed" from="InfoFrame/CarbonSlider/HSlider" to="InfoFrame/Screen/VBoxContainer/VBoxContainer/Pollution/Value/Value" method="_on_slider_value_changed"]
+[connection signal="value_changed" from="InfoFrame/CarbonSlider/HSlider" to="InfoFrame/CarbonSlider/HSlider" method="_on_value_changed"]

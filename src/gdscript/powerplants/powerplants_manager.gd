@@ -7,6 +7,7 @@ signal powerplant_build_requested(map_emplacement: PpMapEmplacement, metrics: Po
 signal build_button_normal_toggled(toggled_on: bool, target_map_emplacement: PpMapEmplacement, can_build: Array[EngineTypeIds])
 signal build_button_in_construction_toggled(toggled_on: bool, target_map_emplacement: PpMapEmplacement)
 signal pp_scene_toggled(toggled_on: bool, pp_scene: PpScene)
+signal carbon_sequestration_toggled(toggled_on: bool)
 signal hide_build_menu
 signal powerplants_metrics_updated(metrics: Array[PowerplantMetrics])
 

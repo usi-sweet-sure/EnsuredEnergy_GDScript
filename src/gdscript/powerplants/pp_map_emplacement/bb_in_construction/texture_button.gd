@@ -19,6 +19,7 @@ func _ready():
 	PowerplantsManager.build_button_normal_toggled.connect(_on_build_button_normal_toggled)
 	PowerplantsManager.build_button_in_construction_toggled.connect(_on_build_button_in_construction_toggled)
 	PowerplantsManager.pp_scene_toggled.connect(_on_pp_scene_toggled)
+	PowerplantsManager.carbon_sequestration_toggled.connect(_on_carbon_sequestration_toggled)
 
 	
 func set_metrics(metrics_to_copy: PowerplantMetrics):
@@ -110,3 +111,8 @@ func _on_pp_scene_toggled(_toggled_on: bool, pp_scene: PpScene):
 	material.set_shader_parameter("show", false)
 	hide_info_frame.emit()
 
+
+func _on_carbon_sequestration_toggled(_toggled_on: bool):
+	set_pressed_no_signal(false)
+	material.set_shader_parameter("show", false)
+	hide_info_frame.emit()

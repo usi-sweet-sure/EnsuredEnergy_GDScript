@@ -15,6 +15,8 @@ func _ready():
 	PowerplantsManager.build_button_normal_toggled.connect(_on_build_button_toggled)
 	PowerplantsManager.build_button_in_construction_toggled.connect(_on_build_button_in_construction_toggled)
 	PowerplantsManager.pp_scene_toggled.connect(_on_pp_scene_toggled)
+	PowerplantsManager.carbon_sequestration_toggled.connect(_on_carbon_sequestration_toggled)
+	
 
 func _on_mouse_entered():
 	set_modulate(Color(1.1, 1.1, 1.1))
@@ -43,7 +45,6 @@ func _on_pp_scene_texture_on_changed(image: Image):
 	texture_click_mask = bitmap
 
 
-# Triggers the lost of focus.
 # We lose focus when we click outside of the pp, but we don't want to loose focus
 # when we drag.
 func _unhandled_input(event):
@@ -94,3 +95,9 @@ func _on_switch_toggled(toggled_on: bool):
 
 func _on_metrics_updated(metrics: PowerplantMetrics):
 	visible = metrics.active
+
+
+func _on_carbon_sequestration_toggled(_toggled_on: bool):
+	material.set_shader_parameter("show", false)
+	set_pressed_no_signal(false)
+	hide_info_frame_requested.emit()

@@ -15,7 +15,7 @@ func _ready():
 	PowerplantsManager.build_button_normal_toggled.connect(_on_build_button_normal_toggled)
 	PowerplantsManager.build_button_in_construction_toggled.connect(_on_build_button_in_construction_toggled)
 	PowerplantsManager.powerplant_build_requested.connect(_on_powerplant_build_requested)
-	
+	PowerplantsManager.carbon_sequestration_toggled.connect(_on_carbon_sequestration_toggled)
 	
 func _on_mouse_entered():
 	set_modulate(Color(1.1, 1.1, 1.1))
@@ -73,6 +73,13 @@ func _on_powerplant_build_requested(map_emplacement: Node2D, metrics: Powerplant
 
 
 func _on_build_button_in_construction_toggled(toggled_on: bool, map_emplacement: Node2D):
+	PowerplantsManager.hide_build_menu.emit()
+	set_pressed_no_signal(false)
+	material.set_shader_parameter("show", false)
+	animation_player.stop()
+
+
+func _on_carbon_sequestration_toggled(_toggled_on: bool):
 	PowerplantsManager.hide_build_menu.emit()
 	set_pressed_no_signal(false)
 	material.set_shader_parameter("show", false)

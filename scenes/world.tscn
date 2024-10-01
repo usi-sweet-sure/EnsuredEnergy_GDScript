@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://b0b88h1h3qru2" path="res://assets/used_assets/textures/map/forests/forest_7.png" id="15_3rssc"]
 [ext_resource type="Texture2D" uid="uid://dk8ammfufvvq8" path="res://assets/used_assets/textures/map/mountains/mountain_4.png" id="16_60cke"]
 [ext_resource type="Texture2D" uid="uid://curvmq4s83e7w" path="res://assets/used_assets/textures/map/mountains/mountain_5.png" id="17_qgn3q"]
-[ext_resource type="PackedScene" uid="uid://dw4roi1aknumh" path="res://scenes/powerplants/carbon_sequestration.tscn" id="18_pdx3e"]
+[ext_resource type="PackedScene" uid="uid://cl2v31dxkoeoq" path="res://scenes/powerplants/carbon_sequestration.tscn" id="18_pdx3e"]
 [ext_resource type="PackedScene" uid="uid://b0gxr46y1af1j" path="res://scenes/powerplants/menu/pp_menu.tscn" id="21_n4f12"]
 
 [node name="World" type="Node2D"]
@@ -72,39 +72,41 @@ texture = ExtResource("7_ptaf0")
 position = Vector2(2397, 125)
 build_on_start = 2
 
-[node name="PpMapEmplacement7" parent="." instance=ExtResource("7_3e8ib")]
-position = Vector2(1359, 163)
-build_on_start = 7
+[node name="CarbonSequestration" parent="." instance=ExtResource("18_pdx3e")]
+offset_left = 1359.0
+offset_top = 163.0
+offset_right = 1359.0
+offset_bottom = 163.0
 
-[node name="PpMapEmplacement8" parent="." instance=ExtResource("7_3e8ib")]
+[node name="PpMapEmplacement7" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(-110, 299)
 
-[node name="PpMapEmplacement9" parent="." instance=ExtResource("7_3e8ib")]
+[node name="PpMapEmplacement8" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(-918, 325)
 build_on_start = 1
 
-[node name="PpMapEmplacement10" parent="." instance=ExtResource("7_3e8ib")]
+[node name="PpMapEmplacement9" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(533, 370)
 
-[node name="PpMapEmplacement11" parent="." instance=ExtResource("7_3e8ib")]
+[node name="PpMapEmplacement10" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(1929, 521)
 
 [node name="Mountain2" type="Sprite2D" parent="."]
 position = Vector2(2930, 777)
 texture = ExtResource("8_1irv8")
 
-[node name="PpMapEmplacement12" parent="." instance=ExtResource("7_3e8ib")]
+[node name="PpMapEmplacement11" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(1155, 785)
 
 [node name="Forest4" type="Sprite2D" parent="."]
 position = Vector2(521, 1220)
 texture = ExtResource("9_ai24k")
 
-[node name="PpMapEmplacement13" parent="." instance=ExtResource("7_3e8ib")]
+[node name="PpMapEmplacement12" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(-401, 844)
 build_on_start = 3
 
-[node name="PpMapEmplacement14" parent="." instance=ExtResource("7_3e8ib")]
+[node name="PpMapEmplacement13" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(-1105, 1093)
 build_on_start = 4
 
@@ -112,7 +114,7 @@ build_on_start = 4
 position = Vector2(-1143, 1674)
 texture = ExtResource("10_bwdos")
 
-[node name="PpMapEmplacement15" parent="." instance=ExtResource("7_3e8ib")]
+[node name="PpMapEmplacement14" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(2828, 885)
 build_on_start = 9
 solar = false
@@ -124,21 +126,21 @@ biogas = false
 hydro = true
 river = true
 
-[node name="PpMapEmplacement16" parent="." instance=ExtResource("7_3e8ib")]
+[node name="PpMapEmplacement15" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(3435, 870)
 build_on_start = 0
 
-[node name="PpMapEmplacement17" parent="." instance=ExtResource("7_3e8ib")]
+[node name="PpMapEmplacement16" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(-427, 1355)
 
-[node name="PpMapEmplacement18" parent="." instance=ExtResource("7_3e8ib")]
+[node name="PpMapEmplacement17" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(2498, 1229)
 
 [node name="Forest6" type="Sprite2D" parent="."]
 position = Vector2(3456, 1656)
 texture = ExtResource("12_4trsl")
 
-[node name="PpMapEmplacement19" parent="." instance=ExtResource("7_3e8ib")]
+[node name="PpMapEmplacement18" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(1419, 1313)
 build_on_start = 8
 solar = false
@@ -154,7 +156,7 @@ river = true
 position = Vector2(816, 1830)
 texture = ExtResource("11_c0lk8")
 
-[node name="PpMapEmplacement20" parent="." instance=ExtResource("7_3e8ib")]
+[node name="PpMapEmplacement19" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(413, 1779)
 solar = false
 wind = false
@@ -169,7 +171,7 @@ river = true
 position = Vector2(2152, 1807)
 texture = ExtResource("13_lqxt0")
 
-[node name="PpMapEmplacement21" parent="." instance=ExtResource("7_3e8ib")]
+[node name="PpMapEmplacement20" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(-61, 1805)
 build_on_start = 8
 solar = false
@@ -181,7 +183,7 @@ biogas = false
 hydro = true
 river = true
 
-[node name="PpMapEmplacement22" parent="." instance=ExtResource("7_3e8ib")]
+[node name="PpMapEmplacement21" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(1650, 1711)
 build_on_start = 9
 solar = false
@@ -205,7 +207,7 @@ texture = ExtResource("15_3rssc")
 position = Vector2(-434, 2305)
 texture = ExtResource("16_60cke")
 
-[node name="PpMapEmplacement23" parent="." instance=ExtResource("7_3e8ib")]
+[node name="PpMapEmplacement22" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(-325, 2341)
 
 [node name="Mountain6" type="Sprite2D" parent="."]
@@ -213,6 +215,3 @@ position = Vector2(526, 2669)
 texture = ExtResource("17_qgn3q")
 
 [node name="PpMenu" parent="." instance=ExtResource("21_n4f12")]
-
-[node name="Carbon" parent="." instance=ExtResource("18_pdx3e")]
-position = Vector2(2223, 1035)
