@@ -46,16 +46,15 @@ texture_normal = ExtResource("2_jdsyi")
 script = ExtResource("3_dvmlx")
 
 [node name="InfoFrame" type="TextureRect" parent="." groups=["pp_info_frames"]]
-visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -449.9
+offset_left = -374.9
 offset_top = -1172.7
-offset_right = 767.1
+offset_right = 842.1
 offset_bottom = -353.7
 grow_horizontal = 2
 grow_vertical = 0
