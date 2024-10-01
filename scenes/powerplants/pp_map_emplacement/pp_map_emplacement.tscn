@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dbdgpa4pfgryb" path="res://scenes/powerplants/pp_map_emplacement/build_button/bb_normal.tscn" id="2_h8dd4"]
 [ext_resource type="PackedScene" uid="uid://d2hhtw1popthi" path="res://scenes/powerplants/pp_map_emplacement/build_button/bb_in_construction.tscn" id="3_xoig2"]
 
-[sub_resource type="Shader" id="Shader_t0jr2"]
+[sub_resource type="Shader" id="Shader_l67do"]
 resource_local_to_scene = true
 code = "shader_type canvas_item;
 
@@ -48,14 +48,14 @@ void fragment() {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kixpu"]
 resource_local_to_scene = true
-shader = SubResource("Shader_t0jr2")
+shader = SubResource("Shader_l67do")
 shader_parameter/line_color = Vector4(1, 1, 1, 1)
 shader_parameter/line_thickness = 1.0
 shader_parameter/frequency = 10.0
 shader_parameter/phase_speed = 5.0
 shader_parameter/show = false
 
-[sub_resource type="Shader" id="Shader_8dyrj"]
+[sub_resource type="Shader" id="Shader_au7cu"]
 resource_local_to_scene = true
 code = "shader_type canvas_item;
 
@@ -99,7 +99,7 @@ void fragment() {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g2jol"]
 resource_local_to_scene = true
-shader = SubResource("Shader_8dyrj")
+shader = SubResource("Shader_au7cu")
 shader_parameter/line_color = Vector4(1, 1, 1, 1)
 shader_parameter/line_thickness = 1.0
 shader_parameter/frequency = 10.0

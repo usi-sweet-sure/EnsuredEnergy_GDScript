@@ -95,8 +95,9 @@ func increase_max_upgrade(new_max: int, type: PowerplantsManager.EngineTypeIds):
 			plant.metrics.max_upgrade = new_max
 			plant.metrics_updated.emit(plant.metrics)
 	for bb in get_tree().get_nodes_in_group("BbsInConstruction"):
-		if bb.metrics.type == type:
-			bb.metrics.max_upgrade = new_max
+		if bb.metrics != null:
+			if bb.metrics.type == type:
+				bb.metrics.max_upgrade = new_max
 			
 	PowerplantsManager.powerplants_max_upgrades[type] = new_max
 	PowerplantsManager.powerplants_metrics[type].max_upgrade = new_max
@@ -108,9 +109,10 @@ func lower_build_time():
 	PowerplantsManager.powerplants_metrics[wind_id].build_time_in_turns = 0
 	
 	for bb in get_tree().get_nodes_in_group("BbsInConstruction"):
-		if bb.metrics.type == wind_id:
-			bb.metrics.build_time_in_turns = 0
-			bb.powerplant_construction_ended.emit(bb.metrics)
+		if bb.metrics != null:
+			if bb.metrics.type == wind_id:
+				bb.metrics.build_time_in_turns = 0
+				bb.powerplant_construction_ended.emit(bb.metrics)
 			
 				
 func lower_industry_demand():

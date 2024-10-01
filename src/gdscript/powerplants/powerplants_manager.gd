@@ -107,7 +107,7 @@ var powerplants_life_spans_in_turns: Array[int] = [
 # MUST BE in the same order as EngineTypeIds
 var powerplants_max_upgrades: Array[int] = [
 	1, # Solar
-	3, # Wind
+	2, # Wind
 	3, # Gas
 	3, # Waste
 	3, # Biomass
@@ -386,6 +386,9 @@ func _store_powerplant_metrics(engine_type_id: EngineTypeIds):
 			upgrade_cost)
 			
 	powerplants_metrics[engine_type_id] = metrics
+	
+	if engine_type_id == EngineTypeIds.WIND:
+		print(metrics.availability * metrics.capacity)
 
 
 # Update everything that buildings affects like supply, emissions, land_use, etc.

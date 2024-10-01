@@ -453,8 +453,8 @@ position = Vector2(549.5, 388.5)
 texture = ExtResource("2_bdksa")
 
 [node name="InfoScreen1" type="Sprite2D" parent="Control/CenterFrame"]
-position = Vector2(2.5, -164.379)
-scale = Vector2(1, 1.09588)
+position = Vector2(2.5, -180)
+scale = Vector2(1, 0.993445)
 texture = ExtResource("3_jt4rt")
 
 [node name="Text" type="RichTextLabel" parent="Control/CenterFrame/InfoScreen1"]
@@ -466,7 +466,7 @@ anchor_bottom = 0.5
 offset_left = -357.5
 offset_top = -294.5
 offset_right = -12.5
-offset_bottom = -7.5
+offset_bottom = -8.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -513,9 +513,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -403.5
-offset_top = -375.0
-offset_right = -35.5
+offset_left = -395.5
+offset_top = -404.0
+offset_right = -42.5
 offset_bottom = -299.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -528,9 +528,9 @@ patch_margin_bottom = 5
 [node name="Infos" type="VBoxContainer" parent="Control/CenterFrame/InfoScreen2"]
 layout_mode = 0
 offset_left = 5.0
-offset_top = -7.0
-offset_right = 361.0
-offset_bottom = 79.0
+offset_top = 3.0
+offset_right = 346.0
+offset_bottom = 100.0
 alignment = 1
 
 [node name="TopLabel" type="Label" parent="Control/CenterFrame/InfoScreen2/Infos"]

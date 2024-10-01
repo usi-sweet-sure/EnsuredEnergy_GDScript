@@ -24,10 +24,10 @@ func _on_button_plus_mouse_entered():
 	if delta == 0:
 		text = ""
 	elif delta <= 0:
-		text = str(delta).pad_decimals(0)
+		text = str(delta).pad_decimals(2)
 		_change_text_to_red()
 	else:
-		text = "+" + str(delta).pad_decimals(0)
+		text = "+" + str(delta).pad_decimals(2)
 		_change_text_to_green()
 
 
@@ -35,8 +35,8 @@ func _on_button_minus_mouse_entered():
 	if delta == 0:
 		text = ""
 	elif delta <= 0:
-		text = "+" + str(abs(delta)).pad_decimals(0)
+		text = "+" + str(abs(delta)).pad_decimals(2)
 		_change_text_to_green()
 	else:
-		text = "-" + str(delta).pad_decimals(0)
+		text = "-" + str(delta).pad_decimals(2)
 		_change_text_to_red()

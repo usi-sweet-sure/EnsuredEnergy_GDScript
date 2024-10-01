@@ -101,7 +101,8 @@ position = Vector2(521, 1220)
 texture = ExtResource("9_ai24k")
 
 [node name="PpMapEmplacement13" parent="." instance=ExtResource("7_3e8ib")]
-position = Vector2(-427, 1355)
+position = Vector2(-401, 844)
+build_on_start = 3
 
 [node name="PpMapEmplacement14" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(-1105, 1093)
@@ -128,8 +129,7 @@ position = Vector2(3435, 870)
 build_on_start = 0
 
 [node name="PpMapEmplacement17" parent="." instance=ExtResource("7_3e8ib")]
-position = Vector2(-401, 844)
-build_on_start = 3
+position = Vector2(-427, 1355)
 
 [node name="PpMapEmplacement18" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(2498, 1229)

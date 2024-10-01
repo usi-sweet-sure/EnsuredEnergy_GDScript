@@ -14,13 +14,8 @@ func _on_metrics_updated(metrics: PowerplantMetrics):
 
 
 func _update_text():
-	print("construction_started_on_turn: ", construction_started_on_turn)
-	print("build_time: ", build_time)
 	var will_build_on_turn: int = construction_started_on_turn + build_time
-	print("will_build_on_turn: ", will_build_on_turn)
 	var remaining_time = will_build_on_turn - Gameloop.current_turn
-	print("remaining_time: ", remaining_time)
-	print("===========================================")
 
 	text = str(remaining_time)
 		

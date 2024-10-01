@@ -89,6 +89,7 @@ func _on_bb_in_construction_toggled(toggled_on):
 func _on_powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMetrics):
 	if map_emplacement == self:
 		bb_normal.hide()
+		bb_in_construction.hide()
 		
 		var new_metrics = metrics.copy()
 		override_metrics(new_metrics)
