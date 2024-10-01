@@ -2,6 +2,9 @@ extends Control
 
 class_name PpScene
 
+@onready var floating_message = $InfoFrame/Modifier/FloatingMessageContainer/FloatingMessage
+
+
 # Used to update children
 signal metrics_updated(metrics: PowerplantMetrics)
 signal show_info_frame
@@ -73,34 +76,38 @@ func _on_next_turn():
 
 
 func _on_button_plus_pressed():
-	metrics.current_upgrade += 1
-	
 	var base_metrics = PowerplantsManager.powerplants_metrics[metrics.type]
-	
-	# Production costs
 	var delta_prod_cost = base_metrics.production_costs * metrics.upgrade_factor_for_production_costs
-	metrics.production_costs += delta_prod_cost
 	
-	# Emissions
-	var delta_emissions = base_metrics.emissions * metrics.upgrade_factor_for_emissions
-	metrics.emissions += delta_emissions
-	
-	# Land use
-	var delta_land_use = base_metrics.land_use * metrics.upgrade_factor_for_land_use
-	metrics.land_use += delta_land_use
-	
-	# Winter supply
-	var delta_winter_supply = base_metrics.availability.y * base_metrics.capacity * metrics.upgrade_factor_for_winter_supply
-	metrics.availability.y += base_metrics.availability.y * metrics.upgrade_factor_for_winter_supply
-	
-	# Summer supply
-	var delta_summer_supply = base_metrics.availability.x * base_metrics.capacity * metrics.upgrade_factor_for_summer_supply
-	metrics.availability.x += base_metrics.availability.x * metrics.upgrade_factor_for_summer_supply
-	
-	# Upgrade cost
-	MoneyManager.building_costs += metrics.upgrade_cost
-	
-	metrics_updated.emit(metrics)
+	if MoneyManager.can_spend_the_money(metrics.upgrade_cost + delta_prod_cost):
+		metrics.current_upgrade += 1
+		
+		# Production costs
+		metrics.production_costs += delta_prod_cost
+		
+		# Emissions
+		var delta_emissions = base_metrics.emissions * metrics.upgrade_factor_for_emissions
+		metrics.emissions += delta_emissions
+		
+		# Land use
+		var delta_land_use = base_metrics.land_use * metrics.upgrade_factor_for_land_use
+		metrics.land_use += delta_land_use
+		
+		# Winter supply
+		var delta_winter_supply = base_metrics.availability.y * base_metrics.capacity * metrics.upgrade_factor_for_winter_supply
+		metrics.availability.y += base_metrics.availability.y * metrics.upgrade_factor_for_winter_supply
+		
+		# Summer supply
+		var delta_summer_supply = base_metrics.availability.x * base_metrics.capacity * metrics.upgrade_factor_for_summer_supply
+		metrics.availability.x += base_metrics.availability.x * metrics.upgrade_factor_for_summer_supply
+		
+		# Upgrade cost
+		MoneyManager.building_costs += metrics.upgrade_cost
+		
+		metrics_updated.emit(metrics)
+	else:
+		floating_message.stop()
+		floating_message.float_up()
 
 
 func _on_button_minus_pressed():

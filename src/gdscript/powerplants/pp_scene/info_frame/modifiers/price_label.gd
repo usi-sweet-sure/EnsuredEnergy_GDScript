@@ -8,7 +8,8 @@ func _ready():
 
 
 func _on_metrics_updated(metrics: PowerplantMetrics):
-	upgrade_cost = metrics.upgrade_cost
+	var base_metrics = PowerplantsManager.powerplants_metrics[metrics.type]
+	upgrade_cost = metrics.upgrade_cost + base_metrics.production_costs * metrics.upgrade_factor_for_production_costs
 
 	
 func _change_text_to_green():

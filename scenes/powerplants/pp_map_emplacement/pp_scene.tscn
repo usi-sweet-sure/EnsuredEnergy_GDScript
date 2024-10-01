@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://vaxkewvk14v6"]
+[gd_scene load_steps=64 format=3 uid="uid://vaxkewvk14v6"]
 
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/pp_scene.gd" id="1_aeq33"]
 [ext_resource type="Shader" path="res://src/gdscript/shaders/outline.gdshader" id="2_ln53j"]
@@ -27,9 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://bsa55enbm5cwg" path="res://assets/used_assets/textures/icons/sticker_summer.png" id="21_ikos6"]
 [ext_resource type="PackedScene" uid="uid://fyc7mfdq5sh5" path="res://scenes/buttons/button_plus.tscn" id="22_imnx4"]
 [ext_resource type="PackedScene" uid="uid://2ddxars5xyyd" path="res://scenes/buttons/button_minus.tscn" id="23_e0l3t"]
-[ext_resource type="Texture2D" uid="uid://cdn0h6b873gbk" path="res://assets/UI Elements/Build_Menu_counter_yellow-1.png" id="25_8lcse"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/winter_label_1.gd" id="25_ivvsm"]
-[ext_resource type="Texture2D" uid="uid://bmka8bclye0ff" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0009_Counter-hole-1-slot.png" id="26_0mvvx"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/winter_label_2.gd" id="26_7m4cr"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/winter_label_3.gd" id="27_muvgy"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/led_off.gd" id="29_1ujwf"]
@@ -40,10 +38,13 @@
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/led_on.gd" id="31_3nepy"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/animation_player.gd" id="31_6iqfa"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/summer_label_3.gd" id="31_e1bc8"]
+[ext_resource type="PackedScene" uid="uid://c8vhh4tt8t2j4" path="res://scenes/floating_message.tscn" id="32_f4obe"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/modifiers/button_plus.gd" id="33_uk7r3"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/modifiers/button_minus.gd" id="35_xrp8g"]
 [ext_resource type="Texture2D" uid="uid://dwys7y27kiabl" path="res://assets/used_assets/textures/buttons/switch_on.png" id="36_ee44d"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/modifiers/current_upgrade_label.gd" id="36_ixpum"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/modifiers/current_upgrade.gd" id="36_le4kj"]
+[ext_resource type="Texture2D" uid="uid://d2btaduc1gq0j" path="res://assets/used_assets/textures/screens/screen_3.png" id="36_xb226"]
 [ext_resource type="Texture2D" uid="uid://dhxkhfg2qxlgx" path="res://assets/used_assets/textures/buttons/switch_off.png" id="37_bgkdg"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/switch.gd" id="38_3g6vi"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/modifiers/production_costs_label.gd" id="39_jie5j"]
@@ -1115,48 +1116,51 @@ color = Color(0.596078, 0.596078, 0.596078, 0)
 
 [node name="ButtonPlus" parent="InfoFrame/Modifier" instance=ExtResource("22_imnx4")]
 layout_mode = 0
-offset_left = 96.3079
-offset_top = 28.0
-offset_right = 153.308
-offset_bottom = 86.0
+offset_left = 108.077
+offset_top = 11.4614
+offset_right = 165.077
+offset_bottom = 69.4614
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("33_uk7r3")
 
 [node name="ButtonMinus" parent="InfoFrame/Modifier" instance=ExtResource("23_e0l3t")]
 layout_mode = 0
-offset_left = 97.3079
-offset_top = 124.0
-offset_right = 154.308
-offset_bottom = 182.0
+offset_left = 107.308
+offset_top = 142.231
+offset_right = 164.308
+offset_bottom = 200.231
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("35_xrp8g")
 
-[node name="CurrentUpgrade" type="Label" parent="InfoFrame/Modifier"]
-layout_mode = 0
-offset_left = 35.3079
-offset_top = 73.0
-offset_right = 64.3079
-offset_bottom = 142.0
+[node name="CurrentUpgrade" type="Control" parent="InfoFrame/Modifier"]
+anchors_preset = 0
+offset_left = -6.53842
+offset_top = 72.2308
+offset_right = 33.4616
+offset_bottom = 112.231
+script = ExtResource("36_le4kj")
+
+[node name="Screen" type="TextureRect" parent="InfoFrame/Modifier/CurrentUpgrade"]
+show_behind_parent = true
+layout_mode = 1
+offset_right = 330.0
+offset_bottom = 187.0
+scale = Vector2(0.370629, 0.370218)
+texture = ExtResource("36_xb226")
+
+[node name="CurrentUpgrade" type="Label" parent="InfoFrame/Modifier/CurrentUpgrade"]
+layout_mode = 1
+offset_right = 125.0
+offset_bottom = 68.0
 theme = ExtResource("14_nud8r")
-theme_override_font_sizes/font_size = 50
-text = "0"
+theme_type_variation = &"Screen"
+theme_override_font_sizes/font_size = 55
+text = "0/0"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("36_ixpum")
-
-[node name="Sprite2D" type="Sprite2D" parent="InfoFrame/Modifier/CurrentUpgrade"]
-show_behind_parent = true
-position = Vector2(12, 35)
-scale = Vector2(2.69298, 2.08844)
-texture = ExtResource("25_8lcse")
-
-[node name="Sprite2D2" type="Sprite2D" parent="InfoFrame/Modifier/CurrentUpgrade/Sprite2D"]
-show_behind_parent = true
-position = Vector2(0.65669, 0.311806)
-scale = Vector2(0.904762, 0.958183)
-texture = ExtResource("26_0mvvx")
 
 [node name="PriceLabel" type="Label" parent="InfoFrame/Modifier"]
 visible = false
@@ -1305,6 +1309,22 @@ text = "+000.00"
 horizontal_alignment = 2
 script = ExtResource("41_f6ke2")
 
+[node name="FloatingMessageContainer" type="Control" parent="InfoFrame/Modifier"]
+anchors_preset = 0
+offset_left = 137.308
+offset_top = -19.3077
+offset_right = 177.308
+offset_bottom = 20.6923
+
+[node name="FloatingMessage" parent="InfoFrame/Modifier/FloatingMessageContainer" instance=ExtResource("32_f4obe")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 1000.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 50
+text = "NOT_ENOUGH_MONEY"
+
 [node name="Switch" type="CheckButton" parent="InfoFrame" groups=["switches"]]
 layout_mode = 1
 anchors_preset = 1
@@ -1432,6 +1452,7 @@ horizontal_alignment = 1
 [connection signal="metrics_updated" from="." to="InfoFrame/Modifier/ButtonPlus" method="_on_metrics_updated"]
 [connection signal="metrics_updated" from="." to="InfoFrame/Modifier/ButtonMinus" method="_on_metrics_updated"]
 [connection signal="metrics_updated" from="." to="InfoFrame/Modifier/CurrentUpgrade" method="_on_metrics_updated"]
+[connection signal="metrics_updated" from="." to="InfoFrame/Modifier/CurrentUpgrade/CurrentUpgrade" method="_on_metrics_updated"]
 [connection signal="metrics_updated" from="." to="InfoFrame/Modifier/PriceLabel" method="_on_metrics_updated"]
 [connection signal="metrics_updated" from="." to="InfoFrame/Modifier/WinterLabel" method="_on_metrics_updated"]
 [connection signal="metrics_updated" from="." to="InfoFrame/Modifier/SummerLabel" method="_on_metrics_updated"]
