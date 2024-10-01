@@ -1,5 +1,6 @@
 extends TextureButton
 
+@onready var floating_message = $Control/FloatingMessage
 
 func _ready():
 	Gameloop.energy_supply_updated_winter.connect(_on_energy_supply_updated)
@@ -63,3 +64,9 @@ func _on_game_ended():
 	GroupManager.disabled_buttons_group_updated.emit()
 	
 	hide()
+
+
+func _on_gui_input(event):
+	if event is InputEventMouseButton and event.button_mask == MOUSE_BUTTON_MASK_LEFT and !Gameloop.can_go_to_next_turn():
+		floating_message.stop()
+		floating_message.float_up()

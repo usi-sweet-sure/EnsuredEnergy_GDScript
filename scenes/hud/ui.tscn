@@ -1,4 +1,4 @@
-[gd_scene load_steps=165 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=162 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/UI Elements/Button-Next-Normal.png" id="2_aobed"]
 [ext_resource type="Texture2D" uid="uid://ccsapuvkqqt1b" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0009_Profile-metal-base.png" id="2_nu7y6"]
@@ -119,7 +119,6 @@
 [ext_resource type="Script" path="res://src/gdscript/hud/clock/current_turn_label.gd" id="95_2utc1"]
 [ext_resource type="Script" path="res://src/gdscript/hud/clock/remaining_turns_label.gd" id="96_6b673"]
 [ext_resource type="Script" path="res://src/gdscript/hud/next_turn_button/next_turn_button.gd" id="97_wp832"]
-[ext_resource type="Script" path="res://src/gdscript/hud/next_turn_button/error_animation.gd" id="99_3seiv"]
 [ext_resource type="Texture2D" uid="uid://cnqa4g3r3kra5" path="res://assets/UI Elements/All-HQ-Assets-E_Clock-base.png" id="100_2c0ru"]
 [ext_resource type="Texture2D" uid="uid://chirnmv8mjb7b" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0012_Counter-hole-4-slots.png" id="101_ykn2m"]
 [ext_resource type="Texture2D" uid="uid://cmmduw4thqeuh" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0020_Counter-1-blue.png" id="102_5ki0w"]
@@ -129,6 +128,7 @@
 [ext_resource type="Script" path="res://src/gdscript/hud/nuclear_shut_down_warning.gd" id="104_qc8c4"]
 [ext_resource type="Texture2D" uid="uid://cv7b32yk735h8" path="res://assets/UI Elements/All-HQ-Assets-D_0008s_0007_Small-left-paper.png" id="108_pjhnp"]
 [ext_resource type="Script" path="res://src/gdscript/hud/clock/turn_info_texture_button.gd" id="114_f0clg"]
+[ext_resource type="PackedScene" uid="uid://c8vhh4tt8t2j4" path="res://scenes/floating_message.tscn" id="115_hpdbb"]
 [ext_resource type="Script" path="res://src/gdscript/shocks/shock_buttons_drawer/shock_buttons_drawer.gd" id="126_ky6x4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3qw21"]
@@ -319,91 +319,6 @@ bg_color = Color(0.215686, 0.337255, 0.34902, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_siya7"]
 bg_color = Color(0.215686, 0.337255, 0.34902, 1)
-
-[sub_resource type="Animation" id="Animation_pjxim"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Warning:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(25, -25)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Warning:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Warning:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_kvnnc"]
-resource_name = "warning"
-length = 1.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Warning:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-28, -40), Vector2(-28, -72)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Warning:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Warning:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.9, 1.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_jpw4y"]
-_data = {
-"RESET": SubResource("Animation_pjxim"),
-"warning": SubResource("Animation_kvnnc")
-}
 
 [sub_resource type="Animation" id="Animation_f32o7"]
 resource_name = "NextTurnAnim"
@@ -2322,35 +2237,26 @@ vertical_alignment = 1
 autowrap_mode = 2
 uppercase = true
 
-[node name="NextTurnAP" type="AnimationPlayer" parent="NextTurn"]
-libraries = {
-"": SubResource("AnimationLibrary_jpw4y")
-}
-script = ExtResource("99_3seiv")
-
 [node name="Button-next-base" type="Sprite2D" parent="NextTurn"]
 show_behind_parent = true
 position = Vector2(95, 43)
 texture = ExtResource("7_g7ih8")
 
-[node name="Warning" type="Label" parent="NextTurn"]
-visible = false
-layout_mode = 0
-offset_left = 25.0
-offset_top = -25.0
-offset_right = 276.0
-offset_bottom = 10.0
-theme = ExtResource("70_2ktfd")
-theme_override_colors/font_color = Color(0.683594, 0.238281, 0.195313, 1)
-theme_override_colors/font_shadow_color = Color(0.141176, 0.192157, 0.2, 0.592157)
-theme_override_constants/outline_size = 0
-text = "NOT_ENOUGH_ENERGY"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
+[node name="Control" type="Control" parent="NextTurn"]
+anchors_preset = 0
+offset_left = 95.0
+offset_top = -45.0
+offset_right = 135.0
+offset_bottom = -5.0
 
-[node name="Error" type="AudioStreamPlayer" parent="NextTurn"]
-bus = &"Sound"
+[node name="FloatingMessage" parent="NextTurn/Control" instance=ExtResource("115_hpdbb")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 1000.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 26
+text = "NOT_ENOUGH_ENERGY"
 
 [node name="MouseBlock" type="ColorRect" parent="."]
 visible = false
@@ -2695,7 +2601,7 @@ script = ExtResource("126_ky6x4")
 [connection signal="value_changed" from="ImportAndEnergy/Import/ImportSlider" to="ImportAndEnergy/Import/ImportSlider" method="_on_import_slider_value_changed"]
 [connection signal="pressed" from="ImportAndEnergy/Import/ImportSlider/UpButton" to="ImportAndEnergy/Import/ImportSlider" method="_on_import_up_button_pressed"]
 [connection signal="pressed" from="ImportAndEnergy/Import/ImportSlider/DownButton" to="ImportAndEnergy/Import/ImportSlider" method="_on_import_down_button_pressed"]
-[connection signal="gui_input" from="NextTurn" to="NextTurn/NextTurnAP" method="_on_next_turn_gui_input"]
+[connection signal="gui_input" from="NextTurn" to="NextTurn" method="_on_gui_input"]
 [connection signal="pressed" from="NextTurn" to="Clock/TimePanelBlank" method="_on_next_turn_button_pressed"]
 [connection signal="pressed" from="Clock/TurnInfo" to="Clock/TimePanelBlank" method="clock_pressed"]
 [connection signal="pressed" from="OpenSettingsButton" to="OpenSettingsButton" method="_on_pressed"]

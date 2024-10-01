@@ -51,13 +51,13 @@ _data = {
 [node name="FloatingMessage" type="Label"]
 custom_minimum_size = Vector2(1000, 0)
 offset_left = -500.0
-offset_top = -102.0
+offset_top = -50.0
 offset_right = 500.0
-offset_bottom = -2.0
+offset_bottom = 50.0
 pivot_offset = Vector2(500, 50)
 size_flags_horizontal = 4
 theme = ExtResource("2_jpb7n")
-theme_override_colors/font_color = Color(0.826032, 0.144611, 0.166934, 1)
+theme_override_colors/font_color = Color(0.841451, 0.0904412, 0.157487, 1)
 theme_override_colors/font_shadow_color = Color(0.219501, 0.219501, 0.219501, 1)
 text = "placeholder"
 horizontal_alignment = 1

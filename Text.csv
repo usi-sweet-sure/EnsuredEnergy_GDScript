@@ -39,44 +39,28 @@ Die Menschen müssen ihre Telefone aufladen und ihre Lieblingsvideospiele spiele
 CLIMATE_TUTORIAL3,"But still, you need to supply enough energy for your population. They need to charge their phones and play their favourite video games.","Cependant, tu dois fournir suffisamment d'énergie pour toute la population. Les gens ont besoin de charger leurs téléphones et de jouer à leurs jeux vidéo préférés.","Du musst genügend Energie für deine Bevölkerung zur Verfügung stellen.\n
 Die Menschen müssen ihre Telefone aufladen und ihre Lieblingsvideospiele spielen können.",Dovete fornire abbastanza energia per tutta la popolazione. Le persone hanno bisogno di caricare i loro telefoni e di giocare ai loro videogiochi preferiti.
 CLIMATE_TUTORIAL4,"There are different ways to supply more energy:\n
-
 - You can import energy in [b]winter[/b], but it can be expensive.","Il existe différentes façons d'approvisionner plus d'énergie :\n
-
 - Tu peux importer de l'énergie, mais cela peut être coûteux.","Es gibt verschiedene Möglichkeiten, mehr Energie zur Verfügung zu stellen:\n
-
 - Man kann Energie importieren, aber das kann teuer sein.","Ci sono diversi modi per fornire più energia:\n
-
-si può importare energia, ma può essere costoso."
+- Si può importare energia, ma può essere costoso."
 CLIMATE_TUTORIAL5,"There are different ways to supply more energy:\n
-
 - You can import energy in [b]winter[/b], but it can be expensive.","Il existe différentes façons d'approvisionner plus d'énergie :\n
-
 - Tu peux importer de l'énergie, mais cela peut être coûteux.","Es gibt verschiedene Möglichkeiten, mehr Energie zur Verfügung zu stellen:\n
-
 - Man kann Energie importieren, aber das kann teuer sein.","Ci sono diversi modi per fornire più energia:\n
-
-si può importare energia, ma può essere costoso."
+-Si può importare energia, ma può essere costoso."
 CLIMATE_TUTORIAL6,"There are different ways to supply more energy:\n
-
 - You can build new power plants, but it costs time and money.","Il existe différentes façons d'approvisionner plus d'énergie :\n
-
 - Tu peux construire de nouvelles centrales électriques, mais cela coûte du temps et de l'argent.","Es gibt verschiedene Möglichkeiten, mehr Energie zu liefern: \n
-
 - Man kann neue Kraftwerke bauen, aber das kostet Zeit und Geld.","Ci sono diversi modi per fornire più energia:\n
-
-si possono costruire nuove centrali elettriche, ma questo costa tempo e denaro."
+-Si possono costruire nuove centrali elettriche, ma questo costa tempo e denaro."
 CLIMATE_TUTORIAL7,"There are different ways to supply more energy:\n
-
 - You can build new power plants, but it costs time and money.","Il existe différentes façons d'approvisionner plus d'énergie :\n
-
 - Tu peux construire de nouvelles centrales électriques, mais cela coûte du temps et de l'argent.","Es gibt verschiedene Möglichkeiten, mehr Energie zu liefern: \n
-
 - Man kann neue Kraftwerke bauen, aber das kostet Zeit und Geld.","Ci sono diversi modi per fornire più energia:\n
-
-si possono costruire nuove centrali elettriche, ma questo costa tempo e denaro."
+-Si possono costruire nuove centrali elettriche, ma questo costa tempo e denaro."
 CLIMATE_TUTORIAL8,There are different ways to supply more energy:\n- You can upgrade some of the existing power plants,Il existe différentes façons d'approvisionner plus d'énergie :\n- Tu peux améliorer les centrales existantes,"Es gibt verschiedene Möglichkeiten, mehr Energie zu liefern:\n- Du kannst einige der bestehenden Kraftwerke aufrüsten",Ci sono diversi modi per fornire più energia:\n- È possibile potenziare alcune delle centrali elettriche esistenti.
 CLIMATE_TUTORIAL9,You can also hold information campaigns or try to implement different policies to reduce energy demand or facilitate the construction of power plants.,Tu peux également organiser des campagnes d'information ou tenter de mettre en oeuvre différentes politiques visant à réduire la demande d'énergie ou à faciliter la construction de centrales électriques.,"Du kannst auch Informationskampagnen durchführen oder versuchen, politische Maßnahmen umzusetzen, um 
-		\t den Energiebedarf zu senken oder den Bau von Kraftwerken zu erleichtern.",Potete anche organizzare campagne di informazione o cercare di attuare varie politiche per ridurre la domanda di energia o facilitare la costruzione di centrali elettriche!
+                \t den Energiebedarf zu senken oder den Bau von Kraftwerken zu erleichtern.",Potete anche organizzare campagne di informazione o cercare di attuare varie politiche per ridurre la domanda di energia o facilitare la costruzione di centrali elettriche!
 TUTOBUBBLE0,"Each turn, you have to reach the demand for both winter and summer","Chaque tour, tu dois atteindre la demande pour l'hiver et l'été",In jeder Runde musst du den Strombedarf für den Winter und den Sommer erreichen.,"Ad ogni turno, bisogna soddisfare la domanda per l'inverno e per l'estate"
 TUTOBUBBLE1,Try importing some energy,Voici la barre d'importation,Hier kannst du mehr Strom importieren,Importa più energia qui
 TUTOBUBBLE2,You cannot import more than what is needed,Vous ne pouvez pas importer plus que ce qui est nécessaire,"Sie können nicht mehr importieren, als benötigt wird",Non è possibile importare più del necessario
@@ -250,7 +234,8 @@ BORROW_MONEY_TEXT_2,Pay back\n(next turn),Rembourser\n(tour suivant),Zurückzahl
 BORROW_MONEY_APPLY,Apply,Appliquer,Anwenden,Applicare
 PLAYER_NAME_NEEDED,Enter a name,Entrez un nom,Name eingeben,Inserire un nome
 IMPORTED,Imported,Importé,Importiert,Importato
-TURNS_TO_BUILD,Construction time:,Temps de construction :,Bauzeit:,Tempo di costruzione:
+TURNS_TO_BUILD,Imported,Temps de construction :,Bauzeit:,Tempo di costruzione:
 TURNS,Turns,Tours ,Runden,Turni
 CONSTRUCTION_TIME_LEFT,Construction time left,Temps de construction restant,Verbleibende Bauzeit,Tempo di costruzione rimasto
 NOT_ENOUGH_MONEY,Not enough money,Pas assez d'argent,Nicht genug Geld,Non c'è abbastanza denaro
+SKIP,Skip,Passer,Überspringen,Saltare

@@ -1,13 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://ciphd0cmpslrn"]
+[gd_scene load_steps=10 format=3 uid="uid://ciphd0cmpslrn"]
 
 [ext_resource type="Texture2D" uid="uid://dnbd3anohlmvn" path="res://assets/UI Elements/All-HQ-Assets-D_0008s_0001_Small-right-paper.png" id="1_p4eo2"]
 [ext_resource type="Script" path="res://src/gdscript/tutorial/tutorial.gd" id="1_yrums"]
 [ext_resource type="Texture2D" uid="uid://03lloca0uata" path="res://assets/Elements/ARROW INFO – 1.png" id="3_xv1gs"]
 [ext_resource type="Texture2D" uid="uid://4yafxnl2h5s" path="res://assets/UI Elements/All-HQ-Assets-D_0008s_0004_Big-paper.png" id="5_3h0cr"]
-[ext_resource type="Texture2D" uid="uid://ikiclp3p8k8k" path="res://assets/key_tab_icon.png" id="5_mivsl"]
+[ext_resource type="Texture2D" uid="uid://ikiclp3p8k8k" path="res://assets/used_assets/textures/keys/key_tab_icon.png" id="5_mivsl"]
 [ext_resource type="PackedScene" uid="uid://cqn5kk1o4vep4" path="res://scenes/hud/show_hand.tscn" id="5_rwmh0"]
 [ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="7_6e2hn"]
-[ext_resource type="PackedScene" uid="uid://chpn7t75mmbkh" path="res://scenes/buttons/button_close.tscn" id="8_j1an2"]
 [ext_resource type="PackedScene" uid="uid://cuajo0ocbdx2d" path="res://scenes/buttons/button_play.tscn" id="9_shki2"]
 
 [sub_resource type="Theme" id="Theme_dnnnk"]
@@ -864,11 +863,17 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 theme_override_constants/separation = 53
 
-[node name="SkipButton" parent="MarginContainer/NavigationButtons" instance=ExtResource("8_j1an2")]
-layout_mode = 2
-
 [node name="NextButton" parent="MarginContainer/NavigationButtons" instance=ExtResource("9_shki2")]
 layout_mode = 2
 
-[connection signal="pressed" from="MarginContainer/NavigationButtons/SkipButton" to="." method="_on_skip_pressed"]
+[node name="SkipButton" type="Control" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/SkipButton"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [connection signal="pressed" from="MarginContainer/NavigationButtons/NextButton" to="." method="_on_next_button_pressed"]
