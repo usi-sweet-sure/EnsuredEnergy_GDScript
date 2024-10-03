@@ -140,4 +140,4 @@ func _on_hide_info_box(season_to_hide: Season):
 
 
 func _on_tutorial_step_updated(step: int):
-	show_hand.visible = (step == 5 and season == Season.WINTER) or step == 3
+	show_hand.visible = (step == 6 and season == Season.WINTER) or step == 3

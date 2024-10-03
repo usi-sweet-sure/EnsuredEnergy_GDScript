@@ -1,17 +1,24 @@
-[gd_scene load_steps=16 format=3 uid="uid://ciphd0cmpslrn"]
+[gd_scene load_steps=23 format=3 uid="uid://ciphd0cmpslrn"]
 
 [ext_resource type="Texture2D" uid="uid://dnbd3anohlmvn" path="res://assets/UI Elements/All-HQ-Assets-D_0008s_0001_Small-right-paper.png" id="1_p4eo2"]
 [ext_resource type="Script" path="res://src/gdscript/tutorial/tutorial.gd" id="1_yrums"]
 [ext_resource type="Script" path="res://src/gdscript/tutorial/mouse_block.gd" id="2_1fnul"]
+[ext_resource type="Script" path="res://src/gdscript/tutorial/info_bubble.gd" id="3_fyqfb"]
 [ext_resource type="Texture2D" uid="uid://03lloca0uata" path="res://assets/Elements/ARROW INFO – 1.png" id="3_xv1gs"]
 [ext_resource type="Texture2D" uid="uid://4yafxnl2h5s" path="res://assets/UI Elements/All-HQ-Assets-D_0008s_0004_Big-paper.png" id="5_3h0cr"]
 [ext_resource type="Texture2D" uid="uid://ikiclp3p8k8k" path="res://assets/UI Elements/key_tab_icon.png" id="5_mivsl"]
 [ext_resource type="PackedScene" uid="uid://cqn5kk1o4vep4" path="res://scenes/hud/show_hand.tscn" id="5_rwmh0"]
 [ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="7_6e2hn"]
 [ext_resource type="Script" path="res://src/gdscript/tutorial/center_frame.gd" id="7_o01rp"]
+[ext_resource type="Script" path="res://src/gdscript/tutorial/info_bubble2.gd" id="8_lilmj"]
 [ext_resource type="PackedScene" uid="uid://cuajo0ocbdx2d" path="res://scenes/buttons/button_play.tscn" id="9_shki2"]
 [ext_resource type="Script" path="res://src/gdscript/tutorial/center_text.gd" id="10_bkf6h"]
+[ext_resource type="Script" path="res://src/gdscript/tutorial/info_bubble3.gd" id="10_tfu1m"]
+[ext_resource type="Script" path="res://src/gdscript/tutorial/info_bubble4.gd" id="11_26kpw"]
+[ext_resource type="Script" path="res://src/gdscript/tutorial/info_bubble5.gd" id="12_cxw0x"]
 [ext_resource type="Script" path="res://src/gdscript/tutorial/skip_button.gd" id="12_m5gsn"]
+[ext_resource type="Script" path="res://src/gdscript/tutorial/info_bubble6.gd" id="13_qergj"]
+[ext_resource type="Script" path="res://src/gdscript/tutorial/info_bubble7.gd" id="14_g4slm"]
 
 [sub_resource type="Theme" id="Theme_dnnnk"]
 
@@ -62,6 +69,7 @@ offset_bottom = 1080.0
 mouse_force_pass_scroll_events = false
 theme = SubResource("Theme_dnnnk")
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
+script = ExtResource("3_fyqfb")
 
 [node name="InfoBubble" type="MarginContainer" parent="Bubbles/InfoBubble" groups=["papers"]]
 layout_mode = 0
@@ -160,6 +168,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_force_pass_scroll_events = false
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
+script = ExtResource("8_lilmj")
 
 [node name="InfoBubble2" type="MarginContainer" parent="Bubbles/InfoBubble2" groups=["papers"]]
 layout_mode = 0
@@ -255,6 +264,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_force_pass_scroll_events = false
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
+script = ExtResource("10_tfu1m")
 
 [node name="InfoBubble3" type="MarginContainer" parent="Bubbles/InfoBubble3" groups=["papers"]]
 layout_mode = 0
@@ -361,34 +371,27 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -602.0
-offset_bottom = -328.0
+offset_right = -889.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_force_pass_scroll_events = false
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
+script = ExtResource("11_26kpw")
+
+[node name="ShowHand" parent="Bubbles/InfoBubble4" instance=ExtResource("5_rwmh0")]
+position = Vector2(985, 655)
+rotation = 0.00720553
 
 [node name="ColorRect3" type="ColorRect" parent="Bubbles/InfoBubble4"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1321.0
-offset_right = 736.0
-offset_bottom = -620.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.156863, 0.156863, 0.156863, 0.784314)
-
-[node name="ColorRect6" type="ColorRect" parent="Bubbles/InfoBubble4"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 3.0
-offset_top = 752.0
-offset_right = -768.0
-offset_bottom = 344.0
+offset_left = 1291.0
+offset_top = -100.0
+offset_right = 1048.0
+offset_bottom = -333.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
@@ -398,9 +401,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1321.0
-offset_top = 350.0
-offset_right = 654.0
+offset_left = 1034.0
+offset_top = 749.0
+offset_right = 916.0
+offset_bottom = 85.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
@@ -410,46 +414,20 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1905.0
-offset_top = 752.0
-offset_right = 664.0
-offset_bottom = 336.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.156863, 0.156863, 0.156863, 0.784314)
-
-[node name="ColorRect5" type="ColorRect" parent="Bubbles/InfoBubble4"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1571.0
-offset_top = 132.0
-offset_right = 786.0
-offset_bottom = -402.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.156863, 0.156863, 0.156863, 0.784314)
-
-[node name="BuildBlock" type="ColorRect" parent="Bubbles/InfoBubble4"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 553.0
-offset_top = 752.0
-offset_right = 584.0
-offset_bottom = 344.0
+offset_left = 1034.0
+offset_top = -117.0
+offset_right = 257.0
+offset_bottom = -543.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 
 [node name="InfoBubble4" type="MarginContainer" parent="Bubbles/InfoBubble4" groups=["papers"]]
 layout_mode = 0
-offset_left = 1571.0
-offset_top = 123.0
-offset_right = 1847.0
-offset_bottom = 264.0
+offset_left = 1289.0
+offset_top = 541.0
+offset_right = 1565.0
+offset_bottom = 682.0
 
 [node name="InfoBubble" type="NinePatchRect" parent="Bubbles/InfoBubble4/InfoBubble4"]
 layout_mode = 2
@@ -479,22 +457,19 @@ text = "TUTOBUBBLE3"
 fit_content = true
 scroll_active = false
 
-[node name="ShowHand" parent="Bubbles/InfoBubble4" instance=ExtResource("5_rwmh0")]
-position = Vector2(1277, 269)
-rotation = 0.00720553
-
 [node name="InfoBubble5" type="ColorRect" parent="Bubbles"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -624.0
-offset_bottom = -328.0
+offset_right = -888.0
+offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_force_pass_scroll_events = false
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
+script = ExtResource("12_cxw0x")
 
 [node name="ColorRect3" type="ColorRect" parent="Bubbles/InfoBubble5"]
 layout_mode = 1
@@ -502,21 +477,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 1299.0
-offset_right = 736.0
-offset_bottom = -336.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.156863, 0.156863, 0.156863, 0.784314)
-
-[node name="ColorRect6" type="ColorRect" parent="Bubbles/InfoBubble5"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 3.0
-offset_top = 752.0
-offset_right = -768.0
-offset_bottom = 344.0
+offset_top = -32.0
+offset_right = 967.0
+offset_bottom = -349.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
@@ -526,9 +489,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1299.0
-offset_top = 664.0
-offset_right = 656.0
+offset_left = 1035.0
+offset_top = 734.0
+offset_right = 982.0
+offset_bottom = 70.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
@@ -538,46 +502,20 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1883.0
-offset_top = 752.0
-offset_right = 664.0
-offset_bottom = 336.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.156863, 0.156863, 0.156863, 0.784314)
-
-[node name="ColorRect5" type="ColorRect" parent="Bubbles/InfoBubble5"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1521.0
-offset_top = 416.0
-offset_right = 736.0
-offset_bottom = -88.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.156863, 0.156863, 0.156863, 0.784314)
-
-[node name="BuildBlock" type="ColorRect" parent="Bubbles/InfoBubble5"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 531.0
-offset_top = 752.0
-offset_right = 584.0
-offset_bottom = 344.0
+offset_left = 1035.0
+offset_top = -138.0
+offset_right = 264.0
+offset_bottom = -546.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 
 [node name="InfoBubble4" type="MarginContainer" parent="Bubbles/InfoBubble5" groups=["papers"]]
 layout_mode = 0
-offset_left = 1521.0
-offset_top = 395.0
-offset_right = 1844.0
-offset_bottom = 536.0
+offset_left = 1299.0
+offset_top = 507.0
+offset_right = 1622.0
+offset_bottom = 648.0
 
 [node name="InfoBubble" type="NinePatchRect" parent="Bubbles/InfoBubble5/InfoBubble4"]
 layout_mode = 2
@@ -615,7 +553,7 @@ fit_content = true
 scroll_active = false
 
 [node name="ShowHand" parent="Bubbles/InfoBubble5" instance=ExtResource("5_rwmh0")]
-position = Vector2(1423, 463)
+position = Vector2(1193, 539)
 rotation = 0.359538
 
 [node name="InfoBubble6" type="ColorRect" parent="Bubbles"]
@@ -630,6 +568,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_force_pass_scroll_events = false
 color = Color(0.156863, 0.156863, 0.156863, 0)
+script = ExtResource("13_qergj")
 
 [node name="ColorRect3" type="ColorRect" parent="Bubbles/InfoBubble6"]
 layout_mode = 1
@@ -765,6 +704,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_force_pass_scroll_events = false
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
+script = ExtResource("14_g4slm")
 
 [node name="InfoBubble6" type="MarginContainer" parent="Bubbles/InfoBubble7"]
 layout_mode = 0
@@ -935,7 +875,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_wx8q0")
 text = "SKIP"
 script = ExtResource("12_m5gsn")
 
-[connection signal="pressed" from="Bubbles/InfoBubble/InfoBubble/NextButtonContainer/PlayButton" to="." method="_on_next_button_pressed"]
-[connection signal="pressed" from="Bubbles/InfoBubble3/InfoBubble3/NextButtonContainer/PlayButton" to="." method="_on_next_button_pressed"]
-[connection signal="pressed" from="CenterFrame/NavigationButtons/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="Bubbles/InfoBubble/InfoBubble/NextButtonContainer/PlayButton" to="." method="_on_next_step_requested"]
+[connection signal="pressed" from="Bubbles/InfoBubble3/InfoBubble3/NextButtonContainer/PlayButton" to="." method="_on_next_step_requested"]
+[connection signal="pressed" from="CenterFrame/NavigationButtons/NextButton" to="." method="_on_next_step_requested"]
 [connection signal="pressed" from="CenterFrame/SkipButton/Button" to="CenterFrame/SkipButton/Button" method="_on_pressed"]

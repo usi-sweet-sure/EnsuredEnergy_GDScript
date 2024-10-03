@@ -86,7 +86,7 @@ position = Vector2(-918, 325)
 build_on_start = 1
 
 [node name="PpMapEmplacement9" parent="." instance=ExtResource("7_3e8ib")]
-position = Vector2(533, 370)
+position = Vector2(573, 313)
 
 [node name="PpMapEmplacement10" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(1929, 521)

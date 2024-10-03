@@ -61,6 +61,7 @@ grow_vertical = 2
 color = Color(0, 0.0823529, 0.0980392, 0.803922)
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = 1683.0
 offset_top = 986.0
 offset_right = 1704.0
@@ -84,7 +85,6 @@ text = "."
 horizontal_alignment = 2
 
 [node name="Label3" type="Label" parent="."]
-visible = false
 offset_left = 1721.0
 offset_top = 986.0
 offset_right = 1742.0
@@ -110,13 +110,3 @@ horizontal_alignment = 2
 libraries = {
 "": SubResource("AnimationLibrary_il5wv")
 }
-
-[node name="Label5" type="Label" parent="."]
-offset_left = 1616.0
-offset_top = 938.0
-offset_right = 1966.0
-offset_bottom = 993.0
-theme = ExtResource("2_l02pl")
-theme_type_variation = &"Screen"
-theme_override_font_sizes/font_size = 40
-text = "(Work in progress)"

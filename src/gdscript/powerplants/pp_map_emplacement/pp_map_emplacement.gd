@@ -123,12 +123,14 @@ func _on_powerplant_delete_requested(metrics: PowerplantMetrics):
 	node.queue_free()
 	bb_normal.show()
 	PowerplantsManager.update_buildings_impact()
+	TutorialManager.next_step_requested.emit()
 
 
 func _on_powerplant_cancel_construction_requested(metrics: PowerplantMetrics):
 	MoneyManager.building_costs -= metrics.building_costs
 	bb_in_construction.hide()
 	bb_normal.show()
+	TutorialManager.next_step_requested.emit()
 	
 
 func _build_on_start(metrics: Array[PowerplantMetrics]):

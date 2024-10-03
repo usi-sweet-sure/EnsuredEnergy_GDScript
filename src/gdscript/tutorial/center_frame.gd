@@ -17,4 +17,4 @@ func _on_tutorial_ended():
 
 
 func _on_step_changed(step: int):
-	visible = not (step == 3 or step == 4 or step == 5)
+	visible = step == 1 or step == 2 or step == 4 or step == 7 or step == 10 or step == 12
