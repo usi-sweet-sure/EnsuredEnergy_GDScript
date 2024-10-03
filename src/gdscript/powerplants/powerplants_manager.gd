@@ -404,7 +404,7 @@ func _store_powerplant_metrics(engine_type_id: EngineTypeIds):
 	powerplants_metrics[engine_type_id] = metrics
 	
 	if engine_type_id == EngineTypeIds.WIND:
-		print(metrics.availability * metrics.capacity)
+		print("wind availability: ", metrics.availability * metrics.capacity)
 
 
 # Update everything that buildings affects like supply, emissions, land_use, etc.

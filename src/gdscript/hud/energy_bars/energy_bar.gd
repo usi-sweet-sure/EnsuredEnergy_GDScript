@@ -18,8 +18,9 @@ var max_value_set := false
 
 
 func _ready():
-	Gameloop.tutorial_step_updated.connect(_on_tutorial_step_updated)
+	TutorialManager.step_changed.connect(_on_tutorial_step_updated)
 	Gameloop.hide_energy_bar_info_requested.connect(_on_hide_info_box)
+	
 	# Determines which season the bar will be monitoring
 	match season:
 		Season.WINTER:

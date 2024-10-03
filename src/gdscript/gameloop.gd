@@ -7,7 +7,6 @@ var years_in_a_turn = 3
 var demand_summer_list = []
 var demand_winter_list = []
 var year_list = []
-var all_power_plants
 
 var ups_list = {
 	"186": 0, # GAS
@@ -23,7 +22,6 @@ var ups_list = {
 }
 
 signal player_name_updated
-
 signal energy_supply_updated_winter
 signal energy_supply_updated_summer
 signal energy_demand_updated_winter
@@ -34,11 +32,8 @@ signal co2_emissions_updated
 signal sequestrated_co2_updated(val: float)
 signal most_recent_shock_updated
 signal current_turn_updated
-signal show_tutorial
-
 signal next_turn
 signal show_ending_screen_requested
-
 signal toggle_settings
 signal toggle_graphs
 signal game_started
@@ -46,11 +41,9 @@ signal game_ended
 signal game_quit_requested
 signal enable_graphs_button
 signal toggle_policies_window
-signal tutorial_ended
-
 signal hide_energy_bar_info_requested
-
-signal tutorial_step_updated(step: int)
+signal testing_env_entered
+signal first_model_request_ended()
 
 # We need to send this signal because some translations 
 # don't update automatically when changing the language at runtime,
@@ -107,8 +100,9 @@ var sequestrated_co2: float = 0.0:
 		sequestrated_co2_updated.emit(sequestrated_co2)
 		co2_emissions_updated.emit(co2_emissions)
 	
-func _ready():	
-	all_power_plants = get_tree().get_nodes_in_group("PP")
+func _ready():
+	Context.http.request_completed.connect(_on_first_request_finished)
+	
 	for i in total_number_of_turns + 1:
 		year_list.append(start_year + (i * 3))
 		
@@ -127,45 +121,26 @@ func _ready():
 				#Gameloop.demand_winter_list.append(float(i["tj"]) / 100)
 		#await Context.http.request_completed
 
-# Call this when play is pressed or the game is restarted
+# Call this when play is pressed
 func start_game():
 	reset_all_values()
 	game_started.emit()
 	
 	if player_name != "":
-		Context.register_new_game_on_model() # New game in model
+		if player_name == "new123":
+			# This is our testing context
+			testing_env_entered.emit()
+			Context.res_id = 1
+			Context.yr = 2022
+			Context.prm_id = 186
+			Context.tj = 8000
+			Context.get_context_from_model()
+		else:
+			Context.register_new_game_on_model() # New game in model
 	else:
 		# This should not happen
 		printerr("A player name is needed")
-			
-			
-# Update everything that buildings affects like supply, emissions, land_use, etc.
-func _update_buildings_impact():
-	all_power_plants = get_tree().get_nodes_in_group("PP")
-	var summer = 0
-	var winter = 0
-	var total_production_costs = 0
-	var total_emissions = 0
-	var total_land_use = 0
-	var total_emissions_sequestrated = 0
-	for power_plant in all_power_plants:
-		if power_plant.is_alive:
-			summer += power_plant.capacity * power_plant.availability.x
-			winter += power_plant.capacity * power_plant.availability.y
-			total_production_costs += power_plant.production_cost
-			total_emissions += power_plant.pollution
-			
-			if power_plant.pollution < 0:
-				total_emissions_sequestrated += abs(power_plant.pollution)
-			
-			total_land_use += power_plant.land_use
-	supply_summer = summer
-	supply_winter = winter
-	MoneyManager.powerplants_production_costs = total_production_costs
-	co2_emissions = total_emissions
-	sequestrated_co2 = total_emissions_sequestrated
-	land_use = total_land_use
-	
+
 
 func _check_supply():
 	return supply_summer >= demand_summer and supply_winter + imported_energy_amount >= demand_winter
@@ -173,12 +148,12 @@ func _check_supply():
 
 func _on_next_turn():
 	Context.yr = Gameloop.year_list[Gameloop.current_turn]
-	_send_send_parameters_to_model()
+	#_send_send_parameters_to_model()
 	imported_energy_amount = 0
 	MoneyManager.set_money_for_new_turn()
 	ShockManager.pick_shock()
 	ShockManager.apply_shock()
-	Context.get_demand_from_model() #S. Not sure where to put this and the line doesnt update
+	#Context.get_demand_from_model() #S. Not sure where to put this and the line doesnt update
 	
 
 func _send_send_parameters_to_model():
@@ -219,3 +194,9 @@ func reset_all_values():
 	MoneyManager.production_costs_modifier = 1
 	MoneyManager.building_costs = 0
 	Context.yr = 2022
+
+
+func _on_first_request_finished(_result, _response_code, _headers, _body):
+	TutorialManager.tutorial_started.emit()
+	first_model_request_ended.emit()
+	Context.http.request_completed.disconnect(_on_first_request_finished)

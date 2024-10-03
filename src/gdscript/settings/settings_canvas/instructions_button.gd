@@ -2,5 +2,5 @@ extends TextureButton
 
 
 func _on_pressed():
-	Gameloop.show_tutorial.emit()
+	TutorialManager.tutorial_started.emit()
 	Gameloop.toggle_settings.emit()

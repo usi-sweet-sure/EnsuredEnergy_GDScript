@@ -1,15 +1,32 @@
-[gd_scene load_steps=10 format=3 uid="uid://ciphd0cmpslrn"]
+[gd_scene load_steps=16 format=3 uid="uid://ciphd0cmpslrn"]
 
 [ext_resource type="Texture2D" uid="uid://dnbd3anohlmvn" path="res://assets/UI Elements/All-HQ-Assets-D_0008s_0001_Small-right-paper.png" id="1_p4eo2"]
 [ext_resource type="Script" path="res://src/gdscript/tutorial/tutorial.gd" id="1_yrums"]
+[ext_resource type="Script" path="res://src/gdscript/tutorial/mouse_block.gd" id="2_1fnul"]
 [ext_resource type="Texture2D" uid="uid://03lloca0uata" path="res://assets/Elements/ARROW INFO – 1.png" id="3_xv1gs"]
 [ext_resource type="Texture2D" uid="uid://4yafxnl2h5s" path="res://assets/UI Elements/All-HQ-Assets-D_0008s_0004_Big-paper.png" id="5_3h0cr"]
-[ext_resource type="Texture2D" uid="uid://ikiclp3p8k8k" path="res://assets/used_assets/textures/keys/key_tab_icon.png" id="5_mivsl"]
+[ext_resource type="Texture2D" uid="uid://ikiclp3p8k8k" path="res://assets/UI Elements/key_tab_icon.png" id="5_mivsl"]
 [ext_resource type="PackedScene" uid="uid://cqn5kk1o4vep4" path="res://scenes/hud/show_hand.tscn" id="5_rwmh0"]
 [ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="7_6e2hn"]
+[ext_resource type="Script" path="res://src/gdscript/tutorial/center_frame.gd" id="7_o01rp"]
 [ext_resource type="PackedScene" uid="uid://cuajo0ocbdx2d" path="res://scenes/buttons/button_play.tscn" id="9_shki2"]
+[ext_resource type="Script" path="res://src/gdscript/tutorial/center_text.gd" id="10_bkf6h"]
+[ext_resource type="Script" path="res://src/gdscript/tutorial/skip_button.gd" id="12_m5gsn"]
 
 [sub_resource type="Theme" id="Theme_dnnnk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cgvln"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wx8q0"]
+bg_color = Color(1, 1, 1, 0.0901961)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="Tutorial" type="CanvasLayer"]
 script = ExtResource("1_yrums")
@@ -33,6 +50,7 @@ offset_right = 1969.0
 offset_bottom = 1129.0
 mouse_filter = 1
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
+script = ExtResource("2_1fnul")
 
 [node name="InfoBubble" type="ColorRect" parent="Bubbles"]
 visible = false
@@ -87,6 +105,27 @@ text = "TUTOBUBBLE0"
 fit_content = true
 scroll_active = false
 autowrap_mode = 2
+
+[node name="NextButtonContainer" type="Control" parent="Bubbles/InfoBubble/InfoBubble"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="PlayButton" parent="Bubbles/InfoBubble/InfoBubble/NextButtonContainer" instance=ExtResource("9_shki2")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.5
+offset_top = -29.0
+offset_right = 27.5
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
 
 [node name="ColorRect" type="ColorRect" parent="Bubbles/InfoBubble"]
 layout_mode = 0
@@ -259,6 +298,25 @@ text = "TUTOBUBBLE2"
 fit_content = true
 scroll_active = false
 
+[node name="NextButtonContainer" type="Control" parent="Bubbles/InfoBubble3/InfoBubble3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="PlayButton" parent="Bubbles/InfoBubble3/InfoBubble3/NextButtonContainer" instance=ExtResource("9_shki2")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.5
+offset_top = -44.0
+offset_right = 27.5
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="ColorRect3" type="ColorRect" parent="Bubbles/InfoBubble3"]
 layout_mode = 1
 anchors_preset = 15
@@ -303,7 +361,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -656.0
+offset_right = -602.0
 offset_bottom = -328.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -315,9 +373,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1267.0
+offset_left = 1321.0
 offset_right = 736.0
-offset_bottom = -272.0
+offset_bottom = -620.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
@@ -340,9 +398,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1267.0
-offset_top = 664.0
-offset_right = 656.0
+offset_left = 1321.0
+offset_top = 350.0
+offset_right = 654.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
@@ -352,7 +410,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1851.0
+offset_left = 1905.0
 offset_top = 752.0
 offset_right = 664.0
 offset_bottom = 336.0
@@ -365,10 +423,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1521.0
-offset_top = 480.0
-offset_right = 736.0
-offset_bottom = -88.0
+offset_left = 1571.0
+offset_top = 132.0
+offset_right = 786.0
+offset_bottom = -402.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
@@ -378,7 +436,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 499.0
+offset_left = 553.0
 offset_top = 752.0
 offset_right = 584.0
 offset_bottom = 344.0
@@ -388,10 +446,10 @@ color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 
 [node name="InfoBubble4" type="MarginContainer" parent="Bubbles/InfoBubble4" groups=["papers"]]
 layout_mode = 0
-offset_left = 1520.0
-offset_top = 462.0
-offset_right = 1796.0
-offset_bottom = 603.0
+offset_left = 1571.0
+offset_top = 123.0
+offset_right = 1847.0
+offset_bottom = 264.0
 
 [node name="InfoBubble" type="NinePatchRect" parent="Bubbles/InfoBubble4/InfoBubble4"]
 layout_mode = 2
@@ -402,13 +460,6 @@ patch_margin_top = 50
 patch_margin_right = 66
 patch_margin_bottom = 30
 metadata/_edit_group_ = true
-
-[node name="Arrow" type="Sprite2D" parent="Bubbles/InfoBubble4/InfoBubble4/InfoBubble"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-position = Vector2(-12, 66)
-texture = ExtResource("3_xv1gs")
-region_rect = Rect2(24, 24, 30, 32)
 
 [node name="MarginContainer" type="MarginContainer" parent="Bubbles/InfoBubble4/InfoBubble4"]
 layout_mode = 2
@@ -429,8 +480,8 @@ fit_content = true
 scroll_active = false
 
 [node name="ShowHand" parent="Bubbles/InfoBubble4" instance=ExtResource("5_rwmh0")]
-position = Vector2(1322, 632)
-rotation = -0.598648
+position = Vector2(1277, 269)
+rotation = 0.00720553
 
 [node name="InfoBubble5" type="ColorRect" parent="Bubbles"]
 visible = false
@@ -792,7 +843,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="CenterFrame" type="MarginContainer" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -808,8 +859,9 @@ theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
+script = ExtResource("7_o01rp")
 
-[node name="TutoPopUp" type="NinePatchRect" parent="MarginContainer"]
+[node name="TutoPopUp" type="NinePatchRect" parent="CenterFrame"]
 layout_mode = 2
 texture = ExtResource("5_3h0cr")
 region_rect = Rect2(0, -3.83349, 577.814, 513.899)
@@ -818,7 +870,7 @@ patch_margin_top = 56
 patch_margin_right = 56
 patch_margin_bottom = 64
 
-[node name="Skip" type="Label" parent="MarginContainer/TutoPopUp"]
+[node name="Skip" type="Label" parent="CenterFrame/TutoPopUp"]
 visible = false
 layout_mode = 1
 anchors_preset = 2
@@ -833,19 +885,19 @@ theme = ExtResource("7_6e2hn")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "to skip"
 
-[node name="KeyTabIcon" type="Sprite2D" parent="MarginContainer/TutoPopUp/Skip"]
+[node name="KeyTabIcon" type="Sprite2D" parent="CenterFrame/TutoPopUp/Skip"]
 position = Vector2(-25.1, 13)
 scale = Vector2(0.329687, 0.225)
 texture = ExtResource("5_mivsl")
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="CenterFrame"]
 layout_mode = 2
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 70
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 80
 
-[node name="Text" type="RichTextLabel" parent="MarginContainer/MarginContainer"]
+[node name="Text" type="RichTextLabel" parent="CenterFrame/MarginContainer"]
 layout_mode = 2
 theme = ExtResource("7_6e2hn")
 theme_type_variation = &"Paper"
@@ -856,24 +908,34 @@ bbcode_enabled = true
 text = "TUTORIAL0"
 fit_content = true
 scroll_active = false
+script = ExtResource("10_bkf6h")
 
-[node name="NavigationButtons" type="HBoxContainer" parent="MarginContainer"]
+[node name="NavigationButtons" type="HBoxContainer" parent="CenterFrame"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 theme_override_constants/separation = 53
 
-[node name="NextButton" parent="MarginContainer/NavigationButtons" instance=ExtResource("9_shki2")]
+[node name="NextButton" parent="CenterFrame/NavigationButtons" instance=ExtResource("9_shki2")]
 layout_mode = 2
 
-[node name="SkipButton" type="Control" parent="MarginContainer"]
+[node name="SkipButton" type="Control" parent="CenterFrame"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
 
-[node name="TextureButton" type="TextureButton" parent="MarginContainer/SkipButton"]
+[node name="Button" type="Button" parent="CenterFrame/SkipButton" groups=["buttons"]]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 18.0
+offset_top = -14.0
+offset_right = 108.0
+offset_bottom = 17.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cgvln")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wx8q0")
+text = "SKIP"
+script = ExtResource("12_m5gsn")
 
-[connection signal="pressed" from="MarginContainer/NavigationButtons/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="Bubbles/InfoBubble/InfoBubble/NextButtonContainer/PlayButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="Bubbles/InfoBubble3/InfoBubble3/NextButtonContainer/PlayButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="CenterFrame/NavigationButtons/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="CenterFrame/SkipButton/Button" to="CenterFrame/SkipButton/Button" method="_on_pressed"]

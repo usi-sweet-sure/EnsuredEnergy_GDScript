@@ -6,8 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://rjcu72lxn4n4" path="res://scenes/settings.tscn" id="11_3whgs"]
 [ext_resource type="PackedScene" uid="uid://ciphd0cmpslrn" path="res://scenes/hud/tutorial.tscn" id="11_uite1"]
 [ext_resource type="PackedScene" uid="uid://885lty3v1qbq" path="res://scenes/windows/shock.tscn" id="12_vvejj"]
+[ext_resource type="Script" path="res://src/gdscript/test_layer/test_layer.gd" id="13_t2kov"]
 [ext_resource type="PackedScene" uid="uid://pvoi2mcc3oc1" path="res://scenes/hud/menu.tscn" id="18_h65u3"]
 [ext_resource type="PackedScene" uid="uid://cej4dlw11su6f" path="res://scenes/hud/end.tscn" id="21_7pke6"]
+[ext_resource type="PackedScene" uid="uid://det4mobxk3l42" path="res://scenes/loading_screen.tscn" id="23_bmtug"]
 [ext_resource type="PackedScene" uid="uid://cuuj2s4h1588i" path="res://scenes/audio.tscn" id="34_smnob"]
 [ext_resource type="Script" path="res://src/gdscript/test_layer/debug_frame.gd" id="53_j41xb"]
 [ext_resource type="PackedScene" uid="uid://dc3s5eeg1c0uv" path="res://scenes/windows/graphs.tscn" id="66_s8n66"]
@@ -19,8 +21,6 @@
 [ext_resource type="Script" path="res://src/gdscript/test_layer/yr_label.gd" id="70_j6q0p"]
 [ext_resource type="Script" path="res://src/gdscript/test_layer/prm_id_label.gd" id="71_q27fr"]
 [ext_resource type="Script" path="res://src/gdscript/test_layer/tj_label.gd" id="72_e32ek"]
-[ext_resource type="Script" path="res://src/gdscript/test_layer/play_test_button.gd" id="73_c8dpd"]
-[ext_resource type="Script" path="res://src/gdscript/test_layer/test_button_explanation_label.gd" id="75_bk8o4"]
 [ext_resource type="PackedScene" uid="uid://mnj2kr6urhvk" path="res://scenes/survey/survey_layer.tscn" id="76_y7xdi"]
 [ext_resource type="PackedScene" uid="uid://cb7movoe2pf7u" path="res://scenes/windows/quit_game.tscn" id="77_iwdt8"]
 
@@ -99,6 +99,7 @@ layer = 4
 visible = false
 
 [node name="TestLayer" type="CanvasLayer" parent="."]
+script = ExtResource("13_t2kov")
 
 [node name="HttpError" type="Label" parent="TestLayer"]
 visible = false
@@ -262,24 +263,6 @@ offset_right = 140.0
 offset_bottom = 23.0
 script = ExtResource("72_e32ek")
 
-[node name="PlayTestButton" type="Button" parent="TestLayer"]
-offset_left = 365.0
-offset_top = 556.0
-offset_right = 515.0
-offset_bottom = 660.0
-text = "Play test"
-script = ExtResource("73_c8dpd")
-
-[node name="Label" type="Label" parent="TestLayer"]
-offset_left = 156.0
-offset_top = 571.0
-offset_right = 356.0
-offset_bottom = 646.0
-text = "Use this button to test the game without creating a new game
-"
-autowrap_mode = 2
-script = ExtResource("75_bk8o4")
-
 [node name="OpenDebugFrameButton" type="Button" parent="TestLayer"]
 offset_left = 1554.0
 offset_top = 26.0
@@ -318,11 +301,10 @@ size_flags_horizontal = 8
 size_flags_vertical = 0
 text = "Close"
 
+[node name="LoadingScreen" parent="." instance=ExtResource("23_bmtug")]
+
 [connection signal="pressed" from="TestLayer/TestButtons/ButtonTop" to="TestLayer/TestButtons" method="_on_button_top_pressed"]
 [connection signal="pressed" from="TestLayer/TestButtons/ButtonBottom" to="TestLayer/TestButtons" method="_on_button_bottom_pressed"]
-[connection signal="pressed" from="TestLayer/PlayTestButton" to="Audio" method="_on_play_test_button_pressed"]
-[connection signal="pressed" from="TestLayer/PlayTestButton" to="TestLayer/PlayTestButton" method="_on_pressed"]
-[connection signal="pressed" from="TestLayer/PlayTestButton" to="TestLayer/Label" method="_on_play_test_button_pressed"]
 [connection signal="pressed" from="TestLayer/OpenDebugFrameButton" to="TestLayer/DebugFrame" method="_on_open_debug_frame_button_pressed"]
 [connection signal="pressed" from="TestLayer/DebugFrame/MarginContainer/CloseButton" to="TestLayer/DebugFrame" method="_on_close_button_pressed"]
 

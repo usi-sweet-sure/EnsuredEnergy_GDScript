@@ -43,11 +43,6 @@ func _on_game_ended():
 	forest_ambiance.stop()
 
 
-# E. To remove
-func _on_play_test_button_pressed():
-	_on_game_started()
-
-
 func _on_button_mouse_entered():
 	button_hover.play()
 

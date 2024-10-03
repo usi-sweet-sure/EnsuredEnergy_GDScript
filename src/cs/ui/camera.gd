@@ -22,8 +22,8 @@ func _ready():
 	scale_plants(init_zoom)
 	
 	# Allows to reset the zoom, so the tutorial windows are placed correctly
-	Gameloop.show_tutorial.connect(_on_show_tutorial)
-	Gameloop.tutorial_ended.connect(_on_tutorial_ended)
+	TutorialManager.tutorial_started.connect(_on_show_tutorial)
+	TutorialManager.tutorial_ended.connect(_on_tutorial_ended)
 	#E. !!! Do or remove
 	# Maybe TODO for carbon sequestration if we add a button for it !!
 	#for power_plant in get_tree().get_nodes_in_group("PP"):

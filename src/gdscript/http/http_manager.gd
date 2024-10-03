@@ -1,6 +1,6 @@
 extends Node
 
-signal http_request_active_updated
+signal http_request_active_updated(active: bool)
 
 var http_request_active := false:
 	set(new_value):
