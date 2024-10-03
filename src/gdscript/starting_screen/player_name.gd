@@ -5,7 +5,6 @@ func _ready():
 	
 	
 func _on_focus_entered():
-	alignment = HORIZONTAL_ALIGNMENT_LEFT
 	placeholder_text = ""
 
 

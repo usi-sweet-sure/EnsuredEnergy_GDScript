@@ -12,6 +12,7 @@ func _on_tutorial_started():
 
 
 func _on_tutorial_ended():
+	hide()
 	TutorialManager.step_changed.disconnect(_on_step_changed)
 	
 
