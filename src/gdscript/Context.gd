@@ -119,12 +119,12 @@ func _http_completed(_result, _response_code, _headers, body):
 		HttpManager.http_request_active = false
 		var json = JSON.new()
 		json.parse(body.get_string_from_utf8())
-		ctx1 = json.get_data()
-		if ctx1 == null:
+		ctx = json.get_data()
+		if ctx == null:
 			context_error.emit()
 		elif Gameloop.current_turn == 1:
-			res_id = int(ctx1[0]["res_id"])
-			get_model_demand()
+			res_id = int(ctx[0]["res_id"])
+			get_demand_from_model()
 	else:
 		HttpManager.http_request_active = false
 		var json = JSON.new()

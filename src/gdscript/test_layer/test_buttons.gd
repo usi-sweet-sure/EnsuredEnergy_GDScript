@@ -8,7 +8,7 @@ extends Control
 
 func _ready():
 	button_top.text = "Next turn"
-	button_bottom.text = "Print 'Powerplants' group"
+	button_bottom.text = "Trigger the end"
 	HttpManager.http_request_active_updated.connect(_on_http_request_active_updated)
 	_on_http_request_active_updated(HttpManager.http_request_active)
 
@@ -19,10 +19,7 @@ func _on_button_top_pressed():
 	
 	
 func _on_button_bottom_pressed():
-	var i = 0
-	for pp: PpScene in get_tree().get_nodes_in_group("Powerplants"):
-		print(i, " ", pp, " ", PowerplantsManager.EngineTypeIds.keys()[pp.metrics.type])
-		i += 1
+	Gameloop.game_ended.emit()
 	
 
 func _on_http_request_active_updated(active: bool):

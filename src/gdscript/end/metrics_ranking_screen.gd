@@ -19,17 +19,17 @@ func _on_leaderboard_button_pressed(button_index):
 	$RichTextLabel.hide()
 	$StatContainer.show()
 	num = 0
-	for i in Context1.leaderboard_json[button_index]:
+	for i in Context.leaderboard_json[button_index]:
 		num += 1
 		var name_node = get_node("/root/Main/End/MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank" + str(num) + "/HBoxContainer/NAME")
 		var score_node = get_node("/root/Main/End/MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank" + str(num) + "/HBoxContainer/SCORE")
 		var rank_node = get_node("/root/Main/End/MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank" + str(num) + "/HBoxContainer/RANK")
-		name_node.text = i["res_name"]
-		score_node.text = i[score_list[button_index]]
-		rank_node.text = i[rank_list[button_index]]
-		%player_name.text = Context1.rank_json[0]["res_name"]
-		%player_score.text = Context1.rank_json[0][score_list[button_index]]
-		%player_rank.text = Context1.rank_json[0][rank_list[button_index]]
+		name_node.text = _assert_not_null(i["res_name"])
+		score_node.text = _assert_not_null(i[score_list[button_index]])
+		rank_node.text = _assert_not_null(i[rank_list[button_index]])
+		%player_name.text = _assert_not_null(Context.rank_json[0]["res_name"])
+		%player_score.text = _assert_not_null(Context.rank_json[0][score_list[button_index]])
+		%player_rank.text = _assert_not_null(Context.rank_json[0][rank_list[button_index]])
 
 
 func _on_end_metrics_leaderboard_updated(leaderboard):
@@ -38,15 +38,23 @@ func _on_end_metrics_leaderboard_updated(leaderboard):
 	num = 0
 	for i in leaderboard[2]:
 		num += 1
+		print("num: ", num)
 		var name_node = get_node("/root/Main/End/MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank" + str(num) + "/HBoxContainer/NAME")
 		var score_node = get_node("/root/Main/End/MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank" + str(num) + "/HBoxContainer/SCORE")
 		var rank_node = get_node("/root/Main/End/MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank" + str(num) + "/HBoxContainer/RANK")
-		name_node.text = i["res_name"]
-		score_node.text = i["met_ele"]
-		rank_node.text = i["rnk_ele"]
+		name_node.text = _assert_not_null(i["res_name"])
+		score_node.text = _assert_not_null(i["met_ele"])
+		rank_node.text = _assert_not_null(i["rnk_ele"])
 
 
 func _on_end_metrics_rank_updated(rank):
-	%player_name.text = rank[0]["res_name"]
-	%player_score.text = rank[0]["met_ele"]
-	%player_rank.text = rank[0]["rnk_ele"]
+	%player_name.text = _assert_not_null(rank[0]["res_name"])
+	%player_score.text = _assert_not_null(rank[0]["met_ele"])
+	%player_rank.text = _assert_not_null(rank[0]["rnk_ele"])
+	
+
+func _assert_not_null(val: Variant):
+	if val == null:
+		return ""
+	else:
+		return val
