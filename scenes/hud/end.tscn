@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://cej4dlw11su6f"]
+[gd_scene load_steps=56 format=3 uid="uid://cej4dlw11su6f"]
 
 [ext_resource type="Script" path="res://src/gdscript/end/end.gd" id="1_eio5g"]
 [ext_resource type="Script" path="res://src/gdscript/end/graphs_frame.gd" id="4_dq0ds"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://iaa6i5ocoaer" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0022_Icon-Popularity-down.png" id="6_88lh6"]
 [ext_resource type="Texture2D" uid="uid://cd23afs6x11al" path="res://assets/used_assets/textures/screens/screen_1.png" id="6_us122"]
 [ext_resource type="Script" path="res://src/gdscript/end/money_label.gd" id="7_1k3ff"]
+[ext_resource type="FontFile" uid="uid://bt2f3flr7psn5" path="res://assets/Fonts/VT323/VT323-Regular.ttf" id="7_5ymr4"]
 [ext_resource type="Texture2D" uid="uid://gp11t1mp6sc3" path="res://assets/UI Elements/All-HQ-Assets-D_0009s_0003_Stats-(side)-metal-plate.png" id="7_57dx7"]
 [ext_resource type="Texture2D" uid="uid://bsa55enbm5cwg" path="res://assets/used_assets/textures/icons/sticker_summer.png" id="7_x2355"]
 [ext_resource type="Script" path="res://src/gdscript/end/trust_bar.gd" id="8_8tlhp"]
@@ -17,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://clnitajx25spt" path="res://assets/UI Elements/Button-Square-normal.png" id="8_hhqa5"]
 [ext_resource type="Texture2D" uid="uid://j7b41prot7rw" path="res://assets/UI Elements/All-HQ-Assets-D_0005s_0007_Popularity-screen.png" id="8_uuhoe"]
 [ext_resource type="Texture2D" uid="uid://4dcp6f66sdeo" path="res://assets/UI Elements/Button-Square-press.png" id="9_adpr1"]
+[ext_resource type="ButtonGroup" uid="uid://bly2ooexf1g4h" path="res://scenes/windows/leaderboard_buttons.tres" id="9_h5vxw"]
 [ext_resource type="Texture2D" uid="uid://ceywqq4wa4ocw" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0026_Icon-Import.png" id="9_uutud"]
 [ext_resource type="Script" path="res://src/gdscript/end/energy_bar.gd" id="10_6lpn4"]
 [ext_resource type="Texture2D" uid="uid://bx0cxko72v5ui" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0020_Icon-Environment-.png" id="10_induf"]
@@ -47,6 +49,44 @@
 [ext_resource type="Script" path="res://src/gdscript/end/emissions_button.gd" id="35_ymyta"]
 [ext_resource type="Script" path="res://src/gdscript/end/emissions_gauge_label.gd" id="37_hchcy"]
 [ext_resource type="Script" path="res://src/gdscript/end/close_button.gd" id="44_iv8kv"]
+
+[sub_resource type="Animation" id="Animation_brsmx"]
+resource_name = "..."
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 1.5, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.833, 0.833, 1.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_7ywj0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.833]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4pr1n"]
+_data = {
+"...": SubResource("Animation_brsmx"),
+"RESET": SubResource("Animation_7ywj0")
+}
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d1wpm"]
 bg_color = Color(0.317647, 0.317647, 0.317647, 0)
@@ -136,25 +176,391 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("5_luxph")
+button_group = ExtResource("9_h5vxw")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MainFrame/Screen/MetricsRanking"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = 7.0
-offset_right = -6.0
-offset_bottom = -4.0
+offset_left = 337.0
+offset_top = 189.0
+offset_right = -5.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_n8g63")
 theme_type_variation = &"Screen"
-theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
+theme_override_colors/default_color = Color(0.219608, 0.756863, 0.788235, 1)
 theme_override_constants/shadow_offset_x = 2
-text = "
+theme_override_fonts/normal_font = ExtResource("7_5ymr4")
+theme_override_font_sizes/normal_font_size = 35
+text = "CALCULATING RANK...
 "
+visible_characters = 16
+visible_ratio = 0.833
 script = ExtResource("5_65thp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MainFrame/Screen/MetricsRanking/RichTextLabel"]
+libraries = {
+"": SubResource("AnimationLibrary_4pr1n")
+}
+autoplay = "..."
+
+[node name="StatContainer" type="MarginContainer" parent="MainFrame/Screen/MetricsRanking"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainFrame/Screen/MetricsRanking/StatContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(105, 0)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_n8g63")
+toggle_mode = true
+button_group = ExtResource("9_h5vxw")
+text = "NUCLEAR"
+
+[node name="Button2" type="Button" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(105, 0)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_n8g63")
+toggle_mode = true
+button_group = ExtResource("9_h5vxw")
+text = "FOSSIL"
+
+[node name="Button3" type="Button" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(105, 0)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_n8g63")
+toggle_mode = true
+button_pressed = true
+button_group = ExtResource("9_h5vxw")
+text = "ELECRTICITY"
+
+[node name="Button4" type="Button" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(105, 0)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_n8g63")
+toggle_mode = true
+button_group = ExtResource("9_h5vxw")
+text = "EMISSIONS"
+
+[node name="Button5" type="Button" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(105, 0)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_n8g63")
+toggle_mode = true
+button_group = ExtResource("9_h5vxw")
+text = "LAND_USE"
+
+[node name="Button6" type="Button" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(105, 0)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_n8g63")
+toggle_mode = true
+button_group = ExtResource("9_h5vxw")
+text = "COSTS"
+
+[node name="Button7" type="Button" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(105, 0)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_n8g63")
+toggle_mode = true
+button_group = ExtResource("9_h5vxw")
+text = "SEASONALITY"
+
+[node name="Line2D" type="Line2D" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer"]
+points = PackedVector2Array(-20.5, 95.5, -20.5, 27.5, 835.5, 27.5, 835.5, 95.5)
+width = 2.0
+default_color = Color(0.219608, 0.756863, 0.788235, 1)
+
+[node name="StatTitle" type="Control" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/StatTitle"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RANK" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/StatTitle/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "RANK
+"
+horizontal_alignment = 1
+
+[node name="NAME" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/StatTitle/HBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "NAME"
+
+[node name="SCORE" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/StatTitle/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "SCORE"
+horizontal_alignment = 2
+
+[node name="Rank1" type="Control" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RANK" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank1/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "RANK
+"
+horizontal_alignment = 1
+
+[node name="NAME" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank1/HBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "NAME"
+
+[node name="SCORE" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank1/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "SCORE"
+horizontal_alignment = 2
+
+[node name="Rank2" type="Control" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RANK" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank2/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "RANK
+"
+horizontal_alignment = 1
+
+[node name="NAME" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank2/HBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "NAME"
+
+[node name="SCORE" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank2/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "SCORE"
+horizontal_alignment = 2
+
+[node name="Rank3" type="Control" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RANK" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank3/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "RANK
+"
+horizontal_alignment = 1
+
+[node name="NAME" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank3/HBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "NAME"
+
+[node name="SCORE" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank3/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "SCORE"
+horizontal_alignment = 2
+
+[node name="Rank4" type="Control" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RANK" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank4/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "RANK
+"
+horizontal_alignment = 1
+
+[node name="NAME" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank4/HBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "NAME"
+
+[node name="SCORE" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank4/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "SCORE"
+horizontal_alignment = 2
+
+[node name="Rank5" type="Control" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RANK" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank5/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "RANK
+"
+horizontal_alignment = 1
+
+[node name="NAME" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank5/HBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "NAME"
+
+[node name="SCORE" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank5/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "SCORE"
+horizontal_alignment = 2
+
+[node name="PlayerStats" type="Control" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/PlayerStats"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.219608, 0.756863, 0.788235, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/PlayerStats"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="player_rank" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/PlayerStats/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(0.0470588, 0.168627, 0.180392, 1)
+text = "RANK
+"
+horizontal_alignment = 1
+
+[node name="player_name" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/PlayerStats/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(0.0470588, 0.168627, 0.180392, 1)
+text = "NAME"
+
+[node name="player_score" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/PlayerStats/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(0.0470588, 0.168627, 0.180392, 1)
+text = "SCORE"
+horizontal_alignment = 2
 
 [node name="BottomFrames" type="HBoxContainer" parent="MainFrame"]
 layout_mode = 1
@@ -726,7 +1132,9 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 18
 text = "x"
 
+[connection signal="metrics_leaderboard_updated" from="." to="MainFrame/Screen/MetricsRanking" method="_on_end_metrics_leaderboard_updated"]
 [connection signal="metrics_leaderboard_updated" from="." to="MainFrame/Screen/MetricsRanking/RichTextLabel" method="_on_metrics_leaderboard_updated"]
+[connection signal="metrics_rank_updated" from="." to="MainFrame/Screen/MetricsRanking" method="_on_end_metrics_rank_updated"]
 [connection signal="context_changed" from="MainFrame/Screen/Graph" to="MainFrame/Screen/MetricsRanking" method="_on_graph_context_changed"]
 [connection signal="context_changed" from="MainFrame/Screen/Graph" to="MainFrame/BottomFrames/LeftFrame/Money/Button" method="_on_graph_context_changed"]
 [connection signal="context_changed" from="MainFrame/Screen/Graph" to="MainFrame/BottomFrames/LeftFrame/Trust/Button" method="_on_graph_context_changed"]

@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 signal metrics_leaderboard_updated
+signal metrics_rank_updated
 
 
 func _ready():
@@ -10,11 +11,36 @@ func _ready():
 
 func _on_game_ended():
 	show()
+	
+	Context.get_rank()
+	await Context.http.request_completed
+	
+	metrics_rank_updated.emit(Context.rank_json)
  
-	Context.get_leaderboard_from_model()
+	Context.category = "5"
+	Context.get_leaderboard()
+	await Context.http.request_completed
+	Context.category = "7"
+	Context.get_leaderboard()
+	await Context.http.request_completed
+	Context.category = "9"
+	Context.get_leaderboard()
+	await Context.http.request_completed
+	Context.category = "11"
+	Context.get_leaderboard()
+	await Context.http.request_completed
+	Context.category = "13"
+	Context.get_leaderboard()
+	await Context.http.request_completed
+	Context.category = "15"
+	Context.get_leaderboard()
+	await Context.http.request_completed
+	Context.category = "17"
+	Context.get_leaderboard()
 	await Context.http.request_completed
 	
 	metrics_leaderboard_updated.emit(Context.leaderboard_json)
+
 	
 	for power_plant in get_tree().get_nodes_in_group("PP"):
 		power_plant._disable_with_no_effect()
