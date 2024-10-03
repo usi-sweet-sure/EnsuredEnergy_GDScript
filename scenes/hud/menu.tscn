@@ -281,6 +281,7 @@ uppercase = true
 [connection signal="focus_entered" from="PlayerName" to="PlayerName" method="_on_focus_entered"]
 [connection signal="focus_exited" from="PlayerName" to="PlayerName" method="_on_focus_exited"]
 [connection signal="text_changed" from="PlayerName" to="Play" method="_on_player_name_text_changed"]
+[connection signal="text_submitted" from="PlayerName" to="." method="_on_player_name_text_submitted"]
 [connection signal="clicked_when_disabled" from="Play" to="PlayerName" method="_on_play_button_clicked_when_disabled"]
 [connection signal="gui_input" from="Play" to="Play" method="_on_gui_input"]
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]

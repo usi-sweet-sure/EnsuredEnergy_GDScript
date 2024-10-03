@@ -30,3 +30,10 @@ func _on_lang_pressed():
 
 func _on_credits_pressed():
 	pass # Replace with function body.
+
+
+# When the user press enter when name input has the focus
+func _on_player_name_text_submitted(new_text: String):
+	Gameloop.player_name = new_text
+	hide()
+	Gameloop.start_game()
