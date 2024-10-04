@@ -38,7 +38,7 @@ func _on_game_started():
 
 func _on_game_ended():
 	dark_fantasy.volume_db = 0
-	dark_fantasy.play()
+	#dark_fantasy.play()
 	# animation player fade in
 	forest_ambiance.stop()
 
