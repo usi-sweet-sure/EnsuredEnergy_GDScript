@@ -37,12 +37,12 @@ func _on_close_button_mouse_exited():
 func _on_pp_scene_texture_on_changed(image):
 	texture_normal = image
 	
-	# Click mask
-	var bitmap = BitMap.new()
-	# Fill it from the image alpha
-	bitmap.create_from_image_alpha(image)
-	# Assign it to the mask
-	texture_click_mask = bitmap
+	## Click mask
+	#var bitmap = BitMap.new()
+	## Fill it from the image alpha
+	#bitmap.create_from_image_alpha(image)
+	## Assign it to the mask
+	#texture_click_mask = bitmap
 
 
 # We lose focus when we click outside of the pp, but we don't want to loose focus

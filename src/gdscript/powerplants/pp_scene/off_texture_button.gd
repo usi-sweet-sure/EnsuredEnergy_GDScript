@@ -29,12 +29,12 @@ func _on_mouse_exited():
 func _on_pp_scene_texture_off_changed(image):
 	texture_normal = image
 	
-	# Click mask
-	var bitmap = BitMap.new()
-	# Fill it from the image alpha
-	bitmap.create_from_image_alpha(image)
-	# Assign it to the mask
-	texture_click_mask = bitmap
+	## Click mask
+	#var bitmap = BitMap.new()
+	## Fill it from the image alpha
+	#bitmap.create_from_image_alpha(image)
+	## Assign it to the mask
+	#texture_click_mask = bitmap
 
 
 func _on_switch_toggled(toggled_on: bool):
