@@ -26,8 +26,8 @@ func _on_mouse_exited():
 	set_modulate(Color(1, 1, 1))
 
 
-func _on_pp_scene_texture_off_changed(image: Image):
-	texture_normal = ImageTexture.create_from_image(image)
+func _on_pp_scene_texture_off_changed(image):
+	texture_normal = image
 	
 	# Click mask
 	var bitmap = BitMap.new()
