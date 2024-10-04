@@ -7,11 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://chpn7t75mmbkh" path="res://scenes/buttons/button_close.tscn" id="4_ysjb1"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/bb_in_construction/button_close.gd" id="6_bo1ac"]
 [ext_resource type="Texture2D" uid="uid://sdv07wonj5bg" path="res://assets/used_assets/textures/backplates/backplate_3.png" id="6_nx13c"]
-[ext_resource type="FontFile" uid="uid://domoiqitlbtwi" path="res://assets/used_assets/fonts/llewie/Llewie.ttf" id="7_6bso0"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/bb_in_construction/info_frame/info_frame.gd" id="7_iiknn"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/bb_in_construction/info_frame/plant_name.gd" id="8_c3q5u"]
 [ext_resource type="Texture2D" uid="uid://cd23afs6x11al" path="res://assets/used_assets/textures/screens/screen_1.png" id="8_ppjfb"]
 [ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="9_0asyi"]
+[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/Fonts/label_themes.tres" id="9_6nsjy"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/bb_in_construction/info_frame/plant_texture.gd" id="10_ja4mu"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/animation_player.gd" id="10_q33v4"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/bb_in_construction/info_frame/build_time_left.gd" id="11_16lme"]
@@ -454,8 +454,8 @@ offset_top = 72.0769
 offset_right = 504.0
 offset_bottom = 132.077
 grow_horizontal = 2
-theme_override_colors/font_color = Color(1, 1, 1, 0.752941)
-theme_override_fonts/font = ExtResource("7_6bso0")
+theme = ExtResource("9_6nsjy")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 43
 text = "Plant name"
 horizontal_alignment = 1

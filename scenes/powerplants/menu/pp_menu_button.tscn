@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://vg02ewph3pco" path="res://assets/used_assets/textures/screens/screen_2.png" id="2_o7fp7"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_menu/pp_menu_button/name_label.gd" id="3_0mf3p"]
 [ext_resource type="Texture2D" uid="uid://b76v2w1on0f0u" path="res://assets/used_assets/textures/icons/chalk_money.png" id="3_aairg"]
-[ext_resource type="FontFile" uid="uid://domoiqitlbtwi" path="res://assets/used_assets/fonts/llewie/Llewie.ttf" id="3_g0k4q"]
+[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/Fonts/label_themes.tres" id="3_cblll"]
 [ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="4_jmg7v"]
 [ext_resource type="Texture2D" uid="uid://cm7cds6soi7e4" path="res://assets/used_assets/textures/icons/chalk_hourglass.png" id="5_jf22d"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_menu/pp_menu_button/texture.gd" id="5_qwyr2"]
@@ -115,8 +115,8 @@ offset_left = 40.0
 offset_top = 17.0
 offset_right = 188.0
 offset_bottom = 40.0
-theme_override_colors/font_color = Color(1, 1, 1, 0.752941)
-theme_override_fonts/font = ExtResource("3_g0k4q")
+theme = ExtResource("3_cblll")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 17
 text = "Powerplant name"
 horizontal_alignment = 1
@@ -370,8 +370,8 @@ offset_left = 62.0
 offset_top = 22.0
 offset_right = 528.0
 offset_bottom = 69.0
-theme_override_colors/font_color = Color(1, 1, 1, 0.752941)
-theme_override_fonts/font = ExtResource("3_g0k4q")
+theme = ExtResource("3_cblll")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 28
 text = "Plant name"
 horizontal_alignment = 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://vaxkewvk14v6"]
+[gd_scene load_steps=63 format=3 uid="uid://vaxkewvk14v6"]
 
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/pp_scene.gd" id="1_aeq33"]
 [ext_resource type="Shader" path="res://src/gdscript/shaders/outline.gdshader" id="2_ln53j"]
@@ -9,7 +9,6 @@
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/off_texture_button.gd" id="8_qcoih"]
 [ext_resource type="Texture2D" uid="uid://bk3lb51erle8l" path="res://assets/used_assets/textures/backplates/backplate_1.png" id="9_t41l1"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/info_frame.gd" id="10_f6a2e"]
-[ext_resource type="FontFile" uid="uid://domoiqitlbtwi" path="res://assets/used_assets/fonts/llewie/Llewie.ttf" id="11_22hcs"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/pant_name.gd" id="11_44a1v"]
 [ext_resource type="Texture2D" uid="uid://cd23afs6x11al" path="res://assets/used_assets/textures/screens/screen_1.png" id="12_qiat4"]
 [ext_resource type="Texture2D" uid="uid://b76v2w1on0f0u" path="res://assets/used_assets/textures/icons/chalk_money.png" id="13_088gv"]
@@ -707,8 +706,8 @@ offset_top = 32.077
 offset_right = 504.0
 offset_bottom = 92.077
 grow_horizontal = 2
-theme_override_colors/font_color = Color(1, 1, 1, 0.752941)
-theme_override_fonts/font = ExtResource("11_22hcs")
+theme = ExtResource("48_ayfs5")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 43
 text = "Plant name"
 horizontal_alignment = 1
