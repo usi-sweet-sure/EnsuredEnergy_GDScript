@@ -64,7 +64,7 @@ func _ready():
 	
 	var no_shock = Shock.new("SHOCK_NO_SHOCK_TITLE", "SHOCK_NO_SHOCK_TEXT", "sunrise.png", false)
 
-	shocks = [cold_spell, heat_wave, glaciers_melting, no_shock, severe_weather, mass_immigration, renewable_support]
+	shocks = [cold_spell, heat_wave, glaciers_melting, no_shock, severe_weather, renewable_support]
 	shocks_full = shocks.duplicate()
 	shocks.shuffle()
 	
