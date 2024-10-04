@@ -136,43 +136,43 @@ var powerplants_min_upgrades: Array[int] = [
 # MUST BE in the same order as EngineTypeIds
 var powerplants_upgrade_factors_for_production_costs: Array[float] = [
 	0.25, # Solar
-	0.25, # Wind
-	0.25, # Gas
+	0.5, # Wind
+	0.5, # Gas
 	0.25, # Waste
-	0.25, # Biomass
-	0.25, # Biogas
-	0.25, # Nuclear
-	0.25, # Carbon sequestration
-	0.25, # Hydro
-	0.25, # River
+	0.5, # Biomass
+	0.5, # Biogas
+	0.1, # Nuclear
+	0.5, # Carbon sequestration
+	0.1, # Hydro
+	0.1, # River
 ]
 
 # MUST BE in the same order as EngineTypeIds
 var powerplants_upgrade_factors_for_emissions: Array[float] = [
-	0.5, # Solar
+	0.25, # Solar
 	0.5, # Wind
 	0.5, # Gas
-	0.5, # Waste
+	0.25, # Waste
 	0.5, # Biomass
 	0.5, # Biogas
-	0.5, # Nuclear
+	0.1, # Nuclear
 	0.5, # Carbon sequestration
-	0.5, # Hydro
-	0.5, # River
+	0.1, # Hydro
+	0.1, # River
 ]
 
 # MUST BE in the same order as EngineTypeIds
 var powerplants_upgrade_factors_for_land_use: Array[float] = [
-	0.5, # Solar
+	0.25, # Solar
 	0.5, # Wind
 	0.5, # Gas
-	0.5, # Waste
+	0.25, # Waste
 	0.5, # Biomass
 	0.5, # Biogas
-	0.5, # Nuclear
+	0.1, # Nuclear
 	0.5, # Carbon sequestration
-	0.5, # Hydro
-	0.5, # River
+	0.1, # Hydro
+	0.1, # River
 ]
 
 # MUST BE in the same order as EngineTypeIds
@@ -325,6 +325,8 @@ func _on_request_finished(_result, _response_code, _headers, _body):
 			_store_powerplant_metrics(type)
 			
 		powerplants_metrics_updated.emit(powerplants_metrics)
+		Context.http.request_completed.disconnect(_on_request_finished)
+		
 
 
 func _store_powerplant_metrics(engine_type_id: EngineTypeIds):
@@ -367,12 +369,17 @@ func _store_powerplant_metrics(engine_type_id: EngineTypeIds):
 		capacity = capacity / 100.0 / 3.0 # there's 3 nuclear plants
 		emissions /= 3.0
 		land_use /= 3.0
-		production_cost = production_cost / 10.0 / 3.0
+		production_cost = production_cost / 3.0
 	elif engine_type_id == EngineTypeIds.HYDRO || engine_type_id == EngineTypeIds.RIVER:
 		capacity = capacity / 100.0 / 2.0
 		emissions /= 4.0 # needs to divide by the number of water plants
 		land_use /= 4.0
-		production_cost = production_cost / 10.0 / 4.0
+		production_cost = production_cost / 4.0
+	elif engine_type_id == EngineTypeIds.SOLAR || engine_type_id == EngineTypeIds.WASTE:
+		capacity = capacity / 100.0 / 4.0
+		emissions /= 4.0 # needs to divide by the number of water plants
+		land_use /= 4.0
+		production_cost = production_cost / 4.0
 	else:
 		capacity /= 100.0
 	
@@ -403,8 +410,6 @@ func _store_powerplant_metrics(engine_type_id: EngineTypeIds):
 			
 	powerplants_metrics[engine_type_id] = metrics
 	
-	if engine_type_id == EngineTypeIds.WIND:
-		print("wind availability: ", metrics.availability * metrics.capacity)
 
 
 # Update everything that buildings affects like supply, emissions, land_use, etc.

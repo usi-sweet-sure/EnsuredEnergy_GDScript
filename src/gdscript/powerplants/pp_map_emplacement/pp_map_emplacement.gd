@@ -36,8 +36,48 @@ class_name PpMapEmplacement
 		life_span_in_turns = new_value
 		override_life_span = true
 var override_life_span = false
-
-
+@export var upgrade_factor_for_production_costs = -1:
+	set(new_value):
+		upgrade_factor_for_production_costs = new_value
+		override_upgrade_factor_for_production_costs = true
+var override_upgrade_factor_for_production_costs = false
+@export var upgrade_factor_for_emissions = -1:
+	set(new_value):
+		upgrade_factor_for_emissions = new_value
+		override_upgrade_factor_for_emissions = true
+var override_upgrade_factor_for_emissions = false
+@export var upgrade_factor_for_land_use = -1:
+	set(new_value):
+		upgrade_factor_for_land_use = new_value
+		override_upgrade_factor_for_land_use = true
+var override_upgrade_factor_for_land_use = false
+@export var upgrade_factor_for_winter_supply = -1:
+	set(new_value):
+		upgrade_factor_for_winter_supply = new_value
+		override_upgrade_factor_for_winter_supply = true
+var override_upgrade_factor_for_winter_supply = false
+@export var upgrade_factor_for_summer_supply = -1:
+	set(new_value):
+		upgrade_factor_for_summer_supply = new_value
+		override_upgrade_factor_for_summer_supply = true
+var override_upgrade_factor_for_summer_supply = false
+@export var current_upgrade = -1:
+	set(new_value):
+		current_upgrade = new_value
+		override_current_upgrade = true
+var override_current_upgrade = false
+@export var max_upgrade = -1:
+	set(new_value):
+		max_upgrade = new_value
+		override_max_upgrade = true
+var override_max_upgrade = false
+@export var can_upgrade = true:
+	set(new_value):
+		can_upgrade = new_value
+		override_can_upgrade = true
+var override_can_upgrade = false
+		
+		
 @onready var bb_normal = $BbNormal
 @onready var bb_in_construction = $BbInConstruction
 
@@ -94,6 +134,9 @@ func _on_powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMe
 		var new_metrics = metrics.copy()
 		override_metrics(new_metrics)
 		
+		if new_metrics.type == PowerplantsManager.EngineTypeIds.SOLAR:
+			print(new_metrics.max_upgrade)
+		
 		if new_metrics.build_time_in_turns > 0:
 			MoneyManager.building_costs += new_metrics.building_costs
 			new_metrics.construction_started_on_turn = Gameloop.current_turn
@@ -113,6 +156,18 @@ func _on_powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMe
 			pp_scene.set_metrics(new_metrics)
 			pp_scene.powerplant_delete_requested.connect(_on_powerplant_delete_requested)
 			pp_scene.activate()
+			
+			if new_metrics.current_upgrade > 0:
+				var target_upgrade = new_metrics.current_upgrade
+				new_metrics.current_upgrade = 0
+				new_metrics.active = true
+				pp_scene.set_metrics(new_metrics)
+				
+				var count = 1
+				
+				while count <= target_upgrade:
+					pp_scene._on_button_plus_pressed()
+					count += 1
 			
 			
 # Connected to "powerplant_delete_requested" emitted by "pp_scene.tscn"
@@ -146,8 +201,34 @@ func _build_on_start(metrics: Array[PowerplantMetrics]):
 func override_metrics(metrics: PowerplantMetrics):
 	if override_life_span:
 		metrics.life_span_in_turns = life_span_in_turns
+		
+	if override_upgrade_factor_for_production_costs:
+		metrics.upgrade_factor_for_production_costs = upgrade_factor_for_production_costs
+		
+	if override_upgrade_factor_for_emissions:
+		metrics.upgrade_factor_for_emissions = upgrade_factor_for_emissions
+		
+	if override_upgrade_factor_for_land_use:
+		metrics.upgrade_factor_for_land_use = upgrade_factor_for_land_use
+		
+	if override_upgrade_factor_for_winter_supply:
+		metrics.upgrade_factor_for_winter_supply = upgrade_factor_for_winter_supply
+		
+	if override_upgrade_factor_for_summer_supply:
+		metrics.upgrade_factor_for_summer_supply = upgrade_factor_for_summer_supply
 
-
+	if override_max_upgrade:
+		metrics.max_upgrade = max_upgrade
+	
+	if override_current_upgrade:
+		metrics.current_upgrade = current_upgrade
+		
+		
+	if override_can_upgrade:
+		metrics.can_upgrade = can_upgrade
+		
+		
+		
 func _on_powerplant_construction_ended(metrics: PowerplantMetrics):
 	metrics.build_time_in_turns = 0
 	metrics.building_costs = 0 # already paid when the construction started

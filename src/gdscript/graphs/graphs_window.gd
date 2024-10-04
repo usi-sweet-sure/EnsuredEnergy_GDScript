@@ -57,7 +57,7 @@ func _set_graph_context(context_name: String):
 			x_axis_min_value = Gameloop.start_year
 			x_axis_max_value = Gameloop.start_year + (Gameloop.total_number_of_turns * Gameloop.years_in_a_turn)
 			y_axis_min_value = 0
-			y_axis_max_value = 250
+			y_axis_max_value = 150
 			_draw_base_graph(Gameloop.years_in_a_turn, 10)
 			_add_data_set_to_graph("land_use", Color(0.663, 0.929, 0.416))
 		"emissions":

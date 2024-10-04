@@ -98,6 +98,7 @@ func get_leaderboard_from_model():
 	if error != OK:
 		push_error("http error")
 		
+		
 func get_rank():
 	rank = true
 	var url = "https://sure.euler.usi.ch/json.php?mth=rnk&res_id={res_id}"
@@ -105,7 +106,6 @@ func get_rank():
 	var error = http.request(url.format({"res_id": res_id}))
 	if error != OK:
 		push_error("http error")
-		
 	
 	
 #handle response

@@ -153,7 +153,7 @@ func _on_next_turn():
 	MoneyManager.set_money_for_new_turn()
 	ShockManager.pick_shock()
 	ShockManager.apply_shock()
-	#Context.get_demand_from_model() #S. Not sure where to put this and the line doesnt update
+	Context.get_demand_from_model() #S. Not sure where to put this and the line doesnt update
 	
 
 func _send_send_parameters_to_model():

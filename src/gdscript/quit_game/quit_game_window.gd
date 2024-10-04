@@ -36,10 +36,12 @@ func _on_confirm_button_pressed():
 		
 		# Since we can't close the tab, we display a black screen to show that the game is dead
 		black_screen.show()
-		get_tree().quit()
+		Context.get_rank()
+		get_tree().create_timer(1).timeout.connect(_on_quit_timeout)
 	else:
 		# Nothing special to do on desktop, we just leave the game
-		get_tree().quit()
+		Context.get_rank()
+		get_tree().create_timer(1).timeout.connect(_on_quit_timeout)
 
 	
 func _on_cancel_button_pressed():
@@ -67,3 +69,7 @@ func _before_unload_callback(args):
 	js_event.returnValue = ''
 	
 	SurveyManager.open_back_to_survey_tab()
+
+
+func _on_quit_timeout():
+	get_tree().quit()
