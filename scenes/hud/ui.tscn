@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/UI Elements/Button-Next-Normal.png" id="2_aobed"]
 [ext_resource type="Texture2D" uid="uid://ccsapuvkqqt1b" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0009_Profile-metal-base.png" id="2_nu7y6"]
+[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/Fonts/label_themes.tres" id="3_8s8ds"]
 [ext_resource type="PackedScene" uid="uid://d2hyunjbx7qb7" path="res://scenes/hud/energy_bar.tscn" id="3_fm1y6"]
 [ext_resource type="Texture2D" uid="uid://biq6v1m7nc6l" path="res://assets/UI Elements/Button-Next-Press.png" id="3_qtdni"]
 [ext_resource type="Script" path="res://src/gdscript/hud/open_settings_button.gd" id="4_8mw6h"]
@@ -13,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://60dl810b25fd" path="res://assets/UI Elements/Button-press.png" id="5_hh5pc"]
 [ext_resource type="PackedScene" uid="uid://c81iji81uc4g7" path="res://scenes/hud/import.tscn" id="5_ps4b6"]
 [ext_resource type="PackedScene" uid="uid://885lty3v1qbq" path="res://scenes/windows/shock.tscn" id="5_tj765"]
-[ext_resource type="FontFile" uid="uid://domoiqitlbtwi" path="res://assets/used_assets/fonts/llewie/Llewie.ttf" id="7_77kb8"]
 [ext_resource type="Texture2D" uid="uid://cgf1xjsx0mfot" path="res://assets/UI Elements/Button-Next-Base.png" id="7_g7ih8"]
 [ext_resource type="PackedScene" uid="uid://jj476u8yn2g8" path="res://scenes/windows/window.tscn" id="7_yu7g8"]
 [ext_resource type="Texture2D" uid="uid://en44frv5c6jy" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0014_graphs-symbol.png" id="9_01q4h"]
@@ -778,8 +778,8 @@ offset_left = 65.0
 offset_top = 18.0
 offset_right = 215.0
 offset_bottom = 44.0
-theme_override_colors/font_color = Color(1, 1, 1, 0.831373)
-theme_override_fonts/font = ExtResource("7_77kb8")
+theme = ExtResource("3_8s8ds")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 14
 text = "POLICIES"
 horizontal_alignment = 1
@@ -794,8 +794,8 @@ offset_left = 44.0
 offset_top = 18.0
 offset_right = 132.0
 offset_bottom = 44.0
+theme = ExtResource("3_8s8ds")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("7_77kb8")
 theme_override_font_sizes/font_size = 14
 text = "GRAPHS"
 horizontal_alignment = 1
@@ -809,8 +809,8 @@ offset_left = 40.0
 offset_top = 141.0
 offset_right = 240.0
 offset_bottom = 167.0
-theme_override_colors/font_color = Color(1, 1, 1, 0.831373)
-theme_override_fonts/font = ExtResource("7_77kb8")
+theme = ExtResource("3_8s8ds")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 14
 text = "RESOURCES"
 horizontal_alignment = 1
@@ -1311,8 +1311,7 @@ offset_right = 202.0
 offset_bottom = 49.0
 grow_horizontal = 2
 theme = ExtResource("70_2ktfd")
-theme_override_colors/font_color = Color(1, 1, 1, 0.960784)
-theme_override_fonts/font = ExtResource("7_77kb8")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "BORROW_MONEY_TITLE"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1403,8 +1402,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("70_2ktfd")
-theme_override_colors/font_color = Color(1, 1, 1, 0.960784)
-theme_override_fonts/font = ExtResource("7_77kb8")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "BORROW_MONEY_APPLY"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1562,8 +1560,8 @@ offset_left = 166.0
 offset_top = 256.0
 offset_right = 246.0
 offset_bottom = 294.0
+theme = ExtResource("3_8s8ds")
 theme_override_colors/font_color = Color(1, 1, 1, 0.992157)
-theme_override_fonts/font = ExtResource("7_77kb8")
 theme_override_font_sizes/font_size = 19
 theme_override_styles/background = SubResource("StyleBoxFlat_uqc36")
 theme_override_styles/fill = SubResource("StyleBoxFlat_mru71")
@@ -1706,8 +1704,8 @@ offset_top = -35.0
 offset_right = 112.0
 offset_bottom = -14.0
 size_flags_horizontal = 0
-theme_override_colors/font_color = Color(1, 1, 1, 0.831373)
-theme_override_fonts/font = ExtResource("7_77kb8")
+theme = ExtResource("3_8s8ds")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 14
 text = "ENVIRONMENT"
 horizontal_alignment = 1
@@ -1842,8 +1840,8 @@ offset_top = -35.0
 offset_right = 112.0
 offset_bottom = -14.0
 size_flags_horizontal = 0
-theme_override_colors/font_color = Color(1, 1, 1, 0.831373)
-theme_override_fonts/font = ExtResource("7_77kb8")
+theme = ExtResource("3_8s8ds")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 14
 text = "EMISSIONS"
 horizontal_alignment = 1
@@ -2014,8 +2012,8 @@ offset_left = -123.0
 offset_top = -30.0
 offset_right = 55.0
 offset_bottom = -9.0
-theme_override_colors/font_color = Color(1, 1, 1, 0.831373)
-theme_override_fonts/font = ExtResource("7_77kb8")
+theme = ExtResource("3_8s8ds")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 14
 text = "IMPORT"
 horizontal_alignment = 1
@@ -2035,8 +2033,8 @@ offset_left = 22.0
 offset_top = -185.0
 offset_right = 190.0
 offset_bottom = -164.0
-theme_override_colors/font_color = Color(1, 1, 1, 0.752941)
-theme_override_fonts/font = ExtResource("7_77kb8")
+theme = ExtResource("3_8s8ds")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 14
 text = "ENERGY"
 horizontal_alignment = 1
@@ -2229,8 +2227,8 @@ offset_right = -10.0
 offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_8s8ds")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("7_77kb8")
 text = "NEXT_TURN_BUTTON_LABEL"
 horizontal_alignment = 1
 vertical_alignment = 1

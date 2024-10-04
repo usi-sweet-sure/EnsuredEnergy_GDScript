@@ -15,8 +15,8 @@
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/center_frame/info_screen_2/bottom_label.gd" id="8_4nde8"]
 [ext_resource type="Texture2D" uid="uid://ddd6qplj5q6p4" path="res://assets/UI Elements/Policies_Button_Hole.png" id="8_iiaj0"]
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/vote_zone/vote_zone.gd" id="9_21wnm"]
-[ext_resource type="FontFile" uid="uid://domoiqitlbtwi" path="res://assets/used_assets/fonts/llewie/Llewie.ttf" id="14_gxya2"]
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/start_campaign_zone/start_campaign_zone.gd" id="15_11d6x"]
+[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/Fonts/label_themes.tres" id="16_fydsq"]
 [ext_resource type="Texture2D" uid="uid://cd23afs6x11al" path="res://assets/used_assets/textures/screens/screen_1.png" id="17_hftqp"]
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/center_frame/info_screen_1/general_explanation.gd" id="17_uqeid"]
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/campaing_screen_label.gd" id="18_tfmt2"]
@@ -595,8 +595,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 0.960784)
-theme_override_fonts/font = ExtResource("14_gxya2")
+theme = ExtResource("16_fydsq")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "VOTE"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -633,8 +633,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 0.960784)
-theme_override_fonts/font = ExtResource("14_gxya2")
+theme = ExtResource("16_fydsq")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "START_CAMPAIGN"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -656,8 +656,7 @@ offset_top = -367.0
 offset_right = 66.0
 offset_bottom = -315.0
 theme = ExtResource("3_yevmu")
-theme_override_colors/font_color = Color(1, 1, 1, 0.960784)
-theme_override_fonts/font = ExtResource("14_gxya2")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 15
 text = "POLICIES_ENVIRONMENTAL_CAMPAIGN"
 horizontal_alignment = 1
@@ -669,8 +668,8 @@ offset_left = -62.0
 offset_top = -45.0
 offset_right = 66.0
 offset_bottom = -19.0
-theme_override_colors/font_color = Color(1, 1, 1, 0.960784)
-theme_override_fonts/font = ExtResource("14_gxya2")
+theme = ExtResource("16_fydsq")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 15
 text = "POLICIES"
 horizontal_alignment = 1
@@ -802,8 +801,7 @@ offset_top = -364.0
 offset_right = 62.0
 offset_bottom = -312.0
 theme = ExtResource("3_yevmu")
-theme_override_colors/font_color = Color(1, 1, 1, 0.960784)
-theme_override_fonts/font = ExtResource("14_gxya2")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 15
 text = "POLICIES_ENERGY_CAMPAIGN"
 horizontal_alignment = 1
@@ -815,8 +813,8 @@ offset_left = -58.0
 offset_top = -44.0
 offset_right = 62.0
 offset_bottom = -18.0
-theme_override_colors/font_color = Color(1, 1, 1, 0.960784)
-theme_override_fonts/font = ExtResource("14_gxya2")
+theme = ExtResource("16_fydsq")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 15
 text = "POLICIES"
 horizontal_alignment = 1

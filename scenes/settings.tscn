@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/settings_canvas.gd" id="1_q4she"]
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/close_button.gd" id="2_q0sqg"]
 [ext_resource type="Texture2D" uid="uid://cvwhghlarnumd" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0004_Settings-metal-base.png" id="3_s2phf"]
-[ext_resource type="FontFile" uid="uid://domoiqitlbtwi" path="res://assets/used_assets/fonts/llewie/Llewie.ttf" id="4_8wnv4"]
+[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/Fonts/label_themes.tres" id="4_u1vjd"]
 [ext_resource type="Texture2D" uid="uid://xmi4fk7xmp5j" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0032_Ball-Slider.png" id="5_0fgff"]
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/volume_slider.gd" id="6_rdjob"]
 [ext_resource type="Texture2D" uid="uid://fe0i52vl7ck6" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0006_Slider-bar-horizontal.png" id="7_cpyrf"]
@@ -164,8 +164,7 @@ offset_top = -6.0
 offset_right = 174.5
 offset_bottom = 85.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0.975918, 1, 0.829976, 0.960784)
-theme_override_fonts/font = ExtResource("4_8wnv4")
+theme_override_colors/font_color = Color(0.976471, 1, 1, 1)
 theme_override_font_sizes/font_size = 38
 text = "ENSURED 
 ENERGY"
@@ -187,8 +186,8 @@ theme_override_constants/separation = 0
 [node name="ScreenOption" type="CheckBox" parent="Control/SettingsBox/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
-theme_override_colors/font_color = Color(1, 1, 1, 0.960784)
-theme_override_fonts/font = ExtResource("4_8wnv4")
+theme = ExtResource("4_u1vjd")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 button_pressed = true
 text = "FULLSCREEN"
 icon_alignment = 2
@@ -198,8 +197,8 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="Control/SettingsBox/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("4_u1vjd")
 theme_override_colors/font_color = Color(1, 1, 1, 0.960784)
-theme_override_fonts/font = ExtResource("4_8wnv4")
 text = "MUSIC"
 
 [node name="VolMusic" type="HSlider" parent="Control/SettingsBox/VBoxContainer" groups=["draggables"]]
@@ -228,8 +227,8 @@ centered = false
 
 [node name="Label2" type="Label" parent="Control/SettingsBox/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 0.960784)
-theme_override_fonts/font = ExtResource("4_8wnv4")
+theme = ExtResource("4_u1vjd")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "SFX"
 
 [node name="VolSound" type="HSlider" parent="Control/SettingsBox/VBoxContainer" groups=["draggables"]]
@@ -293,8 +292,8 @@ offset_right = -9.0
 offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 0.960784)
-theme_override_fonts/font = ExtResource("4_8wnv4")
+theme = ExtResource("4_u1vjd")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "LANG"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -321,8 +320,8 @@ offset_right = -10.0
 offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 0.960784)
-theme_override_fonts/font = ExtResource("4_8wnv4")
+theme = ExtResource("4_u1vjd")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "INSTRUCTIONS"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -347,8 +346,8 @@ offset_right = -11.0
 offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 0.960784)
-theme_override_fonts/font = ExtResource("4_8wnv4")
+theme = ExtResource("4_u1vjd")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "CREDITS"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -568,8 +567,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("19_d2swd")
-theme_override_colors/font_color = Color(1, 1, 1, 0.960784)
-theme_override_fonts/font = ExtResource("4_8wnv4")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "QUIT_CONFIRM_BUTTON_TEXT"
 horizontal_alignment = 1
 vertical_alignment = 1

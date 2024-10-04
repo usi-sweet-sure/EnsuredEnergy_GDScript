@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://src/gdscript/starting_screen/player_name.gd" id="6_h11gm"]
 [ext_resource type="Texture2D" uid="uid://cvr8ptliyw7oc" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0013_1-slot-button-hole.png" id="9_j0rns"]
 [ext_resource type="Script" path="res://src/gdscript/starting_screen/play_button.gd" id="9_oo472"]
-[ext_resource type="FontFile" uid="uid://domoiqitlbtwi" path="res://assets/used_assets/fonts/llewie/Llewie.ttf" id="11_t76u7"]
+[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/Fonts/label_themes.tres" id="11_ta118"]
 [ext_resource type="Texture2D" uid="uid://cqekiqjn8gvh7" path="res://assets/UI Elements/Button-Play-normal.png" id="11_v1gn1"]
 [ext_resource type="Texture2D" uid="uid://c5tgx0yng476j" path="res://assets/UI Elements/Button-Play-press.png" id="12_2e306"]
 [ext_resource type="Texture2D" uid="uid://id0egjudmljv" path="res://assets/UI Elements/Blueprint_normal.png" id="12_eqfmq"]
@@ -146,8 +146,8 @@ offset_right = -12.0
 offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 0.960784)
-theme_override_fonts/font = ExtResource("11_t76u7")
+theme = ExtResource("11_ta118")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "PLAY"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -189,8 +189,8 @@ offset_right = -24.0
 offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 0.960784)
-theme_override_fonts/font = ExtResource("11_t76u7")
+theme = ExtResource("11_ta118")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "LANG"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -232,8 +232,8 @@ offset_left = 12.0
 offset_right = -12.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 0.960784)
-theme_override_fonts/font = ExtResource("11_t76u7")
+theme = ExtResource("11_ta118")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "CREDITS"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -260,7 +260,6 @@ offset_bottom = -24.0
 theme = ExtResource("3_l0e0n")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/line_spacing = 4
-theme_override_fonts/font = ExtResource("11_t76u7")
 text = "HOLD"
 autowrap_mode = 3
 uppercase = true
@@ -273,7 +272,6 @@ offset_bottom = 135.0
 theme = ExtResource("3_l0e0n")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/line_spacing = 4
-theme_override_fonts/font = ExtResource("11_t76u7")
 text = "SCROLL"
 autowrap_mode = 3
 uppercase = true
