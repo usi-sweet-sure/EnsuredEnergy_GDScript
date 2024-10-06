@@ -16,7 +16,16 @@ func _ready():
 	PowerplantsManager.build_button_normal_toggled.connect(_on_build_button_toggled)
 	PowerplantsManager.build_button_in_construction_toggled.connect(_on_build_button_in_construction_toggled)
 	PowerplantsManager.pp_scene_toggled.connect(_on_pp_scene_toggled)
-
+	
+	# Get the image from the texture normal
+	var image = texture_normal.get_image()
+	# Create the BitMap
+	var bitmap = BitMap.new()
+	# Fill it from the image alpha
+	bitmap.create_from_image_alpha(image)
+	# Assign it to the mask
+	texture_click_mask = bitmap
+	
 
 func _on_toggled(toggled_on: bool):
 	if toggled_on:
