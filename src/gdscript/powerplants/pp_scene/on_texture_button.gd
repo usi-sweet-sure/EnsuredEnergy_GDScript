@@ -34,8 +34,8 @@ func _on_close_button_mouse_exited():
 	set_modulate(Color(1, 1, 1))
 
 
-func _on_pp_scene_texture_on_changed(image):
-	texture_normal = image
+func _on_pp_scene_texture_on_changed(image: String):
+	texture_normal = load(image)
 	
 	## Click mask
 	#var bitmap = BitMap.new()
