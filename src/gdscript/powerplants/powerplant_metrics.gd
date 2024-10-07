@@ -1,4 +1,3 @@
-# Used as a "custom type" to provide autocompletion
 extends Resource
 
 class_name PowerplantMetrics
@@ -30,19 +29,7 @@ var upgrade_factor_for_winter_supply: float
 var upgrade_factor_for_summer_supply: float
 var upgrade_cost: float
 var can_upgrade: bool
-# Each entry is the history of what happened to the powerplant during the turn
-# corresponding to the index.
-# A turn history is an Array of 1, -1, true or false, or an emptry array if nothing
-# happened.
-# For example, history[1] = [1, 1, -1, false, true, false, true]
-# means the pp was upgraded twice, downgraded once, then turned off, turned on,
-# turned off and finally turned back on. So the history for turn 2, would mean
-# that the pp was upgraded once.
-# If it was history[1] = [1, 1, -1, false, true, false],
-# the history would mean that the pp was upgraded once, and then turned off.
-# When informing the model at the end of turn 2, the information we would give it
-# would then be that the pp was simply turned off
-var history: Array
+
 
 func _init(
 		type: PowerplantsManager.EngineTypeIds,

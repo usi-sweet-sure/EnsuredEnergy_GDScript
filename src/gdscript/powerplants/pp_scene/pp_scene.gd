@@ -10,6 +10,10 @@ signal metrics_updated(metrics: PowerplantMetrics)
 signal show_info_frame
 signal hide_info_frame
 signal powerplant_delete_requested(metrics: PowerplantMetrics)
+signal powerplant_activated(metrics: PowerplantMetrics)
+signal powerplant_deactivated(metrics: PowerplantMetrics)
+signal powerplant_upgraded(metrics: PowerplantMetrics)
+signal powerplant_downgraded(metrics: PowerplantMetrics)
 signal texture_on_changed(image: Image)
 signal texture_off_changed(image: Image)
 
@@ -30,13 +34,21 @@ func set_metrics(metrics: PowerplantMetrics):
 
 func activate():
 	if metrics.can_activate:
-		metrics.active = true
-		metrics_updated.emit(metrics)
+		var was_activated = metrics.active
+		
+		if not was_activated:
+			metrics.active = true
+			metrics_updated.emit(metrics)
+			powerplant_activated.emit(metrics)
 	
 
 func deactivate():
-	metrics.active = false
-	metrics_updated.emit(metrics)
+	var was_deactivated = not metrics.active
+	
+	if not was_deactivated:
+		metrics.active = false
+		metrics_updated.emit(metrics)
+		powerplant_deactivated.emit(metrics)
 
 
 func _on_close_button_pressed():
@@ -60,8 +72,10 @@ func _on_pp_show_info_frame_requested():
 
 
 func _on_switch_toggled(toggled_on: bool):
-	metrics.active = toggled_on
-	metrics_updated.emit(metrics)
+	if toggled_on:
+		activate()
+	else:
+		deactivate()
 
 
 func _on_next_turn():
@@ -69,10 +83,8 @@ func _on_next_turn():
 	
 	var shutting_down_in = metrics.life_span_in_turns - (Gameloop.current_turn - metrics.built_on_turn)
 	if shutting_down_in == 0:
-		metrics.active = false
 		metrics.can_activate = false
-	
-	metrics_updated.emit(metrics)
+		deactivate()
 
 
 func _on_button_plus_pressed():
@@ -105,6 +117,7 @@ func _on_button_plus_pressed():
 		MoneyManager.building_costs += metrics.upgrade_cost
 		
 		metrics_updated.emit(metrics)
+		powerplant_upgraded.emit(metrics)
 	else:
 		floating_message.stop()
 		floating_message.float_up()
@@ -139,6 +152,7 @@ func _on_button_minus_pressed():
 	MoneyManager.building_costs -= metrics.upgrade_cost
 	
 	metrics_updated.emit(metrics)
+	powerplant_downgraded.emit(metrics)
 
 
 func _on_metrics_updated(metrics):

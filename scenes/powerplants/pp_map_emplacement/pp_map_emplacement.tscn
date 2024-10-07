@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bp4i40e8i68xv"]
+[gd_scene load_steps=9 format=3 uid="uid://bp4i40e8i68xv"]
 
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_map_emplacement.gd" id="1_unu4e"]
 [ext_resource type="PackedScene" uid="uid://dbdgpa4pfgryb" path="res://scenes/powerplants/pp_map_emplacement/build_button/bb_normal.tscn" id="2_h8dd4"]
 [ext_resource type="PackedScene" uid="uid://d2hhtw1popthi" path="res://scenes/powerplants/pp_map_emplacement/build_button/bb_in_construction.tscn" id="3_xoig2"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/history_label.gd" id="4_44y7j"]
 
-[sub_resource type="Shader" id="Shader_u1ppj"]
+[sub_resource type="Shader" id="Shader_khg5c"]
 resource_local_to_scene = true
 code = "shader_type canvas_item;
 
@@ -48,14 +49,14 @@ void fragment() {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kixpu"]
 resource_local_to_scene = true
-shader = SubResource("Shader_u1ppj")
+shader = SubResource("Shader_khg5c")
 shader_parameter/line_color = Vector4(1, 1, 1, 1)
 shader_parameter/line_thickness = 1.0
 shader_parameter/frequency = 10.0
 shader_parameter/phase_speed = 5.0
 shader_parameter/show = false
 
-[sub_resource type="Shader" id="Shader_040o1"]
+[sub_resource type="Shader" id="Shader_iy3uj"]
 resource_local_to_scene = true
 code = "shader_type canvas_item;
 
@@ -99,14 +100,14 @@ void fragment() {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g2jol"]
 resource_local_to_scene = true
-shader = SubResource("Shader_040o1")
+shader = SubResource("Shader_iy3uj")
 shader_parameter/line_color = Vector4(1, 1, 1, 1)
 shader_parameter/line_thickness = 1.0
 shader_parameter/frequency = 10.0
 shader_parameter/phase_speed = 1.0
 shader_parameter/show = false
 
-[node name="PpMapEmplacement" type="Node2D"]
+[node name="PpMapEmplacement" type="Node2D" groups=["map_emplacements"]]
 script = ExtResource("1_unu4e")
 
 [node name="BbNormal" parent="." instance=ExtResource("2_h8dd4")]
@@ -116,6 +117,16 @@ material = SubResource("ShaderMaterial_kixpu")
 visible = false
 material = SubResource("ShaderMaterial_g2jol")
 
+[node name="Label" type="Label" parent="."]
+z_index = 1
+offset_left = 96.0
+offset_top = 368.0
+offset_right = 136.0
+offset_bottom = 437.0
+theme_override_font_sizes/font_size = 50
+script = ExtResource("4_44y7j")
+
+[connection signal="history_updated" from="." to="Label" method="_on_pp_map_emplacement_history_updated"]
 [connection signal="toggled" from="BbNormal" to="." method="_on_bb_normal_toggled"]
 [connection signal="powerplant_cancel_construction_requested" from="BbInConstruction" to="." method="_on_powerplant_cancel_construction_requested"]
 [connection signal="powerplant_construction_ended" from="BbInConstruction" to="." method="_on_powerplant_construction_ended"]

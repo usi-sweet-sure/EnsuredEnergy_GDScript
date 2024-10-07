@@ -312,6 +312,7 @@ var powerplants_metrics_id = [
 
 func _ready():
 	Context.http.request_completed.connect(_on_request_finished)
+	Gameloop.next_turn.connect(_on_next_turn)
 
 
 func _on_request_finished(_result, _response_code, _headers, _body):
@@ -443,3 +444,11 @@ func update_buildings_impact():
 	Gameloop.co2_emissions = total_emissions
 	Gameloop.sequestrated_co2 = total_emissions_sequestrated
 	Gameloop.land_use = total_land_use
+	
+	
+func _on_next_turn():
+	for map_emplacement in get_tree().get_nodes_in_group("map_emplacements"):
+		var history: MapEmplacementHistory = map_emplacement.history
+		var what_happened = history.get_history_meaning(Gameloop.current_turn - 1)
+		
+		

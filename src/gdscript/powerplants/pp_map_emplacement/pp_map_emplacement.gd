@@ -2,6 +2,8 @@ extends Node2D
 
 class_name PpMapEmplacement
 
+signal history_updated(history: MapEmplacementHistory)
+
 # Editor will enumerate as 0, 1 and 2.
 # MUST BE in same order as PowerplantManager.EngineTypeIds
 @export_enum(
@@ -85,10 +87,12 @@ var can_build: Array[PowerplantsManager.EngineTypeIds] = []
 # Used to save the name of the pp node when it's built, to know it's name to delete it
 # later
 var powerplant_node_name: String = ""
-
+var history: MapEmplacementHistory
 
 func _ready():
 	PowerplantsManager.powerplant_build_requested.connect(_on_powerplant_build_requested)
+	history = MapEmplacementHistory.new()
+	history.history_updated.connect(_on_history_updated)
 	
 	# Will be disconnected after the first signal emition
 	if build_on_start != 10: # 10 = Nothing
@@ -142,9 +146,11 @@ func _on_powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMe
 			new_metrics.construction_started_on_turn = Gameloop.current_turn
 			bb_in_construction.set_metrics(new_metrics)
 			bb_in_construction.show()
+			history.pp_construction_started(new_metrics)
+			
 		else:
 			MoneyManager.building_costs += new_metrics.building_costs
-			# This was never set if == 0.
+			# == 0 means it was not set yet.
 			# It's already set when the pp takes multiple turns to build
 			if new_metrics.construction_started_on_turn == 0:
 				new_metrics.construction_started_on_turn = Gameloop.current_turn
@@ -154,6 +160,12 @@ func _on_powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMe
 			add_child(pp_scene)
 			powerplant_node_name = pp_scene.name
 			pp_scene.set_metrics(new_metrics)
+			history.pp_built(new_metrics)
+			
+			pp_scene.powerplant_activated.connect(_on_pp_activated)
+			pp_scene.powerplant_deactivated.connect(_on_pp_deactivated)
+			pp_scene.powerplant_upgraded.connect(_on_pp_upgraded)
+			pp_scene.powerplant_downgraded.connect(_on_pp_downgraded)
 			pp_scene.powerplant_delete_requested.connect(_on_powerplant_delete_requested)
 			pp_scene.activate()
 			
@@ -168,11 +180,13 @@ func _on_powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMe
 				while count <= target_upgrade:
 					pp_scene._on_button_plus_pressed()
 					count += 1
-			
-			
+
+
 # Connected to "powerplant_delete_requested" emitted by "pp_scene.tscn"
 func _on_powerplant_delete_requested(metrics: PowerplantMetrics):
 	MoneyManager.building_costs -= metrics.building_costs
+	history.pp_deleted(metrics)
+	
 	var node = get_node(powerplant_node_name)
 	remove_child(node)
 	node.queue_free()
@@ -183,6 +197,8 @@ func _on_powerplant_delete_requested(metrics: PowerplantMetrics):
 
 func _on_powerplant_cancel_construction_requested(metrics: PowerplantMetrics):
 	MoneyManager.building_costs -= metrics.building_costs
+	history.pp_construction_canceled(metrics)
+	
 	bb_in_construction.hide()
 	bb_normal.show()
 	TutorialManager.next_step_requested.emit()
@@ -195,6 +211,9 @@ func _build_on_start(metrics: Array[PowerplantMetrics]):
 	new_metrics.can_delete = false
 	new_metrics.building_costs = 0
 	_on_powerplant_build_requested(self, new_metrics)
+	# We don't want the pp built automatically at the beginning of the game
+	# to count as a user action
+	history.remove_history_for_turn(Gameloop.current_turn)
 	
 
 # Applies the changes made in the editor
@@ -223,13 +242,31 @@ func override_metrics(metrics: PowerplantMetrics):
 	if override_current_upgrade:
 		metrics.current_upgrade = current_upgrade
 		
-		
 	if override_can_upgrade:
 		metrics.can_upgrade = can_upgrade
-		
 		
 		
 func _on_powerplant_construction_ended(metrics: PowerplantMetrics):
 	metrics.build_time_in_turns = 0
 	metrics.building_costs = 0 # already paid when the construction started
 	PowerplantsManager.powerplant_build_requested.emit(self, metrics)
+
+
+func _on_pp_activated(metrics: PowerplantMetrics):
+	history.pp_activated(metrics)
+	
+	
+func _on_pp_deactivated(metrics: PowerplantMetrics):
+	history.pp_deactivated(metrics)
+	
+	
+func _on_pp_upgraded(metrics: PowerplantMetrics):
+	history.pp_upgraded(metrics)
+	
+	
+func _on_pp_downgraded(metrics: PowerplantMetrics):
+	history.pp_downgraded(metrics)
+	
+
+func _on_history_updated(history: MapEmplacementHistory):
+	history_updated.emit(history)
