@@ -4,6 +4,11 @@ class_name PpMapEmplacement
 
 signal history_updated(history: MapEmplacementHistory)
 
+@export var build_button_texture: Texture:
+	set(new_value):
+		build_button_texture = new_value
+		override_bb_texture = true
+var override_bb_texture = false
 # Editor will enumerate as 0, 1 and 2.
 # MUST BE in same order as PowerplantManager.EngineTypeIds
 @export_enum(
@@ -118,7 +123,9 @@ func _ready():
 		can_build.push_back(PowerplantsManager.EngineTypeIds.HYDRO)
 	if river:
 		can_build.push_back(PowerplantsManager.EngineTypeIds.RIVER)
-		
+	
+	if override_bb_texture:
+		bb_normal.texture_normal = build_button_texture
 		
 func _on_bb_normal_toggled(toggled_on: bool):
 	# The build menu listens to this and emits back a build request with necessary,

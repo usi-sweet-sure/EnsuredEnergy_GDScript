@@ -5,7 +5,7 @@ class_name MapEmplacementHistory
 signal history_updated(history: MapEmplacementHistory)
 
 # The actions than can be deducted from history
-enum possible_actions {
+enum PossibleActions {
 	NOTHING_HAPPENED,
 	PP_BUILT,
 	PP_CONSTRUCTION_STARTED,
@@ -148,36 +148,36 @@ func get_history_meaning(turn: int):
 	var turn_history: MapEmplacementTurnHistory = get_history_for_turn(turn)
 	
 	if turn_history == null:
-		return possible_actions.NOTHING_HAPPENED
+		return PossibleActions.NOTHING_HAPPENED
 	else:
 		if turn_history.pp_built:
 			if turn_history.pp_activated == 0:# Deactivated when built
-				return possible_actions.NOTHING_HAPPENED
+				return PossibleActions.NOTHING_HAPPENED
 			elif turn_history.pp_upgrade == 0:
-				return possible_actions.PP_BUILT
+				return PossibleActions.PP_BUILT
 			else:
-				return possible_actions.PP_BUILT_AND_UPGRADED
+				return PossibleActions.PP_BUILT_AND_UPGRADED
 		elif turn_history.pp_construction_started:
-			return possible_actions.PP_CONSTRUCTION_STARTED
+			return PossibleActions.PP_CONSTRUCTION_STARTED
 		else:
 			# Upgraded, downgraded, activated or deactivated, or nothing
 			if turn_history.pp_activated == -1:
-				return possible_actions.PP_DEACTIVATED
+				return PossibleActions.PP_DEACTIVATED
 			elif turn_history.pp_activated == 1:
 				if turn_history.pp_upgrade == 0:
-					return possible_actions.PP_ACTIVATED
+					return PossibleActions.PP_ACTIVATED
 				elif turn_history.pp_upgrade > 0:
-					return possible_actions.PP_ACTIVATED_AND_UPGRADED
+					return PossibleActions.PP_ACTIVATED_AND_UPGRADED
 				else:
-					return possible_actions.PP_ACTIVATED_AND_DOWNGRADED
+					return PossibleActions.PP_ACTIVATED_AND_DOWNGRADED
 			else:
 				if not turn_history.pp_was_active_when_turn_started:
-					return possible_actions.NOTHING_HAPPENED
+					return PossibleActions.NOTHING_HAPPENED
 				else:
 					# Started the turn activated
 					if turn_history.pp_upgrade == 0:
-						return possible_actions.NOTHING_HAPPENED
+						return PossibleActions.NOTHING_HAPPENED
 					elif turn_history.pp_upgrade > 0:
-						return possible_actions.PP_UPGRADED
+						return PossibleActions.PP_UPGRADED
 					else:
-						return possible_actions.PP_DOWNGRADED
+						return PossibleActions.PP_DOWNGRADED

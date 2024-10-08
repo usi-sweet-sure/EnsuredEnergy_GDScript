@@ -448,6 +448,29 @@ func update_buildings_impact():
 func _on_next_turn():
 	for map_emplacement in get_tree().get_nodes_in_group("map_emplacements"):
 		var history: MapEmplacementHistory = map_emplacement.history
-		var what_happened = history.get_history_meaning(Gameloop.current_turn - 1)
+		var history_for_this_turn: MapEmplacementTurnHistory = history.get_history_for_turn(Gameloop.current_turn - 1)
+		var what_happened: MapEmplacementHistory.PossibleActions = history.get_history_meaning(Gameloop.current_turn - 1)
+		
+		match what_happened:
+			MapEmplacementHistory.PossibleActions.NOTHING_HAPPENED:
+				pass
+			MapEmplacementHistory.PossibleActions.PP_BUILT:
+				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_built
+			MapEmplacementHistory.PossibleActions.PP_CONSTRUCTION_STARTED:
+				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_construction_started
+			MapEmplacementHistory.PossibleActions.PP_ACTIVATED:
+				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_activated
+			MapEmplacementHistory.PossibleActions.PP_DEACTIVATED:
+				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_deactivated
+			MapEmplacementHistory.PossibleActions.PP_UPGRADED:
+				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_upgraded
+			MapEmplacementHistory.PossibleActions.PP_DOWNGRADED:
+				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_downgraded
+			MapEmplacementHistory.PossibleActions.PP_BUILT_AND_UPGRADED:
+				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_upgraded
+			MapEmplacementHistory.PossibleActions.PP_ACTIVATED_AND_UPGRADED:
+				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_upgraded
+			MapEmplacementHistory.PossibleActions.PP_ACTIVATED_AND_DOWNGRADED:
+				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_downgraded
 		
 		

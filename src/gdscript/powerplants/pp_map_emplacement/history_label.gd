@@ -7,4 +7,4 @@ func _ready():
 
 func _on_pp_map_emplacement_history_updated(history: MapEmplacementHistory):
 	var what_happened = history.get_history_meaning(Gameloop.current_turn)
-	text = MapEmplacementHistory.possible_actions.keys()[what_happened]
+	text = MapEmplacementHistory.PossibleActions.keys()[what_happened]

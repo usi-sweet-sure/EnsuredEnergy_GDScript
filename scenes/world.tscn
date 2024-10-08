@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ba56oxmvcxpos"]
+[gd_scene load_steps=20 format=3 uid="uid://ba56oxmvcxpos"]
 
 [ext_resource type="Texture2D" uid="uid://dug4cy4mgxa1b" path="res://assets/textures/map/map.jpg" id="1_exly2"]
 [ext_resource type="Texture2D" uid="uid://dnuq60vou7jic" path="res://assets/textures/map/mountains/mountain_0.png" id="2_0wbri"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ex0mlwlymf7k" path="res://assets/textures/map/forests/forest_4.png" id="10_bwdos"]
 [ext_resource type="Texture2D" uid="uid://d0nonmo0jroqa" path="res://assets/textures/map/mountains/mountain_2.png" id="11_c0lk8"]
 [ext_resource type="Texture2D" uid="uid://imn01mt51ob8" path="res://assets/textures/map/forests/forest_5.png" id="12_4trsl"]
+[ext_resource type="Texture2D" uid="uid://cjla34vrrgb7i" path="res://assets/textures/powerplants/bb_normal_water.png" id="13_iyb57"]
 [ext_resource type="Texture2D" uid="uid://buseob4ix0xih" path="res://assets/textures/map/mountains/mountain_3.png" id="13_lqxt0"]
 [ext_resource type="Texture2D" uid="uid://cww2obs22h5na" path="res://assets/textures/map/forests/forest_6.png" id="14_8vk84"]
 [ext_resource type="Texture2D" uid="uid://b0b88h1h3qru2" path="res://assets/textures/map/forests/forest_7.png" id="15_3rssc"]
@@ -124,6 +125,7 @@ texture = ExtResource("10_bwdos")
 
 [node name="PpMapEmplacement14" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(2828, 885)
+build_button_texture = ExtResource("13_iyb57")
 build_on_start = 9
 solar = false
 wind = false
@@ -158,6 +160,7 @@ texture = ExtResource("12_4trsl")
 
 [node name="PpMapEmplacement18" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(1419, 1313)
+build_button_texture = ExtResource("13_iyb57")
 build_on_start = 8
 solar = false
 wind = false
@@ -174,6 +177,7 @@ texture = ExtResource("11_c0lk8")
 
 [node name="PpMapEmplacement19" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(413, 1779)
+build_button_texture = ExtResource("13_iyb57")
 solar = false
 wind = false
 gas = false
@@ -189,6 +193,7 @@ texture = ExtResource("13_lqxt0")
 
 [node name="PpMapEmplacement20" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(-61, 1805)
+build_button_texture = ExtResource("13_iyb57")
 build_on_start = 8
 solar = false
 wind = false
@@ -201,6 +206,7 @@ river = true
 
 [node name="PpMapEmplacement21" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(1650, 1711)
+build_button_texture = ExtResource("13_iyb57")
 build_on_start = 9
 solar = false
 wind = false
