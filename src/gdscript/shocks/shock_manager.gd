@@ -97,6 +97,7 @@ func pick_shock():
 		if Gameloop.current_turn == 2 and not random_shock.show_shock_window:
 			Gameloop.enable_graphs_button.emit()
 
+
 func apply_shock():
 	if Gameloop.most_recent_shock != null:
 		Gameloop.most_recent_shock.apply()
@@ -138,71 +139,42 @@ func increase_demand(longterm: bool):
 			transport_demand = float(i["tj"])
 		if i["prm_id"] == "67":
 			agriculture_demand = float(i["tj"])
-	Context.prm_id = 7
-	Context.yr = Gameloop.year_list[Gameloop.current_turn-1]
-	Context.tj = household_demand * 5.0 / 100.0
-	Context.send_parameters_to_model()
-	await Context.http.request_completed
-	Context.prm_id = 22
-	Context.tj = industry_demand * 5.0 / 100.0
-	Context.send_parameters_to_model()
-	await Context.http.request_completed
-	Context.prm_id = 37
-	Context.tj = service_demand * 5.0 / 100.0
-	Context.send_parameters_to_model()
-	await Context.http.request_completed
-	Context.prm_id = 52
-	Context.tj = transport_demand * 5.0 / 100.0
-	Context.send_parameters_to_model()
-	await Context.http.request_completed
-	Context.prm_id = 67
-	Context.tj = agriculture_demand * 5.0 / 100.0
-	Context.send_parameters_to_model()
+	var year = Gameloop.year_list[Gameloop.current_turn-1]
+
+	Context.send_parameters_to_model(Context.res_id, year, 7, household_demand * 5.0 / 100.0)
+	await Context.parameters_sent_to_model
+	Context.send_parameters_to_model(Context.res_id, year, 22, industry_demand * 5.0 / 100.0)
+	await Context.parameters_sent_to_model
+	Context.send_parameters_to_model(Context.res_id, year, 37, service_demand * 5.0 / 100.0)
+	await Context.parameters_sent_to_model
+	Context.send_parameters_to_model(Context.res_id, year, 52, transport_demand * 5.0 / 100.0)
+	await Context.parameters_sent_to_model
+	Context.send_parameters_to_model(Context.res_id, year, 67, agriculture_demand * 5.0 / 100.0)
 	if longterm:
-		await Context.http.request_completed
-		Context.prm_id = 7
-		Context.yr = Gameloop.year_list[Gameloop.current_turn]
-		Context.tj = -household_demand * 5.0 / 100.0
-		Context.send_parameters_to_model()
-		await Context.http.request_completed
-		Context.prm_id = 22
-		Context.tj = -industry_demand * 5.0 / 100.0
-		Context.send_parameters_to_model()
-		await Context.http.request_completed
-		Context.prm_id = 37
-		Context.tj = -service_demand * 5.0 / 100.0
-		Context.send_parameters_to_model()
-		await Context.http.request_completed
-		Context.prm_id = 52
-		Context.tj = -transport_demand * 5.0 / 100.0
-		Context.send_parameters_to_model()
-		await Context.http.request_completed
-		Context.prm_id = 67
-		Context.tj = -agriculture_demand * 5.0 / 100.0
-		Context.send_parameters_to_model()
+		await Context.parameters_sent_to_model
+		year = Gameloop.year_list[Gameloop.current_turn]
+		Context.send_parameters_to_model(Context.res_id, year, 7, -household_demand * 5.0 / 100.0)
+		await Context.parameters_sent_to_model
+		Context.send_parameters_to_model(Context.res_id, year, 22, -industry_demand * 5.0 / 100.0)
+		await Context.parameters_sent_to_model
+		Context.send_parameters_to_model(Context.res_id, year, 37, -service_demand * 5.0 / 100.0)
+		await Context.parameters_sent_to_model
+		Context.send_parameters_to_model(Context.res_id, year, 52, -transport_demand * 5.0 / 100.0)
+		await Context.parameters_sent_to_model
+		Context.send_parameters_to_model(Context.res_id, year, 67, -agriculture_demand * 5.0 / 100.0)
 		
 	
 func _severe_wether_send_parameters_to_model():
-	await Context.http.request_completed
-	Context.prm_id = 471 #solar availability
-	Context.yr = Gameloop.year_list[Gameloop.current_turn-1]
-	Context.tj = -0.1
-	Context.send_parameters_to_model()
-	await Context.http.request_completed
-	Context.prm_id = 472 #solar availability
-	Context.yr = Gameloop.year_list[Gameloop.current_turn-1]
-	Context.tj = -0.1
-	Context.send_parameters_to_model()
-	await Context.http.request_completed
-	Context.prm_id = 471 #solar availability
-	Context.yr = Gameloop.year_list[Gameloop.current_turn]
-	Context.tj = 0.1
-	Context.send_parameters_to_model()
-	await Context.http.request_completed
-	Context.prm_id = 472 #solar availability
-	Context.yr = Gameloop.year_list[Gameloop.current_turn]
-	Context.tj = 0.1
-	Context.send_parameters_to_model()
+	await Context.parameters_sent_to_model
+	var year = Gameloop.year_list[Gameloop.current_turn-1]
+	Context.send_parameters_to_model(Context.res_id, year, 471, -0.1)
+	await Context.parameters_sent_to_model
+	Context.send_parameters_to_model(Context.res_id, year, 472, -0.1)
+	await Context.parameters_sent_to_model
+	year = Gameloop.year_list[Gameloop.current_turn]
+	Context.send_parameters_to_model(Context.res_id, year, 471, 0.1)
+	await Context.parameters_sent_to_model
+	Context.send_parameters_to_model(Context.res_id, year, 472, 0.1)
 
 
 func _on_shock_button_entered(shock: Shock):

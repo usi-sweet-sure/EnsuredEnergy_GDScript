@@ -311,12 +311,12 @@ var powerplants_metrics_id = [
 
 
 func _ready():
-	Context.http.request_completed.connect(_on_request_finished)
+	Context.context_updated.connect(_on_context_updated)
 	Gameloop.next_turn.connect(_on_next_turn)
 
 
-func _on_request_finished(_result, _response_code, _headers, _body):
-	if Context.ctx != null:
+func _on_context_updated(context):
+	if context != null:
 		powerplants_metrics = []
 		
 		for type in EngineTypeIds.values():
@@ -326,7 +326,7 @@ func _on_request_finished(_result, _response_code, _headers, _body):
 			_store_powerplant_metrics(type)
 			
 		powerplants_metrics_updated.emit(powerplants_metrics)
-		Context.http.request_completed.disconnect(_on_request_finished)
+		Context.context_updated.disconnect(_on_context_updated)
 		
 
 
@@ -411,7 +411,6 @@ func _store_powerplant_metrics(engine_type_id: EngineTypeIds):
 			
 	powerplants_metrics[engine_type_id] = metrics
 	
-
 
 # Update everything that buildings affects like supply, emissions, land_use, etc.
 func update_buildings_impact():

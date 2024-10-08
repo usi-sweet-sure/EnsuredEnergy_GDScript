@@ -36,11 +36,11 @@ func _on_confirm_button_pressed():
 		
 		# Since we can't close the tab, we display a black screen to show that the game is dead
 		black_screen.show()
-		Context.get_rank()
+		Context.get_rank(Context.res_id)
 		get_tree().create_timer(1).timeout.connect(_on_quit_timeout)
 	else:
 		# Nothing special to do on desktop, we just leave the game
-		Context.get_rank()
+		Context.get_rank(Context.res_id)
 		get_tree().create_timer(1).timeout.connect(_on_quit_timeout)
 
 	

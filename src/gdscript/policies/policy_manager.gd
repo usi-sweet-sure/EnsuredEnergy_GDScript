@@ -120,10 +120,10 @@ func lower_industry_demand():
 	for i in Context.ctx:
 		if i["prm_id"] == "22":
 			industry_demand = float(i["tj"])
-	Context.prm_id = 22
-	Context.yr = Gameloop.year_list[Gameloop.current_turn] #affects following turn
-	Context.tj = -(industry_demand * 5.0 / 100.0)
-	Context.send_parameters_to_model()
+	var year = Gameloop.year_list[Gameloop.current_turn] #affects following turn
+	var prm_id = 22
+	var tj = -(industry_demand * 5.0 / 100.0)
+	Context.send_parameters_to_model(Context.res_id, year, prm_id, tj)
 	
 	
 func lower_household_demand():
@@ -131,10 +131,10 @@ func lower_household_demand():
 	for i in Context.ctx:
 		if i["prm_id"] == "7":
 			household_demand = float(i["tj"])
-	Context.prm_id = 7
-	Context.yr = Gameloop.year_list[Gameloop.current_turn] #affects following turn
-	Context.tj = -(household_demand * 5.0 / 100.0)
-	Context.send_parameters_to_model()
+	var year = Gameloop.year_list[Gameloop.current_turn] #affects following turn
+	var prm_id = 7
+	var tj = -(household_demand * 5.0 / 100.0)
+	Context.send_parameters_to_model(Context.res_id, year, prm_id, tj)
 	
 	
 func get_policy(inspector_id: String):

@@ -43,7 +43,6 @@ signal enable_graphs_button
 signal toggle_policies_window
 signal hide_energy_bar_info_requested
 signal testing_env_entered
-signal first_model_request_ended()
 
 # We need to send this signal because some translations 
 # don't update automatically when changing the language at runtime,
@@ -101,7 +100,7 @@ var sequestrated_co2: float = 0.0:
 		co2_emissions_updated.emit(co2_emissions)
 	
 func _ready():
-	Context.http.request_completed.connect(_on_first_request_finished)
+	Context.context_updated.connect(_on_first_request_finished)
 	
 	for i in total_number_of_turns + 1:
 		year_list.append(start_year + (i * 3))
@@ -112,7 +111,6 @@ func _ready():
 	# TODO get all the demands for each year for the graph (nice to have)
 #func _on_request_completed(_result, _response_code, _headers, _body):
 	#for year in year_list:
-		#Context.yr = str(year)
 		#Context.get_context_from_model()
 		#for i in Context.ctx:
 			#if i["prm_id"] == "454":
@@ -131,12 +129,9 @@ func start_game():
 			# This is our testing context
 			testing_env_entered.emit()
 			Context.res_id = 1
-			Context.yr = 2022
-			Context.prm_id = 186
-			Context.tj = 8000
-			Context.get_context_from_model()
+			Context.get_context_from_model(Context.res_id, 2022)
 		else:
-			Context.register_new_game_on_model() # New game in model
+			Context.register_new_game_on_model(player_name) # New game in model
 	else:
 		# This should not happen
 		printerr("A player name is needed")
@@ -147,7 +142,6 @@ func _check_supply():
 
 
 func _on_next_turn():
-	Context.yr = Gameloop.year_list[Gameloop.current_turn]
 	#_send_send_parameters_to_model()
 	imported_energy_amount = 0
 	MoneyManager.set_money_for_new_turn()
@@ -159,11 +153,10 @@ func _on_next_turn():
 func _send_send_parameters_to_model():
 	for i in ups_list:
 		if ups_list[i] != 0:
-			Context.prm_id = i
-			Context.yr = Gameloop.year_list[Gameloop.current_turn - 1]
-			Context.tj = ups_list[i]
-			Context.send_parameters_to_model()
-			await Context.http.request_completed
+			Context.send_parameters_to_model(Context.res_id, 
+					Gameloop.year_list[Gameloop.current_turn - 1], i,
+					ups_list[i])
+			await Context.parameters_sent_to_model
 			ups_list[i] = 0
 		 
 
@@ -193,10 +186,8 @@ func reset_all_values():
 	MoneyManager.carbon_sequestration_production_costs = 0
 	MoneyManager.production_costs_modifier = 1
 	MoneyManager.building_costs = 0
-	Context.yr = 2022
 
 
-func _on_first_request_finished(_result, _response_code, _headers, _body):
+func _on_first_request_finished(_context):
 	TutorialManager.tutorial_started.emit()
-	first_model_request_ended.emit()
-	Context.http.request_completed.disconnect(_on_first_request_finished)
+	Context.context_updated.disconnect(_on_first_request_finished)

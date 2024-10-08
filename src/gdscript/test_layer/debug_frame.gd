@@ -23,8 +23,7 @@ func _ready():
 	#MoneyManager.energy_import_cost_updated.connect(_update_text)
 	#MoneyManager.building_costs_updated.connect(_update_text)
 	#Gameloop.next_turn.connect(_on_signal_with_no_value)
-	#Context.res_id_updated.connect(_update_text)
-	#Context.res_name_updated.connect(_update_text)
+	#Gameloop.player_name_updated.connect(_update_text)
 	#Context.survey_token_updated.connect(_update_text)
 
 
@@ -77,7 +76,6 @@ func _update_text(_val):
 		"CO2 emissions: [b]" + str(Gameloop.co2_emissions) + "[/b]\n\n",
 		
 		"[b]Context[/b]\n",
-		"res_id: [b]" + str(Context.res_id) + "[/b]\n",
 		"res_name: [b]" + str(Context.res_name) + "[/b]\n",
 		"survey_token: [b]" + str(Context.survey_token) + "[/b]\n",
 	]

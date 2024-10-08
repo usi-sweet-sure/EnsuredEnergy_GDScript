@@ -12,32 +12,25 @@ func _ready():
 func _on_game_ended():
 	show()
 	
-	Context.get_rank()
-	await Context.http.request_completed
+	Context.get_rank(Context.res_id)
+	await Context.rank_updated
 	
 	metrics_rank_updated.emit(Context.rank_json)
  
-	Context.category = "5"
-	Context.get_leaderboard_from_model()
-	await Context.http.request_completed
-	Context.category = "7"
-	Context.get_leaderboard_from_model()
-	await Context.http.request_completed
-	Context.category = "9"
-	Context.get_leaderboard_from_model()
-	await Context.http.request_completed
-	Context.category = "11"
-	Context.get_leaderboard_from_model()
-	await Context.http.request_completed
-	Context.category = "13"
-	Context.get_leaderboard_from_model()
-	await Context.http.request_completed
-	Context.category = "15"
-	Context.get_leaderboard_from_model()
-	await Context.http.request_completed
-	Context.category = "17"
-	Context.get_leaderboard_from_model()
-	await Context.http.request_completed
+	Context.get_leaderboard_from_model("5")
+	await Context.leaderboard_updated
+	Context.get_leaderboard_from_model("7")
+	await Context.leaderboard_updated
+	Context.get_leaderboard_from_model("9")
+	await Context.leaderboard_updated
+	Context.get_leaderboard_from_model("11")
+	await Context.leaderboard_updated
+	Context.get_leaderboard_from_model("13")
+	await Context.leaderboard_updated
+	Context.get_leaderboard_from_model("15")
+	await Context.leaderboard_updated
+	Context.get_leaderboard_from_model("17")
+	await Context.leaderboard_updated
 	
 	metrics_leaderboard_updated.emit(Context.leaderboard_json)
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://g58p7rxvcdik"]
+[gd_scene load_steps=17 format=3 uid="uid://g58p7rxvcdik"]
 
 [ext_resource type="PackedScene" uid="uid://ba56oxmvcxpos" path="res://scenes/world.tscn" id="1_prp6q"]
 [ext_resource type="PackedScene" uid="uid://bs48lirfn2fp2" path="res://scenes/hud/ui.tscn" id="2_d60f5"]
@@ -14,13 +14,6 @@
 [ext_resource type="Script" path="res://src/gdscript/test_layer/debug_frame.gd" id="53_j41xb"]
 [ext_resource type="PackedScene" uid="uid://dc3s5eeg1c0uv" path="res://scenes/windows/graphs.tscn" id="66_s8n66"]
 [ext_resource type="Script" path="res://src/gdscript/test_layer/test_buttons.gd" id="67_xot01"]
-[ext_resource type="Script" path="res://src/gdscript/test_layer/res_id_label.gd" id="68_vv85d"]
-[ext_resource type="Script" path="res://src/gdscript/test_layer/http_error_label.gd" id="69_s8bte"]
-[ext_resource type="Script" path="res://src/gdscript/test_layer/res_name_label.gd" id="69_tx34c"]
-[ext_resource type="Script" path="res://src/gdscript/test_layer/token_label.gd" id="70_d30of"]
-[ext_resource type="Script" path="res://src/gdscript/test_layer/yr_label.gd" id="70_j6q0p"]
-[ext_resource type="Script" path="res://src/gdscript/test_layer/prm_id_label.gd" id="71_q27fr"]
-[ext_resource type="Script" path="res://src/gdscript/test_layer/tj_label.gd" id="72_e32ek"]
 [ext_resource type="PackedScene" uid="uid://mnj2kr6urhvk" path="res://scenes/survey/survey_layer.tscn" id="76_y7xdi"]
 [ext_resource type="PackedScene" uid="uid://cb7movoe2pf7u" path="res://scenes/windows/quit_game.tscn" id="77_iwdt8"]
 
@@ -101,18 +94,6 @@ visible = false
 [node name="TestLayer" type="CanvasLayer" parent="."]
 script = ExtResource("13_t2kov")
 
-[node name="HttpError" type="Label" parent="TestLayer"]
-visible = false
-offset_left = 652.0
-offset_top = 272.0
-offset_right = 1289.0
-offset_bottom = 321.0
-theme_override_colors/font_color = Color(0.898049, 0, 0.0111492, 1)
-text = "Last Http response body was null. No data was changed.
-This is not intended and the game should not continue. This is just to avoid a crash"
-horizontal_alignment = 1
-script = ExtResource("69_s8bte")
-
 [node name="TestButtons" type="Control" parent="TestLayer"]
 layout_mode = 3
 anchors_preset = 0
@@ -137,15 +118,6 @@ offset_bottom = 66.0
 text = "Test button bottom
 "
 
-[node name="HttpRequestIndicator" type="Button" parent="TestLayer/TestButtons"]
-layout_mode = 0
-offset_left = 673.0
-offset_top = 299.0
-offset_right = 886.0
-offset_bottom = 337.0
-theme_override_colors/font_color = Color(0.372419, 0.746602, 0.424331, 1)
-text = "HTTP Request Active"
-
 [node name="ContextInfos" type="VBoxContainer" parent="TestLayer"]
 visible = false
 offset_left = 1643.0
@@ -158,110 +130,6 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.964706, 0, 0.305882, 1)
 theme_override_font_sizes/font_size = 17
 text = "Context Infos"
-
-[node name="res_id" type="Label" parent="TestLayer/ContextInfos"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="TestLayer/ContextInfos/res_id"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_colors/font_color = Color(0.964706, 0, 0.305882, 1)
-text = "res_id:"
-
-[node name="value" type="Label" parent="TestLayer/ContextInfos/res_id"]
-layout_mode = 0
-offset_left = 100.0
-offset_right = 140.0
-offset_bottom = 23.0
-script = ExtResource("68_vv85d")
-
-[node name="res_name" type="Label" parent="TestLayer/ContextInfos"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="TestLayer/ContextInfos/res_name"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_colors/font_color = Color(0.964706, 0, 0.305882, 1)
-text = "res_name:"
-
-[node name="value" type="Label" parent="TestLayer/ContextInfos/res_name"]
-layout_mode = 0
-offset_left = 100.0
-offset_right = 140.0
-offset_bottom = 23.0
-script = ExtResource("69_tx34c")
-
-[node name="token" type="Label" parent="TestLayer/ContextInfos"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="TestLayer/ContextInfos/token"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_colors/font_color = Color(0.964706, 0, 0.305882, 1)
-text = "token:"
-
-[node name="value" type="Label" parent="TestLayer/ContextInfos/token"]
-layout_mode = 0
-offset_left = 100.0
-offset_right = 140.0
-offset_bottom = 23.0
-script = ExtResource("70_d30of")
-
-[node name="year" type="Label" parent="TestLayer/ContextInfos"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="TestLayer/ContextInfos/year"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_colors/font_color = Color(0.964706, 0, 0.305882, 1)
-text = "yr:"
-
-[node name="value" type="Label" parent="TestLayer/ContextInfos/year"]
-layout_mode = 0
-offset_left = 100.0
-offset_right = 140.0
-offset_bottom = 23.0
-script = ExtResource("70_j6q0p")
-
-[node name="prm_id" type="Label" parent="TestLayer/ContextInfos"]
-visible = false
-layout_mode = 2
-
-[node name="Label" type="Label" parent="TestLayer/ContextInfos/prm_id"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_colors/font_color = Color(0.964859, 0, 0.304106, 1)
-text = "prm_id:"
-
-[node name="value" type="Label" parent="TestLayer/ContextInfos/prm_id"]
-layout_mode = 0
-offset_left = 100.0
-offset_right = 140.0
-offset_bottom = 23.0
-script = ExtResource("71_q27fr")
-
-[node name="tj" type="Label" parent="TestLayer/ContextInfos"]
-visible = false
-layout_mode = 2
-
-[node name="Label" type="Label" parent="TestLayer/ContextInfos/tj"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_colors/font_color = Color(0.964706, 0, 0.305882, 1)
-text = "tj:"
-
-[node name="value" type="Label" parent="TestLayer/ContextInfos/tj"]
-layout_mode = 0
-offset_left = 100.0
-offset_right = 140.0
-offset_bottom = 23.0
-script = ExtResource("72_e32ek")
 
 [node name="OpenDebugFrameButton" type="Button" parent="TestLayer"]
 offset_left = 1554.0
