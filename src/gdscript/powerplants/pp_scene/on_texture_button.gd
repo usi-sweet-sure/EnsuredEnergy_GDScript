@@ -34,8 +34,8 @@ func _on_close_button_mouse_exited():
 	set_modulate(Color(1, 1, 1))
 
 
-func _on_pp_scene_texture_on_changed(image_name: String):
-	texture_normal = load(image_name)
+func _on_pp_scene_texture_on_changed(texture: Texture):
+	texture_normal = texture
 	
 	# Get the image from the texture normal
 	var image = texture_normal.get_image()

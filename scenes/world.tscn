@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://ba56oxmvcxpos"]
+[gd_scene load_steps=22 format=3 uid="uid://ba56oxmvcxpos"]
 
 [ext_resource type="Texture2D" uid="uid://dug4cy4mgxa1b" path="res://assets/textures/map/map.jpg" id="1_exly2"]
 [ext_resource type="Texture2D" uid="uid://dnuq60vou7jic" path="res://assets/textures/map/mountains/mountain_0.png" id="2_0wbri"]
@@ -9,8 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://cpcm2hmku8t83" path="res://assets/textures/map/mountains/mountain_1.png" id="8_1irv8"]
 [ext_resource type="Texture2D" uid="uid://bk5676dvr2vrc" path="res://assets/textures/map/forests/forest_3.png" id="9_ai24k"]
 [ext_resource type="Texture2D" uid="uid://ex0mlwlymf7k" path="res://assets/textures/map/forests/forest_4.png" id="10_bwdos"]
+[ext_resource type="Texture2D" uid="uid://cjnk71q5pp4a8" path="res://assets/textures/powerplants/pp_sprite_on_solar_4.png" id="11_5xi1y"]
 [ext_resource type="Texture2D" uid="uid://d0nonmo0jroqa" path="res://assets/textures/map/mountains/mountain_2.png" id="11_c0lk8"]
 [ext_resource type="Texture2D" uid="uid://imn01mt51ob8" path="res://assets/textures/map/forests/forest_5.png" id="12_4trsl"]
+[ext_resource type="Texture2D" uid="uid://ch0sklgxiokk3" path="res://assets/textures/powerplants/pp_sprite_off_solar_4.png" id="12_puhv2"]
 [ext_resource type="Texture2D" uid="uid://cjla34vrrgb7i" path="res://assets/textures/powerplants/bb_normal_water.png" id="13_iyb57"]
 [ext_resource type="Texture2D" uid="uid://buseob4ix0xih" path="res://assets/textures/map/mountains/mountain_3.png" id="13_lqxt0"]
 [ext_resource type="Texture2D" uid="uid://cww2obs22h5na" path="res://assets/textures/map/forests/forest_6.png" id="14_8vk84"]
@@ -125,7 +127,6 @@ texture = ExtResource("10_bwdos")
 
 [node name="PpMapEmplacement14" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(2828, 885)
-build_button_texture = ExtResource("13_iyb57")
 build_on_start = 9
 solar = false
 wind = false
@@ -135,6 +136,7 @@ biomass = false
 biogas = false
 hydro = true
 river = true
+build_button = ExtResource("13_iyb57")
 
 [node name="PpMapEmplacement15" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(3435, 870)
@@ -147,6 +149,8 @@ upgrade_factor_for_summer_supply = 1
 current_upgrade = 3
 max_upgrade = 3
 can_upgrade = false
+powerplant_on = ExtResource("11_5xi1y")
+powerplant_off = ExtResource("12_puhv2")
 
 [node name="PpMapEmplacement16" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(-427, 1355)
@@ -160,7 +164,6 @@ texture = ExtResource("12_4trsl")
 
 [node name="PpMapEmplacement18" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(1419, 1313)
-build_button_texture = ExtResource("13_iyb57")
 build_on_start = 8
 solar = false
 wind = false
@@ -170,6 +173,7 @@ biomass = false
 biogas = false
 hydro = true
 river = true
+build_button = ExtResource("13_iyb57")
 
 [node name="Mountain3" type="Sprite2D" parent="."]
 position = Vector2(816, 1830)
@@ -177,7 +181,6 @@ texture = ExtResource("11_c0lk8")
 
 [node name="PpMapEmplacement19" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(413, 1779)
-build_button_texture = ExtResource("13_iyb57")
 solar = false
 wind = false
 gas = false
@@ -186,6 +189,7 @@ biomass = false
 biogas = false
 hydro = true
 river = true
+build_button = ExtResource("13_iyb57")
 
 [node name="Mountain4" type="Sprite2D" parent="."]
 position = Vector2(2152, 1807)
@@ -193,7 +197,6 @@ texture = ExtResource("13_lqxt0")
 
 [node name="PpMapEmplacement20" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(-61, 1805)
-build_button_texture = ExtResource("13_iyb57")
 build_on_start = 8
 solar = false
 wind = false
@@ -203,10 +206,10 @@ biomass = false
 biogas = false
 hydro = true
 river = true
+build_button = ExtResource("13_iyb57")
 
 [node name="PpMapEmplacement21" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(1650, 1711)
-build_button_texture = ExtResource("13_iyb57")
 build_on_start = 9
 solar = false
 wind = false
@@ -216,6 +219,7 @@ biomass = false
 biogas = false
 hydro = true
 river = true
+build_button = ExtResource("13_iyb57")
 
 [node name="Forest7" type="Sprite2D" parent="."]
 position = Vector2(2319, 2280)

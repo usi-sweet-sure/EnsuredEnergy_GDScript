@@ -27,9 +27,17 @@ func _ready():
 
 func set_metrics(metrics: PowerplantMetrics):
 	self.metrics = metrics.copy()
-	texture_on_changed.emit(PowerplantsManager.powerplants_textures_on[metrics.type])
-	texture_off_changed.emit(PowerplantsManager.powerplants_textures_off[metrics.type])
+	texture_on_changed.emit(load(PowerplantsManager.powerplants_textures_on[metrics.type]))
+	texture_off_changed.emit(load(PowerplantsManager.powerplants_textures_off[metrics.type]))
 	metrics_updated.emit(self.metrics)
+	
+
+func set_texture_on(texture: Texture):
+	texture_on_changed.emit(texture)
+	
+
+func set_texture_off(texture: Texture):
+	texture_off_changed.emit(texture)
 
 
 func activate():

@@ -4,11 +4,7 @@ class_name PpMapEmplacement
 
 signal history_updated(history: MapEmplacementHistory)
 
-@export var build_button_texture: Texture:
-	set(new_value):
-		build_button_texture = new_value
-		override_bb_texture = true
-var override_bb_texture = false
+
 # Editor will enumerate as 0, 1 and 2.
 # MUST BE in same order as PowerplantManager.EngineTypeIds
 @export_enum(
@@ -83,8 +79,28 @@ var override_max_upgrade = false
 		can_upgrade = new_value
 		override_can_upgrade = true
 var override_can_upgrade = false
-		
-		
+
+@export_group("Textures Overrides")
+@export var build_button: Texture:
+	set(new_value):
+		build_button = new_value
+		override_bb_texture = true
+var override_bb_texture = false
+## Will override the texture no matter which powerplant is built.
+## This is intented for powerplants that are built on start
+@export var powerplant_on: Texture:
+	set(new_value):
+		powerplant_on = new_value
+		override_powerplant_on_texture = true
+var override_powerplant_on_texture = false
+## Will override the texture no matter which powerplant is built.
+## This is intented for powerplants that are built on start
+@export var powerplant_off: Texture:
+	set(new_value):
+		powerplant_off = new_value
+		override_powerplant_off_texture = true
+var override_powerplant_off_texture = false
+
 @onready var bb_normal = $BbNormal
 @onready var bb_in_construction = $BbInConstruction
 
@@ -125,7 +141,7 @@ func _ready():
 		can_build.push_back(PowerplantsManager.EngineTypeIds.RIVER)
 	
 	if override_bb_texture:
-		bb_normal.texture_normal = build_button_texture
+		bb_normal.texture_normal = build_button
 		
 func _on_bb_normal_toggled(toggled_on: bool):
 	# The build menu listens to this and emits back a build request with necessary,
@@ -154,7 +170,6 @@ func _on_powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMe
 			bb_in_construction.set_metrics(new_metrics)
 			bb_in_construction.show()
 			history.pp_construction_started(new_metrics)
-			
 		else:
 			MoneyManager.building_costs += new_metrics.building_costs
 			# == 0 means it was not set yet.
@@ -174,6 +189,8 @@ func _on_powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMe
 			pp_scene.powerplant_upgraded.connect(_on_pp_upgraded)
 			pp_scene.powerplant_downgraded.connect(_on_pp_downgraded)
 			pp_scene.powerplant_delete_requested.connect(_on_powerplant_delete_requested)
+	
+				
 			pp_scene.activate()
 			
 			if new_metrics.current_upgrade > 0:
@@ -187,7 +204,11 @@ func _on_powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMe
 				while count <= target_upgrade:
 					pp_scene._on_button_plus_pressed()
 					count += 1
-
+			
+			if override_powerplant_on_texture:
+				pp_scene.set_texture_on(powerplant_on)
+			if override_powerplant_off_texture:
+				pp_scene.set_texture_off(powerplant_off)
 
 # Connected to "powerplant_delete_requested" emitted by "pp_scene.tscn"
 func _on_powerplant_delete_requested(metrics: PowerplantMetrics):
