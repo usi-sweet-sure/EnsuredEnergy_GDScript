@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://src/gdscript/hud/energy_bars/energy_bar.gd" id="2_c6use"]
 [ext_resource type="StyleBox" uid="uid://yqtdxtw3vpjp" path="res://scenes/hud/energy_bar_green.tres" id="3_0cuo8"]
 [ext_resource type="PackedScene" uid="uid://u1nvhv5ceok" path="res://scenes/hud/BarInfo.tscn" id="3_an05x"]
-[ext_resource type="Texture2D" uid="uid://b421l4qq7mg5n" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0024_Line-energy.png" id="3_fqlbn"]
-[ext_resource type="Texture2D" uid="uid://ubsfoucc2064" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0000_Marks-vertical.png" id="4_uo7q2"]
+[ext_resource type="Texture2D" uid="uid://b421l4qq7mg5n" path="res://assets/textures/ui/All-HQ-Assets-D_0007s_0024_Line-energy.png" id="3_fqlbn"]
+[ext_resource type="Texture2D" uid="uid://ubsfoucc2064" path="res://assets/textures/ui/All-HQ-Assets-D_0007s_0000_Marks-vertical.png" id="4_uo7q2"]
 [ext_resource type="PackedScene" uid="uid://cqn5kk1o4vep4" path="res://scenes/hud/show_hand.tscn" id="6_cdm1e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kaeus"]

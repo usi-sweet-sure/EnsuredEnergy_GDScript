@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://u1nvhv5ceok"]
 
-[ext_resource type="Texture2D" uid="uid://bu7evhjgyjni6" path="res://assets/UI Elements/Paper-Middle-Rolled.png" id="2_c7jry"]
-[ext_resource type="Texture2D" uid="uid://bx1g8oiuxi2mk" path="res://assets/UI Elements/Paper-Middle.png" id="3_rmg6x"]
-[ext_resource type="Texture2D" uid="uid://c78xktsl3cnxc" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0016_Icon-yellow-normal-button.png" id="4_0qsle"]
-[ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="4_3f2or"]
-[ext_resource type="Texture2D" uid="uid://dm51vy4uvlpvd" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0015_Icon-yellow-hover-button.png" id="5_h8nss"]
-[ext_resource type="Texture2D" uid="uid://b07rwrrjjeock" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0017_Icon-yellow-press-button.png" id="6_f4vpc"]
-[ext_resource type="Texture2D" uid="uid://b0c3ywqarx8b7" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0002_Icon-round-button-hole.png" id="7_feats"]
+[ext_resource type="Texture2D" uid="uid://bu7evhjgyjni6" path="res://assets/textures/ui/Paper-Middle-Rolled.png" id="2_c7jry"]
+[ext_resource type="Texture2D" uid="uid://bx1g8oiuxi2mk" path="res://assets/textures/ui/Paper-Middle.png" id="3_rmg6x"]
+[ext_resource type="Texture2D" uid="uid://c78xktsl3cnxc" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0016_Icon-yellow-normal-button.png" id="4_0qsle"]
+[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="4_3f2or"]
+[ext_resource type="Texture2D" uid="uid://dm51vy4uvlpvd" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0015_Icon-yellow-hover-button.png" id="5_h8nss"]
+[ext_resource type="Texture2D" uid="uid://b07rwrrjjeock" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0017_Icon-yellow-press-button.png" id="6_f4vpc"]
+[ext_resource type="Texture2D" uid="uid://b0c3ywqarx8b7" path="res://assets/textures/ui/All-HQ-Assets-D_0001s_0002_Icon-round-button-hole.png" id="7_feats"]
 
 [node name="BarInfo" type="Control"]
 layout_mode = 3

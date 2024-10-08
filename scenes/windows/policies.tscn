@@ -1,0 +1,1099 @@
+[gd_scene load_steps=66 format=3 uid="uid://jj476u8yn2g8"]
+
+[ext_resource type="Script" path="res://src/gdscript/policies/policies_window/policies_window.gd" id="1_2fpqe"]
+[ext_resource type="Texture2D" uid="uid://coki776cjtqrp" path="res://assets/textures/ui/All-HQ-Assets-D_0006s_0006_Policies-metal-base.png" id="2_kxr4s"]
+[ext_resource type="Texture2D" uid="uid://d134bmkq0exi6" path="res://assets/textures/ui/All-HQ-Assets-D_0005s_0004_Policies-screen.png" id="3_osw01"]
+[ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/fonts/special_elite/special_elite_regular.ttf" id="4_mukwf"]
+[ext_resource type="FontFile" uid="uid://bt2f3flr7psn5" path="res://assets/fonts/vt323/vt323_regular.ttf" id="5_i4f5y"]
+[ext_resource type="FontFile" uid="uid://dxtsp51pqna2o" path="res://assets/fonts/static/open_sans_bold.ttf" id="6_4to47"]
+[ext_resource type="Script" path="res://src/gdscript/policies/policies_window/center_frame/info_screen_1/general_explanation.gd" id="7_i7ous"]
+[ext_resource type="Texture2D" uid="uid://blyswkq2pjnv2" path="res://assets/textures/votebox.png" id="8_8f12u"]
+[ext_resource type="Texture2D" uid="uid://bd66n77eagmc" path="res://assets/textures/no.png" id="9_esbts"]
+[ext_resource type="Texture2D" uid="uid://cd23afs6x11al" path="res://assets/textures/screens/screen_1.png" id="10_eymcp"]
+[ext_resource type="Script" path="res://src/gdscript/policies/policies_window/center_frame/info_screen_2/top_label.gd" id="11_qjqy7"]
+[ext_resource type="Script" path="res://src/gdscript/policies/policies_window/center_frame/info_screen_2/bottom_label.gd" id="12_fg38d"]
+[ext_resource type="Texture2D" uid="uid://b4m67oni44dpg" path="res://assets/textures/ui/Button-normal.png" id="13_b8hws"]
+[ext_resource type="Texture2D" uid="uid://60dl810b25fd" path="res://assets/textures/ui/Button-press.png" id="14_elh18"]
+[ext_resource type="Texture2D" uid="uid://cuhckno2t6g0r" path="res://assets/textures/ui/Button-hover.png" id="15_tf1yi"]
+[ext_resource type="Script" path="res://src/gdscript/policies/policies_window/vote_zone/vote_zone.gd" id="16_gvguj"]
+[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="17_q7hpp"]
+[ext_resource type="Texture2D" uid="uid://dnr3tvwn2pcnj" path="res://assets/textures/ui/Policies_Button_small_Hole.png" id="18_1bsk2"]
+[ext_resource type="Script" path="res://src/gdscript/policies/policies_window/start_campaign_zone/start_campaign_zone.gd" id="19_byjix"]
+[ext_resource type="Texture2D" uid="uid://dnf85brf6fkbf" path="res://assets/textures/ui/All-HQ-Assets-D_0006s_0005_Policies-(side)-metal-base.png" id="20_xl4nu"]
+[ext_resource type="Script" path="res://src/gdscript/policies/policies_window/campaing_screen_label.gd" id="21_4l5fw"]
+[ext_resource type="PackedScene" uid="uid://dna2006dnsx2x" path="res://scenes/windows/policy_button.tscn" id="22_gnq6m"]
+[ext_resource type="ButtonGroup" uid="uid://ei788aoab46g" path="res://scenes/windows/policyButtonGroup.tres" id="23_7tuqn"]
+[ext_resource type="Texture2D" uid="uid://cs8wokl8kptl" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0028_Policies-normal-green-button.png" id="24_7skvy"]
+[ext_resource type="Texture2D" uid="uid://dhfbtv1td24n2" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0029_Policies-press-green-button.png" id="25_qjvpb"]
+[ext_resource type="Texture2D" uid="uid://chnjpvqbhlneu" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0027_Policies-hover-green-button.png" id="26_3yg01"]
+[ext_resource type="Texture2D" uid="uid://bbkowcyvsefgm" path="res://assets/textures/ui/All-HQ-Assets-D_0001s_0003_Policies-button-hole.png" id="27_cpb4p"]
+[ext_resource type="Texture2D" uid="uid://rsi3865gd46t" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0010_Hammer-symbol.png" id="28_eak62"]
+[ext_resource type="Texture2D" uid="uid://dm4sc8s54816e" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0009_Wind-symbol.png" id="29_k5wvn"]
+[ext_resource type="Texture2D" uid="uid://bx0cxko72v5ui" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0020_Icon-Environment-.png" id="30_j3mrw"]
+[ext_resource type="Script" path="res://src/gdscript/policies/policies_window/campaing_screen_label_2.gd" id="31_d4meo"]
+[ext_resource type="Texture2D" uid="uid://m8sqi2c1vb8w" path="res://assets/textures/ui/Policies-Button-yellow-Normal.png" id="32_kce48"]
+[ext_resource type="Texture2D" uid="uid://cufu62j0t1t6p" path="res://assets/textures/ui/Policies-Button-yellow-Press.png" id="33_kgra0"]
+[ext_resource type="Texture2D" uid="uid://cltrnfisw3ald" path="res://assets/textures/ui/Policies-Button-yellow-Hover.png" id="34_ho1x8"]
+[ext_resource type="Texture2D" uid="uid://ddd6qplj5q6p4" path="res://assets/textures/ui/Policies_Button_Hole.png" id="35_j1jah"]
+[ext_resource type="Texture2D" uid="uid://ceywqq4wa4ocw" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0026_Icon-Import.png" id="36_kloh4"]
+[ext_resource type="Texture2D" uid="uid://ci730aw1uci4x" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0011_House-symbol.png" id="37_3001d"]
+[ext_resource type="Texture2D" uid="uid://trn8noyxvhuf" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0012_Heat-symbol.png" id="38_3ih67"]
+[ext_resource type="Texture2D" uid="uid://xicitqwdhrq7" path="res://assets/textures/yes.png" id="39_d3hcx"]
+[ext_resource type="Texture2D" uid="uid://duoff2c7r1hdy" path="res://assets/textures/buttons/close_button_normal.png" id="40_lyfoq"]
+[ext_resource type="Texture2D" uid="uid://bdq26gwsmigwy" path="res://assets/textures/buttons/close_button_pressed.png" id="41_h0mhu"]
+[ext_resource type="Texture2D" uid="uid://myf36tn1pspq" path="res://assets/textures/buttons/close_button_hover.png" id="42_vmf5h"]
+[ext_resource type="Texture2D" uid="uid://bhl7ei1bspfbw" path="res://assets/textures/buttons/close_button_disabled.png" id="43_wc8ce"]
+[ext_resource type="AudioStream" uid="uid://tyth6kqexsy5" path="res://assets/sounds/success.wav" id="44_651m8"]
+[ext_resource type="Script" path="res://src/gdscript/policies/policies_window/vote_success_audio.gd" id="45_pfqe5"]
+[ext_resource type="AudioStream" uid="uid://dt7vm8d0cxli3" path="res://assets/sounds/error_0.mp3" id="46_qq11d"]
+[ext_resource type="Script" path="res://src/gdscript/policies/policies_window/vote_fail_audio.gd" id="47_22spb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3tdw6"]
+bg_color = Color(0.65098, 0.65098, 0.65098, 0.0470588)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_color = Color(0.25098, 0.807843, 0.839216, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pgfdh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_color = Color(0.219608, 0.752941, 0.784314, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03rjl"]
+bg_color = Color(0.219608, 0.756863, 0.788235, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+
+[sub_resource type="FontVariation" id="FontVariation_3ifss"]
+base_font = ExtResource("6_4to47")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nyqp5"]
+
+[sub_resource type="FontVariation" id="FontVariation_u3fkg"]
+base_font = ExtResource("4_mukwf")
+variation_embolden = 0.6
+
+[sub_resource type="FontVariation" id="FontVariation_ule17"]
+base_font = ExtResource("4_mukwf")
+
+[sub_resource type="FontVariation" id="FontVariation_b0wbe"]
+base_font = ExtResource("5_i4f5y")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5mtqi"]
+bg_color = Color(0.192157, 0.658824, 0.690196, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1qqbn"]
+bg_color = Color(0.247059, 0.776471, 0.811765, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_idcep"]
+bg_color = Color(0.129412, 0.486275, 0.509804, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="Theme" id="Theme_34yde"]
+/colors/Dark = Color(0.0627451, 0.572549, 0, 1)
+/font_sizes/Big = 18
+/fonts/font = ExtResource("4_mukwf")
+Button/colors/font_color = Color(0.211765, 0.690196, 0.717647, 1)
+Button/colors/font_pressed_color = Color(0.0862745, 0.207843, 0.219608, 1)
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("5_i4f5y")
+Button/styles/hover = SubResource("StyleBoxFlat_3tdw6")
+Button/styles/normal = SubResource("StyleBoxFlat_pgfdh")
+Button/styles/pressed = SubResource("StyleBoxFlat_03rjl")
+Label/colors/font_color = Color(0.0784314, 0.180392, 0.192157, 1)
+Label/colors/font_outline_color = Color(1, 1, 1, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/font_sizes/font_size = 16
+Label/fonts/font = SubResource("FontVariation_3ifss")
+Label/styles/normal = SubResource("StyleBoxEmpty_nyqp5")
+Paper/base_type = &"Label"
+Paper/colors/color = Color(0.631373, 0.443137, 0.403922, 1)
+Paper/colors/font_color = Color(0, 0, 0, 1)
+Paper/colors/font_outline_color = Color(0, 0, 0, 1)
+Paper/colors/font_shadow_color = Color(0, 0, 0, 1)
+Paper/constants/line_spacing = 0
+Paper/constants/outline_size = 0
+Paper/constants/shadow_offset_x = 0
+Paper/constants/shadow_offset_y = 0
+Paper/constants/shadow_outline_size = 0
+Paper/font_sizes/font_size = 18
+Paper/font_sizes/size = 16
+Paper/fonts/font = ExtResource("4_mukwf")
+RichTextLabel/constants/line_separation = 7
+RichTextLabel/fonts/bold_font = SubResource("FontVariation_u3fkg")
+RichTextLabel/fonts/normal_font = SubResource("FontVariation_ule17")
+Screen/base_type = &"Label"
+Screen/colors/font_color = Color(0.219608, 0.756863, 0.788235, 1)
+Screen/font_sizes/font_size = 30
+Screen/fonts/font = SubResource("FontVariation_b0wbe")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_5mtqi")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_1qqbn")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_idcep")
+
+[sub_resource type="Theme" id="Theme_6bviu"]
+
+[sub_resource type="Animation" id="Animation_wviye"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/CenterFrame/VoteAnimation/Ballot:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(41, 21, 14, 16)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/CenterFrame/VoteAnimation/Ballot:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(945, 386)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/CenterFrame/VoteAnimation/Ballot:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_esbts")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control/CenterFrame/InfoScreen1/Text:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Control/CenterFrame/VoteAnimation:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Control/CenterFrame/InfoScreen2/Infos/TopLabel:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Control/CenterFrame/InfoScreen1/Text:visible_ratio")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Control/CenterFrame/InfoScreen2/Infos/Dots:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Control/CenterFrame/InfoScreen2/Infos/Dots:visible_ratio")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_352pj"]
+resource_name = "Vote_no"
+length = 2.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/CenterFrame/VoteAnimation/Ballot:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(41, 21, 14, 16), Rect2(41, 21, 14, 16), Rect2(41, 21, 14, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/CenterFrame/VoteAnimation/Ballot:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(945, 345), Vector2(945, 386), Vector2(945, 404)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/CenterFrame/VoteAnimation/Ballot:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_esbts")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/CenterFrame/InfoScreen1/Text:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control/CenterFrame/VoteAnimation:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Control/CenterFrame/InfoScreen2/Infos/TopLabel:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Control/CenterFrame/InfoScreen1/Text:visible_ratio")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(2, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Control/CenterFrame/InfoScreen2/Infos/Dots:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Control/CenterFrame/InfoScreen2/Infos/Dots:visible_ratio")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.134, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_nspa0"]
+resource_name = "Vote_yes"
+length = 2.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/CenterFrame/VoteAnimation/Ballot:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(41, 21, 14, 16), Rect2(41, 21, 14, 16), Rect2(41, 21, 14, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/CenterFrame/VoteAnimation/Ballot:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(945, 345), Vector2(945, 386), Vector2(945, 404)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/CenterFrame/VoteAnimation/Ballot:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("39_d3hcx")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/CenterFrame/InfoScreen1/Text:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control/CenterFrame/VoteAnimation:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Control/CenterFrame/InfoScreen2/Infos/TopLabel:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Control/CenterFrame/InfoScreen1/Text:visible_ratio")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(2, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Control/CenterFrame/InfoScreen2/Infos/Dots:visible_ratio")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.134, 1.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Control/CenterFrame/InfoScreen2/Infos/Dots:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_k75ra"]
+resource_name = "popup"
+length = 0.3
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8dlcw"]
+_data = {
+"RESET": SubResource("Animation_wviye"),
+"Vote_no": SubResource("Animation_352pj"),
+"Vote_yes": SubResource("Animation_nspa0"),
+"popup": SubResource("Animation_k75ra")
+}
+
+[node name="Policies" type="CanvasLayer"]
+script = ExtResource("1_2fpqe")
+metadata/_edit_vertical_guides_ = [210.0]
+metadata/_edit_horizontal_guides_ = [349.0]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.168627, 0.168627, 0.168627, 0.392157)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 400.0
+offset_top = 144.0
+offset_right = -416.0
+offset_bottom = -160.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(552, 388)
+size_flags_horizontal = 4
+
+[node name="CenterFrame" type="Sprite2D" parent="Control"]
+position = Vector2(549.5, 388.5)
+texture = ExtResource("2_kxr4s")
+
+[node name="InfoScreen1" type="Sprite2D" parent="Control/CenterFrame"]
+position = Vector2(2.5, -180)
+scale = Vector2(1, 0.993445)
+texture = ExtResource("3_osw01")
+
+[node name="Text" type="RichTextLabel" parent="Control/CenterFrame/InfoScreen1"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -357.5
+offset_top = -294.5
+offset_right = -12.5
+offset_bottom = -8.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_force_pass_scroll_events = false
+theme = SubResource("Theme_34yde")
+theme_override_colors/default_color = Color(0.219608, 0.756863, 0.788235, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_fonts/normal_font = ExtResource("5_i4f5y")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+autowrap_mode = 2
+script = ExtResource("7_i7ous")
+
+[node name="VoteAnimation" type="Control" parent="Control/CenterFrame"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -949.5
+offset_top = -532.5
+offset_right = -909.5
+offset_bottom = -492.5
+
+[node name="Votebox" type="Sprite2D" parent="Control/CenterFrame/VoteAnimation"]
+modulate = Color(0.219608, 0.74902, 0.780392, 1)
+texture_filter = 1
+position = Vector2(949, 430)
+scale = Vector2(2, 2)
+texture = ExtResource("8_8f12u")
+
+[node name="Ballot" type="Sprite2D" parent="Control/CenterFrame/VoteAnimation"]
+modulate = Color(0.219608, 0.74902, 0.780392, 1)
+texture_filter = 1
+position = Vector2(945, 386)
+scale = Vector2(2, 2)
+texture = ExtResource("9_esbts")
+region_enabled = true
+region_rect = Rect2(41, 21, 14, 16)
+
+[node name="InfoScreen2" type="NinePatchRect" parent="Control/CenterFrame"]
+clip_children = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -395.5
+offset_top = -404.0
+offset_right = -42.5
+offset_bottom = -299.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_eymcp")
+patch_margin_left = 5
+patch_margin_top = 6
+patch_margin_right = 7
+patch_margin_bottom = 5
+
+[node name="Infos" type="VBoxContainer" parent="Control/CenterFrame/InfoScreen2"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 346.0
+offset_bottom = 100.0
+alignment = 1
+
+[node name="TopLabel" type="Label" parent="Control/CenterFrame/InfoScreen2/Infos"]
+custom_minimum_size = Vector2(329, 0)
+layout_mode = 2
+theme = SubResource("Theme_34yde")
+theme_type_variation = &"Screen"
+theme_override_font_sizes/font_size = 22
+text = "You can't start a campaign this turn because you submitted a votation"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+script = ExtResource("11_qjqy7")
+
+[node name="BottomLabel" type="Label" parent="Control/CenterFrame/InfoScreen2/Infos"]
+visible = false
+custom_minimum_size = Vector2(329, 0)
+layout_mode = 2
+theme = SubResource("Theme_34yde")
+theme_type_variation = &"Screen"
+theme_override_font_sizes/font_size = 22
+text = "..."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+script = ExtResource("12_fg38d")
+
+[node name="Dots" type="Label" parent="Control/CenterFrame/InfoScreen2/Infos"]
+visible = false
+custom_minimum_size = Vector2(329, 0)
+layout_mode = 2
+theme = SubResource("Theme_34yde")
+theme_type_variation = &"Screen"
+theme_override_font_sizes/font_size = 22
+text = "..."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Vote" type="TextureButton" parent="Control/CenterFrame" groups=["buttons"]]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -316.0
+offset_top = -576.5
+offset_right = -123.0
+offset_bottom = -493.5
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("13_b8hws")
+texture_pressed = ExtResource("14_elh18")
+texture_hover = ExtResource("15_tf1yi")
+texture_disabled = ExtResource("14_elh18")
+script = ExtResource("16_gvguj")
+
+[node name="VoteL" type="Label" parent="Control/CenterFrame/Vote"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("17_q7hpp")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "VOTE"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Button-hole" type="Sprite2D" parent="Control/CenterFrame/Vote"]
+show_behind_parent = true
+position = Vector2(95, 42.5)
+scale = Vector2(1.47857, 1.35714)
+texture = ExtResource("18_1bsk2")
+
+[node name="StartCampaign" type="TextureButton" parent="Control/CenterFrame" groups=["buttons"]]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -316.0
+offset_top = -576.0
+offset_right = -123.0
+offset_bottom = -493.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("13_b8hws")
+texture_pressed = ExtResource("14_elh18")
+texture_hover = ExtResource("15_tf1yi")
+texture_disabled = ExtResource("14_elh18")
+script = ExtResource("19_byjix")
+
+[node name="ButtonLabel" type="Label" parent="Control/CenterFrame/StartCampaign"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("17_q7hpp")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "START_CAMPAIGN"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Button-hole" type="Sprite2D" parent="Control/CenterFrame/StartCampaign"]
+show_behind_parent = true
+position = Vector2(95, 42.5)
+scale = Vector2(1.47857, 1.35714)
+texture = ExtResource("18_1bsk2")
+
+[node name="LeftFrame" type="Sprite2D" parent="Control"]
+position = Vector2(163.5, 388.5)
+texture = ExtResource("20_xl4nu")
+
+[node name="EnvCampaign" type="Label" parent="Control/LeftFrame"]
+offset_left = -62.0
+offset_top = -367.0
+offset_right = 66.0
+offset_bottom = -315.0
+theme = SubResource("Theme_34yde")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+text = "POLICIES_ENVIRONMENTAL_CAMPAIGN"
+horizontal_alignment = 1
+autowrap_mode = 2
+uppercase = true
+
+[node name="EnvPolicy" type="Label" parent="Control/LeftFrame"]
+offset_left = -62.0
+offset_top = -45.0
+offset_right = 66.0
+offset_bottom = -19.0
+theme = ExtResource("17_q7hpp")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+text = "POLICIES"
+horizontal_alignment = 1
+autowrap_mode = 2
+uppercase = true
+
+[node name="Screen" type="NinePatchRect" parent="Control/LeftFrame"]
+clip_children = 2
+offset_left = -115.0
+offset_top = -164.0
+offset_right = 122.0
+offset_bottom = -74.0
+texture = ExtResource("10_eymcp")
+patch_margin_left = 5
+patch_margin_top = 6
+patch_margin_right = 7
+patch_margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/LeftFrame/Screen"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 6.0
+offset_right = 229.0
+offset_bottom = 84.0
+alignment = 1
+
+[node name="Label3" type="Label" parent="Control/LeftFrame/Screen/VBoxContainer"]
+custom_minimum_size = Vector2(202, 0)
+layout_mode = 2
+theme = SubResource("Theme_34yde")
+theme_type_variation = &"Screen"
+theme_override_constants/shadow_offset_x = 2
+theme_override_font_sizes/font_size = 21
+text = "VOTING_BONUS"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="Control/LeftFrame/Screen/VBoxContainer"]
+custom_minimum_size = Vector2(202, 0)
+layout_mode = 2
+theme = SubResource("Theme_34yde")
+theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(0, 0.929412, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_font_sizes/font_size = 25
+text = "10 %"
+horizontal_alignment = 1
+autowrap_mode = 2
+script = ExtResource("21_4l5fw")
+
+[node name="campaign_env" parent="Control/LeftFrame" instance=ExtResource("22_gnq6m")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -221.0
+offset_top = -309.5
+offset_right = -92.0
+offset_bottom = -181.5
+grow_horizontal = 2
+button_group = ExtResource("23_7tuqn")
+texture_normal = ExtResource("24_7skvy")
+texture_pressed = ExtResource("25_qjvpb")
+texture_hover = ExtResource("26_3yg01")
+policy = "ENVIRONMENTAL CAMPAIGN"
+side = "LEFT"
+
+[node name="PoliciesButtonSmallHole" parent="Control/LeftFrame/campaign_env" index="0"]
+position = Vector2(65, 65)
+texture = ExtResource("27_cpb4p")
+
+[node name="Icon" parent="Control/LeftFrame/campaign_env" index="3"]
+visible = false
+
+[node name="Upgrade_PV" parent="Control/LeftFrame" instance=ExtResource("22_gnq6m")]
+offset_left = -59.0
+offset_top = 44.0
+offset_right = 70.0
+offset_bottom = 124.0
+theme = SubResource("Theme_6bviu")
+button_group = ExtResource("23_7tuqn")
+policy = "ENABLE ALPINE SOLAR PV"
+side = "LEFT"
+
+[node name="Wind_buildtime" parent="Control/LeftFrame" instance=ExtResource("22_gnq6m")]
+anchors_preset = -1
+anchor_left = 0.472
+anchor_top = 0.185
+anchor_right = 0.472
+anchor_bottom = 0.185
+offset_left = -210.344
+offset_top = -0.744965
+offset_right = -81.344
+offset_bottom = 79.255
+button_group = ExtResource("23_7tuqn")
+policy = "FAST TRACK WIND PARKS"
+side = "LEFT"
+
+[node name="Icon" parent="Control/LeftFrame/Wind_buildtime" index="3"]
+texture = ExtResource("28_eak62")
+
+[node name="Upgrade_wind" parent="Control/LeftFrame" instance=ExtResource("22_gnq6m")]
+anchors_preset = -1
+anchor_left = 0.486
+anchor_top = 0.787
+anchor_right = 0.486
+anchor_bottom = 0.787
+offset_left = -214.922
+offset_top = -366.499
+offset_right = -85.922
+offset_bottom = -286.499
+button_group = ExtResource("23_7tuqn")
+policy = "WIND PARKS REGULATION"
+side = "LEFT"
+
+[node name="Icon" parent="Control/LeftFrame/Upgrade_wind" index="3"]
+texture = ExtResource("29_k5wvn")
+
+[node name="Icon-environment-" type="Sprite2D" parent="Control/LeftFrame"]
+position = Vector2(3, -253)
+texture = ExtResource("30_j3mrw")
+
+[node name="RightFrame" type="Sprite2D" parent="Control"]
+position = Vector2(935.5, 388.5)
+texture = ExtResource("20_xl4nu")
+
+[node name="DemandCampaign" type="Label" parent="Control/RightFrame"]
+offset_left = -58.0
+offset_top = -364.0
+offset_right = 62.0
+offset_bottom = -312.0
+theme = SubResource("Theme_34yde")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+text = "POLICIES_ENERGY_CAMPAIGN"
+horizontal_alignment = 1
+autowrap_mode = 2
+uppercase = true
+
+[node name="EnvPolicy2" type="Label" parent="Control/RightFrame"]
+offset_left = -58.0
+offset_top = -44.0
+offset_right = 62.0
+offset_bottom = -18.0
+theme = ExtResource("17_q7hpp")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+text = "POLICIES"
+horizontal_alignment = 1
+autowrap_mode = 2
+uppercase = true
+
+[node name="Screen" type="NinePatchRect" parent="Control/RightFrame"]
+clip_children = 2
+offset_left = -115.0
+offset_top = -164.0
+offset_right = 122.0
+offset_bottom = -74.0
+texture = ExtResource("10_eymcp")
+patch_margin_left = 5
+patch_margin_top = 6
+patch_margin_right = 7
+patch_margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/RightFrame/Screen"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 6.0
+offset_right = 226.0
+offset_bottom = 84.0
+alignment = 1
+
+[node name="Label3" type="Label" parent="Control/RightFrame/Screen/VBoxContainer"]
+custom_minimum_size = Vector2(202, 0)
+layout_mode = 2
+theme = SubResource("Theme_34yde")
+theme_type_variation = &"Screen"
+theme_override_constants/shadow_offset_x = 2
+theme_override_font_sizes/font_size = 21
+text = "VOTING_BONUS"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="Control/RightFrame/Screen/VBoxContainer"]
+custom_minimum_size = Vector2(202, 0)
+layout_mode = 2
+theme = SubResource("Theme_34yde")
+theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(0, 0.929412, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_font_sizes/font_size = 25
+text = "10 %"
+horizontal_alignment = 1
+autowrap_mode = 2
+script = ExtResource("31_d4meo")
+
+[node name="campaign_demand" parent="Control/RightFrame" instance=ExtResource("22_gnq6m")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -222.0
+offset_top = -309.5
+offset_right = -93.0
+offset_bottom = -181.5
+grow_horizontal = 2
+button_group = ExtResource("23_7tuqn")
+texture_normal = ExtResource("32_kce48")
+texture_pressed = ExtResource("33_kgra0")
+texture_hover = ExtResource("34_ho1x8")
+policy = "ENERGY CAMPAIGN"
+side = "RIGHT"
+
+[node name="PoliciesButtonSmallHole" parent="Control/RightFrame/campaign_demand" index="0"]
+position = Vector2(65, 65)
+texture = ExtResource("35_j1jah")
+
+[node name="Icon" parent="Control/RightFrame/campaign_demand" index="3"]
+position = Vector2(63, 58)
+scale = Vector2(1, 1)
+texture = ExtResource("36_kloh4")
+
+[node name="home_regulation" parent="Control/RightFrame" instance=ExtResource("22_gnq6m")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -219.5
+offset_top = -295.5
+offset_right = -90.5
+offset_bottom = -215.5
+grow_horizontal = 2
+grow_vertical = 2
+button_group = ExtResource("23_7tuqn")
+policy = "MANDATORY BUILDING INSULATION"
+side = "RIGHT"
+
+[node name="ThumbsUp" parent="Control/RightFrame/home_regulation" index="1"]
+position = Vector2(-26, 27)
+
+[node name="Icon" parent="Control/RightFrame/home_regulation" index="3"]
+texture = ExtResource("37_3001d")
+
+[node name="industry_subsidy" parent="Control/RightFrame" instance=ExtResource("22_gnq6m")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -220.0
+offset_top = -569.5
+offset_right = -91.0
+offset_bottom = -489.5
+grow_horizontal = 2
+grow_vertical = 0
+button_group = ExtResource("23_7tuqn")
+policy = "INDUSTRY SUBSIDY"
+side = "RIGHT"
+
+[node name="ThumbsUp" parent="Control/RightFrame/industry_subsidy" index="1"]
+position = Vector2(-26, 30)
+
+[node name="Icon" parent="Control/RightFrame/industry_subsidy" index="3"]
+texture = ExtResource("38_3ih67")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_8dlcw")
+}
+
+[node name="CloseButton" type="TextureButton" parent="." groups=["buttons"]]
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 499.0
+offset_top = -400.0
+offset_right = 543.0
+offset_bottom = -357.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+texture_normal = ExtResource("40_lyfoq")
+texture_pressed = ExtResource("41_h0mhu")
+texture_hover = ExtResource("42_vmf5h")
+texture_disabled = ExtResource("43_wc8ce")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="VoteSuccess" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("44_651m8")
+volume_db = -15.0
+bus = &"Sound"
+script = ExtResource("45_pfqe5")
+
+[node name="VoteFail" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("46_qq11d")
+bus = &"Sound"
+script = ExtResource("47_22spb")
+
+[connection signal="window_opened" from="." to="Control/CenterFrame/InfoScreen1/Text" method="_on_policy_window_opened"]
+[connection signal="window_opened" from="." to="Control/CenterFrame/InfoScreen2/Infos/TopLabel" method="_on_policy_window_opened"]
+[connection signal="window_opened" from="." to="Control/CenterFrame/InfoScreen2/Infos/BottomLabel" method="_on_policy_window_opened"]
+[connection signal="window_opened" from="." to="Control/CenterFrame/Vote" method="_on_policy_window_opened"]
+[connection signal="window_opened" from="." to="Control/CenterFrame/StartCampaign" method="_on_policy_window_opened"]
+[connection signal="gui_input" from="ColorRect" to="." method="_on_backdrop_gui_input"]
+[connection signal="pressed" from="Control/CenterFrame/Vote" to="Control/CenterFrame/Vote" method="_on_pressed"]
+[connection signal="pressed" from="Control/CenterFrame/StartCampaign" to="Control/CenterFrame/StartCampaign" method="_on_pressed"]
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
+
+[editable path="Control/LeftFrame/campaign_env"]
+[editable path="Control/LeftFrame/Upgrade_PV"]
+[editable path="Control/LeftFrame/Wind_buildtime"]
+[editable path="Control/LeftFrame/Upgrade_wind"]
+[editable path="Control/RightFrame/campaign_demand"]
+[editable path="Control/RightFrame/home_regulation"]
+[editable path="Control/RightFrame/industry_subsidy"]

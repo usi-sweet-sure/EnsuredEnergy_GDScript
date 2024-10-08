@@ -1,14 +1,15 @@
-[gd_scene load_steps=23 format=3 uid="uid://ciphd0cmpslrn"]
+[gd_scene load_steps=36 format=3 uid="uid://ciphd0cmpslrn"]
 
-[ext_resource type="Texture2D" uid="uid://dnbd3anohlmvn" path="res://assets/UI Elements/All-HQ-Assets-D_0008s_0001_Small-right-paper.png" id="1_p4eo2"]
+[ext_resource type="Texture2D" uid="uid://dnbd3anohlmvn" path="res://assets/textures/ui/All-HQ-Assets-D_0008s_0001_Small-right-paper.png" id="1_p4eo2"]
 [ext_resource type="Script" path="res://src/gdscript/tutorial/tutorial.gd" id="1_yrums"]
 [ext_resource type="Script" path="res://src/gdscript/tutorial/mouse_block.gd" id="2_1fnul"]
 [ext_resource type="Script" path="res://src/gdscript/tutorial/info_bubble.gd" id="3_fyqfb"]
-[ext_resource type="Texture2D" uid="uid://03lloca0uata" path="res://assets/Elements/ARROW INFO – 1.png" id="3_xv1gs"]
-[ext_resource type="Texture2D" uid="uid://4yafxnl2h5s" path="res://assets/UI Elements/All-HQ-Assets-D_0008s_0004_Big-paper.png" id="5_3h0cr"]
-[ext_resource type="Texture2D" uid="uid://ikiclp3p8k8k" path="res://assets/UI Elements/key_tab_icon.png" id="5_mivsl"]
+[ext_resource type="Texture2D" uid="uid://4yafxnl2h5s" path="res://assets/textures/ui/All-HQ-Assets-D_0008s_0004_Big-paper.png" id="5_3h0cr"]
+[ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/fonts/special_elite/special_elite_regular.ttf" id="5_b2jbb"]
+[ext_resource type="Texture2D" uid="uid://ikiclp3p8k8k" path="res://assets/textures/ui/key_tab_icon.png" id="5_mivsl"]
 [ext_resource type="PackedScene" uid="uid://cqn5kk1o4vep4" path="res://scenes/hud/show_hand.tscn" id="5_rwmh0"]
-[ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="7_6e2hn"]
+[ext_resource type="FontFile" uid="uid://bt2f3flr7psn5" path="res://assets/fonts/vt323/vt323_regular.ttf" id="6_iaseo"]
+[ext_resource type="FontFile" uid="uid://dxtsp51pqna2o" path="res://assets/fonts/static/open_sans_bold.ttf" id="7_52kbx"]
 [ext_resource type="Script" path="res://src/gdscript/tutorial/center_frame.gd" id="7_o01rp"]
 [ext_resource type="Script" path="res://src/gdscript/tutorial/info_bubble2.gd" id="8_lilmj"]
 [ext_resource type="PackedScene" uid="uid://cuajo0ocbdx2d" path="res://scenes/buttons/button_play.tscn" id="9_shki2"]
@@ -21,6 +22,111 @@
 [ext_resource type="Script" path="res://src/gdscript/tutorial/info_bubble7.gd" id="14_g4slm"]
 
 [sub_resource type="Theme" id="Theme_dnnnk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3tdw6"]
+bg_color = Color(0.65098, 0.65098, 0.65098, 0.0470588)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_color = Color(0.25098, 0.807843, 0.839216, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pgfdh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_color = Color(0.219608, 0.752941, 0.784314, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03rjl"]
+bg_color = Color(0.219608, 0.756863, 0.788235, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+
+[sub_resource type="FontVariation" id="FontVariation_3ifss"]
+base_font = ExtResource("7_52kbx")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nyqp5"]
+
+[sub_resource type="FontVariation" id="FontVariation_u3fkg"]
+base_font = ExtResource("5_b2jbb")
+variation_embolden = 0.6
+
+[sub_resource type="FontVariation" id="FontVariation_ule17"]
+base_font = ExtResource("5_b2jbb")
+
+[sub_resource type="FontVariation" id="FontVariation_b0wbe"]
+base_font = ExtResource("6_iaseo")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5mtqi"]
+bg_color = Color(0.192157, 0.658824, 0.690196, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1qqbn"]
+bg_color = Color(0.247059, 0.776471, 0.811765, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_idcep"]
+bg_color = Color(0.129412, 0.486275, 0.509804, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="Theme" id="Theme_34yde"]
+/colors/Dark = Color(0.0627451, 0.572549, 0, 1)
+/font_sizes/Big = 18
+/fonts/font = ExtResource("5_b2jbb")
+Button/colors/font_color = Color(0.211765, 0.690196, 0.717647, 1)
+Button/colors/font_pressed_color = Color(0.0862745, 0.207843, 0.219608, 1)
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("6_iaseo")
+Button/styles/hover = SubResource("StyleBoxFlat_3tdw6")
+Button/styles/normal = SubResource("StyleBoxFlat_pgfdh")
+Button/styles/pressed = SubResource("StyleBoxFlat_03rjl")
+Label/colors/font_color = Color(0.0784314, 0.180392, 0.192157, 1)
+Label/colors/font_outline_color = Color(1, 1, 1, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/font_sizes/font_size = 16
+Label/fonts/font = SubResource("FontVariation_3ifss")
+Label/styles/normal = SubResource("StyleBoxEmpty_nyqp5")
+Paper/base_type = &"Label"
+Paper/colors/color = Color(0.631373, 0.443137, 0.403922, 1)
+Paper/colors/font_color = Color(0, 0, 0, 1)
+Paper/colors/font_outline_color = Color(0, 0, 0, 1)
+Paper/colors/font_shadow_color = Color(0, 0, 0, 1)
+Paper/constants/line_spacing = 0
+Paper/constants/outline_size = 0
+Paper/constants/shadow_offset_x = 0
+Paper/constants/shadow_offset_y = 0
+Paper/constants/shadow_outline_size = 0
+Paper/font_sizes/font_size = 18
+Paper/font_sizes/size = 16
+Paper/fonts/font = ExtResource("5_b2jbb")
+RichTextLabel/constants/line_separation = 7
+RichTextLabel/fonts/bold_font = SubResource("FontVariation_u3fkg")
+RichTextLabel/fonts/normal_font = SubResource("FontVariation_ule17")
+Screen/base_type = &"Label"
+Screen/colors/font_color = Color(0.219608, 0.756863, 0.788235, 1)
+Screen/font_sizes/font_size = 30
+Screen/fonts/font = SubResource("FontVariation_b0wbe")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_5mtqi")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_1qqbn")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_idcep")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cgvln"]
 
@@ -88,13 +194,6 @@ patch_margin_right = 57
 patch_margin_bottom = 35
 metadata/_edit_group_ = true
 
-[node name="Arrow" type="Sprite2D" parent="Bubbles/InfoBubble/InfoBubble/InfoBubble"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-position = Vector2(-12, 66)
-texture = ExtResource("3_xv1gs")
-region_rect = Rect2(24, 24, 30, 32)
-
 [node name="MarginContainer" type="MarginContainer" parent="Bubbles/InfoBubble/InfoBubble"]
 layout_mode = 2
 theme_override_constants/margin_left = 40
@@ -104,7 +203,7 @@ theme_override_constants/margin_bottom = 44
 
 [node name="Text" type="RichTextLabel" parent="Bubbles/InfoBubble/InfoBubble/MarginContainer"]
 layout_mode = 2
-theme = ExtResource("7_6e2hn")
+theme = SubResource("Theme_34yde")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 26
 theme_override_font_sizes/bold_font_size = 26
@@ -187,13 +286,6 @@ patch_margin_right = 78
 patch_margin_bottom = 46
 metadata/_edit_group_ = true
 
-[node name="Arrow" type="Sprite2D" parent="Bubbles/InfoBubble2/InfoBubble2/InfoBubble"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-position = Vector2(-12, 66)
-texture = ExtResource("3_xv1gs")
-region_rect = Rect2(24, 24, 30, 32)
-
 [node name="MarginContainer" type="MarginContainer" parent="Bubbles/InfoBubble2/InfoBubble2"]
 layout_mode = 2
 theme_override_constants/margin_left = 40
@@ -203,7 +295,7 @@ theme_override_constants/margin_bottom = 44
 
 [node name="Text" type="RichTextLabel" parent="Bubbles/InfoBubble2/InfoBubble2/MarginContainer"]
 layout_mode = 2
-theme = ExtResource("7_6e2hn")
+theme = SubResource("Theme_34yde")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 26
 theme_override_font_sizes/bold_font_size = 26
@@ -283,13 +375,6 @@ patch_margin_right = 78
 patch_margin_bottom = 46
 metadata/_edit_group_ = true
 
-[node name="Arrow" type="Sprite2D" parent="Bubbles/InfoBubble3/InfoBubble3/InfoBubble"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-position = Vector2(-12, 66)
-texture = ExtResource("3_xv1gs")
-region_rect = Rect2(24, 24, 30, 32)
-
 [node name="MarginContainer" type="MarginContainer" parent="Bubbles/InfoBubble3/InfoBubble3"]
 layout_mode = 2
 theme_override_constants/margin_left = 40
@@ -299,7 +384,7 @@ theme_override_constants/margin_bottom = 44
 
 [node name="Text" type="RichTextLabel" parent="Bubbles/InfoBubble3/InfoBubble3/MarginContainer"]
 layout_mode = 2
-theme = ExtResource("7_6e2hn")
+theme = SubResource("Theme_34yde")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 26
 theme_override_font_sizes/bold_font_size = 26
@@ -448,7 +533,7 @@ theme_override_constants/margin_bottom = 44
 
 [node name="Text" type="RichTextLabel" parent="Bubbles/InfoBubble4/InfoBubble4/MarginContainer"]
 layout_mode = 2
-theme = ExtResource("7_6e2hn")
+theme = SubResource("Theme_34yde")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 26
 theme_override_font_sizes/bold_font_size = 26
@@ -527,13 +612,6 @@ patch_margin_right = 66
 patch_margin_bottom = 30
 metadata/_edit_group_ = true
 
-[node name="Arrow" type="Sprite2D" parent="Bubbles/InfoBubble5/InfoBubble4/InfoBubble"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-position = Vector2(-12, 66)
-texture = ExtResource("3_xv1gs")
-region_rect = Rect2(24, 24, 30, 32)
-
 [node name="MarginContainer" type="MarginContainer" parent="Bubbles/InfoBubble5/InfoBubble4"]
 layout_mode = 2
 theme_override_constants/margin_left = 40
@@ -543,7 +621,7 @@ theme_override_constants/margin_bottom = 44
 
 [node name="Text" type="RichTextLabel" parent="Bubbles/InfoBubble5/InfoBubble4/MarginContainer"]
 layout_mode = 2
-theme = ExtResource("7_6e2hn")
+theme = SubResource("Theme_34yde")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 26
 theme_override_font_sizes/bold_font_size = 26
@@ -664,13 +742,6 @@ patch_margin_right = 56
 patch_margin_bottom = 33
 metadata/_edit_group_ = true
 
-[node name="Arrow" type="Sprite2D" parent="Bubbles/InfoBubble6/InfoBubble5/InfoBubble"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-position = Vector2(-12, 66)
-texture = ExtResource("3_xv1gs")
-region_rect = Rect2(24, 24, 30, 32)
-
 [node name="MarginContainer" type="MarginContainer" parent="Bubbles/InfoBubble6/InfoBubble5"]
 layout_mode = 2
 theme_override_constants/margin_left = 40
@@ -680,7 +751,7 @@ theme_override_constants/margin_bottom = 44
 
 [node name="Text" type="RichTextLabel" parent="Bubbles/InfoBubble6/InfoBubble5/MarginContainer"]
 layout_mode = 2
-theme = ExtResource("7_6e2hn")
+theme = SubResource("Theme_34yde")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 26
 theme_override_font_sizes/bold_font_size = 26
@@ -722,13 +793,6 @@ patch_margin_right = 48
 patch_margin_bottom = 44
 metadata/_edit_group_ = true
 
-[node name="Arrow" type="Sprite2D" parent="Bubbles/InfoBubble7/InfoBubble6/InfoBubble"]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-position = Vector2(-12, 47)
-texture = ExtResource("3_xv1gs")
-region_rect = Rect2(24, 24, 30, 32)
-
 [node name="MarginContainer" type="MarginContainer" parent="Bubbles/InfoBubble7/InfoBubble6"]
 layout_mode = 2
 theme_override_constants/margin_left = 40
@@ -738,7 +802,7 @@ theme_override_constants/margin_bottom = 44
 
 [node name="Text" type="RichTextLabel" parent="Bubbles/InfoBubble7/InfoBubble6/MarginContainer"]
 layout_mode = 2
-theme = ExtResource("7_6e2hn")
+theme = SubResource("Theme_34yde")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 26
 theme_override_font_sizes/bold_font_size = 26
@@ -821,7 +885,7 @@ offset_top = -18.0
 offset_right = 117.0
 offset_bottom = 8.0
 grow_vertical = 0
-theme = ExtResource("7_6e2hn")
+theme = SubResource("Theme_34yde")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "to skip"
 
@@ -839,7 +903,7 @@ theme_override_constants/margin_bottom = 80
 
 [node name="Text" type="RichTextLabel" parent="CenterFrame/MarginContainer"]
 layout_mode = 2
-theme = ExtResource("7_6e2hn")
+theme = SubResource("Theme_34yde")
 theme_type_variation = &"Paper"
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 32

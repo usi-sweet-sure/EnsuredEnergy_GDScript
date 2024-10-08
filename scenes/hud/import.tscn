@@ -1,24 +1,24 @@
 [gd_scene load_steps=20 format=3 uid="uid://c81iji81uc4g7"]
 
-[ext_resource type="Texture2D" uid="uid://dm24o8isvyq3f" path="res://assets/UI Elements/Import-Slider.png" id="1_wlgbb"]
-[ext_resource type="Texture2D" uid="uid://jboxm7nhk0qv" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0001_import-line-stats.png" id="2_oajti"]
-[ext_resource type="Texture2D" uid="uid://df4gj54sb7ccr" path="res://assets/UI Elements/Import-Slider-disabled.png" id="2_s0kbr"]
-[ext_resource type="Texture2D" uid="uid://dwys7y27kiabl" path="res://assets/used_assets/textures/buttons/switch_on.png" id="3_5cyy2"]
-[ext_resource type="Texture2D" uid="uid://dhxkhfg2qxlgx" path="res://assets/used_assets/textures/buttons/switch_off.png" id="4_h7pam"]
-[ext_resource type="Texture2D" uid="uid://cutsnw5tilsgk" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0023_Slider-long-bar-vertical.png" id="5_dclfl"]
-[ext_resource type="Texture2D" uid="uid://ceywqq4wa4ocw" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0026_Icon-Import.png" id="6_48snv"]
-[ext_resource type="Texture2D" uid="uid://4t4xo3iop7ni" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0008_Smaller-up-normal-button.png" id="7_gbmtg"]
-[ext_resource type="Texture2D" uid="uid://dg83vbnyupbsg" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0000_Smaller-up-press-button.png" id="8_3cxra"]
-[ext_resource type="Texture2D" uid="uid://bk8e0brvnqt1h" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0004_Smaller-up-hover-button.png" id="9_vkosn"]
-[ext_resource type="Texture2D" uid="uid://b227np2ip77iq" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0000_Smaller-button-hole.png" id="10_foi7o"]
-[ext_resource type="Texture2D" uid="uid://bpg21sn01dlvs" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0009_Smaller-down-normal-button.png" id="11_dydue"]
-[ext_resource type="Texture2D" uid="uid://befqs6shy6255" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0001_Smaller-down-press-button.png" id="12_s1q53"]
-[ext_resource type="Texture2D" uid="uid://i28apq5k1uve" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0005_Smaller-down-hover-button.png" id="13_2onux"]
-[ext_resource type="Texture2D" uid="uid://d0ce5hjkh4fje" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0025_LED-Off.png" id="14_bnj43"]
-[ext_resource type="Texture2D" uid="uid://dsa7egpm31uso" path="res://assets/UI Elements/All-HQ-Assets-D_0007s_0026_LED-On.png" id="15_ibw3y"]
+[ext_resource type="Texture2D" uid="uid://dm24o8isvyq3f" path="res://assets/textures/ui/Import-Slider.png" id="1_gncqj"]
+[ext_resource type="Texture2D" uid="uid://df4gj54sb7ccr" path="res://assets/textures/ui/Import-Slider-disabled.png" id="2_0cy8l"]
+[ext_resource type="Texture2D" uid="uid://jboxm7nhk0qv" path="res://assets/textures/ui/All-HQ-Assets-D_0007s_0001_import-line-stats.png" id="3_paqnm"]
+[ext_resource type="Texture2D" uid="uid://dwys7y27kiabl" path="res://assets/textures/buttons/switch_on.png" id="4_u8hml"]
+[ext_resource type="Texture2D" uid="uid://dhxkhfg2qxlgx" path="res://assets/textures/buttons/switch_off.png" id="5_imf88"]
+[ext_resource type="Texture2D" uid="uid://cutsnw5tilsgk" path="res://assets/textures/ui/All-HQ-Assets-D_0007s_0023_Slider-long-bar-vertical.png" id="6_whimy"]
+[ext_resource type="Texture2D" uid="uid://ceywqq4wa4ocw" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0026_Icon-Import.png" id="7_enyr6"]
+[ext_resource type="Texture2D" uid="uid://4t4xo3iop7ni" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0008_Smaller-up-normal-button.png" id="8_wkyen"]
+[ext_resource type="Texture2D" uid="uid://dg83vbnyupbsg" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0000_Smaller-up-press-button.png" id="9_3r42e"]
+[ext_resource type="Texture2D" uid="uid://bk8e0brvnqt1h" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0004_Smaller-up-hover-button.png" id="10_r1bt6"]
+[ext_resource type="Texture2D" uid="uid://b227np2ip77iq" path="res://assets/textures/ui/All-HQ-Assets-D_0001s_0000_Smaller-button-hole.png" id="11_dob6c"]
+[ext_resource type="Texture2D" uid="uid://bpg21sn01dlvs" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0009_Smaller-down-normal-button.png" id="12_k22tg"]
+[ext_resource type="Texture2D" uid="uid://befqs6shy6255" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0001_Smaller-down-press-button.png" id="13_2luyg"]
+[ext_resource type="Texture2D" uid="uid://i28apq5k1uve" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0005_Smaller-down-hover-button.png" id="14_u5snb"]
+[ext_resource type="Texture2D" uid="uid://d0ce5hjkh4fje" path="res://assets/textures/ui/All-HQ-Assets-D_0007s_0025_LED-Off.png" id="15_ovdub"]
+[ext_resource type="Texture2D" uid="uid://dsa7egpm31uso" path="res://assets/textures/ui/All-HQ-Assets-D_0007s_0026_LED-On.png" id="16_dwyf5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k8dnj"]
-atlas = ExtResource("1_wlgbb")
+atlas = ExtResource("1_gncqj")
 region = Rect2(2, 1, 37, 50)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p65yt"]
@@ -34,8 +34,8 @@ offset_top = 0.279999
 offset_right = 15.96
 offset_bottom = 96.0
 theme_override_icons/grabber = SubResource("AtlasTexture_k8dnj")
-theme_override_icons/grabber_highlight = ExtResource("1_wlgbb")
-theme_override_icons/grabber_disabled = ExtResource("2_s0kbr")
+theme_override_icons/grabber_highlight = ExtResource("1_gncqj")
+theme_override_icons/grabber_disabled = ExtResource("2_0cy8l")
 theme_override_styles/slider = SubResource("StyleBoxFlat_p65yt")
 max_value = 50.0
 scrollable = false
@@ -45,7 +45,7 @@ ticks_on_borders = true
 [node name="Import-line" type="Sprite2D" parent="."]
 show_behind_parent = true
 position = Vector2(-8, 123)
-texture = ExtResource("2_oajti")
+texture = ExtResource("3_paqnm")
 
 [node name="TargetLine" type="Line2D" parent="."]
 position = Vector2(-111, 9)
@@ -64,8 +64,8 @@ No CO2 emissions
 Cost more $
 "
 focus_mode = 0
-theme_override_icons/checked = ExtResource("3_5cyy2")
-theme_override_icons/unchecked = ExtResource("4_h7pam")
+theme_override_icons/checked = ExtResource("4_u8hml")
+theme_override_icons/unchecked = ExtResource("5_imf88")
 icon_alignment = 1
 
 [node name="OnL" type="Label" parent="ImportSwitch"]
@@ -93,11 +93,11 @@ uppercase = true
 [node name="Import-bar-hole" type="Sprite2D" parent="."]
 show_behind_parent = true
 position = Vector2(19, 122)
-texture = ExtResource("5_dclfl")
+texture = ExtResource("6_whimy")
 
 [node name="Icon-import" type="Sprite2D" parent="."]
 position = Vector2(-24, 289)
-texture = ExtResource("6_48snv")
+texture = ExtResource("7_enyr6")
 
 [node name="UpButton" type="TextureButton" parent="."]
 layout_mode = 0
@@ -105,17 +105,17 @@ offset_left = -48.0
 offset_top = 126.0
 offset_right = -16.0
 offset_bottom = 158.0
-texture_normal = ExtResource("7_gbmtg")
-texture_pressed = ExtResource("8_3cxra")
-texture_hover = ExtResource("9_vkosn")
-texture_disabled = ExtResource("8_3cxra")
+texture_normal = ExtResource("8_wkyen")
+texture_pressed = ExtResource("9_3r42e")
+texture_hover = ExtResource("10_r1bt6")
+texture_disabled = ExtResource("9_3r42e")
 ignore_texture_size = true
 
 [node name="Button-arrow-hole2" type="Sprite2D" parent="UpButton"]
 show_behind_parent = true
 position = Vector2(2, -1)
 rotation = 3.14159
-texture = ExtResource("10_foi7o")
+texture = ExtResource("11_dob6c")
 
 [node name="DownButton" type="TextureButton" parent="."]
 layout_mode = 0
@@ -123,16 +123,16 @@ offset_left = -79.0
 offset_top = 129.0
 offset_right = -47.0
 offset_bottom = 161.0
-texture_normal = ExtResource("11_dydue")
-texture_pressed = ExtResource("12_s1q53")
-texture_hover = ExtResource("13_2onux")
-texture_disabled = ExtResource("12_s1q53")
+texture_normal = ExtResource("12_k22tg")
+texture_pressed = ExtResource("13_2luyg")
+texture_hover = ExtResource("14_u5snb")
+texture_disabled = ExtResource("13_2luyg")
 ignore_texture_size = true
 
 [node name="Button-arrow-hole" type="Sprite2D" parent="DownButton"]
 show_behind_parent = true
 position = Vector2(29, 34)
-texture = ExtResource("10_foi7o")
+texture = ExtResource("11_dob6c")
 
 [node name="ImportLabel" type="Label" parent="."]
 layout_mode = 0
@@ -146,9 +146,9 @@ uppercase = true
 [node name="LEDOff" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(111, 308)
-texture = ExtResource("14_bnj43")
+texture = ExtResource("15_ovdub")
 
 [node name="LEDOn" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(111, 308)
-texture = ExtResource("15_ibw3y")
+texture = ExtResource("16_dwyf5")

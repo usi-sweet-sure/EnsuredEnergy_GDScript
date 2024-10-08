@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://ba56oxmvcxpos" path="res://scenes/world.tscn" id="1_prp6q"]
 [ext_resource type="PackedScene" uid="uid://bs48lirfn2fp2" path="res://scenes/hud/ui.tscn" id="2_d60f5"]
-[ext_resource type="Script" path="res://src/cs/ui/camera.gd" id="3_2lui3"]
-[ext_resource type="PackedScene" uid="uid://rjcu72lxn4n4" path="res://scenes/settings.tscn" id="11_3whgs"]
+[ext_resource type="Script" path="res://src/gdscript/camera.gd" id="3_2lui3"]
+[ext_resource type="PackedScene" uid="uid://rjcu72lxn4n4" path="res://scenes/windows/settings.tscn" id="11_3whgs"]
 [ext_resource type="PackedScene" uid="uid://ciphd0cmpslrn" path="res://scenes/hud/tutorial.tscn" id="11_uite1"]
 [ext_resource type="PackedScene" uid="uid://885lty3v1qbq" path="res://scenes/windows/shock.tscn" id="12_vvejj"]
 [ext_resource type="Script" path="res://src/gdscript/test_layer/test_layer.gd" id="13_t2kov"]

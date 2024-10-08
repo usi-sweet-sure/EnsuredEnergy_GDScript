@@ -1,25 +1,131 @@
-[gd_scene load_steps=24 format=3 uid="uid://pvoi2mcc3oc1"]
+[gd_scene load_steps=37 format=3 uid="uid://pvoi2mcc3oc1"]
 
 [ext_resource type="Script" path="res://src/gdscript/starting_screen/menu.gd" id="1_hl1kv"]
-[ext_resource type="Texture2D" uid="uid://dug4cy4mgxa1b" path="res://assets/used_assets/textures/map/map.jpg" id="2_yai7r"]
-[ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="3_l0e0n"]
-[ext_resource type="Texture2D" uid="uid://d2xmfb55o0osw" path="res://assets/UI Elements/All-HQ-Assets-D_0006s_0014_Start-menu-metal-base.png" id="4_dgun4"]
-[ext_resource type="Texture2D" uid="uid://d2dxa7x362j3j" path="res://assets/Elements/NEXTTURNBUTTONDisabled.png" id="5_gh7te"]
-[ext_resource type="Texture2D" uid="uid://bspccm3p1o4q8" path="res://assets/UI Elements/All-HQ-Assets-D_0005s_0008_Player-name-screen.png" id="5_rxjck"]
+[ext_resource type="Texture2D" uid="uid://dug4cy4mgxa1b" path="res://assets/textures/map/map.jpg" id="2_yai7r"]
+[ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/fonts/special_elite/special_elite_regular.ttf" id="3_hwgqu"]
+[ext_resource type="Texture2D" uid="uid://d2xmfb55o0osw" path="res://assets/textures/ui/All-HQ-Assets-D_0006s_0014_Start-menu-metal-base.png" id="4_dgun4"]
+[ext_resource type="FontFile" uid="uid://bt2f3flr7psn5" path="res://assets/fonts/vt323/vt323_regular.ttf" id="4_u4k4v"]
+[ext_resource type="Texture2D" uid="uid://bspccm3p1o4q8" path="res://assets/textures/ui/All-HQ-Assets-D_0005s_0008_Player-name-screen.png" id="5_rxjck"]
+[ext_resource type="FontFile" uid="uid://dxtsp51pqna2o" path="res://assets/fonts/static/open_sans_bold.ttf" id="5_tofyq"]
 [ext_resource type="Script" path="res://src/gdscript/starting_screen/player_name.gd" id="6_h11gm"]
-[ext_resource type="Texture2D" uid="uid://cvr8ptliyw7oc" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0013_1-slot-button-hole.png" id="9_j0rns"]
+[ext_resource type="Texture2D" uid="uid://cvr8ptliyw7oc" path="res://assets/textures/ui/All-HQ-Assets-D_0001s_0013_1-slot-button-hole.png" id="9_j0rns"]
 [ext_resource type="Script" path="res://src/gdscript/starting_screen/play_button.gd" id="9_oo472"]
-[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/Fonts/label_themes.tres" id="11_ta118"]
-[ext_resource type="Texture2D" uid="uid://cqekiqjn8gvh7" path="res://assets/UI Elements/Button-Play-normal.png" id="11_v1gn1"]
-[ext_resource type="Texture2D" uid="uid://c5tgx0yng476j" path="res://assets/UI Elements/Button-Play-press.png" id="12_2e306"]
-[ext_resource type="Texture2D" uid="uid://id0egjudmljv" path="res://assets/UI Elements/Blueprint_normal.png" id="12_eqfmq"]
-[ext_resource type="Texture2D" uid="uid://bhipsxe5qj5kh" path="res://assets/UI Elements/Blueprint_active_1.png" id="13_bf784"]
-[ext_resource type="Texture2D" uid="uid://0od1i8cgelas" path="res://assets/UI Elements/Button-Play-hover.png" id="13_ngmjh"]
-[ext_resource type="Texture2D" uid="uid://b4m67oni44dpg" path="res://assets/UI Elements/Button-normal.png" id="14_38vq8"]
-[ext_resource type="Texture2D" uid="uid://ctraf5ssdx7wt" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0049_CTA-Normal-metal.png" id="14_n5xse"]
-[ext_resource type="Texture2D" uid="uid://bdqqnt7g3ojt8" path="res://assets/UI Elements/Blueprint_active_2.png" id="14_wbube"]
-[ext_resource type="Texture2D" uid="uid://60dl810b25fd" path="res://assets/UI Elements/Button-press.png" id="15_4vyug"]
-[ext_resource type="Texture2D" uid="uid://cuhckno2t6g0r" path="res://assets/UI Elements/Button-hover.png" id="16_gqjv5"]
+[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="11_ta118"]
+[ext_resource type="Texture2D" uid="uid://cqekiqjn8gvh7" path="res://assets/textures/ui/Button-Play-normal.png" id="11_v1gn1"]
+[ext_resource type="Texture2D" uid="uid://c5tgx0yng476j" path="res://assets/textures/ui/Button-Play-press.png" id="12_2e306"]
+[ext_resource type="Texture2D" uid="uid://id0egjudmljv" path="res://assets/textures/ui/Blueprint_normal.png" id="12_eqfmq"]
+[ext_resource type="Texture2D" uid="uid://bhipsxe5qj5kh" path="res://assets/textures/ui/Blueprint_active_1.png" id="13_bf784"]
+[ext_resource type="Texture2D" uid="uid://0od1i8cgelas" path="res://assets/textures/ui/Button-Play-hover.png" id="13_ngmjh"]
+[ext_resource type="Texture2D" uid="uid://b4m67oni44dpg" path="res://assets/textures/ui/Button-normal.png" id="14_38vq8"]
+[ext_resource type="Texture2D" uid="uid://ctraf5ssdx7wt" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0049_CTA-Normal-metal.png" id="14_n5xse"]
+[ext_resource type="Texture2D" uid="uid://bdqqnt7g3ojt8" path="res://assets/textures/ui/Blueprint_active_2.png" id="14_wbube"]
+[ext_resource type="Texture2D" uid="uid://60dl810b25fd" path="res://assets/textures/ui/Button-press.png" id="15_4vyug"]
+[ext_resource type="Texture2D" uid="uid://cuhckno2t6g0r" path="res://assets/textures/ui/Button-hover.png" id="16_gqjv5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3tdw6"]
+bg_color = Color(0.65098, 0.65098, 0.65098, 0.0470588)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_color = Color(0.25098, 0.807843, 0.839216, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pgfdh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_color = Color(0.219608, 0.752941, 0.784314, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03rjl"]
+bg_color = Color(0.219608, 0.756863, 0.788235, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+
+[sub_resource type="FontVariation" id="FontVariation_3ifss"]
+base_font = ExtResource("5_tofyq")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nyqp5"]
+
+[sub_resource type="FontVariation" id="FontVariation_u3fkg"]
+base_font = ExtResource("3_hwgqu")
+variation_embolden = 0.6
+
+[sub_resource type="FontVariation" id="FontVariation_ule17"]
+base_font = ExtResource("3_hwgqu")
+
+[sub_resource type="FontVariation" id="FontVariation_b0wbe"]
+base_font = ExtResource("4_u4k4v")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5mtqi"]
+bg_color = Color(0.192157, 0.658824, 0.690196, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1qqbn"]
+bg_color = Color(0.247059, 0.776471, 0.811765, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_idcep"]
+bg_color = Color(0.129412, 0.486275, 0.509804, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="Theme" id="Theme_34yde"]
+/colors/Dark = Color(0.0627451, 0.572549, 0, 1)
+/font_sizes/Big = 18
+/fonts/font = ExtResource("3_hwgqu")
+Button/colors/font_color = Color(0.211765, 0.690196, 0.717647, 1)
+Button/colors/font_pressed_color = Color(0.0862745, 0.207843, 0.219608, 1)
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("4_u4k4v")
+Button/styles/hover = SubResource("StyleBoxFlat_3tdw6")
+Button/styles/normal = SubResource("StyleBoxFlat_pgfdh")
+Button/styles/pressed = SubResource("StyleBoxFlat_03rjl")
+Label/colors/font_color = Color(0.0784314, 0.180392, 0.192157, 1)
+Label/colors/font_outline_color = Color(1, 1, 1, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/font_sizes/font_size = 16
+Label/fonts/font = SubResource("FontVariation_3ifss")
+Label/styles/normal = SubResource("StyleBoxEmpty_nyqp5")
+Paper/base_type = &"Label"
+Paper/colors/color = Color(0.631373, 0.443137, 0.403922, 1)
+Paper/colors/font_color = Color(0, 0, 0, 1)
+Paper/colors/font_outline_color = Color(0, 0, 0, 1)
+Paper/colors/font_shadow_color = Color(0, 0, 0, 1)
+Paper/constants/line_spacing = 0
+Paper/constants/outline_size = 0
+Paper/constants/shadow_offset_x = 0
+Paper/constants/shadow_offset_y = 0
+Paper/constants/shadow_outline_size = 0
+Paper/font_sizes/font_size = 18
+Paper/font_sizes/size = 16
+Paper/fonts/font = ExtResource("3_hwgqu")
+RichTextLabel/constants/line_separation = 7
+RichTextLabel/fonts/bold_font = SubResource("FontVariation_u3fkg")
+RichTextLabel/fonts/normal_font = SubResource("FontVariation_ule17")
+Screen/base_type = &"Label"
+Screen/colors/font_color = Color(0.219608, 0.756863, 0.788235, 1)
+Screen/font_sizes/font_size = 30
+Screen/fonts/font = SubResource("FontVariation_b0wbe")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_5mtqi")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_1qqbn")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_idcep")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k5cxq"]
 texture = ExtResource("5_rxjck")
@@ -78,7 +184,7 @@ offset_top = 29.0
 offset_bottom = -774.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("3_l0e0n")
+theme = SubResource("Theme_34yde")
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/shadow_outline_size = 5
@@ -103,7 +209,7 @@ offset_left = 569.0
 offset_top = 501.0
 offset_right = 821.0
 offset_bottom = 561.0
-theme = ExtResource("3_l0e0n")
+theme = SubResource("Theme_34yde")
 theme_type_variation = &"Screen"
 theme_override_colors/caret_color = Color(0.843184, 0.843184, 0.843184, 0.92549)
 theme_override_constants/caret_width = 4
@@ -174,7 +280,6 @@ grow_vertical = 2
 texture_normal = ExtResource("14_38vq8")
 texture_pressed = ExtResource("15_4vyug")
 texture_hover = ExtResource("16_gqjv5")
-texture_disabled = ExtResource("5_gh7te")
 ignore_texture_size = true
 stretch_mode = 3
 metadata/_edit_group_ = true
@@ -257,7 +362,7 @@ offset_left = -220.0
 offset_top = -112.0
 offset_right = -80.0
 offset_bottom = -24.0
-theme = ExtResource("3_l0e0n")
+theme = SubResource("Theme_34yde")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/line_spacing = 4
 text = "HOLD"
@@ -269,7 +374,7 @@ offset_left = -220.0
 offset_top = 42.0
 offset_right = -80.0
 offset_bottom = 135.0
-theme = ExtResource("3_l0e0n")
+theme = SubResource("Theme_34yde")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/line_spacing = 4
 text = "SCROLL"

@@ -37,44 +37,44 @@ var powerplant_scene = preload("res://scenes/powerplants/pp_map_emplacement/pp_s
 
 # MUST BE in the same order as EngineTypeIds
 var powerplants_textures_on: Array[String] = [
-	"res://assets/used_assets/textures/powerplants/pp_sprite_on_solar.png", # Solar
-	"res://assets/used_assets/textures/powerplants/pp_sprite_on_wind.png", # Wind
-	"res://assets/used_assets/textures/powerplants/pp_sprite_on_gas.png", # Gas
-	"res://assets/used_assets/textures/powerplants/pp_sprite_on_waste.png", # Waste
-	"res://assets/used_assets/textures/powerplants/pp_sprite_on_biomass.png", # Biomass
-	"res://assets/used_assets/textures/powerplants/pp_sprite_on_biogas.png", # Biogas
-	"res://assets/used_assets/textures/powerplants/pp_sprite_on_nuclear.png", # Nuclear
-	"res://assets/used_assets/textures/powerplants/pp_sprite_on_carbon_sequestration.png", # Carbon sequestration
-	"res://assets/used_assets/textures/powerplants/pp_sprite_on_hydro.png", # Hydro
-	"res://assets/used_assets/textures/powerplants/pp_sprite_on_river.png", # River 
+	"res://assets/textures/powerplants/pp_sprite_on_solar.png", # Solar
+	"res://assets/textures/powerplants/pp_sprite_on_wind.png", # Wind
+	"res://assets/textures/powerplants/pp_sprite_on_gas.png", # Gas
+	"res://assets/textures/powerplants/pp_sprite_on_waste.png", # Waste
+	"res://assets/textures/powerplants/pp_sprite_on_biomass.png", # Biomass
+	"res://assets/textures/powerplants/pp_sprite_on_biogas.png", # Biogas
+	"res://assets/textures/powerplants/pp_sprite_on_nuclear.png", # Nuclear
+	"res://assets/textures/powerplants/pp_sprite_on_carbon_sequestration.png", # Carbon sequestration
+	"res://assets/textures/powerplants/pp_sprite_on_hydro.png", # Hydro
+	"res://assets/textures/powerplants/pp_sprite_on_river.png", # River 
 ]
 
 # MUST BE in the same order as EngineTypeIds
 var powerplants_textures_off: Array[String] = [
-	"res://assets/used_assets/textures/powerplants/pp_sprite_off_solar.png", # Solar
-	"res://assets/used_assets/textures/powerplants/pp_sprite_off_wind.png", # Wind
-	"res://assets/used_assets/textures/powerplants/pp_sprite_off_gas.png", # Gas
-	"res://assets/used_assets/textures/powerplants/pp_sprite_off_waste.png", # Waste
-	"res://assets/used_assets/textures/powerplants/pp_sprite_off_biomass.png", # Biomass
-	"res://assets/used_assets/textures/powerplants/pp_sprite_off_biogas.png", # Biogas
-	"res://assets/used_assets/textures/powerplants/pp_sprite_off_nuclear.png", # Nuclear
-	"res://assets/used_assets/textures/powerplants/pp_sprite_off_carbon_sequestration.png", # Carbon sequestration
-	"res://assets/used_assets/textures/powerplants/pp_sprite_off_hydro.png", # Hydro
-	"res://assets/used_assets/textures/powerplants/pp_sprite_off_river.png", # River 
+	"res://assets/textures/powerplants/pp_sprite_off_solar.png", # Solar
+	"res://assets/textures/powerplants/pp_sprite_off_wind.png", # Wind
+	"res://assets/textures/powerplants/pp_sprite_off_gas.png", # Gas
+	"res://assets/textures/powerplants/pp_sprite_off_waste.png", # Waste
+	"res://assets/textures/powerplants/pp_sprite_off_biomass.png", # Biomass
+	"res://assets/textures/powerplants/pp_sprite_off_biogas.png", # Biogas
+	"res://assets/textures/powerplants/pp_sprite_off_nuclear.png", # Nuclear
+	"res://assets/textures/powerplants/pp_sprite_off_carbon_sequestration.png", # Carbon sequestration
+	"res://assets/textures/powerplants/pp_sprite_off_hydro.png", # Hydro
+	"res://assets/textures/powerplants/pp_sprite_off_river.png", # River 
 ]
 
 # MUST BE in the same order as EngineTypeIds
 var powerplants_textures_neon: Array[String] = [
-	"res://assets/used_assets/textures/powerplants/pp_sprite_neon_solar.png", # Solar
-	"res://assets/used_assets/textures/powerplants/pp_sprite_neon_wind.png", # Wind
-	"res://assets/used_assets/textures/powerplants/pp_sprite_neon_gas.png", # Gas
-	"res://assets/used_assets/textures/powerplants/pp_sprite_neon_waste.png", # Waste
-	"res://assets/used_assets/textures/powerplants/pp_sprite_neon_biomass.png", # Biomass
-	"res://assets/used_assets/textures/powerplants/pp_sprite_neon_biogas.png", # Biogas
-	"res://assets/used_assets/textures/powerplants/pp_sprite_neon_nuclear.png", # Nuclear
-	"res://assets/used_assets/textures/powerplants/pp_sprite_neon_carbon_sequestration.png", # Carbon sequestration
-	"res://assets/used_assets/textures/powerplants/pp_sprite_neon_hydro.png", # Hydro
-	"res://assets/used_assets/textures/powerplants/pp_sprite_neon_river.png", # River 
+	"res://assets/textures/powerplants/pp_sprite_neon_solar.png", # Solar
+	"res://assets/textures/powerplants/pp_sprite_neon_wind.png", # Wind
+	"res://assets/textures/powerplants/pp_sprite_neon_gas.png", # Gas
+	"res://assets/textures/powerplants/pp_sprite_neon_waste.png", # Waste
+	"res://assets/textures/powerplants/pp_sprite_neon_biomass.png", # Biomass
+	"res://assets/textures/powerplants/pp_sprite_neon_biogas.png", # Biogas
+	"res://assets/textures/powerplants/pp_sprite_neon_nuclear.png", # Nuclear
+	"res://assets/textures/powerplants/pp_sprite_neon_carbon_sequestration.png", # Carbon sequestration
+	"res://assets/textures/powerplants/pp_sprite_neon_hydro.png", # Hydro
+	"res://assets/textures/powerplants/pp_sprite_neon_river.png", # River 
 ]
 
 # MUST BE in the same order as EngineTypeIds

@@ -1,8 +1,8 @@
 [gd_resource type="Theme" load_steps=12 format=3 uid="uid://dwneq676q3hhg"]
 
-[ext_resource type="FontFile" uid="uid://dxtsp51pqna2o" path="res://assets/Fonts/static/OpenSans-Bold.ttf" id="2_h51fi"]
-[ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/Fonts/Special_Elite/SpecialElite-Regular.ttf" id="3_f6d62"]
-[ext_resource type="FontFile" uid="uid://bt2f3flr7psn5" path="res://assets/Fonts/VT323/VT323-Regular.ttf" id="3_tk8xd"]
+[ext_resource type="FontFile" uid="uid://dxtsp51pqna2o" path="res://assets/fonts/static/open_sans_bold.ttf" id="2_h51fi"]
+[ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/fonts/special_elite/special_elite_regular.ttf" id="3_f6d62"]
+[ext_resource type="FontFile" uid="uid://bt2f3flr7psn5" path="res://assets/fonts/vt323/vt323_regular.ttf" id="3_tk8xd"]
 
 [sub_resource type="FontVariation" id="FontVariation_3ifss"]
 base_font = ExtResource("2_h51fi")

@@ -118,6 +118,7 @@ visible = false
 material = SubResource("ShaderMaterial_g2jol")
 
 [node name="Label" type="Label" parent="."]
+visible = false
 z_index = 1
 offset_left = 96.0
 offset_top = 368.0

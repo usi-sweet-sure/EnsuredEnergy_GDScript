@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://dbdgpa4pfgryb"]
 
 [ext_resource type="Shader" path="res://src/gdscript/shaders/outline.gdshader" id="1_kx28v"]
-[ext_resource type="Texture2D" uid="uid://cd8341rl44tws" path="res://assets/used_assets/textures/powerplants/bb_normal.png" id="1_skkg8"]
-[ext_resource type="BitMap" uid="uid://1iqu0g7vgbmb" path="res://assets/used_assets/textures/powerplants/bb_click_mask.png" id="2_6lg61"]
+[ext_resource type="Texture2D" uid="uid://cd8341rl44tws" path="res://assets/textures/powerplants/bb_normal.png" id="1_skkg8"]
+[ext_resource type="BitMap" uid="uid://1iqu0g7vgbmb" path="res://assets/textures/powerplants/bb_click_mask.png" id="2_6lg61"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/bb_normal/texture_button.gd" id="3_hd2cs"]
-[ext_resource type="Texture2D" uid="uid://d1nj3wl5q4pnv" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0017_Icon-Hammer.png" id="4_1bplc"]
+[ext_resource type="Texture2D" uid="uid://d1nj3wl5q4pnv" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0017_Icon-Hammer.png" id="4_1bplc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2h05u"]
 resource_local_to_scene = true

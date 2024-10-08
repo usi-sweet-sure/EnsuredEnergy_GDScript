@@ -23,7 +23,7 @@ var context: String = "none" # Allows to know what the graph is displaying
 var default_line_width = 4
 var default_point_size = Vector2(15.0,15.0)
 
-@onready var label_theme = load("res://scenes/windows/label_themes.tres")
+@onready var label_theme = load("res://assets/fonts/label_themes.tres")
 @onready var graph = $"."
 @onready var line_names_container = $"../../LineNamesContainer"
 

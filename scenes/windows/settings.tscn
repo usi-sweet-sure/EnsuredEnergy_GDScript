@@ -1,0 +1,598 @@
+[gd_scene load_steps=34 format=3 uid="uid://rjcu72lxn4n4"]
+
+[ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/settings_canvas.gd" id="1_q4she"]
+[ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/close_button.gd" id="2_q0sqg"]
+[ext_resource type="Texture2D" uid="uid://cvwhghlarnumd" path="res://assets/textures/ui/All-HQ-Assets-D_0006s_0004_Settings-metal-base.png" id="3_s2phf"]
+[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="4_u1vjd"]
+[ext_resource type="Texture2D" uid="uid://xmi4fk7xmp5j" path="res://assets/textures/ui/All-HQ-Assets-D_0007s_0032_Ball-Slider.png" id="5_0fgff"]
+[ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/volume_slider.gd" id="6_rdjob"]
+[ext_resource type="Texture2D" uid="uid://fe0i52vl7ck6" path="res://assets/textures/ui/All-HQ-Assets-D_0007s_0006_Slider-bar-horizontal.png" id="7_cpyrf"]
+[ext_resource type="Texture2D" uid="uid://bfwxh2i2cmi6x" path="res://assets/textures/ui/All-HQ-Assets-D_0001s_0014_3-slots-button-hole.png" id="8_2bbhj"]
+[ext_resource type="Texture2D" uid="uid://dcmk3ydewbiv1" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0053_CTA-Normal-yellow-.png" id="9_m6vd3"]
+[ext_resource type="Texture2D" uid="uid://du2p1deh0wc0w" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0052_CTA-Press-yellow.png" id="10_ar3yn"]
+[ext_resource type="Texture2D" uid="uid://cjob6p34oigtg" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0051_CTA-Hover-yellow.png" id="11_he6ua"]
+[ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/language_button.gd" id="12_47lq4"]
+[ext_resource type="Texture2D" uid="uid://b4m67oni44dpg" path="res://assets/textures/ui/Button-normal.png" id="13_mepng"]
+[ext_resource type="Texture2D" uid="uid://60dl810b25fd" path="res://assets/textures/ui/Button-press.png" id="14_ddynd"]
+[ext_resource type="Texture2D" uid="uid://cuhckno2t6g0r" path="res://assets/textures/ui/Button-hover.png" id="15_8tsm0"]
+[ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/instructions_button.gd" id="16_qwrhs"]
+[ext_resource type="Texture2D" uid="uid://dvph1wklx4pfh" path="res://assets/textures/ui/Paper-Big.png" id="17_vb3qy"]
+[ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/credits_sprite.gd" id="18_v57dl"]
+[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="19_d2swd"]
+[ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/textures/ui/Button-Next-Normal.png" id="20_dqb8u"]
+[ext_resource type="Texture2D" uid="uid://biq6v1m7nc6l" path="res://assets/textures/ui/Button-Next-Press.png" id="21_7pokf"]
+[ext_resource type="Texture2D" uid="uid://c25aef4m4yd40" path="res://assets/textures/ui/Button-Next-Hover.png" id="22_t6jai"]
+[ext_resource type="Texture2D" uid="uid://8igpvay7modk" path="res://assets/textures/ui/All-HQ-Assets-D_0006s_0003_Settings-warning-metal-base.png" id="23_6klw7"]
+[ext_resource type="Texture2D" uid="uid://cvr8ptliyw7oc" path="res://assets/textures/ui/All-HQ-Assets-D_0001s_0013_1-slot-button-hole.png" id="24_wyual"]
+[ext_resource type="PackedScene" uid="uid://chpn7t75mmbkh" path="res://scenes/buttons/button_close.tscn" id="25_fga0w"]
+[ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/close_button_2.gd" id="26_1fovc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldwmd"]
+bg_color = Color(0.0705882, 0.192157, 0.203922, 0)
+border_width_left = 3
+border_width_top = 6
+border_width_right = 3
+border_width_bottom = 6
+border_color = Color(0.0705882, 0.192157, 0.203922, 0)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(0, 0, 0, 0)
+shadow_size = 1
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eyg2q"]
+bg_color = Color(0.223529, 0.654902, 0.678431, 1)
+border_width_right = 1
+border_width_bottom = 3
+border_color = Color(0.654902, 0.776471, 0.788235, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(0, 0, 0, 0.396078)
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vluk5"]
+bg_color = Color(0.396078, 0.870588, 0.901961, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.658824, 0.780392, 0.792157, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(0, 0, 0, 0.368627)
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pwy5b"]
+bg_color = Color(0.988235, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vka7n"]
+bg_color = Color(0.709804, 0.176471, 0.113725, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fgbvl"]
+bg_color = Color(0.509804, 0, 0.117647, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="Theme" id="Theme_gphvl"]
+Button/styles/hover = SubResource("StyleBoxFlat_pwy5b")
+Button/styles/normal = SubResource("StyleBoxFlat_vka7n")
+Button/styles/pressed = SubResource("StyleBoxFlat_fgbvl")
+
+[node name="Settings" type="CanvasLayer"]
+layer = 3
+visible = false
+script = ExtResource("1_q4she")
+
+[node name="Backdrop" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -113.0
+offset_top = -72.0
+offset_right = 62.0
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0352941, 0.0352941, 0.0352941, 0.54902)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="Close" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = -60.0
+offset_top = 2.0
+offset_right = 1976.0
+offset_bottom = 1086.0
+focus_mode = 0
+flat = true
+script = ExtResource("2_q0sqg")
+
+[node name="SettingsBox" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -163.5
+offset_top = -458.5
+offset_right = 163.5
+offset_bottom = 458.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.4, 0.4, 0.4, 0)
+
+[node name="BackPlate" type="TextureRect" parent="Control/SettingsBox"]
+layout_mode = 0
+offset_left = -59.5
+offset_top = -31.5
+offset_right = 386.5
+offset_bottom = 795.5
+scale = Vector2(1, 1.17784)
+texture = ExtResource("3_s2phf")
+
+[node name="Title" type="Label" parent="Control/SettingsBox"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.5
+offset_top = -6.0
+offset_right = 174.5
+offset_bottom = 85.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.976471, 1, 1, 1)
+theme_override_font_sizes/font_size = 38
+text = "ENSURED 
+ENERGY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/SettingsBox"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -92.5
+offset_top = 154.0
+offset_right = 100.5
+offset_bottom = 665.0
+grow_horizontal = 2
+theme_override_constants/separation = 0
+
+[node name="ScreenOption" type="CheckBox" parent="Control/SettingsBox/VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_u1vjd")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+button_pressed = true
+text = "FULLSCREEN"
+icon_alignment = 2
+
+[node name="Space6" type="Label" parent="Control/SettingsBox/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/SettingsBox/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_u1vjd")
+theme_override_colors/font_color = Color(1, 1, 1, 0.960784)
+text = "MUSIC"
+
+[node name="VolMusic" type="HSlider" parent="Control/SettingsBox/VBoxContainer" groups=["draggables"]]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+focus_mode = 0
+theme_override_icons/grabber = ExtResource("5_0fgff")
+theme_override_icons/grabber_highlight = ExtResource("5_0fgff")
+theme_override_icons/grabber_disabled = ExtResource("5_0fgff")
+theme_override_styles/slider = SubResource("StyleBoxFlat_ldwmd")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_eyg2q")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_vluk5")
+max_value = 1.0
+step = 0.001
+value = 0.8
+scrollable = false
+script = ExtResource("6_rdjob")
+audio_bus_name = "Music"
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/SettingsBox/VBoxContainer/VolMusic"]
+show_behind_parent = true
+position = Vector2(0.5, 9.5)
+scale = Vector2(0.643885, 1.2)
+texture = ExtResource("7_cpyrf")
+centered = false
+
+[node name="Label2" type="Label" parent="Control/SettingsBox/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_u1vjd")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "SFX"
+
+[node name="VolSound" type="HSlider" parent="Control/SettingsBox/VBoxContainer" groups=["draggables"]]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+focus_mode = 0
+theme_override_icons/grabber = ExtResource("5_0fgff")
+theme_override_icons/grabber_highlight = ExtResource("5_0fgff")
+theme_override_icons/grabber_disabled = ExtResource("5_0fgff")
+theme_override_styles/slider = SubResource("StyleBoxFlat_ldwmd")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_eyg2q")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_vluk5")
+max_value = 1.0
+step = 0.001
+value = 0.8
+scrollable = false
+script = ExtResource("6_rdjob")
+audio_bus_name = "Sound"
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/SettingsBox/VBoxContainer/VolSound"]
+show_behind_parent = true
+position = Vector2(0.5, 9.5)
+scale = Vector2(0.643885, 1.2)
+texture = ExtResource("7_cpyrf")
+centered = false
+
+[node name="Space" type="Label" parent="Control/SettingsBox/VBoxContainer"]
+layout_mode = 2
+
+[node name="Space2" type="Label" parent="Control/SettingsBox/VBoxContainer"]
+layout_mode = 2
+
+[node name="Space3" type="Label" parent="Control/SettingsBox/VBoxContainer"]
+layout_mode = 2
+
+[node name="Space4" type="Label" parent="Control/SettingsBox/VBoxContainer"]
+layout_mode = 2
+
+[node name="ButtonHole" type="Sprite2D" parent="Control/SettingsBox/VBoxContainer"]
+position = Vector2(-5, 248)
+texture = ExtResource("8_2bbhj")
+centered = false
+
+[node name="Language" type="TextureButton" parent="Control/SettingsBox/VBoxContainer" groups=["buttons"]]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("9_m6vd3")
+texture_pressed = ExtResource("10_ar3yn")
+texture_hover = ExtResource("11_he6ua")
+script = ExtResource("12_47lq4")
+
+[node name="Label" type="Label" parent="Control/SettingsBox/VBoxContainer/Language"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 7.0
+offset_right = -9.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_u1vjd")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "LANG"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+uppercase = true
+
+[node name="Instructions" type="TextureButton" parent="Control/SettingsBox/VBoxContainer" groups=["buttons"]]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("13_mepng")
+texture_pressed = ExtResource("14_ddynd")
+texture_hover = ExtResource("15_8tsm0")
+script = ExtResource("16_qwrhs")
+
+[node name="Label" type="Label" parent="Control/SettingsBox/VBoxContainer/Instructions"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_u1vjd")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "INSTRUCTIONS"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Credits" type="TextureButton" parent="Control/SettingsBox/VBoxContainer" groups=["buttons"]]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("13_mepng")
+texture_pressed = ExtResource("14_ddynd")
+texture_hover = ExtResource("15_8tsm0")
+
+[node name="Label" type="Label" parent="Control/SettingsBox/VBoxContainer/Credits"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 10.0
+offset_right = -11.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_u1vjd")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "CREDITS"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="CreditsSprite" type="Sprite2D" parent="Control/SettingsBox/VBoxContainer/Credits"]
+visible = false
+position = Vector2(85.5, -206)
+texture = ExtResource("17_vb3qy")
+script = ExtResource("18_v57dl")
+
+[node name="Label3" type="Label" parent="Control/SettingsBox/VBoxContainer/Credits/CreditsSprite"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -328.5
+offset_top = -203.0
+offset_right = -241.5
+offset_bottom = -169.0
+grow_horizontal = 2
+theme = ExtResource("19_d2swd")
+theme_type_variation = &"Paper"
+theme_override_font_sizes/font_size = 22
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Label" type="Label" parent="Control/SettingsBox/VBoxContainer/Credits/CreditsSprite"]
+offset_left = -208.0
+offset_top = -120.0
+offset_right = -165.0
+offset_bottom = -94.0
+theme = ExtResource("19_d2swd")
+theme_type_variation = &"Paper"
+text = "Team"
+uppercase = true
+
+[node name="Label2" type="Label" parent="Control/SettingsBox/VBoxContainer/Credits/CreditsSprite"]
+offset_left = -208.0
+offset_top = -56.0
+offset_right = -75.0
+offset_bottom = 178.0
+theme = ExtResource("19_d2swd")
+theme_type_variation = &"Paper"
+text = "Amelia Dobis
+Borja Maol
+Saara Jones
+Toby Simpson
+Davide Baroli
+Michael Multerer
+Isabelle Stadelmann
+Gracia Brückmann
+Walid El-Ajou
+"
+
+[node name="Reset" type="TextureButton" parent="Control/SettingsBox"]
+visible = false
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 0
+offset_left = 71.0
+offset_top = 784.0
+offset_right = 264.0
+offset_bottom = 867.0
+focus_mode = 0
+theme = SubResource("Theme_gphvl")
+texture_normal = ExtResource("20_dqb8u")
+texture_pressed = ExtResource("21_7pokf")
+texture_hover = ExtResource("22_t6jai")
+
+[node name="Label" type="Label" parent="Control/SettingsBox/Reset"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 183.0
+offset_bottom = 74.0
+theme = ExtResource("19_d2swd")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "RESTART"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="ResetConfirm" type="ColorRect" parent="Control/SettingsBox/Reset"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -343.0
+offset_top = -172.5
+offset_right = 343.0
+offset_bottom = 172.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.560784, 0.560784, 0.560784, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/SettingsBox/Reset/ResetConfirm"]
+position = Vector2(343, 194.5)
+texture = ExtResource("23_6klw7")
+
+[node name="Label" type="Label" parent="Control/SettingsBox/Reset/ResetConfirm"]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 123.0
+offset_right = 565.0
+offset_bottom = 238.0
+theme = ExtResource("19_d2swd")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "RESET_CONFIRM"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Yes" type="TextureButton" parent="Control/SettingsBox/Reset/ResetConfirm"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 222.0
+offset_right = 357.0
+offset_bottom = 305.0
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("20_dqb8u")
+texture_pressed = ExtResource("21_7pokf")
+texture_hover = ExtResource("22_t6jai")
+
+[node name="Label" type="Label" parent="Control/SettingsBox/Reset/ResetConfirm/Yes"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("19_d2swd")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "RESET"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/SettingsBox/Reset/ResetConfirm/Yes"]
+show_behind_parent = true
+position = Vector2(-2.85706, -2.85718)
+texture = ExtResource("24_wyual")
+centered = false
+
+[node name="No" type="TextureButton" parent="Control/SettingsBox/Reset/ResetConfirm"]
+layout_mode = 0
+offset_left = 396.0
+offset_top = 222.0
+offset_right = 589.0
+offset_bottom = 305.0
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("13_mepng")
+texture_pressed = ExtResource("14_ddynd")
+texture_hover = ExtResource("15_8tsm0")
+
+[node name="Label" type="Label" parent="Control/SettingsBox/Reset/ResetConfirm/No"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("19_d2swd")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "CANCEL"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="Control/SettingsBox/Reset/ResetConfirm/No"]
+show_behind_parent = true
+position = Vector2(-2.85718, -2.14291)
+texture = ExtResource("24_wyual")
+centered = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/SettingsBox/Reset"]
+show_behind_parent = true
+position = Vector2(-1358.5, 162.5)
+texture = ExtResource("24_wyual")
+centered = false
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/SettingsBox"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -190.0
+offset_top = -167.5
+offset_right = 188.0
+offset_bottom = -18.5
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="QuitButton" type="TextureButton" parent="Control/SettingsBox/MarginContainer" groups=["buttons"]]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("20_dqb8u")
+texture_pressed = ExtResource("21_7pokf")
+texture_hover = ExtResource("22_t6jai")
+
+[node name="Label" type="Label" parent="Control/SettingsBox/MarginContainer/QuitButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.5
+offset_top = -11.5
+offset_right = 120.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("19_d2swd")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "QUIT_CONFIRM_BUTTON_TEXT"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/SettingsBox/MarginContainer/QuitButton"]
+show_behind_parent = true
+position = Vector2(-2.85706, -2.85718)
+texture = ExtResource("24_wyual")
+centered = false
+
+[node name="CloseButton2" parent="." instance=ExtResource("25_fga0w")]
+offset_left = 1136.0
+offset_top = 61.0
+offset_right = 1172.0
+offset_bottom = 96.0
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("26_1fovc")
+
+[connection signal="pressed" from="Control/Close" to="Control/Close" method="_on_pressed"]
+[connection signal="value_changed" from="Control/SettingsBox/VBoxContainer/VolMusic" to="Control/SettingsBox/VBoxContainer/VolMusic" method="_on_value_changed"]
+[connection signal="value_changed" from="Control/SettingsBox/VBoxContainer/VolSound" to="Control/SettingsBox/VBoxContainer/VolSound" method="_on_value_changed"]
+[connection signal="pressed" from="Control/SettingsBox/VBoxContainer/Language" to="Control/SettingsBox/VBoxContainer/Language" method="_on_pressed"]
+[connection signal="pressed" from="Control/SettingsBox/VBoxContainer/Instructions" to="Control/SettingsBox/VBoxContainer/Instructions" method="_on_pressed"]
+[connection signal="pressed" from="Control/SettingsBox/VBoxContainer/Credits" to="Control/SettingsBox/VBoxContainer/Credits/CreditsSprite" method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Control/SettingsBox/MarginContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="CloseButton2" to="CloseButton2" method="_on_pressed"]

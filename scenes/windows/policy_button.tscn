@@ -1,13 +1,13 @@
 [gd_scene load_steps=14 format=3 uid="uid://dna2006dnsx2x"]
 
-[ext_resource type="Texture2D" uid="uid://hmcjyyrl7dv2" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0034_Policies-normal-(small)-button.png" id="1_7yv6u"]
-[ext_resource type="Texture2D" uid="uid://cjxrgcwrcynwf" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0035_Policies-press-(small)-button.png" id="2_aqrlf"]
-[ext_resource type="Texture2D" uid="uid://80u4mcjyisb7" path="res://assets/UI Elements/All-HQ-Assets-D_0000s_0033_Policies-hover-(small)-button.png" id="3_03pvm"]
+[ext_resource type="Texture2D" uid="uid://hmcjyyrl7dv2" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0034_Policies-normal-(small)-button.png" id="1_7yv6u"]
+[ext_resource type="Texture2D" uid="uid://cjxrgcwrcynwf" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0035_Policies-press-(small)-button.png" id="2_aqrlf"]
+[ext_resource type="Texture2D" uid="uid://80u4mcjyisb7" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0033_Policies-hover-(small)-button.png" id="3_03pvm"]
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/policy_button.gd" id="4_vhi6a"]
-[ext_resource type="Texture2D" uid="uid://cu5qdg6vletaj" path="res://assets/UI Elements/All-HQ-Assets-D_0001s_0004_Policies-(small)-button-hole.png" id="5_xiqse"]
-[ext_resource type="Texture2D" uid="uid://d2mj0ht318q3j" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0022_Icon-Popularity.png" id="6_tp2hn"]
-[ext_resource type="Texture2D" uid="uid://bnuj5hhtj86sa" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0008_Solar-symbol.png" id="7_klwhl"]
-[ext_resource type="Texture2D" uid="uid://iaa6i5ocoaer" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0022_Icon-Popularity-down.png" id="7_ukulm"]
+[ext_resource type="Texture2D" uid="uid://cu5qdg6vletaj" path="res://assets/textures/ui/All-HQ-Assets-D_0001s_0004_Policies-(small)-button-hole.png" id="5_xiqse"]
+[ext_resource type="Texture2D" uid="uid://d2mj0ht318q3j" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0022_Icon-Popularity.png" id="6_tp2hn"]
+[ext_resource type="Texture2D" uid="uid://bnuj5hhtj86sa" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0008_Solar-symbol.png" id="7_klwhl"]
+[ext_resource type="Texture2D" uid="uid://iaa6i5ocoaer" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0022_Icon-Popularity-down.png" id="7_ukulm"]
 
 [sub_resource type="Animation" id="Animation_6nac2"]
 resource_name = "show_left_thumbs_down"

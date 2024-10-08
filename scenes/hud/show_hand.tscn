@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cqn5kk1o4vep4"]
 
-[ext_resource type="Texture2D" uid="uid://bapoidmhwtddl" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0021_Icon-show.png" id="1_ju2s7"]
+[ext_resource type="Texture2D" uid="uid://bapoidmhwtddl" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0021_Icon-show.png" id="1_ju2s7"]
 [ext_resource type="Script" path="res://src/gdscript/hud/showing_hand/showing_hand.gd" id="1_m0o72"]
 
 [sub_resource type="Animation" id="Animation_sga26"]

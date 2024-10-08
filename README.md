@@ -25,4 +25,4 @@ Certain existing games can be used as inspiration to understand the goal of this
   - [Power The Grid](https://claudioa.itch.io/power-the-grid): This is a similar style game, where the goal is to transition a local energy grid towards being able to decomission a coal plant. The art style and core plant management systems in our game were
   - [Frostpunk](https://www.frostpunkgame.com/): This game is a lot more gritty and bleak but uses a similar structure in terms of the political support system.
 
-    
+	

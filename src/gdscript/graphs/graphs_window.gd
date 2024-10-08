@@ -24,7 +24,7 @@ var season := "winter"
 var default_line_width = 4
 var default_point_size = Vector2(15.0,15.0)
 
-@onready var label_theme = load("res://scenes/windows/label_themes.tres")
+@onready var label_theme = load("res://assets/fonts/label_themes.tres")
 @onready var graph = $MainFrame/Screen/Drawable
 @onready var line_names_container = $MainFrame/LineNamesContainer
 

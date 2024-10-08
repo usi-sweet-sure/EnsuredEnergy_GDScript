@@ -1,55 +1,161 @@
-[gd_scene load_steps=42 format=3 uid="uid://dkoknjsrtig82"]
+[gd_scene load_steps=55 format=3 uid="uid://dkoknjsrtig82"]
 
-[ext_resource type="Texture2D" uid="uid://b3fajud3sgo5m" path="res://assets/used_assets/textures/backplates/backplate_2.png" id="1_yeeaq"]
+[ext_resource type="Texture2D" uid="uid://b3fajud3sgo5m" path="res://assets/textures/backplates/backplate_2.png" id="1_6pv2e"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_menu/pp_menu_button/pp_menu_button.gd" id="2_i71um"]
-[ext_resource type="Texture2D" uid="uid://vg02ewph3pco" path="res://assets/used_assets/textures/screens/screen_2.png" id="2_o7fp7"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_menu/pp_menu_button/name_label.gd" id="3_0mf3p"]
-[ext_resource type="Texture2D" uid="uid://b76v2w1on0f0u" path="res://assets/used_assets/textures/icons/chalk_money.png" id="3_aairg"]
-[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/Fonts/label_themes.tres" id="3_cblll"]
-[ext_resource type="Theme" uid="uid://cj6gnnfa8ibb0" path="res://scenes/windows/label_themes.tres" id="4_jmg7v"]
-[ext_resource type="Texture2D" uid="uid://cm7cds6soi7e4" path="res://assets/used_assets/textures/icons/chalk_hourglass.png" id="5_jf22d"]
+[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="3_w0jnk"]
+[ext_resource type="Texture2D" uid="uid://vg02ewph3pco" path="res://assets/textures/screens/screen_2.png" id="5_3cn66"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_menu/pp_menu_button/texture.gd" id="5_qwyr2"]
-[ext_resource type="Texture2D" uid="uid://cischtrjvknyl" path="res://assets/used_assets/textures/icons/sticker_winter.png" id="6_x8xxk"]
-[ext_resource type="Texture2D" uid="uid://od33hjtqpm14" path="res://assets/used_assets/textures/digit_panels/num_hole.png" id="7_6mfcg"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_menu/pp_menu_button/price_label.gd" id="7_edx7k"]
-[ext_resource type="Texture2D" uid="uid://bobwaj4wxr0fj" path="res://assets/used_assets/textures/digit_panels/num_counter.png" id="8_bb7jv"]
+[ext_resource type="Texture2D" uid="uid://b76v2w1on0f0u" path="res://assets/textures/icons/chalk_money.png" id="7_pjuh6"]
+[ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/fonts/special_elite/special_elite_regular.ttf" id="8_3bbo8"]
+[ext_resource type="FontFile" uid="uid://bt2f3flr7psn5" path="res://assets/fonts/vt323/vt323_regular.ttf" id="9_38oyr"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_menu/pp_menu_button/build_time_group.gd" id="9_iwajd"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_menu/pp_menu_button/build_time_label.gd" id="9_oeo3j"]
-[ext_resource type="FontFile" uid="uid://dxtsp51pqna2o" path="res://assets/Fonts/static/OpenSans-Bold.ttf" id="9_w6oub"]
-[ext_resource type="Texture2D" uid="uid://bsa55enbm5cwg" path="res://assets/used_assets/textures/icons/sticker_summer.png" id="10_1fv7e"]
-[ext_resource type="Texture2D" uid="uid://sdv07wonj5bg" path="res://assets/used_assets/textures/backplates/backplate_3.png" id="11_5ykpk"]
+[ext_resource type="FontFile" uid="uid://dxtsp51pqna2o" path="res://assets/fonts/static/open_sans_bold.ttf" id="10_k1772"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_menu/pp_menu_button/winter_energy_label.gd" id="11_caejg"]
-[ext_resource type="Texture2D" uid="uid://d2btaduc1gq0j" path="res://assets/used_assets/textures/screens/screen_3.png" id="12_pdn03"]
-[ext_resource type="Texture2D" uid="uid://bpt1e486wuscd" path="res://assets/used_assets/textures/icons/chalk_emission.png" id="13_ulnr8"]
-[ext_resource type="Texture2D" uid="uid://1esf36575js0" path="res://assets/used_assets/textures/icons/chalk_land_use.png" id="14_n13et"]
+[ext_resource type="Texture2D" uid="uid://cm7cds6soi7e4" path="res://assets/textures/icons/chalk_hourglass.png" id="13_dkotk"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_menu/pp_menu_button/summer_energy_label.gd" id="14_nr5ny"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_menu/pp_menu_button/pp_info/pp_menu_button_info_frame.gd" id="15_yckea"]
+[ext_resource type="Texture2D" uid="uid://cischtrjvknyl" path="res://assets/textures/icons/sticker_winter.png" id="15_yr0bl"]
+[ext_resource type="Texture2D" uid="uid://od33hjtqpm14" path="res://assets/textures/digit_panels/num_hole.png" id="16_tunp5"]
+[ext_resource type="Texture2D" uid="uid://bobwaj4wxr0fj" path="res://assets/textures/digit_panels/num_counter.png" id="17_i0wmq"]
+[ext_resource type="Texture2D" uid="uid://bsa55enbm5cwg" path="res://assets/textures/icons/sticker_summer.png" id="19_axqcp"]
+[ext_resource type="Texture2D" uid="uid://sdv07wonj5bg" path="res://assets/textures/backplates/backplate_3.png" id="21_003hw"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_menu/pp_menu_button/pp_info/plant_name_label.gd" id="21_gq6lq"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_menu/pp_menu_button/pp_info/production_cost_value_label.gd" id="22_12j24"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_menu/pp_menu_button/pp_info/build_time_label.gd" id="23_iegk6"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_menu/pp_menu_button/pp_info/emissions_value_label.gd" id="24_0qmi6"]
+[ext_resource type="Texture2D" uid="uid://d2btaduc1gq0j" path="res://assets/textures/screens/screen_3.png" id="24_n5ylu"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_menu/pp_menu_button/pp_info/land_use_value_label.gd" id="26_1wr5u"]
+[ext_resource type="Texture2D" uid="uid://bpt1e486wuscd" path="res://assets/textures/icons/chalk_emission.png" id="26_qq2og"]
+[ext_resource type="Texture2D" uid="uid://1esf36575js0" path="res://assets/textures/icons/chalk_land_use.png" id="28_0y62r"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_menu/pp_menu_button/pp_info/winter_label.gd" id="29_51oo6"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_menu/pp_menu_button/pp_info/summer_label.gd" id="30_dw4jh"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_menu/pp_menu_button/no_money_overlay.gd" id="32_stpvl"]
-[ext_resource type="Texture2D" uid="uid://coxj27rfhq01u" path="res://assets/UI Elements/All-HQ-Assets-D_0004s_0025_Icon-No-Money.png" id="33_mo342"]
+[ext_resource type="Texture2D" uid="uid://coxj27rfhq01u" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0025_Icon-No-Money.png" id="34_1bjms"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3tdw6"]
+bg_color = Color(0.65098, 0.65098, 0.65098, 0.0470588)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_color = Color(0.25098, 0.807843, 0.839216, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pgfdh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_color = Color(0.219608, 0.752941, 0.784314, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03rjl"]
+bg_color = Color(0.219608, 0.756863, 0.788235, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+
+[sub_resource type="FontVariation" id="FontVariation_3ifss"]
+base_font = ExtResource("10_k1772")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nyqp5"]
+
+[sub_resource type="FontVariation" id="FontVariation_u3fkg"]
+base_font = ExtResource("8_3bbo8")
+variation_embolden = 0.6
+
+[sub_resource type="FontVariation" id="FontVariation_ule17"]
+base_font = ExtResource("8_3bbo8")
+
+[sub_resource type="FontVariation" id="FontVariation_b0wbe"]
+base_font = ExtResource("9_38oyr")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5mtqi"]
+bg_color = Color(0.192157, 0.658824, 0.690196, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1qqbn"]
+bg_color = Color(0.247059, 0.776471, 0.811765, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_idcep"]
+bg_color = Color(0.129412, 0.486275, 0.509804, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="Theme" id="Theme_34yde"]
+/colors/Dark = Color(0.0627451, 0.572549, 0, 1)
+/font_sizes/Big = 18
+/fonts/font = ExtResource("8_3bbo8")
+Button/colors/font_color = Color(0.211765, 0.690196, 0.717647, 1)
+Button/colors/font_pressed_color = Color(0.0862745, 0.207843, 0.219608, 1)
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("9_38oyr")
+Button/styles/hover = SubResource("StyleBoxFlat_3tdw6")
+Button/styles/normal = SubResource("StyleBoxFlat_pgfdh")
+Button/styles/pressed = SubResource("StyleBoxFlat_03rjl")
+Label/colors/font_color = Color(0.0784314, 0.180392, 0.192157, 1)
+Label/colors/font_outline_color = Color(1, 1, 1, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/font_sizes/font_size = 16
+Label/fonts/font = SubResource("FontVariation_3ifss")
+Label/styles/normal = SubResource("StyleBoxEmpty_nyqp5")
+Paper/base_type = &"Label"
+Paper/colors/color = Color(0.631373, 0.443137, 0.403922, 1)
+Paper/colors/font_color = Color(0, 0, 0, 1)
+Paper/colors/font_outline_color = Color(0, 0, 0, 1)
+Paper/colors/font_shadow_color = Color(0, 0, 0, 1)
+Paper/constants/line_spacing = 0
+Paper/constants/outline_size = 0
+Paper/constants/shadow_offset_x = 0
+Paper/constants/shadow_offset_y = 0
+Paper/constants/shadow_outline_size = 0
+Paper/font_sizes/font_size = 18
+Paper/font_sizes/size = 16
+Paper/fonts/font = ExtResource("8_3bbo8")
+RichTextLabel/constants/line_separation = 7
+RichTextLabel/fonts/bold_font = SubResource("FontVariation_u3fkg")
+RichTextLabel/fonts/normal_font = SubResource("FontVariation_ule17")
+Screen/base_type = &"Label"
+Screen/colors/font_color = Color(0.219608, 0.756863, 0.788235, 1)
+Screen/font_sizes/font_size = 30
+Screen/fonts/font = SubResource("FontVariation_b0wbe")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_5mtqi")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_1qqbn")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_idcep")
 
 [sub_resource type="FontVariation" id="FontVariation_xfgeu"]
-base_font = ExtResource("9_w6oub")
+base_font = ExtResource("10_k1772")
 spacing_glyph = 6
 
 [sub_resource type="FontVariation" id="FontVariation_qxud5"]
-base_font = ExtResource("9_w6oub")
+base_font = ExtResource("10_k1772")
 spacing_glyph = 6
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u0exm"]
 
 [sub_resource type="FontVariation" id="FontVariation_u7ut2"]
-base_font = ExtResource("9_w6oub")
+base_font = ExtResource("10_k1772")
 spacing_glyph = 6
 
 [sub_resource type="FontVariation" id="FontVariation_2c7hu"]
-base_font = ExtResource("9_w6oub")
+base_font = ExtResource("10_k1772")
 spacing_glyph = 6
 
 [sub_resource type="Animation" id="Animation_f31ak"]
@@ -106,7 +212,7 @@ offset_right = 226.0
 offset_bottom = 320.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource("1_yeeaq")
+texture = ExtResource("1_6pv2e")
 script = ExtResource("2_i71um")
 
 [node name="Name" type="Label" parent="."]
@@ -115,7 +221,7 @@ offset_left = 40.0
 offset_top = 17.0
 offset_right = 188.0
 offset_bottom = 40.0
-theme = ExtResource("3_cblll")
+theme = ExtResource("3_w0jnk")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 17
 text = "Powerplant name"
@@ -141,7 +247,7 @@ offset_top = -189.0
 offset_right = 84.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("2_o7fp7")
+texture = ExtResource("5_3cn66")
 expand_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="Screen/Screen"]
@@ -174,7 +280,7 @@ layout_mode = 1
 offset_right = 54.0
 offset_bottom = 54.0
 scale = Vector2(0.583333, 0.583333)
-texture = ExtResource("3_aairg")
+texture = ExtResource("7_pjuh6")
 
 [node name="Label" type="Label" parent="Screen/Screen/Money"]
 layout_mode = 1
@@ -182,7 +288,7 @@ offset_left = 35.0
 offset_top = 3.0
 offset_right = 87.0
 offset_bottom = 30.0
-theme = ExtResource("4_jmg7v")
+theme = SubResource("Theme_34yde")
 theme_type_variation = &"Screen"
 theme_override_font_sizes/font_size = 26
 text = "000M"
@@ -215,7 +321,7 @@ offset_bottom = 35.5
 grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_jf22d")
+texture = ExtResource("13_dkotk")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="Screen/Screen/BuildTime"]
@@ -227,7 +333,7 @@ anchor_right = 0.653333
 anchor_bottom = 0.939394
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("4_jmg7v")
+theme = SubResource("Theme_34yde")
 theme_type_variation = &"Screen"
 theme_override_font_sizes/font_size = 26
 text = "0"
@@ -252,27 +358,27 @@ offset_bottom = 40.0
 [node name="IconWinter" type="Sprite2D" parent="Energy/Winter"]
 position = Vector2(21, 19)
 scale = Vector2(0.491, 0.491)
-texture = ExtResource("6_x8xxk")
+texture = ExtResource("15_yr0bl")
 
 [node name="NumHole" type="Sprite2D" parent="Energy/Winter"]
 position = Vector2(66.5233, 19.75)
 scale = Vector2(1.2816, 0.9)
-texture = ExtResource("7_6mfcg")
+texture = ExtResource("16_tunp5")
 
 [node name="NumCounter" type="Sprite2D" parent="Energy/Winter"]
 position = Vector2(47.5118, 19.75)
 scale = Vector2(0.9, 0.9)
-texture = ExtResource("8_bb7jv")
+texture = ExtResource("17_i0wmq")
 
 [node name="NumCounter2" type="Sprite2D" parent="Energy/Winter"]
 position = Vector2(65.0932, 19.75)
 scale = Vector2(0.9, 0.9)
-texture = ExtResource("8_bb7jv")
+texture = ExtResource("17_i0wmq")
 
 [node name="NumCounter3" type="Sprite2D" parent="Energy/Winter"]
 position = Vector2(83.0932, 19.75)
 scale = Vector2(0.9, 0.9)
-texture = ExtResource("8_bb7jv")
+texture = ExtResource("17_i0wmq")
 
 [node name="Label" type="Label" parent="Energy/Winter"]
 layout_mode = 0
@@ -280,7 +386,7 @@ offset_left = 35.0
 offset_top = 4.54999
 offset_right = 90.0
 offset_bottom = 34.55
-theme = ExtResource("4_jmg7v")
+theme = SubResource("Theme_34yde")
 theme_override_fonts/font = SubResource("FontVariation_xfgeu")
 theme_override_font_sizes/font_size = 21
 text = "000"
@@ -295,27 +401,27 @@ offset_bottom = 40.0
 [node name="IconSummer" type="Sprite2D" parent="Energy/Summer"]
 position = Vector2(140, 18)
 scale = Vector2(0.491, 0.491)
-texture = ExtResource("10_1fv7e")
+texture = ExtResource("19_axqcp")
 
 [node name="NumHole" type="Sprite2D" parent="Energy/Summer"]
 position = Vector2(185.593, 18)
 scale = Vector2(1.28665, 0.9)
-texture = ExtResource("7_6mfcg")
+texture = ExtResource("16_tunp5")
 
 [node name="NumCounter" type="Sprite2D" parent="Energy/Summer"]
 position = Vector2(166.721, 18)
 scale = Vector2(0.9, 0.9)
-texture = ExtResource("8_bb7jv")
+texture = ExtResource("17_i0wmq")
 
 [node name="NumCounter2" type="Sprite2D" parent="Energy/Summer"]
 position = Vector2(184.768, 18)
 scale = Vector2(0.9, 0.9)
-texture = ExtResource("8_bb7jv")
+texture = ExtResource("17_i0wmq")
 
 [node name="NumCounter3" type="Sprite2D" parent="Energy/Summer"]
 position = Vector2(201.768, 18)
 scale = Vector2(0.9, 0.9)
-texture = ExtResource("8_bb7jv")
+texture = ExtResource("17_i0wmq")
 
 [node name="Label" type="Label" parent="Energy/Summer"]
 layout_mode = 0
@@ -359,7 +465,7 @@ grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(297, 185)
-texture = ExtResource("11_5ykpk")
+texture = ExtResource("21_003hw")
 patch_margin_left = 60
 patch_margin_right = 60
 script = ExtResource("15_yckea")
@@ -370,7 +476,7 @@ offset_left = 62.0
 offset_top = 22.0
 offset_right = 528.0
 offset_bottom = 69.0
-theme = ExtResource("3_cblll")
+theme = ExtResource("3_w0jnk")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 28
 text = "Plant name"
@@ -383,7 +489,7 @@ offset_left = 41.0
 offset_top = 82.0
 offset_right = 547.0
 offset_bottom = 269.0
-texture = ExtResource("12_pdn03")
+texture = ExtResource("24_n5ylu")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="InfoFrame/Screen"]
 layout_mode = 0
@@ -408,13 +514,13 @@ modulate = Color(0.219608, 0.756863, 0.788235, 1)
 z_index = 4
 position = Vector2(20, 15)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_aairg")
+texture = ExtResource("7_pjuh6")
 
 [node name="IconRed" type="Sprite2D" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/ProductionCosts/Title"]
 modulate = Color(1, 0.541176, 0.596078, 0.517647)
 position = Vector2(22, 16)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_aairg")
+texture = ExtResource("7_pjuh6")
 
 [node name="Label" type="Label" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/ProductionCosts/Title"]
 layout_mode = 2
@@ -422,7 +528,7 @@ offset_left = 46.0
 offset_right = 154.0
 offset_bottom = 30.0
 size_flags_horizontal = 0
-theme = ExtResource("4_jmg7v")
+theme = SubResource("Theme_34yde")
 theme_type_variation = &"Screen"
 theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
 theme_override_constants/shadow_offset_x = 2
@@ -431,7 +537,7 @@ text = "PROD_COST"
 [node name="Value" type="Label" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/ProductionCosts"]
 layout_mode = 2
 size_flags_horizontal = 8
-theme = ExtResource("4_jmg7v")
+theme = SubResource("Theme_34yde")
 theme_type_variation = &"Screen"
 theme_override_colors/font_color = Color(1, 0.129412, 0.207843, 1)
 text = "000X YY"
@@ -449,13 +555,13 @@ modulate = Color(0.219608, 0.756863, 0.788235, 1)
 z_index = 4
 position = Vector2(20, 15)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("13_ulnr8")
+texture = ExtResource("26_qq2og")
 
 [node name="IconRed" type="Sprite2D" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/Pollution/Title"]
 modulate = Color(1, 0.541176, 0.596078, 0.517647)
 position = Vector2(22, 16)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("13_ulnr8")
+texture = ExtResource("26_qq2og")
 
 [node name="Label" type="Label" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/Pollution/Title"]
 layout_mode = 2
@@ -463,7 +569,7 @@ offset_left = 46.0
 offset_right = 154.0
 offset_bottom = 30.0
 size_flags_horizontal = 0
-theme = ExtResource("4_jmg7v")
+theme = SubResource("Theme_34yde")
 theme_type_variation = &"Screen"
 theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
 theme_override_constants/shadow_offset_x = 2
@@ -472,7 +578,7 @@ text = "POLLUTION"
 [node name="Value" type="Label" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/Pollution"]
 layout_mode = 2
 size_flags_horizontal = 8
-theme = ExtResource("4_jmg7v")
+theme = SubResource("Theme_34yde")
 theme_type_variation = &"Screen"
 theme_override_colors/font_color = Color(1, 0.129412, 0.207843, 1)
 text = "000X YY"
@@ -490,13 +596,13 @@ modulate = Color(0.219608, 0.756863, 0.788235, 1)
 z_index = 4
 position = Vector2(20, 15)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("14_n13et")
+texture = ExtResource("28_0y62r")
 
 [node name="IconRed" type="Sprite2D" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/LandUse/Title"]
 modulate = Color(1, 0.541176, 0.596078, 0.517647)
 position = Vector2(22, 16)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("14_n13et")
+texture = ExtResource("28_0y62r")
 
 [node name="Label" type="Label" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/LandUse/Title"]
 layout_mode = 2
@@ -504,7 +610,7 @@ offset_left = 46.0
 offset_right = 154.0
 offset_bottom = 30.0
 size_flags_horizontal = 0
-theme = ExtResource("4_jmg7v")
+theme = SubResource("Theme_34yde")
 theme_type_variation = &"Screen"
 theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
 theme_override_constants/shadow_offset_x = 2
@@ -513,7 +619,7 @@ text = "LAND_USE"
 [node name="Value" type="Label" parent="InfoFrame/Screen/VBoxContainer/VBoxContainer/LandUse"]
 layout_mode = 2
 size_flags_horizontal = 8
-theme = ExtResource("4_jmg7v")
+theme = SubResource("Theme_34yde")
 theme_type_variation = &"Screen"
 theme_override_colors/font_color = Color(1, 0.129412, 0.207843, 1)
 text = "000X YY"
@@ -522,7 +628,7 @@ script = ExtResource("26_1wr5u")
 
 [node name="TurnsToBuild" type="Label" parent="InfoFrame/Screen/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("4_jmg7v")
+theme = SubResource("Theme_34yde")
 theme_type_variation = &"Screen"
 theme_override_colors/font_color = Color(0.932727, 0.41041, 0.257221, 1)
 theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
@@ -553,27 +659,27 @@ size_flags_vertical = 0
 [node name="IconWinter" type="Sprite2D" parent="InfoFrame/Energy/Winter"]
 position = Vector2(24.0002, 19.2)
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("6_x8xxk")
+texture = ExtResource("15_yr0bl")
 
 [node name="NumHole" type="Sprite2D" parent="InfoFrame/Energy/Winter"]
 position = Vector2(77.5233, 20.2)
 scale = Vector2(1.2816, 0.9)
-texture = ExtResource("7_6mfcg")
+texture = ExtResource("16_tunp5")
 
 [node name="NumCounter" type="Sprite2D" parent="InfoFrame/Energy/Winter"]
 position = Vector2(58.5118, 20.2)
 scale = Vector2(0.9, 0.9)
-texture = ExtResource("8_bb7jv")
+texture = ExtResource("17_i0wmq")
 
 [node name="NumCounter2" type="Sprite2D" parent="InfoFrame/Energy/Winter"]
 position = Vector2(76.0932, 20.2)
 scale = Vector2(0.9, 0.9)
-texture = ExtResource("8_bb7jv")
+texture = ExtResource("17_i0wmq")
 
 [node name="NumCounter3" type="Sprite2D" parent="InfoFrame/Energy/Winter"]
 position = Vector2(94.0932, 20.2)
 scale = Vector2(0.9, 0.9)
-texture = ExtResource("8_bb7jv")
+texture = ExtResource("17_i0wmq")
 
 [node name="Label" type="Label" parent="InfoFrame/Energy/Winter"]
 layout_mode = 0
@@ -581,7 +687,7 @@ offset_left = 46.0
 offset_top = 5.0
 offset_right = 101.0
 offset_bottom = 35.0
-theme = ExtResource("4_jmg7v")
+theme = SubResource("Theme_34yde")
 theme_override_fonts/font = SubResource("FontVariation_u7ut2")
 theme_override_font_sizes/font_size = 21
 text = "000"
@@ -599,27 +705,27 @@ size_flags_vertical = 0
 [node name="IconSummer" type="Sprite2D" parent="InfoFrame/Energy/Summer"]
 position = Vector2(139, 19)
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("10_1fv7e")
+texture = ExtResource("19_axqcp")
 
 [node name="NumHole" type="Sprite2D" parent="InfoFrame/Energy/Summer"]
 position = Vector2(192.593, 18)
 scale = Vector2(1.28665, 0.9)
-texture = ExtResource("7_6mfcg")
+texture = ExtResource("16_tunp5")
 
 [node name="NumCounter" type="Sprite2D" parent="InfoFrame/Energy/Summer"]
 position = Vector2(173.721, 18)
 scale = Vector2(0.9, 0.9)
-texture = ExtResource("8_bb7jv")
+texture = ExtResource("17_i0wmq")
 
 [node name="NumCounter2" type="Sprite2D" parent="InfoFrame/Energy/Summer"]
 position = Vector2(191.768, 18)
 scale = Vector2(0.9, 0.9)
-texture = ExtResource("8_bb7jv")
+texture = ExtResource("17_i0wmq")
 
 [node name="NumCounter3" type="Sprite2D" parent="InfoFrame/Energy/Summer"]
 position = Vector2(208.768, 18)
 scale = Vector2(0.9, 0.9)
-texture = ExtResource("8_bb7jv")
+texture = ExtResource("17_i0wmq")
 
 [node name="Label" type="Label" parent="InfoFrame/Energy/Summer"]
 layout_mode = 0
@@ -664,7 +770,7 @@ offset_right = 40.0
 offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("33_mo342")
+texture = ExtResource("34_1bjms")
 
 [connection signal="powerplant_metrics_updated" from="." to="Name" method="_on_powerplant_metrics_updated"]
 [connection signal="powerplant_metrics_updated" from="." to="Screen/Screen/TextureRect" method="_on_powerplant_metrics_updated"]

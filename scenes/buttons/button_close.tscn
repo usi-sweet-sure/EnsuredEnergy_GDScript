@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://chpn7t75mmbkh"]
 
-[ext_resource type="Texture2D" uid="uid://duoff2c7r1hdy" path="res://assets/used_assets/textures/buttons/close_button_normal.png" id="1_ic52f"]
-[ext_resource type="Texture2D" uid="uid://bdq26gwsmigwy" path="res://assets/used_assets/textures/buttons/close_button_pressed.png" id="2_bfoej"]
-[ext_resource type="Texture2D" uid="uid://myf36tn1pspq" path="res://assets/used_assets/textures/buttons/close_button_hover.png" id="3_yf7va"]
-[ext_resource type="Texture2D" uid="uid://bhl7ei1bspfbw" path="res://assets/used_assets/textures/buttons/close_button_disabled.png" id="4_4hwql"]
-[ext_resource type="BitMap" uid="uid://x4jtfk6giqd3" path="res://assets/used_assets/textures/buttons/round_button_click_mask.png" id="5_afjvt"]
+[ext_resource type="Texture2D" uid="uid://duoff2c7r1hdy" path="res://assets/textures/buttons/close_button_normal.png" id="1_ic52f"]
+[ext_resource type="Texture2D" uid="uid://bdq26gwsmigwy" path="res://assets/textures/buttons/close_button_pressed.png" id="2_bfoej"]
+[ext_resource type="Texture2D" uid="uid://myf36tn1pspq" path="res://assets/textures/buttons/close_button_hover.png" id="3_yf7va"]
+[ext_resource type="Texture2D" uid="uid://bhl7ei1bspfbw" path="res://assets/textures/buttons/close_button_disabled.png" id="4_4hwql"]
+[ext_resource type="BitMap" uid="uid://x4jtfk6giqd3" path="res://assets/textures/buttons/round_button_click_mask.png" id="5_afjvt"]
 
 [node name="CloseButton" type="TextureButton" groups=["buttons"]]
 offset_right = 40.0
