@@ -161,9 +161,6 @@ func _on_powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMe
 		var new_metrics = metrics.copy()
 		override_metrics(new_metrics)
 		
-		if new_metrics.type == PowerplantsManager.EngineTypeIds.SOLAR:
-			print(new_metrics.max_upgrade)
-		
 		if new_metrics.build_time_in_turns > 0:
 			MoneyManager.building_costs += new_metrics.building_costs
 			new_metrics.construction_started_on_turn = Gameloop.current_turn
