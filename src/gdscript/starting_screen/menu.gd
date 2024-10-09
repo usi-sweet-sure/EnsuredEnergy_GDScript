@@ -6,11 +6,14 @@ var i = 0
 @onready var player_name_field = $PlayerName
 
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	TranslationServer.set_locale("de")
-	Gameloop.locale_updated.emit("de")
+	if SurveyManager.locale == "":
+		TranslationServer.set_locale("de")
+		Gameloop.locale_updated.emit("de")
+	else:
+		TranslationServer.set_locale(SurveyManager.locale)
+		Gameloop.locale_updated.emit(SurveyManager.locale)
 
 
 func _on_play_pressed():
