@@ -1,9 +1,8 @@
-[gd_scene load_steps=34 format=3 uid="uid://rjcu72lxn4n4"]
+[gd_scene load_steps=28 format=3 uid="uid://rjcu72lxn4n4"]
 
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/settings_canvas.gd" id="1_q4she"]
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/close_button.gd" id="2_q0sqg"]
 [ext_resource type="Texture2D" uid="uid://cvwhghlarnumd" path="res://assets/textures/ui/All-HQ-Assets-D_0006s_0004_Settings-metal-base.png" id="3_s2phf"]
-[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="4_u1vjd"]
 [ext_resource type="Texture2D" uid="uid://xmi4fk7xmp5j" path="res://assets/textures/ui/All-HQ-Assets-D_0007s_0032_Ball-Slider.png" id="5_0fgff"]
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/volume_slider.gd" id="6_rdjob"]
 [ext_resource type="Texture2D" uid="uid://fe0i52vl7ck6" path="res://assets/textures/ui/All-HQ-Assets-D_0007s_0006_Slider-bar-horizontal.png" id="7_cpyrf"]
@@ -22,7 +21,6 @@
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/textures/ui/Button-Next-Normal.png" id="20_dqb8u"]
 [ext_resource type="Texture2D" uid="uid://biq6v1m7nc6l" path="res://assets/textures/ui/Button-Next-Press.png" id="21_7pokf"]
 [ext_resource type="Texture2D" uid="uid://c25aef4m4yd40" path="res://assets/textures/ui/Button-Next-Hover.png" id="22_t6jai"]
-[ext_resource type="Texture2D" uid="uid://8igpvay7modk" path="res://assets/textures/ui/All-HQ-Assets-D_0006s_0003_Settings-warning-metal-base.png" id="23_6klw7"]
 [ext_resource type="Texture2D" uid="uid://cvr8ptliyw7oc" path="res://assets/textures/ui/All-HQ-Assets-D_0001s_0013_1-slot-button-hole.png" id="24_wyual"]
 [ext_resource type="PackedScene" uid="uid://chpn7t75mmbkh" path="res://scenes/buttons/button_close.tscn" id="25_fga0w"]
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/close_button_2.gd" id="26_1fovc"]
@@ -67,32 +65,6 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 shadow_color = Color(0, 0, 0, 0.368627)
 shadow_size = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pwy5b"]
-bg_color = Color(0.988235, 0, 0, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vka7n"]
-bg_color = Color(0.709804, 0.176471, 0.113725, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fgbvl"]
-bg_color = Color(0.509804, 0, 0.117647, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="Theme" id="Theme_gphvl"]
-Button/styles/hover = SubResource("StyleBoxFlat_pwy5b")
-Button/styles/normal = SubResource("StyleBoxFlat_vka7n")
-Button/styles/pressed = SubResource("StyleBoxFlat_fgbvl")
 
 [node name="Settings" type="CanvasLayer"]
 layer = 3
@@ -171,39 +143,25 @@ ENERGY"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/SettingsBox"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -92.5
-offset_top = 154.0
-offset_right = 100.5
-offset_bottom = 665.0
-grow_horizontal = 2
-theme_override_constants/separation = 0
-
-[node name="ScreenOption" type="CheckBox" parent="Control/SettingsBox/VBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control/SettingsBox"]
 layout_mode = 2
-focus_mode = 0
-theme = ExtResource("4_u1vjd")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-button_pressed = true
-text = "FULLSCREEN"
-icon_alignment = 2
+offset_left = 55.5
+offset_top = 147.5
+offset_right = 273.5
+offset_bottom = 292.5
+alignment = 1
 
-[node name="Space6" type="Label" parent="Control/SettingsBox/VBoxContainer"]
+[node name="Label" type="Label" parent="Control/SettingsBox/VBoxContainer2"]
 layout_mode = 2
-
-[node name="Label" type="Label" parent="Control/SettingsBox/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("4_u1vjd")
+size_flags_horizontal = 0
+theme = ExtResource("19_d2swd")
 theme_override_colors/font_color = Color(1, 1, 1, 0.960784)
 text = "MUSIC"
 
-[node name="VolMusic" type="HSlider" parent="Control/SettingsBox/VBoxContainer" groups=["draggables"]]
+[node name="VolMusic" type="HSlider" parent="Control/SettingsBox/VBoxContainer2" groups=["draggables"]]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
+size_flags_vertical = 4
 focus_mode = 0
 theme_override_icons/grabber = ExtResource("5_0fgff")
 theme_override_icons/grabber_highlight = ExtResource("5_0fgff")
@@ -218,22 +176,24 @@ scrollable = false
 script = ExtResource("6_rdjob")
 audio_bus_name = "Music"
 
-[node name="Sprite2D" type="Sprite2D" parent="Control/SettingsBox/VBoxContainer/VolMusic"]
+[node name="Sprite2D" type="Sprite2D" parent="Control/SettingsBox/VBoxContainer2/VolMusic"]
 show_behind_parent = true
-position = Vector2(0.5, 9.5)
-scale = Vector2(0.643885, 1.2)
+position = Vector2(-6.7234e-05, 9.5)
+scale = Vector2(0.784173, 1.2)
 texture = ExtResource("7_cpyrf")
 centered = false
 
-[node name="Label2" type="Label" parent="Control/SettingsBox/VBoxContainer"]
+[node name="Label2" type="Label" parent="Control/SettingsBox/VBoxContainer2"]
 layout_mode = 2
-theme = ExtResource("4_u1vjd")
+size_flags_horizontal = 0
+theme = ExtResource("19_d2swd")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "SFX"
 
-[node name="VolSound" type="HSlider" parent="Control/SettingsBox/VBoxContainer" groups=["draggables"]]
+[node name="VolSound" type="HSlider" parent="Control/SettingsBox/VBoxContainer2" groups=["draggables"]]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
+size_flags_vertical = 4
 focus_mode = 0
 theme_override_icons/grabber = ExtResource("5_0fgff")
 theme_override_icons/grabber_highlight = ExtResource("5_0fgff")
@@ -248,27 +208,30 @@ scrollable = false
 script = ExtResource("6_rdjob")
 audio_bus_name = "Sound"
 
-[node name="Sprite2D" type="Sprite2D" parent="Control/SettingsBox/VBoxContainer/VolSound"]
+[node name="Sprite2D" type="Sprite2D" parent="Control/SettingsBox/VBoxContainer2/VolSound"]
 show_behind_parent = true
 position = Vector2(0.5, 9.5)
-scale = Vector2(0.643885, 1.2)
+scale = Vector2(0.778777, 1.2)
 texture = ExtResource("7_cpyrf")
 centered = false
 
-[node name="Space" type="Label" parent="Control/SettingsBox/VBoxContainer"]
+[node name="Control" type="Control" parent="Control/SettingsBox/VBoxContainer2"]
 layout_mode = 2
 
-[node name="Space2" type="Label" parent="Control/SettingsBox/VBoxContainer"]
-layout_mode = 2
-
-[node name="Space3" type="Label" parent="Control/SettingsBox/VBoxContainer"]
-layout_mode = 2
-
-[node name="Space4" type="Label" parent="Control/SettingsBox/VBoxContainer"]
-layout_mode = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/SettingsBox"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -101.0
+offset_top = 415.5
+offset_right = 92.0
+offset_bottom = 664.5
+grow_horizontal = 2
+theme_override_constants/separation = 0
 
 [node name="ButtonHole" type="Sprite2D" parent="Control/SettingsBox/VBoxContainer"]
-position = Vector2(-5, 248)
+position = Vector2(-5, -3)
 texture = ExtResource("8_2bbhj")
 centered = false
 
@@ -292,7 +255,7 @@ offset_right = -9.0
 offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("4_u1vjd")
+theme = ExtResource("19_d2swd")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "LANG"
 horizontal_alignment = 1
@@ -320,7 +283,7 @@ offset_right = -10.0
 offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("4_u1vjd")
+theme = ExtResource("19_d2swd")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "INSTRUCTIONS"
 horizontal_alignment = 1
@@ -346,7 +309,7 @@ offset_right = -11.0
 offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("4_u1vjd")
+theme = ExtResource("19_d2swd")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "CREDITS"
 horizontal_alignment = 1
@@ -403,133 +366,6 @@ Isabelle Stadelmann
 Gracia Brückmann
 Walid El-Ajou
 "
-
-[node name="Reset" type="TextureButton" parent="Control/SettingsBox"]
-visible = false
-custom_minimum_size = Vector2(0, 48)
-layout_mode = 0
-offset_left = 71.0
-offset_top = 784.0
-offset_right = 264.0
-offset_bottom = 867.0
-focus_mode = 0
-theme = SubResource("Theme_gphvl")
-texture_normal = ExtResource("20_dqb8u")
-texture_pressed = ExtResource("21_7pokf")
-texture_hover = ExtResource("22_t6jai")
-
-[node name="Label" type="Label" parent="Control/SettingsBox/Reset"]
-layout_mode = 0
-offset_left = 11.0
-offset_top = 10.0
-offset_right = 183.0
-offset_bottom = 74.0
-theme = ExtResource("19_d2swd")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "RESTART"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
-
-[node name="ResetConfirm" type="ColorRect" parent="Control/SettingsBox/Reset"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -343.0
-offset_top = -172.5
-offset_right = 343.0
-offset_bottom = 172.5
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.560784, 0.560784, 0.560784, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Control/SettingsBox/Reset/ResetConfirm"]
-position = Vector2(343, 194.5)
-texture = ExtResource("23_6klw7")
-
-[node name="Label" type="Label" parent="Control/SettingsBox/Reset/ResetConfirm"]
-layout_mode = 0
-offset_left = 125.0
-offset_top = 123.0
-offset_right = 565.0
-offset_bottom = 238.0
-theme = ExtResource("19_d2swd")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 24
-text = "RESET_CONFIRM"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Yes" type="TextureButton" parent="Control/SettingsBox/Reset/ResetConfirm"]
-layout_mode = 0
-offset_left = 164.0
-offset_top = 222.0
-offset_right = 357.0
-offset_bottom = 305.0
-scale = Vector2(0.7, 0.7)
-texture_normal = ExtResource("20_dqb8u")
-texture_pressed = ExtResource("21_7pokf")
-texture_hover = ExtResource("22_t6jai")
-
-[node name="Label" type="Label" parent="Control/SettingsBox/Reset/ResetConfirm/Yes"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("19_d2swd")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "RESET"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Control/SettingsBox/Reset/ResetConfirm/Yes"]
-show_behind_parent = true
-position = Vector2(-2.85706, -2.85718)
-texture = ExtResource("24_wyual")
-centered = false
-
-[node name="No" type="TextureButton" parent="Control/SettingsBox/Reset/ResetConfirm"]
-layout_mode = 0
-offset_left = 396.0
-offset_top = 222.0
-offset_right = 589.0
-offset_bottom = 305.0
-scale = Vector2(0.7, 0.7)
-texture_normal = ExtResource("13_mepng")
-texture_pressed = ExtResource("14_ddynd")
-texture_hover = ExtResource("15_8tsm0")
-
-[node name="Label" type="Label" parent="Control/SettingsBox/Reset/ResetConfirm/No"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("19_d2swd")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "CANCEL"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
-
-[node name="Sprite2D2" type="Sprite2D" parent="Control/SettingsBox/Reset/ResetConfirm/No"]
-show_behind_parent = true
-position = Vector2(-2.85718, -2.14291)
-texture = ExtResource("24_wyual")
-centered = false
-
-[node name="Sprite2D" type="Sprite2D" parent="Control/SettingsBox/Reset"]
-show_behind_parent = true
-position = Vector2(-1358.5, 162.5)
-texture = ExtResource("24_wyual")
-centered = false
 
 [node name="MarginContainer" type="MarginContainer" parent="Control/SettingsBox"]
 layout_mode = 1
@@ -589,8 +425,8 @@ stretch_mode = 0
 script = ExtResource("26_1fovc")
 
 [connection signal="pressed" from="Control/Close" to="Control/Close" method="_on_pressed"]
-[connection signal="value_changed" from="Control/SettingsBox/VBoxContainer/VolMusic" to="Control/SettingsBox/VBoxContainer/VolMusic" method="_on_value_changed"]
-[connection signal="value_changed" from="Control/SettingsBox/VBoxContainer/VolSound" to="Control/SettingsBox/VBoxContainer/VolSound" method="_on_value_changed"]
+[connection signal="value_changed" from="Control/SettingsBox/VBoxContainer2/VolMusic" to="Control/SettingsBox/VBoxContainer2/VolMusic" method="_on_value_changed"]
+[connection signal="value_changed" from="Control/SettingsBox/VBoxContainer2/VolSound" to="Control/SettingsBox/VBoxContainer2/VolSound" method="_on_value_changed"]
 [connection signal="pressed" from="Control/SettingsBox/VBoxContainer/Language" to="Control/SettingsBox/VBoxContainer/Language" method="_on_pressed"]
 [connection signal="pressed" from="Control/SettingsBox/VBoxContainer/Instructions" to="Control/SettingsBox/VBoxContainer/Instructions" method="_on_pressed"]
 [connection signal="pressed" from="Control/SettingsBox/VBoxContainer/Credits" to="Control/SettingsBox/VBoxContainer/Credits/CreditsSprite" method="_on_credits_button_pressed"]
