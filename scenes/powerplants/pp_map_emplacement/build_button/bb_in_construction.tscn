@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://d2hhtw1popthi"]
+[gd_scene load_steps=21 format=3 uid="uid://d2hhtw1popthi"]
 
 [ext_resource type="Shader" path="res://src/gdscript/shaders/outline.gdshader" id="1_b0sg4"]
 [ext_resource type="Texture2D" uid="uid://cr0xdhpqcjqjd" path="res://assets/textures/powerplants/bb_in_construction.png" id="1_e03ct"]
@@ -11,7 +11,6 @@
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/bb_in_construction/info_frame/plant_name.gd" id="8_c3q5u"]
 [ext_resource type="Texture2D" uid="uid://cd23afs6x11al" path="res://assets/textures/screens/screen_1.png" id="8_ppjfb"]
 [ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="9_0asyi"]
-[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="9_6nsjy"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/bb_in_construction/info_frame/plant_texture.gd" id="10_ja4mu"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/animation_player.gd" id="10_q33v4"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/bb_in_construction/info_frame/build_time_left.gd" id="11_16lme"]
@@ -418,10 +417,11 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -62.0
-offset_right = 0.0
-offset_bottom = 62.0
+offset_right = 48.0
+offset_bottom = 110.0
 grow_horizontal = 0
 scale = Vector2(1.15, 1.15)
+ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("6_bo1ac")
 
@@ -454,7 +454,7 @@ offset_top = 72.0769
 offset_right = 504.0
 offset_bottom = 132.077
 grow_horizontal = 2
-theme = ExtResource("9_6nsjy")
+theme = ExtResource("9_0asyi")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 43
 text = "Plant name"
