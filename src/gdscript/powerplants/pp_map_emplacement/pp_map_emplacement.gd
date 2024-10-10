@@ -188,9 +188,8 @@ func _on_powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMe
 			pp_scene.powerplant_upgraded.connect(_on_pp_upgraded)
 			pp_scene.powerplant_downgraded.connect(_on_pp_downgraded)
 			pp_scene.powerplant_delete_requested.connect(_on_powerplant_delete_requested)
-	
 				
-			pp_scene.activate()
+			pp_scene.activate(true)
 			
 			if new_metrics.current_upgrade > 0:
 				var target_upgrade = new_metrics.current_upgrade
@@ -211,8 +210,19 @@ func _on_powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMe
 
 # Connected to "powerplant_delete_requested" emitted by "pp_scene.tscn"
 func _on_powerplant_delete_requested(metrics: PowerplantMetrics):
-	MoneyManager.building_costs -= metrics.building_costs
-	Gameloop.available_money_message_requested.emit("+" + str(metrics.building_costs + metrics.production_costs).pad_decimals(2) + "M CHF", true)
+	var refunded_money = metrics.building_costs
+	
+	# Gives back the money that was used to upgrade
+	if metrics.current_upgrade > 0:
+		refunded_money += metrics.current_upgrade * metrics.upgrade_cost
+	
+	MoneyManager.building_costs -= refunded_money
+	
+	if not metrics.active:
+		# production costs where already deducted
+		Gameloop.available_money_message_requested.emit("+" + str(refunded_money).pad_decimals(2) + "M CHF", true)
+	else:
+		Gameloop.available_money_message_requested.emit("+" + str(refunded_money + metrics.production_costs).pad_decimals(2) + "M CHF", true)
 	history.pp_deleted(metrics)
 	
 	var node = get_node(powerplant_node_name)

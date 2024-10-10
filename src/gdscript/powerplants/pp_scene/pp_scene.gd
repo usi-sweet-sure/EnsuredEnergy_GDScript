@@ -40,7 +40,7 @@ func set_texture_off(texture: Texture):
 	texture_off_changed.emit(texture)
 
 
-func activate():
+func activate(is_built: bool):
 	if metrics.can_activate:
 		var was_activated = metrics.active
 		
@@ -48,7 +48,9 @@ func activate():
 			metrics.active = true
 			metrics_updated.emit(metrics)
 			powerplant_activated.emit(metrics)
-			Gameloop.available_money_message_requested.emit("-" + str(metrics.production_costs).pad_decimals(2) + "M CHF", false)
+			
+			if not is_built:
+				Gameloop.available_money_message_requested.emit("-" + str(metrics.production_costs).pad_decimals(2) + "M CHF", false)
 	
 
 func deactivate():
@@ -83,7 +85,7 @@ func _on_pp_show_info_frame_requested():
 
 func _on_switch_toggled(toggled_on: bool):
 	if toggled_on:
-		activate()
+		activate(false)
 	else:
 		deactivate()
 
