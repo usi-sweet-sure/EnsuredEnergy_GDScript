@@ -147,37 +147,46 @@ func _on_next_turn():
 	ShockManager.pick_shock()
 	ShockManager.apply_shock()
 	await ShockManager.shock_resolved
-	#_send_parameters_to_model()
+	_send_parameters_to_model()
 	Context.get_demand_from_model() #S. Not sure where to put this and the line doesnt update
 	
 
 func _send_parameters_to_model():
 	for map_emplacement in get_tree().get_nodes_in_group("map_emplacements"):
 		var history: MapEmplacementHistory = map_emplacement.history
-		var history_for_this_turn: MapEmplacementTurnHistory = history.get_history_for_turn(Gameloop.current_turn - 1)
-		var what_happened: MapEmplacementHistory.PossibleActions = history.get_history_meaning(Gameloop.current_turn - 1)
+		var history_for_this_turn: MapEmplacementTurnHistory = history.get_history_for_turn(Gameloop.current_turn)
+		var what_happened: MapEmplacementHistory.PossibleActions = history.get_history_meaning(Gameloop.current_turn)
 		
 		match what_happened:
 			MapEmplacementHistory.PossibleActions.NOTHING_HAPPENED:
 				pass
 			MapEmplacementHistory.PossibleActions.PP_BUILT:
 				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_built
+				var plant_up_id = PowerplantsManager.powerplants_ups_id[metrics.type]
 			MapEmplacementHistory.PossibleActions.PP_CONSTRUCTION_STARTED:
 				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_construction_started
+				var plant_up_id = PowerplantsManager.powerplants_ups_id[metrics.type]
 			MapEmplacementHistory.PossibleActions.PP_ACTIVATED:
 				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_activated
+				var plant_up_id = PowerplantsManager.powerplants_ups_id[metrics.type]
 			MapEmplacementHistory.PossibleActions.PP_DEACTIVATED:
 				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_deactivated
+				var plant_up_id = PowerplantsManager.powerplants_ups_id[metrics.type]
 			MapEmplacementHistory.PossibleActions.PP_UPGRADED:
 				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_upgraded
+				var plant_up_id = PowerplantsManager.powerplants_ups_id[metrics.type]
 			MapEmplacementHistory.PossibleActions.PP_DOWNGRADED:
 				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_downgraded
+				var plant_up_id = PowerplantsManager.powerplants_ups_id[metrics.type]
 			MapEmplacementHistory.PossibleActions.PP_BUILT_AND_UPGRADED:
 				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_upgraded
+				var plant_up_id = PowerplantsManager.powerplants_ups_id[metrics.type]
 			MapEmplacementHistory.PossibleActions.PP_ACTIVATED_AND_UPGRADED:
 				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_upgraded
+				var plant_up_id = PowerplantsManager.powerplants_ups_id[metrics.type]
 			MapEmplacementHistory.PossibleActions.PP_ACTIVATED_AND_DOWNGRADED:
 				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_downgraded
+				var plant_up_id = PowerplantsManager.powerplants_ups_id[metrics.type]
 				
 				
 	for i in ups_list:

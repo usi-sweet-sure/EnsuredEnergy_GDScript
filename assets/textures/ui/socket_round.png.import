@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dohromkm0xb2d"
-path="res://.godot/imported/pp_sprite_off_wind.png-c9a5c2b9786a1084190ecad097dd2f0b.ctex"
+uid="uid://b0c3ywqarx8b7"
+path="res://.godot/imported/socket_round.png-56b02d2f457f495a11a03da63a935aa5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/powerplants/pp_sprite_off_wind.png"
-dest_files=["res://.godot/imported/pp_sprite_off_wind.png-c9a5c2b9786a1084190ecad097dd2f0b.ctex"]
+source_file="res://assets/textures/ui/socket_round.png"
+dest_files=["res://.godot/imported/socket_round.png-56b02d2f457f495a11a03da63a935aa5.ctex"]
 
 [params]
 

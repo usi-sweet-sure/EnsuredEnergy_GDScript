@@ -33,7 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://b86vm4agcnisw" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0020_Icon-red-press-button.png" id="13_snkrc"]
 [ext_resource type="Texture2D" uid="uid://b066igcqidlny" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0018_Icon-red-hover-button.png" id="14_84fak"]
 [ext_resource type="Texture2D" uid="uid://da56ki5hmlw12" path="res://assets/textures/ui/All-HQ-Assets-D_0009s_0008_Energy-Bar-base.png" id="14_tu03u"]
-[ext_resource type="Texture2D" uid="uid://b0c3ywqarx8b7" path="res://assets/textures/ui/All-HQ-Assets-D_0001s_0002_Icon-round-button-hole.png" id="15_m5wa2"]
+[ext_resource type="Texture2D" uid="uid://b0c3ywqarx8b7" path="res://assets/textures/ui/socket_round.png" id="15_m5wa2"]
 [ext_resource type="Script" path="res://src/gdscript/end/trust_button.gd" id="16_ppd74"]
 [ext_resource type="Texture2D" uid="uid://bmjee8ocqy0ge" path="res://assets/textures/ui/Enviornment-Base.png" id="20_651ix"]
 [ext_resource type="Texture2D" uid="uid://bttco1oeukpbq" path="res://assets/textures/ui/Environment-Bar.png" id="21_n5n6k"]

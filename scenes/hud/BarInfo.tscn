@@ -6,7 +6,7 @@
 [ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="4_3f2or"]
 [ext_resource type="Texture2D" uid="uid://dm51vy4uvlpvd" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0015_Icon-yellow-hover-button.png" id="5_h8nss"]
 [ext_resource type="Texture2D" uid="uid://b07rwrrjjeock" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0017_Icon-yellow-press-button.png" id="6_f4vpc"]
-[ext_resource type="Texture2D" uid="uid://b0c3ywqarx8b7" path="res://assets/textures/ui/All-HQ-Assets-D_0001s_0002_Icon-round-button-hole.png" id="7_feats"]
+[ext_resource type="Texture2D" uid="uid://b0c3ywqarx8b7" path="res://assets/textures/ui/socket_round.png" id="7_feats"]
 
 [node name="BarInfo" type="Control"]
 layout_mode = 3

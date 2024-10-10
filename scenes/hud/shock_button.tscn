@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://bgdrqxfbgr184"]
 
 [ext_resource type="Script" path="res://src/gdscript/shocks/shock_button/shock_button.gd" id="1_3j4o8"]
-[ext_resource type="Texture2D" uid="uid://b0c3ywqarx8b7" path="res://assets/textures/ui/All-HQ-Assets-D_0001s_0002_Icon-round-button-hole.png" id="1_uupry"]
+[ext_resource type="Texture2D" uid="uid://b0c3ywqarx8b7" path="res://assets/textures/ui/socket_round.png" id="1_uupry"]
 [ext_resource type="Script" path="res://src/gdscript/shocks/shock_button/texture_button.gd" id="2_5jsa0"]
 [ext_resource type="Script" path="res://src/gdscript/shocks/shock_button/animation_player.gd" id="2_lohl8"]
 [ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="4_j4m7a"]

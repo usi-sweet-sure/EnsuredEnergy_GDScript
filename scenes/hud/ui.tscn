@@ -31,11 +31,11 @@
 [ext_resource type="Texture2D" uid="uid://b07rwrrjjeock" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0017_Icon-yellow-press-button.png" id="26_kd3a6"]
 [ext_resource type="Texture2D" uid="uid://dm51vy4uvlpvd" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0015_Icon-yellow-hover-button.png" id="27_sye1h"]
 [ext_resource type="Texture2D" uid="uid://vff0e83ytund" path="res://assets/textures/ui/Energy-base.png" id="28_mr6x7"]
-[ext_resource type="Texture2D" uid="uid://b0c3ywqarx8b7" path="res://assets/textures/ui/All-HQ-Assets-D_0001s_0002_Icon-round-button-hole.png" id="28_oub76"]
 [ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/fonts/special_elite/special_elite_regular.ttf" id="30_d1m8l"]
 [ext_resource type="Texture2D" uid="uid://h78kteff8v5d" path="res://assets/textures/ui/Money-counter-hole.png" id="31_jcf3k"]
 [ext_resource type="PackedScene" uid="uid://fyc7mfdq5sh5" path="res://scenes/buttons/button_plus.tscn" id="31_y5561"]
 [ext_resource type="Texture2D" uid="uid://p2nyvgv4j2ll" path="res://assets/textures/ui/Money-counter-1.png" id="32_2wt40"]
+[ext_resource type="Texture2D" uid="uid://b0c3ywqarx8b7" path="res://assets/textures/ui/socket_round.png" id="32_angtv"]
 [ext_resource type="Script" path="res://src/gdscript/hud/money_management/borrow_money_frame/toggle_borrow_money_frame_button.gd" id="32_ynjjj"]
 [ext_resource type="Texture2D" uid="uid://burmdec041k3k" path="res://assets/textures/ui/Shocks-Metal.png" id="33_b8djn"]
 [ext_resource type="Texture2D" uid="uid://sopgul71025f" path="res://assets/textures/ui/Icon-Money.png" id="33_my285"]
@@ -1340,7 +1340,7 @@ vertical_alignment = 1
 [node name="Sprite2D" type="Sprite2D" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MoreMoneyInfoButton"]
 show_behind_parent = true
 position = Vector2(18, 20)
-texture = ExtResource("28_oub76")
+texture = ExtResource("32_angtv")
 
 [node name="BorrowMoney" type="Control" parent="TopLeftZone/MoneyManagement"]
 anchors_preset = 0
