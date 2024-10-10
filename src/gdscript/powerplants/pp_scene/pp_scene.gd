@@ -125,7 +125,7 @@ func _on_button_plus_pressed():
 		
 		# Upgrade cost
 		MoneyManager.building_costs += metrics.upgrade_cost
-		Gameloop.available_money_message_requested.emit("-" + str(metrics.upgrade_cost).pad_decimals(2) + "M CHF", false)
+		Gameloop.available_money_message_requested.emit("-" + str(metrics.upgrade_cost + delta_prod_cost).pad_decimals(0) + "M CHF", false)
 		
 		metrics_updated.emit(metrics)
 		powerplant_upgraded.emit(metrics)
@@ -161,7 +161,7 @@ func _on_button_minus_pressed():
 	
 	# Upgrade cost
 	MoneyManager.building_costs -= metrics.upgrade_cost
-	Gameloop.available_money_message_requested.emit("+" + str(metrics.upgrade_cost).pad_decimals(2) + "M CHF", true)
+	Gameloop.available_money_message_requested.emit("+" + str(metrics.upgrade_cost + delta_prod_cost).pad_decimals(0) + "M CHF", true)
 	
 	metrics_updated.emit(metrics)
 	powerplant_downgraded.emit(metrics)
