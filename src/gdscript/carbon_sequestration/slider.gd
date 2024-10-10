@@ -21,3 +21,9 @@ func _on_next_turn():
 func _on_value_changed(value: float):
 	Gameloop.sequestrated_co2 = value
 	Gameloop.ups_list["774"] = value - previous_value
+	MoneyManager.carbon_sequestration_production_costs = value * 10
+
+
+func _on_drag_ended(value_changed):
+	if value_changed:
+		Gameloop.available_money_message_requested.emit("-" + str(value * 10).pad_decimals(2) + "M CHF", false)

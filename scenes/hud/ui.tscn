@@ -1,4 +1,4 @@
-[gd_scene load_steps=173 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=174 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/textures/ui/Button-Next-Normal.png" id="2_aobed"]
 [ext_resource type="Texture2D" uid="uid://ccsapuvkqqt1b" path="res://assets/textures/ui/All-HQ-Assets-D_0006s_0009_Profile-metal-base.png" id="2_nu7y6"]
@@ -66,6 +66,7 @@
 [ext_resource type="Texture2D" uid="uid://bulftkbpqxib" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0024_Icon-Money.png" id="51_8sidw"]
 [ext_resource type="FontFile" uid="uid://dxtsp51pqna2o" path="res://assets/fonts/static/open_sans_bold.ttf" id="51_joowr"]
 [ext_resource type="Texture2D" uid="uid://myf36tn1pspq" path="res://assets/textures/buttons/close_button_hover.png" id="51_wnliv"]
+[ext_resource type="Script" path="res://src/gdscript/hud/money_management/floating_message.gd" id="52_3bvp3"]
 [ext_resource type="Texture2D" uid="uid://b2s2c41bays6t" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0016_Icon-Notification.png" id="52_j4tdm"]
 [ext_resource type="Texture2D" uid="uid://bhl7ei1bspfbw" path="res://assets/textures/buttons/close_button_disabled.png" id="52_klkvg"]
 [ext_resource type="Texture2D" uid="uid://c3opgyhsh61y8" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0014_Policies-symbol.png" id="53_3a7gr"]
@@ -1558,6 +1559,27 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="FloatingMessage" type="Control" parent="TopLeftZone/MoneyManagement/AvailableMoneyAmount"]
+anchors_preset = 0
+offset_left = 795.0
+offset_top = 191.0
+offset_right = 835.0
+offset_bottom = 231.0
+script = ExtResource("52_3bvp3")
+
+[node name="FloatingMessage" parent="TopLeftZone/MoneyManagement/AvailableMoneyAmount/FloatingMessage" instance=ExtResource("115_hpdbb")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = -50.0
+offset_right = 1000.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 0
+play_sound = "NONE"
+
+[node name="AnimationPlayer" parent="TopLeftZone/MoneyManagement/AvailableMoneyAmount/FloatingMessage/FloatingMessage" index="0"]
+speed_scale = 0.5
+
 [node name="AmountPanel" type="Sprite2D" parent="TopLeftZone/MoneyManagement/AvailableMoneyAmount"]
 position = Vector2(208, 194.5)
 texture = ExtResource("31_jcf3k")
@@ -2712,6 +2734,7 @@ script = ExtResource("126_ky6x4")
 [connection signal="pressed" from="Clock/TurnInfo" to="Clock/TimePanelBlank" method="clock_pressed"]
 [connection signal="pressed" from="OpenSettingsButton" to="OpenSettingsButton" method="_on_pressed"]
 
+[editable path="TopLeftZone/MoneyManagement/AvailableMoneyAmount/FloatingMessage/FloatingMessage"]
 [editable path="TopLeftZone/Policies/Trust/BarInfo"]
 [editable path="EnvironmentAndPollution/Environment/Info"]
 [editable path="EnvironmentAndPollution/Pollution/Info"]

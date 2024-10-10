@@ -14,12 +14,17 @@ extends Node
 @onready var paper_close = $PaperClose
 @onready var switch_toggle = $SwitchToggle
 @onready var paper_manip = $PaperManip
+@onready var more_coin = $MoreCoin
+@onready var less_coin = $LessCoin
 
+var everything_is_ready = false
 
 func _ready():
 	#dark_fantasy.play()
 	Gameloop.game_started.connect(_on_game_started)
 	Gameloop.game_ended.connect(_on_game_ended)
+	Gameloop.everything_is_ready.connect(_on_everything_is_ready)
+	Gameloop.available_money_message_requested.connect(_on_money_message)
 	GroupManager.buttons_group_updated.connect(_on_buttons_group_updated)
 	GroupManager.disabled_buttons_group_updated.connect(_on_disabled_buttons_group_updated)
 	GroupManager.switches_group_updated.connect(_on_switches_group_updated)
@@ -147,3 +152,15 @@ func _on_more_help_buttons_group_updated():
 			
 		if button.gui_input.is_connected(_on_disabled_buttons_gui_input):
 			button.gui_input.disconnect(_on_disabled_buttons_gui_input)
+
+
+func _on_money_message(_message: String, positiv: bool):
+	if everything_is_ready:
+		if positiv:
+			less_coin.play()
+		else:
+			more_coin.play()
+			
+
+func _on_everything_is_ready():
+	everything_is_ready = true

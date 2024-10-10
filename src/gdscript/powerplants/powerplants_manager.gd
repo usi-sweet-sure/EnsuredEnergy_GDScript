@@ -326,7 +326,7 @@ func _on_context_updated(context):
 			
 		powerplants_metrics_updated.emit(powerplants_metrics)
 		Context.context_updated.disconnect(_on_context_updated)
-		
+		Gameloop.everything_is_ready.emit()
 
 
 func _store_powerplant_metrics(engine_type_id: EngineTypeIds):

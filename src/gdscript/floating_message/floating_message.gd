@@ -25,5 +25,13 @@ func float_up():
 	animation_player.play("float_up")
 
 
+func float_down():
+	if play_sound == "ERROR":
+		error.stop()
+		error.play()
+		
+	animation_player.play("float_down")
+	
+	
 func stop():
 	animation_player.stop()

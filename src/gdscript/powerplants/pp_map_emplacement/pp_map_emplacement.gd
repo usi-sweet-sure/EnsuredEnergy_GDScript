@@ -163,12 +163,14 @@ func _on_powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMe
 		
 		if new_metrics.build_time_in_turns > 0:
 			MoneyManager.building_costs += new_metrics.building_costs
+			Gameloop.available_money_message_requested.emit("-" + str(new_metrics.building_costs + new_metrics.production_costs).pad_decimals(1) + "M CHF", false)
 			new_metrics.construction_started_on_turn = Gameloop.current_turn
 			bb_in_construction.set_metrics(new_metrics)
 			bb_in_construction.show()
 			history.pp_construction_started(new_metrics)
 		else:
 			MoneyManager.building_costs += new_metrics.building_costs
+			Gameloop.available_money_message_requested.emit("-" + str(new_metrics.building_costs + new_metrics.production_costs).pad_decimals(1) + "M CHF", false)
 			# == 0 means it was not set yet.
 			# It's already set when the pp takes multiple turns to build
 			if new_metrics.construction_started_on_turn == 0:
@@ -210,6 +212,7 @@ func _on_powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMe
 # Connected to "powerplant_delete_requested" emitted by "pp_scene.tscn"
 func _on_powerplant_delete_requested(metrics: PowerplantMetrics):
 	MoneyManager.building_costs -= metrics.building_costs
+	Gameloop.available_money_message_requested.emit("+" + str(metrics.building_costs + metrics.production_costs).pad_decimals(2) + "M CHF", true)
 	history.pp_deleted(metrics)
 	
 	var node = get_node(powerplant_node_name)
@@ -222,6 +225,7 @@ func _on_powerplant_delete_requested(metrics: PowerplantMetrics):
 
 func _on_powerplant_cancel_construction_requested(metrics: PowerplantMetrics):
 	MoneyManager.building_costs -= metrics.building_costs
+	Gameloop.available_money_message_requested.emit("+" + str(metrics.building_costs + metrics.production_costs).pad_decimals(1) + "M CHF", true)
 	history.pp_construction_canceled(metrics)
 	
 	bb_in_construction.hide()

@@ -43,6 +43,11 @@ signal enable_graphs_button
 signal toggle_policies_window
 signal hide_energy_bar_info_requested
 signal testing_env_entered
+# Emitted after the initial setup, like making the first request to the server.
+# This indicates the player can now start playing and we can activate sounds or 
+# other things that we couldn't activate before
+signal everything_is_ready
+signal available_money_message_requested(message: String, positiv: bool)
 
 # We need to send this signal because some translations 
 # don't update automatically when changing the language at runtime,
