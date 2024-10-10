@@ -1,12 +1,12 @@
 extends Node
 
-var hand_press = preload("res://assets/textures/ui/All-HQ-Assets-D_0004s_0021_Icon-Pointer-press.png")
-var hand_normal = preload("res://assets/textures/ui/All-HQ-Assets-D_0004s_0021_Icon-Pointer.png")
-var hand_help = preload("res://assets/textures/ui/All-HQ-Assets-D_0004s_0021_Icon-help.png")
-var hand_help_press = preload("res://assets/textures/ui/All-HQ-Assets-D_0004s_0021_Icon-help-press.png")
-var hand_drag = preload("res://assets/textures/ui/All-HQ-Assets-D_0004s_0021_cursor-drag.png")
-var hand_drag_press = preload("res://assets/textures/ui/All-HQ-Assets-D_0004s_0021_cursor_drag_press.png")
-var ibeam = preload("res://assets/textures/ui/All-HQ-Assets-D_0004s_0021_Icon-ibeam.png")
+var hand_press = preload("res://assets/textures/cursor/cursor_press.png")
+var hand_normal = preload("res://assets/textures/cursor/cursor.png")
+var hand_help = preload("res://assets/textures/cursor/cursor_info.png")
+var hand_help_press = preload("res://assets/textures/cursor/cursor_info_press.png")
+var hand_drag = preload("res://assets/textures/cursor/cursor_drag.png")
+var hand_drag_press = preload("res://assets/textures/cursor/cursor_drag_press.png")
+var ibeam = preload("res://assets/textures/cursor/cursor_ibeam.png")
 var mode = "normal"
 # When we are dragging something, the cursor stays in grab mode. We want it to switch
 # to the cursor it should have been when the mouse left click is released

@@ -142,15 +142,44 @@ func _check_supply():
 
 
 func _on_next_turn():
-	#_send_send_parameters_to_model()
 	imported_energy_amount = 0
 	MoneyManager.set_money_for_new_turn()
 	ShockManager.pick_shock()
 	ShockManager.apply_shock()
+	await ShockManager.shock_resolved
+	#_send_parameters_to_model()
 	Context.get_demand_from_model() #S. Not sure where to put this and the line doesnt update
 	
 
-func _send_send_parameters_to_model():
+func _send_parameters_to_model():
+	for map_emplacement in get_tree().get_nodes_in_group("map_emplacements"):
+		var history: MapEmplacementHistory = map_emplacement.history
+		var history_for_this_turn: MapEmplacementTurnHistory = history.get_history_for_turn(Gameloop.current_turn - 1)
+		var what_happened: MapEmplacementHistory.PossibleActions = history.get_history_meaning(Gameloop.current_turn - 1)
+		
+		match what_happened:
+			MapEmplacementHistory.PossibleActions.NOTHING_HAPPENED:
+				pass
+			MapEmplacementHistory.PossibleActions.PP_BUILT:
+				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_built
+			MapEmplacementHistory.PossibleActions.PP_CONSTRUCTION_STARTED:
+				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_construction_started
+			MapEmplacementHistory.PossibleActions.PP_ACTIVATED:
+				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_activated
+			MapEmplacementHistory.PossibleActions.PP_DEACTIVATED:
+				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_deactivated
+			MapEmplacementHistory.PossibleActions.PP_UPGRADED:
+				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_upgraded
+			MapEmplacementHistory.PossibleActions.PP_DOWNGRADED:
+				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_downgraded
+			MapEmplacementHistory.PossibleActions.PP_BUILT_AND_UPGRADED:
+				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_upgraded
+			MapEmplacementHistory.PossibleActions.PP_ACTIVATED_AND_UPGRADED:
+				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_upgraded
+			MapEmplacementHistory.PossibleActions.PP_ACTIVATED_AND_DOWNGRADED:
+				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_downgraded
+				
+				
 	for i in ups_list:
 		if ups_list[i] != 0:
 			Context.send_parameters_to_model(Context.res_id, 
@@ -158,7 +187,7 @@ func _send_send_parameters_to_model():
 					ups_list[i])
 			await Context.parameters_sent_to_model
 			ups_list[i] = 0
-		 
+	
 
 func _unhandled_input(event):
 	if event is InputEventKey:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=174 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=173 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/textures/ui/Button-Next-Normal.png" id="2_aobed"]
 [ext_resource type="Texture2D" uid="uid://ccsapuvkqqt1b" path="res://assets/textures/ui/All-HQ-Assets-D_0006s_0009_Profile-metal-base.png" id="2_nu7y6"]
@@ -723,11 +723,9 @@ _data = {
 "RESET": SubResource("Animation_lrye6")
 }
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ycy67"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2dw2x"]
-atlas = SubResource("CompressedTexture2D_ycy67")
-region = Rect2(120, 135, 46.112, 31)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ch2be"]
+atlas = ExtResource("100_2c0ru")
+region = Rect2(112.708, 169.653, 46.5467, 30.2058)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ou8cv"]
 atlas = ExtResource("100_2c0ru")
@@ -2506,9 +2504,15 @@ show_behind_parent = true
 position = Vector2(7, 16)
 texture = ExtResource("102_5ki0w")
 
-[node name="HideNum" type="Sprite2D" parent="Clock/TimePanelBlank"]
-position = Vector2(20, 27)
-texture = SubResource("AtlasTexture_2dw2x")
+[node name="HideNum5" type="Sprite2D" parent="Clock/TimePanelBlank"]
+position = Vector2(22.9999, 33)
+scale = Vector2(0.776765, 0.665322)
+texture = SubResource("AtlasTexture_ch2be")
+
+[node name="HideNum6" type="Sprite2D" parent="Clock/TimePanelBlank"]
+position = Vector2(39, 15)
+scale = Vector2(0.801426, 0.665322)
+texture = SubResource("AtlasTexture_ch2be")
 
 [node name="HideNum2" type="Sprite2D" parent="Clock/TimePanelBlank"]
 position = Vector2(10.8749, 88.375)

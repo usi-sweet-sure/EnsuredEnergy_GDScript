@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqomhlqiqtnrb"
-path="res://.godot/imported/All-HQ-Assets-D_0004s_0021_Icon-ibeam.png-b9ce1c088a8cd385412f87e9005cf809.ctex"
+uid="uid://bfru1axuk3s4i"
+path="res://.godot/imported/cursor_drag.png-5cfc6195eb70775915e47e8d29dfa98e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/ui/All-HQ-Assets-D_0004s_0021_Icon-ibeam.png"
-dest_files=["res://.godot/imported/All-HQ-Assets-D_0004s_0021_Icon-ibeam.png-b9ce1c088a8cd385412f87e9005cf809.ctex"]
+source_file="res://assets/textures/cursor/cursor_drag.png"
+dest_files=["res://.godot/imported/cursor_drag.png-5cfc6195eb70775915e47e8d29dfa98e.ctex"]
 
 [params]
 

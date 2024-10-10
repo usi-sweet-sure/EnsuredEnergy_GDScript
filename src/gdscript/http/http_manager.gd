@@ -3,6 +3,7 @@ extends Node
 signal http_request_active_updated(active: bool)
 signal http_request_completed(result, response_code, headers, body)
 
+
 var http_request_active := false:
 	set(new_value):
 		http_request_active = new_value
