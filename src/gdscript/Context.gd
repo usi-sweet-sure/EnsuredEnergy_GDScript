@@ -38,7 +38,7 @@ func send_parameters_to_model(game_id: int, year: int, prm_id: int, tj: int):
 	HttpManager.make_request(url)
 	
 
-func get_context_from_model(game_id: int, year: InternalMode):
+func get_context_from_model(game_id: int, year: int):
 	var url = "https://sure.euler.usi.ch/json.php?mth=ctx&res_id={res_id}&yr={yr}".format({"res_id": game_id, "yr": year})
 	
 	if not HttpManager.http_request_completed.is_connected(_on_got_context_from_model):
