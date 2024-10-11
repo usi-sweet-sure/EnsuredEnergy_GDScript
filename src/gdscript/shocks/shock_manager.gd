@@ -128,41 +128,11 @@ func _leave_nuclear():
 	
 # sorry for the ugly code
 func increase_demand(longterm: bool):
-	for i in Context.ctx:
-		if i["prm_id"] == "7":
-			household_demand = float(i["tj"])
-		if i["prm_id"] == "22":
-			industry_demand = float(i["tj"])
-		if i["prm_id"] == "37":
-			service_demand = float(i["tj"])
-		if i["prm_id"] == "52":
-			transport_demand = float(i["tj"])
-		if i["prm_id"] == "67":
-			agriculture_demand = float(i["tj"])
 	var year = Gameloop.year_list[Gameloop.current_turn-1]
+	Context.send_shock_parameters(Context.res_id, 1, year)
+	
 
-	Context.send_parameters_to_model(Context.res_id, year, 7, household_demand * 5.0 / 100.0)
-	await Context.parameters_sent_to_model
-	Context.send_parameters_to_model(Context.res_id, year, 22, industry_demand * 5.0 / 100.0)
-	await Context.parameters_sent_to_model
-	Context.send_parameters_to_model(Context.res_id, year, 37, service_demand * 5.0 / 100.0)
-	await Context.parameters_sent_to_model
-	Context.send_parameters_to_model(Context.res_id, year, 52, transport_demand * 5.0 / 100.0)
-	await Context.parameters_sent_to_model
-	Context.send_parameters_to_model(Context.res_id, year, 67, agriculture_demand * 5.0 / 100.0)
-	if longterm:
-		await Context.parameters_sent_to_model
-		year = Gameloop.year_list[Gameloop.current_turn]
-		Context.send_parameters_to_model(Context.res_id, year, 7, -household_demand * 5.0 / 100.0)
-		await Context.parameters_sent_to_model
-		Context.send_parameters_to_model(Context.res_id, year, 22, -industry_demand * 5.0 / 100.0)
-		await Context.parameters_sent_to_model
-		Context.send_parameters_to_model(Context.res_id, year, 37, -service_demand * 5.0 / 100.0)
-		await Context.parameters_sent_to_model
-		Context.send_parameters_to_model(Context.res_id, year, 52, -transport_demand * 5.0 / 100.0)
-		await Context.parameters_sent_to_model
-		Context.send_parameters_to_model(Context.res_id, year, 67, -agriculture_demand * 5.0 / 100.0)
-		
+	
 	
 func _severe_wether_send_parameters_to_model():
 	await Context.parameters_sent_to_model

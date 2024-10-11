@@ -4,6 +4,7 @@ signal context_updated(context)
 signal parameters_sent_to_model
 signal leaderboard_updated(leaderboard)
 signal rank_updated(rank)
+signal shocks_sent_to_model
 
 #the context
 var res_id: int
@@ -61,7 +62,13 @@ func get_rank(game_id: int):
 	if not HttpManager.http_request_completed.is_connected(_on_got_rank_from_model):
 		HttpManager.http_request_completed.connect(_on_got_rank_from_model)
 	HttpManager.make_request(url)
+	
+func send_shock_parameters(game_id: int, shock_id: int, year: int):
+	var url = "https://sure.euler.usi.ch/json.php?mth=shk&res_id={res_id}&shk_id={shock_id}&yr={yr}".format({"res_id": game_id, "shock_id": shock_id, "yr": year})
 
+	if not HttpManager.http_request_completed.is_connected(_on_shocks_sent_to_model):
+		HttpManager.http_request_completed.connect(_on_shocks_sent_to_model)
+	HttpManager.make_request(url)
 
 func get_demand_from_model():
 	for i in ctx:
@@ -92,6 +99,10 @@ func _on_parameters_sent_to_model(_result, _response_code, _headers, _body):
 		HttpManager.http_request_completed.disconnect(_on_parameters_sent_to_model)
 	parameters_sent_to_model.emit()
 
+func _on_shocks_sent_to_model(_result, _response_code, _headers, _body):
+	if HttpManager.http_request_completed.is_connected(_on_shocks_sent_to_model):
+		HttpManager.http_request_completed.disconnect(_on_shocks_sent_to_model)
+	shocks_sent_to_model.emit()
 
 func _on_got_leaderboard_from_model(_result, _response_code, _headers, body):
 	if HttpManager.http_request_completed.is_connected(_on_got_leaderboard_from_model):
