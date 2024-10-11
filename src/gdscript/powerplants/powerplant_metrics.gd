@@ -60,7 +60,7 @@ func _init(
 	):
 		self.type = type
 		self.capacity = capacity
-		self.cnv_capacity = capacity
+		self.cnv_capacity = cnv_capacity
 		self.emissions = emissions
 		self.land_use = land_use
 		self.production_costs = production_costs

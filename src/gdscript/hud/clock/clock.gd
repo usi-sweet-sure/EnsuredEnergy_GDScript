@@ -50,6 +50,8 @@ func _on_next_turn_button_pressed():
 	await $TimelineAnimation.animation_finished
 	
 	if Gameloop.current_turn == Gameloop.total_number_of_turns:
+		Gameloop._send_parameters_to_model()
+		await Gameloop.all_parameters_sent
 		Gameloop.game_ended.emit()
 		$"../../NextTurn".hide()
 	else:

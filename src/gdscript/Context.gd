@@ -33,14 +33,16 @@ func register_new_game_on_model(player_name: String):
 func send_parameters_to_model(game_id: int, year: int, prm_id: int, tj: int):
 	var url = "https://sure.euler.usi.ch/json.php?mth=ups&res_id={res_id}&prm_id={prm_id}&yr={yr}&tj={tj}".format({"res_id": game_id, "yr": year, "prm_id": prm_id, "tj": tj})
 	
-	HttpManager.http_request_completed.connect(_on_parameters_sent_to_model)
+	if not HttpManager.http_request_completed.is_connected(_on_parameters_sent_to_model):
+		HttpManager.http_request_completed.connect(_on_parameters_sent_to_model)
 	HttpManager.make_request(url)
 	
 
 func get_context_from_model(game_id: int, year: InternalMode):
 	var url = "https://sure.euler.usi.ch/json.php?mth=ctx&res_id={res_id}&yr={yr}".format({"res_id": game_id, "yr": year})
 	
-	HttpManager.http_request_completed.connect(_on_got_context_from_model)
+	if not HttpManager.http_request_completed.is_connected(_on_got_context_from_model):
+		HttpManager.http_request_completed.connect(_on_got_context_from_model)
 	HttpManager.make_request(url)
 	
 	
@@ -48,14 +50,16 @@ func get_leaderboard_from_model(category: String):
 	# TODO ask toby for a URL that gives the top 5 for all categories......
 	var url = "https://sure.euler.usi.ch/json.php?mth=lst&lim=5&ord={category}".format({"category": category})
 	
-	HttpManager.http_request_completed.connect(_on_got_leaderboard_from_model)
+	if not HttpManager.http_request_completed.is_connected(_on_got_leaderboard_from_model):
+		HttpManager.http_request_completed.connect(_on_got_leaderboard_from_model)
 	HttpManager.make_request(url)
 		
 		
 func get_rank(game_id: int):
 	var url = "https://sure.euler.usi.ch/json.php?mth=rnk&res_id={res_id}".format({"res_id": game_id})
 	
-	HttpManager.http_request_completed.connect(_on_got_rank_from_model)
+	if not HttpManager.http_request_completed.is_connected(_on_got_rank_from_model):
+		HttpManager.http_request_completed.connect(_on_got_rank_from_model)
 	HttpManager.make_request(url)
 
 
@@ -69,6 +73,9 @@ func get_demand_from_model():
 
 
 func _on_got_context_from_model(_result, _response_code, _headers, body):
+	if HttpManager.http_request_completed.is_connected(_on_got_context_from_model):
+		HttpManager.http_request_completed.disconnect(_on_got_context_from_model)
+		
 	var json = JSON.new()
 	json.parse(body.get_string_from_utf8())
 	ctx = json.get_data()
@@ -77,17 +84,18 @@ func _on_got_context_from_model(_result, _response_code, _headers, body):
 		res_id = int(ctx[0]["res_id"])
 		get_demand_from_model()
 		
-	HttpManager.http_request_completed.disconnect(_on_got_context_from_model)
 	context_updated.emit(ctx)
 	
 
 func _on_parameters_sent_to_model(_result, _response_code, _headers, _body):
-	HttpManager.http_request_completed.disconnect(_on_parameters_sent_to_model)
+	if HttpManager.http_request_completed.is_connected(_on_parameters_sent_to_model):
+		HttpManager.http_request_completed.disconnect(_on_parameters_sent_to_model)
 	parameters_sent_to_model.emit()
 
 
 func _on_got_leaderboard_from_model(_result, _response_code, _headers, body):
-	HttpManager.http_request_completed.disconnect(_on_got_leaderboard_from_model)
+	if HttpManager.http_request_completed.is_connected(_on_got_leaderboard_from_model):
+		HttpManager.http_request_completed.disconnect(_on_got_leaderboard_from_model)
 	var json = JSON.new()
 	json.parse(body.get_string_from_utf8())
 	leaderboard_json.append(json.get_data())
@@ -95,7 +103,8 @@ func _on_got_leaderboard_from_model(_result, _response_code, _headers, body):
 
 
 func _on_got_rank_from_model(_result, _response_code, _headers, body):
-	HttpManager.http_request_completed.disconnect(_on_got_rank_from_model)
+	if HttpManager.http_request_completed.is_connected(_on_got_rank_from_model):
+		HttpManager.http_request_completed.disconnect(_on_got_rank_from_model)
 	var json = JSON.new()
 	json.parse(body.get_string_from_utf8())
 	rank_json = json.get_data()

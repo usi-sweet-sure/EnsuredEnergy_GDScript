@@ -366,16 +366,19 @@ func _store_powerplant_metrics(engine_type_id: EngineTypeIds):
 					availability.y = 1 - availability.x
 	
 	if engine_type_id == EngineTypeIds.NUCLEAR:
+		cnv_capacity = cnv_capacity / 3.0
 		capacity = capacity / 100.0 / 3.0 # there's 3 nuclear plants
 		emissions /= 3.0
 		land_use /= 3.0
 		production_cost = production_cost / 3.0
 	elif engine_type_id == EngineTypeIds.HYDRO || engine_type_id == EngineTypeIds.RIVER:
+		cnv_capacity = cnv_capacity / 2.0
 		capacity = capacity / 100.0 / 2.0
 		emissions /= 4.0 # needs to divide by the number of water plants
 		land_use /= 4.0
 		production_cost = production_cost / 4.0
 	elif engine_type_id == EngineTypeIds.SOLAR || engine_type_id == EngineTypeIds.WASTE:
+		cnv_capacity = cnv_capacity / 4.0
 		capacity = capacity / 100.0 / 4.0
 		emissions /= 4.0 # needs to divide by the number of water plants
 		land_use /= 4.0

@@ -118,7 +118,7 @@ func _reintroduce_nuclear():
 		if pp.is_nuclear():
 			pp.metrics.life_span_in_turns = 11
 			pp.metrics.can_activate = true
-			pp.activate()
+			pp.activate(false)
 			pp.metrics_updated.emit(pp.metrics)
 			
 

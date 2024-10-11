@@ -9,16 +9,16 @@ var demand_winter_list = []
 var year_list = []
 
 var ups_list = {
-	"186": 0, # GAS
-	"151": 0, # NUCLEAR
-	"162": 0, # RIVER
-	"163": 0, # HYDRO
-	"189": 0, # WASTE
-	"192": 0, # BIOMASS
 	"170": 0, # SOLAR
 	"171": 0, # WIND
+	"186": 0, # GAS
+	"189": 0, # WASTE
+	"192": 0, # BIOMASS
 	"175": 0, # BIOGAS
+	"151": 0, # NUCLEAR
 	"774": 0, # CARBON SEQ
+	"163": 0, # HYDRO
+	"162": 0, # RIVER
 }
 
 signal player_name_updated
@@ -48,6 +48,7 @@ signal testing_env_entered
 # other things that we couldn't activate before
 signal everything_is_ready
 signal available_money_message_requested(message: String, positiv: bool)
+signal all_parameters_sent
 
 # We need to send this signal because some translations 
 # don't update automatically when changing the language at runtime,
@@ -151,57 +152,102 @@ func _on_next_turn():
 	MoneyManager.set_money_for_new_turn()
 	ShockManager.pick_shock()
 	ShockManager.apply_shock()
-	await ShockManager.shock_resolved
+	
+	if Gameloop.most_recent_shock != null and Gameloop.most_recent_shock.show_shock_window:
+		await ShockManager.shock_resolved
+		
 	_send_parameters_to_model()
+	await all_parameters_sent
+	print("next turn get demand")
 	Context.get_demand_from_model() #S. Not sure where to put this and the line doesnt update
 	
 
 func _send_parameters_to_model():
+	print("===================================================================")
 	for map_emplacement in get_tree().get_nodes_in_group("map_emplacements"):
 		var history: MapEmplacementHistory = map_emplacement.history
-		var history_for_this_turn: MapEmplacementTurnHistory = history.get_history_for_turn(Gameloop.current_turn)
-		var what_happened: MapEmplacementHistory.PossibleActions = history.get_history_meaning(Gameloop.current_turn)
-		
+		var history_for_this_turn: MapEmplacementTurnHistory = history.get_history_for_turn(Gameloop.current_turn - 1)
+		var what_happened: MapEmplacementHistory.PossibleActions = history.get_history_meaning(Gameloop.current_turn - 1)
+
 		match what_happened:
 			MapEmplacementHistory.PossibleActions.NOTHING_HAPPENED:
 				pass
 			MapEmplacementHistory.PossibleActions.PP_BUILT:
 				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_built
 				var plant_up_id = PowerplantsManager.powerplants_ups_id[metrics.type]
+				
+				Gameloop.ups_list[plant_up_id] += metrics.cnv_capacity
+				print(PowerplantsManager.EngineTypeIds.keys()[metrics.type], " built: ", metrics.cnv_capacity )
 			MapEmplacementHistory.PossibleActions.PP_CONSTRUCTION_STARTED:
-				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_construction_started
-				var plant_up_id = PowerplantsManager.powerplants_ups_id[metrics.type]
+				pass
 			MapEmplacementHistory.PossibleActions.PP_ACTIVATED:
 				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_activated
 				var plant_up_id = PowerplantsManager.powerplants_ups_id[metrics.type]
+				# Si la pp a été contruite, upgrade, puis éteinte, et réactivée
+				# plus tard, on veut ajouter les upgrades
+				var upgrades_capacity = metrics.current_upgrade * metrics.upgrade_factor_for_winter_supply * metrics.cnv_capacity
+				
+				Gameloop.ups_list[plant_up_id] += metrics.cnv_capacity + upgrades_capacity
+				print(PowerplantsManager.EngineTypeIds.keys()[metrics.type], " activated: ", metrics.cnv_capacity + upgrades_capacity)
 			MapEmplacementHistory.PossibleActions.PP_DEACTIVATED:
 				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_deactivated
 				var plant_up_id = PowerplantsManager.powerplants_ups_id[metrics.type]
+				var upgrades_capacity = metrics.current_upgrade * metrics.upgrade_factor_for_winter_supply * metrics.cnv_capacity
+				
+				Gameloop.ups_list[plant_up_id] -= metrics.cnv_capacity + upgrades_capacity
+				print(PowerplantsManager.EngineTypeIds.keys()[metrics.type], " deactivated: ", metrics.cnv_capacity + upgrades_capacity)
 			MapEmplacementHistory.PossibleActions.PP_UPGRADED:
 				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_upgraded
 				var plant_up_id = PowerplantsManager.powerplants_ups_id[metrics.type]
+				
+				Gameloop.ups_list[plant_up_id] += history_for_this_turn.pp_upgrade * metrics.upgrade_factor_for_winter_supply * metrics.cnv_capacity
+				print(PowerplantsManager.EngineTypeIds.keys()[metrics.type], " upgraded: ", history_for_this_turn.pp_upgrade * metrics.upgrade_factor_for_winter_supply * metrics.cnv_capacity)
 			MapEmplacementHistory.PossibleActions.PP_DOWNGRADED:
 				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_downgraded
 				var plant_up_id = PowerplantsManager.powerplants_ups_id[metrics.type]
+				
+				Gameloop.ups_list[plant_up_id] += history_for_this_turn.pp_upgrade * metrics.upgrade_factor_for_winter_supply * metrics.cnv_capacity
+				print(PowerplantsManager.EngineTypeIds.keys()[metrics.type], " downgraded: ", history_for_this_turn.pp_upgrade * metrics.upgrade_factor_for_winter_supply * metrics.cnv_capacity)
 			MapEmplacementHistory.PossibleActions.PP_BUILT_AND_UPGRADED:
 				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_upgraded
 				var plant_up_id = PowerplantsManager.powerplants_ups_id[metrics.type]
+				var upgrade_capacity = history_for_this_turn.pp_upgrade * metrics.upgrade_factor_for_winter_supply * metrics.cnv_capacity
+				
+				Gameloop.ups_list[plant_up_id] += metrics.cnv_capacity + upgrade_capacity
+				print(PowerplantsManager.EngineTypeIds.keys()[metrics.type], " built_and_upgraded: ", metrics.cnv_capacity + upgrade_capacity)
 			MapEmplacementHistory.PossibleActions.PP_ACTIVATED_AND_UPGRADED:
 				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_upgraded
 				var plant_up_id = PowerplantsManager.powerplants_ups_id[metrics.type]
+				var upgrade_capacity = metrics.current_upgrade * metrics.upgrade_factor_for_winter_supply * metrics.cnv_capacity
+				
+				Gameloop.ups_list[plant_up_id] += metrics.cnv_capacity + upgrade_capacity
+				print(PowerplantsManager.EngineTypeIds.keys()[metrics.type], " activated_and_upgraded: ", metrics.cnv_capacity + upgrade_capacity)
 			MapEmplacementHistory.PossibleActions.PP_ACTIVATED_AND_DOWNGRADED:
 				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_downgraded
 				var plant_up_id = PowerplantsManager.powerplants_ups_id[metrics.type]
+				var upgrade_capacity = metrics.current_upgrade * metrics.upgrade_factor_for_winter_supply * metrics.cnv_capacity
+				print("current upgrade:", metrics.current_upgrade)
+				
+				Gameloop.ups_list[plant_up_id] += metrics.cnv_capacity + upgrade_capacity
+				print(PowerplantsManager.EngineTypeIds.keys()[metrics.type], " activated_and_downgraded: ", metrics.cnv_capacity + upgrade_capacity)
 				
 				
+	print("sending next turn parameters")
+	var j = 0
 	for i in ups_list:
 		if ups_list[i] != 0:
+			print("\tsending ", PowerplantsManager.EngineTypeIds.keys()[j])
 			Context.send_parameters_to_model(Context.res_id, 
-					Gameloop.year_list[Gameloop.current_turn - 1], i,
+					Gameloop.year_list[Gameloop.current_turn - 1], int(i),
 					ups_list[i])
+			print("\twaiting for ", PowerplantsManager.EngineTypeIds.keys()[j])
 			await Context.parameters_sent_to_model
+			print("\tdone_waiting for ", PowerplantsManager.EngineTypeIds.keys()[j])
 			ups_list[i] = 0
-	
+		j += 1
+	print("all sent")
+	print("===================================================================")
+	all_parameters_sent.emit()
 
 func _unhandled_input(event):
 	if event is InputEventKey:
