@@ -150,24 +150,24 @@ func _check_supply():
 func _on_next_turn():
 	imported_energy_amount = 0
 	MoneyManager.set_money_for_new_turn()
+	await all_parameters_sent
 	ShockManager.pick_shock()
 	ShockManager.apply_shock()
 	
 	if Gameloop.most_recent_shock != null and Gameloop.most_recent_shock.show_shock_window:
 		await ShockManager.shock_resolved
 		
-	_send_parameters_to_model()
-	await all_parameters_sent
+	
 	print("next turn get demand")
 	Context.get_demand_from_model() #S. Not sure where to put this and the line doesnt update
 	
 
-func _send_parameters_to_model():
+func _send_parameters_to_model(turn: int):
 	print("===================================================================")
 	for map_emplacement in get_tree().get_nodes_in_group("map_emplacements"):
 		var history: MapEmplacementHistory = map_emplacement.history
-		var history_for_this_turn: MapEmplacementTurnHistory = history.get_history_for_turn(Gameloop.current_turn - 1)
-		var what_happened: MapEmplacementHistory.PossibleActions = history.get_history_meaning(Gameloop.current_turn - 1)
+		var history_for_this_turn: MapEmplacementTurnHistory = history.get_history_for_turn(turn)
+		var what_happened: MapEmplacementHistory.PossibleActions = history.get_history_meaning(turn)
 
 		match what_happened:
 			MapEmplacementHistory.PossibleActions.NOTHING_HAPPENED:

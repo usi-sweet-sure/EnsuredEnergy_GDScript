@@ -46,11 +46,12 @@ func _unhandled_input(event):
 		
 func _on_next_turn_button_pressed():
 	_set_next_years_anim()
+	Gameloop._send_parameters_to_model(Gameloop.current_turn)
 	$TimelineAnimation.play("NextTurnAnim")
 	await $TimelineAnimation.animation_finished
 	
 	if Gameloop.current_turn == Gameloop.total_number_of_turns:
-		Gameloop._send_parameters_to_model()
+		Gameloop._send_parameters_to_model(Gameloop.current_turn)
 		await Gameloop.all_parameters_sent
 		Gameloop.game_ended.emit()
 		$"../../NextTurn".hide()
