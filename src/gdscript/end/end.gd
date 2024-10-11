@@ -7,7 +7,7 @@ signal metrics_rank_updated
 func _ready():
 	Gameloop.game_ended.connect(_on_game_ended)
 	Gameloop.show_ending_screen_requested.connect(_on_show_ending_screen)
-	
+	%player_name.placeholder_text = tr("PLAYER_NAME_PLACEHOLDER")
 
 func _on_game_ended():
 	show()
@@ -41,3 +41,26 @@ func _on_show_ending_screen():
 
 func _on_close_button_pressed():
 	hide()
+
+
+func _on_player_name_text_submitted(new_text):
+	Gameloop.player_name = new_text
+	# Ask toby for the url to edit res_name
+
+
+func _on_name_edit_toggled(toggled_on):
+	if toggled_on:
+		%NameEdit.text = "✔️"
+		%player_name.grab_focus()
+	else:
+		%NameEdit.text = "🖊️"
+		%player_name.text_submitted.emit(%player_name.text)
+		%player_name.release_focus()
+
+
+func _on_player_name_focus_entered():
+	%NameEdit.toggled.emit(true)
+
+
+func _on_player_name_focus_exited():
+	%NameEdit.toggled.emit(false)

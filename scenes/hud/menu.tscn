@@ -195,7 +195,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
+[node name="MenuBase" type="Sprite2D" parent="."]
+position = Vector2(690, 685)
+texture = ExtResource("4_dgun4")
+
 [node name="StartMenuBase" type="NinePatchRect" parent="."]
+visible = false
 offset_left = 511.0
 offset_top = 446.0
 offset_right = 873.0
@@ -205,6 +210,7 @@ patch_margin_top = 223
 patch_margin_bottom = 238
 
 [node name="PlayerName" type="LineEdit" parent="." groups=["inputs"]]
+visible = false
 offset_left = 569.0
 offset_top = 501.0
 offset_right = 821.0
@@ -228,12 +234,11 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -364.0
-offset_top = 61.0
+offset_top = 25.0
 offset_right = -167.0
-offset_bottom = 125.0
+offset_bottom = 89.0
 grow_horizontal = 2
 grow_vertical = 2
-disabled = true
 texture_normal = ExtResource("11_v1gn1")
 texture_pressed = ExtResource("12_2e306")
 texture_hover = ExtResource("13_ngmjh")
@@ -272,9 +277,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -364.0
-offset_top = 148.0
+offset_top = 112.0
 offset_right = -167.0
-offset_bottom = 212.0
+offset_bottom = 176.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("14_38vq8")
@@ -315,9 +320,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -364.0
-offset_top = 236.0
+offset_top = 200.0
 offset_right = -167.0
-offset_bottom = 300.0
+offset_bottom = 264.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("14_n5xse")

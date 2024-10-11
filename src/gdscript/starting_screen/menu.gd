@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-var lang = ["en", "fr", "de", "it"]
+var lang = ["de", "fr", "it", "en"]
 var i = 0
 
 @onready var player_name_field = $PlayerName
@@ -17,7 +17,7 @@ func _ready():
 
 
 func _on_play_pressed():
-	Gameloop.player_name = player_name_field.text
+	Gameloop.player_name = "new_player" #player_name_field.text
 	hide()
 	Gameloop.start_game()
 	

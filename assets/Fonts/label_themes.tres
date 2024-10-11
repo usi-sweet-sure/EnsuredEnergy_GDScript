@@ -1,8 +1,31 @@
-[gd_resource type="Theme" load_steps=12 format=3 uid="uid://dwneq676q3hhg"]
+[gd_resource type="Theme" load_steps=15 format=3 uid="uid://dwneq676q3hhg"]
 
 [ext_resource type="FontFile" uid="uid://dxtsp51pqna2o" path="res://assets/Fonts/static/open_sans_bold.ttf" id="2_h51fi"]
 [ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/Fonts/Special_Elite/special_elite_regular.ttf" id="3_f6d62"]
 [ext_resource type="FontFile" uid="uid://bt2f3flr7psn5" path="res://assets/Fonts/VT323/vt323_regular.ttf" id="3_tk8xd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wf6vf"]
+bg_color = Color(0.247059, 0.8, 0.831373, 0.129412)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_color = Color(0.219608, 0.756863, 0.788235, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2d12m"]
+bg_color = Color(0.219608, 0.756863, 0.788235, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_color = Color(0.219608, 0.756863, 0.788235, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i2at7"]
+bg_color = Color(0.219608, 0.756863, 0.788235, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
 
 [sub_resource type="FontVariation" id="FontVariation_3ifss"]
 base_font = ExtResource("2_h51fi")
@@ -44,6 +67,15 @@ corner_radius_bottom_left = 4
 /colors/Dark = Color(0.0627451, 0.572549, 0, 1)
 /font_sizes/Big = 18
 /fonts/font = ExtResource("3_f6d62")
+Button/colors/font_color = Color(0.192157, 0.647059, 0.67451, 1)
+Button/colors/font_hover_color = Color(0.94902, 0.94902, 0.94902, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(0.0745098, 0.196078, 0.207843, 1)
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("3_tk8xd")
+Button/styles/hover = SubResource("StyleBoxFlat_wf6vf")
+Button/styles/normal = SubResource("StyleBoxFlat_2d12m")
+Button/styles/pressed = SubResource("StyleBoxFlat_i2at7")
 Label/colors/font_color = Color(0.0784314, 0.180392, 0.192157, 1)
 Label/colors/font_outline_color = Color(1, 1, 1, 1)
 Label/colors/font_shadow_color = Color(0, 0, 0, 0)
