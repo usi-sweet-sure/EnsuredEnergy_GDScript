@@ -5,6 +5,7 @@ signal parameters_sent_to_model
 signal leaderboard_updated(leaderboard)
 signal rank_updated(rank)
 signal shocks_sent_to_model
+signal player_name_changed
 
 #the context
 var res_id: int
@@ -61,6 +62,13 @@ func get_rank(game_id: int):
 	
 	if not HttpManager.http_request_completed.is_connected(_on_got_rank_from_model):
 		HttpManager.http_request_completed.connect(_on_got_rank_from_model)
+	HttpManager.make_request(url)
+	
+func change_player_name(game_id: int, player_name: String):
+	var url = "https://sure.euler.usi.ch/json.php?mth=upd&res_id={res_id}&res_name={player_name}".format({"res_id": game_id, "player_name": player_name})
+	
+	if not HttpManager.http_request_completed.is_connected(_on_changed_player_name):
+		HttpManager.http_request_completed.connect(_on_changed_player_name)
 	HttpManager.make_request(url)
 	
 func send_shock_parameters(game_id: int, shock_id: int, year: int):
@@ -120,3 +128,8 @@ func _on_got_rank_from_model(_result, _response_code, _headers, body):
 	json.parse(body.get_string_from_utf8())
 	rank_json = json.get_data()
 	rank_updated.emit(rank_json)
+	
+func _on_changed_player_name(_result, _response_code, _headers, _body):
+	if HttpManager.http_request_completed.is_connected(_on_changed_player_name):
+		HttpManager.http_request_completed.disconnect(_on_changed_player_name)
+	player_name_changed.emit()

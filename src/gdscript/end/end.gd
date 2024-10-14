@@ -8,6 +8,7 @@ func _ready():
 	Gameloop.game_ended.connect(_on_game_ended)
 	Gameloop.show_ending_screen_requested.connect(_on_show_ending_screen)
 	%player_name.placeholder_text = tr("PLAYER_NAME_PLACEHOLDER")
+	Context.player_name_changed.connect(_on_player_name_changed)
 
 func _on_game_ended():
 	show()
@@ -44,8 +45,16 @@ func _on_close_button_pressed():
 
 
 func _on_player_name_text_submitted(new_text):
-	Gameloop.player_name = new_text
-	# Ask toby for the url to edit res_name
+	#Gameloop.player_name = new_text
+	Context.change_player_name(Context.res_id, new_text)
+	%player_name.editable = false
+	%NameEdit.hide()
+	%player_name.release_focus()
+	%NameEdit.button_pressed = false
+	
+func _on_player_name_changed():
+	%player_name.editable = true
+	%NameEdit.show()
 
 
 func _on_name_edit_toggled(toggled_on):
