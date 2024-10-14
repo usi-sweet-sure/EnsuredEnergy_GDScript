@@ -46,7 +46,7 @@ signal testing_env_entered
 # Emitted after the initial setup, like making the first request to the server.
 # This indicates the player can now start playing and we can activate sounds or 
 # other things that we couldn't activate before
-signal everything_is_ready
+signal player_can_start_playing_first_turn
 signal available_money_message_requested(message: String, positiv: bool)
 signal all_parameters_sent
 
@@ -56,7 +56,7 @@ signal all_parameters_sent
 # So we listen to this signal and call those statements again where needed.
 # This signal is emitted in language_button.gd
 signal locale_updated(locale: String)
-
+signal player_can_start_playing_new_turn
 
 var player_name: String = "":
 	set(new_value):
@@ -148,19 +148,12 @@ func _check_supply():
 
 
 func _on_next_turn():
+	print("next turn in gameloop")
 	imported_energy_amount = 0
 	MoneyManager.set_money_for_new_turn()
-	await all_parameters_sent
 	ShockManager.pick_shock()
 	ShockManager.apply_shock()
-	
-	if Gameloop.most_recent_shock != null and Gameloop.most_recent_shock.show_shock_window:
-		await ShockManager.shock_resolved
-		
-	
-	print("next turn get demand")
-	Context.get_demand_from_model() #S. Not sure where to put this and the line doesnt update
-	
+
 
 func _send_parameters_to_model(turn: int):
 	print("===================================================================")
@@ -249,6 +242,7 @@ func _send_parameters_to_model(turn: int):
 	print("===================================================================")
 	all_parameters_sent.emit()
 
+
 func _unhandled_input(event):
 	if event is InputEventKey:
 		if event.pressed and event.keycode == KEY_ESCAPE:
@@ -280,3 +274,4 @@ func reset_all_values():
 func _on_first_request_finished(_context):
 	TutorialManager.tutorial_started.emit()
 	Context.context_updated.disconnect(_on_first_request_finished)
+	

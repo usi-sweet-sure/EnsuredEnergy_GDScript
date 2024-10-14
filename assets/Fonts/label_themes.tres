@@ -1,8 +1,6 @@
-[gd_resource type="Theme" load_steps=15 format=3 uid="uid://dwneq676q3hhg"]
+[gd_resource type="Theme" load_steps=13 format=3 uid="uid://dwneq676q3hhg"]
 
-[ext_resource type="FontFile" uid="uid://dxtsp51pqna2o" path="res://assets/Fonts/static/open_sans_bold.ttf" id="2_h51fi"]
-[ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/Fonts/Special_Elite/special_elite_regular.ttf" id="3_f6d62"]
-[ext_resource type="FontFile" uid="uid://bt2f3flr7psn5" path="res://assets/Fonts/VT323/vt323_regular.ttf" id="3_tk8xd"]
+[ext_resource type="FontFile" uid="uid://dxtsp51pqna2o" path="res://assets/fonts/static/open_sans_bold.ttf" id="2_h51fi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wf6vf"]
 bg_color = Color(0.247059, 0.8, 0.831373, 0.129412)
@@ -33,14 +31,11 @@ base_font = ExtResource("2_h51fi")
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nyqp5"]
 
 [sub_resource type="FontVariation" id="FontVariation_u3fkg"]
-base_font = ExtResource("3_f6d62")
 variation_embolden = 0.6
 
 [sub_resource type="FontVariation" id="FontVariation_ule17"]
-base_font = ExtResource("3_f6d62")
 
 [sub_resource type="FontVariation" id="FontVariation_b0wbe"]
-base_font = ExtResource("3_tk8xd")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5mtqi"]
 bg_color = Color(0.192157, 0.658824, 0.690196, 1)
@@ -66,13 +61,13 @@ corner_radius_bottom_left = 4
 [resource]
 /colors/Dark = Color(0.0627451, 0.572549, 0, 1)
 /font_sizes/Big = 18
-/fonts/font = ExtResource("3_f6d62")
+/fonts/font = null
 Button/colors/font_color = Color(0.192157, 0.647059, 0.67451, 1)
 Button/colors/font_hover_color = Color(0.94902, 0.94902, 0.94902, 1)
 Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 Button/colors/font_pressed_color = Color(0.0745098, 0.196078, 0.207843, 1)
 Button/font_sizes/font_size = 24
-Button/fonts/font = ExtResource("3_tk8xd")
+Button/fonts/font = null
 Button/styles/hover = SubResource("StyleBoxFlat_wf6vf")
 Button/styles/normal = SubResource("StyleBoxFlat_2d12m")
 Button/styles/pressed = SubResource("StyleBoxFlat_i2at7")
@@ -99,7 +94,7 @@ Paper/constants/shadow_offset_y = 0
 Paper/constants/shadow_outline_size = 0
 Paper/font_sizes/font_size = 18
 Paper/font_sizes/size = 16
-Paper/fonts/font = ExtResource("3_f6d62")
+Paper/fonts/font = null
 RichTextLabel/constants/line_separation = 7
 RichTextLabel/fonts/bold_font = SubResource("FontVariation_u3fkg")
 RichTextLabel/fonts/normal_font = SubResource("FontVariation_ule17")

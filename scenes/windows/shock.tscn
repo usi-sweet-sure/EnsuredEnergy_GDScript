@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bk3lb51erle8l" path="res://assets/textures/backplates/backplate_1.png" id="2_06ydw"]
 [ext_resource type="Texture2D" uid="uid://burmdec041k3k" path="res://assets/textures/ui/Shocks-Metal.png" id="2_37dlb"]
 [ext_resource type="Texture2D" uid="uid://cbgfs7wym1x5a" path="res://assets/textures/ui/All-HQ-Assets-D_0005s_0003_Shock-screen.png" id="3_wa4y3"]
-[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/Fonts/label_themes.tres" id="5_0qiv1"]
+[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="5_0qiv1"]
 [ext_resource type="Texture2D" uid="uid://d1or1v15j7r7u" path="res://assets/textures/ui/Shocks-Button-Hole.png" id="6_021ab"]
 [ext_resource type="Script" path="res://src/gdscript/shocks/shock_window/shock_title.gd" id="6_ocx2u"]
 [ext_resource type="Script" path="res://src/gdscript/shocks/shock_window/shock_text.gd" id="7_6m7uh"]
@@ -89,6 +89,7 @@ offset_right = -166.0
 offset_bottom = -120.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_force_pass_scroll_events = false
 theme = SubResource("Theme_jkqh0")
 color = Color(0.597656, 0.597656, 0.597656, 1)
 metadata/_edit_use_anchors_ = true

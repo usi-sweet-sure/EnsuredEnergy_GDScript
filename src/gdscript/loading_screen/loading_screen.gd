@@ -5,13 +5,15 @@ extends CanvasLayer
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	hide()
-	HttpManager.http_request_active_updated.connect(_on_http_request_active_updated)
+	Gameloop.game_started.connect(_on_game_started)
+	Gameloop.player_can_start_playing_first_turn.connect(_on_player_can_play_first_turn)
 	
 	
-func _on_http_request_active_updated(active: bool):
-	if active:
-		show()
-		animation_player.play("loading")
-	else:
-		hide()
-		animation_player.stop()
+func _on_game_started():
+	show()
+	animation_player.play("loading")
+	
+	
+func _on_player_can_play_first_turn():
+	hide()
+	animation_player.stop()

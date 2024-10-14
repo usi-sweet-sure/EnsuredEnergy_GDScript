@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://dxtsp51pqna2o"
-path="res://.godot/imported/open_sans_bold.ttf-4bec2263ee7d3bcf04ea585b83c776e6.fontdata"
+path="res://.godot/imported/open_sans_bold.ttf-32565900cc367961922d2ebc953c6047.fontdata"
 
 [deps]
 
-source_file="res://assets/Fonts/static/open_sans_bold.ttf"
-dest_files=["res://.godot/imported/open_sans_bold.ttf-4bec2263ee7d3bcf04ea585b83c776e6.fontdata"]
+source_file="res://assets/fonts/static/open_sans_bold.ttf"
+dest_files=["res://.godot/imported/open_sans_bold.ttf-32565900cc367961922d2ebc953c6047.fontdata"]
 
 [params]
 

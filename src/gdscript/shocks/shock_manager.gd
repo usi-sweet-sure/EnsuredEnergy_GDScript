@@ -1,6 +1,7 @@
 extends Node
 
 signal shock_resolved
+signal shock_effects_applied
 signal toggle_shock_buttons
 signal shock_button_entered
 signal shock_button_exited
@@ -41,38 +42,42 @@ func _ready():
 	heat_wave.add_player_reaction("SHOCK_HEAT_WAVE_PLAYER_REACTION_3", func(): MoneyManager.players_own_money_amount -= 50)
 	
 	var glaciers_melting = Shock.new("SHOCK_GLACIERS_MELTING_TITLE", "SHOCK_GLACIERS_MELTING_TEXT", "ice.png")
-	glaciers_melting.add_effect(func(): print("decreasing hydraulic water supply")) # E. Implement
+	glaciers_melting.add_effect(func(): glaciers_melting())
 	
 	var severe_weather = Shock.new("SHOCK_SEVERE_WEATHER_TITLE", "SHOCK_SEVERE_WEATHER_TEXT", "weather.png")
-	severe_weather.add_effect(func(): _severe_wether_send_parameters_to_model()) # E. Implement
+	severe_weather.add_effect(func(): _severe_wether_send_parameters_to_model())
 	
 	var inc_raw_cost_10 = Shock.new("SHOCK_INC_RAW_COST_10_TITLE", "SHOCK_INC_RAW_COST_10_TEXT", "money.png")
-	inc_raw_cost_10.add_effect(func(): MoneyManager.production_costs_modifier += 0.1)
+	inc_raw_cost_10.add_effect(func(): update_prod_cost_modifier(0.1))
 	
 	var inc_raw_cost_20 = Shock.new("SHOCK_INC_RAW_COST_20_TITLE", "SHOCK_INC_RAW_COST_20_TEXT", "money.png")
-	inc_raw_cost_20.add_effect(func(): MoneyManager.production_costs_modifier += 0.2)
+	inc_raw_cost_20.add_effect(func(): update_prod_cost_modifier(0.2))
 	
 	var dec_raw_cost_20 = Shock.new("SHOCK_DEC_RAW_COST_20_TITLE", "SHOCK_DEC_RAW_COST_20_TEXT", "receive.png")
-	dec_raw_cost_20.add_effect(func(): MoneyManager.production_costs_modifier -= 0.2)
+	dec_raw_cost_20.add_effect(func(): update_prod_cost_modifier(-0.2))
 	
 	var mass_immigration = Shock.new("SHOCK_MASS_IMMIGRATION_TITLE", "SHOCK_MASS_IMMIGRATION_TEXT", "people.png")
 	mass_immigration.add_effect(func(): increase_demand(true))
 	
 	var renewable_support = Shock.new("SHOCK_RENEWABLE_SUPPORT_TITLE", "SHOCK_RENEWABLE_SUPPORT_TEXT", "flower.png")
-	renewable_support.add_effect(func(): PolicyManager.personal_support += 0.1)
+	renewable_support.add_effect(func(): update_personal_support(0.1))
 	
 	
 	var no_shock = Shock.new("SHOCK_NO_SHOCK_TITLE", "SHOCK_NO_SHOCK_TEXT", "sunrise.png", false)
-
+	no_shock.add_effect(func(): no_shock())
+	
 	shocks = [cold_spell, heat_wave, glaciers_melting, no_shock, severe_weather, renewable_support]
 	shocks_full = shocks.duplicate()
 	shocks.shuffle()
 	
 	
 func pick_shock():
+	print("===================================================================")
+	print("Picking shock")
 	# Nuclear reintro always happens in 2034, which is turn 5
 	if Gameloop.current_turn == 5:
 		var nuc_reintro = Shock.new("SHOCK_NUC_REINTRO_TITLE", "SHOCK_NUC_REINTRO_TEXT", "vote.png")
+		nuc_reintro.add_effect(func(): nuc_reintro())
 		nuc_reintro.add_player_reaction("SHOCK_NUC_REINTRO_PLAYER_REACTION_1", func(): _reintroduce_nuclear()) # E. Implement
 		nuc_reintro.add_player_reaction("SHOCK_NUC_REINTRO_PLAYER_REACTION_2", func(): _leave_nuclear()) # E. Implement
 		print("shock picked: ", nuc_reintro.title_key)
@@ -99,11 +104,13 @@ func pick_shock():
 
 
 func apply_shock():
+	print("Applying shock")
 	if Gameloop.most_recent_shock != null:
 		Gameloop.most_recent_shock.apply()
 
 
 func apply_reaction(reaction_index: int):
+	print("Applying reaction")
 	if Gameloop.most_recent_shock != null:
 		Gameloop.most_recent_shock.apply_reaction(reaction_index)
 		
@@ -126,16 +133,17 @@ func _reintroduce_nuclear():
 func _leave_nuclear():
 	pass
 	
+	
 # sorry for the ugly code
 func increase_demand(longterm: bool):
 	var year = Gameloop.year_list[Gameloop.current_turn-1]
 	Context.send_shock_parameters(Context.res_id, 1, year)
-	
-
+	await Context.shocks_sent_to_model
+	Context.get_demand_from_model()
+	ShockManager.shock_effects_applied.emit(Gameloop.most_recent_shock)
 	
 	
 func _severe_wether_send_parameters_to_model():
-	await Context.parameters_sent_to_model
 	var year = Gameloop.year_list[Gameloop.current_turn-1]
 	Context.send_parameters_to_model(Context.res_id, year, 471, -0.1)
 	await Context.parameters_sent_to_model
@@ -145,7 +153,9 @@ func _severe_wether_send_parameters_to_model():
 	Context.send_parameters_to_model(Context.res_id, year, 471, 0.1)
 	await Context.parameters_sent_to_model
 	Context.send_parameters_to_model(Context.res_id, year, 472, 0.1)
-
+	await Context.parameters_sent_to_model
+	Context.get_demand_from_model()
+	ShockManager.shock_effects_applied.emit(Gameloop.most_recent_shock)
 
 func _on_shock_button_entered(shock: Shock):
 	shock_buttons_hovered.push_back(shock)
@@ -164,3 +174,27 @@ func _on_shock_button_exited(shock: Shock):
 		
 	if shock_buttons_hovered.size() == 0:
 		toggle_shock_buttons.emit(false)
+
+
+ # E. Implement
+func glaciers_melting():
+	print("Glaciers are melting")
+	ShockManager.shock_effects_applied.emit(Gameloop.most_recent_shock)
+
+
+func update_prod_cost_modifier(val: float):
+	MoneyManager.production_costs_modifier += val
+	ShockManager.shock_effects_applied.emit(Gameloop.most_recent_shock)
+	
+
+func update_personal_support(val: float):
+	PolicyManager.personal_support += val
+	ShockManager.shock_effects_applied.emit(Gameloop.most_recent_shock)
+
+
+func no_shock():
+	ShockManager.shock_effects_applied.emit(Gameloop.most_recent_shock)
+
+
+func nuc_reintro():
+	ShockManager.shock_effects_applied.emit(Gameloop.most_recent_shock)

@@ -86,7 +86,7 @@ func _on_got_context_from_model(_result, _response_code, _headers, body):
 	var json = JSON.new()
 	json.parse(body.get_string_from_utf8())
 	ctx = json.get_data()
-	
+
 	if ctx!= null and Gameloop.current_turn == 1:
 		res_id = int(ctx[0]["res_id"])
 		get_demand_from_model()

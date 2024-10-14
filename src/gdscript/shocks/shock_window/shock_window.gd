@@ -1,13 +1,12 @@
 extends CanvasLayer
 
 func _ready():
-	Gameloop.most_recent_shock_updated.connect(_on_most_recent_shock_updated)
+	Gameloop.player_can_start_playing_new_turn.connect(_on_player_can_start_playing_new_turn)
 	
 	
-func _on_most_recent_shock_updated(shock):
-	if shock != null:
-		if(shock.show_shock_window):
-			show()
+func _on_player_can_start_playing_new_turn():
+	if Gameloop.most_recent_shock != null && Gameloop.most_recent_shock.show_shock_window:
+		show()
 
 
 func _on_continue_button_pressed():

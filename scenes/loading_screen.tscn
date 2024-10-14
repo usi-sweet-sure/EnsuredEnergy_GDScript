@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://det4mobxk3l42"]
 
 [ext_resource type="Script" path="res://src/gdscript/loading_screen/loading_screen.gd" id="1_6wpr7"]
-[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/Fonts/label_themes.tres" id="2_l02pl"]
+[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="2_l02pl"]
 
 [sub_resource type="Animation" id="Animation_vhawi"]
 resource_name = "loading"
@@ -61,7 +61,6 @@ grow_vertical = 2
 color = Color(0, 0.0823529, 0.0980392, 0.623529)
 
 [node name="Label" type="Label" parent="."]
-visible = false
 offset_left = 1683.0
 offset_top = 986.0
 offset_right = 1704.0
@@ -85,6 +84,7 @@ text = "."
 horizontal_alignment = 2
 
 [node name="Label3" type="Label" parent="."]
+visible = false
 offset_left = 1721.0
 offset_top = 986.0
 offset_right = 1742.0

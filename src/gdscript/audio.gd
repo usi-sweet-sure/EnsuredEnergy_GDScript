@@ -17,13 +17,13 @@ extends Node
 @onready var more_coin = $MoreCoin
 @onready var less_coin = $LessCoin
 
-var everything_is_ready = false
+var player_can_start_playing_first_turn = false
 
 func _ready():
 	#dark_fantasy.play()
 	Gameloop.game_started.connect(_on_game_started)
 	Gameloop.game_ended.connect(_on_game_ended)
-	Gameloop.everything_is_ready.connect(_on_everything_is_ready)
+	Gameloop.player_can_start_playing_first_turn.connect(_on_player_can_start_playing_first_turn)
 	Gameloop.available_money_message_requested.connect(_on_money_message)
 	GroupManager.buttons_group_updated.connect(_on_buttons_group_updated)
 	GroupManager.disabled_buttons_group_updated.connect(_on_disabled_buttons_group_updated)
@@ -155,12 +155,12 @@ func _on_more_help_buttons_group_updated():
 
 
 func _on_money_message(_message: String, positiv: bool):
-	if everything_is_ready:
+	if player_can_start_playing_first_turn:
 		if positiv:
 			less_coin.play()
 		else:
 			more_coin.play()
 			
 
-func _on_everything_is_ready():
-	everything_is_ready = true
+func _on_player_can_start_playing_first_turn():
+	player_can_start_playing_first_turn = true
