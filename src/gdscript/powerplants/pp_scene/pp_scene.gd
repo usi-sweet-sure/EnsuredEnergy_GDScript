@@ -97,6 +97,8 @@ func _on_next_turn():
 	if shutting_down_in == 0:
 		metrics.can_activate = false
 		deactivate()
+	else:
+		metrics_updated.emit(metrics)
 
 
 func _on_button_plus_pressed():
