@@ -249,13 +249,15 @@ func _on_toggle_graphs():
 		_set_graph_context(context)
 
 
-# Season demands aren't linked to a contest, since we want to display them as will
+# Season demands aren't linked to a context, since we want to display them as will
 # with the switch
-func _on_season_switch_toggled(toggled_on):	
+func _on_season_switch_toggled(toggled_on):
 	if toggled_on:
 		season = "summer"
 	else:
 		season = "winter"
+		
+	_set_graph_context("energy")
 		
 func _reset_graph():
 	for n in graph.get_children():

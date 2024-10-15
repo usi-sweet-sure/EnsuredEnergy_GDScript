@@ -2,6 +2,7 @@ extends Label
 
 
 func _ready():
+	hide()
 	Gameloop.next_turn.connect(func(): text = "")
 	
 
