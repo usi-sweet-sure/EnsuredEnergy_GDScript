@@ -59,11 +59,11 @@ func _on_next_turn_button_pressed():
 	_set_next_years_anim()
 	timeline_animation.play("go_to_center")
 	ring_animation.play("rotate_ring")
+	
 	Gameloop._send_parameters_to_model(Gameloop.current_turn)
 
 
 func _on_shock_effect_applied(_shock):
-	print("go back to corner")
 	ring_animation.play("rotate_ring_backward")
 	timeline_animation.play("go_back_to_corner")
 	await timeline_animation.animation_finished
@@ -79,6 +79,10 @@ func _on_all_parameters_sent():
 		await timeline_animation.animation_finished
 	
 	if Gameloop.current_turn == Gameloop.total_number_of_turns:
+		ring_animation.play("rotate_ring_backward")
+		timeline_animation.play("go_back_to_corner")
+		await timeline_animation.animation_finished
+		ring_animation.stop()
 		Gameloop.game_ended.emit()
 		$"../../NextTurn".hide()
 	else:
