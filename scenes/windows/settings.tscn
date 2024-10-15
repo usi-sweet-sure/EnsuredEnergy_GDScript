@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://rjcu72lxn4n4"]
+[gd_scene load_steps=27 format=3 uid="uid://rjcu72lxn4n4"]
 
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/settings_canvas.gd" id="1_q4she"]
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/close_button.gd" id="2_q0sqg"]
@@ -15,8 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://60dl810b25fd" path="res://assets/textures/ui/Button-press.png" id="14_ddynd"]
 [ext_resource type="Texture2D" uid="uid://cuhckno2t6g0r" path="res://assets/textures/ui/Button-hover.png" id="15_8tsm0"]
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/instructions_button.gd" id="16_qwrhs"]
-[ext_resource type="Texture2D" uid="uid://dvph1wklx4pfh" path="res://assets/textures/ui/Paper-Big.png" id="17_vb3qy"]
-[ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/credits_sprite.gd" id="18_v57dl"]
 [ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="19_d2swd"]
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/back_to_survey_button.gd" id="19_r5c2w"]
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/textures/ui/Button-Next-Normal.png" id="20_dqb8u"]
@@ -220,9 +218,9 @@ layout_mode = 2
 
 [node name="MarginContainer2" type="MarginContainer" parent="Control/SettingsBox"]
 layout_mode = 0
-offset_left = 56.0
+offset_left = 66.0
 offset_top = 350.0
-offset_right = 249.0
+offset_right = 259.0
 offset_bottom = 725.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/SettingsBox/MarginContainer2"]
@@ -316,57 +314,6 @@ text = "CREDITS"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
-
-[node name="CreditsSprite" type="Sprite2D" parent="Control/SettingsBox/MarginContainer2/VBoxContainer/Credits"]
-visible = false
-position = Vector2(85.5, -206)
-texture = ExtResource("17_vb3qy")
-script = ExtResource("18_v57dl")
-
-[node name="Label3" type="Label" parent="Control/SettingsBox/MarginContainer2/VBoxContainer/Credits/CreditsSprite"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -328.5
-offset_top = -203.0
-offset_right = -241.5
-offset_bottom = -169.0
-grow_horizontal = 2
-theme = ExtResource("19_d2swd")
-theme_type_variation = &"Paper"
-theme_override_font_sizes/font_size = 22
-text = "Credits"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
-
-[node name="Label" type="Label" parent="Control/SettingsBox/MarginContainer2/VBoxContainer/Credits/CreditsSprite"]
-offset_left = -208.0
-offset_top = -120.0
-offset_right = -165.0
-offset_bottom = -94.0
-theme = ExtResource("19_d2swd")
-theme_type_variation = &"Paper"
-text = "Team"
-uppercase = true
-
-[node name="Label2" type="Label" parent="Control/SettingsBox/MarginContainer2/VBoxContainer/Credits/CreditsSprite"]
-offset_left = -208.0
-offset_top = -56.0
-offset_right = -75.0
-offset_bottom = 178.0
-theme = ExtResource("19_d2swd")
-theme_type_variation = &"Paper"
-text = "Amelia Dobis
-Borja Maol
-Saara Jones
-Toby Simpson
-Davide Baroli
-Michael Multerer
-Isabelle Stadelmann
-Gracia Brückmann
-Walid El-Ajou
-"
 
 [node name="BackToSurvey" type="TextureButton" parent="Control/SettingsBox/MarginContainer2/VBoxContainer" groups=["buttons"]]
 custom_minimum_size = Vector2(0, 48)
@@ -464,7 +411,6 @@ script = ExtResource("26_1fovc")
 [connection signal="value_changed" from="Control/SettingsBox/VBoxContainer2/VolSound" to="Control/SettingsBox/VBoxContainer2/VolSound" method="_on_value_changed"]
 [connection signal="pressed" from="Control/SettingsBox/MarginContainer2/VBoxContainer/Language" to="Control/SettingsBox/MarginContainer2/VBoxContainer/Language" method="_on_pressed"]
 [connection signal="pressed" from="Control/SettingsBox/MarginContainer2/VBoxContainer/Instructions" to="Control/SettingsBox/MarginContainer2/VBoxContainer/Instructions" method="_on_pressed"]
-[connection signal="pressed" from="Control/SettingsBox/MarginContainer2/VBoxContainer/Credits" to="Control/SettingsBox/MarginContainer2/VBoxContainer/Credits/CreditsSprite" method="_on_credits_button_pressed"]
 [connection signal="pressed" from="Control/SettingsBox/MarginContainer2/VBoxContainer/BackToSurvey" to="Control/SettingsBox/MarginContainer2/VBoxContainer/BackToSurvey" method="_on_pressed"]
 [connection signal="pressed" from="Control/SettingsBox/MarginContainer/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="CloseButton2" to="CloseButton2" method="_on_pressed"]

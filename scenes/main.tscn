@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://g58p7rxvcdik"]
+[gd_scene load_steps=18 format=3 uid="uid://g58p7rxvcdik"]
 
 [ext_resource type="PackedScene" uid="uid://ba56oxmvcxpos" path="res://scenes/world.tscn" id="1_prp6q"]
 [ext_resource type="PackedScene" uid="uid://bs48lirfn2fp2" path="res://scenes/hud/ui.tscn" id="2_d60f5"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ciphd0cmpslrn" path="res://scenes/hud/tutorial.tscn" id="11_uite1"]
 [ext_resource type="PackedScene" uid="uid://885lty3v1qbq" path="res://scenes/windows/shock.tscn" id="12_vvejj"]
 [ext_resource type="Script" path="res://src/gdscript/test_layer/test_layer.gd" id="13_t2kov"]
+[ext_resource type="PackedScene" uid="uid://co6w7mqwohn4h" path="res://scenes/Credits/credits.tscn" id="17_nfvbd"]
 [ext_resource type="PackedScene" uid="uid://pvoi2mcc3oc1" path="res://scenes/hud/menu.tscn" id="18_h65u3"]
 [ext_resource type="PackedScene" uid="uid://cej4dlw11su6f" path="res://scenes/hud/end.tscn" id="21_7pke6"]
 [ext_resource type="PackedScene" uid="uid://det4mobxk3l42" path="res://scenes/loading_screen.tscn" id="23_bmtug"]
@@ -170,6 +171,8 @@ size_flags_vertical = 0
 text = "Close"
 
 [node name="LoadingScreen" parent="." instance=ExtResource("23_bmtug")]
+
+[node name="Credits" parent="." instance=ExtResource("17_nfvbd")]
 
 [connection signal="pressed" from="TestLayer/TestButtons/ButtonTop" to="TestLayer/TestButtons" method="_on_button_top_pressed"]
 [connection signal="pressed" from="TestLayer/TestButtons/ButtonBottom" to="TestLayer/TestButtons" method="_on_button_bottom_pressed"]

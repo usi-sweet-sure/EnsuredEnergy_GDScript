@@ -36,6 +36,7 @@ signal next_turn
 signal show_ending_screen_requested
 signal toggle_settings
 signal toggle_graphs
+signal toggle_credits
 signal game_started
 signal game_ended
 signal game_quit_requested

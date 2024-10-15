@@ -1,0 +1,89 @@
+[gd_scene load_steps=5 format=3 uid="uid://co6w7mqwohn4h"]
+
+[ext_resource type="Texture2D" uid="uid://dvph1wklx4pfh" path="res://assets/textures/ui/Paper-Big.png" id="1_b7k2c"]
+[ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/credits.gd" id="2_0y38i"]
+[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="3_5yoe6"]
+[ext_resource type="PackedScene" uid="uid://chpn7t75mmbkh" path="res://scenes/buttons/button_close.tscn" id="4_fp272"]
+
+[node name="Credits" type="CanvasLayer"]
+script = ExtResource("2_0y38i")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.147672, 0.147672, 0.147672, 1)
+
+[node name="CreditsSprite" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -285.0
+offset_top = -248.0
+offset_right = 285.0
+offset_bottom = 248.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_b7k2c")
+
+[node name="Label3" type="Label" parent="CreditsSprite"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -44.5
+offset_top = 65.0
+offset_right = 44.5
+offset_bottom = 99.0
+grow_horizontal = 2
+theme = ExtResource("3_5yoe6")
+theme_type_variation = &"Paper"
+theme_override_font_sizes/font_size = 22
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Label2" type="Label" parent="CreditsSprite"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -262.0
+offset_top = -84.0
+offset_right = 265.0
+offset_bottom = 186.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_5yoe6")
+theme_type_variation = &"Paper"
+text = "Amelia Dobis
+Borja Maol
+Saara Jones
+Toby Simpson
+Davide Baroli
+Michael Multerer
+Isabelle Stadelmann
+Gracia Brückmann
+Walid El-Ajou
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CloseButton" parent="CreditsSprite" instance=ExtResource("4_fp272")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -55.0
+offset_right = 0.0
+offset_bottom = 54.0
+grow_horizontal = 0

@@ -1,4 +1,4 @@
-extends Sprite2D
+extends CanvasLayer
 
 
 func _ready():
