@@ -54,6 +54,7 @@ func _unhandled_input(event):
 		
 		
 func _on_next_turn_button_pressed():
+	Context.context_updated_for_new_turn = false
 	Gameloop.all_parameters_sent.connect(_on_all_parameters_sent)
 
 	_set_next_years_anim()
@@ -64,6 +65,11 @@ func _on_next_turn_button_pressed():
 
 
 func _on_shock_effect_applied(_shock):
+	if not Context.context_updated_for_new_turn:
+		print("CONTEXT WAS NOT GOT, GETTING IT NOW")
+		Context.get_context_from_model(Context.res_id, Gameloop.current_turn)
+		await Context.context_updated
+	
 	ring_animation.play("rotate_ring_backward")
 	timeline_animation.play("go_back_to_corner")
 	await timeline_animation.animation_finished

@@ -139,7 +139,7 @@ func increase_demand(longterm: bool):
 	var year = Gameloop.year_list[Gameloop.current_turn-1]
 	Context.send_shock_parameters(Context.res_id, 1, year)
 	await Context.shocks_sent_to_model
-	Context.get_demand_from_model()
+	Context.get_demand_from_context()
 	ShockManager.shock_effects_applied.emit(Gameloop.most_recent_shock)
 	
 	
@@ -154,7 +154,7 @@ func _severe_wether_send_parameters_to_model():
 	await Context.parameters_sent_to_model
 	Context.send_parameters_to_model(Context.res_id, year, 472, 0.1)
 	await Context.parameters_sent_to_model
-	Context.get_demand_from_model()
+	Context.get_demand_from_context()
 	ShockManager.shock_effects_applied.emit(Gameloop.most_recent_shock)
 
 func _on_shock_button_entered(shock: Shock):

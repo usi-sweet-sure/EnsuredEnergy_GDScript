@@ -13,6 +13,7 @@ var ctx
 var leaderboard_json = []
 var rank_json
 var survey_token: String
+var context_updated_for_new_turn = false
 
 	
 func register_new_game_on_model(player_name: String):
@@ -64,12 +65,14 @@ func get_rank(game_id: int):
 		HttpManager.http_request_completed.connect(_on_got_rank_from_model)
 	HttpManager.make_request(url)
 	
+	
 func change_player_name(game_id: int, player_name: String):
 	var url = "https://sure.euler.usi.ch/json.php?mth=upd&res_id={res_id}&res_name={player_name}".format({"res_id": game_id, "player_name": player_name})
 	
 	if not HttpManager.http_request_completed.is_connected(_on_changed_player_name):
 		HttpManager.http_request_completed.connect(_on_changed_player_name)
 	HttpManager.make_request(url)
+	
 	
 func send_shock_parameters(game_id: int, shock_id: int, year: int):
 	var url = "https://sure.euler.usi.ch/json.php?mth=shk&res_id={res_id}&shk_id={shock_id}&yr={yr}".format({"res_id": game_id, "shock_id": shock_id, "yr": year})
@@ -78,7 +81,8 @@ func send_shock_parameters(game_id: int, shock_id: int, year: int):
 		HttpManager.http_request_completed.connect(_on_shocks_sent_to_model)
 	HttpManager.make_request(url)
 
-func get_demand_from_model():
+
+func get_demand_from_context():
 	for i in ctx:
 		if i["prm_id"] == "455":
 			Gameloop.demand_summer = float(i["tj"]) / 100.0
@@ -91,26 +95,29 @@ func _on_got_context_from_model(_result, _response_code, _headers, body):
 	if HttpManager.http_request_completed.is_connected(_on_got_context_from_model):
 		HttpManager.http_request_completed.disconnect(_on_got_context_from_model)
 		
-	var json = JSON.new()
-	json.parse(body.get_string_from_utf8())
-	ctx = json.get_data()
+	_update_context_no_signal(body)
 
 	if ctx!= null and Gameloop.current_turn == 1:
 		res_id = int(ctx[0]["res_id"])
-		get_demand_from_model()
+		get_demand_from_context()
 		
 	context_updated.emit(ctx)
 	
 
-func _on_parameters_sent_to_model(_result, _response_code, _headers, _body):
+func _on_parameters_sent_to_model(_result, _response_code, _headers, body):
 	if HttpManager.http_request_completed.is_connected(_on_parameters_sent_to_model):
 		HttpManager.http_request_completed.disconnect(_on_parameters_sent_to_model)
+	
+	_update_context_no_signal(body)
+	
 	parameters_sent_to_model.emit()
+
 
 func _on_shocks_sent_to_model(_result, _response_code, _headers, _body):
 	if HttpManager.http_request_completed.is_connected(_on_shocks_sent_to_model):
 		HttpManager.http_request_completed.disconnect(_on_shocks_sent_to_model)
 	shocks_sent_to_model.emit()
+
 
 func _on_got_leaderboard_from_model(_result, _response_code, _headers, body):
 	if HttpManager.http_request_completed.is_connected(_on_got_leaderboard_from_model):
@@ -129,7 +136,16 @@ func _on_got_rank_from_model(_result, _response_code, _headers, body):
 	rank_json = json.get_data()
 	rank_updated.emit(rank_json)
 	
+	
 func _on_changed_player_name(_result, _response_code, _headers, _body):
 	if HttpManager.http_request_completed.is_connected(_on_changed_player_name):
 		HttpManager.http_request_completed.disconnect(_on_changed_player_name)
 	player_name_changed.emit()
+
+
+func _update_context_no_signal(body):
+	print("UPDATE CONTEXT NO SIGNAL")
+	context_updated_for_new_turn = true
+	var json = JSON.new()
+	json.parse(body.get_string_from_utf8())
+	ctx = json.get_data()
