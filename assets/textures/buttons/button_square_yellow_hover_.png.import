@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://m8sqi2c1vb8w"
-path="res://.godot/imported/Policies-Button-yellow-Normal.png-5876c51158083d0e0e871d61fb08c94b.ctex"
+uid="uid://cjob6p34oigtg"
+path="res://.godot/imported/button_square_yellow_hover_.png-60feb6fd7d0ce8411c86125d4aea82a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/ui/Policies-Button-yellow-Normal.png"
-dest_files=["res://.godot/imported/Policies-Button-yellow-Normal.png-5876c51158083d0e0e871d61fb08c94b.ctex"]
+source_file="res://assets/textures/buttons/button_square_yellow_hover_.png"
+dest_files=["res://.godot/imported/button_square_yellow_hover_.png-60feb6fd7d0ce8411c86125d4aea82a4.ctex"]
 
 [params]
 

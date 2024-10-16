@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chnjpvqbhlneu"
-path="res://.godot/imported/All-HQ-Assets-D_0000s_0027_Policies-hover-green-button.png-6eb23b90305c4fb1cd567952246fb2f1.ctex"
+uid="uid://cufu62j0t1t6p"
+path="res://.godot/imported/button_square_yellow_pressed.png-2e74d7bd15653bc19f69100b5a3ee89b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/ui/All-HQ-Assets-D_0000s_0027_Policies-hover-green-button.png"
-dest_files=["res://.godot/imported/All-HQ-Assets-D_0000s_0027_Policies-hover-green-button.png-6eb23b90305c4fb1cd567952246fb2f1.ctex"]
+source_file="res://assets/textures/buttons/button_square_yellow_pressed.png"
+dest_files=["res://.godot/imported/button_square_yellow_pressed.png-2e74d7bd15653bc19f69100b5a3ee89b.ctex"]
 
 [params]
 

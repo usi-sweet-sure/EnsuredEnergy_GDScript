@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cs8wokl8kptl"
-path="res://.godot/imported/All-HQ-Assets-D_0000s_0028_Policies-normal-green-button.png-bc92c3b4ce50914e0bf1f4939b98e872.ctex"
+path="res://.godot/imported/button_square_green_normal.png-7743d5090e2574df7cee5d296a2c82f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/ui/All-HQ-Assets-D_0000s_0028_Policies-normal-green-button.png"
-dest_files=["res://.godot/imported/All-HQ-Assets-D_0000s_0028_Policies-normal-green-button.png-bc92c3b4ce50914e0bf1f4939b98e872.ctex"]
+source_file="res://assets/textures/buttons/button_square_green_normal.png"
+dest_files=["res://.godot/imported/button_square_green_normal.png-7743d5090e2574df7cee5d296a2c82f1.ctex"]
 
 [params]
 

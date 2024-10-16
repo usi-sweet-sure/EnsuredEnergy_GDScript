@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cufu62j0t1t6p"
-path="res://.godot/imported/Policies-Button-yellow-Press.png-e655ac8bb60c2cd3ae5b9bc109815eb9.ctex"
+uid="uid://dhfbtv1td24n2"
+path="res://.godot/imported/button_square_green_pressed.png-9dd289317a9140c015ad66dc90d63beb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/ui/Policies-Button-yellow-Press.png"
-dest_files=["res://.godot/imported/Policies-Button-yellow-Press.png-e655ac8bb60c2cd3ae5b9bc109815eb9.ctex"]
+source_file="res://assets/textures/buttons/button_square_green_pressed.png"
+dest_files=["res://.godot/imported/button_square_green_pressed.png-9dd289317a9140c015ad66dc90d63beb.ctex"]
 
 [params]
 

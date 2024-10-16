@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://jj476u8yn2g8"]
+[gd_scene load_steps=72 format=3 uid="uid://jj476u8yn2g8"]
 
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/policies_window.gd" id="1_2fpqe"]
 [ext_resource type="Texture2D" uid="uid://coki776cjtqrp" path="res://assets/textures/ui/All-HQ-Assets-D_0006s_0006_Policies-metal-base.png" id="2_kxr4s"]
@@ -22,26 +22,30 @@
 [ext_resource type="Texture2D" uid="uid://dnf85brf6fkbf" path="res://assets/textures/ui/All-HQ-Assets-D_0006s_0005_Policies-(side)-metal-base.png" id="20_xl4nu"]
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/campaing_screen_label.gd" id="21_4l5fw"]
 [ext_resource type="Texture2D" uid="uid://cy2dqdgln1uij" path="res://assets/textures/ui/LED-Off.png" id="21_leh1m"]
+[ext_resource type="Script" path="res://src/gdscript/policies/policies_window/environmental_leds.gd" id="21_xm7n5"]
 [ext_resource type="Texture2D" uid="uid://bdifhvhbdals5" path="res://assets/textures/ui/LED-On.png" id="22_0xeve"]
 [ext_resource type="PackedScene" uid="uid://dna2006dnsx2x" path="res://scenes/windows/policy_button.tscn" id="22_gnq6m"]
 [ext_resource type="ButtonGroup" uid="uid://ei788aoab46g" path="res://scenes/windows/policyButtonGroup.tres" id="23_7tuqn"]
-[ext_resource type="Texture2D" uid="uid://cs8wokl8kptl" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0028_Policies-normal-green-button.png" id="24_7skvy"]
-[ext_resource type="Texture2D" uid="uid://dhfbtv1td24n2" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0029_Policies-press-green-button.png" id="25_qjvpb"]
-[ext_resource type="Texture2D" uid="uid://chnjpvqbhlneu" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0027_Policies-hover-green-button.png" id="26_3yg01"]
 [ext_resource type="Texture2D" uid="uid://bbkowcyvsefgm" path="res://assets/textures/ui/All-HQ-Assets-D_0001s_0003_Policies-button-hole.png" id="27_cpb4p"]
+[ext_resource type="Texture2D" uid="uid://cs8wokl8kptl" path="res://assets/textures/buttons/button_square_green_normal.png" id="27_l8ib3"]
+[ext_resource type="Texture2D" uid="uid://dhfbtv1td24n2" path="res://assets/textures/buttons/button_square_green_pressed.png" id="28_4x13b"]
 [ext_resource type="Texture2D" uid="uid://rsi3865gd46t" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0010_Hammer-symbol.png" id="28_eak62"]
 [ext_resource type="Texture2D" uid="uid://dm4sc8s54816e" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0009_Wind-symbol.png" id="29_k5wvn"]
+[ext_resource type="Texture2D" uid="uid://chnjpvqbhlneu" path="res://assets/textures/buttons/button_square_green_hover.png" id="29_mi7e7"]
+[ext_resource type="Texture2D" uid="uid://b2my2pw2jxtsg" path="res://assets/textures/buttons/button_square_green_disabled.png" id="30_eqh1o"]
 [ext_resource type="Texture2D" uid="uid://bx0cxko72v5ui" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0020_Icon-Environment-.png" id="30_j3mrw"]
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/campaing_screen_label_2.gd" id="31_d4meo"]
-[ext_resource type="Texture2D" uid="uid://m8sqi2c1vb8w" path="res://assets/textures/ui/Policies-Button-yellow-Normal.png" id="32_kce48"]
-[ext_resource type="Texture2D" uid="uid://cufu62j0t1t6p" path="res://assets/textures/ui/Policies-Button-yellow-Press.png" id="33_kgra0"]
-[ext_resource type="Texture2D" uid="uid://cltrnfisw3ald" path="res://assets/textures/ui/Policies-Button-yellow-Hover.png" id="34_ho1x8"]
+[ext_resource type="Script" path="res://src/gdscript/policies/policies_window/energy_leds.gd" id="34_vxabv"]
 [ext_resource type="Texture2D" uid="uid://ddd6qplj5q6p4" path="res://assets/textures/ui/Policies_Button_Hole.png" id="35_j1jah"]
 [ext_resource type="Texture2D" uid="uid://ceywqq4wa4ocw" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0026_Icon-Import.png" id="36_kloh4"]
 [ext_resource type="Texture2D" uid="uid://ci730aw1uci4x" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0011_House-symbol.png" id="37_3001d"]
+[ext_resource type="Texture2D" uid="uid://m8sqi2c1vb8w" path="res://assets/textures/buttons/button_square_yellow_normal.png" id="37_dvj7s"]
 [ext_resource type="Texture2D" uid="uid://trn8noyxvhuf" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0012_Heat-symbol.png" id="38_3ih67"]
+[ext_resource type="Texture2D" uid="uid://cufu62j0t1t6p" path="res://assets/textures/buttons/button_square_yellow_pressed.png" id="38_65g16"]
+[ext_resource type="Texture2D" uid="uid://cltrnfisw3ald" path="res://assets/textures/buttons/button_square_yellow_hover.png" id="39_3mr3y"]
 [ext_resource type="Texture2D" uid="uid://xicitqwdhrq7" path="res://assets/textures/yes.png" id="39_d3hcx"]
 [ext_resource type="Texture2D" uid="uid://duoff2c7r1hdy" path="res://assets/textures/buttons/close_button_normal.png" id="40_lyfoq"]
+[ext_resource type="Texture2D" uid="uid://llgpimkykgi6" path="res://assets/textures/buttons/button_square_yellow_disabled.png" id="40_s1lxf"]
 [ext_resource type="Texture2D" uid="uid://bdq26gwsmigwy" path="res://assets/textures/buttons/close_button_pressed.png" id="41_h0mhu"]
 [ext_resource type="Texture2D" uid="uid://myf36tn1pspq" path="res://assets/textures/buttons/close_button_hover.png" id="42_vmf5h"]
 [ext_resource type="Texture2D" uid="uid://bhl7ei1bspfbw" path="res://assets/textures/buttons/close_button_disabled.png" id="43_wc8ce"]
@@ -791,6 +795,7 @@ offset_left = -128.5
 offset_top = -147.5
 offset_right = 138.5
 offset_bottom = -96.5
+script = ExtResource("21_xm7n5")
 
 [node name="Off1" type="TextureRect" parent="Control/LeftFrame/Control"]
 layout_mode = 1
@@ -808,6 +813,7 @@ grow_vertical = 2
 texture = ExtResource("21_leh1m")
 
 [node name="On1" type="TextureRect" parent="Control/LeftFrame/Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -838,6 +844,7 @@ grow_vertical = 2
 texture = ExtResource("21_leh1m")
 
 [node name="On2" type="TextureRect" parent="Control/LeftFrame/Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -907,9 +914,10 @@ offset_right = -92.0
 offset_bottom = -181.5
 grow_horizontal = 2
 button_group = ExtResource("23_7tuqn")
-texture_normal = ExtResource("24_7skvy")
-texture_pressed = ExtResource("25_qjvpb")
-texture_hover = ExtResource("26_3yg01")
+texture_normal = ExtResource("27_l8ib3")
+texture_pressed = ExtResource("28_4x13b")
+texture_hover = ExtResource("29_mi7e7")
+texture_disabled = ExtResource("30_eqh1o")
 policy = "ENVIRONMENTAL CAMPAIGN"
 side = "LEFT"
 
@@ -979,6 +987,7 @@ offset_left = -128.5
 offset_top = -147.5
 offset_right = 138.5
 offset_bottom = -96.5
+script = ExtResource("34_vxabv")
 
 [node name="Off1" type="TextureRect" parent="Control/RightFrame/Control"]
 layout_mode = 1
@@ -1121,9 +1130,10 @@ offset_right = -93.0
 offset_bottom = -181.5
 grow_horizontal = 2
 button_group = ExtResource("23_7tuqn")
-texture_normal = ExtResource("32_kce48")
-texture_pressed = ExtResource("33_kgra0")
-texture_hover = ExtResource("34_ho1x8")
+texture_normal = ExtResource("37_dvj7s")
+texture_pressed = ExtResource("38_65g16")
+texture_hover = ExtResource("39_3mr3y")
+texture_disabled = ExtResource("40_s1lxf")
 policy = "ENERGY CAMPAIGN"
 side = "RIGHT"
 

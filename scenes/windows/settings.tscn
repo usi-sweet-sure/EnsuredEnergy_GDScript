@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bfwxh2i2cmi6x" path="res://assets/textures/ui/All-HQ-Assets-D_0001s_0014_3-slots-button-hole.png" id="8_2bbhj"]
 [ext_resource type="Texture2D" uid="uid://dcmk3ydewbiv1" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0053_CTA-Normal-yellow-.png" id="9_m6vd3"]
 [ext_resource type="Texture2D" uid="uid://du2p1deh0wc0w" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0052_CTA-Press-yellow.png" id="10_ar3yn"]
-[ext_resource type="Texture2D" uid="uid://cjob6p34oigtg" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0051_CTA-Hover-yellow.png" id="11_he6ua"]
+[ext_resource type="Texture2D" uid="uid://cjob6p34oigtg" path="res://assets/textures/buttons/button_square_yellow_hover_.png" id="11_he6ua"]
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/language_button.gd" id="12_47lq4"]
 [ext_resource type="Texture2D" uid="uid://b4m67oni44dpg" path="res://assets/textures/ui/Button-normal.png" id="13_mepng"]
 [ext_resource type="Texture2D" uid="uid://60dl810b25fd" path="res://assets/textures/ui/Button-press.png" id="14_ddynd"]

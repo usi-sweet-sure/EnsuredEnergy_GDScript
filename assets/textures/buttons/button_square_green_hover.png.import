@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cltrnfisw3ald"
-path="res://.godot/imported/Policies-Button-yellow-Hover.png-315095eb9edd56c2abd28f1e4e39539d.ctex"
+uid="uid://chnjpvqbhlneu"
+path="res://.godot/imported/button_square_green_hover.png-b3dec73fd3c5c3176caa99672c155489.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/ui/Policies-Button-yellow-Hover.png"
-dest_files=["res://.godot/imported/Policies-Button-yellow-Hover.png-315095eb9edd56c2abd28f1e4e39539d.ctex"]
+source_file="res://assets/textures/buttons/button_square_green_hover.png"
+dest_files=["res://.godot/imported/button_square_green_hover.png-b3dec73fd3c5c3176caa99672c155489.ctex"]
 
 [params]
 

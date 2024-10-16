@@ -53,8 +53,28 @@ func _on_policy_voted(vote_passed: bool):
 			animation_player.play("show_left_thumbs_down")
 		else:
 			animation_player.play("show_right_thumbs_down")
-
-
+			
+	# Disables campaign buttons if the limit of passed campaigns is reached
+	var all_voted_policies = PolicyManager.voted_policies
+	var number_of_passed_env_campaign = 0
+	var number_of_passed_energy_campaign = 0
+	
+	for voted_policy in all_voted_policies:
+		var pol: Policy = voted_policy.policy
+		var passed = voted_policy.passed
+		
+		if pol.inspector_id == "ENVIRONMENTAL CAMPAIGN" and passed:
+			number_of_passed_env_campaign += 1
+	
+		if pol.inspector_id == "ENERGY CAMPAIGN" and passed:
+			number_of_passed_energy_campaign += 1
+	
+	if policy == "ENVIRONMENTAL CAMPAIGN" and number_of_passed_env_campaign >= 2:
+		disabled = true
+	
+	if policy == "ENERGY CAMPAIGN" and number_of_passed_energy_campaign >= 2:
+		disabled = true
+		
 
 func _on_toggled(toggled_on: bool):
 	if toggled_on:

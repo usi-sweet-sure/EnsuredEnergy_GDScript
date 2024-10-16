@@ -2,7 +2,7 @@ extends Node
 
 signal policy_button_clicked
 signal vote_button_clicked # Start button for campaigns also call that signal
-signal policy_voted
+signal policy_voted(vote_passed: bool)
 signal personal_support_updated
 signal energy_policies_support_updated
 signal environmental_policies_support_updated
