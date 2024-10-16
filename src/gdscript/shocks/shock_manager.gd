@@ -144,6 +144,22 @@ func increase_demand(longterm: bool):
 	
 	
 func _severe_wether_send_parameters_to_model():
+	var powerplants: Array[Node] = get_tree().get_nodes_in_group("Powerplants")
+	
+	for powerplant: PpScene in powerplants:
+		var metrics: PowerplantMetrics = powerplant.metrics
+		if powerplant.is_solar() or powerplant.is_wind():
+			metrics.availability *= Vector2(0.5, 0.5)
+			powerplant.metrics_updated.emit(metrics)
+			
+	for metrics: PowerplantMetrics in PowerplantsManager.powerplants_metrics:
+		if metrics.type == PowerplantsManager.EngineTypeIds.SOLAR or metrics.type == PowerplantsManager.EngineTypeIds.WIND:
+			metrics.availability *= Vector2(0.5, 0.5)
+			
+	# NICE TO HAVE 
+			
+	PowerplantsManager.update_buildings_impact()
+	
 	var year = Gameloop.year_list[Gameloop.current_turn-1]
 	Context.send_parameters_to_model(Context.res_id, year, 471, -0.1)
 	await Context.parameters_sent_to_model
