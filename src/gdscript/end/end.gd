@@ -73,3 +73,7 @@ func _on_player_name_focus_entered():
 
 func _on_player_name_focus_exited():
 	%NameEdit.toggled.emit(false)
+
+
+func _on_button_pressed():
+	$Button.hide()

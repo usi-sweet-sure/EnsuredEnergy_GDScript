@@ -239,3 +239,9 @@ TURNS,Turns,Tours ,Runden,Turni
 CONSTRUCTION_TIME_LEFT,Construction time left,Temps de construction restant,Verbleibende Bauzeit,Tempo di costruzione rimasto
 NOT_ENOUGH_MONEY,Not enough money,Pas assez d'argent,Nicht genug Geld,Non c'è abbastanza denaro
 SKIP,Skip,Passer,Überspringen,Saltare
+FOSSIL,Fossil,Fossile,Fossil,Fossile
+SEASONALITY,Seasonality,Saisonnalité,Saisonalität,Stagionalità
+RANK,Rank,Rang,Rang,Posizione
+SCORE,Score,Score,Spielstand,Punteggio
+CALCULATING_RANK,Calculating rank,Calcul du rang,Berechnung des Rangs,Calcolo del rango
+PLAYER_SCORE_NAME,"If you want to have your name in the leaderboard, you can edit your name here","Si tu souhaites que ton nom figure dans le classement, tu peux modifier ton nom ici.","Wenn du deinen Namen in der Rangliste haben möchtest, kannst du ihn hier bearbeiten","Se si desidera che il proprio nome venga inserito nella classifica, è possibile modificarlo qui"
