@@ -208,6 +208,7 @@ libraries = {
 autoplay = "..."
 
 [node name="StatContainer" type="MarginContainer" parent="MainFrame/Screen/MetricsRanking"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -553,6 +554,19 @@ placeholder_text = "PLAYER_NAME_PLACEHOLDER"
 max_length = 20
 clear_button_enabled = true
 
+[node name="NameEdit" type="Button" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/PlayerStats/HBoxContainer/player_name"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 434.5
+offset_top = 10.5
+offset_right = 477.5
+offset_bottom = 46.5
+size_flags_vertical = 8
+focus_mode = 0
+toggle_mode = true
+text = "🖊️"
+flat = true
+
 [node name="player_score" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/PlayerStats/HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
@@ -562,18 +576,6 @@ theme_type_variation = &"Screen"
 theme_override_colors/font_color = Color(0.0470588, 0.168627, 0.180392, 1)
 text = "SCORE"
 horizontal_alignment = 2
-
-[node name="NameEdit" type="Button" parent="MainFrame/Screen/MetricsRanking"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 616.5
-offset_top = 386.5
-offset_right = 646.5
-offset_bottom = 417.5
-focus_mode = 0
-toggle_mode = true
-text = "🖊️"
-flat = true
 
 [node name="BottomFrames" type="HBoxContainer" parent="MainFrame"]
 layout_mode = 1
@@ -1158,7 +1160,7 @@ text = "x"
 [connection signal="focus_entered" from="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/PlayerStats/HBoxContainer/player_name" to="." method="_on_player_name_focus_entered"]
 [connection signal="focus_exited" from="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/PlayerStats/HBoxContainer/player_name" to="." method="_on_player_name_focus_exited"]
 [connection signal="text_submitted" from="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/PlayerStats/HBoxContainer/player_name" to="." method="_on_player_name_text_submitted"]
-[connection signal="toggled" from="MainFrame/Screen/MetricsRanking/NameEdit" to="." method="_on_name_edit_toggled"]
+[connection signal="toggled" from="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/PlayerStats/HBoxContainer/player_name/NameEdit" to="." method="_on_name_edit_toggled"]
 [connection signal="toggled" from="MainFrame/BottomFrames/LeftFrame/Money/Button" to="MainFrame/Screen/Graph" method="_on_money_button_toggled"]
 [connection signal="toggled" from="MainFrame/BottomFrames/LeftFrame/Trust/Button" to="MainFrame/Screen/Graph" method="_on_trust_button_toggled"]
 [connection signal="toggled" from="MainFrame/BottomFrames/CenterFrame/Winter/Button" to="MainFrame/Screen/Graph" method="_on_winter_button_toggled"]
