@@ -1,6 +1,7 @@
 [gd_resource type="Theme" load_steps=13 format=3 uid="uid://dwneq676q3hhg"]
 
-[ext_resource type="FontFile" uid="uid://dxtsp51pqna2o" path="res://assets/fonts/static/open_sans_bold.ttf" id="2_h51fi"]
+[ext_resource type="FontFile" uid="uid://bt2f3flr7psn5" path="res://assets/Fonts/VT323/vt323_regular.ttf" id="1_l3iso"]
+[ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/Fonts/Special_Elite/special_elite_regular.ttf" id="1_oqpbi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wf6vf"]
 bg_color = Color(0.247059, 0.8, 0.831373, 0.129412)
@@ -26,7 +27,6 @@ corner_radius_top_left = 2
 corner_radius_top_right = 2
 
 [sub_resource type="FontVariation" id="FontVariation_3ifss"]
-base_font = ExtResource("2_h51fi")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nyqp5"]
 
@@ -34,8 +34,6 @@ base_font = ExtResource("2_h51fi")
 variation_embolden = 0.6
 
 [sub_resource type="FontVariation" id="FontVariation_ule17"]
-
-[sub_resource type="FontVariation" id="FontVariation_b0wbe"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5mtqi"]
 bg_color = Color(0.192157, 0.658824, 0.690196, 1)
@@ -94,14 +92,14 @@ Paper/constants/shadow_offset_y = 0
 Paper/constants/shadow_outline_size = 0
 Paper/font_sizes/font_size = 18
 Paper/font_sizes/size = 16
-Paper/fonts/font = null
+Paper/fonts/font = ExtResource("1_oqpbi")
 RichTextLabel/constants/line_separation = 7
 RichTextLabel/fonts/bold_font = SubResource("FontVariation_u3fkg")
 RichTextLabel/fonts/normal_font = SubResource("FontVariation_ule17")
 Screen/base_type = &"Label"
 Screen/colors/font_color = Color(0.219608, 0.756863, 0.788235, 1)
 Screen/font_sizes/font_size = 30
-Screen/fonts/font = SubResource("FontVariation_b0wbe")
+Screen/fonts/font = ExtResource("1_l3iso")
 VScrollBar/styles/grabber = SubResource("StyleBoxFlat_5mtqi")
 VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_1qqbn")
 VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_idcep")

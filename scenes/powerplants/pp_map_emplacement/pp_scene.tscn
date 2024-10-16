@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://vaxkewvk14v6"]
+[gd_scene load_steps=62 format=3 uid="uid://vaxkewvk14v6"]
 
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/pp_scene.gd" id="1_aeq33"]
 [ext_resource type="Shader" path="res://src/gdscript/shaders/outline.gdshader" id="2_ln53j"]
@@ -8,13 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://chpn7t75mmbkh" path="res://scenes/buttons/button_close.tscn" id="7_peksn"]
 [ext_resource type="Texture2D" uid="uid://bk3lb51erle8l" path="res://assets/textures/backplates/backplate_1.png" id="8_dd5xv"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/off_texture_button.gd" id="8_qcoih"]
-[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="10_2bn7g"]
+[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/Fonts/label_themes.tres" id="10_2bn7g"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/info_frame.gd" id="10_f6a2e"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/pant_name.gd" id="11_44a1v"]
 [ext_resource type="Texture2D" uid="uid://cd23afs6x11al" path="res://assets/textures/screens/screen_1.png" id="12_s862k"]
 [ext_resource type="Texture2D" uid="uid://b76v2w1on0f0u" path="res://assets/textures/icons/chalk_money.png" id="13_dcx61"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/production_costs_value.gd" id="15_dvlef"]
-[ext_resource type="FontFile" uid="uid://dxtsp51pqna2o" path="res://assets/fonts/static/open_sans_bold.ttf" id="16_0u5ae"]
+[ext_resource type="FontFile" uid="uid://dxtsp51pqna2o" path="res://assets/Fonts/static/open_sans_bold.ttf" id="16_0u5ae"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/emissions_value.gd" id="17_l1irb"]
 [ext_resource type="Texture2D" uid="uid://bpt1e486wuscd" path="res://assets/textures/icons/chalk_emission.png" id="18_amtid"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/land_use_value.gd" id="19_08r07"]
@@ -72,108 +72,6 @@ shader_parameter/line_thickness = 1.0
 shader_parameter/frequency = 10.0
 shader_parameter/phase_speed = 1.0
 shader_parameter/show = false
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3tdw6"]
-bg_color = Color(0.65098, 0.65098, 0.65098, 0.0470588)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_color = Color(0.25098, 0.807843, 0.839216, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pgfdh"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_color = Color(0.219608, 0.752941, 0.784314, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03rjl"]
-bg_color = Color(0.219608, 0.756863, 0.788235, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-
-[sub_resource type="FontVariation" id="FontVariation_3ifss"]
-base_font = ExtResource("16_0u5ae")
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nyqp5"]
-
-[sub_resource type="FontVariation" id="FontVariation_u3fkg"]
-variation_embolden = 0.6
-
-[sub_resource type="FontVariation" id="FontVariation_ule17"]
-
-[sub_resource type="FontVariation" id="FontVariation_b0wbe"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5mtqi"]
-bg_color = Color(0.192157, 0.658824, 0.690196, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1qqbn"]
-bg_color = Color(0.247059, 0.776471, 0.811765, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_idcep"]
-bg_color = Color(0.129412, 0.486275, 0.509804, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="Theme" id="Theme_34yde"]
-/colors/Dark = Color(0.0627451, 0.572549, 0, 1)
-/font_sizes/Big = 18
-/fonts/font = null
-Button/colors/font_color = Color(0.211765, 0.690196, 0.717647, 1)
-Button/colors/font_pressed_color = Color(0.0862745, 0.207843, 0.219608, 1)
-Button/font_sizes/font_size = 24
-Button/fonts/font = null
-Button/styles/hover = SubResource("StyleBoxFlat_3tdw6")
-Button/styles/normal = SubResource("StyleBoxFlat_pgfdh")
-Button/styles/pressed = SubResource("StyleBoxFlat_03rjl")
-Label/colors/font_color = Color(0.0784314, 0.180392, 0.192157, 1)
-Label/colors/font_outline_color = Color(1, 1, 1, 1)
-Label/colors/font_shadow_color = Color(0, 0, 0, 0)
-Label/constants/line_spacing = 3
-Label/constants/outline_size = 0
-Label/constants/shadow_offset_x = 1
-Label/constants/shadow_offset_y = 1
-Label/constants/shadow_outline_size = 1
-Label/font_sizes/font_size = 16
-Label/fonts/font = SubResource("FontVariation_3ifss")
-Label/styles/normal = SubResource("StyleBoxEmpty_nyqp5")
-Paper/base_type = &"Label"
-Paper/colors/color = Color(0.631373, 0.443137, 0.403922, 1)
-Paper/colors/font_color = Color(0, 0, 0, 1)
-Paper/colors/font_outline_color = Color(0, 0, 0, 1)
-Paper/colors/font_shadow_color = Color(0, 0, 0, 1)
-Paper/constants/line_spacing = 0
-Paper/constants/outline_size = 0
-Paper/constants/shadow_offset_x = 0
-Paper/constants/shadow_offset_y = 0
-Paper/constants/shadow_outline_size = 0
-Paper/font_sizes/font_size = 18
-Paper/font_sizes/size = 16
-Paper/fonts/font = null
-RichTextLabel/constants/line_separation = 7
-RichTextLabel/fonts/bold_font = SubResource("FontVariation_u3fkg")
-RichTextLabel/fonts/normal_font = SubResource("FontVariation_ule17")
-Screen/base_type = &"Label"
-Screen/colors/font_color = Color(0.219608, 0.756863, 0.788235, 1)
-Screen/font_sizes/font_size = 30
-Screen/fonts/font = SubResource("FontVariation_b0wbe")
-VScrollBar/styles/grabber = SubResource("StyleBoxFlat_5mtqi")
-VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_1qqbn")
-VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_idcep")
 
 [sub_resource type="FontVariation" id="FontVariation_n1hys"]
 base_font = ExtResource("16_0u5ae")
@@ -871,7 +769,7 @@ offset_top = 16.0
 offset_right = 284.0
 offset_bottom = 66.0
 size_flags_horizontal = 0
-theme = SubResource("Theme_34yde")
+theme = ExtResource("10_2bn7g")
 theme_type_variation = &"Screen"
 theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
 theme_override_constants/shadow_offset_x = 2
@@ -898,7 +796,7 @@ grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-theme = SubResource("Theme_34yde")
+theme = ExtResource("10_2bn7g")
 theme_type_variation = &"Screen"
 theme_override_colors/font_color = Color(1, 0.129412, 0.207843, 1)
 theme_override_font_sizes/font_size = 50
@@ -931,7 +829,7 @@ offset_top = 20.0
 offset_right = 284.0
 offset_bottom = 70.0
 size_flags_horizontal = 0
-theme = SubResource("Theme_34yde")
+theme = ExtResource("10_2bn7g")
 theme_type_variation = &"Screen"
 theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
 theme_override_constants/shadow_offset_x = 2
@@ -956,7 +854,7 @@ offset_bottom = 70.0
 grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 8
-theme = SubResource("Theme_34yde")
+theme = ExtResource("10_2bn7g")
 theme_type_variation = &"Screen"
 theme_override_colors/font_color = Color(1, 0.129412, 0.207843, 1)
 theme_override_font_sizes/font_size = 50
@@ -989,7 +887,7 @@ offset_top = 19.0
 offset_right = 264.0
 offset_bottom = 69.0
 size_flags_horizontal = 0
-theme = SubResource("Theme_34yde")
+theme = ExtResource("10_2bn7g")
 theme_type_variation = &"Screen"
 theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
 theme_override_constants/shadow_offset_x = 2
@@ -1014,7 +912,7 @@ offset_bottom = 72.0
 grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 8
-theme = SubResource("Theme_34yde")
+theme = ExtResource("10_2bn7g")
 theme_type_variation = &"Screen"
 theme_override_colors/font_color = Color(1, 0.129412, 0.207843, 1)
 theme_override_font_sizes/font_size = 50
@@ -1024,7 +922,7 @@ script = ExtResource("19_08r07")
 
 [node name="LifeSpan" type="Label" parent="InfoFrame/Screen/VBoxContainer"]
 layout_mode = 2
-theme = SubResource("Theme_34yde")
+theme = ExtResource("10_2bn7g")
 theme_type_variation = &"Screen"
 theme_override_colors/font_color = Color(0.932727, 0.41041, 0.257221, 1)
 theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
@@ -1099,7 +997,7 @@ theme_override_constants/separation = 17
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
-theme = SubResource("Theme_34yde")
+theme = ExtResource("10_2bn7g")
 theme_override_fonts/font = SubResource("FontVariation_n1hys")
 theme_override_font_sizes/font_size = 50
 text = "0"
@@ -1110,7 +1008,7 @@ script = ExtResource("25_ivvsm")
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
-theme = SubResource("Theme_34yde")
+theme = ExtResource("10_2bn7g")
 theme_override_fonts/font = SubResource("FontVariation_n1hys")
 theme_override_font_sizes/font_size = 50
 text = "0"
@@ -1121,7 +1019,7 @@ script = ExtResource("26_7m4cr")
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
-theme = SubResource("Theme_34yde")
+theme = ExtResource("10_2bn7g")
 theme_override_fonts/font = SubResource("FontVariation_n1hys")
 theme_override_font_sizes/font_size = 50
 text = "0"
@@ -1176,7 +1074,7 @@ theme_override_constants/separation = 17
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
-theme = SubResource("Theme_34yde")
+theme = ExtResource("10_2bn7g")
 theme_override_fonts/font = SubResource("FontVariation_n1hys")
 theme_override_font_sizes/font_size = 50
 text = "0"
@@ -1187,7 +1085,7 @@ script = ExtResource("29_4pdx3")
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
-theme = SubResource("Theme_34yde")
+theme = ExtResource("10_2bn7g")
 theme_override_fonts/font = SubResource("FontVariation_n1hys")
 theme_override_font_sizes/font_size = 50
 text = "0"
@@ -1198,7 +1096,7 @@ script = ExtResource("30_jmafp")
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
-theme = SubResource("Theme_34yde")
+theme = ExtResource("10_2bn7g")
 theme_override_fonts/font = SubResource("FontVariation_n1hys")
 theme_override_font_sizes/font_size = 50
 text = "0"
@@ -1256,7 +1154,7 @@ texture = ExtResource("38_aaplm")
 layout_mode = 1
 offset_right = 125.0
 offset_bottom = 68.0
-theme = SubResource("Theme_34yde")
+theme = ExtResource("10_2bn7g")
 theme_type_variation = &"Screen"
 theme_override_font_sizes/font_size = 55
 text = "0/0"
@@ -1280,6 +1178,7 @@ grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.150098
 scale = Vector2(2, 2)
+theme = ExtResource("10_2bn7g")
 theme_override_colors/font_color = Color(0.830861, 0, 0.162109, 1)
 theme_override_fonts/font = ExtResource("16_0u5ae")
 theme_override_font_sizes/font_size = 54
@@ -1305,6 +1204,7 @@ grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.115072
 scale = Vector2(2, 2)
+theme = ExtResource("10_2bn7g")
 theme_override_colors/font_color = Color(0.830861, 0, 0.162109, 1)
 theme_override_fonts/font = ExtResource("16_0u5ae")
 theme_override_font_sizes/font_size = 54
@@ -1330,6 +1230,7 @@ grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.115072
 scale = Vector2(2, 2)
+theme = ExtResource("10_2bn7g")
 theme_override_colors/font_color = Color(0.830861, 0, 0.162109, 1)
 theme_override_fonts/font = ExtResource("16_0u5ae")
 theme_override_font_sizes/font_size = 54
@@ -1355,7 +1256,7 @@ grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-theme = SubResource("Theme_34yde")
+theme = ExtResource("10_2bn7g")
 theme_type_variation = &"Screen"
 theme_override_colors/font_color = Color(1, 0.129412, 0.207843, 1)
 theme_override_font_sizes/font_size = 50
@@ -1379,7 +1280,7 @@ grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-theme = SubResource("Theme_34yde")
+theme = ExtResource("10_2bn7g")
 theme_type_variation = &"Screen"
 theme_override_colors/font_color = Color(1, 0.129412, 0.207843, 1)
 theme_override_font_sizes/font_size = 50
@@ -1403,7 +1304,7 @@ grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-theme = SubResource("Theme_34yde")
+theme = ExtResource("10_2bn7g")
 theme_type_variation = &"Screen"
 theme_override_colors/font_color = Color(1, 0.129412, 0.207843, 1)
 theme_override_font_sizes/font_size = 50
