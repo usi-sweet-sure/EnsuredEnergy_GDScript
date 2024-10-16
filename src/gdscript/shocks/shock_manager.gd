@@ -149,26 +149,26 @@ func _severe_wether_send_parameters_to_model():
 	for powerplant: PpScene in powerplants:
 		var metrics: PowerplantMetrics = powerplant.metrics
 		if powerplant.is_solar() or powerplant.is_wind():
-			metrics.availability *= Vector2(0.5, 0.5)
+			metrics.availability *= Vector2(0.8, 0.8)
 			powerplant.metrics_updated.emit(metrics)
 			
 	for metrics: PowerplantMetrics in PowerplantsManager.powerplants_metrics:
 		if metrics.type == PowerplantsManager.EngineTypeIds.SOLAR or metrics.type == PowerplantsManager.EngineTypeIds.WIND:
-			metrics.availability *= Vector2(0.5, 0.5)
+			metrics.availability *= Vector2(0.8, 0.8)
 			
 	# NICE TO HAVE 
 			
 	PowerplantsManager.update_buildings_impact()
 	
 	var year = Gameloop.year_list[Gameloop.current_turn-1]
-	Context.send_parameters_to_model(Context.res_id, year, 471, -0.1)
+	Context.send_parameters_to_model(Context.res_id, year, 471, -0.2)
 	await Context.parameters_sent_to_model
-	Context.send_parameters_to_model(Context.res_id, year, 472, -0.1)
+	Context.send_parameters_to_model(Context.res_id, year, 472, -0.2)
 	await Context.parameters_sent_to_model
 	year = Gameloop.year_list[Gameloop.current_turn]
-	Context.send_parameters_to_model(Context.res_id, year, 471, 0.1)
+	Context.send_parameters_to_model(Context.res_id, year, 471, 0.2)
 	await Context.parameters_sent_to_model
-	Context.send_parameters_to_model(Context.res_id, year, 472, 0.1)
+	Context.send_parameters_to_model(Context.res_id, year, 472, 0.2)
 	await Context.parameters_sent_to_model
 	Context.get_demand_from_context()
 	ShockManager.shock_effects_applied.emit(Gameloop.most_recent_shock)
