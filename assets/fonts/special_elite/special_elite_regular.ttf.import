@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://c1dcad080fsul"
-path="res://.godot/imported/special_elite_regular.ttf-f3e8c03d8555b5226b83c5559c629ede.fontdata"
+path="res://.godot/imported/special_elite_regular.ttf-13fe4044a9ec8a2d1d642898d86010be.fontdata"
 
 [deps]
 
-source_file="res://assets/Fonts/Special_Elite/special_elite_regular.ttf"
-dest_files=["res://.godot/imported/special_elite_regular.ttf-f3e8c03d8555b5226b83c5559c629ede.fontdata"]
+source_file="res://assets/fonts/special_elite/special_elite_regular.ttf"
+dest_files=["res://.godot/imported/special_elite_regular.ttf-13fe4044a9ec8a2d1d642898d86010be.fontdata"]
 
 [params]
 
