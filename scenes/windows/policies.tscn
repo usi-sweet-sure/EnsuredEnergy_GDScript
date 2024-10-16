@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://jj476u8yn2g8"]
+[gd_scene load_steps=68 format=3 uid="uid://jj476u8yn2g8"]
 
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/policies_window.gd" id="1_2fpqe"]
 [ext_resource type="Texture2D" uid="uid://coki776cjtqrp" path="res://assets/textures/ui/All-HQ-Assets-D_0006s_0006_Policies-metal-base.png" id="2_kxr4s"]
@@ -21,6 +21,8 @@
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/start_campaign_zone/start_campaign_zone.gd" id="19_byjix"]
 [ext_resource type="Texture2D" uid="uid://dnf85brf6fkbf" path="res://assets/textures/ui/All-HQ-Assets-D_0006s_0005_Policies-(side)-metal-base.png" id="20_xl4nu"]
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/campaing_screen_label.gd" id="21_4l5fw"]
+[ext_resource type="Texture2D" uid="uid://cy2dqdgln1uij" path="res://assets/textures/ui/LED-Off.png" id="21_leh1m"]
+[ext_resource type="Texture2D" uid="uid://bdifhvhbdals5" path="res://assets/textures/ui/LED-On.png" id="22_0xeve"]
 [ext_resource type="PackedScene" uid="uid://dna2006dnsx2x" path="res://scenes/windows/policy_button.tscn" id="22_gnq6m"]
 [ext_resource type="ButtonGroup" uid="uid://ei788aoab46g" path="res://scenes/windows/policyButtonGroup.tres" id="23_7tuqn"]
 [ext_resource type="Texture2D" uid="uid://cs8wokl8kptl" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0028_Policies-normal-green-button.png" id="24_7skvy"]
@@ -208,7 +210,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Control/CenterFrame/InfoScreen1/Text:visible")
+tracks/4/path = NodePath("Control/CenterFrame/Text:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -244,7 +246,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Control/CenterFrame/InfoScreen1/Text:visible_ratio")
+tracks/7/path = NodePath("Control/CenterFrame/Text:visible_ratio")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -320,7 +322,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Control/CenterFrame/InfoScreen1/Text:visible")
+tracks/3/path = NodePath("Control/CenterFrame/Text:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -356,7 +358,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Control/CenterFrame/InfoScreen1/Text:visible_ratio")
+tracks/6/path = NodePath("Control/CenterFrame/Text:visible_ratio")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -432,7 +434,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Control/CenterFrame/InfoScreen1/Text:visible")
+tracks/3/path = NodePath("Control/CenterFrame/Text:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -468,7 +470,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Control/CenterFrame/InfoScreen1/Text:visible_ratio")
+tracks/6/path = NodePath("Control/CenterFrame/Text:visible_ratio")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -559,20 +561,20 @@ position = Vector2(549.5, 388.5)
 texture = ExtResource("2_kxr4s")
 
 [node name="InfoScreen1" type="Sprite2D" parent="Control/CenterFrame"]
-position = Vector2(2.5, -180)
-scale = Vector2(1, 0.993445)
+position = Vector2(2.5, -124)
+scale = Vector2(1, 1.33442)
 texture = ExtResource("3_osw01")
 
-[node name="Text" type="RichTextLabel" parent="Control/CenterFrame/InfoScreen1"]
+[node name="Text" type="RichTextLabel" parent="Control/CenterFrame"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -357.5
-offset_top = -294.5
-offset_right = -12.5
-offset_bottom = -8.5
+offset_left = -394.5
+offset_top = -696.0
+offset_right = -49.5
+offset_bottom = -313.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -620,9 +622,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -395.5
-offset_top = -404.0
+offset_top = -248.0
 offset_right = -42.5
-offset_bottom = -299.0
+offset_bottom = -143.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("10_eymcp")
@@ -683,9 +685,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -316.0
-offset_top = -576.5
+offset_top = -515.5
 offset_right = -123.0
-offset_bottom = -493.5
+offset_bottom = -432.5
 grow_horizontal = 2
 grow_vertical = 0
 texture_normal = ExtResource("13_b8hws")
@@ -721,9 +723,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -316.0
-offset_top = -576.0
+offset_top = -515.0
 offset_right = -123.0
-offset_bottom = -493.0
+offset_bottom = -432.0
 grow_horizontal = 2
 grow_vertical = 0
 texture_normal = ExtResource("13_b8hws")
@@ -782,7 +784,76 @@ horizontal_alignment = 1
 autowrap_mode = 2
 uppercase = true
 
+[node name="Control" type="Control" parent="Control/LeftFrame"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -128.5
+offset_top = -147.5
+offset_right = 138.5
+offset_bottom = -96.5
+
+[node name="Off1" type="TextureRect" parent="Control/LeftFrame/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_top = -18.5
+offset_right = -14.0
+offset_bottom = 18.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("21_leh1m")
+
+[node name="On1" type="TextureRect" parent="Control/LeftFrame/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_top = -18.5
+offset_right = -14.0
+offset_bottom = 18.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("22_0xeve")
+
+[node name="Off2" type="TextureRect" parent="Control/LeftFrame/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 7.0
+offset_top = -18.5
+offset_right = 45.0
+offset_bottom = 18.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("21_leh1m")
+
+[node name="On2" type="TextureRect" parent="Control/LeftFrame/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 7.0
+offset_top = -18.5
+offset_right = 45.0
+offset_bottom = 18.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("22_0xeve")
+
 [node name="Screen" type="NinePatchRect" parent="Control/LeftFrame"]
+visible = false
 clip_children = 2
 offset_left = -115.0
 offset_top = -164.0
@@ -901,6 +972,74 @@ texture = ExtResource("30_j3mrw")
 position = Vector2(935.5, 388.5)
 texture = ExtResource("20_xl4nu")
 
+[node name="Control" type="Control" parent="Control/RightFrame"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -128.5
+offset_top = -147.5
+offset_right = 138.5
+offset_bottom = -96.5
+
+[node name="Off1" type="TextureRect" parent="Control/RightFrame/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_top = -18.5
+offset_right = -14.0
+offset_bottom = 18.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("21_leh1m")
+
+[node name="On1" type="TextureRect" parent="Control/RightFrame/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_top = -18.5
+offset_right = -14.0
+offset_bottom = 18.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("22_0xeve")
+
+[node name="Off2" type="TextureRect" parent="Control/RightFrame/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 7.0
+offset_top = -18.5
+offset_right = 45.0
+offset_bottom = 18.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("21_leh1m")
+
+[node name="On2" type="TextureRect" parent="Control/RightFrame/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 7.0
+offset_top = -18.5
+offset_right = 45.0
+offset_bottom = 18.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("22_0xeve")
+
 [node name="DemandCampaign" type="Label" parent="Control/RightFrame"]
 offset_left = -58.0
 offset_top = -364.0
@@ -928,6 +1067,7 @@ autowrap_mode = 2
 uppercase = true
 
 [node name="Screen" type="NinePatchRect" parent="Control/RightFrame"]
+visible = false
 clip_children = 2
 offset_left = -115.0
 offset_top = -164.0
@@ -1080,7 +1220,7 @@ stream = ExtResource("46_qq11d")
 bus = &"Sound"
 script = ExtResource("47_22spb")
 
-[connection signal="window_opened" from="." to="Control/CenterFrame/InfoScreen1/Text" method="_on_policy_window_opened"]
+[connection signal="window_opened" from="." to="Control/CenterFrame/Text" method="_on_policy_window_opened"]
 [connection signal="window_opened" from="." to="Control/CenterFrame/InfoScreen2/Infos/TopLabel" method="_on_policy_window_opened"]
 [connection signal="window_opened" from="." to="Control/CenterFrame/InfoScreen2/Infos/BottomLabel" method="_on_policy_window_opened"]
 [connection signal="window_opened" from="." to="Control/CenterFrame/Vote" method="_on_policy_window_opened"]

@@ -12,7 +12,8 @@ func _on_policy_window_opened():
 		text = tr("CANNOT_VOTE_OR_START_CAMPAIGN")
 		_change_text_to_red()
 	else:
-		text = tr("CAN_VOTE_OR_START_CAMPAIGN")
+		text = ""
+		#text = tr("CAN_VOTE_OR_START_CAMPAIGN")
 		_change_text_to_green()
 
 

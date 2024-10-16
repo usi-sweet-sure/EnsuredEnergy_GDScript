@@ -8,6 +8,8 @@ signal energy_policies_support_updated
 signal environmental_policies_support_updated
 signal policy_button_unclicked
 
+var MAX_NUMBER_OF_PASSED_CAMPAIGN = 2
+
 var environmental_policies_support: float = 0.0: # In [0,1]
 	set(new_value):
 		environmental_policies_support = new_value
@@ -189,3 +191,15 @@ func get_turn_of_successful_policy(policy: Policy):
 			break
 	
 	return turn
+
+
+func can_vote_another_campaign(type: Policy.PolicyType):
+	var number_of_passed_campaigns = 0
+	
+	for voted_policy in voted_policies:
+		var policy: Policy = voted_policy.policy
+		
+		if policy.is_campaign() and policy.policy_type == type and voted_policy.passed:
+			number_of_passed_campaigns += 1
+
+	return number_of_passed_campaigns < MAX_NUMBER_OF_PASSED_CAMPAIGN
