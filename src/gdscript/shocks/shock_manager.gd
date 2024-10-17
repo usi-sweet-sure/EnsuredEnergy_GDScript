@@ -102,10 +102,11 @@ func pick_shock():
 		# graph button when the player clicks on the "continue" button of the
 		# shock window (which hides the shock window).
 		# But if the shock is the "no_shock", no frame is shown, so we trigger
-		# the apparition of the graph button directly
+		# the apparition of the graph button directly.
+		# We wait 2 sec for the clock animation to finish
 		if Gameloop.current_turn == 2 and not random_shock.show_shock_window:
-			Gameloop.enable_graphs_button.emit()
-
+			get_tree().create_timer(2).timeout.connect(func(): Gameloop.enable_graphs_button.emit())
+		
 
 func apply_shock():
 	print("Applying shock")
