@@ -1,5 +1,8 @@
 extends Node
 
+signal show_tooltip(text: String)
+signal hide_tooltip
+
 var hand_press = preload("res://assets/textures/cursor/cursor_press.png")
 var hand_normal = preload("res://assets/textures/cursor/cursor.png")
 var hand_help = preload("res://assets/textures/cursor/cursor_info.png")

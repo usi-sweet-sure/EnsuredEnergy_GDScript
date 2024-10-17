@@ -3,8 +3,6 @@ extends CanvasLayer
 var lang = ["de", "fr", "it", "en"]
 var i = 0
 
-@onready var player_name_field = $PlayerName
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,7 +15,7 @@ func _ready():
 
 
 func _on_play_pressed():
-	Gameloop.player_name = "new_player" #player_name_field.text
+	Gameloop.player_name = "new_player"
 	hide()
 	Gameloop.start_game()
 	

@@ -24,6 +24,8 @@ func _on_toggle_policies_window():
 	
 	if visible:
 		window_opened.emit()
+		CameraManager.block_camera.emit()
+		
 	
 	# Buttons stay pressed when closing the window, so we unpress them
 	for button in policy_buttons:
@@ -35,8 +37,10 @@ func _on_toggle_policies_window():
 
 func _on_backdrop_gui_input(event):
 	if event is InputEventMouseButton and event.button_mask == MOUSE_BUTTON_MASK_LEFT:
+		CameraManager.unlock_camera.emit()
 		hide()
 
 
 func _on_close_button_pressed():
+	CameraManager.unlock_camera.emit()
 	hide()

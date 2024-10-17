@@ -1,15 +1,12 @@
-[gd_scene load_steps=37 format=3 uid="uid://pvoi2mcc3oc1"]
+[gd_scene load_steps=32 format=3 uid="uid://pvoi2mcc3oc1"]
 
 [ext_resource type="Script" path="res://src/gdscript/starting_screen/menu.gd" id="1_hl1kv"]
 [ext_resource type="Texture2D" uid="uid://dug4cy4mgxa1b" path="res://assets/textures/map/map.jpg" id="2_yai7r"]
 [ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/fonts/special_elite/special_elite_regular.ttf" id="3_hwgqu"]
 [ext_resource type="Texture2D" uid="uid://d2xmfb55o0osw" path="res://assets/textures/ui/All-HQ-Assets-D_0006s_0014_Start-menu-metal-base.png" id="4_dgun4"]
 [ext_resource type="FontFile" uid="uid://bt2f3flr7psn5" path="res://assets/fonts/vt323/vt323_regular.ttf" id="4_u4k4v"]
-[ext_resource type="Texture2D" uid="uid://bspccm3p1o4q8" path="res://assets/textures/ui/All-HQ-Assets-D_0005s_0008_Player-name-screen.png" id="5_rxjck"]
 [ext_resource type="FontFile" uid="uid://dxtsp51pqna2o" path="res://assets/fonts/static/open_sans_bold.ttf" id="5_tofyq"]
-[ext_resource type="Script" path="res://src/gdscript/starting_screen/player_name.gd" id="6_h11gm"]
 [ext_resource type="Texture2D" uid="uid://cvr8ptliyw7oc" path="res://assets/textures/ui/All-HQ-Assets-D_0001s_0013_1-slot-button-hole.png" id="9_j0rns"]
-[ext_resource type="Script" path="res://src/gdscript/starting_screen/play_button.gd" id="9_oo472"]
 [ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="11_ta118"]
 [ext_resource type="Texture2D" uid="uid://cqekiqjn8gvh7" path="res://assets/textures/ui/Button-Play-normal.png" id="11_v1gn1"]
 [ext_resource type="Texture2D" uid="uid://c5tgx0yng476j" path="res://assets/textures/ui/Button-Play-press.png" id="12_2e306"]
@@ -127,20 +124,6 @@ VScrollBar/styles/grabber = SubResource("StyleBoxFlat_5mtqi")
 VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_1qqbn")
 VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_idcep")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k5cxq"]
-texture = ExtResource("5_rxjck")
-texture_margin_left = 20.0
-texture_margin_top = 15.0
-texture_margin_right = 20.0
-texture_margin_bottom = 15.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4jtbl"]
-texture = ExtResource("5_rxjck")
-texture_margin_left = 20.0
-texture_margin_top = 15.0
-texture_margin_right = 20.0
-texture_margin_bottom = 15.0
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_fibyn"]
 animations = [{
 "frames": [{
@@ -209,25 +192,7 @@ texture = ExtResource("4_dgun4")
 patch_margin_top = 223
 patch_margin_bottom = 238
 
-[node name="PlayerName" type="LineEdit" parent="." groups=["inputs"]]
-visible = false
-offset_left = 569.0
-offset_top = 501.0
-offset_right = 821.0
-offset_bottom = 561.0
-theme = SubResource("Theme_34yde")
-theme_type_variation = &"Screen"
-theme_override_colors/caret_color = Color(0.843184, 0.843184, 0.843184, 0.92549)
-theme_override_constants/caret_width = 4
-theme_override_styles/normal = SubResource("StyleBoxTexture_k5cxq")
-theme_override_styles/focus = SubResource("StyleBoxTexture_4jtbl")
-placeholder_text = "PLAYER_NAME_PLACEHOLDER"
-alignment = 1
-max_length = 15
-caret_blink = true
-script = ExtResource("6_h11gm")
-
-[node name="Play" type="TextureButton" parent="." groups=["disabled_buttons"]]
+[node name="Play" type="TextureButton" parent="." groups=["buttons"]]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -245,7 +210,6 @@ texture_hover = ExtResource("13_ngmjh")
 texture_disabled = ExtResource("12_2e306")
 ignore_texture_size = true
 stretch_mode = 3
-script = ExtResource("9_oo472")
 
 [node name="PlayL" type="Label" parent="Play"]
 layout_mode = 1
@@ -386,12 +350,6 @@ text = "SCROLL"
 autowrap_mode = 3
 uppercase = true
 
-[connection signal="focus_entered" from="PlayerName" to="PlayerName" method="_on_focus_entered"]
-[connection signal="focus_exited" from="PlayerName" to="PlayerName" method="_on_focus_exited"]
-[connection signal="text_changed" from="PlayerName" to="Play" method="_on_player_name_text_changed"]
-[connection signal="text_submitted" from="PlayerName" to="." method="_on_player_name_text_submitted"]
-[connection signal="clicked_when_disabled" from="Play" to="PlayerName" method="_on_play_button_clicked_when_disabled"]
-[connection signal="gui_input" from="Play" to="Play" method="_on_gui_input"]
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Lang" to="." method="_on_lang_pressed"]
 [connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]

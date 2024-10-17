@@ -544,7 +544,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.168627, 0.168627, 0.168627, 0.392157)
+color = Color(0.168627, 0.168627, 0.168627, 0.862745)
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -1238,6 +1238,22 @@ script = ExtResource("47_22spb")
 [connection signal="gui_input" from="ColorRect" to="." method="_on_backdrop_gui_input"]
 [connection signal="pressed" from="Control/CenterFrame/Vote" to="Control/CenterFrame/Vote" method="_on_pressed"]
 [connection signal="pressed" from="Control/CenterFrame/StartCampaign" to="Control/CenterFrame/StartCampaign" method="_on_pressed"]
+[connection signal="mouse_entered" from="Control/LeftFrame/Control/Off1" to="Control/LeftFrame/Control" method="_on_led_entered"]
+[connection signal="mouse_exited" from="Control/LeftFrame/Control/Off1" to="Control/LeftFrame/Control" method="_on_led_exited"]
+[connection signal="mouse_entered" from="Control/LeftFrame/Control/On1" to="Control/LeftFrame/Control" method="_on_led_entered"]
+[connection signal="mouse_exited" from="Control/LeftFrame/Control/On1" to="Control/LeftFrame/Control" method="_on_led_exited"]
+[connection signal="mouse_entered" from="Control/LeftFrame/Control/Off2" to="Control/LeftFrame/Control" method="_on_led_entered"]
+[connection signal="mouse_exited" from="Control/LeftFrame/Control/Off2" to="Control/LeftFrame/Control" method="_on_led_exited"]
+[connection signal="mouse_entered" from="Control/LeftFrame/Control/On2" to="Control/LeftFrame/Control" method="_on_led_entered"]
+[connection signal="mouse_exited" from="Control/LeftFrame/Control/On2" to="Control/LeftFrame/Control" method="_on_led_exited"]
+[connection signal="mouse_entered" from="Control/RightFrame/Control/Off1" to="Control/RightFrame/Control" method="_on_led_entered"]
+[connection signal="mouse_exited" from="Control/RightFrame/Control/Off1" to="Control/RightFrame/Control" method="_on_led_exited"]
+[connection signal="mouse_entered" from="Control/RightFrame/Control/On1" to="Control/RightFrame/Control" method="_on_led_entered"]
+[connection signal="mouse_exited" from="Control/RightFrame/Control/On1" to="Control/RightFrame/Control" method="_on_led_exited"]
+[connection signal="mouse_entered" from="Control/RightFrame/Control/Off2" to="Control/RightFrame/Control" method="_on_led_entered"]
+[connection signal="mouse_exited" from="Control/RightFrame/Control/Off2" to="Control/RightFrame/Control" method="_on_led_exited"]
+[connection signal="mouse_entered" from="Control/RightFrame/Control/On2" to="Control/RightFrame/Control" method="_on_led_entered"]
+[connection signal="mouse_exited" from="Control/RightFrame/Control/On2" to="Control/RightFrame/Control" method="_on_led_exited"]
 [connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
 
 [editable path="Control/LeftFrame/campaign_env"]

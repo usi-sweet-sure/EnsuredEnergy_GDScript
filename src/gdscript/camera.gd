@@ -29,7 +29,9 @@ func _ready():
 	#for power_plant in get_tree().get_nodes_in_group("PP"):
 		#power_plant.ZoomSignal.connect(plant_zoom);
 	camera_blocked = true # Unblocked at the end of the tutorial
-		
+	CameraManager.block_camera.connect(_on_block_camera)
+	CameraManager.unlock_camera.connect(_on_unlock_camera)
+	
 func _physics_process(delta):
 	if not camera_blocked:
 		# Arrow key camera movement
@@ -129,3 +131,12 @@ func _on_tutorial_ended():
 	#position_tween.tween_property(self, "position", plant_pos, ZOOM_ANIMATION_DURATION + 0.1);
 	#var zoom_tween = get_tree().create_tween();
 	#zoom_tween.tween_property(self, "zoom", PLANT_ZOOM, ZOOM_ANIMATION_DURATION + 0.1);
+
+func _on_block_camera():
+	print("jnfdsnfdsélnfslé...")
+	camera_blocked = true
+	
+
+func _on_unlock_camera():
+	print("jnfdsnfdsélnfslé")
+	camera_blocked = false

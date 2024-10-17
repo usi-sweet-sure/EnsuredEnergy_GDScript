@@ -44,3 +44,11 @@ func _on_policy_voted(vote_passed: bool):
 		off_2.hide()
 		on_1.show()
 		on_2.show()
+
+
+func _on_led_entered():
+	Cursor.show_tooltip.emit("+ 10%")
+
+
+func _on_led_exited():
+	Cursor.hide_tooltip.emit()
