@@ -87,6 +87,7 @@ visible = false
 [node name="SurveyLayer" parent="." instance=ExtResource("76_y7xdi")]
 
 [node name="Settings" parent="." instance=ExtResource("11_3whgs")]
+visible = false
 
 [node name="QuitGame" parent="." instance=ExtResource("77_iwdt8")]
 layer = 4

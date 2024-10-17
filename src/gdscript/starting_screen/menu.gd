@@ -32,7 +32,7 @@ func _on_lang_pressed():
 
 
 func _on_credits_pressed():
-	pass # Replace with function body.
+	Gameloop.toggle_credits.emit()
 
 
 # When the user press enter when name input has the focus
