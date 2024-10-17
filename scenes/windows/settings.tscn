@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://rjcu72lxn4n4"]
+[gd_scene load_steps=28 format=3 uid="uid://rjcu72lxn4n4"]
 
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/settings_canvas.gd" id="1_q4she"]
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/close_button.gd" id="2_q0sqg"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://60dl810b25fd" path="res://assets/textures/ui/Button-press.png" id="14_ddynd"]
 [ext_resource type="Texture2D" uid="uid://cuhckno2t6g0r" path="res://assets/textures/ui/Button-hover.png" id="15_8tsm0"]
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/instructions_button.gd" id="16_qwrhs"]
+[ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/credits_button.gd" id="17_wuphf"]
 [ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="19_d2swd"]
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/back_to_survey_button.gd" id="19_r5c2w"]
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/textures/ui/Button-Next-Normal.png" id="20_dqb8u"]
@@ -296,6 +297,7 @@ focus_mode = 0
 texture_normal = ExtResource("13_mepng")
 texture_pressed = ExtResource("14_ddynd")
 texture_hover = ExtResource("15_8tsm0")
+script = ExtResource("17_wuphf")
 
 [node name="Label" type="Label" parent="Control/SettingsBox/MarginContainer2/VBoxContainer/Credits"]
 layout_mode = 1
@@ -411,6 +413,7 @@ script = ExtResource("26_1fovc")
 [connection signal="value_changed" from="Control/SettingsBox/VBoxContainer2/VolSound" to="Control/SettingsBox/VBoxContainer2/VolSound" method="_on_value_changed"]
 [connection signal="pressed" from="Control/SettingsBox/MarginContainer2/VBoxContainer/Language" to="Control/SettingsBox/MarginContainer2/VBoxContainer/Language" method="_on_pressed"]
 [connection signal="pressed" from="Control/SettingsBox/MarginContainer2/VBoxContainer/Instructions" to="Control/SettingsBox/MarginContainer2/VBoxContainer/Instructions" method="_on_pressed"]
+[connection signal="pressed" from="Control/SettingsBox/MarginContainer2/VBoxContainer/Credits" to="Control/SettingsBox/MarginContainer2/VBoxContainer/Credits" method="_on_pressed"]
 [connection signal="pressed" from="Control/SettingsBox/MarginContainer2/VBoxContainer/BackToSurvey" to="Control/SettingsBox/MarginContainer2/VBoxContainer/BackToSurvey" method="_on_pressed"]
 [connection signal="pressed" from="Control/SettingsBox/MarginContainer/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="CloseButton2" to="CloseButton2" method="_on_pressed"]

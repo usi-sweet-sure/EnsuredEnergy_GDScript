@@ -14,7 +14,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.147672, 0.147672, 0.147672, 1)
+color = Color(0.14902, 0.14902, 0.14902, 0.854902)
+
+[node name="BackdropButton" type="Button" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
 
 [node name="CreditsSprite" type="TextureRect" parent="."]
 anchors_preset = 8
@@ -87,3 +95,6 @@ offset_left = -55.0
 offset_right = 0.0
 offset_bottom = 54.0
 grow_horizontal = 0
+
+[connection signal="pressed" from="BackdropButton" to="." method="_on_backdrop_button_pressed"]
+[connection signal="pressed" from="CreditsSprite/CloseButton" to="." method="_on_close_button_pressed"]

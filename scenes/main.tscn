@@ -173,6 +173,7 @@ text = "Close"
 [node name="LoadingScreen" parent="." instance=ExtResource("23_bmtug")]
 
 [node name="Credits" parent="." instance=ExtResource("17_nfvbd")]
+layer = 4
 visible = false
 
 [connection signal="pressed" from="TestLayer/TestButtons/ButtonTop" to="TestLayer/TestButtons" method="_on_button_top_pressed"]
