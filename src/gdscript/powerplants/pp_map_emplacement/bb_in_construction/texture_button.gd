@@ -12,6 +12,9 @@ var mouse_position_on_press: Vector2
 # so we use a tolerance were a drag will not be triggered and a normal click will
 # be detected
 var drag_tolerance = Vector2(5.0, 5.0)
+
+# This is used to revert the changes made to metrics during a shock
+var metrics_backup: PowerplantMetrics
 var metrics: PowerplantMetrics
 
 

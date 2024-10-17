@@ -32,6 +32,9 @@ enum EngineTypeIds {
 # MUST BE in the same order as EngineTypeIds.
 var powerplants_metrics: Array[PowerplantMetrics] = []
 
+# Used to revert changes made to metrics by a shock
+var metrics_backup: Array[PowerplantMetrics] = []
+
 # Used by all the types. Texture is set at runtime when the scene is instantiated
 var powerplant_scene = preload("res://scenes/powerplants/pp_map_emplacement/pp_scene.tscn")
 
@@ -445,3 +448,19 @@ func update_buildings_impact():
 	Gameloop.co2_emissions = total_emissions
 	Gameloop.sequestrated_co2 = total_emissions_sequestrated
 	Gameloop.land_use = total_land_use
+
+
+func backup_metrics():
+	metrics_backup = []
+	
+	for metric in powerplants_metrics:
+		metrics_backup.push_back(metric.copy())
+
+
+func rollback_metrics():
+	powerplants_metrics = []
+	
+	for metric in metrics_backup:
+		powerplants_metrics.push_back(metric.copy())
+		
+	metrics_backup = []

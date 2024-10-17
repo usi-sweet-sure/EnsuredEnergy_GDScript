@@ -208,6 +208,7 @@ func _on_powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMe
 			if override_powerplant_off_texture:
 				pp_scene.set_texture_off(powerplant_off)
 
+
 # Connected to "powerplant_delete_requested" emitted by "pp_scene.tscn"
 func _on_powerplant_delete_requested(metrics: PowerplantMetrics):
 	var refunded_money = metrics.building_costs

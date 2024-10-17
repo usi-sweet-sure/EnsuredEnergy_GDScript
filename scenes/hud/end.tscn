@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://src/gdscript/end/end.gd" id="1_eio5g"]
 [ext_resource type="Script" path="res://src/gdscript/end/graphs_frame.gd" id="4_dq0ds"]
-[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/Fonts/label_themes.tres" id="4_n8g63"]
+[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="4_n8g63"]
 [ext_resource type="Texture2D" uid="uid://bulftkbpqxib" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0024_Icon-Money.png" id="5_goags"]
 [ext_resource type="Script" path="res://src/gdscript/end/metrics_ranking_screen.gd" id="5_luxph"]
 [ext_resource type="Texture2D" uid="uid://ceuxpu5iujr05" path="res://assets/textures/ui/All-HQ-Assets-D_0006s_0001_Stats-metal-base.png" id="5_xqx4k"]
@@ -49,6 +49,21 @@
 [ext_resource type="Script" path="res://src/gdscript/end/close_button.gd" id="44_iv8kv"]
 [ext_resource type="Texture2D" uid="uid://bx1g8oiuxi2mk" path="res://assets/textures/ui/Paper-Middle.png" id="48_py7ex"]
 
+[sub_resource type="Animation" id="Animation_gvfop"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
 [sub_resource type="Animation" id="Animation_clqo8"]
 resource_name = "calculating"
 length = 1.6
@@ -64,21 +79,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [0.0, 1.0, 1.0]
-}
-
-[sub_resource type="Animation" id="Animation_gvfop"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_iyvtd"]

@@ -19,6 +19,10 @@ signal texture_off_changed(image: Image)
 
 var metrics: PowerplantMetrics
 
+# This is used to revert the changes made to metrics during a shock
+var metrics_backup: PowerplantMetrics
+
+
 func _ready():
 	GroupManager.buttons_group_updated.emit()
 	GroupManager.switches_group_updated.emit()
@@ -120,11 +124,9 @@ func _on_button_plus_pressed():
 		metrics.land_use += delta_land_use
 		
 		# Winter supply
-		var delta_winter_supply = base_metrics.availability.y * base_metrics.capacity * metrics.upgrade_factor_for_winter_supply
 		metrics.availability.y += base_metrics.availability.y * metrics.upgrade_factor_for_winter_supply
 		
 		# Summer supply
-		var delta_summer_supply = base_metrics.availability.x * base_metrics.capacity * metrics.upgrade_factor_for_summer_supply
 		metrics.availability.x += base_metrics.availability.x * metrics.upgrade_factor_for_summer_supply
 		
 		# Upgrade cost

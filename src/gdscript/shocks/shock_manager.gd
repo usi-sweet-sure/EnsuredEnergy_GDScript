@@ -15,6 +15,7 @@ var service_demand: float
 var transport_demand: float
 var agriculture_demand: float
 var shock_buttons_hovered: Array[Shock] = []
+var to_do_on_next_turn: Array[Callable] = []
 
 
 func _ready():
@@ -69,6 +70,9 @@ func _ready():
 	shocks = [cold_spell, heat_wave, glaciers_melting, no_shock, severe_weather, renewable_support]
 	shocks_full = shocks.duplicate()
 	shocks.shuffle()
+	
+	Gameloop.next_turn.connect(_on_next_turn)
+	Gameloop.player_can_start_playing_new_turn.connect(_on_player_can_start_playing_new_turn)
 	
 	
 func pick_shock():
@@ -144,19 +148,37 @@ func increase_demand(longterm: bool):
 	
 	
 func _severe_wether_send_parameters_to_model():
+	# Update already built pps metrics
 	var powerplants: Array[Node] = get_tree().get_nodes_in_group("Powerplants")
-	
+
+	# Update already built pps metrics
 	for powerplant: PpScene in powerplants:
 		var metrics: PowerplantMetrics = powerplant.metrics
 		if powerplant.is_solar() or powerplant.is_wind():
-			metrics.availability *= Vector2(0.8, 0.8)
+			powerplant.metrics_backup = metrics.copy()
+			metrics.availability *= Vector2(0.5, 0.5)
 			powerplant.metrics_updated.emit(metrics)
 			
-	for metrics: PowerplantMetrics in PowerplantsManager.powerplants_metrics:
-		if metrics.type == PowerplantsManager.EngineTypeIds.SOLAR or metrics.type == PowerplantsManager.EngineTypeIds.WIND:
-			metrics.availability *= Vector2(0.8, 0.8)
+	# Update pps that will build this turn
+	var pps_in_construction = get_tree().get_nodes_in_group("BbsInConstruction")
+	
+	for pp in pps_in_construction:
+		# All builds buttons are instanciated at launch and are juste hidden,
+		# so if no pp is in construction on that map emplacement,
+		# the metrics are null
+		if pp.metrics != null:
+			# pp will build this turn
+			if pp.metrics.construction_started_on_turn + pp.metrics.build_time_in_turns == Gameloop.current_turn:
+				if pp.metrics.type == PowerplantsManager.EngineTypeIds.SOLAR or pp.metrics.type == PowerplantsManager.EngineTypeIds.WIND:
+					pp.metrics.availability *= Vector2(0.5, 0.5)
 			
-	# NICE TO HAVE 
+	
+	# Update base metrics for futur buildings, but not if they take time to build
+	# since the changes will be reverted anyway on next turn
+	PowerplantsManager.backup_metrics()
+	for metrics: PowerplantMetrics in PowerplantsManager.powerplants_metrics:
+		if metrics.type == PowerplantsManager.EngineTypeIds.SOLAR or metrics.type == PowerplantsManager.EngineTypeIds.WIND and metrics.build_time_in_turns == 0:
+			metrics.availability *= Vector2(0.5, 0.5)
 			
 	PowerplantsManager.update_buildings_impact()
 	
@@ -172,6 +194,7 @@ func _severe_wether_send_parameters_to_model():
 	await Context.parameters_sent_to_model
 	Context.get_demand_from_context()
 	ShockManager.shock_effects_applied.emit(Gameloop.most_recent_shock)
+
 
 func _on_shock_button_entered(shock: Shock):
 	shock_buttons_hovered.push_back(shock)
@@ -214,3 +237,64 @@ func no_shock():
 
 func nuc_reintro():
 	ShockManager.shock_effects_applied.emit(Gameloop.most_recent_shock)
+
+
+# Some shocks modify the state of the game for one turn only. This can be
+# used to revert them
+func _on_next_turn():
+	print("TO DO ON NEXT TURN")
+	for callable in to_do_on_next_turn:
+		callable.call()
+	
+	to_do_on_next_turn = []
+	
+
+func _revert_severe_weather():
+	print("revert severe weather")
+	var powerplants: Array[Node] = get_tree().get_nodes_in_group("Powerplants")
+	
+	# Revert base metrics for futur buildings
+	PowerplantsManager.rollback_metrics()
+	
+	# Revert already built pps metrics
+	for powerplant: PpScene in powerplants:
+		if powerplant.is_solar() or powerplant.is_wind():
+			
+			# We will be rolling back the metrics, but want to keep changes made
+			# by the user
+			var current_upgrade = powerplant.metrics.current_upgrade
+			var active = powerplant.metrics.active
+			var built_on_turn = powerplant.metrics.built_on_turn
+			var production_costs = powerplant.metrics.production_costs
+			var land_use = powerplant.metrics.land_use
+			var emissions = powerplant.metrics.emissions
+			
+			if powerplant.metrics_backup == null:
+				# The pp was built during the shock, and has no backup. We can read
+				# the base metrics instead
+				powerplant.metrics = PowerplantsManager.powerplants_metrics[powerplant.metrics.type].copy()
+			else:
+				powerplant.metrics = powerplant.metrics_backup.copy()
+				powerplant.metrics_backup = null
+			
+			powerplant.metrics.current_upgrade = current_upgrade
+			powerplant.metrics.active = active
+			powerplant.metrics.built_on_turn = built_on_turn
+			powerplant.metrics.production_costs = production_costs
+			powerplant.metrics.land_use = land_use
+			powerplant.metrics.emissions = emissions
+			
+			# Severe weather changed availability. If the pp was upgraded, we have
+			# to upgrade it accordingly
+			var base_metrics = PowerplantsManager.powerplants_metrics[powerplant.metrics.type]
+			powerplant.metrics.availability.y = base_metrics.availability.y + (base_metrics.availability.y * powerplant.metrics.upgrade_factor_for_winter_supply * current_upgrade)
+			powerplant.metrics.availability.x = base_metrics.availability.x + (base_metrics.availability.x * powerplant.metrics.upgrade_factor_for_summer_supply * current_upgrade)
+			powerplant.metrics_updated.emit(powerplant.metrics)
+			
+			
+			PowerplantsManager.update_buildings_impact()
+		
+		
+func _on_player_can_start_playing_new_turn():
+	if Gameloop.most_recent_shock.title_key == "SHOCK_SEVERE_WEATHER_TITLE":
+		to_do_on_next_turn.push_back(_revert_severe_weather)

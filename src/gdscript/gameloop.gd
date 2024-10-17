@@ -150,6 +150,7 @@ func _check_supply():
 
 func _on_next_turn():
 	print("next turn in gameloop")
+
 	imported_energy_amount = 0
 	MoneyManager.set_money_for_new_turn()
 	ShockManager.pick_shock()
