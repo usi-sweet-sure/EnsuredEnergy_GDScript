@@ -5,9 +5,9 @@
 [ext_resource type="Script" path="res://src/gdscript/shocks/shock_button/texture_button.gd" id="2_5jsa0"]
 [ext_resource type="Script" path="res://src/gdscript/shocks/shock_button/animation_player.gd" id="2_lohl8"]
 [ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="4_j4m7a"]
+[ext_resource type="Texture2D" uid="uid://biwwfxsgd37rv" path="res://assets/textures/icons/chalk_warning.png" id="4_uuw5p"]
 [ext_resource type="Texture2D" uid="uid://bx1g8oiuxi2mk" path="res://assets/textures/ui/Paper-Middle.png" id="5_hacl8"]
 [ext_resource type="Script" path="res://src/gdscript/shocks/shock_button/tooltip_text.gd" id="6_7ex6t"]
-[ext_resource type="Texture2D" uid="uid://dghaekaa6d2q" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0023_Icon-Warning.png" id="8_1nlru"]
 
 [sub_resource type="Animation" id="Animation_kb3fo"]
 resource_name = "tooltip_scale_down"
@@ -81,11 +81,12 @@ texture_normal = ExtResource("1_uupry")
 script = ExtResource("2_5jsa0")
 
 [node name="Sprite2D" type="Sprite2D" parent="TextureButton"]
-position = Vector2(27, 25)
+position = Vector2(27, 23)
 scale = Vector2(0.566038, 0.563487)
-texture = ExtResource("8_1nlru")
+texture = ExtResource("4_uuw5p")
 
 [node name="Tooltip" type="RichTextLabel" parent="."]
+visible = false
 clip_contents = false
 anchors_preset = 6
 anchor_left = 1.0
