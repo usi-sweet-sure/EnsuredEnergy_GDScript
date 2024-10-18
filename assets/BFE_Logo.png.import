@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byd72pq50epax"
-path="res://.godot/imported/Screenshot (1265).png-85eb421f137a89fb22d296209afb5bd8.ctex"
+uid="uid://d0phf45274ejw"
+path="res://.godot/imported/BFE_Logo.png-efa4f885d528deda84fb323daeebc749.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Screenshot (1265).png"
-dest_files=["res://.godot/imported/Screenshot (1265).png-85eb421f137a89fb22d296209afb5bd8.ctex"]
+source_file="res://assets/BFE_Logo.png"
+dest_files=["res://.godot/imported/BFE_Logo.png-efa4f885d528deda84fb323daeebc749.ctex"]
 
 [params]
 
