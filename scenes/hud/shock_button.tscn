@@ -1,12 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://bgdrqxfbgr184"]
+[gd_scene load_steps=13 format=3 uid="uid://bgdrqxfbgr184"]
 
 [ext_resource type="Script" path="res://src/gdscript/shocks/shock_button/shock_button.gd" id="1_3j4o8"]
 [ext_resource type="Texture2D" uid="uid://b0c3ywqarx8b7" path="res://assets/textures/ui/socket_round.png" id="1_uupry"]
 [ext_resource type="Script" path="res://src/gdscript/shocks/shock_button/texture_button.gd" id="2_5jsa0"]
 [ext_resource type="Script" path="res://src/gdscript/shocks/shock_button/animation_player.gd" id="2_lohl8"]
-[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="4_j4m7a"]
+[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/Fonts/label_themes.tres" id="4_j4m7a"]
 [ext_resource type="Texture2D" uid="uid://biwwfxsgd37rv" path="res://assets/textures/icons/chalk_warning.png" id="4_uuw5p"]
 [ext_resource type="Texture2D" uid="uid://bx1g8oiuxi2mk" path="res://assets/textures/ui/Paper-Middle.png" id="5_hacl8"]
+[ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/Fonts/Special_Elite/special_elite_regular.ttf" id="6_5a1f6"]
 [ext_resource type="Script" path="res://src/gdscript/shocks/shock_button/tooltip_text.gd" id="6_7ex6t"]
 
 [sub_resource type="Animation" id="Animation_kb3fo"]
@@ -101,6 +102,7 @@ grow_horizontal = 0
 grow_vertical = 2
 theme = ExtResource("4_j4m7a")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_5a1f6")
 theme_override_font_sizes/normal_font_size = 17
 bbcode_enabled = true
 fit_content = true
