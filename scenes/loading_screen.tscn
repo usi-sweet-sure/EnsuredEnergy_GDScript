@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://det4mobxk3l42"]
+[gd_scene load_steps=9 format=3 uid="uid://det4mobxk3l42"]
 
 [ext_resource type="Script" path="res://src/gdscript/loading_screen/loading_screen.gd" id="1_6wpr7"]
-[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="2_l02pl"]
+[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/Fonts/label_themes.tres" id="2_l02pl"]
+[ext_resource type="Texture2D" uid="uid://byd72pq50epax" path="res://assets/Screenshot (1265).png" id="2_uxe4p"]
 
 [sub_resource type="Animation" id="Animation_vhawi"]
 resource_name = "loading"
@@ -49,6 +50,43 @@ _data = {
 "loading": SubResource("Animation_vhawi")
 }
 
+[sub_resource type="Animation" id="Animation_7r0hu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SURELogos:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ei56h"]
+resource_name = "fade"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SURELogos:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ltcoy"]
+_data = {
+"RESET": SubResource("Animation_7r0hu"),
+"fade": SubResource("Animation_ei56h")
+}
+
 [node name="LoadingScreen" type="CanvasLayer"]
 script = ExtResource("1_6wpr7")
 
@@ -60,12 +98,16 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
+[node name="SURELogos" type="Sprite2D" parent="."]
+position = Vector2(960, 541)
+texture = ExtResource("2_uxe4p")
+
 [node name="Label" type="Label" parent="."]
 visible = false
 offset_left = 1683.0
-offset_top = 986.0
+offset_top = 1008.0
 offset_right = 1704.0
-offset_bottom = 1058.0
+offset_bottom = 1080.0
 theme = ExtResource("2_l02pl")
 theme_type_variation = &"Screen"
 theme_override_font_sizes/font_size = 52
@@ -75,9 +117,9 @@ horizontal_alignment = 2
 [node name="Label2" type="Label" parent="."]
 visible = false
 offset_left = 1703.0
-offset_top = 986.0
+offset_top = 1008.0
 offset_right = 1724.0
-offset_bottom = 1058.0
+offset_bottom = 1080.0
 theme = ExtResource("2_l02pl")
 theme_type_variation = &"Screen"
 theme_override_font_sizes/font_size = 52
@@ -86,9 +128,9 @@ horizontal_alignment = 2
 
 [node name="Label3" type="Label" parent="."]
 offset_left = 1721.0
-offset_top = 986.0
+offset_top = 1008.0
 offset_right = 1742.0
-offset_bottom = 1058.0
+offset_bottom = 1080.0
 theme = ExtResource("2_l02pl")
 theme_type_variation = &"Screen"
 theme_override_font_sizes/font_size = 52
@@ -97,9 +139,9 @@ horizontal_alignment = 2
 
 [node name="Label4" type="Label" parent="."]
 offset_left = 1748.0
-offset_top = 986.0
+offset_top = 1008.0
 offset_right = 1895.0
-offset_bottom = 1039.0
+offset_bottom = 1061.0
 theme = ExtResource("2_l02pl")
 theme_type_variation = &"Screen"
 theme_override_font_sizes/font_size = 52
@@ -109,4 +151,9 @@ horizontal_alignment = 2
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_il5wv")
+}
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ltcoy")
 }
