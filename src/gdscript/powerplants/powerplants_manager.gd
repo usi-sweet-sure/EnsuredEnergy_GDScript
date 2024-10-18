@@ -211,7 +211,7 @@ var powerplants_can_upgrade: Array[float] = [
 	true, # Solar
 	true, # Wind
 	true, # Gas
-	true, # Waste
+	false, # Waste
 	true, # Biomass
 	true, # Biogas
 	false, # Nuclear
