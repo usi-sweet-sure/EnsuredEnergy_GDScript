@@ -1,4 +1,4 @@
-[gd_scene load_steps=179 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=182 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/textures/ui/Button-Next-Normal.png" id="2_aobed"]
 [ext_resource type="Texture2D" uid="uid://ccsapuvkqqt1b" path="res://assets/textures/ui/All-HQ-Assets-D_0006s_0009_Profile-metal-base.png" id="2_nu7y6"]
@@ -132,6 +132,7 @@
 [ext_resource type="PackedScene" uid="uid://c8vhh4tt8t2j4" path="res://scenes/hud/floating_message.tscn" id="115_hpdbb"]
 [ext_resource type="Script" path="res://src/gdscript/shocks/shock_buttons_drawer/shock_buttons_drawer.gd" id="126_ky6x4"]
 [ext_resource type="Texture2D" uid="uid://byhs2falwauts" path="res://assets/textures/ui/clock_ring.png" id="128_7na6l"]
+[ext_resource type="Script" path="res://src/gdscript/hud/next_turn_button/next_turn_overlay.gd" id="133_g5xys"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3tdw6"]
 bg_color = Color(0.65098, 0.65098, 0.65098, 0.0470588)
@@ -1013,6 +1014,52 @@ tracks/0/keys = {
 _data = {
 "rotate_ring": SubResource("Animation_3l03v"),
 "rotate_ring_backward": SubResource("Animation_rnjk4")
+}
+
+[sub_resource type="Animation" id="Animation_vhawi"]
+resource_name = "loading"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_il5wv"]
+_data = {
+"loading": SubResource("Animation_vhawi")
 }
 
 [node name="UI" type="CanvasLayer"]
@@ -2905,6 +2952,90 @@ offset_bottom = -134.0
 grow_horizontal = 0
 grow_vertical = 2
 script = ExtResource("126_ky6x4")
+
+[node name="NextTurnOverlay" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1610.0
+offset_top = 916.0
+offset_right = 1859.0
+offset_bottom = 1048.0
+script = ExtResource("133_g5xys")
+
+[node name="ColorRect" type="ColorRect" parent="NextTurnOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -4.0
+offset_right = 2.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.588235)
+
+[node name="Label" type="Label" parent="NextTurnOverlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 21.5
+offset_top = -72.0
+offset_right = 61.5
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_8s8ds")
+theme_type_variation = &"Screen"
+theme_override_font_sizes/font_size = 100
+text = "."
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="NextTurnOverlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -72.0
+offset_right = 20.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_8s8ds")
+theme_type_variation = &"Screen"
+theme_override_font_sizes/font_size = 100
+text = "."
+horizontal_alignment = 2
+
+[node name="Label3" type="Label" parent="NextTurnOverlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -72.0
+offset_right = -20.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_8s8ds")
+theme_type_variation = &"Screen"
+theme_override_font_sizes/font_size = 100
+text = "."
+horizontal_alignment = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NextTurnOverlay"]
+libraries = {
+"": SubResource("AnimationLibrary_il5wv")
+}
 
 [connection signal="pressed" from="TopLeftZone/OpenGraphsFrameButton" to="TopLeftZone/OpenGraphsFrameButton" method="_on_pressed"]
 [connection signal="pressed" from="TopLeftZone/MoneyManagement/MoneyInfo/ToggleMoneyInfoBoxButton" to="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox" method="_on_toggle_money_info_box_button_pressed"]

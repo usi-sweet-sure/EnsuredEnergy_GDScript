@@ -61,6 +61,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = 1683.0
 offset_top = 986.0
 offset_right = 1704.0
@@ -84,7 +85,6 @@ text = "."
 horizontal_alignment = 2
 
 [node name="Label3" type="Label" parent="."]
-visible = false
 offset_left = 1721.0
 offset_top = 986.0
 offset_right = 1742.0
