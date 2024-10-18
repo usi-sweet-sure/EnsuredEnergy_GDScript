@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bgdrqxfbgr184"]
+[gd_scene load_steps=12 format=3 uid="uid://bgdrqxfbgr184"]
 
 [ext_resource type="Script" path="res://src/gdscript/shocks/shock_button/shock_button.gd" id="1_3j4o8"]
 [ext_resource type="Texture2D" uid="uid://b0c3ywqarx8b7" path="res://assets/textures/ui/socket_round.png" id="1_uupry"]
@@ -7,6 +7,7 @@
 [ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="4_j4m7a"]
 [ext_resource type="Texture2D" uid="uid://bx1g8oiuxi2mk" path="res://assets/textures/ui/Paper-Middle.png" id="5_hacl8"]
 [ext_resource type="Script" path="res://src/gdscript/shocks/shock_button/tooltip_text.gd" id="6_7ex6t"]
+[ext_resource type="Texture2D" uid="uid://dghaekaa6d2q" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0023_Icon-Warning.png" id="8_1nlru"]
 
 [sub_resource type="Animation" id="Animation_kb3fo"]
 resource_name = "tooltip_scale_down"
@@ -79,8 +80,12 @@ offset_bottom = 54.0
 texture_normal = ExtResource("1_uupry")
 script = ExtResource("2_5jsa0")
 
+[node name="Sprite2D" type="Sprite2D" parent="TextureButton"]
+position = Vector2(27, 25)
+scale = Vector2(0.566038, 0.563487)
+texture = ExtResource("8_1nlru")
+
 [node name="Tooltip" type="RichTextLabel" parent="."]
-visible = false
 clip_contents = false
 anchors_preset = 6
 anchor_left = 1.0
@@ -93,7 +98,6 @@ offset_right = -73.0
 offset_bottom = 72.0
 grow_horizontal = 0
 grow_vertical = 2
-scale = Vector2(1e-05, 1e-05)
 theme = ExtResource("4_j4m7a")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 17
