@@ -5,7 +5,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	hide()
-	#HttpManager.http_request_active_updated.connect(_on_http_request_updated)
+	HttpManager.http_request_active_updated.connect(_on_http_request_updated)
 	
 	
 func _on_http_request_updated(active: bool):
