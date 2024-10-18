@@ -1,4 +1,4 @@
-extends Label
+extends RichTextLabel
 
 
 func _ready():

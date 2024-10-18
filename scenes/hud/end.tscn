@@ -1,8 +1,8 @@
-[gd_scene load_steps=55 format=3 uid="uid://cej4dlw11su6f"]
+[gd_scene load_steps=56 format=3 uid="uid://cej4dlw11su6f"]
 
 [ext_resource type="Script" path="res://src/gdscript/end/end.gd" id="1_eio5g"]
 [ext_resource type="Script" path="res://src/gdscript/end/graphs_frame.gd" id="4_dq0ds"]
-[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="4_n8g63"]
+[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/Fonts/label_themes.tres" id="4_n8g63"]
 [ext_resource type="Texture2D" uid="uid://bulftkbpqxib" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0024_Icon-Money.png" id="5_goags"]
 [ext_resource type="Script" path="res://src/gdscript/end/metrics_ranking_screen.gd" id="5_luxph"]
 [ext_resource type="Texture2D" uid="uid://ceuxpu5iujr05" path="res://assets/textures/ui/All-HQ-Assets-D_0006s_0001_Stats-metal-base.png" id="5_xqx4k"]
@@ -48,6 +48,7 @@
 [ext_resource type="Script" path="res://src/gdscript/end/emissions_gauge_label.gd" id="37_hchcy"]
 [ext_resource type="Script" path="res://src/gdscript/end/close_button.gd" id="44_iv8kv"]
 [ext_resource type="Texture2D" uid="uid://bx1g8oiuxi2mk" path="res://assets/textures/ui/Paper-Middle.png" id="48_py7ex"]
+[ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/Fonts/Special_Elite/special_elite_regular.ttf" id="49_fl6u7"]
 
 [sub_resource type="Animation" id="Animation_gvfop"]
 length = 0.001
@@ -237,7 +238,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Button" type="Button" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(105, 0)
+custom_minimum_size = Vector2(113, 0)
 layout_mode = 2
 focus_mode = 0
 theme = ExtResource("4_n8g63")
@@ -246,7 +247,7 @@ button_group = ExtResource("9_h5vxw")
 text = "NUCLEAR"
 
 [node name="Button2" type="Button" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(105, 0)
+custom_minimum_size = Vector2(113, 0)
 layout_mode = 2
 focus_mode = 0
 theme = ExtResource("4_n8g63")
@@ -255,7 +256,7 @@ button_group = ExtResource("9_h5vxw")
 text = "FOSSIL"
 
 [node name="Button3" type="Button" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(105, 0)
+custom_minimum_size = Vector2(113, 0)
 layout_mode = 2
 focus_mode = 0
 theme = ExtResource("4_n8g63")
@@ -265,7 +266,7 @@ button_group = ExtResource("9_h5vxw")
 text = "ENERGY"
 
 [node name="Button4" type="Button" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(105, 0)
+custom_minimum_size = Vector2(113, 0)
 layout_mode = 2
 focus_mode = 0
 theme = ExtResource("4_n8g63")
@@ -274,7 +275,7 @@ button_group = ExtResource("9_h5vxw")
 text = "EMISSIONS"
 
 [node name="Button5" type="Button" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(105, 0)
+custom_minimum_size = Vector2(113, 0)
 layout_mode = 2
 focus_mode = 0
 theme = ExtResource("4_n8g63")
@@ -283,7 +284,7 @@ button_group = ExtResource("9_h5vxw")
 text = "LAND_USE"
 
 [node name="Button6" type="Button" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(105, 0)
+custom_minimum_size = Vector2(113, 0)
 layout_mode = 2
 focus_mode = 0
 theme = ExtResource("4_n8g63")
@@ -292,7 +293,7 @@ button_group = ExtResource("9_h5vxw")
 text = "PROD_COST"
 
 [node name="Button7" type="Button" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(105, 0)
+custom_minimum_size = Vector2(113, 0)
 layout_mode = 2
 focus_mode = 0
 theme = ExtResource("4_n8g63")
@@ -301,7 +302,8 @@ button_group = ExtResource("9_h5vxw")
 text = "SEASONALITY"
 
 [node name="Line2D" type="Line2D" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer"]
-points = PackedVector2Array(-20.5, 95.5, -20.5, 27.5, 835.5, 27.5, 835.5, 95.5)
+position = Vector2(0, -4)
+points = PackedVector2Array(-20.5, 95.5, -20.5, 27.5, 847.5, 27.5, 847.5, 95.5)
 width = 2.0
 default_color = Color(0.219608, 0.756863, 0.788235, 1)
 
@@ -328,7 +330,7 @@ horizontal_alignment = 1
 uppercase = true
 
 [node name="NAME" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/StatTitle/HBoxContainer"]
-custom_minimum_size = Vector2(250, 0)
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 theme = ExtResource("4_n8g63")
 theme_type_variation = &"Screen"
@@ -1160,7 +1162,9 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 18
 text = "x"
 
-[node name="Button" type="Button" parent="."]
+[node name="NameInfoButton" type="Button" parent="."]
+unique_name_in_owner = true
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1168,14 +1172,14 @@ grow_horizontal = 2
 grow_vertical = 2
 flat = true
 
-[node name="MarginContainer" type="MarginContainer" parent="Button"]
+[node name="MarginContainer" type="MarginContainer" parent="NameInfoButton"]
 layout_mode = 0
-offset_left = 1496.0
-offset_top = 364.0
-offset_right = 1837.0
-offset_bottom = 563.0
+offset_left = 101.0
+offset_top = 268.0
+offset_right = 442.0
+offset_bottom = 476.0
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Button/MarginContainer"]
+[node name="NinePatchRect" type="NinePatchRect" parent="NameInfoButton/MarginContainer"]
 layout_mode = 2
 texture = ExtResource("48_py7ex")
 patch_margin_left = 84
@@ -1183,22 +1187,20 @@ patch_margin_top = 101
 patch_margin_right = 32
 patch_margin_bottom = 82
 
-[node name="MarginContainer" type="MarginContainer" parent="Button/MarginContainer/NinePatchRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="MarginContainer" type="MarginContainer" parent="NameInfoButton/MarginContainer"]
+layout_mode = 2
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 80
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 60
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Button/MarginContainer/NinePatchRect/MarginContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="NameInfoButton/MarginContainer/MarginContainer"]
 layout_mode = 2
 theme = ExtResource("4_n8g63")
 theme_type_variation = &"Paper"
+theme_override_colors/default_color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+theme_override_fonts/normal_font = ExtResource("49_fl6u7")
+theme_override_font_sizes/normal_font_size = 26
 text = "PLAYER_SCORE_NAME"
 fit_content = true
 
@@ -1223,4 +1225,4 @@ fit_content = true
 [connection signal="toggled" from="MainFrame/BottomFrames/RightFrame/LandUse/Button" to="MainFrame/Screen/Graph" method="_on_land_use_button_toggled"]
 [connection signal="toggled" from="MainFrame/BottomFrames/RightFrame/Emissions/Button" to="MainFrame/Screen/Graph" method="_on_emissions_button_toggled"]
 [connection signal="pressed" from="MainFrame/CloseButton" to="." method="_on_close_button_pressed"]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="NameInfoButton" to="." method="_on_button_pressed"]
