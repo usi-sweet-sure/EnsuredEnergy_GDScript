@@ -28,6 +28,7 @@ func _process(delta):
 	
 	
 func _on_emissions_updated(emissions: float):
+	emissions -= Gameloop.sequestrated_co2
 	# The arrow rotation percentage goes from -75% (full left) to 75% (full right)
 	# No emission points the arrow at -75%
 	var arrow_was_shaking = shake_arrow
