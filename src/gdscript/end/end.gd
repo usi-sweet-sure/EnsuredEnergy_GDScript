@@ -76,4 +76,4 @@ func _on_player_name_focus_exited():
 
 
 func _on_button_pressed():
-	$Button.hide()
+	%NameInfoButton.hide()
