@@ -223,7 +223,6 @@ libraries = {
 autoplay = "calculating"
 
 [node name="StatContainer" type="MarginContainer" parent="MainFrame/Screen/MetricsRanking"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -576,10 +575,10 @@ clear_button_enabled = true
 [node name="NameEdit" type="Button" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/PlayerStats/HBoxContainer/player_name"]
 unique_name_in_owner = true
 layout_mode = 2
-offset_left = 434.5
-offset_top = 10.5
-offset_right = 477.5
-offset_bottom = 46.5
+offset_left = 404.0
+offset_top = 11.0
+offset_right = 436.0
+offset_bottom = 47.0
 size_flags_vertical = 8
 focus_mode = 0
 toggle_mode = true
