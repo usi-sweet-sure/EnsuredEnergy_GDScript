@@ -238,7 +238,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Button" type="Button" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(105, 0)
+custom_minimum_size = Vector2(113, 0)
 layout_mode = 2
 focus_mode = 0
 theme = ExtResource("4_n8g63")
@@ -247,7 +247,7 @@ button_group = ExtResource("9_h5vxw")
 text = "NUCLEAR"
 
 [node name="Button2" type="Button" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(105, 0)
+custom_minimum_size = Vector2(113, 0)
 layout_mode = 2
 focus_mode = 0
 theme = ExtResource("4_n8g63")
@@ -256,7 +256,7 @@ button_group = ExtResource("9_h5vxw")
 text = "FOSSIL"
 
 [node name="Button3" type="Button" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(105, 0)
+custom_minimum_size = Vector2(113, 0)
 layout_mode = 2
 focus_mode = 0
 theme = ExtResource("4_n8g63")
@@ -266,7 +266,7 @@ button_group = ExtResource("9_h5vxw")
 text = "ENERGY"
 
 [node name="Button4" type="Button" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(105, 0)
+custom_minimum_size = Vector2(113, 0)
 layout_mode = 2
 focus_mode = 0
 theme = ExtResource("4_n8g63")
@@ -275,7 +275,7 @@ button_group = ExtResource("9_h5vxw")
 text = "EMISSIONS"
 
 [node name="Button5" type="Button" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(105, 0)
+custom_minimum_size = Vector2(113, 0)
 layout_mode = 2
 focus_mode = 0
 theme = ExtResource("4_n8g63")
@@ -284,7 +284,7 @@ button_group = ExtResource("9_h5vxw")
 text = "LAND_USE"
 
 [node name="Button6" type="Button" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(105, 0)
+custom_minimum_size = Vector2(113, 0)
 layout_mode = 2
 focus_mode = 0
 theme = ExtResource("4_n8g63")
@@ -293,7 +293,7 @@ button_group = ExtResource("9_h5vxw")
 text = "PROD_COST"
 
 [node name="Button7" type="Button" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(105, 0)
+custom_minimum_size = Vector2(113, 0)
 layout_mode = 2
 focus_mode = 0
 theme = ExtResource("4_n8g63")
@@ -302,7 +302,8 @@ button_group = ExtResource("9_h5vxw")
 text = "SEASONALITY"
 
 [node name="Line2D" type="Line2D" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer"]
-points = PackedVector2Array(-20.5, 95.5, -20.5, 27.5, 835.5, 27.5, 835.5, 95.5)
+position = Vector2(0, -4)
+points = PackedVector2Array(-20.5, 95.5, -20.5, 27.5, 847.5, 27.5, 847.5, 95.5)
 width = 2.0
 default_color = Color(0.219608, 0.756863, 0.788235, 1)
 
@@ -329,7 +330,7 @@ horizontal_alignment = 1
 uppercase = true
 
 [node name="NAME" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/StatTitle/HBoxContainer"]
-custom_minimum_size = Vector2(250, 0)
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 theme = ExtResource("4_n8g63")
 theme_type_variation = &"Screen"
