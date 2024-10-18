@@ -82,8 +82,8 @@ func pick_shock():
 	if Gameloop.current_turn == 5:
 		var nuc_reintro = Shock.new("SHOCK_NUC_REINTRO_TITLE", "SHOCK_NUC_REINTRO_TEXT", "vote.png")
 		nuc_reintro.add_effect(func(): nuc_reintro())
-		nuc_reintro.add_player_reaction("SHOCK_NUC_REINTRO_PLAYER_REACTION_1", func(): _reintroduce_nuclear()) # E. Implement
-		nuc_reintro.add_player_reaction("SHOCK_NUC_REINTRO_PLAYER_REACTION_2", func(): _leave_nuclear()) # E. Implement
+		nuc_reintro.add_player_reaction("SHOCK_NUC_REINTRO_PLAYER_REACTION_1", func(): _reintroduce_nuclear())
+		nuc_reintro.add_player_reaction("SHOCK_NUC_REINTRO_PLAYER_REACTION_2", func(): _leave_nuclear())
 		print("shock picked: ", nuc_reintro.title_key)
 		Gameloop.most_recent_shock = nuc_reintro
 	else:

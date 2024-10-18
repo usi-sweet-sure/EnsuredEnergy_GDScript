@@ -210,7 +210,7 @@ var powerplants_upgrade_factors_for_summer_supply: Array[float] = [
 var powerplants_can_upgrade: Array[float] = [
 	true, # Solar
 	true, # Wind
-	true, # Gas
+	false, # Gas
 	false, # Waste
 	true, # Biomass
 	true, # Biogas
