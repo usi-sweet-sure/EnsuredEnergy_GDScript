@@ -2901,7 +2901,6 @@ vertical_alignment = 1
 script = ExtResource("96_6b673")
 
 [node name="ring" type="Sprite2D" parent="Clock/TimePanelBlank"]
-rotation = -3.21713
 texture = ExtResource("128_7na6l")
 
 [node name="Ring" type="AnimationPlayer" parent="Clock/TimePanelBlank"]
