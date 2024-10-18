@@ -153,6 +153,7 @@ texture_normal = ExtResource("2_ooeel")
 script = ExtResource("3_dvmlx")
 
 [node name="InfoFrame" type="TextureRect" parent="." groups=["pp_info_frames"]]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
