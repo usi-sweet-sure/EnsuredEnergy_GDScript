@@ -207,7 +207,7 @@ var powerplants_upgrade_factors_for_summer_supply: Array[float] = [
 ]
 
 # MUST BE in the same order as EngineTypeIds
-var powerplants_can_upgrade: Array[float] = [
+var powerplants_can_upgrade: Array[bool] = [
 	true, # Solar
 	true, # Wind
 	false, # Gas
@@ -218,6 +218,34 @@ var powerplants_can_upgrade: Array[float] = [
 	true, # Carbon sequestration
 	true, # Hydro
 	true, # River
+]
+
+# MUST BE in the same order as EngineTypeIds
+var powerplants_upgrade_costs: Array[float] = [
+	25, # Solar
+	25, # Wind
+	25, # Gas
+	25, # Waste
+	25, # Biomass
+	25, # Biogas
+	25, # Nuclear
+	25, # Carbon sequestration
+	25, # Hydro
+	25, # River
+]
+
+# MUST BE in the same order as EngineTypeIds
+var powerplants_production_cost_factors: Array[float] = [
+	1.0 / 4.0, # Solar
+	1.0, # Wind
+	1.0, # Gas
+	1.0 / 4.0, # Waste
+	1.0, # Biomass
+	1.0, # Biogas
+	1.0 / 3.0, # Nuclear
+	1.0, # Carbon sequestration
+	1.0 / 4.0, # Hydro
+	1.0 / 4.0, # River
 ]
 
 # MUST BE in the same order as EngineTypeIds
@@ -373,21 +401,23 @@ func _store_powerplant_metrics(engine_type_id: EngineTypeIds):
 		capacity = capacity / 100.0 / 3.0 # there's 3 nuclear plants
 		emissions /= 3.0
 		land_use /= 3.0
-		production_cost = production_cost / 3.0
+		#production_cost = production_cost / 3.0
 	elif engine_type_id == EngineTypeIds.HYDRO || engine_type_id == EngineTypeIds.RIVER:
 		cnv_capacity = cnv_capacity / 2.0
 		capacity = capacity / 100.0 / 2.0
 		emissions /= 4.0 # needs to divide by the number of water plants
 		land_use /= 4.0
-		production_cost = production_cost / 4.0
+		#production_cost = production_cost / 4.0
 	elif engine_type_id == EngineTypeIds.SOLAR || engine_type_id == EngineTypeIds.WASTE:
 		cnv_capacity = cnv_capacity / 4.0
 		capacity = capacity / 100.0 / 4.0
 		emissions /= 4.0 # needs to divide by the number of water plants
 		land_use /= 4.0
-		production_cost = production_cost / 4.0
+		#production_cost = production_cost / 4.0
 	else:
 		capacity /= 100.0
+		
+	production_cost *= powerplants_production_cost_factors[engine_type_id]
 	
 	var can_activate = true
 	var active = false
@@ -402,7 +432,7 @@ func _store_powerplant_metrics(engine_type_id: EngineTypeIds):
 	var upgrade_factor_for_land_use = powerplants_upgrade_factors_for_land_use[engine_type_id]
 	var upgrade_factor_for_winter_supply = powerplants_upgrade_factors_for_winter_supply[engine_type_id]
 	var upgrade_factor_for_summer_supply = powerplants_upgrade_factors_for_summer_supply[engine_type_id]
-	var upgrade_cost = 25
+	var upgrade_cost = powerplants_upgrade_costs[engine_type_id]
 	var can_upgrade = powerplants_can_upgrade[engine_type_id]
 	
 	var metrics = PowerplantMetrics.new(engine_type_id, capacity, cnv_capacity,
