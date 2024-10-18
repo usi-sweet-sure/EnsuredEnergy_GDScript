@@ -10,7 +10,7 @@ signal building_costs_updated(val: float)
 signal total_production_costs_updated(val: float)
 
 var start_money: float = 1500.0
-var money_per_turn: float = 100.0
+var money_per_turn: float = 120.0
 var debt_percentage_on_borrowed_money: float = 20.0
 var borrowed_money_amount: float:
 	set(new_value):

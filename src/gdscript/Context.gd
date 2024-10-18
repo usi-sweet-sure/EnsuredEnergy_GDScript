@@ -33,7 +33,7 @@ func register_new_game_on_model(player_name: String):
 
 
 #upsert param
-func send_parameters_to_model(game_id: int, year: int, prm_id: int, tj: int):
+func send_parameters_to_model(game_id: int, year: int, prm_id: int, tj: float):
 	var url = "https://sure.euler.usi.ch/json.php?mth=ups&res_id={res_id}&prm_id={prm_id}&yr={yr}&tj={tj}".format({"res_id": game_id, "yr": year, "prm_id": prm_id, "tj": tj})
 	
 	if not HttpManager.http_request_completed.is_connected(_on_parameters_sent_to_model):

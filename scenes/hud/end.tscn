@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://cej4dlw11su6f"]
+[gd_scene load_steps=60 format=3 uid="uid://cej4dlw11su6f"]
 
 [ext_resource type="Script" path="res://src/gdscript/end/end.gd" id="1_eio5g"]
 [ext_resource type="Script" path="res://src/gdscript/end/graphs_frame.gd" id="4_dq0ds"]
@@ -48,7 +48,11 @@
 [ext_resource type="Script" path="res://src/gdscript/end/emissions_gauge_label.gd" id="37_hchcy"]
 [ext_resource type="Script" path="res://src/gdscript/end/close_button.gd" id="44_iv8kv"]
 [ext_resource type="Texture2D" uid="uid://bx1g8oiuxi2mk" path="res://assets/textures/ui/Paper-Middle.png" id="48_py7ex"]
+[ext_resource type="Texture2D" uid="uid://duoff2c7r1hdy" path="res://assets/textures/buttons/close_button_normal.png" id="48_wntxs"]
 [ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/Fonts/Special_Elite/special_elite_regular.ttf" id="49_fl6u7"]
+[ext_resource type="Texture2D" uid="uid://bdq26gwsmigwy" path="res://assets/textures/buttons/close_button_pressed.png" id="49_nxc3v"]
+[ext_resource type="Texture2D" uid="uid://myf36tn1pspq" path="res://assets/textures/buttons/close_button_hover.png" id="50_3oi6p"]
+[ext_resource type="Texture2D" uid="uid://bhl7ei1bspfbw" path="res://assets/textures/buttons/close_button_disabled.png" id="51_j8egd"]
 
 [sub_resource type="Animation" id="Animation_gvfop"]
 length = 0.001
@@ -1162,22 +1166,29 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 18
 text = "x"
 
-[node name="NameInfoButton" type="Button" parent="."]
+[node name="NameInfoButton" type="TextureButton" parent="."]
 unique_name_in_owner = true
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_right = 0.029
+anchor_bottom = 0.05
+offset_left = 357.0
+offset_top = 274.0
+offset_right = 356.32
+offset_bottom = 274.0
 grow_horizontal = 2
 grow_vertical = 2
-flat = true
+texture_normal = ExtResource("48_wntxs")
+texture_pressed = ExtResource("49_nxc3v")
+texture_hover = ExtResource("50_3oi6p")
+texture_disabled = ExtResource("51_j8egd")
 
 [node name="MarginContainer" type="MarginContainer" parent="NameInfoButton"]
+show_behind_parent = true
 layout_mode = 0
-offset_left = 101.0
-offset_top = 268.0
-offset_right = 442.0
-offset_bottom = 476.0
+offset_left = -272.0
+offset_top = -11.0
+offset_right = 69.0
+offset_bottom = 197.0
 
 [node name="NinePatchRect" type="NinePatchRect" parent="NameInfoButton/MarginContainer"]
 layout_mode = 2

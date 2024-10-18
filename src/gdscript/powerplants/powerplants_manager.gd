@@ -114,12 +114,12 @@ var powerplants_max_upgrades: Array[int] = [
 	2, # Wind
 	3, # Gas
 	3, # Waste
-	3, # Biomass
+	2, # Biomass
 	3, # Biogas
 	0, # Nuclear
 	3, # Carbon sequestration
-	3, # Hydro
-	3, # River
+	4, # Hydro
+	4, # River
 ]
 
 # MUST BE in the same order as EngineTypeIds
@@ -138,72 +138,72 @@ var powerplants_min_upgrades: Array[int] = [
 
 # MUST BE in the same order as EngineTypeIds
 var powerplants_upgrade_factors_for_production_costs: Array[float] = [
-	0.25, # Solar
+	0.2, # Solar
 	0.5, # Wind
 	0.5, # Gas
 	0.25, # Waste
-	0.5, # Biomass
-	0.5, # Biogas
+	0.25, # Biomass
+	0.25, # Biogas
 	0.1, # Nuclear
 	0.5, # Carbon sequestration
-	0.1, # Hydro
-	0.1, # River
+	0.025, # Hydro
+	0.025, # River
 ]
 
 # MUST BE in the same order as EngineTypeIds
 var powerplants_upgrade_factors_for_emissions: Array[float] = [
-	0.25, # Solar
+	0.2, # Solar
 	0.5, # Wind
 	0.5, # Gas
 	0.25, # Waste
-	0.5, # Biomass
-	0.5, # Biogas
+	0.25, # Biomass
+	0.25, # Biogas
 	0.1, # Nuclear
 	0.5, # Carbon sequestration
-	0.1, # Hydro
-	0.1, # River
+	0.025, # Hydro
+	0.025, # River
 ]
 
 # MUST BE in the same order as EngineTypeIds
 var powerplants_upgrade_factors_for_land_use: Array[float] = [
-	0.25, # Solar
+	0.2, # Solar
 	0.5, # Wind
 	0.5, # Gas
 	0.25, # Waste
-	0.5, # Biomass
-	0.5, # Biogas
+	0.25, # Biomass
+	0.25, # Biogas
 	0.1, # Nuclear
 	0.5, # Carbon sequestration
-	0.1, # Hydro
-	0.1, # River
+	0.025, # Hydro
+	0.025, # River
 ]
 
 # MUST BE in the same order as EngineTypeIds
 var powerplants_upgrade_factors_for_winter_supply: Array[float] = [
-	0.25, # Solar
+	0.2, # Solar
 	0.5, # Wind
 	0.5, # Gas
 	0.25, # Waste
-	0.5, # Biomass
-	0.5, # Biogas
+	0.25, # Biomass
+	0.25, # Biogas
 	0.1, # Nuclear
 	0.5, # Carbon sequestration
-	0.1, # Hydro
-	0.1, # River
+	0.025, # Hydro
+	0.025, # River
 ]
 
 # MUST BE in the same order as EngineTypeIds
 var powerplants_upgrade_factors_for_summer_supply: Array[float] = [
-	0.25, # Solar
+	0.2, # Solar
 	0.5, # Wind
 	0.5, # Gas
 	0.25, # Waste
-	0.5, # Biomass
-	0.5, # Biogas
+	0.25, # Biomass
+	0.25, # Biogas
 	0.1, # Nuclear
 	0.5, # Carbon sequestration
-	0.1, # Hydro
-	0.1, # River
+	0.025, # Hydro
+	0.025, # River
 ]
 
 # MUST BE in the same order as EngineTypeIds
@@ -222,16 +222,16 @@ var powerplants_can_upgrade: Array[bool] = [
 
 # MUST BE in the same order as EngineTypeIds
 var powerplants_upgrade_costs: Array[float] = [
-	25, # Solar
-	25, # Wind
+	7, # Solar
+	2, # Wind
 	25, # Gas
 	25, # Waste
-	25, # Biomass
-	25, # Biogas
+	20, # Biomass
+	15, # Biogas
 	25, # Nuclear
 	25, # Carbon sequestration
 	25, # Hydro
-	25, # River
+	20, # River
 ]
 
 # MUST BE in the same order as EngineTypeIds
@@ -240,7 +240,7 @@ var powerplants_production_cost_factors: Array[float] = [
 	1.0, # Wind
 	1.0, # Gas
 	1.0 / 4.0, # Waste
-	1.0, # Biomass
+	1.2, # Biomass
 	1.0, # Biogas
 	1.0 / 3.0, # Nuclear
 	1.0, # Carbon sequestration

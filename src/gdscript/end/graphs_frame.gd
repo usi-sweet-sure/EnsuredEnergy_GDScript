@@ -55,22 +55,22 @@ func _set_graph_context(context_name: String):
 			x_axis_min_value = Gameloop.start_year
 			x_axis_max_value = Gameloop.start_year + (Gameloop.total_number_of_turns * Gameloop.years_in_a_turn)
 			y_axis_min_value = 0
-			y_axis_max_value = 2000
-			_draw_base_graph(Gameloop.years_in_a_turn, 200)
+			y_axis_max_value = 150
+			_draw_base_graph(Gameloop.years_in_a_turn, 10)
 			_add_data_set_to_graph("land_use", Color(0.663, 0.929, 0.416))
 		"emissions":
 			x_axis_min_value = Gameloop.start_year
 			x_axis_max_value = Gameloop.start_year + (Gameloop.total_number_of_turns * Gameloop.years_in_a_turn)
 			y_axis_min_value = 0
-			y_axis_max_value = 2000
-			_draw_base_graph(Gameloop.years_in_a_turn, 200)
+			y_axis_max_value = 5
+			_draw_base_graph(Gameloop.years_in_a_turn, 1)
 			_add_data_set_to_graph("co2_emissions", Color(0.91, 0.38, 0.38))
 		"winter":
 			x_axis_min_value = Gameloop.start_year
 			x_axis_max_value = Gameloop.start_year + (Gameloop.total_number_of_turns * Gameloop.years_in_a_turn)
 			y_axis_min_value = 0
-			y_axis_max_value = 2000
-			_draw_base_graph(Gameloop.years_in_a_turn, 200)
+			y_axis_max_value = 1800
+			_draw_base_graph(Gameloop.years_in_a_turn, 100)
 			_add_data_set_to_graph("winter_energy_supply", Color(0.431, 0.961, 0.957))
 			_add_data_set_to_graph("winter_energy_import", Color(0.988, 0.973, 0.855))
 			_add_data_set_to_graph("winter_demand", Color(0, 0.569, 1, 1))
@@ -78,8 +78,8 @@ func _set_graph_context(context_name: String):
 			x_axis_min_value = Gameloop.start_year
 			x_axis_max_value = Gameloop.start_year + (Gameloop.total_number_of_turns * Gameloop.years_in_a_turn)
 			y_axis_min_value = 0
-			y_axis_max_value = 2000
-			_draw_base_graph(Gameloop.years_in_a_turn, 200)
+			y_axis_max_value = 1800
+			_draw_base_graph(Gameloop.years_in_a_turn, 100)
 			_add_data_set_to_graph("summer_energy_supply", Color(0.929, 0.875, 0.416))
 			_add_data_set_to_graph("summer_demand", Color(1, 0.702, 0.255, 1))
 		"policies":
