@@ -42,11 +42,10 @@ autoplay = true
 position = Vector2(-568, 576)
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-offset_left = -4272.0
-offset_top = -2176.0
-offset_right = 5392.0
-offset_bottom = 3576.0
+offset_left = -3858.0
+offset_top = -1520.0
+offset_right = 5806.0
+offset_bottom = 4232.0
 mouse_filter = 2
 color = Color(0.546875, 0.710938, 0.523438, 1)
 
