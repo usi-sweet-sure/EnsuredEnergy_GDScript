@@ -3,18 +3,19 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bwuskgw4ek8y"
-path="res://.godot/imported/open_sans_medium.ttf-8d6a2768b1ea61fb1d67c3c78a02a68a.fontdata"
+path="res://.godot/imported/open_sans_medium.ttf-dbb7c7e10508e95ee0d7c2702ce46222.fontdata"
 
 [deps]
 
-source_file="res://assets/Fonts/static/open_sans_medium.ttf"
-dest_files=["res://.godot/imported/open_sans_medium.ttf-8d6a2768b1ea61fb1d67c3c78a02a68a.fontdata"]
+source_file="res://assets/fonts/static/open_sans_medium.ttf"
+dest_files=["res://.godot/imported/open_sans_medium.ttf-dbb7c7e10508e95ee0d7c2702ce46222.fontdata"]
 
 [params]
 
 Rendering=null
 antialiasing=1
 generate_mipmaps=false
+disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
 msdf_size=48

@@ -51,9 +51,10 @@ mouse_filter = 2
 color = Color(0.546875, 0.710938, 0.523438, 1)
 
 [node name="World" parent="." instance=ExtResource("1_prp6q")]
+position = Vector2(-244, 170)
 
 [node name="Camera2D" parent="World" index="0"]
-position = Vector2(858, 685)
+position = Vector2(1181, 835)
 anchor_mode = 1
 zoom = Vector2(0.3, 0.3)
 limit_left = -3500
@@ -64,6 +65,10 @@ script = ExtResource("3_2lui3")
 
 [node name="Map" parent="World" index="1"]
 texture_filter = 2
+offset_left = -2044.0
+offset_top = -963.0
+offset_right = 4647.0
+offset_bottom = 3535.0
 
 [node name="UI" parent="." instance=ExtResource("2_d60f5")]
 follow_viewport_enabled = false
