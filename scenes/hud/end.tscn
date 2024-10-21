@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://src/gdscript/end/end.gd" id="1_eio5g"]
 [ext_resource type="Script" path="res://src/gdscript/end/graphs_frame.gd" id="4_dq0ds"]
-[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/Fonts/label_themes.tres" id="4_n8g63"]
+[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="4_n8g63"]
 [ext_resource type="Texture2D" uid="uid://bulftkbpqxib" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0024_Icon-Money.png" id="5_goags"]
 [ext_resource type="Script" path="res://src/gdscript/end/metrics_ranking_screen.gd" id="5_luxph"]
 [ext_resource type="Texture2D" uid="uid://ceuxpu5iujr05" path="res://assets/textures/ui/All-HQ-Assets-D_0006s_0001_Stats-metal-base.png" id="5_xqx4k"]
@@ -49,7 +49,7 @@
 [ext_resource type="Script" path="res://src/gdscript/end/close_button.gd" id="44_iv8kv"]
 [ext_resource type="Texture2D" uid="uid://bx1g8oiuxi2mk" path="res://assets/textures/ui/Paper-Middle.png" id="48_py7ex"]
 [ext_resource type="Texture2D" uid="uid://duoff2c7r1hdy" path="res://assets/textures/buttons/close_button_normal.png" id="48_wntxs"]
-[ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/Fonts/Special_Elite/special_elite_regular.ttf" id="49_fl6u7"]
+[ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/fonts/special_elite/special_elite_regular.ttf" id="49_fl6u7"]
 [ext_resource type="Texture2D" uid="uid://bdq26gwsmigwy" path="res://assets/textures/buttons/close_button_pressed.png" id="49_nxc3v"]
 [ext_resource type="Texture2D" uid="uid://myf36tn1pspq" path="res://assets/textures/buttons/close_button_hover.png" id="50_3oi6p"]
 [ext_resource type="Texture2D" uid="uid://bhl7ei1bspfbw" path="res://assets/textures/buttons/close_button_disabled.png" id="51_j8egd"]
