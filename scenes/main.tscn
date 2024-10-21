@@ -43,7 +43,7 @@ position = Vector2(-568, 576)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -3858.0
-offset_top = -1520.0
+offset_top = -2073.0
 offset_right = 5806.0
 offset_bottom = 4232.0
 mouse_filter = 2
@@ -57,9 +57,9 @@ position = Vector2(1181, 835)
 anchor_mode = 1
 zoom = Vector2(0.3, 0.3)
 limit_left = -3500
-limit_top = -1550
+limit_top = -2000
 limit_right = 5240
-limit_bottom = 3400
+limit_bottom = 3800
 script = ExtResource("3_2lui3")
 
 [node name="Map" parent="World" index="1"]
