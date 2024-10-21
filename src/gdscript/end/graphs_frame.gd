@@ -260,16 +260,16 @@ func _reset_graph():
 func change_line_highlight(line_name, highlight := true):
 	var size_factor := 2.5
 	var move_factor = size_factor # Used for the points
-	var z_index = 2
+	var z_index_ = 2
 	
 	if not highlight: # Reverts the size back
 		size_factor = 1.0
-		z_index = 1
+		z_index_ = 1
 	
 	if graph.has_node(line_name):
 		# Tweens line size
 		var line: Line2D = graph.get_node(line_name)
-		line.z_index = z_index
+		line.z_index = z_index_
 		
 		var tween = get_tree().create_tween()
 		tween.tween_property(line, "width", default_line_width * size_factor, 0.1)

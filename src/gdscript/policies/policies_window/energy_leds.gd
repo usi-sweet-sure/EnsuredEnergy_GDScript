@@ -16,7 +16,7 @@ func _ready():
 	PolicyManager.policy_voted.connect(_on_policy_voted)
 
 
-func _on_policy_voted(vote_passed: bool):
+func _on_policy_voted(_vote_passed: bool):
 	var all_voted_policies = PolicyManager.voted_policies
 	var number_of_passed_env_policies = 0
 	

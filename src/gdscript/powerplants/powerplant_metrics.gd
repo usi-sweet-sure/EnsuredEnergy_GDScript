@@ -32,57 +32,57 @@ var can_upgrade: bool
 
 
 func _init(
-		type: PowerplantsManager.EngineTypeIds,
-		capacity: float,
-		cnv_capacity: float,
-		emissions: float,
-		land_use: float,
-		production_costs: float,
-		availability: Vector2,
-		building_costs: float,
-		build_time_in_turns: int,
-		life_span_in_turns: int,
-		can_activate:bool,
-		active: bool,
-		can_delete: bool,
-		construction_started_on_turn: int,
-		built_on_turn: int,
-		current_upgrade: int,
-		min_upgrade: int,
-		max_upgrade: int,
-		upgrade_factor_for_production_costs: float,
-		upgrade_factor_for_emissions: float,
-		upgrade_factor_for_land_use: float,
-		upgrade_factor_for_winter_supply: float,
-		upgrade_factor_for_summer_supply: float,
-		upgrade_cost: float,
-		can_upgrade: bool,
+		type_: PowerplantsManager.EngineTypeIds,
+		capacity_: float,
+		cnv_capacity_: float,
+		emissions_: float,
+		land_use_: float,
+		production_costs_: float,
+		availability_: Vector2,
+		building_costs_: float,
+		build_time_in_turns_: int,
+		life_span_in_turns_: int,
+		can_activate_:bool,
+		active_: bool,
+		can_delete_: bool,
+		construction_started_on_turn_: int,
+		built_on_turn_: int,
+		current_upgrade_: int,
+		min_upgrade_: int,
+		max_upgrade_: int,
+		upgrade_factor_for_production_costs_: float,
+		upgrade_factor_for_emissions_: float,
+		upgrade_factor_for_land_use_: float,
+		upgrade_factor_for_winter_supply_: float,
+		upgrade_factor_for_summer_supply_: float,
+		upgrade_cost_: float,
+		can_upgrade_: bool,
 	):
-		self.type = type
-		self.capacity = capacity
-		self.cnv_capacity = cnv_capacity
-		self.emissions = emissions
-		self.land_use = land_use
-		self.production_costs = production_costs
-		self.availability = availability
-		self.building_costs = building_costs
-		self.build_time_in_turns = build_time_in_turns
-		self.life_span_in_turns = life_span_in_turns
-		self.can_activate = can_activate
-		self.active = active
-		self.can_delete = can_delete
-		self.construction_started_on_turn = construction_started_on_turn
-		self.built_on_turn = built_on_turn
-		self.current_upgrade = current_upgrade
-		self.min_upgrade = min_upgrade
-		self.max_upgrade = max_upgrade
-		self.upgrade_factor_for_production_costs = upgrade_factor_for_production_costs
-		self.upgrade_factor_for_emissions = upgrade_factor_for_emissions
-		self.upgrade_factor_for_land_use = upgrade_factor_for_land_use
-		self.upgrade_factor_for_winter_supply = upgrade_factor_for_winter_supply
-		self.upgrade_factor_for_summer_supply = upgrade_factor_for_summer_supply
-		self.upgrade_cost = upgrade_cost
-		self.can_upgrade = can_upgrade
+		self.type = type_
+		self.capacity = capacity_
+		self.cnv_capacity = cnv_capacity_
+		self.emissions = emissions_
+		self.land_use = land_use_
+		self.production_costs = production_costs_
+		self.availability = availability_
+		self.building_costs = building_costs_
+		self.build_time_in_turns = build_time_in_turns_
+		self.life_span_in_turns = life_span_in_turns_
+		self.can_activate = can_activate_
+		self.active = active_
+		self.can_delete = can_delete_
+		self.construction_started_on_turn = construction_started_on_turn_
+		self.built_on_turn = built_on_turn_
+		self.current_upgrade = current_upgrade_
+		self.min_upgrade = min_upgrade_
+		self.max_upgrade = max_upgrade_
+		self.upgrade_factor_for_production_costs = upgrade_factor_for_production_costs_
+		self.upgrade_factor_for_emissions = upgrade_factor_for_emissions_
+		self.upgrade_factor_for_land_use = upgrade_factor_for_land_use_
+		self.upgrade_factor_for_winter_supply = upgrade_factor_for_winter_supply_
+		self.upgrade_factor_for_summer_supply = upgrade_factor_for_summer_supply_
+		self.upgrade_cost = upgrade_cost_
+		self.can_upgrade = can_upgrade_
 
 
 func copy() -> PowerplantMetrics:

@@ -44,7 +44,7 @@ func _on_import_down_button_pressed():
 	value -= step
 
 
-func _on_energy_demand_updated_winter(demand: float):
+func _on_energy_demand_updated_winter(_demand: float):
 	_update_slider_properties()
 
 
@@ -52,7 +52,6 @@ func _on_energy_demand_updated_winter(demand: float):
 func _update_slider_properties():
 	# The player can't import more than needed
 	var max_amount_that_can_be_imported = Gameloop.demand_winter - Gameloop.supply_winter
-	var previous_value = Gameloop.imported_energy_amount
 	# Step must not update, otherwise the value will be changed too when
 	# properties update to adapt to the new step
 	step = 0.5
@@ -72,5 +71,5 @@ func _on_next_turn():
 	set_value_no_signal(0)
 
 
-func _on_drag_ended(value_changed):
+func _on_drag_ended(_value_changed):
 	TutorialManager.next_step_requested.emit()

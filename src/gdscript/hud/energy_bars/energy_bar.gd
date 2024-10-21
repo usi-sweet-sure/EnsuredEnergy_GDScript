@@ -39,7 +39,7 @@ func _ready():
 			_on_energy_supply_updated(Gameloop.supply_summer)
 			
 			
-func _process(delta):
+func _process(_delta):
 	change_bar_color()
 	
 	# The bars will have the same max_value and min_value, wich is the maximum demand
@@ -60,7 +60,7 @@ func _process(delta):
 				show_hand.position.x = remap(Gameloop.demand_summer, min_value, max_value, 0, bar_height)
 				
 				
-func _on_energy_demand_updated(demand: float):
+func _on_energy_demand_updated(_demand: float):
 	var bar_height = size.x
 	match season:
 			Season.WINTER:
@@ -139,5 +139,5 @@ func _on_hide_info_box(season_to_hide: Season):
 		info_box.hide()
 
 
-func _on_tutorial_step_updated(step: int):
-	show_hand.visible = (step == 6 and season == Season.WINTER) or step == 3
+func _on_tutorial_step_updated(step_: int):
+	show_hand.visible = (step_ == 6 and season == Season.WINTER) or step_ == 3

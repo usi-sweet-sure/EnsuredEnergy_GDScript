@@ -308,5 +308,5 @@ func _on_pp_downgraded(metrics: PowerplantMetrics):
 	history.pp_downgraded(metrics)
 	
 
-func _on_history_updated(history: MapEmplacementHistory):
-	history_updated.emit(history)
+func _on_history_updated(history_: MapEmplacementHistory):
+	history_updated.emit(history_)

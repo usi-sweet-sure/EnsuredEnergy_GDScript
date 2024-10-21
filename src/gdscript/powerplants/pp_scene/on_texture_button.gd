@@ -62,7 +62,7 @@ func _unhandled_input(event):
 			hide_info_frame_requested.emit()
 
 
-func _on_build_button_toggled(toggled_on: bool, map_emplacement: Node, can_build: Array[PowerplantsManager.EngineTypeIds]):
+func _on_build_button_toggled(_toggled_on: bool, _map_emplacement: Node, _can_build: Array[PowerplantsManager.EngineTypeIds]):
 	material.set_shader_parameter("show", false)
 	set_pressed_no_signal(false)
 	hide_info_frame_requested.emit()
@@ -77,14 +77,14 @@ func _on_toggled(toggled_on: bool):
 		hide_info_frame_requested.emit()
 
 
-func _on_pp_scene_toggled(toggled_on: bool, pp_scene: PpScene):
+func _on_pp_scene_toggled(_toggled_on: bool, pp_scene: PpScene):
 	if pp_scene.get_node("On") != self:
 		material.set_shader_parameter("show", false)
 		set_pressed_no_signal(false)
 		hide_info_frame_requested.emit()
 
 
-func _on_build_button_in_construction_toggled(toggled_on: bool, map_emplacement: Node2D):
+func _on_build_button_in_construction_toggled(_toggled_on: bool, _map_emplacement: Node2D):
 	material.set_shader_parameter("show", false)
 	set_pressed_no_signal(false)
 	hide_info_frame_requested.emit()

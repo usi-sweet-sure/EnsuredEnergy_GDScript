@@ -42,8 +42,8 @@ func _ready():
 	heat_wave.add_player_reaction("SHOCK_HEAT_WAVE_PLAYER_REACTION_2", func(): print("gaz upgrade")) # E. Implement
 	heat_wave.add_player_reaction("SHOCK_HEAT_WAVE_PLAYER_REACTION_3", func(): MoneyManager.players_own_money_amount -= 50)
 	
-	var glaciers_melting = Shock.new("SHOCK_GLACIERS_MELTING_TITLE", "SHOCK_GLACIERS_MELTING_TEXT", "ice.png")
-	glaciers_melting.add_effect(func(): glaciers_melting())
+	var glaciers_melting_shock = Shock.new("SHOCK_GLACIERS_MELTING_TITLE", "SHOCK_GLACIERS_MELTING_TEXT", "ice.png")
+	glaciers_melting_shock.add_effect(func(): glaciers_melting())
 	
 	var severe_weather = Shock.new("SHOCK_SEVERE_WEATHER_TITLE", "SHOCK_SEVERE_WEATHER_TEXT", "weather.png")
 	severe_weather.add_effect(func(): _severe_wether_send_parameters_to_model())
@@ -64,10 +64,10 @@ func _ready():
 	renewable_support.add_effect(func(): update_personal_support(0.1))
 	
 	
-	var no_shock = Shock.new("SHOCK_NO_SHOCK_TITLE", "SHOCK_NO_SHOCK_TEXT", "sunrise.png", false)
-	no_shock.add_effect(func(): no_shock())
+	var no_shock_shock = Shock.new("SHOCK_NO_SHOCK_TITLE", "SHOCK_NO_SHOCK_TEXT", "sunrise.png", false)
+	no_shock_shock.add_effect(func(): no_shock())
 	
-	shocks = [cold_spell, heat_wave, glaciers_melting, no_shock, severe_weather, renewable_support]
+	shocks = [cold_spell, heat_wave, glaciers_melting_shock, no_shock_shock, severe_weather, renewable_support]
 	shocks_full = shocks.duplicate()
 	shocks.shuffle()
 	
@@ -80,12 +80,12 @@ func pick_shock():
 	print("Picking shock")
 	# Nuclear reintro always happens in 2034, which is turn 5
 	if Gameloop.current_turn == 5:
-		var nuc_reintro = Shock.new("SHOCK_NUC_REINTRO_TITLE", "SHOCK_NUC_REINTRO_TEXT", "vote.png")
-		nuc_reintro.add_effect(func(): nuc_reintro())
-		nuc_reintro.add_player_reaction("SHOCK_NUC_REINTRO_PLAYER_REACTION_1", func(): _reintroduce_nuclear())
-		nuc_reintro.add_player_reaction("SHOCK_NUC_REINTRO_PLAYER_REACTION_2", func(): _leave_nuclear())
-		print("shock picked: ", nuc_reintro.title_key)
-		Gameloop.most_recent_shock = nuc_reintro
+		var nuc_reintro_shock = Shock.new("SHOCK_NUC_REINTRO_TITLE", "SHOCK_NUC_REINTRO_TEXT", "vote.png")
+		nuc_reintro_shock.add_effect(func(): nuc_reintro())
+		nuc_reintro_shock.add_player_reaction("SHOCK_NUC_REINTRO_PLAYER_REACTION_1", func(): _reintroduce_nuclear())
+		nuc_reintro_shock.add_player_reaction("SHOCK_NUC_REINTRO_PLAYER_REACTION_2", func(): _leave_nuclear())
+		print("shock picked: ", nuc_reintro_shock.title_key)
+		Gameloop.most_recent_shock = nuc_reintro_shock
 	else:
 		# Picks a random shock
 		if shocks.is_empty():
@@ -119,11 +119,6 @@ func apply_reaction(reaction_index: int):
 	if Gameloop.most_recent_shock != null:
 		Gameloop.most_recent_shock.apply_reaction(reaction_index)
 		
-		var requirements_met_text = ""
-		
-		if Gameloop.most_recent_shock.met_requirements_conditions_when_picked:
-			requirements_met_text = Gameloop.most_recent_shock.requirements_met_text_key
-
 
 func _reintroduce_nuclear():
 	for pp in get_tree().get_nodes_in_group("Powerplants"):
@@ -140,7 +135,7 @@ func _leave_nuclear():
 	
 	
 # sorry for the ugly code
-func increase_demand(longterm: bool):
+func increase_demand(_longterm: bool):
 	var year = Gameloop.year_list[Gameloop.current_turn-1]
 	Context.send_shock_parameters(Context.res_id, 1, year)
 	await Context.shocks_sent_to_model

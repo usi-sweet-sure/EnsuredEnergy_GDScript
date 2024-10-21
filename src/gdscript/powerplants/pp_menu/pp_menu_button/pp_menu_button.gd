@@ -15,8 +15,8 @@ func _ready():
 
 
 # Used when instanciating a button from "pp_menu.gd"
-func assign_powerplant(type_id: PowerplantsManager.EngineTypeIds, target_node: Node):
-	self.target_node = target_node
+func assign_powerplant(type_id: PowerplantsManager.EngineTypeIds, target_node_: Node):
+	self.target_node = target_node_
 	powerplant_type = type_id
 	_on_powerplants_metrics_updated(PowerplantsManager.powerplants_metrics)
 

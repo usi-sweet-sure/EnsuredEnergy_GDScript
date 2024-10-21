@@ -46,7 +46,7 @@ func pp_built(metrics: PowerplantMetrics):
 	history_updated.emit(self)
 
 
-func pp_construction_canceled(metrics: PowerplantMetrics):
+func pp_construction_canceled(_metrics: PowerplantMetrics):
 	# We can just delete the history for that turn
 	# since building then canceling the construction
 	# means nothing happened this turn
@@ -54,7 +54,7 @@ func pp_construction_canceled(metrics: PowerplantMetrics):
 	history_updated.emit(self)
 	
 
-func pp_deleted(metrics: PowerplantMetrics):
+func pp_deleted(_metrics: PowerplantMetrics):
 	# We can just delete the history for that turn
 	# since building then deleting
 	# means nothing happened this turn

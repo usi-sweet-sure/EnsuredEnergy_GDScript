@@ -96,7 +96,7 @@ func _unhandled_input(event):
 			hide_info_frame.emit()
 			
 
-func _on_build_button_normal_toggled(toggled_on: bool, map_emplacement: Node2D, can_build: Array[PowerplantsManager.EngineTypeIds]):
+func _on_build_button_normal_toggled(_toggled_on: bool, _map_emplacement: Node2D, _can_build: Array[PowerplantsManager.EngineTypeIds]):
 	set_pressed_no_signal(false)
 	material.set_shader_parameter("show", false)
 	hide_info_frame.emit()
@@ -109,7 +109,7 @@ func _on_build_button_in_construction_toggled(toggled_on: bool, map_emplacement:
 		hide_info_frame.emit()
 	
 
-func _on_pp_scene_toggled(_toggled_on: bool, pp_scene: PpScene):
+func _on_pp_scene_toggled(_toggled_on: bool, _pp_scene: PpScene):
 	set_pressed_no_signal(false)
 	material.set_shader_parameter("show", false)
 	hide_info_frame.emit()

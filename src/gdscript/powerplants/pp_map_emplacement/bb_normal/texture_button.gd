@@ -42,7 +42,7 @@ func _unhandled_input(event):
 			animation_player.stop()
 
 
-func _on_pp_scene_toggled(_toggled_on: bool, pp_scene: PpScene):
+func _on_pp_scene_toggled(_toggled_on: bool, _pp_scene: PpScene):
 	PowerplantsManager.hide_build_menu.emit()
 	set_pressed_no_signal(false)
 	material.set_shader_parameter("show", false)
@@ -65,14 +65,14 @@ func _on_build_button_normal_toggled(toggled_on:bool, map_emplacement: Node, _ca
 		animation_player.stop()
 	
 
-func _on_powerplant_build_requested(map_emplacement: Node2D, metrics: PowerplantMetrics):
+func _on_powerplant_build_requested(map_emplacement: Node2D, _metrics: PowerplantMetrics):
 	if map_emplacement.get_node("BbNormal") == self:
 		set_pressed_no_signal(false)
 		material.set_shader_parameter("show", false)
 		animation_player.stop()
 
 
-func _on_build_button_in_construction_toggled(toggled_on: bool, map_emplacement: Node2D):
+func _on_build_button_in_construction_toggled(_toggled_on: bool, _map_emplacement: Node2D):
 	PowerplantsManager.hide_build_menu.emit()
 	set_pressed_no_signal(false)
 	material.set_shader_parameter("show", false)

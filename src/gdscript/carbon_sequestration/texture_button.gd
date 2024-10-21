@@ -38,13 +38,13 @@ func _on_toggled(toggled_on: bool):
 	PowerplantsManager.carbon_sequestration_toggled.emit(toggled_on)
 	
 
-func _on_build_button_toggled(toggled_on: bool, map_emplacement: Node, can_build: Array[PowerplantsManager.EngineTypeIds]):
+func _on_build_button_toggled(_toggled_on: bool, _map_emplacement: Node, _can_build: Array[PowerplantsManager.EngineTypeIds]):
 	material.set_shader_parameter("show", false)
 	set_pressed_no_signal(false)
 	hide_info_frame_requested.emit()
 	
 	
-func _on_build_button_in_construction_toggled(toggled_on: bool, map_emplacement: Node2D):
+func _on_build_button_in_construction_toggled(_toggled_on: bool, _map_emplacement: Node2D):
 	material.set_shader_parameter("show", false)
 	set_pressed_no_signal(false)
 	hide_info_frame_requested.emit()

@@ -33,7 +33,7 @@ func _ready():
 		draggable.mouse_exited.connect(_on_draggable_mouse_exited)
 
 
-func _process(delta):
+func _process(_delta):
 	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and mode_to_switch_to_on_mouse_release != "":
 		mode = mode_to_switch_to_on_mouse_release
 		mode_to_switch_to_on_mouse_release = ""

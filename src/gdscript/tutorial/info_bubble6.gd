@@ -15,5 +15,5 @@ func _on_tutorial_ended():
 	TutorialManager.step_changed.disconnect(_on_step_changed)
 	
 
-func _on_step_changed(step: int):
+func _on_step_changed(_step: int):
 	visible = false

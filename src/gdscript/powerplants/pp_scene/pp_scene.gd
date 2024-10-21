@@ -29,10 +29,10 @@ func _ready():
 	Gameloop.next_turn.connect(_on_next_turn)
 
 
-func set_metrics(metrics: PowerplantMetrics):
-	self.metrics = metrics.copy()
-	texture_on_changed.emit(load(PowerplantsManager.powerplants_textures_on[metrics.type]))
-	texture_off_changed.emit(load(PowerplantsManager.powerplants_textures_off[metrics.type]))
+func set_metrics(metrics_: PowerplantMetrics):
+	self.metrics = metrics_.copy()
+	texture_on_changed.emit(load(PowerplantsManager.powerplants_textures_on[metrics_.type]))
+	texture_off_changed.emit(load(PowerplantsManager.powerplants_textures_off[metrics_.type]))
 	metrics_updated.emit(self.metrics)
 	
 
@@ -158,11 +158,9 @@ func _on_button_minus_pressed():
 	metrics.land_use -= delta_land_use
 	
 	# Winter supply
-	var delta_winter_supply = base_metrics.availability.y * base_metrics.capacity * metrics.upgrade_factor_for_winter_supply
 	metrics.availability.y -= base_metrics.availability.y * metrics.upgrade_factor_for_winter_supply
 	
 	# Summer supply
-	var delta_summer_supply = base_metrics.availability.x * base_metrics.capacity * metrics.upgrade_factor_for_summer_supply
 	metrics.availability.x -= base_metrics.availability.x * metrics.upgrade_factor_for_summer_supply
 	
 	# Upgrade cost
@@ -173,7 +171,7 @@ func _on_button_minus_pressed():
 	powerplant_downgraded.emit(metrics)
 
 
-func _on_metrics_updated(metrics):
+func _on_metrics_updated(_metrics):
 	PowerplantsManager.update_buildings_impact()
 
 

@@ -27,11 +27,6 @@ func _ready():
 	#Context.survey_token_updated.connect(_update_text)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
 func _on_close_button_pressed():
 	$"../OpenDebugFrameButton".show()
 	hide()

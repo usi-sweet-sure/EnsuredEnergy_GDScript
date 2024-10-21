@@ -26,7 +26,7 @@ func _ready():
 			_on_energy_supply_updated(Gameloop.supply_summer)
 
 
-func _process(delta):
+func _process(_delta):
 	change_bar_color()
 	
 	# The bars will have the same max_value and min_value, wich is the maximum demand
