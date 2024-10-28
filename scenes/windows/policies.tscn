@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://jj476u8yn2g8"]
+[gd_scene load_steps=71 format=3 uid="uid://jj476u8yn2g8"]
 
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/policies_window.gd" id="1_2fpqe"]
 [ext_resource type="Texture2D" uid="uid://coki776cjtqrp" path="res://assets/textures/ui/All-HQ-Assets-D_0006s_0006_Policies-metal-base.png" id="2_kxr4s"]
@@ -20,7 +20,6 @@
 [ext_resource type="Texture2D" uid="uid://dnr3tvwn2pcnj" path="res://assets/textures/ui/Policies_Button_small_Hole.png" id="18_1bsk2"]
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/start_campaign_zone/start_campaign_zone.gd" id="19_byjix"]
 [ext_resource type="Texture2D" uid="uid://dnf85brf6fkbf" path="res://assets/textures/ui/All-HQ-Assets-D_0006s_0005_Policies-(side)-metal-base.png" id="20_xl4nu"]
-[ext_resource type="Script" path="res://src/gdscript/policies/policies_window/campaing_screen_label.gd" id="21_4l5fw"]
 [ext_resource type="Texture2D" uid="uid://cy2dqdgln1uij" path="res://assets/textures/ui/LED-Off.png" id="21_leh1m"]
 [ext_resource type="Script" path="res://src/gdscript/policies/policies_window/environmental_leds.gd" id="21_xm7n5"]
 [ext_resource type="Texture2D" uid="uid://bdifhvhbdals5" path="res://assets/textures/ui/LED-On.png" id="22_0xeve"]
@@ -595,7 +594,6 @@ region_enabled = true
 region_rect = Rect2(41, 21, 14, 16)
 
 [node name="InfoScreen2" type="NinePatchRect" parent="Control/CenterFrame"]
-clip_children = 2
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -834,51 +832,6 @@ offset_bottom = 18.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("22_0xeve")
-
-[node name="Screen" type="NinePatchRect" parent="Control/LeftFrame"]
-visible = false
-clip_children = 2
-offset_left = -115.0
-offset_top = -164.0
-offset_right = 122.0
-offset_bottom = -74.0
-texture = ExtResource("10_eymcp")
-patch_margin_left = 5
-patch_margin_top = 6
-patch_margin_right = 7
-patch_margin_bottom = 5
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/LeftFrame/Screen"]
-layout_mode = 0
-offset_left = 5.0
-offset_top = 6.0
-offset_right = 229.0
-offset_bottom = 84.0
-alignment = 1
-
-[node name="Label3" type="Label" parent="Control/LeftFrame/Screen/VBoxContainer"]
-custom_minimum_size = Vector2(202, 0)
-layout_mode = 2
-theme = SubResource("Theme_34yde")
-theme_type_variation = &"Screen"
-theme_override_constants/shadow_offset_x = 2
-theme_override_font_sizes/font_size = 21
-text = "VOTING_BONUS"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Label" type="Label" parent="Control/LeftFrame/Screen/VBoxContainer"]
-custom_minimum_size = Vector2(202, 0)
-layout_mode = 2
-theme = SubResource("Theme_34yde")
-theme_type_variation = &"Screen"
-theme_override_colors/font_color = Color(0, 0.929412, 0, 1)
-theme_override_constants/shadow_offset_x = 2
-theme_override_font_sizes/font_size = 25
-text = "10 %"
-horizontal_alignment = 1
-autowrap_mode = 2
-script = ExtResource("21_4l5fw")
 
 [node name="campaign_env" parent="Control/LeftFrame" instance=ExtResource("22_gnq6m")]
 anchors_preset = 5
