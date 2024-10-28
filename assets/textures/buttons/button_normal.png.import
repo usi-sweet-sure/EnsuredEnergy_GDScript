@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b066igcqidlny"
-path="res://.godot/imported/All-HQ-Assets-D_0000s_0018_Icon-red-hover-button.png-a5e5de5a0e5df36ee487e098c2256c8a.ctex"
+uid="uid://b4m67oni44dpg"
+path="res://.godot/imported/button_normal.png-39552793ed0a8677250387d655aac21e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/ui/All-HQ-Assets-D_0000s_0018_Icon-red-hover-button.png"
-dest_files=["res://.godot/imported/All-HQ-Assets-D_0000s_0018_Icon-red-hover-button.png-a5e5de5a0e5df36ee487e098c2256c8a.ctex"]
+source_file="res://assets/textures/buttons/button_normal.png"
+dest_files=["res://.godot/imported/button_normal.png-39552793ed0a8677250387d655aac21e.ctex"]
 
 [params]
 

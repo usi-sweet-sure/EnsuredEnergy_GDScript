@@ -1,6 +1,6 @@
 extends TextureButton
 
-
+var game_ended = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	PolicyManager.policy_button_clicked.connect(_on_policy_button_clicked)
@@ -12,7 +12,8 @@ func _ready():
 func _on_policy_button_clicked(policy_id):
 	var policy = PolicyManager.get_policy(policy_id)
 	visible = not policy.policy_type == Policy.PolicyType.CAMPAIGN
-	disabled = PolicyManager.did_policy_already_passed(policy) or PolicyManager.policy_voted_this_turn != null
+	disabled = game_ended or (PolicyManager.did_policy_already_passed(policy) or PolicyManager.policy_voted_this_turn != null)
+	
 	_change_button_group()
 	
 
@@ -31,6 +32,7 @@ func _on_next_turn():
 
 
 func _on_game_ended():
+	game_ended = true
 	disabled = true
 	_change_button_group()
 

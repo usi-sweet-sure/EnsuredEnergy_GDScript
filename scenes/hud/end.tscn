@@ -24,7 +24,7 @@
 [ext_resource type="Script" path="res://src/gdscript/end/money_button.gd" id="11_gk6vr"]
 [ext_resource type="Texture2D" uid="uid://b421l4qq7mg5n" path="res://assets/textures/ui/All-HQ-Assets-D_0007s_0024_Line-energy.png" id="11_glyce"]
 [ext_resource type="StyleBox" uid="uid://yqtdxtw3vpjp" path="res://scenes/hud/energy_bar_green.tres" id="11_oy1fd"]
-[ext_resource type="Texture2D" uid="uid://bj6ubksmn350n" path="res://assets/textures/ui/Button-Hole.png" id="11_qe2lm"]
+[ext_resource type="Texture2D" uid="uid://bj6ubksmn350n" path="res://assets/textures/buttons/button_hole.png" id="11_qe2lm"]
 [ext_resource type="StyleBox" uid="uid://lco0fbxgcpii" path="res://scenes/hud/energy_bar_low.tres" id="12_2ucrx"]
 [ext_resource type="Texture2D" uid="uid://da56ki5hmlw12" path="res://assets/textures/ui/All-HQ-Assets-D_0009s_0008_Energy-Bar-base.png" id="14_tu03u"]
 [ext_resource type="Script" path="res://src/gdscript/end/trust_button.gd" id="16_ppd74"]

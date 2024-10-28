@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://rjcu72lxn4n4"]
+[gd_scene load_steps=29 format=3 uid="uid://rjcu72lxn4n4"]
 
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/settings_canvas.gd" id="1_q4she"]
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/close_button.gd" id="2_q0sqg"]
@@ -11,9 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://du2p1deh0wc0w" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0052_CTA-Press-yellow.png" id="10_ar3yn"]
 [ext_resource type="Texture2D" uid="uid://cjob6p34oigtg" path="res://assets/textures/buttons/button_square_yellow_hover_.png" id="11_he6ua"]
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/language_button.gd" id="12_47lq4"]
-[ext_resource type="Texture2D" uid="uid://b4m67oni44dpg" path="res://assets/textures/ui/Button-normal.png" id="13_mepng"]
-[ext_resource type="Texture2D" uid="uid://60dl810b25fd" path="res://assets/textures/ui/Button-press.png" id="14_ddynd"]
-[ext_resource type="Texture2D" uid="uid://cuhckno2t6g0r" path="res://assets/textures/ui/Button-hover.png" id="15_8tsm0"]
+[ext_resource type="Texture2D" uid="uid://b4m67oni44dpg" path="res://assets/textures/buttons/button_normal.png" id="13_mepng"]
+[ext_resource type="Texture2D" uid="uid://60dl810b25fd" path="res://assets/textures/buttons/button_press.png" id="14_ddynd"]
+[ext_resource type="Texture2D" uid="uid://cuhckno2t6g0r" path="res://assets/textures/buttons/button_hover.png" id="15_8tsm0"]
+[ext_resource type="Texture2D" uid="uid://0gmf2lgw35ib" path="res://assets/textures/buttons/button_disabled.png" id="16_h81ob"]
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/instructions_button.gd" id="16_qwrhs"]
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/credits_button.gd" id="17_wuphf"]
 [ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="19_d2swd"]
@@ -270,6 +271,7 @@ focus_mode = 0
 texture_normal = ExtResource("13_mepng")
 texture_pressed = ExtResource("14_ddynd")
 texture_hover = ExtResource("15_8tsm0")
+texture_disabled = ExtResource("16_h81ob")
 script = ExtResource("16_qwrhs")
 
 [node name="Label" type="Label" parent="Control/SettingsBox/MarginContainer2/VBoxContainer/Instructions"]

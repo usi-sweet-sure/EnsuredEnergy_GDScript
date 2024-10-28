@@ -10,6 +10,7 @@ func _ready():
 	%player_name.placeholder_text = tr("PLAYER_NAME_PLACEHOLDER")
 	Context.player_name_changed.connect(_on_player_name_changed)
 
+
 func _on_game_ended():
 	show()
 	

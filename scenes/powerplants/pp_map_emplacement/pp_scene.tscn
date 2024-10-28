@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://vaxkewvk14v6"]
+[gd_scene load_steps=63 format=3 uid="uid://vaxkewvk14v6"]
 
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/pp_scene.gd" id="1_aeq33"]
 [ext_resource type="Shader" path="res://src/gdscript/shaders/outline.gdshader" id="2_ln53j"]
@@ -53,6 +53,7 @@
 [ext_resource type="Texture2D" uid="uid://dhxkhfg2qxlgx" path="res://assets/textures/buttons/switch_off.png" id="48_v7xmt"]
 [ext_resource type="Texture2D" uid="uid://cy2dqdgln1uij" path="res://assets/textures/ui/LED-Off.png" id="50_4kj3p"]
 [ext_resource type="Texture2D" uid="uid://bdifhvhbdals5" path="res://assets/textures/ui/LED-On.png" id="52_yd2jm"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_scene/info_frame/end_game_block.gd" id="55_xmnw1"]
 [ext_resource type="Texture2D" uid="uid://b2yd4yb25s4ff" path="res://assets/textures/borders/stamp_border_red.png" id="56_lvm07"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rxno2"]
@@ -1342,8 +1343,8 @@ scale = Vector2(2, 2)
 focus_mode = 0
 mouse_default_cursor_shape = 2
 theme_override_icons/checked = ExtResource("47_pyblj")
-theme_override_icons/checked_disabled = ExtResource("47_pyblj")
 theme_override_icons/unchecked = ExtResource("48_v7xmt")
+theme_override_icons/checked_disabled = ExtResource("47_pyblj")
 theme_override_icons/unchecked_disabled = ExtResource("48_v7xmt")
 button_pressed = true
 action_mode = 0
@@ -1435,6 +1436,16 @@ theme_override_colors/font_color = Color(0.910287, 0.283595, 0.211318, 1)
 theme_override_font_sizes/font_size = 70
 text = "DECOMISSIONED"
 horizontal_alignment = 1
+
+[node name="EndGameBlock" type="ColorRect" parent="InfoFrame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+script = ExtResource("55_xmnw1")
 
 [connection signal="hide_info_frame" from="." to="InfoFrame" method="_on_hide_info_frame"]
 [connection signal="metrics_updated" from="." to="." method="_on_metrics_updated"]

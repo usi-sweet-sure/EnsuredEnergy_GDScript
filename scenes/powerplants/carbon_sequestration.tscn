@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cl2v31dxkoeoq"]
+[gd_scene load_steps=33 format=3 uid="uid://cl2v31dxkoeoq"]
 
 [ext_resource type="Texture2D" uid="uid://cbqebssavvctr" path="res://assets/textures/powerplants/pp_sprite_on_carbon_sequestration.png" id="2_ooeel"]
 [ext_resource type="Shader" path="res://src/gdscript/shaders/outline.gdshader" id="2_xbwqu"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bpt1e486wuscd" path="res://assets/textures/icons/chalk_emission.png" id="12_uy1vn"]
 [ext_resource type="Texture2D" uid="uid://fe0i52vl7ck6" path="res://assets/textures/ui/All-HQ-Assets-D_0007s_0006_Slider-bar-horizontal.png" id="14_httvl"]
 [ext_resource type="Texture2D" uid="uid://xmi4fk7xmp5j" path="res://assets/textures/ui/All-HQ-Assets-D_0007s_0032_Ball-Slider.png" id="15_axucn"]
+[ext_resource type="Script" path="res://src/gdscript/carbon_sequestration/end_game_block.gd" id="18_x7ve3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8ca5d"]
 shader = ExtResource("2_xbwqu")
@@ -401,6 +402,16 @@ step = 0.02
 scrollable = false
 ticks_on_borders = true
 script = ExtResource("11_dcx5m")
+
+[node name="EndGameBlock" type="ColorRect" parent="InfoFrame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+script = ExtResource("18_x7ve3")
 
 [connection signal="hide_info_frame_requested" from="TextureButton" to="InfoFrame" method="_on_hide_info_frame_requested"]
 [connection signal="mouse_entered" from="TextureButton" to="TextureButton" method="_on_mouse_entered"]

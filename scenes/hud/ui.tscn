@@ -1,4 +1,4 @@
-[gd_scene load_steps=182 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=183 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/textures/ui/Button-Next-Normal.png" id="2_aobed"]
 [ext_resource type="Texture2D" uid="uid://ccsapuvkqqt1b" path="res://assets/textures/ui/All-HQ-Assets-D_0006s_0009_Profile-metal-base.png" id="2_nu7y6"]
@@ -11,7 +11,7 @@
 [ext_resource type="Script" path="res://src/gdscript/policies/hud/policies_label.gd" id="4_jixb5"]
 [ext_resource type="Texture2D" uid="uid://c25aef4m4yd40" path="res://assets/textures/ui/Button-Next-Hover.png" id="4_mh4j1"]
 [ext_resource type="Texture2D" uid="uid://b2jlabpuug28x" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0015_Settings-symbol.png" id="5_55id7"]
-[ext_resource type="Texture2D" uid="uid://60dl810b25fd" path="res://assets/textures/ui/Button-press.png" id="5_hh5pc"]
+[ext_resource type="Texture2D" uid="uid://60dl810b25fd" path="res://assets/textures/buttons/button_press.png" id="5_hh5pc"]
 [ext_resource type="PackedScene" uid="uid://c81iji81uc4g7" path="res://scenes/hud/import.tscn" id="5_ps4b6"]
 [ext_resource type="PackedScene" uid="uid://885lty3v1qbq" path="res://scenes/windows/shock.tscn" id="5_tj765"]
 [ext_resource type="Texture2D" uid="uid://cgf1xjsx0mfot" path="res://assets/textures/ui/Button-Next-Base.png" id="7_g7ih8"]
@@ -53,7 +53,7 @@
 [ext_resource type="Script" path="res://src/gdscript/hud/money_management/money_info_box/import_cost_label.gd" id="37_tnewl"]
 [ext_resource type="Texture2D" uid="uid://dlccss1xvy8tb" path="res://assets/textures/ui/Button-Square-hover.png" id="38_7v12r"]
 [ext_resource type="Texture2D" uid="uid://bttco1oeukpbq" path="res://assets/textures/ui/Environment-Bar.png" id="38_jqypa"]
-[ext_resource type="Texture2D" uid="uid://bj6ubksmn350n" path="res://assets/textures/ui/Button-Hole.png" id="39_jsaox"]
+[ext_resource type="Texture2D" uid="uid://bj6ubksmn350n" path="res://assets/textures/buttons/button_hole.png" id="39_jsaox"]
 [ext_resource type="Script" path="res://src/gdscript/hud/money_management/money_info_box/building_cost_label.gd" id="39_y30hd"]
 [ext_resource type="Script" path="res://src/gdscript/hud/money_management/borrow_money_frame/apply_button.gd" id="40_kt3h3"]
 [ext_resource type="Texture2D" uid="uid://b34opid7c6qf6" path="res://assets/textures/ui/Pollution-Bar.png" id="41_ctrnv"]
@@ -90,8 +90,8 @@
 [ext_resource type="Texture2D" uid="uid://behxblj10y4lm" path="res://assets/textures/ui/Build_Menu_0004_Build-Menu-Screen.png" id="61_ni5qv"]
 [ext_resource type="Script" path="res://src/gdscript/graphs/fake_graph_button.gd" id="61_va247"]
 [ext_resource type="Script" path="res://src/gdscript/hud/emissions/emissions_gauge_arrow.gd" id="62_7mist"]
-[ext_resource type="Texture2D" uid="uid://b4m67oni44dpg" path="res://assets/textures/ui/Button-normal.png" id="62_orw34"]
-[ext_resource type="Texture2D" uid="uid://cuhckno2t6g0r" path="res://assets/textures/ui/Button-hover.png" id="63_c1xpc"]
+[ext_resource type="Texture2D" uid="uid://b4m67oni44dpg" path="res://assets/textures/buttons/button_normal.png" id="62_orw34"]
+[ext_resource type="Texture2D" uid="uid://cuhckno2t6g0r" path="res://assets/textures/buttons/button_hover.png" id="63_c1xpc"]
 [ext_resource type="Script" path="res://src/gdscript/hud/money_management/borrow_money_frame/borrow_money_frame.gd" id="63_sky43"]
 [ext_resource type="Script" path="res://src/gdscript/hud/money_management/borrow_money_frame/borrow_amount_label.gd" id="65_rjxqh"]
 [ext_resource type="Script" path="res://src/gdscript/hud/money_management/borrow_money_frame/borrow_money_slider.gd" id="66_0vfa5"]
@@ -133,6 +133,7 @@
 [ext_resource type="Script" path="res://src/gdscript/shocks/shock_buttons_drawer/shock_buttons_drawer.gd" id="126_ky6x4"]
 [ext_resource type="Texture2D" uid="uid://byhs2falwauts" path="res://assets/textures/ui/clock_ring.png" id="128_7na6l"]
 [ext_resource type="Script" path="res://src/gdscript/hud/next_turn_button/next_turn_overlay.gd" id="133_g5xys"]
+[ext_resource type="Script" path="res://src/gdscript/hud/show_end_button.gd" id="134_ba0nv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3tdw6"]
 bg_color = Color(0.65098, 0.65098, 0.65098, 0.0470588)
@@ -3036,6 +3037,33 @@ libraries = {
 "": SubResource("AnimationLibrary_il5wv")
 }
 
+[node name="ShowEnd" type="TextureButton" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -56.5
+offset_top = 105.0
+offset_right = 136.5
+offset_bottom = 188.0
+grow_horizontal = 2
+texture_normal = ExtResource("62_orw34")
+texture_pressed = ExtResource("5_hh5pc")
+texture_hover = ExtResource("63_c1xpc")
+script = ExtResource("134_ba0nv")
+
+[node name="Label" type="Label" parent="ShowEnd"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_8s8ds")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "RESULTS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="TopLeftZone/OpenGraphsFrameButton" to="TopLeftZone/OpenGraphsFrameButton" method="_on_pressed"]
 [connection signal="pressed" from="TopLeftZone/MoneyManagement/MoneyInfo/ToggleMoneyInfoBoxButton" to="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox" method="_on_toggle_money_info_box_button_pressed"]
 [connection signal="pressed" from="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MoreMoneyInfoButton" to="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/InfoMoneyClosed" method="_on_more_money_info_button_pressed"]
@@ -3067,6 +3095,7 @@ libraries = {
 [connection signal="pressed" from="NextTurn" to="Clock/TimePanelBlank" method="_on_next_turn_button_pressed"]
 [connection signal="pressed" from="Clock/TurnInfo" to="Clock/TimePanelBlank" method="clock_pressed"]
 [connection signal="pressed" from="OpenSettingsButton" to="OpenSettingsButton" method="_on_pressed"]
+[connection signal="pressed" from="ShowEnd" to="ShowEnd" method="_on_pressed"]
 
 [editable path="TopLeftZone/MoneyManagement/AvailableMoneyAmount/FloatingMessage/FloatingMessage"]
 [editable path="TopLeftZone/Policies/Trust/BarInfo"]
