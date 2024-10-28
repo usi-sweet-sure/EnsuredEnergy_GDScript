@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://885lty3v1qbq"]
+[gd_scene load_steps=24 format=3 uid="uid://885lty3v1qbq"]
 
 [ext_resource type="Script" path="res://src/gdscript/shocks/shock_window/shock_window.gd" id="1_h0du7"]
 [ext_resource type="Texture2D" uid="uid://bk3lb51erle8l" path="res://assets/textures/backplates/backplate_1.png" id="2_06ydw"]
@@ -25,57 +25,53 @@
 
 [sub_resource type="Theme" id="Theme_jkqh0"]
 
-[sub_resource type="Animation" id="Animation_hvy7n"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Background:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_0i7qt"]
-resource_name = "popUp"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Background:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_wm02j"]
-_data = {
-"RESET": SubResource("Animation_hvy7n"),
-"popUp": SubResource("Animation_0i7qt")
-}
-
 [node name="Shock" type="CanvasLayer"]
 script = ExtResource("1_h0du7")
 
-[node name="Background" type="Panel" parent="."]
-self_modulate = Color(1, 1, 1, 0)
+[node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.168627, 0.168627, 0.168627, 0.862745)
 
 [node name="ShockWindow" type="Sprite2D" parent="."]
-position = Vector2(1044, 487)
+position = Vector2(960, 540)
 texture = ExtResource("2_06ydw")
+
+[node name="Requirements" type="Control" parent="ShockWindow"]
+show_behind_parent = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -11.0
+offset_top = -237.0
+offset_right = 381.0
+offset_bottom = -18.0
+script = ExtResource("21_y600v")
+
+[node name="BackPlate" type="Sprite2D" parent="ShockWindow/Requirements"]
+scale = Vector2(0.495062, 0.393414)
+texture = ExtResource("2_37dlb")
+centered = false
+
+[node name="Title" type="Label" parent="ShockWindow/Requirements"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 6.0
+offset_right = 394.0
+offset_bottom = 29.0
+text = "SHOCK_REQUIREMENT_MET_TITLE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="requirements_met_text" type="RichTextLabel" parent="ShockWindow/Requirements"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 59.0
+offset_right = 353.0
+offset_bottom = 195.0
+script = ExtResource("21_ctbuo")
 
 [node name="ColorRect" type="ColorRect" parent="ShockWindow"]
 self_modulate = Color(1, 1, 1, 0)
@@ -122,13 +118,19 @@ offset_left = -155.5
 offset_right = 164.5
 offset_bottom = 147.0
 grow_horizontal = 2
+mouse_force_pass_scroll_events = false
 theme = ExtResource("5_0qiv1")
 theme_type_variation = &"Screen"
 theme_override_colors/default_color = Color(0.219608, 0.756863, 0.788235, 1)
 theme_override_fonts/normal_font = ExtResource("6_2gnt4")
 theme_override_font_sizes/normal_font_size = 20
 text = "The past few winters have been colder than usual, increasing the energy demand in winter by 
-50 ⚡."
+50 ⚡.fdjnsafdsan fd
+sf
+sd 
+fds
+fds
+a"
 script = ExtResource("7_6m7uh")
 
 [node name="Reactions" type="Control" parent="ShockWindow/ColorRect"]
@@ -308,44 +310,6 @@ text = "Continue"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
-
-[node name="Requirements" type="Control" parent="ShockWindow"]
-show_behind_parent = true
-layout_mode = 3
-anchors_preset = 0
-offset_left = -11.0
-offset_top = -237.0
-offset_right = 381.0
-offset_bottom = -18.0
-script = ExtResource("21_y600v")
-
-[node name="BackPlate" type="Sprite2D" parent="ShockWindow/Requirements"]
-scale = Vector2(0.495062, 0.393414)
-texture = ExtResource("2_37dlb")
-centered = false
-
-[node name="Title" type="Label" parent="ShockWindow/Requirements"]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 6.0
-offset_right = 394.0
-offset_bottom = 29.0
-text = "SHOCK_REQUIREMENT_MET_TITLE"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="requirements_met_text" type="RichTextLabel" parent="ShockWindow/Requirements"]
-layout_mode = 0
-offset_left = 42.0
-offset_top = 59.0
-offset_right = 353.0
-offset_bottom = 195.0
-script = ExtResource("21_ctbuo")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_wm02j")
-}
 
 [connection signal="pressed" from="ShockWindow/ColorRect/Reactions/Button" to="ShockWindow/ColorRect/Reactions" method="_on_button1_pressed"]
 [connection signal="pressed" from="ShockWindow/ColorRect/Reactions/Button" to="ShockWindow/ColorRect/Reactions/Button" method="_on_pressed"]

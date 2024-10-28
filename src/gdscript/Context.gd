@@ -83,6 +83,8 @@ func send_shock_parameters(game_id: int, shock_id: int, year: int):
 
 
 func get_demand_from_context():
+	print("get demand from context")
+	print(ctx)
 	for i in ctx:
 		if i["prm_id"] == "455":
 			Gameloop.demand_summer = float(i["tj"]) / 100.0
