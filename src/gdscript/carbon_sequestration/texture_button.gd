@@ -13,6 +13,8 @@ var drag_tolerance = Vector2(5.0, 5.0)
 
 
 func _ready():
+	TutorialManager.tutorial_started.connect(_on_tutorial_started)
+	TutorialManager.tutorial_ended.connect(_on_tutorial_ended)
 	PowerplantsManager.build_button_normal_toggled.connect(_on_build_button_toggled)
 	PowerplantsManager.build_button_in_construction_toggled.connect(_on_build_button_in_construction_toggled)
 	PowerplantsManager.pp_scene_toggled.connect(_on_pp_scene_toggled)
@@ -77,3 +79,11 @@ func _on_mouse_entered():
 
 func _on_mouse_exited():
 	set_modulate(Color(1, 1, 1))
+
+
+func _on_tutorial_started():
+	hide()
+	
+	
+func _on_tutorial_ended():
+	show()

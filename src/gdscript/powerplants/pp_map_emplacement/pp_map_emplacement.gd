@@ -5,6 +5,8 @@ class_name PpMapEmplacement
 signal history_updated(history: MapEmplacementHistory)
 
 
+@export var is_for_tutorial = false
+
 # Editor will enumerate as 0, 1 and 2.
 # MUST BE in same order as PowerplantManager.EngineTypeIds
 @export_enum(
@@ -111,6 +113,8 @@ var powerplant_node_name: String = ""
 var history: MapEmplacementHistory
 
 func _ready():
+	TutorialManager.tutorial_started.connect(_on_tutorial_started)
+	TutorialManager.tutorial_ended.connect(_on_tutorial_ended)
 	PowerplantsManager.powerplant_build_requested.connect(_on_powerplant_build_requested)
 	history = MapEmplacementHistory.new()
 	history.history_updated.connect(_on_history_updated)
@@ -310,3 +314,11 @@ func _on_pp_downgraded(metrics: PowerplantMetrics):
 
 func _on_history_updated(history_: MapEmplacementHistory):
 	history_updated.emit(history_)
+
+
+func _on_tutorial_started():
+	visible = is_for_tutorial
+	
+	
+func _on_tutorial_ended():
+	visible = not is_for_tutorial
