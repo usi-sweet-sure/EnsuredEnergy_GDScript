@@ -48,7 +48,7 @@ offset_top = -2073.0
 offset_right = 5806.0
 offset_bottom = 4232.0
 mouse_filter = 2
-color = Color(0.546875, 0.710938, 0.523438, 1)
+color = Color(0.466749, 0.625627, 0.444288, 1)
 
 [node name="World" parent="." instance=ExtResource("1_prp6q")]
 position = Vector2(-244, 170)
