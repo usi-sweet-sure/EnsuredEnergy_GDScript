@@ -402,10 +402,10 @@ texture = ExtResource("24_wyual")
 centered = false
 
 [node name="CloseButton2" parent="." instance=ExtResource("25_fga0w")]
-offset_left = 1136.0
-offset_top = 61.0
-offset_right = 1172.0
-offset_bottom = 96.0
+offset_left = 1143.0
+offset_top = 40.0
+offset_right = 1195.0
+offset_bottom = 91.0
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("26_1fovc")
