@@ -6,6 +6,7 @@ extends Control
 func _ready():
 	hide()
 	HttpManager.http_request_active_updated.connect(_on_http_request_updated)
+	Gameloop.game_ended.connect(_on_game_ended)
 	
 	
 func _on_http_request_updated(active: bool):
@@ -15,3 +16,8 @@ func _on_http_request_updated(active: bool):
 	else:
 		hide()
 		animation_player.stop()
+
+
+func _on_game_ended():
+	HttpManager.http_request_active_updated.disconnect(_on_http_request_updated)
+	hide()

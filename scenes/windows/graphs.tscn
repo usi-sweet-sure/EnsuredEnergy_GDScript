@@ -17,17 +17,17 @@
 [ext_resource type="Texture2D" uid="uid://cischtrjvknyl" path="res://assets/textures/icons/sticker_winter.png" id="14_how0c"]
 [ext_resource type="PackedScene" uid="uid://chpn7t75mmbkh" path="res://scenes/buttons/button_close.tscn" id="16_31wqe"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oeq43"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_68mq4"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ylbn1"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5rdm6"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fj5ch"]
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ll5vj"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ylbn1"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fj5ch"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_68mq4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oeq43"]
 
 [node name="Graphs" type="CanvasLayer"]
 script = ExtResource("1_vog1l")
@@ -46,7 +46,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.0646965, 0.0646965, 0.0646965, 0.54902)
+color = Color(0.168627, 0.168627, 0.168627, 0.862745)
 
 [node name="Close" type="Button" parent="Backdrop"]
 layout_mode = 2
@@ -211,16 +211,16 @@ stretch_mode = 3
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_icons/checked = ExtResource("9_iw48x")
-theme_override_icons/checked_disabled = ExtResource("9_iw48x")
-theme_override_icons/unchecked = ExtResource("10_t8yel")
-theme_override_icons/unchecked_disabled = ExtResource("10_t8yel")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_oeq43")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_68mq4")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_5rdm6")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_fj5ch")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_ll5vj")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ylbn1")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5rdm6")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_ll5vj")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_fj5ch")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_68mq4")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_oeq43")
+theme_override_icons/checked = ExtResource("9_iw48x")
+theme_override_icons/unchecked = ExtResource("10_t8yel")
+theme_override_icons/checked_disabled = ExtResource("9_iw48x")
+theme_override_icons/unchecked_disabled = ExtResource("10_t8yel")
 
 [node name="Winter" type="TextureRect" parent="MainFrame/RightContainer/SeasonSwitch"]
 layout_mode = 2

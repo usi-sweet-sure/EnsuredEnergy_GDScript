@@ -110,8 +110,8 @@ var powerplants_life_spans_in_turns: Array[int] = [
 
 # MUST BE in the same order as EngineTypeIds
 var powerplants_max_upgrades: Array[int] = [
-	1, # Solar
-	2, # Wind
+	5, # Solar
+	5, # Wind
 	3, # Gas
 	3, # Waste
 	2, # Biomass

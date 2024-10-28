@@ -12,6 +12,7 @@ func _ready():
 		button.connect("pressed", _on_leaderboard_button_pressed.bind(num))
 		num += 1
 
+
 func _on_graph_context_changed(context: String):
 	visible = context == "none"
 
@@ -53,6 +54,7 @@ func _on_end_metrics_rank_updated(rank):
 	%player_name.text = _assert_not_null(rank[0]["res_name"])
 	%player_score.text = _assert_not_null(rank[0]["met_ele"]).pad_decimals(2) + metric_list[2]
 	%player_rank.text = _assert_not_null(rank[0]["rnk_ele"])
+
 
 func _assert_not_null(val: Variant):
 	if val == null:

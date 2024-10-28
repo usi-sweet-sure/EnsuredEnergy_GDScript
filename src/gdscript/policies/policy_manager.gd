@@ -64,7 +64,7 @@ func _ready():
 			"POLICIES_ENVIRONMENTAL_POLICY_1_TEXT", 0.8, Policy.PolicyType.ENVIRONMENTAL,
 			"ENABLE ALPINE SOLAR PV")
 	env_policy_1.add_effect("POLICIES_ENVIRONMENTAL_POLICY_1_EFFECT_1", 
-			func(): increase_max_upgrade(3, PowerplantsManager.EngineTypeIds.SOLAR))
+			func(): increase_max_upgrade(8, PowerplantsManager.EngineTypeIds.SOLAR))
 			
 	var env_policy_2 = Policy.new("POLICIES_ENVIRONMENTAL_POLICY_2_TITLE",
 			"POLICIES_ENVIRONMENTAL_POLICY_2_TEXT", 0.6, Policy.PolicyType.ENVIRONMENTAL,
@@ -75,7 +75,7 @@ func _ready():
 	var env_policy_3 = Policy.new("POLICIES_ENVIRONMENTAL_POLICY_3_TITLE",
 			"POLICIES_ENVIRONMENTAL_POLICY_3_TEXT", 0.5, Policy.PolicyType.ENVIRONMENTAL, "WIND PARKS REGULATION")		
 	env_policy_3.add_effect("POLICIES_ENVIRONMENTAL_POLICY_3_EFFECT_1", 
-			func(): increase_max_upgrade(5, PowerplantsManager.EngineTypeIds.WIND))
+			func(): increase_max_upgrade(8, PowerplantsManager.EngineTypeIds.WIND))
 	
 	var energy_policy_1 = Policy.new("POLICIES_ENERGY_POLICY_1_TITLE",
 			"POLICIES_ENERGY_POLICY_1_TEXT", 0.7, Policy.PolicyType.ENERGY, "MANDATORY BUILDING INSULATION")

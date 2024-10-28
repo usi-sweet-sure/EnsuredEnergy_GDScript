@@ -344,4 +344,3 @@ func change_point_highlight(point: ColorRect, highlight := true):
 		point.position -= default_point_size / (move_factor)
 	else:
 		point.position += default_point_size / (move_factor)
-
