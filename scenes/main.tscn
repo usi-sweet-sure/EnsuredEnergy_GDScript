@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://g58p7rxvcdik"]
+[gd_scene load_steps=20 format=3 uid="uid://g58p7rxvcdik"]
 
 [ext_resource type="PackedScene" uid="uid://ba56oxmvcxpos" path="res://scenes/world.tscn" id="1_prp6q"]
 [ext_resource type="PackedScene" uid="uid://bs48lirfn2fp2" path="res://scenes/hud/ui.tscn" id="2_d60f5"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://co6w7mqwohn4h" path="res://scenes/Credits/credits.tscn" id="17_nfvbd"]
 [ext_resource type="PackedScene" uid="uid://dqg3dfo1ggbao" path="res://scenes/cursor_tooltip.tscn" id="18_a1i53"]
 [ext_resource type="PackedScene" uid="uid://pvoi2mcc3oc1" path="res://scenes/hud/menu.tscn" id="18_h65u3"]
+[ext_resource type="PackedScene" uid="uid://jj476u8yn2g8" path="res://scenes/windows/policies.tscn" id="19_dtfm3"]
 [ext_resource type="PackedScene" uid="uid://cej4dlw11su6f" path="res://scenes/hud/end.tscn" id="21_7pke6"]
 [ext_resource type="PackedScene" uid="uid://det4mobxk3l42" path="res://scenes/loading_screen.tscn" id="23_bmtug"]
 [ext_resource type="PackedScene" uid="uid://cuuj2s4h1588i" path="res://scenes/audio.tscn" id="34_smnob"]
@@ -190,6 +191,9 @@ offset_left = -960.0
 offset_top = -540.0
 offset_right = -2880.0
 offset_bottom = -1620.0
+
+[node name="Policies" parent="." instance=ExtResource("19_dtfm3")]
+visible = false
 
 [connection signal="pressed" from="TestLayer/TestButtons/ButtonTop" to="TestLayer/TestButtons" method="_on_button_top_pressed"]
 [connection signal="pressed" from="TestLayer/TestButtons/ButtonBottom" to="TestLayer/TestButtons" method="_on_button_bottom_pressed"]

@@ -143,7 +143,7 @@ func get_policy(inspector_id: String):
 	return policies.filter(func(policy): return policy.inspector_id == inspector_id)[0]
 	
 
-func _on_policy_button_clicked(policy_id):
+func _on_policy_button_clicked(policy_id: String):
 	last_policy_clicked = get_policy(policy_id)
 	
 

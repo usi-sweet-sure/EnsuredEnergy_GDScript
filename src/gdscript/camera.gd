@@ -133,10 +133,8 @@ func _on_tutorial_ended():
 	#zoom_tween.tween_property(self, "zoom", PLANT_ZOOM, ZOOM_ANIMATION_DURATION + 0.1);
 
 func _on_block_camera():
-	print("jnfdsnfdsélnfslé...")
 	camera_blocked = true
 	
 
 func _on_unlock_camera():
-	print("jnfdsnfdsélnfslé")
 	camera_blocked = false

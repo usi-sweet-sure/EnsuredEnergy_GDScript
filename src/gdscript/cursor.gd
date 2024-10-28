@@ -38,7 +38,7 @@ func _process(_delta):
 		mode = mode_to_switch_to_on_mouse_release
 		mode_to_switch_to_on_mouse_release = ""
 	
-	# The cursor mode is not changed, doing so make the cursor jitter on high refresh rate screens
+	# The cursor mode is not changed, doing so makes the cursor jitter on high refresh rate screens
 	match mode:
 		"normal":
 			if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=183 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=182 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/textures/ui/Button-Next-Normal.png" id="2_aobed"]
 [ext_resource type="Texture2D" uid="uid://ccsapuvkqqt1b" path="res://assets/textures/ui/All-HQ-Assets-D_0006s_0009_Profile-metal-base.png" id="2_nu7y6"]
@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://c81iji81uc4g7" path="res://scenes/hud/import.tscn" id="5_ps4b6"]
 [ext_resource type="PackedScene" uid="uid://885lty3v1qbq" path="res://scenes/windows/shock.tscn" id="5_tj765"]
 [ext_resource type="Texture2D" uid="uid://cgf1xjsx0mfot" path="res://assets/textures/ui/Button-Next-Base.png" id="7_g7ih8"]
-[ext_resource type="PackedScene" uid="uid://jj476u8yn2g8" path="res://scenes/windows/policies.tscn" id="7_yu7g8"]
 [ext_resource type="Texture2D" uid="uid://en44frv5c6jy" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0014_graphs-symbol.png" id="9_01q4h"]
 [ext_resource type="Script" path="res://src/gdscript/graphs/open_graphs_frame_button.gd" id="9_xq6mg"]
 [ext_resource type="AudioStream" uid="uid://ben5r72x0p8pr" path="res://assets/sounds/move.wav" id="10_po2ll"]
@@ -2933,10 +2932,6 @@ position = Vector2(11, 11)
 scale = Vector2(0.471698, 0.471698)
 texture = ExtResource("5_55id7")
 centered = false
-
-[node name="Policies" parent="." instance=ExtResource("7_yu7g8")]
-layer = 3
-visible = false
 
 [node name="ShockButtonsDrawer" type="Control" parent="."]
 layout_mode = 3

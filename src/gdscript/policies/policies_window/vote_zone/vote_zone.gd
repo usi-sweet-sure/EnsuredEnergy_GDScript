@@ -9,7 +9,7 @@ func _ready():
 	Gameloop.game_ended.connect(_on_game_ended)
 
 
-func _on_policy_button_clicked(policy_id):
+func _on_policy_button_clicked(policy_id: String):
 	var policy = PolicyManager.get_policy(policy_id)
 	visible = not policy.policy_type == Policy.PolicyType.CAMPAIGN
 	disabled = game_ended or (PolicyManager.did_policy_already_passed(policy) or PolicyManager.policy_voted_this_turn != null)

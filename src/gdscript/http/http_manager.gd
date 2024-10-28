@@ -15,6 +15,7 @@ var http1: HTTPRequest
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	http1 = HTTPRequest.new()
+	http1.accept_gzip = false
 	add_child(http1)
 	http1.request_completed.connect(_on_http1_request_completed)
 	
