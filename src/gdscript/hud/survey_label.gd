@@ -6,15 +6,20 @@ func _ready() -> void:
 	SurveyManager.token_updated.connect(_on_token_updated)
 	SurveyManager.survey_ping_requested.connect(_on_ping_requested)
 	SurveyManager.back_to_survey_requested.connect(_on_back_to_survey)
+	SurveyManager.frame_updated.connect(_on_frame_updated)
 
 
 func _on_token_updated(token: String):
-	text += "\ntoken updated : " + token
+	text += "\nToken updated : " + token
 
 
 func _on_ping_requested():
-	text += "\nping requested"
+	text += "\nPinged survey"
 	
 	
 func _on_back_to_survey():
-	text += "\nback to survey"
+	text += "\nBack to survey tab should open"
+
+
+func _on_frame_updated(frame: int):
+	text += "\nFrame updated: " + str(frame)
