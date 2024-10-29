@@ -38,7 +38,7 @@ func _on_confirm_button_pressed():
 		black_screen.show()
 		black_screen.play_text()
 		Context.get_rank(Context.res_id)
-		get_tree().create_timer(1).timeout.connect(_on_quit_timeout)
+		get_tree().create_timer(5).timeout.connect(_on_quit_timeout)
 	else:
 		# Nothing special to do on desktop, we just leave the game
 		Context.get_rank(Context.res_id)
