@@ -32,6 +32,7 @@ func _ready():
 	CameraManager.block_camera.connect(_on_block_camera)
 	CameraManager.unlock_camera.connect(_on_unlock_camera)
 	
+	
 func _physics_process(delta):
 	if not camera_blocked:
 		# Arrow key camera movement
@@ -131,6 +132,7 @@ func _on_tutorial_ended():
 	#position_tween.tween_property(self, "position", plant_pos, ZOOM_ANIMATION_DURATION + 0.1);
 	#var zoom_tween = get_tree().create_tween();
 	#zoom_tween.tween_property(self, "zoom", PLANT_ZOOM, ZOOM_ANIMATION_DURATION + 0.1);
+
 
 func _on_block_camera():
 	camera_blocked = true

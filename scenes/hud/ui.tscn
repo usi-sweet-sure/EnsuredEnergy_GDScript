@@ -1189,7 +1189,6 @@ offset_right = 208.0
 offset_bottom = 219.0
 grow_horizontal = 0
 focus_mode = 0
-mouse_default_cursor_shape = 2
 flat = true
 alignment = 0
 
