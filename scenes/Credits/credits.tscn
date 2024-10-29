@@ -2,10 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://dvph1wklx4pfh" path="res://assets/textures/ui/Paper-Big.png" id="1_b7k2c"]
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/credits.gd" id="2_0y38i"]
-[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/Fonts/label_themes.tres" id="3_5yoe6"]
+[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="3_5yoe6"]
 [ext_resource type="PackedScene" uid="uid://chpn7t75mmbkh" path="res://scenes/buttons/button_close.tscn" id="4_fp272"]
-[ext_resource type="Texture2D" uid="uid://d0phf45274ejw" path="res://assets/BFE_Logo.png" id="5_rfmq0"]
-[ext_resource type="Texture2D" uid="uid://ba1qj2x30q805" path="res://assets/SweetSureLogo.png" id="6_55tnv"]
+[ext_resource type="Texture2D" uid="uid://d0phf45274ejw" path="res://assets/bfe.png" id="5_rfmq0"]
+[ext_resource type="Texture2D" uid="uid://ba1qj2x30q805" path="res://assets/sweet_sure.png" id="6_55tnv"]
 
 [node name="Credits" type="CanvasLayer"]
 script = ExtResource("2_0y38i")

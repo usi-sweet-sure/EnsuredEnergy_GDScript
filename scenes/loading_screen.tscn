@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://det4mobxk3l42"]
 
 [ext_resource type="Script" path="res://src/gdscript/loading_screen/loading_screen.gd" id="1_6wpr7"]
+[ext_resource type="Texture2D" uid="uid://g3u1s5bprqyt" path="res://assets/sure.jpg" id="2_0tah3"]
 [ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="2_l02pl"]
-[ext_resource type="Texture2D" uid="uid://byd72pq50epax" path="res://assets/SURELogo.png" id="2_uxe4p"]
 
 [sub_resource type="Animation" id="Animation_vhawi"]
 resource_name = "loading"
@@ -100,7 +100,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="SURELogos" type="Sprite2D" parent="."]
 position = Vector2(960, 541)
-texture = ExtResource("2_uxe4p")
+texture = ExtResource("2_0tah3")
 
 [node name="Label" type="Label" parent="."]
 visible = false

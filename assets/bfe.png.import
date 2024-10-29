@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byd72pq50epax"
-path="res://.godot/imported/SURELogo.png-ac947c6128b387c39f67299db35e670d.ctex"
+uid="uid://d0phf45274ejw"
+path="res://.godot/imported/bfe.png-45e44e3c751d2d4384a83ab2cb451baf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/SURELogo.png"
-dest_files=["res://.godot/imported/SURELogo.png-ac947c6128b387c39f67299db35e670d.ctex"]
+source_file="res://assets/bfe.png"
+dest_files=["res://.godot/imported/bfe.png-45e44e3c751d2d4384a83ab2cb451baf.ctex"]
 
 [params]
 
