@@ -76,18 +76,18 @@ grow_vertical = 2
 theme = ExtResource("3_5yoe6")
 theme_type_variation = &"Paper"
 text = "USI
-Prof. Michael Multerer
-Prof. Dr. Rolf Krause
+Borja Maol
+Erwan Moreira
 Toby Simpson
+Saara Jones
+Michael Multerer
+Rolf Krause
 Davide Baroli
 Amelia Dobis
-Borja Maol
-Saara Jones
-Erwan Moreira
 
 UNIBE
-Prof. Dr. Isabelle Stadelmann
-Dr. Gracia Brückmann
+Isabelle Stadelmann
+Gracia Brückmann
 Walid El-Ajou
 "
 horizontal_alignment = 1

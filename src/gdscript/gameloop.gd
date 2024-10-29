@@ -1,7 +1,7 @@
 extends Node2D
 
 var start_year: int = 2022
-var total_number_of_turns: int = 2
+var total_number_of_turns: int = 4
 var years_in_a_turn = 3
 
 var demand_summer_list = []
@@ -233,7 +233,7 @@ func _send_parameters_to_model(turn: int):
 		if ups_list[i] != 0:
 			print("\tsending ", PowerplantsManager.EngineTypeIds.keys()[j])
 			Context.send_parameters_to_model(Context.res_id, 
-					Gameloop.year_list[Gameloop.current_turn - 1], int(i),
+					Gameloop.year_list[Gameloop.current_turn], int(i),
 					ups_list[i])
 			print("\twaiting for ", PowerplantsManager.EngineTypeIds.keys()[j])
 			await Context.parameters_sent_to_model

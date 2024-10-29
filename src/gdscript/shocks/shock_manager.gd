@@ -134,11 +134,17 @@ func _leave_nuclear():
 	pass
 	
 	
-# sorry for the ugly code
-func increase_demand(_longterm: bool):
-	var year = Gameloop.year_list[Gameloop.current_turn-1]
+
+func increase_demand(longterm: bool):
+	var year = Gameloop.year_list[Gameloop.current_turn]
 	Context.send_shock_parameters(Context.res_id, 1, year)
 	await Context.shocks_sent_to_model
+
+	if !longterm:
+		year = Gameloop.year_list[Gameloop.current_turn+1] - 1 # TO CHECK!!
+		Context.send_shock_parameters(Context.res_id, 2, year)
+		await Context.shocks_sent_to_model
+	
 	Context.get_demand_from_context()
 	ShockManager.shock_effects_applied.emit(Gameloop.most_recent_shock)
 	
@@ -178,12 +184,12 @@ func _severe_wether_send_parameters_to_model():
 			
 	PowerplantsManager.update_buildings_impact()
 	
-	var year = Gameloop.year_list[Gameloop.current_turn-1]
+	var year = Gameloop.year_list[Gameloop.current_turn]
 	Context.send_parameters_to_model(Context.res_id, year, 471, -0.2)
 	await Context.parameters_sent_to_model
 	Context.send_parameters_to_model(Context.res_id, year, 472, -0.2)
 	await Context.parameters_sent_to_model
-	year = Gameloop.year_list[Gameloop.current_turn]
+	year = Gameloop.year_list[Gameloop.current_turn + 1] - 1 # TO CHECK !!
 	Context.send_parameters_to_model(Context.res_id, year, 471, 0.2)
 	await Context.parameters_sent_to_model
 	Context.send_parameters_to_model(Context.res_id, year, 472, 0.2)
