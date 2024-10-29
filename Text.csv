@@ -2,7 +2,7 @@ keys,en,fr,de,it
 PLAY,Play,Jouer,Spielen,Giocare
 LANG,English,Français,Deutsch,Italiano
 HOLD,Hold and drag to move,Maintenir et faire glisser pour déplacer,Zum Verschieben halten und ziehen,Tenere premuto e trascinare per spostare
-SCROLL,Scroll to zoom,Utilise la molette pour zoomer,Scrollen zum Zoomen,Scorrere per ingrandire
+SCROLL,Scroll to zoom,Utilise la molette pour zoomer,Zum Zoomen scrollen,Scorrere per ingrandire
 INSTRUCTIONS,Instructions,Instructions,Anleitung,Istruzioni
 CREDITS,Credits,Crédits,Mitwirkende,Accreditamenti
 RESTART,Restart,Redémarrer,New Starten,Ricomincia
@@ -11,11 +11,11 @@ MUSIC,Music,Musique,Musik,Musica
 SFX,Sound effects,Effets sonores,Sound-Effekte,Effetti sonori
 TUTORIAL0,"Congratulations !\n
 You have been designated to [b]manage the Swiss power supply[/b] and and to ensure the transition to a sustainable and resilient energy sector over the next 30 years (10 turns).","Félicitations ! \n
-Tu as été désigné pour [b]gérer le réseau énergétique[/b] afin de garantir un secteur durable et résilient pour les 30 prochaines années (10 tours).","Glückwunsch !\n
+Tu as été désigné pour [b]gérer le réseau énergétique[/b] afin de garantir un secteur durable et résilient pour les 30 prochaines années (10 tours).","Glückwunsch!\n
 Du wurdest dazu ausgewählt, [b]das Stromnetz[/b] zu managen und einen nachhaltigen und widerstandsfähigen Energiesektor für die nächsten 30 Jahre (10 Runden) sicherzustellen.","Congratulazioni! \n
 Siete stati incaricati di [b]gestire la rete energetica[/b] per garantire un settore sostenibile e resiliente per i prossimi 30 anni (10 turni di gioco)."
 TUTORIAL1,It is up to you what the future energy system looks like. But always keep in mind that you need to [b]cover the Energy demand[/b].,"Tu peux choisir à quoi le futur système énergétique ressemblera, mais tu dois toujours [b]couvrir la demande d'énergie[/b].","Du kannst entscheiden, wie das zukünftige Energiesystem aussehen soll, \n\t
-	aber denke immer daran, dass du [b]genügend Energie produzieren musst, um den Energiebedarf[/b] zu decken.","Puoi scegliere come sarà il sistema energetico futuro, ma deve comunque [b]coprire la domanda di energia[/b]."
+        aber denke immer daran, dass du [b]genügend Energie produzieren musst, um den Energiebedarf[/b] zu decken.","Puoi scegliere come sarà il sistema energetico futuro, ma deve comunque [b]coprire la domanda di energia[/b]."
 TUTORIAL2,You need to [b]supply[/b] enough [b]energy[/b] for your population. They need to charge their phones and play their favourite video games.,Tu dois [b]fournir[/b] suffisamment d'[b]énergie[/b] pour toute la population. Les gens ont besoin de charger leurs téléphones et de jouer à leurs jeux vidéo préférés.,"Du musst genügend [b]Energie[/b] für deine Bevölkerung zur Verfügung stellen.\n
 Die Menschen müssen ihre Telefone aufladen und ihre Lieblingsvideospiele spielen können.",Dovete [b]fornire[/b] abbastanza [b]energia[/b] per tutta la popolazione. Le persone hanno bisogno di caricare i loro telefoni e di giocare ai loro videogiochi preferiti.
 TUTORIAL3,You need to [b]supply[/b] enough [b]energy[/b] for your population. They need to charge their phones and play their favourite video games.,Tu dois [b]fournir[/b] suffisamment d'[b]énergie[/b] pour toute la population. Les gens ont besoin de charger leurs téléphones et de jouer à leurs jeux vidéo préférés.,"Du musst genügend [b]Energie[/b] für deine Bevölkerung zur Verfügung stellen.\n
@@ -68,7 +68,7 @@ TUTOBUBBLE3,Try building a new power plant,Le bouton de construction,Du kannst n
 TUTOBUBBLE4,You can only cancel a power plant in the same turn it was built,Une centrale ne peut être annulée qu'au cours du même tour où elle a été construite,"Ein Kraftwerk kann nur in derselben Runde abgebrochen werden, in der es gebaut wurde",È possibile annullare una centrale elettrica solo nello stesso turno in cui è stata costruita
 TUTOBUBBLE5,Upgrade it here,Améliorer les centrales existantes,Du kannst bestehende Kraftwerk aufrüsten,Ampiamento della centrale elettrica esistente
 TUTOBUBBLE6,Open the policy window,Le bouton de politique,Du kannst politische Massnahmen ergreifen,Implementare le politiche
-DEMAND,Demand,Demande,Energiebedarg,Domanda
+DEMAND,Demand,Demande,Energiebedarf,Domanda
 SUPPLY,Supply,Apport,Energieversorgung,Fornitura
 LAND_USE,Land use,Utilisation des sols,Landverbrauch,Uso del Terreno
 CO2_EMISSIONS,CO2 Emissions,Émissions de CO2,CO2 Emissionen,Emissioni di CO2
@@ -81,7 +81,7 @@ SHOCK_COLD_SPELL_PLAYER_REACTION_1,Ask the population to lower their energy cons
 SHOCK_COLD_SPELL_PLAYER_REACTION_2,Burn more gas +10 🏭,Brûler plus de gaz +10 🏭,Mehr Gas verbrauchen +10 🏭.,Bruciare più gas +10 🏭
 SHOCK_COLD_SPELL_PLAYER_REACTION_3,Import electricity from neighbouring countries -50 💰,Importer de l'électricité des pays voisins -50 💰,Strom aus Nachbarländern importieren - 50 💰,Importazione di energia elettrica dai paesi limitrofi - 50 💰
 SHOCK_HEAT_WAVE_TITLE,Heat Wave,Canicule,Hitzewelle,Ondata di calore
-SHOCK_HEAT_WAVE_TEXT,"The summers have been hotter than usual, increasing the energy demand in summer by 5 ⚡",Les étés sont de plus en plus chaud. La demande en énergie a augmenté de 5 ⚡,"Die Sommer waren heisser als üblich, was den Energiebedarf im Sommer um 5 ⚡ erhöhte.",Le estati sono sempre più calde. La domanda di energia è aumentata di 5 ⚡
+SHOCK_HEAT_WAVE_TEXT,"The summers have been hotter than usual, increasing the energy demand in summer by 5 %",Les étés sont de plus en plus chauds. La demande en énergie a augmenté de 5 %,"Die Sommer waren heisser als üblich, weshalb der Energiebedarf im Sommer um 5% erhöhte.",Le estati sono sempre più calde. La domanda di energia è aumentata di 5%
 SHOCK_HEAT_WAVE_REQUIREMENT_MET,Energy production was high enough to wistand the shock.\n\n+5 👍 +50 💰,La production d'énergie était assez élevée pour amortir l'imprévu.\n\n+ 5 👍 + 50 💰,"Die Energieproduktion war hoch genug, um den Schock zu überstehen.\n\n+5 👍 +50 💰",La produzione di energia è stata sufficientemente elevata da attutire gli imprevisti.\n\n+10 👍 +50 💰
 SHOCK_HEAT_WAVE_PLAYER_REACTION_1,Ask the population to turn their A/C down -15 👍,Demander à la population de baisser leur climatisation. -15 👍,"Aufforderung an die Bevölkerung, ihre Klimaanlagen herunterzudrehen -15 👍",Chiedere alle persone di ridurre il loro consumo energetico. -10 👍
 SHOCK_HEAT_WAVE_PLAYER_REACTION_2,Turn on the spare gas plant +10 🏭,Améliorer l'usine à gaz +10 🏭,Einschalten der Ersatzgasanlage +10 🏭,Attivare l'impianto a gas di riserva +10 🏭
@@ -113,7 +113,7 @@ NOT_ENOUGH_ENERGY,Not enough energy,Pas assez d'énergie,Nicht genug Energie,Non
 SETTINGS,Settings,Réglages,Einstellungen,Impostazioni
 POLICIES,Policies,Politique,Politische\nMassnahmen,Politiche
 RESOURCES,Resources,Ressources,Ressourcen,Risorse
-ENVIRONMENT,Environment,Environnement,Umfeld,Ambiente
+ENVIRONMENT,Environment,Environnement,Umwelt,Ambiente
 EMISSIONS,Emissions,Emissions,Verschmutzung,Emissioni
 IMPORT,Import,Import,Import,Importazione
 ENERGY,Energy,Energie,Energie,Energia
@@ -246,3 +246,4 @@ SCORE,Score,Score,Spielstand,Punteggio
 CALCULATING_RANK,Calculating rank,Calcul du rang,Berechnung des Rangs,Calcolo del rango
 PLAYER_SCORE_NAME,"If you want to have your name on the leaderboard, you can edit your name on the screen","Si tu souhaites que ton nom figure dans le classement, tu peux modifier ton nom à l'écran","Wenn du möchtest, dass dein Name in der Rangliste erscheint, kannst du deinen Namen auf dem Bildschirm ändern","Se si desidera che il proprio nome compaia nella classifica, è possibile modificarlo sullo schermo"
 CARBON_SEQUESTRATION_TEXT,You can burry the emitted carbon in the ground to reduce emissions,Vous pouvez enfouir le carbone émis dans le sol pour réduire les émissions.,"Sie können den ausgestoßenen Kohlenstoff im Boden vergraben, um die Emissionen zu verringern",È possibile seppellire il carbonio emesso nel terreno per ridurre le emissioni.
+THANK_YOU_FOR_PLAYING,Thank you for playing the game!,Merci d'avoir joué au jeu !,"Vielen Dank, dass Sie das Spiel gespielt haben!",Grazie per aver giocato!
