@@ -1,4 +1,4 @@
-[gd_scene load_steps=182 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=183 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/textures/ui/Button-Next-Normal.png" id="2_aobed"]
 [ext_resource type="Texture2D" uid="uid://ccsapuvkqqt1b" path="res://assets/textures/ui/All-HQ-Assets-D_0006s_0009_Profile-metal-base.png" id="2_nu7y6"]
@@ -133,6 +133,7 @@
 [ext_resource type="Texture2D" uid="uid://byhs2falwauts" path="res://assets/textures/ui/clock_ring.png" id="128_7na6l"]
 [ext_resource type="Script" path="res://src/gdscript/hud/next_turn_button/next_turn_overlay.gd" id="133_g5xys"]
 [ext_resource type="Script" path="res://src/gdscript/hud/show_end_button.gd" id="134_ba0nv"]
+[ext_resource type="Script" path="res://src/gdscript/hud/survey_label.gd" id="134_ps8q0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3tdw6"]
 bg_color = Color(0.65098, 0.65098, 0.65098, 0.0470588)
@@ -3057,6 +3058,13 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "RESULTS"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1152.0
+offset_top = 20.0
+offset_right = 1571.0
+offset_bottom = 269.0
+script = ExtResource("134_ps8q0")
 
 [connection signal="pressed" from="TopLeftZone/OpenGraphsFrameButton" to="TopLeftZone/OpenGraphsFrameButton" method="_on_pressed"]
 [connection signal="pressed" from="TopLeftZone/MoneyManagement/MoneyInfo/ToggleMoneyInfoBoxButton" to="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox" method="_on_toggle_money_info_box_button_pressed"]

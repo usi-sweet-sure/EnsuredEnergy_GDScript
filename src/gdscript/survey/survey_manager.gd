@@ -1,6 +1,6 @@
 extends Node
 
-signal token_updated
+signal token_updated(token: String)
 signal survey_ping_requested
 signal back_to_survey_requested
 
@@ -19,6 +19,7 @@ func _ready():
 	update_locale()
 	survey_ping_requested.connect(_on_survey_ping_requested)
 	back_to_survey_requested.connect(_on_back_to_survey_requested)
+	
 
 func update_token():
 	var temp_token = JavaScriptBridge.eval("new URLSearchParams(window.location.search).get('{token_query_param_name}')".format({"token_query_param_name": token_query_param_name}))
@@ -44,7 +45,6 @@ func update_locale():
 	
 	
 func open_back_to_survey_tab(target := "_blank"):
-	print("back to survey")
 	var url = "https://unibe.eu.qualtrics.com/jfe/form/SV_2lvvzqrI2fWxiwC?keyback={tok}".format({"tok": token})
 	var window = JavaScriptBridge.get_interface("window")
 	
