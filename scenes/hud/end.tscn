@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://cej4dlw11su6f"]
+[gd_scene load_steps=62 format=3 uid="uid://cej4dlw11su6f"]
 
 [ext_resource type="Script" path="res://src/gdscript/end/end.gd" id="1_eio5g"]
 [ext_resource type="Script" path="res://src/gdscript/end/graphs_frame.gd" id="4_dq0ds"]
@@ -49,7 +49,12 @@
 [ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/fonts/special_elite/special_elite_regular.ttf" id="49_fl6u7"]
 [ext_resource type="Texture2D" uid="uid://bdq26gwsmigwy" path="res://assets/textures/buttons/close_button_pressed.png" id="49_nxc3v"]
 [ext_resource type="Texture2D" uid="uid://myf36tn1pspq" path="res://assets/textures/buttons/close_button_hover.png" id="50_3oi6p"]
+[ext_resource type="Texture2D" uid="uid://b4m67oni44dpg" path="res://assets/textures/buttons/button_normal.png" id="51_4xb6c"]
 [ext_resource type="Texture2D" uid="uid://bhl7ei1bspfbw" path="res://assets/textures/buttons/close_button_disabled.png" id="51_j8egd"]
+[ext_resource type="Texture2D" uid="uid://60dl810b25fd" path="res://assets/textures/buttons/button_press.png" id="52_4on8v"]
+[ext_resource type="Texture2D" uid="uid://cuhckno2t6g0r" path="res://assets/textures/buttons/button_hover.png" id="53_o1fqq"]
+[ext_resource type="Texture2D" uid="uid://0gmf2lgw35ib" path="res://assets/textures/buttons/button_disabled.png" id="54_xyurw"]
+[ext_resource type="Script" path="res://src/gdscript/end/back_to_survey_button.gd" id="55_f200q"]
 
 [sub_resource type="Animation" id="Animation_gvfop"]
 length = 0.001
@@ -220,6 +225,7 @@ libraries = {
 autoplay = "calculating"
 
 [node name="StatContainer" type="MarginContainer" parent="MainFrame/Screen/MetricsRanking"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1179,6 +1185,32 @@ theme_override_font_sizes/normal_font_size = 26
 text = "PLAYER_SCORE_NAME"
 fit_content = true
 
+[node name="BackToSurvey" type="TextureButton" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.5
+offset_top = 13.0
+offset_right = 96.5
+offset_bottom = 96.0
+grow_horizontal = 2
+texture_normal = ExtResource("51_4xb6c")
+texture_pressed = ExtResource("52_4on8v")
+texture_hover = ExtResource("53_o1fqq")
+texture_disabled = ExtResource("54_xyurw")
+script = ExtResource("55_f200q")
+
+[node name="Label" type="Label" parent="BackToSurvey"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "BACK_TO_SURVEY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="metrics_leaderboard_updated" from="." to="MainFrame/Screen/MetricsRanking" method="_on_end_metrics_leaderboard_updated"]
 [connection signal="metrics_leaderboard_updated" from="." to="MainFrame/Screen/MetricsRanking/RichTextLabel" method="_on_metrics_leaderboard_updated"]
 [connection signal="metrics_rank_updated" from="." to="MainFrame/Screen/MetricsRanking" method="_on_end_metrics_rank_updated"]
@@ -1201,3 +1233,4 @@ fit_content = true
 [connection signal="toggled" from="MainFrame/BottomFrames/RightFrame/Emissions/Button" to="MainFrame/Screen/Graph" method="_on_emissions_button_toggled"]
 [connection signal="pressed" from="MainFrame/CloseButton2" to="." method="_on_close_button_pressed"]
 [connection signal="pressed" from="NameInfoButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="BackToSurvey" to="BackToSurvey" method="_on_pressed"]
