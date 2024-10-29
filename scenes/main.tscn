@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://g58p7rxvcdik"]
+[gd_scene load_steps=17 format=3 uid="uid://g58p7rxvcdik"]
 
 [ext_resource type="PackedScene" uid="uid://ba56oxmvcxpos" path="res://scenes/world.tscn" id="1_prp6q"]
 [ext_resource type="PackedScene" uid="uid://bs48lirfn2fp2" path="res://scenes/hud/ui.tscn" id="2_d60f5"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://rjcu72lxn4n4" path="res://scenes/windows/settings.tscn" id="11_3whgs"]
 [ext_resource type="PackedScene" uid="uid://ciphd0cmpslrn" path="res://scenes/hud/tutorial.tscn" id="11_uite1"]
 [ext_resource type="PackedScene" uid="uid://885lty3v1qbq" path="res://scenes/windows/shock.tscn" id="12_vvejj"]
-[ext_resource type="Script" path="res://src/gdscript/test_layer/test_layer.gd" id="13_t2kov"]
 [ext_resource type="PackedScene" uid="uid://co6w7mqwohn4h" path="res://scenes/Credits/credits.tscn" id="17_nfvbd"]
 [ext_resource type="PackedScene" uid="uid://dqg3dfo1ggbao" path="res://scenes/cursor_tooltip.tscn" id="18_a1i53"]
 [ext_resource type="PackedScene" uid="uid://pvoi2mcc3oc1" path="res://scenes/hud/menu.tscn" id="18_h65u3"]
@@ -14,9 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cej4dlw11su6f" path="res://scenes/hud/end.tscn" id="21_7pke6"]
 [ext_resource type="PackedScene" uid="uid://det4mobxk3l42" path="res://scenes/loading_screen.tscn" id="23_bmtug"]
 [ext_resource type="PackedScene" uid="uid://cuuj2s4h1588i" path="res://scenes/audio.tscn" id="34_smnob"]
-[ext_resource type="Script" path="res://src/gdscript/test_layer/debug_frame.gd" id="53_j41xb"]
 [ext_resource type="PackedScene" uid="uid://dc3s5eeg1c0uv" path="res://scenes/windows/graphs.tscn" id="66_s8n66"]
-[ext_resource type="Script" path="res://src/gdscript/test_layer/test_buttons.gd" id="67_xot01"]
 [ext_resource type="PackedScene" uid="uid://mnj2kr6urhvk" path="res://scenes/survey/survey_layer.tscn" id="76_y7xdi"]
 [ext_resource type="PackedScene" uid="uid://cb7movoe2pf7u" path="res://scenes/windows/quit_game.tscn" id="77_iwdt8"]
 
@@ -99,84 +96,6 @@ visible = false
 layer = 4
 visible = false
 
-[node name="TestLayer" type="CanvasLayer" parent="."]
-script = ExtResource("13_t2kov")
-
-[node name="TestButtons" type="Control" parent="TestLayer"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 972.0
-offset_top = 43.0
-offset_right = 1012.0
-offset_bottom = 83.0
-script = ExtResource("67_xot01")
-
-[node name="ButtonTop" type="Button" parent="TestLayer/TestButtons"]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-text = "Test button top"
-
-[node name="ButtonBottom" type="Button" parent="TestLayer/TestButtons"]
-layout_mode = 0
-offset_left = 1.0
-offset_top = 35.0
-offset_right = 160.0
-offset_bottom = 66.0
-text = "Test button bottom
-"
-
-[node name="ContextInfos" type="VBoxContainer" parent="TestLayer"]
-visible = false
-offset_left = 1643.0
-offset_top = 391.0
-offset_right = 1753.0
-offset_bottom = 550.0
-
-[node name="Context infos" type="Label" parent="TestLayer/ContextInfos"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.964706, 0, 0.305882, 1)
-theme_override_font_sizes/font_size = 17
-text = "Context Infos"
-
-[node name="OpenDebugFrameButton" type="Button" parent="TestLayer"]
-offset_left = 1554.0
-offset_top = 26.0
-offset_right = 1639.0
-offset_bottom = 57.0
-text = "Debug"
-
-[node name="DebugFrame" type="ColorRect" parent="TestLayer"]
-visible = false
-offset_left = 681.0
-offset_top = 10.0
-offset_right = 1185.0
-offset_bottom = 1067.0
-color = Color(0.0862745, 0.0862745, 0.0862745, 0.333333)
-script = ExtResource("53_j41xb")
-
-[node name="MarginContainer" type="MarginContainer" parent="TestLayer/DebugFrame"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
-
-[node name="RichTextLabel" type="RichTextLabel" parent="TestLayer/DebugFrame/MarginContainer"]
-layout_mode = 2
-bbcode_enabled = true
-
-[node name="CloseButton" type="Button" parent="TestLayer/DebugFrame/MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-text = "Close"
-
 [node name="LoadingScreen" parent="." instance=ExtResource("23_bmtug")]
 
 [node name="Credits" parent="." instance=ExtResource("17_nfvbd")]
@@ -194,11 +113,6 @@ offset_bottom = -1620.0
 
 [node name="Policies" parent="." instance=ExtResource("19_dtfm3")]
 visible = false
-
-[connection signal="pressed" from="TestLayer/TestButtons/ButtonTop" to="TestLayer/TestButtons" method="_on_button_top_pressed"]
-[connection signal="pressed" from="TestLayer/TestButtons/ButtonBottom" to="TestLayer/TestButtons" method="_on_button_bottom_pressed"]
-[connection signal="pressed" from="TestLayer/OpenDebugFrameButton" to="TestLayer/DebugFrame" method="_on_open_debug_frame_button_pressed"]
-[connection signal="pressed" from="TestLayer/DebugFrame/MarginContainer/CloseButton" to="TestLayer/DebugFrame" method="_on_close_button_pressed"]
 
 [editable path="Audio"]
 [editable path="World"]
