@@ -139,7 +139,7 @@ func increase_demand(longterm: bool):
 		Context.send_shock_parameters(Context.res_id, 2, year)
 		await Context.shocks_sent_to_model
 	
-	#Context.get_demand_from_context()
+	Context.get_demand_from_context()
 	ShockManager.shock_effects_applied.emit(Gameloop.most_recent_shock)
 	
 	
