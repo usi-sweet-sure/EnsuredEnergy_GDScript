@@ -1,8 +1,8 @@
 [gd_scene load_steps=24 format=3 uid="uid://885lty3v1qbq"]
 
 [ext_resource type="Script" path="res://src/gdscript/shocks/shock_window/shock_window.gd" id="1_h0du7"]
-[ext_resource type="Texture2D" uid="uid://bk3lb51erle8l" path="res://assets/textures/backplates/backplate_1.png" id="2_06ydw"]
 [ext_resource type="Texture2D" uid="uid://burmdec041k3k" path="res://assets/textures/ui/Shocks-Metal.png" id="2_37dlb"]
+[ext_resource type="Texture2D" uid="uid://0g67p7r3v0vo" path="res://assets/textures/ui/All-HQ-Assets-E_Socks-metal-base.png" id="2_utnvj"]
 [ext_resource type="Texture2D" uid="uid://cbgfs7wym1x5a" path="res://assets/textures/ui/All-HQ-Assets-D_0005s_0003_Shock-screen.png" id="3_wa4y3"]
 [ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="5_0qiv1"]
 [ext_resource type="FontFile" uid="uid://bt2f3flr7psn5" path="res://assets/fonts/vt323/vt323_regular.ttf" id="6_2gnt4"]
@@ -38,16 +38,16 @@ color = Color(0.168627, 0.168627, 0.168627, 0.862745)
 
 [node name="ShockWindow" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
-texture = ExtResource("2_06ydw")
+texture = ExtResource("2_utnvj")
 
 [node name="Requirements" type="Control" parent="ShockWindow"]
 show_behind_parent = true
 layout_mode = 3
 anchors_preset = 0
-offset_left = -11.0
-offset_top = -237.0
-offset_right = 381.0
-offset_bottom = -18.0
+offset_left = -166.0
+offset_top = -252.0
+offset_right = 226.0
+offset_bottom = -33.0
 script = ExtResource("21_y600v")
 
 [node name="BackPlate" type="Sprite2D" parent="ShockWindow/Requirements"]
@@ -80,9 +80,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -653.0
+offset_left = -491.0
 offset_top = -448.5
-offset_right = -166.0
+offset_right = -4.0
 offset_bottom = -120.5
 grow_horizontal = 2
 grow_vertical = 2
