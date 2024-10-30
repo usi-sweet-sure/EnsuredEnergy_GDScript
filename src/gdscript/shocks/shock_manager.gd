@@ -139,6 +139,7 @@ func increase_demand(longterm: bool):
 		Context.send_shock_parameters(Context.res_id, 2, year)
 		await Context.shocks_sent_to_model
 	
+	# E. This line should be elsewhere, context is null, don't know why
 	Context.get_demand_from_context()
 	ShockManager.shock_effects_applied.emit(Gameloop.most_recent_shock)
 	

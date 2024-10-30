@@ -15,7 +15,7 @@ var rank_json
 var survey_token: String
 var context_updated_for_new_turn = false
 
-	
+
 func register_new_game_on_model(player_name: String):	
 	if SurveyManager.token == "":
 		SurveyManager.update_token()
@@ -118,6 +118,7 @@ func _on_got_context_from_model(_result, _response_code, _headers, body):
 
 	if ctx!= null and Gameloop.current_turn == 1:
 		res_id = int(ctx[0]["res_id"])
+		print("getting demand from context")
 		get_demand_from_context()
 		
 	context_updated.emit(ctx)
