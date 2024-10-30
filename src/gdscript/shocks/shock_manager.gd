@@ -141,7 +141,7 @@ func increase_demand(longterm: bool):
 	await Context.shocks_sent_to_model
 
 	if !longterm:
-		year = Gameloop.year_list[Gameloop.current_turn+1] - 1 # TO CHECK!!
+		year += 1 # TO CHECK!!
 		Context.send_shock_parameters(Context.res_id, 2, year)
 		await Context.shocks_sent_to_model
 	
@@ -189,7 +189,7 @@ func _severe_wether_send_parameters_to_model():
 	await Context.parameters_sent_to_model
 	Context.send_parameters_to_model(Context.res_id, year, 472, -0.2)
 	await Context.parameters_sent_to_model
-	year = Gameloop.year_list[Gameloop.current_turn + 1] - 1 # TO CHECK !!
+	year += 1 # TO CHECK !!
 	Context.send_parameters_to_model(Context.res_id, year, 471, 0.2)
 	await Context.parameters_sent_to_model
 	Context.send_parameters_to_model(Context.res_id, year, 472, 0.2)
