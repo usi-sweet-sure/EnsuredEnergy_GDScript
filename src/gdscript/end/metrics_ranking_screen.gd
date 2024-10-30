@@ -5,7 +5,7 @@ var num = 0
 var score_list = ["met_nuc", "met_fos", "met_ele", "met_emi", "met_lnd", "met_cst", "met_smr"]
 var rank_list = ["rnk_nuc", "rnk_fos", "rnk_ele", "rnk_emi", "rnk_lnd", "rnk_cst", "rnk_smr"]
 var metric_list = [" Tj", " Tj", " Tj", "M CO2/t", " Km2", "M CHF", "%"]
-
+var player_new_name = null
 
 func _ready():
 	for button in button_group.get_buttons():
@@ -29,11 +29,14 @@ func _on_leaderboard_button_pressed(button_index):
 		name_node.text = _assert_not_null(i["res_name"])
 		score_node.text = _assert_not_null(i[score_list[button_index]]).pad_decimals(2) + metric_list[button_index]
 		rank_node.text = _assert_not_null(i[rank_list[button_index]])
-		%player_name.text = _assert_not_null(Context.rank_json[0]["res_name"])
 		%player_score.text = _assert_not_null(Context.rank_json[0][score_list[button_index]]).pad_decimals(2) + metric_list[button_index]
 		%player_rank.text = _assert_not_null(Context.rank_json[0][rank_list[button_index]])
-
-
+		if player_new_name != null:
+			%player_name.text = player_new_name
+		else:
+			%player_name.text = _assert_not_null(Context.rank_json[0]["res_name"])
+			
+			
 func _on_end_metrics_leaderboard_updated(leaderboard):
 	$RichTextLabel.hide()
 	$StatContainer.show()
@@ -60,3 +63,8 @@ func _assert_not_null(val: Variant):
 		return ""
 	else:
 		return val
+
+
+func _on_player_name_text_submitted(new_text: String) -> void:
+	print(new_text)
+	player_new_name = new_text
