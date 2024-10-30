@@ -34,6 +34,7 @@ func register_new_game_on_model(player_name: String):
 
 #upsert param
 func send_parameters_to_model(game_id: int, year: int, prm_id: int, tj: float):
+	print("prms year ", year)
 	var url = "https://sure.euler.usi.ch/json.php?mth=ups&res_id={res_id}&prm_id={prm_id}&yr={yr}&tj={tj}".format({"res_id": game_id, "yr": year, "prm_id": prm_id, "tj": tj})
 	
 	if not HttpManager.http_request_completed.is_connected(_on_parameters_sent_to_model):
@@ -42,6 +43,7 @@ func send_parameters_to_model(game_id: int, year: int, prm_id: int, tj: float):
 	
 
 func get_context_from_model(game_id: int, year: int):
+	print("context year ", year)
 	var url = "https://sure.euler.usi.ch/json.php?mth=ctx&res_id={res_id}&yr={yr}".format({"res_id": game_id, "yr": year})
 	
 	if not HttpManager.http_request_completed.is_connected(_on_got_context_from_model):
@@ -75,6 +77,7 @@ func change_player_name(game_id: int, player_name: String):
 	
 	
 func send_shock_parameters(game_id: int, shock_id: int, year: int):
+	print("shock year ", year)
 	var url = "https://sure.euler.usi.ch/json.php?mth=shk&res_id={res_id}&shk_id={shock_id}&yr={yr}".format({"res_id": game_id, "shock_id": shock_id, "yr": year})
 
 	if not HttpManager.http_request_completed.is_connected(_on_shocks_sent_to_model):

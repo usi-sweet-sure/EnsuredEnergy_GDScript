@@ -130,7 +130,7 @@ func _leave_nuclear():
 	
 
 func increase_demand(longterm: bool):
-	var year = Gameloop.year_list[Gameloop.current_turn]
+	var year = Gameloop.year_list[Gameloop.current_turn-1]
 	Context.send_shock_parameters(Context.res_id, 1, year)
 	await Context.shocks_sent_to_model
 
@@ -178,7 +178,7 @@ func _severe_wether_send_parameters_to_model():
 			
 	PowerplantsManager.update_buildings_impact()
 	
-	var year = Gameloop.year_list[Gameloop.current_turn]
+	var year = Gameloop.year_list[Gameloop.current_turn-1]
 	Context.send_parameters_to_model(Context.res_id, year, 471, -0.2)
 	await Context.parameters_sent_to_model
 	Context.send_parameters_to_model(Context.res_id, year, 472, -0.2)
