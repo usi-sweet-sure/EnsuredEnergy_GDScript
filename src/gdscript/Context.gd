@@ -99,13 +99,16 @@ func send_shock_parameters(game_id: int, shock_id: int, year: int):
 
 
 func get_demand_from_context():
-	for i in ctx:
-		if i["prm_id"] == "455":
-			Gameloop.demand_summer = float(i["tj"]) / 100.0
-	for i in ctx: # sorry le code est cheum mais j'ai besoin de la demand_summer avant de pouvoir mettre la winter
-		if i["prm_id"] == "435":
-			Gameloop.demand_winter = (float(i["tj"]) / 100.0) - Gameloop.demand_summer
-
+	if ctx != null:
+		for i in ctx:
+			if i["prm_id"] == "455":
+				Gameloop.demand_summer = float(i["tj"]) / 100.0
+		for i in ctx: # sorry le code est cheum mais j'ai besoin de la demand_summer avant de pouvoir mettre la winter
+			if i["prm_id"] == "435":
+				Gameloop.demand_winter = (float(i["tj"]) / 100.0) - Gameloop.demand_summer
+	else:
+		printerr("Context is null")
+		printerr("Shock: ", Gameloop.most_recent_shock.title_key)
 
 func _on_got_context_from_model(_result, _response_code, _headers, body):
 	if HttpManager.http_request_completed.is_connected(_on_got_context_from_model):
