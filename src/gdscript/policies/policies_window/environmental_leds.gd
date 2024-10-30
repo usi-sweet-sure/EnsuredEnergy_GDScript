@@ -23,7 +23,6 @@ func _on_policy_voted(_vote_passed: bool):
 	for voted_policy in all_voted_policies:
 		var policy: Policy = voted_policy.policy
 		var passed = voted_policy.passed
-		print(policy.inspector_id)
 		
 		if policy.inspector_id == "ENVIRONMENTAL CAMPAIGN" and passed:
 			number_of_passed_env_policies += 1

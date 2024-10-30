@@ -83,8 +83,6 @@ func send_shock_parameters(game_id: int, shock_id: int, year: int):
 
 
 func get_demand_from_context():
-	print("get demand from context")
-	print(ctx)
 	for i in ctx:
 		if i["prm_id"] == "455":
 			Gameloop.demand_summer = float(i["tj"]) / 100.0
@@ -146,7 +144,6 @@ func _on_changed_player_name(_result, _response_code, _headers, _body):
 
 
 func _update_context_no_signal(body):
-	print("UPDATE CONTEXT NO SIGNAL")
 	context_updated_for_new_turn = true
 	var json = JSON.new()
 	json.parse(body.get_string_from_utf8())

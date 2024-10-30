@@ -66,7 +66,6 @@ func _on_next_turn_button_pressed():
 
 func _on_shock_effect_applied(_shock):
 	if not Context.context_updated_for_new_turn:
-		print("CONTEXT WAS NOT GOT, GETTING IT NOW")
 		Context.get_context_from_model(Context.res_id, Gameloop.current_turn)
 		await Context.context_updated
 	

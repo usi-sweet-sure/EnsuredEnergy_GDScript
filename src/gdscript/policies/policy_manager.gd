@@ -159,7 +159,6 @@ func _on_vote_button_clicked():
 			"passed" = vote_passed,
 			"turn" = Gameloop.current_turn
 		})
-	print("voted policies: ", voted_policies)
 	policy_voted.emit(vote_passed)
 
 
