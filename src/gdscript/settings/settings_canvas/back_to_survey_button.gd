@@ -10,4 +10,4 @@ func _on_pressed():
 
 
 func _on_token_updated(token: String):
-	visible = token != ""
+	visible = SurveyManager.is_survey_active()

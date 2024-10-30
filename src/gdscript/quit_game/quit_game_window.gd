@@ -32,7 +32,7 @@ func _on_game_quit_requested():
 func _on_confirm_button_pressed():
 	if OS.get_name() == "Web":
 		# This does require the user to allow popups
-		SurveyManager.open_back_to_survey_tab()
+		SurveyManager.back_to_survey_requested.emit()
 		
 		# Since we can't close the tab, we display a black screen to show that the game is dead
 		black_screen.show()
@@ -69,7 +69,7 @@ func _before_unload_callback(args):
 	js_event.preventDefault()
 	js_event.returnValue = ''
 	
-	SurveyManager.open_back_to_survey_tab()
+	SurveyManager.back_to_survey_requested.emit()
 
 
 func _on_quit_timeout():

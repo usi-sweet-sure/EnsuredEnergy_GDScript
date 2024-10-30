@@ -8,7 +8,7 @@ func _ready() -> void:
 
 
 func _on_token_updated(token: String) -> void:
-	visible = token != ""
+	visible = SurveyManager.is_survey_active()
 
 
 func _on_pressed() -> void:

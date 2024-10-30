@@ -23,7 +23,7 @@ var frame := randi_range(0,1):
 # 0 people playing the game after the survey (control group). 
 # 1 people playing the game first (treatment group)
 # 2 people playing the game with no survey
-var treatment := 2:
+var treatment := -1:
 	set(new_value):
 		treatment = new_value
 		treatment_updated.emit(treatment)
@@ -71,7 +71,7 @@ func update_treatment():
 	var temp_treatment = JavaScriptBridge.eval("new URLSearchParams(window.location.search).get('{treatment_query_string_name}')".format({"treatment_query_string_name": treatment_query_string_name}))
 	
 	if temp_treatment == null:
-		temp_treatment = "2"
+		temp_treatment = "-1"
 		
 	treatment = int(temp_treatment)
 	
@@ -102,12 +102,18 @@ func ping_the_survey():
 
 
 func _on_survey_ping_requested():
-	ping_the_survey()
+	if is_survey_active():
+		ping_the_survey()
 
 
 func _on_back_to_survey_requested():
-	open_back_to_survey_tab()
+	if is_survey_active():
+		open_back_to_survey_tab()
 
 
 func _on_next_turn():
 	survey_ping_requested.emit()
+
+
+func is_survey_active() -> bool:
+	return token != "" and treatment != -1
