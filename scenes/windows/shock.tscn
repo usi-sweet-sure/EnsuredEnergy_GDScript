@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://885lty3v1qbq"]
+[gd_scene load_steps=28 format=3 uid="uid://885lty3v1qbq"]
 
 [ext_resource type="Script" path="res://src/gdscript/shocks/shock_window/shock_window.gd" id="1_h0du7"]
 [ext_resource type="Texture2D" uid="uid://burmdec041k3k" path="res://assets/textures/ui/Shocks-Metal.png" id="2_37dlb"]
@@ -7,6 +7,7 @@
 [ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="5_0qiv1"]
 [ext_resource type="FontFile" uid="uid://bt2f3flr7psn5" path="res://assets/fonts/vt323/vt323_regular.ttf" id="6_2gnt4"]
 [ext_resource type="Texture2D" uid="uid://d1or1v15j7r7u" path="res://assets/textures/ui/Shocks-Button-Hole.png" id="6_021ab"]
+[ext_resource type="Texture2D" uid="uid://d2mj0ht318q3j" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0022_Icon-Popularity.png" id="6_bh1n5"]
 [ext_resource type="Script" path="res://src/gdscript/shocks/shock_window/shock_title.gd" id="6_ocx2u"]
 [ext_resource type="Script" path="res://src/gdscript/shocks/shock_window/shock_text.gd" id="7_6m7uh"]
 [ext_resource type="Texture2D" uid="uid://bukhhwmu7717r" path="res://assets/textures/ui/Shocks-Button-normal.png" id="7_st5u1"]
@@ -19,7 +20,10 @@
 [ext_resource type="Texture2D" uid="uid://cuhckno2t6g0r" path="res://assets/textures/buttons/button_hover.png" id="12_hwdxm"]
 [ext_resource type="Script" path="res://src/gdscript/shocks/shock_window/reaction_button_2.gd" id="13_kct5c"]
 [ext_resource type="Script" path="res://src/gdscript/shocks/shock_window/reaction_button_3.gd" id="14_w31rc"]
+[ext_resource type="Texture2D" uid="uid://b083k6d7sugyx" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0018_Icon-Pollution-.png" id="19_ltvur"]
+[ext_resource type="Texture2D" uid="uid://iaa6i5ocoaer" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0022_Icon-Popularity-down.png" id="20_0uqa3"]
 [ext_resource type="Script" path="res://src/gdscript/shocks/shock_window/continue_button.gd" id="20_ye1t7"]
+[ext_resource type="Texture2D" uid="uid://bulftkbpqxib" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0024_Icon-Money.png" id="21_0kb5n"]
 [ext_resource type="Script" path="res://src/gdscript/shocks/shock_window/requirements_met_text.gd" id="21_ctbuo"]
 [ext_resource type="Script" path="res://src/gdscript/shocks/shock_window/requirements_frame.gd" id="21_y600v"]
 
@@ -44,10 +48,10 @@ texture = ExtResource("2_utnvj")
 show_behind_parent = true
 layout_mode = 3
 anchors_preset = 0
-offset_left = -166.0
-offset_top = -252.0
-offset_right = 226.0
-offset_bottom = -33.0
+offset_left = -155.0
+offset_top = -239.0
+offset_right = 237.0
+offset_bottom = -20.0
 script = ExtResource("21_y600v")
 
 [node name="BackPlate" type="Sprite2D" parent="ShockWindow/Requirements"]
@@ -70,8 +74,38 @@ layout_mode = 0
 offset_left = 42.0
 offset_top = 59.0
 offset_right = 353.0
-offset_bottom = 195.0
+offset_bottom = 130.0
 script = ExtResource("21_ctbuo")
+
+[node name="thumbs_up" type="Sprite2D" parent="ShockWindow/Requirements"]
+position = Vector2(124, 165)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("6_bh1n5")
+
+[node name="icon_money" type="Sprite2D" parent="ShockWindow/Requirements"]
+position = Vector2(286, 167)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("21_0kb5n")
+
+[node name="support" type="Label" parent="ShockWindow/Requirements"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 155.0
+offset_right = 110.0
+offset_bottom = 178.0
+theme = ExtResource("5_0qiv1")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "+ 5"
+
+[node name="money" type="Label" parent="ShockWindow/Requirements"]
+layout_mode = 0
+offset_left = 222.0
+offset_top = 155.0
+offset_right = 262.0
+offset_bottom = 178.0
+theme = ExtResource("5_0qiv1")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "+ 50"
 
 [node name="ColorRect" type="ColorRect" parent="ShockWindow"]
 self_modulate = Color(1, 1, 1, 0)
@@ -123,7 +157,7 @@ theme = ExtResource("5_0qiv1")
 theme_type_variation = &"Screen"
 theme_override_colors/default_color = Color(0.219608, 0.756863, 0.788235, 1)
 theme_override_fonts/normal_font = ExtResource("6_2gnt4")
-theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/normal_font_size = 22
 text = "The past few winters have been colder than usual, increasing the energy demand in winter by 
 50 ⚡.fdjnsafdsan fd
 sf
@@ -174,21 +208,25 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.039
 anchor_top = 0.182
-anchor_right = 0.903
-anchor_bottom = 0.805
-offset_left = -4.82
-offset_top = -0.0140009
-offset_right = -0.140015
-offset_bottom = 0.0149956
+anchor_right = 0.843
+anchor_bottom = 0.753
+offset_left = -4.923
+offset_top = -4.014
+offset_right = 16.049
+offset_bottom = 0.0189972
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("5_0qiv1")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 12
 text = "frehuswilgruvhbiswedfgaq"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+
+[node name="thumbs_down" type="Sprite2D" parent="ShockWindow/ColorRect/Reactions/Button"]
+position = Vector2(327.8, 34.5)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("20_0uqa3")
 
 [node name="Button2" type="TextureButton" parent="ShockWindow/ColorRect/Reactions" groups=["buttons"]]
 layout_mode = 1
@@ -219,21 +257,25 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.029
 anchor_top = 0.143
-anchor_right = 0.895
+anchor_right = 0.84
 anchor_bottom = 0.753
-offset_left = -0.0200005
+offset_left = 34.647
 offset_top = -0.0110006
-offset_right = -0.100006
+offset_right = 9.12
 offset_bottom = 0.0189972
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("5_0qiv1")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 12
 text = "fds"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+
+[node name="poll_icon" type="Sprite2D" parent="ShockWindow/ColorRect/Reactions/Button2"]
+position = Vector2(330.8, 33.5)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("19_ltvur")
 
 [node name="Button3" type="TextureButton" parent="ShockWindow/ColorRect/Reactions" groups=["buttons"]]
 layout_mode = 1
@@ -261,22 +303,28 @@ texture = ExtResource("6_021ab")
 
 [node name="Label" type="Label" parent="ShockWindow/ColorRect/Reactions/Button3"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 13.0
+anchors_preset = -1
+anchor_left = 0.036
+anchor_right = 0.955
+anchor_bottom = 0.74
+offset_left = 40.148
 offset_top = 10.0
-offset_right = -39.0
-offset_bottom = -20.0
+offset_right = -39.935
+offset_bottom = 0.0200005
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("5_0qiv1")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 12
 text = "fds"
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 3
+autowrap_mode = 2
+
+[node name="money_icon" type="Sprite2D" parent="ShockWindow/ColorRect/Reactions/Button3"]
+modulate = Color(1, 0.784314, 1, 1)
+position = Vector2(324.8, 34.5)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("21_0kb5n")
 
 [node name="Continue" type="TextureButton" parent="ShockWindow/ColorRect" groups=["buttons"]]
 visible = false
