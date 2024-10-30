@@ -47,7 +47,7 @@ func _on_close_button_pressed():
 
 func _on_player_name_text_submitted(new_text):
 	#Gameloop.player_name = new_text
-	Context.change_player_name(Context.res_id, new_text)
+	Context.change_player_name(Context.res_id, new_text.uri_encode())
 	%player_name.editable = false
 	%NameEdit.hide()
 	%player_name.release_focus()
