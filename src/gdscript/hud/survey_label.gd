@@ -7,6 +7,7 @@ func _ready() -> void:
 	SurveyManager.survey_ping_requested.connect(_on_ping_requested)
 	SurveyManager.back_to_survey_requested.connect(_on_back_to_survey)
 	SurveyManager.frame_updated.connect(_on_frame_updated)
+	SurveyManager.treatment_updated.connect(_on_treatment_updated)
 
 
 func _on_token_updated(token: String):
@@ -23,3 +24,7 @@ func _on_back_to_survey():
 
 func _on_frame_updated(frame: int):
 	text += "\nFrame updated: " + str(frame)
+
+
+func _on_treatment_updated(treatment: int) -> void:
+	text += "\nTreatment updated: " + str(treatment)

@@ -2,6 +2,7 @@ extends Node
 
 signal token_updated(token: String)
 signal frame_updated(frame: int)
+signal treatment_updated(treatment: int)
 signal survey_ping_requested
 signal back_to_survey_requested
 
@@ -9,6 +10,7 @@ signal back_to_survey_requested
 var token_query_string_name = "res_tok"
 var locale_query_string_name = "lang"
 var frame_query_string_name = "frame"
+var treatment_query_string_name = "treatment"
 var token := "":
 	set(new_value):
 		token = new_value
@@ -18,11 +20,19 @@ var frame := randi_range(0,1):
 	set(new_value):
 		frame = new_value
 		frame_updated.emit(frame)
+# 0 people playing the game after the survey (control group). 
+# 1 people playing the game first (treatment group)
+# 2 people playing the game with no survey
+var treatment := 2:
+	set(new_value):
+		treatment = new_value
+		treatment_updated.emit(treatment)
 
 
 func _ready():
 	update_locale()
 	update_frame()
+	update_treatment()
 	survey_ping_requested.connect(_on_survey_ping_requested)
 	back_to_survey_requested.connect(_on_back_to_survey_requested)
 	
@@ -55,6 +65,15 @@ func update_locale():
 		temp_locale = ""
 		
 	locale = temp_locale
+	
+	
+func update_treatment():
+	var temp_treatment = JavaScriptBridge.eval("new URLSearchParams(window.location.search).get('{treatment_query_string_name}')".format({"treatment_query_string_name": treatment_query_string_name}))
+	
+	if temp_treatment == null:
+		temp_treatment = "2"
+		
+	treatment = int(temp_treatment)
 	
 
 func update_frame():

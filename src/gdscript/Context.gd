@@ -16,7 +16,7 @@ var survey_token: String
 var context_updated_for_new_turn = false
 
 	
-func register_new_game_on_model(player_name: String):
+func register_new_game_on_model(player_name: String):	
 	if SurveyManager.token == "":
 		SurveyManager.update_token()
 		
@@ -25,7 +25,18 @@ func register_new_game_on_model(player_name: String):
 		
 		if SurveyManager.token != "":
 			url += "&res_tok={tok}".format({"tok": SurveyManager.token.uri_encode()})
+			
+		var lang = SurveyManager.locale
 		
+		if lang == "":
+			lang = TranslationServer.get_locale()
+			
+		url += "&res_lng={lang}".format({"lang": lang})
+
+		url += "&res_frm={frame}".format({"frame": str(SurveyManager.frame)})
+		
+		url += "&res_trt={treatment}".format({"treatment": str(SurveyManager.treatment)})
+		print(url)
 		HttpManager.http_request_completed.connect(_on_got_context_from_model)
 		HttpManager.make_request(url)
 	else:
