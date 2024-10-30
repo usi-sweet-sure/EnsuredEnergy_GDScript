@@ -76,15 +76,12 @@ func _ready():
 	
 	
 func pick_shock():
-	print("===================================================================")
-	print("Picking shock")
 	# Nuclear reintro always happens in 2034, which is turn 5
 	if Gameloop.current_turn == 5:
 		var nuc_reintro_shock = Shock.new("SHOCK_NUC_REINTRO_TITLE", "SHOCK_NUC_REINTRO_TEXT", "vote.png")
 		nuc_reintro_shock.add_effect(func(): nuc_reintro())
 		nuc_reintro_shock.add_player_reaction("SHOCK_NUC_REINTRO_PLAYER_REACTION_1", func(): _reintroduce_nuclear())
 		nuc_reintro_shock.add_player_reaction("SHOCK_NUC_REINTRO_PLAYER_REACTION_2", func(): _leave_nuclear())
-		print("shock picked: ", nuc_reintro_shock.title_key)
 		Gameloop.most_recent_shock = nuc_reintro_shock
 	else:
 		# Picks a random shock
@@ -93,7 +90,6 @@ func pick_shock():
 			shocks.shuffle()
 			
 		var random_shock = shocks.pop_front()
-		print("shock picked: ", random_shock.title_key)
 		random_shock.turn_picked = Gameloop.current_turn
 		Gameloop.most_recent_shock = random_shock
 		
@@ -109,13 +105,11 @@ func pick_shock():
 		
 
 func apply_shock():
-	print("Applying shock")
 	if Gameloop.most_recent_shock != null:
 		Gameloop.most_recent_shock.apply()
 
 
 func apply_reaction(reaction_index: int):
-	print("Applying reaction")
 	if Gameloop.most_recent_shock != null:
 		Gameloop.most_recent_shock.apply_reaction(reaction_index)
 		
@@ -219,7 +213,6 @@ func _on_shock_button_exited(shock: Shock):
 
  # E. Implement
 func glaciers_melting():
-	print("Glaciers are melting")
 	ShockManager.shock_effects_applied.emit(Gameloop.most_recent_shock)
 
 
@@ -244,7 +237,6 @@ func nuc_reintro():
 # Some shocks modify the state of the game for one turn only. This can be
 # used to revert them
 func _on_next_turn():
-	print("TO DO ON NEXT TURN")
 	for callable in to_do_on_next_turn:
 		callable.call()
 	
@@ -252,7 +244,6 @@ func _on_next_turn():
 	
 
 func _revert_severe_weather():
-	print("revert severe weather")
 	var powerplants: Array[Node] = get_tree().get_nodes_in_group("Powerplants")
 	
 	# Revert base metrics for futur buildings

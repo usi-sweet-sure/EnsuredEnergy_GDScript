@@ -14,7 +14,7 @@ func _on_token_updated(token: String):
 
 
 func _on_ping_requested():
-	text += "\nPinged survey"
+	text += "\nPinged survey: " + str(Gameloop.current_turn + 1)
 	
 	
 func _on_back_to_survey():

@@ -15,7 +15,6 @@ func _ready():
 func _on_next_step_requested():
 	if step < tuto_length:
 		step += 1
-		print("tuto index: ", step)
 
 		TutorialManager.step_changed.emit(step)
 	else:

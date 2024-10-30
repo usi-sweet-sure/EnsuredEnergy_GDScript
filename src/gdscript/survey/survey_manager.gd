@@ -21,7 +21,6 @@ var frame := randi_range(0,1):
 
 
 func _ready():
-	update_token()
 	update_locale()
 	update_frame()
 	survey_ping_requested.connect(_on_survey_ping_requested)
@@ -33,11 +32,18 @@ func update_token():
 	
 	if temp_token == null:
 		temp_token = ""
+		# No token, we don't want to ping the survey each turn
+		if Gameloop.next_turn.is_connected(_on_next_turn):
+			Gameloop.next_turn.disconnect(_on_next_turn)
 	else:
+		# We want to ping the survey on each turn
+		if not Gameloop.next_turn.is_connected(_on_next_turn):
+			Gameloop.next_turn.connect(_on_next_turn)
+			
 		# The people from the survey want a ping when a user arrives on the game
 		# from their survey. This is where the token is first retrieved and is
 		# a good place to do it
-		ping_the_survey()
+		survey_ping_requested.emit()
 		
 	token = temp_token
 	
@@ -61,7 +67,7 @@ func update_frame():
 	
 	
 func open_back_to_survey_tab(target := "_blank"):
-	var url = "https://unibe.eu.qualtrics.com/jfe/form/SV_2lvvzqrI2fWxiwC?keyback={tok}".format({"tok": token})
+	var url = " https://sure.ethz.ch/api/sure/return-game?tokenGuid={tok}".format({"tok": token})
 	var window = JavaScriptBridge.get_interface("window")
 	
 	if window != null and token != "":
@@ -69,9 +75,11 @@ func open_back_to_survey_tab(target := "_blank"):
 
 
 func ping_the_survey():
-	print("Survey ping")
-	var url = "https://api.github.com/repos/godotengine/godot/releases/latest"
-	HttpManager.make_request(url)
+	# The first ping is sent when the player arrives in the game, on the first turn.
+	# The first ping sent must have a step 2, and then increment on each turn.
+	# Which means step is current_turn + 1.
+	var url = "https://sure.ethz.ch/api/sure/progress?tokenGuid={tok}&step={step}".format({"tok": token, "step": Gameloop.current_turn + 1})
+	HttpManager.ping_survey(url)
 
 
 func _on_survey_ping_requested():
@@ -80,3 +88,7 @@ func _on_survey_ping_requested():
 
 func _on_back_to_survey_requested():
 	open_back_to_survey_tab()
+
+
+func _on_next_turn():
+	survey_ping_requested.emit()

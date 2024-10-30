@@ -42,10 +42,7 @@ func vote():
 	
 	
 func apply_effects():
-	print("applying policy effects")
-	var count = 0
 	for effect in effects:
-		print("policy effect ", ++count)
 		effect.call()
 
 
