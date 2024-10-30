@@ -30,13 +30,15 @@ func register_new_game_on_model(player_name: String):
 		
 		if lang == "":
 			lang = TranslationServer.get_locale()
+		
+		var lang_index = ["de", "fr", "it", "en"].find(lang) + 1
 			
-		url += "&res_lng={lang}".format({"lang": lang})
+		url += "&res_lng={lang}".format({"lang": lang_index})
 
 		url += "&res_frm={frame}".format({"frame": str(SurveyManager.frame)})
 		
 		url += "&res_trt={treatment}".format({"treatment": str(SurveyManager.treatment)})
-		print(url)
+
 		HttpManager.http_request_completed.connect(_on_got_context_from_model)
 		HttpManager.make_request(url)
 	else:

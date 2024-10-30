@@ -35,7 +35,7 @@ func _ready():
 	var heat_wave: = Shock.new("SHOCK_HEAT_WAVE_TITLE", "SHOCK_HEAT_WAVE_TEXT", "hot.png")
 	heat_wave.add_effect(func(): increase_demand(false))
 	heat_wave.add_requirements("SHOCK_HEAT_WAVE_REQUIREMENT_MET",
-			[func():  return Gameloop.supply_summer >= Gameloop.demand_summer + 5],
+			[func():  return Gameloop.supply_summer >= Gameloop.demand_summer + ((Gameloop.demand_summer / 100.0) * 5.00)],
 			[func(): PolicyManager.personal_support += 0.05, func(): MoneyManager.players_own_money_amount += 50]
 		)
 	heat_wave.add_player_reaction("SHOCK_HEAT_WAVE_PLAYER_REACTION_1", func(): PolicyManager.personal_support -= 0.1)
