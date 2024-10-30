@@ -22,7 +22,7 @@ var frame := randi_range(0,1):
 		frame_updated.emit(frame)
 # 0 people playing the game after the survey (control group). 
 # 1 people playing the game first (treatment group)
-# 2 people playing the game with no survey
+# -1 people playing the game with no survey or with survey actions disabled
 var treatment := -1:
 	set(new_value):
 		treatment = new_value
@@ -30,11 +30,13 @@ var treatment := -1:
 
 
 func _ready():
+	survey_ping_requested.connect(_on_survey_ping_requested)
+	back_to_survey_requested.connect(_on_back_to_survey_requested)
+	Gameloop.next_turn.connect(_on_next_turn)
+	update_token()
 	update_locale()
 	update_frame()
 	update_treatment()
-	survey_ping_requested.connect(_on_survey_ping_requested)
-	back_to_survey_requested.connect(_on_back_to_survey_requested)
 	
 
 func update_token():
@@ -42,20 +44,13 @@ func update_token():
 	
 	if temp_token == null:
 		temp_token = ""
-		# No token, we don't want to ping the survey each turn
-		if Gameloop.next_turn.is_connected(_on_next_turn):
-			Gameloop.next_turn.disconnect(_on_next_turn)
-	else:
-		# We want to ping the survey on each turn
-		if not Gameloop.next_turn.is_connected(_on_next_turn):
-			Gameloop.next_turn.connect(_on_next_turn)
-			
-		# The people from the survey want a ping when a user arrives on the game
-		# from their survey. This is where the token is first retrieved and is
-		# a good place to do it
-		survey_ping_requested.emit()
-		
+	
 	token = temp_token
+	
+	# The people from the survey want a ping when a user arrives on the game
+	# from their survey. This is where the token is first retrieved and is
+	# a good place to do it
+	survey_ping_requested.emit()
 	
 	
 func update_locale():
@@ -94,11 +89,13 @@ func open_back_to_survey_tab(target := "_blank"):
 
 
 func ping_the_survey():
+	print("pinging survey", Gameloop.current_turn + 1)
+	pass
 	# The first ping is sent when the player arrives in the game, on the first turn.
 	# The first ping sent must have a step 2, and then increment on each turn.
 	# Which means step is current_turn + 1.
-	var url = "https://sure.ethz.ch/api/sure/progress?tokenGuid={tok}&step={step}".format({"tok": token, "step": Gameloop.current_turn + 1})
-	HttpManager.ping_survey(url)
+	#var url = "https://sure.ethz.ch/api/sure/progress?tokenGuid={tok}&step={step}".format({"tok": token, "step": Gameloop.current_turn + 1})
+	#HttpManager.ping_survey(url)
 
 
 func _on_survey_ping_requested():

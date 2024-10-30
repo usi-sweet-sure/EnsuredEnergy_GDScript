@@ -11,20 +11,25 @@ func _ready() -> void:
 
 
 func _on_token_updated(token: String):
-	text += "\nToken updated : " + token
+	if SurveyManager.is_survey_active():
+		text += "\nToken updated : " + token
 
 
 func _on_ping_requested():
-	text += "\nPinged survey: " + str(Gameloop.current_turn + 1)
+	if SurveyManager.is_survey_active():
+		text += "\nPinged survey: " + str(Gameloop.current_turn + 1)
 	
 	
 func _on_back_to_survey():
-	text += "\nBack to survey tab should open"
+	if SurveyManager.is_survey_active():
+		text += "\nBack to survey tab should open"
 
 
 func _on_frame_updated(frame: int):
-	text += "\nFrame updated: " + str(frame)
+	if SurveyManager.is_survey_active():
+		text += "\nFrame updated: " + str(frame)
 
 
 func _on_treatment_updated(treatment: int) -> void:
-	text += "\nTreatment updated: " + str(treatment)
+	if SurveyManager.is_survey_active():
+		text += "\nTreatment updated: " + str(treatment)

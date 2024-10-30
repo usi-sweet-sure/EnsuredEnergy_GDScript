@@ -16,10 +16,7 @@ var survey_token: String
 var context_updated_for_new_turn = false
 
 
-func register_new_game_on_model(player_name: String):	
-	if SurveyManager.token == "":
-		SurveyManager.update_token()
-		
+func register_new_game_on_model(player_name: String):
 	if player_name != "":
 		var url = "https://sure.euler.usi.ch/json.php?mth=ins&res_name={res_name}".format({"res_name": player_name.uri_encode()})
 		
