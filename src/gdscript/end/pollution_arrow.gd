@@ -4,7 +4,7 @@ extends Sprite2D
 # This value may seems low, but some powerplants only add like 0.3 in emission
 # So we have to be this low to see the arrow move.
 # Just in case users go over that value, we clamp the value.
-var emissions_max_value = 40
+var emissions_max_value = 5
 # Since we clamp the value above. When the emission is above the clamp,
 # we make the arrow jitter so the user has a visual indicator that they are
 # above the max, and that reducing emissions of only a small value may not be
@@ -28,6 +28,7 @@ func _process(delta):
 	
 	
 func _on_emissions_updated(emissions: float):
+	emissions -= Gameloop.sequestrated_co2
 	# The arrow rotation percentage goes from -75% (full left) to 75% (full right)
 	# No emission points the arrow at -75%
 	var arrow_was_shaking = shake_arrow

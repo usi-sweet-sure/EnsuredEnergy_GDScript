@@ -5,7 +5,7 @@ extends Sprite2D
 # So we have to be this low to see the arrow move.
 # 
 # Just in case users go over that value, we clamp the value.
-var land_use_max_value = 300
+var land_use_max_value = 115
 # Since we clamp the value above. When the land use is above the clamp,
 # we make the arrow jitter so the user has a visual indicator that they are
 # above the max, and that reducing land use of only a small value may not be
