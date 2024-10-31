@@ -92,12 +92,11 @@ func open_back_to_survey_tab(target := "_blank"):
 
 func ping_the_survey():
 	print("pinging survey", Gameloop.current_turn + 1)
-	pass
 	# The first ping is sent when the player arrives in the game, on the first turn.
 	# The first ping sent must have a step 2, and then increment on each turn.
 	# Which means step is current_turn + 1.
-	#var url = "https://sure.ethz.ch/api/sure/progress?tokenGuid={tok}&step={step}".format({"tok": token, "step": Gameloop.current_turn + 1})
-	#HttpManager.ping_survey(url)
+	var url = "https://sure.ethz.ch/api/sure/progress?tokenGuid={tok}&step={step}".format({"tok": token, "step": Gameloop.current_turn + 1})
+	HttpManager.ping_survey(url)
 
 
 func _on_survey_ping_requested():
@@ -115,7 +114,6 @@ func _on_next_turn():
 
 
 func is_survey_active() -> bool:
-	return true
 	return token != "" and treatment != -1
 
 
