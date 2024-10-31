@@ -836,6 +836,18 @@ position = Vector2(47, 83)
 scale = Vector2(0.645, 0.645)
 texture = ExtResource("9_uutud")
 
+[node name="Label" type="Label" parent="MainFrame/BottomFrames/CenterFrame/Winter/SupplyScreen"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = -35.0
+offset_right = 100.0
+offset_bottom = -12.0
+theme = ExtResource("4_n8g63")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+text = "IMPORT"
+horizontal_alignment = 1
+
 [node name="Solar" type="Control" parent="MainFrame/BottomFrames/CenterFrame"]
 anchors_preset = 0
 offset_left = 196.0
