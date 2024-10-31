@@ -68,8 +68,7 @@ func _ready():
 	var no_shock_shock = Shock.new("SHOCK_NO_SHOCK_TITLE", "SHOCK_NO_SHOCK_TEXT", "sunrise.png", false)
 	no_shock_shock.add_effect(func(): no_shock())
 	
-	#shocks = [cold_spell, heat_wave, glaciers_melting_shock, no_shock_shock, severe_weather, renewable_support]
-	shocks = [heat_wave]
+	shocks = [cold_spell, heat_wave, glaciers_melting_shock, no_shock_shock, severe_weather, renewable_support]
 	shocks_full = shocks.duplicate()
 	shocks.shuffle()
 	
@@ -298,28 +297,36 @@ func _on_player_can_start_playing_new_turn():
 
 
 func _on_shock_resolved(shock: Shock):
-	var data = {
-		str(Gameloop.current_turn): {
+	shock_history_for_survey[str(Gameloop.current_turn)] = {
 			"shock_title": {
-				TranslationServer.get_locale(): tr(shock.title_key)
+				"key" : shock.title_key,
+				"text" : tr(shock.title_key),
 			},
 			"shock_effect": {
-				TranslationServer.get_locale(): tr(shock.text_key)
+				"key": shock.text_key,
+				"text": tr(shock.text_key)
 			},
-			"player_reactions": {}
 		}
-	}
+		
 	
-	var index = 1
-	for text in shock.player_reactions_texts:
-		data[str(Gameloop.current_turn)]["player_reactions"][str(index)] = tr(text)
-		index += 1
+	if shock.player_reactions_texts.size() > 0:
+		shock_history_for_survey[str(Gameloop.current_turn)]["player_reactions"] = {}
+		shock_history_for_survey[str(Gameloop.current_turn)]["player_reactions"]["chosen_reaction"] = shock.chosen_reaction_index
+	
+		var index = 0
+		for text in shock.player_reactions_texts:
+			shock_history_for_survey[str(Gameloop.current_turn)]["player_reactions"][str(index)] = {}
+			shock_history_for_survey[str(Gameloop.current_turn)]["player_reactions"][str(index)]["key"] = text
+			shock_history_for_survey[str(Gameloop.current_turn)]["player_reactions"][str(index)]["text"] = tr(text)
+			index += 1
+			
 	
 	var url = "https://sure.euler.usi.ch/json.php?mth=upd2"
 	var data_to_send = {
 		"res_id": Context.res_id,
 		"res_name": Gameloop.player_name,
-		"res_txt": data
+		"res_txt": shock_history_for_survey
 	}
+	
 	HttpManager.send_shock_history(url, data_to_send)
 	
