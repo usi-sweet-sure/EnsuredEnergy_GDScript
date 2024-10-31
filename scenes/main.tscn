@@ -53,7 +53,7 @@ position = Vector2(-244, 170)
 [node name="Camera2D" parent="World" index="0"]
 position = Vector2(1181, 835)
 anchor_mode = 1
-zoom = Vector2(0.3, 0.3)
+zoom = Vector2(0.25, 0.25)
 limit_left = -3500
 limit_top = -2000
 limit_right = 5240
