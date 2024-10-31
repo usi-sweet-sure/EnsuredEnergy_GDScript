@@ -2112,7 +2112,7 @@ offset_bottom = 340.0
 script = ExtResource("68_0ckm3")
 
 [node name="Unit" parent="EnvironmentAndPollution/Pollution/Info/MarginContainer/MarginContainer/VBoxContainer" index="0"]
-text = "Mt CO2"
+text = "M CO2/t"
 
 [node name="Text0" parent="EnvironmentAndPollution/Pollution/Info/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer" index="0"]
 theme_override_font_sizes/font_size = 22
