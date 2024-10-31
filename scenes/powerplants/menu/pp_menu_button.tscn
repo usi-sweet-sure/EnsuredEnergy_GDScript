@@ -3,16 +3,16 @@
 [ext_resource type="Texture2D" uid="uid://b3fajud3sgo5m" path="res://assets/textures/backplates/backplate_2.png" id="1_6pv2e"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_menu/pp_menu_button/pp_menu_button.gd" id="2_i71um"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_menu/pp_menu_button/name_label.gd" id="3_0mf3p"]
-[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/Fonts/label_themes.tres" id="3_w0jnk"]
+[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="3_w0jnk"]
 [ext_resource type="Texture2D" uid="uid://vg02ewph3pco" path="res://assets/textures/screens/screen_2.png" id="5_3cn66"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_menu/pp_menu_button/texture.gd" id="5_qwyr2"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_menu/pp_menu_button/price_label.gd" id="7_edx7k"]
 [ext_resource type="Texture2D" uid="uid://b76v2w1on0f0u" path="res://assets/textures/icons/chalk_money.png" id="7_pjuh6"]
-[ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/Fonts/Special_Elite/special_elite_regular.ttf" id="8_3bbo8"]
-[ext_resource type="FontFile" uid="uid://bt2f3flr7psn5" path="res://assets/Fonts/VT323/vt323_regular.ttf" id="9_38oyr"]
+[ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/fonts/special_elite/special_elite_regular.ttf" id="8_3bbo8"]
+[ext_resource type="FontFile" uid="uid://bt2f3flr7psn5" path="res://assets/fonts/vt323/vt323_regular.ttf" id="9_38oyr"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_menu/pp_menu_button/build_time_group.gd" id="9_iwajd"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_menu/pp_menu_button/build_time_label.gd" id="9_oeo3j"]
-[ext_resource type="FontFile" uid="uid://dxtsp51pqna2o" path="res://assets/Fonts/static/open_sans_bold.ttf" id="10_k1772"]
+[ext_resource type="FontFile" uid="uid://dxtsp51pqna2o" path="res://assets/fonts/static/open_sans_bold.ttf" id="10_k1772"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_menu/pp_menu_button/winter_energy_label.gd" id="11_caejg"]
 [ext_resource type="Texture2D" uid="uid://cm7cds6soi7e4" path="res://assets/textures/icons/chalk_hourglass.png" id="13_dkotk"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_menu/pp_menu_button/summer_energy_label.gd" id="14_nr5ny"]
@@ -208,7 +208,7 @@ _data = {
 
 [node name="PpMenuButton" type="TextureRect"]
 show_behind_parent = true
-offset_right = 226.0
+offset_right = 237.0
 offset_bottom = 320.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -216,16 +216,22 @@ texture = ExtResource("1_6pv2e")
 script = ExtResource("2_i71um")
 
 [node name="Name" type="Label" parent="."]
-layout_mode = 0
-offset_left = 40.0
-offset_top = 17.0
-offset_right = 188.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -73.5
+offset_top = 6.0
+offset_right = 74.5
+offset_bottom = 52.0
+grow_horizontal = 2
 theme = ExtResource("3_w0jnk")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 17
 text = "Powerplant name"
 horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 script = ExtResource("3_0mf3p")
 
 [node name="Screen" type="Control" parent="."]
