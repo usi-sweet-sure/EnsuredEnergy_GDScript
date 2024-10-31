@@ -62,7 +62,6 @@ func get_context_from_model(game_id: int, year: int):
 	
 	
 func get_leaderboard_from_model(category: String):
-	# TODO ask toby for a URL that gives the top 5 for all categories......
 	var url = "https://sure.euler.usi.ch/json.php?mth=lst&lim=5&ord={category}".format({"category": category})
 	
 	if not HttpManager.http_request_completed.is_connected(_on_got_leaderboard_from_model):
@@ -100,6 +99,7 @@ func get_demand_from_context():
 		for i in ctx:
 			if i["prm_id"] == "455":
 				Gameloop.demand_summer = float(i["tj"]) / 100.0
+				print(Gameloop.demand_summer)
 		for i in ctx: # sorry le code est cheum mais j'ai besoin de la demand_summer avant de pouvoir mettre la winter
 			if i["prm_id"] == "435":
 				Gameloop.demand_winter = (float(i["tj"]) / 100.0) - Gameloop.demand_summer
@@ -130,9 +130,11 @@ func _on_parameters_sent_to_model(_result, _response_code, _headers, body):
 	parameters_sent_to_model.emit()
 
 
-func _on_shocks_sent_to_model(_result, _response_code, _headers, _body):
+func _on_shocks_sent_to_model(_result, _response_code, _headers, body):
 	if HttpManager.http_request_completed.is_connected(_on_shocks_sent_to_model):
 		HttpManager.http_request_completed.disconnect(_on_shocks_sent_to_model)
+		
+	_update_context_no_signal(body)
 	shocks_sent_to_model.emit()
 
 
@@ -161,7 +163,9 @@ func _on_changed_player_name(_result, _response_code, _headers, _body):
 
 
 func _update_context_no_signal(body):
+	print(body)
 	context_updated_for_new_turn = true
 	var json = JSON.new()
 	json.parse(body.get_string_from_utf8())
 	ctx = json.get_data()
+	get_demand_from_context()

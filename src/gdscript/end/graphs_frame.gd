@@ -375,4 +375,3 @@ func _on_trust_button_toggled(toggled_on: bool):
 	else:
 		_set_graph_context("none")
 		hide()
-

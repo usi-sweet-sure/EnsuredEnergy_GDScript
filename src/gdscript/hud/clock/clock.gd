@@ -66,7 +66,7 @@ func _on_next_turn_button_pressed():
 
 func _on_shock_effect_applied(_shock):
 	if not Context.context_updated_for_new_turn:
-		Context.get_context_from_model(Context.res_id, Gameloop.year_list[Gameloop.current_turn])
+		Context.get_context_from_model(Context.res_id, Gameloop.year_list[Gameloop.current_turn-1])
 		await Context.context_updated
 	
 	ring_animation.play("rotate_ring_backward")

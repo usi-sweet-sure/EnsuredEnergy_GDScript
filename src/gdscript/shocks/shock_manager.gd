@@ -68,8 +68,8 @@ func _ready():
 	var no_shock_shock = Shock.new("SHOCK_NO_SHOCK_TITLE", "SHOCK_NO_SHOCK_TEXT", "sunrise.png", false)
 	no_shock_shock.add_effect(func(): no_shock())
 	
-	#shocks = [cold_spell, heat_wave, glaciers_melting_shock, no_shock_shock, severe_weather, renewable_support]
-	shocks = [heat_wave]
+	shocks = [cold_spell, heat_wave, glaciers_melting_shock, no_shock_shock, severe_weather, renewable_support]
+	#shocks = [heat_wave]
 	shocks_full = shocks.duplicate()
 	shocks.shuffle()
 	
@@ -136,14 +136,14 @@ func increase_demand(longterm: bool):
 	var year = Gameloop.year_list[Gameloop.current_turn-1]
 	Context.send_shock_parameters(Context.res_id, 1, year)
 	await Context.shocks_sent_to_model
-
+	#Context.get_demand_from_context()
+	
 	if !longterm:
 		year += 1 # TO CHECK!!
 		Context.send_shock_parameters(Context.res_id, 2, year)
 		await Context.shocks_sent_to_model
 	
-	# E. This line should be elsewhere, context is null, don't know why
-	Context.get_demand_from_context()
+	
 	ShockManager.shock_effects_applied.emit(Gameloop.most_recent_shock)
 	
 	
@@ -192,7 +192,6 @@ func _severe_wether_send_parameters_to_model():
 	await Context.parameters_sent_to_model
 	Context.send_parameters_to_model(Context.res_id, year, 472, 0.2)
 	await Context.parameters_sent_to_model
-	Context.get_demand_from_context()
 	ShockManager.shock_effects_applied.emit(Gameloop.most_recent_shock)
 
 
