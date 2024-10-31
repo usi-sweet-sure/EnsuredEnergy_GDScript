@@ -33,6 +33,7 @@ var treatment := -1:
 func _ready():
 	survey_ping_requested.connect(_on_survey_ping_requested)
 	back_to_survey_requested.connect(_on_back_to_survey_requested)
+	survey_params_ready.connect(_on_survey_params_ready)
 	Gameloop.next_turn.connect(_on_next_turn)
 	update_token()
 	update_locale()
@@ -49,11 +50,6 @@ func update_token():
 		temp_token = ""
 	
 	token = temp_token
-	
-	# The people from the survey want a ping when a user arrives on the game
-	# from their survey. This is where the token is first retrieved and is
-	# a good place to do it
-	survey_ping_requested.emit()
 	
 	
 func update_locale():
@@ -120,3 +116,10 @@ func _on_next_turn():
 
 func is_survey_active() -> bool:
 	return token != "" and treatment != -1
+
+
+func _on_survey_params_ready():
+	# The people from the survey want a ping when a user arrives on the game
+	# from their survey. This is where the token is first retrieved and is
+	# a good place to do it
+	survey_ping_requested.emit()
