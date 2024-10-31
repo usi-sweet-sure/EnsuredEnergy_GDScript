@@ -333,7 +333,7 @@ theme = SubResource("Theme_34yde")
 theme_type_variation = &"Screen"
 theme_override_colors/font_color = Color(0, 0.882, 0, 1)
 theme_override_font_sizes/font_size = 50
-text = "0Mt CO2"
+text = "0M CO2/t"
 horizontal_alignment = 2
 script = ExtResource("10_g6ev4")
 

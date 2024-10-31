@@ -1,11 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://co6w7mqwohn4h"]
+[gd_scene load_steps=9 format=3 uid="uid://co6w7mqwohn4h"]
 
 [ext_resource type="Texture2D" uid="uid://dvph1wklx4pfh" path="res://assets/textures/ui/Paper-Big.png" id="1_b7k2c"]
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/credits.gd" id="2_0y38i"]
 [ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="3_5yoe6"]
 [ext_resource type="PackedScene" uid="uid://chpn7t75mmbkh" path="res://scenes/buttons/button_close.tscn" id="4_fp272"]
+[ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/Fonts/Special_Elite/special_elite_regular.ttf" id="4_msvy3"]
 [ext_resource type="Texture2D" uid="uid://d0phf45274ejw" path="res://assets/bfe.png" id="5_rfmq0"]
 [ext_resource type="Texture2D" uid="uid://ba1qj2x30q805" path="res://assets/sweet_sure.png" id="6_55tnv"]
+
+[sub_resource type="FontVariation" id="FontVariation_onyef"]
+base_font = ExtResource("4_msvy3")
+variation_embolden = 0.8
 
 [node name="Credits" type="CanvasLayer"]
 script = ExtResource("2_0y38i")
@@ -55,27 +60,52 @@ grow_horizontal = 2
 theme = ExtResource("3_5yoe6")
 theme_type_variation = &"Paper"
 theme_override_font_sizes/font_size = 22
-text = "Credits"
+text = "CREDITS"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Label2" type="Label" parent="CreditsSprite"]
+[node name="Label5" type="Label" parent="CreditsSprite"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 24.0
+offset_top = 319.0
+offset_right = 384.0
+offset_bottom = 551.0
+grow_horizontal = 2
+theme = ExtResource("3_5yoe6")
+theme_type_variation = &"Paper"
+theme_override_font_sizes/font_size = 19
+text = "This game was developed by the SURE consortium, which is funded by the Swiss Federal Office of Energy's SWEET programme.
+
+The designers of this game bear sole responsibility for the content presented."
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="RichTextLabel" parent="CreditsSprite"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -264.0
-offset_top = -12.0
-offset_right = 263.0
-offset_bottom = 258.0
+offset_left = -346.0
+offset_top = -185.0
+offset_right = 46.0
+offset_bottom = 119.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_5yoe6")
 theme_type_variation = &"Paper"
-text = "USI
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_msvy3")
+theme_override_fonts/bold_font = SubResource("FontVariation_onyef")
+theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/bold_font_size = 20
+bbcode_enabled = true
+text = "[b]Università della Svizzera italiana[/b]
 Borja Maol
 Erwan Moreira
 Toby Simpson
@@ -84,14 +114,33 @@ Michael Multerer
 Rolf Krause
 Davide Baroli
 Amelia Dobis
+"
 
-UNIBE
+[node name="Label4" type="RichTextLabel" parent="CreditsSprite"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 95.0
+offset_top = -184.0
+offset_right = 383.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_5yoe6")
+theme_type_variation = &"Paper"
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_msvy3")
+theme_override_fonts/bold_font = SubResource("FontVariation_onyef")
+theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/bold_font_size = 20
+bbcode_enabled = true
+text = "[b]Universität Bern[/b]
 Isabelle Stadelmann
 Gracia Brückmann
-Walid El-Ajou
-"
-horizontal_alignment = 1
-vertical_alignment = 1
+Walid El-Ajou"
 
 [node name="CloseButton" parent="CreditsSprite" instance=ExtResource("4_fp272")]
 layout_mode = 1
@@ -104,12 +153,13 @@ offset_bottom = 54.0
 grow_horizontal = 0
 
 [node name="BFE" type="Sprite2D" parent="CreditsSprite"]
+visible = false
 position = Vector2(609, 191)
 scale = Vector2(0.547431, 0.547431)
 texture = ExtResource("5_rfmq0")
 
 [node name="SweetSure" type="Sprite2D" parent="CreditsSprite"]
-position = Vector2(233, 191)
+position = Vector2(249, 463)
 scale = Vector2(0.455263, 0.455263)
 texture = ExtResource("6_55tnv")
 

@@ -3,6 +3,8 @@ extends CanvasLayer
 signal metrics_leaderboard_updated
 signal metrics_rank_updated
 
+@export var tick_icon: Texture2D
+@export var pen_icon: Texture2D
 
 func _ready():
 	Gameloop.game_ended.connect(_on_game_ended)
@@ -60,10 +62,10 @@ func _on_player_name_changed():
 
 func _on_name_edit_toggled(toggled_on):
 	if toggled_on:
-		%NameEdit.text = "✔️"
+		%NameEdit.icon = tick_icon
 		%player_name.grab_focus()
 	else:
-		%NameEdit.text = "🖊️"
+		%NameEdit.icon = pen_icon
 		%player_name.text_submitted.emit(%player_name.text)
 		%player_name.release_focus()
 

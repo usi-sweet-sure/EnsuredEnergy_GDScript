@@ -1,6 +1,7 @@
 extends RichTextLabel
 
-
+var PV_upgrade_num = "3"
+var wind_upgrade_num = "5"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	PolicyManager.policy_button_clicked.connect(_on_policy_button_clicked)
@@ -17,5 +18,8 @@ func _on_policy_button_clicked(policy_id: String):
 	
 	for effect_text: String in policy.effects_texts:
 		effects_text += tr(effect_text) + "\n"
-	
+		if effect_text == "POLICIES_ENVIRONMENTAL_POLICY_1_EFFECT_1":
+			effects_text += PV_upgrade_num
+		if effect_text == "POLICIES_ENVIRONMENTAL_POLICY_3_EFFECT_1":
+			effects_text += wind_upgrade_num
 	text = "[center][font_size=24]" + tr(policy.title_key) + "[/font_size]\n" + tr(policy.text_key) + "\n\n[font_size=22]" + tr("EFFECT") + "[/font_size]\n" + effects_text + "[/center]"

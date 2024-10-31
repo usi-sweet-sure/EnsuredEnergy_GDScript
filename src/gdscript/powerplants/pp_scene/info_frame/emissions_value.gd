@@ -6,7 +6,7 @@ func _ready():
 	
 
 func _on_metrics_updated(metrics: PowerplantMetrics):
-	text = str(metrics.emissions).pad_decimals(2) + "Mt CO2"
+	text = str(metrics.emissions).pad_decimals(2) + "M CO2/t"
 	if metrics.emissions <= 0:
 		_change_text_to_green()
 	else:
