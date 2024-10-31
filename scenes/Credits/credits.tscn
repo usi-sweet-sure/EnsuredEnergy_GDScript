@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/credits.gd" id="2_0y38i"]
 [ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="3_5yoe6"]
 [ext_resource type="PackedScene" uid="uid://chpn7t75mmbkh" path="res://scenes/buttons/button_close.tscn" id="4_fp272"]
-[ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/Fonts/Special_Elite/special_elite_regular.ttf" id="4_msvy3"]
+[ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/fonts/special_elite/special_elite_regular.ttf" id="4_msvy3"]
 [ext_resource type="Texture2D" uid="uid://d0phf45274ejw" path="res://assets/bfe.png" id="5_rfmq0"]
 [ext_resource type="Texture2D" uid="uid://ba1qj2x30q805" path="res://assets/sweet_sure.png" id="6_55tnv"]
 
@@ -106,10 +106,10 @@ theme_override_font_sizes/normal_font_size = 20
 theme_override_font_sizes/bold_font_size = 20
 bbcode_enabled = true
 text = "[b]Università della Svizzera italiana[/b]
+Saara Jones
 Borja Maol
 Erwan Moreira
 Toby Simpson
-Saara Jones
 Michael Multerer
 Rolf Krause
 Davide Baroli
