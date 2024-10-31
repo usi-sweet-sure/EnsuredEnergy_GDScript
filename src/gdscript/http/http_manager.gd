@@ -11,6 +11,7 @@ var http_request_active := false:
 		
 var http1: HTTPRequest
 var survey_ping: HTTPRequest
+var shock_history: HTTPRequest
 
 
 # Called when the node enters the scene tree for the first time.
@@ -21,6 +22,8 @@ func _ready():
 	http1.request_completed.connect(_on_http1_request_completed)
 	survey_ping = HTTPRequest.new()
 	add_child(survey_ping)
+	shock_history = HTTPRequest.new()
+	add_child(shock_history)
 	
 
 func make_request(url: String):
@@ -35,3 +38,9 @@ func ping_survey(url: String):
 func _on_http1_request_completed(result, response_code, headers, body):
 	http_request_active = false
 	http_request_completed.emit(result, response_code, headers, body)
+
+
+func send_shock_history(url: String, data_to_send):
+	var json = JSON.stringify(data_to_send)
+	var headers = ["Content-Type: application/json"]
+	shock_history.request(url, headers, HTTPClient.METHOD_POST, json)

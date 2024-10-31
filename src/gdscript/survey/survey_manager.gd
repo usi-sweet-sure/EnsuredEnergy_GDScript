@@ -115,6 +115,7 @@ func _on_next_turn():
 
 
 func is_survey_active() -> bool:
+	return true
 	return token != "" and treatment != -1
 
 
