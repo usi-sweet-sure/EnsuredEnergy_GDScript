@@ -8,4 +8,5 @@ func _ready():
 
 
 func _on_imported_energy_amount_updated(val: float):
-	text = str(val).pad_decimals(2) + " Tj"
+	var import_percentage = val / Gameloop.supply_winter * 100
+	text = str(import_percentage).pad_decimals(2) + " %"
