@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://rjcu72lxn4n4"]
+[gd_scene load_steps=32 format=3 uid="uid://rjcu72lxn4n4"]
 
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/settings_canvas.gd" id="1_q4she"]
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/close_button.gd" id="2_q0sqg"]
@@ -19,8 +19,11 @@
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/credits_button.gd" id="17_wuphf"]
 [ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="19_d2swd"]
 [ext_resource type="Script" path="res://src/gdscript/settings/settings_canvas/back_to_survey_button.gd" id="19_r5c2w"]
+[ext_resource type="Texture2D" uid="uid://c8wbmujr8ohwy" path="res://assets/textures/buttons/button_normal_blue.png" id="19_rd13j"]
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/textures/ui/Button-Next-Normal.png" id="20_dqb8u"]
+[ext_resource type="Texture2D" uid="uid://d0dt1qv32p1v6" path="res://assets/textures/buttons/button_pressed_blue.png" id="20_eqv15"]
 [ext_resource type="Texture2D" uid="uid://biq6v1m7nc6l" path="res://assets/textures/ui/Button-Next-Press.png" id="21_7pokf"]
+[ext_resource type="Texture2D" uid="uid://dlavhpvss6kxw" path="res://assets/textures/buttons/button_hover_blue.png" id="21_lll88"]
 [ext_resource type="Texture2D" uid="uid://c25aef4m4yd40" path="res://assets/textures/ui/Button-Next-Hover.png" id="22_t6jai"]
 [ext_resource type="Texture2D" uid="uid://cvr8ptliyw7oc" path="res://assets/textures/ui/All-HQ-Assets-D_0001s_0013_1-slot-button-hole.png" id="24_wyual"]
 [ext_resource type="PackedScene" uid="uid://chpn7t75mmbkh" path="res://scenes/buttons/button_close.tscn" id="25_fga0w"]
@@ -152,6 +155,7 @@ offset_bottom = 292.5
 alignment = 1
 
 [node name="Label" type="Label" parent="Control/SettingsBox/VBoxContainer2"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 0
 theme = ExtResource("19_d2swd")
@@ -159,6 +163,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.960784)
 text = "MUSIC"
 
 [node name="VolMusic" type="HSlider" parent="Control/SettingsBox/VBoxContainer2" groups=["draggables"]]
+visible = false
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_vertical = 4
@@ -323,9 +328,9 @@ uppercase = true
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 focus_mode = 0
-texture_normal = ExtResource("13_mepng")
-texture_pressed = ExtResource("14_ddynd")
-texture_hover = ExtResource("15_8tsm0")
+texture_normal = ExtResource("19_rd13j")
+texture_pressed = ExtResource("20_eqv15")
+texture_hover = ExtResource("21_lll88")
 script = ExtResource("19_r5c2w")
 
 [node name="ButtonHole" type="Sprite2D" parent="Control/SettingsBox/MarginContainer2/VBoxContainer/BackToSurvey"]
@@ -340,9 +345,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 12.0
+offset_left = 13.0
 offset_top = 10.0
-offset_right = -11.0
+offset_right = -10.0
 offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -351,6 +356,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "BACK_TO_SURVEY"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 uppercase = true
 
 [node name="MarginContainer" type="MarginContainer" parent="Control/SettingsBox"]
