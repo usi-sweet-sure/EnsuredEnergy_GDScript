@@ -1,7 +1,7 @@
 extends TextureButton
 
 func _ready():
-	SurveyManager.token_updated.connect(_on_token_updated)
+	SurveyManager.survey_params_ready.connect(_on_token_updated)
 	_on_token_updated(SurveyManager.token)
 	
 	

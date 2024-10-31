@@ -5,6 +5,7 @@ signal frame_updated(frame: int)
 signal treatment_updated(treatment: int)
 signal survey_ping_requested
 signal back_to_survey_requested
+signal survey_params_ready
 
 
 var token_query_string_name = "res_tok"
@@ -37,9 +38,11 @@ func _ready():
 	update_locale()
 	update_frame()
 	update_treatment()
+	survey_params_ready.emit()
 	
 
 func update_token():
+	print("tok")
 	var temp_token = JavaScriptBridge.eval("new URLSearchParams(window.location.search).get('{token_query_string_name}')".format({"token_query_string_name": token_query_string_name}))
 	
 	if temp_token == null:
@@ -54,6 +57,7 @@ func update_token():
 	
 	
 func update_locale():
+	print("loc")
 	var temp_locale = JavaScriptBridge.eval("new URLSearchParams(window.location.search).get('{locale_query_string_name}')".format({"locale_query_string_name": locale_query_string_name}))
 	
 	if temp_locale == null:
@@ -63,6 +67,7 @@ func update_locale():
 	
 	
 func update_treatment():
+	print("trt")
 	var temp_treatment = JavaScriptBridge.eval("new URLSearchParams(window.location.search).get('{treatment_query_string_name}')".format({"treatment_query_string_name": treatment_query_string_name}))
 	
 	if temp_treatment == null:
@@ -72,6 +77,7 @@ func update_treatment():
 	
 
 func update_frame():
+	print("frame")
 	var temp_frame = JavaScriptBridge.eval("new URLSearchParams(window.location.search).get('{frame_query_string_name}')".format({"frame_query_string_name": frame_query_string_name}))
 	
 	if temp_frame != null:

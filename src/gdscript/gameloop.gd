@@ -1,7 +1,7 @@
 extends Node2D
 
 var start_year: int = 2022
-var total_number_of_turns: int = 10
+var total_number_of_turns: int = 1
 var years_in_a_turn = 3
 
 var demand_summer_list = []
