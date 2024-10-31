@@ -847,6 +847,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 15
 text = "IMPORT"
 horizontal_alignment = 1
+uppercase = true
 
 [node name="Solar" type="Control" parent="MainFrame/BottomFrames/CenterFrame"]
 anchors_preset = 0
