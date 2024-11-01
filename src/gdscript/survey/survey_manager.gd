@@ -75,7 +75,7 @@ func update_treatment():
 	if temp_treatment == null:
 		temp_treatment = "-1"
 	else:
-		if int(temp_treatment) != -1 or int(temp_treatment) != 0 or int(temp_treatment) != 1:
+		if int(temp_treatment) != -1 and int(temp_treatment) != 0 and int(temp_treatment) != 1:
 			temp_treatment = "-1"
 		
 	treatment = int(temp_treatment)
