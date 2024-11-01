@@ -109,66 +109,68 @@ func _on_button_plus_pressed():
 	var base_metrics = PowerplantsManager.powerplants_metrics[metrics.type]
 	var delta_prod_cost = base_metrics.production_costs * metrics.upgrade_factor_for_production_costs
 	
-	if MoneyManager.can_spend_the_money(metrics.upgrade_cost + delta_prod_cost):
-		metrics.current_upgrade += 1
-		
-		# Production costs
-		metrics.production_costs += delta_prod_cost
-		
-		# Emissions
-		var delta_emissions = base_metrics.emissions * metrics.upgrade_factor_for_emissions
-		metrics.emissions += delta_emissions
-		
-		# Land use
-		var delta_land_use = base_metrics.land_use * metrics.upgrade_factor_for_land_use
-		metrics.land_use += delta_land_use
-		
-		# Winter supply
-		metrics.availability.y += base_metrics.availability.y * metrics.upgrade_factor_for_winter_supply
-		
-		# Summer supply
-		metrics.availability.x += base_metrics.availability.x * metrics.upgrade_factor_for_summer_supply
-		
-		# Upgrade cost
-		MoneyManager.building_costs += metrics.upgrade_cost
-		Gameloop.available_money_message_requested.emit("-" + str(metrics.upgrade_cost + delta_prod_cost).pad_decimals(0) + "M CHF", false)
-		
-		metrics_updated.emit(metrics)
-		powerplant_upgraded.emit(metrics)
-	else:
-		floating_message.stop()
-		floating_message.float_up()
+	if metrics.current_upgrade < metrics.max_upgrade:
+		if MoneyManager.can_spend_the_money(metrics.upgrade_cost + delta_prod_cost):
+			metrics.current_upgrade += 1
+			
+			# Production costs
+			metrics.production_costs += delta_prod_cost
+			
+			# Emissions
+			var delta_emissions = base_metrics.emissions * metrics.upgrade_factor_for_emissions
+			metrics.emissions += delta_emissions
+			
+			# Land use
+			var delta_land_use = base_metrics.land_use * metrics.upgrade_factor_for_land_use
+			metrics.land_use += delta_land_use
+			
+			# Winter supply
+			metrics.availability.y += base_metrics.availability.y * metrics.upgrade_factor_for_winter_supply
+			
+			# Summer supply
+			metrics.availability.x += base_metrics.availability.x * metrics.upgrade_factor_for_summer_supply
+			
+			# Upgrade cost
+			MoneyManager.building_costs += metrics.upgrade_cost
+			Gameloop.available_money_message_requested.emit("-" + str(metrics.upgrade_cost + delta_prod_cost).pad_decimals(0) + "M CHF", false)
+			
+			metrics_updated.emit(metrics)
+			powerplant_upgraded.emit(metrics)
+		else:
+			floating_message.stop()
+			floating_message.float_up()
 
 
 func _on_button_minus_pressed():
-	metrics.current_upgrade -= 1
-	
-	var base_metrics = PowerplantsManager.powerplants_metrics[metrics.type]
-	
-	# Production costs
-	var delta_prod_cost = base_metrics.production_costs * metrics.upgrade_factor_for_production_costs
-	metrics.production_costs -= delta_prod_cost
-	
-	# Emissions
-	var delta_emissions = base_metrics.emissions * metrics.upgrade_factor_for_emissions
-	metrics.emissions -= delta_emissions
-	
-	# Land use
-	var delta_land_use = base_metrics.land_use * metrics.upgrade_factor_for_land_use
-	metrics.land_use -= delta_land_use
-	
-	# Winter supply
-	metrics.availability.y -= base_metrics.availability.y * metrics.upgrade_factor_for_winter_supply
-	
-	# Summer supply
-	metrics.availability.x -= base_metrics.availability.x * metrics.upgrade_factor_for_summer_supply
-	
-	# Upgrade cost
-	MoneyManager.building_costs -= metrics.upgrade_cost
-	Gameloop.available_money_message_requested.emit("+" + str(metrics.upgrade_cost + delta_prod_cost).pad_decimals(0) + "M CHF", true)
-	
-	metrics_updated.emit(metrics)
-	powerplant_downgraded.emit(metrics)
+	if metrics.current_upgrade > metrics.min_upgrade:
+		metrics.current_upgrade -= 1
+		
+		var base_metrics = PowerplantsManager.powerplants_metrics[metrics.type]
+		
+		# Production costs
+		var delta_prod_cost = base_metrics.production_costs * metrics.upgrade_factor_for_production_costs
+		metrics.production_costs -= delta_prod_cost
+		
+		# Emissions
+		var delta_emissions = base_metrics.emissions * metrics.upgrade_factor_for_emissions
+		metrics.emissions -= delta_emissions
+		
+		# Land use
+		var delta_land_use = base_metrics.land_use * metrics.upgrade_factor_for_land_use
+		metrics.land_use -= delta_land_use
+		
+		# Winter supply
+		metrics.availability.y -= base_metrics.availability.y * metrics.upgrade_factor_for_winter_supply
+		
+		# Summer supply
+		metrics.availability.x -= base_metrics.availability.x * metrics.upgrade_factor_for_summer_supply
+		
+		# Upgrade cost
+		MoneyManager.building_costs -= metrics.upgrade_cost
+		Gameloop.available_money_message_requested.emit("+" + str(metrics.upgrade_cost + delta_prod_cost).pad_decimals(0) + "M CHF", true)
+		
+		metrics_updated.emit(metrics)
+		powerplant_downgraded.emit(metrics)
 
 
 func _on_metrics_updated(_metrics):

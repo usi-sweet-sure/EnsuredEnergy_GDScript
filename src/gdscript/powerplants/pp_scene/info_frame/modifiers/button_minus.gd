@@ -11,6 +11,7 @@ func _on_metrics_updated(metrics: PowerplantMetrics):
 	if not disabled and metrics.current_upgrade == metrics.min_upgrade:
 		disabled = true
 
+
 	if disabled != previous_value:
 		if disabled:
 			mouse_filter = Control.MOUSE_FILTER_IGNORE
