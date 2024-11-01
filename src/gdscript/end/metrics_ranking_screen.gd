@@ -66,5 +66,4 @@ func _assert_not_null(val: Variant):
 
 
 func _on_player_name_text_submitted(new_text: String) -> void:
-	print(new_text)
 	player_new_name = new_text

@@ -36,7 +36,6 @@ func _on_shock_resolved(_shock: Shock):
 	
 func _update():
 	var shutting_down_in = life_span - (Gameloop.current_turn - built_on_turn)
-	var remaining_turns = Gameloop.total_number_of_turns - Gameloop.current_turn + 1
 	
 	if shutting_down_in == 1:
 		animation_player.play("appear")

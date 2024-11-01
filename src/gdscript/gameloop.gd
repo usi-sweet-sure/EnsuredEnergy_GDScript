@@ -140,8 +140,9 @@ func start_game():
 		else:
 			Context.register_new_game_on_model(player_name) # New game in model
 	else:
+		pass
 		# This should not happen
-		printerr("A player name is needed")
+		#printerr("A player name is needed")
 
 
 func _check_supply():

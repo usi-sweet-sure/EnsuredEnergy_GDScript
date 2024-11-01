@@ -29,7 +29,7 @@ func _ready():
 			[func(): PolicyManager.personal_support += 0.05, func(): MoneyManager.players_own_money_amount += 50]
 		)
 	cold_spell.add_player_reaction("SHOCK_COLD_SPELL_PLAYER_REACTION_1", func(): PolicyManager.personal_support -= 0.1)
-	cold_spell.add_player_reaction("SHOCK_COLD_SPELL_PLAYER_REACTION_2", func(): print("gaz upgrade")) # E. Implement
+	cold_spell.add_player_reaction("SHOCK_COLD_SPELL_PLAYER_REACTION_2", func(): pass) # E. Implement gaz upgrade
 	cold_spell.add_player_reaction("SHOCK_COLD_SPELL_PLAYER_REACTION_3", func(): MoneyManager.players_own_money_amount -= 50)
 	
 	var heat_wave: = Shock.new("SHOCK_HEAT_WAVE_TITLE", "SHOCK_HEAT_WAVE_TEXT", "hot.png")
@@ -39,7 +39,7 @@ func _ready():
 			[func(): PolicyManager.personal_support += 0.05, func(): MoneyManager.players_own_money_amount += 50]
 		)
 	heat_wave.add_player_reaction("SHOCK_HEAT_WAVE_PLAYER_REACTION_1", func(): PolicyManager.personal_support -= 0.1)
-	heat_wave.add_player_reaction("SHOCK_HEAT_WAVE_PLAYER_REACTION_2", func(): print("gaz upgrade")) # E. Implement
+	heat_wave.add_player_reaction("SHOCK_HEAT_WAVE_PLAYER_REACTION_2", func(): pass) # E. Implement gaz upgrade
 	heat_wave.add_player_reaction("SHOCK_HEAT_WAVE_PLAYER_REACTION_3", func(): MoneyManager.players_own_money_amount -= 50)
 	
 	var glaciers_melting_shock = Shock.new("SHOCK_GLACIERS_MELTING_TITLE", "SHOCK_GLACIERS_MELTING_TEXT", "ice.png")

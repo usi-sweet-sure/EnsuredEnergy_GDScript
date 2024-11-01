@@ -41,8 +41,6 @@ func _on_http1_request_completed(result, response_code, headers, body):
 
 
 func send_history(url: String, data_to_send):
-	print("sending history")
 	var json = JSON.stringify(data_to_send)
-	print(json)
 	var headers = ["Content-Type: application/json"]
 	history.request(url, headers, HTTPClient.METHOD_POST, json)

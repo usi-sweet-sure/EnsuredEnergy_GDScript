@@ -39,12 +39,12 @@ func register_new_game_on_model(player_name: String):
 		HttpManager.http_request_completed.connect(_on_got_context_from_model)
 		HttpManager.make_request(url)
 	else:
-		printerr("A res_name is needed (Player's name is probably missing)")
+		pass
+		#printerr("A res_name is needed (Player's name is probably missing)")
 
 
 #upsert param
 func send_parameters_to_model(game_id: int, year: int, prm_id: int, tj: float):
-	print("prms year ", year)
 	var url = "https://sure.euler.usi.ch/json.php?mth=ups&res_id={res_id}&prm_id={prm_id}&yr={yr}&tj={tj}".format({"res_id": game_id, "yr": year, "prm_id": prm_id, "tj": tj})
 	
 	if not HttpManager.http_request_completed.is_connected(_on_parameters_sent_to_model):
@@ -53,7 +53,6 @@ func send_parameters_to_model(game_id: int, year: int, prm_id: int, tj: float):
 	
 
 func get_context_from_model(game_id: int, year: int):
-	print("context year ", year)
 	var url = "https://sure.euler.usi.ch/json.php?mth=ctx&res_id={res_id}&yr={yr}".format({"res_id": game_id, "yr": year})
 	
 	if not HttpManager.http_request_completed.is_connected(_on_got_context_from_model):
@@ -86,7 +85,6 @@ func change_player_name(game_id: int, player_name: String):
 	
 	
 func send_shock_parameters(game_id: int, shock_id: int, year: int):
-	print("shock year ", year)
 	var url = "https://sure.euler.usi.ch/json.php?mth=shk&res_id={res_id}&shk_id={shock_id}&yr={yr}".format({"res_id": game_id, "shock_id": shock_id, "yr": year})
 
 	if not HttpManager.http_request_completed.is_connected(_on_shocks_sent_to_model):
@@ -99,13 +97,13 @@ func get_demand_from_context():
 		for i in ctx:
 			if i["prm_id"] == "455":
 				Gameloop.demand_summer = float(i["tj"]) / 100.0
-				print(Gameloop.demand_summer)
 		for i in ctx: # sorry le code est cheum mais j'ai besoin de la demand_summer avant de pouvoir mettre la winter
 			if i["prm_id"] == "435":
 				Gameloop.demand_winter = (float(i["tj"]) / 100.0) - Gameloop.demand_summer
 	else:
-		printerr("Context is null")
-		printerr("Shock: ", Gameloop.most_recent_shock.title_key)
+		pass
+		#printerr("Context is null")
+		#printerr("Shock: ", Gameloop.most_recent_shock.title_key)
 
 func _on_got_context_from_model(_result, _response_code, _headers, body):
 	if HttpManager.http_request_completed.is_connected(_on_got_context_from_model):
@@ -115,7 +113,6 @@ func _on_got_context_from_model(_result, _response_code, _headers, body):
 
 	if ctx!= null and Gameloop.current_turn == 1:
 		res_id = int(ctx[0]["res_id"])
-		print("getting demand from context")
 		get_demand_from_context()
 		
 	context_updated.emit(ctx)
@@ -163,7 +160,6 @@ func _on_changed_player_name(_result, _response_code, _headers, _body):
 
 
 func _update_context_no_signal(body):
-	print(body)
 	context_updated_for_new_turn = true
 	var json = JSON.new()
 	json.parse(body.get_string_from_utf8())

@@ -50,8 +50,6 @@ func update_token():
 	
 	token = temp_token
 	
-	print("token: ", token)
-	
 	
 func update_locale():
 	var temp_locale = JavaScriptBridge.eval("new URLSearchParams(window.location.search).get('{locale_query_string_name}')".format({"locale_query_string_name": locale_query_string_name}))
@@ -65,9 +63,7 @@ func update_locale():
 			temp_locale = "de"
 	
 	locale = temp_locale
-	
-	print("locale: ", locale)
-	
+		
 	
 func update_treatment():
 	var temp_treatment = JavaScriptBridge.eval("new URLSearchParams(window.location.search).get('{treatment_query_string_name}')".format({"treatment_query_string_name": treatment_query_string_name}))
@@ -76,7 +72,7 @@ func update_treatment():
 		temp_treatment = "-1"
 		
 	treatment = int(temp_treatment)
-	print("trt: ", treatment)
+
 	
 func update_frame():
 	var temp_frame = JavaScriptBridge.eval("new URLSearchParams(window.location.search).get('{frame_query_string_name}')".format({"frame_query_string_name": frame_query_string_name}))
@@ -86,8 +82,6 @@ func update_frame():
 	else:
 		# Was already assigned a random value
 		frame_updated.emit(frame)
-		
-	print("frame: ", frame)
 	
 	
 func open_back_to_survey_tab(target := "_blank"):
@@ -99,7 +93,6 @@ func open_back_to_survey_tab(target := "_blank"):
 
 
 func ping_the_survey():
-	print("pinging survey", Gameloop.current_turn + 1)
 	# The first ping is sent when the player arrives in the game, on the first turn.
 	# The first ping sent must have a step 2, and then increment on each turn.
 	# Which means step is current_turn + 1.
@@ -122,7 +115,6 @@ func _on_next_turn():
 
 
 func is_survey_active() -> bool:
-	print("Is survey active: ", token != "" and treatment != -1)
 	return token != "" and treatment != -1
 
 
