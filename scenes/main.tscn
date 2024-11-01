@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://g58p7rxvcdik"]
+[gd_scene load_steps=16 format=3 uid="uid://g58p7rxvcdik"]
 
 [ext_resource type="PackedScene" uid="uid://ba56oxmvcxpos" path="res://scenes/world.tscn" id="1_prp6q"]
 [ext_resource type="PackedScene" uid="uid://bs48lirfn2fp2" path="res://scenes/hud/ui.tscn" id="2_d60f5"]
@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://det4mobxk3l42" path="res://scenes/loading_screen.tscn" id="23_bmtug"]
 [ext_resource type="PackedScene" uid="uid://cuuj2s4h1588i" path="res://scenes/audio.tscn" id="34_smnob"]
 [ext_resource type="PackedScene" uid="uid://dc3s5eeg1c0uv" path="res://scenes/windows/graphs.tscn" id="66_s8n66"]
-[ext_resource type="PackedScene" uid="uid://mnj2kr6urhvk" path="res://scenes/survey/survey_layer.tscn" id="76_y7xdi"]
 [ext_resource type="PackedScene" uid="uid://cb7movoe2pf7u" path="res://scenes/windows/quit_game.tscn" id="77_iwdt8"]
 
 [node name="Main" type="Node2D"]
@@ -86,8 +85,6 @@ metadata/_edit_vertical_guides_ = [725.0, 1270.0, 1417.0, 509.0]
 
 [node name="Graphs" parent="." instance=ExtResource("66_s8n66")]
 visible = false
-
-[node name="SurveyLayer" parent="." instance=ExtResource("76_y7xdi")]
 
 [node name="Settings" parent="." instance=ExtResource("11_3whgs")]
 visible = false

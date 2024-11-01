@@ -7,7 +7,7 @@ func _ready() -> void:
 	_on_token_updated(SurveyManager.token)
 
 
-func _on_token_updated(token: String) -> void:
+func _on_token_updated(_token: String) -> void:
 	visible = SurveyManager.is_survey_active()
 
 

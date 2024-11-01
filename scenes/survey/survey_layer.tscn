@@ -1,7 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://mnj2kr6urhvk"]
-
-[ext_resource type="Script" path="res://src/gdscript/survey/token_label.gd" id="1_1bkmg"]
-[ext_resource type="Script" path="res://src/gdscript/survey/token_title_label.gd" id="1_5u74m"]
+[gd_scene format=3 uid="uid://mnj2kr6urhvk"]
 
 [node name="SurveyLayer" type="CanvasLayer"]
 
@@ -10,27 +7,3 @@ layout_mode = 3
 anchors_preset = 10
 anchor_right = 1.0
 grow_horizontal = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="SurveyToken"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -286.0
-offset_right = 286.0
-offset_bottom = 40.0
-grow_horizontal = 2
-theme_override_constants/separation = 15
-alignment = 1
-
-[node name="Title" type="Label" parent="SurveyToken/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "SURVEY_TOKEN"
-script = ExtResource("1_5u74m")
-
-[node name="TokenLabel" type="Label" parent="SurveyToken/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-horizontal_alignment = 1
-script = ExtResource("1_1bkmg")

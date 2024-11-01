@@ -16,7 +16,6 @@ var transport_demand: float
 var agriculture_demand: float
 var shock_buttons_hovered: Array[Shock] = []
 var to_do_on_next_turn: Array[Callable] = []
-var shock_history_for_survey = {}
 
 
 func _ready():
@@ -74,7 +73,6 @@ func _ready():
 	
 	Gameloop.next_turn.connect(_on_next_turn)
 	Gameloop.player_can_start_playing_new_turn.connect(_on_player_can_start_playing_new_turn)
-	shock_resolved.connect(_on_shock_resolved)
 	
 	
 func pick_shock():
@@ -293,39 +291,4 @@ func _revert_severe_weather():
 func _on_player_can_start_playing_new_turn():
 	if Gameloop.most_recent_shock.title_key == "SHOCK_SEVERE_WEATHER_TITLE":
 		to_do_on_next_turn.push_back(_revert_severe_weather)
-
-
-func _on_shock_resolved(shock: Shock):
-	shock_history_for_survey[str(Gameloop.current_turn)] = {
-			"shock_title": {
-				"key" : shock.title_key,
-				"text" : tr(shock.title_key),
-			},
-			"shock_effect": {
-				"key": shock.text_key,
-				"text": tr(shock.text_key)
-			},
-		}
-		
-	
-	if shock.player_reactions_texts.size() > 0:
-		shock_history_for_survey[str(Gameloop.current_turn)]["player_reactions"] = {}
-		shock_history_for_survey[str(Gameloop.current_turn)]["player_reactions"]["chosen_reaction"] = shock.chosen_reaction_index
-	
-		var index = 0
-		for text in shock.player_reactions_texts:
-			shock_history_for_survey[str(Gameloop.current_turn)]["player_reactions"][str(index)] = {}
-			shock_history_for_survey[str(Gameloop.current_turn)]["player_reactions"][str(index)]["key"] = text
-			shock_history_for_survey[str(Gameloop.current_turn)]["player_reactions"][str(index)]["text"] = tr(text)
-			index += 1
-			
-	
-	var url = "https://sure.euler.usi.ch/json.php?mth=upd2"
-	var data_to_send = {
-		"res_id": Context.res_id,
-		"res_name": Gameloop.player_name,
-		"res_txt": shock_history_for_survey
-	}
-	
-	HttpManager.send_shock_history(url, data_to_send)
 	

@@ -630,7 +630,7 @@ fit_content = true
 scroll_active = false
 
 [node name="ShowHand" parent="Bubbles/InfoBubble5" instance=ExtResource("5_rwmh0")]
-position = Vector2(1089, 491)
+position = Vector2(1069, 493)
 rotation = 0.438783
 
 [node name="InfoBubble6" type="ColorRect" parent="Bubbles"]
