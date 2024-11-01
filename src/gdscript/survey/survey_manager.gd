@@ -72,22 +72,19 @@ func update_locale():
 func update_treatment():
 	var temp_treatment = JavaScriptBridge.eval("new URLSearchParams(window.location.search).get('{treatment_query_string_name}')".format({"treatment_query_string_name": treatment_query_string_name}))
 	
-	if temp_treatment == null:
+	if temp_treatment == null or not ["-1", "1", "0"].has(temp_treatment):
 		temp_treatment = "-1"
-	else:
-		if int(temp_treatment) != -1 and int(temp_treatment) != 0 and int(temp_treatment) != 1:
-			temp_treatment = "-1"
 		
 	treatment = int(temp_treatment)
 	print("trt: ", treatment)
 	
-# E. This code is kinda bad, but afraid to change it on the day of the release
 func update_frame():
 	var temp_frame = JavaScriptBridge.eval("new URLSearchParams(window.location.search).get('{frame_query_string_name}')".format({"frame_query_string_name": frame_query_string_name}))
 	
-	if temp_frame != null and (int(temp_frame) == 0 or int(temp_frame) == 1):
+	if temp_frame != null and ["0", "1"].has(temp_frame):
 		frame = int(temp_frame)
 	else:
+		# Was already assigned a random value
 		frame_updated.emit(frame)
 		
 	print("frame: ", frame)
