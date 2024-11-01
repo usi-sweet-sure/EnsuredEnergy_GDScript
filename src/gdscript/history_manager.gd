@@ -50,6 +50,17 @@ func _on_policy_voted(_passed: bool):
 			"passed": data.passed,
 		}
 		
+		if policy.effects_texts.size() > 0:
+			policy_history_for_survey[str(data.turn)]["effects"] = {}
+			
+			var index = 0
+			for text in policy.effects_texts:
+				policy_history_for_survey[str(data.turn)]["effects"][str(index)] = {
+					"key": text,
+					"text": tr(text)
+				}
+				index += 1
+		
 	send_history_to_survey()
 		
 

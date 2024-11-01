@@ -58,7 +58,12 @@ func update_locale():
 	
 	if temp_locale == null:
 		temp_locale = ""
+	else:
+		var available_locales = ["en", "de", "it", "fr"]
 		
+		if available_locales.find(temp_locale) == -1:
+			temp_locale = "de"
+	
 	locale = temp_locale
 	
 	
@@ -68,15 +73,18 @@ func update_treatment():
 	
 	if temp_treatment == null:
 		temp_treatment = "-1"
+	else:
+		if temp_treatment != -1 or temp_treatment != 0 or temp_treatment != 1:
+			temp_treatment = -1
 		
 	treatment = int(temp_treatment)
 	
-
+# E. This code is kinda bad, but afraid to change it on the day of the release
 func update_frame():
 	print("frame")
 	var temp_frame = JavaScriptBridge.eval("new URLSearchParams(window.location.search).get('{frame_query_string_name}')".format({"frame_query_string_name": frame_query_string_name}))
 	
-	if temp_frame != null:
+	if temp_frame != null and (temp_frame == 0 or temp_frame == 1):
 		frame = int(temp_frame)
 	else:
 		frame_updated.emit(frame)
