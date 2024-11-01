@@ -43,7 +43,6 @@ func _ready():
 	
 
 func update_token():
-	print("tok")
 	var temp_token = JavaScriptBridge.eval("new URLSearchParams(window.location.search).get('{token_query_string_name}')".format({"token_query_string_name": token_query_string_name}))
 	
 	if temp_token == null:
@@ -51,9 +50,10 @@ func update_token():
 	
 	token = temp_token
 	
+	print("token: ", token)
+	
 	
 func update_locale():
-	print("loc")
 	var temp_locale = JavaScriptBridge.eval("new URLSearchParams(window.location.search).get('{locale_query_string_name}')".format({"locale_query_string_name": locale_query_string_name}))
 	
 	if temp_locale == null:
@@ -66,28 +66,31 @@ func update_locale():
 	
 	locale = temp_locale
 	
+	print("locale: ", locale)
+	
 	
 func update_treatment():
-	print("trt")
 	var temp_treatment = JavaScriptBridge.eval("new URLSearchParams(window.location.search).get('{treatment_query_string_name}')".format({"treatment_query_string_name": treatment_query_string_name}))
 	
 	if temp_treatment == null:
 		temp_treatment = "-1"
 	else:
-		if temp_treatment != -1 or temp_treatment != 0 or temp_treatment != 1:
-			temp_treatment = -1
+		if int(temp_treatment) != -1 or int(temp_treatment) != 0 or int(temp_treatment) != 1:
+			temp_treatment = "-1"
 		
 	treatment = int(temp_treatment)
+	print("trt: ", treatment)
 	
 # E. This code is kinda bad, but afraid to change it on the day of the release
 func update_frame():
-	print("frame")
 	var temp_frame = JavaScriptBridge.eval("new URLSearchParams(window.location.search).get('{frame_query_string_name}')".format({"frame_query_string_name": frame_query_string_name}))
 	
-	if temp_frame != null and (temp_frame == 0 or temp_frame == 1):
+	if temp_frame != null and (int(temp_frame) == 0 or int(temp_frame) == 1):
 		frame = int(temp_frame)
 	else:
 		frame_updated.emit(frame)
+		
+	print("frame: ", frame)
 	
 	
 func open_back_to_survey_tab(target := "_blank"):
@@ -122,6 +125,7 @@ func _on_next_turn():
 
 
 func is_survey_active() -> bool:
+	print("Is survey active: ", token != "" and treatment != -1)
 	return token != "" and treatment != -1
 
 
