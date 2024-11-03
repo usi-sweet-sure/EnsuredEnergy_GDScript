@@ -31,11 +31,12 @@ func _on_leaderboard_button_pressed(button_index):
 		rank_node.text = _assert_not_null(i[rank_list[button_index]])
 		%player_score.text = _assert_not_null(Context.rank_json[0][score_list[button_index]]).pad_decimals(2) + metric_list[button_index]
 		%player_rank.text = _assert_not_null(Context.rank_json[0][rank_list[button_index]])
-		if player_new_name != null:
-			%player_name.text = player_new_name
-		else:
-			%player_name.text = _assert_not_null(Context.rank_json[0]["res_name"])
-			
+		%player_name.release_focus()
+		#if player_new_name != null:
+			#%player_name.text = player_new_name
+		#else:
+			#%player_name.text = _assert_not_null(Context.rank_json[0]["res_name"])
+		
 			
 func _on_end_metrics_leaderboard_updated(leaderboard):
 	$RichTextLabel.hide()

@@ -199,8 +199,7 @@ grow_vertical = 2
 theme = ExtResource("4_n8g63")
 theme_type_variation = &"Screen"
 theme_override_constants/shadow_offset_x = 2
-text = "CALCULATING_RANK
-"
+text = "CALCULATING_RANK"
 horizontal_alignment = 1
 vertical_alignment = 1
 

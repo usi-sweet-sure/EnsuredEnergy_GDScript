@@ -11,16 +11,17 @@ func _ready() -> void:
 
 
 func _on_shock_resolved(shock: Shock):
-	shock_history_for_survey[str(Gameloop.current_turn)] = {
-			"shock_title": {
-				"key" : shock.title_key,
-				"text" : tr(shock.title_key),
-			},
-			"shock_effect": {
-				"key": shock.text_key,
-				"text": tr(shock.text_key)
-			},
-		}
+	if shock != null:
+		shock_history_for_survey[str(Gameloop.current_turn)] = {
+				"shock_title": {
+					"key" : shock.title_key,
+					"text" : tr(shock.title_key),
+				},
+				"shock_effect": {
+					"key": shock.text_key,
+					"text": tr(shock.text_key)
+				},
+			}
 		
 	
 	if shock.player_reactions_texts.size() > 0:
@@ -74,5 +75,5 @@ func send_history_to_survey():
 			"policies": policy_history_for_survey
 		}
 	}
-	
+		
 	HttpManager.send_history(url, data_to_send)

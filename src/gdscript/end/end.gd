@@ -49,11 +49,15 @@ func _on_close_button_pressed():
 
 func _on_player_name_text_submitted(new_text):
 	#Gameloop.player_name = new_text
+	if new_text == "" or new_text == null:
+		new_text = "new_player"
+		%player_name.text = new_text
 	Context.change_player_name(Context.res_id, new_text.uri_encode())
 	%player_name.editable = false
 	%NameEdit.hide()
 	%player_name.release_focus()
 	%NameEdit.button_pressed = false
+	
 	
 func _on_player_name_changed():
 	%player_name.editable = true
@@ -66,12 +70,14 @@ func _on_name_edit_toggled(toggled_on):
 		%player_name.grab_focus()
 	else:
 		%NameEdit.icon = pen_icon
-		%player_name.text_submitted.emit(%player_name.text)
-		%player_name.release_focus()
+		if %player_name.editable:
+			%player_name.text_submitted.emit(%player_name.text)
+			%player_name.release_focus()
 
 
 func _on_player_name_focus_entered():
-	%NameEdit.toggled.emit(true)
+	%NameEdit.set_pressed_no_signal(true)
+	%NameEdit.icon = tick_icon
 
 
 func _on_player_name_focus_exited():
