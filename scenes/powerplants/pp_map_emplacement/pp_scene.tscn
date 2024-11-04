@@ -639,22 +639,6 @@ _data = {
 "show_modifiers": SubResource("Animation_7s5wq")
 }
 
-[sub_resource type="Animation" id="Animation_uru8t"]
-resource_name = "breath"
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Warning:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.2, 1.2)]
-}
-
 [sub_resource type="Animation" id="Animation_ufmr4"]
 length = 0.001
 tracks/0/type = "value"
@@ -708,6 +692,22 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(2, 2), Vector2(1.9, 1.9), Vector2(2, 2), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_uru8t"]
+resource_name = "breath"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Warning:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uecmw"]

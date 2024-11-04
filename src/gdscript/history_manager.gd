@@ -69,7 +69,6 @@ func send_history_to_survey():
 	var url = "https://sure.euler.usi.ch/json.php?mth=upd2"
 	var data_to_send = {
 		"res_id": Context.res_id,
-		"res_name": Gameloop.player_name,
 		"res_txt": {
 			"shocks" : shock_history_for_survey,
 			"policies": policy_history_for_survey
