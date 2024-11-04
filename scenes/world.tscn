@@ -35,6 +35,7 @@ offset_left = -4114.0
 offset_top = -2538.0
 offset_right = 5886.0
 offset_bottom = 4462.0
+mouse_default_cursor_shape = 6
 texture = ExtResource("1_exly2")
 
 [node name="Mountain1" type="Sprite2D" parent="."]

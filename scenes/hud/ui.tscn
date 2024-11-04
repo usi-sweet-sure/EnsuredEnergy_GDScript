@@ -1190,6 +1190,7 @@ offset_right = 208.0
 offset_bottom = 219.0
 grow_horizontal = 0
 focus_mode = 0
+mouse_default_cursor_shape = 16
 flat = true
 alignment = 0
 
@@ -1740,6 +1741,7 @@ offset_left = -140.0
 offset_top = -17.0
 offset_right = 140.0
 offset_bottom = 13.0
+mouse_default_cursor_shape = 6
 theme_override_icons/grabber = ExtResource("45_oympp")
 theme_override_icons/grabber_highlight = ExtResource("45_oympp")
 theme_override_icons/grabber_disabled = ExtResource("45_oympp")
@@ -2062,6 +2064,7 @@ offset_bottom = 0.0179977
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
+mouse_default_cursor_shape = 16
 flat = true
 
 [node name="Bar" type="Sprite2D" parent="EnvironmentAndPollution/Environment"]
@@ -2195,6 +2198,7 @@ offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
+mouse_default_cursor_shape = 16
 flat = true
 
 [node name="Base" type="Sprite2D" parent="EnvironmentAndPollution/Pollution"]
@@ -2282,6 +2286,7 @@ offset_left = -70.0
 offset_top = -155.0
 offset_right = -31.0
 offset_bottom = 92.0
+mouse_default_cursor_shape = 6
 theme_override_icons/grabber = ExtResource("83_hii8n")
 theme_override_icons/grabber_highlight = ExtResource("83_hii8n")
 max_value = 100.0
@@ -2467,6 +2472,7 @@ text = "WINTER_SUPPLY_INFO_TEXT"
 [node name="MoreInfo" parent="ImportAndEnergy/Energy/EnergyBarWinter/BarInfo" index="1" groups=["more_help_buttons"]]
 
 [node name="Button" parent="ImportAndEnergy/Energy/EnergyBarWinter" index="3" groups=["help_buttons"]]
+mouse_default_cursor_shape = 16
 
 [node name="EnergyBarSummer" parent="ImportAndEnergy/Energy" instance=ExtResource("3_fm1y6")]
 offset_left = 119.001
@@ -2517,6 +2523,7 @@ text = "SUMMER_SUPPLY_INFO_TEXT"
 [node name="MoreInfo" parent="ImportAndEnergy/Energy/EnergyBarSummer/BarInfo" index="1" groups=["more_help_buttons"]]
 
 [node name="Button" parent="ImportAndEnergy/Energy/EnergyBarSummer" index="3" groups=["help_buttons"]]
+mouse_default_cursor_shape = 16
 
 [node name="NuclearWarning" type="Label" parent="."]
 offset_left = 1964.0
@@ -2619,6 +2626,7 @@ offset_bottom = 238.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
+mouse_default_cursor_shape = 16
 texture_normal = ExtResource("100_2c0ru")
 ignore_texture_size = true
 stretch_mode = 0
