@@ -34,7 +34,7 @@ func _on_close_button_mouse_exited():
 	set_modulate(Color(1, 1, 1))
 
 
-func _on_pp_scene_texture_on_changed(texture: Texture):
+func _on_pp_scene_texture_on_changed(texture: Texture, effects_scene_path: String):
 	texture_normal = texture
 	
 	# Get the image from the texture normal
@@ -45,6 +45,13 @@ func _on_pp_scene_texture_on_changed(texture: Texture):
 	bitmap.create_from_image_alpha(image)
 	# Assign it to the mask
 	texture_click_mask = bitmap
+	
+	# Set effects overlay
+	if effects_scene_path != "":
+		print("path:", effects_scene_path)
+		var scene = load(effects_scene_path).instantiate()
+		add_child(scene)
+		
 
 
 # We lose focus when we click outside of the pp, but we don't want to loose focus

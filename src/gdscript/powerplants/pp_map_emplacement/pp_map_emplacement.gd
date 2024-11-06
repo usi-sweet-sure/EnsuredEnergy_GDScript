@@ -208,7 +208,7 @@ func _on_powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMe
 					count += 1
 			
 			if override_powerplant_on_texture:
-				pp_scene.set_texture_on(powerplant_on)
+				pp_scene.set_texture_on(powerplant_on, "")
 			if override_powerplant_off_texture:
 				pp_scene.set_texture_off(powerplant_off)
 

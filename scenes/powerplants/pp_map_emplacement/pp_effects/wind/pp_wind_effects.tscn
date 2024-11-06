@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://e8ix8khacqof"]
+
+[ext_resource type="Texture2D" uid="uid://dr6s2y4ydg7mw" path="res://assets/textures/powerplants/blades.png" id="1_c3n8u"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_effects/wind/animation_player.gd" id="2_4wd0e"]
+[ext_resource type="Texture2D" uid="uid://d1dchtgr8dspw" path="res://assets/textures/powerplants/nose.png" id="4_dejr5"]
+
+[sub_resource type="Animation" id="Animation_eqjn1"]
+resource_name = "rotate_clockwise"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_q4tqr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_06ksm"]
+_data = {
+"RESET": SubResource("Animation_q4tqr"),
+"rotate_clockwise": SubResource("Animation_eqjn1")
+}
+
+[node name="PpWindEffects" type="Node2D"]
+
+[node name="Texture" type="TextureRect" parent="."]
+offset_left = 189.0
+offset_top = 67.0
+offset_right = 254.0
+offset_bottom = 159.0
+pivot_offset = Vector2(25, 50)
+texture = ExtResource("1_c3n8u")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(213, 116)
+texture = ExtResource("4_dejr5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_06ksm")
+}
+script = ExtResource("2_4wd0e")

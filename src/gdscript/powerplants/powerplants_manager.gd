@@ -38,6 +38,21 @@ var metrics_backup: Array[PowerplantMetrics] = []
 # Used by all the types. Texture is set at runtime when the scene is instantiated
 var powerplant_scene = preload("res://scenes/powerplants/pp_map_emplacement/pp_scene.tscn")
 
+# Effects when the powerplants are on. They are overlayed on the powerplant scene
+# MUST BE in the same order as EngineTypeIds
+var powerplants_effects: Array[String] = [
+	"", # Solar
+	"res://scenes/powerplants/pp_map_emplacement/pp_effects/wind/pp_wind_effects.tscn", # Wind
+	"", # Gas
+	"", # Waste
+	"", # Biomass
+	"", # Biogas
+	"", # Nuclear
+	"", # Carbon sequestration
+	"", # Hydro
+	"", # River 
+] 
+
 # MUST BE in the same order as EngineTypeIds
 var powerplants_textures_on: Array[String] = [
 	"res://assets/textures/powerplants/pp_sprite_on_solar.png", # Solar
