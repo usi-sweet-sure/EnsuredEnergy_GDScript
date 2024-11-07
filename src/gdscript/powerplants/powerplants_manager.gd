@@ -41,16 +41,16 @@ var powerplant_scene = preload("res://scenes/powerplants/pp_map_emplacement/pp_s
 # Effects when the powerplants are on. They are overlayed on the powerplant scene
 # MUST BE in the same order as EngineTypeIds
 var powerplants_effects: Array[String] = [
-	"", # Solar
+	"res://scenes/powerplants/pp_map_emplacement/pp_effects/nuclear/pp_effects_nuclear.tscn", # Solar
 	"res://scenes/powerplants/pp_map_emplacement/pp_effects/wind/pp_effects_wind.tscn", # Wind
-	"", # Gas
-	"", # Waste
-	"", # Biomass
-	"", # Biogas
+	"res://scenes/powerplants/pp_map_emplacement/pp_effects/nuclear/pp_effects_nuclear.tscn", # Gas
+	"res://scenes/powerplants/pp_map_emplacement/pp_effects/nuclear/pp_effects_nuclear.tscn", # Waste
+	"res://scenes/powerplants/pp_map_emplacement/pp_effects/nuclear/pp_effects_nuclear.tscn", # Biomass
+	"res://scenes/powerplants/pp_map_emplacement/pp_effects/nuclear/pp_effects_nuclear.tscn", # Biogas
 	"res://scenes/powerplants/pp_map_emplacement/pp_effects/nuclear/pp_effects_nuclear.tscn", # Nuclear
-	"", # Carbon sequestration
-	"", # Hydro
-	"", # River 
+	"res://scenes/powerplants/pp_map_emplacement/pp_effects/nuclear/pp_effects_nuclear.tscn", # Carbon sequestration
+	"res://scenes/powerplants/pp_map_emplacement/pp_effects/nuclear/pp_effects_nuclear.tscn", # Hydro
+	"res://scenes/powerplants/pp_map_emplacement/pp_effects/nuclear/pp_effects_nuclear.tscn", # River 
 ] 
 
 # MUST BE in the same order as EngineTypeIds
