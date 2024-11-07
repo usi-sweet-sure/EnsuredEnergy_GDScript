@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://mnj2kr6urhvk"]
+
+[node name="SurveyLayer" type="CanvasLayer"]
+
+[node name="SurveyToken" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2

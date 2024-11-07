@@ -1,42 +1,45 @@
 extends CanvasLayer
 
+var step = 0
+var tuto_length = 11
 
-var i = 0
-var j = 0
-var tuto_length = 7
-var bubble_list
+@onready var center_frame = $CenterFrame
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	bubble_list = $Bubbles.get_children()
-	Gameloop.show_tutorial.connect(_on_show_tutorial)
+	hide()
+	TutorialManager.tutorial_started.connect(_on_tutorial_started)
+	TutorialManager.tutorial_ended.connect(_on_tutorial_ended)
 
-func _on_next_button_pressed():
-	if i < tuto_length:
-		i += 1
-		$MarginContainer/MarginContainer/Text.text = tr("TUTORIAL%d" % i)
-		if i > 2:
-			for b in bubble_list:
-				b.hide()
-			bubble_list[j].show()
-			j += 1
+func _on_next_step_requested():
+	if step < tuto_length:
+		step += 1
+
+		TutorialManager.step_changed.emit(step)
 	else:
-		hide()
-		
-func _unhandled_input(event):
-	if event is InputEventKey:
-		if event.keycode == KEY_TAB:
-			hide()
+		TutorialManager.tutorial_ended.emit()
 
-func _on_show_tutorial():
-	_reset_tutorial()
+
+func _on_tutorial_started():
+	step = 0
+	TutorialManager.next_step_requested.connect(_on_next_step_requested)
+	PowerplantsManager.powerplant_build_requested.connect(_on_pp_build)
+	Gameloop.toggle_policies_window.connect(_on_policies_toggled)
+	
 	show()
 
-func _reset_tutorial():
-	i = 0
-	j = 0
-	
-	$MarginContainer/MarginContainer/Text.text = tr("TUTORIAL%d" % i)
-	
-	for b in bubble_list:
-		b.hide()
+
+func _on_tutorial_ended():
+	hide()
+	TutorialManager.next_step_requested.disconnect(_on_next_step_requested)
+	PowerplantsManager.powerplant_build_requested.disconnect(_on_pp_build)
+	Gameloop.toggle_policies_window.disconnect(_on_policies_toggled)
+
+
+func _on_pp_build(_map_emplacement: PpMapEmplacement, _metrics: PowerplantMetrics):
+	_on_next_step_requested()
+
+
+func _on_policies_toggled():
+	_on_next_step_requested()

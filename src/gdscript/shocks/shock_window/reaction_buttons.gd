@@ -7,8 +7,16 @@ func _ready():
 
 
 func _on_most_recent_shock_updated(shock: Shock):
-	if shock.player_reactions.size() > 0 && not shock._are_requirements_to_absorb_shock_met():
-		show()
+	if shock != null:
+		$Button/thumbs_down.hide()
+		$Button2/poll_icon.hide()
+		$Button3/money_icon.hide()
+		if shock.player_reactions.size() > 0 && not shock._are_requirements_to_absorb_shock_met():
+			show()
+			if shock.player_reactions.size() > 2:
+				$Button/thumbs_down.show()
+				$Button2/poll_icon.show()
+				$Button3/money_icon.show()
 
 
 func _on_button1_pressed():

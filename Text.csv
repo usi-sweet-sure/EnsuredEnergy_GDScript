@@ -1,174 +1,200 @@
 keys,en,fr,de,it
 PLAY,Play,Jouer,Spielen,Giocare
-LANG,Language : English,Langue : Français,Sprache : Deutsch,Lingua : Italiano
+LANG,English,Français,Deutsch,Italiano
 HOLD,Hold and drag to move,Maintenir et faire glisser pour déplacer,Zum Verschieben halten und ziehen,Tenere premuto e trascinare per spostare
-SCROLL,Scroll to zoom,Utilise la molette pour zoomer,Scrollen zum Zoomen,Scorrere per ingrandire
+SCROLL,Scroll to zoom,Utilise la molette pour zoomer,Zum Zoomen scrollen,Scorrere per ingrandire
 INSTRUCTIONS,Instructions,Instructions,Anleitung,Istruzioni
-CREDITS,Credits,Crédits,Mitwirkende,Accreditamenti
-RESTART,Restart,Redémarrer,New Starten,Ricomincia
+CREDITS,Credits,Crédits,Mitwirkende,Credits
+RESTART,Restart,Redémarrer,Neustarten,Ricomincia
 FULLSCREEN,Fullscreen,Plein écran,Vollbild,Schermo intero
 MUSIC,Music,Musique,Musik,Musica
 SFX,Sound effects,Effets sonores,Sound-Effekte,Effetti sonori
 TUTORIAL0,"Congratulations !\n
-You have been designated to [b]manage the Swiss power supply[/b] and to ensure a sustainable and resilient energy sector for the next 30 years (10 turns).","Félicitations ! \n
-Tu as été désigné pour [b]gérer le réseau énergétique[/b] afin de garantir un secteur durable et résilient pour les 30 prochaines années (10 tours).","Glückwunsch !\n
+You have been designated to [b]manage the Swiss power supply[/b] and and to ensure the transition to a sustainable and resilient energy sector over the next 30 years (10 turns).","Félicitations ! \n
+Tu as été désigné.e pour [b]gérer le réseau énergétique[/b] afin de garantir un secteur durable et résilient pour les 30 prochaines années (10 tours).","Glückwunsch!\n
 Du wurdest dazu ausgewählt, [b]das Stromnetz[/b] zu managen und einen nachhaltigen und widerstandsfähigen Energiesektor für die nächsten 30 Jahre (10 Runden) sicherzustellen.","Congratulazioni! \n
-Siete stati incaricati di [b]gestire la rete energetica[/b] per garantire un settore sostenibile e resiliente per i prossimi 30 anni (10 turni di gioco)."
-TUTORIAL1,"You can decide what the future energy system will look like, but always keep in mind that you need to [b]cover the Energy demand[/b].","Tu peux choisir à quoi le futur système énergétique ressemblera, mais tu dois toujours [b]couvrir la demande d'énergie[/b].","Du kannst entscheiden, wie das zukünftige Energiesystem aussehen soll, \n\t
-	aber denke immer daran, dass du [b]genügend Energie produzieren musst, um den Energiebedarf[/b] zu decken.","Puoi scegliere come sarà il sistema energetico futuro, ma deve comunque [b]coprire la domanda di energia[/b]."
+Sei stato/a incaricato/a di [b]gestire la rete energetica[/b] per garantire un settore sostenibile e resiliente per i prossimi 30 anni (10 turni di gioco)."
+TUTORIAL1,It is up to you what the future energy system looks like. But always keep in mind that you need to [b]cover the Energy demand[/b].,"Tu peux choisir à quoi le futur système énergétique ressemblera, mais tu dois toujours [b]couvrir la demande d'énergie[/b].","Du kannst entscheiden, wie das zukünftige Energiesystem aussehen soll, aber denke immer daran, dass du [b]genügend Energie produzieren musst, um den Energiebedarf[/b] zu decken.","Puoi scegliere come sarà il sistema energetico futuro, ma deve comunque [b]coprire la domanda di energia[/b]."
 TUTORIAL2,You need to [b]supply[/b] enough [b]energy[/b] for your population. They need to charge their phones and play their favourite video games.,Tu dois [b]fournir[/b] suffisamment d'[b]énergie[/b] pour toute la population. Les gens ont besoin de charger leurs téléphones et de jouer à leurs jeux vidéo préférés.,"Du musst genügend [b]Energie[/b] für deine Bevölkerung zur Verfügung stellen.\n
-Die Menschen müssen ihre Telefone aufladen und ihre Lieblingsvideospiele spielen können.",Dovete [b]fornire[/b] abbastanza [b]energia[/b] per tutta la popolazione. Le persone hanno bisogno di caricare i loro telefoni e di giocare ai loro videogiochi preferiti.
+Die Menschen müssen ihre Telefone aufladen und ihre Lieblingsvideospiele spielen können.",È necessario [b]fornire[/b] abbastanza [b]energia[/b] per tutta la popolazione. Le persone hanno bisogno di caricare i loro telefoni e di giocare ai loro videogiochi preferiti.
 TUTORIAL3,You need to [b]supply[/b] enough [b]energy[/b] for your population. They need to charge their phones and play their favourite video games.,Tu dois [b]fournir[/b] suffisamment d'[b]énergie[/b] pour toute la population. Les gens ont besoin de charger leurs téléphones et de jouer à leurs jeux vidéo préférés.,"Du musst genügend [b]Energie[/b] für deine Bevölkerung zur Verfügung stellen.\n
 Die Menschen müssen ihre Telefone aufladen und ihre Lieblingsvideospiele spielen können.",È necessario [b]fornire[/b] abbastanza [b]energia[/b] per tutta la popolazione. Le persone hanno bisogno di ricaricare i loro telefoni e di giocare ai loro videogiochi preferiti.
-TUTORIAL4,"There are different ways to supply more energy:\n\n
-
-- You can import energy in winter, but it creates pollution and can be expensive.","Il existe différentes façons d'approvisionner plus d'énergie :\n\n
-
-- Tu peux importer de l'énergie, mais cela pollue et peut être coûteux.","Es gibt verschiedene Möglichkeiten, mehr Energie zur Verfügung zu stellen:\n\n
-
-- Man kann Energie importieren, aber das führt zu Verschmutzung und kann teuer sein.","Ci sono diversi modi per fornire più energia:\n\n
-
-si può importare energia, ma questo inquina e può essere costoso."
-TUTORIAL5,"There are different ways to supply more energy:\n\n
-
-- You can build new power plants, but it costs time and money.","Il existe différentes façons d'approvisionner plus d'énergie :\n\n
-
-- Tu peux construire de nouvelles centrales électriques, mais cela coûte du temps et de l'argent.","Es gibt verschiedene Möglichkeiten, mehr Energie zu liefern: \n\n
-
-- Man kann neue Kraftwerke bauen, aber das kostet Zeit und Geld.","Ci sono diversi modi per fornire più energia:\n\n
-
-si possono costruire nuove centrali elettriche, ma questo costa tempo e denaro."
-TUTORIAL6,"There are different ways to supply more energy:\n\n\t
-
-	- You can upgrade some of the existing power plants","Il existe différentes façons d'approvisionner plus d'énergie :\n\n\t
-
-        - Tu peux améliorer les centrales existantes","Es gibt verschiedene Möglichkeiten, mehr Energie zu liefern:\n\n\t
-
-	- Du kannst einige der bestehenden Kraftwerke aufrüsten","Ci sono diversi modi per fornire più energia:\n\n\t
-
-	- È possibile potenziare alcune delle centrali elettriche esistenti."
-TUTORIAL7,You can also hold information campaigns or try to implement different policies to reduce energy demand or facilitate the construction of power plants.,Tu peux également organiser des campagnes d'information ou tenter de mettre en oeuvre différentes politiques visant à réduire la demande d'énergie ou à faciliter la construction de centrales électriques.,"Du kannst auch Informationskampagnen durchführen oder versuchen, politische Maßnahmen umzusetzen, um 
-		\t den Energiebedarf zu senken oder den Bau von Kraftwerken zu erleichtern.",Potete anche organizzare campagne di informazione o cercare di attuare varie politiche per ridurre la domanda di energia o facilitare la costruzione di centrali elettriche!
-TUTOBUBBLE0,"Each turn, you have to reach the demand for winter ❄️ and summer 🔆","Chaque tour, tu dois atteindre la demande pour l'hiver ❄️ et l'été 🔆",In jeder Runde musst du den Strombedarf für den Winter ❄️ und den Sommer 🔆 erreichen.,"Ad ogni turno, bisogna soddisfare la domanda per l'inverno ❄️ e per l'estate 🔆"
-TUTOBUBBLE1,Import more energy here,Voici la barre d'importation,Hier kannst du mehr Strom importieren,Importa più energia qui
-TUTOBUBBLE2,Build new power plants,Le bouton de construction,Du kannst neue Kraftwerke bauen,Costruire nuove centrali elettriche
-TUTOBUBBLE3,Upgrade existing power plant,Améliorer les centrales existantes,Du kannst bestehende Kraftwerk aufrüsten,Ampiamento della centrale elettrica esistente
-TUTOBUBBLE4,Implement policies,Le bouton de politique,Du kannst politische Massnahmen ergreifen,Implementare le politiche
-DEMAND,Demand,Demande,Energiebedarg,Domanda
+TUTORIAL4,"There are different ways to supply more energy:\n- You can import energy in winter, but it can be expensive.","Il existe différentes façons d'approvisionner plus d'énergie :\n- Tu peux importer de l'énergie, mais cela peut être coûteux.","Es gibt verschiedene Möglichkeiten, mehr Energie zur Verfügung zu stellen:\n- Man kann Energie importieren, aber das kann teuer sein.","Ci sono diversi modi per fornire più energia:\n-si può importare energia, ma può essere costoso."
+TUTORIAL5,"There are different ways to supply more energy:\n- You can import energy in winter, but it can be expensive.","Il existe différentes façons d'approvisionner plus d'énergie :\n- Tu peux importer de l'énergie, mais cela peut être coûteux.","Es gibt verschiedene Möglichkeiten, mehr Energie zur Verfügung zu stellen:\n- Man kann Energie importieren, aber das kann teuer sein.","Ci sono diversi modi per fornire più energia:\n-si può importare energia, ma può essere costoso."
+TUTORIAL6,"There are different ways to supply more energy:\n- You can build new power plants, but it costs time and money.","Il existe différentes façons d'approvisionner plus d'énergie :\n- Tu peux construire de nouvelles centrales électriques, mais cela a un coût en temps et en argent.","Es gibt verschiedene Möglichkeiten, mehr Energie zu liefern: \n- Man kann neue Kraftwerke bauen, aber das kostet Zeit und Geld.","Ci sono diversi modi per fornire più energia:\n-si possono costruire nuove centrali elettriche, ma questo costa tempo e denaro."
+TUTORIAL7,"There are different ways to supply more energy:\n- You can build new power plants, but it costs time and money.","Il existe différentes façons d'approvisionner plus d'énergie :\n- Tu peux construire de nouvelles centrales électriques, mais cela a un coût en temps et en argent.","Es gibt verschiedene Möglichkeiten, mehr Energie zu liefern: \n- Man kann neue Kraftwerke bauen, aber das kostet Zeit und Geld.","Ci sono diversi modi per fornire più energia:\n-si possono costruire nuove centrali elettriche, ma questo costa tempo e denaro."
+TUTORIAL8,There are different ways to supply more energy:\n- You can upgrade some of the existing power plants,Il existe différentes façons d'approvisionner plus d'énergie :\n- Tu peux améliorer les centrales existantes,"Es gibt verschiedene Möglichkeiten, mehr Energie zu liefern:\n- Du kannst einige der bestehenden Kraftwerke aufrüsten",Ci sono diversi modi per fornire più energia:\n- è possibile potenziare alcune delle centrali elettriche esistenti.
+TUTORIAL10,You can also hold information campaigns or try to implement different policies to reduce energy demand or facilitate the construction of power plants.,Tu peux également organiser des campagnes d'information ou tenter de mettre en oeuvre différentes politiques visant à réduire la demande d'énergie ou à faciliter la construction de centrales électriques.,"Du kannst auch Informationskampagnen durchführen oder versuchen, politische Massnahmen umzusetzen, um den Energiebedarf zu senken oder den Bau von Kraftwerken zu erleichtern.",Si possono anche organizzare campagne di informazione o cercare di attuare varie politiche per ridurre la domanda di energia o facilitare la costruzione di centrali elettriche!
+CLIMATE_TUTORIAL0,"Congratulations !\n
+You have been designated to [b]manage the Swiss power supply[/b] and and to [b]ensure the transition to a sustainable and resilient[/b] energy sector over the next 30 years (10 turns).","Félicitations ! \n
+Tu as été désigné.e pour [b]gérer le réseau énergétique[/b] afin de [b]transitionner vers un secteur durable et résilient[/b] pendant les 30 prochaines années (10 tours).","Glückwunsch !\n
+Du wurdest dazu ausgewählt, [b]das Stromnetz[/b] zu managen und einen [b]nachhaltigen und widerstandsfähigen[/b] Energiesektor für die nächsten 30 Jahre (10 Runden) sicherzustellen.","Congratulazioni! \n
+Siete stati incaricati di [b]gestire la rete energetica[/b] per garantire un settore sostenibile e resiliente per i prossimi 30 anni (10 turni di gioco)."
+CLIMATE_TUTORIAL1,Be aware that Switzerland has [b]committed to being CO2-neutral by 2050[/b]. A majority of voters approved this goal in a referendum.,La Suisse s'est engagée à être neutre en carbone d'ici 2050. La majorité a approuvé cet objectif dans un référendum.,"Beachte, dass die Schweiz sich dazu verpflichtet hat, [b]bis 2050 CO2-neutral[/b] zu werden. Eine Mehrheit der Stimmbevölkerung hat diesem Ziel in einem Referenumd zugestimmt.",La Svizzera si è impegnata a diventare neutrale dal punto di vista delle emissioni di CO₂ entro il 2050. Questo obiettivo è stato approvato dalla maggioranza degli elettori in un referendum.
+CLIMATE_TUTORIAL2,"But still, you need to supply enough energy for your population. They need to charge their phones and play their favourite video games.","Cependant, tu dois fournir suffisamment d'énergie pour toute la population. Les gens ont besoin de charger leurs téléphones et de jouer à leurs jeux vidéo préférés.","Du musst genügend Energie für deine Bevölkerung zur Verfügung stellen.\n
+Die Menschen müssen ihre Telefone aufladen und ihre Lieblingsvideospiele spielen können.",È necessario fornire abbastanza energia per tutta la popolazione. Le persone hanno bisogno di caricare i loro telefoni e di giocare ai loro videogiochi preferiti.
+CLIMATE_TUTORIAL3,"But still, you need to supply enough energy for your population. They need to charge their phones and play their favourite video games.","Cependant, tu dois fournir suffisamment d'énergie pour toute la population. Les gens ont besoin de charger leurs téléphones et de jouer à leurs jeux vidéo préférés.","Du musst genügend Energie für deine Bevölkerung zur Verfügung stellen.\n
+Die Menschen müssen ihre Telefone aufladen und ihre Lieblingsvideospiele spielen können.",È necessario fornire abbastanza energia per tutta la popolazione. Le persone hanno bisogno di caricare i loro telefoni e di giocare ai loro videogiochi preferiti.
+CLIMATE_TUTORIAL4,"There are different ways to supply more energy:\n
+- You can import energy in [b]winter[/b], but it can be expensive.","Il existe différentes façons d'approvisionner plus d'énergie :\n
+- Tu peux importer de l'énergie, mais cela peut être coûteux.","Es gibt verschiedene Möglichkeiten, mehr Energie zur Verfügung zu stellen:\n
+- Man kann Energie importieren, aber das kann teuer sein.","Ci sono diversi modi per fornire più energia:\n
+- Si può importare energia, ma può essere costoso."
+CLIMATE_TUTORIAL5,"There are different ways to supply more energy:\n
+- You can import energy in [b]winter[/b], but it can be expensive.","Il existe différentes façons d'approvisionner plus d'énergie :\n
+- Tu peux importer de l'énergie, mais cela peut être coûteux.","Es gibt verschiedene Möglichkeiten, mehr Energie zur Verfügung zu stellen:\n
+- Man kann Energie importieren, aber das kann teuer sein.","Ci sono diversi modi per fornire più energia:\n
+-Si può importare energia, ma può essere costoso."
+CLIMATE_TUTORIAL6,"There are different ways to supply more energy:\n
+- You can build new power plants, but it costs time and money.","Il existe différentes façons d'approvisionner plus d'énergie :\n
+- Tu peux construire de nouvelles centrales électriques, mais cela a un coût en temps et en argent.","Es gibt verschiedene Möglichkeiten, mehr Energie zu liefern: \n
+- Man kann neue Kraftwerke bauen, aber das kostet Zeit und Geld.","Ci sono diversi modi per fornire più energia:\n
+-Si possono costruire nuove centrali elettriche, ma questo costa tempo e denaro."
+CLIMATE_TUTORIAL7,"There are different ways to supply more energy:\n
+- You can build new power plants, but it costs time and money.","Il existe différentes façons d'approvisionner plus d'énergie :\n
+- Tu peux construire de nouvelles centrales électriques, mais cela a un coût en temps et en argent.","Es gibt verschiedene Möglichkeiten, mehr Energie zu liefern: \n
+- Man kann neue Kraftwerke bauen, aber das kostet Zeit und Geld.","Ci sono diversi modi per fornire più energia:\n
+-Si possono costruire nuove centrali elettriche, ma questo costa tempo e denaro."
+CLIMATE_TUTORIAL8,There are different ways to supply more energy:\n- You can upgrade some of the existing power plants,Il existe différentes façons d'approvisionner plus d'énergie :\n- Tu peux améliorer les centrales existantes,"Es gibt verschiedene Möglichkeiten, mehr Energie zu liefern:\n- Du kannst einige der bestehenden Kraftwerke aufrüsten",Ci sono diversi modi per fornire più energia:\n- È possibile potenziare alcune delle centrali elettriche esistenti.
+CLIMATE_TUTORIAL10,You can also hold information campaigns or try to implement different policies to reduce energy demand or facilitate the construction of power plants.,Tu peux également organiser des campagnes d'information ou tenter de mettre en oeuvre différentes politiques visant à réduire la demande d'énergie ou à faciliter la construction de centrales électriques.,"Du kannst auch Informationskampagnen durchführen oder versuchen, politische Massnahmen umzusetzen, um den Energiebedarf zu senken oder den Bau von Kraftwerken zu erleichtern.",Si possono anche organizzare campagne di informazione o cercare di attuare varie politiche per ridurre la domanda di energia o facilitare la costruzione di centrali elettriche!
+TUTOBUBBLE0,"Each turn, you have to reach the demand for both winter and summer","Chaque tour, tu dois atteindre la demande pour l'hiver et l'été",In jeder Runde musst du den Strombedarf für den Winter und den Sommer erreichen.,"Ad ogni turno, bisogna soddisfare la domanda per l'inverno e per l'estate"
+TUTOBUBBLE1,Try importing some energy,Essaye d'importer de l'énergie,Probiere es jetzt hier aus,Cercate di importare energia
+TUTOBUBBLE2,You cannot import more than what is needed,Tu ne peux pas importer plus que ce qui est nécessaire,"Du kannst nicht mehr importieren, als benötigt wird",Non è possibile importare più del necessario
+TUTOBUBBLE3,Try building a new power plant,Le bouton de construction,Du kannst neue Kraftwerke bauen,Costruire nuove centrali elettriche
+TUTOBUBBLE4,You can only cancel a power plant in the same turn it was built,Une centrale ne peut être annulée qu'au cours du même tour où elle a été construite,"Nur in derselben Runde, in der ein Kraftwerk gebaut wurde, kann dies noch abgebrochen werden",È possibile annullare una centrale elettrica solo nello stesso turno in cui è stata costruita
+TUTOBUBBLE5,Upgrade it here,Améliorer les centrales existantes,Du kannst bestehende Kraftwerke aufrüsten,Ampliamento della centrale elettrica esistente
+TUTOBUBBLE6,Open the policy window,Lancer des politiques,Du kannst politische Massnahmen ergreifen,Implementare le politiche
+DEMAND,Demand,Demande,Energiebedarf,Domanda
 SUPPLY,Supply,Apport,Energieversorgung,Fornitura
-LAND_USE,Land use,Utilisation des sols,Landverbrauch,Uso del Terreno
-BIODIVERSITY,Biodiversity,Biodiversité,Biodiversität,Biodiversità
-CO2_EMISSIONS,CO2 Emissions,Emissions,Verschmutzung,Emissioni
-CO2_EMISSIONS_TEXT,CO2 emission shows how much greenhouse gas is released by the energy system. Lower emissions mean a lower impact on global warming. Some power plants emit CO2. Switzerland has decided to be carbon neutral and reach net zero by 2050.,Les émissions de CO2 indiquent la quantité de gaz à effet de serre libérée par le système énergétique. Des émissions plus faibles signifient un impact moindre sur le réchauffement de la planète. Certaines centrales électriques émettent du CO2. La Suisse a décidé d'être neutre en carbone et d'atteindre le niveau zéro d'ici 2050.,"Die CO2-Emissionen zeigen, wie viel Treibhausgas durch das Energiesystem freigesetzt wird. Geringere Emissionen bedeuten eine geringere Auswirkung auf die globale Erwärmung. Einige Kraftwerke stoßen CO2 aus. Die Schweiz hat beschlossen, bis zum Jahr 2050 kohlenstoffneutral zu werden und netto null zu erreichen.",L'emissione di CO2 indica la quantità di gas serra rilasciata dal sistema energetico. Emissioni più basse significano un minore impatto sul riscaldamento globale. Alcune centrali elettriche emettono CO2. La Svizzera ha deciso di essere neutrale dal punto di vista delle emissioni di carbonio e di raggiungere il livello zero entro il 2050.
-IMPORTS_EMISSIONS,Imports Emissions,Pollution de l'importation,Import Verschmutzung,Inquinamento dall'importazione
-IMPORTS_EMISSIONS_TEXT,Importing energy from neighbouring countries can also create emissions unless you pay more for green imports.,"L'importation d'énergie des pays voisins peut également générer des émissions, à moins que vous ne payiez plus cher pour des importations vertes.","Der Import von Energie aus Nachbarländern kann ebenfalls zu Emissionen führen, es sei denn, Sie zahlen mehr für grüne Importe.","Anche l'importazione di energia dai Paesi vicini può creare emissioni, a meno che non si paghi di più per le importazioni verdi."
+LAND_USE,Land use,Utilisation des sols,Landnutzung,Uso del terreno
+CO2_EMISSIONS,CO2 Emissions,Émissions de CO2,CO2 Emissionen,Emissioni di CO2
+CO2_EMISSIONS_TEXT,CO2 emission shows how much greenhouse gas is released by the energy system. Lower emissions mean a lower impact on global warming. Some power plants emit CO2. Switzerland has decided to be carbon neutral and reach net zero by 2050.,Les émissions de CO2 indiquent la quantité de gaz à effet de serre libérée par le système énergétique. Des émissions plus faibles signifient un impact moindre sur le réchauffement de la planète. Certaines centrales électriques émettent du CO2. La Suisse a décidé d'être neutre en carbone et d'atteindre le niveau zéro d'ici 2050.,"Die CO2-Emissionen zeigen, wie viel Treibhausgas durch das Energiesystem freigesetzt wird. Geringere Emissionen bedeuten eine geringere Auswirkung auf die globale Erwärmung. Einige Kraftwerke stossen CO2 aus. Die Schweiz hat beschlossen, bis zum Jahr 2050 kohlenstoffneutral zu werden und netto null zu erreichen.",L'emissione di CO2 indica la quantità di gas serra rilasciata dal sistema energetico. Emissioni più basse significano un minore impatto sul riscaldamento globale. Alcune centrali elettriche emettono CO2. La Svizzera ha deciso di essere neutrale dal punto di vista delle emissioni di carbonio e di raggiungere il livello zero entro il 2050.
 SHOCK_REQUIREMENT_MET_TITLE,Bonus,Bonus,Bonus,Bonus
-SHOCK_COLD_SPELL_TITLE,Cold Spell,Hiver Glacial,Kältezauber,Inverno gelido
-SHOCK_COLD_SPELL_TEXT,Recent winters have been colder than usual. This has increased winter energy demand by 5 ⚡.,Ces derniers hivers ont été plus froids que d'habitude. Ceci a augmenté la demande d'énergie en hiver de 5 ⚡.,"In den letzten Wintern war es kälter als sonst, was den Energiebedarf im Winter um 5 ⚡ erhöht hat.",Gli ultimi inverni sono stati più freddi del solito. Questo ha aumentato la domanda di energia invernale di 5 ⚡.
-SHOCK_COLD_SPELL_REQUIREMENT_MET,Energy production was high enough to wistand the shock.\n\n+5 👍 +50 💰,La production d'énergie était assez élevée pour amortir l'imprévu.\n\n+ 5 👍 + 50 💰,"Die Energieproduktion war hoch genug, um den Schock zu überstehen.\n\n+5 👍 +50 💰",La produzione di energia è stata sufficientemente elevata da attutire gli imprevisti.\n\n+ 5 👍 + 50 💰
-SHOCK_COLD_SPELL_PLAYER_REACTION_1,Ask the population to lower their energy consumption.\n-10 👍,Demander à la population de diminuer leur consomation d'énergie.\n-10 👍,"Fordere die Bevölkerung auf, ihren Energieverbrauch zu senken.\n-10 👍",Chiedere alle persone di ridurre il loro consumo energetico. -10 👍
-SHOCK_COLD_SPELL_PLAYER_REACTION_2,Turn on the spare gas plant.\n+10 Pollution 🏭,Améliorer l'usine à gaz.\n+ 10 pollution 🏭,Einschalten der Ersatzgasanlage.\n+10 Verschmutzung 🏭.,Attivare l'impianto a gas di riserva.\n+10 inquinamento 🏭
-SHOCK_COLD_SPELL_PLAYER_REACTION_3,Import electricity from neighbouring countries.\n-50 💰,Importer de l'électricité des pays voisins.\n-50 💰,Strom aus Nachbarländern importieren.\n- 50 💰,Importazione di energia elettrica dai paesi limitrofi.\n- 50 💰Ondata di calore
+SHOCK_COLD_SPELL_TITLE,Cold Spell,Hiver Glacial,Kältewelle,Inverno gelido
+SHOCK_COLD_SPELL_TEXT,Recent winters have been colder than usual. This has increased winter energy demand by 5%,Ces derniers hivers ont été plus froids que d'habitude. Ceci a augmenté la demande d'énergie en hiver de 5%,"In den letzten Wintern war es kälter als sonst, was den Energiebedarf im Winter um 5% erhöht hat.",Gli ultimi inverni sono stati più freddi del solito. Questo ha aumentato la domanda di energia invernale del 5%
+SHOCK_COLD_SPELL_REQUIREMENT_MET,Energy production was high enough to wistand the shock.,La production d'énergie était assez élevée pour amortir l'imprévu.,"Die Energieproduktion war hoch genug, um den Schock zu überstehen.",La produzione di energia è stata sufficientemente elevata da attutire gli imprevisti.
+SHOCK_COLD_SPELL_PLAYER_REACTION_1,Ask the population to lower their energy consumption -10,Demander à la population de diminuer leur consommation d'énergie -10,"Fordere die Bevölkerung auf, ihren Energieverbrauch zu senken. -10",Chiedere alla popolazione di ridurre il consumo energetico. -10
+SHOCK_COLD_SPELL_PLAYER_REACTION_2,Burn more gas +10,Brûler plus de gaz +10,Mehr Gas verbrauchen +10,Bruciare più gas +10
+SHOCK_COLD_SPELL_PLAYER_REACTION_3,Import electricity from neighbouring countries -50,Importer de l'électricité des pays voisins -50,Strom aus Nachbarländern importieren - 50,Importazione di energia elettrica dai paesi limitrofi - 50
 SHOCK_HEAT_WAVE_TITLE,Heat Wave,Canicule,Hitzewelle,Ondata di calore
-SHOCK_HEAT_WAVE_TEXT,"The summers have been hotter than usual, increasing the energy demand in summer by 5 ⚡",Les étés sont de plus en plus chaud. La demande en énergie a augmenté de 5 ⚡,"Die Sommer waren heisser als üblich, was den Energiebedarf im Sommer um 5 ⚡ erhöhte.",Le estati sono sempre più calde. La domanda di energia è aumentata di 5 ⚡
-SHOCK_HEAT_WAVE_REQUIREMENT_MET,Energy production was high enough to wistand the shock.\n\n+5 👍 +50 💰,La production d'énergie était assez élevée pour amortir l'imprévu.\n\n+ 5 👍 + 50 💰,"Die Energieproduktion war hoch genug, um den Schock zu überstehen.\n\n+5 👍 +50 💰",La produzione di energia è stata sufficientemente elevata da attutire gli imprevisti.\n\n+10 👍 +50 💰
-SHOCK_HEAT_WAVE_PLAYER_REACTION_1,Ask the population to turn their A/C down.\n-15 👍,Demander à la population de baisser leur climatisation.\n-15 👍,"Aufforderung an die Bevölkerung, ihre Klimaanlagen herunterzudrehen\n-15 👍",Attivare l'impianto a gas di riserva.\n+10 inquinamento 🏭
-SHOCK_HEAT_WAVE_PLAYER_REACTION_2,Turn on the spare gas plant.\n+10 Pollution 🏭,Améliorer l'usine à gaz.\n+10 pollution 🏭,Einschalten der Ersatzgasanlage.\n+10 Verschmutzung 🏭,Importazione di energia elettrica dai paesi limitrofi. -50 💰
-SHOCK_HEAT_WAVE_PLAYER_REACTION_3,Import electricity from neighbouring countries.\n-50 💰,Importer de l'électricité des pays voisins.\n-50 💰,Stromimport aus Nachbarländern.\n-50 💰,Importazione di energia elettrica dai paesi limitrofi. -50 💰
-SHOCK_GLACIERS_MELTING_TITLE,Glaciers melting,La fonte des glacier,Gletscher schmelzen,Scioglimento dei ghiacciai
-SHOCK_GLACIERS_MELTING_TEXT,"The hydraulic plants depend on the state of the glaciers. As long as the net zero is not reached, the glaciers will continue to melt, decreasing the availability of the hydraulic water supply.","Les centrales hydrauliques dépendent de l'état des glaciers. Tant que la pollution continuera à affecter la fonte des glaciers, la disponibilité en eau baissera pour les centrales hydrauliques.","Die Wasserkraftwerke sind vom Zustand der Gletscher abhängig. Solange der Netto-Nullpunkt nicht erreicht ist, schmelzen die Gletscher weiter, wodurch die Verfügbarkeit der Wasserkraft abnimmt.","Le centrali idroelettriche dipendono dallo stato dei ghiacciai. Finché l'inquinamento continuerà a influire sullo scioglimento dei ghiacciai, la disponibilità di acqua per le centrali idroelettriche diminuirà."
-SHOCK_SEVERE_WEATHER_TITLE,Severe Weather,Tempête,Stürmisches Wetter,Maltempo
-SHOCK_SEVERE_WEATHER_TEXT,Severe weather throughout the year have lowered the energy production of solar panels and wind turbines. Wind and Solar energy -20% ⚡,Le temps imprévisible a réduit la production d'énergie du solaire et du vent. Energie solaire et éolienne -20% ⚡,Unwetter im Laufe des Jahres haben die Energieproduktion von Sonnenkollektoren und Windturbinen beeinträchtigt. Wind- und Solarenergie -20% ⚡,Il maltempo riduce la produzione di energia solare ed eolica. Energia solare ed eolica -20% ⚡
-SHOCK_INC_RAW_COST_10_TITLE,Rise of material costs,Augmentation des prix,Anstieg der Materialkosten,Volatilita dei prezzi
-SHOCK_INC_RAW_COST_10_TEXT,The prices of raw material have increased resulting in production costs going up by 10%.,"Le prix des matières premières ont augmenté, les coûts de production ont augmenté de 10%","Die Rohstoffpreise sind gestiegen, was zu einem Anstieg der Produktionskosten um 10 % geführt hat.",I prezzi delle materie prime sono aumentati e i costi di produzione sono cresciuti del 10%.
-SHOCK_INC_RAW_COST_20_TITLE,Rise of material costs,Augmentation des prix,Anstieg der Materialkosten,Volatilita dei prezzi
-SHOCK_INC_RAW_COST_20_TEXT,The prices of raw material have increased resulting in production costs going up by 20%.,"Le prix des matières premières ont augmenté, les coûts de production ont augmenté de 20%","Die Rohstoffpreise sind gestiegen, was zu einem Anstieg der Produktionskosten um 20 % geführt hat.",I prezzi delle materie prime sono aumentati e i costi di produzione sono cresciuti del 20%.
+SHOCK_HEAT_WAVE_TEXT,"The summers have been hotter than usual, increasing the energy demand in summer by 5 %",Les étés sont de plus en plus chauds. La demande en énergie a augmentée de 5 %,"Die Sommer waren heisser als üblich, weshalb der Energiebedarf im Sommer um 5% erhöhte.",Le estati sono sempre più calde. La domanda di energia è aumentata del 5%
+SHOCK_HEAT_WAVE_REQUIREMENT_MET,Energy production was high enough to wistand the shock.,La production d'énergie était assez élevée pour amortir l'imprévu.,"Die Energieproduktion war hoch genug, um den Schock zu überstehen.",La produzione di energia è stata sufficientemente elevata da attutire gli imprevisti.
+SHOCK_HEAT_WAVE_PLAYER_REACTION_1,Ask the population to turn their A/C down -15,Demander à la population de baisser leur climatisation. -15 ,"Aufforderung an die Bevölkerung, ihre Klimaanlagen herunterzudrehen -15",Chiedere alle persone di ridurre il loro consumo energetico. -10
+SHOCK_HEAT_WAVE_PLAYER_REACTION_2,Turn on the spare gas plant +10,Améliorer l'usine à gaz +10,Einschalten der Ersatzgasanlage +10,Attivare l'impianto a gas di riserva +10
+SHOCK_HEAT_WAVE_PLAYER_REACTION_3,Import electricity from neighbouring countries -50,Importer de l'électricité des pays voisins -50,Stromimport aus Nachbarländern -50,Importazione di energia elettrica dai paesi limitrofi. -50
+SHOCK_GLACIERS_MELTING_TITLE,Glaciers melting,La fonte des glaciers,Die Gletscher schmelzen,Scioglimento dei ghiacciai
+SHOCK_GLACIERS_MELTING_TEXT,"The hydraulic plants depend on the state of the glaciers. As long as net zero is not reached, the glaciers will continue to melt much faster, decreasing the availability of the hydraulic water supply.","Les centrales hydrauliques dépendent de l'état des glaciers. Tant que la pollution continuera à affecter la fonte des glaciers, la disponibilité en eau baissera pour les centrales hydrauliques.","Die Wasserkraftwerke sind vom Zustand der Gletscher abhängig. Solange die Netto-Null nicht erreicht ist, schmelzen die Gletscher weiterhin so schnell, wodurch die Verfügbarkeit der Wasserkraft abnimmt.","Le centrali idroelettriche dipendono dallo stato dei ghiacciai. Finché l'inquinamento continuerà a influire sullo scioglimento dei ghiacciai, la disponibilità di acqua per le centrali idroelettriche diminuirà."
+SHOCK_SEVERE_WEATHER_TITLE,Severe Weather,Tempête,Stürmisches Unwetter,Maltempo
+SHOCK_SEVERE_WEATHER_TEXT,Severe weather throughout the year have lowered the energy production of solar panels and wind turbines. Wind and Solar energy -20%,Le temps imprévisible a réduit la production d'énergie des panneaux solaires et des eoliennes. Energie solaire et éolienne -20%,Unwetter im Laufe des Jahres haben die Energieproduktion von Sonnenkollektoren und Windturbinen beeinträchtigt. Wind- und Solarenergie -20%,Il maltempo riduce la produzione di energia solare ed eolica. Energia solare ed eolica -20%
+SHOCK_INC_RAW_COST_10_TITLE,Rise of material costs,Augmentation des prix,Anstieg der Materialkosten,Volatilità dei prezzi
+SHOCK_INC_RAW_COST_10_TEXT,The prices of raw material have increased resulting in production costs going up by 10%.,"Le prix des matières premières est en hausse, augmentant ainsi les coûts de production de 10%","Die Rohstoffpreise sind gestiegen, was zu einem Anstieg der Produktionskosten um 10 % geführt hat.",I prezzi delle materie prime sono aumentati e i costi di produzione sono cresciuti del 10%.
+SHOCK_INC_RAW_COST_20_TITLE,Rise of material costs,Augmentation des prix,Anstieg der Materialkosten,Volatilità dei prezzi
+SHOCK_INC_RAW_COST_20_TEXT,The prices of raw material have increased resulting in production costs going up by 20%.,"Le prix des matières premières est en hausse, augmentant ainsi les coûts de production de 20%","Die Rohstoffpreise sind gestiegen, was zu einem Anstieg der Produktionskosten um 20 % geführt hat.",I prezzi delle materie prime sono aumentati e i costi di produzione sono cresciuti del 20%.
 SHOCK_DEC_RAW_COST_20_TITLE,Reduction of material costs,Réduction des prix,Reduktion der Materialkosten,Riduzione dei prezzi dei materiali
-SHOCK_DEC_RAW_COST_20_TEXT,The prices of raw material have decreased resulting in production costs going down by 20%.,"Les prix des matières premières ont diminué, ce qui a entraîné une baisse des coûts de production de 20 %.","Die Preise für Rohstoffe sind gesunken, was zu einer Verminderung der Produktionskosten um 20% geführt hat.",Il prezzo delle matere prime è dimumito. Il costo di produzione diminuisce del 20%.
-SHOCK_NO_SHOCK_TITLE,Calm years,,Ruhige Jahre,In questi anni non ci sono variazioni signficative
-SHOCK_NO_SHOCK_TEXT,The past years were calmer than usual,,Die letzten Jahre waren ruhiger als gewöhnlich.,Gli anni passati sono stati piu calmi del solito
-SHOCK_MASS_IMMIGRATION_TITLE,Refugee Crisis,Réfugiés climatiques,Flüchtlingskrise,Rifugiati climatic
-SHOCK_MASS_IMMIGRATION_TEXT,The population has been increasing faster due to the climate refugee crisis. Energy demand in winter and summer +5 ⚡,La population a augmenté plus rapidement que prévu à cause de la crise climatique. Augmentation de la demande en énergie +5⚡,Die Bevölkerung ist aufgrund der Klimaflüchtlingskrise schneller gewachsen. Energiebedarf im Winter und Sommer +5 ⚡,La popolazione è cresciuta più velocemente del previsto a causa della crisi climatica. Aumento della domanda di energia +5⚡
+SHOCK_DEC_RAW_COST_20_TEXT,The prices of raw material have decreased resulting in production costs going down by 20%.,"Les prix des matières premières ont diminués, ce qui a entraîné une baisse des coûts de production de 20 %.","Die Preise für Rohstoffe sind gesunken, was zu einer Verminderung der Produktionskosten um 20% geführt hat.",Il prezzo delle materie prime è diminuito. Il costo di produzione diminuisce del 20%.
+SHOCK_NO_SHOCK_TITLE,Calm years,Années calmes,Ruhige Jahre,In questi anni non ci sono variazioni significative
+SHOCK_NO_SHOCK_TEXT,The past years were calmer than usual,Les années passées étaient plus calmes que d'habitude,Die letzten Jahre waren ruhiger als gewöhnlich.,Gli anni passati sono stati piu calmi del solito
+SHOCK_MASS_IMMIGRATION_TITLE,Refugee Crisis,Réfugiés climatiques,Flüchtlingskrise,Rifugiati climatici
+SHOCK_MASS_IMMIGRATION_TEXT,The population has been increasing faster due to the climate refugee crisis. Energy demand in winter and summer +5%.,La population a augmentée plus rapidement que prévu à cause de la crise climatique. Augmentation de la demande en énergie +5%.,Die Bevölkerung ist aufgrund der Klimaflüchtlingskrise schneller gewachsen. Energiebedarf im Winter und Sommer +5%.,La popolazione è cresciuta più velocemente del previsto a causa della crisi climatica. Aumento della domanda di energia +5%.
 SHOCK_RENEWABLE_SUPPORT_TITLE,Increase in support,Augmentation du soutien,Bevölkerung für Erneuerbare,La popolarità verso le rinnovabili è aumentata
-SHOCK_RENEWABLE_SUPPORT_TEXT,There was an increase in political support for renewable energies. Your support increases by +10 👍,Le soutien politique aux énergies renouvelables s'est accru. Votre soutien augmente de +10.,Die Unterstützung für erneuerbare Energien in der Bevölkerung hat zugenommen. Dein Support nimmt um +10 zu 👍,C'è stato un aumento del supporto politico per l'energia rinnovabile. La popolarità della vostra proposta energetica è aumentata del +10 👍
+SHOCK_RENEWABLE_SUPPORT_TEXT,There was an increase in political support for renewable energies. Your support increases by 10%,Le soutien politique aux énergies renouvelables s'est accru. Ton soutien augmente de 10%,Die Unterstützung für erneuerbare Energien in der Bevölkerung hat zugenommen. Deine Zustimmung steigt um 10% zu,C'è stato un aumento del supporto politico per l'energia rinnovabile. La popolarità della vostra proposta energetica è aumentata del 10%
 SHOCK_NUC_REINTRO_TITLE,Nuclear Re-introduction,Ré-introduction du nucléaire,Wiedereinführung der Kernenergie,Reintroduzione dell'energia nucleare
 SHOCK_NUC_REINTRO_TEXT,The population wants to vote on the future of the nuclear again.,La population souhaite voter sur la question du nucléaire. Que faire ?,Die Bevölkerung will erneut über die Zukunft der Kernenergie abstimmen.,L'opinione pubblica vuole votare sul nucleare. Cosa possiamo fare?
 SHOCK_NUC_REINTRO_PLAYER_REACTION_1,Yes for reintroducig nuclear power.,Oui pour la ré-introduction du nucléaire.,Ja zur Wiedereinführung der Kernenergie.,Sì alla reintroduzione dell'energia nucleare.
 SHOCK_NUC_REINTRO_PLAYER_REACTION_2,"No, it's time to de-transition from nuclear.","Non, il est temps de dé-transitioner du nucléaire.","Nein, es ist Zeit, definitiv aus der Kernenergie auszusteigen.","No, è ora di abbandonare il nucleare."
+REQUIREMENTS_MET,You mitigated the shock,Tu as supporté le choc,Du hast den Schock abgeschwächt,Avete attenuato lo shock
+ACTION_TAKEN,Action taken,Mesures prises,Getroffene Massnahmen,Azione intrapresa
 NEXT_TURN_BUTTON_LABEL,Next turn,Prochain tour,Nächste Runde,Prossimo turno
 NOT_ENOUGH_ENERGY,Not enough energy,Pas assez d'énergie,Nicht genug Energie,Non c'è abbastanza energia
 SETTINGS,Settings,Réglages,Einstellungen,Impostazioni
 POLICIES,Policies,Politique,Politische\nMassnahmen,Politiche
 RESOURCES,Resources,Ressources,Ressourcen,Risorse
-ENVIRONMENT,Environment,Environnement,Umfeld,Ambiente
+ENVIRONMENT,Environment,Environnement,Umwelt,Ambiente
 EMISSIONS,Emissions,Emissions,Verschmutzung,Emissioni
 IMPORT,Import,Import,Import,Importazione
 ENERGY,Energy,Energie,Energie,Energia
 POLICIES_EXPLANATION_CAMPAIGNS_TITLE,- Campaigns -,- Campagnes -, - Kampagnen -,- Campagne -
-POLICIES_EXPLANATION_CAMPAIGNS_TEXT,Information campaigns help boost the popularity of your policies,Les campagnes d'information contribuent à renforcer la popularité de vos politiques,"Informationskampagnen tragen dazu bei, die Popularität Ihrer Politik zu steigern",Le campagne di informazione contribuiscono ad aumentare la popolarità delle vostre polizze
+POLICIES_EXPLANATION_CAMPAIGNS_TEXT,Information campaigns help boost the popularity of your policies,Les campagnes d'information contribuent à renforcer la popularité de vos politiques,"Informationskampagnen tragen dazu bei, die Popularität deiner Politik zu steigern",Le campagne di informazione contribuiscono ad aumentare la popolarità delle vostre politiche
 POLICIES_EXPLANATION_POLICIES_TITLE,- Policies -,- Politiques -,- Politik -,- Politiche -
-POLICIES_EXPLANATION_POLICIES_TEXT,"Policies can help improve existing renewable power plants or lower demand in energy. The population gets to decide, so your support score needs to be good if you want to implement policies","Les politiques peuvent contribuer à améliorer les centrales d'énergie renouvelable existantes ou à réduire la demande en énergie. La population décide, donc votre score de soutien doit être bon si vous voulez mettre en œuvre des politiques.","Politische Maßnahmen können dazu beitragen, bestehende erneuerbare Kraftwerke zu verbessern oder die Energienachfrage zu senken. Die Bevölkerung entscheidet, daher muss Ihr Unterstützungsergebnis gut sein, wenn Sie eine Politik umsetzen wollen","Le politiche possono aiutare a migliorare le centrali elettriche rinnovabili esistenti o a ridurre la domanda di energia. È la popolazione a decidere, quindi il punteggio di supporto deve essere buono se si vogliono implementare le politiche."
+POLICIES_EXPLANATION_POLICIES_TEXT,"Policies can help improve existing renewable power plants or lower demand in energy. The population gets to decide, so your support score needs to be good if you want to implement policies","Les politiques peuvent contribuer à améliorer les centrales d'énergie renouvelable existantes ou à réduire la demande en énergie. La population décide, donc ton score de soutien doit être bon si tu veux mettre en place des politiques.","Politische Massnahmen können dazu beitragen, bestehende Kraftwerke zu verbessern oder die Energienachfrage zu senken. Die Bevölkerung entscheidet, daher muss die Unterstützung hoch genug sein, damit du eine Politik umsetzen kannst","Le politiche possono aiutare a migliorare le centrali elettriche rinnovabili esistenti o a ridurre la domanda di energia. È la popolazione a decidere, quindi i voti a favore devono essere molti se si vogliono implementare le politiche."
 POLICIES_ENVIRONMENTAL_CAMPAIGN,Environmental campaign,Campagne environnementale,Umweltkampagne,Campagna ambientale
 POLICIES_ENERGY_CAMPAIGN,Energy campaign,Campagne énergétique,Energiekampagne,Campagna energetica
 POLICIES,Policies,Politiques,Politik,Politiche
 EFFECT,Effects,Effets,Effekte,Effetti
 POLICIES_ENVIRONMENTAL_CAMPAIGN_TITLE,Renewable energy,Energies renouvelables,Erneuerbare Energie,Energia rinnovabile
 POLICIES_ENVIRONMENTAL_CAMPAIGN_TEXT,Start an information campaign on the advantages of renewable energy.,Démarre une campagne d'information sur les avantages des énergies renouvelables,Start einer Informationskampagne über die Vorteile der erneuerbaren Energien.,Inizia una campagna di informazione sui vantaggi dell'energia rinnovabile
-POLICIES_ENVIRONMENTAL_CAMPAIGN_EFFECT,- Increase environmental policy,- Augmente le soutien pour les politiques environnementales de 10%,- Erhöhung der Unterstützung für Umweltpolitik um 10%,- Aumenta il supporto delle potiche ambientali del 10%
+POLICIES_ENVIRONMENTAL_CAMPAIGN_EFFECT,- Increase environmental policy support by 10%,- Augmente le soutien pour les politiques environnementales de 10%,- Erhöhung der Unterstützung für Umweltpolitik um 10%,- Aumenta il supporto delle politiche ambientali del 10%
 POLICIES_ENERGY_CAMPAIGN_TITLE,Home insulation,Isolation de l'habitat,Hausisolierungen,Isolamento termico della casa
 POLICIES_ENERGY_CAMPAIGN_TEXT,Start an information campaign explaining the advantages of home insulation.,Lancer une campagne d'information expliquant les avantages de l'isolation des habitations.,Start einer Informationskampagne über die Vorteile der Gebäudeisolierung.,Inizia una campagna di informazione spiegando i vantaggi dell'isolamento termico della casa.
-POLICIES_ENERGY_CAMPAIGN_EFFECT,- Increase energy policy support by 10%,- Augmente le soutien pour les politiques énergétiques de 10%,- Erhöhung der Unterstützung für Energiepolitik um 10%,- Aumenta il supporto delle potiche energetiche del 10%
+POLICIES_ENERGY_CAMPAIGN_EFFECT,- Increase energy policy support by 10%,- Augmente le soutien pour les politiques énergétiques de 10%,- Erhöhung der Unterstützung für Energiepolitik um 10%,- Aumenta il supporto delle politiche energetiche del 10%
 POLICIES_ENVIRONMENTAL_POLICY_1_TITLE,Enable alpine solar PV,Autoriser la construction de centrales solaires dans les Alpes,Alpine PV ermöglichen,Permetti la costruzione di impianti solari alpini
-POLICIES_ENVIRONMENTAL_POLICY_1_TEXT,Limitation of appeals to large scale solar projects,Limitation des recours aux projets solaires à grande échelle,Beschränkung der Einspachemöglichkeiten bei grossen Solarprojekten.,Limitazione del sostegno alla costruzione di impianti solari di grandi dimensioni.
-POLICIES_ENVIRONMENTAL_POLICY_1_EFFECT_1,- Increase solar plant upgrades from 1 to 3,- Augmentation du nombre de centrales solaires de 1 à 3,- Erhöht Solaranlagen-Upgrades von 1 auf 3.,- Incrementa innovazione degli impianti solari da 1 a 3
+POLICIES_ENVIRONMENTAL_POLICY_1_TEXT,Limitation of appeals to large scale solar projects,Limitation des recours aux projets solaires à grande échelle,Beschränkung der Einsprachemöglichkeiten bei grossen Solarprojekten.,Limitazione del sostegno alla costruzione di impianti solari di grandi dimensioni.
+POLICIES_ENVIRONMENTAL_POLICY_1_EFFECT_1,- Increase solar plant upgrades to,- Augmentation du nombre de centrales solaires de,- Erhöht Solaranlagen-Upgrades um,- Incrementa innovazione degli impianti solari da
 POLICIES_ENVIRONMENTAL_POLICY_2_TITLE,Fast track wind parks,Innovation dans les délais de construction des parcs éoliens,Schneller zu neuen Windparks,Innovazione nei tempi di costruzione dei parchi eolici
-POLICIES_ENVIRONMENTAL_POLICY_2_TEXT,Limitation of the possibilities of appeal for wind parks.,Limitation des possibilités de recours pour les parcs éoliens.,Beschränkung der Einspachemöglichkeiten bei Windpark-Projekten.,Limitazione del sostegno alla costruzione di parchi eolici.
-POLICIES_ENVIRONMENTAL_POLICY_2_EFFECT_1,- Lowers required building time for wind parks from 2 to 0 turns,- Réduction du temps de construction requis pour les parcs éoliens de 2 à 0 tours,- Verringert die Wartezeit für den Bau von Windparsk von 2 auf 0.,- Riduce il tempo per la costruzione di parchi eolici da 2 a 0
+POLICIES_ENVIRONMENTAL_POLICY_2_TEXT,Limitation of the possibilities of appeal for wind parks.,Limitation des possibilités de recours pour les parcs éoliens.,Beschränkung der Einsprachemöglichkeiten bei Windpark-Projekten.,Limitazione del sostegno alla costruzione di parchi eolici.
+POLICIES_ENVIRONMENTAL_POLICY_2_EFFECT_1,- Lowers required building time for wind parks from 2 to 0 turns,- Réduction du temps de construction requis pour les parcs éoliens de 2 à 0 tours,- Verringert die Wartezeit für den Bau von Windparks von 2 auf 0.,- Riduce il tempo per la costruzione di parchi eolici da 2 a 0
 POLICIES_ENVIRONMENTAL_POLICY_3_TITLE,Wind parks regulation,Réglementation des parcs éoliens,Windpark-Regulierung,Regolazione dei parchi eolici
-POLICIES_ENVIRONMENTAL_POLICY_3_TEXT,Limitation of the possibilities of appeal for wind parks.,Limitation des possibilités de recours pour les parcs éoliens.,Beschränkung der Einspachemöglichkeiten bei Windpark-Projekten.,Limitazione del sostegno alla costruzione di parchi eolic.
-POLICIES_ENVIRONMENTAL_POLICY_3_EFFECT_1,- Increase wind parks upgrades from 2 to 5.,- Augmentation du nombre de parcs éoliens de 2 à 5.,- Erhöht Windpart-Upgrades von 2 auf 5.,- Aumenta innovazione dei parchi eolici da 2 a 5
-POLICIES_ENERGY_POLICY_1_TITLE,Mandatory Building Insulation,Isolation obligatoire des bâtiments,Obligatorische Gebäudeisolierung,L'isolazione termica degli edifici è obligatoria
+POLICIES_ENVIRONMENTAL_POLICY_3_TEXT,Limitation of the possibilities of appeal for wind parks.,Limitation des possibilités de recours pour les parcs éoliens.,Beschränkung der Einsprachemöglichkeiten bei Windpark-Projekten.,Limitazione del sostegno alla costruzione di parchi eolici.
+POLICIES_ENVIRONMENTAL_POLICY_3_EFFECT_1,- Increase wind parks upgrades to,- Augmentation du nombre de parcs éoliens de,- Erhöht Windpark-Upgrades von,- Aumenta innovazione dei parchi eolici da
+POLICIES_ENERGY_POLICY_1_TITLE,Mandatory Building Insulation,Isolation obligatoire des bâtiments,Obligatorische Gebäudeisolierung,L'isolamento termico degli edifici è obbligatorio
 POLICIES_ENERGY_POLICY_1_TEXT,All buildings must be better insulated.,Tous les bâtiments doivent être mieux isolés.,Alle Gebäude müssen innerhalb von n Runden isoliert werden.,Tutti gli edifici devono essere termicamente isolati nei prossimi n turni di gioco.
-POLICIES_ENERGY_POLICY_1_EFFECT_1,- Lowers energy demand by 5 in the Summer,- Réduit la demande d'énergie de 5 en été,- Reduziert den Energiebedarf im Sommer um 5,- La domanda di energia diminuisce di 5 in estate
-POLICIES_ENERGY_POLICY_1_EFFECT_2,- Lowers energy demand by 5 in the Winter,- Réduit la demande d'énergie de 5 en hiver,- Reduziert den Energiebedarf im Winter um 5,- La domanda di energia diminuisce di 5 in inverno
-POLICIES_ENERGY_POLICY_2_TITLE,Industry Subsidy,Subventions à l'industrie,Unterstützung für die Industrie,Sussidi per industria
+POLICIES_ENERGY_POLICY_1_EFFECT_1,- Lowers energy demand by 5% in the Summer,- Réduit la demande d'énergie de 5% en été,- Reduziert den Energiebedarf im Sommer um 5%,- La domanda di energia diminuisce di 5% in estate
+POLICIES_ENERGY_POLICY_1_EFFECT_2,- Lowers energy demand by 5% in the Winter,- Réduit la demande d'énergie de 5% en hiver,- Reduziert den Energiebedarf im Winter um 5%,- La domanda di energia diminuisce di 5% in inverno
+POLICIES_ENERGY_POLICY_2_TITLE,Industry Subsidy,Subventions à l'industrie,Unterstützung für die Industrie,Sussidi per l'industria
 POLICIES_ENERGY_POLICY_2_TEXT,Provide industries with grants for less energy intensive production.,Fournir aux industries des subventions pour une production moins gourmande en énergie.,"Gewährung von Subventionen an die Industrie, um eine weniger energieintensive Produktion zu fördern",Fornisce alle industrie finanziamenti per ridurre la produzione energetica intesiva
-POLICIES_ENERGY_POLICY_2_EFFECT_1,- Lowers energy demand by 5 in the Summer,- Réduit la demande d'énergie de 5 en été,- Reduziert den Energiebedarf im Sommer um 5,- Riduce la domanda di energia di 5 in estate
-POLICIES_ENERGY_POLICY_2_EFFECT_2,- Lowers energy demand by 5 in the Winter,- Réduit la demande d'énergie de 5 en hiver,- Reduziert den Energiebedarf im Winter um 5,- Riduce la domanda di energia di 5 in inverno
-ESTIMATED_ACCEPTANCE_CHANCE,Estimated accpetance chance,Estimation des chances d'acceptation,Geschätzte Akzeptanzchance,Probabilità di accettazione stimata
-DURATION_OF_CAMPAIGN,Duration of campaign : 1 turn,Durée de la campagne : 1 tour,Dauer der Kampagne : 1 Runde,Durata della campagna: 1 turno
+POLICIES_ENERGY_POLICY_2_EFFECT_1,- Lowers energy demand by 5% in the Summer,- Réduit la demande d'énergie de 5% en été,- Reduziert den Energiebedarf im Sommer um 5%,- Riduce la domanda di energia di 5% in estate
+POLICIES_ENERGY_POLICY_2_EFFECT_2,- Lowers energy demand by 5% in the Winter,- Réduit la demande d'énergie de 5% en hiver,- Reduziert den Energiebedarf im Winter um 5%,- Riduce la domanda di energia di 5% in inverno
+ESTIMATED_ACCEPTANCE_CHANCE,Acceptance chance,Chances d'acceptation,Akzeptanzchance,Probabilità di accettazione
+DURATION_OF_CAMPAIGN,Duration of campaign : 1 turn,Durée de la campagne : 1 tour,Dauer der Kampagne: 1 Runde,Durata della campagna: 1 turno
+DURATION_OF_CAMPAIGN_2,You won't be able to vote for policies until next turn,Tu ne pourras pas lancer un nouveau vote avant le prochain tour.,Du kannst erst in der nächsten Runde eine Abstimmung über Politiken ansetzen,Non sarà possibile aprire una votazione per le politiche fino al prossimo turno.
 START_CAMPAIGN,Start,Démarrer,Beginnen,Inizio
-CAMPAIGN_STARTED,The campaign has started!,La campagne a commencé !,Die Kampagne hat begonnen!,La campagna è iniziata!
+CAMPAIGN_STARTED,The campaign has started!,La campagne a commencée !,Die Kampagne hat begonnen!,La campagna è iniziata!
 VOTE,Vote,Voter,Abstimmen,Voto
 VOTE_FAILED,Policy failed to be passed...,La politique n'a pas été adoptée...,Die Politik wurde nicht verabschiedet...,La politica non è stata approvata...
-VOTE_SUCCEEDED,Policy was passed successfully!,La politique a été adoptée avec succès !,Die Richtlinie wurde erfolgreich verabschiedet!,La politica è stata approvata con successo!
+VOTE_SUCCEEDED,Policy was passed successfully!,La politique a été adoptée avec succès !,Die Politik wurde erfolgreich verabschiedet!,La politica è stata approvata con successo!
+VOTING_BONUS,Bonus during votations :,Bonus lors des votations :,Bonus bei Abstimmungen:,Bonus di votazione:
+CANNOT_VOTE_OR_START_CAMPAIGN,You already voted or started a campaign this turn,Tu as déjà voté ou lancé une campagne ce tour-ci,Du hast in dieser Runde bereits eine Abstimmung durchgeführt oder eine Kampagne gestartet,Hai già votato o avviato una campagna in questo turno
+CANNOT_START_CAMPAIGN,You already voted or started a campaign this turn,Tu as déjà voté ou lancé une campagne ce tour-ci,Du hast in dieser Runde bereits eine Abstimmung durchgeführt oder eine Kampagne gestartet.,Hai già votato o avviato una campagna in questo turno
+CANNOT_VOTE,You already voted or started a campaign this turn,Tu as déjà voté ou lancé une campagne ce tour-ci,Du hast in dieser Runde bereits eine Abstimmung durchgeführt oder eine Kampagne gestartet.,Hai già votato o avviato una campagna in questo turno
+CAN_VOTE_OR_START_CAMPAIGN,You can start a campaign or vote for a policy !,Tu peux lancer une campagne ou voter pour une politique !,Du kannst eine Kampagne starten oder eine Abstimmung durchführen!,Puoi avviare una campagna o votare per una politica!
+CAN_START_CAMPAIGN,"You can start a campaign, you'll get more support for futur votations !","Tu peux lancer une campagne, tu obtiendras ainsi plus de soutien pour les futures votations !","Du kannst eine Kampagne starten, um mehr Unterstützung bei künftigen Abstimmungen zu erhalten!","Puoi avviare una campagna, otterrai più sostegno per le votazioni future!"
+VOTE_PASSED,The votation was a success !,La votation a été un succès !,Die Abstimmung war ein Erfolg!,La votazione è stata un successo!
+POLICY_ALREADY_PASSED,The politic is already approved !,La politique est déjà approuvée !,Die Politik ist bereits genehmigt!,La politica è già approvata!
+CAMPAIGN_ONGOING,"The campaign is oingoing, you'll get more support on your politics in the futur !","La campagne est en cours, tu obtiendras plus de soutien à l'avenir !","Die Kampagne ist im Gange, damit wirst du in Zukunft mehr Unterstützung für deine Politik erhalten!","La campagna è in corso, riceverai più sostegno per la tua campagna politica nel futuro!"
+JUST_VOTED_AND_FAILED,This policy was just voted and it wasn't approved...,Cette politique vient d'être votée et n'a pas été approuvée...,Über diese Politik wurde gerade abgestimmt und sie wurde nicht angenommen...,Questa politica è stata appena votata e non è stata approvata...
+JUST_VOTED_AND_SUCCEEDED,This policy was just voted and was approved !,Cette politique vient d'être votée et a été approuvée !,Über diese Politik wurde gerade abgestimmt und sie wurde angenommen!,Questa politica è stata appena votata ed è stata approvata!
 GAS,Gas,Gaz,Gas,Gas
 NUCLEAR,Nuclear,Nucléaire,Atomkraftwerk,Nucleare
 HYDRO,Hydro,Hydraulique,Wasserkraft,Idroelettrica
-WASTE,Waste,Incinération,Abfallverbrennung,Inceneritore
+WASTE,Waste,Incinération,Kehrrichtverbrennung,Inceneritore
 BIOMASS,Biomass,Biomasse,Biomasse,Biomassa
 SOLAR,Solar,Solaire,Solar,Solare
 WIND,Wind,Eolienne,Windrad,Eolica
-GEOTHERMAL,Geothermal,Geothermique,Geothermische,Geotermica
+GEOTHERMAL,Geothermal,Geothermique,Geothermie,Geotermica
 SHUT_DOWN,Shutting down in {nbr} turns,S'arrête dans {nbr} tours,Abschaltung in {nbr} Runden,Spegnimento in {nbr} giri
+SHUT_DOWN_NEXT_TURN,Shuts down next turn,S'éteint au tour suivant,Schaltet in der nächsten Runde ab,Si spegne al prossimo turno
+DECOMISSIONED,Decommissioned,Déclassée,Heruntergefahren,Disattivato
 PROD_COST,Production costs,Coûts de production,Produktionskosten,Costi di produzione
 POLLUTION,CO2 Emissions,Émissions,Verschmutzung,Emissioni
+CARBON,Carbon sequestration,Séquestration du carbone,Kohlenstoff Sequestrierung,Sequestro di carbonio
+CARBON_SEQUESTRATION,Carbon sequestration,Séquestration du carbone,Kohlenstoff Sequestrierung,Sequestro di carbonio
+BIOGAS,Biogas,Biogaz,Biogas,Biogas
 BUDGET,Budget:,Budget :,Haushalt:,Bilancio:
-BUDGET_TEXT,The budget shows you how much money you have and can spend. You start the game with 250.- and at the beginning of each turn receive 250.-,"Le budget vous indique combien d'argent vous avez et pouvez dépenser. Vous commencez la partie avec 250.- et au début de chaque tour, vous recevez 250.-.","Das Budget zeigt dir, wie viel Geld du hast und ausgeben kannst. Sie beginnen das Spiel mit 250.- und erhalten zu Beginn jeder Runde 250.-.",Il budget mostra quanto denaro si ha e si può spendere. Si inizia la partita con 250.- e all'inizio di ogni turno si ricevono 250.-
+BUDGET_TEXT,The budget shows you how much money you have and can spend.,Le budget indique combien d'argent tu as et peux dépenser.,"Das Budget zeigt dir, wie viel Geld du hast und ausgeben kannst.",Il budget mostra quanto denaro si ha e si può spendere.
 PRODUCTION,Production:,Production :,Produktion:,Produzione:
-PRODUCTION_TEXT,Some power plants have production costs because they need materials to run.,Certaines centrales électriques ont des coûts de production car elles ont besoin de matériaux pour fonctionner.,"Einige Kraftwerke haben Produktionskosten, weil sie für ihren Betrieb Materialien benötigen.",Alcune centrali elettriche hanno costi di produzione perché hanno bisogno di materiali per funzionare.
+PRODUCTION_TEXT,Some power plants have production costs because they need materials to run.,Certaines centrales électriques ont des coûts de production car elles ont besoin de matériaux pour fonctionner.,"Kraftwerke haben Produktionskosten, weil sie für ihren Betrieb Materialien benötigen.",Alcune centrali elettriche hanno costi di produzione perché hanno bisogno di materiali per funzionare.
 BUILDING,Building:,Construction :,Konstruktion:,Costruzione:
-BUILDING_TEXT,Indicates how much you have spent on building or upgrading power plants.,Indique le montant que vous avez dépensé pour construire ou améliorer des centrales électriques.,"Gibt an, wie viel Sie für den Bau oder die Aufrüstung von Kraftwerken ausgegeben haben.",Indica quanto si è speso per costruire o potenziare le centrali elettriche.
-IMPORTS,Imports:,Importations :,Einfuhren:,Importazioni:
-IMPORTS_TEXT,Indicates how much you will be spending on imports. Clean imports costs 1.5 times more,"Indique le montant que vous dépenserez pour les importer de l'énergie. Les importations propres coûtent 1,5 fois plus cher","Gibt an, wie viel Sie für Importe ausgeben werden. Saubere Importe kosten 1,5 Mal mehr","Indica quanto si spenderà per le importazioni. Le importazioni pulite costano 1,5 volte di più"
+BUILDING_TEXT,Indicates how much you have spent on building or upgrading power plants.,Indique le montant que tu as dépensé pour construire ou améliorer des centrales électriques.,"Gibt an, wie viel du für den Bau oder die Aufrüstung von Kraftwerken ausgegeben hast.",Indica quanto si è speso per costruire o potenziare le centrali elettriche.
+IMPORTS,Imports:,Importations :,Importe:,Importazioni:
+IMPORTS_TEXT,Indicates how much you will be spending on imports.,Indique le montant que tu dépenseras pour importer de l'énergie,"Gibt an, wie viel du für Importe ausgeben hast",Indica quanto si spenderà per le importazioni
 LOAN,Loan:,Emprunt : ,Darlehen:,Prestito:
-LOAN_TEXT,Indicates how much money you owe.,Indique le montant de votre dette.,"Gibt an, wie viel Geld Sie schulden.",Indica l'importo del debito.
+LOAN_TEXT,Indicates how much money you owe.,Indique le montant de ta dette.,"Gibt an, wie viel Schulden du hast.",Indica l'importo del debito.
 TOTAL,Total,Total,Insgesamt,Totale
 CURRENT_TURN,Now,Ce tour,Jetzt,Ora
 NEXT_TURN,Next turn,Prochain tour,Nächste Runde,Prossimo turno
 TURN,Turn,Tour,Runde,Turno
 REMAINING_TURNS,Remaining turns,Tours restants,Restliche Runden,Turni rimanenti
-NUCLEAR_WARNING,A nuclear plant is shutting down next turn\n⚠️,Une centrale nucléaire sera fermée au prochain tour\n⚠️,Ein Kernkraftwerk wird in der nächsten Runde abgeschaltet\n⚠️,Una centrale nucleare sarà chiusa nella prossima tornata\n⚠️
+NUCLEAR_WARNING,A nuclear plant is shutting down next turn,Une centrale nucléaire sera fermée au prochain tour,Ein Kernkraftwerk wird in der nächsten Runde abgeschaltet,Una centrale nucleare sarà chiusa nel prossimo turno
 ECONOMY,Economy,Economie,Wirtschaft,Economia
 SUMMER_DEMAND_LINE_NAME,Summer demand,Demande estivale,Bedarf im Sommer,Domanda estiva
 WINTER_DEMAND_LINE_NAME,Winter demand,Demande hivernale,Bedarf im Winter,Domanda invernale
@@ -177,10 +203,48 @@ PRODUCTION_COSTS_LINE_NAME,Production costs,Coûts de production,Produktionskost
 IMPORT_COSTS_LINE_NAME,Energy import costs,Coûts d'importation,Kosten für Energieimporte,Costi di importazione dell'energia
 BORROWED_MONEY_LINE_NAME,Borrowed money,Argent emprunté,Geliehenes Geld,Denaro preso in prestito
 AVAILABLE_MONEY_LINE_NAME,Available money,Budget,Budget,Bilancio
-WINTER_ENERGY_SUPPLY_LINE_NAME,Winter energy supply,Apport énergétique hivernal,Energieversorgung im Winter,Fornitura di energiainvernale
-SUMMER_ENERGY_SUPPLY_LINE_NAME,Summer energy supply,Apport énergétique estival,Energieversorgung im Sommer,Fornitura di energia estiva
+WINTER_ENERGY_SUPPLY_LINE_NAME,Winter energy supply,Apport énergétique hivernal,Energieerzeugung im Winter,Fornitura di energia invernale
+SUMMER_ENERGY_SUPPLY_LINE_NAME,Summer energy supply,Apport énergétique estival,Energieerzeugung im Sommer,Fornitura di energia estiva
 WINTER_ENERGY_IMPORT_LINE_NAME,Winter energy import,Energie importée en hiver,Energieimport im Winter,Importazione di energia invernale
 LAND_USE_LINE_NAME,Land use,Utilisation des sols,Landnutzung,Uso del suolo
+CO2_EMISSIONS_LINE_NAME,CO2 Emissions,Émissions de CO2,CO2 Emissionen,Emissioni di CO2
+PERSONAL_SUPPORT_LINE_NAME,Political support,Soutien politique,Politische Unterstützung,Supporto politico
 RESET,Reset,Recommencer,Neu anfangen,Ricominciare
 CANCEL,Cancel,Annuler,Abbrechen,Annullare
-RESET_CONFIRM,Are you sure you want to restart the game ?,Es-tu sûr de vouloir recommencer le jeu ?,"Sind Sie sicher, dass Sie das Spiel neu starten wollen?",Sei sicuro di voler ricominciare il gioco?
+RESET_CONFIRM,Are you sure you want to restart the game ?,Es-tu sûr de vouloir recommencer le jeu ?,"Bist du sicher, dass du das Spiel neu starten willst?",Sei sicuro di voler ricominciare il gioco?
+PLAYER_NAME_PLACEHOLDER,NAME,NOM,NAME,NOME
+SURVEY_TOKEN,Survey token,Num. sondage,Umfrage-Nr.,Indagine n.
+QUIT_WARNING_TEXT,Exit game?\nProgress will be lost,Quitter le jeu ?\nLa progression sera perdue,Das Spiel verlassen?\nDein Fortschritt geht verloren,Uscire dal gioco?\nI progressi andranno persi
+QUIT_WITH_SURVEY_TEXT,A tab directing you to the survey will automatically open,Un onglet renvoyant vers l'enquête s'ouvrira automatiquement,"Es öffnet sich automatisch ein Tab, der dich zur Umfrage zurück bringt.",Si aprirà automaticamente una scheda che ti indirizza al sondaggio
+QUIT_CONFIRM_BUTTON_TEXT,Quit,Quitter,Beenden,Fine
+WINTER_DEMAND_INFO_TEXT,"In winter, energy demand is higher due to the need for heating. Switzerland often has to import the missing energy supply.","En hiver, la demande d'énergie est plus élevée en raison des besoins en chauffage. La Suisse doit souvent importer l'énergie manquante.",Im Winter ist die Energienachfrage aufgrund des Heizbedarfs höher. Die Schweiz muss die fehlende Energie oft importieren.,"In inverno, la domanda di energia è più elevata a causa della necessità di riscaldamento. La Svizzera deve spesso importare l'energia mancante."
+WINTER_SUPPLY_INFO_TEXT,You need to reach the demand in energy. The target is the white line on the energy bar.,Tu dois atteindre la demande en énergie. L'objectif est la ligne blanche sur la barre d'énergie.,Du musst die geforderte Energiemenge erreichen. Das Ziel ist die weisse Linie auf dem Energiebalken.,È necessario raggiungere la richiesta di energia. L'obiettivo è la linea bianca sulla barra dell'energia.
+SUMMER_DEMAND_INFO_TEXT,Energy demand in summer tends to be lower than winter because the need for cooling is lower than the need for heating in winter.,"La demande d'énergie en été tend à être inférieure à celle de l'hiver, les besoins de refroidissement étant plus faibles que les besoins de chauffage en hiver.","Der Energiebedarf im Sommer ist in der Regel niedriger als im Winter, weil der Kühlbedarf geringer ist als der Heizbedarf im Winter.","La domanda di energia in estate tende a essere più bassa rispetto all'inverno, perché il fabbisogno di raffreddamento è inferiore a quello di riscaldamento in inverno."
+SUMMER_SUPPLY_INFO_TEXT,You need to reach the demand in energy. The target is the white line on the energy bar.,Tu dois atteindre la demande en énergie. L'objectif est la ligne blanche sur la barre d'énergie.,Du musst die geforderte Energiemenge erreichen. Das Ziel ist die weisse Linie auf dem Energiebalken.,È necessario raggiungere la richiesta di energia. L'obiettivo è la linea bianca sulla barra dell'energia.
+GRAPHS,Graphs,Graphiques,Grafiken,Grafici
+LAND_USE_INFO_TEXT,"Land use show how much land is used by the energy system. The smaller the indicator, the less impact from the energy system on land use. Some power plants need more land than others. This can negatively impact biodiversity","L'utilisation des sols indique la quantité de terrain utilisée par le système énergétique. Plus l'indicateur est petit, moins l'impact du système énergétique sur l'utilisation des sols est important. Certaines centrales électriques ont besoin de plus de terres que d'autres. Cela peut avoir un impact négatif sur la biodiversité.","Die Landnutzung gibt an, wie viel Land vom Energiesystem genutzt wird. Je kleiner der Indikator ist, desto geringer sind die Auswirkungen des Energiesystems auf die Bodennutzung. Einige Kraftwerke benötigen mehr Land als andere. Dies kann sich negativ auf die Biodiversität auswirken.","L'uso del suolo indica la quantità di terreno utilizzata dal sistema energetico. Più piccolo è l'indicatore, minore è l'impatto del sistema energetico sull'uso del suolo. Alcune centrali elettriche hanno bisogno di più terra di altre. Questo può avere un impatto negativo sulla biodiversità."
+BORROW_MONEY_TITLE,Bank,Banque,Bank,Banca
+BORROW_MONEY_TITLE_2,How much would you like to borrow ?,Quel montant souhaites-tu emprunter ?,Wie viel möchtest du leihen?,Quanto desidera prendere in prestito?
+BORROW_MONEY_TEXT_1,Borrow,Emprunter,Ausleihen,Prendere in prestito
+BORROW_MONEY_TEXT_2,Pay back\n(next turn),Rembourser\n(tour suivant),Zurückzahlen\n(nächste Runde),Rimborso\n(turno successivo)
+BORROW_MONEY_APPLY,Apply,Appliquer,Anwenden,Applicare
+PLAYER_NAME_NEEDED,Enter a name,Entrer un nom,Name eingeben,Inserire un nome
+IMPORTED,Imported,Importé,Importiert,Importato
+TURNS_TO_BUILD,Construction time:,Temps de construction :,Bauzeit:,Tempo di costruzione:
+TURNS,Turns,Tours ,Runden,Turni
+CONSTRUCTION_TIME_LEFT,Construction time left,Temps de construction restant,Verbleibende Bauzeit,Tempo di costruzione rimasto
+NOT_ENOUGH_MONEY,Not enough money,Pas assez d'argent,Nicht genug Geld,Non c'è abbastanza denaro
+SKIP,Skip,Passer,Überspringen,Saltare
+FOSSIL,Fossil,Fossile,Fossil,Fossile
+SEASONALITY,Seasonality,Saisonnalité,Saisonalität,Stagionalità
+RANK,Rank,Rang,Rang,Posizione
+SCORE,Score,Score,Spielstand,Punteggio
+CALCULATING_RANK,Calculating rank,Calcul du rang,Berechnung des Rangs,Calcolo del rango
+PLAYER_SCORE_NAME,"If you want to have your name on the leaderboard, you can edit your name on the screen","Si tu souhaites que ton nom figure dans le classement, tu peux modifier ton nom à l'écran","Wenn du möchtest, dass dein Name in der Rangliste erscheint, kannst du deinen Namen auf dem Bildschirm ändern","Se si desidera che il proprio nome compaia nella classifica, è possibile modificarlo sullo schermo"
+CARBON_SEQUESTRATION_TEXT,You can burry the captured CO2 in the ground to reduce emissions,Tu peux enfouir le CO2 capturé dans le sol pour réduire les émissions.,"Sie können das abgeschiedene CO2 im Boden vergraben, um die Emissionen zu verringern",È possibile immagazzinare nel terreno la CO2 raccolta per ridurre le emissioni.
+THANK_YOU_FOR_PLAYING,Thank you for playing the game!,Merci d'avoir joué au jeu !,"Vielen Dank, dass du das Spiel gespielt hast!",Grazie per aver giocato!
+BACK_TO_SURVEY,Return to survey,Retour au sondage,Zurück zur Umfrage,Torna al sondaggio
+RIVER,River,Rivière,Laufwasserkraftwerk,Fiume
+RESULTS,Results,Résultats,Ergebnisse,Risultati
+PLANT_WILL_DECOMMISSION_NEXT_TURN,The powerplant will be decommissioned next turn,La centrale sera déclassée au prochain tour,Das Kraftwerk wird in der nächsten Runde vom Netz genommen,La centrale sarà declassata nella prossima tornata elettorale
+CONTINUE,Continue,Continuer,Weiter,Continuare

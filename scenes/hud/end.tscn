@@ -1,590 +1,1269 @@
-[gd_scene load_steps=14 format=3 uid="uid://cej4dlw11su6f"]
+[gd_scene load_steps=65 format=3 uid="uid://cej4dlw11su6f"]
 
 [ext_resource type="Script" path="res://src/gdscript/end/end.gd" id="1_eio5g"]
-[ext_resource type="Texture2D" uid="uid://dyyio7rs1i1l6" path="res://assets/UI Elements/Import_energy-Bar-Metal.png" id="2_27rt7"]
-[ext_resource type="Texture2D" uid="uid://b4m67oni44dpg" path="res://assets/UI Elements/Button-normal.png" id="3_g4lp6"]
-[ext_resource type="Texture2D" uid="uid://60dl810b25fd" path="res://assets/UI Elements/Button-press.png" id="4_wpw57"]
-[ext_resource type="Texture2D" uid="uid://cuhckno2t6g0r" path="res://assets/UI Elements/Button-hover.png" id="5_3yvol"]
-[ext_resource type="Texture2D" uid="uid://0mihvtaw003w" path="res://assets/UI Elements/Icon-Pollution-.png" id="6_vhvio"]
-[ext_resource type="Texture2D" uid="uid://sopgul71025f" path="res://assets/UI Elements/Icon-Money.png" id="7_vf71k"]
-[ext_resource type="Texture2D" uid="uid://djt8tok2g8xsq" path="res://assets/UI Elements/Icon-Import.png" id="8_fbglj"]
-[ext_resource type="Texture2D" uid="uid://ca5ev88u31iqa" path="res://assets/UI Elements/Icon-Solar.png" id="9_linj2"]
-[ext_resource type="Texture2D" uid="uid://bbnupxdtp78l5" path="res://assets/UI Elements/Icon-Wind.png" id="10_p8k2p"]
-[ext_resource type="Texture2D" uid="uid://bam7su0aw6q65" path="res://assets/UI Elements/Icon-Popularity.png" id="11_4kvee"]
-[ext_resource type="Texture2D" uid="uid://lxqt8kspr35q" path="res://assets/UI Elements/Icon-Environment-.png" id="12_dufsc"]
+[ext_resource type="Texture2D" uid="uid://hka3jsgvfwwy" path="res://assets/textures/ui/green_checkmark.png" id="2_2yy2d"]
+[ext_resource type="Texture2D" uid="uid://di4s804q6pnh2" path="res://assets/textures/ui/toolPencil.png" id="3_rfpko"]
+[ext_resource type="Script" path="res://src/gdscript/end/graphs_frame.gd" id="4_dq0ds"]
+[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="4_n8g63"]
+[ext_resource type="Texture2D" uid="uid://bulftkbpqxib" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0024_Icon-Money.png" id="5_goags"]
+[ext_resource type="Script" path="res://src/gdscript/end/metrics_ranking_screen.gd" id="5_luxph"]
+[ext_resource type="Texture2D" uid="uid://ceuxpu5iujr05" path="res://assets/textures/ui/All-HQ-Assets-D_0006s_0001_Stats-metal-base.png" id="5_xqx4k"]
+[ext_resource type="Texture2D" uid="uid://cd23afs6x11al" path="res://assets/textures/screens/screen_1.png" id="6_us122"]
+[ext_resource type="Script" path="res://src/gdscript/end/money_label.gd" id="7_1k3ff"]
+[ext_resource type="Texture2D" uid="uid://gp11t1mp6sc3" path="res://assets/textures/ui/All-HQ-Assets-D_0009s_0003_Stats-(side)-metal-plate.png" id="7_57dx7"]
+[ext_resource type="Texture2D" uid="uid://bsa55enbm5cwg" path="res://assets/textures/icons/sticker_summer.png" id="7_x2355"]
+[ext_resource type="Script" path="res://src/gdscript/end/trust_bar.gd" id="8_8tlhp"]
+[ext_resource type="Texture2D" uid="uid://cischtrjvknyl" path="res://assets/textures/icons/sticker_winter.png" id="8_a3fds"]
+[ext_resource type="Texture2D" uid="uid://clnitajx25spt" path="res://assets/textures/ui/Button-Square-normal.png" id="8_hhqa5"]
+[ext_resource type="Texture2D" uid="uid://j7b41prot7rw" path="res://assets/textures/ui/All-HQ-Assets-D_0005s_0007_Popularity-screen.png" id="8_uuhoe"]
+[ext_resource type="Texture2D" uid="uid://4dcp6f66sdeo" path="res://assets/textures/ui/Button-Square-press.png" id="9_adpr1"]
+[ext_resource type="ButtonGroup" uid="uid://bly2ooexf1g4h" path="res://scenes/windows/leaderboard_buttons.tres" id="9_h5vxw"]
+[ext_resource type="Texture2D" uid="uid://ceywqq4wa4ocw" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0026_Icon-Import.png" id="9_uutud"]
+[ext_resource type="Script" path="res://src/gdscript/end/energy_bar.gd" id="10_6lpn4"]
+[ext_resource type="Texture2D" uid="uid://bx0cxko72v5ui" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0020_Icon-Environment-.png" id="10_induf"]
+[ext_resource type="Texture2D" uid="uid://dlccss1xvy8tb" path="res://assets/textures/ui/Button-Square-hover.png" id="10_y0hau"]
+[ext_resource type="Texture2D" uid="uid://b083k6d7sugyx" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0018_Icon-Pollution-.png" id="11_fjiu1"]
+[ext_resource type="Script" path="res://src/gdscript/end/money_button.gd" id="11_gk6vr"]
+[ext_resource type="Texture2D" uid="uid://b421l4qq7mg5n" path="res://assets/textures/ui/All-HQ-Assets-D_0007s_0024_Line-energy.png" id="11_glyce"]
+[ext_resource type="StyleBox" uid="uid://yqtdxtw3vpjp" path="res://scenes/hud/energy_bar_green.tres" id="11_oy1fd"]
+[ext_resource type="Texture2D" uid="uid://bj6ubksmn350n" path="res://assets/textures/buttons/button_hole.png" id="11_qe2lm"]
+[ext_resource type="StyleBox" uid="uid://lco0fbxgcpii" path="res://scenes/hud/energy_bar_low.tres" id="12_2ucrx"]
+[ext_resource type="Texture2D" uid="uid://da56ki5hmlw12" path="res://assets/textures/ui/All-HQ-Assets-D_0009s_0008_Energy-Bar-base.png" id="14_tu03u"]
+[ext_resource type="Script" path="res://src/gdscript/end/trust_button.gd" id="16_ppd74"]
+[ext_resource type="Texture2D" uid="uid://bmjee8ocqy0ge" path="res://assets/textures/ui/Enviornment-Base.png" id="20_651ix"]
+[ext_resource type="Texture2D" uid="uid://d2mj0ht318q3j" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0022_Icon-Popularity.png" id="21_kphba"]
+[ext_resource type="Texture2D" uid="uid://bttco1oeukpbq" path="res://assets/textures/ui/Environment-Bar.png" id="21_n5n6k"]
+[ext_resource type="Texture2D" uid="uid://bwmnloeklg76n" path="res://assets/textures/ui/Enviornment-Hand.png" id="22_1ey0q"]
+[ext_resource type="Script" path="res://src/gdscript/end/winter_button.gd" id="22_twku5"]
+[ext_resource type="Script" path="res://src/gdscript/end/environment_arrow.gd" id="23_gtgnc"]
+[ext_resource type="Texture2D" uid="uid://jboxm7nhk0qv" path="res://assets/textures/ui/All-HQ-Assets-D_0007s_0001_import-line-stats.png" id="23_pq3eq"]
+[ext_resource type="Script" path="res://src/gdscript/end/summer_button.gd" id="24_e8i6d"]
+[ext_resource type="Script" path="res://src/gdscript/end/import_screen_value.gd" id="25_j2xu1"]
+[ext_resource type="Script" path="res://src/gdscript/end/pollution_arrow.gd" id="26_kgqfc"]
+[ext_resource type="Script" path="res://src/gdscript/end/land_use_button.gd" id="32_1ltkv"]
+[ext_resource type="Script" path="res://src/gdscript/end/land_use_gauge_label.gd" id="33_38kwm"]
+[ext_resource type="Script" path="res://src/gdscript/end/emissions_button.gd" id="35_ymyta"]
+[ext_resource type="Script" path="res://src/gdscript/end/emissions_gauge_label.gd" id="37_hchcy"]
+[ext_resource type="PackedScene" uid="uid://chpn7t75mmbkh" path="res://scenes/buttons/button_close.tscn" id="43_pdbh2"]
+[ext_resource type="Script" path="res://src/gdscript/end/close_button.gd" id="44_iv8kv"]
+[ext_resource type="Texture2D" uid="uid://bx1g8oiuxi2mk" path="res://assets/textures/ui/Paper-Middle.png" id="48_py7ex"]
+[ext_resource type="Texture2D" uid="uid://duoff2c7r1hdy" path="res://assets/textures/buttons/close_button_normal.png" id="48_wntxs"]
+[ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/fonts/special_elite/special_elite_regular.ttf" id="49_fl6u7"]
+[ext_resource type="Texture2D" uid="uid://bdq26gwsmigwy" path="res://assets/textures/buttons/close_button_pressed.png" id="49_nxc3v"]
+[ext_resource type="Texture2D" uid="uid://myf36tn1pspq" path="res://assets/textures/buttons/close_button_hover.png" id="50_3oi6p"]
+[ext_resource type="Texture2D" uid="uid://bhl7ei1bspfbw" path="res://assets/textures/buttons/close_button_disabled.png" id="51_j8egd"]
+[ext_resource type="Texture2D" uid="uid://c8wbmujr8ohwy" path="res://assets/textures/buttons/button_normal_blue.png" id="51_twdkf"]
+[ext_resource type="Texture2D" uid="uid://60dl810b25fd" path="res://assets/textures/buttons/button_press.png" id="52_4on8v"]
+[ext_resource type="Texture2D" uid="uid://d0dt1qv32p1v6" path="res://assets/textures/buttons/button_pressed_blue.png" id="52_fi5mo"]
+[ext_resource type="Texture2D" uid="uid://dlavhpvss6kxw" path="res://assets/textures/buttons/button_hover_blue.png" id="53_1g8ma"]
+[ext_resource type="Script" path="res://src/gdscript/end/back_to_survey_button.gd" id="55_f200q"]
+[ext_resource type="Texture2D" uid="uid://cgf1xjsx0mfot" path="res://assets/textures/ui/Button-Next-Base.png" id="59_pxkc5"]
 
-[sub_resource type="Theme" id="Theme_yg7sq"]
+[sub_resource type="Animation" id="Animation_gvfop"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_clqo8"]
+resource_name = "calculating"
+length = 1.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.3, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iyvtd"]
+_data = {
+"RESET": SubResource("Animation_gvfop"),
+"calculating": SubResource("Animation_clqo8")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d1wpm"]
+bg_color = Color(0.317647, 0.317647, 0.317647, 0)
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7rq5"]
+bg_color = Color(0.137255, 0.470588, 0.760784, 0.701961)
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wpusd"]
+bg_color = Color(0.215686, 0.337255, 0.34902, 1)
+draw_center = false
 
 [node name="End" type="CanvasLayer"]
 script = ExtResource("1_eio5g")
+tick_icon = ExtResource("2_2yy2d")
+pen_icon = ExtResource("3_rfpko")
+metadata/_edit_horizontal_guides_ = [869.0, 660.0, 660.0, 645.0]
+metadata/_edit_vertical_guides_ = [725.0, 1270.0, 1417.0, 509.0, 651.0]
 
-[node name="EndWindow" type="ColorRect" parent="."]
+[node name="Backdrop" type="ColorRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -10.0
-offset_top = 91.0
-offset_right = 2.0
-offset_bottom = 6.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.321569, 0.321569, 0.321569, 0.509804)
 
-[node name="Bravo" type="Label" parent="EndWindow"]
+[node name="MainFrame" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -645.5
+offset_top = -436.5
+offset_right = 645.5
+offset_bottom = 436.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+mouse_force_pass_scroll_events = false
+texture = ExtResource("5_xqx4k")
+
+[node name="LineNamesContainer" type="VBoxContainer" parent="MainFrame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1121.0
+offset_top = 74.0
+offset_right = -64.0
+offset_bottom = -360.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 95
+
+[node name="Screen" type="TextureRect" parent="MainFrame"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 182.0
+offset_top = 66.0
+offset_right = -181.0
+offset_bottom = 516.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+texture = ExtResource("6_us122")
+
+[node name="Graph" type="Control" parent="MainFrame/Screen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 6.0
+offset_right = -7.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_dq0ds")
+
+[node name="MetricsRanking" type="Control" parent="MainFrame/Screen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_luxph")
+button_group = ExtResource("9_h5vxw")
+
+[node name="RichTextLabel" type="Label" parent="MainFrame/Screen/MetricsRanking"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+theme_override_constants/shadow_offset_x = 2
+text = "CALCULATING_RANK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel2" type="Label" parent="MainFrame/Screen/MetricsRanking/RichTextLabel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 58.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+theme_override_constants/shadow_offset_x = 2
+text = "...
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MainFrame/Screen/MetricsRanking/RichTextLabel/RichTextLabel2"]
+libraries = {
+"": SubResource("AnimationLibrary_iyvtd")
+}
+autoplay = "calculating"
+
+[node name="StatContainer" type="MarginContainer" parent="MainFrame/Screen/MetricsRanking"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = -91.0
-offset_right = 10.0
-offset_bottom = -747.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 122
-text = "Well Done !
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-uppercase = true
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
 
-[node name="EndText" type="Label" parent="EndWindow"]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 394.0
-offset_top = -450.5
-offset_right = -386.0
-offset_bottom = -76.5
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 72
-text = "You ensured enough energy 
-for 30 years
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-uppercase = true
+[node name="VBoxContainer" type="VBoxContainer" parent="MainFrame/Screen/MetricsRanking/StatContainer"]
+layout_mode = 2
 
-[node name="NinePatchRect7" type="NinePatchRect" parent="EndWindow/EndText"]
-show_behind_parent = true
+[node name="HBoxContainer" type="HBoxContainer" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_n8g63")
+toggle_mode = true
+button_group = ExtResource("9_h5vxw")
+text = "NUCLEAR"
+
+[node name="Button2" type="Button" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_n8g63")
+toggle_mode = true
+button_group = ExtResource("9_h5vxw")
+text = "FOSSIL"
+
+[node name="Button3" type="Button" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_n8g63")
+toggle_mode = true
+button_pressed = true
+button_group = ExtResource("9_h5vxw")
+text = "ENERGY"
+
+[node name="Button4" type="Button" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_n8g63")
+toggle_mode = true
+button_group = ExtResource("9_h5vxw")
+text = "EMISSIONS"
+
+[node name="Button5" type="Button" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_n8g63")
+toggle_mode = true
+button_group = ExtResource("9_h5vxw")
+text = "LAND_USE"
+
+[node name="Button6" type="Button" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_n8g63")
+toggle_mode = true
+button_group = ExtResource("9_h5vxw")
+text = "PROD_COST"
+
+[node name="Button7" type="Button" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_n8g63")
+toggle_mode = true
+button_group = ExtResource("9_h5vxw")
+text = "SEASONALITY"
+
+[node name="Line2D" type="Line2D" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer"]
+position = Vector2(0, -4)
+points = PackedVector2Array(-20.5, 95.5, -20.5, 27.5, 847.5, 27.5, 847.5, 95.5)
+width = 2.0
+default_color = Color(0.219608, 0.756863, 0.788235, 1)
+
+[node name="StatTitle" type="Control" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/StatTitle"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -72.0
-offset_right = 64.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_27rt7")
-region_rect = Rect2(-2, 6, 394, 362)
-patch_margin_left = 42
-patch_margin_top = 36
-patch_margin_right = 44
-patch_margin_bottom = 38
 
-[node name="HBoxContainer" type="HBoxContainer" parent="EndWindow"]
-custom_minimum_size = Vector2(55, 0)
+[node name="RANK" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/StatTitle/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "RANK
+"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="NAME" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/StatTitle/HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "PLAYER_NAME_PLACEHOLDER"
+uppercase = true
+
+[node name="SCORE" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/StatTitle/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "SCORE"
+horizontal_alignment = 2
+uppercase = true
+
+[node name="Rank1" type="Control" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RANK" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank1/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "RANK
+"
+horizontal_alignment = 1
+
+[node name="NAME" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank1/HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "NAME"
+
+[node name="SCORE" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank1/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "SCORE"
+horizontal_alignment = 2
+
+[node name="Rank2" type="Control" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RANK" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank2/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "RANK
+"
+horizontal_alignment = 1
+
+[node name="NAME" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank2/HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "NAME"
+
+[node name="SCORE" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank2/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "SCORE"
+horizontal_alignment = 2
+
+[node name="Rank3" type="Control" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RANK" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank3/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "RANK
+"
+horizontal_alignment = 1
+
+[node name="NAME" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank3/HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "NAME"
+
+[node name="SCORE" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank3/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "SCORE"
+horizontal_alignment = 2
+
+[node name="Rank4" type="Control" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RANK" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank4/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "RANK
+"
+horizontal_alignment = 1
+
+[node name="NAME" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank4/HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "NAME"
+
+[node name="SCORE" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank4/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "SCORE"
+horizontal_alignment = 2
+
+[node name="Rank5" type="Control" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RANK" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank5/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "RANK
+"
+horizontal_alignment = 1
+
+[node name="NAME" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank5/HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "NAME"
+
+[node name="SCORE" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/Rank5/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "SCORE"
+horizontal_alignment = 2
+
+[node name="PlayerStats" type="Control" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/PlayerStats"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.219608, 0.756863, 0.788235, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/PlayerStats"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="player_rank" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/PlayerStats/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(0.0470588, 0.168627, 0.180392, 1)
+text = "RANK
+"
+horizontal_alignment = 1
+
+[node name="player_name" type="LineEdit" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/PlayerStats/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(0.0470588, 0.168627, 0.180392, 1)
+placeholder_text = "PLAYER_NAME_PLACEHOLDER"
+max_length = 20
+select_all_on_focus = true
+caret_blink = true
+
+[node name="NameEdit" type="Button" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/PlayerStats/HBoxContainer/player_name"]
+unique_name_in_owner = true
+modulate = Color(0.027451, 0.14902, 0.164706, 1)
+layout_mode = 2
+offset_left = 408.0
+offset_top = 6.0
+offset_right = 453.0
+offset_bottom = 42.0
+size_flags_vertical = 8
+focus_mode = 0
+toggle_mode = true
+icon = ExtResource("3_rfpko")
+flat = true
+expand_icon = true
+
+[node name="player_score" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/PlayerStats/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(0.0470588, 0.168627, 0.180392, 1)
+text = "SCORE"
+horizontal_alignment = 2
+
+[node name="BottomFrames" type="HBoxContainer" parent="MainFrame"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = -312.0
-offset_right = 10.0
-offset_bottom = -62.0
+offset_left = 109.0
+offset_top = -322.0
+offset_right = -108.0
+offset_bottom = -74.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_constants/separation = 22
-alignment = 1
+theme_override_constants/separation = 9
 
-[node name="Shock" type="Label" parent="EndWindow/HBoxContainer"]
-visible = false
-custom_minimum_size = Vector2(290, 250)
+[node name="LeftFrame" type="TextureRect" parent="MainFrame/BottomFrames"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 46
-text = "Resisted shocks
+texture = ExtResource("7_57dx7")
 
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-uppercase = true
+[node name="Money" type="Control" parent="MainFrame/BottomFrames/LeftFrame"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="ColorRect2" type="ColorRect" parent="EndWindow/HBoxContainer/Shock"]
-show_behind_parent = true
+[node name="Screen" type="NinePatchRect" parent="MainFrame/BottomFrames/LeftFrame/Money"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 52.0
+offset_right = 150.0
+offset_bottom = 132.0
+texture = ExtResource("6_us122")
+patch_margin_left = 5
+patch_margin_top = 6
+patch_margin_right = 7
+patch_margin_bottom = 5
+
+[node name="MoneyLabel" type="Label" parent="MainFrame/BottomFrames/LeftFrame/Money/Screen"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_yg7sq")
-color = Color(1, 0.305882, 0.176471, 1)
-
-[node name="Energy" type="NinePatchRect" parent="EndWindow/HBoxContainer"]
-custom_minimum_size = Vector2(280, 250)
-layout_mode = 2
-texture = ExtResource("2_27rt7")
-region_rect = Rect2(-2, 6, 394, 362)
-patch_margin_left = 42
-patch_margin_top = 36
-patch_margin_right = 44
-patch_margin_bottom = 38
-
-[node name="MarginContainer" type="MarginContainer" parent="EndWindow/HBoxContainer/Energy"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = -8.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_right = 20
-
-[node name="Energy" type="Label" parent="EndWindow/HBoxContainer/Energy/MarginContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 28
-text = "Final Energy Supply
-&
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-uppercase = true
-
-[node name="ColorRect3" type="ColorRect" parent="EndWindow/HBoxContainer/Energy/MarginContainer/Energy"]
-visible = false
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_yg7sq")
-color = Color(1, 0.470588, 0.180392, 1)
-
-[node name="Import" type="NinePatchRect" parent="EndWindow/HBoxContainer"]
-show_behind_parent = true
-custom_minimum_size = Vector2(280, 0)
-layout_mode = 2
-texture = ExtResource("2_27rt7")
-region_rect = Rect2(-2, 6, 394, 362)
-patch_margin_left = 42
-patch_margin_top = 36
-patch_margin_right = 44
-patch_margin_bottom = 38
-
-[node name="MarginContainer" type="MarginContainer" parent="EndWindow/HBoxContainer/Import"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_right = 20
-
-[node name="Import" type="Label" parent="EndWindow/HBoxContainer/Import/MarginContainer"]
-custom_minimum_size = Vector2(0, 200)
-layout_mode = 2
-theme_override_font_sizes/font_size = 28
-text = "You imported %
-"
-horizontal_alignment = 1
-vertical_alignment = 2
-autowrap_mode = 3
-uppercase = true
-
-[node name="ColorRect3" type="ColorRect" parent="EndWindow/HBoxContainer/Import/MarginContainer/Import"]
-visible = false
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_yg7sq")
-color = Color(0.921569, 0.407843, 0.909804, 1)
-
-[node name="Money" type="NinePatchRect" parent="EndWindow/HBoxContainer"]
-show_behind_parent = true
-custom_minimum_size = Vector2(280, 0)
-layout_mode = 2
-texture = ExtResource("2_27rt7")
-region_rect = Rect2(-2, 6, 394, 362)
-patch_margin_left = 42
-patch_margin_top = 36
-patch_margin_right = 44
-patch_margin_bottom = 38
-
-[node name="MarginContainer" type="MarginContainer" parent="EndWindow/HBoxContainer/Money"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_right = 20
-
-[node name="Money" type="Label" parent="EndWindow/HBoxContainer/Money/MarginContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 28
-text = "You avoided an economic crisis
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-uppercase = true
-
-[node name="ColorRect4" type="ColorRect" parent="EndWindow/HBoxContainer/Money/MarginContainer/Money"]
-visible = false
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_yg7sq")
-color = Color(1, 1, 0.0313726, 1)
-
-[node name="Support" type="NinePatchRect" parent="EndWindow/HBoxContainer"]
-show_behind_parent = true
-custom_minimum_size = Vector2(280, 0)
-layout_mode = 2
-texture = ExtResource("2_27rt7")
-region_rect = Rect2(-2, 6, 394, 362)
-patch_margin_left = 42
-patch_margin_top = 36
-patch_margin_right = 44
-patch_margin_bottom = 38
-
-[node name="MarginContainer" type="MarginContainer" parent="EndWindow/HBoxContainer/Support"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_right = 20
-
-[node name="Support" type="Label" parent="EndWindow/HBoxContainer/Support/MarginContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 28
-text = "Final 
-Support
-
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-uppercase = true
-
-[node name="ColorRect5" type="ColorRect" parent="EndWindow/HBoxContainer/Support/MarginContainer/Support"]
-visible = false
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_yg7sq")
-color = Color(0.466667, 0.607843, 0.917647, 1)
-
-[node name="Poll" type="NinePatchRect" parent="EndWindow/HBoxContainer"]
-show_behind_parent = true
-custom_minimum_size = Vector2(280, 0)
-layout_mode = 2
-texture = ExtResource("2_27rt7")
-region_rect = Rect2(-2, 6, 394, 362)
-patch_margin_left = 42
-patch_margin_top = 36
-patch_margin_right = 44
-patch_margin_bottom = 38
-
-[node name="MarginContainer" type="MarginContainer" parent="EndWindow/HBoxContainer/Poll"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_right = 20
-
-[node name="Poll" type="Label" parent="EndWindow/HBoxContainer/Poll/MarginContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 28
-text = "You (did not) reached net zero by 2050
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-uppercase = true
-
-[node name="ColorRect6" type="ColorRect" parent="EndWindow/HBoxContainer/Poll/MarginContainer/Poll"]
-visible = false
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_yg7sq")
-color = Color(0.501961, 0.501961, 0.501961, 1)
-
-[node name="Env" type="NinePatchRect" parent="EndWindow/HBoxContainer"]
-show_behind_parent = true
-custom_minimum_size = Vector2(280, 0)
-layout_mode = 2
-texture = ExtResource("2_27rt7")
-region_rect = Rect2(-2, 6, 394, 362)
-patch_margin_left = 42
-patch_margin_top = 36
-patch_margin_right = 44
-patch_margin_bottom = 38
-
-[node name="MarginContainer" type="MarginContainer" parent="EndWindow/HBoxContainer/Env"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_right = 20
-
-[node name="Env" type="Label" parent="EndWindow/HBoxContainer/Env/MarginContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 28
-text = "Environmental Score
-
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-uppercase = true
-
-[node name="ColorRect7" type="ColorRect" parent="EndWindow/HBoxContainer/Env/MarginContainer/Env"]
-visible = false
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_yg7sq")
-color = Color(0.317647, 0.721569, 0.294118, 1)
-
-[node name="Icon-pollution-" type="Sprite2D" parent="EndWindow"]
-position = Vector2(1466, 721)
-texture = ExtResource("6_vhvio")
-
-[node name="Icon-money" type="Sprite2D" parent="EndWindow"]
-position = Vector2(906, 877)
-texture = ExtResource("7_vf71k")
-
-[node name="Icon-import" type="Sprite2D" parent="EndWindow"]
-position = Vector2(450, 733)
-texture = ExtResource("8_fbglj")
-
-[node name="Icon-solar" type="Sprite2D" parent="EndWindow"]
-position = Vector2(282, 885)
-texture = ExtResource("9_linj2")
-
-[node name="Icon-wind" type="Sprite2D" parent="EndWindow"]
-position = Vector2(154, 884)
-texture = ExtResource("10_p8k2p")
-
-[node name="Icon-popularity" type="Sprite2D" parent="EndWindow"]
-position = Vector2(1058, 869)
-texture = ExtResource("11_4kvee")
-
-[node name="Icon-environment-" type="Sprite2D" parent="EndWindow"]
-position = Vector2(1650, 861)
-texture = ExtResource("12_dufsc")
-
-[node name="Stats" type="Control" parent="EndWindow"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = -18.0
-offset_right = 10.0
-offset_bottom = -18.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Shocks" type="Label" parent="EndWindow/Stats"]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 14
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -800.0
-offset_top = 325.0
-offset_right = -761.0
-offset_bottom = 408.0
+offset_left = 5.0
+offset_top = -15.0
+offset_right = -5.0
+offset_bottom = 15.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 30
-text = "N
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
+theme_override_constants/shadow_offset_x = 2
+text = "000.00M
 "
 horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
+script = ExtResource("7_1k3ff")
 
-[node name="Import" type="Label" parent="EndWindow/Stats"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -486.0
-offset_top = 213.5
-offset_right = -422.0
-offset_bottom = 296.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 30
-text = "N
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
-
-[node name="EnergyS" type="Label" parent="EndWindow/Stats"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -766.0
-offset_top = 319.5
-offset_right = -654.0
-offset_bottom = 402.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 30
-text = "700
-"
-horizontal_alignment = 2
-vertical_alignment = 1
-uppercase = true
-
-[node name="EnergyW" type="Label" parent="EndWindow/Stats"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -862.0
-offset_top = 318.5
-offset_right = -750.0
-offset_bottom = 401.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 30
-text = "900
-"
-vertical_alignment = 1
-uppercase = true
-
-[node name="Support" type="Label" parent="EndWindow/Stats"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 82.0
-offset_top = 350.5
-offset_right = 228.0
-offset_bottom = 437.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 30
-text = "60%
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
-
-[node name="Env" type="Label" parent="EndWindow/Stats"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 682.0
-offset_top = 358.5
-offset_right = 835.0
-offset_bottom = 437.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 30
-text = "50%
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
-
-[node name="Close" type="Button" parent="."]
-visible = false
-offset_left = 1859.0
-offset_top = 104.0
-offset_right = 1888.0
-offset_bottom = 138.0
-text = "x"
-
-[node name="Score" type="TextureButton" parent="."]
-offset_left = 896.0
-offset_top = 24.0
-offset_right = 1040.0
-offset_bottom = 114.0
+[node name="Button" type="TextureButton" parent="MainFrame/BottomFrames/LeftFrame/Money"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 165.0
+offset_right = 115.0
+offset_bottom = 222.0
 toggle_mode = true
-texture_normal = ExtResource("3_g4lp6")
-texture_pressed = ExtResource("4_wpw57")
-texture_hover = ExtResource("5_3yvol")
+texture_normal = ExtResource("8_hhqa5")
+texture_pressed = ExtResource("9_adpr1")
+texture_hover = ExtResource("10_y0hau")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("11_gk6vr")
+
+[node name="Button-hole" type="Sprite2D" parent="MainFrame/BottomFrames/LeftFrame/Money/Button"]
+show_behind_parent = true
+position = Vector2(28, 28)
+scale = Vector2(0.842857, 0.830984)
+texture = ExtResource("11_qe2lm")
+
+[node name="Money" type="Sprite2D" parent="MainFrame/BottomFrames/LeftFrame/Money/Button"]
+position = Vector2(29, 28)
+scale = Vector2(0.645, 0.645)
+texture = ExtResource("5_goags")
+
+[node name="Trust" type="Control" parent="MainFrame/BottomFrames/LeftFrame"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ProgressBar" type="ProgressBar" parent="MainFrame/BottomFrames/LeftFrame/Trust"]
+layout_mode = 0
+offset_left = 181.0
+offset_top = 72.0
+offset_right = 273.0
+offset_bottom = 110.0
+theme = ExtResource("4_n8g63")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/background = SubResource("StyleBoxFlat_d1wpm")
+theme_override_styles/fill = SubResource("StyleBoxFlat_w7rq5")
+step = 1.0
+script = ExtResource("8_8tlhp")
+
+[node name="Grid" type="Sprite2D" parent="MainFrame/BottomFrames/LeftFrame/Trust/ProgressBar"]
+show_behind_parent = true
+position = Vector2(46.75, 21)
+scale = Vector2(1.13068, 1)
+texture = ExtResource("8_uuhoe")
+
+[node name="Button" type="TextureButton" parent="MainFrame/BottomFrames/LeftFrame/Trust"]
+layout_mode = 0
+offset_left = 198.5
+offset_top = 164.5
+offset_right = 256.5
+offset_bottom = 221.5
+toggle_mode = true
+texture_normal = ExtResource("8_hhqa5")
+texture_pressed = ExtResource("9_adpr1")
+texture_hover = ExtResource("10_y0hau")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("16_ppd74")
+
+[node name="Button-hole" type="Sprite2D" parent="MainFrame/BottomFrames/LeftFrame/Trust/Button"]
+show_behind_parent = true
+position = Vector2(28, 28)
+scale = Vector2(0.842857, 0.830984)
+texture = ExtResource("11_qe2lm")
+
+[node name="Support" type="Sprite2D" parent="MainFrame/BottomFrames/LeftFrame/Trust/Button"]
+position = Vector2(28, 28)
+scale = Vector2(0.645, 0.645)
+texture = ExtResource("21_kphba")
+
+[node name="CenterFrame" type="NinePatchRect" parent="MainFrame/BottomFrames"]
+custom_minimum_size = Vector2(436, 0)
+layout_mode = 2
+texture = ExtResource("7_57dx7")
+patch_margin_left = 155
+patch_margin_right = 225
+
+[node name="Winter" type="Control" parent="MainFrame/BottomFrames/CenterFrame"]
+anchors_preset = 0
+offset_left = 48.5
+offset_top = 0.5
+offset_right = 88.5
+offset_bottom = 40.5
+
+[node name="ProgressBar" type="ProgressBar" parent="MainFrame/BottomFrames/CenterFrame/Winter"]
+layout_mode = 0
+offset_left = 142.0
+offset_top = 159.0
+offset_right = 277.0
+offset_bottom = 203.0
+rotation = -1.5708
+theme_override_styles/background = SubResource("StyleBoxFlat_wpusd")
+theme_override_styles/fill = ExtResource("11_oy1fd")
+show_percentage = false
+script = ExtResource("10_6lpn4")
+green_bar = ExtResource("11_oy1fd")
+red_bar = ExtResource("12_2ucrx")
+
+[node name="DemandLine" type="Sprite2D" parent="MainFrame/BottomFrames/CenterFrame/Winter/ProgressBar"]
+z_index = 1
+position = Vector2(0, 23)
+rotation = 1.5708
+texture = ExtResource("11_glyce")
+
+[node name="BarsOverlay" type="NinePatchRect" parent="MainFrame/BottomFrames/CenterFrame/Winter/ProgressBar"]
+layout_mode = 0
+offset_left = 136.0
+offset_right = 181.0
+offset_bottom = 137.0
+rotation = 1.5708
+texture = ExtResource("14_tu03u")
+region_rect = Rect2(34, 22, 41, 196)
+
+[node name="Button" type="TextureButton" parent="MainFrame/BottomFrames/CenterFrame/Winter"]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 164.0
+offset_right = 194.0
+offset_bottom = 221.0
+toggle_mode = true
+texture_normal = ExtResource("8_hhqa5")
+texture_pressed = ExtResource("9_adpr1")
+texture_hover = ExtResource("10_y0hau")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("22_twku5")
+
+[node name="Button-hole" type="Sprite2D" parent="MainFrame/BottomFrames/CenterFrame/Winter/Button"]
+show_behind_parent = true
+position = Vector2(28, 28)
+scale = Vector2(0.842857, 0.830984)
+texture = ExtResource("11_qe2lm")
+
+[node name="Icon" type="Sprite2D" parent="MainFrame/BottomFrames/CenterFrame/Winter/Button"]
+position = Vector2(28.3954, 27.75)
+scale = Vector2(0.645455, 0.645455)
+texture = ExtResource("8_a3fds")
+
+[node name="SupplyScreen" type="NinePatchRect" parent="MainFrame/BottomFrames/CenterFrame/Winter"]
+layout_mode = 0
+offset_left = -19.0
+offset_top = 111.0
+offset_right = 86.0
+offset_bottom = 159.0
+texture = ExtResource("6_us122")
+patch_margin_left = 5
+patch_margin_top = 6
+patch_margin_right = 7
+patch_margin_bottom = 5
+
+[node name="Value" type="Label" parent="MainFrame/BottomFrames/CenterFrame/Winter/SupplyScreen"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 4.0
+offset_top = -15.0
+offset_right = -6.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
+theme_override_constants/shadow_offset_x = 2
+theme_override_font_sizes/font_size = 23
+text = "000.00 Tj
+"
+horizontal_alignment = 1
+script = ExtResource("25_j2xu1")
+
+[node name="Icon" type="Sprite2D" parent="MainFrame/BottomFrames/CenterFrame/Winter/SupplyScreen"]
+position = Vector2(47, 83)
+scale = Vector2(0.645, 0.645)
+texture = ExtResource("9_uutud")
+
+[node name="Label" type="Label" parent="MainFrame/BottomFrames/CenterFrame/Winter/SupplyScreen"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = -35.0
+offset_right = 100.0
+offset_bottom = -12.0
+theme = ExtResource("4_n8g63")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+text = "IMPORT"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Solar" type="Control" parent="MainFrame/BottomFrames/CenterFrame"]
+anchors_preset = 0
+offset_left = 196.0
+offset_top = 1.0
+offset_right = 236.0
+offset_bottom = 41.0
+
+[node name="ProgressBar" type="ProgressBar" parent="MainFrame/BottomFrames/CenterFrame/Solar"]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 159.0
+offset_right = 262.0
+offset_bottom = 203.0
+rotation = -1.5708
+theme_override_styles/background = SubResource("StyleBoxFlat_wpusd")
+theme_override_styles/fill = ExtResource("11_oy1fd")
+show_percentage = false
+script = ExtResource("10_6lpn4")
+season = 1
+green_bar = ExtResource("11_oy1fd")
+red_bar = ExtResource("12_2ucrx")
+
+[node name="DemandLine" type="Sprite2D" parent="MainFrame/BottomFrames/CenterFrame/Solar/ProgressBar"]
+z_index = 1
+position = Vector2(0, 23)
+rotation = 1.5708
+texture = ExtResource("11_glyce")
+
+[node name="BarsOverlay" type="NinePatchRect" parent="MainFrame/BottomFrames/CenterFrame/Solar/ProgressBar"]
+layout_mode = 0
+offset_left = 136.0
+offset_right = 181.0
+offset_bottom = 137.0
+rotation = 1.5708
+texture = ExtResource("14_tu03u")
+region_rect = Rect2(34, 22, 41, 196)
+
+[node name="Button" type="TextureButton" parent="MainFrame/BottomFrames/CenterFrame/Solar"]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 164.0
+offset_right = 179.0
+offset_bottom = 221.0
+toggle_mode = true
+texture_normal = ExtResource("8_hhqa5")
+texture_pressed = ExtResource("9_adpr1")
+texture_hover = ExtResource("10_y0hau")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("24_e8i6d")
+
+[node name="Button-hole" type="Sprite2D" parent="MainFrame/BottomFrames/CenterFrame/Solar/Button"]
+show_behind_parent = true
+position = Vector2(28, 28)
+scale = Vector2(0.842857, 0.830984)
+texture = ExtResource("11_qe2lm")
+
+[node name="Icon" type="Sprite2D" parent="MainFrame/BottomFrames/CenterFrame/Solar/Button"]
+position = Vector2(29.3954, 28.75)
+scale = Vector2(0.645455, 0.645455)
+texture = ExtResource("7_x2355")
+
+[node name="Imports" type="Control" parent="MainFrame/BottomFrames/CenterFrame"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Line" type="Sprite2D" parent="MainFrame/BottomFrames/CenterFrame/Imports"]
+position = Vector2(339.5, 93.5)
+texture = ExtResource("23_pq3eq")
+
+[node name="Button" type="TextureButton" parent="MainFrame/BottomFrames/CenterFrame/Imports"]
+layout_mode = 0
+offset_left = 314.0
+offset_top = 165.0
+offset_right = 372.0
+offset_bottom = 222.0
+texture_normal = ExtResource("8_hhqa5")
+texture_pressed = ExtResource("9_adpr1")
+texture_hover = ExtResource("10_y0hau")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="Score"]
+[node name="Button-hole" type="Sprite2D" parent="MainFrame/BottomFrames/CenterFrame/Imports/Button"]
+show_behind_parent = true
+position = Vector2(28, 28)
+scale = Vector2(0.842857, 0.830984)
+texture = ExtResource("11_qe2lm")
+
+[node name="Icon" type="Sprite2D" parent="MainFrame/BottomFrames/CenterFrame/Imports/Button"]
+position = Vector2(28.5, 29.5)
+scale = Vector2(0.645, 0.645)
+texture = ExtResource("9_uutud")
+
+[node name="RightFrame" type="TextureRect" parent="MainFrame/BottomFrames"]
+layout_mode = 2
+texture = ExtResource("7_57dx7")
+
+[node name="LandUse" type="Control" parent="MainFrame/BottomFrames/RightFrame"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Gauge" type="Control" parent="MainFrame/BottomFrames/RightFrame/LandUse"]
+anchors_preset = 0
+offset_left = -9.0
+offset_top = -8.0
+offset_right = 31.0
+offset_bottom = 32.0
+
+[node name="Window" type="Sprite2D" parent="MainFrame/BottomFrames/RightFrame/LandUse/Gauge"]
+position = Vector2(91.5, 103.5)
+texture = ExtResource("20_651ix")
+
+[node name="Bar" type="Sprite2D" parent="MainFrame/BottomFrames/RightFrame/LandUse/Gauge"]
+position = Vector2(93.5, 94.5)
+texture = ExtResource("21_n5n6k")
+flip_h = true
+
+[node name="Arrow" type="Sprite2D" parent="MainFrame/BottomFrames/RightFrame/LandUse/Gauge"]
+position = Vector2(92.5, 118.5)
+texture = ExtResource("22_1ey0q")
+offset = Vector2(0, -22)
+script = ExtResource("23_gtgnc")
+
+[node name="Screen" type="NinePatchRect" parent="MainFrame/BottomFrames/RightFrame/LandUse/Gauge"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 118.0
+offset_right = 135.0
+offset_bottom = 144.0
+texture = ExtResource("6_us122")
+patch_margin_left = 5
+patch_margin_top = 4
+
+[node name="Value" type="Label" parent="MainFrame/BottomFrames/RightFrame/LandUse/Gauge/Screen"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 14
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -21.5
-offset_top = -13.0
-offset_right = 21.5
-offset_bottom = 13.0
+offset_left = 6.0
+offset_top = -10.5
+offset_right = -1.0
+offset_bottom = 12.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Score"
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
+theme_override_constants/shadow_offset_x = 2
+theme_override_font_sizes/font_size = 22
+text = "000.00 
+"
+horizontal_alignment = 1
+script = ExtResource("33_38kwm")
 
-[connection signal="toggled" from="Score" to="." method="_on_score_toggled"]
+[node name="Unit" type="Label" parent="MainFrame/BottomFrames/RightFrame/LandUse/Gauge"]
+layout_mode = 0
+offset_left = 112.5
+offset_top = 66.5
+offset_right = 136.5
+offset_bottom = 82.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "Km2"
+
+[node name="Button" type="TextureButton" parent="MainFrame/BottomFrames/RightFrame/LandUse"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 165.0
+offset_right = 112.0
+offset_bottom = 222.0
+toggle_mode = true
+texture_normal = ExtResource("8_hhqa5")
+texture_pressed = ExtResource("9_adpr1")
+texture_hover = ExtResource("10_y0hau")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("32_1ltkv")
+
+[node name="Button-hole" type="Sprite2D" parent="MainFrame/BottomFrames/RightFrame/LandUse/Button"]
+show_behind_parent = true
+position = Vector2(28, 28)
+scale = Vector2(0.842857, 0.830984)
+texture = ExtResource("11_qe2lm")
+
+[node name="Icon" type="Sprite2D" parent="MainFrame/BottomFrames/RightFrame/LandUse/Button"]
+position = Vector2(29.5, 27.5)
+scale = Vector2(0.645, 0.645)
+texture = ExtResource("10_induf")
+
+[node name="Emissions" type="Control" parent="MainFrame/BottomFrames/RightFrame"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Gauge" type="Control" parent="MainFrame/BottomFrames/RightFrame/Emissions"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 136.0
+offset_top = -8.0
+offset_right = 176.0
+offset_bottom = 32.0
+
+[node name="Window" type="Sprite2D" parent="MainFrame/BottomFrames/RightFrame/Emissions/Gauge"]
+position = Vector2(91.5, 103.5)
+texture = ExtResource("20_651ix")
+
+[node name="Bar" type="Sprite2D" parent="MainFrame/BottomFrames/RightFrame/Emissions/Gauge"]
+position = Vector2(93.5, 94.5)
+texture = ExtResource("21_n5n6k")
+flip_h = true
+
+[node name="Arrow" type="Sprite2D" parent="MainFrame/BottomFrames/RightFrame/Emissions/Gauge"]
+position = Vector2(92.5, 118.5)
+texture = ExtResource("22_1ey0q")
+offset = Vector2(0, -22)
+script = ExtResource("26_kgqfc")
+
+[node name="Screen" type="NinePatchRect" parent="MainFrame/BottomFrames/RightFrame/Emissions/Gauge"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 118.0
+offset_right = 135.0
+offset_bottom = 144.0
+texture = ExtResource("6_us122")
+patch_margin_left = 5
+patch_margin_top = 4
+patch_margin_right = 1
+
+[node name="Value" type="Label" parent="MainFrame/BottomFrames/RightFrame/Emissions/Gauge/Screen"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = -10.5
+offset_right = -1.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
+theme_override_constants/shadow_offset_x = 2
+theme_override_font_sizes/font_size = 22
+text = "000.00
+"
+horizontal_alignment = 1
+script = ExtResource("37_hchcy")
+
+[node name="Unit" type="Label" parent="MainFrame/BottomFrames/RightFrame/Emissions/Gauge"]
+layout_mode = 0
+offset_left = 100.5
+offset_top = 66.5
+offset_right = 136.5
+offset_bottom = 82.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "Mt CO2"
+
+[node name="Button" type="TextureButton" parent="MainFrame/BottomFrames/RightFrame/Emissions"]
+layout_mode = 0
+offset_left = 199.0
+offset_top = 165.0
+offset_right = 257.0
+offset_bottom = 222.0
+toggle_mode = true
+texture_normal = ExtResource("8_hhqa5")
+texture_pressed = ExtResource("9_adpr1")
+texture_hover = ExtResource("10_y0hau")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("35_ymyta")
+
+[node name="Button-hole" type="Sprite2D" parent="MainFrame/BottomFrames/RightFrame/Emissions/Button"]
+show_behind_parent = true
+position = Vector2(28, 28)
+scale = Vector2(0.842857, 0.830984)
+texture = ExtResource("11_qe2lm")
+
+[node name="Icon" type="Sprite2D" parent="MainFrame/BottomFrames/RightFrame/Emissions/Button"]
+position = Vector2(32.5, 28.5)
+scale = Vector2(0.645, 0.645)
+texture = ExtResource("11_fjiu1")
+
+[node name="CloseButton2" parent="MainFrame" instance=ExtResource("43_pdbh2")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -65.0
+offset_top = 3.0
+offset_right = -10.0
+offset_bottom = 57.0
+grow_horizontal = 0
+script = ExtResource("44_iv8kv")
+
+[node name="NameInfoButton" type="TextureButton" parent="."]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_right = 0.029
+anchor_bottom = 0.05
+offset_left = 357.0
+offset_top = 274.0
+offset_right = 356.32
+offset_bottom = 274.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("48_wntxs")
+texture_pressed = ExtResource("49_nxc3v")
+texture_hover = ExtResource("50_3oi6p")
+texture_disabled = ExtResource("51_j8egd")
+
+[node name="MarginContainer" type="MarginContainer" parent="NameInfoButton"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -272.0
+offset_top = -11.0
+offset_right = 69.0
+offset_bottom = 197.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="NameInfoButton/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("48_py7ex")
+patch_margin_left = 84
+patch_margin_top = 101
+patch_margin_right = 32
+patch_margin_bottom = 82
+
+[node name="MarginContainer" type="MarginContainer" parent="NameInfoButton/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 60
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NameInfoButton/MarginContainer/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Paper"
+theme_override_colors/default_color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+theme_override_fonts/normal_font = ExtResource("49_fl6u7")
+theme_override_font_sizes/normal_font_size = 26
+text = "PLAYER_SCORE_NAME"
+fit_content = true
+
+[node name="NextTurn" type="TextureButton" parent="."]
+offset_left = 1668.0
+offset_top = 938.0
+offset_right = 1860.0
+offset_bottom = 1024.0
+focus_mode = 0
+texture_normal = ExtResource("51_twdkf")
+texture_pressed = ExtResource("52_fi5mo")
+texture_hover = ExtResource("53_1g8ma")
+texture_disabled = ExtResource("52_4on8v")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("55_f200q")
+
+[node name="Label" type="Label" parent="NextTurn"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 3.0
+offset_right = -10.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_n8g63")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "BACK_TO_SURVEY"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+uppercase = true
+
+[node name="Button-next-base" type="Sprite2D" parent="NextTurn"]
+show_behind_parent = true
+position = Vector2(96, 43)
+texture = ExtResource("59_pxkc5")
+
+[node name="Control" type="Control" parent="NextTurn"]
+anchors_preset = 0
+offset_left = 95.0
+offset_top = -45.0
+offset_right = 135.0
+offset_bottom = -5.0
+
+[connection signal="metrics_leaderboard_updated" from="." to="MainFrame/Screen/MetricsRanking" method="_on_end_metrics_leaderboard_updated"]
+[connection signal="metrics_leaderboard_updated" from="." to="MainFrame/Screen/MetricsRanking/RichTextLabel" method="_on_metrics_leaderboard_updated"]
+[connection signal="metrics_rank_updated" from="." to="MainFrame/Screen/MetricsRanking" method="_on_end_metrics_rank_updated"]
+[connection signal="context_changed" from="MainFrame/Screen/Graph" to="MainFrame/Screen/MetricsRanking" method="_on_graph_context_changed"]
+[connection signal="context_changed" from="MainFrame/Screen/Graph" to="MainFrame/BottomFrames/LeftFrame/Money/Button" method="_on_graph_context_changed"]
+[connection signal="context_changed" from="MainFrame/Screen/Graph" to="MainFrame/BottomFrames/LeftFrame/Trust/Button" method="_on_graph_context_changed"]
+[connection signal="context_changed" from="MainFrame/Screen/Graph" to="MainFrame/BottomFrames/CenterFrame/Winter/Button" method="_on_graph_context_changed"]
+[connection signal="context_changed" from="MainFrame/Screen/Graph" to="MainFrame/BottomFrames/CenterFrame/Solar/Button" method="_on_graph_context_changed"]
+[connection signal="context_changed" from="MainFrame/Screen/Graph" to="MainFrame/BottomFrames/RightFrame/LandUse/Button" method="_on_graph_context_changed"]
+[connection signal="context_changed" from="MainFrame/Screen/Graph" to="MainFrame/BottomFrames/RightFrame/Emissions/Button" method="_on_graph_context_changed"]
+[connection signal="focus_entered" from="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/PlayerStats/HBoxContainer/player_name" to="." method="_on_player_name_focus_entered"]
+[connection signal="focus_exited" from="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/PlayerStats/HBoxContainer/player_name" to="." method="_on_player_name_focus_exited"]
+[connection signal="text_submitted" from="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/PlayerStats/HBoxContainer/player_name" to="." method="_on_player_name_text_submitted"]
+[connection signal="text_submitted" from="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/PlayerStats/HBoxContainer/player_name" to="MainFrame/Screen/MetricsRanking" method="_on_player_name_text_submitted"]
+[connection signal="toggled" from="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/PlayerStats/HBoxContainer/player_name/NameEdit" to="." method="_on_name_edit_toggled"]
+[connection signal="toggled" from="MainFrame/BottomFrames/LeftFrame/Money/Button" to="MainFrame/Screen/Graph" method="_on_money_button_toggled"]
+[connection signal="toggled" from="MainFrame/BottomFrames/LeftFrame/Trust/Button" to="MainFrame/Screen/Graph" method="_on_trust_button_toggled"]
+[connection signal="toggled" from="MainFrame/BottomFrames/CenterFrame/Winter/Button" to="MainFrame/Screen/Graph" method="_on_winter_button_toggled"]
+[connection signal="toggled" from="MainFrame/BottomFrames/CenterFrame/Solar/Button" to="MainFrame/Screen/Graph" method="_on_summer_button_toggled"]
+[connection signal="toggled" from="MainFrame/BottomFrames/RightFrame/LandUse/Button" to="MainFrame/Screen/Graph" method="_on_land_use_button_toggled"]
+[connection signal="toggled" from="MainFrame/BottomFrames/RightFrame/Emissions/Button" to="MainFrame/Screen/Graph" method="_on_emissions_button_toggled"]
+[connection signal="pressed" from="MainFrame/CloseButton2" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="NameInfoButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="NextTurn" to="NextTurn" method="_on_pressed"]

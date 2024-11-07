@@ -21,7 +21,7 @@ var acceptance_probability: float = 0.0: # Probability of the policy to be accep
 		modifier += PolicyManager.personal_support - 0.5
 		
 		return acceptance_probability + modifier
-
+		
 
 func _init(p_title_key: String, p_text_key: String, p_acceptance_probability: float,
 		p_policy_type: PolicyType, p_inspector_id := ""):
@@ -42,10 +42,7 @@ func vote():
 	
 	
 func apply_effects():
-	print("applying policy effects")
-	var count = 0
 	for effect in effects:
-		print("policy effect ", ++count)
 		effect.call()
 
 

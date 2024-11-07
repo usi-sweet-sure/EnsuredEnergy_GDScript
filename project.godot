@@ -12,8 +12,8 @@ config_version=5
 
 config/name="Ensured_Energy"
 run/main_scene="res://scenes/main.tscn"
-config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://assets/UI Elements/Icon-Import.png"
+config/features=PackedStringArray("4.3", "GL Compatibility")
+boot_splash/bg_color=Color(0.286275, 0.454902, 0.235294, 1)
 
 [audio]
 
@@ -21,12 +21,20 @@ driver/mix_rate=48000
 
 [autoload]
 
-Context1="*res://src/gdscript/Context1.gd"
+Context="*res://src/gdscript/Context.gd"
+GroupManager="*res://src/gdscript/group_manager.gd"
+TutorialManager="*res://src/gdscript/tutorial/tutorial_manager.gd"
+MoneyManager="*res://src/gdscript/money_manager.gd"
 Gameloop="*res://src/gdscript/gameloop.gd"
+PowerplantsManager="*res://src/gdscript/powerplants/powerplants_manager.gd"
 ShockManager="*res://src/gdscript/shocks/shock_manager.gd"
 PolicyManager="*res://src/gdscript/policies/policy_manager.gd"
-Poc="*res://src/gdscript/http/poc.gd"
 GraphsData="*res://src/gdscript/graphs/graphs_data.gd"
+HttpManager="*res://src/gdscript/http/http_manager.gd"
+SurveyManager="*res://src/gdscript/survey/survey_manager.gd"
+Cursor="*res://src/gdscript/cursor.gd"
+CameraManager="*res://src/gdscript/camera_manager.gd"
+HistoryManager="*res://src/gdscript/history_manager.gd"
 
 [display]
 
@@ -34,16 +42,19 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
 window/stretch/mode="canvas_items"
-mouse_cursor/custom_image="res://assets/UI Elements/All-HQ-Assets-D_0004s_0021_Icon-Pointer.png"
 mouse_cursor/tooltip_position_offset=Vector2(10, -35)
 
 [dotnet]
 
 project/assembly_name="sure_energy_tycoon"
 
-[gui]
+[input]
 
-timers/tooltip_delay_sec=0.0
+left_click={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
+]
+}
 
 [internationalization]
 

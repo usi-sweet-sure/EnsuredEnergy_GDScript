@@ -1,0 +1,116 @@
+[gd_scene load_steps=7 format=3 uid="uid://c8vhh4tt8t2j4"]
+
+[ext_resource type="Script" path="res://src/gdscript/floating_message/floating_message.gd" id="1_up1il"]
+[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="2_jpb7n"]
+[ext_resource type="AudioStream" uid="uid://d0mx81kv2vlha" path="res://assets/sounds/error_1.wav" id="3_2l3al"]
+
+[sub_resource type="Animation" id="Animation_vu2jy"]
+resource_name = "float_down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-500, -50), Vector2(-500, 2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.7, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fwmve"]
+resource_name = "float_up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-500, -50), Vector2(-500, -102)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.7, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jxyb2"]
+_data = {
+"float_down": SubResource("Animation_vu2jy"),
+"float_up": SubResource("Animation_fwmve")
+}
+
+[node name="FloatingMessage" type="Label"]
+custom_minimum_size = Vector2(1000, 0)
+offset_left = -500.0
+offset_top = -13.6
+offset_right = 500.0
+offset_bottom = 86.4
+pivot_offset = Vector2(500, 50)
+size_flags_horizontal = 4
+theme = ExtResource("2_jpb7n")
+theme_override_colors/font_color = Color(0.841451, 0.0904412, 0.157487, 1)
+theme_override_colors/font_shadow_color = Color(0.219501, 0.219501, 0.219501, 1)
+text = "placeholder"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_up1il")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jxyb2")
+}
+
+[node name="Error" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_2l3al")
+volume_db = -10.0
+pitch_scale = 2.0
+bus = &"Sound"

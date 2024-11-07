@@ -1,5 +1,6 @@
 extends ProgressBar
 
+
 enum Season {WINTER, SUMMER}
 @export var season: Season
 @export var green_bar: Resource
@@ -9,43 +10,69 @@ enum Season {WINTER, SUMMER}
 @onready var info_text = $BarInfo/MarginContainer/MarginContainer/VBoxContainer/InfoText
 @onready var info_text_2 = $BarInfo/MarginContainer/MarginContainer/VBoxContainer/InfoText2
 @onready var demand_line = $DemandLine
+@onready var show_hand = $ShowHand # For the tutorial
 
 
+var max_value_set := false
 # Called when the node enters the scene tree for the first time.
+
+
 func _ready():
-	# The bars will have the same max_value, wich is the maximum demand
-	# between winter and summer
-	max_value = max(Gameloop.demand_winter * 1.25, Gameloop.demand_summer * 1.25)
+	TutorialManager.step_changed.connect(_on_tutorial_step_updated)
+	Gameloop.hide_energy_bar_info_requested.connect(_on_hide_info_box)
 	
 	# Determines which season the bar will be monitoring
 	match season:
 		Season.WINTER:
 			Gameloop.energy_supply_updated_winter.connect(_on_energy_supply_updated)
-			Gameloop.energy_demand_updated_winter.connect(_on_energy_demand_updated)
 			Gameloop.imported_energy_amount_updated.connect(_on_imported_energy_amount_updated)
-			
-			# The bars are created after the gameloop sets the variables the first time,
-			# so we have to updates the bars manually when they're created
-			_on_energy_demand_updated(Gameloop.demand_winter)
+			Gameloop.energy_demand_updated_winter.connect(_on_energy_demand_updated)
+
 			_on_energy_supply_updated(Gameloop.supply_winter)
 		Season.SUMMER:
+			$ShowHand/Sprite2D.flip_h = true
+			$ShowHand/AnimationPlayer.play("show_left")
+			show_hand.position.y += 195
 			Gameloop.energy_supply_updated_summer.connect(_on_energy_supply_updated)
 			Gameloop.energy_demand_updated_summer.connect(_on_energy_demand_updated)
 			
-			# The bars are created after the gameloop sets the variables the first time,
-			# so we have to updates the bars manually when they're created
-			_on_energy_demand_updated(Gameloop.demand_summer)
 			_on_energy_supply_updated(Gameloop.supply_summer)
-
-# Updates the position of the line representing the demand and the max value of the progress bar
-func _on_energy_demand_updated(demand):
+			
+			
+func _process(_delta):
+	change_bar_color()
+	
+	# The bars will have the same max_value and min_value, wich is the maximum demand
+	# between winter and summer.
+	# It's set once at the beginning and must not change again
+	if not max_value_set and Gameloop.demand_winter != 0.0 and Gameloop.demand_summer != 0.0:
+		max_value = max(Gameloop.demand_winter * 1.35, Gameloop.demand_summer * 1.35)
+		min_value = 700
+		max_value_set = true
+		
+		var bar_height = size.x
+		match season:
+			Season.WINTER:
+				demand_line.position.x = remap(Gameloop.demand_winter, min_value, max_value, 0, bar_height)
+				show_hand.position.x = remap(Gameloop.demand_winter, min_value, max_value, 0, bar_height)
+			Season.SUMMER:
+				demand_line.position.x = remap(Gameloop.demand_summer, min_value, max_value, 0, bar_height)
+				show_hand.position.x = remap(Gameloop.demand_summer, min_value, max_value, 0, bar_height)
+				
+				
+func _on_energy_demand_updated(_demand: float):
 	var bar_height = size.x
-	demand_line.position.x = bar_height / max_value * demand
-
+	match season:
+			Season.WINTER:
+				demand_line.position.x = remap(Gameloop.demand_winter, min_value, max_value, 0, bar_height)
+				show_hand.position.x = remap(Gameloop.demand_winter, min_value, max_value, 0, bar_height)
+			Season.SUMMER:
+				demand_line.position.x = remap(Gameloop.demand_summer, min_value, max_value, 0, bar_height)
+				show_hand.position.x = remap(Gameloop.demand_summer, min_value, max_value, 0, bar_height)
 
 # Updates the progress bar
-func _on_energy_supply_updated(supply):
-	var new_value = 0
+func _on_energy_supply_updated(supply: float):
+	var new_value := 0.0
 	
 	if season == Season.WINTER:
 		new_value = supply + Gameloop.imported_energy_amount
@@ -55,27 +82,35 @@ func _on_energy_supply_updated(supply):
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "value", new_value, 0.5)
 	
+	
 # Updates the progress bar
-func _on_imported_energy_amount_updated(amount):
+func _on_imported_energy_amount_updated(amount: float):
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "value", Gameloop.supply_winter + amount, 0.5)
+		
 		
 func change_bar_color():
 	match season:
 		Season.SUMMER:
-			if value >= Gameloop.demand_summer:
+			if Gameloop.supply_summer >= Gameloop.demand_summer:
 				self["theme_override_styles/fill"] = green_bar
 			else:
 				self["theme_override_styles/fill"] = red_bar
 				
 		Season.WINTER:
-			if value + Gameloop.imported_energy_amount >= Gameloop.demand_winter:
+			if Gameloop.supply_winter + Gameloop.imported_energy_amount >= Gameloop.demand_winter:
 				self["theme_override_styles/fill"] = green_bar
 			else:
 				self["theme_override_styles/fill"] = red_bar
 		
+		
 # Displays basic information on energy supply and demand
 func _on_bar_button_pressed():
+	match season:
+		Season.WINTER:
+			Gameloop.hide_energy_bar_info_requested.emit(Season.SUMMER)
+		Season.SUMMER:
+			Gameloop.hide_energy_bar_info_requested.emit(Season.WINTER)
 	info_box.visible = not info_box.visible
 	
 
@@ -99,5 +134,10 @@ func get_season_text(season_value: int):
 		1: return "Summer"
 
 
-func _on_value_changed(_val):
-	change_bar_color()
+func _on_hide_info_box(season_to_hide: Season):
+	if season_to_hide == season:
+		info_box.hide()
+
+
+func _on_tutorial_step_updated(step_: int):
+	show_hand.visible = (step_ == 6 and season == Season.WINTER) or step_ == 3

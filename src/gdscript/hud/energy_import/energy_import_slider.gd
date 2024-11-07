@@ -1,12 +1,15 @@
 extends VSlider
 
+var value_before_tutorial = 0
 
 func _ready():
 	Gameloop.energy_demand_updated_winter.connect(_on_energy_demand_updated_winter)
 	Gameloop.energy_supply_updated_winter.connect(_on_energy_supply_updated_winter)
+	Gameloop.game_ended.connect(_on_game_ended)
+	Gameloop.next_turn.connect(_on_next_turn)
+	TutorialManager.tutorial_started.connect(func(): value_before_tutorial = Gameloop.imported_energy_amount)
+	TutorialManager.tutorial_ended.connect(func(): value = value_before_tutorial)
 	
-	# We have to do this to initialize the bar since it is created after the demand
-	# has been set for the first time in Gameloop
 	_on_energy_demand_updated_winter(Gameloop.demand_winter)
 
 
@@ -22,13 +25,16 @@ func _on_import_slider_value_changed(_new_value: float):
 	Gameloop.imported_energy_amount = new_imported_amount
 
 
-# We reduce the energy supplied by imports if other sources supply enough energy
-func _on_energy_supply_updated_winter(winter_supply):
+func _on_energy_supply_updated_winter(winter_supply: float):
+	_update_slider_properties()
+	
+	# We reduce the energy supplied by imports if other sources supply enough energy
 	var energy_supply_excess = winter_supply + Gameloop.imported_energy_amount - Gameloop.demand_winter
 	if energy_supply_excess > 0 :
 		# This will call _on_import_slider_value_changed, which takes care of updating the
 		# imported amount the same way as if the user used the slider
 		value = max(0, Gameloop.demand_winter - winter_supply)
+
 
 func _on_import_up_button_pressed():
 	value += step
@@ -38,7 +44,32 @@ func _on_import_down_button_pressed():
 	value -= step
 
 
-# Updates properties of the slider so we don't have to update the node manually
-func _on_energy_demand_updated_winter(demand):
-	max_value = demand / 4 #I want the player to feel like they are importing a lot
-	#step = round(demand / size.x)
+func _on_energy_demand_updated_winter(_demand: float):
+	_update_slider_properties()
+
+
+# Updates the slider properties when the winter demand or supply change
+func _update_slider_properties():
+	# The player can't import more than needed
+	var max_amount_that_can_be_imported = Gameloop.demand_winter - Gameloop.supply_winter
+	# Step must not update, otherwise the value will be changed too when
+	# properties update to adapt to the new step
+	step = 0.5
+	# We must add the step, otherwise the user may not always be able to
+	# move the slider all the way up if the last step would go higher than the
+	# max than can be imported
+	max_value = max_amount_that_can_be_imported + step
+	
+
+func _on_game_ended():
+	editable = false
+
+
+# Moves the slider to the bottom. Doesn't send the signal because the value
+# is already set back to zero in "gameloop.gd" on a new turn
+func _on_next_turn():
+	set_value_no_signal(0)
+
+
+func _on_drag_ended(_value_changed):
+	TutorialManager.next_step_requested.emit()

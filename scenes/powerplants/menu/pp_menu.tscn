@@ -1,0 +1,99 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0gxr46y1af1j"]
+
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_menu/pp_menu.gd" id="1_6ek7g"]
+
+[sub_resource type="Animation" id="Animation_q46a1"]
+resource_name = "slide_down"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(516, 745), Vector2(516, 735), Vector2(516, 1100)]
+}
+
+[sub_resource type="Animation" id="Animation_dicpa"]
+resource_name = "slide_up"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(516, 1100), Vector2(516, 745), Vector2(516, 750), Vector2(516, 745)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wbbn2"]
+_data = {
+"slide_down": SubResource("Animation_q46a1"),
+"slide_up": SubResource("Animation_dicpa")
+}
+
+[node name="PpMenu" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_6ek7g")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 516.0
+offset_top = 745.0
+offset_right = 1884.0
+offset_bottom = 1079.0
+mouse_force_pass_scroll_events = false
+color = Color(0.215686, 0.215686, 0.215686, 0)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -702.0
+offset_top = -160.0
+offset_right = 702.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wbbn2")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -9,11 +9,12 @@ func _ready():
 
 
 func _on_most_recent_shock_updated(shock: Shock):
-	if shock.player_reactions_texts.size() >= 3  && not shock._are_requirements_to_absorb_shock_met():
-		show()
-		label.text = tr(shock.player_reactions_texts[2])
-	else:
-		hide()
+	if shock != null:
+		if shock.player_reactions_texts.size() >= 3  && not shock._are_requirements_to_absorb_shock_met():
+			show()
+			label.text = tr(shock.player_reactions_texts[2])
+		else:
+			hide()
 
 
 func _on_pressed():

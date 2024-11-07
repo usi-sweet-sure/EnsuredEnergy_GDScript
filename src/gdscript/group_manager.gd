@@ -1,0 +1,6 @@
+extends Node
+
+
+signal buttons_group_updated
+signal disabled_buttons_group_updated
+signal switches_group_updated

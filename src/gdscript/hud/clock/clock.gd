@@ -1,14 +1,22 @@
 extends Node
 
 @onready var clock_info_sticker = $TurnInfoContainer
+@onready var backdrop = $Backdrop
+@onready var timeline_animation: AnimationPlayer = $TimelineAnimation
+@onready var ring_animation = $Ring
 
+
+func _ready():
+	backdrop.hide()
+	ShockManager.shock_effects_applied.connect(_on_shock_effect_applied)
+	
 
 func _set_next_years_anim():
 	var year = Gameloop.year_list[Gameloop.current_turn-1]
 	
 	var last_decade = str(year)
 	
-	var anim = $TimelineAnimation.get_animation("NextTurnAnim")
+	var anim = timeline_animation.get_animation("go_to_center")
 	var decade_anim = $NextDecadeAP.get_animation("NextDecade")
 	
 	#var anim_track = anim.find_track("Year:text", Animation.TYPE_VALUE)
@@ -34,6 +42,7 @@ func _set_next_years_anim():
 				decade_anim.track_set_key_value(decade_track, 0, str(last_decade[2]))
 				decade_anim.track_set_key_value(decade_track2, 0, str(year_num2[2]))
 				$NextDecadeAP.play("NextDecade")
+				
 
 func clock_pressed():
 	clock_info_sticker.visible = not clock_info_sticker.visible
@@ -45,19 +54,42 @@ func _unhandled_input(event):
 		
 		
 func _on_next_turn_button_pressed():
+	Context.context_updated_for_new_turn = false
+	Gameloop.all_parameters_sent.connect(_on_all_parameters_sent)
+
 	_set_next_years_anim()
-	$TimelineAnimation.play("NextTurnAnim")
-	await $TimelineAnimation.animation_finished
-	ShockManager.pick_shock()
-	ShockManager.apply_shock()
+	timeline_animation.play("go_to_center")
+	ring_animation.play("rotate_ring")
+	
+	Gameloop._send_parameters_to_model(Gameloop.current_turn)
+
+
+func _on_shock_effect_applied(_shock):
+	if not Context.context_updated_for_new_turn:
+		Context.get_context_from_model(Context.res_id, Gameloop.year_list[Gameloop.current_turn-1])
+		await Context.context_updated
+	
+	ring_animation.play("rotate_ring_backward")
+	timeline_animation.play("go_back_to_corner")
+	await timeline_animation.animation_finished
+	ring_animation.stop()
+	Gameloop.player_can_start_playing_new_turn.emit()
+
+
+func _on_all_parameters_sent():
+	if Gameloop.all_parameters_sent.is_connected(_on_all_parameters_sent):
+		Gameloop.all_parameters_sent.disconnect(_on_all_parameters_sent)
+		
+	if timeline_animation.is_playing():
+		await timeline_animation.animation_finished
 	
 	if Gameloop.current_turn == Gameloop.total_number_of_turns:
-		Gameloop.end.emit()
+		ring_animation.play("rotate_ring_backward")
+		timeline_animation.play("go_back_to_corner")
+		await timeline_animation.animation_finished
+		ring_animation.stop()
+		Gameloop.game_ended.emit()
 		$"../../NextTurn".hide()
 	else:
 		Gameloop.current_turn += 1
 		Gameloop.next_turn.emit()
-		Context1.yr = Gameloop.year_list[Gameloop.current_turn]
-		
-	Gameloop.set_money_for_new_turn()
-	

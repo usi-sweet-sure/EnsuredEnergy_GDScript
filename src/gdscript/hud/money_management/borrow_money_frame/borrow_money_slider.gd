@@ -6,5 +6,6 @@ func _on_toggle_borrow_money_frame_button_pressed():
 
 
 func _on_borrow_money_apply_button_pressed():
-	Gameloop.borrowed_money_amount += floor(value)
+	MoneyManager.borrowed_money_amount += floor(value)
+	Gameloop.available_money_message_requested.emit("+" + str(floor(value)) + "M CHF", true)
 	value = 0

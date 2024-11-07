@@ -1,0 +1,143 @@
+[gd_scene load_steps=13 format=3 uid="uid://bgdrqxfbgr184"]
+
+[ext_resource type="Script" path="res://src/gdscript/shocks/shock_button/shock_button.gd" id="1_3j4o8"]
+[ext_resource type="Texture2D" uid="uid://b0c3ywqarx8b7" path="res://assets/textures/ui/socket_round.png" id="1_uupry"]
+[ext_resource type="Script" path="res://src/gdscript/shocks/shock_button/texture_button.gd" id="2_5jsa0"]
+[ext_resource type="Script" path="res://src/gdscript/shocks/shock_button/animation_player.gd" id="2_lohl8"]
+[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="4_j4m7a"]
+[ext_resource type="Texture2D" uid="uid://biwwfxsgd37rv" path="res://assets/textures/icons/chalk_warning.png" id="4_uuw5p"]
+[ext_resource type="Texture2D" uid="uid://bx1g8oiuxi2mk" path="res://assets/textures/ui/Paper-Middle.png" id="5_hacl8"]
+[ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/fonts/special_elite/special_elite_regular.ttf" id="6_5a1f6"]
+[ext_resource type="Script" path="res://src/gdscript/shocks/shock_button/tooltip_text.gd" id="6_7ex6t"]
+
+[sub_resource type="Animation" id="Animation_kb3fo"]
+resource_name = "tooltip_scale_down"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tooltip:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Tooltip:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_jmmyd"]
+resource_name = "tooltip_scale_up"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tooltip:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Tooltip:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mqjpv"]
+_data = {
+"tooltip_scale_down": SubResource("Animation_kb3fo"),
+"tooltip_scale_up": SubResource("Animation_jmmyd")
+}
+
+[node name="ShockButton" type="Node2D"]
+script = ExtResource("1_3j4o8")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_right = 55.0
+offset_bottom = 54.0
+texture_normal = ExtResource("1_uupry")
+script = ExtResource("2_5jsa0")
+
+[node name="Sprite2D" type="Sprite2D" parent="TextureButton"]
+position = Vector2(27, 23)
+scale = Vector2(0.566038, 0.563487)
+texture = ExtResource("4_uuw5p")
+
+[node name="Tooltip" type="RichTextLabel" parent="."]
+visible = false
+clip_contents = false
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -510.0
+offset_top = -16.0
+offset_right = -73.0
+offset_bottom = 72.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("4_j4m7a")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_5a1f6")
+theme_override_font_sizes/normal_font_size = 17
+bbcode_enabled = true
+fit_content = true
+autowrap_mode = 2
+script = ExtResource("6_7ex6t")
+
+[node name="Background" type="NinePatchRect" parent="Tooltip"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -36.0
+offset_top = -70.0
+offset_right = 36.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_hacl8")
+region_rect = Rect2(2, 3, 384, 396)
+patch_margin_left = 107
+patch_margin_top = 62
+patch_margin_right = 113
+patch_margin_bottom = 61
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mqjpv")
+}
+script = ExtResource("2_lohl8")
+
+[connection signal="shock_changed" from="." to="Tooltip" method="_on_shock_changed"]
+[connection signal="mouse_entered" from="TextureButton" to="." method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_entered" from="TextureButton" to="TextureButton" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="TextureButton" to="AnimationPlayer" method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="TextureButton" to="." method="_on_texture_button_mouse_exited"]
+[connection signal="mouse_exited" from="TextureButton" to="TextureButton" method="_on_mouse_exited"]
+[connection signal="mouse_exited" from="TextureButton" to="AnimationPlayer" method="_on_texture_button_mouse_exited"]

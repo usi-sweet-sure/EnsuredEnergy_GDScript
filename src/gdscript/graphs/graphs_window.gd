@@ -1,5 +1,5 @@
 # Used to draw the graphs.
-# This the way to add data to the graphs:
+# This is the way to add data to the graphs:
 # 1. Add the data with a dataset name and the way to update it
 #	 (via signal, etc.) in "graphs_data.gd".
 # 2. Add a context in "set_graph_context".
@@ -12,6 +12,8 @@ extends CanvasLayer
 
 @export var draw_axes_outer_lines := false
 
+signal context_changed
+
 var x_axis_min_value: int
 var x_axis_max_value: int
 var y_axis_min_value: int
@@ -22,7 +24,7 @@ var season := "winter"
 var default_line_width = 4
 var default_point_size = Vector2(15.0,15.0)
 
-@onready var label_theme = load("res://scenes/windows/label_themes.tres")
+@onready var label_theme = load("res://assets/fonts/label_themes.tres")
 @onready var graph = $MainFrame/Screen/Drawable
 @onready var line_names_container = $MainFrame/LineNamesContainer
 
@@ -36,6 +38,8 @@ func _ready():
 func _set_graph_context(context_name: String):
 	context = context_name
 	_reset_graph()
+	context_changed.emit(context)
+	$MainFrame/RightContainer/SeasonSwitch.hide()
 	
 	match context_name:
 		"economy":
@@ -49,33 +53,41 @@ func _set_graph_context(context_name: String):
 			_add_data_set_to_graph("import_costs", Color(1, 0.875, 0.255))
 			_add_data_set_to_graph("borrowed_money", Color(0.522, 0.98, 0.404))
 			_add_data_set_to_graph("available_money", Color(0.2, 0.89, 0.282))
-		"environment":
+		"landuse":
+			x_axis_min_value = Gameloop.start_year
+			x_axis_max_value = Gameloop.start_year + (Gameloop.total_number_of_turns * Gameloop.years_in_a_turn)
+			y_axis_min_value = 0
+			y_axis_max_value = 150
+			_draw_base_graph(Gameloop.years_in_a_turn, 10)
+			_add_data_set_to_graph("land_use", Color(0.663, 0.929, 0.416))
+		"emissions":
+			x_axis_min_value = Gameloop.start_year
+			x_axis_max_value = Gameloop.start_year + (Gameloop.total_number_of_turns * Gameloop.years_in_a_turn)
+			y_axis_min_value = 0
+			y_axis_max_value = 5
+			_draw_base_graph(Gameloop.years_in_a_turn, 1)
+			_add_data_set_to_graph("co2_emissions", Color(0.91, 0.38, 0.38))
+		"energy":
 			x_axis_min_value = Gameloop.start_year
 			x_axis_max_value = Gameloop.start_year + (Gameloop.total_number_of_turns * Gameloop.years_in_a_turn)
 			y_axis_min_value = 0
 			y_axis_max_value = 2000
 			_draw_base_graph(Gameloop.years_in_a_turn, 200)
-			_add_data_set_to_graph("land_use", Color(0.663, 0.929, 0.416))
-		"energy":
-			x_axis_min_value = Gameloop.start_year
-			x_axis_max_value = Gameloop.start_year + (Gameloop.total_number_of_turns * Gameloop.years_in_a_turn)
-			y_axis_min_value = 0
-			y_axis_max_value = 3000
-			_draw_base_graph(Gameloop.years_in_a_turn, 200)
-			_add_data_set_to_graph("winter_energy_supply", Color(0.196, 0.573, 0.929))
-			_add_data_set_to_graph("summer_energy_supply", Color(0.929, 0.875, 0.416))
-			_add_data_set_to_graph("winter_energy_import", Color(0.431, 0.961, 0.957))
+			$MainFrame/RightContainer/SeasonSwitch.show()
+			
+			if season == "summer":
+				_add_data_set_to_graph("summer_demand", Color(1, 0.702, 0.255, 1))
+				_add_data_set_to_graph("summer_energy_supply", Color(0.929, 0.875, 0.416))
+			else:
+				_add_data_set_to_graph("winter_demand", Color(0, 0.569, 1, 1))
+				_add_data_set_to_graph("winter_energy_supply", Color(0.431, 0.961, 0.957))
+				_add_data_set_to_graph("winter_energy_import", Color(0.988, 0.973, 0.855))
 		"none":
 			x_axis_min_value = Gameloop.start_year
 			x_axis_max_value = Gameloop.start_year + (Gameloop.total_number_of_turns * Gameloop.years_in_a_turn)
 			y_axis_min_value = 0
 			y_axis_max_value = 2000
 			_draw_base_graph(Gameloop.years_in_a_turn, 200)
-			
-	if season == "winter":
-		_on_season_switch_toggled(false)
-	elif season == "summer":
-		_on_season_switch_toggled(true)
 
 
 # This is what you want to use in a normal use case when adding data to the graph.
@@ -149,6 +161,13 @@ func _add_new_point_to_line(line_name: String, x, y) -> Line2D:
 	visual_point.custom_minimum_size = default_point_size
 	visual_point.position = Vector2(x_in_pixels - default_point_size.x / 2, y_in_pixels - default_point_size.y / 2)
 	visual_point.tooltip_text = str(round(y))
+	
+	# Custom label to show the value instead of tooltip
+	var label = Label.new()
+	visual_point.add_child(label)
+	label.text = str(round(y))
+	label.set_anchors_and_offsets_preset(Control.PRESET_CENTER_TOP)
+	label.hide()
 	visual_point.color = line.default_color
 	visual_point.color.a = 0.75
 	visual_point.mouse_entered.connect(func(): change_point_highlight(visual_point))
@@ -230,19 +249,15 @@ func _on_toggle_graphs():
 		_set_graph_context(context)
 
 
-# Season demands aren't linked to a contest, since we want to display them as will
+# Season demands aren't linked to a context, since we want to display them as will
 # with the switch
 func _on_season_switch_toggled(toggled_on):
 	if toggled_on:
 		season = "summer"
-		
-		_remove_dataset_from_graph("winter_demand")
-		_add_data_set_to_graph("summer_demand", Color(1, 0.702, 0.255, 1))
 	else:
 		season = "winter"
-	
-		_remove_dataset_from_graph("summer_demand")
-		_add_data_set_to_graph("winter_demand", Color(0, 0.569, 1, 1))
+		
+	_set_graph_context("energy")
 		
 func _reset_graph():
 	for n in graph.get_children():
@@ -253,14 +268,14 @@ func _reset_graph():
 		line_names_container.remove_child(n)
 		n.queue_free()
 
+func _on_landuse_button_pressed():
+	_set_graph_context("landuse")
+
+func _on_emissions_button_pressed():
+	_set_graph_context("emissions")
 
 func _on_economy_button_pressed():
 	_set_graph_context("economy")
-
-
-func _on_environment_button_pressed():
-	_set_graph_context("environment")
-
 
 func _on_energy_button_pressed():
 	_set_graph_context("energy")
@@ -279,23 +294,38 @@ func change_line_highlight(line_name, highlight := true):
 		# Tweens line size
 		var line: Line2D = graph.get_node(line_name)
 		line.z_index = z_index
+		
 		var tween = get_tree().create_tween()
 		tween.tween_property(line, "width", default_line_width * size_factor, 0.1)
 		
-		# Tweens points size (only if only one point (no line), find it ugly otherwise)
-		# Works only because ColorRect points are the only children
-		if line.get_children().size() == 1: 
-			for child in line.get_children():
-				tween = get_tree().create_tween()
-				tween.tween_property(child, "size", default_point_size * size_factor, 0.1)
+		# Change points size only if one point (no line), find it ugly otherwise
+		var change_point_size = line.get_children().size() == 1
+		
+		for child in line.get_children():
+			if change_point_size:
+				var tween2 = get_tree().create_tween()
+				tween2.tween_property(child, "size", default_point_size * size_factor, 0.1)
+			
+			# Those formula are to be adapated if the size_factor changes
+			# For example, a size_factor of 2 doesn't require the move_factor to be divided
+			# I'd find a formula but hey
+			var label = child.get_children()[0]
+			var tween3 = get_tree().create_tween()
+			
+			if highlight:
+				label.show()
 				
-				# Those formula are to be adapated if the size_factor changes
-				# For example, a size_factor of 2 doesn't require the move_factor to be divided
-				# I'd find a formula but hey
-				if highlight:
+				if change_point_size:
 					child.position -= default_point_size / (move_factor / 2)
-				else:
+					
+				tween3.tween_property(label, "position", Vector2(label.position.x, label.position.y - 25), 0.1)
+			else:
+				if change_point_size:
 					child.position += default_point_size / (move_factor / 2)
+				tween3.tween_property(label, "position", Vector2(label.position.x, 0), 0.1)
+				
+				var tween4 = get_tree().create_tween()
+				tween4.tween_property(label, "visible", false, 0.1)
 
 # Highlights the point when the mouse is hovering above it
 func change_point_highlight(point: ColorRect, highlight := true):

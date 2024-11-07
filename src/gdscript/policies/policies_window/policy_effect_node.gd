@@ -1,6 +1,7 @@
 extends Control
 
-@onready var text = $Text
+
+@onready var text = $VBoxContainer/Text
 
 
 # Called when the node enters the scene tree for the first time.

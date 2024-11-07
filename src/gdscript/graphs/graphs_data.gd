@@ -42,22 +42,23 @@ func _ready():
 	_add_new_data_set("summer_energy_supply")
 	_add_new_data_set("winter_energy_import")
 	_add_new_data_set("land_use")
+	_add_new_data_set("co2_emissions")
+	_add_new_data_set("personal_support")
 	
-	Gameloop.building_costs_updated.connect(_on_building_cost_updated)
-	Gameloop.powerplants_production_costs_updated.connect(_on_production_cost_updated)
-	Gameloop.energy_import_cost_updated.connect(_on_import_cost_updated)
-	Gameloop.borrowed_money_amount_updated.connect(_on_borrowed_money_updated)
-	Gameloop.available_money_amount_updated.connect(_on_available_money_updated)
+	MoneyManager.building_costs_updated.connect(_on_building_cost_updated)
+	MoneyManager.total_production_costs_updated.connect(_on_production_cost_updated)
+	MoneyManager.energy_import_cost_updated.connect(_on_import_cost_updated)
+	MoneyManager.borrowed_money_amount_updated.connect(_on_borrowed_money_updated)
+	MoneyManager.available_money_amount_updated.connect(_on_available_money_updated)
 	Gameloop.energy_supply_updated_winter.connect(_on_winter_energy_supply_updated)
-	Gameloop.energy_demand_updated_summer.connect(_on_summer_energy_supply_updated)
+	Gameloop.energy_supply_updated_summer.connect(_on_summer_energy_supply_updated)
 	Gameloop.imported_energy_amount_updated.connect(_on_winter_energy_import_updated)
 	Gameloop.land_use_updated.connect(_on_land_use_updated)
+	Gameloop.energy_demand_updated_summer.connect(_on_summer_energy_demand_updated)
+	Gameloop.energy_demand_updated_winter.connect(_on_winter_energy_demand_updated)
+	Gameloop.co2_emissions_updated.connect(_on_co2_emissions_updated)
+	PolicyManager.personal_support_updated.connect(_on_personnal_support_updated)
 	Gameloop.next_turn.connect(_refresh_data)
-	
-	for i in Gameloop.total_number_of_turns + 1:
-		data["summer_demand"][Gameloop.start_year + (Gameloop.years_in_a_turn * i)] = Gameloop.demand_summer + (5 * i)
-	for i in Gameloop.total_number_of_turns + 1:
-		data["winter_demand"][Gameloop.start_year + (Gameloop.years_in_a_turn * i)] = Gameloop.demand_summer + (10 * i)
 	
 	_refresh_data()
 
@@ -77,18 +78,22 @@ func _add_new_data_set(key_name: String):
 		data[key_name] = {}
 		
 		
-# This is used at _ready and on a new turn, since some data don't change when a new
-# starts, but we want to to draw a point for that turn anyway
+# This is used at _ready and on a new turn. Some data don't change when a new turn
+# starts, but we want to to draw a point for that turn right away
 func _refresh_data():
-	_on_building_cost_updated(Gameloop.building_costs)
-	_on_production_cost_updated(Gameloop.powerplants_production_costs)
-	_on_import_cost_updated(Gameloop.powerplants_production_costs)
-	_on_borrowed_money_updated(Gameloop.borrowed_money_amount)
-	_on_available_money_updated(Gameloop.available_money_amount)
+	_on_building_cost_updated(MoneyManager.building_costs)
+	_on_production_cost_updated(MoneyManager.total_production_costs)
+	_on_import_cost_updated(MoneyManager.energy_import_cost)
+	_on_borrowed_money_updated(MoneyManager.borrowed_money_amount)
+	_on_available_money_updated(MoneyManager.available_money_amount)
 	_on_winter_energy_supply_updated(Gameloop.supply_winter)
 	_on_summer_energy_supply_updated(Gameloop.supply_summer)
 	_on_winter_energy_import_updated(Gameloop.imported_energy_amount)
 	_on_land_use_updated(Gameloop.land_use)
+	_on_summer_energy_demand_updated(Gameloop.demand_summer)
+	_on_winter_energy_demand_updated(Gameloop.demand_winter)
+	_on_co2_emissions_updated(Gameloop.co2_emissions)
+	_on_personnal_support_updated(PolicyManager.personal_support)
 
 func _on_building_cost_updated(cost):
 	data["building_costs"][Gameloop.start_year + (Gameloop.current_turn - 1) * Gameloop.years_in_a_turn] = cost
@@ -110,11 +115,11 @@ func _on_available_money_updated(money):
 	data["available_money"][Gameloop.start_year + (Gameloop.current_turn - 1) * Gameloop.years_in_a_turn] = money
 
 
-func _on_winter_energy_supply_updated(energy):
+func _on_winter_energy_supply_updated(energy: float):
 	data["winter_energy_supply"][Gameloop.start_year + (Gameloop.current_turn - 1) * Gameloop.years_in_a_turn] = energy
 	
 
-func _on_summer_energy_supply_updated(energy):
+func _on_summer_energy_supply_updated(energy: float):
 	data["summer_energy_supply"][Gameloop.start_year + (Gameloop.current_turn - 1) * Gameloop.years_in_a_turn] = energy
 	
 	
@@ -124,3 +129,19 @@ func _on_winter_energy_import_updated(energy):
 
 func _on_land_use_updated(land_use):
 	data["land_use"][Gameloop.start_year + (Gameloop.current_turn - 1) * Gameloop.years_in_a_turn] = land_use
+
+
+func _on_summer_energy_demand_updated(value):
+	data["summer_demand"][Gameloop.start_year + (Gameloop.current_turn - 1) * Gameloop.years_in_a_turn] = value
+	
+	
+func _on_winter_energy_demand_updated(value):
+	data["winter_demand"][Gameloop.start_year + (Gameloop.current_turn - 1) * Gameloop.years_in_a_turn] = value
+	
+	
+func _on_co2_emissions_updated(value):
+	data["co2_emissions"][Gameloop.start_year + (Gameloop.current_turn - 1) * Gameloop.years_in_a_turn] = value	
+
+
+func _on_personnal_support_updated(value):
+	data["personal_support"][Gameloop.start_year + (Gameloop.current_turn - 1) * Gameloop.years_in_a_turn] = value * 100	

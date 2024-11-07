@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=3 uid="uid://dbdgpa4pfgryb"]
+
+[ext_resource type="Shader" path="res://src/gdscript/shaders/outline.gdshader" id="1_kx28v"]
+[ext_resource type="Texture2D" uid="uid://cd8341rl44tws" path="res://assets/textures/powerplants/bb_normal.png" id="1_skkg8"]
+[ext_resource type="BitMap" uid="uid://1iqu0g7vgbmb" path="res://assets/textures/powerplants/bb_click_mask.png" id="2_6lg61"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/bb_normal/texture_button.gd" id="3_hd2cs"]
+[ext_resource type="Texture2D" uid="uid://d1nj3wl5q4pnv" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0017_Icon-Hammer.png" id="4_1bplc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2h05u"]
+resource_local_to_scene = true
+shader = ExtResource("1_kx28v")
+shader_parameter/line_color = Vector4(1, 1, 1, 1)
+shader_parameter/line_thickness = 1.0
+shader_parameter/frequency = 10.0
+shader_parameter/phase_speed = 5.0
+shader_parameter/show = false
+
+[sub_resource type="Animation" id="Animation_khtaf"]
+resource_name = "animate_focus"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rvuip"]
+_data = {
+"animate_focus": SubResource("Animation_khtaf")
+}
+
+[node name="BbNormal" type="TextureButton" groups=["BB"]]
+material = SubResource("ShaderMaterial_2h05u")
+offset_right = 591.0
+offset_bottom = 365.0
+scale = Vector2(1.06, 1.06)
+pivot_offset = Vector2(350.5, 256)
+toggle_mode = true
+texture_normal = ExtResource("1_skkg8")
+texture_click_mask = ExtResource("2_6lg61")
+stretch_mode = 0
+script = ExtResource("3_hd2cs")
+
+[node name="Hammer" type="Sprite2D" parent="."]
+position = Vector2(318, 284)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_1bplc")
+offset = Vector2(18, -15)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rvuip")
+}
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="toggled" from="." to="." method="_on_toggled"]

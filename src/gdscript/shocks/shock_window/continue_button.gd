@@ -7,7 +7,8 @@ func _ready():
 
 
 func _on_most_recent_shock_updated(shock: Shock):
-	visible = shock.player_reactions.size() == 0 || shock._are_requirements_to_absorb_shock_met()
+	if shock != null:
+		visible = shock.player_reactions.size() == 0 || shock._are_requirements_to_absorb_shock_met()
 
 
 func _on_reaction_button1_pressed():
