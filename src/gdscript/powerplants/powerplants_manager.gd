@@ -42,12 +42,12 @@ var powerplant_scene = preload("res://scenes/powerplants/pp_map_emplacement/pp_s
 # MUST BE in the same order as EngineTypeIds
 var powerplants_effects: Array[String] = [
 	"", # Solar
-	"res://scenes/powerplants/pp_map_emplacement/pp_effects/wind/pp_wind_effects.tscn", # Wind
+	"res://scenes/powerplants/pp_map_emplacement/pp_effects/wind/pp_effects_wind.tscn", # Wind
 	"", # Gas
 	"", # Waste
 	"", # Biomass
 	"", # Biogas
-	"", # Nuclear
+	"res://scenes/powerplants/pp_map_emplacement/pp_effects/nuclear/pp_effects_nuclear.tscn", # Nuclear
 	"", # Carbon sequestration
 	"", # Hydro
 	"", # River 

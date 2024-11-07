@@ -14,14 +14,13 @@ signal powerplant_activated(metrics: PowerplantMetrics)
 signal powerplant_deactivated(metrics: PowerplantMetrics)
 signal powerplant_upgraded(metrics: PowerplantMetrics)
 signal powerplant_downgraded(metrics: PowerplantMetrics)
-signal texture_on_changed(image: Image, effect_scene: String)
+signal texture_on_changed(image: Image)
 signal texture_off_changed(image: Image)
 
 var metrics: PowerplantMetrics
 
 # This is used to revert the changes made to metrics during a shock
 var metrics_backup: PowerplantMetrics
-
 
 func _ready():
 	GroupManager.buttons_group_updated.emit()
@@ -31,13 +30,20 @@ func _ready():
 
 func set_metrics(metrics_: PowerplantMetrics):
 	self.metrics = metrics_.copy()
-	texture_on_changed.emit(load(PowerplantsManager.powerplants_textures_on[metrics_.type]), PowerplantsManager.powerplants_effects[metrics_.type])
+	texture_on_changed.emit(load(PowerplantsManager.powerplants_textures_on[metrics_.type]))
 	texture_off_changed.emit(load(PowerplantsManager.powerplants_textures_off[metrics_.type]))
+	
+	# Set effects overlay
+	var effects_scene_path = PowerplantsManager.powerplants_effects[metrics_.type]
+	if effects_scene_path != "":
+		var effects_scene = load(effects_scene_path).instantiate()
+		add_child(effects_scene)
+		move_child(effects_scene, 3)
 	metrics_updated.emit(self.metrics)
 	
 
-func set_texture_on(texture: Texture, effects_scene_path: String):
-	texture_on_changed.emit(texture, "")
+func set_texture_on(texture: Texture):
+	texture_on_changed.emit(texture)
 	
 
 func set_texture_off(texture: Texture):
