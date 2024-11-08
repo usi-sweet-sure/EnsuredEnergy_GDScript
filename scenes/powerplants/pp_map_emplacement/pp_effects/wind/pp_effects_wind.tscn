@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dr6s2y4ydg7mw" path="res://assets/textures/powerplants/blades.png" id="1_c3n8u"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_effects/wind/pp_effects_wind.gd" id="1_tsye3"]
 [ext_resource type="Texture2D" uid="uid://d1dchtgr8dspw" path="res://assets/textures/powerplants/nose.png" id="4_dejr5"]
+[ext_resource type="PackedScene" uid="uid://e7nl64v1gs0l" path="res://scenes/wind_gust.tscn" id="4_e4f5j"]
 
 [sub_resource type="Animation" id="Animation_q4tqr"]
 length = 0.001
@@ -41,10 +42,6 @@ _data = {
 "rotate_clockwise": SubResource("Animation_eqjn1")
 }
 
-[sub_resource type="Gradient" id="Gradient_t2him"]
-offsets = PackedFloat32Array(0, 0.48, 1)
-colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0)
-
 [node name="PpEffectsWind" type="Node2D"]
 script = ExtResource("1_tsye3")
 
@@ -64,20 +61,9 @@ texture = ExtResource("4_dejr5")
 libraries = {
 "": SubResource("AnimationLibrary_06ksm")
 }
+speed_scale = 0.5
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-position = Vector2(-39, 179)
-rotation = -0.523991
-amount = 2
-lifetime = 10.0
-speed_scale = 3.0
-explosiveness = 0.5
-emission_shape = 3
-emission_rect_extents = Vector2(1, 50)
-spread = 0.0
-gravity = Vector2(0, 0)
-initial_velocity_min = 40.0
-initial_velocity_max = 40.0
-scale_amount_min = 10.0
-scale_amount_max = 10.0
-color_ramp = SubResource("Gradient_t2him")
+[node name="WindGust" parent="." instance=ExtResource("4_e4f5j")]
+position = Vector2(-794, 429)
+rotation = -0.671901
+random_y_offset = 200.0
