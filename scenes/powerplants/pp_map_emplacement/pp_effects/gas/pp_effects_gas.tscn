@@ -1,0 +1,90 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctduwpmfrowdb"]
+
+[ext_resource type="Texture2D" uid="uid://y8d24u83in2p" path="res://assets/textures/powerplants/smoke.png" id="2_48vdm"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_awk60"]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[sub_resource type="Gradient" id="Gradient_xobiq"]
+offsets = PackedFloat32Array(0.0233333, 1)
+colors = PackedColorArray(0.338473, 0.338473, 0.338472, 1, 1, 1, 1, 0.329412)
+
+[node name="PpEffectsGas" type="Node2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_awk60")
+position = Vector2(387, -56)
+amount = 30
+lifetime = 9.0
+explosiveness = 0.1
+draw_order = 1
+texture = ExtResource("2_48vdm")
+emission_shape = 2
+emission_sphere_radius = 10.0
+direction = Vector2(0, -1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.0
+initial_velocity_max = 40.0
+angular_velocity_min = -40.0
+angular_velocity_max = 40.0
+linear_accel_max = 5.0
+tangential_accel_min = 5.0
+tangential_accel_max = 10.0
+scale_amount_max = 1.2
+color_ramp = SubResource("Gradient_xobiq")
+anim_speed_min = 0.1
+anim_speed_max = 1.0
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_awk60")
+position = Vector2(469, -9)
+amount = 30
+lifetime = 9.0
+explosiveness = 0.1
+draw_order = 1
+texture = ExtResource("2_48vdm")
+emission_shape = 2
+emission_sphere_radius = 10.0
+direction = Vector2(0, -1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.0
+initial_velocity_max = 40.0
+angular_velocity_min = -40.0
+angular_velocity_max = 40.0
+linear_accel_max = 5.0
+tangential_accel_min = 5.0
+tangential_accel_max = 10.0
+scale_amount_max = 1.2
+color_ramp = SubResource("Gradient_xobiq")
+anim_speed_min = 0.1
+anim_speed_max = 1.0
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_awk60")
+position = Vector2(558, 42)
+amount = 50
+lifetime = 9.0
+explosiveness = 0.1
+draw_order = 1
+texture = ExtResource("2_48vdm")
+emission_shape = 2
+emission_sphere_radius = 10.0
+direction = Vector2(0, -1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.0
+initial_velocity_max = 40.0
+angular_velocity_min = -40.0
+angular_velocity_max = 40.0
+linear_accel_max = 5.0
+tangential_accel_min = 5.0
+tangential_accel_max = 10.0
+scale_amount_max = 1.2
+color_ramp = SubResource("Gradient_xobiq")
+anim_speed_min = 0.1
+anim_speed_max = 1.0

@@ -43,7 +43,7 @@ var powerplant_scene = preload("res://scenes/powerplants/pp_map_emplacement/pp_s
 var powerplants_effects: Array[String] = [
 	"", # Solar
 	"res://scenes/powerplants/pp_map_emplacement/pp_effects/wind/pp_effects_wind.tscn", # Wind
-	"", # Gas
+	"res://scenes/powerplants/pp_map_emplacement/pp_effects/gas/pp_effects_gas.tscn", # Gas
 	"", # Waste
 	"res://scenes/powerplants/pp_map_emplacement/pp_effects/biomass/pp_effects_biomass.tscn", # Biomass
 	"", # Biogas
