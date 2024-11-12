@@ -471,7 +471,6 @@ func update_buildings_impact():
 	var total_production_costs = 0
 	var total_emissions = 0
 	var total_land_use = 0
-	var total_emissions_sequestrated = 0
 	
 	for powerplant in powerplants:
 		var metrics: PowerplantMetrics = powerplant.metrics
@@ -481,17 +480,13 @@ func update_buildings_impact():
 			winter += metrics.capacity * metrics.availability.y
 			total_production_costs += metrics.production_costs
 			total_emissions += metrics.emissions
-			
-			if metrics.emissions < 0:
-				total_emissions_sequestrated += abs(metrics.emissions)
-			
+						
 			total_land_use += metrics.land_use
 			
 	Gameloop.supply_summer = summer
 	Gameloop.supply_winter = winter
 	MoneyManager.powerplants_production_costs = total_production_costs
 	Gameloop.co2_emissions = total_emissions
-	Gameloop.sequestrated_co2 = total_emissions_sequestrated
 	Gameloop.land_use = total_land_use
 
 

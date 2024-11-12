@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cl2v31dxkoeoq"]
+[gd_scene load_steps=37 format=3 uid="uid://cl2v31dxkoeoq"]
 
 [ext_resource type="Texture2D" uid="uid://cbqebssavvctr" path="res://assets/textures/powerplants/pp_sprite_on_carbon_sequestration.png" id="2_ooeel"]
 [ext_resource type="Shader" path="res://src/gdscript/shaders/outline.gdshader" id="2_xbwqu"]
@@ -18,6 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://fe0i52vl7ck6" path="res://assets/textures/ui/All-HQ-Assets-D_0007s_0006_Slider-bar-horizontal.png" id="14_httvl"]
 [ext_resource type="Texture2D" uid="uid://xmi4fk7xmp5j" path="res://assets/textures/ui/All-HQ-Assets-D_0007s_0032_Ball-Slider.png" id="15_axucn"]
 [ext_resource type="Script" path="res://src/gdscript/carbon_sequestration/end_game_block.gd" id="18_x7ve3"]
+[ext_resource type="Texture2D" uid="uid://y8d24u83in2p" path="res://assets/textures/powerplants/effects/smoke.png" id="19_7pnkw"]
+[ext_resource type="Script" path="res://src/gdscript/carbon_sequestration/fumes.gd" id="20_dhq7g"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8ca5d"]
 shader = ExtResource("2_xbwqu")
@@ -26,6 +28,15 @@ shader_parameter/line_thickness = 1.0
 shader_parameter/frequency = 10.0
 shader_parameter/phase_speed = 1.0
 shader_parameter/show = false
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ecigq"]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[sub_resource type="Gradient" id="Gradient_sr332"]
+colors = PackedColorArray(0.337255, 0.337255, 0.337255, 1, 1, 1, 1, 0.329412)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3tdw6"]
 bg_color = Color(0.65098, 0.65098, 0.65098, 0.0470588)
@@ -152,6 +163,59 @@ pivot_offset = Vector2(350.5, 256)
 toggle_mode = true
 texture_normal = ExtResource("2_ooeel")
 script = ExtResource("3_dvmlx")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_ecigq")
+position = Vector2(122, -103)
+amount = 100
+lifetime = 9.0
+explosiveness = 0.1
+draw_order = 1
+texture = ExtResource("19_7pnkw")
+emission_shape = 2
+emission_sphere_radius = 10.0
+direction = Vector2(0, -1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.0
+initial_velocity_max = 40.0
+angular_velocity_min = -40.0
+angular_velocity_max = 40.0
+linear_accel_max = 5.0
+tangential_accel_min = 5.0
+tangential_accel_max = 10.0
+scale_amount_max = 1.2
+color_ramp = SubResource("Gradient_sr332")
+anim_speed_min = 0.1
+anim_speed_max = 1.0
+script = ExtResource("20_dhq7g")
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_ecigq")
+position = Vector2(403, 58)
+amount = 100
+lifetime = 9.0
+explosiveness = 0.1
+fract_delta = false
+draw_order = 1
+texture = ExtResource("19_7pnkw")
+emission_shape = 2
+emission_sphere_radius = 10.0
+direction = Vector2(0, -1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.0
+initial_velocity_max = 40.0
+angular_velocity_min = -40.0
+angular_velocity_max = 40.0
+linear_accel_max = 5.0
+tangential_accel_min = 5.0
+tangential_accel_max = 10.0
+scale_amount_max = 1.2
+color_ramp = SubResource("Gradient_sr332")
+anim_speed_min = 0.1
+anim_speed_max = 1.0
+script = ExtResource("20_dhq7g")
 
 [node name="InfoFrame" type="TextureRect" parent="." groups=["pp_info_frames"]]
 visible = false
