@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b5sqjxeuewdyq"]
+[gd_scene load_steps=25 format=3 uid="uid://b5sqjxeuewdyq"]
 
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_effects/hydro/pp_effects_hydro.gd" id="1_w02ok"]
 [ext_resource type="Texture2D" uid="uid://7fcty8ohfwju" path="res://assets/textures/powerplants/effects/water.png" id="2_ntu1y"]
@@ -9,6 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://hfadhiiaqnae" path="res://assets/textures/powerplants/effects/foliage_3.png" id="6_rakho"]
 [ext_resource type="Texture2D" uid="uid://bm8a13nu35hvi" path="res://assets/textures/powerplants/effects/foliage_4.png" id="7_g8py1"]
 [ext_resource type="Texture2D" uid="uid://d0sy6xe7vam15" path="res://assets/textures/powerplants/effects/foliage_5.png" id="8_h6giw"]
+[ext_resource type="Texture2D" uid="uid://chx0b0poecv7i" path="res://assets/textures/powerplants/effects/leaf_1.png" id="10_d6ucc"]
+[ext_resource type="Texture2D" uid="uid://dlxjy8seo7ebo" path="res://assets/textures/powerplants/effects/leaf_2.png" id="11_uli60"]
+[ext_resource type="Texture2D" uid="uid://c23ekgt1f43ma" path="res://assets/textures/powerplants/effects/leaf_3.png" id="12_wmq4h"]
+[ext_resource type="Texture2D" uid="uid://bgttpc7rlo7qv" path="res://assets/textures/powerplants/effects/leaf_4.png" id="13_ngq3h"]
+[ext_resource type="Texture2D" uid="uid://b662f2mrdg45g" path="res://assets/textures/powerplants/effects/leaf_5.png" id="14_p83c1"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_dnpol"]
 particles_animation = true
@@ -23,6 +28,10 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.329412)
 [sub_resource type="Gradient" id="Gradient_eovth"]
 offsets = PackedFloat32Array(0, 0.5, 1)
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.34902, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_vk3jw"]
+offsets = PackedFloat32Array(0, 0.506667, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="Animation" id="Animation_7slgi"]
 length = 0.001
@@ -258,6 +267,106 @@ color = Color(0.964706, 0.964706, 0.964706, 0.65098)
 color_ramp = SubResource("Gradient_eovth")
 anim_speed_min = 0.1
 anim_speed_max = 1.0
+
+[node name="falling_leaves" type="CPUParticles2D" parent="."]
+position = Vector2(264, 67)
+amount = 2
+lifetime = 7.0
+texture = ExtResource("10_d6ucc")
+emission_shape = 2
+emission_sphere_radius = 50.0
+direction = Vector2(0, 1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+angular_velocity_min = 50.0
+angular_velocity_max = 100.0
+tangential_accel_min = 10.0
+tangential_accel_max = 20.0
+angle_min = -30.0
+angle_max = 30.0
+color_ramp = SubResource("Gradient_vk3jw")
+
+[node name="falling_leaves2" type="CPUParticles2D" parent="."]
+position = Vector2(129, 130)
+amount = 2
+lifetime = 7.0
+texture = ExtResource("11_uli60")
+emission_shape = 2
+emission_sphere_radius = 50.0
+direction = Vector2(0, 1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+angular_velocity_min = 50.0
+angular_velocity_max = 100.0
+tangential_accel_min = 10.0
+tangential_accel_max = 20.0
+angle_min = -30.0
+angle_max = 30.0
+color_ramp = SubResource("Gradient_vk3jw")
+
+[node name="falling_leaves3" type="CPUParticles2D" parent="."]
+position = Vector2(212, 53)
+amount = 2
+lifetime = 7.0
+texture = ExtResource("12_wmq4h")
+emission_shape = 2
+emission_sphere_radius = 50.0
+direction = Vector2(0, 1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+angular_velocity_min = 50.0
+angular_velocity_max = 100.0
+tangential_accel_min = 10.0
+tangential_accel_max = 20.0
+angle_min = -30.0
+angle_max = 30.0
+color_ramp = SubResource("Gradient_vk3jw")
+
+[node name="falling_leaves4" type="CPUParticles2D" parent="."]
+position = Vector2(141, 180)
+amount = 2
+lifetime = 7.0
+texture = ExtResource("13_ngq3h")
+emission_shape = 2
+emission_sphere_radius = 50.0
+direction = Vector2(0, 1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+angular_velocity_min = 50.0
+angular_velocity_max = 100.0
+tangential_accel_min = 10.0
+tangential_accel_max = 20.0
+angle_min = -30.0
+angle_max = 30.0
+color_ramp = SubResource("Gradient_vk3jw")
+
+[node name="falling_leaves5" type="CPUParticles2D" parent="."]
+position = Vector2(183, 111)
+amount = 2
+lifetime = 7.0
+texture = ExtResource("14_p83c1")
+emission_shape = 2
+emission_sphere_radius = 50.0
+direction = Vector2(0, 1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+angular_velocity_min = 50.0
+angular_velocity_max = 100.0
+tangential_accel_min = 10.0
+tangential_accel_max = 20.0
+angle_min = -30.0
+angle_max = 30.0
+color_ramp = SubResource("Gradient_vk3jw")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

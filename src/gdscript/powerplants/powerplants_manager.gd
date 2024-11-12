@@ -50,7 +50,7 @@ var powerplants_effects: Array[String] = [
 	"res://scenes/powerplants/pp_map_emplacement/pp_effects/nuclear/pp_effects_nuclear.tscn", # Nuclear
 	"", # Carbon sequestration
 	"res://scenes/powerplants/pp_map_emplacement/pp_effects/hydro/pp_effects_hydro.tscn", # Hydro
-	"", # River 
+	"res://scenes/powerplants/pp_map_emplacement/pp_effects/river/pp_effects_river.tscn", # River 
 ] 
 
 # MUST BE in the same order as EngineTypeIds

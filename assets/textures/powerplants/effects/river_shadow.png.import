@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2pyk7bxevau7"
-path="res://.godot/imported/foliage.png-89e1d688653e07729ce612db98666ad4.ctex"
+uid="uid://rkj7ak7fxjwq"
+path="res://.godot/imported/river_shadow.png-c0def1cb9eac9aea49b9546b9849d60d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/powerplants/effects/foliage.png"
-dest_files=["res://.godot/imported/foliage.png-89e1d688653e07729ce612db98666ad4.ctex"]
+source_file="res://assets/textures/powerplants/effects/river_shadow.png"
+dest_files=["res://.godot/imported/river_shadow.png-c0def1cb9eac9aea49b9546b9849d60d.ctex"]
 
 [params]
 
