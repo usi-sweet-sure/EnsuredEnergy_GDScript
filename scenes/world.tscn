@@ -179,6 +179,10 @@ position = Vector2(2498, 1229)
 position = Vector2(3456, 1656)
 texture = ExtResource("12_4trsl")
 
+[node name="Mountain3" type="Sprite2D" parent="."]
+position = Vector2(2152, 1807)
+texture = ExtResource("13_lqxt0")
+
 [node name="PpMapEmplacement18" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(1419, 1313)
 build_on_start = 8
@@ -192,7 +196,7 @@ hydro = true
 river = true
 build_button = ExtResource("13_iyb57")
 
-[node name="Mountain3" type="Sprite2D" parent="."]
+[node name="Mountain4" type="Sprite2D" parent="."]
 position = Vector2(816, 1830)
 texture = ExtResource("11_c0lk8")
 
@@ -207,10 +211,6 @@ biogas = false
 hydro = true
 river = true
 build_button = ExtResource("13_iyb57")
-
-[node name="Mountain4" type="Sprite2D" parent="."]
-position = Vector2(2152, 1807)
-texture = ExtResource("13_lqxt0")
 
 [node name="PpMapEmplacement20" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(-61, 1805)

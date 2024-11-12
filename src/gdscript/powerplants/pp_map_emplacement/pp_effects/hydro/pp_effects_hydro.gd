@@ -1,7 +1,9 @@
 extends Node2D
 
-@onready var cpu_particles_2d: CPUParticles2D = $CPUParticles2D
-@onready var cpu_particles_2d_2: CPUParticles2D = $CPUParticles2D2
+@onready var blue_water: CPUParticles2D = $blue_water
+@onready var white_water: CPUParticles2D = $white_water
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var animation_player_2: AnimationPlayer = $AnimationPlayer2
 
 
 func _ready():
@@ -11,10 +13,15 @@ func _ready():
 
 
 func effects_off(_metrics: PowerplantMetrics):
-	cpu_particles_2d.emitting = false
-	cpu_particles_2d_2.emitting = false
+	blue_water.emitting = false
+	white_water.emitting = false
+	animation_player.stop()
+	animation_player_2.stop()
 	
 	
 func effects_on(_metrics: PowerplantMetrics):
-	cpu_particles_2d.emitting = true
-	cpu_particles_2d_2.emitting = true
+	blue_water.emitting = true
+	white_water.emitting = true
+	animation_player.play("foliage_breath")
+	await get_tree().create_timer(1).timeout
+	animation_player_2.play("foliage_breath")

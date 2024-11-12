@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b3v4qga38u86x"]
 
-[ext_resource type="Texture2D" uid="uid://y8d24u83in2p" path="res://assets/textures/powerplants/smoke.png" id="1_nurb7"]
+[ext_resource type="Texture2D" uid="uid://y8d24u83in2p" path="res://assets/textures/powerplants/effects/smoke.png" id="1_nurb7"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_effects/biomass/pp_effects_biomass.gd" id="1_pja6a"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_eom3m"]

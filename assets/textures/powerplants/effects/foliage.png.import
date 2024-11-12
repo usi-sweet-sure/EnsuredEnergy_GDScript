@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://y8d24u83in2p"
-path="res://.godot/imported/smoke.png-cbaf96f9b12542011f3ca12b45417460.ctex"
+uid="uid://d2pyk7bxevau7"
+path="res://.godot/imported/foliage.png-89e1d688653e07729ce612db98666ad4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/powerplants/smoke.png"
-dest_files=["res://.godot/imported/smoke.png-cbaf96f9b12542011f3ca12b45417460.ctex"]
+source_file="res://assets/textures/powerplants/effects/foliage.png"
+dest_files=["res://.godot/imported/foliage.png-89e1d688653e07729ce612db98666ad4.ctex"]
 
 [params]
 

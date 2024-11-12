@@ -1,8 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5sqjxeuewdyq"]
+[gd_scene load_steps=19 format=3 uid="uid://b5sqjxeuewdyq"]
 
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_effects/hydro/pp_effects_hydro.gd" id="1_w02ok"]
-[ext_resource type="Texture2D" uid="uid://7fcty8ohfwju" path="res://assets/textures/powerplants/water.png" id="2_ntu1y"]
-[ext_resource type="Texture2D" uid="uid://y8d24u83in2p" path="res://assets/textures/powerplants/smoke.png" id="3_r30mr"]
+[ext_resource type="Texture2D" uid="uid://7fcty8ohfwju" path="res://assets/textures/powerplants/effects/water.png" id="2_ntu1y"]
+[ext_resource type="Texture2D" uid="uid://cn1mdfriw7ed3" path="res://assets/textures/powerplants/effects/trunk.png" id="2_rx1h8"]
+[ext_resource type="Texture2D" uid="uid://y8d24u83in2p" path="res://assets/textures/powerplants/effects/smoke.png" id="3_r30mr"]
+[ext_resource type="Texture2D" uid="uid://cnu26xt1lyynd" path="res://assets/textures/powerplants/effects/foliage_1.png" id="4_cx886"]
+[ext_resource type="Texture2D" uid="uid://civupl0iyeclq" path="res://assets/textures/powerplants/effects/foliage_2.png" id="5_41dbw"]
+[ext_resource type="Texture2D" uid="uid://hfadhiiaqnae" path="res://assets/textures/powerplants/effects/foliage_3.png" id="6_rakho"]
+[ext_resource type="Texture2D" uid="uid://bm8a13nu35hvi" path="res://assets/textures/powerplants/effects/foliage_4.png" id="7_g8py1"]
+[ext_resource type="Texture2D" uid="uid://d0sy6xe7vam15" path="res://assets/textures/powerplants/effects/foliage_5.png" id="8_h6giw"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_dnpol"]
 particles_animation = true
@@ -18,10 +24,187 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.329412)
 offsets = PackedFloat32Array(0, 0.5, 1)
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.34902, 1, 1, 1, 0)
 
+[sub_resource type="Animation" id="Animation_7slgi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("foliage2:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.27931, 1.27931)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("foliage4:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.375, 1.375)]
+}
+
+[sub_resource type="Animation" id="Animation_5617h"]
+resource_name = "foliage_breath"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("foliage2:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.27931, 1.27931), Vector2(1.6, 1.6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("foliage4:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.375, 1.375), Vector2(1.6, 1.6)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_frncr"]
+_data = {
+"RESET": SubResource("Animation_7slgi"),
+"foliage_breath": SubResource("Animation_5617h")
+}
+
+[sub_resource type="Animation" id="Animation_3bhkq"]
+resource_name = "foliage_breath"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("foliage1:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.27532, 1.27532), Vector2(1.5, 1.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("foliage3:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.30882, 1.30882), Vector2(1.6, 1.6)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("foliage5:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.32095, 1.32095), Vector2(1.6, 1.6)]
+}
+
+[sub_resource type="Animation" id="Animation_pwbim"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("foliage1:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.27532, 1.27532)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("foliage3:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.30882, 1.30882)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("foliage5:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.32095, 1.32095)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hpb5e"]
+_data = {
+"RESET": SubResource("Animation_pwbim"),
+"foliage_breath": SubResource("Animation_3bhkq")
+}
+
 [node name="PpEffectsHydro" type="Node2D"]
 script = ExtResource("1_w02ok")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+[node name="trunk" type="Sprite2D" parent="."]
+position = Vector2(181, 253.907)
+scale = Vector2(1.2907, 1.2907)
+texture = ExtResource("2_rx1h8")
+
+[node name="foliage1" type="Sprite2D" parent="."]
+position = Vector2(154.495, 169.505)
+scale = Vector2(1.27532, 1.27532)
+texture = ExtResource("4_cx886")
+
+[node name="foliage2" type="Sprite2D" parent="."]
+position = Vector2(129, 109)
+scale = Vector2(1.27931, 1.27931)
+texture = ExtResource("5_41dbw")
+
+[node name="foliage3" type="Sprite2D" parent="."]
+position = Vector2(169, 125)
+scale = Vector2(1.30882, 1.30882)
+texture = ExtResource("6_rakho")
+
+[node name="foliage4" type="Sprite2D" parent="."]
+position = Vector2(233, 77)
+rotation = -0.000499728
+scale = Vector2(1.375, 1.375)
+texture = ExtResource("7_g8py1")
+
+[node name="foliage5" type="Sprite2D" parent="."]
+position = Vector2(225.133, 148.875)
+scale = Vector2(1.32095, 1.32095)
+texture = ExtResource("8_h6giw")
+
+[node name="blue_water" type="CPUParticles2D" parent="."]
 material = SubResource("CanvasItemMaterial_dnpol")
 position = Vector2(307, 332)
 rotation = 0.50714
@@ -47,7 +230,7 @@ color_ramp = SubResource("Gradient_h1gv8")
 anim_speed_min = 0.1
 anim_speed_max = 1.0
 
-[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+[node name="white_water" type="CPUParticles2D" parent="."]
 material = SubResource("CanvasItemMaterial_dnpol")
 position = Vector2(338, 326)
 rotation = 0.50714
@@ -75,3 +258,15 @@ color = Color(0.964706, 0.964706, 0.964706, 0.65098)
 color_ramp = SubResource("Gradient_eovth")
 anim_speed_min = 0.1
 anim_speed_max = 1.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_frncr")
+}
+speed_scale = 0.3
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hpb5e")
+}
+speed_scale = 0.3
