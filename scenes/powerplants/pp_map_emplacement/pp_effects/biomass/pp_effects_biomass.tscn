@@ -19,7 +19,7 @@ script = ExtResource("1_pja6a")
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 material = SubResource("CanvasItemMaterial_eom3m")
 position = Vector2(282, -72)
-amount = 30
+amount = 90
 lifetime = 6.0
 explosiveness = 0.1
 draw_order = 1
@@ -42,7 +42,7 @@ anim_speed_max = 1.0
 [node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
 material = SubResource("CanvasItemMaterial_eom3m")
 position = Vector2(196, -26)
-amount = 30
+amount = 90
 lifetime = 6.0
 explosiveness = 0.1
 draw_order = 1
