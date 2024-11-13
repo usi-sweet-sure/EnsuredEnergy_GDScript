@@ -22,6 +22,7 @@ func effects_on(metrics: PowerplantMetrics):
 	cpu_particles_2d_2.emitting = true
 	_adapt_to_current_level(metrics.current_upgrade, metrics.max_upgrade)
 
+
 func _update_fumes_intencity(particles: CPUParticles2D, intensity_percentage: float):
 	var color_ramp = particles.color_ramp
 	

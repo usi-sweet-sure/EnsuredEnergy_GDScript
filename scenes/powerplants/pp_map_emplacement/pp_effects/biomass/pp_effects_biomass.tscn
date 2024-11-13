@@ -10,6 +10,7 @@ particles_anim_v_frames = 1
 particles_anim_loop = true
 
 [sub_resource type="Gradient" id="Gradient_srud8"]
+resource_local_to_scene = true
 offsets = PackedFloat32Array(0.0133333, 1)
 colors = PackedColorArray(0.672752, 0.672752, 0.672751, 1, 1, 1, 1, 0.329412)
 
@@ -19,7 +20,7 @@ script = ExtResource("1_pja6a")
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 material = SubResource("CanvasItemMaterial_eom3m")
 position = Vector2(282, -72)
-amount = 90
+amount = 30
 lifetime = 6.0
 explosiveness = 0.1
 draw_order = 1
@@ -42,7 +43,7 @@ anim_speed_max = 1.0
 [node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
 material = SubResource("CanvasItemMaterial_eom3m")
 position = Vector2(196, -26)
-amount = 90
+amount = 30
 lifetime = 6.0
 explosiveness = 0.1
 draw_order = 1
