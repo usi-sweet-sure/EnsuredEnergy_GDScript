@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlwhblnrysabk"]
+
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_effects/waste/pp_effects_waste.gd" id="1_jbmrm"]
+[ext_resource type="Texture2D" uid="uid://y8d24u83in2p" path="res://assets/textures/powerplants/effects/smoke.png" id="3_fjua5"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_rcf1y"]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[sub_resource type="Gradient" id="Gradient_uahr2"]
+resource_local_to_scene = true
+offsets = PackedFloat32Array(0.0233333, 1)
+colors = PackedColorArray(0.462291, 0.462291, 0.462289, 1, 1, 1, 1, 0.329412)
+
+[node name="PpEffectsWaste" type="Node2D"]
+script = ExtResource("1_jbmrm")
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_rcf1y")
+position = Vector2(407, -60)
+amount = 30
+lifetime = 9.0
+explosiveness = 0.1
+draw_order = 1
+texture = ExtResource("3_fjua5")
+emission_shape = 2
+emission_sphere_radius = 10.0
+direction = Vector2(0, -1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.0
+initial_velocity_max = 40.0
+angular_velocity_min = -40.0
+angular_velocity_max = 40.0
+linear_accel_max = 5.0
+tangential_accel_min = 4.0
+tangential_accel_max = 4.0
+scale_amount_max = 1.2
+color_ramp = SubResource("Gradient_uahr2")
+anim_speed_min = 0.1
+anim_speed_max = 1.0
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_rcf1y")
+position = Vector2(498, -12)
+amount = 30
+lifetime = 9.0
+explosiveness = 0.1
+draw_order = 1
+texture = ExtResource("3_fjua5")
+emission_shape = 2
+emission_sphere_radius = 10.0
+direction = Vector2(0, -1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.0
+initial_velocity_max = 40.0
+angular_velocity_min = -40.0
+angular_velocity_max = 40.0
+linear_accel_max = 5.0
+tangential_accel_min = 4.0
+tangential_accel_max = 4.0
+scale_amount_max = 1.2
+color_ramp = SubResource("Gradient_uahr2")
+anim_speed_min = 0.1
+anim_speed_max = 1.0

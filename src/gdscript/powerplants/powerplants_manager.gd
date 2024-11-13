@@ -44,7 +44,7 @@ var powerplants_effects: Array[String] = [
 	"", # Solar
 	"res://scenes/powerplants/pp_map_emplacement/pp_effects/wind/pp_effects_wind.tscn", # Wind
 	"res://scenes/powerplants/pp_map_emplacement/pp_effects/gas/pp_effects_gas.tscn", # Gas
-	"", # Waste
+	"res://scenes/powerplants/pp_map_emplacement/pp_effects/waste/pp_effects_waste.tscn", # Waste
 	"res://scenes/powerplants/pp_map_emplacement/pp_effects/biomass/pp_effects_biomass.tscn", # Biomass
 	"", # Biogas
 	"res://scenes/powerplants/pp_map_emplacement/pp_effects/nuclear/pp_effects_nuclear.tscn", # Nuclear

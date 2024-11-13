@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://ba56oxmvcxpos"]
+[gd_scene load_steps=22 format=3 uid="uid://ba56oxmvcxpos"]
 
 [ext_resource type="Texture2D" uid="uid://dug4cy4mgxa1b" path="res://assets/textures/map/map.jpg" id="1_exly2"]
 [ext_resource type="Texture2D" uid="uid://dnuq60vou7jic" path="res://assets/textures/map/mountains/mountain_0.png" id="2_0wbri"]
@@ -8,9 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cvxhltk38jeyo" path="res://assets/textures/map/forests/forest_2.png" id="7_ptaf0"]
 [ext_resource type="Texture2D" uid="uid://cpcm2hmku8t83" path="res://assets/textures/map/mountains/mountain_1.png" id="8_1irv8"]
 [ext_resource type="Texture2D" uid="uid://bk5676dvr2vrc" path="res://assets/textures/map/forests/forest_3.png" id="9_ai24k"]
-[ext_resource type="Texture2D" uid="uid://b3vwf2v1afnqv" path="res://assets/textures/powerplants/pp_sprite_on_waste_4.png" id="10_bsw2n"]
 [ext_resource type="Texture2D" uid="uid://ex0mlwlymf7k" path="res://assets/textures/map/forests/forest_4.png" id="10_bwdos"]
-[ext_resource type="Texture2D" uid="uid://dfybjpp67komb" path="res://assets/textures/powerplants/pp_sprite_off_waste_4.png" id="11_2do6c"]
 [ext_resource type="Texture2D" uid="uid://cjnk71q5pp4a8" path="res://assets/textures/powerplants/pp_sprite_on_solar_4.png" id="11_5xi1y"]
 [ext_resource type="Texture2D" uid="uid://d0nonmo0jroqa" path="res://assets/textures/map/mountains/mountain_2.png" id="11_c0lk8"]
 [ext_resource type="Texture2D" uid="uid://imn01mt51ob8" path="res://assets/textures/map/forests/forest_5.png" id="12_4trsl"]
@@ -131,8 +129,6 @@ upgrade_factor_for_summer_supply = 1
 current_upgrade = 3
 max_upgrade = 3
 can_upgrade = false
-powerplant_on = ExtResource("10_bsw2n")
-powerplant_off = ExtResource("11_2do6c")
 
 [node name="PpMapEmplacement13" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(-1105, 1093)
