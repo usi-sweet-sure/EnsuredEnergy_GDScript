@@ -23,10 +23,12 @@ particles_anim_v_frames = 1
 particles_anim_loop = true
 
 [sub_resource type="Gradient" id="Gradient_1a6nq"]
+resource_local_to_scene = true
 offsets = PackedFloat32Array(0.0133333, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.329412)
 
 [sub_resource type="Gradient" id="Gradient_g65sk"]
+resource_local_to_scene = true
 offsets = PackedFloat32Array(0, 0.5, 1)
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.34902, 1, 1, 1, 0)
 
