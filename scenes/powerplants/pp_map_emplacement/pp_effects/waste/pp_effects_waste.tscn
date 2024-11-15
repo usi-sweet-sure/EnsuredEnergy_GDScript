@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlwhblnrysabk"]
+[gd_scene load_steps=7 format=3 uid="uid://dlwhblnrysabk"]
 
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_effects/waste/pp_effects_waste.gd" id="1_jbmrm"]
 [ext_resource type="Texture2D" uid="uid://y8d24u83in2p" path="res://assets/textures/powerplants/effects/smoke.png" id="3_fjua5"]
@@ -9,24 +9,32 @@ particles_anim_h_frames = 3
 particles_anim_v_frames = 1
 particles_anim_loop = true
 
+[sub_resource type="Curve" id="Curve_b7ccf"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.417582), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [sub_resource type="Gradient" id="Gradient_uahr2"]
 resource_local_to_scene = true
-offsets = PackedFloat32Array(0.0233333, 1)
-colors = PackedColorArray(0.462291, 0.462291, 0.462289, 1, 1, 1, 1, 0.329412)
+offsets = PackedFloat32Array(0, 0.0280899, 0.623595, 1)
+colors = PackedColorArray(0.462745, 0.462745, 0.462745, 0, 0.315302, 0.341712, 0.316214, 1, 0.581034, 0.581033, 0.581032, 0.572425, 0.678944, 0.678944, 0.678944, 0)
+
+[sub_resource type="Curve" id="Curve_6l45d"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.351648), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="PpEffectsWaste" type="Node2D"]
 script = ExtResource("1_jbmrm")
 
 [node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
 material = SubResource("CanvasItemMaterial_rcf1y")
-position = Vector2(407, -60)
+position = Vector2(411, -73)
 amount = 30
-lifetime = 9.0
+lifetime = 6.0
 explosiveness = 0.1
 draw_order = 1
 texture = ExtResource("3_fjua5")
 emission_shape = 2
-emission_sphere_radius = 10.0
+emission_sphere_radius = 6.0
 direction = Vector2(0, -1)
 spread = 0.0
 gravity = Vector2(0, 0)
@@ -38,20 +46,22 @@ linear_accel_max = 5.0
 tangential_accel_min = 4.0
 tangential_accel_max = 4.0
 scale_amount_max = 1.2
+scale_amount_curve = SubResource("Curve_b7ccf")
+color = Color(1, 1, 1, 0.705882)
 color_ramp = SubResource("Gradient_uahr2")
 anim_speed_min = 0.1
 anim_speed_max = 1.0
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 material = SubResource("CanvasItemMaterial_rcf1y")
-position = Vector2(498, -12)
+position = Vector2(498, -29)
 amount = 30
-lifetime = 9.0
+lifetime = 7.0
 explosiveness = 0.1
 draw_order = 1
 texture = ExtResource("3_fjua5")
 emission_shape = 2
-emission_sphere_radius = 10.0
+emission_sphere_radius = 6.0
 direction = Vector2(0, -1)
 spread = 0.0
 gravity = Vector2(0, 0)
@@ -63,6 +73,8 @@ linear_accel_max = 5.0
 tangential_accel_min = 4.0
 tangential_accel_max = 4.0
 scale_amount_max = 1.2
+scale_amount_curve = SubResource("Curve_6l45d")
+color = Color(1, 1, 1, 0.858824)
 color_ramp = SubResource("Gradient_uahr2")
 anim_speed_min = 0.1
 anim_speed_max = 1.0
