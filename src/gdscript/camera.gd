@@ -80,7 +80,10 @@ func _unhandled_input(event):
 	# Mouse drag moves the camera
 	if event is InputEventMouseMotion and not camera_blocked:
 		if event.button_mask == MOUSE_BUTTON_MASK_LEFT:
-			position -= event.relative / zoom
+			var new_position = position - (event.relative / zoom)
+			
+			position = new_position
+			print(get_screen_center_position())
 			
 	# Mouse wheel zooms the camera
 	# Scrolling down zooms out, scrolling up zooms in
