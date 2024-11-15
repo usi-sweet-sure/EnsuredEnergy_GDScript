@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ctduwpmfrowdb"]
+[gd_scene load_steps=7 format=3 uid="uid://ctduwpmfrowdb"]
 
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_effects/gas/pp_effects_gas.gd" id="1_laqyj"]
 [ext_resource type="Texture2D" uid="uid://y8d24u83in2p" path="res://assets/textures/powerplants/effects/smoke.png" id="2_48vdm"]
@@ -10,17 +10,25 @@ particles_anim_v_frames = 1
 particles_anim_loop = true
 
 [sub_resource type="Gradient" id="Gradient_xobiq"]
-offsets = PackedFloat32Array(0.0233333, 1)
-colors = PackedColorArray(0.338473, 0.338473, 0.338472, 1, 1, 1, 1, 0.329412)
+offsets = PackedFloat32Array(0, 0.0955056, 0.235955, 0.589888, 0.752809)
+colors = PackedColorArray(0.223103, 0.223103, 0.223103, 0, 0.201527, 0.201527, 0.201526, 1, 0.340339, 0.340339, 0.340339, 1, 0.505343, 0.505344, 0.505344, 0.531575, 0.703808, 0.703808, 0.703808, 0)
+
+[sub_resource type="Curve" id="Curve_phq2e"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.615385), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_gkyqs"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.593407), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="PpEffectsGas" type="Node2D"]
 script = ExtResource("1_laqyj")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 material = SubResource("CanvasItemMaterial_awk60")
-position = Vector2(387, -56)
+position = Vector2(384, -56)
 amount = 30
-lifetime = 9.0
+lifetime = 8.0
 explosiveness = 0.1
 draw_order = 1
 texture = ExtResource("2_48vdm")
@@ -34,9 +42,10 @@ initial_velocity_max = 40.0
 angular_velocity_min = -40.0
 angular_velocity_max = 40.0
 linear_accel_max = 5.0
-tangential_accel_min = 5.0
-tangential_accel_max = 10.0
+tangential_accel_min = 2.0
+tangential_accel_max = 8.0
 scale_amount_max = 1.2
+color = Color(1, 1, 1, 0.784314)
 color_ramp = SubResource("Gradient_xobiq")
 anim_speed_min = 0.1
 anim_speed_max = 1.0
@@ -45,7 +54,7 @@ anim_speed_max = 1.0
 material = SubResource("CanvasItemMaterial_awk60")
 position = Vector2(469, -9)
 amount = 30
-lifetime = 9.0
+lifetime = 8.0
 explosiveness = 0.1
 draw_order = 1
 texture = ExtResource("2_48vdm")
@@ -59,9 +68,11 @@ initial_velocity_max = 40.0
 angular_velocity_min = -40.0
 angular_velocity_max = 40.0
 linear_accel_max = 5.0
-tangential_accel_min = 5.0
-tangential_accel_max = 10.0
+tangential_accel_min = 2.0
+tangential_accel_max = 8.0
 scale_amount_max = 1.2
+scale_amount_curve = SubResource("Curve_phq2e")
+color = Color(1, 1, 1, 0.784314)
 color_ramp = SubResource("Gradient_xobiq")
 anim_speed_min = 0.1
 anim_speed_max = 1.0
@@ -70,7 +81,7 @@ anim_speed_max = 1.0
 material = SubResource("CanvasItemMaterial_awk60")
 position = Vector2(558, 42)
 amount = 50
-lifetime = 9.0
+lifetime = 8.0
 explosiveness = 0.1
 draw_order = 1
 texture = ExtResource("2_48vdm")
@@ -83,10 +94,12 @@ initial_velocity_min = 40.0
 initial_velocity_max = 40.0
 angular_velocity_min = -40.0
 angular_velocity_max = 40.0
-linear_accel_max = 5.0
-tangential_accel_min = 5.0
-tangential_accel_max = 10.0
+linear_accel_max = 10.0
+tangential_accel_min = 2.0
+tangential_accel_max = 8.0
 scale_amount_max = 1.2
+scale_amount_curve = SubResource("Curve_gkyqs")
+color = Color(1, 1, 1, 0.784314)
 color_ramp = SubResource("Gradient_xobiq")
 anim_speed_min = 0.1
 anim_speed_max = 1.0

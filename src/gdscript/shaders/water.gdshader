@@ -2,8 +2,8 @@ shader_type canvas_item;
 
 
 uniform vec4 WATER_COL : source_color =  vec4(0.176471, 0.635294, 0.85098, 1.0);
-uniform vec4 WATER2_COL : source_color =  vec4(0.0588235, 0.529412, 0.776471, 1.0);
-uniform vec4 FOAM_COL : source_color = vec4(0.87451, 0.988235, 1, 1.0);
+uniform vec4 WATER2_COL : source_color =  vec4(0.0588235, 0.529412, 0.776471, 0.6);
+uniform vec4 FOAM_COL : source_color = vec4(0.87451, 0.988235, 1, 0.6);
 
 uniform float distortion_speed = 2.0;
 uniform vec2 tile = vec2(5.0, 5.0);

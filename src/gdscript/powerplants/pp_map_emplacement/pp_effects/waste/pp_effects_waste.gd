@@ -31,7 +31,7 @@ func _update_fumes(metrics: PowerplantMetrics):
 	for system in particle_systems:
 		var color_ramp = system.color_ramp
 	
-		var starting_color = color_ramp.get_color(0)
+		var starting_color = color_ramp.get_color(1)
 		starting_color.a = intensity_percentage / 100.0
 		
-		color_ramp.set_color(0, starting_color)
+		color_ramp.set_color(1, starting_color)

@@ -10,11 +10,11 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6t7a5"]
 shader = ExtResource("2_3lisu")
 shader_parameter/WATER_COL = Color(0.227451, 0.760784, 0.792157, 1)
-shader_parameter/WATER2_COL = Color(0.0588235, 0.529412, 0.776471, 1)
-shader_parameter/FOAM_COL = Color(0.871768, 0.973602, 1, 1)
+shader_parameter/WATER2_COL = Color(0.1914, 0.63657, 0.66, 1)
+shader_parameter/FOAM_COL = Color(0.770551, 0.969738, 0.981674, 1)
 shader_parameter/distortion_speed = 2.0
 shader_parameter/tile = Vector2(1, 1)
-shader_parameter/offset = Vector2(0, 0)
+shader_parameter/offset = Vector2(1, 0)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_rvgg6"]
 particles_animation = true
@@ -30,7 +30,7 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.329412)
 [sub_resource type="Gradient" id="Gradient_g65sk"]
 resource_local_to_scene = true
 offsets = PackedFloat32Array(0, 0.5, 1)
-colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.34902, 1, 1, 1, 0)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.525, 1, 1, 1, 0)
 
 [node name="PpEffectsRiver" type="Node2D"]
 script = ExtResource("1_fkb4u")
@@ -43,7 +43,7 @@ texture = ExtResource("3_xttp2")
 
 [node name="blue_water" type="CPUParticles2D" parent="."]
 material = SubResource("CanvasItemMaterial_rvgg6")
-position = Vector2(449, 301)
+position = Vector2(449, 324)
 rotation = 0.0396349
 amount = 30
 speed_scale = 0.8
@@ -67,9 +67,9 @@ anim_speed_max = 1.0
 
 [node name="white_water" type="CPUParticles2D" parent="."]
 material = SubResource("CanvasItemMaterial_rvgg6")
-position = Vector2(409, 308)
+position = Vector2(408, 328)
 rotation = -0.813167
-amount = 30
+amount = 25
 lifetime = 1.5
 speed_scale = 0.4
 explosiveness = 0.3

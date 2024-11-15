@@ -26,10 +26,10 @@ func effects_on(metrics: PowerplantMetrics):
 func _update_fumes_intencity(particles: CPUParticles2D, intensity_percentage: float):
 	var color_ramp = particles.color_ramp
 	
-	var new_transparancy = color_ramp.get_color(0)
+	var new_transparancy = color_ramp.get_color(1)
 	new_transparancy.a = intensity_percentage / 100.0
 	
-	color_ramp.set_color(0, new_transparancy)
+	color_ramp.set_color(1, new_transparancy)
 
 
 func _adapt_to_current_level(current_level: int, max_level: int):
