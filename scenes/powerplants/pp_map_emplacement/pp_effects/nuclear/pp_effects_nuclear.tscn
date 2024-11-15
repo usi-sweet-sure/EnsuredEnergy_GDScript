@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://kj84kbfqbda8"]
+[gd_scene load_steps=6 format=3 uid="uid://kj84kbfqbda8"]
 
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_effects/nuclear/pp_effects_nuclear.gd" id="1_kb732"]
 [ext_resource type="Texture2D" uid="uid://y8d24u83in2p" path="res://assets/textures/powerplants/effects/smoke.png" id="2_vqwjg"]
@@ -9,9 +9,13 @@ particles_anim_h_frames = 3
 particles_anim_v_frames = 1
 particles_anim_loop = true
 
+[sub_resource type="Curve" id="Curve_ajsro"]
+_data = [Vector2(0, 0.846154), 0.0, 0.0, 0, 0, Vector2(1, 0.593407), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [sub_resource type="Gradient" id="Gradient_m3mlp"]
-offsets = PackedFloat32Array(0.0133333, 1)
-colors = PackedColorArray(0.672752, 0.672752, 0.672751, 1, 1, 1, 1, 0.329412)
+offsets = PackedFloat32Array(0.0133333, 0.0786517, 0.516854, 1)
+colors = PackedColorArray(0.890196, 0.890196, 0.890196, 0, 0.886275, 0.886275, 0.886275, 1, 0.858824, 0.858824, 0.858824, 0.25098, 1, 1, 1, 0)
 
 [node name="PpEffectsNuclear" type="Node2D"]
 script = ExtResource("1_kb732")
@@ -20,12 +24,14 @@ script = ExtResource("1_kb732")
 material = SubResource("CanvasItemMaterial_uc03j")
 position = Vector2(396.5, -10)
 amount = 50
-lifetime = 5.0
+lifetime = 5.2
 explosiveness = 0.1
+randomness = 0.1
+lifetime_randomness = 0.1
 draw_order = 1
 texture = ExtResource("2_vqwjg")
 emission_shape = 1
-emission_sphere_radius = 60.0
+emission_sphere_radius = 30.0
 direction = Vector2(0, -1)
 spread = 0.0
 gravity = Vector2(0, 0)
@@ -36,7 +42,9 @@ angular_velocity_max = 40.0
 linear_accel_max = 10.0
 tangential_accel_min = 10.0
 tangential_accel_max = 10.0
+scale_amount_min = 1.2
 scale_amount_max = 1.5
+scale_amount_curve = SubResource("Curve_ajsro")
 color_ramp = SubResource("Gradient_m3mlp")
 anim_speed_min = 0.1
 anim_speed_max = 1.0
