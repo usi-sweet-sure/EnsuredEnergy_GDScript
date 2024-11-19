@@ -40,9 +40,9 @@ position = Vector2(-568, 576)
 
 [node name="ColorRect" type="ColorRect" parent="." groups=["draggables"]]
 offset_left = -4536.0
-offset_top = -1028.0
+offset_top = -2040.0
 offset_right = 5245.0
-offset_bottom = 3926.0
+offset_bottom = 4169.0
 mouse_filter = 1
 mouse_default_cursor_shape = 6
 color = Color(0.466749, 0.625627, 0.444288, 1)
@@ -55,9 +55,9 @@ position = Vector2(1181, 835)
 anchor_mode = 1
 zoom = Vector2(0.25, 0.25)
 limit_left = -4500
-limit_top = -1000
+limit_top = -2000
 limit_right = 5240
-limit_bottom = 3800
+limit_bottom = 4100
 editor_draw_limits = true
 script = ExtResource("3_2lui3")
 
