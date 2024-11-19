@@ -81,9 +81,28 @@ func _unhandled_input(event):
 	if event is InputEventMouseMotion and not camera_blocked:
 		if event.button_mask == MOUSE_BUTTON_MASK_LEFT:
 			var new_position = position - (event.relative / zoom)
-			
 			position = new_position
-			print(get_screen_center_position())
+			
+			# When the camera reaches the limits we set, the camera stops moving
+			# on screen. But it actually keep moving behond the limits, even
+			# if it seems to stop moving on screen.
+			# This means that if the camera stops moving to the left for example,
+			# but we keep dragging, nothing moves on screen, but the camera actually
+			# keeps going to the left, and we have to make it come all the way back
+			# whithin the limits before we can see it move to the right again.
+			# This fixes this behavior by not allowing it to move behond the limits.
+			new_position = global_position
+			
+			var position_seen_on_screen = get_screen_center_position()
+			var real_position_of_camera = get_target_position()
+			
+			if real_position_of_camera.x != position_seen_on_screen.x:
+				new_position.x = position_seen_on_screen.x
+				
+			if real_position_of_camera.y != position_seen_on_screen.y:
+				new_position.y = position_seen_on_screen.y
+			
+			global_position = new_position
 			
 	# Mouse wheel zooms the camera
 	# Scrolling down zooms out, scrolling up zooms in
