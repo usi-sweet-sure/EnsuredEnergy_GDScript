@@ -20,7 +20,6 @@ var initial_curve_points: Array[Vector2]
 func _ready() -> void:
 	var curve = path_2d.curve
 	
-	
 	for i in range(curve.point_count):
 		var initial_point = curve.get_point_position(i)
 		var new_point = Vector2(initial_point.x, initial_point.y)

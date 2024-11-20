@@ -81,11 +81,17 @@ func _ready():
 			"POLICIES_ENERGY_POLICY_1_TEXT", 0.7, Policy.PolicyType.ENERGY, "MANDATORY BUILDING INSULATION")
 	energy_policy_1.add_effect("POLICIES_ENERGY_POLICY_1_EFFECT_1", 
 			func(): lower_household_demand())
+	# Adds text but the effect is already done in the function above
+	energy_policy_1.add_effect("POLICIES_ENERGY_POLICY_1_EFFECT_2", 
+			func(): pass)
 	
 	var energy_policy_2 = Policy.new("POLICIES_ENERGY_POLICY_2_TITLE",
 			"POLICIES_ENERGY_POLICY_2_TEXT", 0.6, Policy.PolicyType.ENERGY, "INDUSTRY SUBSIDY")
 	energy_policy_2.add_effect("POLICIES_ENERGY_POLICY_2_EFFECT_1",
 			func(): lower_industry_demand())
+	# Adds text but the effect is already done in the function above
+	energy_policy_2.add_effect("POLICIES_ENERGY_POLICY_2_EFFECT_2",
+			func(): pass)
 
 	policies = [env_campaign, energy_campaign, env_policy_1, env_policy_2, 
 			env_policy_3, energy_policy_1, energy_policy_2]
