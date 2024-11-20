@@ -39,11 +39,11 @@ func activate():
 	if trail_color_gradient != null:
 		use_gradient = true
 		
-	
 	active = true
 	
 
 func deactivate():
+	# active will be set to false on next iteration
 	loop = false
 	
 
@@ -65,6 +65,8 @@ func move_path():
 	if path_followers[0].progress_ratio >= 1.0:
 		if loop:
 			activate()
+		else:
+			active = false
 
 
 func update_path_gradient():

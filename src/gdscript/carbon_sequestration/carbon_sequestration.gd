@@ -21,9 +21,19 @@ func _on_sequestrated_co2_updated(value: float):
 		elif percentage_of_sequestrated_co2 > 33:
 			number_of_wind_gust = 2
 			
-		for i in number_of_wind_gust:
-			wind_gusts_left[i].activate()
-			wind_gusts_right[i].activate()
+		for i in wind_gusts_left.size():
+			if i < number_of_wind_gust:
+				var wind_gust = wind_gusts_left[i]
+				
+				if not wind_gust.active:
+					wind_gust.activate()
+					
+				wind_gust = wind_gusts_right[i]
+				if not wind_gust.active:
+					wind_gust.activate()
+			else:
+				wind_gusts_left[i].deactivate()
+				wind_gusts_right[i].deactivate()
 	else:
 		for gust in wind_gusts_left:
 			gust.deactivate()
