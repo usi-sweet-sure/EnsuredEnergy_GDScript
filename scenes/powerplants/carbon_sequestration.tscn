@@ -1,5 +1,6 @@
-[gd_scene load_steps=37 format=3 uid="uid://cl2v31dxkoeoq"]
+[gd_scene load_steps=47 format=3 uid="uid://cl2v31dxkoeoq"]
 
+[ext_resource type="Script" path="res://src/gdscript/carbon_sequestration/carbon_sequestration.gd" id="1_3h4xr"]
 [ext_resource type="Texture2D" uid="uid://cbqebssavvctr" path="res://assets/textures/powerplants/pp_sprite_on_carbon_sequestration.png" id="2_ooeel"]
 [ext_resource type="Shader" path="res://src/gdscript/shaders/outline.gdshader" id="2_xbwqu"]
 [ext_resource type="Script" path="res://src/gdscript/carbon_sequestration/texture_button.gd" id="3_dvmlx"]
@@ -18,8 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://fe0i52vl7ck6" path="res://assets/textures/ui/All-HQ-Assets-D_0007s_0006_Slider-bar-horizontal.png" id="14_httvl"]
 [ext_resource type="Texture2D" uid="uid://xmi4fk7xmp5j" path="res://assets/textures/ui/All-HQ-Assets-D_0007s_0032_Ball-Slider.png" id="15_axucn"]
 [ext_resource type="Script" path="res://src/gdscript/carbon_sequestration/end_game_block.gd" id="18_x7ve3"]
-[ext_resource type="Texture2D" uid="uid://y8d24u83in2p" path="res://assets/textures/powerplants/effects/smoke.png" id="19_7pnkw"]
-[ext_resource type="Script" path="res://src/gdscript/carbon_sequestration/fumes.gd" id="20_dhq7g"]
+[ext_resource type="PackedScene" uid="uid://e7nl64v1gs0l" path="res://scenes/wind_gust.tscn" id="19_4uveo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8ca5d"]
 shader = ExtResource("2_xbwqu")
@@ -29,14 +29,77 @@ shader_parameter/frequency = 10.0
 shader_parameter/phase_speed = 1.0
 shader_parameter/show = false
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ecigq"]
-particles_animation = true
-particles_anim_h_frames = 3
-particles_anim_v_frames = 1
-particles_anim_loop = true
+[sub_resource type="Gradient" id="Gradient_7lxlr"]
+resource_local_to_scene = true
+offsets = PackedFloat32Array(0, 0.515432, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0.952)
 
-[sub_resource type="Gradient" id="Gradient_sr332"]
-colors = PackedColorArray(0.337255, 0.337255, 0.337255, 1, 1, 1, 1, 0.329412)
+[sub_resource type="Curve2D" id="Curve2D_tnj05"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(-67.102, 8.29556, 67.102, -8.29556, 1834, 256, 16.6335, -401.674, -16.6335, 401.674, 1620, 641)
+}
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_1jr4u"]
+resource_local_to_scene = true
+offsets = PackedFloat32Array(0, 0.515432, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0.952941)
+
+[sub_resource type="Curve2D" id="Curve2D_7tuf6"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(-300.723, 3.3249, 300.723, -3.3249, 1477, -255, -2.81589, -275.437, 2.81589, 275.437, 1778, 219)
+}
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_u48en"]
+resource_local_to_scene = true
+offsets = PackedFloat32Array(0, 0.515432, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0.952941)
+
+[sub_resource type="Curve2D" id="Curve2D_7ggbr"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(-160.979, -156.382, 160.979, 156.382, 1658, -600, -112.289, -169.447, 112.289, 169.447, 1773, 217)
+}
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_26osf"]
+resource_local_to_scene = true
+offsets = PackedFloat32Array(0, 0.515432, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0.952941)
+
+[sub_resource type="Curve2D" id="Curve2D_5h5uf"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(325.484, 72.2196, -325.484, -72.2196, 1056.29, -264.152, -7.40231, -174.216, 7.40231, 174.216, 650.795, 56.8176)
+}
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_vuxcu"]
+resource_local_to_scene = true
+offsets = PackedFloat32Array(0, 0.515432, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0.952941)
+
+[sub_resource type="Curve2D" id="Curve2D_aqx0k"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(-70.7928, 27.0195, 70.7928, -27.0195, 1761, -455, 7.09799, -154.381, -7.09799, 154.381, 1923, -314, -108.912, -328.945, 108.912, 328.945, 1768, 209)
+}
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_cl548"]
+resource_local_to_scene = true
+offsets = PackedFloat32Array(0, 0.515432, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0.952941)
+
+[sub_resource type="Curve2D" id="Curve2D_io45y"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(-53.3823, -102.389, 53.3823, 102.389, 1307, -78, -119.902, -4.1901, 119.902, 4.1901, 1561, 61, -57.6799, -171.794, 57.6799, 171.794, 1774, 216)
+}
+point_count = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3tdw6"]
 bg_color = Color(0.65098, 0.65098, 0.65098, 0.0470588)
@@ -148,8 +211,7 @@ VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_idcep")
 [node name="CarbonSequestration" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+script = ExtResource("1_3h4xr")
 
 [node name="TextureButton" type="TextureButton" parent="." groups=["pp_sprites"]]
 material = SubResource("ShaderMaterial_8ca5d")
@@ -164,56 +226,56 @@ toggle_mode = true
 texture_normal = ExtResource("2_ooeel")
 script = ExtResource("3_dvmlx")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-material = SubResource("CanvasItemMaterial_ecigq")
-position = Vector2(122, -103)
-amount = 100
-lifetime = 9.0
-explosiveness = 0.1
-draw_order = 1
-texture = ExtResource("19_7pnkw")
-emission_shape = 2
-emission_sphere_radius = 10.0
-direction = Vector2(0, -1)
-spread = 0.0
-gravity = Vector2(0, 0)
-initial_velocity_min = 40.0
-initial_velocity_max = 40.0
-angular_velocity_min = -40.0
-angular_velocity_max = 40.0
-linear_accel_max = 5.0
-tangential_accel_max = 5.0
-scale_amount_max = 1.2
-color_ramp = SubResource("Gradient_sr332")
-anim_speed_min = 0.1
-anim_speed_max = 1.0
-script = ExtResource("20_dhq7g")
+[node name="WindGustLeft1" parent="." instance=ExtResource("19_4uveo")]
+position = Vector2(-1495, -725)
+trail_speed = 0.007
+trail_color_gradient = SubResource("Gradient_7lxlr")
 
-[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
-material = SubResource("CanvasItemMaterial_ecigq")
-position = Vector2(403, 58)
-amount = 100
-lifetime = 9.0
-explosiveness = 0.1
-fract_delta = false
-draw_order = 1
-texture = ExtResource("19_7pnkw")
-emission_shape = 2
-emission_sphere_radius = 10.0
-direction = Vector2(0, -1)
-spread = 0.0
-gravity = Vector2(0, 0)
-initial_velocity_min = 40.0
-initial_velocity_max = 40.0
-angular_velocity_min = -40.0
-angular_velocity_max = 40.0
-linear_accel_max = 5.0
-tangential_accel_max = 5.0
-scale_amount_max = 1.2
-color_ramp = SubResource("Gradient_sr332")
-anim_speed_min = 0.1
-anim_speed_max = 1.0
-script = ExtResource("20_dhq7g")
+[node name="Path2D" parent="WindGustLeft1" index="0"]
+curve = SubResource("Curve2D_tnj05")
+
+[node name="WindGustLeft2" parent="." instance=ExtResource("19_4uveo")]
+position = Vector2(-1657, -314)
+trail_speed = 0.008
+trail_color_gradient = SubResource("Gradient_1jr4u")
+
+[node name="Path2D" parent="WindGustLeft2" index="0"]
+curve = SubResource("Curve2D_7tuf6")
+
+[node name="WindGustLeft3" parent="." instance=ExtResource("19_4uveo")]
+position = Vector2(-1647, -318)
+trail_speed = 0.009
+trail_color_gradient = SubResource("Gradient_u48en")
+
+[node name="Path2D" parent="WindGustLeft3" index="0"]
+curve = SubResource("Curve2D_7ggbr")
+
+[node name="WindGustRight1" parent="." instance=ExtResource("19_4uveo")]
+position = Vector2(-253, 0)
+scale = Vector2(0.998778, 1.00321)
+trail_speed = 0.007
+trail_color_gradient = SubResource("Gradient_26osf")
+
+[node name="Path2D" parent="WindGustRight1" index="0"]
+position = Vector2(6.00734, 22.9264)
+curve = SubResource("Curve2D_5h5uf")
+
+[node name="WindGustRight2" parent="." instance=ExtResource("19_4uveo")]
+position = Vector2(-1369, -143)
+trail_speed = 0.008
+trail_color_gradient = SubResource("Gradient_vuxcu")
+
+[node name="Path2D" parent="WindGustRight2" index="0"]
+curve = SubResource("Curve2D_aqx0k")
+
+[node name="WindGustRight3" parent="." instance=ExtResource("19_4uveo")]
+position = Vector2(-1382, -150)
+trail_speed = 0.009
+trail_color_gradient = SubResource("Gradient_cl548")
+
+[node name="Path2D" parent="WindGustRight3" index="0"]
+position = Vector2(2, 0)
+curve = SubResource("Curve2D_io45y")
 
 [node name="InfoFrame" type="TextureRect" parent="." groups=["pp_info_frames"]]
 visible = false
@@ -484,3 +546,10 @@ script = ExtResource("18_x7ve3")
 [connection signal="drag_ended" from="InfoFrame/CarbonSlider/HSlider" to="InfoFrame/CarbonSlider/HSlider" method="_on_drag_ended"]
 [connection signal="value_changed" from="InfoFrame/CarbonSlider/HSlider" to="InfoFrame/Screen/VBoxContainer/VBoxContainer/Pollution/Value/Value" method="_on_slider_value_changed"]
 [connection signal="value_changed" from="InfoFrame/CarbonSlider/HSlider" to="InfoFrame/CarbonSlider/HSlider" method="_on_value_changed"]
+
+[editable path="WindGustLeft1"]
+[editable path="WindGustLeft2"]
+[editable path="WindGustLeft3"]
+[editable path="WindGustRight1"]
+[editable path="WindGustRight2"]
+[editable path="WindGustRight3"]
