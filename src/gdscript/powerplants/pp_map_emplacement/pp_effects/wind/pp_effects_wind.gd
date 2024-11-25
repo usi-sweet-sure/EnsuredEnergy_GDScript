@@ -25,8 +25,8 @@ func effects_off(_metrics: PowerplantMetrics):
 		wind_gust.deactivate()
 	
 	
-func effects_on(_metrics: PowerplantMetrics):
-	animation_player.play("rotate_clockwise")
+func effects_on(metrics: PowerplantMetrics):
+	animation_player.play("upgrade" + str(metrics.current_upgrade))
 	
 	for wind_gust in wind_gusts:
 		wind_gust.activate()
@@ -34,6 +34,10 @@ func effects_on(_metrics: PowerplantMetrics):
 	
 	
 func _on_powerplant_upgraded(metrics: PowerplantMetrics):
+	animation_player.play("RESET")
+	await animation_player.animation_finished
+	animation_player.play("upgrade" + str(metrics.current_upgrade))
+	
 	var new_wind_gust: WindGust = wind_gust_scene.instantiate()
 	add_child(new_wind_gust)
 	new_wind_gust.position = Vector2(-794, 429)
@@ -41,11 +45,15 @@ func _on_powerplant_upgraded(metrics: PowerplantMetrics):
 	new_wind_gust.random_y_offset = 200
 	wind_gusts.append(new_wind_gust)
 	new_wind_gust.activate()
-	animation_player.speed_scale += 0.25
+	animation_player.speed_scale += 0.10
 
 
 func _on_powerplant_downgraded(metrics: PowerplantMetrics):
+	animation_player.play("RESET")
+	await animation_player.animation_finished
+	animation_player.play("upgrade" + str(metrics.current_upgrade))
+	
 	var removed_wind_gust = wind_gusts.pop_back()
 	remove_child(removed_wind_gust)
 	removed_wind_gust.queue_free()
-	animation_player.speed_scale -= 0.25
+	animation_player.speed_scale -= 0.10
