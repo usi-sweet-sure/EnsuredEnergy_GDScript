@@ -152,16 +152,16 @@ var powerplants_life_spans_in_turns: Array[int] = [
 
 # MUST BE in the same order as EngineTypeIds
 var powerplants_max_upgrades: Array[int] = [
-	5, # Solar
-	5, # Wind
+	6, # Solar
+	6, # Wind
 	3, # Gas
 	3, # Waste
-	2, # Biomass
-	3, # Biogas
+	9, # Biomass
+	9, # Biogas
 	0, # Nuclear
 	3, # Carbon sequestration
-	4, # Hydro
-	4, # River
+	9, # Hydro
+	9, # River
 ]
 
 # MUST BE in the same order as EngineTypeIds
@@ -188,8 +188,8 @@ var powerplants_upgrade_factors_for_production_costs: Array[float] = [
 	0.25, # Biogas
 	0.1, # Nuclear
 	0.5, # Carbon sequestration
-	0.025, # Hydro
-	0.025, # River
+	0.02, # Hydro
+	0.02, # River
 ]
 
 # MUST BE in the same order as EngineTypeIds
@@ -202,8 +202,8 @@ var powerplants_upgrade_factors_for_emissions: Array[float] = [
 	0.25, # Biogas
 	0.1, # Nuclear
 	0.5, # Carbon sequestration
-	0.025, # Hydro
-	0.025, # River
+	0.02, # Hydro
+	0.02, # River
 ]
 
 # MUST BE in the same order as EngineTypeIds
@@ -216,8 +216,8 @@ var powerplants_upgrade_factors_for_land_use: Array[float] = [
 	0.25, # Biogas
 	0.1, # Nuclear
 	0.5, # Carbon sequestration
-	0.025, # Hydro
-	0.025, # River
+	0.02, # Hydro
+	0.02, # River
 ]
 
 # MUST BE in the same order as EngineTypeIds
@@ -230,8 +230,8 @@ var powerplants_upgrade_factors_for_winter_supply: Array[float] = [
 	0.25, # Biogas
 	0.1, # Nuclear
 	0.5, # Carbon sequestration
-	0.025, # Hydro
-	0.025, # River
+	0.02, # Hydro
+	0.02, # River
 ]
 
 # MUST BE in the same order as EngineTypeIds
@@ -244,8 +244,8 @@ var powerplants_upgrade_factors_for_summer_supply: Array[float] = [
 	0.25, # Biogas
 	0.1, # Nuclear
 	0.5, # Carbon sequestration
-	0.025, # Hydro
-	0.025, # River
+	0.02, # Hydro
+	0.02, # River
 ]
 
 # MUST BE in the same order as EngineTypeIds
@@ -264,16 +264,16 @@ var powerplants_can_upgrade: Array[bool] = [
 
 # MUST BE in the same order as EngineTypeIds
 var powerplants_upgrade_costs: Array[float] = [
-	7, # Solar
-	2, # Wind
+	10, # Solar
+	5, # Wind
 	25, # Gas
 	25, # Waste
 	20, # Biomass
 	15, # Biogas
 	25, # Nuclear
 	25, # Carbon sequestration
-	25, # Hydro
-	20, # River
+	30, # Hydro
+	25, # River
 ]
 
 # MUST BE in the same order as EngineTypeIds

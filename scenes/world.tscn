@@ -76,7 +76,7 @@ position = Vector2(2580, 244)
 texture = ExtResource("7_ptaf0")
 
 [node name="PpMapEmplacement6" parent="." instance=ExtResource("7_3e8ib")]
-position = Vector2(2397, 125)
+position = Vector2(2400, 57)
 build_on_start = 2
 
 [node name="CarbonSequestration" parent="." instance=ExtResource("18_pdx3e")]
