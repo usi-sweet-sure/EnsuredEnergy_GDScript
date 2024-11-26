@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cv7x82cp32x66"
-path="res://.godot/imported/pp_sprite_off_solar_4.png-5de907e1d7910f4dd9588398d3c1a774.ctex"
+uid="uid://bejrdksv1bshw"
+path="res://.godot/imported/pp_sprite_off_solar_6.png-26a6e4eab0487083b4ad6ccaf418c190.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/powerplants/pp_sprite_off_solar_4.png"
-dest_files=["res://.godot/imported/pp_sprite_off_solar_4.png-5de907e1d7910f4dd9588398d3c1a774.ctex"]
+source_file="res://assets/textures/powerplants/pp_sprite_off_solar_6.png"
+dest_files=["res://.godot/imported/pp_sprite_off_solar_6.png-26a6e4eab0487083b4ad6ccaf418c190.ctex"]
 
 [params]
 

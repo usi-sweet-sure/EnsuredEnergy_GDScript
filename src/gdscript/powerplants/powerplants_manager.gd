@@ -57,7 +57,13 @@ var powerplants_effects: Array[String] = [
 # Second dimension in upgrades order
 var powerplants_textures_on: Array[Array] = [
 	# Solar
-	["res://assets/textures/powerplants/pp_sprite_on_solar.png"],
+	["res://assets/textures/powerplants/pp_sprite_on_solar.png",
+	 "res://assets/textures/powerplants/pp_sprite_on_solar_1.png",
+	 "res://assets/textures/powerplants/pp_sprite_on_solar_2.png",
+	 "res://assets/textures/powerplants/pp_sprite_on_solar_3.png",
+	 "res://assets/textures/powerplants/pp_sprite_on_solar_4.png",
+	 "res://assets/textures/powerplants/pp_sprite_on_solar_5.png",
+	 "res://assets/textures/powerplants/pp_sprite_on_solar_6.png"],
 	# Wind
 	["res://assets/textures/powerplants/pp_sprite_on_wind.png",
 	 "res://assets/textures/powerplants/pp_sprite_on_wind_1.png",
@@ -88,7 +94,13 @@ var powerplants_textures_on: Array[Array] = [
 # Second dimension in upgrades order
 var powerplants_textures_off: Array[Array] = [
 	# Solar
-	["res://assets/textures/powerplants/pp_sprite_off_solar.png"],
+	["res://assets/textures/powerplants/pp_sprite_off_solar.png",
+	 "res://assets/textures/powerplants/pp_sprite_off_solar_1.png",
+	 "res://assets/textures/powerplants/pp_sprite_off_solar_2.png",
+	 "res://assets/textures/powerplants/pp_sprite_off_solar_3.png",
+	 "res://assets/textures/powerplants/pp_sprite_off_solar_4.png",
+	 "res://assets/textures/powerplants/pp_sprite_off_solar_5.png",
+	 "res://assets/textures/powerplants/pp_sprite_off_solar_6.png"],
 	# Wind
 	["res://assets/textures/powerplants/pp_sprite_off_wind.png",
 	 "res://assets/textures/powerplants/pp_sprite_off_wind_1.png",
