@@ -19,7 +19,7 @@ func _ready():
 
 
 func effects_off(_metrics: PowerplantMetrics):
-	animation_player.stop()
+	animation_player.play("RESET")
 	
 	for wind_gust in wind_gusts:
 		wind_gust.deactivate()
