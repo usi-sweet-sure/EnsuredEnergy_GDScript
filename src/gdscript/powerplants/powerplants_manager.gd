@@ -41,7 +41,7 @@ var powerplant_scene = preload("res://scenes/powerplants/pp_map_emplacement/pp_s
 # Effects when the powerplants are on. They are overlayed on the powerplant scene
 # MUST BE in the same order as EngineTypeIds
 var powerplants_effects: Array[String] = [
-	"", # Solar
+	"res://scenes/powerplants/pp_map_emplacement/pp_effects/solar/pp_effects_solar.tscn", # Solar
 	"res://scenes/powerplants/pp_map_emplacement/pp_effects/wind/pp_effects_wind.tscn", # Wind
 	"res://scenes/powerplants/pp_map_emplacement/pp_effects/gas/pp_effects_gas.tscn", # Gas
 	"res://scenes/powerplants/pp_map_emplacement/pp_effects/waste/pp_effects_waste.tscn", # Waste

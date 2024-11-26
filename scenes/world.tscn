@@ -156,13 +156,8 @@ build_button = ExtResource("13_iyb57")
 [node name="PpMapEmplacement15" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(3435, 870)
 build_on_start = 0
-upgrade_factor_for_production_costs = 1
-upgrade_factor_for_emissions = 1
-upgrade_factor_for_land_use = 1
-upgrade_factor_for_winter_supply = 1
-upgrade_factor_for_summer_supply = 1
-current_upgrade = 3
-max_upgrade = 3
+current_upgrade = 15
+max_upgrade = 15
 can_upgrade = false
 powerplant_on = ExtResource("12_6pfsk")
 powerplant_off = SubResource("CompressedTexture2D_dhjl6")
