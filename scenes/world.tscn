@@ -141,7 +141,7 @@ position = Vector2(-1143, 1674)
 texture = ExtResource("10_bwdos")
 
 [node name="PpMapEmplacement14" parent="." instance=ExtResource("7_3e8ib")]
-position = Vector2(2828, 885)
+position = Vector2(2508, 788)
 build_on_start = 9
 solar = false
 wind = false
@@ -154,7 +154,7 @@ river = true
 build_button = ExtResource("13_iyb57")
 
 [node name="PpMapEmplacement15" parent="." instance=ExtResource("7_3e8ib")]
-position = Vector2(3435, 870)
+position = Vector2(3163, 955)
 build_on_start = 0
 current_upgrade = 15
 max_upgrade = 15

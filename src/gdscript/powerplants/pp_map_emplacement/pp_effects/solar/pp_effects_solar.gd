@@ -8,6 +8,15 @@ extends Node2D
 	[$Upgrades/Highlight4],
 	[$Upgrades/Highlight5, $Upgrades/Cover5, $Upgrades/Cover5_2],
 	[$Upgrades/Highlight6, $Upgrades/Cover6],
+	[],
+	[],
+	[],
+	[],
+	[],
+	[],
+	[],
+	[],
+	[$Level15/Highlight7, $Level15/Highlight5, $Level15/Highlight6, $Level15/Cover6, $Level15/Cover5, $Level15/Cover5_2, $Level15/Highlight3, $Level15/Highlight0, $Level15/Cover1, $Level15/Highlight4, $Level15/Cover2, $Level15/Highlight1, $Level15/Highlight2],
 ]
 
 func _ready() -> void:
@@ -27,19 +36,17 @@ func effects_off(_metrics: PowerplantMetrics):
 func effects_on(metrics: PowerplantMetrics):
 	var counter = 0
 	
-	if metrics.current_upgrade != 15: #special case
-		while counter <= metrics.current_upgrade:
-			for effect in upgrades_effects[counter]:
-					effect.show()
-			counter += 1
+	while counter <= metrics.current_upgrade:
+		for effect in upgrades_effects[counter]:
+				effect.show()
+		counter += 1
 
 
 func _on_powerplant_upgraded(metrics: PowerplantMetrics):
-	if metrics.can_upgrade: #special case if not
-		var effects_to_show = upgrades_effects[metrics.current_upgrade]
-		
-		for effect in effects_to_show:
-			effect.show()
+	var effects_to_show = upgrades_effects[metrics.current_upgrade]
+	
+	for effect in effects_to_show:
+		effect.show()
 
 
 func _on_powerplant_downgraded(metrics: PowerplantMetrics):
