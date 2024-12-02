@@ -1,7 +1,7 @@
 extends RichTextLabel
 
 var PV_upgrade_num = "3"
-var wind_upgrade_num = "5"
+var wind_upgrade_num = "3"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	PolicyManager.policy_button_clicked.connect(_on_policy_button_clicked)

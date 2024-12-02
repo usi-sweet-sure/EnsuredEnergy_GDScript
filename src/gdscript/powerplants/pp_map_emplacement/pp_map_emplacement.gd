@@ -112,6 +112,7 @@ var can_build: Array[PowerplantsManager.EngineTypeIds] = []
 var powerplant_node_name: String = ""
 var history: MapEmplacementHistory
 
+
 func _ready():
 	TutorialManager.tutorial_started.connect(_on_tutorial_started)
 	TutorialManager.tutorial_ended.connect(_on_tutorial_ended)
@@ -146,6 +147,7 @@ func _ready():
 	
 	if override_bb_texture:
 		bb_normal.texture_normal = build_button
+		
 		
 func _on_bb_normal_toggled(toggled_on: bool):
 	# The build menu listens to this and emits back a build request with necessary,
@@ -195,14 +197,15 @@ func _on_powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMe
 				
 			pp_scene.activate(true)
 			
-			if new_metrics.current_upgrade > 0:
+			# We can set a powerplant to be directly built at a specific level of
+			# upgrade
+			if new_metrics.current_upgrade > 0: 
 				var target_upgrade = new_metrics.current_upgrade
 				new_metrics.current_upgrade = 0
 				new_metrics.active = true
 				pp_scene.set_metrics(new_metrics)
 				
 				var count = 1
-				
 				while count <= target_upgrade:
 					pp_scene._on_button_plus_pressed()
 					count += 1

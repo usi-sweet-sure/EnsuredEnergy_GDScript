@@ -163,5 +163,10 @@ func _update_context_no_signal(body):
 	context_updated_for_new_turn = true
 	var json = JSON.new()
 	json.parse(body.get_string_from_utf8())
-	ctx = json.get_data()
+	
+	var data = json.get_data()
+	
+	if data != null:
+		ctx = data
+		
 	get_demand_from_context()

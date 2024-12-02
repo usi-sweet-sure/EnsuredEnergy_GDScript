@@ -64,7 +64,7 @@ func _ready():
 			"POLICIES_ENVIRONMENTAL_POLICY_1_TEXT", 0.8, Policy.PolicyType.ENVIRONMENTAL,
 			"ENABLE ALPINE SOLAR PV")
 	env_policy_1.add_effect("POLICIES_ENVIRONMENTAL_POLICY_1_EFFECT_1", 
-			func(): increase_max_upgrade(8, PowerplantsManager.EngineTypeIds.SOLAR))
+			func(): increase_max_upgrade(9, PowerplantsManager.EngineTypeIds.SOLAR))
 			
 	var env_policy_2 = Policy.new("POLICIES_ENVIRONMENTAL_POLICY_2_TITLE",
 			"POLICIES_ENVIRONMENTAL_POLICY_2_TEXT", 0.6, Policy.PolicyType.ENVIRONMENTAL,
@@ -75,17 +75,23 @@ func _ready():
 	var env_policy_3 = Policy.new("POLICIES_ENVIRONMENTAL_POLICY_3_TITLE",
 			"POLICIES_ENVIRONMENTAL_POLICY_3_TEXT", 0.5, Policy.PolicyType.ENVIRONMENTAL, "WIND PARKS REGULATION")		
 	env_policy_3.add_effect("POLICIES_ENVIRONMENTAL_POLICY_3_EFFECT_1", 
-			func(): increase_max_upgrade(8, PowerplantsManager.EngineTypeIds.WIND))
+			func(): increase_max_upgrade(9, PowerplantsManager.EngineTypeIds.WIND))
 	
 	var energy_policy_1 = Policy.new("POLICIES_ENERGY_POLICY_1_TITLE",
 			"POLICIES_ENERGY_POLICY_1_TEXT", 0.7, Policy.PolicyType.ENERGY, "MANDATORY BUILDING INSULATION")
 	energy_policy_1.add_effect("POLICIES_ENERGY_POLICY_1_EFFECT_1", 
 			func(): lower_household_demand())
+	# Adds text but the effect is already done in the function above
+	energy_policy_1.add_effect("POLICIES_ENERGY_POLICY_1_EFFECT_2", 
+			func(): pass)
 	
 	var energy_policy_2 = Policy.new("POLICIES_ENERGY_POLICY_2_TITLE",
 			"POLICIES_ENERGY_POLICY_2_TEXT", 0.6, Policy.PolicyType.ENERGY, "INDUSTRY SUBSIDY")
 	energy_policy_2.add_effect("POLICIES_ENERGY_POLICY_2_EFFECT_1",
 			func(): lower_industry_demand())
+	# Adds text but the effect is already done in the function above
+	energy_policy_2.add_effect("POLICIES_ENERGY_POLICY_2_EFFECT_2",
+			func(): pass)
 
 	policies = [env_campaign, energy_campaign, env_policy_1, env_policy_2, 
 			env_policy_3, energy_policy_1, energy_policy_2]
@@ -124,7 +130,7 @@ func lower_industry_demand():
 			industry_demand = float(i["tj"])
 	var year = Gameloop.year_list[Gameloop.current_turn] #affects following turn
 	var prm_id = 22
-	var tj = -(industry_demand * 5.0 / 100.0)
+	var tj = -(industry_demand * 10.0 / 100.0)
 	Context.send_parameters_to_model(Context.res_id, year, prm_id, tj)
 	
 	
@@ -135,7 +141,7 @@ func lower_household_demand():
 			household_demand = float(i["tj"])
 	var year = Gameloop.year_list[Gameloop.current_turn] #affects following turn
 	var prm_id = 7
-	var tj = -(household_demand * 5.0 / 100.0)
+	var tj = -(household_demand * 10.0 / 100.0)
 	Context.send_parameters_to_model(Context.res_id, year, prm_id, tj)
 	
 	

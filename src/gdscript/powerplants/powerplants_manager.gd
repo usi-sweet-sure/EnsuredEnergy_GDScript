@@ -38,32 +38,93 @@ var metrics_backup: Array[PowerplantMetrics] = []
 # Used by all the types. Texture is set at runtime when the scene is instantiated
 var powerplant_scene = preload("res://scenes/powerplants/pp_map_emplacement/pp_scene.tscn")
 
+# Effects when the powerplants are on. They are overlayed on the powerplant scene
 # MUST BE in the same order as EngineTypeIds
-var powerplants_textures_on: Array[String] = [
-	"res://assets/textures/powerplants/pp_sprite_on_solar.png", # Solar
-	"res://assets/textures/powerplants/pp_sprite_on_wind.png", # Wind
-	"res://assets/textures/powerplants/pp_sprite_on_gas.png", # Gas
-	"res://assets/textures/powerplants/pp_sprite_on_waste.png", # Waste
-	"res://assets/textures/powerplants/pp_sprite_on_biomass.png", # Biomass
-	"res://assets/textures/powerplants/pp_sprite_on_biogas.png", # Biogas
-	"res://assets/textures/powerplants/pp_sprite_on_nuclear.png", # Nuclear
-	"res://assets/textures/powerplants/pp_sprite_on_carbon_sequestration.png", # Carbon sequestration
-	"res://assets/textures/powerplants/pp_sprite_on_hydro.png", # Hydro
-	"res://assets/textures/powerplants/pp_sprite_on_river.png", # River 
+var powerplants_effects: Array[String] = [
+	"res://scenes/powerplants/pp_map_emplacement/pp_effects/solar/pp_effects_solar.tscn", # Solar
+	"res://scenes/powerplants/pp_map_emplacement/pp_effects/wind/pp_effects_wind.tscn", # Wind
+	"res://scenes/powerplants/pp_map_emplacement/pp_effects/gas/pp_effects_gas.tscn", # Gas
+	"res://scenes/powerplants/pp_map_emplacement/pp_effects/waste/pp_effects_waste.tscn", # Waste
+	"res://scenes/powerplants/pp_map_emplacement/pp_effects/biomass/pp_effects_biomass.tscn", # Biomass
+	"", # Biogas
+	"res://scenes/powerplants/pp_map_emplacement/pp_effects/nuclear/pp_effects_nuclear.tscn", # Nuclear
+	"", # Carbon sequestration
+	"res://scenes/powerplants/pp_map_emplacement/pp_effects/hydro/pp_effects_hydro.tscn", # Hydro
+	"res://scenes/powerplants/pp_map_emplacement/pp_effects/river/pp_effects_river.tscn", # River 
+] 
+
+# First dimension MUST BE in the same order as EngineTypeIds
+# Second dimension in upgrades order
+var powerplants_textures_on: Array[Array] = [
+	# Solar
+	["res://assets/textures/powerplants/pp_sprite_on_solar.png",
+	 "res://assets/textures/powerplants/pp_sprite_on_solar_1.png",
+	 "res://assets/textures/powerplants/pp_sprite_on_solar_2.png",
+	 "res://assets/textures/powerplants/pp_sprite_on_solar_3.png",
+	 "res://assets/textures/powerplants/pp_sprite_on_solar_4.png",
+	 "res://assets/textures/powerplants/pp_sprite_on_solar_5.png",
+	 "res://assets/textures/powerplants/pp_sprite_on_solar_6.png"],
+	# Wind
+	["res://assets/textures/powerplants/pp_sprite_on_wind.png",
+	 "res://assets/textures/powerplants/pp_sprite_on_wind_1.png",
+	 "res://assets/textures/powerplants/pp_sprite_on_wind_2.png",
+	 "res://assets/textures/powerplants/pp_sprite_on_wind_3.png",
+	 "res://assets/textures/powerplants/pp_sprite_on_wind_4.png",
+	 "res://assets/textures/powerplants/pp_sprite_on_wind_5.png",
+	 "res://assets/textures/powerplants/pp_sprite_on_wind_6.png",],
+	# Gas
+	["res://assets/textures/powerplants/pp_sprite_on_gas.png"],
+	# Waste
+	["res://assets/textures/powerplants/pp_sprite_on_waste.png"],
+	# Biomass
+	["res://assets/textures/powerplants/pp_sprite_on_biomass.png"],
+	# Biogas
+	["res://assets/textures/powerplants/pp_sprite_on_biogas.png"],
+	# Nuclear
+	["res://assets/textures/powerplants/pp_sprite_on_nuclear.png"],
+	# Carbon sequestration
+	["res://assets/textures/powerplants/pp_sprite_on_carbon_sequestration.png"],
+	# Hydro
+	["res://assets/textures/powerplants/pp_sprite_on_hydro.png"],
+	# River 
+	["res://assets/textures/powerplants/pp_sprite_on_river.png"],
 ]
 
-# MUST BE in the same order as EngineTypeIds
-var powerplants_textures_off: Array[String] = [
-	"res://assets/textures/powerplants/pp_sprite_off_solar.png", # Solar
-	"res://assets/textures/powerplants/pp_sprite_off_wind.png", # Wind
-	"res://assets/textures/powerplants/pp_sprite_off_gas.png", # Gas
-	"res://assets/textures/powerplants/pp_sprite_off_waste.png", # Waste
-	"res://assets/textures/powerplants/pp_sprite_off_biomass.png", # Biomass
-	"res://assets/textures/powerplants/pp_sprite_off_biogas.png", # Biogas
-	"res://assets/textures/powerplants/pp_sprite_off_nuclear.png", # Nuclear
-	"res://assets/textures/powerplants/pp_sprite_off_carbon_sequestration.png", # Carbon sequestration
-	"res://assets/textures/powerplants/pp_sprite_off_hydro.png", # Hydro
-	"res://assets/textures/powerplants/pp_sprite_off_river.png", # River 
+# First dimension MUST BE in the same order as EngineTypeIds
+# Second dimension in upgrades order
+var powerplants_textures_off: Array[Array] = [
+	# Solar
+	["res://assets/textures/powerplants/pp_sprite_off_solar.png",
+	 "res://assets/textures/powerplants/pp_sprite_off_solar_1.png",
+	 "res://assets/textures/powerplants/pp_sprite_off_solar_2.png",
+	 "res://assets/textures/powerplants/pp_sprite_off_solar_3.png",
+	 "res://assets/textures/powerplants/pp_sprite_off_solar_4.png",
+	 "res://assets/textures/powerplants/pp_sprite_off_solar_5.png",
+	 "res://assets/textures/powerplants/pp_sprite_off_solar_6.png"],
+	# Wind
+	["res://assets/textures/powerplants/pp_sprite_off_wind.png",
+	 "res://assets/textures/powerplants/pp_sprite_off_wind_1.png",
+	 "res://assets/textures/powerplants/pp_sprite_off_wind_2.png",
+	 "res://assets/textures/powerplants/pp_sprite_off_wind_3.png",
+	 "res://assets/textures/powerplants/pp_sprite_off_wind_4.png",
+	 "res://assets/textures/powerplants/pp_sprite_off_wind_5.png",
+	 "res://assets/textures/powerplants/pp_sprite_off_wind_6.png",], 
+	# Gas
+	["res://assets/textures/powerplants/pp_sprite_off_gas.png"],
+	# Waste
+	["res://assets/textures/powerplants/pp_sprite_off_waste.png"],
+	# Biomass
+	["res://assets/textures/powerplants/pp_sprite_off_biomass.png"],
+	# Biogas
+	["res://assets/textures/powerplants/pp_sprite_off_biogas.png"],
+	# Nuclear
+	["res://assets/textures/powerplants/pp_sprite_off_nuclear.png"],
+	# Carbon sequestration
+	["res://assets/textures/powerplants/pp_sprite_off_carbon_sequestration.png"],
+	# Hydro
+	["res://assets/textures/powerplants/pp_sprite_off_hydro.png"],
+	# River 
+	["res://assets/textures/powerplants/pp_sprite_off_river.png"],
 ]
 
 # MUST BE in the same order as EngineTypeIds
@@ -110,16 +171,16 @@ var powerplants_life_spans_in_turns: Array[int] = [
 
 # MUST BE in the same order as EngineTypeIds
 var powerplants_max_upgrades: Array[int] = [
-	5, # Solar
-	5, # Wind
+	6, # Solar
+	6, # Wind
 	3, # Gas
 	3, # Waste
-	2, # Biomass
-	3, # Biogas
+	9, # Biomass
+	9, # Biogas
 	0, # Nuclear
 	3, # Carbon sequestration
-	4, # Hydro
-	4, # River
+	9, # Hydro
+	9, # River
 ]
 
 # MUST BE in the same order as EngineTypeIds
@@ -146,8 +207,8 @@ var powerplants_upgrade_factors_for_production_costs: Array[float] = [
 	0.25, # Biogas
 	0.1, # Nuclear
 	0.5, # Carbon sequestration
-	0.025, # Hydro
-	0.025, # River
+	0.02, # Hydro
+	0.02, # River
 ]
 
 # MUST BE in the same order as EngineTypeIds
@@ -160,8 +221,8 @@ var powerplants_upgrade_factors_for_emissions: Array[float] = [
 	0.25, # Biogas
 	0.1, # Nuclear
 	0.5, # Carbon sequestration
-	0.025, # Hydro
-	0.025, # River
+	0.02, # Hydro
+	0.02, # River
 ]
 
 # MUST BE in the same order as EngineTypeIds
@@ -174,8 +235,8 @@ var powerplants_upgrade_factors_for_land_use: Array[float] = [
 	0.25, # Biogas
 	0.1, # Nuclear
 	0.5, # Carbon sequestration
-	0.025, # Hydro
-	0.025, # River
+	0.02, # Hydro
+	0.02, # River
 ]
 
 # MUST BE in the same order as EngineTypeIds
@@ -188,8 +249,8 @@ var powerplants_upgrade_factors_for_winter_supply: Array[float] = [
 	0.25, # Biogas
 	0.1, # Nuclear
 	0.5, # Carbon sequestration
-	0.025, # Hydro
-	0.025, # River
+	0.02, # Hydro
+	0.02, # River
 ]
 
 # MUST BE in the same order as EngineTypeIds
@@ -202,8 +263,8 @@ var powerplants_upgrade_factors_for_summer_supply: Array[float] = [
 	0.25, # Biogas
 	0.1, # Nuclear
 	0.5, # Carbon sequestration
-	0.025, # Hydro
-	0.025, # River
+	0.02, # Hydro
+	0.02, # River
 ]
 
 # MUST BE in the same order as EngineTypeIds
@@ -222,16 +283,16 @@ var powerplants_can_upgrade: Array[bool] = [
 
 # MUST BE in the same order as EngineTypeIds
 var powerplants_upgrade_costs: Array[float] = [
-	7, # Solar
-	2, # Wind
+	10, # Solar
+	5, # Wind
 	25, # Gas
 	25, # Waste
 	20, # Biomass
 	15, # Biogas
 	25, # Nuclear
 	25, # Carbon sequestration
-	25, # Hydro
-	20, # River
+	30, # Hydro
+	25, # River
 ]
 
 # MUST BE in the same order as EngineTypeIds
@@ -456,7 +517,6 @@ func update_buildings_impact():
 	var total_production_costs = 0
 	var total_emissions = 0
 	var total_land_use = 0
-	var total_emissions_sequestrated = 0
 	
 	for powerplant in powerplants:
 		var metrics: PowerplantMetrics = powerplant.metrics
@@ -466,17 +526,13 @@ func update_buildings_impact():
 			winter += metrics.capacity * metrics.availability.y
 			total_production_costs += metrics.production_costs
 			total_emissions += metrics.emissions
-			
-			if metrics.emissions < 0:
-				total_emissions_sequestrated += abs(metrics.emissions)
-			
+						
 			total_land_use += metrics.land_use
 			
 	Gameloop.supply_summer = summer
 	Gameloop.supply_winter = winter
 	MoneyManager.powerplants_production_costs = total_production_costs
 	Gameloop.co2_emissions = total_emissions
-	Gameloop.sequestrated_co2 = total_emissions_sequestrated
 	Gameloop.land_use = total_land_use
 
 
@@ -494,3 +550,21 @@ func rollback_metrics():
 		powerplants_metrics.push_back(metric.copy())
 		
 	metrics_backup = []
+
+
+func get_powerplant_image_path(type: EngineTypeIds, upgrade: int, active: bool) -> String:
+	var images = []
+	var path = ""
+	
+	if active:
+		images = powerplants_textures_on[type]
+	else:
+		images = powerplants_textures_off[type]
+		
+		
+	if images.size() > upgrade:
+		path = images[upgrade]
+	else:
+		path = images[0]
+	
+	return path

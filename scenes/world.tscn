@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://ba56oxmvcxpos"]
+[gd_scene load_steps=22 format=3 uid="uid://ba56oxmvcxpos"]
 
 [ext_resource type="Texture2D" uid="uid://dug4cy4mgxa1b" path="res://assets/textures/map/map.jpg" id="1_exly2"]
 [ext_resource type="Texture2D" uid="uid://dnuq60vou7jic" path="res://assets/textures/map/mountains/mountain_0.png" id="2_0wbri"]
@@ -8,13 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://cvxhltk38jeyo" path="res://assets/textures/map/forests/forest_2.png" id="7_ptaf0"]
 [ext_resource type="Texture2D" uid="uid://cpcm2hmku8t83" path="res://assets/textures/map/mountains/mountain_1.png" id="8_1irv8"]
 [ext_resource type="Texture2D" uid="uid://bk5676dvr2vrc" path="res://assets/textures/map/forests/forest_3.png" id="9_ai24k"]
-[ext_resource type="Texture2D" uid="uid://b3vwf2v1afnqv" path="res://assets/textures/powerplants/pp_sprite_on_waste_4.png" id="10_bsw2n"]
 [ext_resource type="Texture2D" uid="uid://ex0mlwlymf7k" path="res://assets/textures/map/forests/forest_4.png" id="10_bwdos"]
-[ext_resource type="Texture2D" uid="uid://dfybjpp67komb" path="res://assets/textures/powerplants/pp_sprite_off_waste_4.png" id="11_2do6c"]
-[ext_resource type="Texture2D" uid="uid://cjnk71q5pp4a8" path="res://assets/textures/powerplants/pp_sprite_on_solar_4.png" id="11_5xi1y"]
 [ext_resource type="Texture2D" uid="uid://d0nonmo0jroqa" path="res://assets/textures/map/mountains/mountain_2.png" id="11_c0lk8"]
 [ext_resource type="Texture2D" uid="uid://imn01mt51ob8" path="res://assets/textures/map/forests/forest_5.png" id="12_4trsl"]
-[ext_resource type="Texture2D" uid="uid://ch0sklgxiokk3" path="res://assets/textures/powerplants/pp_sprite_off_solar_4.png" id="12_puhv2"]
+[ext_resource type="Texture2D" uid="uid://2h5b4uyx5wut" path="res://assets/textures/powerplants/pp_sprite_on_solar_15.png" id="12_6pfsk"]
 [ext_resource type="Texture2D" uid="uid://cjla34vrrgb7i" path="res://assets/textures/powerplants/bb_normal_water.png" id="13_iyb57"]
 [ext_resource type="Texture2D" uid="uid://buseob4ix0xih" path="res://assets/textures/map/mountains/mountain_3.png" id="13_lqxt0"]
 [ext_resource type="Texture2D" uid="uid://cww2obs22h5na" path="res://assets/textures/map/forests/forest_6.png" id="14_8vk84"]
@@ -23,6 +20,9 @@
 [ext_resource type="Texture2D" uid="uid://curvmq4s83e7w" path="res://assets/textures/map/mountains/mountain_5.png" id="17_qgn3q"]
 [ext_resource type="PackedScene" uid="uid://cl2v31dxkoeoq" path="res://scenes/powerplants/carbon_sequestration.tscn" id="18_pdx3e"]
 [ext_resource type="PackedScene" uid="uid://b0gxr46y1af1j" path="res://scenes/powerplants/menu/pp_menu.tscn" id="21_n4f12"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dhjl6"]
+load_path = "res://.godot/imported/pp_sprite_off_solar_12.png-575fb6a407f5b14a48b1a6fc0e37482a.ctex"
 
 [node name="World" type="Node2D"]
 position = Vector2(-238, 170)
@@ -78,7 +78,7 @@ position = Vector2(2580, 244)
 texture = ExtResource("7_ptaf0")
 
 [node name="PpMapEmplacement6" parent="." instance=ExtResource("7_3e8ib")]
-position = Vector2(2397, 125)
+position = Vector2(2400, 57)
 build_on_start = 2
 
 [node name="CarbonSequestration" parent="." instance=ExtResource("18_pdx3e")]
@@ -131,8 +131,6 @@ upgrade_factor_for_summer_supply = 1
 current_upgrade = 3
 max_upgrade = 3
 can_upgrade = false
-powerplant_on = ExtResource("10_bsw2n")
-powerplant_off = ExtResource("11_2do6c")
 
 [node name="PpMapEmplacement13" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(-1105, 1093)
@@ -143,7 +141,7 @@ position = Vector2(-1143, 1674)
 texture = ExtResource("10_bwdos")
 
 [node name="PpMapEmplacement14" parent="." instance=ExtResource("7_3e8ib")]
-position = Vector2(2828, 885)
+position = Vector2(2508, 788)
 build_on_start = 9
 solar = false
 wind = false
@@ -156,18 +154,13 @@ river = true
 build_button = ExtResource("13_iyb57")
 
 [node name="PpMapEmplacement15" parent="." instance=ExtResource("7_3e8ib")]
-position = Vector2(3435, 870)
+position = Vector2(3163, 955)
 build_on_start = 0
-upgrade_factor_for_production_costs = 1
-upgrade_factor_for_emissions = 1
-upgrade_factor_for_land_use = 1
-upgrade_factor_for_winter_supply = 1
-upgrade_factor_for_summer_supply = 1
-current_upgrade = 3
-max_upgrade = 3
+current_upgrade = 15
+max_upgrade = 15
 can_upgrade = false
-powerplant_on = ExtResource("11_5xi1y")
-powerplant_off = ExtResource("12_puhv2")
+powerplant_on = ExtResource("12_6pfsk")
+powerplant_off = SubResource("CompressedTexture2D_dhjl6")
 
 [node name="PpMapEmplacement16" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(-427, 1355)
@@ -178,6 +171,10 @@ position = Vector2(2498, 1229)
 [node name="Forest6" type="Sprite2D" parent="."]
 position = Vector2(3456, 1656)
 texture = ExtResource("12_4trsl")
+
+[node name="Mountain3" type="Sprite2D" parent="."]
+position = Vector2(2152, 1807)
+texture = ExtResource("13_lqxt0")
 
 [node name="PpMapEmplacement18" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(1419, 1313)
@@ -192,7 +189,7 @@ hydro = true
 river = true
 build_button = ExtResource("13_iyb57")
 
-[node name="Mountain3" type="Sprite2D" parent="."]
+[node name="Mountain4" type="Sprite2D" parent="."]
 position = Vector2(816, 1830)
 texture = ExtResource("11_c0lk8")
 
@@ -207,10 +204,6 @@ biogas = false
 hydro = true
 river = true
 build_button = ExtResource("13_iyb57")
-
-[node name="Mountain4" type="Sprite2D" parent="."]
-position = Vector2(2152, 1807)
-texture = ExtResource("13_lqxt0")
 
 [node name="PpMapEmplacement20" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(-61, 1805)
