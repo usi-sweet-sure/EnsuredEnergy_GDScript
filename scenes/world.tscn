@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ex0mlwlymf7k" path="res://assets/textures/map/forests/forest_4.png" id="10_bwdos"]
 [ext_resource type="Texture2D" uid="uid://d0nonmo0jroqa" path="res://assets/textures/map/mountains/mountain_2.png" id="11_c0lk8"]
 [ext_resource type="Texture2D" uid="uid://imn01mt51ob8" path="res://assets/textures/map/forests/forest_5.png" id="12_4trsl"]
-[ext_resource type="Texture2D" uid="uid://2h5b4uyx5wut" path="res://assets/textures/powerplants/pp_sprite_on_solar_12.png" id="12_6pfsk"]
+[ext_resource type="Texture2D" uid="uid://2h5b4uyx5wut" path="res://assets/textures/powerplants/pp_sprite_on_solar_15.png" id="12_6pfsk"]
 [ext_resource type="Texture2D" uid="uid://cjla34vrrgb7i" path="res://assets/textures/powerplants/bb_normal_water.png" id="13_iyb57"]
 [ext_resource type="Texture2D" uid="uid://buseob4ix0xih" path="res://assets/textures/map/mountains/mountain_3.png" id="13_lqxt0"]
 [ext_resource type="Texture2D" uid="uid://cww2obs22h5na" path="res://assets/textures/map/forests/forest_6.png" id="14_8vk84"]

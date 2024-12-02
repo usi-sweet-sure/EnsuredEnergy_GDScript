@@ -1,17 +1,108 @@
-[gd_scene load_steps=11 format=3 uid="uid://85fx111n8erw"]
+[gd_scene load_steps=19 format=3 uid="uid://85fx111n8erw"]
 
 [ext_resource type="Shader" path="res://src/gdscript/shaders/highlight.gdshader" id="1_mnkvw"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_effects/solar/pp_effects_solar.gd" id="1_xchol"]
 [ext_resource type="Texture2D" uid="uid://bn63w4eur4tk6" path="res://assets/textures/powerplants/effects/solar_panel.png" id="3_fb1gi"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6wfur"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yntx8"]
 shader = ExtResource("1_mnkvw")
 shader_parameter/Line_Smoothness = 0.045
 shader_parameter/Line_Width = 0.09
 shader_parameter/Brightness = 3.0
 shader_parameter/Rotation_deg = 30.0
 shader_parameter/Distortion = 1.8
-shader_parameter/Speed = 0.5
+shader_parameter/Speed = 0.14
+shader_parameter/Position = 0.0
+shader_parameter/Position_Min = 0.25
+shader_parameter/Position_Max = 0.5
+shader_parameter/Alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5elg4"]
+shader = ExtResource("1_mnkvw")
+shader_parameter/Line_Smoothness = 0.045
+shader_parameter/Line_Width = 0.09
+shader_parameter/Brightness = 3.0
+shader_parameter/Rotation_deg = 30.0
+shader_parameter/Distortion = 1.8
+shader_parameter/Speed = 0.15
+shader_parameter/Position = 0.0
+shader_parameter/Position_Min = 0.25
+shader_parameter/Position_Max = 0.5
+shader_parameter/Alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_66x46"]
+shader = ExtResource("1_mnkvw")
+shader_parameter/Line_Smoothness = 0.045
+shader_parameter/Line_Width = 0.09
+shader_parameter/Brightness = 3.0
+shader_parameter/Rotation_deg = 30.0
+shader_parameter/Distortion = 1.8
+shader_parameter/Speed = 0.2
+shader_parameter/Position = 0.0
+shader_parameter/Position_Min = 0.25
+shader_parameter/Position_Max = 0.5
+shader_parameter/Alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hgdqk"]
+shader = ExtResource("1_mnkvw")
+shader_parameter/Line_Smoothness = 0.045
+shader_parameter/Line_Width = 0.09
+shader_parameter/Brightness = 3.0
+shader_parameter/Rotation_deg = 30.0
+shader_parameter/Distortion = 1.8
+shader_parameter/Speed = 0.14
+shader_parameter/Position = 0.0
+shader_parameter/Position_Min = 0.25
+shader_parameter/Position_Max = 0.5
+shader_parameter/Alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mfr0w"]
+shader = ExtResource("1_mnkvw")
+shader_parameter/Line_Smoothness = 0.045
+shader_parameter/Line_Width = 0.09
+shader_parameter/Brightness = 3.0
+shader_parameter/Rotation_deg = 30.0
+shader_parameter/Distortion = 1.8
+shader_parameter/Speed = 0.15
+shader_parameter/Position = 0.0
+shader_parameter/Position_Min = 0.25
+shader_parameter/Position_Max = 0.5
+shader_parameter/Alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w4onl"]
+shader = ExtResource("1_mnkvw")
+shader_parameter/Line_Smoothness = 0.045
+shader_parameter/Line_Width = 0.09
+shader_parameter/Brightness = 3.0
+shader_parameter/Rotation_deg = 30.0
+shader_parameter/Distortion = 1.8
+shader_parameter/Speed = 0.2
+shader_parameter/Position = 0.0
+shader_parameter/Position_Min = 0.25
+shader_parameter/Position_Max = 0.5
+shader_parameter/Alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_weks5"]
+shader = ExtResource("1_mnkvw")
+shader_parameter/Line_Smoothness = 0.045
+shader_parameter/Line_Width = 0.09
+shader_parameter/Brightness = 3.0
+shader_parameter/Rotation_deg = 30.0
+shader_parameter/Distortion = 1.8
+shader_parameter/Speed = 0.14
+shader_parameter/Position = 0.0
+shader_parameter/Position_Min = 0.25
+shader_parameter/Position_Max = 0.5
+shader_parameter/Alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3c6kd"]
+shader = ExtResource("1_mnkvw")
+shader_parameter/Line_Smoothness = 0.045
+shader_parameter/Line_Width = 0.09
+shader_parameter/Brightness = 3.0
+shader_parameter/Rotation_deg = 30.0
+shader_parameter/Distortion = 1.8
+shader_parameter/Speed = 0.15
 shader_parameter/Position = 0.0
 shader_parameter/Position_Min = 0.25
 shader_parameter/Position_Max = 0.5
@@ -24,7 +115,7 @@ shader_parameter/Line_Width = 0.09
 shader_parameter/Brightness = 3.0
 shader_parameter/Rotation_deg = 30.0
 shader_parameter/Distortion = 1.8
-shader_parameter/Speed = 0.4
+shader_parameter/Speed = 0.25
 shader_parameter/Position = 0.0
 shader_parameter/Position_Min = 0.25
 shader_parameter/Position_Max = 0.5
@@ -37,7 +128,7 @@ shader_parameter/Line_Width = 0.09
 shader_parameter/Brightness = 3.0
 shader_parameter/Rotation_deg = 30.0
 shader_parameter/Distortion = 1.8
-shader_parameter/Speed = 0.5
+shader_parameter/Speed = 0.3
 shader_parameter/Position = 0.0
 shader_parameter/Position_Min = 0.25
 shader_parameter/Position_Max = 0.5
@@ -50,7 +141,7 @@ shader_parameter/Line_Width = 0.09
 shader_parameter/Brightness = 3.0
 shader_parameter/Rotation_deg = 30.0
 shader_parameter/Distortion = 1.8
-shader_parameter/Speed = 0.3
+shader_parameter/Speed = 0.2
 shader_parameter/Position = 0.0
 shader_parameter/Position_Min = 0.25
 shader_parameter/Position_Max = 0.5
@@ -63,13 +154,13 @@ shader_parameter/Line_Width = 0.09
 shader_parameter/Brightness = 3.0
 shader_parameter/Rotation_deg = 30.0
 shader_parameter/Distortion = 1.8
-shader_parameter/Speed = 0.4
+shader_parameter/Speed = 0.25
 shader_parameter/Position = 0.0
 shader_parameter/Position_Min = 0.25
 shader_parameter/Position_Max = 0.5
 shader_parameter/Alpha = 1.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_b2sss"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6wfur"]
 shader = ExtResource("1_mnkvw")
 shader_parameter/Line_Smoothness = 0.045
 shader_parameter/Line_Width = 0.09
@@ -82,6 +173,19 @@ shader_parameter/Position_Min = 0.25
 shader_parameter/Position_Max = 0.5
 shader_parameter/Alpha = 1.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b2sss"]
+shader = ExtResource("1_mnkvw")
+shader_parameter/Line_Smoothness = 0.045
+shader_parameter/Line_Width = 0.09
+shader_parameter/Brightness = 3.0
+shader_parameter/Rotation_deg = 30.0
+shader_parameter/Distortion = 1.8
+shader_parameter/Speed = 0.2
+shader_parameter/Position = 0.0
+shader_parameter/Position_Min = 0.25
+shader_parameter/Position_Max = 0.5
+shader_parameter/Alpha = 1.0
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gd5ro"]
 shader = ExtResource("1_mnkvw")
 shader_parameter/Line_Smoothness = 0.045
@@ -89,7 +193,7 @@ shader_parameter/Line_Width = 0.09
 shader_parameter/Brightness = 3.0
 shader_parameter/Rotation_deg = 30.0
 shader_parameter/Distortion = 1.8
-shader_parameter/Speed = 0.4
+shader_parameter/Speed = 0.25
 shader_parameter/Position = 0.0
 shader_parameter/Position_Min = 0.25
 shader_parameter/Position_Max = 0.5
@@ -104,31 +208,31 @@ scale = Vector2(1.3, 1.3)
 
 [node name="Highlight7" type="ColorRect" parent="Level15"]
 visible = false
-material = SubResource("ShaderMaterial_6wfur")
+material = SubResource("ShaderMaterial_yntx8")
 offset_left = 388.462
 offset_top = -110.769
 offset_right = 503.462
-offset_bottom = 33.2303
+offset_bottom = 33.231
 rotation = 0.534071
 mouse_filter = 2
 
 [node name="Highlight5" type="ColorRect" parent="Level15"]
 visible = false
-material = SubResource("ShaderMaterial_ekrbt")
+material = SubResource("ShaderMaterial_5elg4")
 offset_left = 225.653
 offset_top = -214.616
 offset_right = 340.653
-offset_bottom = -70.6158
+offset_bottom = -70.616
 rotation = 0.534071
 mouse_filter = 2
 
 [node name="Highlight6" type="ColorRect" parent="Level15"]
 visible = false
-material = SubResource("ShaderMaterial_3xof7")
-offset_left = 65.6527
+material = SubResource("ShaderMaterial_66x46")
+offset_left = 65.653
 offset_top = -219.231
 offset_right = 180.653
-offset_bottom = -75.2308
+offset_bottom = -75.231
 rotation = 0.534071
 mouse_filter = 2
 
@@ -152,22 +256,22 @@ texture = ExtResource("3_fb1gi")
 
 [node name="Highlight3" type="ColorRect" parent="Level15"]
 visible = false
-material = SubResource("ShaderMaterial_1xxcd")
+material = SubResource("ShaderMaterial_hgdqk")
 offset_left = 265.653
 offset_top = -106.155
 offset_right = 380.653
-offset_bottom = 37.8457
+offset_bottom = 37.845
 rotation = 0.534071
 mouse_filter = 2
 
 [node name="Highlight0" type="ColorRect" parent="Level15"]
 visible = false
-material = SubResource("ShaderMaterial_68vx2")
+material = SubResource("ShaderMaterial_mfr0w")
 offset_left = 129.499
 offset_top = -140.77
 offset_right = 244.499
-offset_bottom = 3.23022
-rotation = 0.533214
+offset_bottom = 3.23
+rotation = 0.534071
 mouse_filter = 2
 
 [node name="Cover1" type="Sprite2D" parent="Level15"]
@@ -178,11 +282,11 @@ texture = ExtResource("3_fb1gi")
 
 [node name="Highlight4" type="ColorRect" parent="Level15"]
 visible = false
-material = SubResource("ShaderMaterial_6wfur")
-offset_left = -15.8859
+material = SubResource("ShaderMaterial_w4onl")
+offset_left = -15.886
 offset_top = -169.231
-offset_right = 99.1142
-offset_bottom = -25.2313
+offset_right = 99.114
+offset_bottom = -25.231
 rotation = 0.534071
 mouse_filter = 2
 
@@ -194,9 +298,9 @@ texture = ExtResource("3_fb1gi")
 
 [node name="Highlight1" type="ColorRect" parent="Level15"]
 visible = false
-material = SubResource("ShaderMaterial_b2sss")
+material = SubResource("ShaderMaterial_weks5")
 offset_left = 166.422
-offset_top = -18.4621
+offset_top = -18.462
 offset_right = 281.422
 offset_bottom = 125.538
 rotation = 0.534071
@@ -204,11 +308,11 @@ mouse_filter = 2
 
 [node name="Highlight2" type="ColorRect" parent="Level15"]
 visible = false
-material = SubResource("ShaderMaterial_gd5ro")
-offset_left = 24.8831
-offset_top = -63.8466
-offset_right = 139.884
-offset_bottom = 80.1534
+material = SubResource("ShaderMaterial_3c6kd")
+offset_left = 24.883
+offset_top = -63.847
+offset_right = 139.883
+offset_bottom = 80.153
 rotation = 0.534071
 mouse_filter = 2
 
