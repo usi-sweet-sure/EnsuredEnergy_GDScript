@@ -25,3 +25,8 @@ func _on_mouse_entered():
 func _on_mouse_exited():
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "scale", Vector2(1, 1), 0.05)
+
+
+func _on_shock_changed(shock: Shock) -> void:
+	if shock.img != "":
+		texture_normal = load(shock.img)

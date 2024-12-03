@@ -22,7 +22,7 @@ func _ready():
 	shock_button_entered.connect(_on_shock_button_entered)
 	shock_button_exited.connect(_on_shock_button_exited)
 	
-	var cold_spell = Shock.new("SHOCK_COLD_SPELL_TITLE", "SHOCK_COLD_SPELL_TEXT", "cold.png")
+	var cold_spell = Shock.new("SHOCK_COLD_SPELL_TITLE", "SHOCK_COLD_SPELL_TEXT", "res://assets/textures/shocks/cold_spell.png")
 	cold_spell.add_effect(func(): increase_demand(false))
 	cold_spell.add_requirements("SHOCK_COLD_SPELL_REQUIREMENT_MET",
 			[func(): return Gameloop.supply_winter + Gameloop.imported_energy_amount >= Gameloop.demand_winter + 5],
@@ -32,7 +32,7 @@ func _ready():
 	cold_spell.add_player_reaction("SHOCK_COLD_SPELL_PLAYER_REACTION_2", func(): pass) # E. Implement gaz upgrade
 	cold_spell.add_player_reaction("SHOCK_COLD_SPELL_PLAYER_REACTION_3", func(): MoneyManager.players_own_money_amount -= 50)
 	
-	var heat_wave: = Shock.new("SHOCK_HEAT_WAVE_TITLE", "SHOCK_HEAT_WAVE_TEXT", "hot.png")
+	var heat_wave: = Shock.new("SHOCK_HEAT_WAVE_TITLE", "SHOCK_HEAT_WAVE_TEXT", "res://assets/textures/shocks/heat_wave.png")
 	heat_wave.add_effect(func(): increase_demand(false))
 	heat_wave.add_requirements("SHOCK_HEAT_WAVE_REQUIREMENT_MET",
 			[func():  return Gameloop.supply_summer >= Gameloop.demand_summer + ((Gameloop.demand_summer / 100.0) * 5.00)],
@@ -42,29 +42,29 @@ func _ready():
 	heat_wave.add_player_reaction("SHOCK_HEAT_WAVE_PLAYER_REACTION_2", func(): pass) # E. Implement gaz upgrade
 	heat_wave.add_player_reaction("SHOCK_HEAT_WAVE_PLAYER_REACTION_3", func(): MoneyManager.players_own_money_amount -= 50)
 	
-	var glaciers_melting_shock = Shock.new("SHOCK_GLACIERS_MELTING_TITLE", "SHOCK_GLACIERS_MELTING_TEXT", "ice.png")
+	var glaciers_melting_shock = Shock.new("SHOCK_GLACIERS_MELTING_TITLE", "SHOCK_GLACIERS_MELTING_TEXT", "res://assets/textures/shocks/glacier_melting.png")
 	glaciers_melting_shock.add_effect(func(): glaciers_melting())
 	
-	var severe_weather = Shock.new("SHOCK_SEVERE_WEATHER_TITLE", "SHOCK_SEVERE_WEATHER_TEXT", "weather.png")
+	var severe_weather = Shock.new("SHOCK_SEVERE_WEATHER_TITLE", "SHOCK_SEVERE_WEATHER_TEXT", "res://assets/textures/shocks/severe_weather.png")
 	severe_weather.add_effect(func(): _severe_wether_send_parameters_to_model())
 	
-	var inc_raw_cost_10 = Shock.new("SHOCK_INC_RAW_COST_10_TITLE", "SHOCK_INC_RAW_COST_10_TEXT", "money.png")
+	var inc_raw_cost_10 = Shock.new("SHOCK_INC_RAW_COST_10_TITLE", "SHOCK_INC_RAW_COST_10_TEXT", "")
 	inc_raw_cost_10.add_effect(func(): update_prod_cost_modifier(0.1))
 	
-	var inc_raw_cost_20 = Shock.new("SHOCK_INC_RAW_COST_20_TITLE", "SHOCK_INC_RAW_COST_20_TEXT", "money.png")
+	var inc_raw_cost_20 = Shock.new("SHOCK_INC_RAW_COST_20_TITLE", "SHOCK_INC_RAW_COST_20_TEXT", "")
 	inc_raw_cost_20.add_effect(func(): update_prod_cost_modifier(0.2))
 	
-	var dec_raw_cost_20 = Shock.new("SHOCK_DEC_RAW_COST_20_TITLE", "SHOCK_DEC_RAW_COST_20_TEXT", "receive.png")
+	var dec_raw_cost_20 = Shock.new("SHOCK_DEC_RAW_COST_20_TITLE", "SHOCK_DEC_RAW_COST_20_TEXT", "")
 	dec_raw_cost_20.add_effect(func(): update_prod_cost_modifier(-0.2))
 	
-	var mass_immigration = Shock.new("SHOCK_MASS_IMMIGRATION_TITLE", "SHOCK_MASS_IMMIGRATION_TEXT", "people.png")
+	var mass_immigration = Shock.new("SHOCK_MASS_IMMIGRATION_TITLE", "SHOCK_MASS_IMMIGRATION_TEXT", "")
 	mass_immigration.add_effect(func(): increase_demand(true))
 	
-	var renewable_support = Shock.new("SHOCK_RENEWABLE_SUPPORT_TITLE", "SHOCK_RENEWABLE_SUPPORT_TEXT", "flower.png")
+	var renewable_support = Shock.new("SHOCK_RENEWABLE_SUPPORT_TITLE", "SHOCK_RENEWABLE_SUPPORT_TEXT", "res://assets/textures/shocks/renewable_support.png")
 	renewable_support.add_effect(func(): update_personal_support(0.1))
 	
 	
-	var no_shock_shock = Shock.new("SHOCK_NO_SHOCK_TITLE", "SHOCK_NO_SHOCK_TEXT", "sunrise.png", false)
+	var no_shock_shock = Shock.new("SHOCK_NO_SHOCK_TITLE", "SHOCK_NO_SHOCK_TEXT", "", false)
 	no_shock_shock.add_effect(func(): no_shock())
 	
 	shocks = [cold_spell, heat_wave, glaciers_melting_shock, no_shock_shock, severe_weather, renewable_support]
@@ -78,7 +78,7 @@ func _ready():
 func pick_shock():
 	# Nuclear reintro always happens in 2034, which is turn 5
 	if Gameloop.current_turn == 5:
-		var nuc_reintro_shock = Shock.new("SHOCK_NUC_REINTRO_TITLE", "SHOCK_NUC_REINTRO_TEXT", "vote.png")
+		var nuc_reintro_shock = Shock.new("SHOCK_NUC_REINTRO_TITLE", "SHOCK_NUC_REINTRO_TEXT", "res://assets/textures/shocks/nuclear_reintro_yes.png")
 		nuc_reintro_shock.add_effect(func(): nuc_reintro())
 		nuc_reintro_shock.add_player_reaction("SHOCK_NUC_REINTRO_PLAYER_REACTION_1", func(): _reintroduce_nuclear())
 		nuc_reintro_shock.add_player_reaction("SHOCK_NUC_REINTRO_PLAYER_REACTION_2", func(): _leave_nuclear())
@@ -128,7 +128,6 @@ func _leave_nuclear():
 	pass
 	
 	
-
 func increase_demand(longterm: bool):
 	var year = Gameloop.year_list[Gameloop.current_turn-1]
 	Context.send_shock_parameters(Context.res_id, 1, year)

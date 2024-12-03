@@ -764,6 +764,7 @@ position = Vector2(639, 816)
 rotation = 0.357792
 
 [node name="InfoBubble7" type="ColorRect" parent="Bubbles"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

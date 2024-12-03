@@ -40,9 +40,15 @@ func apply():
 	
 	_apply_effects()
 
+
 func apply_reaction(reaction_index: int):
 	if(player_reactions.size() > reaction_index):
 		chosen_reaction_index = reaction_index
+		
+		# Chose to leave nuclear, so we change the img to display
+		if title_key == "SHOCK_NUC_REINTRO_TITLE" and reaction_index == 1:
+			img = "res://assets/textures/shocks/nuclear_reintro_no.png"
+		
 		player_reactions[reaction_index].call()
 		
 

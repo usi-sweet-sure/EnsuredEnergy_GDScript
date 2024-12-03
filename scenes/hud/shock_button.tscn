@@ -1,11 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://bgdrqxfbgr184"]
+[gd_scene load_steps=12 format=3 uid="uid://bgdrqxfbgr184"]
 
 [ext_resource type="Script" path="res://src/gdscript/shocks/shock_button/shock_button.gd" id="1_3j4o8"]
 [ext_resource type="Texture2D" uid="uid://b0c3ywqarx8b7" path="res://assets/textures/ui/socket_round.png" id="1_uupry"]
 [ext_resource type="Script" path="res://src/gdscript/shocks/shock_button/texture_button.gd" id="2_5jsa0"]
 [ext_resource type="Script" path="res://src/gdscript/shocks/shock_button/animation_player.gd" id="2_lohl8"]
 [ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="4_j4m7a"]
-[ext_resource type="Texture2D" uid="uid://biwwfxsgd37rv" path="res://assets/textures/icons/chalk_warning.png" id="4_uuw5p"]
 [ext_resource type="Texture2D" uid="uid://bx1g8oiuxi2mk" path="res://assets/textures/ui/Paper-Middle.png" id="5_hacl8"]
 [ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/fonts/special_elite/special_elite_regular.ttf" id="6_5a1f6"]
 [ext_resource type="Script" path="res://src/gdscript/shocks/shock_button/tooltip_text.gd" id="6_7ex6t"]
@@ -81,11 +80,6 @@ offset_bottom = 54.0
 texture_normal = ExtResource("1_uupry")
 script = ExtResource("2_5jsa0")
 
-[node name="Sprite2D" type="Sprite2D" parent="TextureButton"]
-position = Vector2(27, 23)
-scale = Vector2(0.566038, 0.563487)
-texture = ExtResource("4_uuw5p")
-
 [node name="Tooltip" type="RichTextLabel" parent="."]
 visible = false
 clip_contents = false
@@ -134,6 +128,7 @@ libraries = {
 }
 script = ExtResource("2_lohl8")
 
+[connection signal="shock_changed" from="." to="TextureButton" method="_on_shock_changed"]
 [connection signal="shock_changed" from="." to="Tooltip" method="_on_shock_changed"]
 [connection signal="mouse_entered" from="TextureButton" to="." method="_on_texture_button_mouse_entered"]
 [connection signal="mouse_entered" from="TextureButton" to="TextureButton" method="_on_mouse_entered"]
