@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://885lty3v1qbq"]
+[gd_scene load_steps=34 format=3 uid="uid://885lty3v1qbq"]
 
 [ext_resource type="Script" path="res://src/gdscript/shocks/shock_window/shock_window.gd" id="1_h0du7"]
 [ext_resource type="Texture2D" uid="uid://burmdec041k3k" path="res://assets/textures/ui/Shocks-Metal.png" id="2_37dlb"]
@@ -30,6 +30,94 @@
 [ext_resource type="Script" path="res://src/gdscript/shocks/shock_window/shock_chip.gd" id="28_2f7im"]
 
 [sub_resource type="Theme" id="Theme_jkqh0"]
+
+[sub_resource type="Animation" id="Animation_ssumj"]
+resource_name = "appear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ShockWindow:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.75, 0.75), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ShockWindow:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_j3gwv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ShockWindow:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ShockWindow:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_fqvj2"]
+resource_name = "disappear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ShockWindow:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ShockWindow:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gsxys"]
+_data = {
+"RESET": SubResource("Animation_j3gwv"),
+"appear": SubResource("Animation_ssumj"),
+"disappear": SubResource("Animation_fqvj2")
+}
 
 [node name="Shock" type="CanvasLayer"]
 script = ExtResource("1_h0du7")
@@ -365,6 +453,12 @@ text = "CONTINUE"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gsxys")
+}
+speed_scale = 5.0
 
 [connection signal="pressed" from="ShockWindow/ColorRect/Reactions/Button" to="ShockWindow/ColorRect/Reactions" method="_on_button1_pressed"]
 [connection signal="pressed" from="ShockWindow/ColorRect/Reactions/Button" to="ShockWindow/ColorRect/Reactions/Button" method="_on_pressed"]

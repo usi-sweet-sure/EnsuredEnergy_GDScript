@@ -1,6 +1,6 @@
 extends Node
 
-signal shock_resolved
+signal shock_resolved(shock: Shock)
 signal shock_effects_applied
 signal toggle_shock_buttons
 signal shock_button_entered
