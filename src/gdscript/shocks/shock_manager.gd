@@ -45,7 +45,14 @@ func _ready():
 	var glaciers_melting_shock = Shock.new("SHOCK_GLACIERS_MELTING_TITLE", "SHOCK_GLACIERS_MELTING_TEXT", "res://assets/textures/shocks/glacier_melting.png")
 	glaciers_melting_shock.add_effect(func(): glaciers_melting())
 	
-	var severe_weather = Shock.new("SHOCK_SEVERE_WEATHER_TITLE", "SHOCK_SEVERE_WEATHER_TEXT", "res://assets/textures/shocks/severe_weather.png")
+	var severe_weather = Shock.new("SHOCK_SEVERE_WEATHER_TITLE", "SHOCK_SEVERE_WEATHER_TEXT",
+		"res://assets/textures/shocks/severe_weather.png",
+		true,
+		[
+			{"type": PowerplantsManager.EngineTypeIds.SOLAR, "text_key": "SHOCK_SEVERE_WEATHER_EFFECT_SOLAR"},
+			{"type": PowerplantsManager.EngineTypeIds.WIND, "text_key": "SHOCK_SEVERE_WEATHER_EFFECT_WIND"}
+		])
+		
 	severe_weather.add_effect(func(): _severe_wether_send_parameters_to_model())
 	
 	var inc_raw_cost_10 = Shock.new("SHOCK_INC_RAW_COST_10_TITLE", "SHOCK_INC_RAW_COST_10_TEXT", "")

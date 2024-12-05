@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://885lty3v1qbq"]
+[gd_scene load_steps=30 format=3 uid="uid://885lty3v1qbq"]
 
 [ext_resource type="Script" path="res://src/gdscript/shocks/shock_window/shock_window.gd" id="1_h0du7"]
 [ext_resource type="Texture2D" uid="uid://burmdec041k3k" path="res://assets/textures/ui/Shocks-Metal.png" id="2_37dlb"]
@@ -26,6 +26,8 @@
 [ext_resource type="Texture2D" uid="uid://bulftkbpqxib" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0024_Icon-Money.png" id="21_0kb5n"]
 [ext_resource type="Script" path="res://src/gdscript/shocks/shock_window/requirements_met_text.gd" id="21_ctbuo"]
 [ext_resource type="Script" path="res://src/gdscript/shocks/shock_window/requirements_frame.gd" id="21_y600v"]
+[ext_resource type="Texture2D" uid="uid://cggi7v5bayqja" path="res://assets/textures/shocks/shock_winter.png" id="27_txidr"]
+[ext_resource type="Script" path="res://src/gdscript/shocks/shock_window/shock_chip.gd" id="28_2f7im"]
 
 [sub_resource type="Theme" id="Theme_jkqh0"]
 
@@ -109,10 +111,10 @@ text = "+ 50"
 
 [node name="ColorRect" type="ColorRect" parent="ShockWindow"]
 self_modulate = Color(1, 1, 1, 0)
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = -1
+anchor_left = 0.501018
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 0.501018
 anchor_bottom = 0.5
 offset_left = -491.0
 offset_top = -448.5
@@ -335,15 +337,20 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -331.0
-offset_top = -88.0
+offset_top = -61.0
 offset_right = -138.0
-offset_bottom = -5.0
+offset_bottom = 22.0
 grow_horizontal = 0
 grow_vertical = 0
 texture_normal = ExtResource("10_hydvu")
 texture_pressed = ExtResource("11_are4j")
 texture_hover = ExtResource("12_hwdxm")
 script = ExtResource("20_ye1t7")
+
+[node name="ShockChip" type="Sprite2D" parent="ShockWindow/ColorRect/Continue"]
+position = Vector2(98, -46)
+texture = ExtResource("27_txidr")
+script = ExtResource("28_2f7im")
 
 [node name="Label" type="Label" parent="ShockWindow/ColorRect/Continue"]
 layout_mode = 1

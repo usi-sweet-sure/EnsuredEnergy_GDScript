@@ -15,13 +15,20 @@ var requirements_met_effects: Array[Callable] = [] # Effect of meeting the requi
 var effects: Array[Callable] = [] # Effects of the shock
 var player_reactions: Array[Callable]  = [] # Options given to the player to react to the shock
 var player_reactions_texts: Array[String] = [] # Texts for the options, must match previous array order
+# Each entry is of the form:
+# {
+#  type: PowerplantManager.EngineTypeId,
+#  text_key: String (the text used to be displayed in the tooltip of the powerplant
+#                shock indicator)
+# }
+var affected_powerplants: Array = []
 
-
-func _init(p_title_key:String,p_text_key: String, p_img: String, p_show_shock_window := true):
+func _init(p_title_key:String,p_text_key: String, p_img: String, p_show_shock_window := true, p_affected_powerplants: Array = []):
 	self.title_key = p_title_key
 	self.text_key = p_text_key
 	self.img = p_img
 	self.show_shock_window = p_show_shock_window
+	self.affected_powerplants = p_affected_powerplants
 
 
 func _apply_requirements_met_effects():
