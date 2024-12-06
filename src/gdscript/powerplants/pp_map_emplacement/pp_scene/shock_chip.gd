@@ -4,20 +4,16 @@ extends Control
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var powerplant: PpScene = null
-# Used to animate the chip going from the center of the screen to it's position
-# in the pp when a shock starts affecting it
-var final_global_position: Vector2
-var starting_global_position = Vector2(969, 606) # Center of shock screen
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	hide()
-	ShockManager.shock_resolved.connect(_on_shock_resolved)
+	ShockManager.shock_button_in_place.connect(_on_shock_button_in_place)
 	powerplant = get_parent()
-	final_global_position = global_position + Vector2(-32, -32)
 
 
-func _on_shock_resolved(shock: Shock):
+func _on_shock_button_in_place(shock: Shock):
 	var is_affected_by_shock = false
 	
 	for affected_powerplant in shock.affected_powerplants:
@@ -27,15 +23,10 @@ func _on_shock_resolved(shock: Shock):
 			
 	if is_affected_by_shock:
 		shock_chip.texture = load(shock.img)
-		global_position = starting_global_position
-		show()
-	
+
 		
-		animation_player.play("appear_grow")
-		await animation_player.animation_finished
-		var tween = get_tree().create_tween()
-		tween.tween_property(shock_chip, "global_position", final_global_position, 1) 
-		animation_player.play("appear_move_to_place")
+		await get_tree().create_timer(0.1).timeout
+		animation_player.play("appear")
 		await animation_player.animation_finished
 		animation_player.play("breath")
 	else:

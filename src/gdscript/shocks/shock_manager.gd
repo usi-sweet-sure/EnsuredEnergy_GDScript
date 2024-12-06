@@ -3,8 +3,11 @@ extends Node
 signal shock_resolved(shock: Shock)
 signal shock_effects_applied
 signal toggle_shock_buttons
+
+# Used by the shock buttons drawer for ux
 signal shock_button_entered
 signal shock_button_exited
+signal shock_button_in_place(shock: Shock)
 
 var shocks: Array[Shock] = []
 var shocks_full : Array[Shock] = []
@@ -70,11 +73,7 @@ func _ready():
 	var renewable_support = Shock.new("SHOCK_RENEWABLE_SUPPORT_TITLE", "SHOCK_RENEWABLE_SUPPORT_TEXT", "res://assets/textures/shocks/renewable_support.png")
 	renewable_support.add_effect(func(): update_personal_support(0.1))
 	
-	
-	var no_shock_shock = Shock.new("SHOCK_NO_SHOCK_TITLE", "SHOCK_NO_SHOCK_TEXT", "", false)
-	no_shock_shock.add_effect(func(): no_shock())
-	
-	shocks = [cold_spell, heat_wave, glaciers_melting_shock, no_shock_shock, severe_weather, renewable_support]
+	shocks = [cold_spell, heat_wave, glaciers_melting_shock, severe_weather, renewable_support]
 	shocks_full = shocks.duplicate()
 	shocks.shuffle()
 	
@@ -83,8 +82,15 @@ func _ready():
 	
 	
 func pick_shock():
-	# Nuclear reintro always happens in 2034, which is turn 5
-	if Gameloop.current_turn == 5:
+	if Gameloop.current_turn == 2:
+		# No shock on second turn
+		var no_shock_shock = Shock.new("SHOCK_NO_SHOCK_TITLE", "SHOCK_NO_SHOCK_TEXT", "", false)
+		no_shock_shock.add_effect(func(): no_shock())
+		Gameloop.most_recent_shock = no_shock_shock
+		# We wait 2 sec for the clock animation to finish
+		get_tree().create_timer(2).timeout.connect(func(): Gameloop.enable_graphs_button.emit())
+	elif Gameloop.current_turn == 5:
+		# Nuclear reintro always happens in 2034, which is turn 5
 		var nuc_reintro_shock = Shock.new("SHOCK_NUC_REINTRO_TITLE", "SHOCK_NUC_REINTRO_TEXT", "res://assets/textures/shocks/nuclear_reintro_yes.png")
 		nuc_reintro_shock.add_effect(func(): nuc_reintro())
 		nuc_reintro_shock.add_player_reaction("SHOCK_NUC_REINTRO_PLAYER_REACTION_1", func(): _reintroduce_nuclear())
@@ -99,17 +105,7 @@ func pick_shock():
 		var random_shock = shocks.pop_front()
 		random_shock.turn_picked = Gameloop.current_turn
 		Gameloop.most_recent_shock = random_shock
-		
-		# Graph button is enable on turn 2, but on a new turn the shock window
-		# hides the middle of the screen. So we trigger the apparition of the
-		# graph button when the player clicks on the "continue" button of the
-		# shock window (which hides the shock window).
-		# But if the shock is the "no_shock", no frame is shown, so we trigger
-		# the apparition of the graph button directly.
-		# We wait 2 sec for the clock animation to finish
-		if Gameloop.current_turn == 2 and not random_shock.show_shock_window:
-			get_tree().create_timer(2).timeout.connect(func(): Gameloop.enable_graphs_button.emit())
-		
+
 
 func apply_shock():
 	if Gameloop.most_recent_shock != null:
