@@ -60,6 +60,14 @@ func _update_slider_properties():
 	# max than can be imported
 	max_value = max_amount_that_can_be_imported + step
 	
+	# If the player can't import energy because enough is supplied, the max will
+	# be set to 0, and the slider will move all the way up, which is weird.
+	# In that case we give a value > 0 to the maximum value so the slider can
+	# stay at the bottom and make it unmovable
+	editable = max_amount_that_can_be_imported > 0
+	if max_amount_that_can_be_imported <= 0:
+		max_value = 1
+	
 
 func _on_game_ended():
 	editable = false
