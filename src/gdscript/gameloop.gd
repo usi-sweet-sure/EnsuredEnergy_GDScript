@@ -58,6 +58,7 @@ signal all_parameters_sent
 # This signal is emitted in language_button.gd
 signal locale_updated(locale: String)
 signal player_can_start_playing_new_turn
+signal next_turn_button_pressed
 
 var player_name: String = "":
 	set(new_value):

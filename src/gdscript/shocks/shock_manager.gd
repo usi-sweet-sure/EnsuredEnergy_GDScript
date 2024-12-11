@@ -267,6 +267,7 @@ func _revert_severe_weather():
 			if powerplant.metrics_backup == null:
 				# The pp was built during the shock, and has no backup. We can read
 				# the base metrics instead
+				print(powerplant.metrics)
 				powerplant.metrics = PowerplantsManager.powerplants_metrics[powerplant.metrics.type].copy()
 			else:
 				powerplant.metrics = powerplant.metrics_backup.copy()

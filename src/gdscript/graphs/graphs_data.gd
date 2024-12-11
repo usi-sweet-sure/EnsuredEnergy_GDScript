@@ -35,7 +35,11 @@ var data = {}
 #	 "name" = "unit",
 # }
 var units = {}
-
+var turn_to_register_data_in = 0
+# This is used to stop listenening to events when we don't want to overwrite data,
+# typically on a new turn when imported energy is set back to zero, it will erase
+# what the player imported during the turn that is ending
+var listening = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -66,9 +70,11 @@ func _ready():
 	Gameloop.energy_demand_updated_winter.connect(_on_winter_energy_demand_updated)
 	Gameloop.co2_emissions_updated.connect(_on_co2_emissions_updated)
 	PolicyManager.personal_support_updated.connect(_on_personnal_support_updated)
-	Gameloop.next_turn.connect(_refresh_data)
 	
-	_refresh_data()
+	Gameloop.next_turn_button_pressed.connect(_on_next_turn_button_pressed)
+	Gameloop.player_can_start_playing_new_turn.connect(_set_new_turn_data)
+	Gameloop.player_can_start_playing_first_turn.connect(_on_player_can_start_playing_first_turn)
+	
 
 # Must return a dictionnary of the form
 #	{
@@ -92,8 +98,96 @@ func _add_new_data_set(key_name: String, unit: String):
 		units[key_name] = unit
 		
 		
-# This is used at _ready and on a new turn. Some data don't change when a new turn
+# This is used on a new turn. Some data don't change when a new turn
 # starts, but we want to to draw a point for that turn right away
+func _set_new_turn_data():
+	turn_to_register_data_in = Gameloop.current_turn
+	listening = true
+	_refresh_data()
+
+
+# The initial state of 2022 is registered in the data,
+# now every changes made by the player are registered for the year of the next turn
+func _on_player_can_start_playing_first_turn():
+	# Set 2022 initial state that can't be changed
+	turn_to_register_data_in = 0
+	listening = true
+	_refresh_data()
+	
+	# Set initial 2025 state, that can be changed by the player during first turn
+	# (changes during the first turn are made for the span 2022-2025, and the point
+	# moving is on 2025 on the graph)
+	turn_to_register_data_in = Gameloop.current_turn
+	_refresh_data()
+	
+
+func _on_building_cost_updated(cost):
+	if listening:
+		data["building_costs"][Gameloop.start_year + (turn_to_register_data_in) * Gameloop.years_in_a_turn] = cost
+
+
+func _on_production_cost_updated(cost):
+	if listening:
+		data["production_costs"][Gameloop.start_year + (turn_to_register_data_in) * Gameloop.years_in_a_turn] = cost
+
+
+func _on_import_cost_updated(cost):
+	if listening:
+		data["import_costs"][Gameloop.start_year + (turn_to_register_data_in) * Gameloop.years_in_a_turn] = cost
+
+
+func _on_borrowed_money_updated(money):
+	if listening:
+		data["borrowed_money"][Gameloop.start_year + (turn_to_register_data_in) * Gameloop.years_in_a_turn] = money
+
+
+func _on_available_money_updated(money):
+	if listening:
+		data["available_money"][Gameloop.start_year + (turn_to_register_data_in) * Gameloop.years_in_a_turn] = money
+
+
+func _on_winter_energy_supply_updated(energy: float):
+	if listening:
+		data["winter_energy_supply"][Gameloop.start_year + (turn_to_register_data_in) * Gameloop.years_in_a_turn] = energy
+	
+
+func _on_summer_energy_supply_updated(energy: float):
+	if listening:
+		data["summer_energy_supply"][Gameloop.start_year + (turn_to_register_data_in) * Gameloop.years_in_a_turn] = energy
+	
+	
+func _on_winter_energy_import_updated(energy):
+	print("turn: ", turn_to_register_data_in, ", energy: ", energy)
+	print(data["winter_energy_import"])
+	if listening:
+		data["winter_energy_import"][Gameloop.start_year + (turn_to_register_data_in) * Gameloop.years_in_a_turn] = energy
+
+
+func _on_land_use_updated(land_use):
+	if listening:
+		data["land_use"][Gameloop.start_year + (turn_to_register_data_in) * Gameloop.years_in_a_turn] = land_use
+
+
+func _on_summer_energy_demand_updated(value):
+	if listening:
+		data["summer_demand"][Gameloop.start_year + (turn_to_register_data_in) * Gameloop.years_in_a_turn] = value
+	
+	
+func _on_winter_energy_demand_updated(value):
+	if listening:
+		data["winter_demand"][Gameloop.start_year + (turn_to_register_data_in) * Gameloop.years_in_a_turn] = value
+	
+	
+func _on_co2_emissions_updated(value):
+	if listening:
+		data["co2_emissions"][Gameloop.start_year + (turn_to_register_data_in) * Gameloop.years_in_a_turn] = value	
+
+
+func _on_personnal_support_updated(value):
+	if listening:
+		data["personal_support"][Gameloop.start_year + (turn_to_register_data_in) * Gameloop.years_in_a_turn] = value * 100	
+
+
 func _refresh_data():
 	_on_building_cost_updated(MoneyManager.building_costs)
 	_on_production_cost_updated(MoneyManager.total_production_costs)
@@ -109,53 +203,7 @@ func _refresh_data():
 	_on_co2_emissions_updated(Gameloop.co2_emissions)
 	_on_personnal_support_updated(PolicyManager.personal_support)
 
-func _on_building_cost_updated(cost):
-	data["building_costs"][Gameloop.start_year + (Gameloop.current_turn - 1) * Gameloop.years_in_a_turn] = cost
 
-
-func _on_production_cost_updated(cost):
-	data["production_costs"][Gameloop.start_year + (Gameloop.current_turn - 1) * Gameloop.years_in_a_turn] = cost
-
-
-func _on_import_cost_updated(cost):
-	data["import_costs"][Gameloop.start_year + (Gameloop.current_turn - 1) * Gameloop.years_in_a_turn] = cost
-
-
-func _on_borrowed_money_updated(money):
-	data["borrowed_money"][Gameloop.start_year + (Gameloop.current_turn - 1) * Gameloop.years_in_a_turn] = money
-
-
-func _on_available_money_updated(money):
-	data["available_money"][Gameloop.start_year + (Gameloop.current_turn - 1) * Gameloop.years_in_a_turn] = money
-
-
-func _on_winter_energy_supply_updated(energy: float):
-	data["winter_energy_supply"][Gameloop.start_year + (Gameloop.current_turn - 1) * Gameloop.years_in_a_turn] = energy
-	
-
-func _on_summer_energy_supply_updated(energy: float):
-	data["summer_energy_supply"][Gameloop.start_year + (Gameloop.current_turn - 1) * Gameloop.years_in_a_turn] = energy
-	
-	
-func _on_winter_energy_import_updated(energy):
-	data["winter_energy_import"][Gameloop.start_year + (Gameloop.current_turn - 1) * Gameloop.years_in_a_turn] = energy
-
-
-func _on_land_use_updated(land_use):
-	data["land_use"][Gameloop.start_year + (Gameloop.current_turn - 1) * Gameloop.years_in_a_turn] = land_use
-
-
-func _on_summer_energy_demand_updated(value):
-	data["summer_demand"][Gameloop.start_year + (Gameloop.current_turn - 1) * Gameloop.years_in_a_turn] = value
-	
-	
-func _on_winter_energy_demand_updated(value):
-	data["winter_demand"][Gameloop.start_year + (Gameloop.current_turn - 1) * Gameloop.years_in_a_turn] = value
-	
-	
-func _on_co2_emissions_updated(value):
-	data["co2_emissions"][Gameloop.start_year + (Gameloop.current_turn - 1) * Gameloop.years_in_a_turn] = value	
-
-
-func _on_personnal_support_updated(value):
-	data["personal_support"][Gameloop.start_year + (Gameloop.current_turn - 1) * Gameloop.years_in_a_turn] = value * 100	
+# Avoid listening to changes that we don't want to when the next turn is set
+func _on_next_turn_button_pressed():
+	listening = false
