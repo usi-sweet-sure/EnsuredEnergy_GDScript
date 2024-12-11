@@ -97,7 +97,8 @@ func _add_data_set_to_graph(data_set_name: String, line_color = Color(0.836, 0.7
 		
 	_add_new_line_to_graph(data_set_name, line_color, default_line_width)
 	
-	var points = GraphsData.get_data_set(data_set_name)
+	var data_set = GraphsData.get_data_set(data_set_name)
+	var points = data_set["points"]
 	var abscissas = points.keys()
 	var ordinates = points.values()
 	
@@ -148,31 +149,32 @@ func _add_new_line_to_graph(line_name: String, line_color: Color = Color(1,1,1,1
 	container.add_child(label)
 
 
-
 # Add a point at the end of the line
 func _add_new_point_to_line(line_name: String, x, y) -> Line2D:
 	var line: Line2D = graph.get_node(line_name)
 	var x_in_pixels = (graph.size.x / (x_axis_max_value - x_axis_min_value)) * (x - x_axis_min_value)
 	var y_in_pixels = graph.size.y - ((graph.size.y / (y_axis_max_value - y_axis_min_value)) * (y - y_axis_min_value))
 	line.add_point(Vector2(x_in_pixels, y_in_pixels))
-	
+	var unit =  GraphsData.get_data_set(line_name)["unit"]
+		
 	# Square for the value point
 	var visual_point = ColorRect.new()
 	visual_point.custom_minimum_size = default_point_size
 	visual_point.position = Vector2(x_in_pixels - default_point_size.x / 2, y_in_pixels - default_point_size.y / 2)
-	visual_point.tooltip_text = str(round(y))
 	
-	# Custom label to show the value instead of tooltip
+	# Custom label to show the value when highlighting the line
 	var label = Label.new()
 	visual_point.add_child(label)
-	label.text = str(round(y))
+	label.text = str(round(y)) + " " + unit
 	label.set_anchors_and_offsets_preset(Control.PRESET_CENTER_TOP)
 	label.hide()
 	visual_point.color = line.default_color
 	visual_point.color.a = 0.75
 	visual_point.mouse_entered.connect(func(): change_point_highlight(visual_point))
 	visual_point.mouse_exited.connect(func(): change_point_highlight(visual_point, false))
-	
+	visual_point.mouse_entered.connect(func(): Cursor.show_tooltip.emit(str(round(y)) + unit + "\n" + tr(line_name.to_upper() + "_LINE_NAME")))
+	visual_point.mouse_exited.connect(func(): Cursor.hide_tooltip.emit())
+
 	line.add_child(visual_point)
 	
 	return line
@@ -249,8 +251,6 @@ func _on_toggle_graphs():
 		_set_graph_context(context)
 
 
-# Season demands aren't linked to a context, since we want to display them as will
-# with the switch
 func _on_season_switch_toggled(toggled_on):
 	if toggled_on:
 		season = "summer"
@@ -258,6 +258,7 @@ func _on_season_switch_toggled(toggled_on):
 		season = "winter"
 		
 	_set_graph_context("energy")
+	
 		
 func _reset_graph():
 	for n in graph.get_children():
@@ -267,18 +268,23 @@ func _reset_graph():
 	for n in line_names_container.get_children():
 		line_names_container.remove_child(n)
 		n.queue_free()
+		
 
 func _on_landuse_button_pressed():
 	_set_graph_context("landuse")
 
+
 func _on_emissions_button_pressed():
 	_set_graph_context("emissions")
+
 
 func _on_economy_button_pressed():
 	_set_graph_context("economy")
 
+
 func _on_energy_button_pressed():
 	_set_graph_context("energy")
+
 
 # Makes a line grow in size to highlight it
 func change_line_highlight(line_name, highlight := true):
@@ -308,7 +314,6 @@ func change_line_highlight(line_name, highlight := true):
 			
 			# Those formula are to be adapated if the size_factor changes
 			# For example, a size_factor of 2 doesn't require the move_factor to be divided
-			# I'd find a formula but hey
 			var label = child.get_children()[0]
 			var tween3 = get_tree().create_tween()
 			
@@ -326,6 +331,7 @@ func change_line_highlight(line_name, highlight := true):
 				
 				var tween4 = get_tree().create_tween()
 				tween4.tween_property(label, "visible", false, 0.1)
+
 
 # Highlights the point when the mouse is hovering above it
 func change_point_highlight(point: ColorRect, highlight := true):

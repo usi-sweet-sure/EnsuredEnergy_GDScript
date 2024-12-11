@@ -16,34 +16,42 @@ extends Node
 # }
 # This is tightly linked to the fact we know x-axis will always display years.
 # If this changes, adapt the data accordingly.
-# In any case, graphs_window.gd doesn't know the form of the data, it is only
-# needed that "get_data_set" returns a dictionnary of the form
-#	{
-#		x: float = y: float,
-#		x = y,
-#		...
-#	}
+# It's only needed that "get_data_set" returns a dictionnary of the form
+# {
+#		"points" = {
+#			x: float = y: float,
+#			x = y,
+#			...
+#		},
+#		"unit" = "CHF"
+# }
 # "graphs_window.gd" takes care of everything, so x and y have to be the real
 # values you want to display, nothing else to do appart from setting axis values
-# in "graphs_window.gd" context that goes with the values you want to display.
+# in "graphs_window.gd" context that matches the scale of the values you want to display.
 var data = {}
+# This is a dictionnary of the form
+# units = {
+#	 "name" = "unit",
+#	 "name" = "unit",
+# }
+var units = {}
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	_add_new_data_set("summer_demand")
-	_add_new_data_set("winter_demand")
-	_add_new_data_set("building_costs")
-	_add_new_data_set("production_costs")
-	_add_new_data_set("import_costs")
-	_add_new_data_set("borrowed_money")
-	_add_new_data_set("available_money")
-	_add_new_data_set("winter_energy_supply")
-	_add_new_data_set("summer_energy_supply")
-	_add_new_data_set("winter_energy_import")
-	_add_new_data_set("land_use")
-	_add_new_data_set("co2_emissions")
-	_add_new_data_set("personal_support")
+	_add_new_data_set("summer_demand", " TJ")
+	_add_new_data_set("winter_demand", " TJ")
+	_add_new_data_set("building_costs", "M CHF")
+	_add_new_data_set("production_costs", "M CHF")
+	_add_new_data_set("import_costs", "M CHF")
+	_add_new_data_set("borrowed_money", "M CHF")
+	_add_new_data_set("available_money", "M CHF")
+	_add_new_data_set("winter_energy_supply", " TJ")
+	_add_new_data_set("summer_energy_supply", " TJ")
+	_add_new_data_set("winter_energy_import", " TJ")
+	_add_new_data_set("land_use", " Km2")
+	_add_new_data_set("co2_emissions", "M CO2/t")
+	_add_new_data_set("personal_support", " %")
 	
 	MoneyManager.building_costs_updated.connect(_on_building_cost_updated)
 	MoneyManager.total_production_costs_updated.connect(_on_production_cost_updated)
@@ -68,14 +76,20 @@ func _ready():
 #		x = y,
 #		...
 #	}
-func get_data_set(key_name: String):
-	_add_new_data_set(key_name) # Initializes empty data if needed 
-	return data[key_name]
+func get_data_set(key_name: String) -> Dictionary:
+	_add_new_data_set(key_name, "") # Initializes empty data if needed
+	return {
+		"points" = data[key_name],
+		"unit" = units[key_name]
+	}
 
 
-func _add_new_data_set(key_name: String):
+func _add_new_data_set(key_name: String, unit: String):
 	if not data.has(key_name):
 		data[key_name] = {}
+		
+	if not units.has(key_name):
+		units[key_name] = unit
 		
 		
 # This is used at _ready and on a new turn. Some data don't change when a new turn
