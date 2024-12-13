@@ -189,11 +189,48 @@ grow_vertical = 2
 script = ExtResource("5_luxph")
 button_group = ExtResource("9_h5vxw")
 
+[node name="Label" type="Label" parent="MainFrame/Screen/MetricsRanking"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -8.0
+offset_bottom = -299.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "You managed to cover the energy demand for 30 years."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="MainFrame/Screen/MetricsRanking/Label"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 208.0
+offset_top = 135.0
+offset_right = -55.0
+offset_bottom = 202.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+theme_override_constants/line_spacing = 13
+text = "You did not reach net zero.
+You chose to keep nuclear.
+The costs for your energy system are below average.
+You managed to implement n policies.
+% of your winter energy is imported."
+
 [node name="RichTextLabel" type="Label" parent="MainFrame/Screen/MetricsRanking"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 343.0
+offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_n8g63")
@@ -856,6 +893,7 @@ offset_right = 236.0
 offset_bottom = 41.0
 
 [node name="ProgressBar" type="ProgressBar" parent="MainFrame/BottomFrames/CenterFrame/Solar"]
+visible = false
 layout_mode = 0
 offset_left = 127.0
 offset_top = 159.0
@@ -910,6 +948,39 @@ position = Vector2(29.3954, 28.75)
 scale = Vector2(0.645455, 0.645455)
 texture = ExtResource("7_x2355")
 
+[node name="Screen" type="NinePatchRect" parent="MainFrame/BottomFrames/CenterFrame/Solar"]
+offset_left = 85.5
+offset_top = 56.5
+offset_right = 213.5
+offset_bottom = 136.5
+texture = ExtResource("6_us122")
+patch_margin_left = 5
+patch_margin_top = 6
+patch_margin_right = 7
+patch_margin_bottom = 5
+
+[node name="NuclearLabel" type="Label" parent="MainFrame/BottomFrames/CenterFrame/Solar/Screen"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = -15.0
+offset_right = -5.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
+theme_override_constants/shadow_offset_x = 2
+text = "NO
+NUCLEAR
+"
+horizontal_alignment = 1
+script = ExtResource("7_1k3ff")
+
 [node name="Imports" type="Control" parent="MainFrame/BottomFrames/CenterFrame"]
 visible = false
 anchors_preset = 0
@@ -953,6 +1024,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Gauge" type="Control" parent="MainFrame/BottomFrames/RightFrame/LandUse"]
+visible = false
 anchors_preset = 0
 offset_left = -9.0
 offset_top = -8.0
@@ -1041,12 +1113,45 @@ position = Vector2(29.5, 27.5)
 scale = Vector2(0.645, 0.645)
 texture = ExtResource("10_induf")
 
+[node name="Screen" type="NinePatchRect" parent="MainFrame/BottomFrames/RightFrame/LandUse"]
+offset_left = 20.5
+offset_top = 57.5
+offset_right = 148.5
+offset_bottom = 137.5
+texture = ExtResource("6_us122")
+patch_margin_left = 5
+patch_margin_top = 6
+patch_margin_right = 7
+patch_margin_bottom = 5
+
+[node name="LandUseLabel" type="Label" parent="MainFrame/BottomFrames/RightFrame/LandUse/Screen"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = -15.0
+offset_right = -5.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
+theme_override_constants/shadow_offset_x = 2
+text = "000.0 Km2
+"
+horizontal_alignment = 1
+script = ExtResource("7_1k3ff")
+
 [node name="Emissions" type="Control" parent="MainFrame/BottomFrames/RightFrame"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Gauge" type="Control" parent="MainFrame/BottomFrames/RightFrame/Emissions"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 136.0
@@ -1136,6 +1241,39 @@ texture = ExtResource("11_qe2lm")
 position = Vector2(32.5, 28.5)
 scale = Vector2(0.645, 0.645)
 texture = ExtResource("11_fjiu1")
+
+[node name="Screen" type="NinePatchRect" parent="MainFrame/BottomFrames/RightFrame/Emissions"]
+offset_left = 164.5
+offset_top = 57.5
+offset_right = 292.5
+offset_bottom = 137.5
+texture = ExtResource("6_us122")
+patch_margin_left = 5
+patch_margin_top = 6
+patch_margin_right = 7
+patch_margin_bottom = 5
+
+[node name="EmissionLabel" type="Label" parent="MainFrame/BottomFrames/RightFrame/Emissions/Screen"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = -15.0
+offset_right = -5.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
+theme_override_constants/shadow_offset_x = 2
+text = "NET ZERO
+REACHED
+"
+horizontal_alignment = 1
+script = ExtResource("7_1k3ff")
 
 [node name="CloseButton2" parent="MainFrame" instance=ExtResource("43_pdbh2")]
 layout_mode = 1
