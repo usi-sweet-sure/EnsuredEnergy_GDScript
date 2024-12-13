@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d2hhtw1popthi" path="res://scenes/powerplants/pp_map_emplacement/build_button/bb_in_construction.tscn" id="3_xoig2"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/history_label.gd" id="4_44y7j"]
 
-[sub_resource type="Shader" id="Shader_hj60s"]
+[sub_resource type="Shader" id="Shader_44sfs"]
 resource_local_to_scene = true
 code = "shader_type canvas_item;
 
@@ -49,14 +49,14 @@ void fragment() {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kixpu"]
 resource_local_to_scene = true
-shader = SubResource("Shader_hj60s")
+shader = SubResource("Shader_44sfs")
 shader_parameter/line_color = Vector4(1, 1, 1, 1)
 shader_parameter/line_thickness = 1.0
 shader_parameter/frequency = 10.0
 shader_parameter/phase_speed = 5.0
 shader_parameter/show = false
 
-[sub_resource type="Shader" id="Shader_p75io"]
+[sub_resource type="Shader" id="Shader_gxojw"]
 resource_local_to_scene = true
 code = "shader_type canvas_item;
 
@@ -100,7 +100,7 @@ void fragment() {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g2jol"]
 resource_local_to_scene = true
-shader = SubResource("Shader_p75io")
+shader = SubResource("Shader_gxojw")
 shader_parameter/line_color = Vector4(1, 1, 1, 1)
 shader_parameter/line_thickness = 1.0
 shader_parameter/frequency = 10.0

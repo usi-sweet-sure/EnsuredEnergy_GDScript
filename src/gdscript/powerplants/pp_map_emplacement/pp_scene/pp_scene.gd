@@ -22,7 +22,6 @@ var metrics: PowerplantMetrics
 # This is used to revert the changes made to metrics during a shock
 var metrics_backup: PowerplantMetrics
 
-
 func _ready():
 	GroupManager.buttons_group_updated.emit()
 	GroupManager.switches_group_updated.emit()
@@ -31,8 +30,16 @@ func _ready():
 
 func set_metrics(metrics_: PowerplantMetrics):
 	self.metrics = metrics_.copy()
-	texture_on_changed.emit(load(PowerplantsManager.powerplants_textures_on[metrics_.type]))
-	texture_off_changed.emit(load(PowerplantsManager.powerplants_textures_off[metrics_.type]))
+	
+	change_image(metrics)
+	
+	# Set effects overlay
+	var effects_scene_path = PowerplantsManager.powerplants_effects[metrics_.type]
+	if effects_scene_path != "":
+		var effects_scene = load(effects_scene_path).instantiate()
+		add_child(effects_scene)
+		move_child(effects_scene, 3)
+		
 	metrics_updated.emit(self.metrics)
 	
 
@@ -134,6 +141,8 @@ func _on_button_plus_pressed():
 			MoneyManager.building_costs += metrics.upgrade_cost
 			Gameloop.available_money_message_requested.emit("-" + str(metrics.upgrade_cost + delta_prod_cost).pad_decimals(0) + "M CHF", false)
 			
+			change_image(metrics)
+			
 			metrics_updated.emit(metrics)
 			powerplant_upgraded.emit(metrics)
 		else:
@@ -168,6 +177,8 @@ func _on_button_minus_pressed():
 		# Upgrade cost
 		MoneyManager.building_costs -= metrics.upgrade_cost
 		Gameloop.available_money_message_requested.emit("+" + str(metrics.upgrade_cost + delta_prod_cost).pad_decimals(0) + "M CHF", true)
+		
+		change_image(metrics)
 		
 		metrics_updated.emit(metrics)
 		powerplant_downgraded.emit(metrics)
@@ -215,3 +226,11 @@ func is_biogas() -> bool:
 
 func is_carbon_sequestration() -> bool:
 		return metrics.type == PowerplantsManager.EngineTypeIds.CARBON_SEQUESTRATION
+
+
+func change_image(metrics_: PowerplantMetrics):
+	var image_path_on = PowerplantsManager.get_powerplant_image_path(metrics_.type, metrics_.current_upgrade, true)
+	var image_path_off = PowerplantsManager.get_powerplant_image_path(metrics_.type, metrics_.current_upgrade, false)
+
+	texture_on_changed.emit(load(image_path_on))
+	texture_off_changed.emit(load(image_path_off))
