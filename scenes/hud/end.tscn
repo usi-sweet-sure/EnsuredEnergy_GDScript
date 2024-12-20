@@ -161,7 +161,7 @@ anchor_right = 1.0
 offset_left = 182.0
 offset_top = 66.0
 offset_right = -181.0
-offset_bottom = 516.0
+offset_bottom = 721.0
 grow_horizontal = 2
 size_flags_horizontal = 0
 texture = ExtResource("6_us122")
@@ -636,6 +636,7 @@ text = "SCORE"
 horizontal_alignment = 2
 
 [node name="BottomFrames" type="HBoxContainer" parent="MainFrame"]
+visible = false
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
