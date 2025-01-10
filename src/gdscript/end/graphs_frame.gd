@@ -174,8 +174,9 @@ func _add_new_point_to_line(line_name: String, x, y) -> Line2D:
 	# Custom label to show the value instead of tooltip
 	var label = Label.new()
 	visual_point.add_child(label)
-	label.text = str(round(y)) + " " + unit
-	label.set_anchors_and_offsets_preset(Control.PRESET_CENTER_TOP)
+	label.text = str(round(y)) + "\n" + unit
+	label.set_anchors_and_offsets_preset(Control.PRESET_CENTER_BOTTOM)
+	label.position.y = label.position.y - 25
 	label.hide()
 	visual_point.color = line.default_color
 	visual_point.color.a = 0.75
@@ -290,20 +291,17 @@ func change_line_highlight(line_name, highlight := true):
 			# Those formula are to be adapated if the size_factor changes
 			# For example, a size_factor of 2 doesn't require the move_factor to be divided
 			var label = child.get_children()[0]
-			var tween3 = get_tree().create_tween()
-			
+						
 			if highlight:
+				label.set_anchors_and_offsets_preset(Control.PRESET_CENTER_BOTTOM)
 				label.show()
 				
 				if change_point_size:
 					child.position -= default_point_size / (move_factor / 2)
-					
-				tween3.tween_property(label, "position", Vector2(label.position.x, label.position.y - 25), 0.1)
 			else:
 				if change_point_size:
 					child.position += default_point_size / (move_factor / 2)
-				tween3.tween_property(label, "position", Vector2(label.position.x, 0), 0.1)
-				
+									
 				var tween4 = get_tree().create_tween()
 				tween4.tween_property(label, "visible", false, 0.1)
 
