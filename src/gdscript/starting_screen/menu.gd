@@ -2,6 +2,8 @@ extends CanvasLayer
 
 var lang = ["de", "fr", "it", "en"]
 var i = 0
+@onready var hud: CanvasLayer = $CanvasLayer
+@onready var parallax_background: ParallaxBackground = $ParallaxBackground
 
 
 # Called when the node enters the scene tree for the first time.
@@ -16,6 +18,8 @@ func _ready():
 
 func _on_play_pressed():
 	Gameloop.player_name = "new_player"
+	hud.hide()
+	parallax_background.hide()
 	hide()
 	Gameloop.start_game()
 	

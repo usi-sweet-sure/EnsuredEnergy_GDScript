@@ -37,7 +37,8 @@ func _on_game_ended():
 	await Context.leaderboard_updated
 	
 	metrics_leaderboard_updated.emit(Context.leaderboard_json)
-	
+	$MainFrame/Leaderboard.disabled = false
+	$MainFrame/Summary.disabled = false
 	
 func _on_show_ending_screen():
 	show()
@@ -87,3 +88,24 @@ func _on_player_name_focus_exited():
 func _on_button_pressed():
 	%NameInfoButton.hide()
 	%player_name.grab_focus()
+
+
+
+
+func _on_leaderboard_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		$MainFrame/Screen/MetricsRanking/EndMessage.hide()
+		$MainFrame/Screen/MetricsRanking/StatContainer.show()
+		%NameInfoButton.show()
+	else:
+		$MainFrame/Screen/MetricsRanking/StatContainer.hide()
+		$MainFrame/Screen/MetricsRanking/EndMessage.show()
+
+
+func _on_summary_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		$MainFrame/Screen/MetricsRanking/SummaryContainer.show()
+		$MainFrame/Screen/MetricsRanking/EndMessage.hide()
+	else:
+		$MainFrame/Screen/MetricsRanking/SummaryContainer.hide()
+		$MainFrame/Screen/MetricsRanking/EndMessage.show()

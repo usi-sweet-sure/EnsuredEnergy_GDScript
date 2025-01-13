@@ -1,7 +1,9 @@
-[gd_scene load_steps=32 format=3 uid="uid://pvoi2mcc3oc1"]
+[gd_scene load_steps=36 format=3 uid="uid://pvoi2mcc3oc1"]
 
 [ext_resource type="Script" path="res://src/gdscript/starting_screen/menu.gd" id="1_hl1kv"]
-[ext_resource type="Texture2D" uid="uid://dug4cy4mgxa1b" path="res://assets/textures/map/map.jpg" id="2_yai7r"]
+[ext_resource type="Shader" path="res://src/gdscript/shaders/cloud.gdshader" id="2_8lpgc"]
+[ext_resource type="Texture2D" uid="uid://cgp2b1kada3ww" path="res://assets/title/map.png" id="2_madfd"]
+[ext_resource type="Texture2D" uid="uid://kfrnyvqb84es" path="res://assets/title/cloud.png" id="3_0nshc"]
 [ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/fonts/special_elite/special_elite_regular.ttf" id="3_hwgqu"]
 [ext_resource type="Texture2D" uid="uid://d2xmfb55o0osw" path="res://assets/textures/ui/All-HQ-Assets-D_0006s_0014_Start-menu-metal-base.png" id="4_dgun4"]
 [ext_resource type="FontFile" uid="uid://bt2f3flr7psn5" path="res://assets/fonts/vt323/vt323_regular.ttf" id="4_u4k4v"]
@@ -18,6 +20,30 @@
 [ext_resource type="Texture2D" uid="uid://bdqqnt7g3ojt8" path="res://assets/textures/ui/Blueprint_active_2.png" id="14_wbube"]
 [ext_resource type="Texture2D" uid="uid://60dl810b25fd" path="res://assets/textures/buttons/button_press.png" id="15_4vyug"]
 [ext_resource type="Texture2D" uid="uid://cuhckno2t6g0r" path="res://assets/textures/buttons/button_hover.png" id="16_gqjv5"]
+[ext_resource type="Texture2D" uid="uid://c5cp3fte7g6ii" path="res://assets/title/logo.png" id="19_1nqsc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_odwvr"]
+shader = ExtResource("2_8lpgc")
+shader_parameter/density = 0.75
+shader_parameter/speed = Vector2(0.02, 0.01)
+shader_parameter/noise_texture = ExtResource("3_0nshc")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fibyn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_eqfmq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_bf784")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_wbube")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3tdw6"]
 bg_color = Color(0.65098, 0.65098, 0.65098, 0.0470588)
@@ -124,83 +150,44 @@ VScrollBar/styles/grabber = SubResource("StyleBoxFlat_5mtqi")
 VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_1qqbn")
 VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_idcep")
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_fibyn"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("12_eqfmq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_bf784")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_wbube")
-}],
-"loop": true,
-"name": &"default",
-"speed": 4.0
-}]
-
 [node name="Menu" type="CanvasLayer"]
 script = ExtResource("1_hl1kv")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.466667, 0.627451, 0.443137, 1)
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = 2
 
-[node name="Map-matternhorn" type="Sprite2D" parent="."]
-position = Vector2(207, 23)
-scale = Vector2(0.23, 0.23)
-texture = ExtResource("2_yai7r")
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1920, 1080)
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground"]
+material = SubResource("ShaderMaterial_odwvr")
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("2_madfd")
 centered = false
 
-[node name="Title" type="Label" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 56.0
-offset_top = 29.0
-offset_bottom = -774.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_34yde")
-theme_override_constants/shadow_offset_x = 1
-theme_override_constants/shadow_offset_y = 1
-theme_override_constants/shadow_outline_size = 5
-theme_override_font_sizes/font_size = 100
-text = "Ensured 
-Energy"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 3
 
-[node name="MenuBase" type="Sprite2D" parent="."]
-position = Vector2(690, 685)
+[node name="Logo" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(986, 209)
+texture = ExtResource("19_1nqsc")
+
+[node name="BlueprintNormal2" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(701, 685)
 texture = ExtResource("4_dgun4")
 
-[node name="StartMenuBase" type="NinePatchRect" parent="."]
-visible = false
-offset_left = 511.0
-offset_top = 446.0
-offset_right = 873.0
-offset_bottom = 907.0
-texture = ExtResource("4_dgun4")
-patch_margin_top = 223
-patch_margin_bottom = 238
-
-[node name="Play" type="TextureButton" parent="." groups=["buttons"]]
+[node name="BlueprintNormal3" type="TextureButton" parent="CanvasLayer" groups=["buttons"]]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -364.0
+offset_left = -353.0
 offset_top = 25.0
-offset_right = -167.0
+offset_right = -156.0
 offset_bottom = 89.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -211,7 +198,7 @@ texture_disabled = ExtResource("12_2e306")
 ignore_texture_size = true
 stretch_mode = 3
 
-[node name="PlayL" type="Label" parent="Play"]
+[node name="PlayL" type="Label" parent="CanvasLayer/BlueprintNormal3"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -228,21 +215,21 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Sprite2D3" type="Sprite2D" parent="Play"]
+[node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer/BlueprintNormal3"]
 show_behind_parent = true
 position = Vector2(-1, -12)
 texture = ExtResource("9_j0rns")
 centered = false
 
-[node name="Lang" type="TextureButton" parent="." groups=["buttons"]]
+[node name="BlueprintNormal4" type="TextureButton" parent="CanvasLayer" groups=["buttons"]]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -364.0
+offset_left = -353.0
 offset_top = 112.0
-offset_right = -167.0
+offset_right = -156.0
 offset_bottom = 176.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -253,7 +240,7 @@ ignore_texture_size = true
 stretch_mode = 3
 metadata/_edit_group_ = true
 
-[node name="LangL" type="Label" parent="Lang"]
+[node name="LangL" type="Label" parent="CanvasLayer/BlueprintNormal4"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -271,21 +258,21 @@ vertical_alignment = 1
 autowrap_mode = 2
 uppercase = true
 
-[node name="Sprite2D2" type="Sprite2D" parent="Lang"]
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/BlueprintNormal4"]
 show_behind_parent = true
 position = Vector2(-1, -12)
 texture = ExtResource("9_j0rns")
 centered = false
 
-[node name="Credits" type="TextureButton" parent="." groups=["buttons"]]
+[node name="BlueprintNormal5" type="TextureButton" parent="CanvasLayer" groups=["buttons"]]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -364.0
+offset_left = -353.0
 offset_top = 200.0
-offset_right = -167.0
+offset_right = -156.0
 offset_bottom = 264.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -297,7 +284,7 @@ ignore_texture_size = true
 stretch_mode = 3
 metadata/_edit_group_ = true
 
-[node name="OfflineL" type="Label" parent="Credits"]
+[node name="OfflineL" type="Label" parent="CanvasLayer/BlueprintNormal5"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -314,19 +301,19 @@ vertical_alignment = 1
 autowrap_mode = 2
 uppercase = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Credits"]
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/BlueprintNormal5"]
 show_behind_parent = true
 position = Vector2(-1, -12)
 texture = ExtResource("9_j0rns")
 centered = false
 
-[node name="BlueprintNormal" type="AnimatedSprite2D" parent="."]
-position = Vector2(1232, 680)
+[node name="BlueprintNormal" type="AnimatedSprite2D" parent="CanvasLayer"]
+position = Vector2(1298, 683)
 sprite_frames = SubResource("SpriteFrames_fibyn")
 autoplay = "default"
 frame_progress = 0.665593
 
-[node name="Drag" type="Label" parent="BlueprintNormal"]
+[node name="Drag" type="Label" parent="CanvasLayer/BlueprintNormal"]
 offset_left = -220.0
 offset_top = -112.0
 offset_right = -80.0
@@ -338,7 +325,7 @@ text = "HOLD"
 autowrap_mode = 3
 uppercase = true
 
-[node name="Scroll" type="Label" parent="BlueprintNormal"]
+[node name="Scroll" type="Label" parent="CanvasLayer/BlueprintNormal"]
 offset_left = -220.0
 offset_top = 42.0
 offset_right = -80.0
@@ -350,6 +337,6 @@ text = "SCROLL"
 autowrap_mode = 3
 uppercase = true
 
-[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Lang" to="." method="_on_lang_pressed"]
-[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="CanvasLayer/BlueprintNormal3" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/BlueprintNormal4" to="." method="_on_lang_pressed"]
+[connection signal="pressed" from="CanvasLayer/BlueprintNormal5" to="." method="_on_credits_pressed"]
