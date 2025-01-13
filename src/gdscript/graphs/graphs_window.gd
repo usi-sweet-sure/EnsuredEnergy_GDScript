@@ -18,6 +18,8 @@ var x_axis_min_value: int
 var x_axis_max_value: int
 var y_axis_min_value: int
 var y_axis_max_value: int
+var x_axis_ticks_delta: int # Difference in value between two axis ticks
+var y_axis_ticks_delta: int # Difference in value between two axis ticks
 
 var context: String = "energy" # Allows to know what the graph is displaying
 var season := "winter"
@@ -40,14 +42,16 @@ func _set_graph_context(context_name: String):
 	_reset_graph()
 	context_changed.emit(context)
 	$MainFrame/RightContainer/SeasonSwitch.hide()
+	x_axis_ticks_delta = Gameloop.years_in_a_turn
 	
 	match context_name:
 		"economy":
 			x_axis_min_value = Gameloop.start_year
 			x_axis_max_value = Gameloop.start_year + (Gameloop.total_number_of_turns * Gameloop.years_in_a_turn)
 			y_axis_min_value = -1000
-			y_axis_max_value = 2000
-			_draw_base_graph(Gameloop.years_in_a_turn, 200)
+			y_axis_max_value = 1000
+			y_axis_ticks_delta = 200
+			_draw_base_graph(["building_costs", "production_costs", "import_costs", "borrowed_money", "available_money"])
 			_add_data_set_to_graph("building_costs", Color(0.929, 0.651, 0.247))
 			_add_data_set_to_graph("production_costs", Color(0.902, 0.49, 0.384))
 			_add_data_set_to_graph("import_costs", Color(1, 0.875, 0.255))
@@ -58,27 +62,31 @@ func _set_graph_context(context_name: String):
 			x_axis_max_value = Gameloop.start_year + (Gameloop.total_number_of_turns * Gameloop.years_in_a_turn)
 			y_axis_min_value = 0
 			y_axis_max_value = 150
-			_draw_base_graph(Gameloop.years_in_a_turn, 10)
+			y_axis_ticks_delta = 10
+			_draw_base_graph(["land_use"])
 			_add_data_set_to_graph("land_use", Color(0.663, 0.929, 0.416))
 		"emissions":
 			x_axis_min_value = Gameloop.start_year
 			x_axis_max_value = Gameloop.start_year + (Gameloop.total_number_of_turns * Gameloop.years_in_a_turn)
 			y_axis_min_value = 0
 			y_axis_max_value = 5
-			_draw_base_graph(Gameloop.years_in_a_turn, 1)
+			y_axis_ticks_delta = 1
+			_draw_base_graph(["co2_emissions"])
 			_add_data_set_to_graph("co2_emissions", Color(0.91, 0.38, 0.38))
 		"energy":
 			x_axis_min_value = Gameloop.start_year
 			x_axis_max_value = Gameloop.start_year + (Gameloop.total_number_of_turns * Gameloop.years_in_a_turn)
 			y_axis_min_value = 0
 			y_axis_max_value = 2000
-			_draw_base_graph(Gameloop.years_in_a_turn, 200)
+			y_axis_ticks_delta = 200
 			$MainFrame/RightContainer/SeasonSwitch.show()
 			
 			if season == "summer":
+				_draw_base_graph(["summer_demand", "summer_energy_supply"])
 				_add_data_set_to_graph("summer_demand", Color(1, 0.702, 0.255, 1))
 				_add_data_set_to_graph("summer_energy_supply", Color(0.929, 0.875, 0.416))
 			else:
+				_draw_base_graph(["winter_demand", "winter_energy_supply", "winter_energy_import"])
 				_add_data_set_to_graph("winter_demand", Color(0, 0.569, 1, 1))
 				_add_data_set_to_graph("winter_energy_supply", Color(0.431, 0.961, 0.957))
 				_add_data_set_to_graph("winter_energy_import", Color(0.988, 0.973, 0.855))
@@ -87,7 +95,8 @@ func _set_graph_context(context_name: String):
 			x_axis_max_value = Gameloop.start_year + (Gameloop.total_number_of_turns * Gameloop.years_in_a_turn)
 			y_axis_min_value = 0
 			y_axis_max_value = 2000
-			_draw_base_graph(Gameloop.years_in_a_turn, 200)
+			y_axis_ticks_delta = 200
+			_draw_base_graph()
 
 
 # This is what you want to use in a normal use case when adding data to the graph.
@@ -107,7 +116,23 @@ func _add_data_set_to_graph(data_set_name: String, line_color = Color(0.836, 0.7
 		
 		
 # Draws the axis tick lines and labels
-func _draw_base_graph(x_axis_ticks_delta: int, y_axis_ticks_delta):
+func _draw_base_graph(data_sets: Array[String] = []):
+	# Adapts y axis max and min values so all points are inside the frame
+	for data_set_name in data_sets:
+		var data_set = GraphsData.get_data_set(data_set_name)
+		var points = data_set["points"]
+		var abscissas = points.keys()
+		var ordinates = points.values()
+		
+		for i in range(points.size()):
+			var y = ordinates[i]
+			
+			if y > y_axis_max_value:
+				y_axis_max_value = ceil(y + y * 10/100)
+			if y < y_axis_min_value:
+				y_axis_min_value = floor(y + y * 10/100)
+				
+		
 	_draw_axis_tick_lines("x", x_axis_ticks_delta)
 	_draw_axis_tick_lines("y", y_axis_ticks_delta)
 	
@@ -207,25 +232,31 @@ func _draw_axis_tick_lines(axis: String, ticks_value_delta: int):
 	var isXAxis := axis == "x" || axis == "X"
 	
 	# Defaults to x axis values
-	var axis_size = graph.size.x
-	var line_size = graph.size.y
-	var distance_between_ticks = (axis_size / (x_axis_max_value - x_axis_min_value)) * ticks_value_delta
+	var axis_length = graph.size.x
+	var line_length = graph.size.y
+	var distance_between_ticks = (axis_length / (x_axis_max_value - x_axis_min_value)) * ticks_value_delta
 	var first_tick_value = x_axis_min_value
 	
 	# Switch to y axis values as needed
 	if not isXAxis:
-		axis_size = graph.size.y
-		line_size = graph.size.x
-		distance_between_ticks = (axis_size / (y_axis_max_value - y_axis_min_value)) * ticks_value_delta
+		axis_length = graph.size.y
+		line_length = graph.size.x
+		distance_between_ticks = (axis_length / (y_axis_max_value - y_axis_min_value)) * ticks_value_delta
 		first_tick_value = y_axis_min_value
 	
 	# Draw the lines and the labels
 	var tick_index = 0
-	while tick_index * distance_between_ticks <= axis_size:
+	while tick_index * distance_between_ticks <= axis_length:
 		var new_line = Line2D.new()
+		
+		if isXAxis:
+			new_line.name = "x_axis_" + str(tick_index)
+		else:
+			new_line.name = "y_axis_" + str(tick_index)
+			
 		new_line.width = 2
 		
-		if not draw_axes_outer_lines && (tick_index == 0 || tick_index * distance_between_ticks == axis_size):
+		if not draw_axes_outer_lines && (tick_index == 0 || tick_index * distance_between_ticks == axis_length):
 			new_line.default_color = Color(1,1,1,0)
 		else:
 			new_line.default_color = Color(1,1,1,0.4)
@@ -239,13 +270,13 @@ func _draw_axis_tick_lines(axis: String, ticks_value_delta: int):
 		var tick_position = tick_index * distance_between_ticks
 		if isXAxis:
 			new_line.add_point(Vector2(tick_position, 0))
-			new_line.add_point(Vector2(tick_position, line_size))
-			new_label.position = Vector2(tick_position - 20, line_size + 3)
+			new_line.add_point(Vector2(tick_position, line_length))
+			new_label.position = Vector2(tick_position - 20, line_length + 3)
 		else:
 			new_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 			new_line.add_point(Vector2(0, tick_position))
-			new_line.add_point(Vector2(line_size, tick_position))
-			new_label.position = Vector2((label_size_x + 15) * -1, axis_size - tick_position - 15)
+			new_line.add_point(Vector2(line_length, tick_position))
+			new_label.position = Vector2((label_size_x + 15) * -1, axis_length - tick_position - 15)
 
 		graph.add_child(new_line)
 		
