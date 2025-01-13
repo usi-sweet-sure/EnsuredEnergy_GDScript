@@ -39,9 +39,9 @@ func _on_leaderboard_button_pressed(button_index):
 		
 			
 func _on_end_metrics_leaderboard_updated(leaderboard):
-	$RichTextLabel.hide()
-	$StatContainer.show()
-	%NameInfoButton.show()
+	$CalcRank.hide()
+	#$StatContainer.show()
+	#%NameInfoButton.show()
 	num = 0
 	for i in leaderboard[2]:
 		num += 1
