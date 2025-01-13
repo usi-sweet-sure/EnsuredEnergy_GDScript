@@ -950,6 +950,7 @@ scale = Vector2(0.645455, 0.645455)
 texture = ExtResource("7_x2355")
 
 [node name="Screen" type="NinePatchRect" parent="MainFrame/BottomFrames/CenterFrame/Solar"]
+layout_mode = 0
 offset_left = 85.5
 offset_top = 56.5
 offset_right = 213.5
@@ -1115,6 +1116,7 @@ scale = Vector2(0.645, 0.645)
 texture = ExtResource("10_induf")
 
 [node name="Screen" type="NinePatchRect" parent="MainFrame/BottomFrames/RightFrame/LandUse"]
+layout_mode = 0
 offset_left = 20.5
 offset_top = 57.5
 offset_right = 148.5
@@ -1244,6 +1246,7 @@ scale = Vector2(0.645, 0.645)
 texture = ExtResource("11_fjiu1")
 
 [node name="Screen" type="NinePatchRect" parent="MainFrame/BottomFrames/RightFrame/Emissions"]
+layout_mode = 0
 offset_left = 164.5
 offset_top = 57.5
 offset_right = 292.5
