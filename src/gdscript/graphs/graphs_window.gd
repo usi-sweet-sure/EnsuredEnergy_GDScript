@@ -274,8 +274,8 @@ func _draw_axis_tick_lines(axis: String, ticks_value_delta: int):
 			new_label.position = Vector2(tick_position - 20, line_length + 3)
 		else:
 			new_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
-			new_line.add_point(Vector2(0, tick_position))
-			new_line.add_point(Vector2(line_length, tick_position))
+			new_line.add_point(Vector2(0, axis_length - tick_position))
+			new_line.add_point(Vector2(line_length, axis_length - tick_position))
 			new_label.position = Vector2((label_size_x + 15) * -1, axis_length - tick_position - 15)
 
 		graph.add_child(new_line)
