@@ -863,7 +863,6 @@ stretch_mode = 0
 script = ExtResource("5_qmmyq")
 
 [node name="InfoFrame" type="TextureRect" parent="." groups=["pp_info_frames"]]
-visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -1525,7 +1524,6 @@ offset_bottom = 71.0
 grow_horizontal = 0
 scale = Vector2(2, 2)
 focus_mode = 0
-mouse_default_cursor_shape = 2
 theme_override_icons/checked = ExtResource("47_pyblj")
 theme_override_icons/unchecked = ExtResource("48_v7xmt")
 theme_override_icons/checked_disabled = ExtResource("47_pyblj")
