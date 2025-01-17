@@ -96,7 +96,6 @@ func _on_leaderboard_toggled(toggled_on: bool) -> void:
 	if toggled_on:
 		$MainFrame/Screen/MetricsRanking/EndMessage.hide()
 		$MainFrame/Screen/MetricsRanking/StatContainer.show()
-		%NameInfoButton.show()
 	else:
 		$MainFrame/Screen/MetricsRanking/StatContainer.hide()
 		$MainFrame/Screen/MetricsRanking/EndMessage.show()
@@ -109,3 +108,7 @@ func _on_summary_toggled(toggled_on: bool) -> void:
 	else:
 		$MainFrame/Screen/MetricsRanking/SummaryContainer.hide()
 		$MainFrame/Screen/MetricsRanking/EndMessage.show()
+
+
+func _on_metrics_leaderboard_updated(leaderboard) -> void:
+	$MainFrame/Leaderboard.button_pressed = true
