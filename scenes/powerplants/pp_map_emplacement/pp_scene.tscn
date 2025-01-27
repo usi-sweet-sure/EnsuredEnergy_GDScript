@@ -863,6 +863,7 @@ stretch_mode = 0
 script = ExtResource("5_qmmyq")
 
 [node name="InfoFrame" type="TextureRect" parent="." groups=["pp_info_frames"]]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
