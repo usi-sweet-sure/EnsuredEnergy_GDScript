@@ -98,6 +98,10 @@ build_on_start = 1
 [node name="PpMapEmplacement9" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(573, 313)
 
+[node name="HelpSign" parent="." instance=ExtResource("21_unlro")]
+position = Vector2(1912, 377)
+message = "CARBON_SEQUESTRATION_TEXT"
+
 [node name="PpMapEmplacement10" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(1929, 521)
 
@@ -252,7 +256,3 @@ position = Vector2(526, 2669)
 texture = ExtResource("17_qgn3q")
 
 [node name="PpMenu" parent="." instance=ExtResource("21_n4f12")]
-
-[node name="HelpSign" parent="." instance=ExtResource("21_unlro")]
-position = Vector2(1912, 377)
-message = "CARBON_SEQUESTRATION_TEXT"

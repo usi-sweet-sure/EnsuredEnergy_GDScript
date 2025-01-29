@@ -76,12 +76,6 @@ func _ready():
 	Gameloop.player_can_start_playing_first_turn.connect(_on_player_can_start_playing_first_turn)
 	
 
-# Must return a dictionnary of the form
-#	{
-#		x: float = y: float,
-#		x = y,
-#		...
-#	}
 func get_data_set(key_name: String) -> Dictionary:
 	_add_new_data_set(key_name, "") # Initializes empty data if needed
 	return {
@@ -207,3 +201,16 @@ func _refresh_data():
 # Avoid listening to changes that we don't want to when the next turn is set
 func _on_next_turn_button_pressed():
 	listening = false
+
+
+func get_data_for_year(data_set_name:String, year: int):
+	var data_set = get_data_set(data_set_name)
+	
+	var value = data_set["points"][year]
+	var unit = data_set["unit"]
+	
+	
+	return {
+		"value": value,
+		"unit": unit
+	}
