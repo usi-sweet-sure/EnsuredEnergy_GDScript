@@ -11,6 +11,7 @@ var game_stats = {
 	"reached_net_zero": false,
 	"exited_nuclear": false,
 	"lowered_production_costs": false,
+	"increased_production_costs": false,
 	"policies_implemented_count": 0,
 }
 
@@ -66,6 +67,13 @@ func compute_game_stats():
 		if chosen_reaction == 1:
 			game_stats.exited_nuclear = true
 			
+	
+	var production_costs_in_2022 = GraphsData.get_data_for_year("production_costs", Gameloop.start_year).value
+	var production_costs_now = GraphsData.get_data_for_year("production_costs", Gameloop.start_year + Gameloop.current_turn * Gameloop.years_in_a_turn).value
+	
+	game_stats.lowered_production_costs = production_costs_now < production_costs_in_2022
+	game_stats.increased_production_costs = production_costs_now > production_costs_in_2022
+	
 	print(game_stats)
 	
 func _on_show_ending_screen():
