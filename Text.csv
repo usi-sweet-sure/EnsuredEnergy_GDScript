@@ -243,10 +243,25 @@ RANK,Rank,Rang,Rang,Posizione
 SCORE,Score,Score,Spielstand,Punteggio
 CALCULATING_RANK,Calculating rank,Calcul du rang,Berechnung des Rangs,Calcolo del rango
 PLAYER_SCORE_NAME,"If you want to have your name on the leaderboard, you can edit your name on the screen","Si tu souhaites que ton nom figure dans le classement, tu peux modifier ton nom à l'écran","Wenn du möchtest, dass dein Name in der Rangliste erscheint, kannst du deinen Namen auf dem Bildschirm ändern","Se si desidera che il proprio nome compaia nella classifica, è possibile modificarlo sullo schermo"
-CARBON_SEQUESTRATION_TEXT,You can burry the captured CO2 in the ground to reduce emissions,Tu peux enfouir le CO2 capturé dans le sol pour réduire les émissions.,"Sie können das abgeschiedene CO2 im Boden vergraben, um die Emissionen zu verringern",È possibile immagazzinare nel terreno la CO2 raccolta per ridurre le emissioni.
+CARBON_SEQUESTRATION_TEXT,You can burry the captured CO2\nin the ground to reduce emissions,Tu peux enfouir le CO2 capturé\ndans le sol pour réduire les émissions.,"Sie können das abgeschiedene CO2\nim Boden vergraben, um\ndie Emissionen zu verringern",È possibile immagazzinare nel terreno la CO2\nraccolta per ridurre le emissioni.
 THANK_YOU_FOR_PLAYING,Thank you for playing the game!,Merci d'avoir joué au jeu !,"Vielen Dank, dass du das Spiel gespielt hast!",Grazie per aver giocato!
 BACK_TO_SURVEY,Return to survey,Retour au sondage,Zurück zur Umfrage,Torna al sondaggio
 RIVER,River,Rivière,Laufwasserkraftwerk,Fiume
 RESULTS,Results,Résultats,Ergebnisse,Risultati
 PLANT_WILL_DECOMMISSION_NEXT_TURN,The powerplant will be decommissioned next turn,La centrale sera déclassée au prochain tour,Das Kraftwerk wird in der nächsten Runde vom Netz genommen,La centrale sarà declassata nella prossima tornata elettorale
 CONTINUE,Continue,Continuer,Weiter,Continuare
+NETZERO_TEXT,,,,
+NO_NETZERO_TEXT,,,,
+NUC_TEXT,,,,
+NO_NUC_TEXT,,,,
+MONEY_TEXT,,,,
+NO_MONEY_TEXT,,,,
+POLICIES_TEXT,,,,
+IMPORT_TEXT,,,,
+ENERGY_SCORE,,,,
+FOSSIL_SCORE,,,,
+NUCLEAR_SCORE,,,,
+EMISSIONS_SCORE,,,,
+LAND_USE_SCORE,,,,
+PROD_COST_SCORE,,,,
+SEASONALITY_SCORE,,,,
