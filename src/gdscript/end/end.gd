@@ -6,6 +6,15 @@ signal metrics_rank_updated
 @export var tick_icon: Texture2D
 @export var pen_icon: Texture2D
 
+var game_stats = {
+	"lowered_co2_emissions": false,
+	"reached_net_zero": false,
+	"exited_nuclear": false,
+	"lowered_production_costs": false,
+	"increased_production_costs": false,
+	"policies_implemented_count": 0,
+}
+
 func _ready():
 	Gameloop.game_ended.connect(_on_game_ended)
 	Gameloop.show_ending_screen_requested.connect(_on_show_ending_screen)
@@ -19,6 +28,8 @@ func _on_game_ended():
 	Context.get_rank(Context.res_id)
 	await Context.rank_updated
 	
+	compute_game_stats()
+		
 	metrics_rank_updated.emit(Context.rank_json)
  
 	Context.get_leaderboard_from_model("5")
@@ -39,6 +50,31 @@ func _on_game_ended():
 	metrics_leaderboard_updated.emit(Context.leaderboard_json)
 	$MainFrame/Leaderboard.disabled = false
 	$MainFrame/Summary.disabled = false
+	
+	
+func compute_game_stats():
+	var emissions_in_2022 = GraphsData.get_data_for_year("co2_emissions", Gameloop.start_year).value
+	var emissions_now = GraphsData.get_data_for_year("co2_emissions", Gameloop.start_year + Gameloop.current_turn * Gameloop.years_in_a_turn).value
+	
+	game_stats.lowered_co2_emissions = emissions_now < emissions_in_2022
+	game_stats.reached_net_zero = emissions_now == 0
+	
+	var nuclear_event = HistoryManager.get_shock_event("SHOCK_NUC_REINTRO_TITLE")
+	
+	if nuclear_event != null:
+		var chosen_reaction = nuclear_event["player_reactions"]["chosen_reaction"]
+		
+		if chosen_reaction == 1:
+			game_stats.exited_nuclear = true
+			
+	
+	var production_costs_in_2022 = GraphsData.get_data_for_year("production_costs", Gameloop.start_year).value
+	var production_costs_now = GraphsData.get_data_for_year("production_costs", Gameloop.start_year + Gameloop.current_turn * Gameloop.years_in_a_turn).value
+	
+	game_stats.lowered_production_costs = production_costs_now < production_costs_in_2022
+	game_stats.increased_production_costs = production_costs_now > production_costs_in_2022
+	
+	print(game_stats)
 	
 func _on_show_ending_screen():
 	show()
@@ -88,8 +124,6 @@ func _on_player_name_focus_exited():
 func _on_button_pressed():
 	%NameInfoButton.hide()
 	%player_name.grab_focus()
-
-
 
 
 func _on_leaderboard_toggled(toggled_on: bool) -> void:
