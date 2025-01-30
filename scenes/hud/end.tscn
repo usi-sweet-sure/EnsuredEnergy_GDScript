@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://cej4dlw11su6f"]
+[gd_scene load_steps=76 format=3 uid="uid://cej4dlw11su6f"]
 
 [ext_resource type="Script" path="res://src/gdscript/end/end.gd" id="1_eio5g"]
 [ext_resource type="Texture2D" uid="uid://hka3jsgvfwwy" path="res://assets/textures/ui/green_checkmark.png" id="2_2yy2d"]
@@ -20,9 +20,10 @@
 [ext_resource type="ButtonGroup" uid="uid://bly2ooexf1g4h" path="res://scenes/windows/leaderboard_buttons.tres" id="9_h5vxw"]
 [ext_resource type="Texture2D" uid="uid://ceywqq4wa4ocw" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0026_Icon-Import.png" id="9_uutud"]
 [ext_resource type="Script" path="res://src/gdscript/end/energy_bar.gd" id="10_6lpn4"]
-[ext_resource type="ButtonGroup" uid="uid://duc830qsnf8t2" path="res://scenes/buttons/summary_button_group.tres" id="10_hny1g"]
+[ext_resource type="ButtonGroup" path="res://scenes/buttons/summary_button_group.tres" id="10_hny1g"]
 [ext_resource type="Texture2D" uid="uid://bx0cxko72v5ui" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0020_Icon-Environment-.png" id="10_induf"]
 [ext_resource type="Texture2D" uid="uid://dlccss1xvy8tb" path="res://assets/textures/ui/Button-Square-hover.png" id="10_y0hau"]
+[ext_resource type="Texture2D" uid="uid://bpt1e486wuscd" path="res://assets/textures/icons/chalk_emission.png" id="11_2srpk"]
 [ext_resource type="Texture2D" uid="uid://b083k6d7sugyx" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0018_Icon-Pollution-.png" id="11_fjiu1"]
 [ext_resource type="Script" path="res://src/gdscript/end/money_button.gd" id="11_gk6vr"]
 [ext_resource type="Texture2D" uid="uid://b421l4qq7mg5n" path="res://assets/textures/ui/All-HQ-Assets-D_0007s_0024_Line-energy.png" id="11_glyce"]
@@ -30,7 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://bj6ubksmn350n" path="res://assets/textures/buttons/button_hole.png" id="11_qe2lm"]
 [ext_resource type="Texture2D" uid="uid://1esf36575js0" path="res://assets/textures/icons/chalk_land_use.png" id="11_v0rb1"]
 [ext_resource type="StyleBox" uid="uid://lco0fbxgcpii" path="res://scenes/hud/energy_bar_low.tres" id="12_2ucrx"]
-[ext_resource type="Texture2D" uid="uid://0v0cjn8yr4n8" path="res://assets/textures/shocks/nuclear_reintro_no.png" id="12_np7nw"]
+[ext_resource type="Texture2D" uid="uid://biwwfxsgd37rv" path="res://assets/textures/icons/chalk_warning.png" id="13_pfn5s"]
 [ext_resource type="Texture2D" uid="uid://d3vcg8408jiv6" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0002_no-Money-symbol.png" id="13_u017u"]
 [ext_resource type="Texture2D" uid="uid://da56ki5hmlw12" path="res://assets/textures/ui/All-HQ-Assets-D_0009s_0008_Energy-Bar-base.png" id="14_tu03u"]
 [ext_resource type="Texture2D" uid="uid://c3opgyhsh61y8" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0014_Policies-symbol.png" id="14_x4nl2"]
@@ -649,7 +650,6 @@ text = "SCORE"
 horizontal_alignment = 2
 
 [node name="SummaryContainer" type="MarginContainer" parent="MainFrame/Screen/MetricsRanking"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -664,71 +664,72 @@ layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/VBoxContainer"]
 layout_mode = 2
+alignment = 1
 
-[node name="Button" type="TextureButton" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(180, 0)
+[node name="CO2" type="Button" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 focus_mode = 0
 theme = ExtResource("4_n8g63")
 toggle_mode = true
 button_group = ExtResource("10_hny1g")
-texture_normal = ExtResource("11_v0rb1")
-texture_pressed = ExtResource("11_v0rb1")
-texture_hover = ExtResource("11_v0rb1")
-stretch_mode = 3
+icon = ExtResource("11_2srpk")
+icon_alignment = 1
 
-[node name="Button2" type="TextureButton" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(180, 0)
+[node name="Landuse" type="Button" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 focus_mode = 0
 theme = ExtResource("4_n8g63")
 toggle_mode = true
 button_group = ExtResource("10_hny1g")
-texture_normal = ExtResource("12_np7nw")
-texture_pressed = ExtResource("12_np7nw")
-texture_hover = ExtResource("12_np7nw")
-stretch_mode = 3
+icon = ExtResource("11_v0rb1")
+icon_alignment = 1
 
-[node name="Button3" type="TextureButton" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(180, 0)
+[node name="Nuc" type="Button" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_n8g63")
+toggle_mode = true
+button_group = ExtResource("10_hny1g")
+icon = ExtResource("13_pfn5s")
+icon_alignment = 1
+
+[node name="Costs" type="Button" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 focus_mode = 0
 theme = ExtResource("4_n8g63")
 toggle_mode = true
 button_pressed = true
 button_group = ExtResource("10_hny1g")
-texture_normal = ExtResource("13_u017u")
-texture_pressed = ExtResource("13_u017u")
-texture_hover = ExtResource("13_u017u")
-stretch_mode = 3
+icon = ExtResource("13_u017u")
+icon_alignment = 1
 
-[node name="Button4" type="TextureButton" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(180, 0)
+[node name="Policies" type="Button" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 focus_mode = 0
 theme = ExtResource("4_n8g63")
 toggle_mode = true
 button_group = ExtResource("10_hny1g")
-texture_normal = ExtResource("14_x4nl2")
-texture_pressed = ExtResource("14_x4nl2")
-texture_hover = ExtResource("14_x4nl2")
-stretch_mode = 3
+icon = ExtResource("14_x4nl2")
+icon_alignment = 1
 
-[node name="Button5" type="TextureButton" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(180, 0)
+[node name="Imports" type="Button" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 focus_mode = 0
 theme = ExtResource("4_n8g63")
 toggle_mode = true
 button_group = ExtResource("10_hny1g")
-texture_normal = ExtResource("15_s55n7")
-texture_pressed = ExtResource("15_s55n7")
-texture_hover = ExtResource("15_s55n7")
-stretch_mode = 3
+icon = ExtResource("15_s55n7")
+icon_alignment = 1
 
 [node name="Line2D" type="Line2D" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/VBoxContainer"]
-position = Vector2(47.5, 47.5)
-points = PackedVector2Array(-20.5, 95.5, -20.5, 27.5, 847.5, 27.5, 847.5, 95.5)
+position = Vector2(47.5, 33.5)
+points = PackedVector2Array(-20.5, 95.5, -20.5, 27.5, 858, 27, 858, 96)
 width = 2.0
 default_color = Color(0.219608, 0.756863, 0.788235, 1)
 
