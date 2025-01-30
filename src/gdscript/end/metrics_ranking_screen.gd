@@ -6,7 +6,7 @@ var num = 0
 var score_list = ["met_nuc", "met_fos", "met_ele", "met_emi", "met_lnd", "met_cst", "met_smr"]
 var rank_list = ["rnk_nuc", "rnk_fos", "rnk_ele", "rnk_emi", "rnk_lnd", "rnk_cst", "rnk_smr"]
 var metric_list = [" Tj", " Tj", " Tj", "M CO2/t", " Km2", "M CHF", "%"]
-var summary_list = ["NETZERO_TEXT", "NUC_TEXT", "NO_MONEY_TEXT", "POLICIES_TEXT", "IMPORT_TEXT"]
+var summary_list = ["NETZERO_TEXT", "LANDUSE", "NUC_TEXT", "NO_MONEY_TEXT", "POLICIES_TEXT", "IMPORT_TEXT"]
 var player_new_name = null
 
 func _ready():
