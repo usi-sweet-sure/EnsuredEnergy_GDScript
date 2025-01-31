@@ -250,18 +250,23 @@ RIVER,River,Rivière,Laufwasserkraftwerk,Fiume
 RESULTS,Results,Résultats,Ergebnisse,Risultati
 PLANT_WILL_DECOMMISSION_NEXT_TURN,The powerplant will be decommissioned next turn,La centrale sera déclassée au prochain tour,Das Kraftwerk wird in der nächsten Runde vom Netz genommen,La centrale sarà declassata nella prossima tornata elettorale
 CONTINUE,Continue,Continuer,Weiter,Continuare
-NETZERO_TEXT,,,,
-NO_NETZERO_TEXT,,,,
-NUC_TEXT,,,,
-NO_NUC_TEXT,,,,
-MONEY_TEXT,,,,
-NO_MONEY_TEXT,,,,
-POLICIES_TEXT,,,,
-IMPORT_TEXT,,,,
-ENERGY_SCORE,,,,
-FOSSIL_SCORE,,,,
-NUCLEAR_SCORE,,,,
-EMISSIONS_SCORE,,,,
-LAND_USE_SCORE,,,,
-PROD_COST_SCORE,,,,
-SEASONALITY_SCORE,,,,
+NETZERO_TEXT,You have reached net zero!,You have reached net zero!,You have reached net zero!,You have reached net zero!
+NO_NETZERO_TEXT,You did not reach net zero by 2050.,You did not reach net zero by 2050.,You did not reach net zero by 2050.,You did not reach net zero by 2050.
+CO2_TEXT,You emit n% less CO2 than in 2022.,You emit n% less CO2 than in 2022.,You emit n% less CO2 than in 2022.,You emit n% less CO2 than in 2022.
+NO_CO2_TEXT,You emit n% more CO2 than in 2022.,You emit n% more CO2 than in 2022.,You emit n% more CO2 than in 2022.,You emit n% more CO2 than in 2022.
+LANDUSE_TEXT,You use n% less land than in 2022.,You use n% less land than in 2022.,You use n% less land than in 2022.,You use n% less land than in 2022.
+NO_LANDUSE_TEXT,You use n% more land than in 2022.,You use n% more land than in 2022.,You use n% more land than in 2022.,You use n% more land than in 2022.
+NUC_TEXT,You decided to keep nuclear. It provides n% of your electricity.,You decided to keep nuclear. It provides n% of your electricity.,You decided to keep nuclear. It provides n% of your electricity.,You decided to keep nuclear. It provides n% of your electricity.
+NO_NUC_TEXT,You decided to de-transition from nuclear and managed to provide enough energy.,You decided to de-transition from nuclear and managed to provide enough energy.,You decided to de-transition from nuclear and managed to provide enough energy.,You decided to de-transition from nuclear and managed to provide enough energy.
+MONEY_TEXT,Your energy system costs n% less than in 2022.,Your energy system costs n% less than in 2022.,Your energy system costs n% less than in 2022.,Your energy system costs n% less than in 2022.
+NO_MONEY_TEXT,Your energy system costs n% more than in 2022.,Your energy system costs n% more than in 2022.,Your energy system costs n% more than in 2022.,Your energy system costs n% more than in 2022.
+POLICIES_TEXT,You implemented n policies.,You implemented n policies.,You implemented n policies.,You implemented n policies.
+IMPORT_TEXT,n% of your winter energy is imported.,n% of your winter energy is imported.,n% of your winter energy is imported.,n% of your winter energy is imported.
+NO_IMPORT_TEXT,You do not rely on any imported energy.,You do not rely on any imported energy.,You do not rely on any imported energy.,You do not rely on any imported energy.
+ENERGY_SCORE,"Your energy score shows if you provide enough energy. If the number is negative, it means you produce more than the demand and if it is positive you need imports.","Your energy score shows if you provide enough energy. If the number is negative, it means you produce more than the demand and if it is positive you need imports.","Your energy score shows if you provide enough energy. If the number is negative, it means you produce more than the demand and if it is positive you need imports.","Your energy score shows if you provide enough energy. If the number is negative, it means you produce more than the demand and if it is positive you need imports."
+FOSSIL_SCORE,Your fossil score shows the energy produced by fossil plants over the course of 30 years.,Your fossil score shows the energy produced by fossil plants over the course of 30 years.,Your fossil score shows the energy produced by fossil plants over the course of 30 years.,Your fossil score shows the energy produced by fossil plants over the course of 30 years.
+NUCLEAR_SCORE,Your nuclear score shows the energy produced by nuclear plant over the course of 30 years.,Your nuclear score shows the energy produced by nuclear plant over the course of 30 years.,Your nuclear score shows the energy produced by nuclear plant over the course of 30 years.,Your nuclear score shows the energy produced by nuclear plant over the course of 30 years.
+EMISSIONS_SCORE,Your CO2 score shows the tonnes of emissions over the course of 30 years.,Your CO2 score shows the tonnes of emissions over the course of 30 years.,Your CO2 score shows the tonnes of emissions over the course of 30 years.,Your CO2 score shows the tonnes of emissions over the course of 30 years.
+LAND_USE_SCORE,This is how much land you have used for your energy system throughout the game.,This is how much land you have used for your energy system throughout the game.,This is how much land you have used for your energy system throughout the game.,This is how much land you have used for your energy system throughout the game.
+PROD_COST_SCORE,This is how much your energy system costs over 30 years.,This is how much your energy system costs over 30 years.,This is how much your energy system costs over 30 years.,This is how much your energy system costs over 30 years.
+SEASONALITY_SCORE,This shows your energy balance between winter and summer.,This shows your energy balance between winter and summer.,This shows your energy balance between winter and summer.,This shows your energy balance between winter and summer.
