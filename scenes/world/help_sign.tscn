@@ -5,6 +5,21 @@
 [ext_resource type="Texture2D" uid="uid://8fojakrkavcm" path="res://assets/textures/map/help_sign_pannel.png" id="2_e1ur1"]
 [ext_resource type="AudioStream" uid="uid://bjd30r3egxjhw" path="res://assets/sounds/plank.wav" id="4_w1myi"]
 
+[sub_resource type="Animation" id="Animation_e5ql0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Pannel:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
 [sub_resource type="Animation" id="Animation_bdggh"]
 resource_name = "rock"
 length = 3.0
@@ -19,21 +34,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.174533, -0.139626, 0.0, 0.174533, -0.139626, 0.0]
-}
-
-[sub_resource type="Animation" id="Animation_e5ql0"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Control/Pannel:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ylpnj"]
