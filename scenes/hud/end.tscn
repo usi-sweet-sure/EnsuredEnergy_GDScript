@@ -649,8 +649,24 @@ theme_override_colors/font_color = Color(0.0470588, 0.168627, 0.180392, 1)
 text = "SCORE"
 horizontal_alignment = 2
 
+[node name="PlayerStats2" type="Control" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Score_info" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/PlayerStats2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+offset_top = 42.0
+offset_right = 827.0
+offset_bottom = 174.0
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "...
+"
+horizontal_alignment = 1
+autowrap_mode = 3
+
 [node name="SummaryContainer" type="MarginContainer" parent="MainFrame/Screen/MetricsRanking"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -673,6 +689,7 @@ layout_mode = 2
 focus_mode = 0
 theme = ExtResource("4_n8g63")
 toggle_mode = true
+button_pressed = true
 button_group = ExtResource("10_hny1g")
 icon = ExtResource("11_2srpk")
 icon_alignment = 1
@@ -703,7 +720,6 @@ layout_mode = 2
 focus_mode = 0
 theme = ExtResource("4_n8g63")
 toggle_mode = true
-button_pressed = true
 button_group = ExtResource("10_hny1g")
 icon = ExtResource("13_u017u")
 icon_alignment = 1
@@ -755,7 +771,24 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_n8g63")
 theme_type_variation = &"Screen"
-text = "1, 2, this is a test"
+text = "..."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/VBoxContainer/SummaryText"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 144.0
+offset_top = 112.0
+offset_right = -144.0
+offset_bottom = 194.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "CO2_TEXT"
 horizontal_alignment = 1
 autowrap_mode = 3
 

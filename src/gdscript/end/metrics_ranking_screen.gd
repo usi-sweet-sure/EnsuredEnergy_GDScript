@@ -7,9 +7,12 @@ var score_list = ["met_nuc", "met_fos", "met_ele", "met_emi", "met_lnd", "met_cs
 var rank_list = ["rnk_nuc", "rnk_fos", "rnk_ele", "rnk_emi", "rnk_lnd", "rnk_cst", "rnk_smr"]
 var metric_list = [" Tj", " Tj", " Tj", "M CO2/t", " Km2", "M CHF", "%"]
 var summary_list = ["NETZERO_TEXT", "LANDUSE_TEXT", "NUC_TEXT", "NO_MONEY_TEXT", "POLICIES_TEXT", "IMPORT_TEXT"]
+var score_info_list = ["NUCLEAR_SCORE", "FOSSIL_SCORE", "ENERGY_SCORE", "EMISSIONS_SCORE", "LAND_USE_SCORE", "PROD_COST_SCORE", "SEASONALITY_SCORE"]
 var player_new_name = null
 
 func _ready():
+	$SummaryContainer/VBoxContainer/SummaryText/Label.text = summary_list[0]
+	
 	for button in button_group.get_buttons():
 		button.connect("pressed", _on_leaderboard_button_pressed.bind(num))
 		num += 1
@@ -27,6 +30,7 @@ func _on_graph_context_changed(context: String):
 func _on_leaderboard_button_pressed(button_index):
 	$EndMessage.hide()
 	$StatContainer.show()
+	$StatContainer/VBoxContainer/PlayerStats2/Score_info.text = score_info_list[button_index]
 	num = 0
 	for i in Context.leaderboard_json[button_index]:
 		num += 1
@@ -47,11 +51,16 @@ func _on_leaderboard_button_pressed(button_index):
 			
 func _on_summary_button_pressed(button_index):
 	$SummaryContainer/VBoxContainer/SummaryText/Label.text = summary_list[button_index]
+	if button_index == 0:
+		$SummaryContainer/VBoxContainer/SummaryText/Label2.show()
+	else:
+		$SummaryContainer/VBoxContainer/SummaryText/Label2.hide()
 			
 func _on_end_metrics_leaderboard_updated(leaderboard):
 	$CalcRank.hide()
 	#$StatContainer.show()
 	%NameInfoButton.show()
+	$StatContainer/VBoxContainer/PlayerStats2/Score_info.text = score_info_list[2]
 	num = 0
 	for i in leaderboard[2]:
 		num += 1
