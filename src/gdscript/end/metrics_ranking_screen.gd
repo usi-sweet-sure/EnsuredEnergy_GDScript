@@ -6,12 +6,14 @@ var num = 0
 var score_list = ["met_nuc", "met_fos", "met_ele", "met_emi", "met_lnd", "met_cst", "met_smr"]
 var rank_list = ["rnk_nuc", "rnk_fos", "rnk_ele", "rnk_emi", "rnk_lnd", "rnk_cst", "rnk_smr"]
 var metric_list = [" Tj", " Tj", " Tj", "M CO2/t", " Km2", "M CHF", "%"]
-var summary_list = ["NETZERO_TEXT", "LANDUSE_TEXT", "NUC_TEXT", "NO_MONEY_TEXT", "POLICIES_TEXT", "IMPORT_TEXT"]
+var summary_texts_1 = ["NETZERO_TEXT", "LANDUSE_TEXT", "NUC_TEXT", "NO_MONEY_TEXT", "POLICIES_TEXT", "IMPORT_TEXT"]
+var summary_texts_2 = ["", "", "", "", "", ""]
+var game_stats = null
 var score_info_list = ["NUCLEAR_SCORE", "FOSSIL_SCORE", "ENERGY_SCORE", "EMISSIONS_SCORE", "LAND_USE_SCORE", "PROD_COST_SCORE", "SEASONALITY_SCORE"]
 var player_new_name = null
 
 func _ready():
-	$SummaryContainer/VBoxContainer/SummaryText/Label.text = summary_list[0]
+	$SummaryContainer/VBoxContainer/SummaryText/Label.text = summary_texts_1[0]
 	
 	for button in button_group.get_buttons():
 		button.connect("pressed", _on_leaderboard_button_pressed.bind(num))
@@ -50,11 +52,13 @@ func _on_leaderboard_button_pressed(button_index):
 		
 			
 func _on_summary_button_pressed(button_index):
-	$SummaryContainer/VBoxContainer/SummaryText/Label.text = summary_list[button_index]
+	$SummaryContainer/VBoxContainer/SummaryText/Label.text = summary_texts_1[button_index]
+	
 	if button_index == 0:
 		$SummaryContainer/VBoxContainer/SummaryText/Label2.show()
 	else:
 		$SummaryContainer/VBoxContainer/SummaryText/Label2.hide()
+		
 			
 func _on_end_metrics_leaderboard_updated(leaderboard):
 	$CalcRank.hide()
@@ -88,3 +92,42 @@ func _assert_not_null(val: Variant):
 func _on_player_name_text_submitted(new_text: String) -> void:
 	player_new_name = new_text
 	
+
+
+func _on_game_stats_updated(_game_stats: Dictionary) -> void:
+	# inside an array containing :
+	# ["NETZERO", "LANDUSE", "NUC", "NO_MONEY", "POLICIES", "IMPORT"]
+	game_stats = _game_stats
+	
+	if game_stats.reached_net_zero:
+		summary_texts_1[0] = tr("NETZERO_TEXT")
+	else:
+		summary_texts_1[0] = tr("NO_NETZERO_TEXT")
+		
+	if game_stats.land_use_diff_percentage < 0:
+		var value = str(game_stats.land_use_diff_percentage).pad_decimals(2)
+		summary_texts_1[1] = tr("LANDUSE_TEXT").format([value], "&&")
+	else:
+		var value = str(game_stats.land_use_diff_percentage).pad_decimals(2)
+		summary_texts_1[1] = tr("NO_LANDUSE_TEXT").format([value], "&&")
+
+	if game_stats.nuclear_energy_percentage > 0:
+		var value = str(game_stats.nuclear_energy_percentage).pad_decimals(2)
+		summary_texts_1[2] = tr("NUC_TEXT").format([value], "&&")
+	else:
+		summary_texts_1[2] = tr("NO_NUC_TEXT")
+	
+	if game_stats.production_costs_diff_percentage < 0:
+		var value = str(game_stats.production_costs_diff_percentage).pad_decimals(2)
+		summary_texts_1[3] = tr("MONEY_TEXT").format([value], "&&")
+	else:
+		var value = str(game_stats.production_costs_diff_percentage).pad_decimals(2)
+		summary_texts_1[3] = tr("NO_MONEY_TEXT").format([value], "&&")
+
+	summary_texts_1[4] = tr("POLICIES_TEXT").format([game_stats.implemented_policies_count], "&&")
+	
+	if game_stats.imported_energy_percentage > 0:
+		var value = str(game_stats.imported_energy_percentage).pad_decimals(2)
+		summary_texts_1[5] = tr("IMPORT_TEXT").format([value], "&&")
+	else:
+		summary_texts_1[5] = tr("NO_IMPORT_TEXT")

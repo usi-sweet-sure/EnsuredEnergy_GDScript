@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://hka3jsgvfwwy" path="res://assets/textures/ui/green_checkmark.png" id="2_2yy2d"]
 [ext_resource type="Texture2D" uid="uid://di4s804q6pnh2" path="res://assets/textures/ui/toolPencil.png" id="3_rfpko"]
 [ext_resource type="Script" path="res://src/gdscript/end/graphs_frame.gd" id="4_dq0ds"]
-[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/Fonts/label_themes.tres" id="4_n8g63"]
+[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="4_n8g63"]
 [ext_resource type="Texture2D" uid="uid://bulftkbpqxib" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0024_Icon-Money.png" id="5_goags"]
 [ext_resource type="Script" path="res://src/gdscript/end/metrics_ranking_screen.gd" id="5_luxph"]
 [ext_resource type="Texture2D" uid="uid://ceuxpu5iujr05" path="res://assets/textures/ui/All-HQ-Assets-D_0006s_0001_Stats-metal-base.png" id="5_xqx4k"]
@@ -20,7 +20,7 @@
 [ext_resource type="ButtonGroup" uid="uid://bly2ooexf1g4h" path="res://scenes/windows/leaderboard_buttons.tres" id="9_h5vxw"]
 [ext_resource type="Texture2D" uid="uid://ceywqq4wa4ocw" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0026_Icon-Import.png" id="9_uutud"]
 [ext_resource type="Script" path="res://src/gdscript/end/energy_bar.gd" id="10_6lpn4"]
-[ext_resource type="ButtonGroup" path="res://scenes/buttons/summary_button_group.tres" id="10_hny1g"]
+[ext_resource type="ButtonGroup" uid="uid://duc830qsnf8t2" path="res://scenes/buttons/summary_button_group.tres" id="10_hny1g"]
 [ext_resource type="Texture2D" uid="uid://bx0cxko72v5ui" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0020_Icon-Environment-.png" id="10_induf"]
 [ext_resource type="Texture2D" uid="uid://dlccss1xvy8tb" path="res://assets/textures/ui/Button-Square-hover.png" id="10_y0hau"]
 [ext_resource type="Texture2D" uid="uid://bpt1e486wuscd" path="res://assets/textures/icons/chalk_emission.png" id="11_2srpk"]
@@ -59,7 +59,7 @@
 [ext_resource type="ButtonGroup" uid="uid://bgtq40ngq16h0" path="res://scenes/buttons/end_buttons.tres" id="48_rnypu"]
 [ext_resource type="Texture2D" uid="uid://duoff2c7r1hdy" path="res://assets/textures/buttons/close_button_normal.png" id="48_wntxs"]
 [ext_resource type="Texture2D" uid="uid://80u4mcjyisb7" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0033_Policies-hover-(small)-button.png" id="49_3hwq1"]
-[ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/Fonts/Special_Elite/special_elite_regular.ttf" id="49_fl6u7"]
+[ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/fonts/special_elite/special_elite_regular.ttf" id="49_fl6u7"]
 [ext_resource type="Texture2D" uid="uid://bdq26gwsmigwy" path="res://assets/textures/buttons/close_button_pressed.png" id="49_nxc3v"]
 [ext_resource type="Texture2D" uid="uid://myf36tn1pspq" path="res://assets/textures/buttons/close_button_hover.png" id="50_3oi6p"]
 [ext_resource type="Texture2D" uid="uid://bhl7ei1bspfbw" path="res://assets/textures/buttons/close_button_disabled.png" id="51_j8egd"]
@@ -178,6 +178,7 @@ size_flags_horizontal = 0
 texture = ExtResource("6_us122")
 
 [node name="Graph" type="Control" parent="MainFrame/Screen"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -667,6 +668,7 @@ horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="SummaryContainer" type="MarginContainer" parent="MainFrame/Screen/MetricsRanking"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1590,6 +1592,8 @@ offset_top = -45.0
 offset_right = 135.0
 offset_bottom = -5.0
 
+[connection signal="game_stats_updated" from="." to="MainFrame/Screen/MetricsRanking" method="_on_game_stats_updated"]
+[connection signal="game_stats_updated" from="." to="MainFrame/Screen/MetricsRanking/SummaryContainer/VBoxContainer/SummaryText/Label2" method="_on_game_stats_updated"]
 [connection signal="metrics_leaderboard_updated" from="." to="." method="_on_metrics_leaderboard_updated"]
 [connection signal="metrics_leaderboard_updated" from="." to="MainFrame/Screen/MetricsRanking" method="_on_end_metrics_leaderboard_updated"]
 [connection signal="metrics_leaderboard_updated" from="." to="MainFrame/Screen/MetricsRanking/CalcRank" method="_on_metrics_leaderboard_updated"]

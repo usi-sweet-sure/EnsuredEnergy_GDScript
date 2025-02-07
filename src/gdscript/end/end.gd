@@ -2,17 +2,18 @@ extends CanvasLayer
 
 signal metrics_leaderboard_updated
 signal metrics_rank_updated
+signal game_stats_updated(game_stats: Dictionary)
 
 @export var tick_icon: Texture2D
 @export var pen_icon: Texture2D
 
 var game_stats = {
-	"lowered_co2_emissions": false,
 	"reached_net_zero": false,
-	"exited_nuclear": false,
-	"lowered_production_costs": false,
-	"increased_production_costs": false,
-	"policies_implemented_count": 0,
+	"production_costs_diff_percentage": 0,
+	"land_use_diff_percentage": 0,
+	"nuclear_energy_percentage": 0,
+	"implemented_policies_count": 0,
+	"imported_energy_percentage": 0,
 }
 
 func _ready():
@@ -55,26 +56,32 @@ func _on_game_ended():
 func compute_game_stats():
 	var emissions_in_2022 = GraphsData.get_data_for_year("co2_emissions", Gameloop.start_year).value
 	var emissions_now = GraphsData.get_data_for_year("co2_emissions", Gameloop.start_year + Gameloop.current_turn * Gameloop.years_in_a_turn).value
-	
-	game_stats.lowered_co2_emissions = emissions_now < emissions_in_2022
 	game_stats.reached_net_zero = emissions_now == 0
 	
-	var nuclear_event = HistoryManager.get_shock_event("SHOCK_NUC_REINTRO_TITLE")
-	
-	if nuclear_event != null:
-		var chosen_reaction = nuclear_event["player_reactions"]["chosen_reaction"]
-		
-		if chosen_reaction == 1:
-			game_stats.exited_nuclear = true
+	var nuclear_supply = PowerplantsManager.get_energy_provided_by_plant_type(PowerplantsManager.EngineTypeIds.NUCLEAR)
+	var total_nuclear_energy = nuclear_supply.winter_supply + nuclear_supply.summer_supply
+	var total_energy = Gameloop.supply_summer + Gameloop.supply_winter
+	var nuclear_energy_percentage = total_nuclear_energy * 100.0 / total_energy
+	game_stats.nuclear_energy_percentage = nuclear_energy_percentage
 			
-	
 	var production_costs_in_2022 = GraphsData.get_data_for_year("production_costs", Gameloop.start_year).value
 	var production_costs_now = GraphsData.get_data_for_year("production_costs", Gameloop.start_year + Gameloop.current_turn * Gameloop.years_in_a_turn).value
+	var production_costs_diff_percentage = (production_costs_now * 100.0 / production_costs_in_2022) -100.0
+	game_stats.production_costs_diff_percentage = production_costs_diff_percentage
 	
-	game_stats.lowered_production_costs = production_costs_now < production_costs_in_2022
-	game_stats.increased_production_costs = production_costs_now > production_costs_in_2022
+	var land_use_in_2022 = GraphsData.get_data_for_year("land_use", Gameloop.start_year).value
+	var land_use_now = GraphsData.get_data_for_year("land_use", Gameloop.start_year + Gameloop.current_turn * Gameloop.years_in_a_turn).value
+	var land_use_diff_percentage = (land_use_now * 100.0 / land_use_in_2022) -100.0
+	game_stats.land_use_diff_percentage = land_use_diff_percentage
 	
-	print(game_stats)
+	game_stats.implemented_policies_count = PolicyManager.get_implemented_policies_count()
+	
+	var imported_energy_amount = Gameloop.imported_energy_amount
+	var total_winter_energy = Gameloop.supply_winter
+	game_stats.imported_energy_percentage =  imported_energy_amount * 100.0 / total_winter_energy
+	
+	game_stats_updated.emit(game_stats)
+	
 	
 func _on_show_ending_screen():
 	show()
@@ -127,21 +134,13 @@ func _on_button_pressed():
 
 
 func _on_leaderboard_toggled(toggled_on: bool) -> void:
-	if toggled_on:
-		$MainFrame/Screen/MetricsRanking/EndMessage.hide()
-		$MainFrame/Screen/MetricsRanking/StatContainer.show()
-	else:
-		$MainFrame/Screen/MetricsRanking/StatContainer.hide()
-		$MainFrame/Screen/MetricsRanking/EndMessage.show()
+	$MainFrame/Screen/MetricsRanking/EndMessage.visible = not toggled_on
+	$MainFrame/Screen/MetricsRanking/StatContainer.visible = toggled_on
 
 
 func _on_summary_toggled(toggled_on: bool) -> void:
-	if toggled_on:
-		$MainFrame/Screen/MetricsRanking/SummaryContainer.show()
-		$MainFrame/Screen/MetricsRanking/EndMessage.hide()
-	else:
-		$MainFrame/Screen/MetricsRanking/SummaryContainer.hide()
-		$MainFrame/Screen/MetricsRanking/EndMessage.show()
+	$MainFrame/Screen/MetricsRanking/SummaryContainer.visible = toggled_on
+	$MainFrame/Screen/MetricsRanking/EndMessage.visible = not toggled_on
 
 
 func _on_metrics_leaderboard_updated(leaderboard) -> void:

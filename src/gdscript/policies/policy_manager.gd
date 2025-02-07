@@ -208,3 +208,15 @@ func can_vote_another_campaign(type: Policy.PolicyType):
 			number_of_passed_campaigns += 1
 
 	return number_of_passed_campaigns < MAX_NUMBER_OF_PASSED_CAMPAIGN
+
+
+func get_implemented_policies_count():
+	var count = 0
+	
+	for voted_policy in voted_policies:
+		var policy: Policy = voted_policy.policy
+		
+		if not policy.is_campaign() and voted_policy.passed:
+			count += 1
+			
+	return count

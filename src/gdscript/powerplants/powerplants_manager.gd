@@ -534,7 +534,26 @@ func update_buildings_impact():
 	MoneyManager.powerplants_production_costs = total_production_costs
 	Gameloop.co2_emissions = total_emissions
 	Gameloop.land_use = total_land_use
+	
 
+func get_energy_provided_by_plant_type(type: EngineTypeIds):
+	var powerplants: Array[Node] = get_tree().get_nodes_in_group("Powerplants")
+	var summer_supply = 0
+	var winter_supply = 0
+	
+	for powerplant in powerplants:
+		var metrics: PowerplantMetrics = powerplant.metrics
+		
+		if metrics.type == type and metrics.active:
+			summer_supply += metrics.capacity * metrics.availability.x
+			winter_supply += metrics.capacity * metrics.availability.y
+		
+		
+	return {
+		"summer_supply": summer_supply,
+		"winter_supply": winter_supply
+	}
+	
 
 func backup_metrics():
 	metrics_backup = []
