@@ -19,7 +19,7 @@ func effects_off(_metrics: PowerplantMetrics):
 	
 func effects_on(metrics: PowerplantMetrics):
 	highlight.show()
-	god_rays.hide() 
+	god_rays.hide()
 	
 	if metrics.current_upgrade > metrics.min_upgrade:
 		god_rays.show()

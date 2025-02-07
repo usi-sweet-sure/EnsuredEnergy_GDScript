@@ -2,7 +2,7 @@
 
 [ext_resource type="Shader" path="res://src/gdscript/shaders/highlight.gdshader" id="1_mnkvw"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_effects/solar/pp_effects_solar.gd" id="1_xchol"]
-[ext_resource type="Shader" path="res://scenes/powerplants/pp_map_emplacement/pp_effects/solar/god_rays.gdshader" id="4_my3tj"]
+[ext_resource type="Shader" path="res://src/gdscript/shaders/god_rays.gdshader" id="4_my3tj"]
 [ext_resource type="Texture2D" uid="uid://bgbm8t4r0m4a0" path="res://assets/textures/powerplants/pp_sprite_on_solar.png" id="4_wrfau"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_68vx2"]
@@ -55,6 +55,7 @@ rotation = 0.533214
 mouse_filter = 2
 
 [node name="GodRays" type="ColorRect" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_dketu")
 offset_left = 483.0
 offset_top = 103.0
