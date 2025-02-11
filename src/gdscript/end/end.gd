@@ -9,6 +9,7 @@ signal game_stats_updated(game_stats: Dictionary)
 
 var game_stats = {
 	"reached_net_zero": false,
+	"emissions_diff_percentage": 0,
 	"production_costs_diff_percentage": 0,
 	"land_use_diff_percentage": 0,
 	"nuclear_energy_percentage": 0,
@@ -56,7 +57,12 @@ func _on_game_ended():
 func compute_game_stats():
 	var emissions_in_2022 = GraphsData.get_data_for_year("co2_emissions", Gameloop.start_year).value
 	var emissions_now = GraphsData.get_data_for_year("co2_emissions", Gameloop.start_year + Gameloop.current_turn * Gameloop.years_in_a_turn).value
+	emissions_now -= Gameloop.sequestrated_co2
 	game_stats.reached_net_zero = emissions_now == 0
+	game_stats.emissions_diff_percentage = (emissions_now * 100.0 / emissions_in_2022) -100.0
+	print("emissions in 2022: ", emissions_in_2022)
+	print("emissions now: ", emissions_now)
+	print("emissions diff: ", game_stats.emissions_diff_percentage)
 	
 	var nuclear_supply = PowerplantsManager.get_energy_provided_by_plant_type(PowerplantsManager.EngineTypeIds.NUCLEAR)
 	var total_nuclear_energy = nuclear_supply.winter_supply + nuclear_supply.summer_supply

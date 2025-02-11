@@ -251,7 +251,7 @@ RESULTS,Results,Résultats,Ergebnisse,Risultati
 PLANT_WILL_DECOMMISSION_NEXT_TURN,The powerplant will be decommissioned next turn,La centrale sera déclassée au prochain tour,Das Kraftwerk wird in der nächsten Runde vom Netz genommen,La centrale sarà declassata nella prossima tornata elettorale
 CONTINUE,Continue,Continuer,Weiter,Continuare
 NETZERO_TEXT,You have reached net zero!,Tu as atteint le zéro net !,Du hast Netto-Null erreicht!,Avete raggiunto lo zero netto!
-NO_NETZERO_TEXT,You did not reach net zero by 2050.,Vous n'avez pas atteint l'objectif de zéro net d'ici à 2050.,"Du hast das Ziel, bis 2050 eine Netto-Null zu erreichen, nicht erreicht.",Non avete ancora raggiunto l'obiettivo di una rete zero entro il 2050.
+NO_NETZERO_TEXT,You did not reach net zero by 2050.,Tu n'as pas atteint l'objectif de zéro net d'ici à 2050.,"Du hast das Ziel, bis 2050 eine Netto-Null zu erreichen, nicht erreicht.",Non avete ancora raggiunto l'obiettivo di una rete zero entro il 2050.
 CO2_TEXT,You emit &&% less CO2 than in 2022.,Tu émets &&% de CO2 en moins qu'en 2022.,Du emittierst &&% weniger CO2 als im Jahr 2022.,Emettete il &&% in meno di CO2 rispetto al 2022.
 NO_CO2_TEXT,You emit &&% more CO2 than in 2022.,Tu émets &&% de CO2 en plus qu'en 2022.,Du emittierst &&% mehr CO2 als im Jahr 2022.,Emettete il &&% in più di CO2 rispetto al 2022.
 LANDUSE_TEXT,You use &&% less land than in 2022.,Tu utilises &&% de terrain en moins qu'en 2022.,Du nutzt &&% weniger Land als im Jahr 2022.,Si utilizza il &&% di terra in meno rispetto al 2022.

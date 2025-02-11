@@ -31,7 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://bj6ubksmn350n" path="res://assets/textures/buttons/button_hole.png" id="11_qe2lm"]
 [ext_resource type="Texture2D" uid="uid://1esf36575js0" path="res://assets/textures/icons/chalk_land_use.png" id="11_v0rb1"]
 [ext_resource type="StyleBox" uid="uid://lco0fbxgcpii" path="res://scenes/hud/energy_bar_low.tres" id="12_2ucrx"]
-[ext_resource type="Texture2D" uid="uid://biwwfxsgd37rv" path="res://assets/textures/icons/chalk_warning.png" id="13_pfn5s"]
+[ext_resource type="Texture2D" uid="uid://tlhcj4dv8w72" path="res://assets/textures/icons/chalk_nuclear.png" id="13_okhtr"]
 [ext_resource type="Texture2D" uid="uid://d3vcg8408jiv6" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0002_no-Money-symbol.png" id="13_u017u"]
 [ext_resource type="Texture2D" uid="uid://da56ki5hmlw12" path="res://assets/textures/ui/All-HQ-Assets-D_0009s_0008_Energy-Bar-base.png" id="14_tu03u"]
 [ext_resource type="Texture2D" uid="uid://c3opgyhsh61y8" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0014_Policies-symbol.png" id="14_x4nl2"]
@@ -713,7 +713,7 @@ focus_mode = 0
 theme = ExtResource("4_n8g63")
 toggle_mode = true
 button_group = ExtResource("10_hny1g")
-icon = ExtResource("13_pfn5s")
+icon = ExtResource("13_okhtr")
 icon_alignment = 1
 
 [node name="Costs" type="Button" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/VBoxContainer/HBoxContainer"]

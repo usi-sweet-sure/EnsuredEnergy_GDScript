@@ -13,8 +13,6 @@ var score_info_list = ["NUCLEAR_SCORE", "FOSSIL_SCORE", "ENERGY_SCORE", "EMISSIO
 var player_new_name = null
 
 func _ready():
-	$SummaryContainer/VBoxContainer/SummaryText/Label.text = summary_texts_1[0]
-	
 	for button in button_group.get_buttons():
 		button.connect("pressed", _on_leaderboard_button_pressed.bind(num))
 		num += 1
@@ -53,7 +51,8 @@ func _on_leaderboard_button_pressed(button_index):
 			
 func _on_summary_button_pressed(button_index):
 	$SummaryContainer/VBoxContainer/SummaryText/Label.text = summary_texts_1[button_index]
-	
+	$SummaryContainer/VBoxContainer/SummaryText/Label2.text = summary_texts_2[button_index]
+
 	if button_index == 0:
 		$SummaryContainer/VBoxContainer/SummaryText/Label2.show()
 	else:
@@ -95,30 +94,53 @@ func _on_player_name_text_submitted(new_text: String) -> void:
 
 
 func _on_game_stats_updated(_game_stats: Dictionary) -> void:
-	# inside an array containing :
-	# ["NETZERO", "LANDUSE", "NUC", "NO_MONEY", "POLICIES", "IMPORT"]
 	game_stats = _game_stats
+	var summary_buttons = summary_button.get_buttons()
 	
+	# Emissions
+	var emissions_button: Button = summary_buttons[0]
 	if game_stats.reached_net_zero:
 		summary_texts_1[0] = tr("NETZERO_TEXT")
+		emissions_button.add_theme_color_override("icon_normal_color", Color("00a522"))
+		emissions_button.add_theme_color_override("icon_hover_color", Color("00a522"))
+		emissions_button.add_theme_color_override("icon_pressed_color", Color("00a522"))
 	else:
 		summary_texts_1[0] = tr("NO_NETZERO_TEXT")
+		emissions_button.add_theme_color_override("icon_normal_color", Color("f62a33"))
+		emissions_button.add_theme_color_override("icon_hover_color", Color("f62a33"))
+		emissions_button.add_theme_color_override("icon_pressed_color", Color("f62a33"))
 		
+	if game_stats.emissions_diff_percentage < 0:
+		var value = str(abs(game_stats.emissions_diff_percentage)).pad_decimals(2)
+		summary_texts_2[0] = tr("CO2_TEXT").format([value], "&&")
+	else:
+		var value = str(game_stats.emissions_diff_percentage).pad_decimals(2)
+		summary_texts_2[0] = tr("NO_CO2_TEXT").format([value], "&&")
+	
+	# Landuse
 	if game_stats.land_use_diff_percentage < 0:
-		var value = str(game_stats.land_use_diff_percentage).pad_decimals(2)
+		var value = str(abs(game_stats.land_use_diff_percentage)).pad_decimals(2)
 		summary_texts_1[1] = tr("LANDUSE_TEXT").format([value], "&&")
 	else:
 		var value = str(game_stats.land_use_diff_percentage).pad_decimals(2)
 		summary_texts_1[1] = tr("NO_LANDUSE_TEXT").format([value], "&&")
-
+	
+	# Nuclear
+	var nuclear_button: Button = summary_buttons[2]
 	if game_stats.nuclear_energy_percentage > 0:
-		var value = str(game_stats.nuclear_energy_percentage).pad_decimals(2)
+		var value = str(abs(game_stats.nuclear_energy_percentage)).pad_decimals(2)
 		summary_texts_1[2] = tr("NUC_TEXT").format([value], "&&")
+		nuclear_button.add_theme_color_override("icon_normal_color", Color("f62a33"))
+		nuclear_button.add_theme_color_override("icon_hover_color", Color("f62a33"))
+		nuclear_button.add_theme_color_override("icon_pressed_color", Color("f62a33"))
 	else:
 		summary_texts_1[2] = tr("NO_NUC_TEXT")
+		nuclear_button.add_theme_color_override("icon_normal_color", Color("00a522"))
+		nuclear_button.add_theme_color_override("icon_hover_color", Color("00a522"))
+		nuclear_button.add_theme_color_override("icon_pressed_color", Color("00a522"))
 	
 	if game_stats.production_costs_diff_percentage < 0:
-		var value = str(game_stats.production_costs_diff_percentage).pad_decimals(2)
+		var value = str(abs(game_stats.production_costs_diff_percentage)).pad_decimals(2)
 		summary_texts_1[3] = tr("MONEY_TEXT").format([value], "&&")
 	else:
 		var value = str(game_stats.production_costs_diff_percentage).pad_decimals(2)
@@ -131,3 +153,5 @@ func _on_game_stats_updated(_game_stats: Dictionary) -> void:
 		summary_texts_1[5] = tr("IMPORT_TEXT").format([value], "&&")
 	else:
 		summary_texts_1[5] = tr("NO_IMPORT_TEXT")
+		
+	_on_summary_button_pressed(0)
