@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://cej4dlw11su6f"]
+[gd_scene load_steps=86 format=3 uid="uid://cej4dlw11su6f"]
 
 [ext_resource type="Script" path="res://src/gdscript/end/end.gd" id="1_eio5g"]
 [ext_resource type="Texture2D" uid="uid://hka3jsgvfwwy" path="res://assets/textures/ui/green_checkmark.png" id="2_2yy2d"]
@@ -38,6 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://2ifd0dxwcqka" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0013_Electricity-symbol.png" id="15_s55n7"]
 [ext_resource type="Script" path="res://src/gdscript/end/trust_button.gd" id="16_ppd74"]
 [ext_resource type="Texture2D" uid="uid://bqcub63frxj38" path="res://assets/textures/powerplants/pp_sprite_neon_gas.png" id="17_80r7i"]
+[ext_resource type="Script" path="res://src/gdscript/end/summary/co2_plant_tooltip.gd" id="18_ni0vf"]
 [ext_resource type="Texture2D" uid="uid://ddlljpbljj4x0" path="res://assets/textures/powerplants/pp_sprite_neon_biogas.png" id="18_nt8bk"]
 [ext_resource type="Texture2D" uid="uid://b3a42e5ad2u38" path="res://assets/textures/powerplants/pp_sprite_neon_nuclear.png" id="19_kv7ws"]
 [ext_resource type="Texture2D" uid="uid://bmjee8ocqy0ge" path="res://assets/textures/ui/Enviornment-Base.png" id="20_651ix"]
@@ -677,6 +678,7 @@ horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="SummaryContainer" type="MarginContainer" parent="MainFrame/Screen/MetricsRanking"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -831,8 +833,9 @@ offset_top = -14.0
 offset_right = 125.0
 offset_bottom = 172.0
 scale = Vector2(0.55, 0.55)
-tooltip_text = "GAS"
 texture = ExtResource("17_80r7i")
+script = ExtResource("18_ni0vf")
+plant_name = "GAS"
 
 [node name="Biogaz" type="Control" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2"]
 anchors_preset = 0
@@ -860,6 +863,8 @@ offset_right = 125.0
 offset_bottom = 172.0
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("18_nt8bk")
+script = ExtResource("18_ni0vf")
+plant_name = "BIOGAS"
 
 [node name="Nuclear" type="Control" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2"]
 anchors_preset = 0
@@ -887,6 +892,8 @@ offset_right = 125.0
 offset_bottom = 170.0
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("19_kv7ws")
+script = ExtResource("18_ni0vf")
+plant_name = "NUCLEAR"
 
 [node name="Biomass" type="Control" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2"]
 anchors_preset = 0
@@ -914,6 +921,8 @@ offset_right = 125.0
 offset_bottom = 172.0
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("20_ud2pm")
+script = ExtResource("18_ni0vf")
+plant_name = "BIOMASS"
 
 [node name="Hydro" type="Control" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2"]
 anchors_preset = 0
@@ -941,6 +950,8 @@ offset_right = 125.0
 offset_bottom = 172.0
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("21_5ourj")
+script = ExtResource("18_ni0vf")
+plant_name = "HYDRO"
 
 [node name="Solar" type="Control" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2"]
 anchors_preset = 0
@@ -968,6 +979,8 @@ offset_right = 125.0
 offset_bottom = 172.0
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("22_wectj")
+script = ExtResource("18_ni0vf")
+plant_name = "SOLAR"
 
 [node name="Waste" type="Control" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2"]
 anchors_preset = 0
@@ -995,6 +1008,8 @@ offset_right = 125.0
 offset_bottom = 172.0
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("23_vx30y")
+script = ExtResource("18_ni0vf")
+plant_name = "WASTE"
 
 [node name="River" type="Control" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2"]
 anchors_preset = 0
@@ -1022,6 +1037,8 @@ offset_right = 125.0
 offset_bottom = 172.0
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("24_amppy")
+script = ExtResource("18_ni0vf")
+plant_name = "RIVER"
 
 [node name="Wind" type="Control" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2"]
 anchors_preset = 0
@@ -1049,6 +1066,8 @@ offset_right = 125.0
 offset_bottom = 172.0
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("24_bc83k")
+script = ExtResource("18_ni0vf")
+plant_name = "WIND"
 
 [node name="BottomFrames" type="HBoxContainer" parent="MainFrame"]
 visible = false

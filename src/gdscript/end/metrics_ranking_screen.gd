@@ -113,10 +113,12 @@ func _on_game_stats_updated(_game_stats: Dictionary) -> void:
 	if game_stats.emissions_diff_percentage < 0:
 		var value = str(abs(game_stats.emissions_diff_percentage)).pad_decimals(2)
 		summary_texts_2[0] = tr("CO2_TEXT").format([value], "&&")
-	else:
+	elif game_stats.emissions_diff_percentage > 0:
 		var value = str(game_stats.emissions_diff_percentage).pad_decimals(2)
 		summary_texts_2[0] = tr("NO_CO2_TEXT").format([value], "&&")
-	
+	else:
+		$SummaryContainer/VBoxContainer/SummaryText/Label2.hide()
+
 	# Landuse
 	if game_stats.land_use_diff_percentage < 0:
 		var value = str(abs(game_stats.land_use_diff_percentage)).pad_decimals(2)
