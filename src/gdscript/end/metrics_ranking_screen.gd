@@ -2,6 +2,7 @@ extends Control
 
 @export var button_group: ButtonGroup
 @export var summary_button: ButtonGroup
+@onready var co_2_summary: Control = $SummaryContainer/CO2Summary
 var num = 0
 var score_list = ["met_nuc", "met_fos", "met_ele", "met_emi", "met_lnd", "met_cst", "met_smr"]
 var rank_list = ["rnk_nuc", "rnk_fos", "rnk_ele", "rnk_emi", "rnk_lnd", "rnk_cst", "rnk_smr"]
@@ -11,6 +12,7 @@ var summary_texts_2 = ["", "", "", "", "", ""]
 var game_stats = null
 var score_info_list = ["NUCLEAR_SCORE", "FOSSIL_SCORE", "ENERGY_SCORE", "EMISSIONS_SCORE", "LAND_USE_SCORE", "PROD_COST_SCORE", "SEASONALITY_SCORE"]
 var player_new_name = null
+
 
 func _ready():
 	for button in button_group.get_buttons():
@@ -55,8 +57,10 @@ func _on_summary_button_pressed(button_index):
 
 	if button_index == 0:
 		$SummaryContainer/VBoxContainer/SummaryText/Label2.show()
+		co_2_summary.show()
 	else:
 		$SummaryContainer/VBoxContainer/SummaryText/Label2.hide()
+		co_2_summary.hide()
 		
 			
 func _on_end_metrics_leaderboard_updated(leaderboard):
@@ -113,11 +117,9 @@ func _on_game_stats_updated(_game_stats: Dictionary) -> void:
 	if game_stats.emissions_diff_percentage < 0:
 		var value = str(abs(game_stats.emissions_diff_percentage)).pad_decimals(2)
 		summary_texts_2[0] = tr("CO2_TEXT").format([value], "&&")
-	elif game_stats.emissions_diff_percentage > 0:
+	else:
 		var value = str(game_stats.emissions_diff_percentage).pad_decimals(2)
 		summary_texts_2[0] = tr("NO_CO2_TEXT").format([value], "&&")
-	else:
-		$SummaryContainer/VBoxContainer/SummaryText/Label2.hide()
 
 	# Landuse
 	if game_stats.land_use_diff_percentage < 0:

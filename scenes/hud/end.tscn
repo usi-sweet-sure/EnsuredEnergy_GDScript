@@ -804,18 +804,18 @@ text = "CO2_TEXT"
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="CO2" type="Control" parent="MainFrame/Screen/MetricsRanking/SummaryContainer"]
+[node name="CO2Summary" type="Control" parent="MainFrame/Screen/MetricsRanking/SummaryContainer"]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="Gaz" type="Control" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2"]
+[node name="Gaz" type="Control" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2Summary"]
 anchors_preset = 0
 offset_left = 213.5
 offset_top = 258.5
 offset_right = 253.5
 offset_bottom = 298.5
 
-[node name="Percentage" type="Label" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2/Gaz"]
+[node name="Percentage" type="Label" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2Summary/Gaz"]
 layout_mode = 0
 offset_left = -82.0
 offset_top = 87.0
@@ -826,7 +826,7 @@ theme_type_variation = &"Screen"
 text = "80%"
 horizontal_alignment = 1
 
-[node name="Sprite2D" type="TextureRect" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2/Gaz"]
+[node name="Sprite2D" type="TextureRect" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2Summary/Gaz"]
 layout_mode = 0
 offset_left = -91.0
 offset_top = -14.0
@@ -835,16 +835,16 @@ offset_bottom = 172.0
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("17_80r7i")
 script = ExtResource("18_ni0vf")
-plant_name = "GAS"
+plant_type = 2
 
-[node name="Biogaz" type="Control" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2"]
+[node name="Biogaz" type="Control" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2Summary"]
 anchors_preset = 0
 offset_left = 392.5
 offset_top = 258.5
 offset_right = 432.5
 offset_bottom = 298.5
 
-[node name="Percentage" type="Label" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2/Biogaz"]
+[node name="Percentage" type="Label" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2Summary/Biogaz"]
 layout_mode = 0
 offset_left = -82.0
 offset_top = 87.0
@@ -855,7 +855,7 @@ theme_type_variation = &"Screen"
 text = "80%"
 horizontal_alignment = 1
 
-[node name="Sprite2D" type="TextureRect" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2/Biogaz"]
+[node name="Sprite2D" type="TextureRect" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2Summary/Biogaz"]
 layout_mode = 0
 offset_left = -91.0
 offset_top = -14.0
@@ -864,16 +864,16 @@ offset_bottom = 172.0
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("18_nt8bk")
 script = ExtResource("18_ni0vf")
-plant_name = "BIOGAS"
+plant_type = 5
 
-[node name="Nuclear" type="Control" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2"]
+[node name="Nuclear" type="Control" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2Summary"]
 anchors_preset = 0
 offset_left = 589.5
 offset_top = 258.5
 offset_right = 629.5
 offset_bottom = 298.5
 
-[node name="Percentage" type="Label" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2/Nuclear"]
+[node name="Percentage" type="Label" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2Summary/Nuclear"]
 layout_mode = 0
 offset_left = -82.0
 offset_top = 87.0
@@ -884,7 +884,7 @@ theme_type_variation = &"Screen"
 text = "80%"
 horizontal_alignment = 1
 
-[node name="Sprite2D" type="TextureRect" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2/Nuclear"]
+[node name="Sprite2D" type="TextureRect" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2Summary/Nuclear"]
 layout_mode = 0
 offset_left = -91.0
 offset_top = -14.0
@@ -893,16 +893,16 @@ offset_bottom = 170.0
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("19_kv7ws")
 script = ExtResource("18_ni0vf")
-plant_name = "NUCLEAR"
+plant_type = 6
 
-[node name="Biomass" type="Control" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2"]
+[node name="Biomass" type="Control" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2Summary"]
 anchors_preset = 0
 offset_left = 774.5
 offset_top = 258.5
 offset_right = 814.5
 offset_bottom = 298.5
 
-[node name="Percentage" type="Label" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2/Biomass"]
+[node name="Percentage" type="Label" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2Summary/Biomass"]
 layout_mode = 0
 offset_left = -82.0
 offset_top = 87.0
@@ -913,7 +913,7 @@ theme_type_variation = &"Screen"
 text = "80%"
 horizontal_alignment = 1
 
-[node name="Sprite2D" type="TextureRect" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2/Biomass"]
+[node name="Sprite2D" type="TextureRect" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2Summary/Biomass"]
 layout_mode = 0
 offset_left = -91.0
 offset_top = -14.0
@@ -922,16 +922,16 @@ offset_bottom = 172.0
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("20_ud2pm")
 script = ExtResource("18_ni0vf")
-plant_name = "BIOMASS"
+plant_type = 4
 
-[node name="Hydro" type="Control" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2"]
+[node name="Hydro" type="Control" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2Summary"]
 anchors_preset = 0
 offset_left = 134.5
 offset_top = 424.5
 offset_right = 174.5
 offset_bottom = 464.5
 
-[node name="Percentage" type="Label" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2/Hydro"]
+[node name="Percentage" type="Label" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2Summary/Hydro"]
 layout_mode = 0
 offset_left = -82.0
 offset_top = 87.0
@@ -942,7 +942,7 @@ theme_type_variation = &"Screen"
 text = "80%"
 horizontal_alignment = 1
 
-[node name="Sprite2D" type="TextureRect" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2/Hydro"]
+[node name="Sprite2D" type="TextureRect" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2Summary/Hydro"]
 layout_mode = 0
 offset_left = -91.0
 offset_top = -14.0
@@ -951,16 +951,16 @@ offset_bottom = 172.0
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("21_5ourj")
 script = ExtResource("18_ni0vf")
-plant_name = "HYDRO"
+plant_type = 8
 
-[node name="Solar" type="Control" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2"]
+[node name="Solar" type="Control" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2Summary"]
 anchors_preset = 0
 offset_left = 303.5
 offset_top = 423.5
 offset_right = 343.5
 offset_bottom = 463.5
 
-[node name="Percentage" type="Label" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2/Solar"]
+[node name="Percentage" type="Label" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2Summary/Solar"]
 layout_mode = 0
 offset_left = -82.0
 offset_top = 87.0
@@ -971,7 +971,7 @@ theme_type_variation = &"Screen"
 text = "80%"
 horizontal_alignment = 1
 
-[node name="Sprite2D" type="TextureRect" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2/Solar"]
+[node name="Sprite2D" type="TextureRect" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2Summary/Solar"]
 layout_mode = 0
 offset_left = -91.0
 offset_top = -14.0
@@ -980,16 +980,15 @@ offset_bottom = 172.0
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("22_wectj")
 script = ExtResource("18_ni0vf")
-plant_name = "SOLAR"
 
-[node name="Waste" type="Control" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2"]
+[node name="Waste" type="Control" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2Summary"]
 anchors_preset = 0
 offset_left = 490.5
 offset_top = 423.5
 offset_right = 530.5
 offset_bottom = 463.5
 
-[node name="Percentage" type="Label" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2/Waste"]
+[node name="Percentage" type="Label" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2Summary/Waste"]
 layout_mode = 0
 offset_left = -82.0
 offset_top = 87.0
@@ -1000,7 +999,7 @@ theme_type_variation = &"Screen"
 text = "80%"
 horizontal_alignment = 1
 
-[node name="Sprite2D" type="TextureRect" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2/Waste"]
+[node name="Sprite2D" type="TextureRect" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2Summary/Waste"]
 layout_mode = 0
 offset_left = -91.0
 offset_top = -14.0
@@ -1009,16 +1008,16 @@ offset_bottom = 172.0
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("23_vx30y")
 script = ExtResource("18_ni0vf")
-plant_name = "WASTE"
+plant_type = 3
 
-[node name="River" type="Control" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2"]
+[node name="River" type="Control" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2Summary"]
 anchors_preset = 0
 offset_left = 686.5
 offset_top = 423.5
 offset_right = 726.5
 offset_bottom = 463.5
 
-[node name="Percentage" type="Label" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2/River"]
+[node name="Percentage" type="Label" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2Summary/River"]
 layout_mode = 0
 offset_left = -82.0
 offset_top = 87.0
@@ -1029,7 +1028,7 @@ theme_type_variation = &"Screen"
 text = "80%"
 horizontal_alignment = 1
 
-[node name="Sprite2D" type="TextureRect" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2/River"]
+[node name="Sprite2D" type="TextureRect" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2Summary/River"]
 layout_mode = 0
 offset_left = -91.0
 offset_top = -14.0
@@ -1038,16 +1037,16 @@ offset_bottom = 172.0
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("24_amppy")
 script = ExtResource("18_ni0vf")
-plant_name = "RIVER"
+plant_type = 9
 
-[node name="Wind" type="Control" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2"]
+[node name="Wind" type="Control" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2Summary"]
 anchors_preset = 0
 offset_left = 856.5
 offset_top = 423.5
 offset_right = 896.5
 offset_bottom = 463.5
 
-[node name="Percentage" type="Label" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2/Wind"]
+[node name="Percentage" type="Label" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2Summary/Wind"]
 layout_mode = 0
 offset_left = -82.0
 offset_top = 87.0
@@ -1058,7 +1057,7 @@ theme_type_variation = &"Screen"
 text = "80%"
 horizontal_alignment = 1
 
-[node name="Sprite2D" type="TextureRect" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2/Wind"]
+[node name="Sprite2D" type="TextureRect" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2Summary/Wind"]
 layout_mode = 0
 offset_left = -91.0
 offset_top = -14.0
@@ -1067,7 +1066,7 @@ offset_bottom = 172.0
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("24_bc83k")
 script = ExtResource("18_ni0vf")
-plant_name = "WIND"
+plant_type = 1
 
 [node name="BottomFrames" type="HBoxContainer" parent="MainFrame"]
 visible = false
@@ -1869,6 +1868,15 @@ offset_bottom = -5.0
 
 [connection signal="game_stats_updated" from="." to="MainFrame/Screen/MetricsRanking" method="_on_game_stats_updated"]
 [connection signal="game_stats_updated" from="." to="MainFrame/Screen/MetricsRanking/SummaryContainer/VBoxContainer/SummaryText/Label2" method="_on_game_stats_updated"]
+[connection signal="game_stats_updated" from="." to="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2Summary/Gaz/Sprite2D" method="_on_game_stats_updated"]
+[connection signal="game_stats_updated" from="." to="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2Summary/Biogaz/Sprite2D" method="_on_game_stats_updated"]
+[connection signal="game_stats_updated" from="." to="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2Summary/Nuclear/Sprite2D" method="_on_game_stats_updated"]
+[connection signal="game_stats_updated" from="." to="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2Summary/Biomass/Sprite2D" method="_on_game_stats_updated"]
+[connection signal="game_stats_updated" from="." to="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2Summary/Solar/Sprite2D" method="_on_game_stats_updated"]
+[connection signal="game_stats_updated" from="." to="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2Summary/Hydro/Sprite2D" method="_on_game_stats_updated"]
+[connection signal="game_stats_updated" from="." to="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2Summary/Waste/Sprite2D" method="_on_game_stats_updated"]
+[connection signal="game_stats_updated" from="." to="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2Summary/River/Sprite2D" method="_on_game_stats_updated"]
+[connection signal="game_stats_updated" from="." to="MainFrame/Screen/MetricsRanking/SummaryContainer/CO2Summary/Wind/Sprite2D" method="_on_game_stats_updated"]
 [connection signal="metrics_leaderboard_updated" from="." to="." method="_on_metrics_leaderboard_updated"]
 [connection signal="metrics_leaderboard_updated" from="." to="MainFrame/Screen/MetricsRanking" method="_on_end_metrics_leaderboard_updated"]
 [connection signal="metrics_leaderboard_updated" from="." to="MainFrame/Screen/MetricsRanking/CalcRank" method="_on_metrics_leaderboard_updated"]

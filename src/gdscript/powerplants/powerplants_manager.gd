@@ -536,6 +536,19 @@ func update_buildings_impact():
 	Gameloop.land_use = total_land_use
 	
 
+func get_co2_emitted_by_plant_type(type: EngineTypeIds):
+	var powerplants: Array[Node] = get_tree().get_nodes_in_group("Powerplants")
+	var co2_emitted = 0
+	
+	for powerplant in powerplants:
+		var metrics: PowerplantMetrics = powerplant.metrics
+		
+		if metrics.type == type and metrics.active:
+			co2_emitted += metrics.emissions
+		
+	return co2_emitted
+	
+	
 func get_energy_provided_by_plant_type(type: EngineTypeIds):
 	var powerplants: Array[Node] = get_tree().get_nodes_in_group("Powerplants")
 	var summer_supply = 0
