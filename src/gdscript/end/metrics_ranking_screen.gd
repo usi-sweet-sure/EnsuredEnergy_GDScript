@@ -1,8 +1,10 @@
 extends Control
 
+signal summary_requested(type: String)
+
 @export var button_group: ButtonGroup
 @export var summary_button: ButtonGroup
-@onready var co_2_summary: Control = $SummaryContainer/CO2Summary
+@onready var per_plant_summary: Control = $SummaryContainer/PerPlantSummary
 var num = 0
 var score_list = ["met_nuc", "met_fos", "met_ele", "met_emi", "met_lnd", "met_cst", "met_smr"]
 var rank_list = ["rnk_nuc", "rnk_fos", "rnk_ele", "rnk_emi", "rnk_lnd", "rnk_cst", "rnk_smr"]
@@ -52,15 +54,20 @@ func _on_leaderboard_button_pressed(button_index):
 		
 			
 func _on_summary_button_pressed(button_index):
+	var summary_types = ["emissions", "land_use", "nuclear", "money", "politics", "energy"]
+	summary_requested.emit(summary_types[button_index])
 	$SummaryContainer/VBoxContainer/SummaryText/Label.text = summary_texts_1[button_index]
 	$SummaryContainer/VBoxContainer/SummaryText/Label2.text = summary_texts_2[button_index]
 
 	if button_index == 0:
 		$SummaryContainer/VBoxContainer/SummaryText/Label2.show()
-		co_2_summary.show()
 	else:
 		$SummaryContainer/VBoxContainer/SummaryText/Label2.hide()
-		co_2_summary.hide()
+	
+	if button_index == 0 or button_index == 1 or button_index == 3 or button_index == 5:
+		per_plant_summary.show()
+	else:
+		per_plant_summary.hide()
 		
 			
 func _on_end_metrics_leaderboard_updated(leaderboard):

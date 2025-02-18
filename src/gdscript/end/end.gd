@@ -11,8 +11,12 @@ var game_stats = {
 	"reached_net_zero": false,
 	"emissions_diff_percentage": 0,
 	"emissions_per_plant_type": {},
+	"summer_energy_per_plant_type": {},
+	"winter_energy_per_plant_type": {},
 	"production_costs_diff_percentage": 0,
+	"production_costs_per_plant_type": {},
 	"land_use_diff_percentage": 0,
+	"land_use_per_plant_type": {},
 	"nuclear_energy_percentage": 0,
 	"implemented_policies_count": 0,
 	"imported_energy_percentage": 0,
@@ -62,11 +66,7 @@ func compute_game_stats():
 	emissions_now -= Gameloop.sequestrated_co2
 	game_stats.reached_net_zero = emissions_now == 0
 	game_stats.emissions_diff_percentage = (emissions_now * 100.0 / emissions_in_2022) -100.0
-	
-	for type in PowerplantsManager.EngineTypeIds.values():
-		game_stats.emissions_per_plant_type[type] = PowerplantsManager.get_co2_emitted_by_plant_type(type)
 
-	
 	# Nuclear
 	var nuclear_supply = PowerplantsManager.get_energy_provided_by_plant_type(PowerplantsManager.EngineTypeIds.NUCLEAR)
 	var total_nuclear_energy = nuclear_supply.winter_supply + nuclear_supply.summer_supply
@@ -94,6 +94,16 @@ func compute_game_stats():
 	var total_winter_energy = Gameloop.supply_winter
 	game_stats.imported_energy_percentage =  imported_energy_amount * 100.0 / total_winter_energy
 	
+	# Per type stats
+	for type in PowerplantsManager.EngineTypeIds.values():
+		game_stats.emissions_per_plant_type[type] = PowerplantsManager.get_co2_emitted_by_plant_type(type)
+		var energy = PowerplantsManager.get_energy_provided_by_plant_type(type)
+		game_stats.summer_energy_per_plant_type[type] = energy.summer_supply
+		game_stats.winter_energy_per_plant_type[type] = energy.winter_supply
+		game_stats.land_use_per_plant_type[type] = PowerplantsManager.get_land_use_by_plant_type(type)
+		game_stats.production_costs_per_plant_type[type] = PowerplantsManager.get_production_costs_by_plant_type(type)
+
+
 	game_stats_updated.emit(game_stats)
 	
 	

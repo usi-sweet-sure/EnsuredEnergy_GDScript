@@ -535,6 +535,19 @@ func update_buildings_impact():
 	Gameloop.co2_emissions = total_emissions
 	Gameloop.land_use = total_land_use
 	
+	
+func get_production_costs_by_plant_type(type: EngineTypeIds):
+	var powerplants: Array[Node] = get_tree().get_nodes_in_group("Powerplants")
+	var costs = 0
+	
+	for powerplant in powerplants:
+		var metrics: PowerplantMetrics = powerplant.metrics
+		
+		if metrics.type == type and metrics.active:
+			costs += metrics.production_costs
+		
+	return costs
+
 
 func get_co2_emitted_by_plant_type(type: EngineTypeIds):
 	var powerplants: Array[Node] = get_tree().get_nodes_in_group("Powerplants")
@@ -547,6 +560,19 @@ func get_co2_emitted_by_plant_type(type: EngineTypeIds):
 			co2_emitted += metrics.emissions
 		
 	return co2_emitted
+	
+	
+func get_land_use_by_plant_type(type: EngineTypeIds):
+	var powerplants: Array[Node] = get_tree().get_nodes_in_group("Powerplants")
+	var land_use = 0
+	
+	for powerplant in powerplants:
+		var metrics: PowerplantMetrics = powerplant.metrics
+		
+		if metrics.type == type and metrics.active:
+			land_use += metrics.land_use
+		
+	return land_use
 	
 	
 func get_energy_provided_by_plant_type(type: EngineTypeIds):

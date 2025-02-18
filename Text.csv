@@ -270,3 +270,5 @@ EMISSIONS_SCORE,Your CO2 score shows the tonnes of emissions emitted.,Ton score 
 LAND_USE_SCORE,This is how much land you have used for your energy system.,Il s'agit de la superficie de terrain que tu as utilisée pour ton système énergétique.,"Dies ist die Landfläche, die du für dein Energiesystem genutzt hast.",È l'area di terreno che avete utilizzato per il vostro sistema energetico.
 PROD_COST_SCORE,This is how much your energy system costs.,Voici combien coûte ton système énergétique.,"Hier erfährst du, wie viel dein Energiesystem kostet.",Ecco quanto costa il vostro sistema energetico.
 SEASONALITY_SCORE,This shows your energy balance between winter and summer.,Voici ton équilibre énergétique entre l'hiver et l'été.,Dies ist dein Energiegleichgewicht zwischen Winter und Sommer.,Si tratta del bilancio energetico tra inverno ed estate.
+SUMMER,Summer,Été,Sommer,Estate
+WINTER,Winter,Hiver,Winter,Inverno
