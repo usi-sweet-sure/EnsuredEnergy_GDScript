@@ -1,23 +1,8 @@
 extends Node2D
 
-@onready var upgrades_effects: Array[Array] = [
-	[$Upgrades/Highlight0],
-	[$Upgrades/Cover1, $Upgrades/Highlight1],
-	[$Upgrades/Cover2, $Upgrades/Highlight2],
-	[$Upgrades/Highlight3],
-	[$Upgrades/Highlight4],
-	[$Upgrades/Highlight5, $Upgrades/Cover5, $Upgrades/Cover5_2],
-	[$Upgrades/Highlight6, $Upgrades/Cover6],
-	[],
-	[],
-	[],
-	[],
-	[],
-	[],
-	[],
-	[],
-	[$Level15/Highlight7, $Level15/Highlight5, $Level15/Highlight6, $Level15/Cover6, $Level15/Cover5, $Level15/Cover5_2, $Level15/Highlight3, $Level15/Highlight0, $Level15/Cover1, $Level15/Highlight4, $Level15/Cover2, $Level15/Highlight1, $Level15/Highlight2],
-]
+@onready var god_rays: ColorRect = $GodRays
+@onready var highlight: ColorRect = $Highlight
+
 
 func _ready() -> void:
 	var pp_scene: PpScene = get_parent()
@@ -28,31 +13,33 @@ func _ready() -> void:
 
 
 func effects_off(_metrics: PowerplantMetrics):
-	for effects in upgrades_effects:
-		for effect in effects:
-			effect.hide()
+	god_rays.hide()
+	highlight.hide()
 	
 	
 func effects_on(metrics: PowerplantMetrics):
-	var counter = 0
+	highlight.show()
+	god_rays.hide()
 	
-	while counter <= metrics.current_upgrade:
-		for effect in upgrades_effects[counter]:
-				effect.show()
-		counter += 1
-
+	if metrics.current_upgrade > metrics.min_upgrade:
+		god_rays.show()
+		var current_upgrade = metrics.current_upgrade - 1
+		var intensity = float(current_upgrade - metrics.min_upgrade) / (metrics.max_upgrade - metrics.min_upgrade)
+		god_rays.material.set_shader_parameter("ray2_intensity", intensity)
+		
 
 func _on_powerplant_upgraded(metrics: PowerplantMetrics):
-	var effects_to_show = upgrades_effects[metrics.current_upgrade]
-	
-	for effect in effects_to_show:
-		effect.show()
+	god_rays.show()
+	# Goes from 0 to 1
+	var current_upgrade = metrics.current_upgrade - 1
+	var intensity = float(current_upgrade - metrics.min_upgrade) / (metrics.max_upgrade - metrics.min_upgrade)
+	god_rays.material.set_shader_parameter("ray2_intensity", intensity)
 
 
 func _on_powerplant_downgraded(metrics: PowerplantMetrics):
-	var effects_to_hide = upgrades_effects[metrics.current_upgrade + 1]
-	
-	for effect in effects_to_hide:
-		effect.hide()
-
-	
+	if metrics.current_upgrade == metrics.min_upgrade:
+		god_rays.hide()
+	else:
+		var current_upgrade = metrics.current_upgrade - 1
+		var intensity = float(current_upgrade - metrics.min_upgrade) / (metrics.max_upgrade - metrics.min_upgrade)
+		god_rays.material.set_shader_parameter("ray2_intensity", intensity)

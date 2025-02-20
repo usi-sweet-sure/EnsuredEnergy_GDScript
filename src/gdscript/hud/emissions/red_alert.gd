@@ -13,6 +13,8 @@ func _ready():
 
 	
 func _on_emissions_updated(emissions: float):
+	emissions -= Gameloop.sequestrated_co2
+	
 	if emissions >= emissions_max_value:
 		animation_player.play("red_alert_blink")
 	else:

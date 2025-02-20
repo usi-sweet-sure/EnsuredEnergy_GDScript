@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ba56oxmvcxpos"]
+[gd_scene load_steps=21 format=3 uid="uid://ba56oxmvcxpos"]
 
 [ext_resource type="Texture2D" uid="uid://dug4cy4mgxa1b" path="res://assets/textures/map/map.jpg" id="1_exly2"]
 [ext_resource type="Texture2D" uid="uid://dnuq60vou7jic" path="res://assets/textures/map/mountains/mountain_0.png" id="2_0wbri"]
@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://ex0mlwlymf7k" path="res://assets/textures/map/forests/forest_4.png" id="10_bwdos"]
 [ext_resource type="Texture2D" uid="uid://d0nonmo0jroqa" path="res://assets/textures/map/mountains/mountain_2.png" id="11_c0lk8"]
 [ext_resource type="Texture2D" uid="uid://imn01mt51ob8" path="res://assets/textures/map/forests/forest_5.png" id="12_4trsl"]
-[ext_resource type="Texture2D" uid="uid://2h5b4uyx5wut" path="res://assets/textures/powerplants/pp_sprite_on_solar_15.png" id="12_6pfsk"]
 [ext_resource type="Texture2D" uid="uid://cjla34vrrgb7i" path="res://assets/textures/powerplants/bb_normal_water.png" id="13_iyb57"]
 [ext_resource type="Texture2D" uid="uid://buseob4ix0xih" path="res://assets/textures/map/mountains/mountain_3.png" id="13_lqxt0"]
 [ext_resource type="Texture2D" uid="uid://cww2obs22h5na" path="res://assets/textures/map/forests/forest_6.png" id="14_8vk84"]
@@ -20,9 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://curvmq4s83e7w" path="res://assets/textures/map/mountains/mountain_5.png" id="17_qgn3q"]
 [ext_resource type="PackedScene" uid="uid://cl2v31dxkoeoq" path="res://scenes/powerplants/carbon_sequestration.tscn" id="18_pdx3e"]
 [ext_resource type="PackedScene" uid="uid://b0gxr46y1af1j" path="res://scenes/powerplants/menu/pp_menu.tscn" id="21_n4f12"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dhjl6"]
-load_path = "res://.godot/imported/pp_sprite_off_solar_12.png-575fb6a407f5b14a48b1a6fc0e37482a.ctex"
+[ext_resource type="PackedScene" uid="uid://cs0djggwahoyn" path="res://scenes/world/help_sign.tscn" id="21_unlro"]
 
 [node name="World" type="Node2D"]
 position = Vector2(-238, 170)
@@ -97,6 +94,10 @@ build_on_start = 1
 [node name="PpMapEmplacement9" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(573, 313)
 
+[node name="HelpSign" parent="." instance=ExtResource("21_unlro")]
+position = Vector2(1912, 377)
+message = "CARBON_SEQUESTRATION_TEXT"
+
 [node name="PpMapEmplacement10" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(1929, 521)
 
@@ -159,8 +160,6 @@ build_on_start = 0
 current_upgrade = 15
 max_upgrade = 15
 can_upgrade = false
-powerplant_on = ExtResource("12_6pfsk")
-powerplant_off = SubResource("CompressedTexture2D_dhjl6")
 
 [node name="PpMapEmplacement16" parent="." instance=ExtResource("7_3e8ib")]
 position = Vector2(-427, 1355)

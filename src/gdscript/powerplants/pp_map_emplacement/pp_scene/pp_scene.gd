@@ -189,43 +189,43 @@ func _on_metrics_updated(_metrics):
 
 
 func is_gas() -> bool:
-		return metrics.type == PowerplantsManager.EngineTypeIds.GAS
+	return metrics.type == PowerplantsManager.EngineTypeIds.GAS
 		
 		
 func is_nuclear() -> bool:
-		return metrics.type == PowerplantsManager.EngineTypeIds.NUCLEAR
+	return metrics.type == PowerplantsManager.EngineTypeIds.NUCLEAR
 		
 		
 func is_river() -> bool:
-		return metrics.type == PowerplantsManager.EngineTypeIds.RIVER
+	return metrics.type == PowerplantsManager.EngineTypeIds.RIVER
 
 
 func is_hydro() -> bool:
-		return metrics.type == PowerplantsManager.EngineTypeIds.HYDRO
+	return metrics.type == PowerplantsManager.EngineTypeIds.HYDRO
 
 
 func is_waste() -> bool:
-		return metrics.type == PowerplantsManager.EngineTypeIds.WASTE
+	return metrics.type == PowerplantsManager.EngineTypeIds.WASTE
 
 
 func is_biomass() -> bool:
-		return metrics.type == PowerplantsManager.EngineTypeIds.BIOMASS
+	return metrics.type == PowerplantsManager.EngineTypeIds.BIOMASS
 
 
 func is_solar() -> bool:
-		return metrics.type == PowerplantsManager.EngineTypeIds.SOLAR
+	return metrics.type == PowerplantsManager.EngineTypeIds.SOLAR
 
 
 func is_wind() -> bool:
-		return metrics.type == PowerplantsManager.EngineTypeIds.WIND
+	return metrics.type == PowerplantsManager.EngineTypeIds.WIND
 
 
 func is_biogas() -> bool:
-		return metrics.type == PowerplantsManager.EngineTypeIds.BIOGAS
+	return metrics.type == PowerplantsManager.EngineTypeIds.BIOGAS
 		
 
 func is_carbon_sequestration() -> bool:
-		return metrics.type == PowerplantsManager.EngineTypeIds.CARBON_SEQUESTRATION
+	return metrics.type == PowerplantsManager.EngineTypeIds.CARBON_SEQUESTRATION
 
 
 func change_image(metrics_: PowerplantMetrics):

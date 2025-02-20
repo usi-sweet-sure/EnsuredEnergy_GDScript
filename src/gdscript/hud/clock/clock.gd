@@ -54,6 +54,7 @@ func _unhandled_input(event):
 		
 		
 func _on_next_turn_button_pressed():
+	Gameloop.next_turn_button_pressed.emit()
 	Context.context_updated_for_new_turn = false
 	Gameloop.all_parameters_sent.connect(_on_all_parameters_sent)
 

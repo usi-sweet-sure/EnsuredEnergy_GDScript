@@ -103,7 +103,8 @@ func _add_data_set_to_graph(data_set_name: String, line_color = Color(0.836, 0.7
 		
 	_add_new_line_to_graph(data_set_name, line_color, default_line_width)
 	
-	var points = GraphsData.get_data_set(data_set_name)
+	var data_set = GraphsData.get_data_set(data_set_name)
+	var points = data_set["points"]
 	var abscissas = points.keys()
 	var ordinates = points.values()
 	
@@ -161,7 +162,9 @@ func _add_new_point_to_line(line_name: String, x, y) -> Line2D:
 	var x_in_pixels = (graph.size.x / (x_axis_max_value - x_axis_min_value)) * (x - x_axis_min_value)
 	var y_in_pixels = graph.size.y - ((graph.size.y / (y_axis_max_value - y_axis_min_value)) * (y - y_axis_min_value))
 	line.add_point(Vector2(x_in_pixels, y_in_pixels))
-	
+	var unit =  GraphsData.get_data_set(line_name)["unit"]
+
+
 	# Square for the value point
 	var visual_point = ColorRect.new()
 	visual_point.custom_minimum_size = default_point_size
@@ -171,13 +174,16 @@ func _add_new_point_to_line(line_name: String, x, y) -> Line2D:
 	# Custom label to show the value instead of tooltip
 	var label = Label.new()
 	visual_point.add_child(label)
-	label.text = str(round(y))
-	label.set_anchors_and_offsets_preset(Control.PRESET_CENTER_TOP)
+	label.text = str(round(y)) + "\n" + unit
+	label.set_anchors_and_offsets_preset(Control.PRESET_CENTER_BOTTOM)
+	label.position.y = label.position.y - 25
 	label.hide()
 	visual_point.color = line.default_color
 	visual_point.color.a = 0.75
 	visual_point.mouse_entered.connect(func(): change_point_highlight(visual_point))
 	visual_point.mouse_exited.connect(func(): change_point_highlight(visual_point, false))
+	visual_point.mouse_entered.connect(func(): Cursor.show_tooltip.emit(str(round(y)) + unit + "\n" + tr(line_name.to_upper() + "_LINE_NAME")))
+	visual_point.mouse_exited.connect(func(): Cursor.hide_tooltip.emit())
 	
 	line.add_child(visual_point)
 	
@@ -284,22 +290,18 @@ func change_line_highlight(line_name, highlight := true):
 			
 			# Those formula are to be adapated if the size_factor changes
 			# For example, a size_factor of 2 doesn't require the move_factor to be divided
-			# I'd find a formula but hey
 			var label = child.get_children()[0]
-			var tween3 = get_tree().create_tween()
-			
+						
 			if highlight:
+				label.set_anchors_and_offsets_preset(Control.PRESET_CENTER_BOTTOM)
 				label.show()
 				
 				if change_point_size:
 					child.position -= default_point_size / (move_factor / 2)
-					
-				tween3.tween_property(label, "position", Vector2(label.position.x, label.position.y - 25), 0.1)
 			else:
 				if change_point_size:
 					child.position += default_point_size / (move_factor / 2)
-				tween3.tween_property(label, "position", Vector2(label.position.x, 0), 0.1)
-				
+									
 				var tween4 = get_tree().create_tween()
 				tween4.tween_property(label, "visible", false, 0.1)
 

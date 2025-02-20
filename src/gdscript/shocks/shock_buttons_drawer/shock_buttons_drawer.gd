@@ -11,8 +11,29 @@ func _ready():
 func _on_shock_resolved(shock: Shock):
 	var shock_button = shock_button_scene.instantiate()
 	shock_button.shock = shock
+	shock_button.hide()
 	add_child(shock_button)
-
+	
+	#Moves button from center to it's position
+	var final_position = shock_button.global_position
+	var starting_position = get_viewport_rect().size / 2 # Center of screen
+	shock_button.global_position = starting_position
+	shock_button.show()
+	var texture = shock_button.get_node("TextureButton")
+	var tween = get_tree().create_tween()
+	tween.tween_property(texture, "scale", Vector2(1.5, 1.5), 0.15)
+	await tween.finished
+	tween = get_tree().create_tween()
+	tween.tween_property(texture, "scale", Vector2(1.3, 1.3), 0.15)
+	await tween.finished
+	tween = get_tree().create_tween()
+	tween.tween_property(texture, "scale", Vector2(1.5, 1.5), 0.1)
+	await tween.finished
+	tween = get_tree().create_tween()
+	tween.parallel().tween_property(texture, "scale", Vector2(1, 1), 0.75)
+	tween.parallel().tween_property(shock_button, "global_position", final_position, 0.6)
+	await tween.finished
+	ShockManager.shock_button_in_place.emit(shock)
 
 func _on_toggle_shock_buttons(toggle: bool):
 	var direction = 1

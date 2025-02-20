@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://cej4dlw11su6f"]
+[gd_scene load_steps=86 format=3 uid="uid://cej4dlw11su6f"]
 
 [ext_resource type="Script" path="res://src/gdscript/end/end.gd" id="1_eio5g"]
 [ext_resource type="Texture2D" uid="uid://hka3jsgvfwwy" path="res://assets/textures/ui/green_checkmark.png" id="2_2yy2d"]
@@ -20,23 +20,40 @@
 [ext_resource type="ButtonGroup" uid="uid://bly2ooexf1g4h" path="res://scenes/windows/leaderboard_buttons.tres" id="9_h5vxw"]
 [ext_resource type="Texture2D" uid="uid://ceywqq4wa4ocw" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0026_Icon-Import.png" id="9_uutud"]
 [ext_resource type="Script" path="res://src/gdscript/end/energy_bar.gd" id="10_6lpn4"]
+[ext_resource type="ButtonGroup" uid="uid://duc830qsnf8t2" path="res://scenes/buttons/summary_button_group.tres" id="10_hny1g"]
 [ext_resource type="Texture2D" uid="uid://bx0cxko72v5ui" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0020_Icon-Environment-.png" id="10_induf"]
 [ext_resource type="Texture2D" uid="uid://dlccss1xvy8tb" path="res://assets/textures/ui/Button-Square-hover.png" id="10_y0hau"]
+[ext_resource type="Texture2D" uid="uid://bpt1e486wuscd" path="res://assets/textures/icons/chalk_emission.png" id="11_2srpk"]
 [ext_resource type="Texture2D" uid="uid://b083k6d7sugyx" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0018_Icon-Pollution-.png" id="11_fjiu1"]
 [ext_resource type="Script" path="res://src/gdscript/end/money_button.gd" id="11_gk6vr"]
 [ext_resource type="Texture2D" uid="uid://b421l4qq7mg5n" path="res://assets/textures/ui/All-HQ-Assets-D_0007s_0024_Line-energy.png" id="11_glyce"]
 [ext_resource type="StyleBox" uid="uid://yqtdxtw3vpjp" path="res://scenes/hud/energy_bar_green.tres" id="11_oy1fd"]
 [ext_resource type="Texture2D" uid="uid://bj6ubksmn350n" path="res://assets/textures/buttons/button_hole.png" id="11_qe2lm"]
+[ext_resource type="Texture2D" uid="uid://1esf36575js0" path="res://assets/textures/icons/chalk_land_use.png" id="11_v0rb1"]
 [ext_resource type="StyleBox" uid="uid://lco0fbxgcpii" path="res://scenes/hud/energy_bar_low.tres" id="12_2ucrx"]
+[ext_resource type="Texture2D" uid="uid://tlhcj4dv8w72" path="res://assets/textures/icons/chalk_nuclear.png" id="13_okhtr"]
+[ext_resource type="Texture2D" uid="uid://d3vcg8408jiv6" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0002_no-Money-symbol.png" id="13_u017u"]
 [ext_resource type="Texture2D" uid="uid://da56ki5hmlw12" path="res://assets/textures/ui/All-HQ-Assets-D_0009s_0008_Energy-Bar-base.png" id="14_tu03u"]
+[ext_resource type="Texture2D" uid="uid://c3opgyhsh61y8" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0014_Policies-symbol.png" id="14_x4nl2"]
+[ext_resource type="Texture2D" uid="uid://2ifd0dxwcqka" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0013_Electricity-symbol.png" id="15_s55n7"]
 [ext_resource type="Script" path="res://src/gdscript/end/trust_button.gd" id="16_ppd74"]
+[ext_resource type="Texture2D" uid="uid://bqcub63frxj38" path="res://assets/textures/powerplants/pp_sprite_neon_gas.png" id="17_80r7i"]
+[ext_resource type="Script" path="res://src/gdscript/end/summary/plant.gd" id="18_ni0vf"]
+[ext_resource type="Texture2D" uid="uid://ddlljpbljj4x0" path="res://assets/textures/powerplants/pp_sprite_neon_biogas.png" id="18_nt8bk"]
+[ext_resource type="Texture2D" uid="uid://b3a42e5ad2u38" path="res://assets/textures/powerplants/pp_sprite_neon_nuclear.png" id="19_kv7ws"]
 [ext_resource type="Texture2D" uid="uid://bmjee8ocqy0ge" path="res://assets/textures/ui/Enviornment-Base.png" id="20_651ix"]
+[ext_resource type="Texture2D" uid="uid://bj4tvp2lyt062" path="res://assets/textures/powerplants/pp_sprite_neon_biomass.png" id="20_ud2pm"]
+[ext_resource type="Texture2D" uid="uid://blsfp2folqofg" path="res://assets/textures/powerplants/pp_sprite_neon_hydro.png" id="21_5ourj"]
 [ext_resource type="Texture2D" uid="uid://d2mj0ht318q3j" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0022_Icon-Popularity.png" id="21_kphba"]
 [ext_resource type="Texture2D" uid="uid://bttco1oeukpbq" path="res://assets/textures/ui/Environment-Bar.png" id="21_n5n6k"]
 [ext_resource type="Texture2D" uid="uid://bwmnloeklg76n" path="res://assets/textures/ui/Enviornment-Hand.png" id="22_1ey0q"]
 [ext_resource type="Script" path="res://src/gdscript/end/winter_button.gd" id="22_twku5"]
+[ext_resource type="Texture2D" uid="uid://cssrlygtxiak" path="res://assets/textures/powerplants/pp_sprite_neon_solar.png" id="22_wectj"]
 [ext_resource type="Script" path="res://src/gdscript/end/environment_arrow.gd" id="23_gtgnc"]
 [ext_resource type="Texture2D" uid="uid://jboxm7nhk0qv" path="res://assets/textures/ui/All-HQ-Assets-D_0007s_0001_import-line-stats.png" id="23_pq3eq"]
+[ext_resource type="Texture2D" uid="uid://b20t5eecd5dmi" path="res://assets/textures/powerplants/pp_sprite_neon_waste.png" id="23_vx30y"]
+[ext_resource type="Texture2D" uid="uid://cklce5oocr611" path="res://assets/textures/powerplants/pp_sprite_neon_river.png" id="24_amppy"]
+[ext_resource type="Texture2D" uid="uid://b2gbtnhgkx7jk" path="res://assets/textures/powerplants/pp_sprite_neon_wind.png" id="24_bc83k"]
 [ext_resource type="Script" path="res://src/gdscript/end/summer_button.gd" id="24_e8i6d"]
 [ext_resource type="Script" path="res://src/gdscript/end/import_screen_value.gd" id="25_j2xu1"]
 [ext_resource type="Script" path="res://src/gdscript/end/pollution_arrow.gd" id="26_kgqfc"]
@@ -46,8 +63,12 @@
 [ext_resource type="Script" path="res://src/gdscript/end/emissions_gauge_label.gd" id="37_hchcy"]
 [ext_resource type="PackedScene" uid="uid://chpn7t75mmbkh" path="res://scenes/buttons/button_close.tscn" id="43_pdbh2"]
 [ext_resource type="Script" path="res://src/gdscript/end/close_button.gd" id="44_iv8kv"]
+[ext_resource type="Texture2D" uid="uid://hmcjyyrl7dv2" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0034_Policies-normal-(small)-button.png" id="47_fevx4"]
+[ext_resource type="Texture2D" uid="uid://cjxrgcwrcynwf" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0035_Policies-press-(small)-button.png" id="48_3nhwh"]
 [ext_resource type="Texture2D" uid="uid://bx1g8oiuxi2mk" path="res://assets/textures/ui/Paper-Middle.png" id="48_py7ex"]
+[ext_resource type="ButtonGroup" uid="uid://bgtq40ngq16h0" path="res://scenes/buttons/end_buttons.tres" id="48_rnypu"]
 [ext_resource type="Texture2D" uid="uid://duoff2c7r1hdy" path="res://assets/textures/buttons/close_button_normal.png" id="48_wntxs"]
+[ext_resource type="Texture2D" uid="uid://80u4mcjyisb7" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0033_Policies-hover-(small)-button.png" id="49_3hwq1"]
 [ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/fonts/special_elite/special_elite_regular.ttf" id="49_fl6u7"]
 [ext_resource type="Texture2D" uid="uid://bdq26gwsmigwy" path="res://assets/textures/buttons/close_button_pressed.png" id="49_nxc3v"]
 [ext_resource type="Texture2D" uid="uid://myf36tn1pspq" path="res://assets/textures/buttons/close_button_hover.png" id="50_3oi6p"]
@@ -161,12 +182,13 @@ anchor_right = 1.0
 offset_left = 182.0
 offset_top = 66.0
 offset_right = -181.0
-offset_bottom = 516.0
+offset_bottom = 721.0
 grow_horizontal = 2
 size_flags_horizontal = 0
 texture = ExtResource("6_us122")
 
 [node name="Graph" type="Control" parent="MainFrame/Screen"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -188,12 +210,52 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("5_luxph")
 button_group = ExtResource("9_h5vxw")
+summary_button = ExtResource("10_hny1g")
 
-[node name="RichTextLabel" type="Label" parent="MainFrame/Screen/MetricsRanking"]
+[node name="EndMessage" type="Label" parent="MainFrame/Screen/MetricsRanking"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -8.0
+offset_bottom = -299.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "Thank you for playing !
+You managed to cover the energy demand for 30 years."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="MainFrame/Screen/MetricsRanking/EndMessage"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 152.0
+offset_top = 223.0
+offset_right = -54.0
+offset_bottom = 203.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+theme_override_constants/line_spacing = 13
+text = "You did not reach net zero.
+You chose to keep nuclear.
+The costs for your energy system are below average.
+You managed to implement n policies.
+% of your winter energy is imported."
+
+[node name="CalcRank" type="Label" parent="MainFrame/Screen/MetricsRanking"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 495.0
+offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_n8g63")
@@ -203,7 +265,7 @@ text = "CALCULATING_RANK"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RichTextLabel2" type="Label" parent="MainFrame/Screen/MetricsRanking/RichTextLabel"]
+[node name="RichTextLabel2" type="Label" parent="MainFrame/Screen/MetricsRanking/CalcRank"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -222,7 +284,7 @@ vertical_alignment = 1
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="MainFrame/Screen/MetricsRanking/RichTextLabel/RichTextLabel2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MainFrame/Screen/MetricsRanking/CalcRank/RichTextLabel2"]
 libraries = {
 "": SubResource("AnimationLibrary_iyvtd")
 }
@@ -598,7 +660,416 @@ theme_override_colors/font_color = Color(0.0470588, 0.168627, 0.180392, 1)
 text = "SCORE"
 horizontal_alignment = 2
 
+[node name="PlayerStats2" type="Control" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Score_info" type="Label" parent="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/PlayerStats2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+offset_top = 42.0
+offset_right = 827.0
+offset_bottom = 174.0
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "...
+"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="SummaryContainer" type="MarginContainer" parent="MainFrame/Screen/MetricsRanking"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 63.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainFrame/Screen/MetricsRanking/SummaryContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="CO2" type="Button" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_n8g63")
+toggle_mode = true
+button_pressed = true
+button_group = ExtResource("10_hny1g")
+icon = ExtResource("11_2srpk")
+icon_alignment = 1
+
+[node name="Landuse" type="Button" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_n8g63")
+toggle_mode = true
+button_group = ExtResource("10_hny1g")
+icon = ExtResource("11_v0rb1")
+icon_alignment = 1
+
+[node name="Nuc" type="Button" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_n8g63")
+toggle_mode = true
+button_group = ExtResource("10_hny1g")
+icon = ExtResource("13_okhtr")
+icon_alignment = 1
+
+[node name="Costs" type="Button" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_n8g63")
+toggle_mode = true
+button_group = ExtResource("10_hny1g")
+icon = ExtResource("13_u017u")
+icon_alignment = 1
+
+[node name="Policies" type="Button" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_n8g63")
+toggle_mode = true
+button_group = ExtResource("10_hny1g")
+icon = ExtResource("14_x4nl2")
+icon_alignment = 1
+
+[node name="Imports" type="Button" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("4_n8g63")
+toggle_mode = true
+button_group = ExtResource("10_hny1g")
+icon = ExtResource("15_s55n7")
+icon_alignment = 1
+
+[node name="Line2D" type="Line2D" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/VBoxContainer"]
+position = Vector2(47.5, 33.5)
+points = PackedVector2Array(-20.5, 95.5, -20.5, 27.5, 858, 27, 858, 96)
+width = 2.0
+default_color = Color(0.219608, 0.756863, 0.788235, 1)
+
+[node name="Space" type="Control" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="SummaryText" type="Control" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/VBoxContainer/SummaryText"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 144.0
+offset_top = -3.0
+offset_right = -144.0
+offset_bottom = 123.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "..."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/VBoxContainer/SummaryText"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 144.0
+offset_top = 76.0
+offset_right = -144.0
+offset_bottom = 158.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "CO2_TEXT"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="PerPlantSummary" type="Control" parent="MainFrame/Screen/MetricsRanking/SummaryContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Gaz" type="Control" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary"]
+anchors_preset = 0
+offset_left = 213.5
+offset_top = 258.5
+offset_right = 253.5
+offset_bottom = 298.5
+
+[node name="Percentage" type="Label" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary/Gaz"]
+layout_mode = 0
+offset_left = -82.0
+offset_top = 87.0
+offset_right = 23.0
+offset_bottom = 117.0
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "80%"
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="TextureRect" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary/Gaz"]
+layout_mode = 0
+offset_left = -91.0
+offset_top = -14.0
+offset_right = 125.0
+offset_bottom = 172.0
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("17_80r7i")
+script = ExtResource("18_ni0vf")
+plant_type = 2
+
+[node name="Biogaz" type="Control" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary"]
+anchors_preset = 0
+offset_left = 392.5
+offset_top = 258.5
+offset_right = 432.5
+offset_bottom = 298.5
+
+[node name="Percentage" type="Label" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary/Biogaz"]
+layout_mode = 0
+offset_left = -82.0
+offset_top = 87.0
+offset_right = 23.0
+offset_bottom = 117.0
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "80%"
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="TextureRect" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary/Biogaz"]
+layout_mode = 0
+offset_left = -91.0
+offset_top = -14.0
+offset_right = 125.0
+offset_bottom = 172.0
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("18_nt8bk")
+script = ExtResource("18_ni0vf")
+plant_type = 5
+
+[node name="Nuclear" type="Control" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary"]
+anchors_preset = 0
+offset_left = 589.5
+offset_top = 258.5
+offset_right = 629.5
+offset_bottom = 298.5
+
+[node name="Percentage" type="Label" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary/Nuclear"]
+layout_mode = 0
+offset_left = -82.0
+offset_top = 87.0
+offset_right = 23.0
+offset_bottom = 117.0
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "80%"
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="TextureRect" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary/Nuclear"]
+layout_mode = 0
+offset_left = -91.0
+offset_top = -14.0
+offset_right = 125.0
+offset_bottom = 170.0
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("19_kv7ws")
+script = ExtResource("18_ni0vf")
+plant_type = 6
+
+[node name="Biomass" type="Control" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary"]
+anchors_preset = 0
+offset_left = 774.5
+offset_top = 258.5
+offset_right = 814.5
+offset_bottom = 298.5
+
+[node name="Percentage" type="Label" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary/Biomass"]
+layout_mode = 0
+offset_left = -82.0
+offset_top = 87.0
+offset_right = 23.0
+offset_bottom = 117.0
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "80%"
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="TextureRect" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary/Biomass"]
+layout_mode = 0
+offset_left = -91.0
+offset_top = -14.0
+offset_right = 125.0
+offset_bottom = 172.0
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("20_ud2pm")
+script = ExtResource("18_ni0vf")
+plant_type = 4
+
+[node name="Hydro" type="Control" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary"]
+anchors_preset = 0
+offset_left = 134.5
+offset_top = 424.5
+offset_right = 174.5
+offset_bottom = 464.5
+
+[node name="Percentage" type="Label" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary/Hydro"]
+layout_mode = 0
+offset_left = -82.0
+offset_top = 87.0
+offset_right = 23.0
+offset_bottom = 117.0
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "80%"
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="TextureRect" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary/Hydro"]
+layout_mode = 0
+offset_left = -91.0
+offset_top = -14.0
+offset_right = 125.0
+offset_bottom = 172.0
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("21_5ourj")
+script = ExtResource("18_ni0vf")
+plant_type = 8
+
+[node name="Solar" type="Control" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary"]
+anchors_preset = 0
+offset_left = 303.5
+offset_top = 423.5
+offset_right = 343.5
+offset_bottom = 463.5
+
+[node name="Percentage" type="Label" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary/Solar"]
+layout_mode = 0
+offset_left = -82.0
+offset_top = 87.0
+offset_right = 23.0
+offset_bottom = 117.0
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "80%"
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="TextureRect" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary/Solar"]
+layout_mode = 0
+offset_left = -91.0
+offset_top = -14.0
+offset_right = 125.0
+offset_bottom = 172.0
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("22_wectj")
+script = ExtResource("18_ni0vf")
+
+[node name="Waste" type="Control" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary"]
+anchors_preset = 0
+offset_left = 490.5
+offset_top = 423.5
+offset_right = 530.5
+offset_bottom = 463.5
+
+[node name="Percentage" type="Label" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary/Waste"]
+layout_mode = 0
+offset_left = -82.0
+offset_top = 87.0
+offset_right = 23.0
+offset_bottom = 117.0
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "80%"
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="TextureRect" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary/Waste"]
+layout_mode = 0
+offset_left = -91.0
+offset_top = -14.0
+offset_right = 125.0
+offset_bottom = 172.0
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("23_vx30y")
+script = ExtResource("18_ni0vf")
+plant_type = 3
+
+[node name="River" type="Control" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary"]
+anchors_preset = 0
+offset_left = 686.5
+offset_top = 423.5
+offset_right = 726.5
+offset_bottom = 463.5
+
+[node name="Percentage" type="Label" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary/River"]
+layout_mode = 0
+offset_left = -82.0
+offset_top = 87.0
+offset_right = 23.0
+offset_bottom = 117.0
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "80%"
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="TextureRect" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary/River"]
+layout_mode = 0
+offset_left = -91.0
+offset_top = -14.0
+offset_right = 125.0
+offset_bottom = 172.0
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("24_amppy")
+script = ExtResource("18_ni0vf")
+plant_type = 9
+
+[node name="Wind" type="Control" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary"]
+anchors_preset = 0
+offset_left = 856.5
+offset_top = 423.5
+offset_right = 896.5
+offset_bottom = 463.5
+
+[node name="Percentage" type="Label" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary/Wind"]
+layout_mode = 0
+offset_left = -82.0
+offset_top = 87.0
+offset_right = 23.0
+offset_bottom = 117.0
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+text = "80%"
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="TextureRect" parent="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary/Wind"]
+layout_mode = 0
+offset_left = -91.0
+offset_top = -14.0
+offset_right = 125.0
+offset_bottom = 172.0
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("24_bc83k")
+script = ExtResource("18_ni0vf")
+plant_type = 1
+
 [node name="BottomFrames" type="HBoxContainer" parent="MainFrame"]
+visible = false
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -856,6 +1327,7 @@ offset_right = 236.0
 offset_bottom = 41.0
 
 [node name="ProgressBar" type="ProgressBar" parent="MainFrame/BottomFrames/CenterFrame/Solar"]
+visible = false
 layout_mode = 0
 offset_left = 127.0
 offset_top = 159.0
@@ -910,6 +1382,40 @@ position = Vector2(29.3954, 28.75)
 scale = Vector2(0.645455, 0.645455)
 texture = ExtResource("7_x2355")
 
+[node name="Screen" type="NinePatchRect" parent="MainFrame/BottomFrames/CenterFrame/Solar"]
+layout_mode = 0
+offset_left = 85.5
+offset_top = 56.5
+offset_right = 213.5
+offset_bottom = 136.5
+texture = ExtResource("6_us122")
+patch_margin_left = 5
+patch_margin_top = 6
+patch_margin_right = 7
+patch_margin_bottom = 5
+
+[node name="NuclearLabel" type="Label" parent="MainFrame/BottomFrames/CenterFrame/Solar/Screen"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = -15.0
+offset_right = -5.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
+theme_override_constants/shadow_offset_x = 2
+text = "NO
+NUCLEAR
+"
+horizontal_alignment = 1
+script = ExtResource("7_1k3ff")
+
 [node name="Imports" type="Control" parent="MainFrame/BottomFrames/CenterFrame"]
 visible = false
 anchors_preset = 0
@@ -953,6 +1459,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Gauge" type="Control" parent="MainFrame/BottomFrames/RightFrame/LandUse"]
+visible = false
 anchors_preset = 0
 offset_left = -9.0
 offset_top = -8.0
@@ -1041,12 +1548,46 @@ position = Vector2(29.5, 27.5)
 scale = Vector2(0.645, 0.645)
 texture = ExtResource("10_induf")
 
+[node name="Screen" type="NinePatchRect" parent="MainFrame/BottomFrames/RightFrame/LandUse"]
+layout_mode = 0
+offset_left = 20.5
+offset_top = 57.5
+offset_right = 148.5
+offset_bottom = 137.5
+texture = ExtResource("6_us122")
+patch_margin_left = 5
+patch_margin_top = 6
+patch_margin_right = 7
+patch_margin_bottom = 5
+
+[node name="LandUseLabel" type="Label" parent="MainFrame/BottomFrames/RightFrame/LandUse/Screen"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = -15.0
+offset_right = -5.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
+theme_override_constants/shadow_offset_x = 2
+text = "000.0 Km2
+"
+horizontal_alignment = 1
+script = ExtResource("7_1k3ff")
+
 [node name="Emissions" type="Control" parent="MainFrame/BottomFrames/RightFrame"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Gauge" type="Control" parent="MainFrame/BottomFrames/RightFrame/Emissions"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 136.0
@@ -1137,6 +1678,40 @@ position = Vector2(32.5, 28.5)
 scale = Vector2(0.645, 0.645)
 texture = ExtResource("11_fjiu1")
 
+[node name="Screen" type="NinePatchRect" parent="MainFrame/BottomFrames/RightFrame/Emissions"]
+layout_mode = 0
+offset_left = 164.5
+offset_top = 57.5
+offset_right = 292.5
+offset_bottom = 137.5
+texture = ExtResource("6_us122")
+patch_margin_left = 5
+patch_margin_top = 6
+patch_margin_right = 7
+patch_margin_bottom = 5
+
+[node name="EmissionLabel" type="Label" parent="MainFrame/BottomFrames/RightFrame/Emissions/Screen"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = -15.0
+offset_right = -5.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_n8g63")
+theme_type_variation = &"Screen"
+theme_override_colors/font_shadow_color = Color(1, 0.541176, 0.596078, 0.517647)
+theme_override_constants/shadow_offset_x = 2
+text = "NET ZERO
+REACHED
+"
+horizontal_alignment = 1
+script = ExtResource("7_1k3ff")
+
 [node name="CloseButton2" parent="MainFrame" instance=ExtResource("43_pdbh2")]
 layout_mode = 1
 anchors_preset = 1
@@ -1148,6 +1723,54 @@ offset_right = -10.0
 offset_bottom = 57.0
 grow_horizontal = 0
 script = ExtResource("44_iv8kv")
+
+[node name="Leaderboard" type="TextureButton" parent="MainFrame"]
+layout_mode = 0
+offset_left = 461.5
+offset_top = 744.5
+offset_right = 590.5
+offset_bottom = 807.5
+disabled = true
+toggle_mode = true
+button_group = ExtResource("48_rnypu")
+texture_normal = ExtResource("47_fevx4")
+texture_pressed = ExtResource("48_3nhwh")
+texture_hover = ExtResource("49_3hwq1")
+texture_disabled = ExtResource("48_3nhwh")
+
+[node name="Label" type="Label" parent="MainFrame/Leaderboard"]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 48.0
+theme = ExtResource("4_n8g63")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "LEADERBOARD"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Summary" type="TextureButton" parent="MainFrame"]
+layout_mode = 0
+offset_left = 709.5
+offset_top = 744.5
+offset_right = 838.5
+offset_bottom = 807.5
+disabled = true
+toggle_mode = true
+button_group = ExtResource("48_rnypu")
+texture_normal = ExtResource("47_fevx4")
+texture_pressed = ExtResource("48_3nhwh")
+texture_hover = ExtResource("49_3hwq1")
+texture_disabled = ExtResource("48_3nhwh")
+
+[node name="Label" type="Label" parent="MainFrame/Summary"]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 48.0
+theme = ExtResource("4_n8g63")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "SUMMARY"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="NameInfoButton" type="TextureButton" parent="."]
 unique_name_in_owner = true
@@ -1243,8 +1866,20 @@ offset_top = -45.0
 offset_right = 135.0
 offset_bottom = -5.0
 
+[connection signal="game_stats_updated" from="." to="MainFrame/Screen/MetricsRanking" method="_on_game_stats_updated"]
+[connection signal="game_stats_updated" from="." to="MainFrame/Screen/MetricsRanking/SummaryContainer/VBoxContainer/SummaryText/Label2" method="_on_game_stats_updated"]
+[connection signal="game_stats_updated" from="." to="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary/Gaz/Sprite2D" method="_on_game_stats_updated"]
+[connection signal="game_stats_updated" from="." to="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary/Biogaz/Sprite2D" method="_on_game_stats_updated"]
+[connection signal="game_stats_updated" from="." to="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary/Nuclear/Sprite2D" method="_on_game_stats_updated"]
+[connection signal="game_stats_updated" from="." to="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary/Biomass/Sprite2D" method="_on_game_stats_updated"]
+[connection signal="game_stats_updated" from="." to="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary/Hydro/Sprite2D" method="_on_game_stats_updated"]
+[connection signal="game_stats_updated" from="." to="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary/Solar/Sprite2D" method="_on_game_stats_updated"]
+[connection signal="game_stats_updated" from="." to="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary/Waste/Sprite2D" method="_on_game_stats_updated"]
+[connection signal="game_stats_updated" from="." to="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary/River/Sprite2D" method="_on_game_stats_updated"]
+[connection signal="game_stats_updated" from="." to="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary/Wind/Sprite2D" method="_on_game_stats_updated"]
+[connection signal="metrics_leaderboard_updated" from="." to="." method="_on_metrics_leaderboard_updated"]
 [connection signal="metrics_leaderboard_updated" from="." to="MainFrame/Screen/MetricsRanking" method="_on_end_metrics_leaderboard_updated"]
-[connection signal="metrics_leaderboard_updated" from="." to="MainFrame/Screen/MetricsRanking/RichTextLabel" method="_on_metrics_leaderboard_updated"]
+[connection signal="metrics_leaderboard_updated" from="." to="MainFrame/Screen/MetricsRanking/CalcRank" method="_on_metrics_leaderboard_updated"]
 [connection signal="metrics_rank_updated" from="." to="MainFrame/Screen/MetricsRanking" method="_on_end_metrics_rank_updated"]
 [connection signal="context_changed" from="MainFrame/Screen/Graph" to="MainFrame/Screen/MetricsRanking" method="_on_graph_context_changed"]
 [connection signal="context_changed" from="MainFrame/Screen/Graph" to="MainFrame/BottomFrames/LeftFrame/Money/Button" method="_on_graph_context_changed"]
@@ -1253,6 +1888,15 @@ offset_bottom = -5.0
 [connection signal="context_changed" from="MainFrame/Screen/Graph" to="MainFrame/BottomFrames/CenterFrame/Solar/Button" method="_on_graph_context_changed"]
 [connection signal="context_changed" from="MainFrame/Screen/Graph" to="MainFrame/BottomFrames/RightFrame/LandUse/Button" method="_on_graph_context_changed"]
 [connection signal="context_changed" from="MainFrame/Screen/Graph" to="MainFrame/BottomFrames/RightFrame/Emissions/Button" method="_on_graph_context_changed"]
+[connection signal="summary_requested" from="MainFrame/Screen/MetricsRanking" to="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary/Gaz/Sprite2D" method="_on_summary_requested"]
+[connection signal="summary_requested" from="MainFrame/Screen/MetricsRanking" to="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary/Biogaz/Sprite2D" method="_on_summary_requested"]
+[connection signal="summary_requested" from="MainFrame/Screen/MetricsRanking" to="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary/Nuclear/Sprite2D" method="_on_summary_requested"]
+[connection signal="summary_requested" from="MainFrame/Screen/MetricsRanking" to="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary/Biomass/Sprite2D" method="_on_summary_requested"]
+[connection signal="summary_requested" from="MainFrame/Screen/MetricsRanking" to="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary/Hydro/Sprite2D" method="_on_summary_requested"]
+[connection signal="summary_requested" from="MainFrame/Screen/MetricsRanking" to="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary/Solar/Sprite2D" method="_on_summary_requested"]
+[connection signal="summary_requested" from="MainFrame/Screen/MetricsRanking" to="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary/Waste/Sprite2D" method="_on_summary_requested"]
+[connection signal="summary_requested" from="MainFrame/Screen/MetricsRanking" to="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary/River/Sprite2D" method="_on_summary_requested"]
+[connection signal="summary_requested" from="MainFrame/Screen/MetricsRanking" to="MainFrame/Screen/MetricsRanking/SummaryContainer/PerPlantSummary/Wind/Sprite2D" method="_on_summary_requested"]
 [connection signal="focus_entered" from="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/PlayerStats/HBoxContainer/player_name" to="." method="_on_player_name_focus_entered"]
 [connection signal="focus_exited" from="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/PlayerStats/HBoxContainer/player_name" to="." method="_on_player_name_focus_exited"]
 [connection signal="text_submitted" from="MainFrame/Screen/MetricsRanking/StatContainer/VBoxContainer/PlayerStats/HBoxContainer/player_name" to="." method="_on_player_name_text_submitted"]
@@ -1265,5 +1909,7 @@ offset_bottom = -5.0
 [connection signal="toggled" from="MainFrame/BottomFrames/RightFrame/LandUse/Button" to="MainFrame/Screen/Graph" method="_on_land_use_button_toggled"]
 [connection signal="toggled" from="MainFrame/BottomFrames/RightFrame/Emissions/Button" to="MainFrame/Screen/Graph" method="_on_emissions_button_toggled"]
 [connection signal="pressed" from="MainFrame/CloseButton2" to="." method="_on_close_button_pressed"]
+[connection signal="toggled" from="MainFrame/Leaderboard" to="." method="_on_leaderboard_toggled"]
+[connection signal="toggled" from="MainFrame/Summary" to="." method="_on_summary_toggled"]
 [connection signal="pressed" from="NameInfoButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="NextTurn" to="NextTurn" method="_on_pressed"]

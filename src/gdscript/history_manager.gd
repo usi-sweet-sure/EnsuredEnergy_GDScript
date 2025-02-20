@@ -63,7 +63,18 @@ func _on_policy_voted(_passed: bool):
 				index += 1
 		
 	send_history_to_survey()
+
+func get_shock_event(shock_title: String):
+	var shock_event = null
+	for turn in shock_history_for_survey:
+		var shock_data = shock_history_for_survey[turn]
+		var title = shock_data["shock_title"]["key"]
 		
+		if title == shock_title:
+			shock_event = shock_data
+			
+	return shock_event
+
 
 func send_history_to_survey():
 	var url = "https://sure.euler.usi.ch/json.php?mth=upd2"

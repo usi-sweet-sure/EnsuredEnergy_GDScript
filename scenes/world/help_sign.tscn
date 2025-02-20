@@ -1,0 +1,82 @@
+[gd_scene load_steps=8 format=3 uid="uid://cs0djggwahoyn"]
+
+[ext_resource type="Script" path="res://src/gdscript/world/help_sign/help_sign.gd" id="1_2fgpj"]
+[ext_resource type="Texture2D" uid="uid://c6ro57yn3ia4r" path="res://assets/textures/map/help_sign_stick.png" id="1_yttkg"]
+[ext_resource type="Texture2D" uid="uid://8fojakrkavcm" path="res://assets/textures/map/help_sign_pannel.png" id="2_e1ur1"]
+[ext_resource type="AudioStream" uid="uid://bjd30r3egxjhw" path="res://assets/sounds/plank.wav" id="4_w1myi"]
+
+[sub_resource type="Animation" id="Animation_e5ql0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Pannel:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_bdggh"]
+resource_name = "rock"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Pannel:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.174533, -0.139626, 0.0, 0.174533, -0.139626, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ylpnj"]
+_data = {
+"RESET": SubResource("Animation_e5ql0"),
+"rock": SubResource("Animation_bdggh")
+}
+
+[node name="HelpSign" type="Node2D"]
+script = ExtResource("1_2fgpj")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+rotation = 0.104177
+
+[node name="Stick" type="Sprite2D" parent="Control"]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("1_yttkg")
+
+[node name="Pannel" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = -71.0
+offset_top = -109.0
+offset_right = 33.0
+offset_bottom = -20.0
+scale = Vector2(1.2, 1.2)
+pivot_offset = Vector2(49, 44)
+texture = ExtResource("2_e1ur1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ylpnj")
+}
+speed_scale = 5.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_w1myi")
+volume_db = -25.0
+pitch_scale = 2.0
+bus = &"Sound"
+
+[connection signal="mouse_entered" from="Control/Pannel" to="." method="_on_pannel_mouse_entered"]
+[connection signal="mouse_exited" from="Control/Pannel" to="." method="_on_pannel_mouse_exited"]
