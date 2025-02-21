@@ -32,7 +32,7 @@ func _ready():
 			[func(): PolicyManager.personal_support += 0.05, func(): MoneyManager.players_own_money_amount += 50]
 		)
 	cold_spell.add_player_reaction("SHOCK_COLD_SPELL_PLAYER_REACTION_1", func(): PolicyManager.personal_support -= 0.1)
-	cold_spell.add_player_reaction("SHOCK_COLD_SPELL_PLAYER_REACTION_2", func(): pass) # E. Implement gaz upgrade
+	cold_spell.add_player_reaction("SHOCK_COLD_SPELL_PLAYER_REACTION_2", func(): burn_gas()) # E. Implement gaz upgrade
 	cold_spell.add_player_reaction("SHOCK_COLD_SPELL_PLAYER_REACTION_3", func(): MoneyManager.players_own_money_amount -= 50)
 	
 	var heat_wave: = Shock.new("SHOCK_HEAT_WAVE_TITLE", "SHOCK_HEAT_WAVE_TEXT", "res://assets/textures/shocks/heat_wave.png")
@@ -42,7 +42,7 @@ func _ready():
 			[func(): PolicyManager.personal_support += 0.05, func(): MoneyManager.players_own_money_amount += 50]
 		)
 	heat_wave.add_player_reaction("SHOCK_HEAT_WAVE_PLAYER_REACTION_1", func(): PolicyManager.personal_support -= 0.1)
-	heat_wave.add_player_reaction("SHOCK_HEAT_WAVE_PLAYER_REACTION_2", func(): pass) # E. Implement gaz upgrade
+	heat_wave.add_player_reaction("SHOCK_HEAT_WAVE_PLAYER_REACTION_2", func(): burn_gas()) # E. Implement gaz upgrade
 	heat_wave.add_player_reaction("SHOCK_HEAT_WAVE_PLAYER_REACTION_3", func(): MoneyManager.players_own_money_amount -= 50)
 	
 	var glaciers_melting_shock = Shock.new("SHOCK_GLACIERS_MELTING_TITLE", "SHOCK_GLACIERS_MELTING_TEXT", "res://assets/textures/shocks/glacier_melting.png")
@@ -234,6 +234,27 @@ func no_shock():
 
 func nuc_reintro():
 	ShockManager.shock_effects_applied.emit(Gameloop.most_recent_shock)
+	
+# Increase the gas capacity for 1 year (only impacts the end score)
+func burn_gas():
+	# Need the number of active gas plants
+	var powerplants: Array[Node] = get_tree().get_nodes_in_group("Powerplants")
+	var active_gas_plants = 0
+	
+	for powerplant in powerplants:
+		var metrics: PowerplantMetrics = powerplant.metrics
+		
+		if metrics.type == PowerplantsManager.EngineTypeIds.GAS and metrics.active:
+			active_gas_plants += 1
+			
+	var gas_capacity = 0.0
+	for i in Context.ctx:
+		if i["prm_id"] == "186":
+			gas_capacity = float(i["tj"])
+	var year = Gameloop.year_list[Gameloop.current_turn-1]
+	Context.send_parameters_to_model(Context.res_id, year, 186, gas_capacity * active_gas_plants + 720)
+	await Context.parameters_sent_to_model
+	Context.send_parameters_to_model(Context.res_id, year, 186, gas_capacity * active_gas_plants)
 
 
 # Some shocks modify the state of the game for one turn only. This can be
