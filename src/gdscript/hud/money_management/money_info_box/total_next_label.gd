@@ -12,4 +12,4 @@ func _ready():
 
 # Shows how much money the player will have next turn
 func _on_money_change(_unused_signal_param):
-	text = str(round(MoneyManager.get_money_for_next_turn()))
+	text = "CHF " + str(round(MoneyManager.get_money_for_next_turn())) + "M"

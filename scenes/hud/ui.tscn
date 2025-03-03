@@ -1,4 +1,4 @@
-[gd_scene load_steps=183 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=184 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/textures/ui/Button-Next-Normal.png" id="2_aobed"]
 [ext_resource type="Texture2D" uid="uid://ccsapuvkqqt1b" path="res://assets/textures/ui/All-HQ-Assets-D_0006s_0009_Profile-metal-base.png" id="2_nu7y6"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" path="res://src/gdscript/graphs/open_graphs_frame_button.gd" id="9_xq6mg"]
 [ext_resource type="AudioStream" uid="uid://ben5r72x0p8pr" path="res://assets/sounds/move.wav" id="10_po2ll"]
 [ext_resource type="AudioStream" uid="uid://00apgxjmwgw0" path="res://assets/sounds/click_0.wav" id="11_tr1n1"]
+[ext_resource type="Texture2D" uid="uid://dvph1wklx4pfh" path="res://assets/textures/ui/Paper-Big.png" id="15_rf0ak"]
 [ext_resource type="Texture2D" uid="uid://bu3fwwb31gmuw" path="res://assets/textures/ui/Import_energy-Metal.png" id="19_1inpw"]
 [ext_resource type="FontFile" uid="uid://bt2f3flr7psn5" path="res://assets/fonts/vt323/vt323_regular.ttf" id="19_t3l2l"]
 [ext_resource type="Texture2D" uid="uid://bmjee8ocqy0ge" path="res://assets/textures/ui/Enviornment-Base.png" id="21_i8c3o"]
@@ -1065,7 +1066,7 @@ _data = {
 
 [node name="UI" type="CanvasLayer"]
 follow_viewport_enabled = true
-metadata/_edit_vertical_guides_ = [960.0, 1041.0, -52.0]
+metadata/_edit_vertical_guides_ = [960.0, 1041.0, -52.0, 904.0]
 metadata/_edit_horizontal_guides_ = [690.0, 482.0]
 
 [node name="Shock" parent="." instance=ExtResource("5_tj765")]
@@ -1195,23 +1196,23 @@ flat = true
 alignment = 0
 
 [node name="MoneyInfoBox" type="Control" parent="TopLeftZone/MoneyManagement/MoneyInfo" groups=["papers"]]
-visible = false
 layout_mode = 1
 anchor_left = 0.233
 anchor_top = 0.076
 anchor_right = 0.233
 anchor_bottom = 0.076
 offset_left = 350.68
-offset_top = 9.96
+offset_top = 14.96
 offset_right = 803.68
-offset_bottom = 354.96
+offset_bottom = 359.96
 grow_horizontal = 0
 script = ExtResource("53_cwkn3")
 
 [node name="MarginContainer" type="MarginContainer" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox"]
 layout_mode = 0
-offset_right = 456.0
-offset_bottom = 342.0
+offset_top = -35.0
+offset_right = 570.0
+offset_bottom = 454.0
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
@@ -1222,16 +1223,15 @@ layout_mode = 2
 texture = ExtResource("34_yg0ni")
 region_rect = Rect2(0, 0, 390, 244)
 patch_margin_left = 42
-patch_margin_top = 92
+patch_margin_top = 148
 patch_margin_right = 56
-patch_margin_bottom = 102
+patch_margin_bottom = 134
 script = ExtResource("55_ikt4p")
 
 [node name="InfoMoneyOpen" type="NinePatchRect" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer"]
 visible = false
 layout_mode = 2
-texture = ExtResource("36_vc5yj")
-region_rect = Rect2(0, 2, 386, 398)
+texture = ExtResource("15_rf0ak")
 patch_margin_left = 52
 patch_margin_top = 92
 patch_margin_right = 40
@@ -1250,6 +1250,9 @@ layout_mode = 2
 theme_override_constants/separation = 14
 script = ExtResource("56_3y5yk")
 
+[node name="Spacer1" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer"]
+layout_mode = 2
+
 [node name="ColumnsName" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer"]
 layout_mode = 2
 theme = SubResource("Theme_34yde")
@@ -1260,9 +1263,9 @@ vertical_alignment = 1
 
 [node name="Now" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer/ColumnsName"]
 layout_mode = 0
-offset_left = 115.0
+offset_left = 131.0
 offset_top = -3.0
-offset_right = 257.0
+offset_right = 303.0
 offset_bottom = 37.0
 theme = SubResource("Theme_34yde")
 theme_type_variation = &"Paper"
@@ -1274,9 +1277,9 @@ vertical_alignment = 1
 
 [node name="Next" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer/ColumnsName"]
 layout_mode = 0
-offset_left = 261.0
+offset_left = 307.0
 offset_top = -3.0
-offset_right = 349.0
+offset_right = 457.0
 offset_bottom = 37.0
 theme = SubResource("Theme_34yde")
 theme_type_variation = &"Paper"
@@ -1298,9 +1301,9 @@ vertical_alignment = 1
 
 [node name="budgetNow" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer/Budget"]
 layout_mode = 0
-offset_left = 115.0
+offset_left = 161.0
 offset_top = -3.0
-offset_right = 257.0
+offset_right = 303.0
 offset_bottom = 37.0
 theme = SubResource("Theme_34yde")
 theme_type_variation = &"Paper"
@@ -1313,9 +1316,9 @@ script = ExtResource("36_dvvfa")
 
 [node name="budgetNext" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer/Budget"]
 layout_mode = 0
-offset_left = 200.0
+offset_left = 315.0
 offset_top = -3.0
-offset_right = 342.0
+offset_right = 457.0
 offset_bottom = 37.0
 theme = SubResource("Theme_34yde")
 theme_type_variation = &"Paper"
@@ -1347,23 +1350,24 @@ vertical_alignment = 1
 
 [node name="ProductionCost" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer/Production"]
 layout_mode = 0
-offset_left = 196.0
+offset_left = 177.0
 offset_top = -5.0
-offset_right = 343.0
+offset_right = 303.0
 offset_bottom = 35.0
 theme = SubResource("Theme_34yde")
 theme_type_variation = &"Paper"
 theme_override_colors/font_color = Color(0.945098, 0, 0.0705882, 1)
 theme_override_font_sizes/font_size = 26
 text = "000"
+horizontal_alignment = 2
 vertical_alignment = 1
 script = ExtResource("36_288kb")
 
 [node name="ProductionCost2" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer/Production"]
 layout_mode = 0
-offset_left = 196.0
+offset_left = 323.0
 offset_top = -5.0
-offset_right = 343.0
+offset_right = 457.0
 offset_bottom = 35.0
 theme = SubResource("Theme_34yde")
 theme_type_variation = &"Paper"
@@ -1395,10 +1399,10 @@ vertical_alignment = 1
 
 [node name="BuildingCost" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer/Building"]
 layout_mode = 0
-offset_left = 117.0
-offset_top = -4.0
-offset_right = 257.0
-offset_bottom = 36.0
+offset_left = 155.0
+offset_top = -2.0
+offset_right = 303.0
+offset_bottom = 38.0
 theme = SubResource("Theme_34yde")
 theme_type_variation = &"Paper"
 theme_override_colors/font_color = Color(0.945098, 0, 0.0705882, 1)
@@ -1428,9 +1432,9 @@ text = "IMPORTS"
 
 [node name="ImportCost" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer/Import"]
 layout_mode = 2
-offset_left = 214.0
+offset_left = 139.0
 offset_top = 2.0
-offset_right = 342.0
+offset_right = 303.0
 offset_bottom = 33.0
 theme = SubResource("Theme_34yde")
 theme_type_variation = &"Paper"
@@ -1450,7 +1454,6 @@ text = "IMPORTS_TEXT"
 autowrap_mode = 3
 
 [node name="BorrowedMoney" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer"]
-visible = false
 layout_mode = 2
 theme = SubResource("Theme_34yde")
 theme_type_variation = &"Paper"
@@ -1460,9 +1463,9 @@ script = ExtResource("58_c856x")
 
 [node name="DebtAmount" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer/BorrowedMoney"]
 layout_mode = 2
-offset_left = 214.0
+offset_left = 329.0
 offset_top = 2.0
-offset_right = 342.0
+offset_right = 457.0
 offset_bottom = 33.0
 theme = SubResource("Theme_34yde")
 theme_type_variation = &"Paper"
@@ -1473,9 +1476,9 @@ horizontal_alignment = 2
 
 [node name="BorrowedAmount" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer/BorrowedMoney"]
 layout_mode = 2
-offset_left = 129.0
+offset_left = 175.0
 offset_top = 2.0
-offset_right = 257.0
+offset_right = 303.0
 offset_bottom = 33.0
 theme = SubResource("Theme_34yde")
 theme_type_variation = &"Paper"
@@ -1493,6 +1496,9 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "LOAN_TEXT"
 autowrap_mode = 3
 
+[node name="Spacer2" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer"]
+layout_mode = 2
+
 [node name="Total" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer"]
 layout_mode = 2
 theme = SubResource("Theme_34yde")
@@ -1503,9 +1509,9 @@ text = "TOTAL"
 
 [node name="TotalNow" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer/Total"]
 layout_mode = 2
-offset_left = 128.0
+offset_left = 175.0
 offset_top = 2.0
-offset_right = 256.0
+offset_right = 303.0
 offset_bottom = 33.0
 theme = SubResource("Theme_34yde")
 theme_type_variation = &"Paper"
@@ -1517,10 +1523,10 @@ script = ExtResource("42_l0rtw")
 
 [node name="TotalNext" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer/Total"]
 layout_mode = 2
-offset_left = 214.0
-offset_top = 2.0
-offset_right = 342.0
-offset_bottom = 33.0
+offset_left = 329.0
+offset_top = 3.0
+offset_right = 457.0
+offset_bottom = 34.0
 theme = SubResource("Theme_34yde")
 theme_type_variation = &"Paper"
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -1531,10 +1537,10 @@ script = ExtResource("43_lu1ke")
 
 [node name="MoreMoneyInfoButton" type="TextureButton" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox" groups=["more_help_buttons"]]
 layout_mode = 0
-offset_left = 410.0
-offset_top = 1.0
-offset_right = 455.0
-offset_bottom = 46.0
+offset_left = 523.0
+offset_top = -30.0
+offset_right = 568.0
+offset_bottom = 15.0
 texture_normal = ExtResource("25_o5q30")
 texture_pressed = ExtResource("26_kd3a6")
 texture_hover = ExtResource("27_sye1h")

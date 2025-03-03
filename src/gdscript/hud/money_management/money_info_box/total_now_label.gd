@@ -8,4 +8,4 @@ func _ready():
 	
 
 func _on_available_money_amount_updated(value: float):
-	text = str(round(value))
+	text = "CHF " + str(round(value)) + "M"

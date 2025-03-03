@@ -257,6 +257,7 @@ func _build_on_start(metrics: Array[PowerplantMetrics]):
 	new_metrics.build_time_in_turns = 0
 	new_metrics.can_delete = false
 	new_metrics.building_costs = 0
+	new_metrics.upgrade_cost = 0
 	_on_powerplant_build_requested(self, new_metrics)
 	# We don't want the pp built automatically at the beginning of the game
 	# to count as a user action
@@ -291,7 +292,7 @@ func override_metrics(metrics: PowerplantMetrics):
 		
 	if override_can_upgrade:
 		metrics.can_upgrade = can_upgrade
-		
+	
 		
 func _on_powerplant_construction_ended(metrics: PowerplantMetrics):
 	metrics.build_time_in_turns = 0

@@ -9,7 +9,7 @@ signal energy_import_cost_updated(val: float)
 signal building_costs_updated(val: float)
 signal total_production_costs_updated(val: float)
 
-var start_money: float = 1500.0
+var start_money: float = 1250.0
 var money_per_turn: float = 110.0
 var debt_percentage_on_borrowed_money: float = 20.0
 var borrowed_money_amount: float:
@@ -25,7 +25,7 @@ var players_own_money_amount: float:
 # This is a compute of all the money sources, minus costs. Do not set it
 var available_money_amount: float:
 	get:
-		return players_own_money_amount + borrowed_money_amount - building_costs - total_production_costs
+		return players_own_money_amount + borrowed_money_amount - building_costs - total_production_costs - energy_import_cost
 # Do not set this directly
 var total_production_costs: float:
 	get:

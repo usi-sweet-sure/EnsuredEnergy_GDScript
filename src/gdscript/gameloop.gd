@@ -85,6 +85,7 @@ var imported_energy_amount: float:
 		imported_energy_amount = new_value
 		imported_energy_amount_updated.emit(imported_energy_amount)
 		MoneyManager.energy_import_cost_updated.emit(MoneyManager.energy_import_cost)
+		MoneyManager.available_money_amount_updated.emit(MoneyManager.available_money_amount)
 var land_use: float:
 	set(new_value):
 		land_use = new_value
