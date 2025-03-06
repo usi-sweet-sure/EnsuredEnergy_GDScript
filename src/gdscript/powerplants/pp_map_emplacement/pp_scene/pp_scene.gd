@@ -16,6 +16,8 @@ signal powerplant_upgraded(metrics: PowerplantMetrics)
 signal powerplant_downgraded(metrics: PowerplantMetrics)
 signal texture_on_changed(image: Image)
 signal texture_off_changed(image: Image)
+signal construction_sound_requested
+signal construction_smoke_requested
 
 var metrics: PowerplantMetrics
 

@@ -4,7 +4,6 @@ class_name PpMapEmplacement
 
 signal history_updated(history: MapEmplacementHistory)
 
-
 @export var is_for_tutorial = false
 
 # Editor will enumerate as 0, 1 and 2.
@@ -167,6 +166,7 @@ func _on_powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMe
 		var new_metrics = metrics.copy()
 		override_metrics(new_metrics)
 		
+		
 		if new_metrics.build_time_in_turns > 0:
 			MoneyManager.building_costs += new_metrics.building_costs
 			Gameloop.available_money_message_requested.emit("-" + str(new_metrics.building_costs + new_metrics.production_costs).pad_decimals(1) + "M CHF", false)
@@ -185,6 +185,12 @@ func _on_powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMe
 			new_metrics.built_on_turn = Gameloop.current_turn
 			var pp_scene = PowerplantsManager.powerplant_scene.instantiate()
 			add_child(pp_scene)
+			
+			if build_on_start == 10: # built by the user
+				print("djséakfjds")
+				pp_scene.construction_sound_requested.emit()
+				pp_scene.construction_smoke_requested.emit()
+				
 			powerplant_node_name = pp_scene.name
 			pp_scene.set_metrics(new_metrics)
 			history.pp_built(new_metrics)
@@ -292,7 +298,7 @@ func override_metrics(metrics: PowerplantMetrics):
 		
 	if override_can_upgrade:
 		metrics.can_upgrade = can_upgrade
-	
+		
 		
 func _on_powerplant_construction_ended(metrics: PowerplantMetrics):
 	metrics.build_time_in_turns = 0

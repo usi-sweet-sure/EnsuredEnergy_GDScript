@@ -16,6 +16,21 @@ shader_parameter/frequency = 10.0
 shader_parameter/phase_speed = 5.0
 shader_parameter/show = false
 
+[sub_resource type="Animation" id="Animation_mdkh6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hammer:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
 [sub_resource type="Animation" id="Animation_khtaf"]
 resource_name = "animate_focus"
 loop_mode = 1
@@ -42,21 +57,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.785398, 0.610865, 0.785398, 0.0]
-}
-
-[sub_resource type="Animation" id="Animation_mdkh6"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Hammer:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rvuip"]
@@ -87,9 +87,9 @@ libraries = {
 "": SubResource("AnimationLibrary_rvuip")
 }
 
-[node name="HammeringSound" type="AudioStreamPlayer" parent="."]
+[node name="Hammering2Hits" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_e2waq")
-pitch_scale = 2.0
+bus = &"Sound"
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

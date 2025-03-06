@@ -1,7 +1,7 @@
 extends TextureButton
 
 @onready var animation_player = $AnimationPlayer
-@onready var hammering_sound: AudioStreamPlayer = $HammeringSound
+@onready var hammering_2_hits: AudioStreamPlayer = $Hammering2Hits
 
 # Used to detect a drag
 var mouse_position_on_press: Vector2
@@ -54,8 +54,8 @@ func _on_toggled(toggled_on: bool):
 	if toggled_on:
 		material.set_shader_parameter("show", true)
 		animation_player.play("animate_focus")
-		hammering_sound.pitch_scale = randf_range(1.5, 2)
-		hammering_sound.play()
+		hammering_2_hits.pitch_scale = randf_range(1, 1.5)
+		hammering_2_hits.play()
 	else:
 		material.set_shader_parameter("show", false)
 		animation_player.stop()
