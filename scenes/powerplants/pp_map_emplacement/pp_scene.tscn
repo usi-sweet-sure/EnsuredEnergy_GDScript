@@ -67,20 +67,30 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rxno2"]
 resource_local_to_scene = true
 shader = ExtResource("2_ln53j")
+shader_parameter/show_outline = false
 shader_parameter/line_color = Vector4(1, 1, 1, 1)
 shader_parameter/line_thickness = 1.0
 shader_parameter/frequency = 10.0
 shader_parameter/phase_speed = 1.0
-shader_parameter/show = false
+shader_parameter/appear = false
+shader_parameter/percentage = 1.0
+shader_parameter/line_angle = 3.1
+shader_parameter/line_width = 0.02
+shader_parameter/line_color_2 = Color(1, 1, 1, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m2smc"]
 resource_local_to_scene = true
 shader = ExtResource("2_ln53j")
+shader_parameter/show_outline = false
 shader_parameter/line_color = Vector4(1, 1, 1, 1)
 shader_parameter/line_thickness = 1.0
 shader_parameter/frequency = 10.0
 shader_parameter/phase_speed = 1.0
-shader_parameter/show = false
+shader_parameter/appear = false
+shader_parameter/percentage = 1.0
+shader_parameter/line_angle = 0.0
+shader_parameter/line_width = 0.02
+shader_parameter/line_color_2 = Color(1, 1, 1, 1)
 
 [sub_resource type="FontVariation" id="FontVariation_n1hys"]
 base_font = ExtResource("16_0u5ae")
@@ -1802,6 +1812,7 @@ libraries = {
 "": SubResource("AnimationLibrary_fup87")
 }
 
+[connection signal="construction_appear_requested" from="." to="On" method="_on_construction_appear_requested"]
 [connection signal="construction_smoke_requested" from="." to="ConstructionSmoke" method="_on_construction_smoke_requested"]
 [connection signal="construction_sound_requested" from="." to="AudioStreamPlayer" method="_on_construction_sound_requested"]
 [connection signal="hide_info_frame" from="." to="InfoFrame" method="_on_hide_info_frame"]

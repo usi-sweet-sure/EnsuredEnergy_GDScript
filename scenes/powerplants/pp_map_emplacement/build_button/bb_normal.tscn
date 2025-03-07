@@ -10,11 +10,16 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2h05u"]
 resource_local_to_scene = true
 shader = ExtResource("1_kx28v")
+shader_parameter/show_outline = false
 shader_parameter/line_color = Vector4(1, 1, 1, 1)
 shader_parameter/line_thickness = 1.0
 shader_parameter/frequency = 10.0
 shader_parameter/phase_speed = 5.0
-shader_parameter/show = false
+shader_parameter/appear = false
+shader_parameter/percentage = 0.0
+shader_parameter/line_angle = 3.1
+shader_parameter/line_width = 0.02
+shader_parameter/line_color_2 = Color(1, 1, 1, 1)
 
 [sub_resource type="Animation" id="Animation_mdkh6"]
 length = 0.001

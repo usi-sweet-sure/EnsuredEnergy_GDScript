@@ -188,8 +188,10 @@ func _on_powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMe
 			
 			if build_on_start == 10: # built by the user
 				print("djséakfjds")
+				pp_scene.construction_appear_requested.emit()
 				pp_scene.construction_sound_requested.emit()
 				pp_scene.construction_smoke_requested.emit()
+				
 				
 			powerplant_node_name = pp_scene.name
 			pp_scene.set_metrics(new_metrics)

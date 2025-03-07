@@ -58,41 +58,41 @@ func _unhandled_input(event):
 	# Mouse release
 	if event is InputEventMouseButton and event.button_mask == 0:
 		if not mouse_position_on_press - drag_tolerance >= event.position and not mouse_position_on_press + drag_tolerance <= event.position:
-			material.set_shader_parameter("show", false)
+			material.set_shader_parameter("show_outline", false)
 			set_pressed_no_signal(false)
 			hide_info_frame_requested.emit()
 
 
 func _on_build_button_toggled(_toggled_on: bool, _map_emplacement: Node, _can_build: Array[PowerplantsManager.EngineTypeIds]):
-	material.set_shader_parameter("show", false)
+	material.set_shader_parameter("show_outline", false)
 	set_pressed_no_signal(false)
 	hide_info_frame_requested.emit()
 
 
 func _on_toggled(toggled_on: bool):
 	if toggled_on:
-		material.set_shader_parameter("show", true)
+		material.set_shader_parameter("show_outline", true)
 		show_info_frame_requested.emit()
 	else:
-		material.set_shader_parameter("show", false)
+		material.set_shader_parameter("show_outline", false)
 		hide_info_frame_requested.emit()
 
 
 func _on_pp_scene_toggled(_toggled_on: bool, pp_scene: PpScene):
 	if pp_scene.get_node("On") != self:
-		material.set_shader_parameter("show", false)
+		material.set_shader_parameter("show_outline", false)
 		set_pressed_no_signal(false)
 		hide_info_frame_requested.emit()
 
 
 func _on_build_button_in_construction_toggled(_toggled_on: bool, _map_emplacement: Node2D):
-	material.set_shader_parameter("show", false)
+	material.set_shader_parameter("show_outline", false)
 	set_pressed_no_signal(false)
 	hide_info_frame_requested.emit()
 
 
 func _on_switch_toggled(toggled_on: bool):
-	material.set_shader_parameter("show", toggled_on)
+	material.set_shader_parameter("show_outline", toggled_on)
 	set_pressed_no_signal(toggled_on)
 
 
@@ -101,6 +101,16 @@ func _on_metrics_updated(metrics: PowerplantMetrics):
 
 
 func _on_carbon_sequestration_toggled(_toggled_on: bool):
-	material.set_shader_parameter("show", false)
+	material.set_shader_parameter("show_outline", false)
 	set_pressed_no_signal(false)
 	hide_info_frame_requested.emit()
+
+func set_appear_percent(percentage: float) -> void:
+	material.set_shader_parameter('percentage', percentage)
+	
+	
+func _on_construction_appear_requested() -> void:
+	material.set_shader_parameter("percentage", 0.0)
+	material.set_shader_parameter("appear", true)
+	var tween = get_tree().create_tween()
+	tween.tween_method(set_appear_percent, 0.0, 1.0, 3.0)

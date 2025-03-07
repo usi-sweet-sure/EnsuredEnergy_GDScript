@@ -18,6 +18,7 @@ signal texture_on_changed(image: Image)
 signal texture_off_changed(image: Image)
 signal construction_sound_requested
 signal construction_smoke_requested
+signal construction_appear_requested
 
 var metrics: PowerplantMetrics
 
