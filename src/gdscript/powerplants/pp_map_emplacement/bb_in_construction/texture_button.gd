@@ -1,5 +1,7 @@
 extends TextureButton
 
+@onready var construction_ambiance_player: AnimationPlayer = $ConstructionAmbiancePlayer
+
 signal powerplant_cancel_construction_requested(metrics: PowerplantMetrics)
 signal powerplant_construction_ended(metrics: PowerplantMetrics)
 signal metrics_updated(metrics: PowerplantMetrics)
@@ -66,17 +68,21 @@ func _on_toggled(toggled_on: bool):
 	if toggled_on:
 		material.set_shader_parameter("show", true)
 		show_info_frame.emit()
+		construction_ambiance_player.play("play")
 	else:
 		material.set_shader_parameter("show", false)
 		hide_info_frame.emit()
+		construction_ambiance_player.play("stop")
 		
 		
 func _on_focus_entered():
 	material.set_shader_parameter("show", true)
+	construction_ambiance_player.play("play")
 
 
 func _on_focus_exited():
 	material.set_shader_parameter("show", false)
+	construction_ambiance_player.play("stop")
 
 
 # Triggers the lost of focus.
@@ -93,12 +99,14 @@ func _unhandled_input(event):
 			PowerplantsManager.hide_build_menu.emit()
 			set_pressed_no_signal(false)
 			material.set_shader_parameter("show", false)
+			construction_ambiance_player.play("stop")
 			hide_info_frame.emit()
 			
 
 func _on_build_button_normal_toggled(_toggled_on: bool, _map_emplacement: Node2D, _can_build: Array[PowerplantsManager.EngineTypeIds]):
 	set_pressed_no_signal(false)
 	material.set_shader_parameter("show", false)
+	construction_ambiance_player.play("stop")
 	hide_info_frame.emit()
 
 
@@ -106,16 +114,19 @@ func _on_build_button_in_construction_toggled(toggled_on: bool, map_emplacement:
 	if toggled_on and map_emplacement.get_node("BbInConstruction") != self:
 		set_pressed_no_signal(false)
 		material.set_shader_parameter("show", false)
+		construction_ambiance_player.play("stop")
 		hide_info_frame.emit()
 	
 
 func _on_pp_scene_toggled(_toggled_on: bool, _pp_scene: PpScene):
 	set_pressed_no_signal(false)
 	material.set_shader_parameter("show", false)
+	construction_ambiance_player.play("stop")
 	hide_info_frame.emit()
 
 
 func _on_carbon_sequestration_toggled(_toggled_on: bool):
 	set_pressed_no_signal(false)
 	material.set_shader_parameter("show", false)
+	construction_ambiance_player.play("stop")
 	hide_info_frame.emit()

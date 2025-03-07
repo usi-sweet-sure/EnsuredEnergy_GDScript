@@ -849,6 +849,33 @@ point_count = 2
 offsets = PackedFloat32Array(0.0133333, 0.0786517, 0.498246, 1)
 colors = PackedColorArray(0.890196, 0.890196, 0.890196, 0, 0.886275, 0.886275, 0.886275, 1, 0.858824, 0.858824, 0.858824, 0.25098, 1, 1, 1, 0)
 
+[sub_resource type="Animation" id="Animation_wj5oj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-6.0]
+}
+
 [sub_resource type="Animation" id="Animation_338qk"]
 resource_name = "fade_out"
 length = 5.0
@@ -875,33 +902,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [-8.0, -40.0]
-}
-
-[sub_resource type="Animation" id="Animation_wj5oj"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AudioStreamPlayer:playing")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AudioStreamPlayer:volume_db")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-6.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fup87"]
