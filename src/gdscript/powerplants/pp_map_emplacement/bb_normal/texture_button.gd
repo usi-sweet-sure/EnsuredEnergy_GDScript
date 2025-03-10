@@ -18,6 +18,7 @@ func _ready():
 	PowerplantsManager.powerplant_build_requested.connect(_on_powerplant_build_requested)
 	PowerplantsManager.carbon_sequestration_toggled.connect(_on_carbon_sequestration_toggled)
 	
+	
 func _on_mouse_entered():
 	set_modulate(Color(1.1, 1.1, 1.1))
 

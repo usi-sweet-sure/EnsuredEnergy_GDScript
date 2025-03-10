@@ -104,6 +104,7 @@ var override_powerplant_off_texture = false
 
 @onready var bb_normal = $BbNormal
 @onready var bb_in_construction = $BbInConstruction
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var can_build: Array[PowerplantsManager.EngineTypeIds] = []
 # Used to save the name of the pp node when it's built, to know it's name to delete it
@@ -244,7 +245,7 @@ func _on_powerplant_delete_requested(metrics: PowerplantMetrics):
 	var node = get_node(powerplant_node_name)
 	remove_child(node)
 	node.queue_free()
-	bb_normal.show()
+	animation_player.play("bb_normal_appear")
 	PowerplantsManager.update_buildings_impact()
 	TutorialManager.next_step_requested.emit()
 
@@ -255,7 +256,7 @@ func _on_powerplant_cancel_construction_requested(metrics: PowerplantMetrics):
 	history.pp_construction_canceled(metrics)
 	
 	bb_in_construction.hide()
-	bb_normal.show()
+	animation_player.play("bb_normal_appear")
 	TutorialManager.next_step_requested.emit()
 	
 

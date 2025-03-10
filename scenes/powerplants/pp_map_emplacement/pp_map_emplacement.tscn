@@ -1,11 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bp4i40e8i68xv"]
+[gd_scene load_steps=12 format=3 uid="uid://bp4i40e8i68xv"]
 
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_map_emplacement.gd" id="1_unu4e"]
 [ext_resource type="PackedScene" uid="uid://dbdgpa4pfgryb" path="res://scenes/powerplants/pp_map_emplacement/build_button/bb_normal.tscn" id="2_h8dd4"]
 [ext_resource type="PackedScene" uid="uid://d2hhtw1popthi" path="res://scenes/powerplants/pp_map_emplacement/build_button/bb_in_construction.tscn" id="3_xoig2"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/history_label.gd" id="4_44y7j"]
 
-[sub_resource type="Shader" id="Shader_8gyjk"]
+[sub_resource type="Shader" id="Shader_7s1oc"]
 resource_local_to_scene = true
 code = "shader_type canvas_item;
 
@@ -49,14 +49,14 @@ void fragment() {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kixpu"]
 resource_local_to_scene = true
-shader = SubResource("Shader_8gyjk")
+shader = SubResource("Shader_7s1oc")
 shader_parameter/line_color = Vector4(1, 1, 1, 1)
 shader_parameter/line_thickness = 1.0
 shader_parameter/frequency = 10.0
 shader_parameter/phase_speed = 5.0
 shader_parameter/show = false
 
-[sub_resource type="Shader" id="Shader_c7umt"]
+[sub_resource type="Shader" id="Shader_7bw6t"]
 resource_local_to_scene = true
 code = "shader_type canvas_item;
 
@@ -100,12 +100,72 @@ void fragment() {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g2jol"]
 resource_local_to_scene = true
-shader = SubResource("Shader_c7umt")
+shader = SubResource("Shader_7bw6t")
 shader_parameter/line_color = Vector4(1, 1, 1, 1)
 shader_parameter/line_thickness = 1.0
 shader_parameter/frequency = 10.0
 shader_parameter/phase_speed = 1.0
 shader_parameter/show = false
+
+[sub_resource type="Animation" id="Animation_17tum"]
+resource_name = "bb_normal_appear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BbNormal:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1.1, 1.1), Vector2(0.9, 0.9), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BbNormal:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_2o72m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BbNormal:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BbNormal:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pa4e8"]
+_data = {
+"RESET": SubResource("Animation_2o72m"),
+"bb_normal_appear": SubResource("Animation_17tum")
+}
 
 [node name="PpMapEmplacement" type="Node2D" groups=["map_emplacements"]]
 script = ExtResource("1_unu4e")
@@ -126,6 +186,11 @@ offset_right = 136.0
 offset_bottom = 437.0
 theme_override_font_sizes/font_size = 50
 script = ExtResource("4_44y7j")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pa4e8")
+}
 
 [connection signal="history_updated" from="." to="Label" method="_on_pp_map_emplacement_history_updated"]
 [connection signal="toggled" from="BbNormal" to="." method="_on_bb_normal_toggled"]
