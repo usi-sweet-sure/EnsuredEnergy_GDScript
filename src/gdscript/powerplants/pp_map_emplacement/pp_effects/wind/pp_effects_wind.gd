@@ -6,16 +6,26 @@ extends Node2D
 var wind_gusts: Array[WindGust]
 var wind_gust_scene
 
+var is_construction_animation_finished = false
+
 
 func _ready():
 	wind_gust_scene = load("res://scenes/wind_gust.tscn")
 	wind_gusts.append(wind_gust_1)
 	
 	var pp_scene: PpScene = get_parent()
+	# Disables the effects during the  build animation
+	if not pp_scene.built_on_start:
+		animation_player.play("RESET")
+	
+		for wind_gust in wind_gusts:
+			wind_gust.deactivate()
 	pp_scene.powerplant_activated.connect(effects_on)
 	pp_scene.powerplant_deactivated.connect(effects_off)
 	pp_scene.powerplant_upgraded.connect(_on_powerplant_upgraded)
 	pp_scene.powerplant_downgraded.connect(_on_powerplant_downgraded)
+	pp_scene.construction_animation_finished.connect(construction_animation_finished)
+	pp_scene.destruction_animation_requested.connect(destruction_animation_started)
 
 
 func effects_off(_metrics: PowerplantMetrics):
@@ -26,11 +36,12 @@ func effects_off(_metrics: PowerplantMetrics):
 	
 	
 func effects_on(metrics: PowerplantMetrics):
-	animation_player.play("upgrade" + str(metrics.current_upgrade))
-	
-	for wind_gust in wind_gusts:
-		wind_gust.activate()
-		await get_tree().create_timer(randf_range(0, 1)).timeout
+	if is_construction_animation_finished:
+		animation_player.play("upgrade" + str(metrics.current_upgrade))
+		
+		for wind_gust in wind_gusts:
+			wind_gust.activate()
+			await get_tree().create_timer(randf_range(0, 1)).timeout
 	
 	
 func _on_powerplant_upgraded(metrics: PowerplantMetrics):
@@ -57,3 +68,15 @@ func _on_powerplant_downgraded(metrics: PowerplantMetrics):
 	remove_child(removed_wind_gust)
 	removed_wind_gust.queue_free()
 	animation_player.speed_scale -= 0.10
+
+
+func construction_animation_finished(metrics: PowerplantMetrics):
+	is_construction_animation_finished = true
+	effects_on(metrics)
+
+
+func destruction_animation_started(_metrics: PowerplantMetrics):
+	animation_player.play("RESET")
+	
+	for wind_gust in wind_gusts:
+		wind_gust.deactivate()

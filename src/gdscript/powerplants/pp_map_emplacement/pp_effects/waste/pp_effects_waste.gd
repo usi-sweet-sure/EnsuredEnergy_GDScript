@@ -15,6 +15,7 @@ func _ready():
 	pp_scene.powerplant_upgraded.connect(_update_fumes)
 	pp_scene.powerplant_downgraded.connect(_update_fumes)
 	pp_scene.construction_animation_finished.connect(construction_animation_finished)
+	pp_scene.destruction_animation_requested.connect(destruction_animation_started)
 
 
 func effects_off(_metrics: PowerplantMetrics):
@@ -47,3 +48,10 @@ func _update_fumes(metrics: PowerplantMetrics):
 func construction_animation_finished(metrics: PowerplantMetrics):
 	is_construction_animation_finished = true
 	effects_on(metrics)
+
+
+func destruction_animation_started(_metrics: PowerplantMetrics):
+	# This hides the particles instantly
+	for system in particle_systems:
+		system.visible = false
+	

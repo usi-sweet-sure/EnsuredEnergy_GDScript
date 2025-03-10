@@ -18,6 +18,8 @@ signal texture_on_changed(image: Image)
 signal texture_off_changed(image: Image)
 signal construction_animation_finished(metrics: PowerplantMetrics)
 signal construction_animation_requested(metrics: PowerplantMetrics)
+signal destruction_animation_requested(metrics: PowerplantMetrics)
+
 
 var metrics: PowerplantMetrics
 
@@ -242,3 +244,7 @@ func _on_destruction_smoke_finished() -> void:
 
 func _on_appear_animation_finished() -> void:
 	construction_animation_finished.emit(metrics)
+
+
+func _on_close_button_pressed() -> void:
+	destruction_animation_requested.emit(metrics)

@@ -18,6 +18,7 @@ func _ready():
 	pp_scene.powerplant_activated.connect(effects_on)
 	pp_scene.powerplant_deactivated.connect(effects_off)
 	pp_scene.construction_animation_finished.connect(construction_animation_finished)
+	pp_scene.destruction_animation_requested.connect(destruction_animation_started)
 	
 
 func effects_off(_metrics: PowerplantMetrics):
@@ -38,3 +39,10 @@ func construction_animation_finished(_metrics: PowerplantMetrics):
 	cpu_particles_2d.emitting = true
 	cpu_particles_2d_2.emitting = true
 	cpu_particles_2d_3.emitting = true
+
+
+func destruction_animation_started(_metrics: PowerplantMetrics):
+	# This hides the particles instantly
+	cpu_particles_2d.visible = false
+	cpu_particles_2d_2.visible = false
+	cpu_particles_2d_3.visible = false
