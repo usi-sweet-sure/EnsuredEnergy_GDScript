@@ -9,6 +9,7 @@ var drag_tolerance = Vector2(5.0, 5.0)
 
 signal hide_info_frame_requested
 signal show_info_frame_requested
+signal appear_animation_finished
 
 
 func _ready():
@@ -116,3 +117,5 @@ func _on_construction_appear_requested() -> void:
 	material.set_shader_parameter("appear", true)
 	var tween = get_tree().create_tween()
 	tween.tween_method(set_appear_percent, 0.0, 1.0, 3.0)
+	await tween.finished
+	appear_animation_finished.emit()

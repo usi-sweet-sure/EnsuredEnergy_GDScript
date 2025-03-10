@@ -1813,6 +1813,7 @@ libraries = {
 }
 
 [connection signal="construction_appear_requested" from="." to="On" method="_on_construction_appear_requested"]
+[connection signal="construction_appear_requested" from="." to="CloseButton" method="_on_construction_appear_requested"]
 [connection signal="construction_smoke_requested" from="." to="ConstructionSmoke" method="_on_construction_smoke_requested"]
 [connection signal="construction_sound_requested" from="." to="AudioStreamPlayer" method="_on_construction_sound_requested"]
 [connection signal="hide_info_frame" from="." to="InfoFrame" method="_on_hide_info_frame"]
@@ -1849,6 +1850,7 @@ libraries = {
 [connection signal="show_info_frame" from="." to="InfoFrame" method="_on_show_info_frame"]
 [connection signal="texture_off_changed" from="." to="Off" method="_on_pp_scene_texture_off_changed"]
 [connection signal="texture_on_changed" from="." to="On" method="_on_pp_scene_texture_on_changed"]
+[connection signal="appear_animation_finished" from="On" to="CloseButton" method="_on_appear_animation_finished"]
 [connection signal="hide_info_frame_requested" from="On" to="." method="_on_pp_hide_info_frame_requested"]
 [connection signal="mouse_entered" from="On" to="On" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="On" to="On" method="_on_mouse_exited"]
