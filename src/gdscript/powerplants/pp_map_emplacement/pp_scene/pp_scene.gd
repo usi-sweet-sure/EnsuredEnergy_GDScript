@@ -16,15 +16,14 @@ signal powerplant_upgraded(metrics: PowerplantMetrics)
 signal powerplant_downgraded(metrics: PowerplantMetrics)
 signal texture_on_changed(image: Image)
 signal texture_off_changed(image: Image)
-signal construction_sound_requested
-signal construction_smoke_requested
-signal construction_appear_requested
-
+signal construction_animation_finished(metrics: PowerplantMetrics)
+signal construction_animation_requested(metrics: PowerplantMetrics)
 
 var metrics: PowerplantMetrics
 
 # This is used to revert the changes made to metrics during a shock
 var metrics_backup: PowerplantMetrics
+var built_on_start = false
 
 func _ready():
 	GroupManager.buttons_group_updated.emit()
@@ -77,10 +76,6 @@ func deactivate():
 		metrics_updated.emit(metrics)
 		powerplant_deactivated.emit(metrics)
 		#Gameloop.available_money_message_requested.emit("+" + str(metrics.production_costs).pad_decimals(2) + "M CHF", true)
-
-
-func _on_close_button_pressed():
-	powerplant_delete_requested.emit(metrics)
 
 
 func _on_pp_focus_exited():
@@ -239,3 +234,11 @@ func change_image(metrics_: PowerplantMetrics):
 
 	texture_on_changed.emit(load(image_path_on))
 	texture_off_changed.emit(load(image_path_off))
+
+
+func _on_destruction_smoke_finished() -> void:
+	powerplant_delete_requested.emit(metrics)
+
+
+func _on_appear_animation_finished() -> void:
+	construction_animation_finished.emit(metrics)

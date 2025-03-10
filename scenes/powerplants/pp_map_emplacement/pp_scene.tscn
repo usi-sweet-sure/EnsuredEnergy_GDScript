@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://vaxkewvk14v6"]
+[gd_scene load_steps=88 format=3 uid="uid://vaxkewvk14v6"]
 
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_scene/pp_scene.gd" id="1_aeq33"]
 [ext_resource type="Shader" path="res://src/gdscript/shaders/outline.gdshader" id="2_ln53j"]
@@ -63,6 +63,9 @@
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_scene/construction_smoke.gd" id="61_me645"]
 [ext_resource type="AudioStream" uid="uid://b66rg7asssywk" path="res://assets/sounds/construction_cc0.mp3" id="62_y2erx"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_scene/construction_sound.gd" id="63_lbfgy"]
+[ext_resource type="AudioStream" uid="uid://b7e06i0u4sygt" path="res://assets/sounds/demolish.mp3" id="64_4suht"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_scene/demolition_sound.gd" id="65_0oa7b"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_scene/destruction_smoke.gd" id="65_pic2b"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rxno2"]
 resource_local_to_scene = true
@@ -73,8 +76,8 @@ shader_parameter/line_thickness = 1.0
 shader_parameter/frequency = 10.0
 shader_parameter/phase_speed = 1.0
 shader_parameter/appear = false
-shader_parameter/percentage = 1.0
-shader_parameter/line_angle = 3.1
+shader_parameter/percentage = 0.0
+shader_parameter/line_angle = 3.14159
 shader_parameter/line_width = 0.02
 shader_parameter/line_color_2 = Color(1, 1, 1, 1)
 
@@ -1812,10 +1815,52 @@ libraries = {
 "": SubResource("AnimationLibrary_fup87")
 }
 
-[connection signal="construction_appear_requested" from="." to="On" method="_on_construction_appear_requested"]
-[connection signal="construction_appear_requested" from="." to="CloseButton" method="_on_construction_appear_requested"]
-[connection signal="construction_smoke_requested" from="." to="ConstructionSmoke" method="_on_construction_smoke_requested"]
-[connection signal="construction_sound_requested" from="." to="AudioStreamPlayer" method="_on_construction_sound_requested"]
+[node name="DemolitionSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("64_4suht")
+volume_db = -12.0
+script = ExtResource("65_0oa7b")
+
+[node name="DestructionSmoke" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_52cmj")
+position = Vector2(346, 281)
+emitting = false
+amount = 50
+lifetime = 2.0
+one_shot = true
+speed_scale = 3.5
+explosiveness = 0.19
+randomness = 0.1
+lifetime_randomness = 0.1
+draw_order = 1
+texture = ExtResource("60_cdixl")
+emission_shape = 3
+emission_rect_extents = Vector2(200, 200)
+direction = Vector2(0, -1)
+spread = 0.0
+gravity = Vector2(0, 20)
+initial_velocity_min = 40.0
+initial_velocity_max = 40.0
+angular_velocity_min = -20.0
+angular_velocity_max = 20.0
+linear_accel_max = 10.0
+radial_accel_min = -20.0
+radial_accel_max = 20.0
+tangential_accel_min = -20.0
+tangential_accel_max = 20.0
+damping_max = 200.0
+scale_amount_min = 2.0
+scale_amount_max = 7.0
+scale_amount_curve = SubResource("Curve_yboya")
+color = Color(0.779287, 0.642299, 0.545224, 1)
+color_ramp = SubResource("Gradient_fxsdh")
+anim_speed_min = 0.1
+anim_speed_max = 1.0
+script = ExtResource("65_pic2b")
+
+[connection signal="construction_animation_requested" from="." to="On" method="_on_construction_animation_requested"]
+[connection signal="construction_animation_requested" from="." to="CloseButton" method="_on_construction_animation_requested"]
+[connection signal="construction_animation_requested" from="." to="ConstructionSmoke" method="_on_construction_animation_requested"]
+[connection signal="construction_animation_requested" from="." to="AudioStreamPlayer" method="_on_construction_animation_requested"]
 [connection signal="hide_info_frame" from="." to="InfoFrame" method="_on_hide_info_frame"]
 [connection signal="metrics_updated" from="." to="." method="_on_metrics_updated"]
 [connection signal="metrics_updated" from="." to="On" method="_on_metrics_updated"]
@@ -1850,6 +1895,7 @@ libraries = {
 [connection signal="show_info_frame" from="." to="InfoFrame" method="_on_show_info_frame"]
 [connection signal="texture_off_changed" from="." to="Off" method="_on_pp_scene_texture_off_changed"]
 [connection signal="texture_on_changed" from="." to="On" method="_on_pp_scene_texture_on_changed"]
+[connection signal="appear_animation_finished" from="On" to="." method="_on_appear_animation_finished"]
 [connection signal="appear_animation_finished" from="On" to="CloseButton" method="_on_appear_animation_finished"]
 [connection signal="hide_info_frame_requested" from="On" to="." method="_on_pp_hide_info_frame_requested"]
 [connection signal="mouse_entered" from="On" to="On" method="_on_mouse_entered"]
@@ -1866,7 +1912,10 @@ libraries = {
 [connection signal="toggled" from="Off" to="Off" method="_on_toggled"]
 [connection signal="mouse_entered" from="CloseButton" to="On" method="_on_close_button_mouse_entered"]
 [connection signal="mouse_exited" from="CloseButton" to="On" method="_on_close_button_mouse_exited"]
-[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="CloseButton" to="On" method="_on_close_button_pressed"]
+[connection signal="pressed" from="CloseButton" to="CloseButton" method="_on_pressed"]
+[connection signal="pressed" from="CloseButton" to="DemolitionSound" method="_on_close_button_pressed"]
+[connection signal="pressed" from="CloseButton" to="DestructionSmoke" method="_on_close_button_pressed"]
 [connection signal="mouse_entered" from="InfoFrame/Modifier/ButtonPlus" to="InfoFrame/Modifier/PriceLabel" method="_on_button_plus_mouse_entered"]
 [connection signal="mouse_entered" from="InfoFrame/Modifier/ButtonPlus" to="InfoFrame/Modifier/WinterLabel" method="_on_button_plus_mouse_entered"]
 [connection signal="mouse_entered" from="InfoFrame/Modifier/ButtonPlus" to="InfoFrame/Modifier/SummerLabel" method="_on_button_plus_mouse_entered"]
@@ -1892,3 +1941,4 @@ libraries = {
 [connection signal="mouse_exited" from="ShutDownWarning/Warning" to="ShutDownWarning" method="_on_warning_mouse_exited"]
 [connection signal="mouse_entered" from="ShockIndicator/ShockChip" to="ShockIndicator" method="_on_shock_chip_mouse_entered"]
 [connection signal="mouse_exited" from="ShockIndicator/ShockChip" to="ShockIndicator" method="_on_shock_chip_mouse_exited"]
+[connection signal="finished" from="DestructionSmoke" to="." method="_on_destruction_smoke_finished"]

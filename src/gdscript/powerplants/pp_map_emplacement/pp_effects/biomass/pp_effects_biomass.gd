@@ -3,13 +3,20 @@ extends Node2D
 @onready var cpu_particles_2d: CPUParticles2D = $CPUParticles2D
 @onready var cpu_particles_2d_2: CPUParticles2D = $CPUParticles2D2
 
+var is_construction_animation_finished = false
+
 
 func _ready():
 	var pp_scene: PpScene = get_parent()
+	# Disables the effects during the  build animation
+	if not pp_scene.built_on_start:
+		cpu_particles_2d.emitting = false
+		cpu_particles_2d_2.emitting = false
 	pp_scene.powerplant_activated.connect(effects_on)
 	pp_scene.powerplant_deactivated.connect(effects_off)
 	pp_scene.powerplant_upgraded.connect(_on_powerplant_upgraded)
 	pp_scene.powerplant_downgraded.connect(_on_powerplant_downgraded)
+	pp_scene.construction_animation_finished.connect(construction_animation_finished)
 
 
 func effects_off(_metrics: PowerplantMetrics):
@@ -18,9 +25,10 @@ func effects_off(_metrics: PowerplantMetrics):
 	
 	
 func effects_on(metrics: PowerplantMetrics):
-	cpu_particles_2d.emitting = true
-	cpu_particles_2d_2.emitting = true
-	_adapt_to_current_level(metrics.current_upgrade, metrics.max_upgrade)
+	if is_construction_animation_finished:
+		cpu_particles_2d.emitting = true
+		cpu_particles_2d_2.emitting = true
+		_adapt_to_current_level(metrics.current_upgrade, metrics.max_upgrade)
 
 
 func _update_fumes_intencity(particles: CPUParticles2D, intensity_percentage: float):
@@ -49,3 +57,8 @@ func _on_powerplant_upgraded(metrics: PowerplantMetrics):
 
 func _on_powerplant_downgraded(metrics: PowerplantMetrics):
 	_adapt_to_current_level(metrics.current_upgrade, metrics.max_upgrade)
+
+
+func construction_animation_finished(metrics: PowerplantMetrics):
+	is_construction_animation_finished = true
+	effects_on(metrics)

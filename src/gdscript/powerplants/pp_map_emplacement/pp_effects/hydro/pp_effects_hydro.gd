@@ -6,14 +6,25 @@ extends Node2D
 @onready var foliage: Array = [$trunk, $foliage1, $foliage2, $foliage3, $foliage4, $foliage5]
 
 var WHITE_WATER_MAX_TRANSPARENCY = 0.35
+var is_construction_animation_finished = false
 
 func _ready():
-	print("ready")
 	var pp_scene: PpScene = get_parent()
+	# Disables the effects during the  build animation
+	if not pp_scene.built_on_start:
+		for element in foliage:
+			element.hide()
+			
+		for particle in particles:
+			particle.emitting = false
+			
+		animation_player.stop()
+		animation_player_2.stop()
 	pp_scene.powerplant_activated.connect(effects_on)
 	pp_scene.powerplant_deactivated.connect(effects_off)
 	pp_scene.powerplant_upgraded.connect(_adapt_to_current_upgrade)
 	pp_scene.powerplant_downgraded.connect(_adapt_to_current_upgrade)
+	pp_scene.construction_animation_finished.connect(construction_animation_finished)
 
 
 func effects_off(_metrics: PowerplantMetrics):
@@ -28,17 +39,18 @@ func effects_off(_metrics: PowerplantMetrics):
 	
 	
 func effects_on(metrics: PowerplantMetrics):
-	_adapt_to_current_upgrade(metrics)
-		
-	for element in foliage:
-		element.show()
-		
-	for particle in particles:
-		particle.emitting = true
-		
-	animation_player.play("foliage_breath")
-	await get_tree().create_timer(1).timeout
-	animation_player_2.play("foliage_breath")
+	if is_construction_animation_finished:
+		_adapt_to_current_upgrade(metrics)
+			
+		for element in foliage:
+			element.show()
+			
+		for particle in particles:
+			particle.emitting = true
+			
+		animation_player.play("foliage_breath")
+		await get_tree().create_timer(1).timeout
+		animation_player_2.play("foliage_breath")
 
 
 func _adapt_to_current_upgrade(metrics: PowerplantMetrics):
@@ -71,3 +83,8 @@ func _update_water_intensity(intensity_percentage: float):
 
 	middle_color.a = new_transparency
 	white_water_color_ramp.set_color(1, middle_color)
+
+
+func construction_animation_finished(metrics: PowerplantMetrics):
+	is_construction_animation_finished = true
+	effects_on(metrics)

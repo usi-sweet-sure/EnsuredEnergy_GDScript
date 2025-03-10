@@ -187,10 +187,9 @@ func _on_powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMe
 			add_child(pp_scene)
 			
 			if build_on_start == 10: # built by the user
-				pp_scene.construction_appear_requested.emit()
-				pp_scene.construction_sound_requested.emit()
-				pp_scene.construction_smoke_requested.emit()
-				
+				pp_scene.construction_animation_requested.emit(new_metrics)
+			else:
+				pp_scene.built_on_start = true
 				
 			powerplant_node_name = pp_scene.name
 			pp_scene.set_metrics(new_metrics)

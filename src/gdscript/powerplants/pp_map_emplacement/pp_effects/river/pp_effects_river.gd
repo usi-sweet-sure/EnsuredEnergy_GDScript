@@ -6,14 +6,22 @@ extends Node2D
 @onready var still_water_shadow: Sprite2D = $still_water_shadow
 
 var WHITE_WATER_MAX_TRANSPARENCY = 0.35
-
+var is_construction_animation_finished = false
 
 func _ready():
 	var pp_scene: PpScene = get_parent()
+	# Disables the effects during the  build animation
+	if not pp_scene.built_on_start:
+		blue_water.emitting = false
+		white_water.emitting = false
+		still_water.hide()
+		still_water_shadow.hide()
+		
 	pp_scene.powerplant_activated.connect(effects_on)
 	pp_scene.powerplant_deactivated.connect(effects_off)
 	pp_scene.powerplant_upgraded.connect(_adapt_to_current_upgrade)
 	pp_scene.powerplant_downgraded.connect(_adapt_to_current_upgrade)
+	pp_scene.construction_animation_finished.connect(construction_animation_finished)
 
 
 func effects_off(_metrics: PowerplantMetrics):
@@ -24,11 +32,12 @@ func effects_off(_metrics: PowerplantMetrics):
 	
 	
 func effects_on(metrics: PowerplantMetrics):
-	_adapt_to_current_upgrade(metrics)
-	blue_water.emitting = true
-	white_water.emitting = true
-	still_water.show()
-	still_water_shadow.show()
+	if is_construction_animation_finished:
+		_adapt_to_current_upgrade(metrics)
+		blue_water.emitting = true
+		white_water.emitting = true
+		still_water.show()
+		still_water_shadow.show()
 
 
 func _adapt_to_current_upgrade(metrics: PowerplantMetrics):
@@ -50,7 +59,6 @@ func _update_water_intensity(intensity_percentage: float):
 	
 	blue_water_color_ramp.set_color(0, starting_color)
 	
-	
 	# White water
 	var white_water_color_ramp = white_water.color_ramp
 	var middle_color = white_water_color_ramp.get_color(1)
@@ -61,3 +69,8 @@ func _update_water_intensity(intensity_percentage: float):
 
 	middle_color.a = new_transparency
 	white_water_color_ramp.set_color(1, middle_color)
+
+
+func construction_animation_finished(metrics: PowerplantMetrics):
+	is_construction_animation_finished = true
+	effects_on(metrics)

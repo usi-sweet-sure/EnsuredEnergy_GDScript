@@ -2,13 +2,19 @@ extends Node2D
 
 @onready var particle_systems: Array[CPUParticles2D] = [$CPUParticles2D, $CPUParticles2D2]
 
+var is_construction_animation_finished = false
 
 func _ready():
 	var pp_scene: PpScene = get_parent()
+	# Disables the effects during the  build animation
+	if not pp_scene.built_on_start:
+		for system in particle_systems:
+			system.emitting = false
 	pp_scene.powerplant_activated.connect(effects_on)
 	pp_scene.powerplant_deactivated.connect(effects_off)
 	pp_scene.powerplant_upgraded.connect(_update_fumes)
 	pp_scene.powerplant_downgraded.connect(_update_fumes)
+	pp_scene.construction_animation_finished.connect(construction_animation_finished)
 
 
 func effects_off(_metrics: PowerplantMetrics):
@@ -17,10 +23,11 @@ func effects_off(_metrics: PowerplantMetrics):
 	
 	
 func effects_on(metrics: PowerplantMetrics):
-	_update_fumes(metrics)
-	
-	for system in particle_systems:
-		system.emitting = true
+	if is_construction_animation_finished:
+		_update_fumes(metrics)
+		
+		for system in particle_systems:
+			system.emitting = true
 
 
 func _update_fumes(metrics: PowerplantMetrics):
@@ -35,3 +42,8 @@ func _update_fumes(metrics: PowerplantMetrics):
 		starting_color.a = intensity_percentage / 100.0
 		
 		color_ramp.set_color(1, starting_color)
+
+
+func construction_animation_finished(metrics: PowerplantMetrics):
+	is_construction_animation_finished = true
+	effects_on(metrics)
