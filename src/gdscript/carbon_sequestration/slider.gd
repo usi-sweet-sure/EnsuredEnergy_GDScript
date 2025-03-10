@@ -26,4 +26,5 @@ func _on_value_changed(value_: float):
 
 func _on_drag_ended(value_changed_):
 	if value_changed_:
-		Gameloop.available_money_message_requested.emit("-" + str(value * 10).pad_decimals(2) + "M CHF", false)
+		pass
+		#Gameloop.available_money_message_requested.emit("-" + str(value * 10).pad_decimals(2) + "M CHF", false)

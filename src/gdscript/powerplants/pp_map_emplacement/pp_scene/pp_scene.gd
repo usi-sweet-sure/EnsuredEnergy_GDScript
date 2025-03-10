@@ -20,6 +20,7 @@ signal construction_sound_requested
 signal construction_smoke_requested
 signal construction_appear_requested
 
+
 var metrics: PowerplantMetrics
 
 # This is used to revert the changes made to metrics during a shock
@@ -64,7 +65,8 @@ func activate(is_built: bool):
 			powerplant_activated.emit(metrics)
 			
 			if not is_built:
-				Gameloop.available_money_message_requested.emit("-" + str(metrics.production_costs).pad_decimals(2) + "M CHF", false)
+				pass
+				#Gameloop.available_money_message_requested.emit("-" + str(metrics.production_costs).pad_decimals(2) + "M CHF", false)
 	
 
 func deactivate():
@@ -74,7 +76,7 @@ func deactivate():
 		metrics.active = false
 		metrics_updated.emit(metrics)
 		powerplant_deactivated.emit(metrics)
-		Gameloop.available_money_message_requested.emit("+" + str(metrics.production_costs).pad_decimals(2) + "M CHF", true)
+		#Gameloop.available_money_message_requested.emit("+" + str(metrics.production_costs).pad_decimals(2) + "M CHF", true)
 
 
 func _on_close_button_pressed():
@@ -142,7 +144,7 @@ func _on_button_plus_pressed():
 			
 			# Upgrade cost
 			MoneyManager.building_costs += metrics.upgrade_cost
-			Gameloop.available_money_message_requested.emit("-" + str(metrics.upgrade_cost + delta_prod_cost).pad_decimals(0) + "M CHF", false)
+			#Gameloop.available_money_message_requested.emit("-" + str(metrics.upgrade_cost + delta_prod_cost).pad_decimals(0) + "M CHF", false)
 			
 			change_image(metrics)
 			
@@ -179,7 +181,7 @@ func _on_button_minus_pressed():
 		
 		# Upgrade cost
 		MoneyManager.building_costs -= metrics.upgrade_cost
-		Gameloop.available_money_message_requested.emit("+" + str(metrics.upgrade_cost + delta_prod_cost).pad_decimals(0) + "M CHF", true)
+		#Gameloop.available_money_message_requested.emit("+" + str(metrics.upgrade_cost + delta_prod_cost).pad_decimals(0) + "M CHF", true)
 		
 		change_image(metrics)
 		

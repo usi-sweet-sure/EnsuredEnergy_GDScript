@@ -105,12 +105,14 @@ func _on_carbon_sequestration_toggled(_toggled_on: bool):
 	set_pressed_no_signal(false)
 	hide_info_frame_requested.emit()
 
+
 func set_appear_percent(percentage: float) -> void:
 	material.set_shader_parameter('percentage', percentage)
 	
 	
 func _on_construction_appear_requested() -> void:
 	material.set_shader_parameter("percentage", 0.0)
+	material.set_shader_parameter("line_angle", 3.1)
 	material.set_shader_parameter("appear", true)
 	var tween = get_tree().create_tween()
 	tween.tween_method(set_appear_percent, 0.0, 1.0, 3.0)
