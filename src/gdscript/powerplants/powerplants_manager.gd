@@ -46,7 +46,7 @@ var powerplants_effects: Array[String] = [
 	"res://scenes/powerplants/pp_map_emplacement/pp_effects/gas/pp_effects_gas.tscn", # Gas
 	"res://scenes/powerplants/pp_map_emplacement/pp_effects/waste/pp_effects_waste.tscn", # Waste
 	"res://scenes/powerplants/pp_map_emplacement/pp_effects/biomass/pp_effects_biomass.tscn", # Biomass
-	"", # Biogas
+	"res://scenes/powerplants/pp_map_emplacement/pp_effects/biogas/pp_effects_biogas.tscn", # Biogas
 	"res://scenes/powerplants/pp_map_emplacement/pp_effects/nuclear/pp_effects_nuclear.tscn", # Nuclear
 	"", # Carbon sequestration
 	"res://scenes/powerplants/pp_map_emplacement/pp_effects/hydro/pp_effects_hydro.tscn", # Hydro
