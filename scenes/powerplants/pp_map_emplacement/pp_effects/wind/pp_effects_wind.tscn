@@ -1,8 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://e8ix8khacqof"]
+[gd_scene load_steps=19 format=3 uid="uid://e8ix8khacqof"]
 
 [ext_resource type="Texture2D" uid="uid://dr6s2y4ydg7mw" path="res://assets/textures/powerplants/blades.png" id="1_c3n8u"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_effects/wind/pp_effects_wind.gd" id="1_tsye3"]
-[ext_resource type="Texture2D" uid="uid://qosku45b5yt7" path="res://assets/textures/powerplants/pp_sprite_on_wind_6.png" id="2_s4x5q"]
+[ext_resource type="Texture2D" uid="uid://dygcotgdm16h3" path="res://assets/textures/powerplants/pp_sprite_on_wind_9.png" id="2_dr1kv"]
 [ext_resource type="Texture2D" uid="uid://d1dchtgr8dspw" path="res://assets/textures/powerplants/nose.png" id="4_dejr5"]
 [ext_resource type="PackedScene" uid="uid://e7nl64v1gs0l" path="res://scenes/wind_gust.tscn" id="4_e4f5j"]
 
@@ -679,6 +679,78 @@ tracks/55/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
+}
+tracks/56/type = "value"
+tracks/56/imported = false
+tracks/56/enabled = true
+tracks/56/path = NodePath("Blades/Upgrade7/Blade7:rotation")
+tracks/56/interp = 1
+tracks/56/loop_wrap = true
+tracks/56/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/57/type = "value"
+tracks/57/imported = false
+tracks/57/enabled = true
+tracks/57/path = NodePath("Blades/Upgrade7/Blade7:visible")
+tracks/57/interp = 1
+tracks/57/loop_wrap = true
+tracks/57/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/58/type = "value"
+tracks/58/imported = false
+tracks/58/enabled = true
+tracks/58/path = NodePath("Blades/Upgrade8/Blade8:rotation")
+tracks/58/interp = 1
+tracks/58/loop_wrap = true
+tracks/58/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/59/type = "value"
+tracks/59/imported = false
+tracks/59/enabled = true
+tracks/59/path = NodePath("Blades/Upgrade8/Blade8:visible")
+tracks/59/interp = 1
+tracks/59/loop_wrap = true
+tracks/59/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/60/type = "value"
+tracks/60/imported = false
+tracks/60/enabled = true
+tracks/60/path = NodePath("Blades/Upgrade9/Blade9:rotation")
+tracks/60/interp = 1
+tracks/60/loop_wrap = true
+tracks/60/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/61/type = "value"
+tracks/61/imported = false
+tracks/61/enabled = true
+tracks/61/path = NodePath("Blades/Upgrade9/Blade9:visible")
+tracks/61/interp = 1
+tracks/61/loop_wrap = true
+tracks/61/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_eqjn1"]
@@ -1381,6 +1453,666 @@ tracks/13/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_er36q"]
+resource_name = "upgrade7"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Blades/Upgrade6/Blade0:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Blades/Upgrade6/Blade1:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.872665, 7.15585]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Blades/Upgrade6/Blade2:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.74533, 8.02851]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Blades/Upgrade6/Blade3:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2.61799, 8.90118]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Blades/Upgrade6/Blade4:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [3.49066, 9.77384]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Blades/Upgrade6/Blade5:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [4.36332, 10.6465]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Blades/Upgrade6/Blade6:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2.0944, 8.37758]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Blades/Upgrade6/Blade0:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Blades/Upgrade6/Blade1:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Blades/Upgrade6/Blade2:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Blades/Upgrade6/Blade3:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Blades/Upgrade6/Blade4:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Blades/Upgrade6/Blade5:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Blades/Upgrade6/Blade6:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Blades/Upgrade7/Blade7:rotation")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Blades/Upgrade7/Blade7:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_vbqt4"]
+resource_name = "upgrade8"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Blades/Upgrade6/Blade0:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Blades/Upgrade6/Blade1:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.872665, 7.15585]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Blades/Upgrade6/Blade2:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.74533, 8.02851]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Blades/Upgrade6/Blade3:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2.61799, 8.90118]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Blades/Upgrade6/Blade4:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [3.49066, 9.77384]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Blades/Upgrade6/Blade5:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [4.36332, 10.6465]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Blades/Upgrade6/Blade6:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2.0944, 8.37758]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Blades/Upgrade6/Blade0:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Blades/Upgrade6/Blade1:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Blades/Upgrade6/Blade2:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Blades/Upgrade6/Blade3:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Blades/Upgrade6/Blade4:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Blades/Upgrade6/Blade5:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Blades/Upgrade6/Blade6:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Blades/Upgrade7/Blade7:rotation")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Blades/Upgrade7/Blade7:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Blades/Upgrade8/Blade8:rotation")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.872665, 7.15585]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Blades/Upgrade8/Blade8:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_l3kf6"]
+resource_name = "upgrade9"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Blades/Upgrade6/Blade0:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Blades/Upgrade6/Blade1:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.872665, 7.15585]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Blades/Upgrade6/Blade2:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.74533, 8.02851]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Blades/Upgrade6/Blade3:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2.61799, 8.90118]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Blades/Upgrade6/Blade4:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [3.49066, 9.77384]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Blades/Upgrade6/Blade5:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [4.36332, 10.6465]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Blades/Upgrade6/Blade6:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2.0944, 8.37758]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Blades/Upgrade6/Blade0:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Blades/Upgrade6/Blade1:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Blades/Upgrade6/Blade2:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Blades/Upgrade6/Blade3:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Blades/Upgrade6/Blade4:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Blades/Upgrade6/Blade5:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Blades/Upgrade6/Blade6:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Blades/Upgrade7/Blade7:rotation")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Blades/Upgrade7/Blade7:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Blades/Upgrade8/Blade8:rotation")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.872665, 7.15585]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Blades/Upgrade8/Blade8:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Blades/Upgrade9/Blade9:rotation")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.74533, 8.02851]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Blades/Upgrade9/Blade9:visible")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_06ksm"]
 _data = {
 "RESET": SubResource("Animation_q4tqr"),
@@ -1390,7 +2122,10 @@ _data = {
 "upgrade3": SubResource("Animation_sx7j8"),
 "upgrade4": SubResource("Animation_qmwdp"),
 "upgrade5": SubResource("Animation_h7q01"),
-"upgrade6": SubResource("Animation_dh6ni")
+"upgrade6": SubResource("Animation_dh6ni"),
+"upgrade7": SubResource("Animation_er36q"),
+"upgrade8": SubResource("Animation_vbqt4"),
+"upgrade9": SubResource("Animation_l3kf6")
 }
 
 [sub_resource type="Gradient" id="Gradient_lxvib"]
@@ -1405,7 +2140,7 @@ script = ExtResource("1_tsye3")
 visible = false
 position = Vector2(352, 254)
 scale = Vector2(1.3, 1.3)
-texture = ExtResource("2_s4x5q")
+texture = ExtResource("2_dr1kv")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -1687,6 +2422,255 @@ offset_bottom = 22.0
 pivot_offset = Vector2(25, 50)
 texture = ExtResource("1_c3n8u")
 
+[node name="Upgrade7" type="Node2D" parent="Blades"]
+
+[node name="Blade0" type="TextureRect" parent="Blades/Upgrade7"]
+visible = false
+offset_left = 148.0
+offset_top = 26.0
+offset_right = 213.0
+offset_bottom = 118.0
+pivot_offset = Vector2(25, 50)
+texture = ExtResource("1_c3n8u")
+
+[node name="Blade1" type="TextureRect" parent="Blades/Upgrade7"]
+visible = false
+offset_left = 394.0
+offset_top = 239.0
+offset_right = 459.0
+offset_bottom = 331.0
+pivot_offset = Vector2(25, 50)
+texture = ExtResource("1_c3n8u")
+
+[node name="Blade2" type="TextureRect" parent="Blades/Upgrade7"]
+visible = false
+offset_left = 492.0
+offset_top = 115.0
+offset_right = 557.0
+offset_bottom = 207.0
+pivot_offset = Vector2(25, 50)
+texture = ExtResource("1_c3n8u")
+
+[node name="Blade3" type="TextureRect" parent="Blades/Upgrade7"]
+visible = false
+offset_left = 360.0
+offset_top = -3.0
+offset_right = 425.0
+offset_bottom = 89.0
+pivot_offset = Vector2(25, 50)
+texture = ExtResource("1_c3n8u")
+
+[node name="Blade4" type="TextureRect" parent="Blades/Upgrade7"]
+visible = false
+offset_left = 294.0
+offset_top = 137.0
+offset_right = 359.0
+offset_bottom = 229.0
+pivot_offset = Vector2(25, 50)
+texture = ExtResource("1_c3n8u")
+
+[node name="Blade5" type="TextureRect" parent="Blades/Upgrade7"]
+visible = false
+offset_left = 185.0
+offset_top = 202.0
+offset_right = 250.0
+offset_bottom = 294.0
+pivot_offset = Vector2(25, 50)
+texture = ExtResource("1_c3n8u")
+
+[node name="Blade6" type="TextureRect" parent="Blades/Upgrade7"]
+visible = false
+offset_left = 253.0
+offset_top = -70.0
+offset_right = 318.0
+offset_bottom = 22.0
+pivot_offset = Vector2(25, 50)
+texture = ExtResource("1_c3n8u")
+
+[node name="Blade7" type="TextureRect" parent="Blades/Upgrade7"]
+visible = false
+offset_left = 397.0
+offset_top = 88.0
+offset_right = 462.0
+offset_bottom = 180.0
+pivot_offset = Vector2(25, 50)
+texture = ExtResource("1_c3n8u")
+
+[node name="Upgrade8" type="Node2D" parent="Blades"]
+
+[node name="Blade0" type="TextureRect" parent="Blades/Upgrade8"]
+visible = false
+offset_left = 148.0
+offset_top = 26.0
+offset_right = 213.0
+offset_bottom = 118.0
+pivot_offset = Vector2(25, 50)
+texture = ExtResource("1_c3n8u")
+
+[node name="Blade1" type="TextureRect" parent="Blades/Upgrade8"]
+visible = false
+offset_left = 394.0
+offset_top = 239.0
+offset_right = 459.0
+offset_bottom = 331.0
+pivot_offset = Vector2(25, 50)
+texture = ExtResource("1_c3n8u")
+
+[node name="Blade2" type="TextureRect" parent="Blades/Upgrade8"]
+visible = false
+offset_left = 492.0
+offset_top = 115.0
+offset_right = 557.0
+offset_bottom = 207.0
+pivot_offset = Vector2(25, 50)
+texture = ExtResource("1_c3n8u")
+
+[node name="Blade3" type="TextureRect" parent="Blades/Upgrade8"]
+visible = false
+offset_left = 360.0
+offset_top = -3.0
+offset_right = 425.0
+offset_bottom = 89.0
+pivot_offset = Vector2(25, 50)
+texture = ExtResource("1_c3n8u")
+
+[node name="Blade4" type="TextureRect" parent="Blades/Upgrade8"]
+visible = false
+offset_left = 294.0
+offset_top = 137.0
+offset_right = 359.0
+offset_bottom = 229.0
+pivot_offset = Vector2(25, 50)
+texture = ExtResource("1_c3n8u")
+
+[node name="Blade5" type="TextureRect" parent="Blades/Upgrade8"]
+visible = false
+offset_left = 185.0
+offset_top = 202.0
+offset_right = 250.0
+offset_bottom = 294.0
+pivot_offset = Vector2(25, 50)
+texture = ExtResource("1_c3n8u")
+
+[node name="Blade6" type="TextureRect" parent="Blades/Upgrade8"]
+visible = false
+offset_left = 253.0
+offset_top = -70.0
+offset_right = 318.0
+offset_bottom = 22.0
+pivot_offset = Vector2(25, 50)
+texture = ExtResource("1_c3n8u")
+
+[node name="Blade7" type="TextureRect" parent="Blades/Upgrade8"]
+visible = false
+offset_left = 397.0
+offset_top = 88.0
+offset_right = 462.0
+offset_bottom = 180.0
+pivot_offset = Vector2(25, 50)
+texture = ExtResource("1_c3n8u")
+
+[node name="Blade8" type="TextureRect" parent="Blades/Upgrade8"]
+visible = false
+offset_left = 260.0
+offset_top = 33.0
+offset_right = 325.0
+offset_bottom = 125.0
+pivot_offset = Vector2(25, 50)
+texture = ExtResource("1_c3n8u")
+
+[node name="Upgrade9" type="Node2D" parent="Blades"]
+
+[node name="Blade0" type="TextureRect" parent="Blades/Upgrade9"]
+visible = false
+offset_left = 148.0
+offset_top = 26.0
+offset_right = 213.0
+offset_bottom = 118.0
+pivot_offset = Vector2(25, 50)
+texture = ExtResource("1_c3n8u")
+
+[node name="Blade1" type="TextureRect" parent="Blades/Upgrade9"]
+visible = false
+offset_left = 394.0
+offset_top = 239.0
+offset_right = 459.0
+offset_bottom = 331.0
+pivot_offset = Vector2(25, 50)
+texture = ExtResource("1_c3n8u")
+
+[node name="Blade2" type="TextureRect" parent="Blades/Upgrade9"]
+visible = false
+offset_left = 492.0
+offset_top = 115.0
+offset_right = 557.0
+offset_bottom = 207.0
+pivot_offset = Vector2(25, 50)
+texture = ExtResource("1_c3n8u")
+
+[node name="Blade3" type="TextureRect" parent="Blades/Upgrade9"]
+visible = false
+offset_left = 360.0
+offset_top = -3.0
+offset_right = 425.0
+offset_bottom = 89.0
+pivot_offset = Vector2(25, 50)
+texture = ExtResource("1_c3n8u")
+
+[node name="Blade4" type="TextureRect" parent="Blades/Upgrade9"]
+visible = false
+offset_left = 294.0
+offset_top = 137.0
+offset_right = 359.0
+offset_bottom = 229.0
+pivot_offset = Vector2(25, 50)
+texture = ExtResource("1_c3n8u")
+
+[node name="Blade5" type="TextureRect" parent="Blades/Upgrade9"]
+visible = false
+offset_left = 185.0
+offset_top = 202.0
+offset_right = 250.0
+offset_bottom = 294.0
+pivot_offset = Vector2(25, 50)
+texture = ExtResource("1_c3n8u")
+
+[node name="Blade6" type="TextureRect" parent="Blades/Upgrade9"]
+visible = false
+offset_left = 253.0
+offset_top = -70.0
+offset_right = 318.0
+offset_bottom = 22.0
+pivot_offset = Vector2(25, 50)
+texture = ExtResource("1_c3n8u")
+
+[node name="Blade7" type="TextureRect" parent="Blades/Upgrade9"]
+visible = false
+offset_left = 397.0
+offset_top = 88.0
+offset_right = 462.0
+offset_bottom = 180.0
+pivot_offset = Vector2(25, 50)
+texture = ExtResource("1_c3n8u")
+
+[node name="Blade8" type="TextureRect" parent="Blades/Upgrade9"]
+visible = false
+offset_left = 260.0
+offset_top = 33.0
+offset_right = 325.0
+offset_bottom = 125.0
+pivot_offset = Vector2(25, 50)
+texture = ExtResource("1_c3n8u")
+
+[node name="Blade9" type="TextureRect" parent="Blades/Upgrade9"]
+visible = false
+offset_left = 305.0
+offset_top = 266.0
+offset_right = 370.0
+offset_bottom = 358.0
+pivot_offset = Vector2(25, 50)
+texture = ExtResource("1_c3n8u")
+
 [node name="Noses" type="Node2D" parent="."]
 
 [node name="Upgrade0" type="Node2D" parent="Noses"]
@@ -1841,4 +2825,145 @@ texture = ExtResource("4_dejr5")
 [node name="Nose6" type="Sprite2D" parent="Noses/Upgrade6"]
 visible = false
 position = Vector2(277, -20)
+texture = ExtResource("4_dejr5")
+
+[node name="Upgrade7" type="Node2D" parent="Noses"]
+
+[node name="Nose0" type="Sprite2D" parent="Noses/Upgrade7"]
+visible = false
+position = Vector2(172, 73)
+texture = ExtResource("4_dejr5")
+
+[node name="Nose1" type="Sprite2D" parent="Noses/Upgrade7"]
+visible = false
+position = Vector2(416, 288)
+texture = ExtResource("4_dejr5")
+
+[node name="Nose2" type="Sprite2D" parent="Noses/Upgrade7"]
+visible = false
+position = Vector2(516, 163)
+texture = ExtResource("4_dejr5")
+
+[node name="Nose3" type="Sprite2D" parent="Noses/Upgrade7"]
+visible = false
+position = Vector2(385, 44)
+texture = ExtResource("4_dejr5")
+
+[node name="Nose4" type="Sprite2D" parent="Noses/Upgrade7"]
+visible = false
+position = Vector2(320, 185)
+texture = ExtResource("4_dejr5")
+
+[node name="Nose5" type="Sprite2D" parent="Noses/Upgrade7"]
+visible = false
+position = Vector2(209, 250)
+texture = ExtResource("4_dejr5")
+
+[node name="Nose6" type="Sprite2D" parent="Noses/Upgrade7"]
+visible = false
+position = Vector2(277, -20)
+texture = ExtResource("4_dejr5")
+
+[node name="Nose7" type="Sprite2D" parent="Noses/Upgrade7"]
+visible = false
+position = Vector2(422, 137)
+texture = ExtResource("4_dejr5")
+
+[node name="Upgrade8" type="Node2D" parent="Noses"]
+
+[node name="Nose0" type="Sprite2D" parent="Noses/Upgrade8"]
+visible = false
+position = Vector2(172, 73)
+texture = ExtResource("4_dejr5")
+
+[node name="Nose1" type="Sprite2D" parent="Noses/Upgrade8"]
+visible = false
+position = Vector2(416, 288)
+texture = ExtResource("4_dejr5")
+
+[node name="Nose2" type="Sprite2D" parent="Noses/Upgrade8"]
+visible = false
+position = Vector2(516, 163)
+texture = ExtResource("4_dejr5")
+
+[node name="Nose3" type="Sprite2D" parent="Noses/Upgrade8"]
+visible = false
+position = Vector2(385, 44)
+texture = ExtResource("4_dejr5")
+
+[node name="Nose4" type="Sprite2D" parent="Noses/Upgrade8"]
+visible = false
+position = Vector2(320, 185)
+texture = ExtResource("4_dejr5")
+
+[node name="Nose5" type="Sprite2D" parent="Noses/Upgrade8"]
+visible = false
+position = Vector2(209, 250)
+texture = ExtResource("4_dejr5")
+
+[node name="Nose6" type="Sprite2D" parent="Noses/Upgrade8"]
+visible = false
+position = Vector2(277, -20)
+texture = ExtResource("4_dejr5")
+
+[node name="Nose7" type="Sprite2D" parent="Noses/Upgrade8"]
+visible = false
+position = Vector2(422, 137)
+texture = ExtResource("4_dejr5")
+
+[node name="Nose8" type="Sprite2D" parent="Noses/Upgrade8"]
+visible = false
+position = Vector2(284, 83)
+texture = ExtResource("4_dejr5")
+
+[node name="Upgrade9" type="Node2D" parent="Noses"]
+
+[node name="Nose0" type="Sprite2D" parent="Noses/Upgrade9"]
+visible = false
+position = Vector2(172, 73)
+texture = ExtResource("4_dejr5")
+
+[node name="Nose1" type="Sprite2D" parent="Noses/Upgrade9"]
+visible = false
+position = Vector2(416, 288)
+texture = ExtResource("4_dejr5")
+
+[node name="Nose2" type="Sprite2D" parent="Noses/Upgrade9"]
+visible = false
+position = Vector2(516, 163)
+texture = ExtResource("4_dejr5")
+
+[node name="Nose3" type="Sprite2D" parent="Noses/Upgrade9"]
+visible = false
+position = Vector2(385, 44)
+texture = ExtResource("4_dejr5")
+
+[node name="Nose4" type="Sprite2D" parent="Noses/Upgrade9"]
+visible = false
+position = Vector2(320, 185)
+texture = ExtResource("4_dejr5")
+
+[node name="Nose5" type="Sprite2D" parent="Noses/Upgrade9"]
+visible = false
+position = Vector2(209, 250)
+texture = ExtResource("4_dejr5")
+
+[node name="Nose6" type="Sprite2D" parent="Noses/Upgrade9"]
+visible = false
+position = Vector2(277, -20)
+texture = ExtResource("4_dejr5")
+
+[node name="Nose7" type="Sprite2D" parent="Noses/Upgrade9"]
+visible = false
+position = Vector2(422, 137)
+texture = ExtResource("4_dejr5")
+
+[node name="Nose8" type="Sprite2D" parent="Noses/Upgrade9"]
+visible = false
+position = Vector2(284, 83)
+texture = ExtResource("4_dejr5")
+
+[node name="Nose9" type="Sprite2D" parent="Noses/Upgrade9"]
+visible = false
+position = Vector2(330, 315)
 texture = ExtResource("4_dejr5")
