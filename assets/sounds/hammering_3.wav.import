@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cvag8132pjegd"
-path="res://.godot/imported/hammering_3_hits.wav-dccf30a867fee1e874d0488be4cadabe.sample"
+path="res://.godot/imported/hammering_3.wav-10e8c6d084f28e5bcaa3504eac58bb12.sample"
 
 [deps]
 
-source_file="res://assets/sounds/hammering_3_hits.wav"
-dest_files=["res://.godot/imported/hammering_3_hits.wav-dccf30a867fee1e874d0488be4cadabe.sample"]
+source_file="res://assets/sounds/hammering_3.wav"
+dest_files=["res://.godot/imported/hammering_3.wav-10e8c6d084f28e5bcaa3504eac58bb12.sample"]
 
 [params]
 

@@ -105,6 +105,10 @@ var override_powerplant_off_texture = false
 @onready var bb_normal = $BbNormal
 @onready var bb_in_construction = $BbInConstruction
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var bb_in_construction_appear_sound: AudioStreamPlayer = $BbInConstructionAppearSound
+@onready var bic_smoke: CPUParticles2D = $BicSmoke
+@onready var demolition_sound: AudioStreamPlayer = $DemolitionSound
+
 
 var can_build: Array[PowerplantsManager.EngineTypeIds] = []
 # Used to save the name of the pp node when it's built, to know it's name to delete it
@@ -173,7 +177,9 @@ func _on_powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMe
 			#Gameloop.available_money_message_requested.emit("-" + str(new_metrics.building_costs + new_metrics.production_costs).pad_decimals(1) + "M CHF", false)
 			new_metrics.construction_started_on_turn = Gameloop.current_turn
 			bb_in_construction.set_metrics(new_metrics)
-			bb_in_construction.show()
+			bic_smoke.emitting = true
+			animation_player.play("bb_in_construction_appear")
+			bb_in_construction_appear_sound.play()
 			history.pp_construction_started(new_metrics)
 		else:
 			MoneyManager.building_costs += new_metrics.building_costs
@@ -255,6 +261,8 @@ func _on_powerplant_cancel_construction_requested(metrics: PowerplantMetrics):
 	#Gameloop.available_money_message_requested.emit("+" + str(metrics.building_costs + metrics.production_costs).pad_decimals(1) + "M CHF", true)
 	history.pp_construction_canceled(metrics)
 	
+	demolition_sound.play()
+	bic_smoke.emitting = true
 	bb_in_construction.hide()
 	animation_player.play("bb_normal_appear")
 	TutorialManager.next_step_requested.emit()

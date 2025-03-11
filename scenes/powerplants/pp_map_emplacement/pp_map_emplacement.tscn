@@ -1,11 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://bp4i40e8i68xv"]
+[gd_scene load_steps=21 format=3 uid="uid://bp4i40e8i68xv"]
 
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_map_emplacement.gd" id="1_unu4e"]
 [ext_resource type="PackedScene" uid="uid://dbdgpa4pfgryb" path="res://scenes/powerplants/pp_map_emplacement/build_button/bb_normal.tscn" id="2_h8dd4"]
 [ext_resource type="PackedScene" uid="uid://d2hhtw1popthi" path="res://scenes/powerplants/pp_map_emplacement/build_button/bb_in_construction.tscn" id="3_xoig2"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/history_label.gd" id="4_44y7j"]
+[ext_resource type="AudioStream" uid="uid://cvag8132pjegd" path="res://assets/sounds/hammering_3.wav" id="5_o218l"]
+[ext_resource type="Texture2D" uid="uid://y8d24u83in2p" path="res://assets/textures/powerplants/effects/smoke.png" id="6_atxg7"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_scene/destruction_smoke.gd" id="7_g6ehh"]
+[ext_resource type="AudioStream" uid="uid://bmjgx10f7cgok" path="res://assets/sounds/debris.wav" id="8_mlm11"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_scene/demolition_sound.gd" id="9_adecw"]
 
-[sub_resource type="Shader" id="Shader_7s1oc"]
+[sub_resource type="Shader" id="Shader_ap7qr"]
 resource_local_to_scene = true
 code = "shader_type canvas_item;
 
@@ -49,14 +54,14 @@ void fragment() {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kixpu"]
 resource_local_to_scene = true
-shader = SubResource("Shader_7s1oc")
+shader = SubResource("Shader_ap7qr")
 shader_parameter/line_color = Vector4(1, 1, 1, 1)
 shader_parameter/line_thickness = 1.0
 shader_parameter/frequency = 10.0
 shader_parameter/phase_speed = 5.0
 shader_parameter/show = false
 
-[sub_resource type="Shader" id="Shader_7bw6t"]
+[sub_resource type="Shader" id="Shader_gkfd2"]
 resource_local_to_scene = true
 code = "shader_type canvas_item;
 
@@ -100,7 +105,7 @@ void fragment() {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g2jol"]
 resource_local_to_scene = true
-shader = SubResource("Shader_7bw6t")
+shader = SubResource("Shader_gkfd2")
 shader_parameter/line_color = Vector4(1, 1, 1, 1)
 shader_parameter/line_thickness = 1.0
 shader_parameter/frequency = 10.0
@@ -160,12 +165,78 @@ tracks/1/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BbInConstruction:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BbInConstruction:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7fg40"]
+resource_name = "bb_in_construction_appear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BbInConstruction:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BbInConstruction:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.25, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1.1, 1.1), Vector2(0.9, 0.9), Vector2(1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pa4e8"]
 _data = {
 "RESET": SubResource("Animation_2o72m"),
+"bb_in_construction_appear": SubResource("Animation_7fg40"),
 "bb_normal_appear": SubResource("Animation_17tum")
 }
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4e8h1"]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[sub_resource type="Curve" id="Curve_fk5jx"]
+_data = [Vector2(0, 0.846154), 0.0, 0.0, 0, 0, Vector2(1, 0.593407), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_lr7rt"]
+offsets = PackedFloat32Array(0.0133333, 0.0786517, 0.498246, 1)
+colors = PackedColorArray(0.890196, 0.890196, 0.890196, 0, 0.886275, 0.886275, 0.886275, 1, 0.858824, 0.858824, 0.858824, 0.25098, 1, 1, 1, 0)
 
 [node name="PpMapEmplacement" type="Node2D" groups=["map_emplacements"]]
 script = ExtResource("1_unu4e")
@@ -191,6 +262,52 @@ script = ExtResource("4_44y7j")
 libraries = {
 "": SubResource("AnimationLibrary_pa4e8")
 }
+
+[node name="BbInConstructionAppearSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_o218l")
+pitch_scale = 1.5
+
+[node name="BicSmoke" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_4e8h1")
+position = Vector2(346, 281)
+emitting = false
+amount = 50
+one_shot = true
+speed_scale = 3.5
+explosiveness = 0.19
+randomness = 0.1
+lifetime_randomness = 0.1
+draw_order = 1
+texture = ExtResource("6_atxg7")
+emission_shape = 3
+emission_rect_extents = Vector2(200, 200)
+direction = Vector2(0, -1)
+spread = 0.0
+gravity = Vector2(0, 20)
+initial_velocity_min = 40.0
+initial_velocity_max = 40.0
+angular_velocity_min = -20.0
+angular_velocity_max = 20.0
+linear_accel_max = 10.0
+radial_accel_min = -20.0
+radial_accel_max = 20.0
+tangential_accel_min = -20.0
+tangential_accel_max = 20.0
+damping_max = 200.0
+scale_amount_min = 2.0
+scale_amount_max = 7.0
+scale_amount_curve = SubResource("Curve_fk5jx")
+color = Color(0.779287, 0.642299, 0.545224, 1)
+color_ramp = SubResource("Gradient_lr7rt")
+anim_speed_min = 0.1
+anim_speed_max = 1.0
+script = ExtResource("7_g6ehh")
+
+[node name="DemolitionSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_mlm11")
+volume_db = -18.0
+bus = &"Sound"
+script = ExtResource("9_adecw")
 
 [connection signal="history_updated" from="." to="Label" method="_on_pp_map_emplacement_history_updated"]
 [connection signal="toggled" from="BbNormal" to="." method="_on_bb_normal_toggled"]

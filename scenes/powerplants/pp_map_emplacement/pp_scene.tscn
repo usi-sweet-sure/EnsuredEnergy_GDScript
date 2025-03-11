@@ -91,7 +91,7 @@ shader_parameter/frequency = 10.0
 shader_parameter/phase_speed = 1.0
 shader_parameter/appear = false
 shader_parameter/percentage = 1.0
-shader_parameter/line_angle = 0.0
+shader_parameter/line_angle = 3.14159
 shader_parameter/line_width = 0.02
 shader_parameter/line_color_2 = Color(1, 1, 1, 1)
 
@@ -1818,6 +1818,7 @@ libraries = {
 [node name="DemolitionSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("64_74vd0")
 volume_db = -18.0
+bus = &"Sound"
 script = ExtResource("65_0oa7b")
 
 [node name="DestructionSmoke" type="CPUParticles2D" parent="."]
@@ -1914,6 +1915,7 @@ script = ExtResource("65_pic2b")
 [connection signal="mouse_exited" from="CloseButton" to="On" method="_on_close_button_mouse_exited"]
 [connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
 [connection signal="pressed" from="CloseButton" to="On" method="_on_close_button_pressed"]
+[connection signal="pressed" from="CloseButton" to="Off" method="_on_close_button_pressed"]
 [connection signal="pressed" from="CloseButton" to="CloseButton" method="_on_pressed"]
 [connection signal="pressed" from="CloseButton" to="DemolitionSound" method="_on_close_button_pressed"]
 [connection signal="pressed" from="CloseButton" to="DestructionSmoke" method="_on_close_button_pressed"]

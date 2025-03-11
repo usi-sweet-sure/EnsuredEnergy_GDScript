@@ -2,6 +2,7 @@ extends TextureButton
 
 @onready var construction_ambiance_player: AnimationPlayer = $ConstructionAmbiancePlayer
 
+
 signal powerplant_cancel_construction_requested(metrics: PowerplantMetrics)
 signal powerplant_construction_ended(metrics: PowerplantMetrics)
 signal metrics_updated(metrics: PowerplantMetrics)

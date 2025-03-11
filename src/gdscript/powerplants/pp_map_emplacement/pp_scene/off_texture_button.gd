@@ -90,3 +90,16 @@ func _on_toggled(toggled_on: bool):
 	else:
 		material.set_shader_parameter("show", false)
 		hide_info_frame_requested.emit()
+
+
+func set_appear_percent(percentage: float) -> void:
+	material.set_shader_parameter('percentage', percentage)
+	
+	
+func _on_close_button_pressed() -> void:
+	material.set_shader_parameter("percentage", 1.0)
+	material.set_shader_parameter("line_width", 0)
+	material.set_shader_parameter("appear", true)
+	var tween = get_tree().create_tween()
+	tween.tween_method(set_appear_percent, 1.0, 0.0, 0.2)
+	await tween.finished
