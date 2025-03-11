@@ -13,6 +13,12 @@ func _ready():
 	wind_gust_scene = load("res://scenes/wind_gust.tscn")
 	wind_gusts.append(wind_gust_1)
 	
+	animation_player.play("upgrade" + str(0))
+	
+	for wind_gust in wind_gusts:
+		wind_gust.activate()
+		await get_tree().create_timer(randf_range(0, 1)).timeout
+	
 	var pp_scene: PpScene = get_parent()
 	# Disables the effects during the  build animation
 	if not pp_scene.built_on_start:
