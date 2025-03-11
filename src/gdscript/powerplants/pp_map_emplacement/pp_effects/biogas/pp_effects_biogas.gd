@@ -23,6 +23,7 @@ func _ready():
 	
 
 func effects_off(_metrics: PowerplantMetrics):
+	is_construction_animation_finished = true
 	pipe0.visible = false
 	pipe1.visible = false
 	pipe2.visible = false

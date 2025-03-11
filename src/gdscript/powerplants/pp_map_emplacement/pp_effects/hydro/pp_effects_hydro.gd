@@ -28,6 +28,7 @@ func _ready():
 
 
 func effects_off(_metrics: PowerplantMetrics):
+	is_construction_animation_finished = true
 	for element in foliage:
 		element.hide()
 		

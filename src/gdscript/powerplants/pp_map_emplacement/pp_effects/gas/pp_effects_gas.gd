@@ -22,6 +22,7 @@ func _ready():
 	
 
 func effects_off(_metrics: PowerplantMetrics):
+	is_construction_animation_finished = true
 	cpu_particles_2d.emitting = false
 	cpu_particles_2d_2.emitting = false
 	cpu_particles_2d_3.emitting = false

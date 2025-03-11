@@ -35,6 +35,7 @@ func _ready():
 
 
 func effects_off(_metrics: PowerplantMetrics):
+	is_construction_animation_finished = true
 	animation_player.play("RESET")
 	
 	for wind_gust in wind_gusts:

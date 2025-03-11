@@ -25,6 +25,7 @@ func _ready():
 
 
 func effects_off(_metrics: PowerplantMetrics):
+	is_construction_animation_finished = true
 	blue_water.emitting = false
 	white_water.emitting = false
 	still_water.hide()

@@ -20,6 +20,7 @@ func _ready() -> void:
 
 
 func effects_off(_metrics: PowerplantMetrics):
+	is_construction_animation_finished = true
 	god_rays.hide()
 	highlight.hide()
 	
