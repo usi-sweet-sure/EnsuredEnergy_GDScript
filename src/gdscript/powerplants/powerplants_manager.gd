@@ -112,7 +112,10 @@ var powerplants_textures_off: Array[Array] = [
 	 "res://assets/textures/powerplants/pp_sprite_off_wind_3.png",
 	 "res://assets/textures/powerplants/pp_sprite_off_wind_4.png",
 	 "res://assets/textures/powerplants/pp_sprite_off_wind_5.png",
-	 "res://assets/textures/powerplants/pp_sprite_off_wind_6.png",], 
+	 "res://assets/textures/powerplants/pp_sprite_off_wind_6.png",
+	 "res://assets/textures/powerplants/pp_sprite_off_wind_7.png",
+	 "res://assets/textures/powerplants/pp_sprite_off_wind_8.png",
+	 "res://assets/textures/powerplants/pp_sprite_off_wind_9.png",], 
 	# Gas
 	["res://assets/textures/powerplants/pp_sprite_off_gas.png"],
 	# Waste
