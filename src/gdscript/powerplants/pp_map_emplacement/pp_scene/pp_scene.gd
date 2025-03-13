@@ -3,7 +3,7 @@ extends Control
 class_name PpScene
 
 @onready var floating_message = $InfoFrame/Modifier/FloatingMessageContainer/FloatingMessage
-
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 # Used to update children
 signal metrics_updated(metrics: PowerplantMetrics)
@@ -18,7 +18,6 @@ signal texture_on_changed(image: Image)
 signal texture_off_changed(image: Image)
 signal construction_animation_finished(metrics: PowerplantMetrics)
 signal construction_animation_requested(metrics: PowerplantMetrics)
-signal destruction_animation_requested(metrics: PowerplantMetrics)
 
 
 var metrics: PowerplantMetrics
@@ -236,11 +235,13 @@ func change_image(metrics_: PowerplantMetrics):
 
 	texture_on_changed.emit(load(image_path_on))
 	texture_off_changed.emit(load(image_path_off))
-	
-
-func _on_appear_animation_finished() -> void:
-	construction_animation_finished.emit(metrics)
 
 
 func _on_close_button_pressed() -> void:
 	powerplant_delete_requested.emit(metrics)
+
+
+func _on_construction_animation_requested(metrics: PowerplantMetrics) -> void:
+	animation_player.play("construction")
+	await get_tree().create_timer(0.2).timeout
+	construction_animation_finished.emit(metrics)

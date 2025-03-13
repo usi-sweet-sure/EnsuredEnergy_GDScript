@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://vaxkewvk14v6"]
+[gd_scene load_steps=83 format=3 uid="uid://vaxkewvk14v6"]
 
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_scene/pp_scene.gd" id="1_aeq33"]
 [ext_resource type="Shader" path="res://src/gdscript/shaders/outline.gdshader" id="2_ln53j"]
@@ -60,9 +60,7 @@
 [ext_resource type="Texture2D" uid="uid://cggi7v5bayqja" path="res://assets/textures/shocks/shock_winter.png" id="58_fj4lj"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_scene/shock_chip.gd" id="59_kgvig"]
 [ext_resource type="Texture2D" uid="uid://y8d24u83in2p" path="res://assets/textures/powerplants/effects/smoke.png" id="60_cdixl"]
-[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_scene/construction_smoke.gd" id="61_me645"]
-[ext_resource type="AudioStream" uid="uid://b66rg7asssywk" path="res://assets/sounds/construction_cc0.mp3" id="62_y2erx"]
-[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_scene/construction_sound.gd" id="63_lbfgy"]
+[ext_resource type="AudioStream" uid="uid://cvag8132pjegd" path="res://assets/sounds/hammering_3.wav" id="60_d1cw7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rxno2"]
 resource_local_to_scene = true
@@ -835,20 +833,6 @@ _data = {
 "breath": SubResource("Animation_xwc5i")
 }
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_52cmj"]
-particles_animation = true
-particles_anim_h_frames = 3
-particles_anim_v_frames = 1
-particles_anim_loop = true
-
-[sub_resource type="Curve" id="Curve_yboya"]
-_data = [Vector2(0, 0.846154), 0.0, 0.0, 0, 0, Vector2(1, 0.593407), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="Gradient" id="Gradient_fxsdh"]
-offsets = PackedFloat32Array(0.0133333, 0.0786517, 0.498246, 1)
-colors = PackedColorArray(0.890196, 0.890196, 0.890196, 0, 0.886275, 0.886275, 0.886275, 1, 0.858824, 0.858824, 0.858824, 0.25098, 1, 1, 1, 0)
-
 [sub_resource type="Animation" id="Animation_wj5oj"]
 length = 0.001
 tracks/0/type = "value"
@@ -866,19 +850,43 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/1/path = NodePath("Smoke:emitting")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("On:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [-6.0]
+"values": [Vector2(1.3, 1.3)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CloseButton:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.3, 1.3)]
 }
 
 [sub_resource type="Animation" id="Animation_338qk"]
-resource_name = "fade_out"
-length = 5.0
+resource_name = "construction"
+length = 0.33
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -894,25 +902,64 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/1/path = NodePath("Smoke:emitting")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(2.66667, 4.7),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("On:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.25, 0.33),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [-8.0, -40.0]
+"values": [Vector2(0, 0), Vector2(1.4, 1.4), Vector2(1.2, 1.2), Vector2(1.3, 1.3)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CloseButton:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.25, 0.33),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1.4, 1.4), Vector2(1.2, 1.2), Vector2(1.3, 1.3)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fup87"]
 _data = {
 "RESET": SubResource("Animation_wj5oj"),
-"fade_out": SubResource("Animation_338qk")
+"construction": SubResource("Animation_338qk")
 }
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_jvn6y"]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[sub_resource type="Curve" id="Curve_ch62o"]
+_data = [Vector2(0, 0.846154), 0.0, 0.0, 0, 0, Vector2(1, 0.593407), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_psc15"]
+offsets = PackedFloat32Array(0.0133333, 0.0786517, 0.498246, 1)
+colors = PackedColorArray(0.890196, 0.890196, 0.890196, 0, 0.886275, 0.886275, 0.886275, 1, 0.858824, 0.858824, 0.858824, 0.25098, 1, 1, 1, 0)
 
 [node name="PpScene" type="Control" groups=["Powerplants"]]
 layout_mode = 3
 anchors_preset = 0
+pivot_offset = Vector2(347, 278)
 script = ExtResource("1_aeq33")
 
 [node name="On" type="TextureButton" parent="." groups=["pp_sprites"]]
@@ -947,6 +994,7 @@ offset_right = 754.0
 offset_bottom = 32.0
 grow_horizontal = 0
 scale = Vector2(1.3, 1.3)
+pivot_offset = Vector2(43, 44)
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("5_qmmyq")
@@ -1764,12 +1812,22 @@ libraries = {
 }
 speed_scale = 2.0
 
-[node name="ConstructionSmoke" type="CPUParticles2D" parent="."]
-material = SubResource("CanvasItemMaterial_52cmj")
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("60_d1cw7")
+volume_db = -8.0
+pitch_scale = 1.5
+bus = &"Sound"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fup87")
+}
+
+[node name="Smoke" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_jvn6y")
 position = Vector2(346, 281)
 emitting = false
 amount = 50
-lifetime = 10.0
 one_shot = true
 speed_scale = 3.5
 explosiveness = 0.19
@@ -1794,28 +1852,13 @@ tangential_accel_max = 20.0
 damping_max = 200.0
 scale_amount_min = 2.0
 scale_amount_max = 7.0
-scale_amount_curve = SubResource("Curve_yboya")
+scale_amount_curve = SubResource("Curve_ch62o")
 color = Color(0.779287, 0.642299, 0.545224, 1)
-color_ramp = SubResource("Gradient_fxsdh")
+color_ramp = SubResource("Gradient_psc15")
 anim_speed_min = 0.1
 anim_speed_max = 1.0
-script = ExtResource("61_me645")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("62_y2erx")
-volume_db = -6.0
-bus = &"Sound"
-script = ExtResource("63_lbfgy")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_fup87")
-}
-
-[connection signal="construction_animation_requested" from="." to="On" method="_on_construction_animation_requested"]
-[connection signal="construction_animation_requested" from="." to="CloseButton" method="_on_construction_animation_requested"]
-[connection signal="construction_animation_requested" from="." to="ConstructionSmoke" method="_on_construction_animation_requested"]
-[connection signal="construction_animation_requested" from="." to="AudioStreamPlayer" method="_on_construction_animation_requested"]
+[connection signal="construction_animation_requested" from="." to="." method="_on_construction_animation_requested"]
 [connection signal="hide_info_frame" from="." to="InfoFrame" method="_on_hide_info_frame"]
 [connection signal="metrics_updated" from="." to="." method="_on_metrics_updated"]
 [connection signal="metrics_updated" from="." to="On" method="_on_metrics_updated"]
@@ -1850,8 +1893,6 @@ libraries = {
 [connection signal="show_info_frame" from="." to="InfoFrame" method="_on_show_info_frame"]
 [connection signal="texture_off_changed" from="." to="Off" method="_on_pp_scene_texture_off_changed"]
 [connection signal="texture_on_changed" from="." to="On" method="_on_pp_scene_texture_on_changed"]
-[connection signal="appear_animation_finished" from="On" to="." method="_on_appear_animation_finished"]
-[connection signal="appear_animation_finished" from="On" to="CloseButton" method="_on_appear_animation_finished"]
 [connection signal="hide_info_frame_requested" from="On" to="." method="_on_pp_hide_info_frame_requested"]
 [connection signal="mouse_entered" from="On" to="On" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="On" to="On" method="_on_mouse_exited"]

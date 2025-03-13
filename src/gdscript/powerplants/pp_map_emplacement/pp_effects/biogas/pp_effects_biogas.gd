@@ -19,7 +19,6 @@ func _ready():
 	pp_scene.powerplant_activated.connect(effects_on)
 	pp_scene.powerplant_deactivated.connect(effects_off)
 	pp_scene.construction_animation_finished.connect(construction_animation_finished)
-	pp_scene.destruction_animation_requested.connect(destruction_animation_started)
 	
 
 func effects_off(_metrics: PowerplantMetrics):
@@ -41,10 +40,3 @@ func construction_animation_finished(_metrics: PowerplantMetrics):
 	pipe0.visible = true
 	pipe1.visible = true
 	pipe2.visible = true
-
-
-func destruction_animation_started(_metrics: PowerplantMetrics):
-	# This hides the particles instantly
-	pipe0.visible = false
-	pipe1.visible = false
-	pipe2.visible = false
