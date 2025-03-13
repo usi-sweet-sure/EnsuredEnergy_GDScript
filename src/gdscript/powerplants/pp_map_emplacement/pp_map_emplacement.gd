@@ -251,6 +251,9 @@ func _on_powerplant_delete_requested(metrics: PowerplantMetrics):
 	var node = get_node(powerplant_node_name)
 	remove_child(node)
 	node.queue_free()
+	demolition_sound.play()
+	bic_smoke.emitting = true
+	bb_in_construction.hide()
 	animation_player.play("bb_normal_appear")
 	PowerplantsManager.update_buildings_impact()
 	TutorialManager.next_step_requested.emit()

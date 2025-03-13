@@ -15,10 +15,6 @@ func _on_appear_animation_finished() -> void:
 		show()
 
 
-func _on_pressed() -> void:
-	hide()
-
-
 func _on_construction_animation_requested(metrics: PowerplantMetrics) -> void:
 	building = true
 	hide()

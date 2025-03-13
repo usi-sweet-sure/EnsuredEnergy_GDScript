@@ -236,15 +236,11 @@ func change_image(metrics_: PowerplantMetrics):
 
 	texture_on_changed.emit(load(image_path_on))
 	texture_off_changed.emit(load(image_path_off))
-
-
-func _on_destruction_smoke_finished() -> void:
-	powerplant_delete_requested.emit(metrics)
-
+	
 
 func _on_appear_animation_finished() -> void:
 	construction_animation_finished.emit(metrics)
 
 
 func _on_close_button_pressed() -> void:
-	destruction_animation_requested.emit(metrics)
+	powerplant_delete_requested.emit(metrics)
