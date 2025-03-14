@@ -1,28 +1,47 @@
-[gd_scene load_steps=9 format=3 uid="uid://cjs3hap5glb75"]
+[gd_scene load_steps=13 format=3 uid="uid://cjs3hap5glb75"]
 
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_effects/biogas/pp_effects_biogas.gd" id="1_n0lqt"]
 [ext_resource type="Shader" path="res://src/gdscript/shaders/pipe.gdshader" id="3_yamag"]
 [ext_resource type="Texture2D" uid="uid://dj6qfx4t0a57a" path="res://assets/textures/powerplants/effects/pipe_0.png" id="4_v8xy7"]
 [ext_resource type="Texture2D" uid="uid://dxjincm8anvlg" path="res://assets/textures/powerplants/effects/pipe1.png" id="5_bqme1"]
 [ext_resource type="Texture2D" uid="uid://dy4htqn4bhjug" path="res://assets/textures/powerplants/effects/pipe2.png" id="6_nqeke"]
+[ext_resource type="Texture2D" uid="uid://y8d24u83in2p" path="res://assets/textures/powerplants/effects/smoke.png" id="7_oqjdo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6knru"]
+resource_local_to_scene = true
 shader = ExtResource("3_yamag")
 shader_parameter/amplitude = 3.0
 shader_parameter/frequency = 16.0
 shader_parameter/speed = 10.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4wwao"]
+resource_local_to_scene = true
 shader = ExtResource("3_yamag")
 shader_parameter/amplitude = 1.5
 shader_parameter/frequency = 16.0
 shader_parameter/speed = 20.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_502mo"]
+resource_local_to_scene = true
 shader = ExtResource("3_yamag")
 shader_parameter/amplitude = 2.0
 shader_parameter/frequency = 4.0
 shader_parameter/speed = 25.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_s8o0x"]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[sub_resource type="Curve" id="Curve_a6o1q"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.351648), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_mw077"]
+resource_local_to_scene = true
+offsets = PackedFloat32Array(0, 0.0280899, 0.623595, 1)
+colors = PackedColorArray(0.356863, 0.384314, 0.356863, 0, 0.35511, 0.38371, 0.356091, 1, 0.581034, 0.581033, 0.581032, 0.572425, 0.678944, 0.678944, 0.678944, 0)
 
 [node name="PpEffectsBiogas" type="Node2D"]
 script = ExtResource("1_n0lqt")
@@ -44,3 +63,106 @@ material = SubResource("ShaderMaterial_502mo")
 position = Vector2(475, 367)
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("6_nqeke")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_s8o0x")
+position = Vector2(369, -3)
+rotation = -0.59654
+emitting = false
+amount = 5
+lifetime = 1.5
+explosiveness = 1.0
+draw_order = 1
+texture = ExtResource("7_oqjdo")
+direction = Vector2(0, -1)
+spread = 10.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 100.0
+tangential_accel_min = 4.0
+tangential_accel_max = 4.0
+scale_amount_max = 1.2
+scale_amount_curve = SubResource("Curve_a6o1q")
+color = Color(1, 1, 1, 0.858824)
+color_ramp = SubResource("Gradient_mw077")
+
+[node name="CPUParticles2D5" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_s8o0x")
+position = Vector2(439, 32)
+rotation = 3.02737
+scale = Vector2(1, 1)
+emitting = false
+amount = 5
+explosiveness = 0.6
+draw_order = 1
+texture = ExtResource("7_oqjdo")
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 100.0
+tangential_accel_min = 4.0
+tangential_accel_max = 4.0
+scale_amount_max = 1.2
+scale_amount_curve = SubResource("Curve_a6o1q")
+color = Color(1, 1, 1, 0.858824)
+color_ramp = SubResource("Gradient_mw077")
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_s8o0x")
+position = Vector2(245, 17)
+rotation = 3.02737
+emitting = false
+amount = 5
+explosiveness = 0.5
+draw_order = 1
+texture = ExtResource("7_oqjdo")
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 100.0
+tangential_accel_min = 4.0
+tangential_accel_max = 4.0
+scale_amount_max = 1.2
+scale_amount_curve = SubResource("Curve_a6o1q")
+color = Color(1, 1, 1, 0.858824)
+color_ramp = SubResource("Gradient_mw077")
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_s8o0x")
+position = Vector2(500, 347)
+rotation = 1.45283
+emitting = false
+amount = 5
+explosiveness = 0.75
+draw_order = 1
+texture = ExtResource("7_oqjdo")
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 100.0
+tangential_accel_min = 4.0
+tangential_accel_max = 4.0
+scale_amount_max = 1.2
+scale_amount_curve = SubResource("Curve_a6o1q")
+color = Color(1, 1, 1, 0.858824)
+color_ramp = SubResource("Gradient_mw077")
+
+[node name="CPUParticles2D4" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_s8o0x")
+position = Vector2(323, 195)
+rotation = 3.02737
+scale = Vector2(1, 1)
+emitting = false
+amount = 5
+explosiveness = 0.25
+draw_order = 1
+texture = ExtResource("7_oqjdo")
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 100.0
+tangential_accel_min = 4.0
+tangential_accel_max = 4.0
+scale_amount_max = 1.2
+scale_amount_curve = SubResource("Curve_a6o1q")
+color = Color(1, 1, 1, 0.858824)
+color_ramp = SubResource("Gradient_mw077")
