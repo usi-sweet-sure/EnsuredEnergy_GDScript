@@ -272,7 +272,6 @@ anim_speed_max = 1.0
 
 [node name="falling_leaves" type="CPUParticles2D" parent="."]
 position = Vector2(264, 67)
-amount = 2
 lifetime = 7.0
 texture = ExtResource("10_d6ucc")
 emission_shape = 2
@@ -292,7 +291,6 @@ color_ramp = SubResource("Gradient_vk3jw")
 
 [node name="falling_leaves2" type="CPUParticles2D" parent="."]
 position = Vector2(129, 130)
-amount = 2
 lifetime = 7.0
 texture = ExtResource("11_uli60")
 emission_shape = 2
@@ -312,7 +310,6 @@ color_ramp = SubResource("Gradient_vk3jw")
 
 [node name="falling_leaves3" type="CPUParticles2D" parent="."]
 position = Vector2(212, 53)
-amount = 2
 lifetime = 7.0
 texture = ExtResource("12_wmq4h")
 emission_shape = 2
@@ -332,7 +329,6 @@ color_ramp = SubResource("Gradient_vk3jw")
 
 [node name="falling_leaves4" type="CPUParticles2D" parent="."]
 position = Vector2(141, 180)
-amount = 2
 lifetime = 7.0
 texture = ExtResource("13_ngq3h")
 emission_shape = 2
@@ -352,7 +348,6 @@ color_ramp = SubResource("Gradient_vk3jw")
 
 [node name="falling_leaves5" type="CPUParticles2D" parent="."]
 position = Vector2(183, 111)
-amount = 2
 lifetime = 7.0
 texture = ExtResource("14_p83c1")
 emission_shape = 2
