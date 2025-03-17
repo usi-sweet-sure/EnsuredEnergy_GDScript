@@ -94,6 +94,7 @@ libraries = {
 
 [node name="Hammering2Hits" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_e2waq")
+volume_db = -6.0
 bus = &"Sound"
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

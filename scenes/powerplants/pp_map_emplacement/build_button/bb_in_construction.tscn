@@ -16,7 +16,7 @@
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/bb_in_construction/info_frame/build_time_left.gd" id="11_16lme"]
 [ext_resource type="Texture2D" uid="uid://cm7cds6soi7e4" path="res://assets/textures/icons/chalk_hourglass.png" id="15_2l1ub"]
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/bb_in_construction/construction_time.gd" id="16_6u6my"]
-[ext_resource type="AudioStream" uid="uid://coab0nvl58y6" path="res://assets/sounds/Construction_sounds.mp3" id="17_mph5g"]
+[ext_resource type="AudioStream" uid="uid://coab0nvl58y6" path="res://assets/sounds/ambiences/construction.mp3" id="17_mph5g"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_52txu"]
 resource_local_to_scene = true
@@ -430,7 +430,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [-12.0]
+"values": [-18.0]
 }
 
 [sub_resource type="Animation" id="Animation_kc5df"]
@@ -649,7 +649,7 @@ script = ExtResource("16_6u6my")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_mph5g")
-volume_db = -12.0
+volume_db = -18.0
 bus = &"Sound"
 
 [node name="ConstructionAmbiancePlayer" type="AnimationPlayer" parent="."]

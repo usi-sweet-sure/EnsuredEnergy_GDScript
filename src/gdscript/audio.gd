@@ -2,9 +2,6 @@ extends Node
 
 
 @onready var forest_ambiance: AudioStreamPlayer = $ForestAmbiance
-@onready var water: AudioStreamPlayer2D = $Water
-@onready var water_2: AudioStreamPlayer2D = $Water2
-@onready var wind: AudioStreamPlayer2D = $Wind
 @onready var dark_fantasy: AudioStreamPlayer = $DarkFantasy
 @onready var button_hover = $ButtonHover
 @onready var button_press = $ButtonPress

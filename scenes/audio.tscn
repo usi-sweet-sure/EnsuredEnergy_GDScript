@@ -1,9 +1,7 @@
-[gd_scene load_steps=18 format=4 uid="uid://cuuj2s4h1588i"]
+[gd_scene load_steps=16 format=4 uid="uid://cuuj2s4h1588i"]
 
 [ext_resource type="Script" path="res://src/gdscript/audio.gd" id="1_7lxuj"]
-[ext_resource type="AudioStream" uid="uid://c78fhd6h6rxwg" path="res://assets/sounds/ambiance_forest.wav" id="1_lqxid"]
-[ext_resource type="AudioStream" uid="uid://chfos7nbvqtwi" path="res://assets/sounds/ambiance_waterfall.wav" id="2_sy5eb"]
-[ext_resource type="AudioStream" uid="uid://5ohbdhp41n1m" path="res://assets/sounds/ambiance_wind.wav" id="3_bohix"]
+[ext_resource type="AudioStream" uid="uid://c78fhd6h6rxwg" path="res://assets/sounds/ambiences/forest.wav" id="1_lqxid"]
 [ext_resource type="AudioStream" uid="uid://csqgcy86hhwvs" path="res://assets/sounds/click_1.wav" id="5_h5sa0"]
 [ext_resource type="AudioStream" uid="uid://00apgxjmwgw0" path="res://assets/sounds/click_0.wav" id="6_56jxk"]
 [ext_resource type="AudioStream" uid="uid://d0mx81kv2vlha" path="res://assets/sounds/error_1.wav" id="7_m15oc"]
@@ -112,24 +110,8 @@ script = ExtResource("1_7lxuj")
 
 [node name="ForestAmbiance" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_lqxid")
-volume_db = -15.0
+volume_db = -6.0
 bus = &"Music"
-
-[node name="Water" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_sy5eb")
-pitch_scale = 0.9
-bus = &"Sound"
-
-[node name="Water2" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_sy5eb")
-volume_db = -2.0
-pitch_scale = 1.2
-bus = &"Sound"
-
-[node name="Wind" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_bohix")
-autoplay = true
-bus = &"Sound"
 
 [node name="DarkFantasy" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamMP3_17urj")

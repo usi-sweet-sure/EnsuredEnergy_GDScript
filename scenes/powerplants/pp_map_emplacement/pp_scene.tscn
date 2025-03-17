@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://vaxkewvk14v6"]
+[gd_scene load_steps=84 format=3 uid="uid://vaxkewvk14v6"]
 
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_scene/pp_scene.gd" id="1_aeq33"]
 [ext_resource type="Shader" path="res://src/gdscript/shaders/outline.gdshader" id="2_ln53j"]
@@ -61,6 +61,7 @@
 [ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_scene/shock_chip.gd" id="59_kgvig"]
 [ext_resource type="Texture2D" uid="uid://y8d24u83in2p" path="res://assets/textures/powerplants/effects/smoke.png" id="60_cdixl"]
 [ext_resource type="AudioStream" uid="uid://cvag8132pjegd" path="res://assets/sounds/hammering_3.wav" id="60_d1cw7"]
+[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_scene/ambience.gd" id="62_g0ssb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rxno2"]
 resource_local_to_scene = true
@@ -1858,6 +1859,10 @@ color_ramp = SubResource("Gradient_psc15")
 anim_speed_min = 0.1
 anim_speed_max = 1.0
 
+[node name="Ambience" type="AudioStreamPlayer" parent="."]
+bus = &"Sound"
+script = ExtResource("62_g0ssb")
+
 [connection signal="construction_animation_requested" from="." to="." method="_on_construction_animation_requested"]
 [connection signal="hide_info_frame" from="." to="InfoFrame" method="_on_hide_info_frame"]
 [connection signal="metrics_updated" from="." to="." method="_on_metrics_updated"]
@@ -1890,13 +1895,18 @@ anim_speed_max = 1.0
 [connection signal="metrics_updated" from="." to="InfoFrame/LedOn" method="_on_metrics_updated"]
 [connection signal="metrics_updated" from="." to="InfoFrame/DecomissionedOverlay" method="_on_metrics_updated"]
 [connection signal="metrics_updated" from="." to="ShutDownWarning" method="_on_metrics_updated"]
+[connection signal="metrics_updated" from="." to="Ambience" method="_on_pp_scene_metrics_updated"]
+[connection signal="powerplant_activated" from="." to="Ambience" method="_on_pp_scene_powerplant_activated"]
+[connection signal="powerplant_deactivated" from="." to="Ambience" method="_on_pp_scene_powerplant_deactivated"]
 [connection signal="show_info_frame" from="." to="InfoFrame" method="_on_show_info_frame"]
 [connection signal="texture_off_changed" from="." to="Off" method="_on_pp_scene_texture_off_changed"]
 [connection signal="texture_on_changed" from="." to="On" method="_on_pp_scene_texture_on_changed"]
 [connection signal="hide_info_frame_requested" from="On" to="." method="_on_pp_hide_info_frame_requested"]
+[connection signal="hide_info_frame_requested" from="On" to="Ambience" method="_on_on_hide_info_frame_requested"]
 [connection signal="mouse_entered" from="On" to="On" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="On" to="On" method="_on_mouse_exited"]
 [connection signal="show_info_frame_requested" from="On" to="." method="_on_pp_show_info_frame_requested"]
+[connection signal="show_info_frame_requested" from="On" to="Ambience" method="_on_on_show_info_frame_requested"]
 [connection signal="toggled" from="On" to="." method="_on_pp_toggled"]
 [connection signal="toggled" from="On" to="On" method="_on_toggled"]
 [connection signal="hide_info_frame_requested" from="Off" to="." method="_on_pp_hide_info_frame_requested"]

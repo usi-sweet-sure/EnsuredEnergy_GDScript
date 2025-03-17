@@ -51,7 +51,22 @@ var powerplants_effects: Array[String] = [
 	"", # Carbon sequestration
 	"res://scenes/powerplants/pp_map_emplacement/pp_effects/hydro/pp_effects_hydro.tscn", # Hydro
 	"res://scenes/powerplants/pp_map_emplacement/pp_effects/river/pp_effects_river.tscn", # River 
-] 
+]
+
+# Ambience sound playing when the powerplant is in focus
+# MUST BE in the same order as EngineTypeIds
+var powerplants_ambiences: Array[String] = [
+	"res://assets/sounds/ambiences/wind.wav", # Solar
+	"res://assets/sounds/ambiences/wind.wav", # Wind
+	"res://assets/sounds/ambiences/wind.wav", # Gas
+	"res://assets/sounds/ambiences/wind.wav", # Waste
+	"res://assets/sounds/ambiences/wind.wav", # Biomass
+	"res://assets/sounds/ambiences/wind.wav", # Biogas
+	"res://assets/sounds/ambiences/wind.wav", # Nuclear
+	"res://assets/sounds/ambiences/wind.wav", # Carbon sequestration
+	"res://assets/sounds/ambiences/waterfall.wav", # Hydro
+	"res://assets/sounds/ambiences/waterfall.wav", # River 
+]
 
 # First dimension MUST BE in the same order as EngineTypeIds
 # Second dimension in upgrades order

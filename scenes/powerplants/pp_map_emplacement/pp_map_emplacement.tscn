@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://y8d24u83in2p" path="res://assets/textures/powerplants/effects/smoke.png" id="6_atxg7"]
 [ext_resource type="AudioStream" uid="uid://bmjgx10f7cgok" path="res://assets/sounds/debris.wav" id="8_mlm11"]
 
-[sub_resource type="Shader" id="Shader_1s6m4"]
+[sub_resource type="Shader" id="Shader_3l2oi"]
 resource_local_to_scene = true
 code = "shader_type canvas_item;
 
@@ -52,14 +52,14 @@ void fragment() {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kixpu"]
 resource_local_to_scene = true
-shader = SubResource("Shader_1s6m4")
+shader = SubResource("Shader_3l2oi")
 shader_parameter/line_color = Vector4(1, 1, 1, 1)
 shader_parameter/line_thickness = 1.0
 shader_parameter/frequency = 10.0
 shader_parameter/phase_speed = 5.0
 shader_parameter/show = false
 
-[sub_resource type="Shader" id="Shader_6x33e"]
+[sub_resource type="Shader" id="Shader_khh2i"]
 resource_local_to_scene = true
 code = "shader_type canvas_item;
 
@@ -103,7 +103,7 @@ void fragment() {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g2jol"]
 resource_local_to_scene = true
-shader = SubResource("Shader_6x33e")
+shader = SubResource("Shader_khh2i")
 shader_parameter/line_color = Vector4(1, 1, 1, 1)
 shader_parameter/line_thickness = 1.0
 shader_parameter/frequency = 10.0
@@ -317,7 +317,7 @@ script = SubResource("GDScript_t6lhf")
 
 [node name="DemolitionSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_mlm11")
-volume_db = -18.0
+volume_db = -24.0
 bus = &"Sound"
 script = SubResource("GDScript_1duj8")
 

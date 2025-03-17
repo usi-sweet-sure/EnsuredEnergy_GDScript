@@ -25,19 +25,6 @@ metadata/_edit_vertical_guides_ = [1047.0]
 volume_db = -16.0
 bus = &"Sound"
 
-[node name="Water" parent="Audio" index="1"]
-position = Vector2(808, 2080)
-volume_db = -10.0
-autoplay = true
-
-[node name="Water2" parent="Audio" index="2"]
-position = Vector2(2056, 2080)
-volume_db = -8.0
-autoplay = true
-
-[node name="Wind" parent="Audio" index="3"]
-position = Vector2(-568, 576)
-
 [node name="ColorRect" type="ColorRect" parent="." groups=["draggables"]]
 offset_left = -4536.0
 offset_top = -2040.0
