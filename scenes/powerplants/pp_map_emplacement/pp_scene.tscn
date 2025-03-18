@@ -1001,6 +1001,7 @@ stretch_mode = 0
 script = ExtResource("5_qmmyq")
 
 [node name="InfoFrame" type="TextureRect" parent="." groups=["pp_info_frames"]]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -1769,6 +1770,7 @@ color = Color(1, 1, 1, 0)
 script = ExtResource("55_xmnw1")
 
 [node name="Position" type="Label" parent="InfoFrame"]
+visible = false
 layout_mode = 0
 offset_left = 1236.08
 offset_top = 348.231
