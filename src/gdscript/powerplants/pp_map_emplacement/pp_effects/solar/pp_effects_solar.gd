@@ -41,7 +41,7 @@ func _on_powerplant_upgraded(metrics: PowerplantMetrics):
 	var current_upgrade = metrics.current_upgrade - 1
 	var intensity = float(current_upgrade - metrics.min_upgrade) / (metrics.max_upgrade - metrics.min_upgrade)
 	god_rays.material.set_shader_parameter("ray2_intensity", intensity)
-
+	
 
 func _on_powerplant_downgraded(metrics: PowerplantMetrics):
 	if metrics.current_upgrade == metrics.min_upgrade:

@@ -25,6 +25,7 @@ var metrics: PowerplantMetrics
 # This is used to revert the changes made to metrics during a shock
 var metrics_backup: PowerplantMetrics
 var built_on_start = false
+var effects_added = false
 
 func _ready():
 	GroupManager.buttons_group_updated.emit()
@@ -39,7 +40,8 @@ func set_metrics(metrics_: PowerplantMetrics):
 	
 	# Set effects overlay
 	var effects_scene_path = PowerplantsManager.powerplants_effects[metrics_.type]
-	if effects_scene_path != "":
+	if effects_scene_path != "" and not effects_added:
+		effects_added = true
 		var effects_scene = load(effects_scene_path).instantiate()
 		add_child(effects_scene)
 		move_child(effects_scene, 3)
