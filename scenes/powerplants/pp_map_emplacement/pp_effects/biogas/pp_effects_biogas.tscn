@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://cjs3hap5glb75"]
 
-[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_effects/biogas/pp_effects_biogas.gd" id="1_n0lqt"]
-[ext_resource type="Shader" path="res://src/gdscript/shaders/pipe.gdshader" id="3_yamag"]
+[ext_resource type="Script" uid="uid://b877icf2hc5rg" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_effects/biogas/pp_effects_biogas.gd" id="1_n0lqt"]
+[ext_resource type="Shader" uid="uid://boc1us4rpeokr" path="res://src/gdscript/shaders/pipe.gdshader" id="3_yamag"]
 [ext_resource type="Texture2D" uid="uid://dj6qfx4t0a57a" path="res://assets/textures/powerplants/effects/pipe_0.png" id="4_v8xy7"]
 [ext_resource type="Texture2D" uid="uid://dxjincm8anvlg" path="res://assets/textures/powerplants/effects/pipe1.png" id="5_bqme1"]
 [ext_resource type="Texture2D" uid="uid://dy4htqn4bhjug" path="res://assets/textures/powerplants/effects/pipe2.png" id="6_nqeke"]

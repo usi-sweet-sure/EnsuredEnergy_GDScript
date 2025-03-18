@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://e8ix8khacqof"]
 
 [ext_resource type="Texture2D" uid="uid://dr6s2y4ydg7mw" path="res://assets/textures/powerplants/blades.png" id="1_c3n8u"]
-[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_effects/wind/pp_effects_wind.gd" id="1_tsye3"]
+[ext_resource type="Script" uid="uid://b02wuy8lmfg8k" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_effects/wind/pp_effects_wind.gd" id="1_tsye3"]
 [ext_resource type="Texture2D" uid="uid://bh1jd2q534s57" path="res://assets/textures/powerplants/pp_sprite_on_wind.png" id="2_xb4k0"]
 [ext_resource type="Texture2D" uid="uid://d1dchtgr8dspw" path="res://assets/textures/powerplants/nose.png" id="4_dejr5"]
 [ext_resource type="PackedScene" uid="uid://e7nl64v1gs0l" path="res://scenes/wind_gust.tscn" id="4_e4f5j"]
@@ -2115,17 +2115,17 @@ tracks/19/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_06ksm"]
 _data = {
-"RESET": SubResource("Animation_q4tqr"),
-"upgrade0": SubResource("Animation_eqjn1"),
-"upgrade1": SubResource("Animation_ycyey"),
-"upgrade2": SubResource("Animation_lb4vu"),
-"upgrade3": SubResource("Animation_sx7j8"),
-"upgrade4": SubResource("Animation_qmwdp"),
-"upgrade5": SubResource("Animation_h7q01"),
-"upgrade6": SubResource("Animation_dh6ni"),
-"upgrade7": SubResource("Animation_er36q"),
-"upgrade8": SubResource("Animation_vbqt4"),
-"upgrade9": SubResource("Animation_l3kf6")
+&"RESET": SubResource("Animation_q4tqr"),
+&"upgrade0": SubResource("Animation_eqjn1"),
+&"upgrade1": SubResource("Animation_ycyey"),
+&"upgrade2": SubResource("Animation_lb4vu"),
+&"upgrade3": SubResource("Animation_sx7j8"),
+&"upgrade4": SubResource("Animation_qmwdp"),
+&"upgrade5": SubResource("Animation_h7q01"),
+&"upgrade6": SubResource("Animation_dh6ni"),
+&"upgrade7": SubResource("Animation_er36q"),
+&"upgrade8": SubResource("Animation_vbqt4"),
+&"upgrade9": SubResource("Animation_l3kf6")
 }
 
 [sub_resource type="Gradient" id="Gradient_lxvib"]

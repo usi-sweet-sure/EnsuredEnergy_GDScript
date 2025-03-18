@@ -7,4 +7,4 @@ func _ready():
 
 
 func _on_total_production_costs_updated(new_value: float):
-	text = "-" + str(round(new_value))
+	text = "-" + str(round(new_value)).pad_decimals(0)

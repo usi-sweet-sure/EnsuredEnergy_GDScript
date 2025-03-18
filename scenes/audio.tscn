@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=4 uid="uid://cuuj2s4h1588i"]
 
-[ext_resource type="Script" path="res://src/gdscript/audio.gd" id="1_7lxuj"]
+[ext_resource type="Script" uid="uid://d0pqo10ltaln2" path="res://src/gdscript/audio.gd" id="1_7lxuj"]
 [ext_resource type="AudioStream" uid="uid://c78fhd6h6rxwg" path="res://assets/sounds/ambiences/forest.wav" id="1_lqxid"]
 [ext_resource type="AudioStream" uid="uid://csqgcy86hhwvs" path="res://assets/sounds/click_1.wav" id="5_h5sa0"]
 [ext_resource type="AudioStream" uid="uid://00apgxjmwgw0" path="res://assets/sounds/click_0.wav" id="6_56jxk"]
@@ -100,9 +100,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_43v5f"]
 _data = {
-"RESET": SubResource("Animation_h5q8b"),
-"fade_in": SubResource("Animation_atecw"),
-"fade_out": SubResource("Animation_naq6y")
+&"RESET": SubResource("Animation_h5q8b"),
+&"fade_in": SubResource("Animation_atecw"),
+&"fade_out": SubResource("Animation_naq6y")
 }
 
 [node name="Audio" type="Node"]

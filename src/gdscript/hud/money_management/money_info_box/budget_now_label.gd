@@ -9,4 +9,4 @@ func _ready():
 
 
 func _on_money_change(_value: float):
-	text = str(round(MoneyManager.players_own_money_amount + MoneyManager.borrowed_money_amount))
+	text = str(round(MoneyManager.players_own_money_amount + MoneyManager.borrowed_money_amount)).pad_decimals(0)

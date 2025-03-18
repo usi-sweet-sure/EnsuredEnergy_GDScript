@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://ctduwpmfrowdb"]
 
-[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_effects/gas/pp_effects_gas.gd" id="1_laqyj"]
+[ext_resource type="Script" uid="uid://dvec6a2jm5nlr" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_effects/gas/pp_effects_gas.gd" id="1_laqyj"]
 [ext_resource type="Texture2D" uid="uid://y8d24u83in2p" path="res://assets/textures/powerplants/effects/smoke.png" id="2_48vdm"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_awk60"]

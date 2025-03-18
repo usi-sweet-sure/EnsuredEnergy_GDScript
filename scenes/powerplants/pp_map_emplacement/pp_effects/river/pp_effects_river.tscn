@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://br54ii8p0huwx"]
 
-[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_effects/river/pp_effects_river.gd" id="1_fkb4u"]
-[ext_resource type="Shader" path="res://src/gdscript/shaders/water.gdshader" id="2_3lisu"]
+[ext_resource type="Script" uid="uid://b1o8pjlhkyonm" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_effects/river/pp_effects_river.gd" id="1_fkb4u"]
+[ext_resource type="Shader" uid="uid://dkfw1hy216d5f" path="res://src/gdscript/shaders/water.gdshader" id="2_3lisu"]
 [ext_resource type="Texture2D" uid="uid://bq30i0qq0gfjv" path="res://assets/textures/powerplants/effects/river.png" id="3_xttp2"]
 [ext_resource type="Texture2D" uid="uid://7fcty8ohfwju" path="res://assets/textures/powerplants/effects/water.png" id="4_b5rbi"]
 [ext_resource type="Texture2D" uid="uid://y8d24u83in2p" path="res://assets/textures/powerplants/effects/smoke.png" id="5_kvliq"]

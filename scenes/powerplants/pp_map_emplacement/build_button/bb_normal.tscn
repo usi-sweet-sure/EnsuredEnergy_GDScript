@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://dbdgpa4pfgryb"]
 
-[ext_resource type="Shader" path="res://src/gdscript/shaders/outline.gdshader" id="1_kx28v"]
+[ext_resource type="Shader" uid="uid://bk3o4q3or40xk" path="res://src/gdscript/shaders/outline.gdshader" id="1_kx28v"]
 [ext_resource type="Texture2D" uid="uid://cd8341rl44tws" path="res://assets/textures/powerplants/bb_normal.png" id="1_skkg8"]
 [ext_resource type="BitMap" uid="uid://1iqu0g7vgbmb" path="res://assets/textures/powerplants/bb_click_mask.png" id="2_6lg61"]
-[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/bb_normal/texture_button.gd" id="3_hd2cs"]
+[ext_resource type="Script" uid="uid://fl4ihknasbmt" path="res://src/gdscript/powerplants/pp_map_emplacement/bb_normal/texture_button.gd" id="3_hd2cs"]
 [ext_resource type="Texture2D" uid="uid://d1nj3wl5q4pnv" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0017_Icon-Hammer.png" id="4_1bplc"]
 [ext_resource type="AudioStream" uid="uid://btm4lsuqic4m7" path="res://assets/sounds/hammering_2.wav" id="6_e2waq"]
 
@@ -66,8 +66,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rvuip"]
 _data = {
-"RESET": SubResource("Animation_mdkh6"),
-"animate_focus": SubResource("Animation_khtaf")
+&"RESET": SubResource("Animation_mdkh6"),
+&"animate_focus": SubResource("Animation_khtaf")
 }
 
 [node name="BbNormal" type="TextureButton" groups=["BB"]]

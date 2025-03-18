@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://85fx111n8erw"]
 
-[ext_resource type="Shader" path="res://src/gdscript/shaders/highlight.gdshader" id="1_mnkvw"]
-[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_effects/solar/pp_effects_solar.gd" id="1_xchol"]
-[ext_resource type="Shader" path="res://src/gdscript/shaders/god_rays.gdshader" id="4_my3tj"]
+[ext_resource type="Shader" uid="uid://wx8g4nisun2n" path="res://src/gdscript/shaders/highlight.gdshader" id="1_mnkvw"]
+[ext_resource type="Script" uid="uid://r083o5pl015e" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_effects/solar/pp_effects_solar.gd" id="1_xchol"]
+[ext_resource type="Shader" uid="uid://cnokacav3m0gh" path="res://src/gdscript/shaders/god_rays.gdshader" id="4_my3tj"]
 [ext_resource type="Texture2D" uid="uid://bgbm8t4r0m4a0" path="res://assets/textures/powerplants/pp_sprite_on_solar.png" id="4_wrfau"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_68vx2"]

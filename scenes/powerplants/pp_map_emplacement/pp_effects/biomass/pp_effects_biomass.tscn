@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b3v4qga38u86x"]
 
 [ext_resource type="Texture2D" uid="uid://y8d24u83in2p" path="res://assets/textures/powerplants/effects/smoke.png" id="1_nurb7"]
-[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_effects/biomass/pp_effects_biomass.gd" id="1_pja6a"]
+[ext_resource type="Script" uid="uid://cslx0jvfysxvv" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_effects/biomass/pp_effects_biomass.gd" id="1_pja6a"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_eom3m"]
 particles_animation = true
@@ -10,7 +10,7 @@ particles_anim_v_frames = 1
 particles_anim_loop = true
 
 [sub_resource type="Curve" id="Curve_v1em1"]
-max_value = 2.0
+_limits = [0.0, 2.0, 0.0, 1.0]
 _data = [Vector2(0, 1.31868), 0.0, 0.0, 0, 0, Vector2(1, 0.725275), 0.0, 0.0, 0, 0]
 point_count = 2
 

@@ -1,15 +1,15 @@
 [gd_scene load_steps=36 format=3 uid="uid://pvoi2mcc3oc1"]
 
-[ext_resource type="Script" path="res://src/gdscript/starting_screen/menu.gd" id="1_hl1kv"]
-[ext_resource type="Shader" path="res://src/gdscript/shaders/cloud.gdshader" id="2_8lpgc"]
+[ext_resource type="Script" uid="uid://36oi73byoywi" path="res://src/gdscript/starting_screen/menu.gd" id="1_hl1kv"]
+[ext_resource type="Shader" uid="uid://fkpbxalsaovj" path="res://src/gdscript/shaders/cloud.gdshader" id="2_8lpgc"]
 [ext_resource type="Texture2D" uid="uid://cgp2b1kada3ww" path="res://assets/title/map.png" id="2_madfd"]
 [ext_resource type="Texture2D" uid="uid://kfrnyvqb84es" path="res://assets/title/cloud.png" id="3_0nshc"]
-[ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/fonts/special_elite/special_elite_regular.ttf" id="3_hwgqu"]
+[ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/new_fonts/special_elite/special_elite_regular.ttf" id="3_hwgqu"]
 [ext_resource type="Texture2D" uid="uid://d2xmfb55o0osw" path="res://assets/textures/ui/All-HQ-Assets-D_0006s_0014_Start-menu-metal-base.png" id="4_dgun4"]
-[ext_resource type="FontFile" uid="uid://bt2f3flr7psn5" path="res://assets/fonts/vt323/vt323_regular.ttf" id="4_u4k4v"]
-[ext_resource type="FontFile" uid="uid://dxtsp51pqna2o" path="res://assets/fonts/static/open_sans_bold.ttf" id="5_tofyq"]
+[ext_resource type="FontFile" uid="uid://bt2f3flr7psn5" path="res://assets/new_fonts/vt323/vt323_regular.ttf" id="4_u4k4v"]
+[ext_resource type="FontFile" uid="uid://dxtsp51pqna2o" path="res://assets/new_fonts/static/open_sans_bold.ttf" id="5_tofyq"]
 [ext_resource type="Texture2D" uid="uid://cvr8ptliyw7oc" path="res://assets/textures/ui/All-HQ-Assets-D_0001s_0013_1-slot-button-hole.png" id="9_j0rns"]
-[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="11_ta118"]
+[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/new_fonts/label_themes.tres" id="11_ta118"]
 [ext_resource type="Texture2D" uid="uid://cqekiqjn8gvh7" path="res://assets/textures/ui/Button-Play-normal.png" id="11_v1gn1"]
 [ext_resource type="Texture2D" uid="uid://c5tgx0yng476j" path="res://assets/textures/ui/Button-Play-press.png" id="12_2e306"]
 [ext_resource type="Texture2D" uid="uid://id0egjudmljv" path="res://assets/textures/ui/Blueprint_normal.png" id="12_eqfmq"]
@@ -24,9 +24,9 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_odwvr"]
 shader = ExtResource("2_8lpgc")
+shader_parameter/noise_texture = ExtResource("3_0nshc")
 shader_parameter/density = 0.75
 shader_parameter/speed = Vector2(0.02, 0.01)
-shader_parameter/noise_texture = ExtResource("3_0nshc")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fibyn"]
 animations = [{

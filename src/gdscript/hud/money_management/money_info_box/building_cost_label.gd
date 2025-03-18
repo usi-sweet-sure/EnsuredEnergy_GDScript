@@ -9,6 +9,6 @@ func _ready():
 func _on_building_cost_updated(new_value: float):
 	if new_value != 0:
 		show()
-		text = "-" + str(round(new_value))
+		text = "-" + str(round(new_value)).pad_decimals(0)
 	else:
 		hide()

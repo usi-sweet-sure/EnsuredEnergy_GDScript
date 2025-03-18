@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://b5sqjxeuewdyq"]
 
-[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_effects/hydro/pp_effects_hydro.gd" id="1_w02ok"]
+[ext_resource type="Script" uid="uid://hlkkg3djlsrk" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_effects/hydro/pp_effects_hydro.gd" id="1_w02ok"]
 [ext_resource type="Texture2D" uid="uid://7fcty8ohfwju" path="res://assets/textures/powerplants/effects/water.png" id="2_ntu1y"]
 [ext_resource type="Texture2D" uid="uid://cn1mdfriw7ed3" path="res://assets/textures/powerplants/effects/trunk.png" id="2_rx1h8"]
 [ext_resource type="Texture2D" uid="uid://y8d24u83in2p" path="res://assets/textures/powerplants/effects/smoke.png" id="3_r30mr"]
@@ -92,8 +92,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_frncr"]
 _data = {
-"RESET": SubResource("Animation_7slgi"),
-"foliage_breath": SubResource("Animation_5617h")
+&"RESET": SubResource("Animation_7slgi"),
+&"foliage_breath": SubResource("Animation_5617h")
 }
 
 [sub_resource type="Animation" id="Animation_pwbim"]
@@ -177,8 +177,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hpb5e"]
 _data = {
-"RESET": SubResource("Animation_pwbim"),
-"foliage_breath": SubResource("Animation_3bhkq")
+&"RESET": SubResource("Animation_pwbim"),
+&"foliage_breath": SubResource("Animation_3bhkq")
 }
 
 [node name="PpEffectsHydro" type="Node2D"]

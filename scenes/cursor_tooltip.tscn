@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dqg3dfo1ggbao"]
 
-[ext_resource type="Script" path="res://src/gdscript/cursor_tooltip/cursor_tooltip.gd" id="1_yuint"]
-[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="2_jvp5b"]
+[ext_resource type="Script" uid="uid://ckymmhaapkkf0" path="res://src/gdscript/cursor_tooltip/cursor_tooltip.gd" id="1_yuint"]
+[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/new_fonts/label_themes.tres" id="2_jvp5b"]
 
 [node name="CursorTooltip" type="Control"]
 layout_mode = 3

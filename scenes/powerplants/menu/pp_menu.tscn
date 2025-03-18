@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b0gxr46y1af1j"]
 
-[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_menu/pp_menu.gd" id="1_6ek7g"]
+[ext_resource type="Script" uid="uid://b132vpdqqkaxq" path="res://src/gdscript/powerplants/pp_menu/pp_menu.gd" id="1_6ek7g"]
 
 [sub_resource type="Animation" id="Animation_q46a1"]
 resource_name = "slide_down"
@@ -60,8 +60,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wbbn2"]
 _data = {
-"slide_down": SubResource("Animation_q46a1"),
-"slide_up": SubResource("Animation_dicpa")
+&"slide_down": SubResource("Animation_q46a1"),
+&"slide_up": SubResource("Animation_dicpa")
 }
 
 [node name="PpMenu" type="CanvasLayer"]

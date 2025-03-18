@@ -1,9 +1,9 @@
 [gd_scene load_steps=21 format=3 uid="uid://bp4i40e8i68xv"]
 
-[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_map_emplacement.gd" id="1_unu4e"]
+[ext_resource type="Script" uid="uid://dnio1yksd77cd" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_map_emplacement.gd" id="1_unu4e"]
 [ext_resource type="PackedScene" uid="uid://dbdgpa4pfgryb" path="res://scenes/powerplants/pp_map_emplacement/build_button/bb_normal.tscn" id="2_h8dd4"]
 [ext_resource type="PackedScene" uid="uid://d2hhtw1popthi" path="res://scenes/powerplants/pp_map_emplacement/build_button/bb_in_construction.tscn" id="3_xoig2"]
-[ext_resource type="Script" path="res://src/gdscript/powerplants/pp_map_emplacement/history_label.gd" id="4_44y7j"]
+[ext_resource type="Script" uid="uid://cjnk37q718w0q" path="res://src/gdscript/powerplants/pp_map_emplacement/history_label.gd" id="4_44y7j"]
 [ext_resource type="AudioStream" uid="uid://cvag8132pjegd" path="res://assets/sounds/hammering_3.wav" id="5_o218l"]
 [ext_resource type="Texture2D" uid="uid://y8d24u83in2p" path="res://assets/textures/powerplants/effects/smoke.png" id="6_atxg7"]
 [ext_resource type="AudioStream" uid="uid://bmjgx10f7cgok" path="res://assets/sounds/debris.wav" id="8_mlm11"]
@@ -217,9 +217,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pa4e8"]
 _data = {
-"RESET": SubResource("Animation_2o72m"),
-"bb_in_construction_appear": SubResource("Animation_7fg40"),
-"bb_normal_appear": SubResource("Animation_17tum")
+&"RESET": SubResource("Animation_2o72m"),
+&"bb_in_construction_appear": SubResource("Animation_7fg40"),
+&"bb_normal_appear": SubResource("Animation_17tum")
 }
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4e8h1"]

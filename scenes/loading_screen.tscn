@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://det4mobxk3l42"]
 
-[ext_resource type="Script" path="res://src/gdscript/loading_screen/loading_screen.gd" id="1_6wpr7"]
+[ext_resource type="Script" uid="uid://drnna01aqa036" path="res://src/gdscript/loading_screen/loading_screen.gd" id="1_6wpr7"]
 [ext_resource type="Texture2D" uid="uid://g3u1s5bprqyt" path="res://assets/sure.jpg" id="2_0tah3"]
-[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="2_l02pl"]
+[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/new_fonts/label_themes.tres" id="2_l02pl"]
 
 [sub_resource type="Animation" id="Animation_vhawi"]
 resource_name = "loading"
@@ -47,7 +47,7 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_il5wv"]
 _data = {
-"loading": SubResource("Animation_vhawi")
+&"loading": SubResource("Animation_vhawi")
 }
 
 [sub_resource type="Animation" id="Animation_7r0hu"]
@@ -83,8 +83,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ltcoy"]
 _data = {
-"RESET": SubResource("Animation_7r0hu"),
-"fade": SubResource("Animation_ei56h")
+&"RESET": SubResource("Animation_7r0hu"),
+&"fade": SubResource("Animation_ei56h")
 }
 
 [node name="LoadingScreen" type="CanvasLayer"]

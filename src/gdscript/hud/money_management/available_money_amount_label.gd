@@ -7,4 +7,4 @@ func _ready():
 
 
 func _on_available_money_amount_updated(amount: float):
-	text = str(round(amount))
+	text = str(round(amount)).pad_decimals(0)

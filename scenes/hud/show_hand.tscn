@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cqn5kk1o4vep4"]
 
 [ext_resource type="Texture2D" uid="uid://bapoidmhwtddl" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0021_Icon-show.png" id="1_ju2s7"]
-[ext_resource type="Script" path="res://src/gdscript/hud/showing_hand/showing_hand.gd" id="1_m0o72"]
+[ext_resource type="Script" uid="uid://d0lqvsiwltfey" path="res://src/gdscript/hud/showing_hand/showing_hand.gd" id="1_m0o72"]
 
 [sub_resource type="Animation" id="Animation_sga26"]
 resource_name = "show_left"
@@ -61,8 +61,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eso46"]
 _data = {
-"show_left": SubResource("Animation_sga26"),
-"show_right": SubResource("Animation_uuuj2")
+&"show_left": SubResource("Animation_sga26"),
+&"show_right": SubResource("Animation_uuuj2")
 }
 
 [node name="Node2D" type="Node2D"]

@@ -7,4 +7,4 @@ func _ready():
 	
 	
 func _on_imported_energy_amount_updated(_amount: int):
-	text = str(floor(MoneyManager.energy_import_cost))
+	text = str(floor(MoneyManager.energy_import_cost)).pad_decimals(0)
