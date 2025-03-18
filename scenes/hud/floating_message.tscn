@@ -106,7 +106,7 @@ script = ExtResource("1_up1il")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_jxyb2")
+&"": SubResource("AnimationLibrary_jxyb2")
 }
 
 [node name="Error" type="AudioStreamPlayer" parent="."]
