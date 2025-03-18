@@ -6,14 +6,14 @@
 [ext_resource type="Script" path="res://src/gdscript/carbon_sequestration/texture_button.gd" id="3_dvmlx"]
 [ext_resource type="Texture2D" uid="uid://bk3lb51erle8l" path="res://assets/textures/backplates/backplate_1.png" id="4_ggmmt"]
 [ext_resource type="Script" path="res://src/gdscript/carbon_sequestration/info_frame.gd" id="5_wq8x4"]
-[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/fonts/label_themes.tres" id="6_w8gl2"]
+[ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/new_fonts/label_themes.tres" id="6_w8gl2"]
 [ext_resource type="Texture2D" uid="uid://cd23afs6x11al" path="res://assets/textures/screens/screen_1.png" id="6_xk887"]
 [ext_resource type="Texture2D" uid="uid://b76v2w1on0f0u" path="res://assets/textures/icons/chalk_money.png" id="7_wifai"]
 [ext_resource type="Script" path="res://src/gdscript/carbon_sequestration/production_costs_value.gd" id="8_gdhxi"]
-[ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/fonts/special_elite/special_elite_regular.ttf" id="8_ulx1r"]
-[ext_resource type="FontFile" uid="uid://bt2f3flr7psn5" path="res://assets/fonts/vt323/vt323_regular.ttf" id="9_ib3vw"]
+[ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/new_fonts/special_elite/special_elite_regular.ttf" id="8_ulx1r"]
+[ext_resource type="FontFile" uid="uid://bt2f3flr7psn5" path="res://assets/new_fonts/vt323/vt323_regular.ttf" id="9_ib3vw"]
 [ext_resource type="Script" path="res://src/gdscript/carbon_sequestration/emissions_value.gd" id="10_g6ev4"]
-[ext_resource type="FontFile" uid="uid://dxtsp51pqna2o" path="res://assets/fonts/static/open_sans_bold.ttf" id="10_tk0bw"]
+[ext_resource type="FontFile" uid="uid://dxtsp51pqna2o" path="res://assets/new_fonts/static/open_sans_bold.ttf" id="10_tk0bw"]
 [ext_resource type="Script" path="res://src/gdscript/carbon_sequestration/slider.gd" id="11_dcx5m"]
 [ext_resource type="Texture2D" uid="uid://bpt1e486wuscd" path="res://assets/textures/icons/chalk_emission.png" id="12_uy1vn"]
 [ext_resource type="Texture2D" uid="uid://fe0i52vl7ck6" path="res://assets/textures/ui/All-HQ-Assets-D_0007s_0006_Slider-bar-horizontal.png" id="14_httvl"]
@@ -23,11 +23,16 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8ca5d"]
 shader = ExtResource("2_xbwqu")
+shader_parameter/show_outline = false
 shader_parameter/line_color = Vector4(1, 1, 1, 1)
 shader_parameter/line_thickness = 1.0
 shader_parameter/frequency = 10.0
 shader_parameter/phase_speed = 1.0
-shader_parameter/show = false
+shader_parameter/appear = false
+shader_parameter/percentage = 0.0
+shader_parameter/line_angle = 3.1
+shader_parameter/line_width = 0.02
+shader_parameter/line_color_2 = Color(1, 1, 1, 1)
 
 [sub_resource type="Gradient" id="Gradient_7lxlr"]
 resource_local_to_scene = true
