@@ -31,6 +31,8 @@ func _ready():
 	camera_blocked = true # Unblocked at the end of the tutorial
 	CameraManager.block_camera.connect(_on_block_camera)
 	CameraManager.unlock_camera.connect(_on_unlock_camera)
+	CameraManager.move_camera_to.connect(_on_move_camera_to)
+	CameraManager.move_camera_by.connect(_on_move_camera_by)
 	
 	
 func _physics_process(delta):
@@ -84,7 +86,7 @@ func _unhandled_input(event):
 			position = new_position
 			
 			# When the camera reaches the limits we set, the camera stops moving
-			# on screen. But it actually keep moving behond the limits, even
+			# on screen. But it actually keeps moving behond the limits, even
 			# if it seems to stop moving on screen.
 			# This means that if the camera stops moving to the left for example,
 			# but we keep dragging, nothing moves on screen, but the camera actually
@@ -162,3 +164,11 @@ func _on_block_camera():
 
 func _on_unlock_camera():
 	camera_blocked = false
+	
+	
+func _on_move_camera_to(coord: Vector2) -> void:
+	animate_camera_position(coord)
+
+
+func _on_move_camera_by(coord: Vector2) -> void:
+	animate_camera_position(Vector2(position.x - (coord.x / zoom.x), position.y - (coord.y / zoom.y)))

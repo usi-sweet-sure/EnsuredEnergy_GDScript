@@ -1001,7 +1001,6 @@ stretch_mode = 0
 script = ExtResource("5_qmmyq")
 
 [node name="InfoFrame" type="TextureRect" parent="." groups=["pp_info_frames"]]
-visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -1768,6 +1767,14 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0)
 script = ExtResource("55_xmnw1")
+
+[node name="Position" type="Label" parent="InfoFrame"]
+layout_mode = 0
+offset_left = 1236.08
+offset_top = 348.231
+offset_right = 1276.08
+offset_bottom = 431.231
+theme_override_font_sizes/font_size = 60
 
 [node name="ShutDownWarning" type="Control" parent="."]
 anchors_preset = 0
