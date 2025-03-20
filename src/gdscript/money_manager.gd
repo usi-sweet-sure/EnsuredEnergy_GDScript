@@ -9,8 +9,8 @@ signal energy_import_cost_updated(val: float)
 signal building_costs_updated(val: float)
 signal total_production_costs_updated(val: float)
 
-var start_money: float = 1250.0
-var money_per_turn: float = 110.0
+var start_money: float = 1373.0
+var money_per_turn: float = 150.0
 var debt_percentage_on_borrowed_money: float = 20.0
 var borrowed_money_amount: float:
 	set(new_value):
@@ -59,7 +59,7 @@ var building_costs: float: # Costs of building and upgrading buildings
 		available_money_amount_updated.emit(available_money_amount)
 var energy_import_cost: float:
 	get:
-		return Gameloop.imported_energy_amount * 2
+		return Gameloop.imported_energy_amount * 0.7
 
 
 func _ready():
