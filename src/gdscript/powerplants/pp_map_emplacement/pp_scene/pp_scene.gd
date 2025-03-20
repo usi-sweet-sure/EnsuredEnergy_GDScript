@@ -48,7 +48,7 @@ func set_metrics(metrics_: PowerplantMetrics):
 		
 	metrics_updated.emit(self.metrics)
 	
-
+	
 func set_texture_on(texture: Texture):
 	texture_on_changed.emit(texture)
 	
@@ -57,7 +57,7 @@ func set_texture_off(texture: Texture):
 	texture_off_changed.emit(texture)
 
 
-func activate(is_built: bool):
+func activate(is_being_built: bool):
 	if metrics.can_activate:
 		var was_activated = metrics.active
 		
@@ -66,7 +66,11 @@ func activate(is_built: bool):
 			metrics_updated.emit(metrics)
 			powerplant_activated.emit(metrics)
 			
-			if not is_built:
+			if not is_being_built:
+				# If the pp that is activated is just being built, the costs
+				# paid for production were already shown.
+				# If it was built previously, but is just being activated after
+				# being turned of, we show that the production costs are back
 				pass
 				#Gameloop.available_money_message_requested.emit("-" + str(metrics.production_costs).pad_decimals(2) + "M CHF", false)
 	
@@ -141,6 +145,7 @@ func _on_button_plus_pressed():
 			metrics.availability.x += base_metrics.availability.x * metrics.upgrade_factor_for_summer_supply
 			
 			# Upgrade cost
+			print(metrics.upgrade_cost)
 			MoneyManager.building_costs += metrics.upgrade_cost
 			#Gameloop.available_money_message_requested.emit("-" + str(metrics.upgrade_cost + delta_prod_cost).pad_decimals(0) + "M CHF", false)
 			

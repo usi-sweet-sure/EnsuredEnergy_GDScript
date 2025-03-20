@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://y8d24u83in2p" path="res://assets/textures/powerplants/effects/smoke.png" id="6_atxg7"]
 [ext_resource type="AudioStream" uid="uid://bmjgx10f7cgok" path="res://assets/sounds/debris.wav" id="8_mlm11"]
 
-[sub_resource type="Shader" id="Shader_3l2oi"]
+[sub_resource type="Shader" id="Shader_ui45k"]
 resource_local_to_scene = true
 code = "shader_type canvas_item;
 
@@ -52,14 +52,14 @@ void fragment() {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kixpu"]
 resource_local_to_scene = true
-shader = SubResource("Shader_3l2oi")
+shader = SubResource("Shader_ui45k")
 shader_parameter/line_color = Vector4(1, 1, 1, 1)
 shader_parameter/line_thickness = 1.0
 shader_parameter/frequency = 10.0
 shader_parameter/phase_speed = 5.0
 shader_parameter/show = false
 
-[sub_resource type="Shader" id="Shader_khh2i"]
+[sub_resource type="Shader" id="Shader_vtc7m"]
 resource_local_to_scene = true
 code = "shader_type canvas_item;
 
@@ -103,7 +103,7 @@ void fragment() {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g2jol"]
 resource_local_to_scene = true
-shader = SubResource("Shader_khh2i")
+shader = SubResource("Shader_vtc7m")
 shader_parameter/line_color = Vector4(1, 1, 1, 1)
 shader_parameter/line_thickness = 1.0
 shader_parameter/frequency = 10.0
@@ -272,7 +272,7 @@ script = ExtResource("4_44y7j")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_pa4e8")
+&"": SubResource("AnimationLibrary_pa4e8")
 }
 
 [node name="BbInConstructionAppearSound" type="AudioStreamPlayer" parent="."]
@@ -284,13 +284,13 @@ material = SubResource("CanvasItemMaterial_4e8h1")
 position = Vector2(346, 281)
 emitting = false
 amount = 50
+texture = ExtResource("6_atxg7")
 one_shot = true
 speed_scale = 3.5
 explosiveness = 0.19
 randomness = 0.1
 lifetime_randomness = 0.1
 draw_order = 1
-texture = ExtResource("6_atxg7")
 emission_shape = 3
 emission_rect_extents = Vector2(200, 200)
 direction = Vector2(0, -1)

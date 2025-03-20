@@ -209,19 +209,23 @@ func _on_powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMe
 			pp_scene.powerplant_delete_requested.connect(_on_powerplant_delete_requested)
 				
 			pp_scene.activate(true)
-			
-			# We can set a powerplant to be directly built at a specific level of
-			# upgrade
+			new_metrics.active = true
+			# We can set a powerplant built at the beginning to be directly built$
+			# at a specific level of upgrade		
 			if new_metrics.current_upgrade > 0: 
 				var target_upgrade = new_metrics.current_upgrade
 				new_metrics.current_upgrade = 0
-				new_metrics.active = true
 				pp_scene.set_metrics(new_metrics)
 				
 				var count = 1
 				while count <= target_upgrade:
 					pp_scene._on_button_plus_pressed()
 					count += 1
+			
+			# Upgrades for powerplants built at the beginning are free,
+			# we have to set them back to the actual price once it's built
+			new_metrics.upgrade_cost = PowerplantsManager.powerplants_upgrade_costs[new_metrics.type]
+			pp_scene.set_metrics(new_metrics)
 			
 			if override_powerplant_on_texture:
 				pp_scene.set_texture_on(powerplant_on)
