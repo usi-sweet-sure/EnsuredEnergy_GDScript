@@ -24,10 +24,6 @@ func _ready():
 	# Allows to reset the zoom, so the tutorial windows are placed correctly
 	TutorialManager.tutorial_started.connect(_on_show_tutorial)
 	TutorialManager.tutorial_ended.connect(_on_tutorial_ended)
-	#E. !!! Do or remove
-	# Maybe TODO for carbon sequestration if we add a button for it !!
-	#for power_plant in get_tree().get_nodes_in_group("PP"):
-		#power_plant.ZoomSignal.connect(plant_zoom);
 	camera_blocked = true # Unblocked at the end of the tutorial
 	CameraManager.block_camera.connect(_on_block_camera)
 	CameraManager.unlock_camera.connect(_on_unlock_camera)
@@ -48,20 +44,8 @@ func scale_plants(zoom_val: Vector2):
 	if zoom_val < POWER_PLANT_ZOOM_IN_LIMIT and not camera_blocked:
 		var new_zoom = Vector2(1.0, 1.0) / (zoom_val * 2.5)
 		
-		#for power_plant in get_tree().get_nodes_in_group("PP"):
-			#animate_power_plant_zoom(power_plant, new_zoom)
-
-
-		#for sprite in get_tree().get_nodes_in_group("pp_sprites"):
-			#animate_power_plant_zoom(sprite, new_zoom)
-			
-		
 		for frame in get_tree().get_nodes_in_group("pp_info_frames"):
 			animate_power_plant_zoom(frame, new_zoom)
-			
-		
-		#for build_button in get_tree().get_nodes_in_group("BB"):
-			#animate_power_plant_zoom(build_button, new_zoom)
 
 
 # Adds control to inputs that otherwise would not have triggered any events  
@@ -69,16 +53,6 @@ func scale_plants(zoom_val: Vector2):
 #     1) When the player clicks the screen, in which case we want to drag the camera around
 #     2) When the player uses the mouse wheel, in which case we want to zoom in or out
 func _unhandled_input(event):
-	if event is InputEventMagnifyGesture and not camera_blocked:
-		var target_zoom = clamp(zoom * event.factor, ZOOM_OUT_LIMIT, ZOOM_IN_LIMIT)
-		zoom = target_zoom
-		scale_plants(target_zoom)
-	
-	elif event is InputEventPanGesture and not camera_blocked:
-		var target_zoom = clamp(zoom + Vector2(event.delta.y * PAN_ZOOM_SENSITIVITY, event.delta.y * PAN_ZOOM_SENSITIVITY), ZOOM_OUT_LIMIT, ZOOM_IN_LIMIT)
-		zoom = target_zoom
-		scale_plants(target_zoom)
-	
 	# Mouse drag moves the camera
 	if event is InputEventMouseMotion and not camera_blocked:
 		if event.button_mask == MOUSE_BUTTON_MASK_LEFT:
@@ -144,18 +118,9 @@ func _on_show_tutorial():
 	animate_camera_zoom(init_zoom)
 	camera_blocked = true
 	
-	
 
 func _on_tutorial_ended():
 	camera_blocked = false
-	
-#E. Do or remove
-# func plant_zoom(_plant_pos: Vector2):
-	#pass
-	#var position_tween = get_tree().create_tween();
-	#position_tween.tween_property(self, "position", plant_pos, ZOOM_ANIMATION_DURATION + 0.1);
-	#var zoom_tween = get_tree().create_tween();
-	#zoom_tween.tween_property(self, "zoom", PLANT_ZOOM, ZOOM_ANIMATION_DURATION + 0.1);
 
 
 func _on_block_camera():

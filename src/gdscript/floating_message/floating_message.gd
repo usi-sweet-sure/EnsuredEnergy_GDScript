@@ -7,7 +7,6 @@ extends Label
 @onready var error = $Error
 
 
-
 func _ready():
 	set_self_modulate(Color(1, 1, 1, 1))
 	

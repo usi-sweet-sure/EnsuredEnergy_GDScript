@@ -1,4 +1,4 @@
-[gd_scene load_steps=183 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=187 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/textures/ui/Button-Next-Normal.png" id="2_aobed"]
 [ext_resource type="Texture2D" uid="uid://ccsapuvkqqt1b" path="res://assets/textures/ui/All-HQ-Assets-D_0006s_0009_Profile-metal-base.png" id="2_nu7y6"]
@@ -119,6 +119,7 @@
 [ext_resource type="Script" uid="uid://co8qki3pxitgi" path="res://src/gdscript/hud/clock/current_turn_label.gd" id="95_2utc1"]
 [ext_resource type="Script" uid="uid://emn7rmy2027s" path="res://src/gdscript/hud/clock/remaining_turns_label.gd" id="96_6b673"]
 [ext_resource type="Script" uid="uid://bb0x0hc5hfjyn" path="res://src/gdscript/hud/next_turn_button/next_turn_button.gd" id="97_wp832"]
+[ext_resource type="Script" uid="uid://dcqkcb86dnv8c" path="res://src/gdscript/hud/energy_bars/back_panel.gd" id="98_3vkf3"]
 [ext_resource type="Texture2D" uid="uid://cnqa4g3r3kra5" path="res://assets/textures/ui/clock.png" id="100_2c0ru"]
 [ext_resource type="Texture2D" uid="uid://chirnmv8mjb7b" path="res://assets/textures/ui/All-HQ-Assets-D_0001s_0012_Counter-hole-4-slots.png" id="101_ykn2m"]
 [ext_resource type="Texture2D" uid="uid://cmmduw4thqeuh" path="res://assets/textures/ui/All-HQ-Assets-D_0007s_0020_Counter-1-blue.png" id="102_5ki0w"]
@@ -428,6 +429,67 @@ bg_color = Color(0.215686, 0.337255, 0.34902, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_siya7"]
 bg_color = Color(0.215686, 0.337255, 0.34902, 1)
+
+[sub_resource type="Animation" id="Animation_nuxdx"]
+resource_name = "not_enough_energy_warning"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BackPanel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.871359, 0.34934, 0.29613, 1), Color(1, 1, 1, 1), Color(0.870588, 0.34902, 0.298039, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BackPanel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(107, -23), Vector2(110, -23), Vector2(107, -23), Vector2(104, -23), Vector2(107, -23), Vector2(110, -23), Vector2(107, -23)]
+}
+
+[sub_resource type="Animation" id="Animation_m2tvt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BackPanel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BackPanel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(107, -23)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u070d"]
+_data = {
+&"RESET": SubResource("Animation_m2tvt"),
+&"not_enough_energy_warning": SubResource("Animation_nuxdx")
+}
 
 [sub_resource type="Animation" id="Animation_lrye6"]
 length = 0.001
@@ -2371,6 +2433,7 @@ uppercase = true
 z_index = 1
 position = Vector2(107, -23)
 texture = ExtResource("28_mr6x7")
+script = ExtResource("98_3vkf3")
 
 [node name="WindIcon" type="Sprite2D" parent="ImportAndEnergy/Energy"]
 position = Vector2(75, 156)
@@ -2510,6 +2573,12 @@ text = "SUMMER_SUPPLY_INFO_TEXT"
 [node name="Button" parent="ImportAndEnergy/Energy/EnergyBarSummer" index="3" groups=["help_buttons"]]
 mouse_default_cursor_shape = 16
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ImportAndEnergy/Energy"]
+libraries = {
+&"": SubResource("AnimationLibrary_u070d")
+}
+speed_scale = 2.0
+
 [node name="NuclearWarning" type="Label" parent="."]
 offset_left = 1964.0
 offset_top = 700.0
@@ -2600,7 +2669,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="TurnInfo" type="TextureButton" parent="Clock" groups=["help_buttons"]]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2625,7 +2693,8 @@ region_rect = Rect2(0, 0, 266, 268)
 script = ExtResource("57_lg17s")
 
 [node name="Backdrop" type="ColorRect" parent="Clock/TimePanelBlank"]
-self_modulate = Color(0, 0, 0, 1)
+visible = false
+self_modulate = Color(0, 0, 0, 0)
 show_behind_parent = true
 offset_left = -1779.0
 offset_top = -774.0
@@ -2968,6 +3037,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.588235)
 
 [node name="Label" type="Label" parent="NextTurnOverlay"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -2987,6 +3057,7 @@ text = "."
 horizontal_alignment = 2
 
 [node name="Label2" type="Label" parent="NextTurnOverlay"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -3091,6 +3162,7 @@ script = ExtResource("134_ps8q0")
 [connection signal="value_changed" from="ImportAndEnergy/Import/ImportSlider" to="ImportAndEnergy/Import/ImportSlider" method="_on_import_slider_value_changed"]
 [connection signal="pressed" from="ImportAndEnergy/Import/ImportSlider/UpButton" to="ImportAndEnergy/Import/ImportSlider" method="_on_import_up_button_pressed"]
 [connection signal="pressed" from="ImportAndEnergy/Import/ImportSlider/DownButton" to="ImportAndEnergy/Import/ImportSlider" method="_on_import_down_button_pressed"]
+[connection signal="gui_input" from="NextTurn" to="ImportAndEnergy/Energy/BackPanel" method="_on_next_turn_gui_input"]
 [connection signal="gui_input" from="NextTurn" to="NextTurn" method="_on_gui_input"]
 [connection signal="pressed" from="NextTurn" to="Clock/TimePanelBlank" method="_on_next_turn_button_pressed"]
 [connection signal="pressed" from="Clock/TurnInfo" to="Clock/TimePanelBlank" method="clock_pressed"]
