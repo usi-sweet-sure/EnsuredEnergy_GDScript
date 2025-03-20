@@ -2,6 +2,7 @@ extends AudioStreamPlayer
 
 var in_focus := false
 var ambience_path :String = ""
+@onready var ambience_fade: AnimationPlayer = $"../AmbienceFade"
 
 
 func _on_pp_scene_metrics_updated(metrics: PowerplantMetrics) -> void:
@@ -14,21 +15,21 @@ func _on_pp_scene_metrics_updated(metrics: PowerplantMetrics) -> void:
 		stream = load(ambience_path)
 		
 		if in_focus:
-			play()
+			ambience_fade.play("fade_in")
 
 
 func _on_on_show_info_frame_requested() -> void:
 	in_focus = true
-	play()
+	ambience_fade.play("fade_in")
 
 
 func _on_on_hide_info_frame_requested() -> void:
 	in_focus = false
-	stop()
+	ambience_fade.play("fade_out")
 
 
 func _on_pp_scene_powerplant_deactivated(metrics: PowerplantMetrics) -> void:
-	stop()
+	ambience_fade.play("fade_out")
 
 
 func _on_pp_scene_powerplant_activated(metrics: PowerplantMetrics) -> void:

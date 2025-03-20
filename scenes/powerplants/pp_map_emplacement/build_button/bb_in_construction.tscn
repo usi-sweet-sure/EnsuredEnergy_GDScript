@@ -457,7 +457,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.466667, 20.12),
-"transitions": PackedFloat32Array(1, 1, 1),
+"transitions": PackedFloat32Array(0.25, 0.25, 1),
 "update": 0,
 "values": [-60.0, -17.0, -17.0]
 }
@@ -474,7 +474,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [-17.0, -40.0]
+"values": [-17.0, -60.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -621,7 +621,7 @@ script = ExtResource("10_ja4mu")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="InfoFrame"]
 libraries = {
-"": SubResource("AnimationLibrary_gcppt")
+&"": SubResource("AnimationLibrary_gcppt")
 }
 script = ExtResource("10_q33v4")
 
@@ -654,7 +654,7 @@ bus = &"Sound"
 
 [node name="ConstructionAmbiancePlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_d8uj0")
+&"": SubResource("AnimationLibrary_d8uj0")
 }
 
 [connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
