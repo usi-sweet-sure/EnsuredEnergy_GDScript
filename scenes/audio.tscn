@@ -125,7 +125,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_p5uep"]
 resource_name = "start_menu_fade_in"
-length = 2.0
+length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -153,6 +153,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_dn6px"]
 resource_name = "start_menu_fade_out"
+length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -160,7 +161,7 @@ tracks/0/path = NodePath("ElectricHumInWind:playing")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(1),
+"times": PackedFloat32Array(3),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
@@ -172,7 +173,7 @@ tracks/1/path = NodePath("ElectricHumInWind:volume_db")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, -80.0]
