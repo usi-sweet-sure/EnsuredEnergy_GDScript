@@ -748,7 +748,7 @@ script = ExtResource("30_dw4jh")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_8cwk4")
+&"": SubResource("AnimationLibrary_8cwk4")
 }
 speed_scale = 10.0
 

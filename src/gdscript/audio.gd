@@ -13,11 +13,14 @@ extends Node
 @onready var paper_manip = $PaperManip
 @onready var more_coin = $MoreCoin
 @onready var less_coin = $LessCoin
+@onready var electric_hum_in_wind: AudioStreamPlayer = $ElectricHumInWind
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var player_can_start_playing_first_turn = false
 
+
 func _ready():
-	#dark_fantasy.play()
+	animation_player.play("start_menu_fade_in")
 	Gameloop.game_started.connect(_on_game_started)
 	Gameloop.game_ended.connect(_on_game_ended)
 	Gameloop.player_can_start_playing_first_turn.connect(_on_player_can_start_playing_first_turn)
@@ -35,6 +38,7 @@ func _ready():
 
 func _on_game_started():
 	forest_ambiance.play()
+	animation_player.play("start_menu_fade_out")
 	#$AnimationPlayer.play("fade_out")
 	
 
