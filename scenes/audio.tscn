@@ -125,7 +125,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_p5uep"]
 resource_name = "start_menu_fade_in"
-length = 3.0
+length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -145,7 +145,7 @@ tracks/1/path = NodePath("ElectricHumInWind:volume_db")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(0, 1.5),
 "transitions": PackedFloat32Array(0.25, 0.25),
 "update": 0,
 "values": [-80.0, 0.0]

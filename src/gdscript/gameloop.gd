@@ -50,6 +50,7 @@ signal testing_env_entered
 signal player_can_start_playing_first_turn
 signal available_money_message_requested(message: String, positiv: bool)
 signal all_parameters_sent
+signal start_menu_disappeared
 
 # We need to send this signal because some translations 
 # don't update automatically when changing the language at runtime,
@@ -256,6 +257,5 @@ func reset_all_values():
 
 
 func _on_first_request_finished(_context):
-	TutorialManager.tutorial_started.emit()
 	Context.context_updated.disconnect(_on_first_request_finished)
 	

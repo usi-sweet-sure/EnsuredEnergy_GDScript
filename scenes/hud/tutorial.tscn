@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://ciphd0cmpslrn"]
+[gd_scene load_steps=38 format=3 uid="uid://ciphd0cmpslrn"]
 
 [ext_resource type="Texture2D" uid="uid://dnbd3anohlmvn" path="res://assets/textures/ui/All-HQ-Assets-D_0008s_0001_Small-right-paper.png" id="1_p4eo2"]
 [ext_resource type="Script" uid="uid://pefde6sv23kq" path="res://src/gdscript/tutorial/tutorial.gd" id="1_yrums"]
@@ -139,6 +139,66 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cgvln"]
+
+[sub_resource type="Animation" id="Animation_55w7j"]
+resource_name = "tutorial_starts"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterFrame:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1982, 301), Vector2(650, 301), Vector2(655, 301)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CenterFrame:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_j5oqc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterFrame:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(655, 301)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CenterFrame:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i0yq7"]
+_data = {
+&"RESET": SubResource("Animation_j5oqc"),
+&"tutorial_starts": SubResource("Animation_55w7j")
+}
 
 [node name="Tutorial" type="CanvasLayer"]
 script = ExtResource("1_yrums")
@@ -847,7 +907,6 @@ grow_vertical = 2
 color = Color(0.156863, 0.156863, 0.156863, 0.784314)
 
 [node name="CenterFrame" type="MarginContainer" parent="."]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -918,6 +977,11 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_wx8q0")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_cgvln")
 text = "SKIP"
 script = ExtResource("12_m5gsn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_i0yq7")
+}
 
 [connection signal="pressed" from="Bubbles/InfoBubble/InfoBubble/NextButtonContainer/PlayButton" to="." method="_on_next_step_requested"]
 [connection signal="pressed" from="Bubbles/InfoBubble3/InfoBubble3/NextButtonContainer/PlayButton" to="." method="_on_next_step_requested"]

@@ -38,7 +38,6 @@ func _ready():
 
 func _on_game_started():
 	forest_ambiance.play()
-	animation_player.play("start_menu_fade_out")
 	#$AnimationPlayer.play("fade_out")
 	
 
@@ -165,3 +164,4 @@ func _on_money_message(_message: String, positiv: bool):
 
 func _on_player_can_start_playing_first_turn():
 	player_can_start_playing_first_turn = true
+	animation_player.play("start_menu_fade_out")

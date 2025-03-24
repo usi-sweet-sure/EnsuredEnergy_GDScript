@@ -8,6 +8,8 @@ func _ready():
 
 
 func _on_tutorial_started():
+	# Set to transparent, and the animation player takes care of makign it appear
+	modulate = Color("ffffff00")
 	show()
 	TutorialManager.step_changed.connect(_on_step_changed)
 

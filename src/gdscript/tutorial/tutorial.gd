@@ -4,6 +4,7 @@ var step = 0
 var tuto_length = 11
 
 @onready var center_frame = $CenterFrame
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
 # Called when the node enters the scene tree for the first time.
@@ -26,8 +27,9 @@ func _on_tutorial_started():
 	TutorialManager.next_step_requested.connect(_on_next_step_requested)
 	PowerplantsManager.powerplant_build_requested.connect(_on_pp_build)
 	Gameloop.toggle_policies_window.connect(_on_policies_toggled)
-	
 	show()
+
+	animation_player.play("tutorial_starts")
 
 
 func _on_tutorial_ended():
