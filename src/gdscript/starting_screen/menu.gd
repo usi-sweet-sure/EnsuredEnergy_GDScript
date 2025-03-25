@@ -4,7 +4,11 @@ var lang = ["de", "fr", "it", "en"]
 var i = 0
 @onready var hud: CanvasLayer = $CanvasLayer
 @onready var parallax_background: ParallaxBackground = $ParallaxBackground
+# Using two identical animation players so we can blend two animations
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var animation_player_2: AnimationPlayer = $AnimationPlayer2
+@onready var neon_flickers: AudioStreamPlayer = $NeonFlickers
+@onready var play_button: TextureButton = $CanvasLayer/Buttons/PlayButton
 
 
 # Called when the node enters the scene tree for the first time.
@@ -23,9 +27,13 @@ func _ready():
 
 
 func _on_play_pressed():
+	play_button.disabled = true
 	animation_player.play("menu_goes_away_phase_1")
 	await  animation_player.animation_finished
 	animation_player.play("menu_goes_away_phase_2")
+	# Let the animation play for a bit, in case the http request is done too quickly
+	var timer = get_tree().create_timer(1.8)
+	await timer.timeout
 	Gameloop.player_name = "new_player"
 	Gameloop.start_game()
 	
@@ -51,16 +59,10 @@ func _on_player_name_text_submitted(new_text: String):
 
 
 func _on_player_can_start_playing() -> void:
-	if animation_player.is_playing() and animation_player.current_animation == "menu_goes_away_phase_1":
-		await animation_player.animation_finished
-		animation_player.play("menu_goes_away_phase_3")
-		# Waiting so the tutorial animation blends better
-		var timer = get_tree().create_timer(0.5)
-		await timer.timeout
-		TutorialManager.tutorial_started.emit()
-	else:
-		animation_player.play("menu_goes_away_phase_3")
-		# Waiting so the tutorial animation blends better
-		var timer = get_tree().create_timer(0.5)
-		await timer.timeout
-		TutorialManager.tutorial_started.emit()
+	animation_player_2.play("menu_goes_away_phase_3")
+	# Waiting so the tutorial animation blends better
+	var timer = get_tree().create_timer(0.5)
+	await timer.timeout
+	animation_player.stop() # menu_goes_away_phase_2 is still playing in parallel
+	neon_flickers.stop() # animation_player.stop doesn't cut the audio
+	TutorialManager.tutorial_started.emit()

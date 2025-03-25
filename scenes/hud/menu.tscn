@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://pvoi2mcc3oc1"]
+[gd_scene load_steps=46 format=3 uid="uid://pvoi2mcc3oc1"]
 
 [ext_resource type="Script" uid="uid://36oi73byoywi" path="res://src/gdscript/starting_screen/menu.gd" id="1_hl1kv"]
 [ext_resource type="Shader" uid="uid://fkpbxalsaovj" path="res://src/gdscript/shaders/cloud.gdshader" id="2_8lpgc"]
@@ -21,6 +21,9 @@
 [ext_resource type="Texture2D" uid="uid://60dl810b25fd" path="res://assets/textures/buttons/button_press.png" id="15_4vyug"]
 [ext_resource type="Texture2D" uid="uid://cuhckno2t6g0r" path="res://assets/textures/buttons/button_hover.png" id="16_gqjv5"]
 [ext_resource type="Texture2D" uid="uid://c5cp3fte7g6ii" path="res://assets/title/logo.png" id="19_1nqsc"]
+[ext_resource type="Texture2D" uid="uid://bvnvytcana2ov" path="res://assets/textures/logo_neon_on.png" id="22_7v6ln"]
+[ext_resource type="AudioStream" uid="uid://dscg8potl0i2h" path="res://assets/sounds/neon_switch_on.mp3" id="22_35jma"]
+[ext_resource type="AudioStream" uid="uid://b34wip64mt4iu" path="res://assets/sounds/neon_flicker.mp3" id="23_j7y56"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_odwvr"]
 shader = ExtResource("2_8lpgc")
@@ -296,6 +299,66 @@ tracks/11/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("CanvasLayer/LogoNeon:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("CanvasLayer/Logo:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("NeonFlickers:playing")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("NeonFlickers:volume_db")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-12.0]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("NeonSwitchOn:playing")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_uw6xn"]
 resource_name = "menu_apparition"
@@ -315,6 +378,12 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_j7y56"]
 resource_name = "menu_goes_away_phase_1"
+length = 1.5
+markers = [{
+"color": Color(1, 1, 1, 1),
+"name": &"new_marker",
+"time": 1.2145
+}]
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -322,7 +391,7 @@ tracks/0/path = NodePath("CanvasLayer/Buttons:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
+"times": PackedFloat32Array(0.0333333, 0.233333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(0, 0)]
@@ -334,7 +403,7 @@ tracks/1/path = NodePath("CanvasLayer/BlueprintNormal:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2),
+"times": PackedFloat32Array(0.0333333, 0.233333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(0, 0)]
@@ -346,7 +415,7 @@ tracks/2/path = NodePath("CanvasLayer/Logo:position")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.35, 0.7),
+"times": PackedFloat32Array(0.166264, 0.516264, 0.866264),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(986, 209), Vector2(986, 380), Vector2(986, 362)]
@@ -358,15 +427,140 @@ tracks/3/path = NodePath("CanvasLayer/Logo:scale")
 tracks/3/interp = 2
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.733333, 0.8, 1),
+"times": PackedFloat32Array(0.166264, 0.899594, 0.966264, 1.16626),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1.25, 1.25), Vector2(1.15, 1.15), Vector2(1.2, 1.2)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/LogoNeon:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.0015, 0.225, 0.945),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/Logo:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.0015, 0.225, 0.945),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayer/LogoNeon:position")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.166667, 0.516667, 0.866666),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(986, 209), Vector2(986, 380), Vector2(986, 362)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CanvasLayer/LogoNeon:scale")
+tracks/7/interp = 2
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.166667, 0.899997, 0.966667, 1.16667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.25, 1.25), Vector2(1.15, 1.15), Vector2(1.2, 1.2)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("NeonSwitchOn:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_7v6ln"]
 resource_name = "menu_goes_away_phase_2"
-length = 2.0
+length = 9.67
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Logo:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 8.93333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(986, 362), Vector2(986, 360), Vector2(986, 362), Vector2(986, 360), Vector2(986, 362), Vector2(986, 360), Vector2(986, 362), Vector2(986, 360), Vector2(986, 362), Vector2(986, 360)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NeonFlickers:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/LogoNeon:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 8.93333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(986, 362), Vector2(986, 360), Vector2(986, 362), Vector2(986, 360), Vector2(986, 362), Vector2(986, 360), Vector2(986, 362), Vector2(986, 360), Vector2(986, 362), Vector2(986, 360)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Logo:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5, 0.6, 0.85, 1.3, 1.55, 2.25, 2.53, 2.57, 2.63, 2.77, 2.83, 3.5, 3.78, 4.39, 4.62, 5.05, 5.22, 5.37, 5.43, 5.535, 5.95, 6.8, 7.09, 7.179, 7.275, 7.81, 8.195, 8.285, 8.64),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/LogoNeon:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5, 0.6, 0.85, 1.3, 1.55, 2.25, 2.53, 2.57, 2.63, 2.77, 2.83, 3.5, 3.78, 4.39, 4.62, 5.05, 5.22, 5.37, 5.43, 5.535, 5.95, 6.8, 7.09, 7.179, 7.275, 7.81, 8.195, 8.285, 8.64),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_bho1h"]
+resource_name = "menu_idle"
+length = 4.0
 loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -375,15 +569,16 @@ tracks/0/path = NodePath("CanvasLayer/Logo:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2),
+"times": PackedFloat32Array(0, 2, 4),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(986, 362), Vector2(986, 360), Vector2(986, 362)]
+"values": [Vector2(986, 209), Vector2(986, 207), Vector2(986, 209)]
 }
 
 [sub_resource type="Animation" id="Animation_abil0"]
 resource_name = "menu_goes_away_phase_3"
 length = 1.1
+capture_included = true
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -417,7 +612,7 @@ tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.4, 0.766667),
 "transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
+"update": 2,
 "values": [Vector2(986, 360.172), Vector2(990, 360.172), Vector2(-482, 360.172)]
 }
 tracks/3/type = "value"
@@ -480,22 +675,41 @@ tracks/7/keys = {
 "update": 1,
 "values": [true, false]
 }
-
-[sub_resource type="Animation" id="Animation_bho1h"]
-resource_name = "menu_idle"
-length = 4.0
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/Logo:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 4),
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("NeonFlickers:volume_db")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-12.0, -80.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("CanvasLayer/LogoNeon:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.766667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(986, 209), Vector2(986, 207), Vector2(986, 209)]
+"values": [Vector2(986, 360.172), Vector2(990, 360.172), Vector2(-482, 360.172)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("CanvasLayer/LogoNeon:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.333333, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_j7y56"]
@@ -542,7 +756,7 @@ pivot_offset = Vector2(180, 107.41)
 position = Vector2(179, 195)
 texture = ExtResource("4_dgun4")
 
-[node name="BlueprintNormal3" type="TextureButton" parent="CanvasLayer/Buttons" groups=["buttons"]]
+[node name="PlayButton" type="TextureButton" parent="CanvasLayer/Buttons"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -562,7 +776,7 @@ texture_disabled = ExtResource("12_2e306")
 ignore_texture_size = true
 stretch_mode = 3
 
-[node name="PlayL" type="Label" parent="CanvasLayer/Buttons/BlueprintNormal3"]
+[node name="PlayL" type="Label" parent="CanvasLayer/Buttons/PlayButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -579,13 +793,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer/Buttons/BlueprintNormal3"]
+[node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer/Buttons/PlayButton"]
 show_behind_parent = true
 position = Vector2(-1, -12)
 texture = ExtResource("9_j0rns")
 centered = false
 
-[node name="BlueprintNormal4" type="TextureButton" parent="CanvasLayer/Buttons" groups=["buttons"]]
+[node name="LangButton" type="TextureButton" parent="CanvasLayer/Buttons" groups=["buttons"]]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -605,7 +819,7 @@ ignore_texture_size = true
 stretch_mode = 3
 metadata/_edit_group_ = true
 
-[node name="LangL" type="Label" parent="CanvasLayer/Buttons/BlueprintNormal4"]
+[node name="LangL" type="Label" parent="CanvasLayer/Buttons/LangButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -623,13 +837,13 @@ vertical_alignment = 1
 autowrap_mode = 2
 uppercase = true
 
-[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/Buttons/BlueprintNormal4"]
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/Buttons/LangButton"]
 show_behind_parent = true
 position = Vector2(-1, -12)
 texture = ExtResource("9_j0rns")
 centered = false
 
-[node name="BlueprintNormal5" type="TextureButton" parent="CanvasLayer/Buttons" groups=["buttons"]]
+[node name="CreditButton" type="TextureButton" parent="CanvasLayer/Buttons" groups=["buttons"]]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -650,7 +864,7 @@ ignore_texture_size = true
 stretch_mode = 3
 metadata/_edit_group_ = true
 
-[node name="OfflineL" type="Label" parent="CanvasLayer/Buttons/BlueprintNormal5"]
+[node name="OfflineL" type="Label" parent="CanvasLayer/Buttons/CreditButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -667,7 +881,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 uppercase = true
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Buttons/BlueprintNormal5"]
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Buttons/CreditButton"]
 show_behind_parent = true
 position = Vector2(-1, -12)
 texture = ExtResource("9_j0rns")
@@ -707,9 +921,15 @@ uppercase = true
 position = Vector2(986, 209)
 texture = ExtResource("19_1nqsc")
 
+[node name="LogoNeon" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(986, 209)
+texture = ExtResource("22_7v6ln")
+
 [node name="GreenOverlay" type="ColorRect" parent="CanvasLayer"]
+offset_top = -1.0
 offset_right = 1920.0
-offset_bottom = 1080.0
+offset_bottom = 1079.0
 mouse_filter = 2
 color = Color(0.286275, 0.454902, 0.235294, 1)
 
@@ -718,6 +938,19 @@ libraries = {
 &"": SubResource("AnimationLibrary_j7y56")
 }
 
-[connection signal="pressed" from="CanvasLayer/Buttons/BlueprintNormal3" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="CanvasLayer/Buttons/BlueprintNormal4" to="." method="_on_lang_pressed"]
-[connection signal="pressed" from="CanvasLayer/Buttons/BlueprintNormal5" to="." method="_on_credits_pressed"]
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_j7y56")
+}
+
+[node name="NeonSwitchOn" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_35jma")
+pitch_scale = 1.2
+
+[node name="NeonFlickers" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_j7y56")
+volume_db = -12.0
+
+[connection signal="pressed" from="CanvasLayer/Buttons/PlayButton" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/Buttons/LangButton" to="." method="_on_lang_pressed"]
+[connection signal="pressed" from="CanvasLayer/Buttons/CreditButton" to="." method="_on_credits_pressed"]
