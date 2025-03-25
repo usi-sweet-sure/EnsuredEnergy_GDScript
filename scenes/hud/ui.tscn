@@ -2416,12 +2416,12 @@ position = Vector2(66, 296)
 
 [node name="GaugeSound" type="AudioStreamPlayer" parent="ImportAndEnergy/Import"]
 stream = ExtResource("97_nuxdx")
-volume_db = -16.0
+volume_db = -20.0
 pitch_scale = 0.2
 parameters/looping = true
 
 [node name="Timer" type="Timer" parent="ImportAndEnergy/Import"]
-wait_time = 0.01
+wait_time = 0.05
 
 [node name="Energy" type="Node2D" parent="ImportAndEnergy"]
 position = Vector2(238, 856)
