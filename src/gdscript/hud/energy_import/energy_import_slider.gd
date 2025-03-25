@@ -2,6 +2,9 @@ extends VSlider
 
 var value_before_tutorial = 0
 @onready var gauge_sound: AudioStreamPlayer = $"../GaugeSound"
+# Used to update the value when holding import buttons down
+@onready var timer: Timer = $"../Timer"
+var value_delta = 1
 
 func _ready():
 	Gameloop.energy_demand_updated_winter.connect(_on_energy_demand_updated_winter)
@@ -12,7 +15,8 @@ func _ready():
 	TutorialManager.tutorial_ended.connect(func(): value = value_before_tutorial)
 	
 	_on_energy_demand_updated_winter(Gameloop.demand_winter)
-
+	timer.timeout.connect(_update_value)
+	
 
 # Makes sure the user does not import more energy than needed
 func _on_import_slider_value_changed(_new_value: float):
@@ -98,16 +102,26 @@ func _set_sound_pitch():
 
 
 func _on_up_button_button_up() -> void:
+	timer.stop()
 	gauge_sound.stop()
 
 
 func _on_up_button_button_down() -> void:
 	gauge_sound.play()
+	value_delta = 1
+	timer.start()
 
 
 func _on_down_button_button_up() -> void:
+	timer.stop()
 	gauge_sound.stop()
 	
 
 func _on_down_button_button_down() -> void:
 	gauge_sound.play()
+	value_delta = -1
+	timer.start()
+	
+
+func _update_value() -> void:
+	value += value_delta

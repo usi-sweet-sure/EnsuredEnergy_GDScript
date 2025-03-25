@@ -2420,6 +2420,9 @@ volume_db = -16.0
 pitch_scale = 0.2
 parameters/looping = true
 
+[node name="Timer" type="Timer" parent="ImportAndEnergy/Import"]
+wait_time = 0.01
+
 [node name="Energy" type="Node2D" parent="ImportAndEnergy"]
 position = Vector2(238, 856)
 
