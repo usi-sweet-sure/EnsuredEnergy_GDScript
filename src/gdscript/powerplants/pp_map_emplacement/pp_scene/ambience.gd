@@ -34,4 +34,4 @@ func _on_pp_scene_powerplant_deactivated(metrics: PowerplantMetrics) -> void:
 
 func _on_pp_scene_powerplant_activated(metrics: PowerplantMetrics) -> void:
 	if in_focus:
-		play()
+		ambience_fade.play("fade_in")
