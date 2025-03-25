@@ -78,6 +78,5 @@ func _on_powerplant_downgraded(metrics: PowerplantMetrics):
 
 
 func construction_animation_finished(metrics: PowerplantMetrics):
-	print("wind finished")
 	is_construction_animation_finished = true
 	effects_on(metrics)

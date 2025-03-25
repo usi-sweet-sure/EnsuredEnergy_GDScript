@@ -151,8 +151,6 @@ func _on_summer_energy_supply_updated(energy: float):
 	
 	
 func _on_winter_energy_import_updated(energy):
-	print("turn: ", turn_to_register_data_in, ", energy: ", energy)
-	print(data["winter_energy_import"])
 	if listening:
 		data["winter_energy_import"][Gameloop.start_year + (turn_to_register_data_in) * Gameloop.years_in_a_turn] = energy
 

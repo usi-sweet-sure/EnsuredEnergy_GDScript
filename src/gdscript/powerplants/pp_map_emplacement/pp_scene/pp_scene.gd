@@ -145,7 +145,6 @@ func _on_button_plus_pressed():
 			metrics.availability.x += base_metrics.availability.x * metrics.upgrade_factor_for_summer_supply
 			
 			# Upgrade cost
-			print(metrics.upgrade_cost)
 			MoneyManager.building_costs += metrics.upgrade_cost
 			#Gameloop.available_money_message_requested.emit("-" + str(metrics.upgrade_cost + delta_prod_cost).pad_decimals(0) + "M CHF", false)
 			

@@ -82,7 +82,6 @@ func set_money_for_new_turn():
 	# Production costs are not computed because they already are in "available_money",
 	var income = players_own_money_amount + money_per_turn + borrowed_money_amount
 	var outcome = borrowed_money_amount * (1.0 + (debt_percentage_on_borrowed_money / 100.0)) + building_costs + energy_import_cost
-	print("import cost ", energy_import_cost)
 	players_own_money_amount = income - outcome
 	borrowed_money_amount = 0
 	building_costs = 0

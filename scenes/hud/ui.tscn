@@ -1,4 +1,4 @@
-[gd_scene load_steps=187 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=188 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/textures/ui/Button-Next-Normal.png" id="2_aobed"]
 [ext_resource type="Texture2D" uid="uid://ccsapuvkqqt1b" path="res://assets/textures/ui/All-HQ-Assets-D_0006s_0009_Profile-metal-base.png" id="2_nu7y6"]
@@ -118,6 +118,7 @@
 [ext_resource type="Script" uid="uid://0tqcdcdi3ffo" path="res://src/gdscript/hud/energy_bars/summer/infos/summer_supply_label.gd" id="94_bcqhm"]
 [ext_resource type="Script" uid="uid://co8qki3pxitgi" path="res://src/gdscript/hud/clock/current_turn_label.gd" id="95_2utc1"]
 [ext_resource type="Script" uid="uid://emn7rmy2027s" path="res://src/gdscript/hud/clock/remaining_turns_label.gd" id="96_6b673"]
+[ext_resource type="AudioStream" uid="uid://cpmjon6gf78v2" path="res://assets/sounds/gauge.mp3" id="97_nuxdx"]
 [ext_resource type="Script" uid="uid://bb0x0hc5hfjyn" path="res://src/gdscript/hud/next_turn_button/next_turn_button.gd" id="97_wp832"]
 [ext_resource type="Script" uid="uid://dcqkcb86dnv8c" path="res://src/gdscript/hud/energy_bars/back_panel.gd" id="98_3vkf3"]
 [ext_resource type="Texture2D" uid="uid://cnqa4g3r3kra5" path="res://assets/textures/ui/clock.png" id="100_2c0ru"]
@@ -2413,6 +2414,12 @@ position = Vector2(66, 296)
 [node name="LEDOn" parent="ImportAndEnergy/Import/ImportSlider" index="9"]
 position = Vector2(66, 296)
 
+[node name="GaugeSound" type="AudioStreamPlayer" parent="ImportAndEnergy/Import"]
+stream = ExtResource("97_nuxdx")
+volume_db = -16.0
+pitch_scale = 0.2
+parameters/looping = true
+
 [node name="Energy" type="Node2D" parent="ImportAndEnergy"]
 position = Vector2(238, 856)
 
@@ -3159,8 +3166,13 @@ script = ExtResource("134_ps8q0")
 [connection signal="pressed" from="EnvironmentAndPollution/Pollution/OpenInfoBoxButton" to="EnvironmentAndPollution/Environment/Info" method="_on_pollution_open_info_box_button_pressed"]
 [connection signal="pressed" from="EnvironmentAndPollution/Pollution/OpenInfoBoxButton" to="EnvironmentAndPollution/Pollution/Info" method="_on_open_info_box_button_pressed"]
 [connection signal="drag_ended" from="ImportAndEnergy/Import/ImportSlider" to="ImportAndEnergy/Import/ImportSlider" method="_on_drag_ended"]
+[connection signal="drag_started" from="ImportAndEnergy/Import/ImportSlider" to="ImportAndEnergy/Import/ImportSlider" method="_on_drag_started"]
 [connection signal="value_changed" from="ImportAndEnergy/Import/ImportSlider" to="ImportAndEnergy/Import/ImportSlider" method="_on_import_slider_value_changed"]
+[connection signal="button_down" from="ImportAndEnergy/Import/ImportSlider/UpButton" to="ImportAndEnergy/Import/ImportSlider" method="_on_up_button_button_down"]
+[connection signal="button_up" from="ImportAndEnergy/Import/ImportSlider/UpButton" to="ImportAndEnergy/Import/ImportSlider" method="_on_up_button_button_up"]
 [connection signal="pressed" from="ImportAndEnergy/Import/ImportSlider/UpButton" to="ImportAndEnergy/Import/ImportSlider" method="_on_import_up_button_pressed"]
+[connection signal="button_down" from="ImportAndEnergy/Import/ImportSlider/DownButton" to="ImportAndEnergy/Import/ImportSlider" method="_on_down_button_button_down"]
+[connection signal="button_up" from="ImportAndEnergy/Import/ImportSlider/DownButton" to="ImportAndEnergy/Import/ImportSlider" method="_on_down_button_button_up"]
 [connection signal="pressed" from="ImportAndEnergy/Import/ImportSlider/DownButton" to="ImportAndEnergy/Import/ImportSlider" method="_on_import_down_button_pressed"]
 [connection signal="gui_input" from="NextTurn" to="ImportAndEnergy/Energy/BackPanel" method="_on_next_turn_gui_input"]
 [connection signal="gui_input" from="NextTurn" to="NextTurn" method="_on_gui_input"]

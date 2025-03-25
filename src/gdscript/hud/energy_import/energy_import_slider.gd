@@ -1,6 +1,7 @@
 extends VSlider
 
 var value_before_tutorial = 0
+@onready var gauge_sound: AudioStreamPlayer = $"../GaugeSound"
 
 func _ready():
 	Gameloop.energy_demand_updated_winter.connect(_on_energy_demand_updated_winter)
@@ -16,6 +17,7 @@ func _ready():
 # Makes sure the user does not import more energy than needed
 func _on_import_slider_value_changed(_new_value: float):
 	var new_imported_amount = value
+	_set_sound_pitch()
 	
 	# Prevents the user from importing more than the energy demand
 	if(Gameloop.supply_winter + new_imported_amount > Gameloop.demand_winter):
@@ -38,10 +40,12 @@ func _on_energy_supply_updated_winter(winter_supply: float):
 
 func _on_import_up_button_pressed():
 	value += step
+	_set_sound_pitch()
 
 
 func _on_import_down_button_pressed():
 	value -= step
+	_set_sound_pitch()
 
 
 func _on_energy_demand_updated_winter(_demand: float):
@@ -81,3 +85,29 @@ func _on_next_turn():
 
 func _on_drag_ended(_value_changed):
 	TutorialManager.next_step_requested.emit()
+	gauge_sound.stop()
+	
+
+func _on_drag_started() -> void:
+	gauge_sound.play()
+
+
+func _set_sound_pitch():
+	var normalized_value = value / max_value
+	gauge_sound.pitch_scale = clamp(normalized_value, 0.1, 1) # Pitch between 0 and 1
+
+
+func _on_up_button_button_up() -> void:
+	gauge_sound.stop()
+
+
+func _on_up_button_button_down() -> void:
+	gauge_sound.play()
+
+
+func _on_down_button_button_up() -> void:
+	gauge_sound.stop()
+	
+
+func _on_down_button_button_down() -> void:
+	gauge_sound.play()

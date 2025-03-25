@@ -439,7 +439,7 @@ tracks/4/path = NodePath("CanvasLayer/LogoNeon:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.0015, 0.225, 0.945),
+"times": PackedFloat32Array(0, 0.225, 0.945),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, false, true]
@@ -451,7 +451,7 @@ tracks/5/path = NodePath("CanvasLayer/Logo:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0.0015, 0.225, 0.945),
+"times": PackedFloat32Array(0, 0.225, 0.945),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
@@ -923,7 +923,8 @@ texture = ExtResource("19_1nqsc")
 
 [node name="LogoNeon" type="Sprite2D" parent="CanvasLayer"]
 visible = false
-position = Vector2(986, 209)
+position = Vector2(986, 362)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("22_7v6ln")
 
 [node name="GreenOverlay" type="ColorRect" parent="CanvasLayer"]
