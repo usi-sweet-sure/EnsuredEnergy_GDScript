@@ -10,6 +10,7 @@ func _on_show_info_frame():
 	visible = true
 	tween.tween_property(self, "scale", new_scale, 0.1)
 	await tween.finished
+
 	
 	# The limits depend on where on the screen is the infoframe,
 	# since the ui has multiple elements hidings more or less of the screen,
