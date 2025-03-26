@@ -1,8 +1,10 @@
 extends TextureButton
 
 @onready var floating_message = $Control/FloatingMessage
+@onready var label: Label = $Label
 
 func _ready():
+	Gameloop.player_can_start_playing_new_turn.connect(_on_player_can_start_playing_turn)
 	Gameloop.energy_supply_updated_winter.connect(_on_energy_supply_updated)
 	Gameloop.energy_supply_updated_summer.connect(_on_energy_supply_updated)
 	Gameloop.imported_energy_amount_updated.connect(_on_imported_energy_amount_updated)
@@ -70,3 +72,8 @@ func _on_gui_input(event):
 	if event is InputEventMouseButton and event.button_mask == MOUSE_BUTTON_MASK_LEFT and !Gameloop.can_go_to_next_turn():
 		floating_message.stop()
 		floating_message.float_up()
+
+
+func _on_player_can_start_playing_turn():
+	if Gameloop.current_turn == Gameloop.total_number_of_turns:
+		label.text = "NEXT_TURN_BUTTON_LABEL_2"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=188 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=207 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/textures/ui/Button-Next-Normal.png" id="2_aobed"]
 [ext_resource type="Texture2D" uid="uid://ccsapuvkqqt1b" path="res://assets/textures/ui/All-HQ-Assets-D_0006s_0009_Profile-metal-base.png" id="2_nu7y6"]
@@ -133,6 +133,9 @@
 [ext_resource type="PackedScene" uid="uid://c8vhh4tt8t2j4" path="res://scenes/hud/floating_message.tscn" id="115_hpdbb"]
 [ext_resource type="Script" uid="uid://3222vc26ymbm" path="res://src/gdscript/shocks/shock_buttons_drawer/shock_buttons_drawer.gd" id="126_ky6x4"]
 [ext_resource type="Texture2D" uid="uid://byhs2falwauts" path="res://assets/textures/ui/clock_ring.png" id="128_7na6l"]
+[ext_resource type="Script" uid="uid://bn1ekqei8wgos" path="res://src/gdscript/hud/clock/last_turn_indicator.gd" id="131_cwd6i"]
+[ext_resource type="Shader" uid="uid://d0i20xnn8v4mu" path="res://src/gdscript/shaders/text_move.gdshader" id="132_cwd6i"]
+[ext_resource type="Texture2D" uid="uid://d2btaduc1gq0j" path="res://assets/textures/screens/screen_3.png" id="132_u070d"]
 [ext_resource type="Script" uid="uid://jlfi6jdguf2i" path="res://src/gdscript/hud/next_turn_button/next_turn_overlay.gd" id="133_g5xys"]
 [ext_resource type="Script" uid="uid://nrxw7g2t5ipy" path="res://src/gdscript/hud/show_end_button.gd" id="134_ba0nv"]
 [ext_resource type="Script" uid="uid://lx3ngjfsuyiu" path="res://src/gdscript/hud/survey_label.gd" id="134_ps8q0"]
@@ -1080,6 +1083,187 @@ _data = {
 &"rotate_ring_backward": SubResource("Animation_rnjk4")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u070d"]
+shader = ExtResource("132_cwd6i")
+shader_parameter/direction = Vector2(-1, 0)
+shader_parameter/speed = 0.3
+shader_parameter/text_length = 191.0
+shader_parameter/enters_from_right = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cwd6i"]
+shader = ExtResource("132_cwd6i")
+shader_parameter/direction = Vector2(-1, 0)
+shader_parameter/speed = 0.3
+shader_parameter/text_length = 191.0
+shader_parameter/enters_from_right = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wf6vf"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+bg_color = Color(0.247059, 0.8, 0.831373, 0.129412)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_color = Color(0.219608, 0.756863, 0.788235, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2d12m"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+bg_color = Color(0.219608, 0.756863, 0.788235, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_color = Color(0.219608, 0.756863, 0.788235, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i2at7"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+bg_color = Color(0.219608, 0.756863, 0.788235, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+
+[sub_resource type="FontVariation" id="FontVariation_fuu3p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rmx58"]
+
+[sub_resource type="FontVariation" id="FontVariation_26ixr"]
+variation_embolden = 0.6
+
+[sub_resource type="FontVariation" id="FontVariation_j2wkk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rmula"]
+bg_color = Color(0.192157, 0.658824, 0.690196, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j4b0y"]
+bg_color = Color(0.247059, 0.776471, 0.811765, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_arjh5"]
+bg_color = Color(0.129412, 0.486275, 0.509804, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="Theme" id="Theme_jki7j"]
+/colors/Dark = Color(0.0627451, 0.572549, 0, 1)
+/font_sizes/Big = 18
+/fonts/font = null
+Button/colors/font_color = Color(0.192157, 0.647059, 0.67451, 1)
+Button/colors/font_hover_color = Color(0.94902, 0.94902, 0.94902, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(0.0745098, 0.196078, 0.207843, 1)
+Button/font_sizes/font_size = 20
+Button/fonts/font = ExtResource("19_t3l2l")
+Button/styles/hover = SubResource("StyleBoxFlat_wf6vf")
+Button/styles/normal = SubResource("StyleBoxFlat_2d12m")
+Button/styles/pressed = SubResource("StyleBoxFlat_i2at7")
+Label/colors/font_color = Color(0.0784314, 0.180392, 0.192157, 1)
+Label/colors/font_outline_color = Color(1, 1, 1, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/font_sizes/font_size = 16
+Label/fonts/font = SubResource("FontVariation_fuu3p")
+Label/styles/normal = SubResource("StyleBoxEmpty_rmx58")
+Paper/base_type = &"Label"
+Paper/colors/color = Color(0.631373, 0.443137, 0.403922, 1)
+Paper/colors/font_color = Color(0, 0, 0, 1)
+Paper/colors/font_outline_color = Color(0, 0, 0, 1)
+Paper/colors/font_shadow_color = Color(0, 0, 0, 1)
+Paper/constants/line_spacing = 0
+Paper/constants/outline_size = 0
+Paper/constants/shadow_offset_x = 0
+Paper/constants/shadow_offset_y = 0
+Paper/constants/shadow_outline_size = 0
+Paper/font_sizes/font_size = 18
+Paper/font_sizes/size = 16
+Paper/fonts/font = ExtResource("30_d1m8l")
+RichTextLabel/constants/line_separation = 7
+RichTextLabel/fonts/bold_font = SubResource("FontVariation_26ixr")
+RichTextLabel/fonts/normal_font = SubResource("FontVariation_j2wkk")
+Screen/base_type = &"Label"
+Screen/colors/font_color = Color(0.219608, 0.756863, 0.788235, 1)
+Screen/font_sizes/font_size = 30
+Screen/fonts/font = ExtResource("19_t3l2l")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_rmula")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_j4b0y")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_arjh5")
+
+[sub_resource type="Animation" id="Animation_fuu3p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Clock/LastTurnIndicator:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Clock/LastTurnIndicator:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_cwd6i"]
+resource_name = "appear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Clock/LastTurnIndicator:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1.1, 1.1), Vector2(0.9, 0.9), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Clock/LastTurnIndicator:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rmx58"]
+_data = {
+&"RESET": SubResource("Animation_fuu3p"),
+&"appear": SubResource("Animation_cwd6i")
+}
+
 [sub_resource type="Animation" id="Animation_vhawi"]
 resource_name = "loading"
 length = 1.5
@@ -1128,7 +1312,7 @@ _data = {
 
 [node name="UI" type="CanvasLayer"]
 follow_viewport_enabled = true
-metadata/_edit_vertical_guides_ = [960.0, 1041.0, -52.0, 904.0]
+metadata/_edit_vertical_guides_ = [960.0, 1041.0, -52.0, 904.0, 1737.0, 1872.0, 1602.0]
 metadata/_edit_horizontal_guides_ = [690.0, 482.0]
 
 [node name="Shock" parent="." instance=ExtResource("5_tj765")]
@@ -2984,6 +3168,77 @@ libraries = {
 &"": SubResource("AnimationLibrary_nn3hb")
 }
 speed_scale = 0.5
+
+[node name="LastTurnIndicator" type="Control" parent="Clock"]
+anchors_preset = 0
+offset_left = 1601.0
+offset_top = 288.0
+offset_right = 1872.0
+offset_bottom = 346.0
+pivot_offset = Vector2(135, 29)
+script = ExtResource("131_cwd6i")
+
+[node name="BackPlate" type="NinePatchRect" parent="Clock/LastTurnIndicator"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = -5.0
+offset_right = -21.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("62_orw34")
+patch_margin_left = 59
+patch_margin_top = 35
+patch_margin_right = 59
+patch_margin_bottom = 34
+
+[node name="Screen" type="NinePatchRect" parent="Clock/LastTurnIndicator"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 8.0
+offset_right = 234.0
+offset_bottom = 52.0
+texture = ExtResource("132_u070d")
+
+[node name="Label" type="Label" parent="Clock/LastTurnIndicator"]
+material = SubResource("ShaderMaterial_u070d")
+layout_mode = 0
+offset_left = 39.0
+offset_top = 10.0
+offset_right = 230.0
+offset_bottom = 50.0
+theme = ExtResource("3_8s8ds")
+theme_type_variation = &"Screen"
+theme_override_font_sizes/font_size = 25
+text = "LAST_TURN"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="Label2" type="Label" parent="Clock/LastTurnIndicator"]
+material = SubResource("ShaderMaterial_cwd6i")
+layout_mode = 0
+offset_left = 39.0
+offset_top = 10.0
+offset_right = 230.0
+offset_bottom = 50.0
+theme = SubResource("Theme_jki7j")
+theme_type_variation = &"Screen"
+theme_override_font_sizes/font_size = 25
+text = "LAST_TURN"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Clock/LastTurnIndicator"]
+root_node = NodePath("../../..")
+libraries = {
+&"": SubResource("AnimationLibrary_rmx58")
+}
+speed_scale = 2.0
 
 [node name="OpenSettingsButton" type="TextureButton" parent="." groups=["buttons"]]
 offset_left = 1864.0

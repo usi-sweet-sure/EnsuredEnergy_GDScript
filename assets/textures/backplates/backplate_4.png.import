@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d2xmfb55o0osw"
-path="res://.godot/imported/All-HQ-Assets-D_0006s_0014_Start-menu-metal-base.png-15ca4482dfd493799110775996f9f950.ctex"
+path="res://.godot/imported/backplate_4.png-5b5124f7f08df1572abd637b0845aea9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/ui/All-HQ-Assets-D_0006s_0014_Start-menu-metal-base.png"
-dest_files=["res://.godot/imported/All-HQ-Assets-D_0006s_0014_Start-menu-metal-base.png-15ca4482dfd493799110775996f9f950.ctex"]
+source_file="res://assets/textures/backplates/backplate_4.png"
+dest_files=["res://.godot/imported/backplate_4.png-5b5124f7f08df1572abd637b0845aea9.ctex"]
 
 [params]
 

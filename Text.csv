@@ -107,6 +107,7 @@ SHOCK_NUC_REINTRO_PLAYER_REACTION_2,"No, it's time to de-transition from nuclear
 REQUIREMENTS_MET,You mitigated the shock,Tu as supporté le choc,Du hast den Schock abgeschwächt,Avete attenuato lo shock
 ACTION_TAKEN,Action taken,Mesures prises,Getroffene Massnahmen,Azione intrapresa
 NEXT_TURN_BUTTON_LABEL,Next turn,Prochain tour,Nächste Runde,Prossimo turno
+NEXT_TURN_BUTTON_LABEL_2,End,Fin,Ende,Fine
 NOT_ENOUGH_ENERGY,Not enough energy,Pas assez d'énergie,Nicht genug Energie,Non c'è abbastanza energia
 SETTINGS,Settings,Réglages,Einstellungen,Impostazioni
 POLICIES,Policies,Politique,Politische\nMassnahmen,Politiche
@@ -272,3 +273,4 @@ PROD_COST_SCORE,This is how much your energy system costs.,Voici combien coûte 
 SEASONALITY_SCORE,This shows your energy balance between winter and summer.,Voici ton équilibre énergétique entre l'hiver et l'été.,Dies ist dein Energiegleichgewicht zwischen Winter und Sommer.,Si tratta del bilancio energetico tra inverno ed estate.
 SUMMER,Summer,Été,Sommer,Estate
 WINTER,Winter,Hiver,Winter,Inverno
+LAST_TURN,Last turn!,Dernier tour !,Letzte Runde!,Ultimo turno!

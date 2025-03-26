@@ -286,7 +286,7 @@ visible_ratio = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="MainFrame/Screen/MetricsRanking/CalcRank/RichTextLabel2"]
 libraries = {
-"": SubResource("AnimationLibrary_iyvtd")
+&"": SubResource("AnimationLibrary_iyvtd")
 }
 autoplay = "calculating"
 

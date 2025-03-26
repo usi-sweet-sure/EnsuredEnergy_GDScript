@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cgp2b1kada3ww" path="res://assets/title/map.png" id="2_madfd"]
 [ext_resource type="Texture2D" uid="uid://kfrnyvqb84es" path="res://assets/title/cloud.png" id="3_0nshc"]
 [ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/new_fonts/special_elite/special_elite_regular.ttf" id="3_hwgqu"]
-[ext_resource type="Texture2D" uid="uid://d2xmfb55o0osw" path="res://assets/textures/ui/All-HQ-Assets-D_0006s_0014_Start-menu-metal-base.png" id="4_dgun4"]
+[ext_resource type="Texture2D" uid="uid://d2xmfb55o0osw" path="res://assets/textures/backplates/backplate_4.png" id="4_dgun4"]
 [ext_resource type="FontFile" uid="uid://bt2f3flr7psn5" path="res://assets/new_fonts/vt323/vt323_regular.ttf" id="4_u4k4v"]
 [ext_resource type="FontFile" uid="uid://dxtsp51pqna2o" path="res://assets/new_fonts/static/open_sans_bold.ttf" id="5_tofyq"]
 [ext_resource type="Texture2D" uid="uid://cvr8ptliyw7oc" path="res://assets/textures/ui/All-HQ-Assets-D_0001s_0013_1-slot-button-hole.png" id="9_j0rns"]
