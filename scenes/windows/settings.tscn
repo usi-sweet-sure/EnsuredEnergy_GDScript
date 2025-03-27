@@ -135,14 +135,13 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -175.5
-offset_top = -6.0
+offset_top = -27.0
 offset_right = 174.5
-offset_bottom = 85.0
+offset_bottom = 64.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.976471, 1, 1, 1)
 theme_override_font_sizes/font_size = 38
-text = "ENSURED 
-ENERGY"
+text = "SETTINGS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
