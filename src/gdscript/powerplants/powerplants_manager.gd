@@ -58,14 +58,14 @@ var powerplants_effects: Array[String] = [
 var powerplants_ambiences: Array[String] = [
 	"res://assets/sounds/ambiences/wind.wav", # Solar
 	"res://assets/sounds/ambiences/wind.wav", # Wind
-	"res://assets/sounds/ambiences/wind.wav", # Gas
-	"res://assets/sounds/ambiences/wind.wav", # Waste
-	"res://assets/sounds/ambiences/wind.wav", # Biomass
-	"res://assets/sounds/ambiences/wind.wav", # Biogas
-	"res://assets/sounds/ambiences/wind.wav", # Nuclear
+	"res://assets/sounds/ambiences/Big_Smoke_Amb.wav", # Gas
+	"res://assets/sounds/ambiences/Big_Smoke_Amb.wav", # Waste
+	"res://assets/sounds/ambiences/Small_Smoke_Amb.wav", # Biomass
+	"res://assets/sounds/ambiences/Small_Smoke_Amb.wav", # Biogas
+	"res://assets/sounds/ambiences/Nuclear_Amb.wav", # Nuclear
 	"res://assets/sounds/ambiences/wind.wav", # Carbon sequestration
-	"res://assets/sounds/ambiences/waterfall.wav", # Hydro
-	"res://assets/sounds/ambiences/waterfall.wav", # River 
+	"res://assets/sounds/ambiences/Hydro_Water.wav", # Hydro
+	"res://assets/sounds/ambiences/River_Water.wav", # River 
 ]
 
 # First dimension MUST BE in the same order as EngineTypeIds
