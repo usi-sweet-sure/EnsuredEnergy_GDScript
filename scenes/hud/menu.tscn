@@ -28,8 +28,9 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_odwvr"]
 shader = ExtResource("2_8lpgc")
 shader_parameter/noise_texture = ExtResource("3_0nshc")
-shader_parameter/density = 0.75
+shader_parameter/cloud_density = 0.75
 shader_parameter/speed = Vector2(0.02, 0.01)
+shader_parameter/fog_density = 3.75
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fibyn"]
 animations = [{
@@ -923,7 +924,7 @@ texture = ExtResource("19_1nqsc")
 
 [node name="LogoNeon" type="Sprite2D" parent="CanvasLayer"]
 visible = false
-position = Vector2(986, 362)
+position = Vector2(986, 360.172)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("22_7v6ln")
 

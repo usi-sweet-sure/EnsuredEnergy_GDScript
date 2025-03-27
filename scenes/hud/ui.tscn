@@ -1,7 +1,10 @@
-[gd_scene load_steps=207 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=213 format=3 uid="uid://bs48lirfn2fp2"]
 
+[ext_resource type="Shader" uid="uid://fkpbxalsaovj" path="res://src/gdscript/shaders/cloud.gdshader" id="1_rmx58"]
+[ext_resource type="Texture2D" uid="uid://kfrnyvqb84es" path="res://assets/title/cloud.png" id="2_26ixr"]
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/textures/ui/Button-Next-Normal.png" id="2_aobed"]
 [ext_resource type="Texture2D" uid="uid://ccsapuvkqqt1b" path="res://assets/textures/ui/All-HQ-Assets-D_0006s_0009_Profile-metal-base.png" id="2_nu7y6"]
+[ext_resource type="Texture2D" uid="uid://dbh32v46opxyl" path="res://assets/title/clouds.jpeg" id="2_rmx58"]
 [ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/new_fonts/label_themes.tres" id="3_8s8ds"]
 [ext_resource type="PackedScene" uid="uid://d2hyunjbx7qb7" path="res://scenes/hud/energy_bar.tscn" id="3_fm1y6"]
 [ext_resource type="Texture2D" uid="uid://biq6v1m7nc6l" path="res://assets/textures/ui/Button-Next-Press.png" id="3_qtdni"]
@@ -28,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://0mihvtaw003w" path="res://assets/textures/ui/Icon-Pollution-.png" id="25_7q1c5"]
 [ext_resource type="Texture2D" uid="uid://c78xktsl3cnxc" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0016_Icon-yellow-normal-button.png" id="25_o5q30"]
 [ext_resource type="Script" uid="uid://bixk4y7dlkn1t" path="res://src/gdscript/hud/energy_import/energy_import_slider.gd" id="25_pkr0e"]
+[ext_resource type="AudioStream" uid="uid://d2wailh7xcnu1" path="res://assets/sounds/ambiences/wind_shaking_an_electrical_wire.mp3" id="26_j2wkk"]
 [ext_resource type="Texture2D" uid="uid://b07rwrrjjeock" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0017_Icon-yellow-press-button.png" id="26_kd3a6"]
 [ext_resource type="Texture2D" uid="uid://dm51vy4uvlpvd" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0015_Icon-yellow-hover-button.png" id="27_sye1h"]
 [ext_resource type="Texture2D" uid="uid://vff0e83ytund" path="res://assets/textures/ui/Energy-base.png" id="28_mr6x7"]
@@ -140,360 +144,19 @@
 [ext_resource type="Script" uid="uid://nrxw7g2t5ipy" path="res://src/gdscript/hud/show_end_button.gd" id="134_ba0nv"]
 [ext_resource type="Script" uid="uid://lx3ngjfsuyiu" path="res://src/gdscript/hud/survey_label.gd" id="134_ps8q0"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3tdw6"]
-bg_color = Color(0.65098, 0.65098, 0.65098, 0.0470588)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_color = Color(0.25098, 0.807843, 0.839216, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j2wkk"]
+shader = ExtResource("1_rmx58")
+shader_parameter/noise_texture = ExtResource("2_rmx58")
+shader_parameter/cloud_density = 0.5
+shader_parameter/speed = Vector2(0.05, 0.01)
+shader_parameter/fog_density = 7.472
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pgfdh"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_color = Color(0.219608, 0.752941, 0.784314, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03rjl"]
-bg_color = Color(0.219608, 0.756863, 0.788235, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-
-[sub_resource type="FontVariation" id="FontVariation_3ifss"]
-base_font = ExtResource("51_joowr")
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nyqp5"]
-
-[sub_resource type="FontVariation" id="FontVariation_u3fkg"]
-base_font = ExtResource("30_d1m8l")
-variation_embolden = 0.6
-
-[sub_resource type="FontVariation" id="FontVariation_ule17"]
-base_font = ExtResource("30_d1m8l")
-
-[sub_resource type="FontVariation" id="FontVariation_b0wbe"]
-base_font = ExtResource("19_t3l2l")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5mtqi"]
-bg_color = Color(0.192157, 0.658824, 0.690196, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1qqbn"]
-bg_color = Color(0.247059, 0.776471, 0.811765, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_idcep"]
-bg_color = Color(0.129412, 0.486275, 0.509804, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="Theme" id="Theme_34yde"]
-/colors/Dark = Color(0.0627451, 0.572549, 0, 1)
-/font_sizes/Big = 18
-/fonts/font = ExtResource("30_d1m8l")
-Button/colors/font_color = Color(0.211765, 0.690196, 0.717647, 1)
-Button/colors/font_pressed_color = Color(0.0862745, 0.207843, 0.219608, 1)
-Button/font_sizes/font_size = 24
-Button/fonts/font = ExtResource("19_t3l2l")
-Button/styles/hover = SubResource("StyleBoxFlat_3tdw6")
-Button/styles/normal = SubResource("StyleBoxFlat_pgfdh")
-Button/styles/pressed = SubResource("StyleBoxFlat_03rjl")
-Label/colors/font_color = Color(0.0784314, 0.180392, 0.192157, 1)
-Label/colors/font_outline_color = Color(1, 1, 1, 1)
-Label/colors/font_shadow_color = Color(0, 0, 0, 0)
-Label/constants/line_spacing = 3
-Label/constants/outline_size = 0
-Label/constants/shadow_offset_x = 1
-Label/constants/shadow_offset_y = 1
-Label/constants/shadow_outline_size = 1
-Label/font_sizes/font_size = 16
-Label/fonts/font = SubResource("FontVariation_3ifss")
-Label/styles/normal = SubResource("StyleBoxEmpty_nyqp5")
-Paper/base_type = &"Label"
-Paper/colors/color = Color(0.631373, 0.443137, 0.403922, 1)
-Paper/colors/font_color = Color(0, 0, 0, 1)
-Paper/colors/font_outline_color = Color(0, 0, 0, 1)
-Paper/colors/font_shadow_color = Color(0, 0, 0, 1)
-Paper/constants/line_spacing = 0
-Paper/constants/outline_size = 0
-Paper/constants/shadow_offset_x = 0
-Paper/constants/shadow_offset_y = 0
-Paper/constants/shadow_outline_size = 0
-Paper/font_sizes/font_size = 18
-Paper/font_sizes/size = 16
-Paper/fonts/font = ExtResource("30_d1m8l")
-RichTextLabel/constants/line_separation = 7
-RichTextLabel/fonts/bold_font = SubResource("FontVariation_u3fkg")
-RichTextLabel/fonts/normal_font = SubResource("FontVariation_ule17")
-Screen/base_type = &"Label"
-Screen/colors/font_color = Color(0.219608, 0.756863, 0.788235, 1)
-Screen/font_sizes/font_size = 30
-Screen/fonts/font = SubResource("FontVariation_b0wbe")
-VScrollBar/styles/grabber = SubResource("StyleBoxFlat_5mtqi")
-VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_1qqbn")
-VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_idcep")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3qw21"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r2ty1"]
-
-[sub_resource type="FontVariation" id="FontVariation_15ni2"]
-base_font = ExtResource("51_joowr")
-spacing_glyph = 7
-
-[sub_resource type="FontVariation" id="FontVariation_4ww80"]
-variation_embolden = 0.2
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uqc36"]
-bg_color = Color(0.317647, 0.317647, 0.317647, 0)
-border_color = Color(0, 0, 0, 1)
-border_blend = true
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mru71"]
-bg_color = Color(0.137255, 0.470588, 0.760784, 0.701961)
-border_color = Color(0, 0, 0, 1)
-
-[sub_resource type="Animation" id="Animation_nhl1a"]
-resource_name = "appear_then_lock"
-length = 1.75
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.4, 0.6, 1.2, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(2.25, 2.25), Vector2(1.75, 1.75), Vector2(2.25, 2.25), Vector2(2.25, 2.25), Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(1.2, 1.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(996, 540), Vector2(146, 104.5)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.1, 1.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../OpenGraphsFrameButton:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.1, 1.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../BackPlate/Graphs:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0.1, 1.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../Policies/OpenPoliciesWindowButton:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(1.2, 1.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(166, 80), Vector2(228, 74)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../BackPlate/Policies:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(1.2, 1.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(65, 18), Vector2(127, 18)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_r7tbv"]
-_data = {
-&"appear_then_lock": SubResource("Animation_nhl1a")
-}
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nm6d8"]
-bg_color = Color(0.317647, 0.317647, 0.317647, 0.87451)
-border_color = Color(0, 0, 0, 1)
-border_blend = true
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldrdn"]
-bg_color = Color(0.152941, 0.658824, 0.152941, 1)
-border_color = Color(0, 0, 0, 1)
-border_blend = true
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vvqt"]
-bg_color = Color(0.317647, 0.317647, 0.317647, 0.87451)
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dvfnp"]
-bg_color = Color(0.627451, 0.627451, 0.627451, 1)
-border_color = Color(0, 0, 0, 1)
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="Animation" id="Animation_sip0e"]
-resource_name = "red_alert_blink"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("alert:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.309804), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_rwe8w"]
-_data = {
-&"red_alert_blink": SubResource("Animation_sip0e")
-}
-
-[sub_resource type="FontVariation" id="FontVariation_n3vpe"]
-base_font = ExtResource("51_joowr")
-spacing_glyph = 7
-
-[sub_resource type="FontVariation" id="FontVariation_bwdpt"]
-base_font = ExtResource("53_v477p")
-
-[sub_resource type="FontVariation" id="FontVariation_t46uf"]
-base_font = ExtResource("53_v477p")
-
-[sub_resource type="Theme" id="Theme_yjcuk"]
-/font_sizes/Big = 22
-/fonts/font = SubResource("FontVariation_bwdpt")
-MetalLabel/colors/White = Color(1, 1, 1, 1)
-MetalLabel/font_sizes/size = 22
-MetalLabel/fonts/font = SubResource("FontVariation_t46uf")
-PaperLabel/font_sizes/size = 22
-PaperLabel/fonts/font = ExtResource("30_d1m8l")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qglqh"]
-bg_color = Color(0.215686, 0.337255, 0.34902, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_siya7"]
-bg_color = Color(0.215686, 0.337255, 0.34902, 1)
-
-[sub_resource type="Animation" id="Animation_m2tvt"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BackPanel:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("BackPanel:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(107, -23)]
-}
-
-[sub_resource type="Animation" id="Animation_nuxdx"]
-resource_name = "not_enough_energy_warning"
-length = 1.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BackPanel:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(0.871359, 0.34934, 0.29613, 1), Color(1, 1, 1, 1), Color(0.870588, 0.34902, 0.298039, 1), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("BackPanel:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(107, -23), Vector2(110, -23), Vector2(107, -23), Vector2(104, -23), Vector2(107, -23), Vector2(110, -23), Vector2(107, -23)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_u070d"]
-_data = {
-&"RESET": SubResource("Animation_m2tvt"),
-&"not_enough_energy_warning": SubResource("Animation_nuxdx")
-}
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_26ixr"]
+shader = ExtResource("1_rmx58")
+shader_parameter/noise_texture = ExtResource("2_26ixr")
+shader_parameter/cloud_density = 0.75
+shader_parameter/speed = Vector2(0.02, 0.01)
+shader_parameter/fog_density = 4.861
 
 [sub_resource type="Animation" id="Animation_lrye6"]
 length = 0.001
@@ -609,7 +272,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("../../MouseBlock:visible")
+tracks/9/path = NodePath("../../../ParallaxBackground:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -617,6 +280,150 @@ tracks/9/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../../../ParallaxBackground2:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../../../ParallaxBackground/ColorRect:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../../../ParallaxBackground2/ColorRect:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("../..:layer")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("../../../TopLeftZone:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("../../../EnvironmentAndPollution:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("../../../ImportAndEnergy:modulate")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("../../../NextTurn:modulate")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("../../../NextTurnOverlay:modulate")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("../../../OpenSettingsButton:modulate")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("../../AudioStreamPlayer:playing")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("../../AudioStreamPlayer:volume_db")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_gyjvq"]
@@ -630,7 +437,7 @@ tracks/0/path = NodePath(".:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = false
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.19, 1.24),
+"times": PackedFloat32Array(0, 0.19, 1.25),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1.25, 1.25), Vector2(1, 1)]
@@ -677,31 +484,31 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("../../MouseBlock:visible")
+tracks/4/path = NodePath("../TurnInfo:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0, 1.25),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true, false]
+"values": [false, true]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("../TurnInfo:visible")
+tracks/5/path = NodePath("../..:layer")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0, 1.25),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false, true]
+"values": [2, 1]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Backdrop:visible")
+tracks/6/path = NodePath("../../../ParallaxBackground:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -713,14 +520,134 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Backdrop:self_modulate")
+tracks/7/path = NodePath("../../../ParallaxBackground2:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0.54, 1.25),
+"times": PackedFloat32Array(0, 1.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../../../ParallaxBackground/ColorRect:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1.25),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../../../ParallaxBackground2/ColorRect:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 1.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../../../TopLeftZone:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 1.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../../../EnvironmentAndPollution:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 1.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../../../ImportAndEnergy:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 1.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("../../../NextTurn:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 1.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("../../../NextTurnOverlay:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 1.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("../../../OpenSettingsButton:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 1.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("../../AudioStreamPlayer:playing")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0.01, 1.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("../../AudioStreamPlayer:volume_db")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 1.25),
+"transitions": PackedFloat32Array(7.17937, 3.36359),
+"update": 0,
+"values": [0.0, -60.0]
 }
 
 [sub_resource type="Animation" id="Animation_f32o7"]
@@ -865,35 +792,35 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("../../MouseBlock:visible")
+tracks/10/path = NodePath("../TurnInfo:visible")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("../TurnInfo:visible")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
 "times": PackedFloat32Array(0.01),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../../../ParallaxBackground:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Backdrop:visible")
+tracks/12/path = NodePath("../../../ParallaxBackground2:visible")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(0.01),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -901,14 +828,134 @@ tracks/12/keys = {
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Backdrop:self_modulate")
+tracks/13/path = NodePath("../../../ParallaxBackground/ColorRect:modulate")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(0.01, 0.55),
+"times": PackedFloat32Array(0, 0.7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("../../../ParallaxBackground2/ColorRect:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("../..:layer")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("../../../TopLeftZone:modulate")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("../../../EnvironmentAndPollution:modulate")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("../../../ImportAndEnergy:modulate")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("../../../NextTurn:modulate")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("../../../NextTurnOverlay:modulate")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("../../../OpenSettingsButton:modulate")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("../../AudioStreamPlayer:playing")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("../../AudioStreamPlayer:volume_db")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0.01, 0.71),
+"transitions": PackedFloat32Array(0.176777, 0.196146),
+"update": 0,
+"values": [-80.0, 0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_08hvt"]
@@ -917,6 +964,111 @@ _data = {
 &"go_back_to_corner": SubResource("Animation_gyjvq"),
 &"go_to_center": SubResource("Animation_f32o7")
 }
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3tdw6"]
+bg_color = Color(0.65098, 0.65098, 0.65098, 0.0470588)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_color = Color(0.25098, 0.807843, 0.839216, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pgfdh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_color = Color(0.219608, 0.752941, 0.784314, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03rjl"]
+bg_color = Color(0.219608, 0.756863, 0.788235, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+
+[sub_resource type="FontVariation" id="FontVariation_3ifss"]
+base_font = ExtResource("51_joowr")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nyqp5"]
+
+[sub_resource type="FontVariation" id="FontVariation_u3fkg"]
+base_font = ExtResource("30_d1m8l")
+variation_embolden = 0.6
+
+[sub_resource type="FontVariation" id="FontVariation_ule17"]
+base_font = ExtResource("30_d1m8l")
+
+[sub_resource type="FontVariation" id="FontVariation_b0wbe"]
+base_font = ExtResource("19_t3l2l")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5mtqi"]
+bg_color = Color(0.192157, 0.658824, 0.690196, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1qqbn"]
+bg_color = Color(0.247059, 0.776471, 0.811765, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_idcep"]
+bg_color = Color(0.129412, 0.486275, 0.509804, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="Theme" id="Theme_34yde"]
+/colors/Dark = Color(0.0627451, 0.572549, 0, 1)
+/font_sizes/Big = 18
+/fonts/font = ExtResource("30_d1m8l")
+Button/colors/font_color = Color(0.211765, 0.690196, 0.717647, 1)
+Button/colors/font_pressed_color = Color(0.0862745, 0.207843, 0.219608, 1)
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("19_t3l2l")
+Button/styles/hover = SubResource("StyleBoxFlat_3tdw6")
+Button/styles/normal = SubResource("StyleBoxFlat_pgfdh")
+Button/styles/pressed = SubResource("StyleBoxFlat_03rjl")
+Label/colors/font_color = Color(0.0784314, 0.180392, 0.192157, 1)
+Label/colors/font_outline_color = Color(1, 1, 1, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/font_sizes/font_size = 16
+Label/fonts/font = SubResource("FontVariation_3ifss")
+Label/styles/normal = SubResource("StyleBoxEmpty_nyqp5")
+Paper/base_type = &"Label"
+Paper/colors/color = Color(0.631373, 0.443137, 0.403922, 1)
+Paper/colors/font_color = Color(0, 0, 0, 1)
+Paper/colors/font_outline_color = Color(0, 0, 0, 1)
+Paper/colors/font_shadow_color = Color(0, 0, 0, 1)
+Paper/constants/line_spacing = 0
+Paper/constants/outline_size = 0
+Paper/constants/shadow_offset_x = 0
+Paper/constants/shadow_offset_y = 0
+Paper/constants/shadow_outline_size = 0
+Paper/font_sizes/font_size = 18
+Paper/font_sizes/size = 16
+Paper/fonts/font = ExtResource("30_d1m8l")
+RichTextLabel/constants/line_separation = 7
+RichTextLabel/fonts/bold_font = SubResource("FontVariation_u3fkg")
+RichTextLabel/fonts/normal_font = SubResource("FontVariation_ule17")
+Screen/base_type = &"Label"
+Screen/colors/font_color = Color(0.219608, 0.756863, 0.788235, 1)
+Screen/font_sizes/font_size = 30
+Screen/fonts/font = SubResource("FontVariation_b0wbe")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_5mtqi")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_1qqbn")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_idcep")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ch2be"]
 atlas = ExtResource("100_2c0ru")
@@ -1209,7 +1361,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Clock/LastTurnIndicator:scale")
+tracks/0/path = NodePath("Clock/Clock/LastTurnIndicator:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -1221,7 +1373,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Clock/LastTurnIndicator:visible")
+tracks/1/path = NodePath("Clock/Clock/LastTurnIndicator:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -1236,7 +1388,7 @@ resource_name = "appear"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Clock/LastTurnIndicator:scale")
+tracks/0/path = NodePath("Clock/Clock/LastTurnIndicator:scale")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -1248,7 +1400,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Clock/LastTurnIndicator:visible")
+tracks/1/path = NodePath("Clock/Clock/LastTurnIndicator:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -1262,6 +1414,256 @@ tracks/1/keys = {
 _data = {
 &"RESET": SubResource("Animation_fuu3p"),
 &"appear": SubResource("Animation_cwd6i")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qw21"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r2ty1"]
+
+[sub_resource type="FontVariation" id="FontVariation_15ni2"]
+base_font = ExtResource("51_joowr")
+spacing_glyph = 7
+
+[sub_resource type="FontVariation" id="FontVariation_4ww80"]
+variation_embolden = 0.2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uqc36"]
+bg_color = Color(0.317647, 0.317647, 0.317647, 0)
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mru71"]
+bg_color = Color(0.137255, 0.470588, 0.760784, 0.701961)
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_nhl1a"]
+resource_name = "appear_then_lock"
+length = 1.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.4, 0.6, 1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(2.25, 2.25), Vector2(1.75, 1.75), Vector2(2.25, 2.25), Vector2(2.25, 2.25), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(996, 540), Vector2(146, 104.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../OpenGraphsFrameButton:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../BackPlate/Graphs:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.1, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Policies/OpenPoliciesWindowButton:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(166, 80), Vector2(228, 74)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../BackPlate/Policies:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(65, 18), Vector2(127, 18)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r7tbv"]
+_data = {
+&"appear_then_lock": SubResource("Animation_nhl1a")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nm6d8"]
+bg_color = Color(0.317647, 0.317647, 0.317647, 0.87451)
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldrdn"]
+bg_color = Color(0.152941, 0.658824, 0.152941, 1)
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vvqt"]
+bg_color = Color(0.317647, 0.317647, 0.317647, 0.87451)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dvfnp"]
+bg_color = Color(0.627451, 0.627451, 0.627451, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="Animation" id="Animation_sip0e"]
+resource_name = "red_alert_blink"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("alert:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.309804), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rwe8w"]
+_data = {
+&"red_alert_blink": SubResource("Animation_sip0e")
+}
+
+[sub_resource type="FontVariation" id="FontVariation_n3vpe"]
+base_font = ExtResource("51_joowr")
+spacing_glyph = 7
+
+[sub_resource type="FontVariation" id="FontVariation_bwdpt"]
+base_font = ExtResource("53_v477p")
+
+[sub_resource type="FontVariation" id="FontVariation_t46uf"]
+base_font = ExtResource("53_v477p")
+
+[sub_resource type="Theme" id="Theme_yjcuk"]
+/font_sizes/Big = 22
+/fonts/font = SubResource("FontVariation_bwdpt")
+MetalLabel/colors/White = Color(1, 1, 1, 1)
+MetalLabel/font_sizes/size = 22
+MetalLabel/fonts/font = SubResource("FontVariation_t46uf")
+PaperLabel/font_sizes/size = 22
+PaperLabel/fonts/font = ExtResource("30_d1m8l")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qglqh"]
+bg_color = Color(0.215686, 0.337255, 0.34902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_siya7"]
+bg_color = Color(0.215686, 0.337255, 0.34902, 1)
+
+[sub_resource type="Animation" id="Animation_m2tvt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BackPanel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BackPanel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(107, -23)]
+}
+
+[sub_resource type="Animation" id="Animation_nuxdx"]
+resource_name = "not_enough_energy_warning"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BackPanel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.871359, 0.34934, 0.29613, 1), Color(1, 1, 1, 1), Color(0.870588, 0.34902, 0.298039, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BackPanel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(107, -23), Vector2(110, -23), Vector2(107, -23), Vector2(104, -23), Vector2(107, -23), Vector2(110, -23), Vector2(107, -23)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u070d"]
+_data = {
+&"RESET": SubResource("Animation_m2tvt"),
+&"not_enough_energy_warning": SubResource("Animation_nuxdx")
 }
 
 [sub_resource type="Animation" id="Animation_vhawi"]
@@ -1315,9 +1717,413 @@ follow_viewport_enabled = true
 metadata/_edit_vertical_guides_ = [960.0, 1041.0, -52.0, 904.0, 1737.0, 1872.0, 1602.0]
 metadata/_edit_horizontal_guides_ = [690.0, 482.0]
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = 2
+visible = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1920, 1080)
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground"]
+material = SubResource("ShaderMaterial_j2wkk")
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+layer = 2
+visible = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
+motion_mirroring = Vector2(1920, 1080)
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground2"]
+material = SubResource("ShaderMaterial_26ixr")
+offset_right = 1920.0
+offset_bottom = 1080.0
+
 [node name="Shock" parent="." instance=ExtResource("5_tj765")]
 visible = false
 script = null
+
+[node name="Clock" type="CanvasLayer" parent="."]
+
+[node name="Clock" type="Control" parent="Clock"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TurnInfo" type="TextureButton" parent="Clock/Clock" groups=["help_buttons"]]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1603.0
+offset_top = 10.0
+offset_right = 1829.0
+offset_bottom = 238.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+mouse_default_cursor_shape = 16
+texture_normal = ExtResource("100_2c0ru")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("114_f0clg")
+
+[node name="TimePanelBlank" type="Sprite2D" parent="Clock/Clock"]
+position = Vector2(1736, 144)
+texture = ExtResource("100_2c0ru")
+region_rect = Rect2(0, 0, 266, 268)
+script = ExtResource("57_lg17s")
+
+[node name="TimelineAnimation" type="AnimationPlayer" parent="Clock/Clock/TimePanelBlank"]
+libraries = {
+&"": SubResource("AnimationLibrary_08hvt")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Clock/Clock/TimePanelBlank"]
+volume_db = -20.0
+pitch_scale = 0.5
+bus = &"Sound"
+
+[node name="CounterHole" type="Sprite2D" parent="Clock/Clock/TimePanelBlank"]
+position = Vector2(0, 58)
+texture = ExtResource("101_ykn2m")
+
+[node name="Num1" type="Sprite2D" parent="Clock/Clock/TimePanelBlank"]
+position = Vector2(-31, 58)
+texture = ExtResource("102_5ki0w")
+
+[node name="Num2" type="Sprite2D" parent="Clock/Clock/TimePanelBlank"]
+position = Vector2(-11, 58)
+texture = ExtResource("102_5ki0w")
+
+[node name="Year2" type="Label" parent="Clock/Clock/TimePanelBlank"]
+offset_left = -48.0
+offset_top = 23.0
+offset_right = -12.0
+offset_bottom = 93.0
+theme = SubResource("Theme_34yde")
+theme_override_font_sizes/font_size = 23
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Year7" type="Label" parent="Clock/Clock/TimePanelBlank"]
+offset_left = -28.0
+offset_top = 23.0
+offset_right = 8.0
+offset_bottom = 93.0
+theme = SubResource("Theme_34yde")
+theme_override_font_sizes/font_size = 23
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Year3" type="Label" parent="Clock/Clock/TimePanelBlank"]
+offset_left = -1.0
+offset_top = 41.0
+offset_right = 20.0
+offset_bottom = 75.0
+theme = SubResource("Theme_34yde")
+theme_override_font_sizes/font_size = 23
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Num3" type="Sprite2D" parent="Clock/Clock/TimePanelBlank/Year3"]
+show_behind_parent = true
+position = Vector2(10, 17)
+texture = ExtResource("102_5ki0w")
+
+[node name="Year6" type="Label" parent="Clock/Clock/TimePanelBlank"]
+offset_left = 3.0
+offset_top = 73.0
+offset_right = 19.0
+offset_bottom = 105.0
+theme = SubResource("Theme_34yde")
+theme_override_font_sizes/font_size = 23
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Num3" type="Sprite2D" parent="Clock/Clock/TimePanelBlank/Year6"]
+show_behind_parent = true
+position = Vector2(7, 16)
+texture = ExtResource("102_5ki0w")
+
+[node name="Year4" type="Label" parent="Clock/Clock/TimePanelBlank"]
+offset_left = 10.0
+offset_top = 23.0
+offset_right = 50.0
+offset_bottom = 93.0003
+theme = SubResource("Theme_34yde")
+theme_override_font_sizes/font_size = 23
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Num4" type="Sprite2D" parent="Clock/Clock/TimePanelBlank/Year4"]
+show_behind_parent = true
+position = Vector2(18.8689, 35.1187)
+texture = ExtResource("102_5ki0w")
+
+[node name="Year5" type="Label" parent="Clock/Clock/TimePanelBlank"]
+offset_left = 22.0
+offset_top = 75.0
+offset_right = 38.0
+offset_bottom = 142.0
+theme = SubResource("Theme_34yde")
+theme_override_font_sizes/font_size = 23
+text = "2
+"
+horizontal_alignment = 1
+
+[node name="Num4" type="Sprite2D" parent="Clock/Clock/TimePanelBlank/Year5"]
+show_behind_parent = true
+position = Vector2(7, 16)
+texture = ExtResource("102_5ki0w")
+
+[node name="HideNum5" type="Sprite2D" parent="Clock/Clock/TimePanelBlank"]
+position = Vector2(12.9328, 31.4899)
+scale = Vector2(1.21447, 0.765994)
+texture = SubResource("AtlasTexture_ch2be")
+
+[node name="HideNum6" type="Sprite2D" parent="Clock/Clock/TimePanelBlank"]
+position = Vector2(39, 15)
+scale = Vector2(0.801426, 0.665322)
+texture = SubResource("AtlasTexture_ch2be")
+
+[node name="HideNum7" type="Sprite2D" parent="Clock/Clock/TimePanelBlank"]
+position = Vector2(29, 27)
+scale = Vector2(0.801426, 0.665322)
+texture = SubResource("AtlasTexture_ch2be")
+
+[node name="HideNum8" type="Sprite2D" parent="Clock/Clock/TimePanelBlank"]
+position = Vector2(20.1072, 24.3417)
+rotation = 0.968181
+scale = Vector2(0.502814, 0.665322)
+texture = SubResource("AtlasTexture_ch2be")
+
+[node name="HideNum9" type="Sprite2D" parent="Clock/Clock/TimePanelBlank"]
+position = Vector2(7.77938, 28.1445)
+rotation = 1.3251
+scale = Vector2(0.404485, 0.665322)
+texture = SubResource("AtlasTexture_ch2be")
+
+[node name="HideNum2" type="Sprite2D" parent="Clock/Clock/TimePanelBlank"]
+position = Vector2(10.8749, 88.375)
+scale = Vector2(0.869401, 0.879032)
+texture = SubResource("AtlasTexture_ou8cv")
+
+[node name="HideNum10" type="Sprite2D" parent="Clock/Clock/TimePanelBlank"]
+position = Vector2(13, 97)
+scale = Vector2(0.824628, 0.879032)
+texture = SubResource("AtlasTexture_ou8cv")
+
+[node name="HideNum3" type="Sprite2D" parent="Clock/Clock/TimePanelBlank"]
+position = Vector2(-0.5, 41.5)
+texture = SubResource("AtlasTexture_8gg1h")
+
+[node name="HideNum4" type="Sprite2D" parent="Clock/Clock/TimePanelBlank"]
+position = Vector2(0, 74)
+texture = SubResource("AtlasTexture_fqbmy")
+
+[node name="Shadow" type="Sprite2D" parent="Clock/Clock/TimePanelBlank"]
+modulate = Color(1, 1, 1, 0.780392)
+position = Vector2(2, 3)
+rotation = -2.21657
+texture = ExtResource("103_hihu7")
+offset = Vector2(0, -20)
+
+[node name="Arrow" type="Sprite2D" parent="Clock/Clock/TimePanelBlank"]
+rotation = -2.18166
+texture = ExtResource("104_ifv1c")
+offset = Vector2(0, -20)
+
+[node name="NextDecadeAP" type="AnimationPlayer" parent="Clock/Clock/TimePanelBlank"]
+libraries = {
+&"": SubResource("AnimationLibrary_5dlvf")
+}
+
+[node name="TurnInfoContainer" type="MarginContainer" parent="Clock/Clock/TimePanelBlank" groups=["papers"]]
+visible = false
+anchors_preset = -1
+anchor_left = -0.152
+anchor_top = 1.038
+anchor_right = 1.117
+anchor_bottom = 1.992
+offset_left = -462.264
+offset_top = -401.184
+offset_right = -566.707
+offset_bottom = -481.822
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Clock/Clock/TimePanelBlank/TurnInfoContainer"]
+layout_mode = 2
+texture = ExtResource("36_vc5yj")
+
+[node name="MarginContainer" type="MarginContainer" parent="Clock/Clock/TimePanelBlank/TurnInfoContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 23
+theme_override_constants/margin_top = 36
+theme_override_constants/margin_right = 39
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Clock/Clock/TimePanelBlank/TurnInfoContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="CurrentTurn" type="Label" parent="Clock/Clock/TimePanelBlank/TurnInfoContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme = SubResource("Theme_34yde")
+theme_type_variation = &"Paper"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "TURN"
+
+[node name="CurrentTurn" type="Label" parent="Clock/Clock/TimePanelBlank/TurnInfoContainer/MarginContainer/VBoxContainer/CurrentTurn"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -22.665
+offset_top = -19.5
+offset_right = 17.335
+offset_bottom = 19.5
+grow_horizontal = 0
+grow_vertical = 2
+theme = SubResource("Theme_34yde")
+theme_type_variation = &"Paper"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "N"
+horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("95_2utc1")
+
+[node name="RemainingTurns" type="Label" parent="Clock/Clock/TimePanelBlank/TurnInfoContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_34yde")
+theme_type_variation = &"Paper"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "REMAINING_TURNS"
+autowrap_mode = 2
+
+[node name="RemainingTurns" type="Label" parent="Clock/Clock/TimePanelBlank/TurnInfoContainer/MarginContainer/VBoxContainer/RemainingTurns"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -22.665
+offset_top = -19.5
+offset_right = 17.335
+offset_bottom = 19.5
+grow_horizontal = 0
+grow_vertical = 2
+theme = SubResource("Theme_34yde")
+theme_type_variation = &"Paper"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "N"
+horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("96_6b673")
+
+[node name="ring" type="Sprite2D" parent="Clock/Clock/TimePanelBlank"]
+texture = ExtResource("128_7na6l")
+
+[node name="Ring" type="AnimationPlayer" parent="Clock/Clock/TimePanelBlank"]
+libraries = {
+&"": SubResource("AnimationLibrary_nn3hb")
+}
+speed_scale = 0.5
+
+[node name="LastTurnIndicator" type="Control" parent="Clock/Clock"]
+anchors_preset = 0
+offset_left = 1601.0
+offset_top = 288.0
+offset_right = 1872.0
+offset_bottom = 346.0
+pivot_offset = Vector2(135, 29)
+script = ExtResource("131_cwd6i")
+
+[node name="BackPlate" type="NinePatchRect" parent="Clock/Clock/LastTurnIndicator"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = -5.0
+offset_right = -21.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("62_orw34")
+patch_margin_left = 59
+patch_margin_top = 35
+patch_margin_right = 59
+patch_margin_bottom = 34
+
+[node name="Screen" type="NinePatchRect" parent="Clock/Clock/LastTurnIndicator"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 8.0
+offset_right = 234.0
+offset_bottom = 52.0
+texture = ExtResource("132_u070d")
+
+[node name="Label" type="Label" parent="Clock/Clock/LastTurnIndicator"]
+material = SubResource("ShaderMaterial_u070d")
+layout_mode = 0
+offset_left = 39.0
+offset_top = 10.0
+offset_right = 230.0
+offset_bottom = 50.0
+theme = ExtResource("3_8s8ds")
+theme_type_variation = &"Screen"
+theme_override_font_sizes/font_size = 25
+text = "LAST_TURN"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="Label2" type="Label" parent="Clock/Clock/LastTurnIndicator"]
+material = SubResource("ShaderMaterial_cwd6i")
+layout_mode = 0
+offset_left = 39.0
+offset_top = 10.0
+offset_right = 230.0
+offset_bottom = 50.0
+theme = SubResource("Theme_jki7j")
+theme_type_variation = &"Screen"
+theme_override_font_sizes/font_size = 25
+text = "LAST_TURN"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Clock/Clock/LastTurnIndicator"]
+root_node = NodePath("../../../..")
+libraries = {
+&"": SubResource("AnimationLibrary_rmx58")
+}
+speed_scale = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Clock"]
+stream = ExtResource("26_j2wkk")
 
 [node name="TopLeftZone" type="Control" parent="."]
 layout_mode = 3
@@ -2855,391 +3661,6 @@ offset_right = 2120.0
 offset_bottom = 1225.0
 color = Color(1, 1, 0.941176, 0)
 
-[node name="Clock" type="Control" parent="."]
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TurnInfo" type="TextureButton" parent="Clock" groups=["help_buttons"]]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1603.0
-offset_top = 10.0
-offset_right = 1829.0
-offset_bottom = 238.0
-grow_horizontal = 2
-grow_vertical = 2
-focus_mode = 0
-mouse_default_cursor_shape = 16
-texture_normal = ExtResource("100_2c0ru")
-ignore_texture_size = true
-stretch_mode = 0
-script = ExtResource("114_f0clg")
-
-[node name="TimePanelBlank" type="Sprite2D" parent="Clock"]
-position = Vector2(1736, 144)
-texture = ExtResource("100_2c0ru")
-region_rect = Rect2(0, 0, 266, 268)
-script = ExtResource("57_lg17s")
-
-[node name="Backdrop" type="ColorRect" parent="Clock/TimePanelBlank"]
-visible = false
-self_modulate = Color(0, 0, 0, 0)
-show_behind_parent = true
-offset_left = -1779.0
-offset_top = -774.0
-offset_right = 1441.0
-offset_bottom = 980.0
-mouse_force_pass_scroll_events = false
-color = Color(0, 0, 0, 1)
-
-[node name="TimelineAnimation" type="AnimationPlayer" parent="Clock/TimePanelBlank"]
-libraries = {
-&"": SubResource("AnimationLibrary_08hvt")
-}
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Clock/TimePanelBlank"]
-volume_db = -20.0
-pitch_scale = 0.5
-bus = &"Sound"
-
-[node name="CounterHole" type="Sprite2D" parent="Clock/TimePanelBlank"]
-position = Vector2(0, 58)
-texture = ExtResource("101_ykn2m")
-
-[node name="Num1" type="Sprite2D" parent="Clock/TimePanelBlank"]
-position = Vector2(-31, 58)
-texture = ExtResource("102_5ki0w")
-
-[node name="Num2" type="Sprite2D" parent="Clock/TimePanelBlank"]
-position = Vector2(-11, 58)
-texture = ExtResource("102_5ki0w")
-
-[node name="Year2" type="Label" parent="Clock/TimePanelBlank"]
-offset_left = -48.0
-offset_top = 23.0
-offset_right = -12.0
-offset_bottom = 93.0
-theme = SubResource("Theme_34yde")
-theme_override_font_sizes/font_size = 23
-text = "2"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Year7" type="Label" parent="Clock/TimePanelBlank"]
-offset_left = -28.0
-offset_top = 23.0
-offset_right = 8.0
-offset_bottom = 93.0
-theme = SubResource("Theme_34yde")
-theme_override_font_sizes/font_size = 23
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Year3" type="Label" parent="Clock/TimePanelBlank"]
-offset_left = -1.0
-offset_top = 41.0
-offset_right = 20.0
-offset_bottom = 75.0
-theme = SubResource("Theme_34yde")
-theme_override_font_sizes/font_size = 23
-text = "2"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Num3" type="Sprite2D" parent="Clock/TimePanelBlank/Year3"]
-show_behind_parent = true
-position = Vector2(10, 17)
-texture = ExtResource("102_5ki0w")
-
-[node name="Year6" type="Label" parent="Clock/TimePanelBlank"]
-offset_left = 3.0
-offset_top = 73.0
-offset_right = 19.0
-offset_bottom = 105.0
-theme = SubResource("Theme_34yde")
-theme_override_font_sizes/font_size = 23
-text = "3"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Num3" type="Sprite2D" parent="Clock/TimePanelBlank/Year6"]
-show_behind_parent = true
-position = Vector2(7, 16)
-texture = ExtResource("102_5ki0w")
-
-[node name="Year4" type="Label" parent="Clock/TimePanelBlank"]
-offset_left = 10.0
-offset_top = 23.0
-offset_right = 50.0
-offset_bottom = 93.0003
-theme = SubResource("Theme_34yde")
-theme_override_font_sizes/font_size = 23
-text = "2"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Num4" type="Sprite2D" parent="Clock/TimePanelBlank/Year4"]
-show_behind_parent = true
-position = Vector2(18.8689, 35.1187)
-texture = ExtResource("102_5ki0w")
-
-[node name="Year5" type="Label" parent="Clock/TimePanelBlank"]
-offset_left = 22.0
-offset_top = 75.0
-offset_right = 38.0
-offset_bottom = 142.0
-theme = SubResource("Theme_34yde")
-theme_override_font_sizes/font_size = 23
-text = "2
-"
-horizontal_alignment = 1
-
-[node name="Num4" type="Sprite2D" parent="Clock/TimePanelBlank/Year5"]
-show_behind_parent = true
-position = Vector2(7, 16)
-texture = ExtResource("102_5ki0w")
-
-[node name="HideNum5" type="Sprite2D" parent="Clock/TimePanelBlank"]
-position = Vector2(12.9328, 31.4899)
-scale = Vector2(1.21447, 0.765994)
-texture = SubResource("AtlasTexture_ch2be")
-
-[node name="HideNum6" type="Sprite2D" parent="Clock/TimePanelBlank"]
-position = Vector2(39, 15)
-scale = Vector2(0.801426, 0.665322)
-texture = SubResource("AtlasTexture_ch2be")
-
-[node name="HideNum7" type="Sprite2D" parent="Clock/TimePanelBlank"]
-position = Vector2(29, 27)
-scale = Vector2(0.801426, 0.665322)
-texture = SubResource("AtlasTexture_ch2be")
-
-[node name="HideNum8" type="Sprite2D" parent="Clock/TimePanelBlank"]
-position = Vector2(20.1072, 24.3417)
-rotation = 0.968181
-scale = Vector2(0.502814, 0.665322)
-texture = SubResource("AtlasTexture_ch2be")
-
-[node name="HideNum9" type="Sprite2D" parent="Clock/TimePanelBlank"]
-position = Vector2(7.77938, 28.1445)
-rotation = 1.3251
-scale = Vector2(0.404485, 0.665322)
-texture = SubResource("AtlasTexture_ch2be")
-
-[node name="HideNum2" type="Sprite2D" parent="Clock/TimePanelBlank"]
-position = Vector2(10.8749, 88.375)
-scale = Vector2(0.869401, 0.879032)
-texture = SubResource("AtlasTexture_ou8cv")
-
-[node name="HideNum10" type="Sprite2D" parent="Clock/TimePanelBlank"]
-position = Vector2(13, 97)
-scale = Vector2(0.824628, 0.879032)
-texture = SubResource("AtlasTexture_ou8cv")
-
-[node name="HideNum3" type="Sprite2D" parent="Clock/TimePanelBlank"]
-position = Vector2(-0.5, 41.5)
-texture = SubResource("AtlasTexture_8gg1h")
-
-[node name="HideNum4" type="Sprite2D" parent="Clock/TimePanelBlank"]
-position = Vector2(0, 74)
-texture = SubResource("AtlasTexture_fqbmy")
-
-[node name="Shadow" type="Sprite2D" parent="Clock/TimePanelBlank"]
-modulate = Color(1, 1, 1, 0.780392)
-position = Vector2(2, 3)
-rotation = -2.21657
-texture = ExtResource("103_hihu7")
-offset = Vector2(0, -20)
-
-[node name="Arrow" type="Sprite2D" parent="Clock/TimePanelBlank"]
-rotation = -2.18166
-texture = ExtResource("104_ifv1c")
-offset = Vector2(0, -20)
-
-[node name="NextDecadeAP" type="AnimationPlayer" parent="Clock/TimePanelBlank"]
-libraries = {
-&"": SubResource("AnimationLibrary_5dlvf")
-}
-
-[node name="TurnInfoContainer" type="MarginContainer" parent="Clock/TimePanelBlank" groups=["papers"]]
-visible = false
-anchors_preset = -1
-anchor_left = -0.152
-anchor_top = 1.038
-anchor_right = 1.117
-anchor_bottom = 1.992
-offset_left = -462.264
-offset_top = -401.184
-offset_right = -566.707
-offset_bottom = -481.822
-grow_horizontal = 0
-grow_vertical = 2
-scale = Vector2(1.5, 1.5)
-
-[node name="NinePatchRect" type="NinePatchRect" parent="Clock/TimePanelBlank/TurnInfoContainer"]
-layout_mode = 2
-texture = ExtResource("36_vc5yj")
-
-[node name="MarginContainer" type="MarginContainer" parent="Clock/TimePanelBlank/TurnInfoContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 23
-theme_override_constants/margin_top = 36
-theme_override_constants/margin_right = 39
-theme_override_constants/margin_bottom = 30
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Clock/TimePanelBlank/TurnInfoContainer/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 10
-alignment = 1
-
-[node name="CurrentTurn" type="Label" parent="Clock/TimePanelBlank/TurnInfoContainer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 20)
-layout_mode = 2
-theme = SubResource("Theme_34yde")
-theme_type_variation = &"Paper"
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 15
-text = "TURN"
-
-[node name="CurrentTurn" type="Label" parent="Clock/TimePanelBlank/TurnInfoContainer/MarginContainer/VBoxContainer/CurrentTurn"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -22.665
-offset_top = -19.5
-offset_right = 17.335
-offset_bottom = 19.5
-grow_horizontal = 0
-grow_vertical = 2
-theme = SubResource("Theme_34yde")
-theme_type_variation = &"Paper"
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 15
-text = "N"
-horizontal_alignment = 2
-vertical_alignment = 1
-script = ExtResource("95_2utc1")
-
-[node name="RemainingTurns" type="Label" parent="Clock/TimePanelBlank/TurnInfoContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme = SubResource("Theme_34yde")
-theme_type_variation = &"Paper"
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 15
-text = "REMAINING_TURNS"
-autowrap_mode = 2
-
-[node name="RemainingTurns" type="Label" parent="Clock/TimePanelBlank/TurnInfoContainer/MarginContainer/VBoxContainer/RemainingTurns"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -22.665
-offset_top = -19.5
-offset_right = 17.335
-offset_bottom = 19.5
-grow_horizontal = 0
-grow_vertical = 2
-theme = SubResource("Theme_34yde")
-theme_type_variation = &"Paper"
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 15
-text = "N"
-horizontal_alignment = 2
-vertical_alignment = 1
-script = ExtResource("96_6b673")
-
-[node name="ring" type="Sprite2D" parent="Clock/TimePanelBlank"]
-texture = ExtResource("128_7na6l")
-
-[node name="Ring" type="AnimationPlayer" parent="Clock/TimePanelBlank"]
-libraries = {
-&"": SubResource("AnimationLibrary_nn3hb")
-}
-speed_scale = 0.5
-
-[node name="LastTurnIndicator" type="Control" parent="Clock"]
-anchors_preset = 0
-offset_left = 1601.0
-offset_top = 288.0
-offset_right = 1872.0
-offset_bottom = 346.0
-pivot_offset = Vector2(135, 29)
-script = ExtResource("131_cwd6i")
-
-[node name="BackPlate" type="NinePatchRect" parent="Clock/LastTurnIndicator"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 21.0
-offset_top = -5.0
-offset_right = -21.0
-offset_bottom = 6.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("62_orw34")
-patch_margin_left = 59
-patch_margin_top = 35
-patch_margin_right = 59
-patch_margin_bottom = 34
-
-[node name="Screen" type="NinePatchRect" parent="Clock/LastTurnIndicator"]
-layout_mode = 0
-offset_left = 35.0
-offset_top = 8.0
-offset_right = 234.0
-offset_bottom = 52.0
-texture = ExtResource("132_u070d")
-
-[node name="Label" type="Label" parent="Clock/LastTurnIndicator"]
-material = SubResource("ShaderMaterial_u070d")
-layout_mode = 0
-offset_left = 39.0
-offset_top = 10.0
-offset_right = 230.0
-offset_bottom = 50.0
-theme = ExtResource("3_8s8ds")
-theme_type_variation = &"Screen"
-theme_override_font_sizes/font_size = 25
-text = "LAST_TURN"
-horizontal_alignment = 1
-vertical_alignment = 1
-clip_text = true
-
-[node name="Label2" type="Label" parent="Clock/LastTurnIndicator"]
-material = SubResource("ShaderMaterial_cwd6i")
-layout_mode = 0
-offset_left = 39.0
-offset_top = 10.0
-offset_right = 230.0
-offset_bottom = 50.0
-theme = SubResource("Theme_jki7j")
-theme_type_variation = &"Screen"
-theme_override_font_sizes/font_size = 25
-text = "LAST_TURN"
-horizontal_alignment = 1
-vertical_alignment = 1
-clip_text = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Clock/LastTurnIndicator"]
-root_node = NodePath("../../..")
-libraries = {
-&"": SubResource("AnimationLibrary_rmx58")
-}
-speed_scale = 2.0
-
 [node name="OpenSettingsButton" type="TextureButton" parent="." groups=["buttons"]]
 offset_left = 1864.0
 offset_top = 8.0
@@ -3400,6 +3821,7 @@ offset_right = 1571.0
 offset_bottom = 269.0
 script = ExtResource("134_ps8q0")
 
+[connection signal="pressed" from="Clock/Clock/TurnInfo" to="Clock/Clock/TimePanelBlank" method="clock_pressed"]
 [connection signal="pressed" from="TopLeftZone/OpenGraphsFrameButton" to="TopLeftZone/OpenGraphsFrameButton" method="_on_pressed"]
 [connection signal="pressed" from="TopLeftZone/MoneyManagement/MoneyInfo/ToggleMoneyInfoBoxButton" to="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox" method="_on_toggle_money_info_box_button_pressed"]
 [connection signal="pressed" from="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MoreMoneyInfoButton" to="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/InfoMoneyClosed" method="_on_more_money_info_button_pressed"]
@@ -3434,8 +3856,7 @@ script = ExtResource("134_ps8q0")
 [connection signal="pressed" from="ImportAndEnergy/Import/ImportSlider/DownButton" to="ImportAndEnergy/Import/ImportSlider" method="_on_import_down_button_pressed"]
 [connection signal="gui_input" from="NextTurn" to="ImportAndEnergy/Energy/BackPanel" method="_on_next_turn_gui_input"]
 [connection signal="gui_input" from="NextTurn" to="NextTurn" method="_on_gui_input"]
-[connection signal="pressed" from="NextTurn" to="Clock/TimePanelBlank" method="_on_next_turn_button_pressed"]
-[connection signal="pressed" from="Clock/TurnInfo" to="Clock/TimePanelBlank" method="clock_pressed"]
+[connection signal="pressed" from="NextTurn" to="Clock/Clock/TimePanelBlank" method="_on_next_turn_button_pressed"]
 [connection signal="pressed" from="OpenSettingsButton" to="OpenSettingsButton" method="_on_pressed"]
 [connection signal="pressed" from="ShowEnd" to="ShowEnd" method="_on_pressed"]
 

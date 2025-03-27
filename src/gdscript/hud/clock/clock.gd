@@ -1,13 +1,11 @@
 extends Node
 
 @onready var clock_info_sticker = $TurnInfoContainer
-@onready var backdrop = $Backdrop
 @onready var timeline_animation: AnimationPlayer = $TimelineAnimation
 @onready var ring_animation = $Ring
 
 
 func _ready():
-	backdrop.hide()
 	ShockManager.shock_effects_applied.connect(_on_shock_effect_applied)
 	
 

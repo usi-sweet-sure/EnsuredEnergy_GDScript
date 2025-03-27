@@ -3,11 +3,9 @@ shader_type canvas_item;
 
 // Noise texture
 uniform sampler2D noise_texture: repeat_enable, filter_nearest;
-// Fog density
-uniform float density: hint_range(0.0, 1.0) = 0.25;
-// Fog speed
+uniform float cloud_density: hint_range(0.0, 1.0) = 0.25;
 uniform vec2 speed = vec2(0.02, 0.01);
-
+uniform float fog_density: hint_range(0.0, 10.0) = 3.75;
 
 // Called for every pixel the material is visible on
 void fragment() {
@@ -17,7 +15,7 @@ void fragment() {
 	float noise = texture(noise_texture, uv).r;
 	// Convert the noise from the (0.0, 1.0) range to the (-1.0, 1.0) range
 	// and clamp it between 0.0 and 1.0 again
-	float fog = clamp(noise * 3.75 - 1.0, 0.0, 1.0);
+	float fog = clamp(noise * fog_density - 1.0, 0.0, 1.0);
 	// Apply the fog effect
-	COLOR.a *= fog * density;
+	COLOR.a *= fog * cloud_density;
 }
