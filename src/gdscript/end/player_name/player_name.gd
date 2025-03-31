@@ -3,6 +3,7 @@ extends Control
 @onready var button_label: Label = $NextButton/Label
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var name_input: LineEdit = $BackPanel/Screen/LineEdit
+@onready var keyboard_sound: AudioStreamPlayer = $KeyboardSound
 
 
 func _ready() -> void:
@@ -10,6 +11,9 @@ func _ready() -> void:
 
 
 func _on_text_changed(new_text: String) -> void:
+	keyboard_sound.pitch_scale = randf_range(0.9, 1.0)
+
+	keyboard_sound.play()
 	if new_text.length() > 0:
 		button_label.text = tr("VALIDATE")
 	else:

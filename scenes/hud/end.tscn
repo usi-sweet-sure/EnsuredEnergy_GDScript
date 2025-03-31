@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://cej4dlw11su6f"]
+[gd_scene load_steps=52 format=3 uid="uid://cej4dlw11su6f"]
 
 [ext_resource type="Script" uid="uid://bm08rcot30crf" path="res://src/gdscript/end/end.gd" id="1_eio5g"]
 [ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/new_fonts/label_themes.tres" id="4_n8g63"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://c3opgyhsh61y8" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0014_Policies-symbol.png" id="14_x4nl2"]
 [ext_resource type="Texture2D" uid="uid://2ifd0dxwcqka" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0013_Electricity-symbol.png" id="15_s55n7"]
 [ext_resource type="Texture2D" uid="uid://bqcub63frxj38" path="res://assets/textures/powerplants/pp_sprite_neon_gas.png" id="17_80r7i"]
+[ext_resource type="AudioStream" uid="uid://4vynfj6udhle" path="res://assets/sounds/keyboard.mp3" id="17_dy03i"]
 [ext_resource type="Script" uid="uid://dghwruw1wribv" path="res://src/gdscript/end/summary/plant.gd" id="18_ni0vf"]
 [ext_resource type="Texture2D" uid="uid://ddlljpbljj4x0" path="res://assets/textures/powerplants/pp_sprite_neon_biogas.png" id="18_nt8bk"]
 [ext_resource type="Texture2D" uid="uid://b3a42e5ad2u38" path="res://assets/textures/powerplants/pp_sprite_neon_nuclear.png" id="19_kv7ws"]
@@ -815,7 +816,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("80_piib2")
 
-[node name="NextButton" type="TextureButton" parent="ThankYou"]
+[node name="NextButton" type="TextureButton" parent="ThankYou" groups=["buttons"]]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 855.0
@@ -1060,7 +1061,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(1.20327e-08, 0.111567, 0.114168, 0.364706)
 
-[node name="NextButton" type="TextureButton" parent="PlayerName"]
+[node name="NextButton" type="TextureButton" parent="PlayerName" groups=["buttons"]]
 layout_mode = 0
 offset_left = 2051.0
 offset_top = 700.0
@@ -1103,6 +1104,9 @@ texture = ExtResource("59_pxkc5")
 libraries = {
 &"": SubResource("AnimationLibrary_vlyhg")
 }
+
+[node name="KeyboardSound" type="AudioStreamPlayer" parent="PlayerName"]
+stream = ExtResource("17_dy03i")
 
 [node name="Summary" type="Control" parent="."]
 layout_mode = 3
@@ -1898,7 +1902,7 @@ texture = ExtResource("24_bc83k")
 script = ExtResource("18_ni0vf")
 plant_type = 1
 
-[node name="SummaryButton" type="TextureButton" parent="Summary"]
+[node name="SummaryButton" type="TextureButton" parent="Summary" groups=["buttons"]]
 layout_mode = 0
 offset_left = 668.0
 offset_top = 817.0
@@ -1939,7 +1943,7 @@ position = Vector2(100, 43)
 scale = Vector2(1.03846, 1)
 texture = ExtResource("59_pxkc5")
 
-[node name="LeaderboardButton" type="TextureButton" parent="Summary"]
+[node name="LeaderboardButton" type="TextureButton" parent="Summary" groups=["buttons"]]
 layout_mode = 0
 offset_left = 1040.0
 offset_top = 817.0

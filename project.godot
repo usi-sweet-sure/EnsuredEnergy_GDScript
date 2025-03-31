@@ -48,6 +48,10 @@ mouse_cursor/tooltip_position_offset=Vector2(10, -35)
 
 project/assembly_name="sure_energy_tycoon"
 
+[global_group]
+
+buttons=""
+
 [input]
 
 left_click={
