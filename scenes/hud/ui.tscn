@@ -1,4 +1,4 @@
-[gd_scene load_steps=213 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=214 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Shader" uid="uid://fkpbxalsaovj" path="res://src/gdscript/shaders/cloud.gdshader" id="1_rmx58"]
 [ext_resource type="Texture2D" uid="uid://kfrnyvqb84es" path="res://assets/title/cloud.png" id="2_26ixr"]
@@ -424,6 +424,33 @@ tracks/21/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath(".:modulate")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_j2wkk"]
+resource_name = "clock_disappears"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_gyjvq"]
@@ -961,6 +988,7 @@ tracks/23/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_08hvt"]
 _data = {
 &"RESET": SubResource("Animation_lrye6"),
+&"clock_disappears": SubResource("Animation_j2wkk"),
 &"go_back_to_corner": SubResource("Animation_gyjvq"),
 &"go_to_center": SubResource("Animation_f32o7")
 }
@@ -2124,6 +2152,7 @@ speed_scale = 2.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Clock"]
 stream = ExtResource("26_j2wkk")
+parameters/looping = true
 
 [node name="TopLeftZone" type="Control" parent="."]
 layout_mode = 3

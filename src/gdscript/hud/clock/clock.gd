@@ -84,11 +84,10 @@ func _on_all_parameters_sent():
 	
 	if Gameloop.current_turn == Gameloop.total_number_of_turns:
 		ring_animation.play("rotate_ring_backward")
-		timeline_animation.play("go_back_to_corner")
+		timeline_animation.play("clock_disappears")
 		await timeline_animation.animation_finished
 		ring_animation.stop()
 		Gameloop.game_ended.emit()
-		$"../../NextTurn".hide()
 	else:
 		Gameloop.current_turn += 1
 		Gameloop.next_turn.emit()
