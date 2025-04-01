@@ -10,6 +10,7 @@ signal pp_scene_toggled(toggled_on: bool, pp_scene: PpScene)
 signal carbon_sequestration_toggled(toggled_on: bool)
 signal hide_build_menu
 signal powerplants_metrics_updated(metrics: Array[PowerplantMetrics])
+signal unfocus_all
 
 
 # Ids used to identify the powerplants inside the engine in a consistent manner

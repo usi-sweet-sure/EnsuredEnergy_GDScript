@@ -29,6 +29,7 @@ func _ready():
 	CameraManager.unlock_camera.connect(_on_unlock_camera)
 	CameraManager.move_camera_to.connect(_on_move_camera_to)
 	CameraManager.move_camera_by.connect(_on_move_camera_by)
+	CameraManager.reset_camera.connect(_on_reset_camera)
 	
 	
 func _physics_process(delta):
@@ -137,3 +138,9 @@ func _on_move_camera_to(coord: Vector2) -> void:
 
 func _on_move_camera_by(coord: Vector2) -> void:
 	animate_camera_position(Vector2(position.x - (coord.x / zoom.x), position.y - (coord.y / zoom.y)))
+
+
+func _on_reset_camera() -> void:
+	animate_camera_position(init_pos)
+	animate_camera_zoom(init_zoom)
+	camera_blocked = true

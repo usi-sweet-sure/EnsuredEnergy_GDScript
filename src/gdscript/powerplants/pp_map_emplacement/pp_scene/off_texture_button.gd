@@ -16,8 +16,8 @@ func _ready():
 	PowerplantsManager.build_button_normal_toggled.connect(_on_build_button_toggled)
 	PowerplantsManager.build_button_in_construction_toggled.connect(_on_build_button_in_construction_toggled)
 	PowerplantsManager.pp_scene_toggled.connect(_on_pp_scene_toggled)
-
-
+	PowerplantsManager.unfocus_all.connect(_on_unfocus_all)
+	
 func _on_mouse_entered():
 	set_modulate(Color(1.1, 1.1, 1.1))
 
@@ -94,3 +94,9 @@ func _on_toggled(toggled_on: bool):
 
 func set_appear_percent(percentage: float) -> void:
 	material.set_shader_parameter('percentage', percentage)
+
+
+func _on_unfocus_all():
+	material.set_shader_parameter("show", false)
+	set_pressed_no_signal(false)
+	hide_info_frame_requested.emit()

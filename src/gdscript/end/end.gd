@@ -22,11 +22,9 @@ var game_stats = {
 
 func _ready():
 	Gameloop.game_ended.connect(_on_game_ended)
-	Gameloop.show_ending_screen_requested.connect(_on_show_ending_screen)
 
 
 func _on_game_ended():
-	print("sdjfélkdjsaéflas")
 	show()
 	
 	Context.get_rank(Context.res_id)
@@ -100,7 +98,3 @@ func compute_game_stats():
 
 
 	game_stats_updated.emit(game_stats)
-	
-	
-func _on_show_ending_screen():
-	show()

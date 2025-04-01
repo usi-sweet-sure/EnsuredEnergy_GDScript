@@ -1,7 +1,7 @@
 extends Node2D
 
 var start_year: int = 2022
-var total_number_of_turns: int = 1
+var total_number_of_turns: int = 10
 var years_in_a_turn = 3
 
 var demand_summer_list = []
@@ -60,6 +60,7 @@ signal start_menu_disappeared
 signal locale_updated(locale: String)
 signal player_can_start_playing_new_turn
 signal next_turn_button_pressed
+signal end_toggled(toogle: bool)
 
 var player_name: String = "":
 	set(new_value):

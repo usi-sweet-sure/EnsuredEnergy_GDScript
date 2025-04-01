@@ -1,4 +1,4 @@
-[gd_scene load_steps=225 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=229 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Shader" uid="uid://fkpbxalsaovj" path="res://src/gdscript/shaders/cloud.gdshader" id="1_rmx58"]
 [ext_resource type="Texture2D" uid="uid://kfrnyvqb84es" path="res://assets/title/cloud.png" id="2_26ixr"]
@@ -145,8 +145,8 @@
 [ext_resource type="Shader" uid="uid://d0i20xnn8v4mu" path="res://src/gdscript/shaders/text_move.gdshader" id="132_cwd6i"]
 [ext_resource type="Texture2D" uid="uid://d2btaduc1gq0j" path="res://assets/textures/screens/screen_3.png" id="132_u070d"]
 [ext_resource type="Script" uid="uid://jlfi6jdguf2i" path="res://src/gdscript/hud/next_turn_button/next_turn_overlay.gd" id="133_g5xys"]
-[ext_resource type="Script" uid="uid://nrxw7g2t5ipy" path="res://src/gdscript/hud/show_end_button.gd" id="134_ba0nv"]
 [ext_resource type="Script" uid="uid://lx3ngjfsuyiu" path="res://src/gdscript/hud/survey_label.gd" id="134_ps8q0"]
+[ext_resource type="Script" uid="uid://cb6ma7s4maf2l" path="res://src/gdscript/ui_clouds.gd" id="147_jki7j"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_j2wkk"]
 shader = ExtResource("1_rmx58")
@@ -2441,6 +2441,226 @@ _data = {
 &"loading": SubResource("Animation_vhawi")
 }
 
+[sub_resource type="Animation" id="Animation_arjh5"]
+resource_name = "show_map"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ParallaxBackground:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ParallaxBackground/ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ParallaxBackground2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ParallaxBackground2/ColorRect:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = false
+tracks/4/path = NodePath("Clock/AudioStreamPlayer:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.01, 0.0333334, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = false
+tracks/5/path = NodePath("Clock/AudioStreamPlayer:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(7.17937, 3.36359),
+"update": 0,
+"values": [0.0, -60.0]
+}
+
+[sub_resource type="Animation" id="Animation_bpwa2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ParallaxBackground:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ParallaxBackground/ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ParallaxBackground2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ParallaxBackground2/ColorRect:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Clock/AudioStreamPlayer:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_2tst5"]
+resource_name = "show_end"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ParallaxBackground:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ParallaxBackground/ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ParallaxBackground2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ParallaxBackground2/ColorRect:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = false
+tracks/4/path = NodePath("Clock/AudioStreamPlayer:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = false
+tracks/5/path = NodePath("Clock/AudioStreamPlayer:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.01, 0.71),
+"transitions": PackedFloat32Array(0.176777, 0.196146),
+"update": 0,
+"values": [-80.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e8n7a"]
+_data = {
+&"RESET": SubResource("Animation_bpwa2"),
+&"show_end": SubResource("Animation_2tst5"),
+&"show_map": SubResource("Animation_arjh5")
+}
+
 [node name="UI" type="CanvasLayer"]
 follow_viewport_enabled = true
 metadata/_edit_vertical_guides_ = [960.0, 1041.0, -52.0, 904.0, 1737.0, 1872.0, 1602.0]
@@ -2454,6 +2674,7 @@ visible = false
 motion_mirroring = Vector2(1920, 1080)
 
 [node name="ColorRect" type="ColorRect" parent="ParallaxBackground"]
+modulate = Color(1, 1, 1, 0)
 material = SubResource("ShaderMaterial_j2wkk")
 offset_right = 1920.0
 offset_bottom = 1080.0
@@ -2466,6 +2687,7 @@ visible = false
 motion_mirroring = Vector2(1920, 1080)
 
 [node name="ColorRect" type="ColorRect" parent="ParallaxBackground2"]
+modulate = Color(1, 1, 1, 0)
 material = SubResource("ShaderMaterial_26ixr")
 offset_right = 1920.0
 offset_bottom = 1080.0
@@ -2570,9 +2792,9 @@ position = Vector2(10, 17)
 texture = ExtResource("102_5ki0w")
 
 [node name="Year6" type="Label" parent="Clock/Clock/TimePanelBlank"]
-offset_left = 2.0
+offset_left = 3.0
 offset_top = 73.0
-offset_right = 18.0
+offset_right = 19.0
 offset_bottom = 105.0
 theme = SubResource("Theme_34yde")
 theme_override_font_sizes/font_size = 23
@@ -4525,33 +4747,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_il5wv")
 }
 
-[node name="ShowEnd" type="TextureButton" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -56.5
-offset_top = 105.0
-offset_right = 136.5
-offset_bottom = 188.0
-grow_horizontal = 2
-texture_normal = ExtResource("62_orw34")
-texture_pressed = ExtResource("5_hh5pc")
-texture_hover = ExtResource("63_c1xpc")
-script = ExtResource("134_ba0nv")
-
-[node name="Label" type="Label" parent="ShowEnd"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("3_8s8ds")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "RESULTS"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Label" type="Label" parent="."]
 visible = false
 offset_left = 1152.0
@@ -4559,6 +4754,12 @@ offset_top = 20.0
 offset_right = 1571.0
 offset_bottom = 269.0
 script = ExtResource("134_ps8q0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_e8n7a")
+}
+script = ExtResource("147_jki7j")
 
 [connection signal="pressed" from="Clock/Clock/TurnInfo" to="Clock/Clock/TimePanelBlank" method="clock_pressed"]
 [connection signal="pressed" from="TopLeftZone/OpenGraphsFrameButton" to="TopLeftZone/OpenGraphsFrameButton" method="_on_pressed"]
@@ -4597,7 +4798,6 @@ script = ExtResource("134_ps8q0")
 [connection signal="gui_input" from="NextTurn" to="NextTurn" method="_on_gui_input"]
 [connection signal="pressed" from="NextTurn" to="Clock/Clock/TimePanelBlank" method="_on_next_turn_button_pressed"]
 [connection signal="pressed" from="OpenSettingsButton" to="OpenSettingsButton" method="_on_pressed"]
-[connection signal="pressed" from="ShowEnd" to="ShowEnd" method="_on_pressed"]
 
 [editable path="TopLeftZone/Policies/Trust/BarInfo"]
 [editable path="EnvironmentAndPollution/Environment/Info"]

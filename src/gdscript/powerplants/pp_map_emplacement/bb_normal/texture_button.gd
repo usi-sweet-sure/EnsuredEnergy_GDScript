@@ -17,6 +17,7 @@ func _ready():
 	PowerplantsManager.build_button_in_construction_toggled.connect(_on_build_button_in_construction_toggled)
 	PowerplantsManager.powerplant_build_requested.connect(_on_powerplant_build_requested)
 	PowerplantsManager.carbon_sequestration_toggled.connect(_on_carbon_sequestration_toggled)
+	PowerplantsManager.unfocus_all.connect(_on_unfocus_all)
 	
 	
 func _on_mouse_entered():
@@ -84,6 +85,13 @@ func _on_build_button_in_construction_toggled(_toggled_on: bool, _map_emplacemen
 
 
 func _on_carbon_sequestration_toggled(_toggled_on: bool):
+	PowerplantsManager.hide_build_menu.emit()
+	set_pressed_no_signal(false)
+	material.set_shader_parameter("show", false)
+	animation_player.stop()
+
+
+func _on_unfocus_all():
 	PowerplantsManager.hide_build_menu.emit()
 	set_pressed_no_signal(false)
 	material.set_shader_parameter("show", false)

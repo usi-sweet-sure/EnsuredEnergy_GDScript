@@ -18,6 +18,7 @@ func _ready():
 	PowerplantsManager.build_button_normal_toggled.connect(_on_build_button_toggled)
 	PowerplantsManager.build_button_in_construction_toggled.connect(_on_build_button_in_construction_toggled)
 	PowerplantsManager.pp_scene_toggled.connect(_on_pp_scene_toggled)
+	PowerplantsManager.unfocus_all.connect(_on_unfocus_all)
 	
 	# Get the image from the texture normal
 	var image = texture_normal.get_image()
@@ -87,3 +88,10 @@ func _on_tutorial_started():
 	
 func _on_tutorial_ended():
 	show()
+
+
+func _on_unfocus_all():
+	material.set_shader_parameter("show", false)
+	set_pressed_no_signal(false)
+	hide_info_frame_requested.emit()
+	

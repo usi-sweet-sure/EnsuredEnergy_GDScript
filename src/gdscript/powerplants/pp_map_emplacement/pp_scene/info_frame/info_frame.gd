@@ -2,6 +2,7 @@ extends TextureRect
 
 @onready var position_label: Label = $Position
 
+
 func _on_show_info_frame():
 	var tween = get_tree().create_tween()
 

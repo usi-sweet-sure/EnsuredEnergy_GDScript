@@ -52,6 +52,7 @@ func _unhandled_input(event):
 		
 		
 func _on_next_turn_button_pressed():
+	PowerplantsManager.unfocus_all.emit()
 	Gameloop.next_turn_button_pressed.emit()
 	Context.context_updated_for_new_turn = false
 	Gameloop.all_parameters_sent.connect(_on_all_parameters_sent)
@@ -83,6 +84,8 @@ func _on_all_parameters_sent():
 		await timeline_animation.animation_finished
 	
 	if Gameloop.current_turn == Gameloop.total_number_of_turns:
+		PowerplantsManager.unfocus_all.emit()
+		CameraManager.reset_camera.emit()
 		ring_animation.stop()
 		timeline_animation.play("clock_disappears")
 		# Animation lasts for 4.25 seconds but nothing happens visually from 3.6s,

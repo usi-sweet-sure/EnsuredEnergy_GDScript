@@ -15,10 +15,11 @@ var summary_texts_1 = ["NETZERO_TEXT", "LANDUSE_TEXT", "NUC_TEXT", "NO_MONEY_TEX
 var summary_texts_2 = ["", "", "", "", "", ""]
 var game_stats = null
 var score_info_list = ["NUCLEAR_SCORE", "FOSSIL_SCORE", "ENERGY_SCORE", "EMISSIONS_SCORE", "LAND_USE_SCORE", "PROD_COST_SCORE", "SEASONALITY_SCORE"]
-
+var first_time_toggling_end = true
 
 func _ready():
 	Gameloop.player_name_updated.connect(_on_player_name_updated)
+	Gameloop.end_toggled.connect(_on_end_toggled)
 	hide()
 	$BackPanel/Screen/Leaderboard.hide()
 	$BackPanel/Screen/Summary.hide()
@@ -172,3 +173,18 @@ func _on_next_button_pressed() -> void:
 
 func _on_player_name_updated(value: String)  -> void:
 	$BackPanel/Screen/Leaderboard/VBoxContainer/PlayerStats/HBoxContainer/player_name.text = value
+
+
+func _on_show_map_toggled(toggled_on: bool) -> void:
+	Gameloop.end_toggled.emit(toggled_on)
+
+
+func _on_end_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		animation_player.play("show_map")
+		CameraManager.unlock_camera.emit()
+	else:
+		animation_player.play("summary_appears_2")
+		PowerplantsManager.unfocus_all.emit()
+		CameraManager.reset_camera.emit()
+		CameraManager.block_camera.emit()
