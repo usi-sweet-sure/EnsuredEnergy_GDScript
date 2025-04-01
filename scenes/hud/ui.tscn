@@ -1,4 +1,4 @@
-[gd_scene load_steps=229 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=232 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Shader" uid="uid://fkpbxalsaovj" path="res://src/gdscript/shaders/cloud.gdshader" id="1_rmx58"]
 [ext_resource type="Texture2D" uid="uid://kfrnyvqb84es" path="res://assets/title/cloud.png" id="2_26ixr"]
@@ -1921,6 +1921,9 @@ shader_parameter/burnMult = 0.135
 shader_parameter/noiseTexture = SubResource("NoiseTexture2D_j4b0y")
 shader_parameter/burnColor = Color(0.529412, 0.184314, 0, 1)
 
+[sub_resource type="Animation" id="Animation_jki7j"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_3l03v"]
 resource_name = "rotate_ring"
 length = 4.0
@@ -1953,9 +1956,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [3.48787e-16, -6.28319]
 }
-
-[sub_resource type="Animation" id="Animation_jki7j"]
-length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nn3hb"]
 _data = {
@@ -2328,6 +2328,67 @@ MetalLabel/fonts/font = SubResource("FontVariation_t46uf")
 PaperLabel/font_sizes/size = 22
 PaperLabel/fonts/font = ExtResource("30_d1m8l")
 
+[sub_resource type="Animation" id="Animation_e8n7a"]
+resource_name = "play_gauge_sound"
+length = 0.07
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GaugeSound:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GaugeSound:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.03, 0.07),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-80.0, -20.0, -20.0]
+}
+
+[sub_resource type="Animation" id="Animation_hampf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GaugeSound:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GaugeSound:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-20.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qn1qf"]
+_data = {
+&"RESET": SubResource("Animation_hampf"),
+&"play_gauge_sound": SubResource("Animation_e8n7a")
+}
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qglqh"]
 bg_color = Color(0.215686, 0.337255, 0.34902, 1)
 
@@ -2439,81 +2500,6 @@ tracks/2/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_il5wv"]
 _data = {
 &"loading": SubResource("Animation_vhawi")
-}
-
-[sub_resource type="Animation" id="Animation_arjh5"]
-resource_name = "show_map"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ParallaxBackground:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ParallaxBackground/ColorRect:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ParallaxBackground2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("ParallaxBackground2/ColorRect:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = false
-tracks/4/path = NodePath("Clock/AudioStreamPlayer:playing")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0.01, 0.0333334, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [true, true, false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = false
-tracks/5/path = NodePath("Clock/AudioStreamPlayer:volume_db")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(7.17937, 3.36359),
-"update": 0,
-"values": [0.0, -60.0]
 }
 
 [sub_resource type="Animation" id="Animation_bpwa2"]
@@ -2652,6 +2638,81 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(0.176777, 0.196146),
 "update": 0,
 "values": [-80.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_arjh5"]
+resource_name = "show_map"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ParallaxBackground:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ParallaxBackground/ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ParallaxBackground2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ParallaxBackground2/ColorRect:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = false
+tracks/4/path = NodePath("Clock/AudioStreamPlayer:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.01, 0.0333334, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = false
+tracks/5/path = NodePath("Clock/AudioStreamPlayer:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(7.17937, 3.36359),
+"update": 0,
+"values": [0.0, -60.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e8n7a"]
@@ -4369,10 +4430,15 @@ position = Vector2(66, 296)
 stream = ExtResource("97_nuxdx")
 volume_db = -20.0
 pitch_scale = 0.2
-parameters/looping = true
+bus = &"Sound"
 
 [node name="Timer" type="Timer" parent="ImportAndEnergy/Import"]
 wait_time = 0.05
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ImportAndEnergy/Import"]
+libraries = {
+&"": SubResource("AnimationLibrary_qn1qf")
+}
 
 [node name="Energy" type="Node2D" parent="ImportAndEnergy"]
 position = Vector2(238, 856)

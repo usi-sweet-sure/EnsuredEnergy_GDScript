@@ -4,6 +4,7 @@ var value_before_tutorial = 0
 @onready var gauge_sound: AudioStreamPlayer = $"../GaugeSound"
 # Used to update the value when holding import buttons down
 @onready var timer: Timer = $"../Timer"
+@onready var gauge_sound_player: AnimationPlayer = $"../AnimationPlayer"
 var value_delta = 1
 
 func _ready():
@@ -18,15 +19,20 @@ func _ready():
 	timer.timeout.connect(_update_value)
 	
 
-# Makes sure the user does not import more energy than needed
 func _on_import_slider_value_changed(_new_value: float):
 	var new_imported_amount = value
 	_set_sound_pitch()
 	
 	# Prevents the user from importing more than the energy demand
+	# by reducing the imported amount automatically when building
 	if(Gameloop.supply_winter + new_imported_amount > Gameloop.demand_winter):
 		new_imported_amount = max(0, Gameloop.demand_winter - Gameloop.supply_winter)
 		set_value_no_signal(new_imported_amount)
+	else:
+		# Only play the sound when user is importing, not when it's modified
+		# when building
+		if value != Gameloop.imported_energy_amount and not gauge_sound_player.is_playing():
+			gauge_sound_player.play("play_gauge_sound")
 
 	Gameloop.imported_energy_amount = new_imported_amount
 
@@ -93,7 +99,7 @@ func _on_drag_ended(_value_changed):
 	
 
 func _on_drag_started() -> void:
-	gauge_sound.play()
+	pass
 
 
 func _set_sound_pitch():
@@ -107,7 +113,6 @@ func _on_up_button_button_up() -> void:
 
 
 func _on_up_button_button_down() -> void:
-	gauge_sound.play()
 	value_delta = 1
 	timer.start()
 
@@ -118,7 +123,6 @@ func _on_down_button_button_up() -> void:
 	
 
 func _on_down_button_button_down() -> void:
-	gauge_sound.play()
 	value_delta = -1
 	timer.start()
 	
