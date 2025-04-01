@@ -124,7 +124,9 @@ func _ready():
 	history = MapEmplacementHistory.new()
 	history.history_updated.connect(_on_history_updated)
 	
-	# Will be disconnected after the first signal emition
+	# Will be disconnected after the first signal emition,
+	# which is happening when the context is gotten the first time, and the metrics
+	# are set for the first time, meaning pps built from the start can be built
 	if build_on_start != 10: # 10 = Nothing
 		PowerplantsManager.powerplants_metrics_updated.connect(_build_on_start)
 	
@@ -171,7 +173,6 @@ func _on_powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMe
 		var new_metrics = metrics.copy()
 		override_metrics(new_metrics)
 		
-		
 		if new_metrics.build_time_in_turns > 0:
 			MoneyManager.building_costs += new_metrics.building_costs
 			#Gameloop.available_money_message_requested.emit("-" + str(new_metrics.building_costs + new_metrics.production_costs).pad_decimals(1) + "M CHF", false)
@@ -211,21 +212,23 @@ func _on_powerplant_build_requested(map_emplacement: Node, metrics: PowerplantMe
 			pp_scene.activate(true)
 			new_metrics.active = true
 			# We can set a powerplant built at the beginning to be directly built$
-			# at a specific level of upgrade		
+			# at a specific level of upgrade
 			if new_metrics.current_upgrade > 0: 
 				var target_upgrade = new_metrics.current_upgrade
 				new_metrics.current_upgrade = 0
 				pp_scene.set_metrics(new_metrics)
 				
 				var count = 1
+	
 				while count <= target_upgrade:
 					pp_scene._on_button_plus_pressed()
 					count += 1
 			
 			# Upgrades for powerplants built at the beginning are free,
 			# we have to set them back to the actual price once it's built
-			new_metrics.upgrade_cost = PowerplantsManager.powerplants_upgrade_costs[new_metrics.type]
-			pp_scene.set_metrics(new_metrics)
+			var pp_metrics = pp_scene.metrics
+			pp_metrics.upgrade_cost = PowerplantsManager.powerplants_upgrade_costs[new_metrics.type]
+			pp_scene.set_metrics(pp_metrics)
 			
 			if override_powerplant_on_texture:
 				pp_scene.set_texture_on(powerplant_on)

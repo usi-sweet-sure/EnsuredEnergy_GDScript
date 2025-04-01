@@ -820,9 +820,9 @@ script = ExtResource("80_piib2")
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 855.0
-offset_top = 806.0
+offset_top = 644.0
 offset_right = 1057.0
-offset_bottom = 892.0
+offset_bottom = 730.0
 focus_mode = 0
 disabled = true
 texture_normal = ExtResource("81_qtl7y")
@@ -1063,9 +1063,9 @@ color = Color(1.20327e-08, 0.111567, 0.114168, 0.364706)
 
 [node name="NextButton" type="TextureButton" parent="PlayerName" groups=["buttons"]]
 layout_mode = 0
-offset_left = 2051.0
+offset_left = 860.0
 offset_top = 700.0
-offset_right = 2253.0
+offset_right = 1062.0
 offset_bottom = 786.0
 focus_mode = 0
 texture_normal = ExtResource("81_qtl7y")
