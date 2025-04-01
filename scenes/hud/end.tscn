@@ -529,7 +529,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(668, 817)]
+"values": [Vector2(668, 860)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -553,7 +553,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1040, 817)]
+"values": [Vector2(1040, 860)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -662,10 +662,10 @@ tracks/3/path = NodePath("SummaryButton:position")
 tracks/3/interp = 2
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.2, 0.6, 0.8, 1),
+"times": PackedFloat32Array(0.2, 0.6, 0.8, 1.1),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(2054, 817), Vector2(638, 817), Vector2(688, 817), Vector2(668, 817)]
+"values": [Vector2(2054, 860), Vector2(638, 860), Vector2(688, 860), Vector2(668, 860)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -689,7 +689,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0.3, 0.7, 0.9, 1.1),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(2052, 817), Vector2(1010, 817), Vector2(1060, 817), Vector2(1040, 817)]
+"values": [Vector2(2052, 860), Vector2(1010, 860), Vector2(1060, 860), Vector2(1040, 860)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -1128,7 +1128,7 @@ anchor_bottom = 0.5
 offset_left = 433.0
 offset_top = 62.0
 offset_right = 1449.0
-offset_bottom = 749.0
+offset_bottom = 782.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(508, 343)
@@ -1142,9 +1142,9 @@ layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_left = 40.0
-offset_top = 35.0
+offset_top = 31.0
 offset_right = -35.0
-offset_bottom = 655.0
+offset_bottom = 689.0
 grow_horizontal = 2
 size_flags_horizontal = 0
 texture = ExtResource("6_us122")
@@ -1906,9 +1906,9 @@ plant_type = 1
 [node name="SummaryButton" type="TextureButton" parent="Summary" groups=["buttons"]]
 layout_mode = 0
 offset_left = 668.0
-offset_top = 817.0
+offset_top = 860.0
 offset_right = 870.0
-offset_bottom = 903.0
+offset_bottom = 946.0
 focus_mode = 0
 toggle_mode = true
 button_group = ExtResource("36_ly168")
@@ -1947,9 +1947,9 @@ texture = ExtResource("59_pxkc5")
 [node name="LeaderboardButton" type="TextureButton" parent="Summary" groups=["buttons"]]
 layout_mode = 0
 offset_left = 1040.0
-offset_top = 817.0
+offset_top = 860.0
 offset_right = 1242.0
-offset_bottom = 903.0
+offset_bottom = 946.0
 focus_mode = 0
 toggle_mode = true
 button_group = ExtResource("36_ly168")
