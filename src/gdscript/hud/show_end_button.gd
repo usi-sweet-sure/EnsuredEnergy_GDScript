@@ -8,7 +8,8 @@ func _ready() -> void:
 
 
 func _on_game_ended() -> void:
-	show()
+	pass
+	#show()
 
 
 func _on_pressed() -> void:

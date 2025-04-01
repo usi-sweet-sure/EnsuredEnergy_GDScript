@@ -26,6 +26,7 @@ func _ready():
 
 
 func _on_game_ended():
+	print("sdjfélkdjsaéflas")
 	show()
 	
 	Context.get_rank(Context.res_id)

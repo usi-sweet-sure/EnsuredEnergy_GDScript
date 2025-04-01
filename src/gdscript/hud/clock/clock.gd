@@ -83,10 +83,14 @@ func _on_all_parameters_sent():
 		await timeline_animation.animation_finished
 	
 	if Gameloop.current_turn == Gameloop.total_number_of_turns:
-		ring_animation.play("rotate_ring_backward")
-		timeline_animation.play("clock_disappears")
-		await timeline_animation.animation_finished
 		ring_animation.stop()
+		timeline_animation.play("clock_disappears")
+		# Animation lasts for 4.25 seconds but nothing happens visually from 3.6s,
+		# it has to be done this way so the burning shader is slower.
+		# So we wait on a timer instead of the animation to finish, to make
+		# the ending screen appear a bit earlier
+		var timer = get_tree().create_timer(3.6)
+		await timer.timeout
 		Gameloop.game_ended.emit()
 	else:
 		Gameloop.current_turn += 1
