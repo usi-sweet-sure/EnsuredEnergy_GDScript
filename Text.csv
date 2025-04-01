@@ -278,3 +278,5 @@ GAME_DONE_1,You've successfully managed Switzerland's energy demand for 30 years
 GAME_DONE_2,Here's a summary of the decisions you've made to get there.,Voici un résumé des décisions que tu as prises pour y parvenir.,"Hier findest du eine Zusammenfassung der Entscheidungen, die du getroffen hast, um dies zu erreichen.",Ecco una sintesi delle decisioni prese per arrivarci.
 TO_SUMMARY,To summary,Vers le résumé,Zur Zusammenfassung,Alla sintesi
 VALIDATE,Confirm,Valider,Bestätigen,Confermare
+SUMMARY,Summary,Résumé,Zusammenfassung,Sintesi
+LEADERBOARD,Leaderboard,Classement,Bestenliste,Classifica

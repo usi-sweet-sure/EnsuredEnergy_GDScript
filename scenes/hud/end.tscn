@@ -1247,8 +1247,7 @@ custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme = ExtResource("4_n8g63")
 theme_type_variation = &"Screen"
-text = "RANK
-"
+text = "RANK"
 horizontal_alignment = 1
 uppercase = true
 
