@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -8,7 +9,10 @@ func _ready():
 
 
 func _on_toggle_settings():
-	visible = not visible
+	if visible:
+		hide()
+	else:
+		animation_player.play("settings_appear")
 
 
 func _on_quit_button_pressed():

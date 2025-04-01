@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://rjcu72lxn4n4"]
+[gd_scene load_steps=35 format=3 uid="uid://rjcu72lxn4n4"]
 
 [ext_resource type="Script" uid="uid://bf5t3koyr1q1x" path="res://src/gdscript/settings/settings_canvas/settings_canvas.gd" id="1_q4she"]
 [ext_resource type="Script" uid="uid://dj0kslvymos47" path="res://src/gdscript/settings/settings_canvas/close_button.gd" id="2_q0sqg"]
@@ -70,6 +70,67 @@ corner_radius_bottom_left = 4
 shadow_color = Color(0, 0, 0, 0.368627)
 shadow_size = 1
 
+[sub_resource type="Animation" id="Animation_b3j2e"]
+resource_name = "settings_appear"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1.1, 1.1), Vector2(0.9, 0.9), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_aua5f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_se3wp"]
+_data = {
+&"RESET": SubResource("Animation_aua5f"),
+&"settings_appear": SubResource("Animation_b3j2e")
+}
+
 [node name="Settings" type="CanvasLayer"]
 layer = 3
 script = ExtResource("1_q4she")
@@ -93,6 +154,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(960, 540)
 size_flags_horizontal = 4
 
 [node name="Close" type="Button" parent="Control"]
@@ -408,7 +470,7 @@ position = Vector2(-2.85706, -2.85718)
 texture = ExtResource("24_wyual")
 centered = false
 
-[node name="CloseButton2" parent="." instance=ExtResource("25_fga0w")]
+[node name="CloseButton2" parent="Control" instance=ExtResource("25_fga0w")]
 offset_left = 1143.0
 offset_top = 40.0
 offset_right = 1195.0
@@ -416,6 +478,11 @@ offset_bottom = 91.0
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("26_1fovc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_se3wp")
+}
 
 [connection signal="pressed" from="Control/Close" to="Control/Close" method="_on_pressed"]
 [connection signal="value_changed" from="Control/SettingsBox/VBoxContainer2/VolMusic" to="Control/SettingsBox/VBoxContainer2/VolMusic" method="_on_value_changed"]
@@ -425,4 +492,4 @@ script = ExtResource("26_1fovc")
 [connection signal="pressed" from="Control/SettingsBox/MarginContainer2/VBoxContainer/Credits" to="Control/SettingsBox/MarginContainer2/VBoxContainer/Credits" method="_on_pressed"]
 [connection signal="pressed" from="Control/SettingsBox/MarginContainer2/VBoxContainer/BackToSurvey" to="Control/SettingsBox/MarginContainer2/VBoxContainer/BackToSurvey" method="_on_pressed"]
 [connection signal="pressed" from="Control/SettingsBox/MarginContainer/QuitButton" to="." method="_on_quit_button_pressed"]
-[connection signal="pressed" from="CloseButton2" to="CloseButton2" method="_on_pressed"]
+[connection signal="pressed" from="Control/CloseButton2" to="Control/CloseButton2" method="_on_pressed"]
