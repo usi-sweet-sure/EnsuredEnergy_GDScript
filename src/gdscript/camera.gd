@@ -54,6 +54,15 @@ func scale_plants(zoom_val: Vector2):
 #     1) When the player clicks the screen, in which case we want to drag the camera around
 #     2) When the player uses the mouse wheel, in which case we want to zoom in or out
 func _unhandled_input(event):
+	if event is InputEventMagnifyGesture and not camera_blocked:
+		var target_zoom = clamp(zoom * event.factor, ZOOM_OUT_LIMIT, ZOOM_IN_LIMIT)
+		zoom = target_zoom
+		scale_plants(target_zoom)
+	elif event is InputEventPanGesture and not camera_blocked:
+		var target_zoom = clamp(zoom + Vector2(event.delta.y * PAN_ZOOM_SENSITIVITY, event.delta.y * PAN_ZOOM_SENSITIVITY), ZOOM_OUT_LIMIT, ZOOM_IN_LIMIT)
+		zoom = target_zoom
+		scale_plants(target_zoom)
+		
 	# Mouse drag moves the camera
 	if event is InputEventMouseMotion and not camera_blocked:
 		if event.button_mask == MOUSE_BUTTON_MASK_LEFT:
