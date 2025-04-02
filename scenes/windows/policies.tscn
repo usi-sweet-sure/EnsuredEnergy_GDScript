@@ -53,7 +53,7 @@
 [ext_resource type="AudioStream" uid="uid://dt7vm8d0cxli3" path="res://assets/sounds/error_0.mp3" id="46_qq11d"]
 [ext_resource type="Script" uid="uid://b5rvk6mityvwj" path="res://src/gdscript/policies/policies_window/vote_fail_audio.gd" id="47_22spb"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3tdw6"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ikufu"]
 bg_color = Color(0.65098, 0.65098, 0.65098, 0.0470588)
 border_width_left = 2
 border_width_top = 2
@@ -62,7 +62,7 @@ border_color = Color(0.25098, 0.807843, 0.839216, 1)
 corner_radius_top_left = 2
 corner_radius_top_right = 2
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pgfdh"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dq1lu"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_left = 2
 border_width_top = 2
@@ -71,41 +71,41 @@ border_color = Color(0.219608, 0.752941, 0.784314, 1)
 corner_radius_top_left = 2
 corner_radius_top_right = 2
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03rjl"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wv0nu"]
 bg_color = Color(0.219608, 0.756863, 0.788235, 1)
 corner_radius_top_left = 2
 corner_radius_top_right = 2
 
-[sub_resource type="FontVariation" id="FontVariation_3ifss"]
+[sub_resource type="FontVariation" id="FontVariation_6fqid"]
 base_font = ExtResource("6_4to47")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nyqp5"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4sv4h"]
 
-[sub_resource type="FontVariation" id="FontVariation_u3fkg"]
+[sub_resource type="FontVariation" id="FontVariation_4kd01"]
 base_font = ExtResource("4_mukwf")
 variation_embolden = 0.6
 
-[sub_resource type="FontVariation" id="FontVariation_ule17"]
+[sub_resource type="FontVariation" id="FontVariation_0fjlg"]
 base_font = ExtResource("4_mukwf")
 
-[sub_resource type="FontVariation" id="FontVariation_b0wbe"]
+[sub_resource type="FontVariation" id="FontVariation_hfw5d"]
 base_font = ExtResource("5_i4f5y")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5mtqi"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qjti8"]
 bg_color = Color(0.192157, 0.658824, 0.690196, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1qqbn"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5j3g5"]
 bg_color = Color(0.247059, 0.776471, 0.811765, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_idcep"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tswj7"]
 bg_color = Color(0.129412, 0.486275, 0.509804, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
@@ -120,9 +120,9 @@ Button/colors/font_color = Color(0.211765, 0.690196, 0.717647, 1)
 Button/colors/font_pressed_color = Color(0.0862745, 0.207843, 0.219608, 1)
 Button/font_sizes/font_size = 24
 Button/fonts/font = ExtResource("5_i4f5y")
-Button/styles/hover = SubResource("StyleBoxFlat_3tdw6")
-Button/styles/normal = SubResource("StyleBoxFlat_pgfdh")
-Button/styles/pressed = SubResource("StyleBoxFlat_03rjl")
+Button/styles/hover = SubResource("StyleBoxFlat_ikufu")
+Button/styles/normal = SubResource("StyleBoxFlat_dq1lu")
+Button/styles/pressed = SubResource("StyleBoxFlat_wv0nu")
 Label/colors/font_color = Color(0.0784314, 0.180392, 0.192157, 1)
 Label/colors/font_outline_color = Color(1, 1, 1, 1)
 Label/colors/font_shadow_color = Color(0, 0, 0, 0)
@@ -132,8 +132,8 @@ Label/constants/shadow_offset_x = 1
 Label/constants/shadow_offset_y = 1
 Label/constants/shadow_outline_size = 1
 Label/font_sizes/font_size = 16
-Label/fonts/font = SubResource("FontVariation_3ifss")
-Label/styles/normal = SubResource("StyleBoxEmpty_nyqp5")
+Label/fonts/font = SubResource("FontVariation_6fqid")
+Label/styles/normal = SubResource("StyleBoxEmpty_4sv4h")
 Paper/base_type = &"Label"
 Paper/colors/color = Color(0.631373, 0.443137, 0.403922, 1)
 Paper/colors/font_color = Color(0, 0, 0, 1)
@@ -148,15 +148,15 @@ Paper/font_sizes/font_size = 18
 Paper/font_sizes/size = 16
 Paper/fonts/font = ExtResource("4_mukwf")
 RichTextLabel/constants/line_separation = 7
-RichTextLabel/fonts/bold_font = SubResource("FontVariation_u3fkg")
-RichTextLabel/fonts/normal_font = SubResource("FontVariation_ule17")
+RichTextLabel/fonts/bold_font = SubResource("FontVariation_4kd01")
+RichTextLabel/fonts/normal_font = SubResource("FontVariation_0fjlg")
 Screen/base_type = &"Label"
 Screen/colors/font_color = Color(0.219608, 0.756863, 0.788235, 1)
 Screen/font_sizes/font_size = 30
-Screen/fonts/font = SubResource("FontVariation_b0wbe")
-VScrollBar/styles/grabber = SubResource("StyleBoxFlat_5mtqi")
-VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_1qqbn")
-VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_idcep")
+Screen/fonts/font = SubResource("FontVariation_hfw5d")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_qjti8")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_5j3g5")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_tswj7")
 
 [sub_resource type="Theme" id="Theme_6bviu"]
 
@@ -1122,7 +1122,7 @@ texture = ExtResource("38_3ih67")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
 libraries = {
-"": SubResource("AnimationLibrary_8dlcw")
+&"": SubResource("AnimationLibrary_8dlcw")
 }
 
 [node name="CloseButton" type="TextureButton" parent="." groups=["buttons"]]

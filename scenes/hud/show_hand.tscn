@@ -22,7 +22,7 @@ tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("Sprite2D:flip_h")
-tracks/1/interp = 1
+tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
@@ -70,11 +70,11 @@ z_index = 1
 script = ExtResource("1_m0o72")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(33.9625, 1)
+position = Vector2(0, 1)
 texture = ExtResource("1_ju2s7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_eso46")
+&"": SubResource("AnimationLibrary_eso46")
 }
 speed_scale = 1.7

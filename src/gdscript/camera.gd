@@ -30,6 +30,7 @@ func _ready():
 	CameraManager.move_camera_to.connect(_on_move_camera_to)
 	CameraManager.move_camera_by.connect(_on_move_camera_by)
 	CameraManager.reset_camera.connect(_on_reset_camera)
+	CameraManager.zoom_camera_to.connect(_on_zoom_camera_to)
 	
 	
 func _physics_process(delta):
@@ -109,6 +110,8 @@ func animate_camera_zoom(new_zoom):
 		var tween = get_tree().create_tween()
 		tween.tween_property(self, "zoom", new_zoom, ZOOM_ANIMATION_DURATION)
 		scale_plants(new_zoom)
+	
+	print("zoom ", new_zoom)
 
 
 func animate_camera_position(new_position):
@@ -153,3 +156,7 @@ func _on_reset_camera() -> void:
 	animate_camera_position(init_pos)
 	animate_camera_zoom(init_zoom)
 	camera_blocked = true
+	
+	
+func _on_zoom_camera_to(zoom: Vector2) -> void:
+	animate_camera_zoom(zoom)
