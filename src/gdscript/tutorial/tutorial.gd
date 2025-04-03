@@ -24,7 +24,7 @@ const HIGHLIGHT_ZONE_CENTER = {
 
 var step = 0
 var previous_step = 0
-var tuto_length = 11
+var tuto_length = 10
 var futur_next_animation := NEXT_ANIMATION_A
 var futur_previous_animation := PREVIOUS_ANIMATION_A
 var previous_survey_frame = 1
@@ -40,9 +40,7 @@ var texts: Array[String] = [
 	"CLIMATE_TUTORIAL7",  # Step7
 	"TUTOBUBBLE3",        # Step8
 	"TUTOBUBBLE4",        # Step9
-	"CLIMATE_TUTORIAL10", # Step10
-	"TUTOBUBBLE6",        # Step11
-	"TUTORIAL_0",         # Step12
+	"TUTOBUBBLE7",        # Step10
 ]
 var steps_with_no_navigation_button := [5, 8, 9, 11]
 var camera_config_for_step := [
@@ -57,8 +55,6 @@ var camera_config_for_step := [
 	[Vector2(1376.407, 407.5414), Vector2(0.6, 0.6)], # Step8
 	[Vector2(1376.407, 407.5414), Vector2(0.6, 0.6)], # Step9
 	null, # Step10
-	null, # Step11
-	null, # Step12
 ]
 #Parameters for the shader "tutorial_highlight.gdshader"
 var highlight_zones_for_step := [
@@ -98,13 +94,6 @@ var highlight_zones_for_step := [
 		"bottom": 1.0,
 	}, 
 	null,                 # Step10
-	{                     # Step11
-		"left": 0.0722,
-		"top": 0.0505,
-		"right": 0.2099,
-		"bottom": 0.1656,
-	}, 
-	null,                  # Step12
 ]
 
 func _ready():
@@ -125,7 +114,6 @@ func _on_tutorial_started():
 	_update_step_indicator_state()
 	TutorialManager.next_step_requested.connect(_on_next_step_requested)
 	PowerplantsManager.powerplant_build_requested.connect(_on_pp_build)
-	Gameloop.toggle_policies_window.connect(_on_policies_toggled)
 	
 	show()
 	
@@ -136,12 +124,12 @@ func _on_tutorial_started():
 	
 
 func _on_next_step_requested():
-	# If next step has a highlight, we don't go back to center before moving
-	# the highlight zone
-	if highlight_zones_for_step[step + 1] == null:
-		_animate_highlight_zone(HIGHLIGHT_ZONE_CENTER)
-		
 	if step < tuto_length:
+		# If next step has a highlight, we don't go back to center before moving
+		# the highlight zone
+		if highlight_zones_for_step[step + 1] == null:
+			_animate_highlight_zone(HIGHLIGHT_ZONE_CENTER)
+			
 		previous_step = step
 		step += 1
 		TutorialManager.step_changed.emit(step)
@@ -155,12 +143,12 @@ func _on_next_step_requested():
 		
 
 func _on_previous_step_requested():
-	# If the previous step has a highlight, we don't go back to center before moving
-	# the highlight zone
-	if highlight_zones_for_step[step -1] == null:
-		_animate_highlight_zone(HIGHLIGHT_ZONE_CENTER)
-		
 	if step > 0:
+		# If the previous step has a highlight, we don't go back to center before moving
+		# the highlight zone
+		if highlight_zones_for_step[step -1] == null:
+			_animate_highlight_zone(HIGHLIGHT_ZONE_CENTER)
+			
 		previous_step = step
 		step -= 1
 		TutorialManager.step_changed.emit(step)
@@ -172,17 +160,12 @@ func _on_previous_step_requested():
 
 
 func _on_tutorial_ended():
-	hide()
 	TutorialManager.next_step_requested.disconnect(_on_next_step_requested)
 	PowerplantsManager.powerplant_build_requested.disconnect(_on_pp_build)
-	Gameloop.toggle_policies_window.disconnect(_on_policies_toggled)
+	animation_player.play("tutorial_ends")
 
 
 func _on_pp_build(_map_emplacement: PpMapEmplacement, _metrics: PowerplantMetrics):
-	_on_next_step_requested()
-
-
-func _on_policies_toggled():
 	_on_next_step_requested()
 	
 	
@@ -190,6 +173,7 @@ func _play_animation(forward: bool = true) -> void:
 	var animation = futur_next_animation
 	var hide_navigation_buttons = steps_with_no_navigation_button.has(step) and not steps_with_no_navigation_button.has(previous_step)
 	var show_navigation_buttons = steps_with_no_navigation_button.has(previous_step) and not steps_with_no_navigation_button.has(step)
+	var show_start_playing_button = step == tuto_length
 	
 	if not forward:
 		animation = futur_previous_animation
@@ -213,7 +197,9 @@ func _play_animation(forward: bool = true) -> void:
 		
 	animation_player.play(animation)
 	
-	if hide_navigation_buttons:
+	if show_start_playing_button:
+		animation_player_2.play("show_start_playing_button")
+	elif hide_navigation_buttons:
 		animation_player_2.play("hide_navigation_buttons")
 	elif show_navigation_buttons:
 		animation_player_2.play("show_navigations_buttons")

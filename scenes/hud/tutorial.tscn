@@ -1,12 +1,17 @@
-[gd_scene load_steps=74 format=4 uid="uid://ciphd0cmpslrn"]
+[gd_scene load_steps=81 format=4 uid="uid://ciphd0cmpslrn"]
 
 [ext_resource type="Script" uid="uid://pefde6sv23kq" path="res://src/gdscript/tutorial/tutorial.gd" id="1_yrums"]
 [ext_resource type="Script" uid="uid://8owrlbkkpfwk" path="res://src/gdscript/tutorial/mouse_block.gd" id="2_1fnul"]
 [ext_resource type="Shader" uid="uid://cltr8wmm0e2i6" path="res://src/gdscript/shaders/tutorial_highlight.gdshader" id="4_55w7j"]
 [ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/new_fonts/special_elite/special_elite_regular.ttf" id="5_b2jbb"]
 [ext_resource type="FontFile" uid="uid://bt2f3flr7psn5" path="res://assets/new_fonts/vt323/vt323_regular.ttf" id="6_iaseo"]
+[ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/textures/ui/Button-Next-Normal.png" id="6_xrkad"]
 [ext_resource type="FontFile" uid="uid://dxtsp51pqna2o" path="res://assets/new_fonts/static/open_sans_bold.ttf" id="7_52kbx"]
+[ext_resource type="Texture2D" uid="uid://biq6v1m7nc6l" path="res://assets/textures/ui/Button-Next-Press.png" id="7_kp06i"]
+[ext_resource type="Texture2D" uid="uid://c25aef4m4yd40" path="res://assets/textures/ui/Button-Next-Hover.png" id="8_55w7j"]
+[ext_resource type="Texture2D" uid="uid://60dl810b25fd" path="res://assets/textures/buttons/button_press.png" id="9_j5oqc"]
 [ext_resource type="PackedScene" uid="uid://cuajo0ocbdx2d" path="res://scenes/buttons/button_play.tscn" id="9_shki2"]
+[ext_resource type="Texture2D" uid="uid://cgf1xjsx0mfot" path="res://assets/textures/ui/Button-Next-Base.png" id="11_i0yq7"]
 [ext_resource type="Texture2D" uid="uid://ceuxpu5iujr05" path="res://assets/textures/ui/All-HQ-Assets-D_0006s_0001_Stats-metal-base.png" id="20_r4b0o"]
 [ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/new_fonts/label_themes.tres" id="21_rws3h"]
 [ext_resource type="Texture2D" uid="uid://cd23afs6x11al" path="res://assets/textures/screens/screen_1.png" id="22_81gy2"]
@@ -194,6 +199,54 @@ tracks/14/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [1.0]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Buttons/StartPlayingButton:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(25, 201)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("StepIndicator:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(900, 38)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("HighlightZone:modulate")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath(".:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_oxx03"]
@@ -575,6 +628,118 @@ tracks/13/keys = {
 "update": 0,
 "values": [1.0]
 }
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("StepIndicator:position")
+tracks/14/interp = 2
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 0.866667, 0.933333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2100, 38), Vector2(880, 38), Vector2(910, 38), Vector2(900, 38)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("HighlightZone:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 1.2333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kp06i"]
+resource_name = "tutorial_ends"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Frame0:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(589, 93), Vector2(559, 93), Vector2(2100, 93)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Buttons/SkipButton:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Buttons/NavigationButtons:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Buttons/StartPlayingButton:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(25, 201), Vector2(-15, 201), Vector2(2100, 201)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("StepIndicator:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.366667, 0.466667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(900, 38), Vector2(870, 38), Vector2(2100, 38)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HighlightZone:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i0yq7"]
 _data = {
@@ -583,6 +748,7 @@ _data = {
 &"next__1_out_0_in": SubResource("Animation_ij5yh"),
 &"previous__0_out_1_in": SubResource("Animation_2l66c"),
 &"previous__1_out_0_in": SubResource("Animation_npaia"),
+&"tutorial_ends": SubResource("Animation_kp06i"),
 &"tutorial_starts": SubResource("Animation_55w7j")
 }
 
@@ -599,6 +765,30 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(841, 572)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Buttons/StartPlayingButton:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Buttons/StartPlayingButton:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(25, 27)]
 }
 
 [sub_resource type="Animation" id="Animation_i0yq7"]
@@ -633,19 +823,63 @@ tracks/0/keys = {
 "values": [Vector2(841, 415), Vector2(841, 592), Vector2(841, 552), Vector2(841, 572)]
 }
 
+[sub_resource type="Animation" id="Animation_xrkad"]
+resource_name = "show_start_playing_button"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Buttons:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(841, 572), Vector2(841, 592), Vector2(841, 412)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Buttons/StartPlayingButton:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Buttons/StartPlayingButton:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(25, 27), Vector2(25, 220), Vector2(25, 180), Vector2(25, 201)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_81gy2"]
 _data = {
 &"RESET": SubResource("Animation_r4b0o"),
 &"hide_navigation_buttons": SubResource("Animation_i0yq7"),
-&"show_navigations_buttons": SubResource("Animation_rws3h")
+&"show_navigations_buttons": SubResource("Animation_rws3h"),
+&"show_start_playing_button": SubResource("Animation_xrkad")
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_55w7j"]
 shader = ExtResource("4_55w7j")
 shader_parameter/left = 1.0
-shader_parameter/top = 0.0
-shader_parameter/right = 0.0
-shader_parameter/bottom = 0.0
+shader_parameter/top = 0.25
+shader_parameter/right = 0.75
+shader_parameter/bottom = 0.75
+shader_parameter/height = 7.0
+shader_parameter/frequency = 52.0
+shader_parameter/speed = 1.5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wx8q0"]
 bg_color = Color(1, 1, 1, 0.0901961)
@@ -6860,6 +7094,52 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_wx8q0")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_cgvln")
 text = "SKIP"
 
+[node name="StartPlayingButton" type="TextureButton" parent="Buttons"]
+visible = false
+layout_mode = 1
+offset_left = 25.0
+offset_top = 27.0
+offset_right = 217.0
+offset_bottom = 113.0
+focus_mode = 0
+texture_normal = ExtResource("6_xrkad")
+texture_pressed = ExtResource("7_kp06i")
+texture_hover = ExtResource("8_55w7j")
+texture_disabled = ExtResource("9_j5oqc")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Buttons/StartPlayingButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 3.0
+offset_right = -10.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("21_rws3h")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "START_PLAYING"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+uppercase = true
+
+[node name="Button-next-base" type="Sprite2D" parent="Buttons/StartPlayingButton"]
+show_behind_parent = true
+position = Vector2(96, 43)
+texture = ExtResource("11_i0yq7")
+
+[node name="Control" type="Control" parent="Buttons/StartPlayingButton"]
+anchors_preset = 0
+offset_left = 95.0
+offset_top = -45.0
+offset_right = 135.0
+offset_bottom = -5.0
+
 [node name="Frame0" type="TextureRect" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
@@ -6974,3 +7254,4 @@ vertical_alignment = 1
 [connection signal="pressed" from="Buttons/NavigationButtons/Buttons/Previous" to="." method="_on_previous_step_requested"]
 [connection signal="pressed" from="Buttons/NavigationButtons/Buttons/Next" to="." method="_on_next_step_requested"]
 [connection signal="pressed" from="Buttons/SkipButton/Button" to="." method="_on_skip_button_pressed"]
+[connection signal="pressed" from="Buttons/StartPlayingButton" to="." method="_on_next_step_requested"]

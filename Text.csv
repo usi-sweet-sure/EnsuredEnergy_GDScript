@@ -64,6 +64,7 @@ TUTOBUBBLE3,Try building a new power plant,Essaie de construire une nouvelle cen
 TUTOBUBBLE4,You can only cancel a power plant in the same turn it was built,Une centrale ne peut être annulée qu'au cours du même tour où elle a été construite,"Nur in derselben Runde, in der ein Kraftwerk gebaut wurde, kann dies noch abgebrochen werden",È possibile annullare una centrale elettrica solo nello stesso turno in cui è stata costruita
 TUTOBUBBLE5,Upgrade it here,Améliorer les centrales existantes,Du kannst bestehende Kraftwerke aufrüsten,Ampliamento della centrale elettrica esistente
 TUTOBUBBLE6,Open the policy window,Lancer des politiques,Du kannst politische Massnahmen ergreifen,Implementare le politiche
+TUTOBUBBLE7,"There are still other ways of facilitating the supply of energy, such as voting for policies or improving powerplants. So take a good look at your environment and have fun! See you in 2050!","Il existe encore d'autres manières de faciliter l'apport en énergie, comme par exemple voter des politiques ou encore améliorer les centrales électriques. Alors observe bien ton environnement et amuse-toi bien ! On se voit en 2050 !","Es gibt noch weitere Möglichkeiten, die Energieversorgung zu erleichtern, wie z. B. das Abstimmen von Politikern oder die Verbesserung von Kraftwerken. Also beobachte deine Umgebung genau und hab Spaß! Wir sehen uns im Jahr 2050!","Ci sono ancora altri modi per facilitare la fornitura di energia, come votare per le politiche o migliorare le centrali elettriche. Quindi guardate bene il vostro ambiente e divertitevi! Ci vediamo nel 2050!"
 DEMAND,Demand,Demande,Energiebedarf,Domanda
 SUPPLY,Supply,Apport,Energieversorgung,Fornitura
 LAND_USE,Land use,Utilisation des sols,Landnutzung,Uso del terreno
@@ -281,3 +282,4 @@ VALIDATE,Confirm,Valider,Bestätigen,Confermare
 SUMMARY,Summary,Résumé,Zusammenfassung,Sintesi
 LEADERBOARD,Leaderboard,Classement,Bestenliste,Classifica
 SHOW_MAP,Show map,Voir la carte,Karte anzeigen,Mostra la mappa
+START_PLAYING,Get started!,Commencer !,Anfangen!,Iniziate!
