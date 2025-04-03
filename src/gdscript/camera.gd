@@ -110,8 +110,6 @@ func animate_camera_zoom(new_zoom):
 		var tween = get_tree().create_tween()
 		tween.tween_property(self, "zoom", new_zoom, ZOOM_ANIMATION_DURATION)
 		scale_plants(new_zoom)
-	
-	print("zoom ", new_zoom)
 
 
 func animate_camera_position(new_position):

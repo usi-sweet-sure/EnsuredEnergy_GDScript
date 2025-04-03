@@ -4,6 +4,15 @@ const NEXT_ANIMATION_A := "next__0_out_1_in"
 const NEXT_ANIMATION_B := "next__1_out_0_in"
 const PREVIOUS_ANIMATION_A := "previous__1_out_0_in"
 const PREVIOUS_ANIMATION_B := "previous__0_out_1_in"
+# This is "tutorial_highlight.gdshader" parameters to set a square at the center
+# of the screen, so when we animate a highlight zone for a step, it seem to be
+# coming from the frame displaying texts at the center of the screen
+const HIGHLIGHT_ZONE_CENTER = { 
+	"left": 0.479,
+	"top": 0.2737,
+	"right": 0.5153,
+	"bottom": 0.3432,
+}
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animation_player_2: AnimationPlayer = $AnimationPlayer2
@@ -11,7 +20,7 @@ const PREVIOUS_ANIMATION_B := "previous__0_out_1_in"
 @onready var text_1: RichTextLabel = $Frame0/Screen/Text1
 @onready var previous_button: TextureButton = $Buttons/NavigationButtons/Buttons/Previous
 @onready var step_indicator_label: Label = $StepIndicator/Label
-
+@onready var highlight_zone: ColorRect = $HighlightZone
 
 var step = 0
 var previous_step = 0
@@ -51,7 +60,52 @@ var camera_config_for_step := [
 	null, # Step11
 	null, # Step12
 ]
-
+#Parameters for the shader "tutorial_highlight.gdshader"
+var highlight_zones_for_step := [
+	null,                 # Step0
+	null,                 # Step1
+	null,                 # Step2
+	{                     # Step3
+		"left": 0.1304,
+		"top": 0.5867,
+		"right": 0.2558,
+		"bottom": 0.9202,
+	},     
+	null,                 # Step4
+	{                     # Step5
+		"left": 0.0297,
+		"top": 0.5809,
+		"right": 0.1956,
+		"bottom": 0.9405,
+	},  
+	{                     # Step6
+		"left": 0.1297,
+		"top": 0.5809,
+		"right": 0.1956,
+		"bottom": 0.9405,
+	}, 
+	null,                 # Step7
+	{                     # Step8
+		"left": 0.2595,
+		"top": 0.527,
+		"right": 0.8056,
+		"bottom": 1.0,
+	}, 
+	{                     # Step9
+		"left": 0.2595,
+		"top": 0.527,
+		"right": 0.8056,
+		"bottom": 1.0,
+	}, 
+	null,                 # Step10
+	{                     # Step11
+		"left": 0.0722,
+		"top": 0.0505,
+		"right": 0.2099,
+		"bottom": 0.1656,
+	}, 
+	null,                  # Step12
+]
 
 func _ready():
 	hide()
@@ -77,9 +131,16 @@ func _on_tutorial_started():
 	
 	animation_player_2.play("RESET")
 	animation_player.play("tutorial_starts")
+	await animation_player.animation_finished
+	_animate_highlight_zone(HIGHLIGHT_ZONE_CENTER)
 	
 
 func _on_next_step_requested():
+	# If next step has a highlight, we don't go back to center before moving
+	# the highlight zone
+	if highlight_zones_for_step[step + 1] == null:
+		_animate_highlight_zone(HIGHLIGHT_ZONE_CENTER)
+		
 	if step < tuto_length:
 		previous_step = step
 		step += 1
@@ -88,11 +149,17 @@ func _on_next_step_requested():
 		_play_animation()
 		_update_step_indicator_state()
 		_update_camera_state()
+		_animate_highlight_zone(highlight_zones_for_step[step])
 	else:
 		TutorialManager.tutorial_ended.emit()
 		
 
 func _on_previous_step_requested():
+	# If the previous step has a highlight, we don't go back to center before moving
+	# the highlight zone
+	if highlight_zones_for_step[step -1] == null:
+		_animate_highlight_zone(HIGHLIGHT_ZONE_CENTER)
+		
 	if step > 0:
 		previous_step = step
 		step -= 1
@@ -101,6 +168,7 @@ func _on_previous_step_requested():
 		_update_step_indicator_state()
 		_play_animation(false)
 		_update_camera_state()
+		_animate_highlight_zone(highlight_zones_for_step[step])
 
 
 func _on_tutorial_ended():
@@ -209,3 +277,12 @@ func _update_camera_state():
 	else:
 		CameraManager.unlock_camera.emit()
 		CameraManager.reset_camera.emit()
+		
+		
+func _animate_highlight_zone(destination):
+	if destination != null:
+		var tween = get_tree().create_tween()
+		tween.parallel().tween_property(highlight_zone.material, "shader_parameter/left", destination.left, 0.4)
+		tween.parallel().tween_property(highlight_zone.material, "shader_parameter/right", destination.right, 0.4)
+		tween.parallel().tween_property(highlight_zone.material, "shader_parameter/top", destination.top, 0.4)
+		tween.parallel().tween_property(highlight_zone.material, "shader_parameter/bottom", destination.bottom, 0.4)
