@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=4 uid="uid://ciphd0cmpslrn"]
+[gd_scene load_steps=91 format=4 uid="uid://ciphd0cmpslrn"]
 
 [ext_resource type="Script" uid="uid://pefde6sv23kq" path="res://src/gdscript/tutorial/tutorial.gd" id="1_yrums"]
 [ext_resource type="Script" uid="uid://8owrlbkkpfwk" path="res://src/gdscript/tutorial/mouse_block.gd" id="2_1fnul"]
@@ -12,7 +12,11 @@
 [ext_resource type="Texture2D" uid="uid://60dl810b25fd" path="res://assets/textures/buttons/button_press.png" id="9_j5oqc"]
 [ext_resource type="PackedScene" uid="uid://cuajo0ocbdx2d" path="res://scenes/buttons/button_play.tscn" id="9_shki2"]
 [ext_resource type="Texture2D" uid="uid://cgf1xjsx0mfot" path="res://assets/textures/ui/Button-Next-Base.png" id="11_i0yq7"]
+[ext_resource type="AudioStream" uid="uid://ujxpgomil1xs" path="res://assets/sounds/vhs_sound.mp3" id="18_j5oqc"]
+[ext_resource type="AudioStream" uid="uid://c3qr5pxx7pqwi" path="res://assets/sounds/ambiences/vhs_sound_loop.mp3" id="19_i0yq7"]
 [ext_resource type="Texture2D" uid="uid://ceuxpu5iujr05" path="res://assets/textures/ui/All-HQ-Assets-D_0006s_0001_Stats-metal-base.png" id="20_r4b0o"]
+[ext_resource type="AudioStream" uid="uid://dwkg2io232u4j" path="res://assets/sounds/tape.mp3" id="20_rws3h"]
+[ext_resource type="AudioStream" uid="uid://btwp8avb4bfck" path="res://assets/sounds/projector_stop.mp3" id="21_i0yq7"]
 [ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/new_fonts/label_themes.tres" id="21_rws3h"]
 [ext_resource type="Texture2D" uid="uid://cd23afs6x11al" path="res://assets/textures/screens/screen_1.png" id="22_81gy2"]
 [ext_resource type="Shader" uid="uid://b3m5xpc6noa31" path="res://src/gdscript/shaders/diapo_shift.gdshader" id="23_oxx03"]
@@ -829,34 +833,22 @@ length = 0.7
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Buttons:position")
-tracks/0/interp = 2
+tracks/0/path = NodePath("Buttons/StartPlayingButton:visible")
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(841, 572), Vector2(841, 592), Vector2(841, 412)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Buttons/StartPlayingButton:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Buttons/StartPlayingButton:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Buttons/StartPlayingButton:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0.4, 0.5, 0.6, 0.7),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
@@ -869,6 +861,240 @@ _data = {
 &"hide_navigation_buttons": SubResource("Animation_i0yq7"),
 &"show_navigations_buttons": SubResource("Animation_rws3h"),
 &"show_start_playing_button": SubResource("Animation_xrkad")
+}
+
+[sub_resource type="Animation" id="Animation_81gy2"]
+resource_name = "tutorial_starts"
+length = 6.23
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VhsStart:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VhsStart:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 3.26667, 6.2),
+"transitions": PackedFloat32Array(0.25, 0.25, 0.535887, 1),
+"update": 0,
+"values": [-80.0, -6.0, -6.0, -20.0]
+}
+
+[sub_resource type="Animation" id="Animation_e4ww1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VhsStart:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VhsStart:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("VhsLoop:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("VhsLoop:volume_db")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ProjectorStop:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ProjectorStop:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_wrv10"]
+resource_name = "ambience_loops"
+length = 10.24
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VhsLoop:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VhsLoop:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-20.0]
+}
+
+[sub_resource type="Animation" id="Animation_883my"]
+resource_name = "tutorial_ends"
+length = 2.16
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VhsLoop:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ProjectorStop:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("VhsLoop:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.86667),
+"transitions": PackedFloat32Array(4.43828, 3.605),
+"update": 0,
+"values": [-6.0, -80.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ProjectorStop:volume_db")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.258816, 0.225313),
+"update": 0,
+"values": [-80.0, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("VhsStart:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_7e26y"]
+resource_name = "last_turn"
+length = 10.24
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VhsLoop:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 10.23),
+"transitions": PackedFloat32Array(0.241484, 0.277393, 1),
+"update": 0,
+"values": [-6.0, -6.0, -6.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VhsLoop:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 10.24),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_883my"]
+_data = {
+&"RESET": SubResource("Animation_e4ww1"),
+&"ambience_loops": SubResource("Animation_wrv10"),
+&"last_turn": SubResource("Animation_7e26y"),
+&"tutorial_ends": SubResource("Animation_883my"),
+&"tutorial_starts": SubResource("Animation_81gy2")
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_55w7j"]
@@ -6996,6 +7222,11 @@ libraries = {
 &"": SubResource("AnimationLibrary_81gy2")
 }
 
+[node name="AnimationPlayer3" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_883my")
+}
+
 [node name="MouseBlock" type="ColorRect" parent="."]
 offset_left = -57.0
 offset_top = -48.0
@@ -7250,6 +7481,19 @@ theme_type_variation = &"Screen"
 text = "0 / 10"
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="VhsStart" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_j5oqc")
+
+[node name="VhsLoop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_i0yq7")
+
+[node name="Tape" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_rws3h")
+volume_db = -12.0
+
+[node name="ProjectorStop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_i0yq7")
 
 [connection signal="pressed" from="Buttons/NavigationButtons/Buttons/Previous" to="." method="_on_previous_step_requested"]
 [connection signal="pressed" from="Buttons/NavigationButtons/Buttons/Next" to="." method="_on_next_step_requested"]

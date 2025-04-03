@@ -16,11 +16,13 @@ const HIGHLIGHT_ZONE_CENTER = {
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animation_player_2: AnimationPlayer = $AnimationPlayer2
+@onready var animation_player_3: AnimationPlayer = $AnimationPlayer3
 @onready var text_0: RichTextLabel = $Frame0/Screen/Text0
 @onready var text_1: RichTextLabel = $Frame0/Screen/Text1
 @onready var previous_button: TextureButton = $Buttons/NavigationButtons/Buttons/Previous
 @onready var step_indicator_label: Label = $StepIndicator/Label
 @onready var highlight_zone: ColorRect = $HighlightZone
+@onready var tape_sound: AudioStreamPlayer = $Tape
 
 var step = 0
 var previous_step = 0
@@ -119,12 +121,21 @@ func _on_tutorial_started():
 	
 	animation_player_2.play("RESET")
 	animation_player.play("tutorial_starts")
+	animation_player_3.play("tutorial_starts")
 	await animation_player.animation_finished
 	_animate_highlight_zone(HIGHLIGHT_ZONE_CENTER)
+	
+	# If tutorial is skipped, this signal will be heard during gameplay
+	# and sound will be played, although tutorial is gone, so we test visibility
+	await animation_player_3.animation_finished
+	if visible:
+		animation_player_3.play("ambience_loops")
 	
 
 func _on_next_step_requested():
 	if step < tuto_length:
+		tape_sound.pitch_scale = randf_range(0.85, 1.0)
+		tape_sound.play()
 		# If next step has a highlight, we don't go back to center before moving
 		# the highlight zone
 		if highlight_zones_for_step[step + 1] == null:
@@ -144,6 +155,8 @@ func _on_next_step_requested():
 
 func _on_previous_step_requested():
 	if step > 0:
+		tape_sound.pitch_scale = randf_range(0.85, 1.0)
+		tape_sound.play()
 		# If the previous step has a highlight, we don't go back to center before moving
 		# the highlight zone
 		if highlight_zones_for_step[step -1] == null:
@@ -163,6 +176,7 @@ func _on_tutorial_ended():
 	TutorialManager.next_step_requested.disconnect(_on_next_step_requested)
 	PowerplantsManager.powerplant_build_requested.disconnect(_on_pp_build)
 	animation_player.play("tutorial_ends")
+	animation_player_3.play("tutorial_ends")
 
 
 func _on_pp_build(_map_emplacement: PpMapEmplacement, _metrics: PowerplantMetrics):
@@ -199,6 +213,7 @@ func _play_animation(forward: bool = true) -> void:
 	
 	if show_start_playing_button:
 		animation_player_2.play("show_start_playing_button")
+		animation_player_3.play("last_turn")
 	elif hide_navigation_buttons:
 		animation_player_2.play("hide_navigation_buttons")
 	elif show_navigation_buttons:
