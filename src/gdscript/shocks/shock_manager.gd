@@ -102,7 +102,14 @@ func pick_shock():
 			shocks = shocks_full.duplicate()
 			shocks.shuffle()
 			
-		var random_shock = shocks.pop_front()
+		var random_shock: Shock = shocks.pop_front()
+		
+		if Gameloop.current_turn == 10 and random_shock.title_key == "SHOCK_SEVERE_WEATHER_TITLE":
+			if shocks.is_empty():
+				shocks = shocks_full.duplicate()
+				shocks.shuffle()
+			random_shock = shocks.pop_front()
+			
 		random_shock.turn_picked = Gameloop.current_turn
 		Gameloop.most_recent_shock = random_shock
 
