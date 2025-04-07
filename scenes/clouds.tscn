@@ -4,7 +4,7 @@
 [ext_resource type="Shader" uid="uid://fkpbxalsaovj" path="res://src/gdscript/shaders/cloud.gdshader" id="2_q442c"]
 [ext_resource type="Texture2D" uid="uid://dbh32v46opxyl" path="res://assets/title/clouds.jpeg" id="3_0hd3x"]
 [ext_resource type="Texture2D" uid="uid://kfrnyvqb84es" path="res://assets/title/cloud.png" id="4_qyalo"]
-[ext_resource type="AudioStream" uid="uid://df3fauxnnqfeq" path="res://assets/sounds/ambiences/electric_hum_in_wind.mp3" id="5_q442c"]
+[ext_resource type="AudioStream" uid="uid://drm2sc0t8a4pd" path="res://assets/sounds/ambiences/Small_Smoke_Amb.wav" id="5_q442c"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yc10j"]
 shader = ExtResource("2_q442c")

@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://df16xuyhaf34g" path="res://assets/sounds/paper-0.ogg" id="9_g3hit"]
 [ext_resource type="AudioStream" uid="uid://dmw8t66vhmoss" path="res://assets/sounds/paper-1.ogg" id="10_4apat"]
 [ext_resource type="AudioStream" uid="uid://bpsvj51ehh4l7" path="res://assets/sounds/paper-2.ogg" id="10_mnpfl"]
-[ext_resource type="AudioStream" uid="uid://df3fauxnnqfeq" path="res://assets/sounds/ambiences/electric_hum_in_wind.mp3" id="11_p5uep"]
+[ext_resource type="AudioStream" uid="uid://ba6c2xr8j5pwg" path="res://assets/sounds/ambiences/Big_Smoke_Amb.wav" id="11_p5uep"]
 [ext_resource type="AudioStream" uid="uid://d21uvnuh48ewj" path="res://assets/sounds/purse.wav" id="12_1eh3w"]
 
 [sub_resource type="AudioStreamMP3" id="AudioStreamMP3_17urj"]
