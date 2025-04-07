@@ -19,6 +19,7 @@ var max_value_set := false
 
 func _ready():
 	TutorialManager.step_changed.connect(_on_tutorial_step_updated)
+	TutorialManager.tutorial_ended.connect(_on_tutorial_ended)
 	Gameloop.hide_energy_bar_info_requested.connect(_on_hide_info_box)
 	
 	# Determines which season the bar will be monitoring
@@ -141,3 +142,7 @@ func _on_hide_info_box(season_to_hide: Season):
 
 func _on_tutorial_step_updated(step_: int):
 	show_hand.visible = (step_ == 6 and season == Season.WINTER) or step_ == 3
+
+
+func _on_tutorial_ended() -> void:
+	show_hand.visible = false
