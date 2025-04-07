@@ -7,7 +7,7 @@ func _ready() -> void:
 
 func _on_pressed():
 	TutorialManager.tutorial_started.emit()
-	Gameloop.toggle_settings.emit()
+	Gameloop.toggle_settings.emit(false)
 
 
 func _on_game_ended():

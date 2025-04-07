@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://g58p7rxvcdik"]
+[gd_scene load_steps=17 format=3 uid="uid://g58p7rxvcdik"]
 
 [ext_resource type="PackedScene" uid="uid://ba56oxmvcxpos" path="res://scenes/world.tscn" id="1_prp6q"]
 [ext_resource type="PackedScene" uid="uid://bs48lirfn2fp2" path="res://scenes/hud/ui.tscn" id="2_d60f5"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://rjcu72lxn4n4" path="res://scenes/windows/settings.tscn" id="11_3whgs"]
 [ext_resource type="PackedScene" uid="uid://ciphd0cmpslrn" path="res://scenes/hud/tutorial.tscn" id="11_uite1"]
 [ext_resource type="PackedScene" uid="uid://885lty3v1qbq" path="res://scenes/windows/shock.tscn" id="12_vvejj"]
+[ext_resource type="PackedScene" uid="uid://v637x3ghtx6w" path="res://scenes/clouds.tscn" id="16_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://co6w7mqwohn4h" path="res://scenes/Credits/credits.tscn" id="17_nfvbd"]
 [ext_resource type="PackedScene" uid="uid://dqg3dfo1ggbao" path="res://scenes/cursor_tooltip.tscn" id="18_a1i53"]
 [ext_resource type="PackedScene" uid="uid://pvoi2mcc3oc1" path="res://scenes/hud/menu.tscn" id="18_h65u3"]
@@ -18,6 +19,8 @@
 
 [node name="Main" type="Node2D"]
 metadata/_edit_vertical_guides_ = [1047.0]
+
+[node name="Clouds" parent="." instance=ExtResource("16_jbj1t")]
 
 [node name="Audio" parent="." instance=ExtResource("34_smnob")]
 
@@ -76,7 +79,6 @@ metadata/_edit_vertical_guides_ = [725.0, 1270.0, 1417.0, 509.0]
 visible = false
 
 [node name="Settings" parent="." instance=ExtResource("11_3whgs")]
-visible = false
 
 [node name="QuitGame" parent="." instance=ExtResource("77_iwdt8")]
 layer = 4
@@ -86,7 +88,6 @@ visible = false
 
 [node name="Credits" parent="." instance=ExtResource("17_nfvbd")]
 layer = 4
-visible = false
 
 [node name="CursorTooltipLayer" type="CanvasLayer" parent="."]
 layer = 10

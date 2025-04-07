@@ -2,4 +2,4 @@ extends TextureButton
 
 
 func _on_pressed():
-	Gameloop.toggle_credits.emit()
+	Gameloop.toggle_credits.emit(true)

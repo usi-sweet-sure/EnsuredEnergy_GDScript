@@ -1,19 +1,259 @@
-[gd_scene load_steps=9 format=3 uid="uid://co6w7mqwohn4h"]
+[gd_scene load_steps=30 format=3 uid="uid://co6w7mqwohn4h"]
 
-[ext_resource type="Texture2D" uid="uid://dvph1wklx4pfh" path="res://assets/textures/ui/Paper-Big.png" id="1_b7k2c"]
 [ext_resource type="Script" uid="uid://b1soiar8xqajb" path="res://src/gdscript/settings/settings_canvas/credits.gd" id="2_0y38i"]
+[ext_resource type="Texture2D" uid="uid://ceuxpu5iujr05" path="res://assets/textures/ui/All-HQ-Assets-D_0006s_0001_Stats-metal-base.png" id="2_js1np"]
 [ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/new_fonts/label_themes.tres" id="3_5yoe6"]
+[ext_resource type="Texture2D" uid="uid://cd23afs6x11al" path="res://assets/textures/screens/screen_1.png" id="3_altrx"]
 [ext_resource type="PackedScene" uid="uid://chpn7t75mmbkh" path="res://scenes/buttons/button_close.tscn" id="4_fp272"]
 [ext_resource type="FontFile" uid="uid://c1dcad080fsul" path="res://assets/new_fonts/special_elite/special_elite_regular.ttf" id="4_msvy3"]
+[ext_resource type="Shader" uid="uid://b3m5xpc6noa31" path="res://src/gdscript/shaders/diapo_shift.gdshader" id="5_rc5e8"]
 [ext_resource type="Texture2D" uid="uid://d0phf45274ejw" path="res://assets/bfe.png" id="5_rfmq0"]
 [ext_resource type="Texture2D" uid="uid://ba1qj2x30q805" path="res://assets/sweet_sure.png" id="6_55tnv"]
+[ext_resource type="FontFile" uid="uid://bt2f3flr7psn5" path="res://assets/new_fonts/vt323/vt323_regular.ttf" id="7_32mse"]
+[ext_resource type="FontFile" uid="uid://dxtsp51pqna2o" path="res://assets/new_fonts/static/open_sans_bold.ttf" id="8_7lfst"]
 
-[sub_resource type="FontVariation" id="FontVariation_onyef"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nsvoa"]
+shader = ExtResource("5_rc5e8")
+shader_parameter/delta_x = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r4b0o"]
+bg_color = Color(0.65098, 0.65098, 0.65098, 0.0470588)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_color = Color(0.25098, 0.807843, 0.839216, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rws3h"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_color = Color(0.219608, 0.752941, 0.784314, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_81gy2"]
+bg_color = Color(0.219608, 0.756863, 0.788235, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+
+[sub_resource type="FontVariation" id="FontVariation_oxx03"]
+base_font = ExtResource("8_7lfst")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ij5yh"]
+
+[sub_resource type="FontVariation" id="FontVariation_npaia"]
 base_font = ExtResource("4_msvy3")
+variation_embolden = 0.6
+
+[sub_resource type="FontVariation" id="FontVariation_2l66c"]
+base_font = ExtResource("4_msvy3")
+
+[sub_resource type="FontVariation" id="FontVariation_e4ww1"]
+base_font = ExtResource("7_32mse")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wrv10"]
+bg_color = Color(0.192157, 0.658824, 0.690196, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_883my"]
+bg_color = Color(0.247059, 0.776471, 0.811765, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7e26y"]
+bg_color = Color(0.129412, 0.486275, 0.509804, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="Theme" id="Theme_jy3c8"]
+/colors/Dark = Color(0.0627451, 0.572549, 0, 1)
+/font_sizes/Big = 18
+/fonts/font = ExtResource("4_msvy3")
+Button/colors/font_color = Color(0.211765, 0.690196, 0.717647, 1)
+Button/colors/font_pressed_color = Color(0.0862745, 0.207843, 0.219608, 1)
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("7_32mse")
+Button/styles/hover = SubResource("StyleBoxFlat_r4b0o")
+Button/styles/normal = SubResource("StyleBoxFlat_rws3h")
+Button/styles/pressed = SubResource("StyleBoxFlat_81gy2")
+Label/colors/font_color = Color(0.0784314, 0.180392, 0.192157, 1)
+Label/colors/font_outline_color = Color(1, 1, 1, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/font_sizes/font_size = 16
+Label/fonts/font = SubResource("FontVariation_oxx03")
+Label/styles/normal = SubResource("StyleBoxEmpty_ij5yh")
+Paper/base_type = &"Label"
+Paper/colors/color = Color(0.631373, 0.443137, 0.403922, 1)
+Paper/colors/font_color = Color(0, 0, 0, 1)
+Paper/colors/font_outline_color = Color(0, 0, 0, 1)
+Paper/colors/font_shadow_color = Color(0, 0, 0, 1)
+Paper/constants/line_spacing = 0
+Paper/constants/outline_size = 0
+Paper/constants/shadow_offset_x = 0
+Paper/constants/shadow_offset_y = 0
+Paper/constants/shadow_outline_size = 0
+Paper/font_sizes/font_size = 18
+Paper/font_sizes/size = 16
+Paper/fonts/font = ExtResource("4_msvy3")
+RichTextLabel/constants/line_separation = 7
+RichTextLabel/fonts/bold_font = SubResource("FontVariation_npaia")
+RichTextLabel/fonts/normal_font = SubResource("FontVariation_2l66c")
+Screen/base_type = &"Label"
+Screen/colors/font_color = Color(0.219608, 0.756863, 0.788235, 1)
+Screen/font_sizes/font_size = 30
+Screen/fonts/font = SubResource("FontVariation_e4ww1")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_wrv10")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_883my")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_7e26y")
+
+[sub_resource type="FontVariation" id="FontVariation_path1"]
+base_font = ExtResource("7_32mse")
 variation_embolden = 0.8
+
+[sub_resource type="Animation" id="Animation_js1np"]
+resource_name = "credits_appear"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BackPanel:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BackPanel:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1987, 230), Vector2(402, 230), Vector2(502, 230), Vector2(452, 230)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_altrx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BackPanel:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BackPanel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(452, 230)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_rc5e8"]
+resource_name = "credits_go_away"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BackPanel:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BackPanel:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(452, 230), Vector2(402, 230), Vector2(1987, 230)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rc5e8"]
+_data = {
+&"RESET": SubResource("Animation_altrx"),
+&"credits_appear": SubResource("Animation_js1np"),
+&"credits_go_away": SubResource("Animation_rc5e8")
+}
 
 [node name="Credits" type="CanvasLayer"]
 script = ExtResource("2_0y38i")
+metadata/_edit_horizontal_guides_ = [112.0]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -21,7 +261,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.14902, 0.14902, 0.14902, 0.854902)
+color = Color(0.14902, 0.14902, 0.14902, 0)
 
 [node name="BackdropButton" type="Button" parent="."]
 anchors_preset = 15
@@ -31,79 +271,58 @@ grow_horizontal = 2
 grow_vertical = 2
 flat = true
 
-[node name="CreditsSprite" type="TextureRect" parent="."]
+[node name="BackPanel" type="TextureRect" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -425.0
-offset_top = -307.0
-offset_right = 425.0
-offset_bottom = 307.0
+offset_left = 1027.0
+offset_top = -310.0
+offset_right = 2043.0
+offset_bottom = 377.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(508, 343)
+mouse_filter = 0
+mouse_force_pass_scroll_events = false
+texture = ExtResource("2_js1np")
+expand_mode = 1
+
+[node name="Screen" type="TextureRect" parent="BackPanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 40.0
+offset_top = 35.0
+offset_right = -35.0
+offset_bottom = 658.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+texture = ExtResource("3_altrx")
+
+[node name="Text0" type="RichTextLabel" parent="BackPanel/Screen"]
+material = SubResource("ShaderMaterial_nsvoa")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 29.0
+offset_right = -444.0
+offset_bottom = -152.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("1_b7k2c")
-
-[node name="Label3" type="Label" parent="CreditsSprite"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -44.5
-offset_top = 65.0
-offset_right = 44.5
-offset_bottom = 99.0
-grow_horizontal = 2
-theme = ExtResource("3_5yoe6")
-theme_type_variation = &"Paper"
-theme_override_font_sizes/font_size = 22
-text = "CREDITS"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
-
-[node name="Label5" type="Label" parent="CreditsSprite"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 24.0
-offset_top = 319.0
-offset_right = 384.0
-offset_bottom = 551.0
-grow_horizontal = 2
-theme = ExtResource("3_5yoe6")
-theme_type_variation = &"Paper"
-theme_override_font_sizes/font_size = 19
-text = "This game was developed by the SURE consortium, which is funded by the Swiss Federal Office of Energy's SWEET programme.
-
-The designers of this game bear sole responsibility for the content presented."
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="Label2" type="RichTextLabel" parent="CreditsSprite"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -346.0
-offset_top = -185.0
-offset_right = 46.0
-offset_bottom = 119.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("3_5yoe6")
-theme_type_variation = &"Paper"
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("4_msvy3")
-theme_override_fonts/bold_font = SubResource("FontVariation_onyef")
-theme_override_font_sizes/normal_font_size = 20
-theme_override_font_sizes/bold_font_size = 20
+mouse_force_pass_scroll_events = false
+theme = SubResource("Theme_jy3c8")
+theme_override_colors/default_color = Color(0.219608, 0.756863, 0.788235, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_fonts/normal_font = ExtResource("7_32mse")
+theme_override_fonts/bold_font = SubResource("FontVariation_path1")
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
 bbcode_enabled = true
 text = "[b]Università della Svizzera italiana[/b]
 Saara Jones
@@ -115,53 +334,85 @@ Rolf Krause
 Davide Baroli
 Amelia Dobis
 "
+autowrap_mode = 2
 
-[node name="Label4" type="RichTextLabel" parent="CreditsSprite"]
+[node name="Text1" type="RichTextLabel" parent="BackPanel/Screen"]
+material = SubResource("ShaderMaterial_nsvoa")
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 95.0
-offset_top = -184.0
-offset_right = 383.0
-offset_bottom = 68.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 601.0
+offset_top = 28.0
+offset_right = -16.0
+offset_bottom = -320.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("3_5yoe6")
-theme_type_variation = &"Paper"
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("4_msvy3")
-theme_override_fonts/bold_font = SubResource("FontVariation_onyef")
-theme_override_font_sizes/normal_font_size = 20
-theme_override_font_sizes/bold_font_size = 20
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_force_pass_scroll_events = false
+theme = SubResource("Theme_jy3c8")
+theme_override_colors/default_color = Color(0.219608, 0.756863, 0.788235, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_fonts/normal_font = ExtResource("7_32mse")
+theme_override_fonts/bold_font = SubResource("FontVariation_path1")
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
 bbcode_enabled = true
 text = "[b]Universität Bern[/b]
 Isabelle Stadelmann
 Gracia Brückmann
-Walid El-Ajou"
+Walid El-Ajou
+"
+autowrap_mode = 2
 
-[node name="CloseButton" parent="CreditsSprite" instance=ExtResource("4_fp272")]
+[node name="Label5" type="Label" parent="BackPanel/Screen"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -462.5
+offset_top = 374.0
+offset_right = 460.5
+offset_bottom = 635.0
+grow_horizontal = 2
+theme = ExtResource("3_5yoe6")
+theme_type_variation = &"Screen"
+theme_override_font_sizes/font_size = 30
+text = "This game was developed by the SURE consortium, which is funded by the Swiss Federal Office of Energy's SWEET programme.
+
+The designers of this game bear sole responsibility for the content presented."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="BFE" type="Sprite2D" parent="BackPanel/Screen"]
+visible = false
+position = Vector2(652, 192.5)
+scale = Vector2(0.547431, 0.547431)
+texture = ExtResource("5_rfmq0")
+
+[node name="SweetSure" type="Sprite2D" parent="BackPanel/Screen"]
+visible = false
+position = Vector2(197, 527.5)
+scale = Vector2(0.455263, 0.455263)
+texture = ExtResource("6_55tnv")
+
+[node name="CloseButton" parent="BackPanel" instance=ExtResource("4_fp272")]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -55.0
-offset_right = 0.0
-offset_bottom = 54.0
+offset_left = -46.0
+offset_top = -12.0
+offset_right = 9.0
+offset_bottom = 42.0
 grow_horizontal = 0
 
-[node name="BFE" type="Sprite2D" parent="CreditsSprite"]
-visible = false
-position = Vector2(609, 191)
-scale = Vector2(0.547431, 0.547431)
-texture = ExtResource("5_rfmq0")
-
-[node name="SweetSure" type="Sprite2D" parent="CreditsSprite"]
-position = Vector2(249, 463)
-scale = Vector2(0.455263, 0.455263)
-texture = ExtResource("6_55tnv")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_rc5e8")
+}
 
 [connection signal="pressed" from="BackdropButton" to="." method="_on_backdrop_button_pressed"]
-[connection signal="pressed" from="CreditsSprite/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="BackPanel/CloseButton" to="." method="_on_close_button_pressed"]

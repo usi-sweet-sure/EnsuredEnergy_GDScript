@@ -34,9 +34,9 @@ signal most_recent_shock_updated
 signal current_turn_updated
 signal next_turn
 signal show_ending_screen_requested
-signal toggle_settings
+signal toggle_settings(toggled: bool)
 signal toggle_graphs
-signal toggle_credits
+signal toggle_credits(toggled: bool)
 signal game_started
 signal game_ended
 signal game_quit_requested
@@ -227,12 +227,6 @@ func _send_parameters_to_model(turn: int):
 			await Context.parameters_sent_to_model
 			ups_list[i] = 0
 	all_parameters_sent.emit()
-
-
-func _unhandled_input(event):
-	if event is InputEventKey:
-		if event.pressed and event.keycode == KEY_ESCAPE:
-			toggle_settings.emit()
 			
 			
 func can_go_to_next_turn():

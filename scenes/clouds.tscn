@@ -1,0 +1,347 @@
+[gd_scene load_steps=16 format=3 uid="uid://v637x3ghtx6w"]
+
+[ext_resource type="Script" uid="uid://biyryx2eqaqv4" path="res://src/gdscript/clouds.gd" id="1_ihijd"]
+[ext_resource type="Shader" uid="uid://fkpbxalsaovj" path="res://src/gdscript/shaders/cloud.gdshader" id="2_q442c"]
+[ext_resource type="Texture2D" uid="uid://dbh32v46opxyl" path="res://assets/title/clouds.jpeg" id="3_0hd3x"]
+[ext_resource type="Texture2D" uid="uid://kfrnyvqb84es" path="res://assets/title/cloud.png" id="4_qyalo"]
+[ext_resource type="AudioStream" uid="uid://df3fauxnnqfeq" path="res://assets/sounds/ambiences/electric_hum_in_wind.mp3" id="5_q442c"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yc10j"]
+shader = ExtResource("2_q442c")
+shader_parameter/noise_texture = ExtResource("3_0hd3x")
+shader_parameter/cloud_density = 0.5
+shader_parameter/speed = Vector2(0.05, 0.01)
+shader_parameter/fog_density = 7.472
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jscy8"]
+shader = ExtResource("2_q442c")
+shader_parameter/noise_texture = ExtResource("4_qyalo")
+shader_parameter/cloud_density = 0.75
+shader_parameter/speed = Vector2(0.02, 0.01)
+shader_parameter/fog_density = 4.861
+
+[sub_resource type="Animation" id="Animation_0hd3x"]
+resource_name = "clouds_appear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ParallaxBackground:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ParallaxBackground2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ParallaxBackground/ColorRect:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ParallaxBackground2/ColorRect2:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qyalo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ParallaxBackground:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ParallaxBackground2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ParallaxBackground/ColorRect:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ParallaxBackground2/ColorRect2:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_q442c"]
+resource_name = "clouds_go_away"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ParallaxBackground:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ParallaxBackground2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ParallaxBackground/ColorRect:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ParallaxBackground2/ColorRect2:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_je36c"]
+_data = {
+&"RESET": SubResource("Animation_qyalo"),
+&"clouds_appear": SubResource("Animation_0hd3x"),
+&"clouds_go_away": SubResource("Animation_q442c")
+}
+
+[sub_resource type="Animation" id="Animation_r61fl"]
+resource_name = "play_ambience_1"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ElectricHumInWindSound:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ElectricHumInWindSound:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(0.25, 0.25),
+"update": 0,
+"values": [-80.0, -6.0]
+}
+
+[sub_resource type="Animation" id="Animation_ppb1u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ElectricHumInWindSound:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ElectricHumInWindSound:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_v1asv"]
+resource_name = "stop_ambience_1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ElectricHumInWindSound:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.7),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ElectricHumInWindSound:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-6.0, -80.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cvsdc"]
+_data = {
+&"RESET": SubResource("Animation_ppb1u"),
+&"play_ambience_1": SubResource("Animation_r61fl"),
+&"stop_ambience_1": SubResource("Animation_v1asv")
+}
+
+[node name="Clouds" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_ihijd")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = 2
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1920, 1080)
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground"]
+material = SubResource("ShaderMaterial_yc10j")
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+layer = 2
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground2"]
+motion_mirroring = Vector2(1920, 1080)
+
+[node name="ColorRect2" type="ColorRect" parent="ParallaxBackground2"]
+material = SubResource("ShaderMaterial_jscy8")
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="ElectricHumInWindSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_q442c")
+bus = &"Sound"
+parameters/looping = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_je36c")
+}
+
+[node name="SoundPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_cvsdc")
+}

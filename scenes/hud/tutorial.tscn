@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=4 uid="uid://ciphd0cmpslrn"]
+[gd_scene load_steps=102 format=4 uid="uid://ciphd0cmpslrn"]
 
 [ext_resource type="Script" uid="uid://pefde6sv23kq" path="res://src/gdscript/tutorial/tutorial.gd" id="1_yrums"]
 [ext_resource type="Script" uid="uid://8owrlbkkpfwk" path="res://src/gdscript/tutorial/mouse_block.gd" id="2_1fnul"]
@@ -461,6 +461,94 @@ tracks/3/keys = {
 "values": [true, false]
 }
 
+[sub_resource type="Animation" id="Animation_kp06i"]
+resource_name = "tutorial_ends"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Frame0:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(589, 93), Vector2(559, 93), Vector2(2100, 93)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Buttons/SkipButton:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Buttons/NavigationButtons:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Buttons/StartPlayingButton:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(25, 201), Vector2(-15, 201), Vector2(2100, 201)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("StepIndicator:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.366667, 0.466667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(900, 38), Vector2(870, 38), Vector2(2100, 38)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HighlightZone:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
 [sub_resource type="Animation" id="Animation_55w7j"]
 resource_name = "tutorial_starts"
 length = 1.24
@@ -657,94 +745,6 @@ tracks/15/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_kp06i"]
-resource_name = "tutorial_ends"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Frame0:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(589, 93), Vector2(559, 93), Vector2(2100, 93)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Buttons/SkipButton:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Buttons/NavigationButtons:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Buttons/StartPlayingButton:position")
-tracks/3/interp = 2
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(25, 201), Vector2(-15, 201), Vector2(2100, 201)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("StepIndicator:position")
-tracks/4/interp = 2
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.366667, 0.466667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(900, 38), Vector2(870, 38), Vector2(2100, 38)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("HighlightZone:modulate")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath(".:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i0yq7"]
 _data = {
 &"RESET": SubResource("Animation_j5oqc"),
@@ -863,34 +863,6 @@ _data = {
 &"show_start_playing_button": SubResource("Animation_xrkad")
 }
 
-[sub_resource type="Animation" id="Animation_81gy2"]
-resource_name = "tutorial_starts"
-length = 6.23
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("VhsStart:playing")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("VhsStart:volume_db")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5, 3.26667, 6.2),
-"transitions": PackedFloat32Array(0.25, 0.25, 0.535887, 1),
-"update": 0,
-"values": [-80.0, -6.0, -6.0, -20.0]
-}
-
 [sub_resource type="Animation" id="Animation_e4ww1"]
 length = 0.001
 tracks/0/type = "value"
@@ -995,6 +967,35 @@ tracks/1/keys = {
 "values": [-20.0]
 }
 
+[sub_resource type="Animation" id="Animation_7e26y"]
+resource_name = "last_turn"
+length = 10.24
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VhsLoop:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 10.23),
+"transitions": PackedFloat32Array(0.241484, 0.277393, 1),
+"update": 0,
+"values": [-6.0, -6.0, -6.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VhsLoop:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 10.24),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
 [sub_resource type="Animation" id="Animation_883my"]
 resource_name = "tutorial_ends"
 length = 2.16
@@ -1059,33 +1060,32 @@ tracks/4/keys = {
 "values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_7e26y"]
-resource_name = "last_turn"
-length = 10.24
-loop_mode = 1
+[sub_resource type="Animation" id="Animation_81gy2"]
+resource_name = "tutorial_starts"
+length = 6.23
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("VhsLoop:volume_db")
+tracks/0/path = NodePath("VhsStart:playing")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 10.23),
-"transitions": PackedFloat32Array(0.241484, 0.277393, 1),
-"update": 0,
-"values": [-6.0, -6.0, -6.0]
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("VhsLoop:playing")
+tracks/1/path = NodePath("VhsStart:volume_db")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 10.24),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
+"times": PackedFloat32Array(0, 0.5, 3.26667, 6.2),
+"transitions": PackedFloat32Array(0.25, 0.25, 0.535887, 1),
+"update": 0,
+"values": [-80.0, -6.0, -6.0, -20.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_883my"]
@@ -1121,6 +1121,115 @@ corner_radius_bottom_left = 5
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cgvln"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ij5yh"]
+shader = ExtResource("23_oxx03")
+shader_parameter/delta_x = 0.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i0yq7"]
+bg_color = Color(0.65098, 0.65098, 0.65098, 0.0470588)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_color = Color(0.25098, 0.807843, 0.839216, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oxx03"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_color = Color(0.219608, 0.752941, 0.784314, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ij5yh"]
+bg_color = Color(0.219608, 0.756863, 0.788235, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+
+[sub_resource type="FontVariation" id="FontVariation_wrv10"]
+base_font = ExtResource("7_52kbx")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_883my"]
+
+[sub_resource type="FontVariation" id="FontVariation_7e26y"]
+base_font = ExtResource("5_b2jbb")
+variation_embolden = 0.6
+
+[sub_resource type="FontVariation" id="FontVariation_ppdyi"]
+base_font = ExtResource("5_b2jbb")
+
+[sub_resource type="FontVariation" id="FontVariation_2ehys"]
+base_font = ExtResource("6_iaseo")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0qaxh"]
+bg_color = Color(0.192157, 0.658824, 0.690196, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ks2pt"]
+bg_color = Color(0.247059, 0.776471, 0.811765, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nf5pd"]
+bg_color = Color(0.129412, 0.486275, 0.509804, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="Theme" id="Theme_ppdyi"]
+/colors/Dark = Color(0.0627451, 0.572549, 0, 1)
+/font_sizes/Big = 18
+/fonts/font = ExtResource("5_b2jbb")
+Button/colors/font_color = Color(0.211765, 0.690196, 0.717647, 1)
+Button/colors/font_pressed_color = Color(0.0862745, 0.207843, 0.219608, 1)
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("6_iaseo")
+Button/styles/hover = SubResource("StyleBoxFlat_i0yq7")
+Button/styles/normal = SubResource("StyleBoxFlat_oxx03")
+Button/styles/pressed = SubResource("StyleBoxFlat_ij5yh")
+Label/colors/font_color = Color(0.0784314, 0.180392, 0.192157, 1)
+Label/colors/font_outline_color = Color(1, 1, 1, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/font_sizes/font_size = 16
+Label/fonts/font = SubResource("FontVariation_wrv10")
+Label/styles/normal = SubResource("StyleBoxEmpty_883my")
+Paper/base_type = &"Label"
+Paper/colors/color = Color(0.631373, 0.443137, 0.403922, 1)
+Paper/colors/font_color = Color(0, 0, 0, 1)
+Paper/colors/font_outline_color = Color(0, 0, 0, 1)
+Paper/colors/font_shadow_color = Color(0, 0, 0, 1)
+Paper/constants/line_spacing = 0
+Paper/constants/outline_size = 0
+Paper/constants/shadow_offset_x = 0
+Paper/constants/shadow_offset_y = 0
+Paper/constants/shadow_outline_size = 0
+Paper/font_sizes/font_size = 18
+Paper/font_sizes/size = 16
+Paper/fonts/font = ExtResource("5_b2jbb")
+RichTextLabel/constants/line_separation = 7
+RichTextLabel/fonts/bold_font = SubResource("FontVariation_7e26y")
+RichTextLabel/fonts/normal_font = SubResource("FontVariation_ppdyi")
+Screen/base_type = &"Label"
+Screen/colors/font_color = Color(0.219608, 0.756863, 0.788235, 1)
+Screen/font_sizes/font_size = 30
+Screen/fonts/font = SubResource("FontVariation_2ehys")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_0qaxh")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_ks2pt")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_nf5pd")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oxx03"]
 shader = ExtResource("23_oxx03")
 shader_parameter/delta_x = 0.0
 
@@ -1182,56 +1291,6 @@ corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
-
-[sub_resource type="Theme" id="Theme_ppdyi"]
-/colors/Dark = Color(0.0627451, 0.572549, 0, 1)
-/font_sizes/Big = 18
-/fonts/font = ExtResource("5_b2jbb")
-Button/colors/font_color = Color(0.211765, 0.690196, 0.717647, 1)
-Button/colors/font_pressed_color = Color(0.0862745, 0.207843, 0.219608, 1)
-Button/font_sizes/font_size = 24
-Button/fonts/font = ExtResource("6_iaseo")
-Button/styles/hover = SubResource("StyleBoxFlat_r4b0o")
-Button/styles/normal = SubResource("StyleBoxFlat_rws3h")
-Button/styles/pressed = SubResource("StyleBoxFlat_81gy2")
-Label/colors/font_color = Color(0.0784314, 0.180392, 0.192157, 1)
-Label/colors/font_outline_color = Color(1, 1, 1, 1)
-Label/colors/font_shadow_color = Color(0, 0, 0, 0)
-Label/constants/line_spacing = 3
-Label/constants/outline_size = 0
-Label/constants/shadow_offset_x = 1
-Label/constants/shadow_offset_y = 1
-Label/constants/shadow_outline_size = 1
-Label/font_sizes/font_size = 16
-Label/fonts/font = SubResource("FontVariation_oxx03")
-Label/styles/normal = SubResource("StyleBoxEmpty_ij5yh")
-Paper/base_type = &"Label"
-Paper/colors/color = Color(0.631373, 0.443137, 0.403922, 1)
-Paper/colors/font_color = Color(0, 0, 0, 1)
-Paper/colors/font_outline_color = Color(0, 0, 0, 1)
-Paper/colors/font_shadow_color = Color(0, 0, 0, 1)
-Paper/constants/line_spacing = 0
-Paper/constants/outline_size = 0
-Paper/constants/shadow_offset_x = 0
-Paper/constants/shadow_offset_y = 0
-Paper/constants/shadow_outline_size = 0
-Paper/font_sizes/font_size = 18
-Paper/font_sizes/size = 16
-Paper/fonts/font = ExtResource("5_b2jbb")
-RichTextLabel/constants/line_separation = 7
-RichTextLabel/fonts/bold_font = SubResource("FontVariation_npaia")
-RichTextLabel/fonts/normal_font = SubResource("FontVariation_2l66c")
-Screen/base_type = &"Label"
-Screen/colors/font_color = Color(0.219608, 0.756863, 0.788235, 1)
-Screen/font_sizes/font_size = 30
-Screen/fonts/font = SubResource("FontVariation_e4ww1")
-VScrollBar/styles/grabber = SubResource("StyleBoxFlat_wrv10")
-VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_883my")
-VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_7e26y")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_oxx03"]
-shader = ExtResource("23_oxx03")
-shader_parameter/delta_x = 0.0
 
 [sub_resource type="Theme" id="Theme_ij5yh"]
 /colors/Dark = Color(0.0627451, 0.572549, 0, 1)
@@ -7484,16 +7543,20 @@ vertical_alignment = 1
 
 [node name="VhsStart" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_j5oqc")
+bus = &"Sound"
 
 [node name="VhsLoop" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("19_i0yq7")
+bus = &"Sound"
 
 [node name="Tape" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("20_rws3h")
 volume_db = -15.0
+bus = &"Sound"
 
 [node name="ProjectorStop" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_i0yq7")
+bus = &"Sound"
 
 [connection signal="pressed" from="Buttons/NavigationButtons/Buttons/Previous" to="." method="_on_previous_step_requested"]
 [connection signal="pressed" from="Buttons/NavigationButtons/Buttons/Next" to="." method="_on_next_step_requested"]
