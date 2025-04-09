@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-var lang = ["de", "fr", "it", "en"]
+var lang := ["de", "fr", "it", "en"]
 var i = 0
 @onready var hud: CanvasLayer = $CanvasLayer
 @onready var parallax_background: ParallaxBackground = $ParallaxBackground
@@ -24,6 +24,7 @@ func _ready():
 	animation_player.play("menu_apparition")
 	await animation_player.animation_finished
 	animation_player.play("menu_idle")
+	Gameloop.locale_updated.connect(_on_locale_updated)
 
 
 func _on_play_pressed():
@@ -66,3 +67,7 @@ func _on_player_can_start_playing() -> void:
 	animation_player.stop() # menu_goes_away_phase_2 is still playing in parallel
 	neon_flickers.stop() # animation_player.stop doesn't cut the audio
 	TutorialManager.tutorial_started.emit()
+
+
+func _on_locale_updated(locale: String) -> void:
+	i = lang.find(locale)
