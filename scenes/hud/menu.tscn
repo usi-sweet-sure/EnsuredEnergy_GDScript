@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://pvoi2mcc3oc1"]
+[gd_scene load_steps=51 format=3 uid="uid://pvoi2mcc3oc1"]
 
 [ext_resource type="Script" uid="uid://36oi73byoywi" path="res://src/gdscript/starting_screen/menu.gd" id="1_hl1kv"]
 [ext_resource type="Shader" uid="uid://fkpbxalsaovj" path="res://src/gdscript/shaders/cloud.gdshader" id="2_8lpgc"]
@@ -25,6 +25,7 @@
 [ext_resource type="AudioStream" uid="uid://dscg8potl0i2h" path="res://assets/sounds/neon_switch_on.mp3" id="22_35jma"]
 [ext_resource type="AudioStream" uid="uid://b34wip64mt4iu" path="res://assets/sounds/neon_flicker.mp3" id="23_j7y56"]
 [ext_resource type="Script" uid="uid://x4aqv7qt66gc" path="res://src/gdscript/starting_screen/lang_selection.gd" id="24_abil0"]
+[ext_resource type="Texture2D" uid="uid://1esf36575js0" path="res://assets/textures/icons/chalk_land_use.png" id="24_wv0xo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_odwvr"]
 shader = ExtResource("2_8lpgc")
@@ -1163,24 +1164,28 @@ script = ExtResource("24_abil0")
 [node name="Backplate" type="NinePatchRect" parent="CanvasLayer/LangSelection"]
 layout_mode = 1
 offset_left = 23.0
-offset_top = -6.0
+offset_top = -13.0
 offset_right = 459.0
-offset_bottom = 499.0
+offset_bottom = 530.0
 texture = ExtResource("4_dgun4")
 patch_margin_left = 54
-patch_margin_top = 81
-patch_margin_right = 68
+patch_margin_top = 146
+patch_margin_right = 42
 patch_margin_bottom = 76
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/LangSelection"]
+position = Vector2(235, 44)
+texture = ExtResource("24_wv0xo")
 
 [node name="GermanButton" type="TextureButton" parent="CanvasLayer/LangSelection" groups=["buttons"]]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -97.5
-offset_top = 80.0
-offset_right = 99.5
-offset_bottom = 144.0
+offset_left = -95.5
+offset_top = 124.0
+offset_right = 101.5
+offset_bottom = 188.0
 grow_horizontal = 2
 pivot_offset = Vector2(98, 32)
 texture_normal = ExtResource("14_38vq8")
@@ -1218,10 +1223,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -97.5
-offset_top = 172.0
-offset_right = 99.5
-offset_bottom = 236.0
+offset_left = -95.5
+offset_top = 216.0
+offset_right = 101.5
+offset_bottom = 280.0
 grow_horizontal = 2
 pivot_offset = Vector2(98, 32)
 texture_normal = ExtResource("14_38vq8")
@@ -1259,10 +1264,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -97.5
-offset_top = 263.0
-offset_right = 99.5
-offset_bottom = 327.0
+offset_left = -95.5
+offset_top = 307.0
+offset_right = 101.5
+offset_bottom = 371.0
 grow_horizontal = 2
 pivot_offset = Vector2(98, 32)
 texture_normal = ExtResource("14_38vq8")
@@ -1300,10 +1305,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -97.5
-offset_top = 354.0
-offset_right = 99.5
-offset_bottom = 418.0
+offset_left = -95.5
+offset_top = 398.0
+offset_right = 101.5
+offset_bottom = 462.0
 grow_horizontal = 2
 pivot_offset = Vector2(98, 32)
 texture_normal = ExtResource("14_38vq8")
