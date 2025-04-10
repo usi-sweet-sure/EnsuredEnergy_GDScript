@@ -7,11 +7,11 @@ uniform bool enters_from_right = false;
 
 void vertex() {
 	vec2 delta_x = (direction * fract(TIME * speed) * text_length);
-	
+
 	if (enters_from_right) {
 		delta_x += vec2(text_length, 0.0);
 	}
-	
+
 	vec2 new_vertex = VERTEX + delta_x;
 	VERTEX = new_vertex;
 }

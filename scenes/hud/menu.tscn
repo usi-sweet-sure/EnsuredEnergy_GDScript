@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://pvoi2mcc3oc1"]
+[gd_scene load_steps=50 format=3 uid="uid://pvoi2mcc3oc1"]
 
 [ext_resource type="Script" uid="uid://36oi73byoywi" path="res://src/gdscript/starting_screen/menu.gd" id="1_hl1kv"]
 [ext_resource type="Shader" uid="uid://fkpbxalsaovj" path="res://src/gdscript/shaders/cloud.gdshader" id="2_8lpgc"]
@@ -156,55 +156,67 @@ VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_1qqbn")
 VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_idcep")
 
 [sub_resource type="Animation" id="Animation_wv0xo"]
-resource_name = "buttons_appear"
-length = 0.6
+resource_name = "language_selection_goes_away"
+length = 0.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("GermanButton:scale")
+tracks/0/path = NodePath(".:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.0666667, 0.166667, 0.266667, 0.366667),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(1.2, 1.2), Vector2(1.15, 1.15), Vector2(1.2, 1.2)]
+"values": [Vector2(750, 448), Vector2(770, 448), Vector2(-488, 448)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("FrenchButton:scale")
-tracks/1/interp = 2
+tracks/1/path = NodePath("../Buttons:visible")
+tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.0666667, 0.233333, 0.333333, 0.433333),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(1.2, 1.2), Vector2(1.15, 1.15), Vector2(1.2, 1.2)]
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("ItalianButton:scale")
-tracks/2/interp = 1
+tracks/2/path = NodePath("../Buttons:position")
+tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.0666667, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.266667, 0.433333, 0.533333, 0.633333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(1.2, 1.2), Vector2(1.15, 1.15), Vector2(1.2, 1.2)]
+"values": [Vector2(1972, 490), Vector2(1972, 490), Vector2(502, 490), Vector2(542, 490), Vector2(522, 490)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("EnglishButton:scale")
+tracks/3/path = NodePath("../BlueprintNormal:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.0666667, 0.366667, 0.466667, 0.566667),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../BlueprintNormal:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.366667, 0.533333, 0.633333, 0.733333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(1.2, 1.2), Vector2(1.15, 1.15), Vector2(1.2, 1.2)]
+"values": [Vector2(2300, 683), Vector2(2300, 683), Vector2(1278, 683), Vector2(1318, 683), Vector2(1298, 683)]
 }
 
 [sub_resource type="Animation" id="Animation_1vieb"]
@@ -212,216 +224,68 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("GermanButton:scale")
+tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
+"values": [Vector2(750, 448)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("GermanButton:position")
+tracks/1/path = NodePath("../Buttons:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-542, -32)]
+"update": 1,
+"values": [false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("FrenchButton:position")
+tracks/2/path = NodePath("../Buttons:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-245, -32)]
+"values": [Vector2(522, 490)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("ItalianButton:position")
+tracks/3/path = NodePath("../BlueprintNormal:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(50, -32)]
+"update": 1,
+"values": [false]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("EnglishButton:position")
+tracks/4/path = NodePath("../BlueprintNormal:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(345, -32)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../Buttons:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(522, 490)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../Buttons:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("../BlueprintNormal:visible")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("../BlueprintNormal:position")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
 "values": [Vector2(1298, 683)]
-}
-
-[sub_resource type="Animation" id="Animation_10l40"]
-resource_name = "buttons_go_away"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("GermanButton:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(-542, -32), Vector2(-522, -32), Vector2(-1247, -32)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("FrenchButton:position")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.133333, 0.333333, 0.433333),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(-245, -32), Vector2(-225, -32), Vector2(-1247, -32)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ItalianButton:position")
-tracks/2/interp = 2
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.2, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(50, -32), Vector2(70, -32), Vector2(-1247, -32)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("EnglishButton:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.266667, 0.466667, 0.566667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(345, -32), Vector2(365, -32), Vector2(-1247, -32)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../Buttons:position")
-tracks/4/interp = 2
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0.4, 0.666667, 0.766667, 0.866667),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(2061, 490), Vector2(502, 490), Vector2(542, 490), Vector2(522, 490)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../Buttons:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../BlueprintNormal:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("../BlueprintNormal:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0.466667, 0.733333, 0.833333, 0.933333),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(2300, 683), Vector2(1260, 683), Vector2(1320, 683), Vector2(1298, 683)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_10l40"]
 _data = {
 &"RESET": SubResource("Animation_1vieb"),
-&"buttons_appear": SubResource("Animation_wv0xo"),
-&"buttons_go_away": SubResource("Animation_10l40")
+&"language_selection_goes_away": SubResource("Animation_wv0xo")
 }
 
 [sub_resource type="Animation" id="Animation_35jma"]
@@ -1272,8 +1136,7 @@ texture = ExtResource("19_1nqsc")
 
 [node name="LogoNeon" type="Sprite2D" parent="CanvasLayer"]
 visible = false
-position = Vector2(986, 360.172)
-scale = Vector2(1.2, 1.2)
+position = Vector2(986, 209)
 texture = ExtResource("22_7v6ln")
 
 [node name="GreenOverlay" type="ColorRect" parent="CanvasLayer"]
@@ -1286,33 +1149,39 @@ color = Color(0.286275, 0.454902, 0.235294, 1)
 
 [node name="LangSelection" type="Control" parent="CanvasLayer"]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 28.0
-offset_top = 47.0
-offset_right = 28.0
-offset_bottom = 47.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 750.0
+offset_top = 448.0
+offset_right = -696.0
+offset_bottom = -249.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 4
 script = ExtResource("24_abil0")
+
+[node name="Backplate" type="NinePatchRect" parent="CanvasLayer/LangSelection"]
+layout_mode = 1
+offset_left = 23.0
+offset_top = -6.0
+offset_right = 459.0
+offset_bottom = 499.0
+texture = ExtResource("4_dgun4")
+patch_margin_left = 54
+patch_margin_top = 81
+patch_margin_right = 68
+patch_margin_bottom = 76
 
 [node name="GermanButton" type="TextureButton" parent="CanvasLayer/LangSelection" groups=["buttons"]]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -542.0
-offset_top = -32.0
-offset_right = -345.0
-offset_bottom = 32.0
-grow_horizontal = 0
-grow_vertical = 2
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -97.5
+offset_top = 80.0
+offset_right = 99.5
+offset_bottom = 144.0
+grow_horizontal = 2
 pivot_offset = Vector2(98, 32)
 texture_normal = ExtResource("14_38vq8")
 texture_pressed = ExtResource("15_4vyug")
@@ -1346,15 +1215,14 @@ centered = false
 
 [node name="FrenchButton" type="TextureButton" parent="CanvasLayer/LangSelection" groups=["buttons"]]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = -245.0
-offset_top = -32.0
-offset_right = -48.0
-offset_bottom = 32.0
-grow_vertical = 2
-scale = Vector2(1.2, 1.2)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -97.5
+offset_top = 172.0
+offset_right = 99.5
+offset_bottom = 236.0
+grow_horizontal = 2
 pivot_offset = Vector2(98, 32)
 texture_normal = ExtResource("14_38vq8")
 texture_pressed = ExtResource("15_4vyug")
@@ -1388,15 +1256,14 @@ centered = false
 
 [node name="ItalianButton" type="TextureButton" parent="CanvasLayer/LangSelection" groups=["buttons"]]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 50.0
-offset_top = -32.0
-offset_right = 247.0
-offset_bottom = 32.0
-grow_vertical = 2
-scale = Vector2(1.2, 1.2)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -97.5
+offset_top = 263.0
+offset_right = 99.5
+offset_bottom = 327.0
+grow_horizontal = 2
 pivot_offset = Vector2(98, 32)
 texture_normal = ExtResource("14_38vq8")
 texture_pressed = ExtResource("15_4vyug")
@@ -1430,15 +1297,14 @@ centered = false
 
 [node name="EnglishButton" type="TextureButton" parent="CanvasLayer/LangSelection" groups=["buttons"]]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 345.0
-offset_top = -32.0
-offset_right = 542.0
-offset_bottom = 32.0
-grow_vertical = 2
-scale = Vector2(1.2, 1.2)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -97.5
+offset_top = 354.0
+offset_right = 99.5
+offset_bottom = 418.0
+grow_horizontal = 2
 pivot_offset = Vector2(98, 32)
 texture_normal = ExtResource("14_38vq8")
 texture_pressed = ExtResource("15_4vyug")
@@ -1496,15 +1362,7 @@ volume_db = -12.0
 [connection signal="pressed" from="CanvasLayer/Buttons/PlayButton" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/Buttons/LangButton" to="." method="_on_lang_pressed"]
 [connection signal="pressed" from="CanvasLayer/Buttons/CreditButton" to="." method="_on_credits_pressed"]
-[connection signal="mouse_entered" from="CanvasLayer/LangSelection/GermanButton" to="CanvasLayer/LangSelection" method="_on_lang_button_mouse_entered" binds= ["german"]]
-[connection signal="mouse_exited" from="CanvasLayer/LangSelection/GermanButton" to="CanvasLayer/LangSelection" method="_on_lang_button_mouse_exited" binds= ["german"]]
 [connection signal="pressed" from="CanvasLayer/LangSelection/GermanButton" to="CanvasLayer/LangSelection" method="_on_lang_button_pressed" binds= ["de"]]
-[connection signal="mouse_entered" from="CanvasLayer/LangSelection/FrenchButton" to="CanvasLayer/LangSelection" method="_on_lang_button_mouse_entered" binds= ["french"]]
-[connection signal="mouse_exited" from="CanvasLayer/LangSelection/FrenchButton" to="CanvasLayer/LangSelection" method="_on_lang_button_mouse_exited" binds= ["french"]]
 [connection signal="pressed" from="CanvasLayer/LangSelection/FrenchButton" to="CanvasLayer/LangSelection" method="_on_lang_button_pressed" binds= ["fr"]]
-[connection signal="mouse_entered" from="CanvasLayer/LangSelection/ItalianButton" to="CanvasLayer/LangSelection" method="_on_lang_button_mouse_entered" binds= ["italian"]]
-[connection signal="mouse_exited" from="CanvasLayer/LangSelection/ItalianButton" to="CanvasLayer/LangSelection" method="_on_lang_button_mouse_exited" binds= ["italian"]]
 [connection signal="pressed" from="CanvasLayer/LangSelection/ItalianButton" to="CanvasLayer/LangSelection" method="_on_lang_button_pressed" binds= ["it"]]
-[connection signal="mouse_entered" from="CanvasLayer/LangSelection/EnglishButton" to="CanvasLayer/LangSelection" method="_on_lang_button_mouse_entered" binds= ["english"]]
-[connection signal="mouse_exited" from="CanvasLayer/LangSelection/EnglishButton" to="CanvasLayer/LangSelection" method="_on_lang_button_mouse_exited" binds= ["english"]]
 [connection signal="pressed" from="CanvasLayer/LangSelection/EnglishButton" to="CanvasLayer/LangSelection" method="_on_lang_button_pressed" binds= ["en"]]
