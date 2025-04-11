@@ -1,4 +1,4 @@
-[gd_scene load_steps=232 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=234 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Shader" uid="uid://fkpbxalsaovj" path="res://src/gdscript/shaders/cloud.gdshader" id="1_rmx58"]
 [ext_resource type="Texture2D" uid="uid://kfrnyvqb84es" path="res://assets/title/cloud.png" id="2_26ixr"]
@@ -109,6 +109,8 @@
 [ext_resource type="Script" uid="uid://50mxdqoonuvt" path="res://src/gdscript/hud/emissions/info_box/co2_emissions_percentage_label.gd" id="69_g60cp"]
 [ext_resource type="Script" uid="uid://nd424ni3k8qx" path="res://src/gdscript/hud/emissions/info_box/co2_emissions_info_text_label.gd" id="70_444pk"]
 [ext_resource type="Script" uid="uid://d3um0ex0xbges" path="res://src/gdscript/hud/money_management/available_money_amount_label.gd" id="71_xcmoe"]
+[ext_resource type="Texture2D" uid="uid://vg02ewph3pco" path="res://assets/textures/screens/screen_2.png" id="76_2tst5"]
+[ext_resource type="Script" uid="uid://bx4vxh8ouaa1b" path="res://src/gdscript/hud/money_management/borrow_money_frame/count_label.gd" id="77_e8n7a"]
 [ext_resource type="Script" uid="uid://c26n6jea83h48" path="res://src/gdscript/hud/emissions/info_box/sequestrated_co2_value.gd" id="79_7os60"]
 [ext_resource type="Script" uid="uid://wul4xsyn1bb7" path="res://src/gdscript/hud/emissions/info_box/total_emissions_value.gd" id="80_lk5v6"]
 [ext_resource type="Texture2D" uid="uid://h07lsn8vups3" path="res://assets/textures/gauge_red_alert.png" id="83_g38lf"]
@@ -3669,7 +3671,7 @@ anchor_bottom = 1.0
 offset_left = -24.0
 offset_top = -3.0
 offset_right = 40.0
-offset_bottom = 199.0
+offset_bottom = 285.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 0.79588)
@@ -3781,9 +3783,9 @@ script = ExtResource("66_c76li")
 [node name="Apply" type="TextureButton" parent="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame" groups=["disabled_buttons"]]
 layout_mode = 0
 offset_left = 137.5
-offset_top = 357.0
+offset_top = 423.0
 offset_right = 330.5
-offset_bottom = 440.0
+offset_bottom = 506.0
 disabled = true
 texture_normal = ExtResource("62_orw34")
 texture_pressed = ExtResource("5_hh5pc")
@@ -3848,6 +3850,31 @@ texture_normal = ExtResource("49_8dui0")
 texture_pressed = ExtResource("50_gyl2g")
 texture_hover = ExtResource("51_wnliv")
 texture_disabled = ExtResource("52_klkvg")
+
+[node name="CountScreen" type="Sprite2D" parent="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame"]
+position = Vector2(235, 377.482)
+scale = Vector2(0.585858, 0.210601)
+texture = ExtResource("76_2tst5")
+
+[node name="Label" type="Label" parent="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = 155.982
+offset_right = 58.0
+offset_bottom = 189.982
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_8s8ds")
+theme_type_variation = &"Screen"
+text = "0 / 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("77_e8n7a")
 
 [node name="AvailableMoneyAmount" type="Control" parent="TopLeftZone/MoneyManagement"]
 anchors_preset = 0
