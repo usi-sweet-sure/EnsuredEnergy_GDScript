@@ -1,4 +1,4 @@
-[gd_scene load_steps=232 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=227 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Shader" uid="uid://fkpbxalsaovj" path="res://src/gdscript/shaders/cloud.gdshader" id="1_rmx58"]
 [ext_resource type="Texture2D" uid="uid://kfrnyvqb84es" path="res://assets/title/cloud.png" id="2_26ixr"]
@@ -85,11 +85,8 @@
 [ext_resource type="PackedScene" uid="uid://dp1c6io21ijm3" path="res://scenes/buttons/button_help.tscn" id="57_jki7j"]
 [ext_resource type="Script" uid="uid://c62vh7o5i48lm" path="res://src/gdscript/hud/clock/clock.gd" id="57_lg17s"]
 [ext_resource type="Script" uid="uid://l8ku3wg0jlhh" path="res://src/gdscript/policies/hud/open_policies_window_button.gd" id="57_uofws"]
-[ext_resource type="Script" uid="uid://c7rwcfejebgqs" path="res://src/gdscript/hud/environment/info_box/opened_roll.gd" id="57_v13k6"]
 [ext_resource type="Script" uid="uid://3q0thq2j5d2m" path="res://src/gdscript/hud/money_management/money_info_box/borrowed_money_labels.gd" id="58_c856x"]
-[ext_resource type="Script" uid="uid://cn4tr5m18mivf" path="res://src/gdscript/hud/environment/info_box/land_use_percentage_label.gd" id="58_pvl5y"]
 [ext_resource type="Script" uid="uid://di1enwwd7aeu" path="res://src/gdscript/hud/environment/environment_gauge_arrow.gd" id="59_2gboh"]
-[ext_resource type="Script" uid="uid://dwwfp6t5sl54" path="res://src/gdscript/hud/environment/info_box/land_use_info_text_label.gd" id="59_lf76s"]
 [ext_resource type="Texture2D" uid="uid://behxblj10y4lm" path="res://assets/textures/ui/Build_Menu_0004_Build-Menu-Screen.png" id="61_ni5qv"]
 [ext_resource type="Script" uid="uid://p8dqie25recb" path="res://src/gdscript/graphs/fake_graph_button.gd" id="61_va247"]
 [ext_resource type="Script" uid="uid://d2qidjgk0k8pb" path="res://src/gdscript/hud/emissions/emissions_gauge_arrow.gd" id="62_7mist"]
@@ -101,11 +98,7 @@
 [ext_resource type="Script" uid="uid://bdgyrsxf0td84" path="res://src/gdscript/hud/money_management/borrow_money_frame/debt_amount_label.gd" id="66_c76li"]
 [ext_resource type="Script" uid="uid://disqc8ovu506g" path="res://src/gdscript/hud/energy_import/import_cost_label.gd" id="67_ohk5r"]
 [ext_resource type="Script" uid="uid://bte6mgw2b8rsl" path="res://src/gdscript/hud/emissions/info_box/info_box.gd" id="67_q6cf6"]
-[ext_resource type="Script" uid="uid://bmdt5xdxrtcg7" path="res://src/gdscript/hud/emissions/info_box/opened_roll.gd" id="68_0ckm3"]
-[ext_resource type="Script" uid="uid://50mxdqoonuvt" path="res://src/gdscript/hud/emissions/info_box/co2_emissions_percentage_label.gd" id="69_g60cp"]
-[ext_resource type="Script" uid="uid://nd424ni3k8qx" path="res://src/gdscript/hud/emissions/info_box/co2_emissions_info_text_label.gd" id="70_444pk"]
 [ext_resource type="Script" uid="uid://d3um0ex0xbges" path="res://src/gdscript/hud/money_management/available_money_amount_label.gd" id="71_xcmoe"]
-[ext_resource type="Script" uid="uid://c26n6jea83h48" path="res://src/gdscript/hud/emissions/info_box/sequestrated_co2_value.gd" id="79_7os60"]
 [ext_resource type="Script" uid="uid://wul4xsyn1bb7" path="res://src/gdscript/hud/emissions/info_box/total_emissions_value.gd" id="80_lk5v6"]
 [ext_resource type="Texture2D" uid="uid://h07lsn8vups3" path="res://assets/textures/gauge_red_alert.png" id="83_g38lf"]
 [ext_resource type="Texture2D" uid="uid://61oa2tq2xw7y" path="res://assets/textures/ui/All-HQ-Assets-D_0007s_0034_Import-Slider.png" id="83_hii8n"]
@@ -114,14 +107,13 @@
 [ext_resource type="Script" uid="uid://373euivgaiep" path="res://src/gdscript/hud/energy_import/down_button.gd" id="88_cvkym"]
 [ext_resource type="Texture2D" uid="uid://cischtrjvknyl" path="res://assets/textures/icons/sticker_winter.png" id="88_lv1v1"]
 [ext_resource type="Texture2D" uid="uid://bsa55enbm5cwg" path="res://assets/textures/icons/sticker_summer.png" id="89_6asbj"]
-[ext_resource type="Script" uid="uid://b1wm0udjhxi28" path="res://src/gdscript/hud/energy_bars/winter/infos/winter_demand_label.gd" id="91_butgj"]
-[ext_resource type="Script" uid="uid://1xg0rdtvhhyk" path="res://src/gdscript/hud/energy_bars/winter/infos/winter_supply_label.gd" id="92_bqjhv"]
-[ext_resource type="Script" uid="uid://ysnrmd6m4hmy" path="res://src/gdscript/hud/energy_bars/summer/infos/summer_demand_label.gd" id="92_j1ii1"]
 [ext_resource type="StyleBox" uid="uid://yqtdxtw3vpjp" path="res://scenes/hud/energy_bar_green.tres" id="93_6koeb"]
 [ext_resource type="StyleBox" uid="uid://lco0fbxgcpii" path="res://scenes/hud/energy_bar_low.tres" id="94_b4xie"]
-[ext_resource type="Script" uid="uid://0tqcdcdi3ffo" path="res://src/gdscript/hud/energy_bars/summer/infos/summer_supply_label.gd" id="94_bcqhm"]
 [ext_resource type="Script" uid="uid://co8qki3pxitgi" path="res://src/gdscript/hud/clock/current_turn_label.gd" id="95_2utc1"]
+[ext_resource type="Script" uid="uid://50mxdqoonuvt" path="res://src/gdscript/hud/emissions/info_box/co2_emissions_percentage_label.gd" id="95_3vkf3"]
+[ext_resource type="Script" uid="uid://nd424ni3k8qx" path="res://src/gdscript/hud/emissions/info_box/co2_emissions_info_text_label.gd" id="95_qwyse"]
 [ext_resource type="Script" uid="uid://emn7rmy2027s" path="res://src/gdscript/hud/clock/remaining_turns_label.gd" id="96_6b673"]
+[ext_resource type="Script" uid="uid://c26n6jea83h48" path="res://src/gdscript/hud/emissions/info_box/sequestrated_co2_value.gd" id="97_m2tvt"]
 [ext_resource type="AudioStream" uid="uid://cpmjon6gf78v2" path="res://assets/sounds/gauge.mp3" id="97_nuxdx"]
 [ext_resource type="Script" uid="uid://bb0x0hc5hfjyn" path="res://src/gdscript/hud/next_turn_button/next_turn_button.gd" id="97_wp832"]
 [ext_resource type="Script" uid="uid://dcqkcb86dnv8c" path="res://src/gdscript/hud/energy_bars/back_panel.gd" id="98_3vkf3"]
@@ -1671,7 +1663,7 @@ _data = {
 &"go_to_center": SubResource("Animation_f32o7")
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3tdw6"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o27bw"]
 bg_color = Color(0.65098, 0.65098, 0.65098, 0.0470588)
 border_width_left = 2
 border_width_top = 2
@@ -1680,7 +1672,7 @@ border_color = Color(0.25098, 0.807843, 0.839216, 1)
 corner_radius_top_left = 2
 corner_radius_top_right = 2
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pgfdh"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qwyse"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_left = 2
 border_width_top = 2
@@ -1689,41 +1681,41 @@ border_color = Color(0.219608, 0.752941, 0.784314, 1)
 corner_radius_top_left = 2
 corner_radius_top_right = 2
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03rjl"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xo3i8"]
 bg_color = Color(0.219608, 0.756863, 0.788235, 1)
 corner_radius_top_left = 2
 corner_radius_top_right = 2
 
-[sub_resource type="FontVariation" id="FontVariation_3ifss"]
+[sub_resource type="FontVariation" id="FontVariation_3vkf3"]
 base_font = ExtResource("51_joowr")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nyqp5"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nuxdx"]
 
-[sub_resource type="FontVariation" id="FontVariation_u3fkg"]
+[sub_resource type="FontVariation" id="FontVariation_m2tvt"]
 base_font = ExtResource("30_d1m8l")
 variation_embolden = 0.6
 
-[sub_resource type="FontVariation" id="FontVariation_ule17"]
+[sub_resource type="FontVariation" id="FontVariation_u070d"]
 base_font = ExtResource("30_d1m8l")
 
-[sub_resource type="FontVariation" id="FontVariation_b0wbe"]
+[sub_resource type="FontVariation" id="FontVariation_cwd6i"]
 base_font = ExtResource("19_t3l2l")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5mtqi"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fuu3p"]
 bg_color = Color(0.192157, 0.658824, 0.690196, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1qqbn"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rmx58"]
 bg_color = Color(0.247059, 0.776471, 0.811765, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_idcep"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_26ixr"]
 bg_color = Color(0.129412, 0.486275, 0.509804, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
@@ -1738,9 +1730,9 @@ Button/colors/font_color = Color(0.211765, 0.690196, 0.717647, 1)
 Button/colors/font_pressed_color = Color(0.0862745, 0.207843, 0.219608, 1)
 Button/font_sizes/font_size = 24
 Button/fonts/font = ExtResource("19_t3l2l")
-Button/styles/hover = SubResource("StyleBoxFlat_3tdw6")
-Button/styles/normal = SubResource("StyleBoxFlat_pgfdh")
-Button/styles/pressed = SubResource("StyleBoxFlat_03rjl")
+Button/styles/hover = SubResource("StyleBoxFlat_o27bw")
+Button/styles/normal = SubResource("StyleBoxFlat_qwyse")
+Button/styles/pressed = SubResource("StyleBoxFlat_xo3i8")
 Label/colors/font_color = Color(0.0784314, 0.180392, 0.192157, 1)
 Label/colors/font_outline_color = Color(1, 1, 1, 1)
 Label/colors/font_shadow_color = Color(0, 0, 0, 0)
@@ -1750,8 +1742,8 @@ Label/constants/shadow_offset_x = 1
 Label/constants/shadow_offset_y = 1
 Label/constants/shadow_outline_size = 1
 Label/font_sizes/font_size = 16
-Label/fonts/font = SubResource("FontVariation_3ifss")
-Label/styles/normal = SubResource("StyleBoxEmpty_nyqp5")
+Label/fonts/font = SubResource("FontVariation_3vkf3")
+Label/styles/normal = SubResource("StyleBoxEmpty_nuxdx")
 Paper/base_type = &"Label"
 Paper/colors/color = Color(0.631373, 0.443137, 0.403922, 1)
 Paper/colors/font_color = Color(0, 0, 0, 1)
@@ -1766,15 +1758,15 @@ Paper/font_sizes/font_size = 18
 Paper/font_sizes/size = 16
 Paper/fonts/font = ExtResource("30_d1m8l")
 RichTextLabel/constants/line_separation = 7
-RichTextLabel/fonts/bold_font = SubResource("FontVariation_u3fkg")
-RichTextLabel/fonts/normal_font = SubResource("FontVariation_ule17")
+RichTextLabel/fonts/bold_font = SubResource("FontVariation_m2tvt")
+RichTextLabel/fonts/normal_font = SubResource("FontVariation_u070d")
 Screen/base_type = &"Label"
 Screen/colors/font_color = Color(0.219608, 0.756863, 0.788235, 1)
 Screen/font_sizes/font_size = 30
-Screen/fonts/font = SubResource("FontVariation_b0wbe")
-VScrollBar/styles/grabber = SubResource("StyleBoxFlat_5mtqi")
-VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_1qqbn")
-VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_idcep")
+Screen/fonts/font = SubResource("FontVariation_cwd6i")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_fuu3p")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_rmx58")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_26ixr")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ch2be"]
 atlas = ExtResource("100_2c0ru")
@@ -2141,20 +2133,19 @@ _data = {
 &"appear": SubResource("Animation_cwd6i")
 }
 
-[sub_resource type="Animation" id="Animation_rmula"]
-resource_name = "info_frame_appears"
-length = 0.4
+[sub_resource type="Animation" id="Animation_j4b0y"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("MoneyInfoBox:position")
-tracks/0/interp = 2
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(360, -622), Vector2(360, 78), Vector2(360, 18), Vector2(360, 48)]
+"values": [Vector2(360, 48)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -2169,19 +2160,20 @@ tracks/1/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_j4b0y"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_rmula"]
+resource_name = "info_frame_appears"
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("MoneyInfoBox:position")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(360, 48)]
+"values": [Vector2(360, -622), Vector2(360, 78), Vector2(360, 18), Vector2(360, 48)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -2374,6 +2366,89 @@ border_color = Color(0, 0, 0, 1)
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
+[sub_resource type="Animation" id="Animation_3vkf3"]
+resource_name = " info_frame_appears"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Info:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Info:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(471, -911), Vector2(471, -409), Vector2(471, -469), Vector2(471, -429)]
+}
+
+[sub_resource type="Animation" id="Animation_u070d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Info:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Info:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(471, -911)]
+}
+
+[sub_resource type="Animation" id="Animation_rmx58"]
+resource_name = "info_frame_goes_away"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Info:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Info:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(471, -429), Vector2(471, -389), Vector2(471, -911)]
+}
+
 [sub_resource type="Animation" id="Animation_sip0e"]
 resource_name = "red_alert_blink"
 loop_mode = 1
@@ -2392,6 +2467,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rwe8w"]
 _data = {
+&" info_frame_appears": SubResource("Animation_3vkf3"),
+&"RESET": SubResource("Animation_u070d"),
+&"info_frame_goes_away": SubResource("Animation_rmx58"),
 &"red_alert_blink": SubResource("Animation_sip0e")
 }
 
@@ -3232,6 +3310,59 @@ parameters/looping = true
 
 [node name="BurnSound" type="AudioStreamPlayer" parent="Clock"]
 stream = ExtResource("29_arjh5")
+
+[node name="ImportAndEnergy_Energy_EnergyBarWinter_BarInfo_MarginContainer_MarginContainer_VBoxContainer#HBoxContainer3" type="HBoxContainer" parent="."]
+
+[node name="Text1" type="Label" parent="ImportAndEnergy_Energy_EnergyBarWinter_BarInfo_MarginContainer_MarginContainer_VBoxContainer#HBoxContainer3"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = SubResource("Theme_34yde")
+theme_type_variation = &"Paper"
+theme_override_colors/font_color = Color(0, 0.45098, 0, 1)
+theme_override_font_sizes/font_size = 19
+text = "IMPORTED"
+autowrap_mode = 2
+
+[node name="n1" type="Label" parent="ImportAndEnergy_Energy_EnergyBarWinter_BarInfo_MarginContainer_MarginContainer_VBoxContainer#HBoxContainer3"]
+custom_minimum_size = Vector2(142, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme = SubResource("Theme_34yde")
+theme_type_variation = &"Paper"
+theme_override_colors/font_color = Color(0, 0.45098, 0, 1)
+theme_override_font_sizes/font_size = 19
+text = "n"
+horizontal_alignment = 2
+autowrap_mode = 3
+script = ExtResource("102_q4o5w")
+
+[node name="EnvironmentAndPollution_Pollution_Info_MarginContainer_MarginContainer_VBoxContainer#HBoxContainer3" type="HBoxContainer" parent="."]
+
+[node name="Text0" type="Label" parent="EnvironmentAndPollution_Pollution_Info_MarginContainer_MarginContainer_VBoxContainer#HBoxContainer3"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = SubResource("Theme_34yde")
+theme_type_variation = &"Paper"
+theme_override_colors/font_color = Color(0.666667, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = "TOTAL"
+autowrap_mode = 2
+
+[node name="n" type="Label" parent="EnvironmentAndPollution_Pollution_Info_MarginContainer_MarginContainer_VBoxContainer#HBoxContainer3"]
+custom_minimum_size = Vector2(142, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme = SubResource("Theme_34yde")
+theme_type_variation = &"Paper"
+theme_override_colors/font_color = Color(0.666667, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = "n"
+horizontal_alignment = 2
+autowrap_mode = 2
+script = ExtResource("80_lk5v6")
 
 [node name="TopLeftZone" type="Control" parent="."]
 layout_mode = 3
@@ -4109,16 +4240,6 @@ offset_bottom = 290.621
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="MarginContainer" parent="TopLeftZone/Policies/Trust/BarInfo/MarginContainer" index="2"]
-theme_override_constants/margin_top = 60
-theme_override_constants/margin_bottom = 0
-
-[node name="InfoText" parent="TopLeftZone/Policies/Trust/BarInfo/MarginContainer/MarginContainer/VBoxContainer" index="2"]
-text = "Political support shows how popular your decisions are. The higher the support the more options in policy choices you have."
-
-[node name="InfoText2" parent="TopLeftZone/Policies/Trust/BarInfo/MarginContainer/MarginContainer/VBoxContainer" index="4"]
-text = ""
-
 [node name="FakeGraphButton" type="Node2D" parent="TopLeftZone"]
 position = Vector2(997, 540)
 scale = Vector2(1.625, 1.625)
@@ -4196,31 +4317,6 @@ grow_vertical = 1
 script = ExtResource("56_0qat8")
 metadata/_edit_group_ = true
 
-[node name="BubbleOpen" parent="EnvironmentAndPollution/Environment/Info/MarginContainer" index="1"]
-script = ExtResource("57_v13k6")
-
-[node name="Unit" parent="EnvironmentAndPollution/Environment/Info/MarginContainer/MarginContainer/VBoxContainer" index="0"]
-text = "Km2"
-
-[node name="Text0" parent="EnvironmentAndPollution/Environment/Info/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer" index="0"]
-text = "LAND_USE"
-
-[node name="n" parent="EnvironmentAndPollution/Environment/Info/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer" index="1"]
-script = ExtResource("58_pvl5y")
-
-[node name="InfoText" parent="EnvironmentAndPollution/Environment/Info/MarginContainer/MarginContainer/VBoxContainer" index="2"]
-text = "LAND_USE_INFO_TEXT"
-script = ExtResource("59_lf76s")
-
-[node name="HBoxContainer2" parent="EnvironmentAndPollution/Environment/Info/MarginContainer/MarginContainer/VBoxContainer" index="3"]
-visible = false
-
-[node name="InfoText2" parent="EnvironmentAndPollution/Environment/Info/MarginContainer/MarginContainer/VBoxContainer" index="4"]
-text = "Biodiversity shows the environmental impact of the energy system. The higher the score, the more can animals and plants thrive in their natural habitats. Most power plants negatively affect biodiversity because they require lots of land and water.
-"
-
-[node name="MoreInfo" parent="EnvironmentAndPollution/Environment/Info" index="1" groups=["more_help_buttons"]]
-
 [node name="Name" type="Label" parent="EnvironmentAndPollution/Environment"]
 layout_mode = 2
 offset_left = -19.0
@@ -4281,82 +4377,67 @@ fill_mode = 3
 show_percentage = false
 metadata/_edit_group_ = true
 
-[node name="Info" parent="EnvironmentAndPollution/Pollution" groups=["papers"] instance=ExtResource("4_67rbh")]
+[node name="Info" parent="EnvironmentAndPollution/Pollution" instance=ExtResource("4_67rbh")]
 visible = false
 layout_mode = 1
-offset_left = 245.0
-offset_top = -80.0
-offset_right = 388.92
-offset_bottom = -60.355
-grow_horizontal = 1
-grow_vertical = 1
+offset_left = 471.0
+offset_top = -911.0
+offset_right = 997.0
+offset_bottom = -891.0
 script = ExtResource("67_q6cf6")
 metadata/_edit_group_ = true
 
-[node name="MarginContainer" parent="EnvironmentAndPollution/Pollution/Info" index="0"]
-offset_top = -15.0
-offset_bottom = 340.0
-
-[node name="BubbleOpen" parent="EnvironmentAndPollution/Pollution/Info/MarginContainer" index="1"]
-script = ExtResource("68_0ckm3")
-
-[node name="Unit" parent="EnvironmentAndPollution/Pollution/Info/MarginContainer/MarginContainer/VBoxContainer" index="0"]
+[node name="Unit" parent="EnvironmentAndPollution/Pollution/Info/ScrollContainer/MarginContainer/VBoxContainer/Unit" index="0"]
 text = "M CO2/t"
 
-[node name="Text0" parent="EnvironmentAndPollution/Pollution/Info/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer" index="0"]
-theme_override_font_sizes/font_size = 22
+[node name="Text" parent="EnvironmentAndPollution/Pollution/Info/ScrollContainer/MarginContainer/VBoxContainer/Value" index="0"]
 text = "CO2_EMISSIONS"
 
-[node name="n" parent="EnvironmentAndPollution/Pollution/Info/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer" index="1"]
-theme_override_font_sizes/font_size = 22
-script = ExtResource("69_g60cp")
+[node name="Value" parent="EnvironmentAndPollution/Pollution/Info/ScrollContainer/MarginContainer/VBoxContainer/Value" index="1"]
+script = ExtResource("95_3vkf3")
 
-[node name="InfoText" parent="EnvironmentAndPollution/Pollution/Info/MarginContainer/MarginContainer/VBoxContainer" index="2"]
+[node name="Text" parent="EnvironmentAndPollution/Pollution/Info/ScrollContainer/MarginContainer/VBoxContainer" index="2"]
+visible = false
+script = ExtResource("95_qwyse")
+
+[node name="Text" parent="EnvironmentAndPollution/Pollution/Info/ScrollContainer/MarginContainer/VBoxContainer/Text" index="0"]
 text = "CO2_EMISSIONS_TEXT"
-script = ExtResource("70_444pk")
 
-[node name="Text1" parent="EnvironmentAndPollution/Pollution/Info/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2" index="0"]
-theme_override_font_sizes/font_size = 22
+[node name="Text" parent="EnvironmentAndPollution/Pollution/Info/ScrollContainer/MarginContainer/VBoxContainer/Value2" index="0"]
 text = "CARBON"
 
-[node name="n1" parent="EnvironmentAndPollution/Pollution/Info/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2" index="1"]
-theme_override_font_sizes/font_size = 22
-script = ExtResource("79_7os60")
+[node name="Value" parent="EnvironmentAndPollution/Pollution/Info/ScrollContainer/MarginContainer/VBoxContainer/Value2" index="1"]
+script = ExtResource("97_m2tvt")
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="EnvironmentAndPollution/Pollution/Info/MarginContainer/MarginContainer/VBoxContainer" index="4"]
-layout_mode = 2
+[node name="Text2" parent="EnvironmentAndPollution/Pollution/Info/ScrollContainer/MarginContainer/VBoxContainer" index="4"]
+visible = false
 
-[node name="Text0" type="Label" parent="EnvironmentAndPollution/Pollution/Info/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
-custom_minimum_size = Vector2(180, 0)
+[node name="Text" parent="EnvironmentAndPollution/Pollution/Info/ScrollContainer/MarginContainer/VBoxContainer/Text2" index="0"]
+text = "IMPORTS_EMISSIONS_TEXT"
+
+[node name="Value3" type="HBoxContainer" parent="EnvironmentAndPollution/Pollution/Info/ScrollContainer/MarginContainer/VBoxContainer" index="5"]
 layout_mode = 2
-size_flags_horizontal = 0
-theme = SubResource("Theme_34yde")
-theme_type_variation = &"Paper"
-theme_override_colors/font_color = Color(0.666667, 0, 0, 1)
-theme_override_font_sizes/font_size = 26
+size_flags_vertical = 10
+
+[node name="Text" type="Label" parent="EnvironmentAndPollution/Pollution/Info/ScrollContainer/MarginContainer/VBoxContainer/Value3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_8s8ds")
+theme_type_variation = &"Screen"
+theme_override_font_sizes/font_size = 35
 text = "TOTAL"
 autowrap_mode = 2
 
-[node name="n" type="Label" parent="EnvironmentAndPollution/Pollution/Info/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
-custom_minimum_size = Vector2(142, 0)
+[node name="Value" type="Label" parent="EnvironmentAndPollution/Pollution/Info/ScrollContainer/MarginContainer/VBoxContainer/Value3"]
 layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-theme = SubResource("Theme_34yde")
-theme_type_variation = &"Paper"
-theme_override_colors/font_color = Color(0.666667, 0, 0, 1)
-theme_override_font_sizes/font_size = 26
+size_flags_horizontal = 3
+theme = ExtResource("3_8s8ds")
+theme_type_variation = &"Screen"
+theme_override_font_sizes/font_size = 35
 text = "n"
 horizontal_alignment = 2
-autowrap_mode = 2
+autowrap_mode = 3
 script = ExtResource("80_lk5v6")
-
-[node name="InfoText2" parent="EnvironmentAndPollution/Pollution/Info/MarginContainer/MarginContainer/VBoxContainer" index="5"]
-text = "IMPORTS_EMISSIONS_TEXT"
-
-[node name="MoreInfo" parent="EnvironmentAndPollution/Pollution/Info" index="1" groups=["more_help_buttons"]]
-offset_top = -17.0
-offset_bottom = 20.0
 
 [node name="Name" type="Label" parent="EnvironmentAndPollution/Pollution"]
 layout_mode = 2
@@ -4407,7 +4488,7 @@ texture = ExtResource("25_7q1c5")
 
 [node name="alert" type="Sprite2D" parent="EnvironmentAndPollution/Pollution"]
 modulate = Color(1, 1, 1, 0.921569)
-self_modulate = Color(1, 1, 1, 0.741176)
+self_modulate = Color(1, 1, 1, 0)
 position = Vector2(49, 43)
 texture = ExtResource("83_g38lf")
 script = ExtResource("84_f1r4u")
@@ -4417,6 +4498,11 @@ libraries = {
 &"": SubResource("AnimationLibrary_rwe8w")
 }
 speed_scale = 1.5
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="EnvironmentAndPollution/Pollution"]
+libraries = {
+&"": SubResource("AnimationLibrary_rwe8w")
+}
 
 [node name="ImportAndEnergy" type="Control" parent="."]
 layout_mode = 3
@@ -4619,59 +4705,6 @@ offset_right = 826.768
 offset_bottom = 293.055
 rotation = 1.5708
 
-[node name="MarginContainer" parent="ImportAndEnergy/Energy/EnergyBarWinter/BarInfo" index="0"]
-offset_bottom = 330.0
-
-[node name="Unit" parent="ImportAndEnergy/Energy/EnergyBarWinter/BarInfo/MarginContainer/MarginContainer/VBoxContainer" index="0"]
-text = "TJ"
-
-[node name="Text0" parent="ImportAndEnergy/Energy/EnergyBarWinter/BarInfo/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer" index="0"]
-text = "DEMAND"
-
-[node name="n" parent="ImportAndEnergy/Energy/EnergyBarWinter/BarInfo/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer" index="1"]
-script = ExtResource("91_butgj")
-
-[node name="InfoText" parent="ImportAndEnergy/Energy/EnergyBarWinter/BarInfo/MarginContainer/MarginContainer/VBoxContainer" index="2"]
-text = "WINTER_DEMAND_INFO_TEXT"
-
-[node name="Text1" parent="ImportAndEnergy/Energy/EnergyBarWinter/BarInfo/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2" index="0"]
-text = "SUPPLY"
-
-[node name="n1" parent="ImportAndEnergy/Energy/EnergyBarWinter/BarInfo/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2" index="1"]
-script = ExtResource("92_bqjhv")
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="ImportAndEnergy/Energy/EnergyBarWinter/BarInfo/MarginContainer/MarginContainer/VBoxContainer" index="4"]
-layout_mode = 2
-
-[node name="Text1" type="Label" parent="ImportAndEnergy/Energy/EnergyBarWinter/BarInfo/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
-custom_minimum_size = Vector2(180, 0)
-layout_mode = 2
-size_flags_horizontal = 0
-theme = SubResource("Theme_34yde")
-theme_type_variation = &"Paper"
-theme_override_colors/font_color = Color(0, 0.45098, 0, 1)
-theme_override_font_sizes/font_size = 19
-text = "IMPORTED"
-autowrap_mode = 2
-
-[node name="n1" type="Label" parent="ImportAndEnergy/Energy/EnergyBarWinter/BarInfo/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
-custom_minimum_size = Vector2(142, 0)
-layout_mode = 2
-size_flags_horizontal = 8
-theme = SubResource("Theme_34yde")
-theme_type_variation = &"Paper"
-theme_override_colors/font_color = Color(0, 0.45098, 0, 1)
-theme_override_font_sizes/font_size = 19
-text = "n"
-horizontal_alignment = 2
-autowrap_mode = 3
-script = ExtResource("102_q4o5w")
-
-[node name="InfoText2" parent="ImportAndEnergy/Energy/EnergyBarWinter/BarInfo/MarginContainer/MarginContainer/VBoxContainer" index="5"]
-text = "WINTER_SUPPLY_INFO_TEXT"
-
-[node name="MoreInfo" parent="ImportAndEnergy/Energy/EnergyBarWinter/BarInfo" index="1" groups=["more_help_buttons"]]
-
 [node name="Button" parent="ImportAndEnergy/Energy/EnergyBarWinter" index="3" groups=["help_buttons"]]
 mouse_default_cursor_shape = 16
 
@@ -4699,29 +4732,6 @@ offset_right = 827.768
 offset_bottom = 398.788
 rotation = 1.5708
 metadata/_edit_group_ = true
-
-[node name="Unit" parent="ImportAndEnergy/Energy/EnergyBarSummer/BarInfo/MarginContainer/MarginContainer/VBoxContainer" index="0"]
-text = "TJ"
-
-[node name="Text0" parent="ImportAndEnergy/Energy/EnergyBarSummer/BarInfo/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer" index="0"]
-text = "DEMAND"
-
-[node name="n" parent="ImportAndEnergy/Energy/EnergyBarSummer/BarInfo/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer" index="1"]
-script = ExtResource("92_j1ii1")
-
-[node name="InfoText" parent="ImportAndEnergy/Energy/EnergyBarSummer/BarInfo/MarginContainer/MarginContainer/VBoxContainer" index="2"]
-text = "SUMMER_DEMAND_INFO_TEXT"
-
-[node name="Text1" parent="ImportAndEnergy/Energy/EnergyBarSummer/BarInfo/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2" index="0"]
-text = "SUPPLY"
-
-[node name="n1" parent="ImportAndEnergy/Energy/EnergyBarSummer/BarInfo/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2" index="1"]
-script = ExtResource("94_bcqhm")
-
-[node name="InfoText2" parent="ImportAndEnergy/Energy/EnergyBarSummer/BarInfo/MarginContainer/MarginContainer/VBoxContainer" index="4"]
-text = "SUMMER_SUPPLY_INFO_TEXT"
-
-[node name="MoreInfo" parent="ImportAndEnergy/Energy/EnergyBarSummer/BarInfo" index="1" groups=["more_help_buttons"]]
 
 [node name="Button" parent="ImportAndEnergy/Energy/EnergyBarSummer" index="3" groups=["help_buttons"]]
 mouse_default_cursor_shape = 16
@@ -4966,15 +4976,9 @@ script = ExtResource("147_jki7j")
 [connection signal="value_changed" from="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame/BorrowSlider/Slider" to="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame/Apply" method="_on_slider_value_changed"]
 [connection signal="pressed" from="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame/Close" to="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame" method="_on_close_button_pressed"]
 [connection signal="pressed" from="TopLeftZone/Policies/OpenPoliciesWindowButton" to="TopLeftZone/Policies/OpenPoliciesWindowButton" method="_on_pressed"]
-[connection signal="pressed" from="EnvironmentAndPollution/Environment/Info/MoreInfo" to="EnvironmentAndPollution/Environment/Info/MarginContainer/BubbleOpen" method="_on_more_info_button_pressed"]
-[connection signal="pressed" from="EnvironmentAndPollution/Environment/Info/MoreInfo" to="EnvironmentAndPollution/Environment/Info/MarginContainer/MarginContainer/VBoxContainer/InfoText" method="_on_more_info_button_pressed"]
-[connection signal="pressed" from="EnvironmentAndPollution/Environment/Info/MoreInfo" to="EnvironmentAndPollution/Environment/Info/MarginContainer/MarginContainer/VBoxContainer/InfoText2" method="_on_more_info_button_pressed"]
 [connection signal="pressed" from="EnvironmentAndPollution/Environment/OpenInfoBoxButton" to="EnvironmentAndPollution/Environment/Info" method="_on_open_info_box_button_pressed"]
-[connection signal="pressed" from="EnvironmentAndPollution/Environment/OpenInfoBoxButton" to="EnvironmentAndPollution/Pollution/Info" method="_on_environment_open_info_box_button_pressed"]
-[connection signal="pressed" from="EnvironmentAndPollution/Pollution/Info/MoreInfo" to="EnvironmentAndPollution/Pollution/Info/MarginContainer/BubbleOpen" method="_on_more_info_button_pressed"]
-[connection signal="pressed" from="EnvironmentAndPollution/Pollution/Info/MoreInfo" to="EnvironmentAndPollution/Pollution/Info/MarginContainer/MarginContainer/VBoxContainer/InfoText" method="_on_more_info_button_pressed"]
-[connection signal="pressed" from="EnvironmentAndPollution/Pollution/Info/MoreInfo" to="EnvironmentAndPollution/Pollution/Info/MarginContainer/MarginContainer/VBoxContainer/InfoText2" method="_on_more_info_button_pressed"]
-[connection signal="pressed" from="EnvironmentAndPollution/Pollution/OpenInfoBoxButton" to="EnvironmentAndPollution/Environment/Info" method="_on_pollution_open_info_box_button_pressed"]
+[connection signal="pressed" from="EnvironmentAndPollution/Pollution/Info/HelpButton" to="EnvironmentAndPollution/Pollution/Info/ScrollContainer/MarginContainer/VBoxContainer/Text" method="_on_help_button_pressed"]
+[connection signal="pressed" from="EnvironmentAndPollution/Pollution/Info/CloseButton" to="EnvironmentAndPollution/Pollution/Info" method="_on_close_button_pressed"]
 [connection signal="pressed" from="EnvironmentAndPollution/Pollution/OpenInfoBoxButton" to="EnvironmentAndPollution/Pollution/Info" method="_on_open_info_box_button_pressed"]
 [connection signal="drag_ended" from="ImportAndEnergy/Import/ImportSlider" to="ImportAndEnergy/Import/ImportSlider" method="_on_drag_ended"]
 [connection signal="drag_started" from="ImportAndEnergy/Import/ImportSlider" to="ImportAndEnergy/Import/ImportSlider" method="_on_drag_started"]

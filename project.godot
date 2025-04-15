@@ -35,6 +35,7 @@ SurveyManager="*res://src/gdscript/survey/survey_manager.gd"
 Cursor="*res://src/gdscript/cursor.gd"
 CameraManager="*res://src/gdscript/camera_manager.gd"
 HistoryManager="*res://src/gdscript/history_manager.gd"
+InfoFramesManager="*res://src/gdscript/info_frames_manager.gd"
 
 [display]
 

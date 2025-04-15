@@ -5,14 +5,25 @@ extends Control
 
 func _ready() -> void:
 	hide()
+	InfoFramesManager.show_frame.connect(_on_manager_show_frame)
+	InfoFramesManager.hide_frame.connect(_on_manager_hide_frame)
 
-
+func _on_manager_hide_frame(frame: String) -> void:
+	if frame == InfoFramesManager.MONEY_FRAME:
+		animation_player.play("info_frame_goes_away")
+		
+		
+func _on_manager_show_frame(frame: String) -> void:
+	if frame == InfoFramesManager.MONEY_FRAME:
+		animation_player.play("info_frame_appears")
+		
+	
 func _on_toggle_money_info_box_button_pressed():
 	if not visible:
-		animation_player.play("info_frame_appears")
+		InfoFramesManager.show_frame_requested.emit(InfoFramesManager.MONEY_FRAME)
 	else:
-		animation_player.play("info_frame_goes_away")
+		InfoFramesManager.hide_frame_requested.emit(InfoFramesManager.MONEY_FRAME)
 
 
 func _on_close_button_pressed() -> void:
-	animation_player.play("info_frame_goes_away")
+	InfoFramesManager.hide_frame_requested.emit(InfoFramesManager.MONEY_FRAME)

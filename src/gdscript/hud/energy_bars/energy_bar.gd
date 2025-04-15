@@ -7,8 +7,8 @@ enum Season {WINTER, SUMMER}
 @export var red_bar: Resource
 
 @onready var info_box = $BarInfo
-@onready var info_text = $BarInfo/MarginContainer/MarginContainer/VBoxContainer/InfoText
-@onready var info_text_2 = $BarInfo/MarginContainer/MarginContainer/VBoxContainer/InfoText2
+@onready var info_text = $BarInfo/ScrollContainer/MarginContainer/VBoxContainer/Text/Text
+@onready var info_text_2 = $BarInfo/ScrollContainer/MarginContainer/VBoxContainer/Text2/Text
 @onready var demand_line = $DemandLine
 @onready var show_hand = $ShowHand # For the tutorial
 

@@ -1,178 +1,170 @@
-[gd_scene load_steps=8 format=3 uid="uid://u1nvhv5ceok"]
+[gd_scene load_steps=6 format=3 uid="uid://u1nvhv5ceok"]
 
-[ext_resource type="Texture2D" uid="uid://bu7evhjgyjni6" path="res://assets/textures/ui/Paper-Middle-Rolled.png" id="2_c7jry"]
-[ext_resource type="Texture2D" uid="uid://bx1g8oiuxi2mk" path="res://assets/textures/ui/Paper-Middle.png" id="3_rmg6x"]
-[ext_resource type="Texture2D" uid="uid://c78xktsl3cnxc" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0016_Icon-yellow-normal-button.png" id="4_0qsle"]
+[ext_resource type="Texture2D" uid="uid://ceuxpu5iujr05" path="res://assets/textures/ui/All-HQ-Assets-D_0006s_0001_Stats-metal-base.png" id="1_yd3kw"]
+[ext_resource type="Texture2D" uid="uid://cd23afs6x11al" path="res://assets/textures/screens/screen_1.png" id="2_cnfan"]
 [ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/new_fonts/label_themes.tres" id="4_3f2or"]
-[ext_resource type="Texture2D" uid="uid://dm51vy4uvlpvd" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0015_Icon-yellow-hover-button.png" id="5_h8nss"]
-[ext_resource type="Texture2D" uid="uid://b07rwrrjjeock" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0017_Icon-yellow-press-button.png" id="6_f4vpc"]
-[ext_resource type="Texture2D" uid="uid://b0c3ywqarx8b7" path="res://assets/textures/ui/socket_round.png" id="7_feats"]
+[ext_resource type="PackedScene" uid="uid://dp1c6io21ijm3" path="res://scenes/buttons/button_help.tscn" id="4_fuql8"]
+[ext_resource type="PackedScene" uid="uid://chpn7t75mmbkh" path="res://scenes/buttons/button_close.tscn" id="5_2sbht"]
 
 [node name="BarInfo" type="Control"]
 layout_mode = 3
-anchor_right = 0.168
-anchor_bottom = 0.267
-offset_right = 0.439972
-offset_bottom = -0.360016
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+mouse_force_pass_scroll_events = false
+metadata/_edit_vertical_guides_ = [1042.0]
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_right = 426.0
-offset_bottom = 232.0
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
+[node name="BackPanel" type="TextureRect" parent="."]
+layout_mode = 1
+offset_right = 588.0
+offset_bottom = 397.0
+pivot_offset = Vector2(508, 343)
+mouse_filter = 0
+mouse_force_pass_scroll_events = false
+texture = ExtResource("1_yd3kw")
+expand_mode = 1
 
-[node name="BubbleClosed" type="NinePatchRect" parent="MarginContainer"]
+[node name="Screen" type="TextureRect" parent="BackPanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 23.0
+offset_top = 17.0
+offset_right = -23.0
+offset_bottom = 380.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+texture = ExtResource("2_cnfan")
+expand_mode = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+offset_left = 32.0
+offset_top = 36.0
+offset_right = 555.0
+offset_bottom = 358.0
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer"]
+custom_minimum_size = Vector2(495, 0)
 layout_mode = 2
-texture = ExtResource("2_c7jry")
-region_rect = Rect2(0, 4, 388, 230)
-patch_margin_left = 98
-patch_margin_top = 106
-patch_margin_right = 130
-patch_margin_bottom = 98
+size_flags_horizontal = 6
+size_flags_vertical = 3
 
-[node name="BubbleOpen" type="NinePatchRect" parent="MarginContainer"]
-visible = false
-layout_mode = 2
-texture = ExtResource("3_rmg6x")
-region_rect = Rect2(0, 4, 388, 390)
-patch_margin_left = 38
-patch_margin_top = 106
-patch_margin_right = 36
-patch_margin_bottom = 72
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 70
-theme_override_constants/margin_right = 40
-theme_override_constants/margin_bottom = 70
-
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/MarginContainer"]
-visible = false
-layout_mode = 2
-color = Color(0.6, 0.6, 0.6, 1)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 15
-alignment = 1
 
-[node name="Unit" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(180, 0)
+[node name="Unit" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+
+[node name="Unit" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Unit"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme = ExtResource("4_3f2or")
-theme_type_variation = &"Paper"
-theme_override_colors/font_color = Color(0.666667, 0, 0, 1)
-theme_override_font_sizes/font_size = 26
+theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(0.945098, 0, 0.0705882, 1)
+theme_override_font_sizes/font_size = 30
 text = "Unit"
 horizontal_alignment = 2
 autowrap_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer"]
+[node name="Value" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Text0" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(180, 0)
+[node name="Text" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Value"]
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
 theme = ExtResource("4_3f2or")
-theme_type_variation = &"Paper"
-theme_override_colors/font_color = Color(0.666667, 0, 0, 1)
-theme_override_font_sizes/font_size = 26
+theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(0.945098, 0, 0.0705882, 1)
+theme_override_font_sizes/font_size = 30
 text = "Text"
 autowrap_mode = 2
 
-[node name="n" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(142, 0)
+[node name="Value" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Value"]
 layout_mode = 2
-size_flags_horizontal = 8
+size_flags_horizontal = 3
 size_flags_vertical = 0
 theme = ExtResource("4_3f2or")
-theme_type_variation = &"Paper"
-theme_override_colors/font_color = Color(0.666667, 0, 0, 1)
-theme_override_font_sizes/font_size = 26
+theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(0.945098, 0, 0.0705882, 1)
+theme_override_font_sizes/font_size = 30
 text = "n"
 horizontal_alignment = 2
 autowrap_mode = 2
 
-[node name="InfoText" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer"]
-visible = false
+[node name="Text" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+
+[node name="Text" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Text"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme = ExtResource("4_3f2or")
-theme_type_variation = &"Paper"
-text = "Most power plants negatively affect biodiversity because they require lots of land and water.
-"
+theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(0.596078, 0.721569, 1, 1)
+theme_override_font_sizes/font_size = 25
+text = "Most power plants negatively affect biodiversity because they require lots of land and water."
 autowrap_mode = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/MarginContainer/VBoxContainer"]
+[node name="Value2" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Text1" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(180, 0)
+[node name="Text" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Value2"]
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
 theme = ExtResource("4_3f2or")
-theme_type_variation = &"Paper"
-theme_override_colors/font_color = Color(0, 0.45098, 0, 1)
-theme_override_font_sizes/font_size = 26
+theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(0, 0.701961, 0, 1)
+theme_override_font_sizes/font_size = 30
 text = "Text"
 autowrap_mode = 2
 
-[node name="n1" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(142, 0)
+[node name="Value" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Value2"]
 layout_mode = 2
-size_flags_horizontal = 8
+size_flags_horizontal = 3
 theme = ExtResource("4_3f2or")
-theme_type_variation = &"Paper"
-theme_override_colors/font_color = Color(0, 0.45098, 0, 1)
-theme_override_font_sizes/font_size = 26
+theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(0, 0.701961, 0, 1)
+theme_override_font_sizes/font_size = 30
 text = "n"
 horizontal_alignment = 2
 autowrap_mode = 3
 
-[node name="InfoText2" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer"]
-visible = false
+[node name="Text2" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+
+[node name="Text" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Text2"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme = ExtResource("4_3f2or")
-theme_type_variation = &"Paper"
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(0.596078, 0.721569, 1, 1)
+theme_override_font_sizes/font_size = 25
 text = "Most power plants negatively affect biodiversity because they require lots of land and water.
 "
 autowrap_mode = 3
 
-[node name="n_ov_max" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer"]
-visible = false
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Most power plants negatively affect biodiversity because they require lots of land and water.
-"
-autowrap_mode = 3
-
-[node name="MoreInfo" type="TextureButton" parent="."]
+[node name="HelpButton" parent="." instance=ExtResource("4_fuql8")]
 layout_mode = 0
-offset_left = 383.0
-offset_top = -2.0
-offset_right = 418.0
-offset_bottom = 35.0
-texture_normal = ExtResource("4_0qsle")
-texture_pressed = ExtResource("6_f4vpc")
-texture_hover = ExtResource("5_h8nss")
-
-[node name="Label" type="Label" parent="MoreInfo"]
-layout_mode = 0
-offset_left = 13.0
-offset_right = 53.0
+offset_left = 495.0
+offset_top = -16.0
+offset_right = 550.0
 offset_bottom = 38.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 20
-text = "?"
+scale = Vector2(0.8, 0.8)
+toggle_mode = true
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="Sprite2D" type="Sprite2D" parent="MoreInfo"]
-show_behind_parent = true
-position = Vector2(18, 21)
-texture = ExtResource("7_feats")
+[node name="CloseButton" parent="." instance=ExtResource("5_2sbht")]
+layout_mode = 0
+offset_left = 550.0
+offset_top = -15.0
+offset_right = 605.0
+offset_bottom = 39.0
+scale = Vector2(0.8, 0.8)

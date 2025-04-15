@@ -1,14 +1,29 @@
 extends Control
 
+@onready var animation_player: AnimationPlayer = $"../AnimationPlayer2"
+
+
+func _ready() -> void:
+	InfoFramesManager.show_frame.connect(_on_manager_show_frame)
+	InfoFramesManager.hide_frame.connect(_on_manager_hide_frame)
+
+
+func _on_manager_show_frame(frame: String) -> void:
+	if frame == InfoFramesManager.EMISSIONS_FRAME:
+		animation_player.play(" info_frame_appears")
+
+
+func _on_manager_hide_frame(frame: String) -> void:
+	if frame == InfoFramesManager.EMISSIONS_FRAME:
+		animation_player.play("info_frame_goes_away")
+
 
 func _on_open_info_box_button_pressed():
-	visible = not visible
+	if not visible:
+		InfoFramesManager.show_frame_requested.emit(InfoFramesManager.EMISSIONS_FRAME)
+	else:
+		InfoFramesManager.hide_frame_requested.emit(InfoFramesManager.EMISSIONS_FRAME)
 
 
-func _unhandled_input(event):
-	if event is InputEventMouseButton and event.button_mask == MOUSE_BUTTON_MASK_LEFT:
-		hide()
-
-
-func _on_environment_open_info_box_button_pressed():
-	hide()
+func _on_close_button_pressed() -> void:
+	InfoFramesManager.hide_frame_requested.emit(InfoFramesManager.EMISSIONS_FRAME)
