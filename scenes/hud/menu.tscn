@@ -156,70 +156,6 @@ VScrollBar/styles/grabber = SubResource("StyleBoxFlat_5mtqi")
 VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_1qqbn")
 VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_idcep")
 
-[sub_resource type="Animation" id="Animation_wv0xo"]
-resource_name = "language_selection_goes_away"
-length = 0.8
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(750, 448), Vector2(770, 448), Vector2(-488, 448)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Buttons:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Buttons:position")
-tracks/2/interp = 2
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.266667, 0.433333, 0.533333, 0.633333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1972, 490), Vector2(1972, 490), Vector2(502, 490), Vector2(542, 490), Vector2(522, 490)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../BlueprintNormal:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../BlueprintNormal:position")
-tracks/4/interp = 2
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.366667, 0.533333, 0.633333, 0.733333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(2300, 683), Vector2(2300, 683), Vector2(1278, 683), Vector2(1318, 683), Vector2(1298, 683)]
-}
-
 [sub_resource type="Animation" id="Animation_1vieb"]
 length = 0.001
 tracks/0/type = "value"
@@ -281,6 +217,70 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1298, 683)]
+}
+
+[sub_resource type="Animation" id="Animation_wv0xo"]
+resource_name = "language_selection_goes_away"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(750, 448), Vector2(770, 448), Vector2(-488, 448)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Buttons:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Buttons:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.433333, 0.533333, 0.633333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1972, 490), Vector2(1972, 490), Vector2(502, 490), Vector2(542, 490), Vector2(522, 490)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../BlueprintNormal:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../BlueprintNormal:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.566666, 0.666666, 0.766666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2300, 683), Vector2(2300, 683), Vector2(1278, 683), Vector2(1318, 683), Vector2(1298, 683)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_10l40"]
@@ -1163,9 +1163,9 @@ script = ExtResource("24_abil0")
 
 [node name="Backplate" type="NinePatchRect" parent="CanvasLayer/LangSelection"]
 layout_mode = 1
-offset_left = 23.0
+offset_left = 18.0
 offset_top = -13.0
-offset_right = 459.0
+offset_right = 464.0
 offset_bottom = 530.0
 texture = ExtResource("4_dgun4")
 patch_margin_left = 54
@@ -1174,7 +1174,7 @@ patch_margin_right = 42
 patch_margin_bottom = 76
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/LangSelection"]
-position = Vector2(235, 44)
+position = Vector2(236, 44)
 texture = ExtResource("24_wv0xo")
 
 [node name="GermanButton" type="TextureButton" parent="CanvasLayer/LangSelection" groups=["buttons"]]
@@ -1182,10 +1182,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -95.5
-offset_top = 124.0
-offset_right = 101.5
-offset_bottom = 188.0
+offset_left = -94.5
+offset_top = 123.0
+offset_right = 102.5
+offset_bottom = 187.0
 grow_horizontal = 2
 pivot_offset = Vector2(98, 32)
 texture_normal = ExtResource("14_38vq8")
@@ -1223,10 +1223,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -95.5
-offset_top = 216.0
-offset_right = 101.5
-offset_bottom = 280.0
+offset_left = -94.5
+offset_top = 215.0
+offset_right = 102.5
+offset_bottom = 279.0
 grow_horizontal = 2
 pivot_offset = Vector2(98, 32)
 texture_normal = ExtResource("14_38vq8")
@@ -1264,10 +1264,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -95.5
-offset_top = 307.0
-offset_right = 101.5
-offset_bottom = 371.0
+offset_left = -94.5
+offset_top = 306.0
+offset_right = 102.5
+offset_bottom = 370.0
 grow_horizontal = 2
 pivot_offset = Vector2(98, 32)
 texture_normal = ExtResource("14_38vq8")
@@ -1305,9 +1305,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -95.5
+offset_left = -94.5
 offset_top = 398.0
-offset_right = 101.5
+offset_right = 102.5
 offset_bottom = 462.0
 grow_horizontal = 2
 pivot_offset = Vector2(98, 32)

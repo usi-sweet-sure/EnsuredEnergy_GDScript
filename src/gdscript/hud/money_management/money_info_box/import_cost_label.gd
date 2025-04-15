@@ -8,7 +8,7 @@ func _ready():
 
 func _on_energy_import_cost_updated(new_value: float):
 	if new_value != 0:
-		show()
+		set_self_modulate(Color("ffffff"))
 		text = "-" + str(round(new_value)).pad_decimals(0)
 	else:
-		hide()
+		set_self_modulate(Color("ffffff00"))

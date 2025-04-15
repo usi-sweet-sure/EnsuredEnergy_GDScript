@@ -24,18 +24,14 @@
 [ext_resource type="Script" uid="uid://173otii7eoi3" path="res://src/gdscript/graphs/open_graphs_frame_button.gd" id="9_xq6mg"]
 [ext_resource type="AudioStream" uid="uid://ben5r72x0p8pr" path="res://assets/sounds/move.wav" id="10_po2ll"]
 [ext_resource type="AudioStream" uid="uid://00apgxjmwgw0" path="res://assets/sounds/click_0.wav" id="11_tr1n1"]
-[ext_resource type="Texture2D" uid="uid://dvph1wklx4pfh" path="res://assets/textures/ui/Paper-Big.png" id="15_rf0ak"]
 [ext_resource type="Texture2D" uid="uid://bu3fwwb31gmuw" path="res://assets/textures/ui/Import_energy-Metal.png" id="19_1inpw"]
 [ext_resource type="FontFile" uid="uid://bt2f3flr7psn5" path="res://assets/new_fonts/vt323/vt323_regular.ttf" id="19_t3l2l"]
 [ext_resource type="Texture2D" uid="uid://bmjee8ocqy0ge" path="res://assets/textures/ui/Enviornment-Base.png" id="21_i8c3o"]
 [ext_resource type="Texture2D" uid="uid://bwmnloeklg76n" path="res://assets/textures/ui/Enviornment-Hand.png" id="23_3qgyr"]
 [ext_resource type="Texture2D" uid="uid://lxqt8kspr35q" path="res://assets/textures/ui/Icon-Environment-.png" id="24_t8vy5"]
 [ext_resource type="Texture2D" uid="uid://0mihvtaw003w" path="res://assets/textures/ui/Icon-Pollution-.png" id="25_7q1c5"]
-[ext_resource type="Texture2D" uid="uid://c78xktsl3cnxc" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0016_Icon-yellow-normal-button.png" id="25_o5q30"]
 [ext_resource type="Script" uid="uid://bixk4y7dlkn1t" path="res://src/gdscript/hud/energy_import/energy_import_slider.gd" id="25_pkr0e"]
 [ext_resource type="AudioStream" uid="uid://d2wailh7xcnu1" path="res://assets/sounds/ambiences/wind_shaking_an_electrical_wire.mp3" id="26_j2wkk"]
-[ext_resource type="Texture2D" uid="uid://b07rwrrjjeock" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0017_Icon-yellow-press-button.png" id="26_kd3a6"]
-[ext_resource type="Texture2D" uid="uid://dm51vy4uvlpvd" path="res://assets/textures/ui/All-HQ-Assets-D_0000s_0015_Icon-yellow-hover-button.png" id="27_sye1h"]
 [ext_resource type="AudioStream" uid="uid://8lxulu06phjs" path="res://assets/sounds/spin.mp3" id="28_jki7j"]
 [ext_resource type="Texture2D" uid="uid://vff0e83ytund" path="res://assets/textures/ui/Energy-base.png" id="28_mr6x7"]
 [ext_resource type="AudioStream" uid="uid://bveuicypxxvs7" path="res://assets/sounds/burn.mp3" id="29_arjh5"]
@@ -43,13 +39,11 @@
 [ext_resource type="Texture2D" uid="uid://h78kteff8v5d" path="res://assets/textures/ui/Money-counter-hole.png" id="31_jcf3k"]
 [ext_resource type="PackedScene" uid="uid://fyc7mfdq5sh5" path="res://scenes/buttons/button_plus.tscn" id="31_y5561"]
 [ext_resource type="Texture2D" uid="uid://p2nyvgv4j2ll" path="res://assets/textures/ui/Money-counter-1.png" id="32_2wt40"]
-[ext_resource type="Texture2D" uid="uid://b0c3ywqarx8b7" path="res://assets/textures/ui/socket_round.png" id="32_angtv"]
 [ext_resource type="Script" uid="uid://cno3quteb6wr2" path="res://src/gdscript/hud/money_management/borrow_money_frame/toggle_borrow_money_frame_button.gd" id="32_ynjjj"]
 [ext_resource type="Texture2D" uid="uid://burmdec041k3k" path="res://assets/textures/ui/Shocks-Metal.png" id="33_b8djn"]
 [ext_resource type="Texture2D" uid="uid://sopgul71025f" path="res://assets/textures/ui/Icon-Money.png" id="33_my285"]
 [ext_resource type="Texture2D" uid="uid://ejm62lq3nu3a" path="res://assets/textures/ui/All-HQ-Assets-D_0005s_0006_Borrow-money-screen.png" id="34_lx4h4"]
 [ext_resource type="Texture2D" uid="uid://bam7su0aw6q65" path="res://assets/textures/ui/Icon-Popularity.png" id="34_xcgyc"]
-[ext_resource type="Texture2D" uid="uid://bu7evhjgyjni6" path="res://assets/textures/ui/Paper-Middle-Rolled.png" id="34_yg0ni"]
 [ext_resource type="Texture2D" uid="uid://b2g8qas0h64m8" path="res://assets/textures/ui/Popularity-.png" id="35_qiawk"]
 [ext_resource type="Script" uid="uid://b8nksn7ncqglk" path="res://src/gdscript/hud/money_management/money_info_box/production_cost_label.gd" id="36_288kb"]
 [ext_resource type="Script" uid="uid://dwcie770gf4ux" path="res://src/gdscript/hud/money_management/money_info_box/budget_now_label.gd" id="36_dvvfa"]
@@ -64,7 +58,9 @@
 [ext_resource type="Texture2D" uid="uid://bj6ubksmn350n" path="res://assets/textures/buttons/button_hole.png" id="39_jsaox"]
 [ext_resource type="Script" uid="uid://cbrb8bdlnhfjh" path="res://src/gdscript/hud/money_management/money_info_box/building_cost_label.gd" id="39_y30hd"]
 [ext_resource type="Script" uid="uid://c8khw2d2u4q7f" path="res://src/gdscript/hud/money_management/borrow_money_frame/apply_button.gd" id="40_kt3h3"]
+[ext_resource type="Texture2D" uid="uid://ceuxpu5iujr05" path="res://assets/textures/ui/All-HQ-Assets-D_0006s_0001_Stats-metal-base.png" id="41_2tst5"]
 [ext_resource type="Texture2D" uid="uid://b34opid7c6qf6" path="res://assets/textures/ui/Pollution-Bar.png" id="41_ctrnv"]
+[ext_resource type="Texture2D" uid="uid://cd23afs6x11al" path="res://assets/textures/screens/screen_1.png" id="42_e8n7a"]
 [ext_resource type="Script" uid="uid://bov3b4im1hdae" path="res://src/gdscript/hud/money_management/money_info_box/total_now_label.gd" id="42_l0rtw"]
 [ext_resource type="Script" uid="uid://bikx0hxcqnciy" path="res://src/gdscript/hud/money_management/money_info_box/total_next_label.gd" id="43_lu1ke"]
 [ext_resource type="Texture2D" uid="uid://fe0i52vl7ck6" path="res://assets/textures/ui/All-HQ-Assets-D_0007s_0006_Slider-bar-horizontal.png" id="44_d3ema"]
@@ -83,10 +79,10 @@
 [ext_resource type="Script" uid="uid://bcu0q8u46kswg" path="res://src/gdscript/policies/hud/personal_trust_bar.gd" id="54_3uqxf"]
 [ext_resource type="Texture2D" uid="uid://od33hjtqpm14" path="res://assets/textures/digit_panels/num_hole.png" id="54_7juy1"]
 [ext_resource type="Texture2D" uid="uid://bobwaj4wxr0fj" path="res://assets/textures/digit_panels/num_counter.png" id="55_5s2up"]
-[ext_resource type="Script" uid="uid://d1kbk7d466lry" path="res://src/gdscript/hud/money_management/money_info_box/info_money_closed_scroll.gd" id="55_ikt4p"]
-[ext_resource type="Script" uid="uid://cyo5vyxd7fhek" path="res://src/gdscript/hud/money_management/money_info_box/info_money_opened_scroll.gd" id="55_q3xbm"]
 [ext_resource type="Script" uid="uid://ducvgsfrk08ul" path="res://src/gdscript/hud/environment/info_box/info_box.gd" id="56_0qat8"]
 [ext_resource type="Script" uid="uid://b6t21rqgeamst" path="res://src/gdscript/hud/money_management/money_info_box/money_info_box_texts_container.gd" id="56_3y5yk"]
+[ext_resource type="PackedScene" uid="uid://chpn7t75mmbkh" path="res://scenes/buttons/button_close.tscn" id="56_arjh5"]
+[ext_resource type="PackedScene" uid="uid://dp1c6io21ijm3" path="res://scenes/buttons/button_help.tscn" id="57_jki7j"]
 [ext_resource type="Script" uid="uid://c62vh7o5i48lm" path="res://src/gdscript/hud/clock/clock.gd" id="57_lg17s"]
 [ext_resource type="Script" uid="uid://l8ku3wg0jlhh" path="res://src/gdscript/policies/hud/open_policies_window_button.gd" id="57_uofws"]
 [ext_resource type="Script" uid="uid://c7rwcfejebgqs" path="res://src/gdscript/hud/environment/info_box/opened_roll.gd" id="57_v13k6"]
@@ -2145,6 +2141,96 @@ _data = {
 &"appear": SubResource("Animation_cwd6i")
 }
 
+[sub_resource type="Animation" id="Animation_rmula"]
+resource_name = "info_frame_appears"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MoneyInfoBox:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(360, -622), Vector2(360, 78), Vector2(360, 18), Vector2(360, 48)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MoneyInfoBox:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_j4b0y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MoneyInfoBox:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(360, 48)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MoneyInfoBox:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_qn1qf"]
+resource_name = "info_frame_goes_away"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MoneyInfoBox:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(360, 48), Vector2(360, 78), Vector2(360, -595)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MoneyInfoBox:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_arjh5"]
+_data = {
+&"RESET": SubResource("Animation_j4b0y"),
+&"info_frame_appears": SubResource("Animation_rmula"),
+&"info_frame_goes_away": SubResource("Animation_qn1qf")
+}
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_3qw21"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r2ty1"]
@@ -3269,373 +3355,412 @@ mouse_default_cursor_shape = 16
 flat = true
 alignment = 0
 
-[node name="MoneyInfoBox" type="Control" parent="TopLeftZone/MoneyManagement/MoneyInfo" groups=["papers"]]
-visible = false
+[node name="MoneyInfoBox" type="Control" parent="TopLeftZone/MoneyManagement/MoneyInfo"]
 layout_mode = 1
 anchor_left = 0.233
 anchor_top = 0.076
 anchor_right = 0.233
 anchor_bottom = 0.076
 offset_left = 350.68
-offset_top = 14.96
+offset_top = 44.96
 offset_right = 803.68
-offset_bottom = 359.96
+offset_bottom = 389.96
 grow_horizontal = 0
+mouse_force_pass_scroll_events = false
 script = ExtResource("53_cwkn3")
 
-[node name="MarginContainer" type="MarginContainer" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox"]
+[node name="BackPanel" type="TextureRect" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 16.5
+offset_top = -189.5
+offset_right = 809.5
+offset_bottom = 346.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(508, 343)
+mouse_filter = 0
+mouse_force_pass_scroll_events = false
+texture = ExtResource("41_2tst5")
+expand_mode = 1
+
+[node name="Screen" type="TextureRect" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/BackPanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 31.0
+offset_top = 27.0
+offset_right = -25.0
+offset_bottom = 512.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+texture = ExtResource("42_e8n7a")
+expand_mode = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox"]
 layout_mode = 0
-offset_top = -35.0
-offset_right = 570.0
-offset_bottom = 454.0
+offset_left = 278.0
+offset_top = 26.0
+offset_right = 1001.0
+offset_bottom = 479.0
+
+[node name="MarginContainer" type="MarginContainer" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer"]
+custom_minimum_size = Vector2(680, 453)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="InfoMoneyClosed" type="NinePatchRect" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer"]
-layout_mode = 2
-texture = ExtResource("34_yg0ni")
-region_rect = Rect2(0, 0, 390, 244)
-patch_margin_left = 42
-patch_margin_top = 148
-patch_margin_right = 56
-patch_margin_bottom = 134
-script = ExtResource("55_ikt4p")
-
-[node name="InfoMoneyOpen" type="NinePatchRect" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer"]
-visible = false
-layout_mode = 2
-texture = ExtResource("15_rf0ak")
-patch_margin_left = 52
-patch_margin_top = 92
-patch_margin_right = 40
-patch_margin_bottom = 80
-script = ExtResource("55_q3xbm")
-
-[node name="MarginContainer" type="MarginContainer" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 30
-theme_override_constants/margin_right = 50
-theme_override_constants/margin_bottom = 84
-
-[node name="MoneyInfoBoxTextsContainer" type="VBoxContainer" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 14
 script = ExtResource("56_3y5yk")
 
-[node name="Spacer1" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer"]
+[node name="Title" type="HBoxContainer" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="ColumnsName" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer"]
+[node name="Spacer2" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer/MarginContainer/VBoxContainer/Title"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme = SubResource("Theme_34yde")
-theme_type_variation = &"Paper"
-theme_override_font_sizes/font_size = 24
-text = " "
-vertical_alignment = 1
+theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(0.945098, 0, 0.0705882, 1)
+theme_override_font_sizes/font_size = 35
+horizontal_alignment = 2
 
-[node name="Now" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer/ColumnsName"]
-layout_mode = 0
-offset_left = 131.0
-offset_top = -3.0
-offset_right = 303.0
-offset_bottom = 37.0
+[node name="Now" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer/MarginContainer/VBoxContainer/Title"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme = SubResource("Theme_34yde")
-theme_type_variation = &"Paper"
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 16
+theme_type_variation = &"Screen"
+theme_override_font_sizes/font_size = 30
 text = "CURRENT_TURN"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="Next" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer/ColumnsName"]
-layout_mode = 0
-offset_left = 307.0
-offset_top = -3.0
-offset_right = 457.0
-offset_bottom = 37.0
+[node name="Next" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer/MarginContainer/VBoxContainer/Title"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme = SubResource("Theme_34yde")
-theme_type_variation = &"Paper"
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 16
+theme_type_variation = &"Screen"
+theme_override_font_sizes/font_size = 30
 text = "NEXT_TURN"
 horizontal_alignment = 2
 vertical_alignment = 1
-autowrap_mode = 2
 
-[node name="Budget" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer"]
+[node name="Budget" type="HBoxContainer" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+
+[node name="Budget" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer/MarginContainer/VBoxContainer/Budget"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
 theme = SubResource("Theme_34yde")
-theme_type_variation = &"Paper"
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 26
+theme_type_variation = &"Screen"
+theme_override_font_sizes/font_size = 35
 text = "BUDGET"
 vertical_alignment = 1
 
-[node name="budgetNow" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer/Budget"]
-layout_mode = 0
-offset_left = 161.0
-offset_top = -3.0
-offset_right = 303.0
-offset_bottom = 37.0
+[node name="budgetNow" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer/MarginContainer/VBoxContainer/Budget"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme = SubResource("Theme_34yde")
-theme_type_variation = &"Paper"
+theme_type_variation = &"Screen"
 theme_override_colors/font_color = Color(0, 0.701961, 0, 1)
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 35
 text = "000"
 horizontal_alignment = 2
 vertical_alignment = 1
 script = ExtResource("36_dvvfa")
 
-[node name="budgetNext" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer/Budget"]
-layout_mode = 0
-offset_left = 315.0
-offset_top = -3.0
-offset_right = 457.0
-offset_bottom = 37.0
+[node name="budgetNext" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer/MarginContainer/VBoxContainer/Budget"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme = SubResource("Theme_34yde")
-theme_type_variation = &"Paper"
+theme_type_variation = &"Screen"
 theme_override_colors/font_color = Color(0, 0.701961, 0, 1)
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 35
 text = "000"
 horizontal_alignment = 2
 vertical_alignment = 1
 script = ExtResource("37_qff14")
 
-[node name="BudgetText" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer"]
+[node name="BudgetText" type="HBoxContainer" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer/MarginContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
+
+[node name="BudgetText" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer/MarginContainer/VBoxContainer/BudgetText"]
+custom_minimum_size = Vector2(672, 0)
+layout_mode = 2
+size_flags_horizontal = 3
 theme = SubResource("Theme_34yde")
-theme_type_variation = &"Paper"
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(0.596078, 0.721569, 1, 1)
+theme_override_font_sizes/font_size = 28
 text = "BUDGET_TEXT"
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Production" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer"]
+[node name="Production" type="HBoxContainer" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+
+[node name="Production" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer/MarginContainer/VBoxContainer/Production"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
 theme = SubResource("Theme_34yde")
-theme_type_variation = &"Paper"
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 26
+theme_type_variation = &"Screen"
+theme_override_font_sizes/font_size = 35
 text = "PRODUCTION"
 vertical_alignment = 1
 
-[node name="ProductionCost" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer/Production"]
-layout_mode = 0
-offset_left = 177.0
-offset_top = -5.0
-offset_right = 303.0
-offset_bottom = 35.0
+[node name="ProductionCost" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer/MarginContainer/VBoxContainer/Production"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
 theme = SubResource("Theme_34yde")
-theme_type_variation = &"Paper"
+theme_type_variation = &"Screen"
 theme_override_colors/font_color = Color(0.945098, 0, 0.0705882, 1)
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 35
 text = "000"
 horizontal_alignment = 2
 vertical_alignment = 1
 script = ExtResource("36_288kb")
 
-[node name="ProductionCost2" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer/Production"]
-layout_mode = 0
-offset_left = 323.0
-offset_top = -5.0
-offset_right = 457.0
-offset_bottom = 35.0
+[node name="ProductionCost2" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer/MarginContainer/VBoxContainer/Production"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme = SubResource("Theme_34yde")
-theme_type_variation = &"Paper"
+theme_type_variation = &"Screen"
 theme_override_colors/font_color = Color(0.945098, 0, 0.0705882, 1)
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 35
 text = "000"
 horizontal_alignment = 2
 vertical_alignment = 1
 script = ExtResource("36_288kb")
 
-[node name="ProductionText" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer"]
+[node name="ProductionText" type="HBoxContainer" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer/MarginContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
+
+[node name="ProductionText" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer/MarginContainer/VBoxContainer/ProductionText"]
+custom_minimum_size = Vector2(672, 0)
+layout_mode = 2
+size_flags_horizontal = 3
 theme = SubResource("Theme_34yde")
-theme_type_variation = &"Paper"
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(0.596078, 0.721569, 1, 1)
+theme_override_font_sizes/font_size = 28
 text = "PRODUCTION_TEXT"
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Building" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer"]
+[node name="Building" type="HBoxContainer" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+
+[node name="Building" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer/MarginContainer/VBoxContainer/Building"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
 theme = SubResource("Theme_34yde")
-theme_type_variation = &"Paper"
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 26
+theme_type_variation = &"Screen"
+theme_override_font_sizes/font_size = 35
 text = "BUILDING"
 vertical_alignment = 1
 
-[node name="BuildingCost" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer/Building"]
-layout_mode = 0
-offset_left = 155.0
-offset_top = -2.0
-offset_right = 303.0
-offset_bottom = 38.0
+[node name="BuildingCost" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer/MarginContainer/VBoxContainer/Building"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme = SubResource("Theme_34yde")
-theme_type_variation = &"Paper"
+theme_type_variation = &"Screen"
 theme_override_colors/font_color = Color(0.945098, 0, 0.0705882, 1)
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 35
 text = "000"
 horizontal_alignment = 2
 vertical_alignment = 1
 script = ExtResource("39_y30hd")
 
-[node name="BuildingText" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer"]
+[node name="Spacer" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer/MarginContainer/VBoxContainer/Building"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_34yde")
+theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(0.945098, 0, 0.0705882, 1)
+theme_override_font_sizes/font_size = 35
+horizontal_alignment = 2
+
+[node name="BuildingText" type="HBoxContainer" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer/MarginContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
+
+[node name="BuildingText" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer/MarginContainer/VBoxContainer/BuildingText"]
+custom_minimum_size = Vector2(672, 0)
+layout_mode = 2
+size_flags_horizontal = 3
 theme = SubResource("Theme_34yde")
-theme_type_variation = &"Paper"
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(0.596078, 0.721569, 1, 1)
+theme_override_font_sizes/font_size = 28
 text = "BUILDING_TEXT"
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Import" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer"]
+[node name="Imports" type="HBoxContainer" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+
+[node name="Import" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer/MarginContainer/VBoxContainer/Imports"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
 theme = SubResource("Theme_34yde")
-theme_type_variation = &"Paper"
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 26
+theme_type_variation = &"Screen"
+theme_override_font_sizes/font_size = 35
 text = "IMPORTS"
 
-[node name="ImportCost" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer/Import"]
+[node name="ImportCost" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer/MarginContainer/VBoxContainer/Imports"]
 layout_mode = 2
-offset_left = 139.0
-offset_top = 2.0
-offset_right = 303.0
-offset_bottom = 33.0
+size_flags_horizontal = 3
 theme = SubResource("Theme_34yde")
-theme_type_variation = &"Paper"
+theme_type_variation = &"Screen"
 theme_override_colors/font_color = Color(0.945098, 0, 0.0705882, 1)
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 35
 text = "000"
 horizontal_alignment = 2
 script = ExtResource("37_tnewl")
 
-[node name="ImportText" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer"]
+[node name="Spacer2" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer/MarginContainer/VBoxContainer/Imports"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_34yde")
+theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(0.945098, 0, 0.0705882, 1)
+theme_override_font_sizes/font_size = 35
+horizontal_alignment = 2
+
+[node name="ImportsText" type="HBoxContainer" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer/MarginContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
+
+[node name="ImportText" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer/MarginContainer/VBoxContainer/ImportsText"]
+custom_minimum_size = Vector2(672, 0)
+layout_mode = 2
+size_flags_horizontal = 3
 theme = SubResource("Theme_34yde")
-theme_type_variation = &"Paper"
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(0.596078, 0.721569, 1, 1)
+theme_override_font_sizes/font_size = 28
 text = "IMPORTS_TEXT"
 autowrap_mode = 3
 
-[node name="BorrowedMoney" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer"]
+[node name="Loan" type="HBoxContainer" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+
+[node name="BorrowedMoney" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer/MarginContainer/VBoxContainer/Loan"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
 theme = SubResource("Theme_34yde")
-theme_type_variation = &"Paper"
-theme_override_font_sizes/font_size = 26
+theme_type_variation = &"Screen"
+theme_override_font_sizes/font_size = 35
 text = "LOAN"
 script = ExtResource("58_c856x")
 
-[node name="DebtAmount" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer/BorrowedMoney"]
+[node name="BorrowedAmount" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer/MarginContainer/VBoxContainer/Loan"]
 layout_mode = 2
-offset_left = 329.0
-offset_top = 2.0
-offset_right = 457.0
-offset_bottom = 33.0
+size_flags_horizontal = 3
 theme = SubResource("Theme_34yde")
-theme_type_variation = &"Paper"
-theme_override_colors/font_color = Color(0.945098, 0, 0.0705882, 1)
-theme_override_font_sizes/font_size = 26
-text = "000"
-horizontal_alignment = 2
-
-[node name="BorrowedAmount" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer/BorrowedMoney"]
-layout_mode = 2
-offset_left = 175.0
-offset_top = 2.0
-offset_right = 303.0
-offset_bottom = 33.0
-theme = SubResource("Theme_34yde")
-theme_type_variation = &"Paper"
+theme_type_variation = &"Screen"
 theme_override_colors/font_color = Color(0.0156863, 0.819608, 0.00392157, 1)
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 35
 text = "000"
 horizontal_alignment = 2
 
-[node name="DebtText" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer"]
+[node name="DebtAmount" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer/MarginContainer/VBoxContainer/Loan"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_34yde")
+theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(0.945098, 0, 0.0705882, 1)
+theme_override_font_sizes/font_size = 35
+text = "000"
+horizontal_alignment = 2
+
+[node name="LoanText" type="HBoxContainer" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer/MarginContainer/VBoxContainer"]
 visible = false
 layout_mode = 2
+
+[node name="DebtText" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer/MarginContainer/VBoxContainer/LoanText"]
+custom_minimum_size = Vector2(672, 0)
+layout_mode = 2
+size_flags_horizontal = 3
 theme = SubResource("Theme_34yde")
-theme_type_variation = &"Paper"
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(0.596078, 0.721569, 1, 1)
+theme_override_font_sizes/font_size = 28
 text = "LOAN_TEXT"
 autowrap_mode = 3
 
-[node name="Spacer2" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer"]
+[node name="Total" type="HBoxContainer" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 
-[node name="Total" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer"]
+[node name="Total" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer/MarginContainer/VBoxContainer/Total"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 10
+mouse_filter = 1
 theme = SubResource("Theme_34yde")
-theme_type_variation = &"Paper"
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 26
+theme_type_variation = &"Screen"
+theme_override_font_sizes/font_size = 35
 text = "TOTAL"
 
-[node name="TotalNow" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer/Total"]
+[node name="TotalNow" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer/MarginContainer/VBoxContainer/Total"]
 layout_mode = 2
-offset_left = 175.0
-offset_top = 2.0
-offset_right = 303.0
-offset_bottom = 33.0
+size_flags_horizontal = 3
+size_flags_vertical = 10
 theme = SubResource("Theme_34yde")
-theme_type_variation = &"Paper"
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 26
+theme_type_variation = &"Screen"
+theme_override_font_sizes/font_size = 35
 text = "000"
 horizontal_alignment = 2
 script = ExtResource("42_l0rtw")
 
-[node name="TotalNext" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer/Total"]
+[node name="TotalNext" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer/MarginContainer/VBoxContainer/Total"]
 layout_mode = 2
-offset_left = 329.0
-offset_top = 3.0
-offset_right = 457.0
-offset_bottom = 34.0
+size_flags_horizontal = 3
+size_flags_vertical = 10
 theme = SubResource("Theme_34yde")
-theme_type_variation = &"Paper"
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 26
+theme_type_variation = &"Screen"
+theme_override_font_sizes/font_size = 35
 text = "000"
 horizontal_alignment = 2
 script = ExtResource("43_lu1ke")
 
-[node name="MoreMoneyInfoButton" type="TextureButton" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox" groups=["more_help_buttons"]]
+[node name="CloseButton" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox" instance=ExtResource("56_arjh5")]
 layout_mode = 0
-offset_left = 523.0
-offset_top = -30.0
-offset_right = 568.0
-offset_bottom = 15.0
-texture_normal = ExtResource("25_o5q30")
-texture_pressed = ExtResource("26_kd3a6")
-texture_hover = ExtResource("27_sye1h")
+offset_left = 992.0
+offset_top = -31.0
+offset_right = 1047.0
+offset_bottom = 23.0
 
-[node name="Label" type="Label" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MoreMoneyInfoButton"]
+[node name="HelpButton" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox" instance=ExtResource("57_jki7j")]
 layout_mode = 0
-offset_left = -8.0
-offset_top = -3.0
-offset_right = 42.0
-offset_bottom = 33.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 20
-text = "?"
-horizontal_alignment = 1
-vertical_alignment = 1
+offset_left = 924.0
+offset_top = -32.0
+offset_right = 979.0
+offset_bottom = 22.0
 
-[node name="Sprite2D" type="Sprite2D" parent="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MoreMoneyInfoButton"]
-show_behind_parent = true
-position = Vector2(18, 20)
-texture = ExtResource("32_angtv")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TopLeftZone/MoneyManagement/MoneyInfo"]
+libraries = {
+&"": SubResource("AnimationLibrary_arjh5")
+}
 
 [node name="BorrowMoney" type="Control" parent="TopLeftZone/MoneyManagement"]
 anchors_preset = 0
@@ -4830,9 +4955,8 @@ script = ExtResource("147_jki7j")
 [connection signal="pressed" from="Clock/Clock/TurnInfo" to="Clock/Clock/TimePanelBlank" method="clock_pressed"]
 [connection signal="pressed" from="TopLeftZone/OpenGraphsFrameButton" to="TopLeftZone/OpenGraphsFrameButton" method="_on_pressed"]
 [connection signal="pressed" from="TopLeftZone/MoneyManagement/MoneyInfo/ToggleMoneyInfoBoxButton" to="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox" method="_on_toggle_money_info_box_button_pressed"]
-[connection signal="pressed" from="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MoreMoneyInfoButton" to="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/InfoMoneyClosed" method="_on_more_money_info_button_pressed"]
-[connection signal="pressed" from="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MoreMoneyInfoButton" to="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/InfoMoneyOpen" method="_on_more_money_info_button_pressed"]
-[connection signal="pressed" from="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MoreMoneyInfoButton" to="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/MarginContainer/MarginContainer/MoneyInfoBoxTextsContainer" method="_on_more_money_info_button_pressed"]
+[connection signal="pressed" from="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/CloseButton" to="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox" method="_on_close_button_pressed"]
+[connection signal="pressed" from="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/HelpButton" to="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/ScrollContainer/MarginContainer/VBoxContainer" method="_on_more_money_info_button_pressed"]
 [connection signal="pressed" from="TopLeftZone/MoneyManagement/BorrowMoney/ButtonPlus" to="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame" method="_on_toggle_borrow_money_frame_button_pressed"]
 [connection signal="pressed" from="TopLeftZone/MoneyManagement/BorrowMoney/ButtonPlus" to="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame/BorrowSlider/Slider" method="_on_toggle_borrow_money_frame_button_pressed"]
 [connection signal="pressed" from="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame/Apply" to="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame/BorrowSlider/Slider" method="_on_borrow_money_apply_button_pressed"]

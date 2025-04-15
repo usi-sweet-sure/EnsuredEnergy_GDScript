@@ -1,7 +1,7 @@
 extends Label
 
-@onready var borrowed_amount_label = $BorrowedAmount
-@onready var debt_amount_label = $DebtAmount
+@onready var borrowed_amount_label = $"../BorrowedAmount"
+@onready var debt_amount_label = $"../DebtAmount"
 
 
 func _ready():
