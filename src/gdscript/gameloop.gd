@@ -42,7 +42,6 @@ signal game_ended
 signal game_quit_requested
 signal enable_graphs_button
 signal toggle_policies_window
-signal hide_energy_bar_info_requested
 signal testing_env_entered
 # Emitted after the initial setup, like making the first request to the server.
 # This indicates the player can now start playing and we can activate sounds or 

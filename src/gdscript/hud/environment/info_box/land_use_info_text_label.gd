@@ -1,5 +1,9 @@
-extends Label
+extends HBoxContainer
 
 
-func _on_more_info_button_pressed():
+func _ready() -> void:
+	hide()
+	
+	
+func _on_help_button_pressed() -> void:
 	visible = not visible

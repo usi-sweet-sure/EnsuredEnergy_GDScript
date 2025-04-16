@@ -1,4 +1,4 @@
-[gd_scene load_steps=227 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=242 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Shader" uid="uid://fkpbxalsaovj" path="res://src/gdscript/shaders/cloud.gdshader" id="1_rmx58"]
 [ext_resource type="Texture2D" uid="uid://kfrnyvqb84es" path="res://assets/title/cloud.png" id="2_26ixr"]
@@ -103,9 +103,11 @@
 [ext_resource type="Texture2D" uid="uid://h07lsn8vups3" path="res://assets/textures/gauge_red_alert.png" id="83_g38lf"]
 [ext_resource type="Texture2D" uid="uid://61oa2tq2xw7y" path="res://assets/textures/ui/All-HQ-Assets-D_0007s_0034_Import-Slider.png" id="83_hii8n"]
 [ext_resource type="Script" uid="uid://b8bqese2n41oa" path="res://src/gdscript/hud/emissions/red_alert.gd" id="84_f1r4u"]
+[ext_resource type="Script" uid="uid://cn4tr5m18mivf" path="res://src/gdscript/hud/environment/info_box/land_use_percentage_label.gd" id="87_nuxdx"]
 [ext_resource type="Script" uid="uid://ve3smm312ryd" path="res://src/gdscript/hud/energy_import/up_button.gd" id="87_wunut"]
 [ext_resource type="Script" uid="uid://373euivgaiep" path="res://src/gdscript/hud/energy_import/down_button.gd" id="88_cvkym"]
 [ext_resource type="Texture2D" uid="uid://cischtrjvknyl" path="res://assets/textures/icons/sticker_winter.png" id="88_lv1v1"]
+[ext_resource type="Script" uid="uid://dwwfp6t5sl54" path="res://src/gdscript/hud/environment/info_box/land_use_info_text_label.gd" id="88_m2tvt"]
 [ext_resource type="Texture2D" uid="uid://bsa55enbm5cwg" path="res://assets/textures/icons/sticker_summer.png" id="89_6asbj"]
 [ext_resource type="StyleBox" uid="uid://yqtdxtw3vpjp" path="res://scenes/hud/energy_bar_green.tres" id="93_6koeb"]
 [ext_resource type="StyleBox" uid="uid://lco0fbxgcpii" path="res://scenes/hud/energy_bar_low.tres" id="94_b4xie"]
@@ -127,7 +129,12 @@
 [ext_resource type="Texture2D" uid="uid://cv7b32yk735h8" path="res://assets/textures/ui/All-HQ-Assets-D_0008s_0007_Small-left-paper.png" id="108_pjhnp"]
 [ext_resource type="Script" uid="uid://dgle1ehgqw1ge" path="res://src/gdscript/hud/clock/turn_info_texture_button.gd" id="114_f0clg"]
 [ext_resource type="PackedScene" uid="uid://c8vhh4tt8t2j4" path="res://scenes/hud/floating_message.tscn" id="115_hpdbb"]
+[ext_resource type="Script" uid="uid://b1wm0udjhxi28" path="res://src/gdscript/hud/energy_bars/winter/infos/winter_demand_label.gd" id="123_cwd6i"]
+[ext_resource type="Script" uid="uid://1xg0rdtvhhyk" path="res://src/gdscript/hud/energy_bars/winter/infos/winter_supply_label.gd" id="124_fuu3p"]
+[ext_resource type="Script" uid="uid://ysnrmd6m4hmy" path="res://src/gdscript/hud/energy_bars/summer/infos/summer_demand_label.gd" id="126_26ixr"]
+[ext_resource type="Script" uid="uid://d5xrkaxarbg6" path="res://src/gdscript/hud/energy_bars/animation_player.gd" id="126_fuu3p"]
 [ext_resource type="Script" uid="uid://3222vc26ymbm" path="res://src/gdscript/shocks/shock_buttons_drawer/shock_buttons_drawer.gd" id="126_ky6x4"]
+[ext_resource type="Script" uid="uid://0tqcdcdi3ffo" path="res://src/gdscript/hud/energy_bars/summer/infos/summer_supply_label.gd" id="127_j2wkk"]
 [ext_resource type="Texture2D" uid="uid://byhs2falwauts" path="res://assets/textures/ui/clock_ring.png" id="128_7na6l"]
 [ext_resource type="Script" uid="uid://bn1ekqei8wgos" path="res://src/gdscript/hud/clock/last_turn_indicator.gd" id="131_cwd6i"]
 [ext_resource type="Shader" uid="uid://d0i20xnn8v4mu" path="res://src/gdscript/shaders/text_move.gdshader" id="132_cwd6i"]
@@ -2352,22 +2359,8 @@ border_blend = true
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vvqt"]
-bg_color = Color(0.317647, 0.317647, 0.317647, 0.87451)
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dvfnp"]
-bg_color = Color(0.627451, 0.627451, 0.627451, 1)
-border_color = Color(0, 0, 0, 1)
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="Animation" id="Animation_3vkf3"]
-resource_name = " info_frame_appears"
+[sub_resource type="Animation" id="Animation_26ixr"]
+resource_name = "info_frame_appears"
 length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -2391,8 +2384,84 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.3, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(471, -911), Vector2(471, -409), Vector2(471, -469), Vector2(471, -429)]
+"values": [Vector2(643, -913), Vector2(643, -409), Vector2(643, -449), Vector2(643, -429)]
 }
+
+[sub_resource type="Animation" id="Animation_fackv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Info:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Info:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(643, -429)]
+}
+
+[sub_resource type="Animation" id="Animation_i7rjw"]
+resource_name = "info_frame_goes_away"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Info:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Info:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(643, -429), Vector2(643, -409), Vector2(643, -913)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ogum8"]
+_data = {
+&"RESET": SubResource("Animation_fackv"),
+&"info_frame_appears": SubResource("Animation_26ixr"),
+&"info_frame_goes_away": SubResource("Animation_i7rjw")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vvqt"]
+bg_color = Color(0.317647, 0.317647, 0.317647, 0.87451)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dvfnp"]
+bg_color = Color(0.627451, 0.627451, 0.627451, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [sub_resource type="Animation" id="Animation_u070d"]
 length = 0.001
@@ -2419,6 +2488,34 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(471, -911)]
+}
+
+[sub_resource type="Animation" id="Animation_3vkf3"]
+resource_name = "info_frame_appears"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Info:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Info:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(471, -911), Vector2(471, -409), Vector2(471, -469), Vector2(471, -429)]
 }
 
 [sub_resource type="Animation" id="Animation_rmx58"]
@@ -2467,8 +2564,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rwe8w"]
 _data = {
-&" info_frame_appears": SubResource("Animation_3vkf3"),
 &"RESET": SubResource("Animation_u070d"),
+&"info_frame_appears": SubResource("Animation_3vkf3"),
 &"info_frame_goes_away": SubResource("Animation_rmx58"),
 &"red_alert_blink": SubResource("Animation_sip0e")
 }
@@ -2585,6 +2682,54 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(107, -23)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("EnergyBarWinter/BarInfo:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("EnergyBarWinter/BarInfo:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1345, 460.005)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("EnergyBarSummer/BarInfo:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("EnergyBarSummer/BarInfo:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1345, 393.004)]
+}
 
 [sub_resource type="Animation" id="Animation_nuxdx"]
 resource_name = "not_enough_energy_warning"
@@ -2614,10 +2759,126 @@ tracks/1/keys = {
 "values": [Vector2(107, -23), Vector2(110, -23), Vector2(107, -23), Vector2(104, -23), Vector2(107, -23), Vector2(110, -23), Vector2(107, -23)]
 }
 
+[sub_resource type="Animation" id="Animation_ogum8"]
+resource_name = "winter_info_frame_appears"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EnergyBarWinter/BarInfo:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EnergyBarWinter/BarInfo:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1345, 460.005), Vector2(842, 460.003), Vector2(902, 460.003), Vector2(862.998, 460.003)]
+}
+
+[sub_resource type="Animation" id="Animation_q6ydm"]
+resource_name = "summer_info_frame_appears"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EnergyBarSummer/BarInfo:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EnergyBarSummer/BarInfo:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1345, 393.004), Vector2(841, 393.004), Vector2(901, 393.004), Vector2(861.999, 393.002)]
+}
+
+[sub_resource type="Animation" id="Animation_yq8a3"]
+resource_name = "winter_info_frame_goes_away"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EnergyBarWinter/BarInfo:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EnergyBarWinter/BarInfo:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(862.998, 460.003), Vector2(842, 460.003), Vector2(1343, 460.005)]
+}
+
+[sub_resource type="Animation" id="Animation_amb7f"]
+resource_name = "summer_info_frame_goes_away"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EnergyBarSummer/BarInfo:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EnergyBarSummer/BarInfo:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(861.999, 393.002), Vector2(841, 393.002), Vector2(1400, 393.002)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u070d"]
 _data = {
 &"RESET": SubResource("Animation_m2tvt"),
-&"not_enough_energy_warning": SubResource("Animation_nuxdx")
+&"not_enough_energy_warning": SubResource("Animation_nuxdx"),
+&"summer_info_frame_appears": SubResource("Animation_q6ydm"),
+&"summer_info_frame_goes_away": SubResource("Animation_amb7f"),
+&"winter_info_frame_appears": SubResource("Animation_ogum8"),
+&"winter_info_frame_goes_away": SubResource("Animation_yq8a3")
 }
 
 [sub_resource type="Animation" id="Animation_vhawi"]
@@ -3310,59 +3571,6 @@ parameters/looping = true
 
 [node name="BurnSound" type="AudioStreamPlayer" parent="Clock"]
 stream = ExtResource("29_arjh5")
-
-[node name="ImportAndEnergy_Energy_EnergyBarWinter_BarInfo_MarginContainer_MarginContainer_VBoxContainer#HBoxContainer3" type="HBoxContainer" parent="."]
-
-[node name="Text1" type="Label" parent="ImportAndEnergy_Energy_EnergyBarWinter_BarInfo_MarginContainer_MarginContainer_VBoxContainer#HBoxContainer3"]
-custom_minimum_size = Vector2(180, 0)
-layout_mode = 2
-size_flags_horizontal = 0
-theme = SubResource("Theme_34yde")
-theme_type_variation = &"Paper"
-theme_override_colors/font_color = Color(0, 0.45098, 0, 1)
-theme_override_font_sizes/font_size = 19
-text = "IMPORTED"
-autowrap_mode = 2
-
-[node name="n1" type="Label" parent="ImportAndEnergy_Energy_EnergyBarWinter_BarInfo_MarginContainer_MarginContainer_VBoxContainer#HBoxContainer3"]
-custom_minimum_size = Vector2(142, 0)
-layout_mode = 2
-size_flags_horizontal = 8
-theme = SubResource("Theme_34yde")
-theme_type_variation = &"Paper"
-theme_override_colors/font_color = Color(0, 0.45098, 0, 1)
-theme_override_font_sizes/font_size = 19
-text = "n"
-horizontal_alignment = 2
-autowrap_mode = 3
-script = ExtResource("102_q4o5w")
-
-[node name="EnvironmentAndPollution_Pollution_Info_MarginContainer_MarginContainer_VBoxContainer#HBoxContainer3" type="HBoxContainer" parent="."]
-
-[node name="Text0" type="Label" parent="EnvironmentAndPollution_Pollution_Info_MarginContainer_MarginContainer_VBoxContainer#HBoxContainer3"]
-custom_minimum_size = Vector2(180, 0)
-layout_mode = 2
-size_flags_horizontal = 0
-theme = SubResource("Theme_34yde")
-theme_type_variation = &"Paper"
-theme_override_colors/font_color = Color(0.666667, 0, 0, 1)
-theme_override_font_sizes/font_size = 26
-text = "TOTAL"
-autowrap_mode = 2
-
-[node name="n" type="Label" parent="EnvironmentAndPollution_Pollution_Info_MarginContainer_MarginContainer_VBoxContainer#HBoxContainer3"]
-custom_minimum_size = Vector2(142, 0)
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-theme = SubResource("Theme_34yde")
-theme_type_variation = &"Paper"
-theme_override_colors/font_color = Color(0.666667, 0, 0, 1)
-theme_override_font_sizes/font_size = 26
-text = "n"
-horizontal_alignment = 2
-autowrap_mode = 2
-script = ExtResource("80_lk5v6")
 
 [node name="TopLeftZone" type="Control" parent="."]
 layout_mode = 3
@@ -4305,17 +4513,29 @@ fill_mode = 3
 show_percentage = false
 metadata/_edit_group_ = true
 
-[node name="Info" parent="EnvironmentAndPollution/Environment" groups=["papers"] instance=ExtResource("4_67rbh")]
-visible = false
+[node name="Info" parent="EnvironmentAndPollution/Environment" instance=ExtResource("4_67rbh")]
 layout_mode = 1
-offset_left = 415.0
-offset_top = -80.0
-offset_right = 717.2
-offset_bottom = 75.781
-grow_horizontal = 1
-grow_vertical = 1
+offset_left = 643.0
+offset_top = -429.0
+offset_right = 945.2
+offset_bottom = -273.219
 script = ExtResource("56_0qat8")
 metadata/_edit_group_ = true
+
+[node name="Unit" parent="EnvironmentAndPollution/Environment/Info/ScrollContainer/MarginContainer/VBoxContainer/Unit" index="0"]
+text = "Km2"
+
+[node name="Text" parent="EnvironmentAndPollution/Environment/Info/ScrollContainer/MarginContainer/VBoxContainer/Value" index="0"]
+text = "LAND_USE"
+
+[node name="Value" parent="EnvironmentAndPollution/Environment/Info/ScrollContainer/MarginContainer/VBoxContainer/Value" index="1"]
+script = ExtResource("87_nuxdx")
+
+[node name="Text" parent="EnvironmentAndPollution/Environment/Info/ScrollContainer/MarginContainer/VBoxContainer" index="2"]
+script = ExtResource("88_m2tvt")
+
+[node name="Text" parent="EnvironmentAndPollution/Environment/Info/ScrollContainer/MarginContainer/VBoxContainer/Text" index="0"]
+text = "LAND_USE_INFO_TEXT"
 
 [node name="Name" type="Label" parent="EnvironmentAndPollution/Environment"]
 layout_mode = 2
@@ -4363,6 +4583,11 @@ script = ExtResource("59_2gboh")
 [node name="Icon" type="Sprite2D" parent="EnvironmentAndPollution/Environment"]
 position = Vector2(46, 70)
 texture = ExtResource("24_t8vy5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="EnvironmentAndPollution/Environment"]
+libraries = {
+&"": SubResource("AnimationLibrary_ogum8")
+}
 
 [node name="Pollution" type="ProgressBar" parent="EnvironmentAndPollution"]
 layout_mode = 0
@@ -4697,13 +4922,61 @@ value = 500.0
 green_bar = ExtResource("93_6koeb")
 red_bar = ExtResource("94_b4xie")
 
-[node name="BarInfo" parent="ImportAndEnergy/Energy/EnergyBarWinter" index="1" groups=["papers"]]
+[node name="BarInfo" parent="ImportAndEnergy/Energy/EnergyBarWinter" index="1"]
+visible = true
 z_index = 1
-offset_left = 523.999
-offset_top = 169.002
-offset_right = 826.768
-offset_bottom = 293.055
+offset_left = 1345.0
+offset_top = 460.005
+offset_right = 1647.77
+offset_bottom = 584.058
 rotation = 1.5708
+
+[node name="Unit" parent="ImportAndEnergy/Energy/EnergyBarWinter/BarInfo/ScrollContainer/MarginContainer/VBoxContainer/Unit" index="0"]
+text = "Tj"
+
+[node name="Text" parent="ImportAndEnergy/Energy/EnergyBarWinter/BarInfo/ScrollContainer/MarginContainer/VBoxContainer/Value" index="0"]
+text = "DEMAND"
+
+[node name="Value" parent="ImportAndEnergy/Energy/EnergyBarWinter/BarInfo/ScrollContainer/MarginContainer/VBoxContainer/Value" index="1"]
+script = ExtResource("123_cwd6i")
+
+[node name="Text" parent="ImportAndEnergy/Energy/EnergyBarWinter/BarInfo/ScrollContainer/MarginContainer/VBoxContainer/Text" index="0"]
+text = "WINTER_DEMAND_INFO_TEXT"
+
+[node name="Text" parent="ImportAndEnergy/Energy/EnergyBarWinter/BarInfo/ScrollContainer/MarginContainer/VBoxContainer/Value2" index="0"]
+text = "SUPPLY"
+
+[node name="Value" parent="ImportAndEnergy/Energy/EnergyBarWinter/BarInfo/ScrollContainer/MarginContainer/VBoxContainer/Value2" index="1"]
+script = ExtResource("124_fuu3p")
+
+[node name="Value3" type="HBoxContainer" parent="ImportAndEnergy/Energy/EnergyBarWinter/BarInfo/ScrollContainer/MarginContainer/VBoxContainer" index="4"]
+layout_mode = 2
+
+[node name="Text" type="Label" parent="ImportAndEnergy/Energy/EnergyBarWinter/BarInfo/ScrollContainer/MarginContainer/VBoxContainer/Value3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme = ExtResource("3_8s8ds")
+theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(0, 0.701961, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "IMPORTED"
+autowrap_mode = 2
+
+[node name="Value" type="Label" parent="ImportAndEnergy/Energy/EnergyBarWinter/BarInfo/ScrollContainer/MarginContainer/VBoxContainer/Value3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_8s8ds")
+theme_type_variation = &"Screen"
+theme_override_colors/font_color = Color(0, 0.701961, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "n"
+horizontal_alignment = 2
+autowrap_mode = 3
+script = ExtResource("102_q4o5w")
+
+[node name="Text" parent="ImportAndEnergy/Energy/EnergyBarWinter/BarInfo/ScrollContainer/MarginContainer/VBoxContainer/Text2" index="0"]
+text = "WINTER_SUPPLY_INFO_TEXT"
 
 [node name="Button" parent="ImportAndEnergy/Energy/EnergyBarWinter" index="3" groups=["help_buttons"]]
 mouse_default_cursor_shape = 16
@@ -4724,14 +4997,35 @@ season = 1
 green_bar = ExtResource("93_6koeb")
 red_bar = ExtResource("94_b4xie")
 
-[node name="BarInfo" parent="ImportAndEnergy/Energy/EnergyBarSummer" index="1" groups=["papers"]]
+[node name="BarInfo" parent="ImportAndEnergy/Energy/EnergyBarSummer" index="1"]
 z_index = 1
-offset_left = 525.0
-offset_top = 106.002
-offset_right = 827.768
-offset_bottom = 398.788
+offset_left = 1345.0
+offset_top = 393.004
+offset_right = 1647.77
+offset_bottom = 685.79
 rotation = 1.5708
 metadata/_edit_group_ = true
+
+[node name="Unit" parent="ImportAndEnergy/Energy/EnergyBarSummer/BarInfo/ScrollContainer/MarginContainer/VBoxContainer/Unit" index="0"]
+text = "Tj"
+
+[node name="Text" parent="ImportAndEnergy/Energy/EnergyBarSummer/BarInfo/ScrollContainer/MarginContainer/VBoxContainer/Value" index="0"]
+text = "DEMAND"
+
+[node name="Value" parent="ImportAndEnergy/Energy/EnergyBarSummer/BarInfo/ScrollContainer/MarginContainer/VBoxContainer/Value" index="1"]
+script = ExtResource("126_26ixr")
+
+[node name="Text" parent="ImportAndEnergy/Energy/EnergyBarSummer/BarInfo/ScrollContainer/MarginContainer/VBoxContainer/Text" index="0"]
+text = "SUMMER_DEMAND_INFO_TEXT"
+
+[node name="Text" parent="ImportAndEnergy/Energy/EnergyBarSummer/BarInfo/ScrollContainer/MarginContainer/VBoxContainer/Value2" index="0"]
+text = "SUPPLY"
+
+[node name="Value" parent="ImportAndEnergy/Energy/EnergyBarSummer/BarInfo/ScrollContainer/MarginContainer/VBoxContainer/Value2" index="1"]
+script = ExtResource("127_j2wkk")
+
+[node name="Text" parent="ImportAndEnergy/Energy/EnergyBarSummer/BarInfo/ScrollContainer/MarginContainer/VBoxContainer/Text2" index="0"]
+text = "SUMMER_SUPPLY_INFO_TEXT"
 
 [node name="Button" parent="ImportAndEnergy/Energy/EnergyBarSummer" index="3" groups=["help_buttons"]]
 mouse_default_cursor_shape = 16
@@ -4741,6 +5035,12 @@ libraries = {
 &"": SubResource("AnimationLibrary_u070d")
 }
 speed_scale = 2.0
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="ImportAndEnergy/Energy"]
+libraries = {
+&"": SubResource("AnimationLibrary_u070d")
+}
+script = ExtResource("126_fuu3p")
 
 [node name="NuclearWarning" type="Label" parent="."]
 offset_left = 1964.0
@@ -4976,6 +5276,8 @@ script = ExtResource("147_jki7j")
 [connection signal="value_changed" from="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame/BorrowSlider/Slider" to="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame/Apply" method="_on_slider_value_changed"]
 [connection signal="pressed" from="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame/Close" to="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame" method="_on_close_button_pressed"]
 [connection signal="pressed" from="TopLeftZone/Policies/OpenPoliciesWindowButton" to="TopLeftZone/Policies/OpenPoliciesWindowButton" method="_on_pressed"]
+[connection signal="pressed" from="EnvironmentAndPollution/Environment/Info/HelpButton" to="EnvironmentAndPollution/Environment/Info/ScrollContainer/MarginContainer/VBoxContainer/Text" method="_on_help_button_pressed"]
+[connection signal="pressed" from="EnvironmentAndPollution/Environment/Info/CloseButton" to="EnvironmentAndPollution/Environment/Info" method="_on_close_button_pressed"]
 [connection signal="pressed" from="EnvironmentAndPollution/Environment/OpenInfoBoxButton" to="EnvironmentAndPollution/Environment/Info" method="_on_open_info_box_button_pressed"]
 [connection signal="pressed" from="EnvironmentAndPollution/Pollution/Info/HelpButton" to="EnvironmentAndPollution/Pollution/Info/ScrollContainer/MarginContainer/VBoxContainer/Text" method="_on_help_button_pressed"]
 [connection signal="pressed" from="EnvironmentAndPollution/Pollution/Info/CloseButton" to="EnvironmentAndPollution/Pollution/Info" method="_on_close_button_pressed"]
@@ -4989,6 +5291,10 @@ script = ExtResource("147_jki7j")
 [connection signal="button_down" from="ImportAndEnergy/Import/ImportSlider/DownButton" to="ImportAndEnergy/Import/ImportSlider" method="_on_down_button_button_down"]
 [connection signal="button_up" from="ImportAndEnergy/Import/ImportSlider/DownButton" to="ImportAndEnergy/Import/ImportSlider" method="_on_down_button_button_up"]
 [connection signal="pressed" from="ImportAndEnergy/Import/ImportSlider/DownButton" to="ImportAndEnergy/Import/ImportSlider" method="_on_import_down_button_pressed"]
+[connection signal="pressed" from="ImportAndEnergy/Energy/EnergyBarWinter/BarInfo/HelpButton" to="ImportAndEnergy/Energy/EnergyBarWinter" method="_on_help_button_pressed"]
+[connection signal="pressed" from="ImportAndEnergy/Energy/EnergyBarWinter/BarInfo/CloseButton" to="ImportAndEnergy/Energy/EnergyBarWinter" method="_on_close_button_pressed"]
+[connection signal="pressed" from="ImportAndEnergy/Energy/EnergyBarSummer/BarInfo/HelpButton" to="ImportAndEnergy/Energy/EnergyBarSummer" method="_on_help_button_pressed"]
+[connection signal="pressed" from="ImportAndEnergy/Energy/EnergyBarSummer/BarInfo/CloseButton" to="ImportAndEnergy/Energy/EnergyBarSummer" method="_on_close_button_pressed"]
 [connection signal="gui_input" from="NextTurn" to="ImportAndEnergy/Energy/BackPanel" method="_on_next_turn_gui_input"]
 [connection signal="gui_input" from="NextTurn" to="NextTurn" method="_on_gui_input"]
 [connection signal="pressed" from="NextTurn" to="Clock/Clock/TimePanelBlank" method="_on_next_turn_button_pressed"]

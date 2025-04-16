@@ -4,13 +4,14 @@ extends Control
 
 
 func _ready() -> void:
+	hide()
 	InfoFramesManager.show_frame.connect(_on_manager_show_frame)
 	InfoFramesManager.hide_frame.connect(_on_manager_hide_frame)
 
 
 func _on_manager_show_frame(frame: String) -> void:
 	if frame == InfoFramesManager.EMISSIONS_FRAME:
-		animation_player.play(" info_frame_appears")
+		animation_player.play("info_frame_appears")
 
 
 func _on_manager_hide_frame(frame: String) -> void:

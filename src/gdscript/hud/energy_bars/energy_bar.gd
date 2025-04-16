@@ -7,8 +7,8 @@ enum Season {WINTER, SUMMER}
 @export var red_bar: Resource
 
 @onready var info_box = $BarInfo
-@onready var info_text = $BarInfo/ScrollContainer/MarginContainer/VBoxContainer/Text/Text
-@onready var info_text_2 = $BarInfo/ScrollContainer/MarginContainer/VBoxContainer/Text2/Text
+@onready var info_text = $BarInfo/ScrollContainer/MarginContainer/VBoxContainer/Text
+@onready var info_text_2 = $BarInfo/ScrollContainer/MarginContainer/VBoxContainer/Text2
 @onready var demand_line = $DemandLine
 @onready var show_hand = $ShowHand # For the tutorial
 
@@ -18,9 +18,12 @@ var max_value_set := false
 
 
 func _ready():
+	info_box.hide()
+	info_text.hide()
+	info_text_2.hide()
 	TutorialManager.step_changed.connect(_on_tutorial_step_updated)
 	TutorialManager.tutorial_ended.connect(_on_tutorial_ended)
-	Gameloop.hide_energy_bar_info_requested.connect(_on_hide_info_box)
+
 	
 	# Determines which season the bar will be monitoring
 	match season:
@@ -71,6 +74,7 @@ func _on_energy_demand_updated(_demand: float):
 				demand_line.position.x = remap(Gameloop.demand_summer, min_value, max_value, 0, bar_height)
 				show_hand.position.x = remap(Gameloop.demand_summer, min_value, max_value, 0, bar_height)
 
+
 # Updates the progress bar
 func _on_energy_supply_updated(supply: float):
 	var new_value := 0.0
@@ -107,26 +111,24 @@ func change_bar_color():
 		
 # Displays basic information on energy supply and demand
 func _on_bar_button_pressed():
-	match season:
-		Season.WINTER:
-			Gameloop.hide_energy_bar_info_requested.emit(Season.SUMMER)
-		Season.SUMMER:
-			Gameloop.hide_energy_bar_info_requested.emit(Season.WINTER)
-	info_box.visible = not info_box.visible
-	
-
-# Displays more detailed information about energy supply and demand
-func _on_more_info_pressed():
-	info_text.visible = not info_text.visible
-	info_text_2.visible = not info_text_2.visible
-
-
-# Hides the info box
-func _unhandled_input(event):
-	if event is InputEventMouseButton and event.button_mask == MOUSE_BUTTON_MASK_LEFT:
-		info_text.hide()
-		info_text_2.hide()
-		info_box.hide()
+	if InfoFramesManager.current_frame == InfoFramesManager.WINTER_FRAME:
+		match season:
+			Season.WINTER:
+				InfoFramesManager.hide_frame_requested.emit(InfoFramesManager.WINTER_FRAME)
+			Season.SUMMER:
+				InfoFramesManager.show_frame_requested.emit(InfoFramesManager.SUMMER_FRAME)
+	elif InfoFramesManager.current_frame == InfoFramesManager.SUMMER_FRAME:
+		match season:
+			Season.WINTER:
+				InfoFramesManager.show_frame_requested.emit(InfoFramesManager.WINTER_FRAME)
+			Season.SUMMER:
+				InfoFramesManager.hide_frame_requested.emit(InfoFramesManager.SUMMER_FRAME)
+	else:
+		match season:
+			Season.WINTER:
+				InfoFramesManager.show_frame_requested.emit(InfoFramesManager.WINTER_FRAME)
+			Season.SUMMER:
+				InfoFramesManager.show_frame_requested.emit(InfoFramesManager.SUMMER_FRAME)
 
 
 func get_season_text(season_value: int):
@@ -135,14 +137,21 @@ func get_season_text(season_value: int):
 		1: return "Summer"
 
 
-func _on_hide_info_box(season_to_hide: Season):
-	if season_to_hide == season:
-		info_box.hide()
-
-
 func _on_tutorial_step_updated(step_: int):
 	show_hand.visible = (step_ == 6 and season == Season.WINTER) or step_ == 3
 
 
 func _on_tutorial_ended() -> void:
 	show_hand.visible = false
+
+
+func _on_help_button_pressed() -> void:
+	info_text.visible = not info_text.visible
+	info_text_2.visible = not info_text_2.visible
+
+
+func _on_close_button_pressed() -> void:
+	if season == Season.WINTER:
+		InfoFramesManager.hide_frame_requested.emit(InfoFramesManager.WINTER_FRAME)
+	else:
+		InfoFramesManager.hide_frame_requested.emit(InfoFramesManager.SUMMER_FRAME)
