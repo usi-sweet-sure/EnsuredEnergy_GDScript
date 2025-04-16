@@ -8,7 +8,9 @@ signal carbon_sequestration_production_costs_updated(val: float)
 signal energy_import_cost_updated(val: float)
 signal building_costs_updated(val: float)
 signal total_production_costs_updated(val: float)
+signal import_count_updated(count: int, authorized: int)
 
+var import_count_authorized = 2
 var start_money: float = 1411.0
 var money_per_turn: float = 200.0
 var debt_percentage_on_borrowed_money: float = 20.0
@@ -60,10 +62,15 @@ var building_costs: float: # Costs of building and upgrading buildings
 var energy_import_cost: float:
 	get:
 		return Gameloop.imported_energy_amount * 0.7
+var import_count := 0:
+	set(new_value):
+		import_count = new_value
+		import_count_updated.emit(import_count, import_count_authorized)
 
 
 func _ready():
 	players_own_money_amount = start_money
+	Gameloop.player_can_start_playing_new_turn.connect(_on_new_turn)
 
 
 func can_spend_the_money(money_to_spend: float):
@@ -85,3 +92,7 @@ func set_money_for_new_turn():
 	players_own_money_amount = income - outcome
 	borrowed_money_amount = 0
 	building_costs = 0
+
+
+func _on_new_turn():
+	import_count = 0

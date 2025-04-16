@@ -1,6 +1,9 @@
 extends TextureButton
 
 
+func _ready() -> void:
+	MoneyManager.import_count_updated.connect(_on_import_count_updated)
+
 func _on_slider_value_changed(value):
 	disabled = value == 0
 	
@@ -13,3 +16,7 @@ func _on_slider_value_changed(value):
 		
 	GroupManager.buttons_group_updated.emit()
 	GroupManager.disabled_buttons_group_updated.emit()
+
+
+func _on_import_count_updated(count: int, authorized: int):
+	disabled = count >= authorized
