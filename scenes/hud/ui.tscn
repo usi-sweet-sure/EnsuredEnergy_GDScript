@@ -1,4 +1,4 @@
-[gd_scene load_steps=244 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=247 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Shader" uid="uid://fkpbxalsaovj" path="res://src/gdscript/shaders/cloud.gdshader" id="1_rmx58"]
 [ext_resource type="Texture2D" uid="uid://kfrnyvqb84es" path="res://assets/title/cloud.png" id="2_26ixr"]
@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://bwmnloeklg76n" path="res://assets/textures/ui/Enviornment-Hand.png" id="23_3qgyr"]
 [ext_resource type="Texture2D" uid="uid://lxqt8kspr35q" path="res://assets/textures/ui/Icon-Environment-.png" id="24_t8vy5"]
 [ext_resource type="Texture2D" uid="uid://0mihvtaw003w" path="res://assets/textures/ui/Icon-Pollution-.png" id="25_7q1c5"]
+[ext_resource type="Script" uid="uid://ci813ytuej7a8" path="res://src/gdscript/hud/clock/info_frame.gd" id="25_j2wkk"]
 [ext_resource type="Script" uid="uid://bixk4y7dlkn1t" path="res://src/gdscript/hud/energy_import/energy_import_slider.gd" id="25_pkr0e"]
 [ext_resource type="AudioStream" uid="uid://d2wailh7xcnu1" path="res://assets/sounds/ambiences/wind_shaking_an_electrical_wire.mp3" id="26_j2wkk"]
 [ext_resource type="AudioStream" uid="uid://8lxulu06phjs" path="res://assets/sounds/spin.mp3" id="28_jki7j"]
@@ -47,7 +48,6 @@
 [ext_resource type="Texture2D" uid="uid://b2g8qas0h64m8" path="res://assets/textures/ui/Popularity-.png" id="35_qiawk"]
 [ext_resource type="Script" uid="uid://b8nksn7ncqglk" path="res://src/gdscript/hud/money_management/money_info_box/production_cost_label.gd" id="36_288kb"]
 [ext_resource type="Script" uid="uid://dwcie770gf4ux" path="res://src/gdscript/hud/money_management/money_info_box/budget_now_label.gd" id="36_dvvfa"]
-[ext_resource type="Texture2D" uid="uid://bx1g8oiuxi2mk" path="res://assets/textures/ui/Paper-Middle.png" id="36_vc5yj"]
 [ext_resource type="Texture2D" uid="uid://clnitajx25spt" path="res://assets/textures/ui/Button-Square-normal.png" id="36_xxsv6"]
 [ext_resource type="Texture2D" uid="uid://4dcp6f66sdeo" path="res://assets/textures/ui/Button-Square-press.png" id="37_533gb"]
 [ext_resource type="Texture2D" uid="uid://crbym71styska" path="res://assets/textures/ui/Environment-Metal.png" id="37_q7ul8"]
@@ -116,7 +116,6 @@
 [ext_resource type="Script" uid="uid://co8qki3pxitgi" path="res://src/gdscript/hud/clock/current_turn_label.gd" id="95_2utc1"]
 [ext_resource type="Script" uid="uid://50mxdqoonuvt" path="res://src/gdscript/hud/emissions/info_box/co2_emissions_percentage_label.gd" id="95_3vkf3"]
 [ext_resource type="Script" uid="uid://nd424ni3k8qx" path="res://src/gdscript/hud/emissions/info_box/co2_emissions_info_text_label.gd" id="95_qwyse"]
-[ext_resource type="Script" uid="uid://emn7rmy2027s" path="res://src/gdscript/hud/clock/remaining_turns_label.gd" id="96_6b673"]
 [ext_resource type="Script" uid="uid://c26n6jea83h48" path="res://src/gdscript/hud/emissions/info_box/sequestrated_co2_value.gd" id="97_m2tvt"]
 [ext_resource type="AudioStream" uid="uid://cpmjon6gf78v2" path="res://assets/sounds/gauge.mp3" id="97_nuxdx"]
 [ext_resource type="Script" uid="uid://bb0x0hc5hfjyn" path="res://src/gdscript/hud/next_turn_button/next_turn_button.gd" id="97_wp832"]
@@ -277,7 +276,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("TurnInfoContainer:visible")
+tracks/8/path = NodePath("../../../ParallaxBackground:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -289,7 +288,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("../../../ParallaxBackground:visible")
+tracks/9/path = NodePath("../../../ParallaxBackground2:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -301,19 +300,19 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("../../../ParallaxBackground2:visible")
+tracks/10/path = NodePath("../../../ParallaxBackground/ColorRect:modulate")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("../../../ParallaxBackground/ColorRect:modulate")
+tracks/11/path = NodePath("../../../ParallaxBackground2/ColorRect:modulate")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -325,31 +324,31 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("../../../ParallaxBackground2/ColorRect:modulate")
+tracks/12/path = NodePath("../..:layer")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
+"update": 1,
+"values": [1]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("../..:layer")
+tracks/13/path = NodePath("../../../TopLeftZone:modulate")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("../../../TopLeftZone:modulate")
+tracks/14/path = NodePath("../../../EnvironmentAndPollution:modulate")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
@@ -361,7 +360,7 @@ tracks/14/keys = {
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("../../../EnvironmentAndPollution:modulate")
+tracks/15/path = NodePath("../../../ImportAndEnergy:modulate")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
@@ -373,7 +372,7 @@ tracks/15/keys = {
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("../../../ImportAndEnergy:modulate")
+tracks/16/path = NodePath("../../../NextTurn:modulate")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
@@ -385,7 +384,7 @@ tracks/16/keys = {
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("../../../NextTurn:modulate")
+tracks/17/path = NodePath("../../../NextTurnOverlay:modulate")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
@@ -397,7 +396,7 @@ tracks/17/keys = {
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("../../../NextTurnOverlay:modulate")
+tracks/18/path = NodePath("../../../OpenSettingsButton:modulate")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
@@ -409,79 +408,79 @@ tracks/18/keys = {
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("../../../OpenSettingsButton:modulate")
+tracks/19/path = NodePath("../../AudioStreamPlayer:playing")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
+"update": 1,
+"values": [false]
 }
 tracks/20/type = "value"
 tracks/20/imported = false
 tracks/20/enabled = true
-tracks/20/path = NodePath("../../AudioStreamPlayer:playing")
+tracks/20/path = NodePath("../../AudioStreamPlayer:volume_db")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [0.0]
 }
 tracks/21/type = "value"
 tracks/21/imported = false
 tracks/21/enabled = true
-tracks/21/path = NodePath("../../AudioStreamPlayer:volume_db")
+tracks/21/path = NodePath(".:material:shader_parameter/radius")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [-0.5]
 }
 tracks/22/type = "value"
 tracks/22/imported = false
 tracks/22/enabled = true
-tracks/22/path = NodePath(".:material:shader_parameter/radius")
+tracks/22/path = NodePath("ring:material:shader_parameter/radius")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [-0.5]
+"values": [0.0]
 }
 tracks/23/type = "value"
 tracks/23/imported = false
 tracks/23/enabled = true
-tracks/23/path = NodePath("ring:material:shader_parameter/radius")
+tracks/23/path = NodePath("Arrow:position")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [Vector2(0, 0)]
 }
 tracks/24/type = "value"
 tracks/24/imported = false
 tracks/24/enabled = true
-tracks/24/path = NodePath("Arrow:position")
+tracks/24/path = NodePath("Num1:visible")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
+"update": 1,
+"values": [true]
 }
 tracks/25/type = "value"
 tracks/25/imported = false
 tracks/25/enabled = true
-tracks/25/path = NodePath("Num1:visible")
+tracks/25/path = NodePath("Num2:visible")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
 tracks/25/keys = {
@@ -493,7 +492,7 @@ tracks/25/keys = {
 tracks/26/type = "value"
 tracks/26/imported = false
 tracks/26/enabled = true
-tracks/26/path = NodePath("Num2:visible")
+tracks/26/path = NodePath("Year2:visible")
 tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = {
@@ -505,7 +504,7 @@ tracks/26/keys = {
 tracks/27/type = "value"
 tracks/27/imported = false
 tracks/27/enabled = true
-tracks/27/path = NodePath("Year2:visible")
+tracks/27/path = NodePath("Year7:visible")
 tracks/27/interp = 1
 tracks/27/loop_wrap = true
 tracks/27/keys = {
@@ -517,7 +516,7 @@ tracks/27/keys = {
 tracks/28/type = "value"
 tracks/28/imported = false
 tracks/28/enabled = true
-tracks/28/path = NodePath("Year7:visible")
+tracks/28/path = NodePath("Year3:visible")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/keys = {
@@ -529,7 +528,7 @@ tracks/28/keys = {
 tracks/29/type = "value"
 tracks/29/imported = false
 tracks/29/enabled = true
-tracks/29/path = NodePath("Year3:visible")
+tracks/29/path = NodePath("Year6:visible")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = {
@@ -541,7 +540,7 @@ tracks/29/keys = {
 tracks/30/type = "value"
 tracks/30/imported = false
 tracks/30/enabled = true
-tracks/30/path = NodePath("Year6:visible")
+tracks/30/path = NodePath("Year4:visible")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
 tracks/30/keys = {
@@ -553,7 +552,7 @@ tracks/30/keys = {
 tracks/31/type = "value"
 tracks/31/imported = false
 tracks/31/enabled = true
-tracks/31/path = NodePath("Year4:visible")
+tracks/31/path = NodePath("Year5:visible")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/keys = {
@@ -565,7 +564,7 @@ tracks/31/keys = {
 tracks/32/type = "value"
 tracks/32/imported = false
 tracks/32/enabled = true
-tracks/32/path = NodePath("Year5:visible")
+tracks/32/path = NodePath("HideNum5:visible")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/keys = {
@@ -577,7 +576,7 @@ tracks/32/keys = {
 tracks/33/type = "value"
 tracks/33/imported = false
 tracks/33/enabled = true
-tracks/33/path = NodePath("HideNum5:visible")
+tracks/33/path = NodePath("HideNum6:visible")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/keys = {
@@ -589,7 +588,7 @@ tracks/33/keys = {
 tracks/34/type = "value"
 tracks/34/imported = false
 tracks/34/enabled = true
-tracks/34/path = NodePath("HideNum6:visible")
+tracks/34/path = NodePath("HideNum7:visible")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = {
@@ -601,7 +600,7 @@ tracks/34/keys = {
 tracks/35/type = "value"
 tracks/35/imported = false
 tracks/35/enabled = true
-tracks/35/path = NodePath("HideNum7:visible")
+tracks/35/path = NodePath("HideNum8:visible")
 tracks/35/interp = 1
 tracks/35/loop_wrap = true
 tracks/35/keys = {
@@ -613,7 +612,7 @@ tracks/35/keys = {
 tracks/36/type = "value"
 tracks/36/imported = false
 tracks/36/enabled = true
-tracks/36/path = NodePath("HideNum8:visible")
+tracks/36/path = NodePath("HideNum9:visible")
 tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = {
@@ -625,7 +624,7 @@ tracks/36/keys = {
 tracks/37/type = "value"
 tracks/37/imported = false
 tracks/37/enabled = true
-tracks/37/path = NodePath("HideNum9:visible")
+tracks/37/path = NodePath("HideNum2:visible")
 tracks/37/interp = 1
 tracks/37/loop_wrap = true
 tracks/37/keys = {
@@ -637,7 +636,7 @@ tracks/37/keys = {
 tracks/38/type = "value"
 tracks/38/imported = false
 tracks/38/enabled = true
-tracks/38/path = NodePath("HideNum2:visible")
+tracks/38/path = NodePath("HideNum10:visible")
 tracks/38/interp = 1
 tracks/38/loop_wrap = true
 tracks/38/keys = {
@@ -649,7 +648,7 @@ tracks/38/keys = {
 tracks/39/type = "value"
 tracks/39/imported = false
 tracks/39/enabled = true
-tracks/39/path = NodePath("HideNum10:visible")
+tracks/39/path = NodePath("HideNum3:visible")
 tracks/39/interp = 1
 tracks/39/loop_wrap = true
 tracks/39/keys = {
@@ -661,7 +660,7 @@ tracks/39/keys = {
 tracks/40/type = "value"
 tracks/40/imported = false
 tracks/40/enabled = true
-tracks/40/path = NodePath("HideNum3:visible")
+tracks/40/path = NodePath("HideNum4:visible")
 tracks/40/interp = 1
 tracks/40/loop_wrap = true
 tracks/40/keys = {
@@ -673,7 +672,7 @@ tracks/40/keys = {
 tracks/41/type = "value"
 tracks/41/imported = false
 tracks/41/enabled = true
-tracks/41/path = NodePath("HideNum4:visible")
+tracks/41/path = NodePath("Shadow:visible")
 tracks/41/interp = 1
 tracks/41/loop_wrap = true
 tracks/41/keys = {
@@ -685,7 +684,7 @@ tracks/41/keys = {
 tracks/42/type = "value"
 tracks/42/imported = false
 tracks/42/enabled = true
-tracks/42/path = NodePath("Shadow:visible")
+tracks/42/path = NodePath("CounterHole:visible")
 tracks/42/interp = 1
 tracks/42/loop_wrap = true
 tracks/42/keys = {
@@ -697,82 +696,70 @@ tracks/42/keys = {
 tracks/43/type = "value"
 tracks/43/imported = false
 tracks/43/enabled = true
-tracks/43/path = NodePath("CounterHole:visible")
+tracks/43/path = NodePath("../../BurnSound:playing")
 tracks/43/interp = 1
 tracks/43/loop_wrap = true
 tracks/43/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/44/type = "value"
 tracks/44/imported = false
 tracks/44/enabled = true
-tracks/44/path = NodePath("../../BurnSound:playing")
+tracks/44/path = NodePath("../../BurnSound:volume_db")
 tracks/44/interp = 1
 tracks/44/loop_wrap = true
 tracks/44/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [0.0]
 }
 tracks/45/type = "value"
 tracks/45/imported = false
 tracks/45/enabled = true
-tracks/45/path = NodePath("../../BurnSound:volume_db")
+tracks/45/path = NodePath("ring:rotation")
 tracks/45/interp = 1
 tracks/45/loop_wrap = true
 tracks/45/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [3.48787e-16]
 }
 tracks/46/type = "value"
 tracks/46/imported = false
 tracks/46/enabled = true
-tracks/46/path = NodePath("ring:rotation")
+tracks/46/path = NodePath("../../SpinSound:playing")
 tracks/46/interp = 1
 tracks/46/loop_wrap = true
 tracks/46/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [3.48787e-16]
+"update": 1,
+"values": [false]
 }
 tracks/47/type = "value"
 tracks/47/imported = false
 tracks/47/enabled = true
-tracks/47/path = NodePath("../../SpinSound:playing")
+tracks/47/path = NodePath("../../SpinSound:volume_db")
 tracks/47/interp = 1
 tracks/47/loop_wrap = true
 tracks/47/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [13.951]
 }
 tracks/48/type = "value"
 tracks/48/imported = false
 tracks/48/enabled = true
-tracks/48/path = NodePath("../../SpinSound:volume_db")
+tracks/48/path = NodePath("Arrow:scale")
 tracks/48/interp = 1
 tracks/48/loop_wrap = true
 tracks/48/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [13.951]
-}
-tracks/49/type = "value"
-tracks/49/imported = false
-tracks/49/enabled = true
-tracks/49/path = NodePath("Arrow:scale")
-tracks/49/interp = 1
-tracks/49/loop_wrap = true
-tracks/49/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -1178,43 +1165,43 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("TurnInfoContainer:visible")
+tracks/3/path = NodePath("../TurnInfo:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.25),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false]
+"values": [false, true]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("../TurnInfo:visible")
+tracks/4/path = NodePath("../..:layer")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0, 1.25),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false, true]
+"values": [2, 1]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("../..:layer")
+tracks/5/path = NodePath("../../../ParallaxBackground:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0, 1.25),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [2, 1]
+"values": [true, false]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("../../../ParallaxBackground:visible")
+tracks/6/path = NodePath("../../../ParallaxBackground2:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -1226,19 +1213,19 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("../../../ParallaxBackground2:visible")
+tracks/7/path = NodePath("../../../ParallaxBackground/ColorRect:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0, 1.25),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("../../../ParallaxBackground/ColorRect:modulate")
+tracks/8/path = NodePath("../../../ParallaxBackground2/ColorRect:modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -1250,19 +1237,19 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("../../../ParallaxBackground2/ColorRect:modulate")
+tracks/9/path = NodePath("../../../TopLeftZone:modulate")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0, 1.25),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("../../../TopLeftZone:modulate")
+tracks/10/path = NodePath("../../../EnvironmentAndPollution:modulate")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -1274,7 +1261,7 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("../../../EnvironmentAndPollution:modulate")
+tracks/11/path = NodePath("../../../ImportAndEnergy:modulate")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -1286,7 +1273,7 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("../../../ImportAndEnergy:modulate")
+tracks/12/path = NodePath("../../../NextTurn:modulate")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
@@ -1298,7 +1285,7 @@ tracks/12/keys = {
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("../../../NextTurn:modulate")
+tracks/13/path = NodePath("../../../NextTurnOverlay:modulate")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
@@ -1310,7 +1297,7 @@ tracks/13/keys = {
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("../../../NextTurnOverlay:modulate")
+tracks/14/path = NodePath("../../../OpenSettingsButton:modulate")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
@@ -1322,34 +1309,22 @@ tracks/14/keys = {
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("../../../OpenSettingsButton:modulate")
+tracks/15/path = NodePath("../../AudioStreamPlayer:playing")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"times": PackedFloat32Array(0, 1.25),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/16/type = "value"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("../../AudioStreamPlayer:playing")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
 "times": PackedFloat32Array(0.01, 1.25),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
 }
-tracks/17/type = "value"
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/path = NodePath("../../AudioStreamPlayer:volume_db")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/keys = {
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("../../AudioStreamPlayer:volume_db")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
 "times": PackedFloat32Array(0, 1.25),
 "transitions": PackedFloat32Array(7.17937, 3.36359),
 "update": 0,
@@ -1486,11 +1461,11 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("TurnInfoContainer:visible")
+tracks/9/path = NodePath("../TurnInfo:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.01),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
@@ -1498,19 +1473,19 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("../TurnInfo:visible")
+tracks/10/path = NodePath("../../../ParallaxBackground:visible")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0.01),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("../../../ParallaxBackground:visible")
+tracks/11/path = NodePath("../../../ParallaxBackground2:visible")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -1522,19 +1497,19 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("../../../ParallaxBackground2:visible")
+tracks/12/path = NodePath("../../../ParallaxBackground/ColorRect:modulate")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("../../../ParallaxBackground/ColorRect:modulate")
+tracks/13/path = NodePath("../../../ParallaxBackground2/ColorRect:modulate")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
@@ -1546,31 +1521,31 @@ tracks/13/keys = {
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("../../../ParallaxBackground2/ColorRect:modulate")
+tracks/14/path = NodePath("../..:layer")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(0, 0.7),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("../..:layer")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [2]
 }
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("../../../TopLeftZone:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("../../../TopLeftZone:modulate")
+tracks/16/path = NodePath("../../../EnvironmentAndPollution:modulate")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
@@ -1582,7 +1557,7 @@ tracks/16/keys = {
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("../../../EnvironmentAndPollution:modulate")
+tracks/17/path = NodePath("../../../ImportAndEnergy:modulate")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
@@ -1594,7 +1569,7 @@ tracks/17/keys = {
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("../../../ImportAndEnergy:modulate")
+tracks/18/path = NodePath("../../../NextTurn:modulate")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
@@ -1606,7 +1581,7 @@ tracks/18/keys = {
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("../../../NextTurn:modulate")
+tracks/19/path = NodePath("../../../NextTurnOverlay:modulate")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
@@ -1618,7 +1593,7 @@ tracks/19/keys = {
 tracks/20/type = "value"
 tracks/20/imported = false
 tracks/20/enabled = true
-tracks/20/path = NodePath("../../../NextTurnOverlay:modulate")
+tracks/20/path = NodePath("../../../OpenSettingsButton:modulate")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
@@ -1630,34 +1605,22 @@ tracks/20/keys = {
 tracks/21/type = "value"
 tracks/21/imported = false
 tracks/21/enabled = true
-tracks/21/path = NodePath("../../../OpenSettingsButton:modulate")
+tracks/21/path = NodePath("../../AudioStreamPlayer:playing")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
-"times": PackedFloat32Array(0, 0.7),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/22/type = "value"
-tracks/22/imported = false
-tracks/22/enabled = true
-tracks/22/path = NodePath("../../AudioStreamPlayer:playing")
-tracks/22/interp = 1
-tracks/22/loop_wrap = true
-tracks/22/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
 }
-tracks/23/type = "value"
-tracks/23/imported = false
-tracks/23/enabled = true
-tracks/23/path = NodePath("../../AudioStreamPlayer:volume_db")
-tracks/23/interp = 1
-tracks/23/loop_wrap = true
-tracks/23/keys = {
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("../../AudioStreamPlayer:volume_db")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
 "times": PackedFloat32Array(0.01, 0.71),
 "transitions": PackedFloat32Array(0.176777, 0.196146),
 "update": 0,
@@ -2140,6 +2103,96 @@ tracks/1/keys = {
 _data = {
 &"RESET": SubResource("Animation_fuu3p"),
 &"appear": SubResource("Animation_cwd6i")
+}
+
+[sub_resource type="Animation" id="Animation_wsmed"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(750, -418)]
+}
+
+[sub_resource type="Animation" id="Animation_md4es"]
+resource_name = "info_frame_appears"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(750, -418), Vector2(750, 97), Vector2(750, 17), Vector2(750, 57)]
+}
+
+[sub_resource type="Animation" id="Animation_46vqg"]
+resource_name = "info_frame_goes_away"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(750, 57), Vector2(750, 97), Vector2(750, -418)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sjf7x"]
+_data = {
+&"RESET": SubResource("Animation_wsmed"),
+&"info_frame_appears": SubResource("Animation_md4es"),
+&"info_frame_goes_away": SubResource("Animation_46vqg")
 }
 
 [sub_resource type="Animation" id="Animation_j4b0y"]
@@ -3194,7 +3247,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="TurnInfo" type="TextureButton" parent="Clock/Clock" groups=["help_buttons"]]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -3389,99 +3441,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_5dlvf")
 }
 
-[node name="TurnInfoContainer" type="MarginContainer" parent="Clock/Clock/TimePanelBlank" groups=["papers"]]
-visible = false
-anchors_preset = -1
-anchor_left = -0.152
-anchor_top = 1.038
-anchor_right = 1.117
-anchor_bottom = 1.992
-offset_left = -462.264
-offset_top = -401.184
-offset_right = -566.707
-offset_bottom = -481.822
-grow_horizontal = 0
-grow_vertical = 2
-scale = Vector2(1.5, 1.5)
-
-[node name="NinePatchRect" type="NinePatchRect" parent="Clock/Clock/TimePanelBlank/TurnInfoContainer"]
-layout_mode = 2
-texture = ExtResource("36_vc5yj")
-
-[node name="MarginContainer" type="MarginContainer" parent="Clock/Clock/TimePanelBlank/TurnInfoContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 23
-theme_override_constants/margin_top = 36
-theme_override_constants/margin_right = 39
-theme_override_constants/margin_bottom = 30
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Clock/Clock/TimePanelBlank/TurnInfoContainer/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 10
-alignment = 1
-
-[node name="CurrentTurn" type="Label" parent="Clock/Clock/TimePanelBlank/TurnInfoContainer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 20)
-layout_mode = 2
-theme = SubResource("Theme_34yde")
-theme_type_variation = &"Paper"
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 15
-text = "TURN"
-
-[node name="CurrentTurn" type="Label" parent="Clock/Clock/TimePanelBlank/TurnInfoContainer/MarginContainer/VBoxContainer/CurrentTurn"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -22.665
-offset_top = -19.5
-offset_right = 17.335
-offset_bottom = 19.5
-grow_horizontal = 0
-grow_vertical = 2
-theme = SubResource("Theme_34yde")
-theme_type_variation = &"Paper"
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 15
-text = "N"
-horizontal_alignment = 2
-vertical_alignment = 1
-script = ExtResource("95_2utc1")
-
-[node name="RemainingTurns" type="Label" parent="Clock/Clock/TimePanelBlank/TurnInfoContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme = SubResource("Theme_34yde")
-theme_type_variation = &"Paper"
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 15
-text = "REMAINING_TURNS"
-autowrap_mode = 2
-
-[node name="RemainingTurns" type="Label" parent="Clock/Clock/TimePanelBlank/TurnInfoContainer/MarginContainer/VBoxContainer/RemainingTurns"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -22.665
-offset_top = -19.5
-offset_right = 17.335
-offset_bottom = 19.5
-grow_horizontal = 0
-grow_vertical = 2
-theme = SubResource("Theme_34yde")
-theme_type_variation = &"Paper"
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 15
-text = "N"
-horizontal_alignment = 2
-vertical_alignment = 1
-script = ExtResource("96_6b673")
-
 [node name="ring" type="Sprite2D" parent="Clock/Clock/TimePanelBlank"]
 material = SubResource("ShaderMaterial_arjh5")
 texture = ExtResource("128_7na6l")
@@ -3562,6 +3521,93 @@ libraries = {
 &"": SubResource("AnimationLibrary_rmx58")
 }
 speed_scale = 2.0
+
+[node name="InfoFrame" type="Control" parent="Clock/Clock"]
+anchors_preset = 0
+offset_left = 750.0
+offset_top = -418.0
+offset_right = 790.0
+offset_bottom = -378.0
+script = ExtResource("25_j2wkk")
+
+[node name="BackPanel" type="TextureRect" parent="Clock/Clock/InfoFrame"]
+layout_mode = 0
+offset_right = 588.0
+offset_bottom = 397.0
+pivot_offset = Vector2(508, 343)
+mouse_filter = 0
+mouse_force_pass_scroll_events = false
+texture = ExtResource("41_2tst5")
+expand_mode = 1
+
+[node name="Screen" type="TextureRect" parent="Clock/Clock/InfoFrame/BackPanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 23.0
+offset_top = 17.0
+offset_right = -23.0
+offset_bottom = 380.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+texture = ExtResource("42_e8n7a")
+expand_mode = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Clock/Clock/InfoFrame"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 36.0
+offset_right = 555.0
+offset_bottom = 358.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Clock/Clock/InfoFrame/ScrollContainer"]
+custom_minimum_size = Vector2(495, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Clock/Clock/InfoFrame/ScrollContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="CurrentTurn" type="HBoxContainer" parent="Clock/Clock/InfoFrame/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Text" type="Label" parent="Clock/Clock/InfoFrame/ScrollContainer/MarginContainer/VBoxContainer/CurrentTurn"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme = ExtResource("3_8s8ds")
+theme_type_variation = &"Screen"
+theme_override_font_sizes/font_size = 30
+text = "TURN"
+autowrap_mode = 2
+
+[node name="Value" type="Label" parent="Clock/Clock/InfoFrame/ScrollContainer/MarginContainer/VBoxContainer/CurrentTurn"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme = ExtResource("3_8s8ds")
+theme_type_variation = &"Screen"
+theme_override_font_sizes/font_size = 30
+text = "n"
+horizontal_alignment = 2
+autowrap_mode = 2
+script = ExtResource("95_2utc1")
+
+[node name="CloseButton" parent="Clock/Clock/InfoFrame" instance=ExtResource("56_arjh5")]
+layout_mode = 0
+offset_left = 550.0
+offset_top = -11.0
+offset_right = 595.0
+offset_bottom = 33.0
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Clock/Clock/InfoFrame"]
+libraries = {
+&"": SubResource("AnimationLibrary_sjf7x")
+}
 
 [node name="SpinSound" type="AudioStreamPlayer" parent="Clock"]
 stream = ExtResource("28_jki7j")
@@ -5290,7 +5336,8 @@ libraries = {
 }
 script = ExtResource("147_jki7j")
 
-[connection signal="pressed" from="Clock/Clock/TurnInfo" to="Clock/Clock/TimePanelBlank" method="clock_pressed"]
+[connection signal="pressed" from="Clock/Clock/TurnInfo" to="Clock/Clock/InfoFrame" method="_on_turn_info_pressed"]
+[connection signal="pressed" from="Clock/Clock/InfoFrame/CloseButton" to="Clock/Clock/InfoFrame" method="_on_close_button_pressed"]
 [connection signal="pressed" from="TopLeftZone/OpenGraphsFrameButton" to="TopLeftZone/OpenGraphsFrameButton" method="_on_pressed"]
 [connection signal="pressed" from="TopLeftZone/MoneyManagement/MoneyInfo/ToggleMoneyInfoBoxButton" to="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox" method="_on_toggle_money_info_box_button_pressed"]
 [connection signal="pressed" from="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox/CloseButton" to="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox" method="_on_close_button_pressed"]

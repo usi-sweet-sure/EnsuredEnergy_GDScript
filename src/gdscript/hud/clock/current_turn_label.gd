@@ -8,4 +8,4 @@ func _ready():
 
 
 func _on_current_turn_updated(value):
-	text = str(value)
+	text = str(value) + "/" + str(Gameloop.total_number_of_turns)

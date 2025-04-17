@@ -1,6 +1,5 @@
 extends Node
 
-@onready var clock_info_sticker = $TurnInfoContainer
 @onready var timeline_animation: AnimationPlayer = $TimelineAnimation
 @onready var ring_animation = $Ring
 
@@ -40,16 +39,7 @@ func _set_next_years_anim():
 				decade_anim.track_set_key_value(decade_track, 0, str(last_decade[2]))
 				decade_anim.track_set_key_value(decade_track2, 0, str(year_num2[2]))
 				$NextDecadeAP.play("NextDecade")
-				
 
-func clock_pressed():
-	clock_info_sticker.visible = not clock_info_sticker.visible
-
-
-func _unhandled_input(event):
-	if event is InputEventMouseButton and event.button_mask == MOUSE_BUTTON_MASK_LEFT:
-		clock_info_sticker.hide()
-		
 		
 func _on_next_turn_button_pressed():
 	PowerplantsManager.unfocus_all.emit()
