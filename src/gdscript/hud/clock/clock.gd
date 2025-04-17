@@ -43,6 +43,7 @@ func _set_next_years_anim():
 		
 func _on_next_turn_button_pressed():
 	PowerplantsManager.unfocus_all.emit()
+	InfoFramesManager.hide_frame_requested.emit(InfoFramesManager.current_frame)
 	Gameloop.next_turn_button_pressed.emit()
 	Context.context_updated_for_new_turn = false
 	Gameloop.all_parameters_sent.connect(_on_all_parameters_sent)
