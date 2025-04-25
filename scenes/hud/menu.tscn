@@ -277,7 +277,7 @@ tracks/4/path = NodePath("../BlueprintNormal:position")
 tracks/4/interp = 2
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.566666, 0.666666, 0.766666),
+"times": PackedFloat32Array(0, 0.4, 0.6, 0.7, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(2300, 683), Vector2(2300, 683), Vector2(1278, 683), Vector2(1318, 683), Vector2(1298, 683)]
@@ -1137,7 +1137,7 @@ texture = ExtResource("19_1nqsc")
 
 [node name="LogoNeon" type="Sprite2D" parent="CanvasLayer"]
 visible = false
-position = Vector2(986, 209)
+position = Vector2(986, 360.172)
 texture = ExtResource("22_7v6ln")
 
 [node name="GreenOverlay" type="ColorRect" parent="CanvasLayer"]
@@ -1174,7 +1174,7 @@ patch_margin_right = 42
 patch_margin_bottom = 76
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/LangSelection"]
-position = Vector2(236, 50)
+position = Vector2(236, 35)
 texture = ExtResource("24_wv0xo")
 
 [node name="GermanButton" type="TextureButton" parent="CanvasLayer/LangSelection" groups=["buttons"]]
