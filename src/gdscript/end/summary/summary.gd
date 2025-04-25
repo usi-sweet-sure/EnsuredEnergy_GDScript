@@ -102,14 +102,8 @@ func _on_game_stats_updated(_game_stats: Dictionary) -> void:
 	var emissions_button: Button = summary_buttons[0]
 	if game_stats.reached_net_zero:
 		summary_texts_1[0] = tr("NETZERO_TEXT")
-		emissions_button.add_theme_color_override("icon_normal_color", Color("00a522"))
-		emissions_button.add_theme_color_override("icon_hover_color", Color("00a522"))
-		emissions_button.add_theme_color_override("icon_pressed_color", Color("00a522"))
 	else:
 		summary_texts_1[0] = tr("NO_NETZERO_TEXT")
-		emissions_button.add_theme_color_override("icon_normal_color", Color("f62a33"))
-		emissions_button.add_theme_color_override("icon_hover_color", Color("f62a33"))
-		emissions_button.add_theme_color_override("icon_pressed_color", Color("f62a33"))
 		
 	if game_stats.emissions_diff_percentage < 0:
 		var value = str(abs(game_stats.emissions_diff_percentage)).pad_decimals(2)
@@ -131,14 +125,8 @@ func _on_game_stats_updated(_game_stats: Dictionary) -> void:
 	if game_stats.nuclear_energy_percentage > 0:
 		var value = str(abs(game_stats.nuclear_energy_percentage)).pad_decimals(2)
 		summary_texts_1[2] = tr("NUC_TEXT").format([value], "&&")
-		nuclear_button.add_theme_color_override("icon_normal_color", Color("f62a33"))
-		nuclear_button.add_theme_color_override("icon_hover_color", Color("f62a33"))
-		nuclear_button.add_theme_color_override("icon_pressed_color", Color("f62a33"))
 	else:
 		summary_texts_1[2] = tr("NO_NUC_TEXT")
-		nuclear_button.add_theme_color_override("icon_normal_color", Color("00a522"))
-		nuclear_button.add_theme_color_override("icon_hover_color", Color("00a522"))
-		nuclear_button.add_theme_color_override("icon_pressed_color", Color("00a522"))
 	
 	if game_stats.production_costs_diff_percentage < 0:
 		var value = str(abs(game_stats.production_costs_diff_percentage)).pad_decimals(2)
