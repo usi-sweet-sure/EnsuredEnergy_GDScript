@@ -3451,6 +3451,114 @@ libraries = {
 }
 speed_scale = 0.5
 
+[node name="Turn1" type="Label" parent="Clock/Clock/TimePanelBlank"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.941176)
+offset_left = -90.0
+offset_top = 69.0
+offset_right = -81.0
+offset_bottom = 91.0
+rotation = -2.18636
+theme = SubResource("Theme_34yde")
+theme_override_colors/font_color = Color(0.113725, 0.235294, 0.247059, 1)
+theme_override_font_sizes/font_size = 15
+text = "1"
+
+[node name="Turn2" type="Label" parent="Clock/Clock/TimePanelBlank"]
+self_modulate = Color(1, 1, 1, 0.941176)
+offset_left = -107.0
+offset_top = 32.0
+offset_right = -97.0
+offset_bottom = 55.0
+rotation = -1.91574
+theme = SubResource("Theme_34yde")
+theme_override_colors/font_color = Color(0.113725, 0.235294, 0.247059, 1)
+theme_override_font_sizes/font_size = 15
+text = "2"
+
+[node name="Turn3" type="Label" parent="Clock/Clock/TimePanelBlank"]
+self_modulate = Color(1, 1, 1, 0.941176)
+offset_left = -110.0
+offset_top = -23.0
+offset_right = -100.0
+rotation = -1.28594
+theme = SubResource("Theme_34yde")
+theme_override_colors/font_color = Color(0.113725, 0.235294, 0.247059, 1)
+theme_override_font_sizes/font_size = 15
+text = "3"
+
+[node name="Turn4" type="Label" parent="Clock/Clock/TimePanelBlank"]
+self_modulate = Color(1, 1, 1, 0.941176)
+offset_left = -87.0
+offset_top = -72.0
+offset_right = -77.0
+offset_bottom = -49.0
+rotation = -0.748249
+theme = SubResource("Theme_34yde")
+theme_override_colors/font_color = Color(0.113725, 0.235294, 0.247059, 1)
+theme_override_font_sizes/font_size = 15
+text = "4"
+
+[node name="Turn5" type="Label" parent="Clock/Clock/TimePanelBlank"]
+self_modulate = Color(1, 1, 1, 0.941176)
+offset_left = -48.0
+offset_top = -102.0
+offset_right = -38.0
+offset_bottom = -79.0
+rotation = -0.435903
+theme = SubResource("Theme_34yde")
+theme_override_colors/font_color = Color(0.113725, 0.235294, 0.247059, 1)
+theme_override_font_sizes/font_size = 15
+text = "5"
+
+[node name="Turn7" type="Label" parent="Clock/Clock/TimePanelBlank"]
+self_modulate = Color(1, 1, 1, 0.941176)
+offset_left = 40.0
+offset_top = -105.0
+offset_right = 50.0
+offset_bottom = -82.0
+rotation = 0.381402
+theme = SubResource("Theme_34yde")
+theme_override_colors/font_color = Color(0.113725, 0.235294, 0.247059, 1)
+theme_override_font_sizes/font_size = 15
+text = "7"
+
+[node name="Turn8" type="Label" parent="Clock/Clock/TimePanelBlank"]
+self_modulate = Color(1, 1, 1, 0.941176)
+offset_left = 80.0
+offset_top = -79.0
+offset_right = 90.0
+offset_bottom = -56.0
+rotation = 0.747817
+theme = SubResource("Theme_34yde")
+theme_override_colors/font_color = Color(0.113725, 0.235294, 0.247059, 1)
+theme_override_font_sizes/font_size = 15
+text = "8"
+
+[node name="Turn9" type="Label" parent="Clock/Clock/TimePanelBlank"]
+self_modulate = Color(1, 1, 1, 0.941176)
+offset_left = 108.0
+offset_top = -32.0
+offset_right = 118.0
+offset_bottom = -9.0
+rotation = 1.28575
+theme = SubResource("Theme_34yde")
+theme_override_colors/font_color = Color(0.113725, 0.235294, 0.247059, 1)
+theme_override_font_sizes/font_size = 15
+text = "9"
+
+[node name="Turn10" type="Label" parent="Clock/Clock/TimePanelBlank"]
+self_modulate = Color(1, 1, 1, 0.941176)
+offset_left = 112.0
+offset_top = 18.0
+offset_right = 130.0
+offset_bottom = 41.0
+rotation = 1.86914
+theme = SubResource("Theme_34yde")
+theme_override_colors/font_color = Color(0.113725, 0.235294, 0.247059, 1)
+theme_override_font_sizes/font_size = 15
+text = "10"
+
 [node name="LastTurnIndicator" type="Control" parent="Clock/Clock"]
 anchors_preset = 0
 offset_left = 1601.0
