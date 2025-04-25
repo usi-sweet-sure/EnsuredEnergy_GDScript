@@ -3246,7 +3246,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TurnInfo" type="TextureButton" parent="Clock/Clock" groups=["help_buttons"]]
+[node name="TurnInfo" type="TextureButton" parent="Clock/Clock"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -3258,7 +3258,6 @@ offset_bottom = 238.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
-mouse_default_cursor_shape = 16
 texture_normal = ExtResource("100_2c0ru")
 ignore_texture_size = true
 stretch_mode = 0
@@ -5444,7 +5443,6 @@ libraries = {
 }
 script = ExtResource("147_jki7j")
 
-[connection signal="pressed" from="Clock/Clock/TurnInfo" to="Clock/Clock/InfoFrame" method="_on_turn_info_pressed"]
 [connection signal="pressed" from="Clock/Clock/InfoFrame/CloseButton" to="Clock/Clock/InfoFrame" method="_on_close_button_pressed"]
 [connection signal="pressed" from="TopLeftZone/OpenGraphsFrameButton" to="TopLeftZone/OpenGraphsFrameButton" method="_on_pressed"]
 [connection signal="pressed" from="TopLeftZone/MoneyManagement/MoneyInfo/ToggleMoneyInfoBoxButton" to="TopLeftZone/MoneyManagement/MoneyInfo/MoneyInfoBox" method="_on_toggle_money_info_box_button_pressed"]
