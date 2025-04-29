@@ -17,7 +17,7 @@ shader_parameter/rain_color = Color(0.8, 0.8, 0.8, 1)
 shader_parameter/base_rain_speed = 0.5
 shader_parameter/additional_rain_speed = 0.5
 shader_parameter/slant = 0.2
-shader_parameter/is_snow = false
+shader_parameter/is_snow = true
 
 [node name="SeverWeather" type="Node2D"]
 script = ExtResource("1_ttur2")

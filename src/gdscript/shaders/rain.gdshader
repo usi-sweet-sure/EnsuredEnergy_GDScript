@@ -52,7 +52,9 @@ void fragment() {
 	if(is_snow) {
 		float far_rain_length_override = 0.01;
 		float near_rain_lengt_override = 0.01;
-		COLOR = mix(COLOR, rain_color_alphaed, step(1.0 - (far_rain_length_override + (near_rain_lengt_override - far_rain_length_override) * rn), fract(uv.y - time * (base_rain_speed + additional_rain_speed * rn))) * (far_rain_transparency + (near_rain_transparency - far_rain_transparency) * rn) * step(remainder * rain_amount, far_rain_width + (near_rain_width - far_rain_width) * rn));
+		float base_rain_speed_override = 0.1;
+		float additional_rain_speed_override = 0.2;
+		COLOR = mix(COLOR, rain_color_alphaed, step(1.0 - (far_rain_length_override + (near_rain_lengt_override - far_rain_length_override) * rn), fract(uv.y - time * (base_rain_speed_override + additional_rain_speed_override * rn))) * (far_rain_transparency + (near_rain_transparency - far_rain_transparency) * rn) * step(remainder * rain_amount, far_rain_width + (near_rain_width - far_rain_width) * rn));
 	} else {
 		COLOR = mix(COLOR, rain_color_alphaed, smoothstep(1.0 - (far_rain_length + (near_rain_length - far_rain_length) * rn), 1.0, fract(uv.y - time * (base_rain_speed + additional_rain_speed * rn))) * (far_rain_transparency + (near_rain_transparency - far_rain_transparency) * rn) * step(remainder * rain_amount, far_rain_width + (near_rain_width - far_rain_width) * rn));
 	}
