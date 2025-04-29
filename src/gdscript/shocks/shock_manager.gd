@@ -52,8 +52,8 @@ func _ready():
 		"res://assets/textures/shocks/severe_weather.png",
 		true,
 		[
-			{"type": PowerplantsManager.EngineTypeIds.SOLAR, "text_key": "SHOCK_SEVERE_WEATHER_EFFECT_SOLAR"},
-			{"type": PowerplantsManager.EngineTypeIds.WIND, "text_key": "SHOCK_SEVERE_WEATHER_EFFECT_WIND"}
+			{"type": PowerplantsManager.EngineTypeIds.SOLAR, "text_key": "SHOCK_SEVERE_WEATHER_EFFECT_SOLAR", "scene_path": "res://scenes/powerplants/pp_map_emplacement/pp_effects/shocks/severe_weather.tscn"},
+			{"type": PowerplantsManager.EngineTypeIds.WIND, "text_key": "SHOCK_SEVERE_WEATHER_EFFECT_WIND", "scene_path": "res://scenes/powerplants/pp_map_emplacement/pp_effects/shocks/severe_weather.tscn"}
 		])
 		
 	severe_weather.add_effect(func(): _severe_wether_send_parameters_to_model())

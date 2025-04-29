@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=3 uid="uid://vaxkewvk14v6"]
+[gd_scene load_steps=89 format=3 uid="uid://vaxkewvk14v6"]
 
 [ext_resource type="Script" uid="uid://ci1dby3rv5f4g" path="res://src/gdscript/powerplants/pp_map_emplacement/pp_scene/pp_scene.gd" id="1_aeq33"]
 [ext_resource type="Shader" uid="uid://bk3o4q3or40xk" path="res://src/gdscript/shaders/outline.gdshader" id="2_ln53j"]
@@ -770,6 +770,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ShockIndicator/ShockChip:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_syqbw"]
 resource_name = "appear"
@@ -827,11 +839,28 @@ tracks/0/keys = {
 "values": [Vector2(2.24074, 2.24074), Vector2(2.441, 2.441)]
 }
 
+[sub_resource type="Animation" id="Animation_ugfkm"]
+resource_name = "disappear"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ShockIndicator/ShockChip:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_grh3k"]
 _data = {
 &"RESET": SubResource("Animation_dw0f0"),
 &"appear": SubResource("Animation_syqbw"),
-&"breath": SubResource("Animation_xwc5i")
+&"breath": SubResource("Animation_xwc5i"),
+&"disappear": SubResource("Animation_ugfkm")
 }
 
 [sub_resource type="Animation" id="Animation_wj5oj"]
@@ -1898,9 +1927,10 @@ script = ExtResource("59_kgvig")
 
 [node name="ShockChip" type="TextureRect" parent="ShockIndicator"]
 layout_mode = 0
-offset_top = -22.0
-offset_right = 64.0
-offset_bottom = 41.0
+offset_left = 323.0
+offset_top = 183.0
+offset_right = 387.0
+offset_bottom = 246.0
 scale = Vector2(2.24074, 2.24074)
 pivot_offset = Vector2(32, 31.5)
 texture = ExtResource("58_fj4lj")

@@ -19,7 +19,8 @@ var player_reactions_texts: Array[String] = [] # Texts for the options, must mat
 # {
 #  type: PowerplantManager.EngineTypeId,
 #  text_key: String (the text used to be displayed in the tooltip of the powerplant
-#                shock indicator)
+#                shock indicator),
+#  scene_path: String (visual effects for the shock)
 # }
 var affected_powerplants: Array = []
 

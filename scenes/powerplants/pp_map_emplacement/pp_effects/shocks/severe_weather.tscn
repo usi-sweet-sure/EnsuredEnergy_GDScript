@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://mp6gitafrvpf"]
+
+[ext_resource type="Texture2D" uid="uid://bgbm8t4r0m4a0" path="res://assets/textures/powerplants/pp_sprite_on_solar.png" id="1_nvgt7"]
+[ext_resource type="Script" uid="uid://cclwgpc1aduf3" path="res://src/gdscript/powerplants/pp_map_emplacement/shocks/severe_weather.gd" id="1_ttur2"]
+[ext_resource type="Shader" uid="uid://bkr6bfpw4d57q" path="res://src/gdscript/shaders/rain.gdshader" id="2_ttur2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_381r0"]
+resource_local_to_scene = true
+shader = ExtResource("2_ttur2")
+shader_parameter/rain_amount = 200.0
+shader_parameter/near_rain_length = 0.2
+shader_parameter/far_rain_length = 0.1
+shader_parameter/near_rain_width = 1.0
+shader_parameter/far_rain_width = 0.5
+shader_parameter/near_rain_transparency = 1.0
+shader_parameter/far_rain_transparency = 0.5
+shader_parameter/rain_color = Color(0.8, 0.8, 0.8, 1)
+shader_parameter/base_rain_speed = 0.5
+shader_parameter/additional_rain_speed = 0.5
+shader_parameter/slant = 0.2
+shader_parameter/is_snow = false
+
+[node name="SeverWeather" type="Node2D"]
+script = ExtResource("1_ttur2")
+metadata/_edit_vertical_guides_ = [-103.0, 808.0]
+metadata/_edit_horizontal_guides_ = [-321.0, -81.0, 592.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(349, 258)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("1_nvgt7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_381r0")
+offset_left = -103.0
+offset_top = -163.0
+offset_right = 801.0
+offset_bottom = 510.0
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
