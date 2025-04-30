@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://jj476u8yn2g8"]
+[gd_scene load_steps=72 format=3 uid="uid://jj476u8yn2g8"]
 
 [ext_resource type="Script" uid="uid://pm5ha8hmdpk1" path="res://src/gdscript/policies/policies_window/policies_window.gd" id="1_2fpqe"]
 [ext_resource type="Texture2D" uid="uid://coki776cjtqrp" path="res://assets/textures/ui/All-HQ-Assets-D_0006s_0006_Policies-metal-base.png" id="2_kxr4s"]
@@ -270,6 +270,42 @@ tracks/8/keys = {
 "update": 0,
 "values": [1.0]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Control:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath(".:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("ColorRect:self_modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_352pj"]
 resource_name = "Vote_no"
@@ -497,14 +533,92 @@ tracks/8/keys = {
 
 [sub_resource type="Animation" id="Animation_k75ra"]
 resource_name = "popup"
-length = 0.3
+length = 0.4
 step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1.05, 1.05), Vector2(0.95, 0.95), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ikufu"]
+resource_name = "popout"
+length = 0.2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.05, 1.05), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8dlcw"]
 _data = {
 &"RESET": SubResource("Animation_wviye"),
 &"Vote_no": SubResource("Animation_352pj"),
 &"Vote_yes": SubResource("Animation_nspa0"),
+&"popout": SubResource("Animation_ikufu"),
 &"popup": SubResource("Animation_k75ra")
 }
 
@@ -522,6 +636,7 @@ grow_vertical = 2
 color = Color(0.168627, 0.168627, 0.168627, 0.862745)
 
 [node name="Control" type="Control" parent="."]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -1119,23 +1234,18 @@ position = Vector2(-26, 30)
 [node name="Icon" parent="Control/RightFrame/industry_subsidy" index="3"]
 texture = ExtResource("38_3ih67")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-unique_name_in_owner = true
-libraries = {
-&"": SubResource("AnimationLibrary_8dlcw")
-}
-
-[node name="CloseButton" type="TextureButton" parent="." groups=["buttons"]]
+[node name="CloseButton" type="TextureButton" parent="Control" groups=["buttons"]]
 z_index = 1
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 499.0
-offset_top = -400.0
-offset_right = 543.0
-offset_bottom = -357.0
+offset_left = 507.0
+offset_top = -392.0
+offset_right = 551.0
+offset_bottom = -349.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -1147,6 +1257,12 @@ texture_hover = ExtResource("42_vmf5h")
 texture_disabled = ExtResource("43_wc8ce")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_8dlcw")
+}
 
 [node name="VoteSuccess" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("44_651m8")
@@ -1183,7 +1299,7 @@ script = ExtResource("47_22spb")
 [connection signal="mouse_exited" from="Control/RightFrame/Control/Off2" to="Control/RightFrame/Control" method="_on_led_exited"]
 [connection signal="mouse_entered" from="Control/RightFrame/Control/On2" to="Control/RightFrame/Control" method="_on_led_entered"]
 [connection signal="mouse_exited" from="Control/RightFrame/Control/On2" to="Control/RightFrame/Control" method="_on_led_exited"]
-[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="Control/CloseButton" to="." method="_on_close_button_pressed"]
 
 [editable path="Control/LeftFrame/campaign_env"]
 [editable path="Control/LeftFrame/Upgrade_PV"]

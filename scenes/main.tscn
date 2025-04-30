@@ -99,7 +99,6 @@ offset_right = -2880.0
 offset_bottom = -1620.0
 
 [node name="Policies" parent="." instance=ExtResource("19_dtfm3")]
-visible = false
 
 [editable path="Audio"]
 [editable path="World"]
