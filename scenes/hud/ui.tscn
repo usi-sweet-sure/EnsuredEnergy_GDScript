@@ -1,4 +1,4 @@
-[gd_scene load_steps=243 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=244 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Shader" uid="uid://fkpbxalsaovj" path="res://src/gdscript/shaders/cloud.gdshader" id="1_rmx58"]
 [ext_resource type="Texture2D" uid="uid://kfrnyvqb84es" path="res://assets/title/cloud.png" id="2_26ixr"]
@@ -104,6 +104,7 @@
 [ext_resource type="Texture2D" uid="uid://h07lsn8vups3" path="res://assets/textures/gauge_red_alert.png" id="83_g38lf"]
 [ext_resource type="Texture2D" uid="uid://61oa2tq2xw7y" path="res://assets/textures/ui/All-HQ-Assets-D_0007s_0034_Import-Slider.png" id="83_hii8n"]
 [ext_resource type="Script" uid="uid://b8bqese2n41oa" path="res://src/gdscript/hud/emissions/red_alert.gd" id="84_f1r4u"]
+[ext_resource type="Script" uid="uid://pignigp6kwri" path="res://src/gdscript/policies/hud/tooltip.gd" id="84_j2wkk"]
 [ext_resource type="Script" uid="uid://cn4tr5m18mivf" path="res://src/gdscript/hud/environment/info_box/land_use_percentage_label.gd" id="87_nuxdx"]
 [ext_resource type="Script" uid="uid://ve3smm312ryd" path="res://src/gdscript/hud/energy_import/up_button.gd" id="87_wunut"]
 [ext_resource type="Script" uid="uid://373euivgaiep" path="res://src/gdscript/hud/energy_import/down_button.gd" id="88_cvkym"]
@@ -4599,6 +4600,16 @@ offset_bottom = 290.621
 grow_horizontal = 1
 grow_vertical = 1
 
+[node name="ColorRect" type="ColorRect" parent="TopLeftZone/Policies"]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 249.0
+offset_right = 259.0
+offset_bottom = 301.0
+mouse_filter = 1
+color = Color(1, 1, 1, 0)
+script = ExtResource("84_j2wkk")
+
 [node name="FakeGraphButton" type="Node2D" parent="TopLeftZone"]
 position = Vector2(997, 540)
 scale = Vector2(1.625, 1.625)
@@ -5427,6 +5438,8 @@ script = ExtResource("147_jki7j")
 [connection signal="value_changed" from="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame/BorrowSlider/Slider" to="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame/Apply" method="_on_slider_value_changed"]
 [connection signal="pressed" from="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame/Close" to="TopLeftZone/MoneyManagement/BorrowMoney/BorrowMoneyFrame" method="_on_close_button_pressed"]
 [connection signal="pressed" from="TopLeftZone/Policies/OpenPoliciesWindowButton" to="TopLeftZone/Policies/OpenPoliciesWindowButton" method="_on_pressed"]
+[connection signal="mouse_entered" from="TopLeftZone/Policies/ColorRect" to="TopLeftZone/Policies/ColorRect" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TopLeftZone/Policies/ColorRect" to="TopLeftZone/Policies/ColorRect" method="_on_mouse_exited"]
 [connection signal="pressed" from="EnvironmentAndPollution/Environment/Info/HelpButton" to="EnvironmentAndPollution/Environment/Info/ScrollContainer/MarginContainer/VBoxContainer/Text" method="_on_help_button_pressed"]
 [connection signal="pressed" from="EnvironmentAndPollution/Environment/Info/CloseButton" to="EnvironmentAndPollution/Environment/Info" method="_on_close_button_pressed"]
 [connection signal="pressed" from="EnvironmentAndPollution/Environment/OpenInfoBoxButton" to="EnvironmentAndPollution/Environment/Info" method="_on_open_info_box_button_pressed"]
