@@ -1,5 +1,6 @@
 extends Node2D
 
+var use_remote_model = true
 var start_year: int = 2022
 var total_number_of_turns: int = 10
 var years_in_a_turn = 3
@@ -116,18 +117,7 @@ func _ready():
 		year_list.append(start_year + (i * 3))
 		
 	next_turn.connect(_on_next_turn)
-	#Context.http.request_completed.connect(_on_request_completed)
-	
-	# TODO get all the demands for each year for the graph (nice to have)
-#func _on_request_completed(_result, _response_code, _headers, _body):
-	#for year in year_list:
-		#Context.get_context_from_model()
-		#for i in Context.ctx:
-			#if i["prm_id"] == "454":
-				#Gameloop.demand_summer_list.append(float(i["tj"]) / 100)
-			#if i["prm_id"] == "455":
-				#Gameloop.demand_winter_list.append(float(i["tj"]) / 100)
-		#await Context.http.request_completed
+
 
 # Call this when play is pressed
 func start_game():
@@ -143,9 +133,9 @@ func start_game():
 		else:
 			Context.register_new_game_on_model(player_name) # New game in model
 	else:
-		pass
 		# This should not happen
-		#printerr("A player name is needed")
+		pass
+
 
 
 func _check_supply():

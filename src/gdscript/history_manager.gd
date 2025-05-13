@@ -77,13 +77,14 @@ func get_shock_event(shock_title: String):
 
 
 func send_history_to_survey():
-	var url = "https://sure.euler.usi.ch/json.php?mth=upd2"
-	var data_to_send = {
-		"res_id": Context.res_id,
-		"res_txt": {
-			"shocks" : shock_history_for_survey,
-			"policies": policy_history_for_survey
+	if Gameloop.use_remote_model:
+		var url = "https://sure.euler.usi.ch/json.php?mth=upd2"
+		var data_to_send = {
+			"res_id": Context.res_id,
+			"res_txt": {
+				"shocks" : shock_history_for_survey,
+				"policies": policy_history_for_survey
+			}
 		}
-	}
-		
-	HttpManager.send_history(url, data_to_send)
+			
+		HttpManager.send_history(url, data_to_send)

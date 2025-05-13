@@ -17,79 +17,86 @@ var context_updated_for_new_turn = false
 
 
 func register_new_game_on_model(player_name: String):
-	if player_name != "":
-		var url = "https://sure.euler.usi.ch/json.php?mth=ins&res_name={res_name}".format({"res_name": player_name.uri_encode()})
-		
-		if SurveyManager.token != "":
-			url += "&res_tok={tok}".format({"tok": SurveyManager.token.uri_encode()})
+	if Gameloop.use_remote_model:
+		if player_name != "":
+			var url = "https://sure.euler.usi.ch/json.php?mth=ins&res_name={res_name}".format({"res_name": player_name.uri_encode()})
 			
-		var lang = SurveyManager.locale
-		
-		if lang == "":
-			lang = TranslationServer.get_locale()
-		
-		var lang_index = ["de", "fr", "it", "en"].find(lang) + 1
+			if SurveyManager.token != "":
+				url += "&res_tok={tok}".format({"tok": SurveyManager.token.uri_encode()})
+				
+			var lang = SurveyManager.locale
 			
-		url += "&res_lng={lang}".format({"lang": lang_index})
+			if lang == "":
+				lang = TranslationServer.get_locale()
+			
+			var lang_index = ["de", "fr", "it", "en"].find(lang) + 1
+				
+			url += "&res_lng={lang}".format({"lang": lang_index})
 
-		url += "&res_frm={frame}".format({"frame": str(SurveyManager.frame)})
-		
-		url += "&res_trt={treatment}".format({"treatment": str(SurveyManager.treatment)})
+			url += "&res_frm={frame}".format({"frame": str(SurveyManager.frame)})
+			
+			url += "&res_trt={treatment}".format({"treatment": str(SurveyManager.treatment)})
 
-		HttpManager.http_request_completed.connect(_on_got_context_from_model)
-		HttpManager.make_request(url)
-	else:
-		pass
-		#printerr("A res_name is needed (Player's name is probably missing)")
+			HttpManager.http_request_completed.connect(_on_got_context_from_model)
+			HttpManager.make_request(url)
+		else:
+			pass
+			#printerr("A res_name is needed (Player's name is probably missing)")
 
 
 #upsert param
 func send_parameters_to_model(game_id: int, year: int, prm_id: int, tj: float):
-	var url = "https://sure.euler.usi.ch/json.php?mth=ups&res_id={res_id}&prm_id={prm_id}&yr={yr}&tj={tj}".format({"res_id": game_id, "yr": year, "prm_id": prm_id, "tj": tj})
-	
-	if not HttpManager.http_request_completed.is_connected(_on_parameters_sent_to_model):
-		HttpManager.http_request_completed.connect(_on_parameters_sent_to_model)
-	HttpManager.make_request(url)
+	if Gameloop.use_remote_model:
+		var url = "https://sure.euler.usi.ch/json.php?mth=ups&res_id={res_id}&prm_id={prm_id}&yr={yr}&tj={tj}".format({"res_id": game_id, "yr": year, "prm_id": prm_id, "tj": tj})
+		
+		if not HttpManager.http_request_completed.is_connected(_on_parameters_sent_to_model):
+			HttpManager.http_request_completed.connect(_on_parameters_sent_to_model)
+		HttpManager.make_request(url)
 	
 
 func get_context_from_model(game_id: int, year: int):
-	var url = "https://sure.euler.usi.ch/json.php?mth=ctx&res_id={res_id}&yr={yr}".format({"res_id": game_id, "yr": year})
-	
-	if not HttpManager.http_request_completed.is_connected(_on_got_context_from_model):
-		HttpManager.http_request_completed.connect(_on_got_context_from_model)
-	HttpManager.make_request(url)
+	if Gameloop.use_remote_model:
+		var url = "https://sure.euler.usi.ch/json.php?mth=ctx&res_id={res_id}&yr={yr}".format({"res_id": game_id, "yr": year})
+		
+		if not HttpManager.http_request_completed.is_connected(_on_got_context_from_model):
+			HttpManager.http_request_completed.connect(_on_got_context_from_model)
+		HttpManager.make_request(url)
 	
 	
 func get_leaderboard_from_model(category: String):
-	var url = "https://sure.euler.usi.ch/json.php?mth=lst&lim=5&ord={category}".format({"category": category})
-	
-	if not HttpManager.http_request_completed.is_connected(_on_got_leaderboard_from_model):
-		HttpManager.http_request_completed.connect(_on_got_leaderboard_from_model)
-	HttpManager.make_request(url)
+	if Gameloop.use_remote_model:
+		var url = "https://sure.euler.usi.ch/json.php?mth=lst&lim=5&ord={category}".format({"category": category})
+		
+		if not HttpManager.http_request_completed.is_connected(_on_got_leaderboard_from_model):
+			HttpManager.http_request_completed.connect(_on_got_leaderboard_from_model)
+		HttpManager.make_request(url)
 		
 		
 func get_rank(game_id: int):
-	var url = "https://sure.euler.usi.ch/json.php?mth=rnk&res_id={res_id}".format({"res_id": game_id})
-	
-	if not HttpManager.http_request_completed.is_connected(_on_got_rank_from_model):
-		HttpManager.http_request_completed.connect(_on_got_rank_from_model)
-	HttpManager.make_request(url)
+	if Gameloop.use_remote_model:
+		var url = "https://sure.euler.usi.ch/json.php?mth=rnk&res_id={res_id}".format({"res_id": game_id})
+		
+		if not HttpManager.http_request_completed.is_connected(_on_got_rank_from_model):
+			HttpManager.http_request_completed.connect(_on_got_rank_from_model)
+		HttpManager.make_request(url)
 	
 	
 func change_player_name(game_id: int, player_name: String):
-	var url = "https://sure.euler.usi.ch/json.php?mth=upd&res_id={res_id}&res_name={player_name}".format({"res_id": game_id, "player_name": player_name})
-	
-	if not HttpManager.http_request_completed.is_connected(_on_changed_player_name):
-		HttpManager.http_request_completed.connect(_on_changed_player_name)
-	HttpManager.make_request(url)
+	if Gameloop.use_remote_model:
+		var url = "https://sure.euler.usi.ch/json.php?mth=upd&res_id={res_id}&res_name={player_name}".format({"res_id": game_id, "player_name": player_name})
+		
+		if not HttpManager.http_request_completed.is_connected(_on_changed_player_name):
+			HttpManager.http_request_completed.connect(_on_changed_player_name)
+		HttpManager.make_request(url)
 	
 	
 func send_shock_parameters(game_id: int, shock_id: int, year: int):
-	var url = "https://sure.euler.usi.ch/json.php?mth=shk&res_id={res_id}&shk_id={shock_id}&yr={yr}".format({"res_id": game_id, "shock_id": shock_id, "yr": year})
+	if Gameloop.use_remote_model:
+		var url = "https://sure.euler.usi.ch/json.php?mth=shk&res_id={res_id}&shk_id={shock_id}&yr={yr}".format({"res_id": game_id, "shock_id": shock_id, "yr": year})
 
-	if not HttpManager.http_request_completed.is_connected(_on_shocks_sent_to_model):
-		HttpManager.http_request_completed.connect(_on_shocks_sent_to_model)
-	HttpManager.make_request(url)
+		if not HttpManager.http_request_completed.is_connected(_on_shocks_sent_to_model):
+			HttpManager.http_request_completed.connect(_on_shocks_sent_to_model)
+		HttpManager.make_request(url)
 
 
 func get_demand_from_context():
@@ -105,6 +112,7 @@ func get_demand_from_context():
 		#printerr("Context is null")
 		#printerr("Shock: ", Gameloop.most_recent_shock.title_key)
 
+
 func _on_got_context_from_model(_result, _response_code, _headers, body):
 	if HttpManager.http_request_completed.is_connected(_on_got_context_from_model):
 		HttpManager.http_request_completed.disconnect(_on_got_context_from_model)
@@ -114,7 +122,7 @@ func _on_got_context_from_model(_result, _response_code, _headers, body):
 	if ctx!= null and Gameloop.current_turn == 1:
 		res_id = int(ctx[0]["res_id"])
 		get_demand_from_context()
-		
+	print(ctx)
 	context_updated.emit(ctx)
 	
 
