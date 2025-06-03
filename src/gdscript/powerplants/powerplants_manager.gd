@@ -30,281 +30,8 @@ enum EngineTypeIds {
 # Stores the base data of the powerplants, some of this is retrieved from the model,
 # some are local to the engine.
 # Each powerplant type data is stored at the index corresponding to EngineTypeIds.
-# The values below are inspired from the remote model and hard coded for offline mode.
-# They are overwritten when in online mode with the model data.
 # MUST BE in the same order as EngineTypeIds.
-var powerplants_metrics: Array[PowerplantMetrics] = [
-	PowerplantMetrics.new(
-		0, # SOLAR
-		20.6941191729591, # capacity
-		2069.41191729591, # cnv_capacity
-		0.04656176884503, # emissions
-		0.17245099126101, # land_use
-		5.74836647976175, # production_costs
-		Vector2(0.754133, 0.245867), # availability
-		22.993465919047, # building_costs
-		0, # build_time_in_turns
-		11, # life_span_in_turns
-		true, # can_activate
-		false, # active
-		true, # can_delete
-		0, # construction_started_on_turn
-		0, # built_on_turn
-		0, # current_upgrade
-		0, # min_upgrade
-		6, # max_upgrade
-		0.2, # upgrade_factor_for_production_costs
-		0.2, # upgrade_factor_for_emissions
-		0.2, # upgrade_factor_for_land_use
-		0.2, # upgrade_factor_for_winter_supply
-		0.2, # upgrade_factor_for_summer_supply
-		10.0, # upgrade_cost
-		true, # can_upgrade
-	),
-	PowerplantMetrics.new(
-		1, # WIND
-		6.40379007643745, # capacity
-		640.379007643745, # cnv_capacity
-		0.00302401183943, # emissions
-		0.37355440780593, # land_use
-		2.3124796119901, # production_costs
-		Vector2(0.379199, 0.620801), # availability
-		2.3124796119901, # building_costs
-		2, # build_time_in_turns
-		11, # life_span_in_turns
-		true, # can_activate
-		false, # active
-		true, # can_delete
-		0, # construction_started_on_turn
-		0, # built_on_turn
-		0, # current_upgrade
-		0, # min_upgrade
-		6, # max_upgrade
-		0.5, # upgrade_factor_for_production_costs
-		0.5, # upgrade_factor_for_emissions
-		0.5, # upgrade_factor_for_land_use
-		0.5, # upgrade_factor_for_winter_supply
-		0.5, # upgrade_factor_for_summer_supply
-		5.0, # upgrade_cost
-		true, # can_upgrade
-	),
-	PowerplantMetrics.new(
-		2, # GAS
-		12.7554504023673, # capacity
-		7211.04761904762, # cnv_capacity
-		1.2018412569693, # emissions
-		0.68104340693182, # land_use
-		32.0490986188253, # production_costs
-		Vector2(0.5, 0.5), # availability
-		32.0490986188253, # building_costs
-		0, # build_time_in_turns
-		11, # life_span_in_turns
-		true, # can_activate
-		false, # active
-		true, # can_delete
-		0, # construction_started_on_turn
-		0, # built_on_turn
-		0, # current_upgrade
-		0, # min_upgrade
-		3, # max_upgrade
-		0.5, # upgrade_factor_for_production_costs
-		0.5, # upgrade_factor_for_emissions
-		0.5, # upgrade_factor_for_land_use
-		0.5, # upgrade_factor_for_winter_supply
-		0.5, # upgrade_factor_for_summer_supply
-		25.0, # upgrade_cost
-		false, # can_upgrade
-	),
-	PowerplantMetrics.new(
-		3, # WASTE
-		22.2078188025172, # capacity
-		12554.7619047619, # cnv_capacity
-		0.02441203673752, # emissions
-		0.1743716950603, # land_use
-		31.3869052296061, # production_costs
-		Vector2(0.5, 0.5), # availability
-		125.547620918424, # building_costs
-		0, # build_time_in_turns
-		11, # life_span_in_turns
-		true, # can_activate
-		false, # active
-		true, # can_delete
-		0, # construction_started_on_turn
-		0, # built_on_turn
-		0, # current_upgrade
-		0, # min_upgrade
-		3, # max_upgrade
-		0.25, # upgrade_factor_for_production_costs
-		0.25, # upgrade_factor_for_emissions
-		0.25, # upgrade_factor_for_land_use
-		0.25, # upgrade_factor_for_winter_supply
-		0.25, # upgrade_factor_for_summer_supply
-		25.0, # upgrade_cost
-		false, # can_upgrade
-	),
-	PowerplantMetrics.new(
-		4, # BIOMASS
-		13.4767717212224, # capacity
-		5564.15621207101, # cnv_capacity
-		0.0710975503649, # emissions
-		19.4745473433634, # land_use
-		44.5132470433716, # production_costs
-		Vector2(0.5, 0.5), # availability
-		37.094372536143, # building_costs
-		0, # build_time_in_turns
-		11, # life_span_in_turns
-		true, # can_activate
-		false, # active
-		true, # can_delete
-		0, # construction_started_on_turn
-		0, # built_on_turn
-		0, # current_upgrade
-		0, # min_upgrade
-		9, # max_upgrade
-		0.25, # upgrade_factor_for_production_costs
-		0.25, # upgrade_factor_for_emissions
-		0.25, # upgrade_factor_for_land_use
-		0.25, # upgrade_factor_for_winter_supply
-		0.25, # upgrade_factor_for_summer_supply
-		20.0, # upgrade_cost
-		true, # can_upgrade
-	),
-	PowerplantMetrics.new(
-		5, # BIOGAS
-		12.2562652207836, # capacity
-		4261.02702927362, # cnv_capacity
-		0.41071566040541, # emissions
-		0.18937898118428, # land_use
-		24.8559895225636, # production_costs
-		Vector2(0.5, 0.5), # availability
-		24.8559895225636, # building_costs
-		0, # build_time_in_turns
-		11, # life_span_in_turns
-		true, # can_activate
-		false, # active
-		true, # can_delete
-		0, # construction_started_on_turn
-		0, # built_on_turn
-		0, # current_upgrade
-		0, # min_upgrade
-		9, # max_upgrade
-		0.25, # upgrade_factor_for_production_costs
-		0.25, # upgrade_factor_for_emissions
-		0.25, # upgrade_factor_for_land_use
-		0.25, # upgrade_factor_for_winter_supply
-		0.25, # upgrade_factor_for_summer_supply
-		15.0, # upgrade_cost
-		true, # can_upgrade
-	),
-	PowerplantMetrics.new(
-		6, # NUCLEAR
-		267.618804300282, # capacity
-		81094.746031746, # cnv_capacity
-		0.31536845292076, # emissions
-		2.92842149079216, # land_use
-		202.73686810038, # production_costs
-		Vector2(0.470475, 0.529525), # availability
-		608.210604301139, # building_costs
-		0, # build_time_in_turns
-		11, # life_span_in_turns
-		true, # can_activate
-		false, # active
-		true, # can_delete
-		0, # construction_started_on_turn
-		0, # built_on_turn
-		0, # current_upgrade
-		0, # min_upgrade
-		0, # max_upgrade
-		0.1, # upgrade_factor_for_production_costs
-		0.1, # upgrade_factor_for_emissions
-		0.1, # upgrade_factor_for_land_use
-		0.1, # upgrade_factor_for_winter_supply
-		0.1, # upgrade_factor_for_summer_supply
-		25.0, # upgrade_cost
-		false, # can_upgrade
-	),
-	PowerplantMetrics.new(
-		7, # CARBON_SEQUESTRATION
-		0.0, # capacity
-		0.0, # cnv_capacity
-		0.0, # emissions
-		0.0, # land_use
-		0.0, # production_costs
-		Vector2(0.0, 0.0), # availability
-		0.0, # building_costs
-		0, # build_time_in_turns
-		11, # life_span_in_turns
-		true, # can_activate
-		false, # active
-		true, # can_delete
-		0, # construction_started_on_turn
-		0, # built_on_turn
-		0, # current_upgrade
-		0, # min_upgrade
-		3, # max_upgrade
-		0.5, # upgrade_factor_for_production_costs
-		0.5, # upgrade_factor_for_emissions
-		0.5, # upgrade_factor_for_land_use
-		0.5, # upgrade_factor_for_winter_supply
-		0.5, # upgrade_factor_for_summer_supply
-		25.0, # upgrade_cost
-		true, # can_upgrade
-	),
-	PowerplantMetrics.new(
-		8, # HYDRO
-		345.54576390381, # capacity
-		41497.7189174107, # cnv_capacity
-		0.06916286468773, # emissions
-		23.6306453421927, # land_use
-		46.1085738266155, # production_costs
-		Vector2(0.527875, 0.472125), # availability
-		184.434295306462, # building_costs
-		6, # build_time_in_turns
-		11, # life_span_in_turns
-		true, # can_activate
-		false, # active
-		true, # can_delete
-		0, # construction_started_on_turn
-		0, # built_on_turn
-		0, # current_upgrade
-		0, # min_upgrade
-		9, # max_upgrade
-		0.02, # upgrade_factor_for_production_costs
-		0.02, # upgrade_factor_for_emissions
-		0.02, # upgrade_factor_for_land_use
-		0.02, # upgrade_factor_for_winter_supply
-		0.02, # upgrade_factor_for_summer_supply
-		30.0, # upgrade_cost
-		true, # can_upgrade
-	),
-	PowerplantMetrics.new(
-		9, # RIVER
-		315.555858398437, # capacity
-		31555.5858398437, # cnv_capacity
-		0.01753088157578, # emissions
-		0.6574080312891, # land_use
-		35.061759954427, # production_costs
-		Vector2(0.587837, 0.412163), # availability
-		140.247039817708, # building_costs
-		3, # build_time_in_turns
-		11, # life_span_in_turns
-		true, # can_activate
-		false, # active
-		true, # can_delete
-		0, # construction_started_on_turn
-		0, # built_on_turn
-		0, # current_upgrade
-		0, # min_upgrade
-		9, # max_upgrade
-		0.02, # upgrade_factor_for_production_costs
-		0.02, # upgrade_factor_for_emissions
-		0.02, # upgrade_factor_for_land_use
-		0.02, # upgrade_factor_for_winter_supply
-		0.02, # upgrade_factor_for_summer_supply
-		25.0, # upgrade_cost
-		true, # can_upgrade
-	)
-]
+var powerplants_metrics: Array[PowerplantMetrics] = []
 
 # Used to revert changes made to metrics by a shock
 var metrics_backup: Array[PowerplantMetrics] = []
@@ -717,91 +444,90 @@ func _on_context_updated(context):
 
 
 func _store_powerplant_metrics(engine_type_id: EngineTypeIds):
-	if Gameloop.use_remote_model:
-		var model_key: String = powerplants_model_id[engine_type_id]
-		var plant_id: String = powerplants_ups_id[engine_type_id]
-		var emission_key: String = powerplants_metrics_id[engine_type_id]["emission"]
-		var land_use_key: String = powerplants_metrics_id[engine_type_id]["land_use"]
-		var production_cost_key: String = powerplants_metrics_id[engine_type_id]["production_cost"]
-		var availability_key: String = powerplants_metrics_id[engine_type_id]["availability"]
+	var model_key: String = powerplants_model_id[engine_type_id]
+	var plant_id: String = powerplants_ups_id[engine_type_id]
+	var emission_key: String = powerplants_metrics_id[engine_type_id]["emission"]
+	var land_use_key: String = powerplants_metrics_id[engine_type_id]["land_use"]
+	var production_cost_key: String = powerplants_metrics_id[engine_type_id]["production_cost"]
+	var availability_key: String = powerplants_metrics_id[engine_type_id]["availability"]
+	
+	var capacity := 0.0
+	var cnv_capacity := 0.0
+	var emissions := 0.0
+	var land_use := 0.0
+	var production_cost := 0.0
+	var availability := Vector2(0.0, 0.0)
+	var building_costs := 0.0
+	var build_time_in_turns = powerplants_build_times_in_turns[engine_type_id]
+	var life_span_in_turns = powerplants_life_spans_in_turns[engine_type_id]
+	
+	if Context.ctx != null:
+		for i in Context.ctx:
+			match i["prm_id"]:
+				model_key:
+					capacity = float(i["tj"])
+				plant_id:
+					cnv_capacity = float(i["tj"])
+				emission_key:
+					emissions = float(i["tj"])
+				land_use_key:
+					land_use = float(i["tj"])
+				production_cost_key:
+					production_cost = float(i["tj"]) / 10.0
+					building_costs = production_cost
+				availability_key:
+					availability.x = float(i["tj"]) / capacity
+					availability.y = 1 - availability.x
+	
+	if engine_type_id == EngineTypeIds.NUCLEAR:
+		cnv_capacity = cnv_capacity / 3.0
+		capacity = capacity / 100.0 / 3.0 # there's 3 nuclear plants
+		emissions /= 3.0
+		land_use /= 3.0
+		#production_cost = production_cost / 3.0
+	elif engine_type_id == EngineTypeIds.HYDRO || engine_type_id == EngineTypeIds.RIVER:
+		cnv_capacity = cnv_capacity / 2.0
+		capacity = capacity / 100.0 / 2.0
+		emissions /= 4.0 # needs to divide by the number of water plants
+		land_use /= 4.0
+		#production_cost = production_cost / 4.0
+	elif engine_type_id == EngineTypeIds.SOLAR || engine_type_id == EngineTypeIds.WASTE:
+		cnv_capacity = cnv_capacity / 4.0
+		capacity = capacity / 100.0 / 4.0
+		emissions /= 4.0 # needs to divide by the number of water plants
+		land_use /= 4.0
+		#production_cost = production_cost / 4.0
+	else:
+		capacity /= 100.0
 		
-		var capacity := 0.0
-		var cnv_capacity := 0.0
-		var emissions := 0.0
-		var land_use := 0.0
-		var production_cost := 0.0
-		var availability := Vector2(0.0, 0.0)
-		var building_costs := 0.0
-		var build_time_in_turns = powerplants_build_times_in_turns[engine_type_id]
-		var life_span_in_turns = powerplants_life_spans_in_turns[engine_type_id]
-		
-		if Context.ctx != null:
-			for i in Context.ctx:
-				match i["prm_id"]:
-					model_key:
-						capacity = float(i["tj"])
-					plant_id:
-						cnv_capacity = float(i["tj"])
-					emission_key:
-						emissions = float(i["tj"])
-					land_use_key:
-						land_use = float(i["tj"])
-					production_cost_key:
-						production_cost = float(i["tj"]) / 10.0
-						building_costs = production_cost
-					availability_key:
-						availability.x = float(i["tj"]) / capacity
-						availability.y = 1 - availability.x
-		
-		if engine_type_id == EngineTypeIds.NUCLEAR:
-			cnv_capacity = cnv_capacity / 3.0
-			capacity = capacity / 100.0 / 3.0 # there's 3 nuclear plants
-			emissions /= 3.0
-			land_use /= 3.0
-			#production_cost = production_cost / 3.0
-		elif engine_type_id == EngineTypeIds.HYDRO || engine_type_id == EngineTypeIds.RIVER:
-			cnv_capacity = cnv_capacity / 2.0
-			capacity = capacity / 100.0 / 2.0
-			emissions /= 4.0 # needs to divide by the number of water plants
-			land_use /= 4.0
-			#production_cost = production_cost / 4.0
-		elif engine_type_id == EngineTypeIds.SOLAR || engine_type_id == EngineTypeIds.WASTE:
-			cnv_capacity = cnv_capacity / 4.0
-			capacity = capacity / 100.0 / 4.0
-			emissions /= 4.0 # needs to divide by the number of water plants
-			land_use /= 4.0
-			#production_cost = production_cost / 4.0
-		else:
-			capacity /= 100.0
-			
-		production_cost *= powerplants_production_cost_factors[engine_type_id]
-		
-		var can_activate = true
-		var active = false
-		var can_delete = true
-		var construction_started_on_turn = 0
-		var built_on_turn = 0
-		var current_upgrade = 0
-		var min_upgrade = powerplants_min_upgrades[engine_type_id]
-		var max_upgrade = powerplants_max_upgrades[engine_type_id]
-		var upgrade_factor_for_production_costs = powerplants_upgrade_factors_for_production_costs[engine_type_id]
-		var upgrade_factor_for_emissions = powerplants_upgrade_factors_for_emissions[engine_type_id]
-		var upgrade_factor_for_land_use = powerplants_upgrade_factors_for_land_use[engine_type_id]
-		var upgrade_factor_for_winter_supply = powerplants_upgrade_factors_for_winter_supply[engine_type_id]
-		var upgrade_factor_for_summer_supply = powerplants_upgrade_factors_for_summer_supply[engine_type_id]
-		var upgrade_cost = powerplants_upgrade_costs[engine_type_id]
-		var can_upgrade = powerplants_can_upgrade[engine_type_id]
-		
-		var metrics = PowerplantMetrics.new(engine_type_id, capacity, cnv_capacity,
-				emissions, land_use, production_cost, availability, building_costs,
-				build_time_in_turns, life_span_in_turns, can_activate, active, can_delete,
-				construction_started_on_turn, built_on_turn, current_upgrade,
-				min_upgrade, max_upgrade, upgrade_factor_for_production_costs,
-				upgrade_factor_for_emissions, upgrade_factor_for_land_use,
-				upgrade_factor_for_winter_supply, upgrade_factor_for_summer_supply,
-				upgrade_cost, can_upgrade)
+	production_cost *= powerplants_production_cost_factors[engine_type_id]
+	
+	var can_activate = true
+	var active = false
+	var can_delete = true
+	var construction_started_on_turn = 0
+	var built_on_turn = 0
+	var current_upgrade = 0
+	var min_upgrade = powerplants_min_upgrades[engine_type_id]
+	var max_upgrade = powerplants_max_upgrades[engine_type_id]
+	var upgrade_factor_for_production_costs = powerplants_upgrade_factors_for_production_costs[engine_type_id]
+	var upgrade_factor_for_emissions = powerplants_upgrade_factors_for_emissions[engine_type_id]
+	var upgrade_factor_for_land_use = powerplants_upgrade_factors_for_land_use[engine_type_id]
+	var upgrade_factor_for_winter_supply = powerplants_upgrade_factors_for_winter_supply[engine_type_id]
+	var upgrade_factor_for_summer_supply = powerplants_upgrade_factors_for_summer_supply[engine_type_id]
+	var upgrade_cost = powerplants_upgrade_costs[engine_type_id]
+	var can_upgrade = powerplants_can_upgrade[engine_type_id]
+	
+	var metrics = PowerplantMetrics.new(engine_type_id, capacity, cnv_capacity,
+			emissions, land_use, production_cost, availability, building_costs,
+			build_time_in_turns, life_span_in_turns, can_activate, active, can_delete,
+			construction_started_on_turn, built_on_turn, current_upgrade,
+			min_upgrade, max_upgrade, upgrade_factor_for_production_costs,
+			upgrade_factor_for_emissions, upgrade_factor_for_land_use,
+			upgrade_factor_for_winter_supply, upgrade_factor_for_summer_supply,
+			upgrade_cost, can_upgrade)
 
-		powerplants_metrics[engine_type_id] = metrics
+	powerplants_metrics[engine_type_id] = metrics
 		
 
 # Update everything that buildings affects like supply, emissions, land_use, etc.

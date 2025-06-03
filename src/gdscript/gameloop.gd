@@ -1,6 +1,6 @@
 extends Node2D
 
-var use_remote_model = true
+var use_remote_model = false
 var start_year: int = 2022
 var total_number_of_turns: int = 10
 var years_in_a_turn = 3
