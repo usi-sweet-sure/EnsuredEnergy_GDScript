@@ -1,6 +1,5 @@
 extends Node2D
 
-var use_remote_model = false
 var start_year: int = 2022
 var total_number_of_turns: int = 10
 var years_in_a_turn = 3
@@ -22,7 +21,6 @@ var ups_list = {
 	"162": 0, # RIVER
 }
 
-signal player_name_updated
 signal energy_supply_updated_winter
 signal energy_supply_updated_summer
 signal energy_demand_updated_winter
@@ -49,7 +47,6 @@ signal testing_env_entered
 # other things that we couldn't activate before
 signal player_can_start_playing_first_turn
 signal available_money_message_requested(message: String, positiv: bool)
-signal all_parameters_sent
 signal start_menu_disappeared
 
 # We need to send this signal because some translations 
@@ -62,10 +59,7 @@ signal player_can_start_playing_new_turn
 signal next_turn_button_pressed
 signal end_toggled(toogle: bool)
 
-var player_name: String = "":
-	set(new_value):
-		player_name = new_value
-		player_name_updated.emit(player_name)
+
 var demand_summer: float:
 	set(new_value):
 		demand_summer = new_value;
@@ -110,9 +104,8 @@ var sequestrated_co2: float = 0.0:
 		sequestrated_co2_updated.emit(sequestrated_co2)
 		co2_emissions_updated.emit(co2_emissions)
 	
-func _ready():
-	Context.context_updated.connect(_on_first_request_finished)
 	
+func _ready():
 	for i in total_number_of_turns + 1:
 		year_list.append(start_year + (i * 3))
 		
@@ -123,19 +116,6 @@ func _ready():
 func start_game():
 	reset_all_values()
 	game_started.emit()
-	
-	if player_name != "":
-		if player_name == "new123":
-			# This is our testing context
-			testing_env_entered.emit()
-			Context.res_id = 1
-			Context.get_context_from_model(Context.res_id, 2022)
-		else:
-			Context.register_new_game_on_model(player_name) # New game in model
-	else:
-		# This should not happen
-		pass
-
 
 
 func _check_supply():
@@ -147,75 +127,6 @@ func _on_next_turn():
 	imported_energy_amount = 0
 	ShockManager.pick_shock()
 	ShockManager.apply_shock()
-
-
-func _send_parameters_to_model(turn: int):
-	for map_emplacement in get_tree().get_nodes_in_group("map_emplacements"):
-		var history: MapEmplacementHistory = map_emplacement.history
-		var history_for_this_turn: MapEmplacementTurnHistory = history.get_history_for_turn(turn)
-		var what_happened: MapEmplacementHistory.PossibleActions = history.get_history_meaning(turn)
-
-		match what_happened:
-			MapEmplacementHistory.PossibleActions.NOTHING_HAPPENED:
-				pass
-			MapEmplacementHistory.PossibleActions.PP_BUILT:
-				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_built
-				var plant_up_id = PowerplantsManager.powerplants_ups_id[metrics.type]
-				
-				Gameloop.ups_list[plant_up_id] += metrics.cnv_capacity
-			MapEmplacementHistory.PossibleActions.PP_CONSTRUCTION_STARTED:
-				pass
-			MapEmplacementHistory.PossibleActions.PP_ACTIVATED:
-				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_activated
-				var plant_up_id = PowerplantsManager.powerplants_ups_id[metrics.type]
-				# Si la pp a été contruite, upgrade, puis éteinte, et réactivée
-				# plus tard, on veut ajouter les upgrades
-				var upgrades_capacity = metrics.current_upgrade * metrics.upgrade_factor_for_winter_supply * metrics.cnv_capacity
-				
-				Gameloop.ups_list[plant_up_id] += metrics.cnv_capacity + upgrades_capacity
-			MapEmplacementHistory.PossibleActions.PP_DEACTIVATED:
-				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_deactivated
-				var plant_up_id = PowerplantsManager.powerplants_ups_id[metrics.type]
-				var upgrades_capacity = metrics.current_upgrade * metrics.upgrade_factor_for_winter_supply * metrics.cnv_capacity
-				
-				Gameloop.ups_list[plant_up_id] -= metrics.cnv_capacity + upgrades_capacity
-			MapEmplacementHistory.PossibleActions.PP_UPGRADED:
-				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_upgraded
-				var plant_up_id = PowerplantsManager.powerplants_ups_id[metrics.type]
-				
-				Gameloop.ups_list[plant_up_id] += history_for_this_turn.pp_upgrade * metrics.upgrade_factor_for_winter_supply * metrics.cnv_capacity
-			MapEmplacementHistory.PossibleActions.PP_DOWNGRADED:
-				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_downgraded
-				var plant_up_id = PowerplantsManager.powerplants_ups_id[metrics.type]
-				
-				Gameloop.ups_list[plant_up_id] += history_for_this_turn.pp_upgrade * metrics.upgrade_factor_for_winter_supply * metrics.cnv_capacity
-			MapEmplacementHistory.PossibleActions.PP_BUILT_AND_UPGRADED:
-				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_upgraded
-				var plant_up_id = PowerplantsManager.powerplants_ups_id[metrics.type]
-				var upgrade_capacity = history_for_this_turn.pp_upgrade * metrics.upgrade_factor_for_winter_supply * metrics.cnv_capacity
-				
-				Gameloop.ups_list[plant_up_id] += metrics.cnv_capacity + upgrade_capacity
-			MapEmplacementHistory.PossibleActions.PP_ACTIVATED_AND_UPGRADED:
-				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_upgraded
-				var plant_up_id = PowerplantsManager.powerplants_ups_id[metrics.type]
-				var upgrade_capacity = metrics.current_upgrade * metrics.upgrade_factor_for_winter_supply * metrics.cnv_capacity
-				
-				Gameloop.ups_list[plant_up_id] += metrics.cnv_capacity + upgrade_capacity
-			MapEmplacementHistory.PossibleActions.PP_ACTIVATED_AND_DOWNGRADED:
-				var metrics: PowerplantMetrics = history_for_this_turn.metrics_when_downgraded
-				var plant_up_id = PowerplantsManager.powerplants_ups_id[metrics.type]
-				var upgrade_capacity = metrics.current_upgrade * metrics.upgrade_factor_for_winter_supply * metrics.cnv_capacity
-				
-				Gameloop.ups_list[plant_up_id] += metrics.cnv_capacity + upgrade_capacity
-				
-	for i in ups_list:
-		if ups_list[i] != 0:
-			Context.send_parameters_to_model(Context.res_id, 
-					Gameloop.year_list[Gameloop.current_turn], int(i),
-					ups_list[i])
-			await Context.parameters_sent_to_model
-			ups_list[i] = 0
-	all_parameters_sent.emit()
 			
 			
 func can_go_to_next_turn():
@@ -238,8 +149,3 @@ func reset_all_values():
 	MoneyManager.carbon_sequestration_production_costs = 0
 	MoneyManager.production_costs_modifier = 1
 	MoneyManager.building_costs = 0
-
-
-func _on_first_request_finished(_context):
-	Context.context_updated.disconnect(_on_first_request_finished)
-	

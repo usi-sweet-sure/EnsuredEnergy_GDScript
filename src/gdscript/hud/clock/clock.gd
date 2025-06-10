@@ -45,7 +45,7 @@ func _on_next_turn_button_pressed():
 	PowerplantsManager.unfocus_all.emit()
 	InfoFramesManager.hide_frame_requested.emit(InfoFramesManager.current_frame)
 	Gameloop.next_turn_button_pressed.emit()
-	Context.context_updated_for_new_turn = false
+	#Context.context_updated_for_new_turn = false !! local mode to do
 	Gameloop.all_parameters_sent.connect(_on_all_parameters_sent)
 
 	_set_next_years_anim()
@@ -56,23 +56,37 @@ func _on_next_turn_button_pressed():
 
 
 func _on_shock_effect_applied(_shock):
-	if not Context.context_updated_for_new_turn:
-		Context.get_context_from_model(Context.res_id, Gameloop.year_list[Gameloop.current_turn-1])
-		await Context.context_updated
+	print("shock applied")
+	#!! local mode to do
+	#if not Context.context_updated_for_new_turn:
+		#print("getting context")
+		#
+		#if Gameloop.use_remote_model:
+			#Context.get_context_from_model(Context.res_id, Gameloop.year_list[Gameloop.current_turn-1])
+			#await Context.context_updated
+		#
+		#print("got")
 	
+	print("play back anim")
 	ring_animation.play("rotate_ring_backward")
 	timeline_animation.play("go_back_to_corner")
 	await timeline_animation.animation_finished
 	ring_animation.stop()
+	print("back anim done")
 	Gameloop.player_can_start_playing_new_turn.emit()
 
 
 func _on_all_parameters_sent():
 	if Gameloop.all_parameters_sent.is_connected(_on_all_parameters_sent):
 		Gameloop.all_parameters_sent.disconnect(_on_all_parameters_sent)
-		
+	
+	print("params sent")
 	if timeline_animation.is_playing():
+		print("waiting")
 		await timeline_animation.animation_finished
+		print("done waiting")
+	
+	print("next")
 	
 	if Gameloop.current_turn == Gameloop.total_number_of_turns:
 		PowerplantsManager.unfocus_all.emit()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=244 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=243 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Shader" uid="uid://fkpbxalsaovj" path="res://src/gdscript/shaders/cloud.gdshader" id="1_rmx58"]
 [ext_resource type="Texture2D" uid="uid://kfrnyvqb84es" path="res://assets/title/cloud.png" id="2_26ixr"]
@@ -141,7 +141,6 @@
 [ext_resource type="Shader" uid="uid://d0i20xnn8v4mu" path="res://src/gdscript/shaders/text_move.gdshader" id="132_cwd6i"]
 [ext_resource type="Texture2D" uid="uid://d2btaduc1gq0j" path="res://assets/textures/screens/screen_3.png" id="132_u070d"]
 [ext_resource type="Script" uid="uid://jlfi6jdguf2i" path="res://src/gdscript/hud/next_turn_button/next_turn_overlay.gd" id="133_g5xys"]
-[ext_resource type="Script" uid="uid://lx3ngjfsuyiu" path="res://src/gdscript/hud/survey_label.gd" id="134_ps8q0"]
 [ext_resource type="Script" uid="uid://cb6ma7s4maf2l" path="res://src/gdscript/ui_clouds.gd" id="147_jki7j"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_j2wkk"]
@@ -5410,14 +5409,6 @@ horizontal_alignment = 2
 libraries = {
 &"": SubResource("AnimationLibrary_il5wv")
 }
-
-[node name="Label" type="Label" parent="."]
-visible = false
-offset_left = 1152.0
-offset_top = 20.0
-offset_right = 1571.0
-offset_bottom = 269.0
-script = ExtResource("134_ps8q0")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

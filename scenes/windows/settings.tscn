@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://rjcu72lxn4n4"]
+[gd_scene load_steps=33 format=3 uid="uid://rjcu72lxn4n4"]
 
 [ext_resource type="Script" uid="uid://bf5t3koyr1q1x" path="res://src/gdscript/settings/settings_canvas/settings_canvas.gd" id="1_q4she"]
 [ext_resource type="Script" uid="uid://dj0kslvymos47" path="res://src/gdscript/settings/settings_canvas/close_button.gd" id="2_q0sqg"]
@@ -18,12 +18,8 @@
 [ext_resource type="Script" uid="uid://cugng4ps2m8q0" path="res://src/gdscript/settings/settings_canvas/instructions_button.gd" id="16_qwrhs"]
 [ext_resource type="Script" uid="uid://b7kmeq2titf68" path="res://src/gdscript/settings/settings_canvas/credits_button.gd" id="17_wuphf"]
 [ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/new_fonts/label_themes.tres" id="19_d2swd"]
-[ext_resource type="Script" uid="uid://b56q3u35fp3pg" path="res://src/gdscript/settings/settings_canvas/back_to_survey_button.gd" id="19_r5c2w"]
-[ext_resource type="Texture2D" uid="uid://c8wbmujr8ohwy" path="res://assets/textures/buttons/button_normal_blue.png" id="19_rd13j"]
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/textures/ui/Button-Next-Normal.png" id="20_dqb8u"]
-[ext_resource type="Texture2D" uid="uid://d0dt1qv32p1v6" path="res://assets/textures/buttons/button_pressed_blue.png" id="20_eqv15"]
 [ext_resource type="Texture2D" uid="uid://biq6v1m7nc6l" path="res://assets/textures/ui/Button-Next-Press.png" id="21_7pokf"]
-[ext_resource type="Texture2D" uid="uid://dlavhpvss6kxw" path="res://assets/textures/buttons/button_hover_blue.png" id="21_lll88"]
 [ext_resource type="Texture2D" uid="uid://c25aef4m4yd40" path="res://assets/textures/ui/Button-Next-Hover.png" id="22_t6jai"]
 [ext_resource type="Texture2D" uid="uid://cvr8ptliyw7oc" path="res://assets/textures/ui/All-HQ-Assets-D_0001s_0013_1-slot-button-hole.png" id="24_wyual"]
 [ext_resource type="PackedScene" uid="uid://chpn7t75mmbkh" path="res://scenes/buttons/button_close.tscn" id="25_fga0w"]
@@ -121,32 +117,32 @@ tracks/3/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_b3j2e"]
-resource_name = "settings_appear"
-length = 0.4
+[sub_resource type="Animation" id="Animation_1jgin"]
+resource_name = "comes_in_left"
+length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Control:scale")
-tracks/0/interp = 2
+tracks/0/path = NodePath("Control:visible")
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(1.1, 1.1), Vector2(0.9, 0.9), Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1922, 0), Vector2(75, 0), Vector2(-75, 0), Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_se3wp"]
@@ -177,32 +173,32 @@ tracks/1/keys = {
 "values": [true, false]
 }
 
-[sub_resource type="Animation" id="Animation_1jgin"]
-resource_name = "comes_in_left"
-length = 0.6
+[sub_resource type="Animation" id="Animation_b3j2e"]
+resource_name = "settings_appear"
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Control:visible")
-tracks/0/interp = 1
+tracks/0/path = NodePath("Control:scale")
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1.1, 1.1), Vector2(0.9, 0.9), Vector2(1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Control:position")
-tracks/1/interp = 2
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(-1922, 0), Vector2(75, 0), Vector2(-75, 0), Vector2(0, 0)]
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_se3wp"]
@@ -469,41 +465,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="BackToSurvey" type="TextureButton" parent="Control/SettingsBox/MarginContainer2/VBoxContainer" groups=["buttons"]]
-custom_minimum_size = Vector2(0, 48)
-layout_mode = 2
-focus_mode = 0
-texture_normal = ExtResource("19_rd13j")
-texture_pressed = ExtResource("20_eqv15")
-texture_hover = ExtResource("21_lll88")
-script = ExtResource("19_r5c2w")
-
-[node name="ButtonHole" type="Sprite2D" parent="Control/SettingsBox/MarginContainer2/VBoxContainer/BackToSurvey"]
-show_behind_parent = true
-position = Vector2(-5.5, -3.5)
-scale = Vector2(1, 0.34556)
-texture = ExtResource("8_2bbhj")
-centered = false
-
-[node name="Label" type="Label" parent="Control/SettingsBox/MarginContainer2/VBoxContainer/BackToSurvey"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 13.0
-offset_top = 10.0
-offset_right = -10.0
-offset_bottom = -8.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("19_d2swd")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "BACK_TO_SURVEY"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-uppercase = true
-
 [node name="MarginContainer" type="MarginContainer" parent="Control/SettingsBox"]
 layout_mode = 1
 anchors_preset = 7
@@ -573,6 +534,5 @@ libraries = {
 [connection signal="pressed" from="Control/SettingsBox/MarginContainer2/VBoxContainer/Language" to="Control/SettingsBox/MarginContainer2/VBoxContainer/Language" method="_on_pressed"]
 [connection signal="pressed" from="Control/SettingsBox/MarginContainer2/VBoxContainer/Instructions" to="Control/SettingsBox/MarginContainer2/VBoxContainer/Instructions" method="_on_pressed"]
 [connection signal="pressed" from="Control/SettingsBox/MarginContainer2/VBoxContainer/Credits" to="Control/SettingsBox/MarginContainer2/VBoxContainer/Credits" method="_on_pressed"]
-[connection signal="pressed" from="Control/SettingsBox/MarginContainer2/VBoxContainer/BackToSurvey" to="Control/SettingsBox/MarginContainer2/VBoxContainer/BackToSurvey" method="_on_pressed"]
 [connection signal="pressed" from="Control/SettingsBox/MarginContainer/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="Control/CloseButton2" to="Control/CloseButton2" method="_on_pressed"]

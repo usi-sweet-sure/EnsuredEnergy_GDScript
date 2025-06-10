@@ -1,7 +1,5 @@
 extends CanvasLayer
 
-signal leaderboard_updated(leaderboard)
-signal rank_updated
 signal game_stats_updated(game_stats: Dictionary)
 
 var game_stats = {
@@ -26,30 +24,7 @@ func _ready():
 
 func _on_game_ended():
 	show()
-	
-	Context.get_rank(Context.res_id)
-	await Context.rank_updated
-	
 	compute_game_stats()
-		
-	rank_updated.emit(Context.rank_json)
- 
-	Context.get_leaderboard_from_model("5")
-	await Context.leaderboard_updated
-	Context.get_leaderboard_from_model("7")
-	await Context.leaderboard_updated
-	Context.get_leaderboard_from_model("9")
-	await Context.leaderboard_updated
-	Context.get_leaderboard_from_model("11")
-	await Context.leaderboard_updated
-	Context.get_leaderboard_from_model("13")
-	await Context.leaderboard_updated
-	Context.get_leaderboard_from_model("15")
-	await Context.leaderboard_updated
-	Context.get_leaderboard_from_model("17")
-	await Context.leaderboard_updated
-	
-	leaderboard_updated.emit(Context.leaderboard_json)
 	
 	
 func compute_game_stats():

@@ -29,7 +29,6 @@ var previous_step = 0
 var tuto_length = 10
 var futur_next_animation := NEXT_ANIMATION_A
 var futur_previous_animation := PREVIOUS_ANIMATION_A
-var previous_survey_frame = 1
 var current_text = 0
 var texts: Array[String] = [
 	"CLIMATE_TUTORIAL0",  # Step0
@@ -102,9 +101,7 @@ func _ready():
 	hide()
 	TutorialManager.tutorial_started.connect(_on_tutorial_started)
 	TutorialManager.tutorial_ended.connect(_on_tutorial_ended)
-	SurveyManager.frame_updated.connect(_on_frame_updated)
 	Gameloop.locale_updated.connect(_on_locale_updated)
-	_on_frame_updated(SurveyManager.frame)
 	
 	
 func _on_tutorial_started():
@@ -218,23 +215,6 @@ func _play_animation(forward: bool = true) -> void:
 		animation_player_2.play("hide_navigation_buttons")
 	elif show_navigation_buttons:
 		animation_player_2.play("show_navigations_buttons")
-	
-
-func _on_frame_updated(survey_frame: int) -> void:
-	var index = 0
-	# 0 is TUTORIAL, 1 is CLIMATE_TUTORIAL
-	for key in texts:
-		if survey_frame == 0 and previous_survey_frame == 1:
-			texts[index] = key.replace("CLIMATE_TUTORIAL", "TUTORIAL")
-		elif survey_frame == 1 and previous_survey_frame == 0:
-			texts[index] = key.replace("TUTORIAL", "CLIMATE_TUTORIAL")
-		index += 1
-		
-	previous_survey_frame = survey_frame
-
-	if step == 0:
-		text_0.text = tr(texts[step])
-		
 
 func _on_locale_updated(_locale):
 	if current_text == 0:

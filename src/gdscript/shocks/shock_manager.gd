@@ -139,65 +139,67 @@ func _leave_nuclear():
 	
 	
 func increase_demand(longterm: bool):
-	var year = Gameloop.year_list[Gameloop.current_turn-1]
-	Context.send_shock_parameters(Context.res_id, 1, year)
-	await Context.shocks_sent_to_model
-	#Context.get_demand_from_context()
-	
-	if !longterm:
-		year += 1 # TO CHECK!!
-		Context.send_shock_parameters(Context.res_id, 2, year)
-		await Context.shocks_sent_to_model
+	#!! local mode todo
+	#var year = Gameloop.year_list[Gameloop.current_turn-1]
+	#Context.send_shock_parameters(Context.res_id, 1, year)
+	#await Context.shocks_sent_to_model
+	##Context.get_demand_from_context()
+	#
+	#if !longterm:
+		#year += 1 # TO CHECK!!
+		#Context.send_shock_parameters(Context.res_id, 2, year)
+		#await Context.shocks_sent_to_model
 	
 	
 	ShockManager.shock_effects_applied.emit(Gameloop.most_recent_shock)
 	
 	
 func _severe_wether_send_parameters_to_model():
-	# Update already built pps metrics
-	var powerplants: Array[Node] = get_tree().get_nodes_in_group("Powerplants")
-
-	# Update already built pps metrics
-	for powerplant: PpScene in powerplants:
-		var metrics: PowerplantMetrics = powerplant.metrics
-		if powerplant.is_solar() or powerplant.is_wind():
-			powerplant.metrics_backup = metrics.copy()
-			metrics.availability *= Vector2(0.5, 0.5)
-			powerplant.metrics_updated.emit(metrics)
-			
-	# Update pps that will build this turn
-	var pps_in_construction = get_tree().get_nodes_in_group("BbsInConstruction")
-	
-	for pp in pps_in_construction:
-		# All builds buttons are instanciated at launch and are juste hidden,
-		# so if no pp is in construction on that map emplacement,
-		# the metrics are null
-		if pp.metrics != null:
-			# pp will build this turn
-			if pp.metrics.construction_started_on_turn + pp.metrics.build_time_in_turns == Gameloop.current_turn:
-				if pp.metrics.type == PowerplantsManager.EngineTypeIds.SOLAR or pp.metrics.type == PowerplantsManager.EngineTypeIds.WIND:
-					pp.metrics.availability *= Vector2(0.5, 0.5)
-			
-	
-	# Update base metrics for futur buildings, but not if they take time to build
-	# since the changes will be reverted anyway on next turn
-	PowerplantsManager.backup_metrics()
-	for metrics: PowerplantMetrics in PowerplantsManager.powerplants_metrics:
-		if metrics.type == PowerplantsManager.EngineTypeIds.SOLAR or metrics.type == PowerplantsManager.EngineTypeIds.WIND and metrics.build_time_in_turns == 0:
-			metrics.availability *= Vector2(0.5, 0.5)
-			
-	PowerplantsManager.update_buildings_impact()
-	
-	var year = Gameloop.year_list[Gameloop.current_turn-1]
-	Context.send_parameters_to_model(Context.res_id, year, 471, -0.2)
-	await Context.parameters_sent_to_model
-	Context.send_parameters_to_model(Context.res_id, year, 472, -0.2)
-	await Context.parameters_sent_to_model
-	year += 1 # TO CHECK !!
-	Context.send_parameters_to_model(Context.res_id, year, 471, 0.2)
-	await Context.parameters_sent_to_model
-	Context.send_parameters_to_model(Context.res_id, year, 472, 0.2)
-	await Context.parameters_sent_to_model
+	##!! local mode todo
+	## Update already built pps metrics
+	#var powerplants: Array[Node] = get_tree().get_nodes_in_group("Powerplants")
+#
+	## Update already built pps metrics
+	#for powerplant: PpScene in powerplants:
+		#var metrics: PowerplantMetrics = powerplant.metrics
+		#if powerplant.is_solar() or powerplant.is_wind():
+			#powerplant.metrics_backup = metrics.copy()
+			#metrics.availability *= Vector2(0.5, 0.5)
+			#powerplant.metrics_updated.emit(metrics)
+			#
+	## Update pps that will build this turn
+	#var pps_in_construction = get_tree().get_nodes_in_group("BbsInConstruction")
+	#
+	#for pp in pps_in_construction:
+		## All builds buttons are instanciated at launch and are juste hidden,
+		## so if no pp is in construction on that map emplacement,
+		## the metrics are null
+		#if pp.metrics != null:
+			## pp will build this turn
+			#if pp.metrics.construction_started_on_turn + pp.metrics.build_time_in_turns == Gameloop.current_turn:
+				#if pp.metrics.type == PowerplantsManager.EngineTypeIds.SOLAR or pp.metrics.type == PowerplantsManager.EngineTypeIds.WIND:
+					#pp.metrics.availability *= Vector2(0.5, 0.5)
+			#
+	#
+	## Update base metrics for futur buildings, but not if they take time to build
+	## since the changes will be reverted anyway on next turn
+	#PowerplantsManager.backup_metrics()
+	#for metrics: PowerplantMetrics in PowerplantsManager.powerplants_metrics:
+		#if metrics.type == PowerplantsManager.EngineTypeIds.SOLAR or metrics.type == PowerplantsManager.EngineTypeIds.WIND and metrics.build_time_in_turns == 0:
+			#metrics.availability *= Vector2(0.5, 0.5)
+			#
+	#PowerplantsManager.update_buildings_impact()
+	#
+	#var year = Gameloop.year_list[Gameloop.current_turn-1]
+	#Context.send_parameters_to_model(Context.res_id, year, 471, -0.2)
+	#await Context.parameters_sent_to_model
+	#Context.send_parameters_to_model(Context.res_id, year, 472, -0.2)
+	#await Context.parameters_sent_to_model
+	#year += 1 # TO CHECK !!
+	#Context.send_parameters_to_model(Context.res_id, year, 471, 0.2)
+	#await Context.parameters_sent_to_model
+	#Context.send_parameters_to_model(Context.res_id, year, 472, 0.2)
+	#await Context.parameters_sent_to_model
 	ShockManager.shock_effects_applied.emit(Gameloop.most_recent_shock)
 
 
@@ -244,24 +246,26 @@ func nuc_reintro():
 	
 # Increase the gas capacity for 1 year (only impacts the end score)
 func burn_gas():
-	# Need the number of active gas plants
-	var powerplants: Array[Node] = get_tree().get_nodes_in_group("Powerplants")
-	var active_gas_plants = 0
-	
-	for powerplant in powerplants:
-		var metrics: PowerplantMetrics = powerplant.metrics
-		
-		if metrics.type == PowerplantsManager.EngineTypeIds.GAS and metrics.active:
-			active_gas_plants += 1
-			
-	var gas_capacity = 0.0
-	for i in Context.ctx:
-		if i["prm_id"] == "186":
-			gas_capacity = float(i["tj"])
-	var year = Gameloop.year_list[Gameloop.current_turn-1]
-	Context.send_parameters_to_model(Context.res_id, year, 186, gas_capacity * active_gas_plants + 720)
-	await Context.parameters_sent_to_model
-	Context.send_parameters_to_model(Context.res_id, year, 186, gas_capacity * active_gas_plants)
+	pass
+	#!! local mode to do
+	## Need the number of active gas plants
+	#var powerplants: Array[Node] = get_tree().get_nodes_in_group("Powerplants")
+	#var active_gas_plants = 0
+	#
+	#for powerplant in powerplants:
+		#var metrics: PowerplantMetrics = powerplant.metrics
+		#
+		#if metrics.type == PowerplantsManager.EngineTypeIds.GAS and metrics.active:
+			#active_gas_plants += 1
+			#
+	#var gas_capacity = 0.0
+	#for i in Context.ctx:
+		#if i["prm_id"] == "186":
+			#gas_capacity = float(i["tj"])
+	#var year = Gameloop.year_list[Gameloop.current_turn-1]
+	#Context.send_parameters_to_model(Context.res_id, year, 186, gas_capacity * active_gas_plants + 720)
+	#await Context.parameters_sent_to_model
+	#Context.send_parameters_to_model(Context.res_id, year, 186, gas_capacity * active_gas_plants)
 
 
 # Some shocks modify the state of the game for one turn only. This can be

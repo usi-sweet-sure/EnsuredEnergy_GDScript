@@ -2,15 +2,10 @@ extends Control
 
 signal summary_requested(type: String)
 
-@export var leaderboard_buttons: ButtonGroup
 @export var summary_buttons: ButtonGroup
 @onready var per_plant_summary: Control = $BackPanel/Screen/Summary/PerPlantSummary
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-
-var score_list = ["met_nuc", "met_fos", "met_ele", "met_emi", "met_lnd", "met_cst", "met_smr"]
-var rank_list = ["rnk_nuc", "rnk_fos", "rnk_ele", "rnk_emi", "rnk_lnd", "rnk_cst", "rnk_smr"]
-var metric_list = [" Tj", " Tj", " Tj", "M CO2/t", " Km2", "M CHF", "%"]
 var summary_texts_1 = ["NETZERO_TEXT", "LANDUSE_TEXT", "NUC_TEXT", "NO_MONEY_TEXT", "POLICIES_TEXT", "IMPORT_TEXT"]
 var summary_texts_2 = ["", "", "", "", "", ""]
 var game_stats = null
@@ -18,37 +13,13 @@ var score_info_list = ["NUCLEAR_SCORE", "FOSSIL_SCORE", "ENERGY_SCORE", "EMISSIO
 var first_time_toggling_end = true
 
 func _ready():
-	Gameloop.player_name_updated.connect(_on_player_name_updated)
 	Gameloop.end_toggled.connect(_on_end_toggled)
 	hide()
-	$BackPanel/Screen/Leaderboard.hide()
-	$BackPanel/Screen/Summary.hide()
-	$SummaryButton.button_pressed = true
 	
 	var button_index = 0
-	for button in leaderboard_buttons.get_buttons():
-		button.connect("pressed", _on_leaderboard_button_pressed.bind(button_index))
-		button_index += 1
-		
-	button_index = 0
 	for button in summary_buttons.get_buttons():
 		button.connect("pressed", _on_summary_button_pressed.bind(button_index))
 		button_index += 1
-
-
-func _on_leaderboard_button_pressed(button_index):
-	$BackPanel/Screen/Leaderboard/VBoxContainer/PlayerStats2/Score_info.text = score_info_list[button_index]
-	var tab = 0
-	for i in Context.leaderboard_json[button_index]:
-		tab += 1
-		var name_node = get_node("BackPanel/Screen/Leaderboard/VBoxContainer/Rank" + str(tab) + "/HBoxContainer/NAME")
-		var score_node = get_node("BackPanel/Screen/Leaderboard/VBoxContainer/Rank" + str(tab) + "/HBoxContainer/SCORE")
-		var rank_node = get_node("BackPanel/Screen/Leaderboard/VBoxContainer/Rank" + str(tab) + "/HBoxContainer/RANK")
-		name_node.text = _assert_not_null(i["res_name"])
-		score_node.text = _assert_not_null(i[score_list[button_index]]).pad_decimals(2) + metric_list[button_index]
-		rank_node.text = _assert_not_null(i[rank_list[button_index]])
-		$BackPanel/Screen/Leaderboard/VBoxContainer/PlayerStats/HBoxContainer/player_score.text = _assert_not_null(Context.rank_json[0][score_list[button_index]]).pad_decimals(2) + metric_list[button_index]
-		$BackPanel/Screen/Leaderboard/VBoxContainer/PlayerStats/HBoxContainer/player_rank.text = _assert_not_null(Context.rank_json[0][rank_list[button_index]])
 		
 			
 func _on_summary_button_pressed(button_index):
@@ -66,32 +37,6 @@ func _on_summary_button_pressed(button_index):
 		per_plant_summary.show()
 	else:
 		per_plant_summary.hide()
-		
-			
-func _on_leaderboard_updated(leaderboard):
-	$BackPanel/Screen/Leaderboard/VBoxContainer/PlayerStats2/Score_info.text = score_info_list[2]
-	var button_index = 0
-	for i in leaderboard[2]:
-		button_index += 1
-		var name_node = get_node("BackPanel/Screen/Leaderboard/VBoxContainer/Rank" + str(button_index) + "/HBoxContainer/NAME")
-		var score_node = get_node("BackPanel/Screen/Leaderboard/VBoxContainer/Rank" + str(button_index) + "/HBoxContainer/SCORE")
-		var rank_node = get_node("BackPanel/Screen/Leaderboard/VBoxContainer/Rank" + str(button_index) + "/HBoxContainer/RANK")
-		name_node.text = _assert_not_null(i["res_name"])
-		score_node.text = _assert_not_null(i["met_ele"]).pad_decimals(2) + metric_list[2]
-		rank_node.text = _assert_not_null(i["rnk_ele"])
-		
-
-func _on_rank_updated(rank):
-	$BackPanel/Screen/Leaderboard/VBoxContainer/PlayerStats/HBoxContainer/player_name.text = _assert_not_null(rank[0]["res_name"])
-	$BackPanel/Screen/Leaderboard/VBoxContainer/PlayerStats/HBoxContainer/player_score.text = _assert_not_null(rank[0]["met_ele"]).pad_decimals(2) + metric_list[2]
-	$BackPanel/Screen/Leaderboard/VBoxContainer/PlayerStats/HBoxContainer/player_rank.text = _assert_not_null(rank[0]["rnk_ele"])
-
-
-func _assert_not_null(val: Variant):
-	if val == null:
-		return ""
-	else:
-		return val
 	
 
 func _on_game_stats_updated(_game_stats: Dictionary) -> void:
@@ -146,21 +91,9 @@ func _on_game_stats_updated(_game_stats: Dictionary) -> void:
 	_on_summary_button_pressed(0)
 	
 
-func _on_leaderboard_toggled(toggled_on: bool) -> void:
-	$BackPanel/Screen/Leaderboard.visible = toggled_on
-
-
-func _on_summary_toggled(toggled_on: bool) -> void:
-	$BackPanel/Screen/Summary.visible = toggled_on
-	
-
 # Next button from previous screen, leading to this one
 func _on_next_button_pressed() -> void:
 	animation_player.play("summary_appears")
-
-
-func _on_player_name_updated(value: String)  -> void:
-	$BackPanel/Screen/Leaderboard/VBoxContainer/PlayerStats/HBoxContainer/player_name.text = value
 
 
 func _on_show_map_toggled(toggled_on: bool) -> void:
