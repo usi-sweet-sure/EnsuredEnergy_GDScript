@@ -637,6 +637,8 @@ func _ready():
 
 
 func _on_game_started():
+	Gameloop.demand_summer = 1000.0
+	Gameloop.demand_winter = 1200.0
 	powerplants_metrics_updated.emit(powerplants_metrics)
 	Gameloop.player_can_start_playing_first_turn.emit()
 		
