@@ -48,7 +48,7 @@ func _ready():
 	vote_button_clicked.connect(_on_vote_button_clicked)
 	Gameloop.next_turn.connect(_on_next_turn)
 	
-	# Campaigns are treated as policies than don't need a vote
+	# Campaigns are treated as policies that don't need a vote
 	var env_campaign = Policy.new("POLICIES_ENVIRONMENTAL_CAMPAIGN_TITLE",
 			"POLICIES_ENVIRONMENTAL_CAMPAIGN_TEXT", 1, Policy.PolicyType.CAMPAIGN,
 			"ENVIRONMENTAL CAMPAIGN")
@@ -124,29 +124,15 @@ func lower_build_time():
 			
 				
 func lower_industry_demand():
-	pass
-	#!! local mode to do
-	#var industry_demand = 0.0
-	#for i in Context.ctx:
-		#if i["prm_id"] == "22":
-			#industry_demand = float(i["tj"])
-	#var year = Gameloop.year_list[Gameloop.current_turn] #affects following turn
-	#var prm_id = 22
-	#var tj = -(industry_demand * 10.0 / 100.0)
-	#Context.send_parameters_to_model(Context.res_id, year, prm_id, tj)
+	# Lowers energy demand by 5%
+	Gameloop.demand_winter *= 0.95
+	Gameloop.demand_summer *= 0.95
 	
 	
 func lower_household_demand():
-	pass
-	#!! local mode to do
-	#var household_demand = 0.0
-	#for i in Context.ctx:
-		#if i["prm_id"] == "7":
-			#household_demand = float(i["tj"])
-	#var year = Gameloop.year_list[Gameloop.current_turn] #affects following turn
-	#var prm_id = 7
-	#var tj = -(household_demand * 10.0 / 100.0)
-	#Context.send_parameters_to_model(Context.res_id, year, prm_id, tj)
+	# Lowers energy demand by 5%
+	Gameloop.demand_winter *= 0.95
+	Gameloop.demand_summer *= 0.95
 	
 	
 func get_policy(inspector_id: String):
