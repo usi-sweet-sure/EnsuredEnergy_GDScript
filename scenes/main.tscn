@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://g58p7rxvcdik"]
+[gd_scene load_steps=16 format=3 uid="uid://g58p7rxvcdik"]
 
 [ext_resource type="PackedScene" uid="uid://ba56oxmvcxpos" path="res://scenes/world.tscn" id="1_prp6q"]
 [ext_resource type="PackedScene" uid="uid://bs48lirfn2fp2" path="res://scenes/hud/ui.tscn" id="2_d60f5"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://pvoi2mcc3oc1" path="res://scenes/hud/menu.tscn" id="18_h65u3"]
 [ext_resource type="PackedScene" uid="uid://jj476u8yn2g8" path="res://scenes/windows/policies.tscn" id="19_dtfm3"]
 [ext_resource type="PackedScene" uid="uid://cej4dlw11su6f" path="res://scenes/hud/end.tscn" id="21_7pke6"]
-[ext_resource type="PackedScene" uid="uid://det4mobxk3l42" path="res://scenes/loading_screen.tscn" id="23_bmtug"]
 [ext_resource type="PackedScene" uid="uid://cuuj2s4h1588i" path="res://scenes/audio.tscn" id="34_smnob"]
 [ext_resource type="PackedScene" uid="uid://dc3s5eeg1c0uv" path="res://scenes/windows/graphs.tscn" id="66_s8n66"]
 [ext_resource type="PackedScene" uid="uid://cb7movoe2pf7u" path="res://scenes/windows/quit_game.tscn" id="77_iwdt8"]
@@ -83,8 +82,6 @@ visible = false
 [node name="QuitGame" parent="." instance=ExtResource("77_iwdt8")]
 layer = 4
 visible = false
-
-[node name="LoadingScreen" parent="." instance=ExtResource("23_bmtug")]
 
 [node name="Credits" parent="." instance=ExtResource("17_nfvbd")]
 layer = 4
