@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cej4dlw11su6f"]
+[gd_scene load_steps=41 format=3 uid="uid://cej4dlw11su6f"]
 
 [ext_resource type="Script" uid="uid://bm08rcot30crf" path="res://src/gdscript/end/end.gd" id="1_eio5g"]
 [ext_resource type="Theme" uid="uid://dwneq676q3hhg" path="res://assets/new_fonts/label_themes.tres" id="4_n8g63"]
@@ -30,7 +30,6 @@
 [ext_resource type="Texture2D" uid="uid://c0rjlvrr2ncy1" path="res://assets/textures/ui/Button-Next-Normal.png" id="81_qtl7y"]
 [ext_resource type="Texture2D" uid="uid://biq6v1m7nc6l" path="res://assets/textures/ui/Button-Next-Press.png" id="82_63gm0"]
 [ext_resource type="Texture2D" uid="uid://c25aef4m4yd40" path="res://assets/textures/ui/Button-Next-Hover.png" id="83_43cth"]
-[ext_resource type="Texture2D" uid="uid://b2s2c41bays6t" path="res://assets/textures/ui/All-HQ-Assets-D_0004s_0016_Icon-Notification.png" id="84_63gm0"]
 [ext_resource type="Script" uid="uid://gklakbq4k3h5" path="res://src/gdscript/end/summary/summary.gd" id="86_i264e"]
 
 [sub_resource type="Animation" id="Animation_lp1lc"]
@@ -82,18 +81,6 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("NextButton:self_modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_qtl7y"]
@@ -159,92 +146,6 @@ _data = {
 &"screen_appears": SubResource("Animation_piib2")
 }
 
-[sub_resource type="Animation" id="Animation_43cth"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("NextButton:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("NextButton/LoadingIndicator:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(21, 42)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("NextButton/LoadingIndicator:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_63gm0"]
-resource_name = "next_button_modulates"
-length = 0.5
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("NextButton:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("NextButton/LoadingIndicator:position")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(28, 45), Vector2(176, 45)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("NextButton/LoadingIndicator:scale")
-tracks/2/interp = 2
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1.2, 1.2), Vector2(1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_i264e"]
-_data = {
-&"RESET": SubResource("Animation_43cth"),
-&"next_button_modulates": SubResource("Animation_63gm0")
-}
-
 [sub_resource type="Animation" id="Animation_q3lkw"]
 length = 0.001
 tracks/0/type = "value"
@@ -307,6 +208,30 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector2(2054, 51)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../ThankYou/BackPanel:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(460, 82)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../ThankYou/NextButton:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(855, 644)]
+}
 
 [sub_resource type="Animation" id="Animation_dy03i"]
 resource_name = "show_map"
@@ -350,7 +275,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_vlyhg"]
 resource_name = "summary_appears"
-length = 1.1
+length = 1.7
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -358,7 +283,7 @@ tracks/0/path = NodePath("BackPanel:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.2),
+"times": PackedFloat32Array(0.4),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -370,7 +295,7 @@ tracks/1/path = NodePath("BackPanel:position")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.2, 0.4, 0.6, 0.8),
+"times": PackedFloat32Array(0.4, 0.6, 0.8, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(2000, 82), Vector2(353, 82), Vector2(463, 82), Vector2(453, 82)]
@@ -382,7 +307,7 @@ tracks/2/path = NodePath(".:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.2),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -394,7 +319,7 @@ tracks/3/path = NodePath("ShowMap:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.2),
+"times": PackedFloat32Array(0.4),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -406,10 +331,34 @@ tracks/4/path = NodePath("ShowMap:position")
 tracks/4/interp = 2
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.2, 0.566667, 0.8, 1.1),
+"times": PackedFloat32Array(0.4, 0.766667, 1, 1.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(2054, 51), Vector2(1691, 51), Vector2(1641, 51), Vector2(1671, 51)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../ThankYou/BackPanel:position")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.466667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(460, 82), Vector2(535, 82), Vector2(-1196, 82)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../ThankYou/NextButton:position")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.0666667, 0.233333, 0.533333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(855, 806), Vector2(1012, 806), Vector2(-420, 806)]
 }
 
 [sub_resource type="Animation" id="Animation_6id3j"]
@@ -475,14 +424,12 @@ script = ExtResource("80_piib2")
 
 [node name="NextButton" type="TextureButton" parent="ThankYou" groups=["buttons"]]
 visible = false
-self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 855.0
 offset_top = 644.0
 offset_right = 1057.0
 offset_bottom = 730.0
 focus_mode = 0
-disabled = true
 texture_normal = ExtResource("81_qtl7y")
 texture_pressed = ExtResource("82_63gm0")
 texture_hover = ExtResource("83_43cth")
@@ -503,6 +450,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_n8g63")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "TO_SUMMARY"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -520,10 +468,6 @@ offset_left = 95.0
 offset_top = -45.0
 offset_right = 135.0
 offset_bottom = -5.0
-
-[node name="LoadingIndicator" type="Sprite2D" parent="ThankYou/NextButton"]
-position = Vector2(21, 42)
-texture = ExtResource("84_63gm0")
 
 [node name="BackPanel" type="TextureRect" parent="ThankYou"]
 layout_mode = 1
@@ -619,11 +563,6 @@ autowrap_mode = 2
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ThankYou"]
 libraries = {
 &"": SubResource("AnimationLibrary_j8ncq")
-}
-
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="ThankYou"]
-libraries = {
-&"": SubResource("AnimationLibrary_i264e")
 }
 
 [node name="Summary" type="Control" parent="."]
@@ -1117,6 +1056,7 @@ libraries = {
 [connection signal="game_stats_updated" from="." to="Summary/BackPanel/Screen/Summary/PerPlantSummary/River/Sprite2D" method="_on_game_stats_updated"]
 [connection signal="game_stats_updated" from="." to="Summary/BackPanel/Screen/Summary/PerPlantSummary/Wind/Sprite2D" method="_on_game_stats_updated"]
 [connection signal="text_written" from="ThankYou" to="ThankYou" method="_on_text_written"]
+[connection signal="pressed" from="ThankYou/NextButton" to="Summary" method="_on_next_button_pressed"]
 [connection signal="summary_requested" from="Summary" to="Summary/BackPanel/Screen/Summary/PerPlantSummary/Gaz/Sprite2D" method="_on_summary_requested"]
 [connection signal="summary_requested" from="Summary" to="Summary/BackPanel/Screen/Summary/PerPlantSummary/Biogaz/Sprite2D" method="_on_summary_requested"]
 [connection signal="summary_requested" from="Summary" to="Summary/BackPanel/Screen/Summary/PerPlantSummary/Nuclear/Sprite2D" method="_on_summary_requested"]
