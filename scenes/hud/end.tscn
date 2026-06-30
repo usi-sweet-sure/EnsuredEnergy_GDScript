@@ -1046,9 +1046,9 @@ script = ExtResource("80_piib2")
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 855.0
-offset_top = 644.0
+offset_top = 806.0
 offset_right = 1057.0
-offset_bottom = 730.0
+offset_bottom = 892.0
 focus_mode = 0
 disabled = true
 texture_normal = ExtResource("81_qtl7y")
@@ -1100,9 +1100,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 440.0
+offset_left = 431.0
 offset_top = 62.0
-offset_right = 1456.0
+offset_right = 1447.0
 offset_bottom = 749.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -1287,11 +1287,22 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(1.20327e-08, 0.111567, 0.114168, 0.364706)
 
+[node name="UnallowedLabel" type="Label" parent="PlayerName/BackPanel/Screen"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 310.0
+offset_right = 825.0
+offset_bottom = 338.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "USERNAME_NOT_ALLOWED"
+horizontal_alignment = 1
+
 [node name="NextButton" type="TextureButton" parent="PlayerName" groups=["buttons"]]
 layout_mode = 0
-offset_left = 860.0
+offset_left = 2051.0
 offset_top = 700.0
-offset_right = 1062.0
+offset_right = 2253.0
 offset_bottom = 786.0
 focus_mode = 0
 texture_normal = ExtResource("81_qtl7y")
@@ -1397,9 +1408,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 1980.0
+offset_left = 433.0
 offset_top = 62.0
-offset_right = 2996.0
+offset_right = 1449.0
 offset_bottom = 782.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -2176,9 +2187,9 @@ plant_type = 1
 
 [node name="SummaryButton" type="TextureButton" parent="Summary" groups=["buttons"]]
 layout_mode = 0
-offset_left = 2054.0
+offset_left = 668.0
 offset_top = 860.0
-offset_right = 2256.0
+offset_right = 870.0
 offset_bottom = 946.0
 focus_mode = 0
 toggle_mode = true
@@ -2217,9 +2228,9 @@ texture = ExtResource("59_pxkc5")
 
 [node name="LeaderboardButton" type="TextureButton" parent="Summary" groups=["buttons"]]
 layout_mode = 0
-offset_left = 2052.0
+offset_left = 1040.0
 offset_top = 860.0
-offset_right = 2254.0
+offset_right = 1242.0
 offset_bottom = 946.0
 focus_mode = 0
 toggle_mode = true
