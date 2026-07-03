@@ -194,11 +194,11 @@ script = ExtResource("1_7lxuj")
 [node name="ForestAmbiance" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_lqxid")
 volume_db = -6.0
-bus = &"Music"
+bus = &"Sound"
 
 [node name="DarkFantasy" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamMP3_17urj")
-bus = &"Music"
+bus = &"Sound"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -236,6 +236,7 @@ bus = &"Sound"
 [node name="PaperManip" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_mnpfl")
 volume_db = -14.0
+bus = &"Sound"
 
 [node name="PaperClose" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_4apat")
