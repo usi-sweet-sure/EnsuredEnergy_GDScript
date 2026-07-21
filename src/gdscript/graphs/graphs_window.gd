@@ -194,7 +194,7 @@ func _add_new_point_to_line(line_name: String, x, y) -> Line2D:
 	color_rect.size = Vector2(60, 60)
 	color_rect.position -= Vector2(10, 5)
 	visual_point.add_child(label)
-	label.text = str(round(y)) + "\n" + unit.trim_prefix(" ")
+	label.text = str(y).pad_decimals(1) + "\n" + unit.trim_prefix(" ")
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	label.set_anchors_and_offsets_preset(Control.PRESET_CENTER_BOTTOM)
 	label.add_child(color_rect)
@@ -206,7 +206,7 @@ func _add_new_point_to_line(line_name: String, x, y) -> Line2D:
 	visual_point.color.a = 0.75
 	visual_point.mouse_entered.connect(func(): change_point_highlight(visual_point))
 	visual_point.mouse_exited.connect(func(): change_point_highlight(visual_point, false))
-	visual_point.mouse_entered.connect(func(): Cursor.show_tooltip.emit(str(round(y)) + unit + "\n" + tr(line_name.to_upper() + "_LINE_NAME")))
+	visual_point.mouse_entered.connect(func(): Cursor.show_tooltip.emit(str(y).pad_decimals(1) + unit + "\n" + tr(line_name.to_upper() + "_LINE_NAME")))
 	visual_point.mouse_exited.connect(func(): Cursor.hide_tooltip.emit())
 
 	line.add_child(visual_point)
