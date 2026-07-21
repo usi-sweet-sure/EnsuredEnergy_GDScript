@@ -61,11 +61,6 @@ func compute_game_stats():
 	game_stats.sequestrated_co2_percentage = Gameloop.sequestrated_co2 * 100.0 / emissions_now
 	game_stats.reached_net_zero = net_zero <= 0.01
 	game_stats.emissions_diff_percentage = (emissions_now * 100.0 / emissions_in_2022) -100.0
-	print("emissions_in_2022: ", emissions_in_2022)
-	print("emissions_now: ", emissions_now)
-	print("diff: ", game_stats.emissions_diff_percentage)
-	print("sequestrated_co2: ", Gameloop.sequestrated_co2)
-	print("net_zero: ", game_stats.reached_net_zero, " ", game_stats.sequestrated_co2_percentage)
 	
 
 	# Nuclear
