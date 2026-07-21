@@ -105,40 +105,41 @@ func _on_game_stats_updated(_game_stats: Dictionary) -> void:
 	else:
 		summary_texts_1[0] = tr("NO_NETZERO_TEXT")
 		
+	var diff = str(abs(int(round(game_stats.emissions_diff_percentage))))
+	var sequestrated = str(int(round(game_stats.sequestrated_co2_percentage)))
+	
 	if game_stats.emissions_diff_percentage < 0:
-		var value = str(abs(game_stats.emissions_diff_percentage)).pad_decimals(2)
-		summary_texts_2[0] = tr("CO2_TEXT").format([value], "&&") + "\n" + tr("SEQUESTRATED_CO2").format([value], "&&")
+		summary_texts_2[0] = tr("CO2_TEXT").format([diff], "&&") + "\n" + tr("SEQUESTRATED_CO2").format([sequestrated], "&&")
 	else:
-		var value = str(game_stats.emissions_diff_percentage).pad_decimals(2)
-		summary_texts_2[0] = tr("NO_CO2_TEXT").format([value], "&&") + "\n" + tr("SEQUESTRATED_CO2").format([value], "&&")
+		summary_texts_2[0] = tr("NO_CO2_TEXT").format([diff], "&&") + "\n" + tr("SEQUESTRATED_CO2").format([sequestrated], "&&")
 
 	# Landuse
 	if game_stats.land_use_diff_percentage < 0:
-		var value = str(abs(game_stats.land_use_diff_percentage)).pad_decimals(2)
+		var value = str(abs(int(round(game_stats.land_use_diff_percentage))))
 		summary_texts_1[1] = tr("LANDUSE_TEXT").format([value], "&&")
 	else:
-		var value = str(game_stats.land_use_diff_percentage).pad_decimals(2)
+		var value = str(int(round(game_stats.land_use_diff_percentage)))
 		summary_texts_1[1] = tr("NO_LANDUSE_TEXT").format([value], "&&")
 	
 	# Nuclear
 	var nuclear_button: Button = summary_buttons[2]
 	if game_stats.nuclear_energy_percentage > 0:
-		var value = str(abs(game_stats.nuclear_energy_percentage)).pad_decimals(2)
+		var value = str(abs(int(round(game_stats.nuclear_energy_percentage))))
 		summary_texts_1[2] = tr("NUC_TEXT").format([value], "&&")
 	else:
 		summary_texts_1[2] = tr("NO_NUC_TEXT")
 	
 	if game_stats.production_costs_diff_percentage < 0:
-		var value = str(abs(game_stats.production_costs_diff_percentage)).pad_decimals(2)
+		var value = str(abs(int(round(game_stats.production_costs_diff_percentage))))
 		summary_texts_1[3] = tr("MONEY_TEXT").format([value], "&&")
 	else:
-		var value = str(game_stats.production_costs_diff_percentage).pad_decimals(2)
+		var value = str(int(round(game_stats.production_costs_diff_percentage)))
 		summary_texts_1[3] = tr("NO_MONEY_TEXT").format([value], "&&")
 
 	summary_texts_1[4] = tr("POLICIES_TEXT").format([game_stats.implemented_policies_count], "&&")
 	
 	if game_stats.imported_energy_percentage > 0:
-		var value = str(game_stats.imported_energy_percentage).pad_decimals(2)
+		var value = str(int(round(game_stats.imported_energy_percentage)))
 		summary_texts_1[5] = tr("IMPORT_TEXT").format([value], "&&")
 	else:
 		summary_texts_1[5] = tr("NO_IMPORT_TEXT")
