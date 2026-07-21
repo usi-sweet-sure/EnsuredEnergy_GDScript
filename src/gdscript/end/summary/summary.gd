@@ -106,7 +106,10 @@ func _on_game_stats_updated(_game_stats: Dictionary) -> void:
 		summary_texts_1[0] = tr("NO_NETZERO_TEXT")
 		
 	var diff = str(abs(int(round(game_stats.emissions_diff_percentage))))
-	var sequestrated = str(int(round(game_stats.sequestrated_co2_percentage)))
+	var sequestrated = str(game_stats.sequestrated_co2_percentage).pad_decimals(1)
+		
+	if game_stats.sequestrated_co2_percentage == 100:
+		sequestrated = str(int(game_stats.sequestrated_co2_percentage))
 	
 	if game_stats.emissions_diff_percentage < 0:
 		summary_texts_2[0] = tr("CO2_TEXT").format([diff], "&&") + "\n" + tr("SEQUESTRATED_CO2").format([sequestrated], "&&")
