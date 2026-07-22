@@ -17,6 +17,7 @@ var game_stats = {
 	"nuclear_energy_percentage": 0,
 	"implemented_policies_count": 0,
 	"imported_energy_percentage": 0,
+	"sequestrated_co2_percentage": 0,
 }
 
 
@@ -56,9 +57,11 @@ func compute_game_stats():
 	# CO2
 	var emissions_in_2022 = GraphsData.get_data_for_year("co2_emissions", Gameloop.start_year).value
 	var emissions_now = GraphsData.get_data_for_year("co2_emissions", Gameloop.start_year + Gameloop.current_turn * Gameloop.years_in_a_turn).value
-	emissions_now -= Gameloop.sequestrated_co2
-	game_stats.reached_net_zero = emissions_now == 0
+	var net_zero = emissions_now - Gameloop.sequestrated_co2
+	game_stats.sequestrated_co2_percentage = Gameloop.sequestrated_co2 * 100.0 / emissions_now
+	game_stats.reached_net_zero = net_zero <= 0.01
 	game_stats.emissions_diff_percentage = (emissions_now * 100.0 / emissions_in_2022) -100.0
+	
 
 	# Nuclear
 	var nuclear_supply = PowerplantsManager.get_energy_provided_by_plant_type(PowerplantsManager.EngineTypeIds.NUCLEAR)

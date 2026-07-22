@@ -1,4 +1,4 @@
-[gd_scene load_steps=244 format=3 uid="uid://bs48lirfn2fp2"]
+[gd_scene load_steps=243 format=3 uid="uid://bs48lirfn2fp2"]
 
 [ext_resource type="Shader" uid="uid://fkpbxalsaovj" path="res://src/gdscript/shaders/cloud.gdshader" id="1_rmx58"]
 [ext_resource type="Texture2D" uid="uid://kfrnyvqb84es" path="res://assets/title/cloud.png" id="2_26ixr"]
@@ -97,7 +97,7 @@
 [ext_resource type="Script" uid="uid://bdgyrsxf0td84" path="res://src/gdscript/hud/money_management/borrow_money_frame/debt_amount_label.gd" id="66_c76li"]
 [ext_resource type="Script" uid="uid://disqc8ovu506g" path="res://src/gdscript/hud/energy_import/import_cost_label.gd" id="67_ohk5r"]
 [ext_resource type="Script" uid="uid://bte6mgw2b8rsl" path="res://src/gdscript/hud/emissions/info_box/info_box.gd" id="67_q6cf6"]
-[ext_resource type="Script" uid="uid://d3um0ex0xbges" path="res://src/gdscript/hud/money_management/available_money_amount_label.gd" id="71_xcmoe"]
+[ext_resource type="Script" uid="uid://canbimsk2v1pe" path="res://src/gdscript/hud/money_management/available_money_amount.gd" id="72_rmula"]
 [ext_resource type="Texture2D" uid="uid://vg02ewph3pco" path="res://assets/textures/screens/screen_2.png" id="76_2tst5"]
 [ext_resource type="Script" uid="uid://bx4vxh8ouaa1b" path="res://src/gdscript/hud/money_management/borrow_money_frame/count_label.gd" id="77_e8n7a"]
 [ext_resource type="Script" uid="uid://wul4xsyn1bb7" path="res://src/gdscript/hud/emissions/info_box/total_emissions_value.gd" id="80_lk5v6"]
@@ -2249,10 +2249,6 @@ _data = {
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r2ty1"]
 
-[sub_resource type="FontVariation" id="FontVariation_15ni2"]
-base_font = ExtResource("51_joowr")
-spacing_glyph = 7
-
 [sub_resource type="FontVariation" id="FontVariation_4ww80"]
 variation_embolden = 0.2
 
@@ -4236,10 +4232,10 @@ offset_bottom = 40.0
 
 [node name="ButtonPlus" parent="TopLeftZone/MoneyManagement/BorrowMoney" instance=ExtResource("31_y5561")]
 layout_mode = 0
-offset_left = 270.0
-offset_top = 178.0
-offset_right = 301.0
-offset_bottom = 210.0
+offset_left = 268.0
+offset_top = 172.0
+offset_right = 299.0
+offset_bottom = 204.0
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("32_ynjjj")
@@ -4468,46 +4464,109 @@ script = ExtResource("77_e8n7a")
 
 [node name="AvailableMoneyAmount" type="Control" parent="TopLeftZone/MoneyManagement"]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -10.0
+offset_top = -5.0
+offset_right = 30.0
+offset_bottom = 35.0
+script = ExtResource("72_rmula")
 
 [node name="AmountPanel" type="Sprite2D" parent="TopLeftZone/MoneyManagement/AvailableMoneyAmount"]
-position = Vector2(212, 194.5)
+position = Vector2(210.377, 194.5)
+scale = Vector2(1.24132, 1)
 texture = ExtResource("31_jcf3k")
 
-[node name="Money-counter-1" type="Sprite2D" parent="TopLeftZone/MoneyManagement/AvailableMoneyAmount/AmountPanel"]
+[node name="Sign" type="Node2D" parent="TopLeftZone/MoneyManagement/AvailableMoneyAmount"]
+position = Vector2(220, 194.5)
+
+[node name="signBg" type="Sprite2D" parent="TopLeftZone/MoneyManagement/AvailableMoneyAmount/Sign"]
+position = Vector2(-50, -1.5)
+texture = ExtResource("32_2wt40")
+
+[node name="SignLabel" type="Label" parent="TopLeftZone/MoneyManagement/AvailableMoneyAmount/Sign"]
+offset_left = -58.0
+offset_top = -16.5
+offset_right = -41.0
+offset_bottom = 11.5
+theme_override_colors/font_color = Color(0.105882, 0.105882, 0.105882, 1)
+theme_override_font_sizes/font_size = 20
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Digit3" type="Node2D" parent="TopLeftZone/MoneyManagement/AvailableMoneyAmount"]
+position = Vector2(220, 194.5)
+
+[node name="Money-counter-1" type="Sprite2D" parent="TopLeftZone/MoneyManagement/AvailableMoneyAmount/Digit3"]
 position = Vector2(-30, -1)
 texture = ExtResource("32_2wt40")
 
-[node name="Money-counter-2" type="Sprite2D" parent="TopLeftZone/MoneyManagement/AvailableMoneyAmount/AmountPanel"]
+[node name="Digit3Label" type="Label" parent="TopLeftZone/MoneyManagement/AvailableMoneyAmount/Digit3"]
+offset_left = -37.0
+offset_top = -14.0
+offset_right = -20.0
+offset_bottom = 14.0
+theme_override_colors/font_color = Color(0.10748, 0.10748, 0.10748, 1)
+theme_override_font_sizes/font_size = 18
+text = "9"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Digit2" type="Node2D" parent="TopLeftZone/MoneyManagement/AvailableMoneyAmount"]
+position = Vector2(220, 194.5)
+
+[node name="Money-counter-2" type="Sprite2D" parent="TopLeftZone/MoneyManagement/AvailableMoneyAmount/Digit2"]
 position = Vector2(-10, -1)
 texture = ExtResource("32_2wt40")
 
-[node name="Money-counter-3" type="Sprite2D" parent="TopLeftZone/MoneyManagement/AvailableMoneyAmount/AmountPanel"]
+[node name="Digit2Label" type="Label" parent="TopLeftZone/MoneyManagement/AvailableMoneyAmount/Digit2"]
+offset_left = -17.0
+offset_top = -14.0
+offset_bottom = 14.0
+theme_override_colors/font_color = Color(0.105882, 0.105882, 0.105882, 1)
+theme_override_font_sizes/font_size = 18
+text = "9"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Digit1" type="Node2D" parent="TopLeftZone/MoneyManagement/AvailableMoneyAmount"]
+position = Vector2(220, 194.5)
+
+[node name="Money-counter-3" type="Sprite2D" parent="TopLeftZone/MoneyManagement/AvailableMoneyAmount/Digit1"]
 position = Vector2(10, -1)
 texture = ExtResource("32_2wt40")
 
-[node name="Money-counter-4" type="Sprite2D" parent="TopLeftZone/MoneyManagement/AvailableMoneyAmount/AmountPanel"]
+[node name="Digit1Label" type="Label" parent="TopLeftZone/MoneyManagement/AvailableMoneyAmount/Digit1"]
+offset_left = 3.0
+offset_top = -14.0
+offset_right = 19.0
+offset_bottom = 14.0
+theme_override_colors/font_color = Color(0.105882, 0.105882, 0.105882, 1)
+theme_override_font_sizes/font_size = 18
+text = "9"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Digit0" type="Node2D" parent="TopLeftZone/MoneyManagement/AvailableMoneyAmount"]
+position = Vector2(220, 194.5)
+
+[node name="Money-counter-4" type="Sprite2D" parent="TopLeftZone/MoneyManagement/AvailableMoneyAmount/Digit0"]
 position = Vector2(30, -1)
 texture = ExtResource("32_2wt40")
 
-[node name="AmountLabel" type="Label" parent="TopLeftZone/MoneyManagement/AvailableMoneyAmount"]
-layout_mode = 0
-offset_left = 173.5
-offset_top = 178.0
-offset_right = 248.5
-offset_bottom = 210.0
-theme = SubResource("Theme_34yde")
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("FontVariation_15ni2")
-theme_override_font_sizes/font_size = 22
-text = "9999"
-horizontal_alignment = 2
+[node name="Digit0Label" type="Label" parent="TopLeftZone/MoneyManagement/AvailableMoneyAmount/Digit0"]
+offset_left = 23.0
+offset_top = -14.0
+offset_right = 39.0
+offset_bottom = 14.0
+theme_override_colors/font_color = Color(0.105882, 0.105882, 0.105882, 1)
+theme_override_font_sizes/font_size = 18
+text = "9"
+horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("71_xcmoe")
 
 [node name="MoneyIcon" type="Sprite2D" parent="TopLeftZone/MoneyManagement"]
-position = Vector2(130.5, 191)
+position = Vector2(115.5, 187.455)
+scale = Vector2(0.636364, 0.636364)
 texture = ExtResource("51_8sidw")
 
 [node name="Policies" type="Control" parent="TopLeftZone"]
@@ -4561,19 +4620,19 @@ position = Vector2(6, 13)
 texture = ExtResource("52_j4tdm")
 
 [node name="Icon-popularity" type="Sprite2D" parent="TopLeftZone/Policies"]
-position = Vector2(130, 274)
-scale = Vector2(0.972222, 0.901941)
+position = Vector2(113.063, 274.275)
+scale = Vector2(0.841667, 0.780823)
 texture = ExtResource("34_xcgyc")
 
 [node name="Popularity-" type="Sprite2D" parent="TopLeftZone/Policies"]
-position = Vector2(213, 274.5)
+position = Vector2(200, 274.5)
 texture = ExtResource("35_qiawk")
 
 [node name="Trust" type="ProgressBar" parent="TopLeftZone/Policies"]
 layout_mode = 0
-offset_left = 172.0
+offset_left = 160.0
 offset_top = 256.0
-offset_right = 252.0
+offset_right = 240.0
 offset_bottom = 294.0
 theme = ExtResource("3_8s8ds")
 theme_override_colors/font_color = Color(1, 1, 1, 0.992157)
@@ -4602,9 +4661,9 @@ grow_vertical = 1
 
 [node name="ColorRect" type="ColorRect" parent="TopLeftZone/Policies"]
 layout_mode = 0
-offset_left = 110.0
+offset_left = 112.0
 offset_top = 249.0
-offset_right = 259.0
+offset_right = 261.0
 offset_bottom = 301.0
 mouse_filter = 1
 color = Color(1, 1, 1, 0)

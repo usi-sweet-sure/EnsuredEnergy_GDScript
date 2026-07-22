@@ -209,7 +209,7 @@ BORROWED_MONEY_LINE_NAME,Borrowed money,Argent emprunté,Geliehenes Geld,Denaro 
 AVAILABLE_MONEY_LINE_NAME,Available money,Budget,Budget,Bilancio
 WINTER_ENERGY_SUPPLY_LINE_NAME,Winter energy supply,Apport énergétique hivernal,Energieerzeugung im Winter,Fornitura di energia invernale
 SUMMER_ENERGY_SUPPLY_LINE_NAME,Summer energy supply,Apport énergétique estival,Energieerzeugung im Sommer,Fornitura di energia estiva
-WINTER_ENERGY_IMPORT_LINE_NAME,Winter energy import,Energie importée en hiver,Energieimport im Winter,Importazione di energia invernale
+WINTER_ENERGY_IMPORT_LINE_NAME,Winter electricity import,Electricité importée en hiver,Stromimporte im Winter,Importazione di energia elletrica invernale
 LAND_USE_LINE_NAME,Land use,Utilisation des sols,Landnutzung,Uso del suolo
 CO2_EMISSIONS_LINE_NAME,CO2 Emissions,Émissions de CO2,CO2 Emissionen,Emissioni di CO2
 PERSONAL_SUPPORT_LINE_NAME,Political support,Soutien politique,Politische Unterstützung,Supporto politico
@@ -257,13 +257,13 @@ NO_NETZERO_TEXT,You did not reach net zero by 2050.,Tu n'as pas atteint l'object
 CO2_TEXT,You emit &&% less CO2 than in 2022.,Tu émets &&% de CO2 en moins qu'en 2022.,Du emittierst &&% weniger CO2 als im Jahr 2022.,Emettete il &&% in meno di CO2 rispetto al 2022.
 NO_CO2_TEXT,You emit &&% more CO2 than in 2022.,Tu émets &&% de CO2 en plus qu'en 2022.,Du emittierst &&% mehr CO2 als im Jahr 2022.,Emettete il &&% in più di CO2 rispetto al 2022.
 LANDUSE_TEXT,You use &&% less land than in 2022.,Tu utilises &&% de terrain en moins qu'en 2022.,Du nutzt &&% weniger Land als im Jahr 2022.,Si utilizza il &&% di terra in meno rispetto al 2022.
-NO_LANDUSE_TEXT,You use &&% more land than in 2022.,Tu utilies &&% de terres en plus qu'en 2022.,Du nutzt &&% mehr Land als im Jahr 2022.,State utilizzando il &&% di terreno in più rispetto al 2022.
+NO_LANDUSE_TEXT,You use &&% more land than in 2022.,Tu utilises &&% de terres en plus qu'en 2022.,Du nutzt &&% mehr Land als im Jahr 2022.,State utilizzando il &&% di terreno in più rispetto al 2022.
 NUC_TEXT,"You've decided to keep nuclear power, which supplies &&% of your electricity.","Tu as décidé de conserver le nucléaire, qui fournit &&% de ton électricité.","Du hast dich entschieden, an der Kernenergie festzuhalten, die &&% deines Stroms liefert.","Avete deciso di mantenere l'energia nucleare, che fornisce il &&% dell'elettricità."
 NO_NUC_TEXT,You decided to de-transition from nuclear and still managed to provide enough energy.,Tu as décidé de sortir du nucléaire et réussi a fournir suffisamment d'énergie.,"Du hast dich entschieden, aus der Kernenergie auszusteigen und gleichzeitig genügend Energie zu liefern.",Avete deciso di abbandonare l'energia nucleare e di fornire comunque energia a sufficienza.
 MONEY_TEXT,Your energy system costs &&% less than in 2022.,Ton système énergétique coûte &&% de moins qu'en 2022.,Dein Energiesystem kostet &&% weniger als im Jahr 2022.,Il vostro sistema energetico costa il &&% in meno rispetto al 2022.
 NO_MONEY_TEXT,Your energy system costs &&% more than in 2022.,Ton système énergétique coûte &&% de plus qu'en 2022.,Dein Energiesystem kostet 5 % mehr als im Jahr 2022.,Il vostro sistema energetico costa il &&% in più rispetto al 2022.
 POLICIES_TEXT,You implemented && policies.,Tu as implémenté && politiques.,Du hast && Richtlinien implementiert.,Avete implementato && politiche.
-IMPORT_TEXT,n% of your winter energy is imported.,&&% de l'énergie consommée en hiver est importée,&&% Ihrer Winterenergie wird importiert,Il &&% dell'energia invernale è importato
+IMPORT_TEXT,&&% of your winter electricity is imported.,&&% de l'électricité consommée en hiver est importée,&& % Ihres Stromverbrauchs im Winter stammen aus dem Import.,Il &&% del vostro consumo di energia elettrica invernale proviene dall'importazione.
 NO_IMPORT_TEXT,You do not rely on any imported energy.,Tu ne dépends d'aucune énergie importée.,Du bist nicht auf importierte Energie angewiesen.,Non dipendete dall'energia importata.
 ENERGY_SCORE,"Your energy score combines winter and summer and shows if you provide enough energy. If the number is negative, it means you produce more than the demand (yearly total) and if it is positive, it means you depend on imports.","Ton score énergétique combine l'hiver et l'été et indique si tu fournis suffisamment d'énergie. Si le chiffre est négatif, cela signifie que tu produis plus que la demande (total annuel) et s'il est positif, cela signifie que tu dépends des importations.","Dein Energie-Score kombiniert Winter und Sommer und zeigt an, ob du genügend Energie bereitstellst. Wenn die Zahl negativ ist, bedeutet das, dass du mehr produzierst als nachgefragt wird (Jahresgesamtwert), und wenn sie positiv ist, bedeutet das, dass du von Importen abhängig bist.","Il punteggio energetico combina l'inverno e l'estate e indica se si fornisce energia a sufficienza. Se il dato è negativo, significa che si produce più della domanda (totale annuo) e se è positivo, significa che si dipende dalle importazioni."
 FOSSIL_SCORE,Your fossil score indicates the energy produced by fossil fuel powerplants.,Ton score fossile indique l'énergie produite par les centrales à combustibles fossiles.,"Deine fossile Punktzahl gibt die Energie an, die in Kraftwerken für fossile Brennstoffe erzeugt wird.",Il punteggio relativo ai combustibili fossili indica l'energia prodotta dalle centrali elettriche a combustibili fossili.
@@ -283,3 +283,5 @@ SUMMARY,Summary,Résumé,Zusammenfassung,Sintesi
 LEADERBOARD,Leaderboard,Classement,Bestenliste,Classifica
 SHOW_MAP,Show map,Voir la carte,Karte anzeigen,Mostra la mappa
 START_PLAYING,Get started!,Commencer !,Anfangen!,Iniziate!
+USERNAME_NOT_ALLOWED,Invalid username,Nom d'utilisateur invalide,Ungültiger Benutzername,Nome utente non valido
+SEQUESTRATED_CO2,You have sequestered &&% of CO2 emissions,Tu as séquestré &&% des émissions de CO2,Du hast &&% der CO₂-Emissionen gebunden,Hai ridotto del &&% le emissioni di CO2

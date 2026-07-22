@@ -26,7 +26,6 @@ metadata/_edit_vertical_guides_ = [1047.0]
 
 [node name="ForestAmbiance" parent="Audio" index="0"]
 volume_db = -16.0
-bus = &"Sound"
 
 [node name="ColorRect" type="ColorRect" parent="." groups=["draggables"]]
 offset_left = -4536.0
